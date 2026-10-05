@@ -454,5 +454,69 @@
       "What surprised me"
     ],
     "tags": "water buoyancy sink float floating sinking boat foil predictions results sorting"
+  },
+  {
+    "slug": "weather-journal",
+    "subject": "science",
+    "title": "My Weather Journal",
+    "subtitle": "Look closely. Record a little. Discover a pattern.",
+    "description": "Observe the sky, keep a weather diary, choose an outfit and build a toy shelter.",
+    "ages": [
+      "3-5",
+      "6-8"
+    ],
+    "ageLabel": "4–7",
+    "time": "5–10 minutes a day",
+    "place": "Indoors with a view",
+    "art": "weather",
+    "alt": "A child drawing in a journal beside a closed window overlooking a cloudy sky.",
+    "skills": "Observation, comparison, describing, designing",
+    "intro": "Start with a view through a window. Choose one of the illustrated activities below to record the sky, compare a week of observations or try a small design challenge.",
+    "materials": [
+      "A safe view through a closed window",
+      "Paper and pencils or the drawing spaces on screen",
+      "A grown-up to help describe outdoor conditions",
+      "For the optional shelter: a small box, roof material, washable toy, tray and a little water"
+    ],
+    "safety": "Observe with a grown-up from a safe indoor spot. Never look directly at the sun. Stay indoors during storms. For the toy shelter, test over a tray with adult help and keep devices dry.",
+    "steps": [
+      [
+        "Choose a safe view",
+        "Look through a closed window with a grown-up. Do not climb or open a window to get a better view."
+      ],
+      [
+        "Record when you look",
+        "Write the date and time. Try a similar time each day if you are comparing the week."
+      ],
+      [
+        "Describe the sky",
+        "Notice clouds, clear areas or rain. Describe what you can see without looking directly at the sun."
+      ],
+      [
+        "Look for wind clues",
+        "Watch leaves or a flag. Say whether they are still or moving. If nothing suitable is visible, record that you cannot tell."
+      ],
+      [
+        "Draw and compare",
+        "Use the daily diary or weekly tracker. Save your picture before leaving. Ask a grown-up about how it feels outdoors, then compare your observations."
+      ]
+    ],
+    "why": "Weather is what the atmosphere is doing at a particular place and time. Looking regularly helps us notice changes in cloud cover, wind and other conditions. A short journal records this week’s weather; it does not establish a climate pattern.",
+    "questions": [
+      "What changed since your last observation?",
+      "What evidence tells you about the wind?",
+      "What would you wear for your planned activity?"
+    ],
+    "younger": "Choose one thing to describe, such as the clouds. A grown-up can write the child’s words while the child draws.",
+    "older": "Compare records from the same time over seven days. Explain differences using the observations rather than guessing what happened between visits.",
+    "troubleshoot": "If the view is blocked or you miss a day, write that down. Do not fill gaps with invented observations. Indoor temperature does not tell you the outdoor temperature.",
+    "sheet": "How to observe the weather",
+    "sheetPrompt": "Open the illustrated guide or choose a diary, tracker, clothing activity or toy-shelter challenge.",
+    "sheetLabels": [
+      "The sky",
+      "Evidence of wind",
+      "What changed"
+    ],
+    "tags": "weather clouds wind diary journal week clothes clothing shelter sky"
   }
 ]

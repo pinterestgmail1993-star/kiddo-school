@@ -40,3 +40,7 @@ All eight user-hosted R2 WebP URLs returned HTTP 200 and image/webp on 2026-10-0
 ## Sink or Float collection
 
 Added the main guide and five interactive activity routes with the six user-hosted WebP images. All six image URLs returned HTTP 200 with image/webp. The build now has 38 pages. Tests cover one preview per activity page, correct water supervision guidance, drawing/export controls, catalogue search, internal links, metadata and sitemap. Physical touch/stylus and rendered layout review remain outstanding.
+
+## Weather Journal
+
+Added six routes using six verified HTTP-200 R2 WebP assets. Activity pages lead with a large single worksheet preview and use white backgrounds, short adjacent guidance, drawing and keyboard fields. Weekly journal clearly explains that work must be saved before leaving. Build: 44 pages. Automated checks cover image ordering, one preview, controls, metadata, links and sitemap. Real-device touch/stylus and visual browser review remain outstanding.

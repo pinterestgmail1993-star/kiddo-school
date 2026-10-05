@@ -33,3 +33,13 @@ test('sink or float pages have one worksheet preview, working export controls an
  }
  const html=readFileSync('dist/science/sink-or-float/index.html','utf8');assert.match(html,/sink-or-float-cover.webp/);assert.match(html,/foil-boat-challenge\//);
 });
+
+test('weather pages lead with one preview before the writing controls',async()=>{
+ const {weatherPages}=await import('../src/weather-project.mjs');
+ for(const p of weatherPages){
+  const html=readFileSync(`dist/science/weather-journal/${p.slug}/index.html`,'utf8');
+  assert.equal([...html.matchAll(new RegExp('<img[^>]+src="[^"]+/'+p.slug+'\\.webp"','g'))].length,1);
+  assert.ok(html.indexOf('class="weather-visual"')<html.indexOf('class="bean-work-controls"'));
+  assert.match(html,/data-export/);assert.match(html,/<textarea/);assert.match(html,/Never look directly at the sun/);
+ }
+});
