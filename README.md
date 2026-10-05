@@ -1,11 +1,11 @@
 # KIDDO.SCHOOL
 
-**Make · Learn · Discover.** A warm scrapbook-style static activity website for children and the adults learning alongside them.
+**Make · Learn · Discover.** A pink classroom-style static activity website for children and the adults learning alongside them.
 
 ## Pilot contents
 
-- 24 static HTML pages: homepage, subject and age collections, searchable activity catalogue, six complete activity guides, grown-up guidance, about, privacy and a real 404 page.
-- Six original SVG illustrations and six printable SVG activity sheets; no external asset hosting required.
+- 25 static HTML pages: homepage, subject and age collections, searchable activity catalogue, six complete activity guides, grown-up guidance, about, privacy and a real 404 page.
+- Six original SVG illustrations and seven printable SVG activity sheets; no external asset hosting required.
 - Accessible native controls, labelled search and filters, skip link, visible focus styles, reduced-motion support and print styles.
 - Permanent activity URLs, descriptive metadata, canonical tags, structured data, robots.txt and sitemap.xml.
 - No database, accounts, server functions, tracking scripts, external fonts or build dependencies.
@@ -24,7 +24,9 @@ npm run preview
 
 Open http://localhost:4173. Root-relative links require a web server; double-clicking HTML files is not a supported preview method.
 
-The checked-in `dist/` folder is the complete prebuilt **preview** website. It has indexing disabled until the real public URL is known. Cloudflare is not configured and no deployment has been made.
+The on-screen handwriting practice at `/literacy/handwriting-practice/` supports pointer input, undo, guide lines and local PNG export. Physical touch/stylus testing remains needed. Read [ASSETS.md](ASSETS.md) for the 29-file R2 asset pack and folder structure.
+
+The checked-in `dist/` folder is the complete prebuilt **preview** website. It has indexing disabled until the real public URL is known. Cloudflare Pages is connected at https://kiddo-school.pages.dev; production commits trigger a build. Indexing stays disabled during review.
 
 ## Publish later
 

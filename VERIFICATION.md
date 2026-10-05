@@ -2,7 +2,7 @@
 
 ## Completed
 
-- Dependency-free Node build: 24 HTML pages, six original activity illustrations and six printable SVG image sheets.
+- Dependency-free Node build: 25 HTML pages, six original activity illustrations and seven printable SVG image sheets.
 - Automated tests of all internal page/asset links and fragment targets, permanent activity routes, unique titles/descriptions, image alt text and dimensions, canonical origins, JSON-LD, sitemap coverage and noindex preview safeguards.
 - Executed the shipped search script against built activity attributes: case/whitespace normalization, multiword search, subject/age combinations, no-results state, clear/reset, URL-initialized filters, invalid filters, submit handling and safe query encoding.
 - Production-origin build and noindex preview build checks.
@@ -24,3 +24,7 @@ After opening the local preview or the first Cloudflare review deployment:
 6. Check the browser console and network panel for missing resources or blocked scripts. Check that unknown paths return an actual HTTP 404 on Cloudflare.
 
 The local server intentionally does not emulate Cloudflare `_headers`; verify those response headers after the first deployment. Social previews use a PNG card; crawler-specific preview appearance should also be checked after a public URL exists.
+
+## Pink classroom update
+
+Applied the approved pink, golden-yellow and purple theme. Added on-device handwriting at `/literacy/handwriting-practice/`, with trace prompts, pointer input, undo, clear, guide toggle and PNG download. Added descriptive illustration filenames. Re-ran static integrity/search checks and JavaScript syntax checks. Touch/stylus behavior and the new rendered layout still require real-device review; no handwriting recognition or grading is claimed.
