@@ -518,5 +518,69 @@
       "What changed"
     ],
     "tags": "weather clouds wind diary journal week clothes clothing shelter sky"
+  },
+  {
+    "slug": "mixing-colours",
+    "subject": "art",
+    "title": "Mixing Colours",
+    "subtitle": "A little paint. A new discovery.",
+    "description": "Predict paint mixtures, record your results, match colour cards and invent your own shade.",
+    "ages": [
+      "3-5",
+      "6-8"
+    ],
+    "ageLabel": "4–7",
+    "time": "20–30 minutes",
+    "place": "A protected table",
+    "art": "colours",
+    "alt": "Red, yellow and blue paint pots beside a mixing tray and brush.",
+    "skills": "Colour observation, comparison, creative expression",
+    "intro": "Choose an illustrated activity below. Start with a prediction, test it with paint, then use your new colours in a picture. The printable matching cards offer a dry activity too.",
+    "materials": [
+      "Washable child-safe red, yellow and blue paints",
+      "A mixing tray and brush",
+      "Paper, a table cover and a little water for cleaning brushes",
+      "For matching cards: a printer and scissors used by a grown-up"
+    ],
+    "safety": "Use washable child-safe paint with a grown-up. Keep paint away from your mouth and eyes. Wash hands afterward. Keep devices dry and away from paint. A grown-up should cut the matching cards.",
+    "steps": [
+      [
+        "Prepare your space",
+        "Cover the table and choose washable paints with a grown-up. Keep your device away from the paint and water."
+      ],
+      [
+        "Predict a mixture",
+        "Choose two colours. Draw or name what you think they might make before mixing."
+      ],
+      [
+        "Mix small amounts",
+        "Put a little of each paint into one tray space and mix gently. Observe the actual colour."
+      ],
+      [
+        "Record the result",
+        "Paint a sample on paper. Describe or name it in the results sheet. Clean your brush before the next mixture."
+      ],
+      [
+        "Change and create",
+        "Add more of one paint to explore a different shade. Name your own mixture and use it in a picture. Wash hands and clean the table afterward."
+      ]
+    ],
+    "why": "Paint mixtures depend on the pigments and their proportions. Common classroom red, yellow and blue mixtures can produce orange, green and purple, but real results vary. Watching and describing your own mixture is more useful than trying to match an exact screen colour.",
+    "questions": [
+      "Which result surprised you?",
+      "What changed when you added more of one paint?",
+      "What name would you give your colour?"
+    ],
+    "younger": "Offer two paints at a time and let the child describe the result aloud. A grown-up can write their words.",
+    "older": "Compare mixtures made with different proportions. Record which paint you added more of and describe the change.",
+    "troubleshoot": "If a colour looks muddy, try a clean tray space and brush. Some pigments make duller mixtures; record that honestly rather than treating it as a failure.",
+    "sheet": "How to mix colours",
+    "sheetPrompt": "Open the illustrated guide or choose a prediction sheet, results diary, matching cards or creative challenge.",
+    "sheetLabels": [
+      "My paints",
+      "My prediction",
+      "My result"
+    ],
+    "tags": "art paint colour color mixing matching cards shades primary secondary"
   }
 ]

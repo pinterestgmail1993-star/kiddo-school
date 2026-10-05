@@ -43,3 +43,11 @@ test('weather pages lead with one preview before the writing controls',async()=>
   assert.match(html,/data-export/);assert.match(html,/<textarea/);assert.match(html,/Never look directly at the sun/);
  }
 });
+
+test('colour activities use one portrait preview and paint-specific guidance',async()=>{
+ const {colourPages}=await import('../src/colour-project.mjs');
+ for(const p of colourPages){const html=readFileSync(`dist/art/mixing-colours/${p.slug}/index.html`,'utf8');
+ assert.match(html,/activities\/art\/mixing-colours\//);assert.match(html,/washable child-safe paint/);assert.match(html,/data-export/);assert.match(html,/<textarea/);
+ assert.equal([...html.matchAll(new RegExp('<img[^>]+src="[^"]+/'+p.slug+'\\.webp"','g'))].length,1);
+ }
+});

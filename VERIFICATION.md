@@ -44,3 +44,7 @@ Added the main guide and five interactive activity routes with the six user-host
 ## Weather Journal
 
 Added six routes using six verified HTTP-200 R2 WebP assets. Activity pages lead with a large single worksheet preview and use white backgrounds, short adjacent guidance, drawing and keyboard fields. Weekly journal clearly explains that work must be saved before leaving. Build: 44 pages. Automated checks cover image ordering, one preview, controls, metadata, links and sitemap. Real-device touch/stylus and visual browser review remain outstanding.
+
+## Mixing Colours
+
+Added the main art guide and five interactive pages. All six R2 image URLs returned HTTP 200 and image/webp. One 2:3 preview per activity; matching-card cutting instructions and paint-specific guidance included. Build now contains 50 pages. Physical touch/stylus and visual browser verification remain outstanding.
