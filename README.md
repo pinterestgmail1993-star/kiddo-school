@@ -4,7 +4,7 @@
 
 ## Pilot contents
 
-- 25 static HTML pages: homepage, subject and age collections, searchable activity catalogue, six complete activity guides, grown-up guidance, about, privacy and a real 404 page.
+- 30 static HTML pages: homepage, subject and age collections, searchable activity catalogue, six complete activity guides, grown-up guidance, about, privacy and a real 404 page.
 - Six original SVG illustrations and seven printable SVG activity sheets; no external asset hosting required.
 - Accessible native controls, labelled search and filters, skip link, visible focus styles, reduced-motion support and print styles.
 - Permanent activity URLs, descriptive metadata, canonical tags, structured data, robots.txt and sitemap.xml.
@@ -53,3 +53,7 @@ Illustrations and activity sheets in this repository were created for this pilot
 ## Verification status
 
 See [VERIFICATION.md](VERIFICATION.md) for checks performed and the outstanding real-browser visual review. This pilot makes no claims about AdSense approval, accreditation, owner identity or testimonials.
+
+## Grow a Bean interactive project
+
+Five individual pages under `/science/grow-a-bean/`: `how-to-grow-a-bean/`, `my-plant-diary/`, `how-tall-is-your-plant/`, `parts-of-my-plant/`, and `my-bean-leaf/`. They combine cartoon worksheet downloads with per-panel drawing canvases and real keyboard answer fields. The Save action includes both drawings and typed text in one PNG. Work is temporary and stays on the device. No accounts, uploads or server storage.

@@ -52,3 +52,9 @@ Version future replacements deliberately (for example `grow-a-bean-activity-v2.w
 ## Official reference
 
 Cloudflare public buckets and custom domains: https://developers.cloudflare.com/r2/buckets/public-buckets/
+
+## Active bean artwork
+
+Public base: https://pub-f2fcb7c9b45a496cbeefef18dbba0ec0.r2.dev/activities/science/grow-a-bean/
+
+Eight WebP files: grow-a-bean-cover, how-to-grow-a-bean, my-plant-diary, parts-of-a-bean-plant, bean-plant-life-cycle, how-tall-is-your-plant, my-bean-leaf, decorate-your-plant. The route parts-of-my-plant uses the file parts-of-a-bean-plant.webp. Change beanAssetBase in src/bean-project.mjs and the CSP image origin in scripts/build.mjs if moving to a custom asset domain.

@@ -2,7 +2,7 @@
 
 ## Completed
 
-- Dependency-free Node build: 25 HTML pages, six original activity illustrations and seven printable SVG image sheets.
+- Dependency-free Node build: 32 HTML pages, six original activity illustrations and seven printable SVG image sheets.
 - Automated tests of all internal page/asset links and fragment targets, permanent activity routes, unique titles/descriptions, image alt text and dimensions, canonical origins, JSON-LD, sitemap coverage and noindex preview safeguards.
 - Executed the shipped search script against built activity attributes: case/whitespace normalization, multiword search, subject/age combinations, no-results state, clear/reset, URL-initialized filters, invalid filters, submit handling and safe query encoding.
 - Production-origin build and noindex preview build checks.
@@ -28,3 +28,11 @@ The local server intentionally does not emulate Cloudflare `_headers`; verify th
 ## Pink classroom update
 
 Applied the approved pink, golden-yellow and purple theme. Added on-device handwriting at `/literacy/handwriting-practice/`, with trace prompts, pointer input, undo, clear, guide toggle and PNG download. Added descriptive illustration filenames. Re-ran static integrity/search checks and JavaScript syntax checks. Touch/stylus behavior and the new rendered layout still require real-device review; no handwriting recognition or grading is claimed.
+
+## Seven-activity bean project
+
+Built all seven separate routes and checked drawing areas, typed fields and export controls. Shipped-script tests cover pen-pointer drawing, clearing without erasing typed answers, undo restoration and inclusion of typed text plus drawings in the exported image. All nine automated tests pass. These script tests use a simulated document and do not replace physical touch/stylus or visual layout testing.
+
+## Rainbow image connection
+
+All eight user-hosted R2 WebP URLs returned HTTP 200 and image/webp on 2026-10-05. The content security policy permits images from that exact R2 origin. Seven interactive pages use the new worksheets; the bean cover replaces the old bean illustration. Nine automated tests pass. Physical touch/stylus and rendered layout checks remain outstanding.
