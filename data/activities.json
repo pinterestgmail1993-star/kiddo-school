@@ -271,7 +271,7 @@
     "time": "15 min",
     "place": "Outdoors or by a window",
     "art": "sound",
-    "alt": "Illustration of a listening map with a centre point, bird, leaves and ripples representing sounds.",
+    "alt": "Two children and a grown-up listening together, with bird, leaves and cricket picture examples.",
     "skills": "Careful listening, spatial awareness, observation",
     "intro": "A sound map records what you hear instead of what you see. A garden, schoolyard or open window can all be listening places. Stay in one spot and notice quiet sounds as well as loud ones.",
     "materials": [
@@ -313,7 +313,7 @@
     "older": "Create a key for natural and human-made sounds. Compare maps made at the same place at two different times.",
     "troubleshoot": "Too much background noise? Try a quieter place with an adult or listen by a window. If hearing is limited, adapt this to a movement map and mark leaves, shadows or other visible changes.",
     "sheet": "My sound map",
-    "sheetPrompt": "Mark yourself in the centre. Draw sounds around you, then add a key.",
+    "sheetPrompt": "Draw the sounds around your listening spot and explain your symbols.",
     "sheetLabels": [
       "Listening map",
       "My symbols mean…",

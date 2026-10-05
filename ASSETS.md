@@ -60,3 +60,5 @@ Public base: https://pub-f2fcb7c9b45a496cbeefef18dbba0ec0.r2.dev/activities/scie
 Eight WebP files: grow-a-bean-cover, how-to-grow-a-bean, my-plant-diary, parts-of-a-bean-plant, bean-plant-life-cycle, how-tall-is-your-plant, my-bean-leaf, decorate-your-plant. The route parts-of-my-plant uses the file parts-of-a-bean-plant.webp. Change beanAssetBase in src/bean-project.mjs and the CSP image origin in scripts/build.mjs if moving to a custom asset domain.
 
 Shape Collage: six WebP images hosted at activities/art/shape-collage/ on the existing public R2 base. Names: shape-collage-cover, how-to-make-a-shape-collage, shape-collage-cutout-shapes, shape-collage-picture-planner, build-a-shape-picture, my-shape-art-story. Display at native 2:3 proportions.
+
+Sound Map assets use activities/nature/sound-map/ on the existing public R2 base. Six portrait WebP images retain 2:3 display proportions: nature-sound-map-cover, how-to-make-a-sound-map, nature-sound-picture-cards, my-listening-diary, my-nature-sound-map, my-sound-patterns.

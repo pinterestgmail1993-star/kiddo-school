@@ -59,3 +59,11 @@ test('colour activities use one portrait preview and paint-specific guidance',as
  assert.equal([...html.matchAll(new RegExp('<img[^>]+src="[^"]+/'+p.slug+'\\.webp"','g'))].length,1);
  }
  });
+
+test('sound activities use one preview, listening guidance and drawing controls',async()=>{
+ const {soundPages}=await import('../src/sound-project.mjs');
+ for(const p of soundPages){const html=readFileSync(`dist/nature/sound-map/${p.slug}/index.html`,'utf8');
+ assert.match(html,/Never follow a sound/);assert.match(html,/data-export/);assert.match(html,/<textarea/);assert.match(html,/<canvas/);
+ assert.equal([...html.matchAll(new RegExp('<img[^>]+src="[^"]+/'+p.slug+'\\.webp"','g'))].length,1);
+ }
+});
