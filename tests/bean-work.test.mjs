@@ -51,3 +51,11 @@ test('colour activities use one portrait preview and paint-specific guidance',as
  assert.equal([...html.matchAll(new RegExp('<img[^>]+src="[^"]+/'+p.slug+'\\.webp"','g'))].length,1);
  }
 });
+
+ test('shape pages keep one preview and provide drawing, typing and art guidance',async()=>{
+ const {shapePages}=await import('../src/shape-project.mjs');
+ for(const p of shapePages){const html=readFileSync(`dist/art/paper-shape-collage/${p.slug}/index.html`,'utf8');
+ assert.match(html,/activities\/art\/shape-collage\//);assert.match(html,/adult helps with cutting/);assert.match(html,/data-export/);assert.match(html,/<textarea/);assert.match(html,/<canvas/);
+ assert.equal([...html.matchAll(new RegExp('<img[^>]+src="[^"]+/'+p.slug+'\\.webp"','g'))].length,1);
+ }
+ });
