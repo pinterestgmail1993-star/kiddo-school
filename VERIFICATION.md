@@ -36,3 +36,7 @@ Built all seven separate routes and checked drawing areas, typed fields and expo
 ## Rainbow image connection
 
 All eight user-hosted R2 WebP URLs returned HTTP 200 and image/webp on 2026-10-05. The content security policy permits images from that exact R2 origin. Seven interactive pages use the new worksheets; the bean cover replaces the old bean illustration. Nine automated tests pass. Physical touch/stylus and rendered layout checks remain outstanding.
+
+## Sink or Float collection
+
+Added the main guide and five interactive activity routes with the six user-hosted WebP images. All six image URLs returned HTTP 200 with image/webp. The build now has 38 pages. Tests cover one preview per activity page, correct water supervision guidance, drawing/export controls, catalogue search, internal links, metadata and sitemap. Physical touch/stylus and rendered layout review remain outstanding.

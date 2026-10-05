@@ -19,16 +19,16 @@ function harness(search=''){
  return{cards,q,subject,age,events,clear,count,empty,get visible(){return cards.filter(c=>!c.hidden);},get url(){return lastUrl;}};
 }
 test('keyword matching, whitespace/case normalization, combined filters and empty state',()=>{
- const ui=harness();assert.equal(ui.visible.length,6);
+ const ui=harness();assert.equal(ui.visible.length,7);
  ui.q.value='  BEAN  ';ui.events.input();assert.equal(ui.visible.length,1);assert.equal(ui.visible[0].dataset.subject,'science');
  ui.age.value='3-5';ui.events.change();assert.equal(ui.visible.length,0);assert.equal(ui.empty.hidden,false);assert.match(ui.count.textContent,/0 activities/);
- ui.clear.click();assert.equal(ui.visible.length,6);assert.equal(ui.url,'/activities/');assert.ok(ui.q.focused);
+ ui.clear.click();assert.equal(ui.visible.length,7);assert.equal(ui.url,'/activities/');assert.ok(ui.q.focused);
  ui.subject.value='art';ui.age.value='6-8';ui.q.value='paper shapes';ui.events.input();assert.equal(ui.visible.length,1);
  ui.q.value='<script>alert(1)</script>';ui.events.input();assert.equal(ui.visible.length,0);assert.match(ui.url,/%3Cscript%3E/);
 });
 test('deep-linked search, invalid filters, form submit and reset',()=>{
  const ui=harness('?q=bridge&subject=engineering&age=9-12');assert.equal(ui.visible.length,1);
  let prevented=false;ui.events.submit({preventDefault(){prevented=true;}});assert.ok(prevented);assert.match(ui.url,/subject=engineering/);
- ui.clear.click();assert.equal(ui.visible.length,6);assert.equal(ui.subject.value,'');assert.equal(ui.q.value,'');
- const bad=harness('?subject=unknown&age=999');assert.equal(bad.visible.length,6);
+ ui.clear.click();assert.equal(ui.visible.length,7);assert.equal(ui.subject.value,'');assert.equal(ui.q.value,'');
+ const bad=harness('?subject=unknown&age=999');assert.equal(bad.visible.length,7);
 });

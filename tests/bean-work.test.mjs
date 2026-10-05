@@ -23,3 +23,13 @@ test('pointer drawing, undo, clear and exported typed text use the shipped scrip
  clear.click();assert.equal(paths.length,0);assert.equal(answer.value,'I see two green leaves.');undo.click();assert.ok(paths.some(p=>p[0]===90));
  save.click();assert.ok(clicked);assert.ok(exported.includes(answer.value));assert.ok(exported.includes('drawing'));assert.match(status.textContent,/download together/);
 });
+
+test('sink or float pages have one worksheet preview, working export controls and correct safety',async()=>{
+ const {sinkPages}=await import('../src/sink-project.mjs');
+ for(const p of sinkPages){
+  const html=readFileSync(`dist/science/sink-or-float/${p.slug}/index.html`,'utf8');
+  assert.match(html,/data-export/);assert.match(html,/<textarea/);assert.match(html,/Keep your screen dry/);assert.doesNotMatch(html,/untreated planting beans/);
+  assert.equal([...html.matchAll(new RegExp('<img[^>]+src="[^"]+/'+p.slug+'\\.webp"','g'))].length,1);
+ }
+ const html=readFileSync('dist/science/sink-or-float/index.html','utf8');assert.match(html,/sink-or-float-cover.webp/);assert.match(html,/foil-boat-challenge\//);
+});
