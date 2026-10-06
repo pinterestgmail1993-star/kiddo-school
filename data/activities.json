@@ -335,37 +335,41 @@
     "time": "30 min",
     "place": "Indoors",
     "art": "bridge",
-    "alt": "Illustration of a folded paper bridge between two stacks of books, supporting wooden blocks.",
+    "alt": "Two children testing a folded paper bridge supported on low stacks of books.",
     "skills": "Design, fair testing, recording results",
     "intro": "Can you make a sheet of paper hold more weight without adding another sheet? Build a small bridge between two stacks of books and compare a flat deck with a folded one.",
     "materials": [
-      "Two matching sheets of ordinary paper",
-      "Two low, stable stacks of books",
-      "A ruler",
-      "Several identical large wooden blocks",
-      "Pencil and paper or the bridge test sheet"
+      "Two matching sheets of paper",
+      "Two low stacks of books of equal height",
+      "Large identical lightweight blocks",
+      "Ruler",
+      "Pencil"
     ],
-    "safety": "Build on the floor or a low stable surface, away from feet. Use light, large blocks and low book stacks. This is a model only: never stand or lean on it. An adult should supervise setup and testing.",
+    "safety": "Work with a grown-up on a low surface. Use stable, low supports and large lightweight blocks. Keep fingers clear if the paper slips, and never stand on a model bridge.",
     "steps": [
       [
-        "Set up the gap",
-        "Place two low stacks of books 15 cm apart. Lay one sheet across them so it rests equally on both sides. Keep the paper orientation the same for both tests."
+        "Set the supports",
+        "Place two low, equal-height book stacks on a low surface. Leave a small gap with enough paper to rest securely on both stacks."
       ],
       [
-        "Predict and test the flat bridge",
-        "Predict how many blocks it will hold. Add one block at a time gently at the centre. Stop when the paper bends into the gap. Record the last number it held before collapsing; zero is a useful result."
+        "Test flat paper",
+        "Lay one sheet across the gap. Add blocks gently at the centre, one at a time. Stop at noticeable bending or slipping."
       ],
       [
-        "Fold a new design",
-        "Take the second sheet. Make accordion folds about 2 cm wide, with each long fold running from one book stack toward the other. The ridges should span the gap."
+        "Record the result",
+        "Count only blocks held before bending or slipping. Record zero if the first block causes this. Describe what happened."
       ],
       [
-        "Repeat the same test",
-        "Use the same gap, blocks and loading spot. Add one block at a time and record the result. Stop if the stacks move or the blocks become unstable."
+        "Fold another sheet",
+        "Use matching paper. Make alternating narrow accordion folds so ridges run from one support to the other. Keep both ends supported."
       ],
       [
-        "Improve and explain",
-        "Try a different fold width using another sheet if available. Sketch what you changed. Describe the result using your counts, including designs that did not improve."
+        "Compare fairly",
+        "Keep the gap, blocks and loading position the same. Use the same stopping rule, record the result and compare."
+      ],
+      [
+        "Improve one feature",
+        "Change one fold feature, test again and explain what you learned."
       ]
     ],
     "why": "Folding changes the shape of the paper's cross-section. Ridges running across the gap can resist bending better than a flat sheet. The result also depends on the paper, fold shape and where you place the load.",

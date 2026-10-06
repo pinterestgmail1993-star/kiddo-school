@@ -56,3 +56,5 @@ Retained /art/paper-shape-collage/ and added five interactive activity pages. Si
 Sound Map: six R2 WebP assets returned HTTP 200 and image/webp. Five interactive activities added under the retained /nature/sound-map/ guide. Build has 60 HTML pages and 58 sitemap entries. Physical touch/stylus and rendered browser checks remain outstanding.
 
 Story Map: six R2 WebP URLs verified HTTP 200 and image/webp. Five interactive pages added under /literacy/story-map/. Full portrait previews, typing, drawing and PNG export use the existing activity controls. Build: 65 HTML pages and 63 sitemap entries. Physical touch/stylus and rendered browser checks remain outstanding.
+
+Paper Bridge: six R2 WebP URLs returned HTTP 200 and image/webp. Five interactive pages added beneath /engineering/paper-bridge/. Guide uses matching paper, identical blocks, consistent stopping rule and clear fold direction. Build: 70 pages and 68 sitemap entries. Physical touch/stylus and rendered browser checks remain outstanding.

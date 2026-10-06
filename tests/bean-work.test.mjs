@@ -75,3 +75,11 @@ test('story activities offer one image preview, typing, drawing and save control
  assert.equal([...html.matchAll(new RegExp('<img[^>]+src="[^"]+/'+p.slug+'\\.webp"','g'))].length,1);
  }
 });
+
+test('bridge activities provide one preview, safe testing and recording controls',async()=>{
+ const {bridgePages}=await import('../src/bridge-project.mjs');
+ for(const p of bridgePages){const html=readFileSync(`dist/engineering/paper-bridge/${p.slug}/index.html`,'utf8');
+ assert.match(html,/large lightweight blocks/);assert.match(html,/data-export/);assert.match(html,/<textarea/);assert.match(html,/<canvas/);
+ assert.equal([...html.matchAll(new RegExp('<img[^>]+src="[^"]+/'+p.slug+'\\.webp"','g'))].length,1);
+ }
+});
