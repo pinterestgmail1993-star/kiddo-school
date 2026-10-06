@@ -8,9 +8,9 @@ The site is deployed at https://kiddo-school.pages.dev from the `main` branch of
 - Build command: `npm run build`. Output directory: `dist`. Root: repository root.
 - Node: 22 or newer (set `NODE_VERSION=22` if required).
 
-## Indexing stays off during review
+## Indexing
 
-`site.config.json` sets `siteUrl` to the Pages URL and `indexable: false`. Environment variables `SITE_URL` and `SITE_INDEXABLE` can override the config. Keep noindex in place until domain ownership and launch readiness are confirmed; do not switch canonicals to a custom domain early. Non-main branch builds stay noindex regardless of settings.
+`site.config.json` sets `siteUrl` to the Pages URL and, since the first Kiddo School lesson (newborn high-contrast cards), `indexable: true` — the SEO work (canonical URLs, sitemap, structured data) assumes a public site. The Pages environment variable `SITE_INDEXABLE` overrides this config and is currently still `false`, so deploys stay `noindex` until you flip it. To launch indexing: Pages dashboard → Settings → Environment variables → set `SITE_INDEXABLE=true` (or remove it) → retry deployment. Non-main branch builds stay noindex regardless of settings.
 
 ## Images and R2
 
