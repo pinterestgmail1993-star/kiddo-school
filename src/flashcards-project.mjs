@@ -7,14 +7,19 @@ export const flashcardSets=[
   h1:'Black and white baby flashcards.',
   subtitle:'Free printable high-contrast cards, made for newborn eyes.',
   hubTitle:'Black and White Baby Cards',
-  metaDescription:'Free printable black and white baby flashcards: eight high-contrast animal cards for newborns 0–6 months. Print at home, no sign-up.',
+  metaDescription:'Free printable black and white baby flashcards: fifteen high-contrast cards for newborns 0–6 months. Print at home, no sign-up.',
   ageLabel:'0–6 months',
   cover:'first-discoveries-look-together-cutout-sheet.webp',
   coverAlt:'Cover of the Black and White Baby Cards set: the First Discoveries 01 look-together sheet showing four black and white baby cards — bear, bird, fish and butterfly',
   guide:'first-discoveries-look-together-parent-guide.webp',
   guideAlt:'Printable one-page parents guide for the black and white baby cards: print the cards, show one at a time, talk softly and pause, follow your baby’s cues',
-  blurb:'Eight bold animal cards for the very first months. Print, show one at a time and watch your baby stare, track and smile.',
-  intro:'Newborn eyes see the world in black and white first. These eight animal cards use bold, high-contrast shapes that are easy for a baby to focus on, so early looking becomes calm, shared play. Print them at home, hold one up close and talk softly as your baby meets the bear, the bird, the butterfly, the fish, the cat, the elephant, the rabbit and the turtle. There is nothing to teach and nothing to test: the whole point is a quiet minute of looking together.',
+  blurb:'Fifteen bold cards for the very first months. Print, show one at a time and watch your baby stare, track and smile.',
+  intro:'Newborn eyes see the world in black and white first. These fifteen cards use bold, high-contrast shapes that are easy for a baby to focus on, so early looking becomes calm, shared play. Print them at home, hold one up close and talk softly as your baby meets the bear, the bird, the butterfly, the fish, the cat, the elephant, the rabbit, the dog, the ball, the cup, the spoon — and three friendly faces. There is nothing to teach and nothing to test: the whole point is a quiet minute of looking together.',
+  stages:[
+   {age:'0–6 weeks',cls:'Newborn 1',subjects:['Vision','Bonding','Sound'],desc:'Black and white bold shapes, stripes, circles and simple faces.'},
+   {age:'6–12 weeks',cls:'Newborn 2',subjects:['Visual tracking','Faces','Sound'],desc:'B&W patterns first, then very simple high-contrast images. Parent voice activities.'},
+   {age:'3–4 months',cls:'Infant 1',subjects:['Vision','Movement','Communication'],desc:'B&W plus strong single colors, faces and familiar objects.'}
+  ],
   cards:[
    {file:'first-discoveries-bear-card.webp',word:'Bear',n:'01',alt:'Black and white baby flashcard of a bear face with the word Bear, from Kiddo.school First Discoveries set 01'},
    {file:'first-discoveries-bird-card.webp',word:'Bird',n:'02',alt:'Black and white baby flashcard of a bird with the word Bird, from Kiddo.school First Discoveries set 01'},
@@ -23,7 +28,14 @@ export const flashcardSets=[
    {file:'black-and-white-baby-card-cat.webp',word:'Cat',n:'05',alt:'Black and white baby flashcard of a cat face with the word Cat, from Kiddo.school First Discoveries set 01'},
    {file:'black-and-white-baby-card-elephant.webp',word:'Elephant',n:'06',alt:'Black and white baby flashcard of an elephant with the word Elephant, from Kiddo.school First Discoveries set 01'},
    {file:'black-and-white-baby-card-rabbit.webp',word:'Rabbit',n:'07',alt:'Black and white baby flashcard of a rabbit with the word Rabbit, from Kiddo.school First Discoveries set 01'},
-   {file:'black-and-white-baby-card-turtle.webp',word:'Turtle',n:'08',alt:'Black and white baby flashcard of a turtle with the word Turtle, from Kiddo.school First Discoveries set 01'}
+   {file:'black-and-white-baby-card-turtle.webp',word:'Turtle',n:'08',alt:'Black and white baby flashcard of a turtle with the word Turtle, from Kiddo.school First Discoveries set 01'},
+   {file:'black-and-white-baby-card-ball.webp',word:'Ball',n:'09',w:1080,h:1350,alt:'Black and white baby flashcard of a beach ball with the word Ball, from Kiddo.school First Discoveries set 01'},
+   {file:'black-and-white-baby-card-cup.webp',word:'Cup',n:'10',w:1080,h:1350,alt:'Black and white baby flashcard of a cup with the word Cup, from Kiddo.school First Discoveries set 01'},
+   {file:'black-and-white-baby-card-dog.webp',word:'Dog',n:'11',w:1080,h:1350,alt:'Black and white baby flashcard of a dog with the word Dog, from Kiddo.school First Discoveries set 01'},
+   {file:'black-and-white-baby-card-happy-face.webp',word:'Happy face',n:'12',w:1080,h:1350,alt:'Black and white baby flashcard of a happy smiley face with the words Happy face, from Kiddo.school First Discoveries set 01'},
+   {file:'black-and-white-baby-card-sleepy-face.webp',word:'Sleepy face',n:'13',w:1080,h:1350,alt:'Black and white baby flashcard of a sleepy face with the words Sleepy face, from Kiddo.school First Discoveries set 01'},
+   {file:'black-and-white-baby-card-spoon.webp',word:'Spoon',n:'14',w:1080,h:1350,alt:'Black and white baby flashcard of a spoon with the word Spoon, from Kiddo.school First Discoveries set 01'},
+   {file:'black-and-white-baby-card-surprised-face.webp',word:'Surprised face',n:'15',w:1080,h:1350,alt:'Black and white baby flashcard of a surprised face with the words Surprised face, from Kiddo.school First Discoveries set 01'}
   ],
   steps:[
    ['Print the cards','Print on A4 or Letter paper using fit to page. Plain paper works; cardstock or a photo setting makes the cards last longer.'],
@@ -48,7 +60,8 @@ export function fcSoon(){
 }
 export function fcSetBody(set){
  return `<section class="wrap fc-intro"><div class="fc-chips"><span>Ages ${set.ageLabel}</span><span>${set.cards.length} cards</span><span>Free to print</span></div><p class="fc-lede">${set.intro}</p></section>
- <section class="wrap fc-section"><span class="eyebrow">THE EIGHT CARDS</span><h2>Meet the animals.</h2><p class="fc-hint">Tap a card to open it full-size, then print from your browser. One card per page keeps every shape big and bold.</p><div class="fc-grid">${set.cards.map(c=>`<figure class="fc-card"><a href="${imgUrl(set,c.file)}" aria-label="Open full-size ${c.word} card"><img src="${imgUrl(set,c.file)}" width="1024" height="1536" alt="${c.alt}" loading="lazy"></a><figcaption><strong>${c.word}</strong><span>Card ${c.n}</span></figcaption></figure>`).join('')}</div></section>
+ <section class="wrap fc-section"><span class="eyebrow">AGES · CLASSES · SUBJECTS</span><h2>What the cards are for, stage by stage.</h2><p class="fc-hint">The exact age, class and subjects for each stage, so you always know what your little one is working on.</p><div class="fc-stages">${set.stages.map(st=>`<div class="fc-stage"><div class="fc-stage-pills"><span class="fc-age">${st.age}</span><span class="fc-class">${st.cls}</span></div><div class="fc-stage-subjects">${st.subjects.map(su=>`<span>${su}</span>`).join('')}</div><p>${st.desc}</p></div>`).join('')}</div></section>
+ <section class="wrap fc-section"><span class="eyebrow">THE FIFTEEN CARDS</span><h2>Meet the whole set.</h2><p class="fc-hint">Tap a card to open it full-size, then print from your browser. One card per page keeps every shape big and bold.</p><div class="fc-grid">${set.cards.map(c=>`<figure class="fc-card"><a href="${imgUrl(set,c.file)}" aria-label="Open full-size ${c.word} card"><img src="${imgUrl(set,c.file)}" width="${c.w||1024}" height="${c.h||1536}" alt="${c.alt}" loading="lazy"></a><figcaption><strong>${c.word}</strong><span>Card ${c.n}</span></figcaption></figure>`).join('')}</div></section>
  <section class="wrap fc-section"><span class="eyebrow">FOR THE GROWN-UPS</span><h2>The parents guide.</h2><p class="fc-hint">One printable page for you, not for the baby: how to print, how to hold the cards, and when to stop. Handy to keep on the fridge or hand to babysitters and grandparents.</p><figure class="fc-guide-figure"><a href="${imgUrl(set,set.guide)}" aria-label="Open full-size parents guide"><img src="${imgUrl(set,set.guide)}" width="1024" height="1536" alt="${set.guideAlt}" loading="lazy"></a><figcaption><strong>Parents guide</strong><span>One page, free to print, big text, zero jargon.</span></figcaption></figure></section>
  <section class="wrap fc-section"><span class="eyebrow">HOW TO LOOK TOGETHER</span><h2>One card, one quiet minute.</h2><ol class="fc-steps">${set.steps.map(([t,d],i)=>`<li><span class="fc-stepnum">${String(i+1).padStart(2,'0')}</span><div><h3>${t}</h3><p>${d}</p></div></li>`).join('')}</ol></section>
  <section class="wrap fc-section fc-why"><span class="eyebrow">THE LITTLE BIT OF LEARNING</span><h2>Why black and white?</h2><p>${set.why}</p></section>

@@ -11,12 +11,17 @@ test('flashcards hub lists every set and links from home nav and footer',()=>{
  assert.match(home,/href="\/flashcards\/"/);
 });
 
-test('black and white baby cards page shows only flashcards plus guide in its own section',()=>{
+test('black and white baby cards page shows flashcards, stages grid, guide and safety',()=>{
  const s=flashcardSets[0];
  const html=readFileSync(`dist/flashcards/${s.slug}/index.html`,'utf8');
  assert.match(html,/Black and White Baby Flashcards – Free Printable Cards/);
  for(const c of s.cards){assert.match(html,new RegExp(c.file));assert.match(html,new RegExp(c.word));}
  assert.doesNotMatch(html,/cutout/i);
+ assert.match(html,/Newborn 1/);
+ assert.match(html,/Newborn 2/);
+ assert.match(html,/Infant 1/);
+ assert.match(html,/0–6 weeks/);
+ assert.match(html,/Visual tracking/);
  assert.match(html,/first-discoveries-look-together-parent-guide\.webp/);
  assert.match(html,/FOR THE GROWN-UPS/);
  assert.match(html,/The parents guide\./);
@@ -24,5 +29,5 @@ test('black and white baby cards page shows only flashcards plus guide in its ow
  assert.match(html,/25 to 40 centimetres/);
  assert.match(html,/out of sleep spaces/i);
  const urls=[...html.matchAll(/<img[^>]+src="(https:\/\/pub-f2fcb7[^"]+)"/g)].map(m=>m[1]);
- assert.ok(urls.length>=9,'set page should embed the eight flashcards plus the parents guide');
+ assert.ok(urls.length>=16,'set page should embed the fifteen flashcards plus the parents guide');
 });
