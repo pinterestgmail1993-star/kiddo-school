@@ -21,5 +21,5 @@ test('black and white baby cards page shows every card, extras, steps and safety
  assert.match(html,/25 to 40 centimetres/);
  assert.match(html,/out of sleep spaces/i);
  const urls=[...html.matchAll(/<img[^>]+src="(https:\/\/pub-f2fcb7[^"]+)"/g)].map(m=>m[1]);
- assert.ok(urls.length>=6,'set page should embed all six images');
+ assert.ok(urls.length>=11,'set page should embed all eleven images');
 });
