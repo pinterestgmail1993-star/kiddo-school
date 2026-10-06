@@ -54,3 +54,5 @@ Added the main art guide and five interactive pages. All six R2 image URLs retur
 Retained /art/paper-shape-collage/ and added five interactive activity pages. Six R2 WebP URLs verified HTTP 200. All previews preserve 2:3 proportions. Guide links to individual sheets without repeating the planner preview in its download section. Build: 55 pages, 53 sitemap entries; drawing script simulation and site tests pass. Physical touch/stylus and visual browser review remain outstanding.
 
 Sound Map: six R2 WebP assets returned HTTP 200 and image/webp. Five interactive activities added under the retained /nature/sound-map/ guide. Build has 60 HTML pages and 58 sitemap entries. Physical touch/stylus and rendered browser checks remain outstanding.
+
+Story Map: six R2 WebP URLs verified HTTP 200 and image/webp. Five interactive pages added under /literacy/story-map/. Full portrait previews, typing, drawing and PNG export use the existing activity controls. Build: 65 HTML pages and 63 sitemap entries. Physical touch/stylus and rendered browser checks remain outstanding.

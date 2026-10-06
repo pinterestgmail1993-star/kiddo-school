@@ -62,3 +62,5 @@ Eight WebP files: grow-a-bean-cover, how-to-grow-a-bean, my-plant-diary, parts-o
 Shape Collage: six WebP images hosted at activities/art/shape-collage/ on the existing public R2 base. Names: shape-collage-cover, how-to-make-a-shape-collage, shape-collage-cutout-shapes, shape-collage-picture-planner, build-a-shape-picture, my-shape-art-story. Display at native 2:3 proportions.
 
 Sound Map assets use activities/nature/sound-map/ on the existing public R2 base. Six portrait WebP images retain 2:3 display proportions: nature-sound-map-cover, how-to-make-a-sound-map, nature-sound-picture-cards, my-listening-diary, my-nature-sound-map, my-sound-patterns.
+
+Story Map: activities/literacy/draw-a-story-map/ on the existing R2 base contains draw-a-story-map-cover, how-to-draw-a-story-map, story-character-cards, my-story-setting, beginning-middle-end-story-map and write-my-story, all .webp, displayed at 2:3 proportions.

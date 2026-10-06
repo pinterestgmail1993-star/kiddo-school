@@ -67,3 +67,11 @@ test('sound activities use one preview, listening guidance and drawing controls'
  assert.equal([...html.matchAll(new RegExp('<img[^>]+src="[^"]+/'+p.slug+'\\.webp"','g'))].length,1);
  }
 });
+
+test('story activities offer one image preview, typing, drawing and save controls',async()=>{
+ const {storyPages}=await import('../src/story-project.mjs');
+ for(const p of storyPages){const html=readFileSync(`dist/literacy/story-map/${p.slug}/index.html`,'utf8');
+ assert.match(html,/An adult helps cut character cards/);assert.match(html,/data-export/);assert.match(html,/<textarea/);assert.match(html,/<canvas/);
+ assert.equal([...html.matchAll(new RegExp('<img[^>]+src="[^"]+/'+p.slug+'\\.webp"','g'))].length,1);
+ }
+});
