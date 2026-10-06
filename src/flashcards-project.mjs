@@ -9,7 +9,10 @@ export const flashcardSets=[
   hubTitle:'Black and White Baby Cards',
   metaDescription:'Free printable black and white baby flashcards: eight high-contrast animal cards for newborns 0–6 months. Print at home, no sign-up.',
   ageLabel:'0–6 months',
-  thumb:'first-discoveries-bear-card.webp',
+  cover:'first-discoveries-look-together-cutout-sheet.webp',
+  coverAlt:'Cover of the Black and White Baby Cards set: the First Discoveries 01 look-together sheet showing four black and white baby cards — bear, bird, fish and butterfly',
+  guide:'first-discoveries-look-together-parent-guide.webp',
+  guideAlt:'Printable one-page parents guide for the black and white baby cards: print the cards, show one at a time, talk softly and pause, follow your baby’s cues',
   blurb:'Eight bold animal cards for the very first months. Print, show one at a time and watch your baby stare, track and smile.',
   intro:'Newborn eyes see the world in black and white first. These eight animal cards use bold, high-contrast shapes that are easy for a baby to focus on, so early looking becomes calm, shared play. Print them at home, hold one up close and talk softly as your baby meets the bear, the bird, the butterfly, the fish, the cat, the elephant, the rabbit and the turtle. There is nothing to teach and nothing to test: the whole point is a quiet minute of looking together.',
   cards:[
@@ -38,7 +41,7 @@ export const flashcardSets=[
 const setUrl=s=>`/flashcards/${s.slug}/`;
 const imgUrl=(s,f)=>flashcardsBase+s.slug+'/'+f;
 export function fcSetCard(set){
- return `<a class="fc-setcard" href="${setUrl(set)}"><div class="fc-setcard-visual"><img src="${imgUrl(set,set.thumb)}" width="1024" height="1536" alt="Cover preview of the ${set.hubTitle} set: ${set.cards[0].alt}" loading="lazy"></div><div class="fc-setcard-copy"><span class="eyebrow">${set.setLabel} · AGES ${set.ageLabel}</span><h2>${set.hubTitle}</h2><p>${set.blurb}</p><span class="fc-open">Open this set <span aria-hidden="true">↗</span></span></div></a>`;
+ return `<a class="fc-setcard" href="${setUrl(set)}"><div class="fc-setcard-visual"><img src="${imgUrl(set,set.cover)}" width="1024" height="1536" alt="${set.coverAlt}" loading="lazy"></div><div class="fc-setcard-copy"><span class="eyebrow">${set.setLabel} · AGES ${set.ageLabel}</span><h2>${set.hubTitle}</h2><p>${set.blurb}</p><span class="fc-open">Open this set <span aria-hidden="true">↗</span></span></div></a>`;
 }
 export function fcSoon(){
  return `<div class="fc-soon"><h2>More sets are on the drawing table.</h2><p>Parents tell us they want first words, animals, alphabet and number flashcards next, all in the same print-at-home style. If there is a set you are waiting for, the kitchen table decides what gets made first: tell someone at Kiddo.school what your little one is learning right now.</p></div>`;
@@ -46,6 +49,7 @@ export function fcSoon(){
 export function fcSetBody(set){
  return `<section class="wrap fc-intro"><div class="fc-chips"><span>Ages ${set.ageLabel}</span><span>${set.cards.length} cards</span><span>Free to print</span></div><p class="fc-lede">${set.intro}</p></section>
  <section class="wrap fc-section"><span class="eyebrow">THE EIGHT CARDS</span><h2>Meet the animals.</h2><p class="fc-hint">Tap a card to open it full-size, then print from your browser. One card per page keeps every shape big and bold.</p><div class="fc-grid">${set.cards.map(c=>`<figure class="fc-card"><a href="${imgUrl(set,c.file)}" aria-label="Open full-size ${c.word} card"><img src="${imgUrl(set,c.file)}" width="1024" height="1536" alt="${c.alt}" loading="lazy"></a><figcaption><strong>${c.word}</strong><span>Card ${c.n}</span></figcaption></figure>`).join('')}</div></section>
+ <section class="wrap fc-section"><span class="eyebrow">FOR THE GROWN-UPS</span><h2>The parents guide.</h2><p class="fc-hint">One printable page for you, not for the baby: how to print, how to hold the cards, and when to stop. Handy to keep on the fridge or hand to babysitters and grandparents.</p><figure class="fc-guide-figure"><a href="${imgUrl(set,set.guide)}" aria-label="Open full-size parents guide"><img src="${imgUrl(set,set.guide)}" width="1024" height="1536" alt="${set.guideAlt}" loading="lazy"></a><figcaption><strong>Parents guide</strong><span>One page, free to print, big text, zero jargon.</span></figcaption></figure></section>
  <section class="wrap fc-section"><span class="eyebrow">HOW TO LOOK TOGETHER</span><h2>One card, one quiet minute.</h2><ol class="fc-steps">${set.steps.map(([t,d],i)=>`<li><span class="fc-stepnum">${String(i+1).padStart(2,'0')}</span><div><h3>${t}</h3><p>${d}</p></div></li>`).join('')}</ol></section>
  <section class="wrap fc-section fc-why"><span class="eyebrow">THE LITTLE BIT OF LEARNING</span><h2>Why black and white?</h2><p>${set.why}</p></section>
  <section class="wrap fc-section"><h2>Make it work for you.</h2><div class="fc-adapt"><div><h3>Keep it simple</h3><p>${set.younger}</p></div><div><h3>Take it further</h3><p>${set.older}</p></div></div><p class="fc-safety"><strong>A note for grown-ups:</strong> ${set.safety}</p></section>
