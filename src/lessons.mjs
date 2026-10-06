@@ -178,11 +178,58 @@ export const fwftLesson={
  ],note:'<strong>Every baby develops differently.</strong> Kiddo School age ranges are guides, not tests or developmental deadlines.'},
  tryTogether:['Ball. Look at the ball.','Here is your cup.','Can you see the dog?','Hello, baby!'],
  pills:{heading:'Where to next?',items:[['Baby classes','/baby/'],['4–6 Months','/baby/4-6-months/'],['Talk','/subjects/talk/']]},
- pathNav:{prev:{title:'Colors & First Objects',range:'3–4 Months',href:'/baby/3-4-months/colors-and-first-objects/'},next:null},
+ pathNav:{prev:{title:'Colors & First Objects',range:'3–4 Months',href:'/baby/3-4-months/colors-and-first-objects/'},next:{title:'Animals & Everyday Objects',range:'6–9 Months',href:'/baby/6-9-months/animals-everyday-objects/'}},
  hubBlurb:'Everyday objects, foods, animals and a friendly face — name what you see together and let the first words grow. Two to five calm minutes.',
  schema:{level:'Infant (4–6 months)',teaches:'First words, listening and early language through familiar objects',audience:'Parents of babies',keywords:'first words flashcards, familiar objects for babies, baby talking activities, 4-6 months baby flashcards'}
 };
-export const lessons=[hcLesson,fvLesson,cfoLesson,fwftLesson];
+export const aeoLesson={
+ path:'/baby/6-9-months/animals-everyday-objects/',
+ seoTitle:'Animals & Everyday Objects for Babies 6–9 Months',
+ title:'Animals & Everyday Objects for Babies 6–9 Months',
+ h1:'Animals & Everyday Objects for Babies 6–9 Months',
+ description:'Explore animal and everyday-object flashcards for babies 6–9 months, with simple parent-led activities for looking, listening and early recognition.',
+ ogAlt:'Cover of the Kiddo School Explorer 1 class Animals and Everyday Objects for babies 6 to 9 months, with a cat, a dog and a ball',
+ ogImage:lessonsBase+'animals-everyday-objects-6-9-months/cover.webp',
+ schemaImage:lessonsBase+'animals-everyday-objects-6-9-months/cover.webp',
+ eyebrow:'EXPLORER 1 · LESSON 5',
+ crumbs:[['Baby','/baby/'],['6–9 Months','/baby/6-9-months/'],['Animals & Everyday Objects','/baby/6-9-months/animals-everyday-objects/']],
+ chips:[['Age','6–9 Months'],['Subject','Talk &amp; Think'],['Class','Explorer 1'],['Duration','3–5 minutes']],
+ ledes:['Around six to nine months, babies reach for what interests them, light up at familiar pictures and love a funny animal sound. This class pairs twelve realistic animals with everyday objects — a cat, a dog, a bird, a fish, a duck, a cow, then a ball, a shoe, a cup, a spoon, a car and a teddy bear — shown one at a time while you name what you see and play with simple sounds.',
+  'There is no script and nothing to test. Your baby looks and listens, you talk and play, and every little connection — woof, moo, ball, cup — grows early recognition at your baby’s own pace. Short, playful sessions of three to five minutes are all it takes.'],
+ startHint:'Twelve cards, one at a time. Name each picture and add an animal sound if you like — short and playful wins.',
+ viewerLabel:'Today’s class: twelve animal and everyday-object cards',
+ viewerHeading:'Twelve cards, one at a time.',
+ folder:'animals-everyday-objects-6-9-months/',
+ eagerFirst:false,
+ cover:{file:'cover.webp',w:1414,h:2000,alt:'Cover of the Animals and Everyday Objects class for babies 6 to 9 months: a cat, a dog and a ball with the Explorer 1 Talk & Think label from Kiddo School'},
+ cards:[
+  {order:1,file:'01-cat.webp',w:1414,h:2000,alt:'Realistic cat flashcard for babies'},
+  {order:2,file:'02-dog.webp',w:1414,h:2000,alt:'Realistic dog flashcard for babies'},
+  {order:3,file:'03-bird.webp',w:1414,h:2000,alt:'Realistic bird flashcard for babies'},
+  {order:4,file:'04-fish.webp',w:1414,h:2000,alt:'Realistic fish flashcard for babies'},
+  {order:5,file:'05-duck.webp',w:1414,h:2000,alt:'Realistic duck flashcard for babies'},
+  {order:6,file:'06-cow.webp',w:1414,h:2000,alt:'Realistic cow flashcard for babies'},
+  {order:7,file:'07-ball.webp',w:1414,h:2000,alt:'Ball flashcard for babies'},
+  {order:8,file:'08-shoe.webp',w:1414,h:2000,alt:'Shoe flashcard for babies'},
+  {order:9,file:'09-cup.webp',w:1414,h:2000,alt:'Cup flashcard for babies'},
+  {order:10,file:'10-spoon.webp',w:1414,h:2000,alt:'Spoon flashcard for babies'},
+  {order:11,file:'11-car.webp',w:1414,h:2000,alt:'Car flashcard for babies'},
+  {order:12,file:'12-teddy-bear.webp',w:1414,h:2000,alt:'Teddy bear flashcard for babies'}
+ ],
+ howTo:{heading:'How to use this activity',paragraphs:[
+  'Sit with your baby when they are awake and comfortable. Show one card at a time and clearly name what you see. Keep your language simple: ‘cat’, ‘dog’, ‘ball’ or ‘Here is the cup.’',
+  'For animals, you can also make a simple sound such as ‘woof’ or ‘moo’. For everyday objects, point out the real object later when you see it together.',
+  'Give your baby time to look, listen and respond in their own way. There is no need to ask them to identify or name the pictures.',
+  'Keep the activity short and stop when your baby loses interest.'
+ ],note:'<strong>Every baby develops differently.</strong> Kiddo School age ranges are guides, not tests or developmental deadlines.'},
+ tryTogether:['Dog. Woof woof!','Look, a bird.','Here is the ball.','That’s a cup.','Can you see the cow? Moo!'],
+ realWorld:{heading:'Find It in Real Life',copy:'Learning can continue away from the screen. When you see one of these animals or objects during your day, point it out and name it naturally.',examples:['See a dog → “Dog!”','Hold baby’s cup → “Your cup.”','Pick up a shoe → “Shoe.”','See a bird outside → “Bird!”']},
+ pills:{heading:'Where to next?',items:[['Baby classes','/baby/'],['6–9 Months','/baby/6-9-months/'],['Talk &amp; Think','/subjects/talk-and-think/']]},
+ pathNav:{prev:{title:'First Words & Familiar Things',range:'4–6 Months',href:'/baby/4-6-months/first-words-familiar-things/'},next:null},
+ hubBlurb:'Realistic animals alongside a ball, a shoe, a cup and more — name them, add the sounds, and let early recognition grow. Three to five playful minutes.',
+ schema:{level:'Infant (6–9 months)',teaches:'Early recognition, listening and first thinking skills through animals and everyday objects',audience:'Parents of babies',keywords:'animal flashcards for babies, everyday objects flashcards, baby talking activities, 6-9 months baby flashcards'}
+};
+export const lessons=[hcLesson,fvLesson,cfoLesson,fwftLesson,aeoLesson];
 export function classLessonSchema(site,L){
  return [
   {'@context':'https://schema.org','@type':'LearningResource',name:L.title,description:L.description,url:site+L.path,image:L.schemaImage,inLanguage:'en',learningResourceType:'Interactive baby class',educationalLevel:L.schema.level,isAccessibleForFree:true,educationalUse:'Home learning activity',teaches:L.schema.teaches,audience:{'@type':'Audience',audienceType:L.schema.audience},keywords:L.schema.keywords},
@@ -222,6 +269,12 @@ export function classLessonBody(L){
   <p class="fc-hint">Prompts for you, not for the cards — say them softly while your baby looks.</p>
   <ul class="lesson-prompts">${L.tryTogether.map(p=>`<li>${p}</li>`).join('')}</ul>
  </section>`:'';
+ const realWorld=L.realWorld?`<section class="wrap lesson-section">
+  <span class="eyebrow">REAL-WORLD CONNECTION</span>
+  <h2>${L.realWorld.heading}</h2>
+  <p class="lesson-copy">${L.realWorld.copy}</p>
+  <ul class="lesson-prompts">${L.realWorld.examples.map(p=>`<li>${p}</li>`).join('')}</ul>
+ </section>`:'';
  const why=L.why?`<section class="wrap lesson-section fc-why"><span class="eyebrow">THE LITTLE BIT OF LEARNING</span><h2>Why black and white?</h2><p>${L.why}</p></section>`:'';
  const pills=L.pills?`<section class="wrap lesson-section"><span class="eyebrow">KEEP EXPLORING</span><h2>${L.pills.heading}</h2><div class="lesson-linkrow">${L.pills.items.map(([label,href])=>`<a class="lesson-pill-link" href="${href}">${label}</a>`).join('')}</div>${L.pills.after||''}</section>`:'';
  const pathCard=(kind,n)=>n?`<a class="fc-stage lesson-card-link" href="${n.href}"><div class="fc-stage-pills"><span class="fc-age">${kind}</span><span class="fc-class">${esc(n.range)}</span></div><h3>${esc(n.title)}</h3><span class="fc-open">Open this class <span aria-hidden="true">↗</span></span></a>`:`<div class="fc-stage lesson-soon"><div class="fc-stage-pills"><span class="fc-age">Next lesson</span><span class="fc-class">Coming soon</span></div><h3>Coming soon</h3><p>The next class on this path is still on the drawing table.</p></div>`;
@@ -230,7 +283,7 @@ export function classLessonBody(L){
  ${hero}
  ${viewer}
  ${howTo}
- ${tryTogether}
+ ${tryTogether}${realWorld?`\n ${realWorld}`:''}
  ${why}
  ${pills}
  ${pathNav}`;

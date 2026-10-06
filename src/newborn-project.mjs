@@ -1,6 +1,6 @@
 import {lessons,lessonStageCard} from './lessons.mjs';
 export const newbornBase='https://pub-f2fcb7c9b45a496cbeefef18dbba0ec0.r2.dev/flashcards/black-and-white-baby-cards/';
-export const [hcLesson,fvLesson,cfoLesson,fwftLesson]=lessons;
+export const [hcLesson,fvLesson,cfoLesson,fwftLesson,aeoLesson]=lessons;
 export function babyBody(){
  return `<section class="wrap section compact"><p class="lesson-lede">Kiddo.school began as hands-on activities for curious kids. It is growing into a whole school for parents: tiny, calm classes you can do at home in two to five minutes, sequenced from birth onward. Every class shows the exact age, the class name and the subjects it supports, so you always know what your little one is working on — and what comes next.</p>
  <div class="fc-stages">
@@ -8,6 +8,7 @@ export function babyBody(){
   <a class="fc-stage lesson-card-link" href="/newborn/6-12-weeks/"><div class="fc-stage-pills"><span class="fc-age">6–12 weeks</span><span class="fc-class">Newborn 2</span></div><h3>Faces &amp; tracking</h3><p>Simple faces, high-contrast patterns and a first taste of strong colour, with slow side-to-side tracking games.</p><span class="fc-open">Open Newborn 2 <span aria-hidden="true">↗</span></span></a>
   <a class="fc-stage lesson-card-link" href="/baby/3-4-months/"><div class="fc-stage-pills"><span class="fc-age">3–4 months</span><span class="fc-class">Infant 1</span></div><h3>Colours &amp; first objects</h3><p>Bold red, yellow and blue alongside a ball, a cup, a spoon, an apple and a teddy.</p><span class="fc-open">Open Infant 1 <span aria-hidden="true">↗</span></span></a>
   <a class="fc-stage lesson-card-link" href="/baby/4-6-months/"><div class="fc-stage-pills"><span class="fc-age">4–6 months</span><span class="fc-class">Infant 2</span></div><h3>First words &amp; familiar things</h3><p>Everyday objects, foods, animals and a friendly face, named with simple natural words as first words grow.</p><span class="fc-open">Open Infant 2 <span aria-hidden="true">↗</span></span></a>
+  <a class="fc-stage lesson-card-link" href="/baby/6-9-months/"><div class="fc-stage-pills"><span class="fc-age">6–9 months</span><span class="fc-class">Explorer 1</span></div><h3>Animals &amp; everyday objects</h3><p>Animal and everyday-object cards with sounds, pointing and simple naming for looking, listening and early recognition.</p><span class="fc-open">Open Explorer 1 <span aria-hidden="true">↗</span></span></a>
  </div></section>`;
 }
 export function newbornBody(){
@@ -33,6 +34,11 @@ export function seeBody(){
 }
 export function talkBody(){
  return `<section class="wrap section compact"><p class="lesson-lede">Talk is the subject behind your baby’s first words. Long before babies speak, they listen: to your voice, to the rhythm of everyday speech and to the little names you give the world — ball, cup, dog, hello. Classes in this subject pair simple familiar pictures with natural parent talk, so language grows at your baby’s own pace. Every Talk class is short, calm and designed to be led by you.</p>
- <div class="fc-stages">${lessonStageCard(fwftLesson,'Lesson 4 · 4–6 months','Talk')}</div>
+ <div class="fc-stages">${lessonStageCard(fwftLesson,'Lesson 4 · 4–6 months','Talk')}${lessonStageCard(aeoLesson,'Lesson 5 · 6–9 months','Talk &amp; Think')}</div>
  <p class="fc-hint">More Talk classes are on the drawing table. Browse the whole path in <a href="/newborn/">Newborn Learning</a> and <a href="/baby/">Baby classes</a>.</p></section>`;
+}
+export function talkThinkBody(){
+ return `<section class="wrap section compact"><p class="lesson-lede">Talk &amp; Think is the subject where language and little thoughts grow together. Long before babies can answer, they recognise: the cat on the card, the cup in their hands, the sound you make when you say woof. Classes in this subject pair realistic animals and familiar objects with simple naming, sound play and repetition, so early recognition grows at your baby’s own pace. Every Talk &amp; Think class is short, calm and designed to be led by you.</p>
+ <div class="fc-stages">${lessonStageCard(aeoLesson,'Lesson 5 · 6–9 months','Talk &amp; Think')}</div>
+ <p class="fc-hint">More Talk &amp; Think classes are on the drawing table. Browse the whole path in <a href="/newborn/">Newborn Learning</a> and <a href="/baby/">Baby classes</a>.</p></section>`;
 }
