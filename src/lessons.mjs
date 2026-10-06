@@ -486,11 +486,99 @@ export const csLesson={
   'There is no need to finish every section in one sitting, and no need for your toddler to name every color or shape.'
  ],note:'<strong>Age ranges are a guide.</strong> Kiddo School age ranges are guides, not tests or developmental deadlines. Children learn at their own pace.'},
  pills:{heading:'Where to next?',items:[['Toddler classes','/toddler/'],['Age 2','/toddler/2-years/'],['Think &amp; Talk','/subjects/talk-and-think/']]},
- pathNav:{prev:{title:'First Concepts — Big, Small, Up & Down',range:'18–24 Months',href:'/toddler/18-24-months/first-concepts-big-small-up-down/'},next:null},
+ pathNav:{prev:{title:'First Concepts — Big, Small, Up & Down',range:'18–24 Months',href:'/toddler/18-24-months/first-concepts-big-small-up-down/'},next:{title:'Matching & Sorting',range:'Age 2',href:'/toddler/2-years/matching-and-sorting/'}},
  hubBlurb:'Eight colors, seven shapes, big-button find-it games and real-world hunts — a first interactive class made for two-year-old hands. Three to five playful minutes.',
  schema:{level:'Toddler (age 2)',teaches:'Color names, shape names and early matching through look, find and match play',audience:'Parents of toddlers',keywords:'colors and shapes for 2 year olds, toddler color activities, shapes for toddlers, matching games for toddlers, toddler learning activities'}
 };
-export const lessons=[hcLesson,fvLesson,cfoLesson,fwftLesson,aeoLesson,fabLesson,fwfhLesson,fcLesson,csLesson];
+export const msLesson={
+ path:'/toddler/2-years/matching-and-sorting/',
+ seoTitle:'Matching and Sorting for 2-Year-Olds',
+ title:'Matching and Sorting for 2-Year-Olds (Toddler 4)',
+ h1:'Matching and Sorting for 2-Year-Olds',
+ description:'Explore matching and sorting with your 2-year-old through simple visual activities for colors, shapes, everyday objects and things that belong together.',
+ ogAlt:'Cover of the Kiddo School Toddler 4 class Matching and Sorting for 2-year-olds, with a shape-sorter box and three matching blocks',
+ ogImage:toddlerBase+'matching-and-sorting-age-2/learning-cards/cover.webp',
+ schemaImage:toddlerBase+'matching-and-sorting-age-2/learning-cards/cover.webp',
+ eyebrow:'TODDLER 4 · LESSON 10',
+ crumbs:[['Toddler','/toddler/'],['Age 2','/toddler/2-years/'],['Matching & Sorting','/toddler/2-years/matching-and-sorting/']],
+ chips:[['Age','2 Years'],['Subject','Think &amp; Talk'],['Class','Toddler 4'],['Duration','3–5 minutes']],
+ ledes:['By two, children notice that things match: two balls, two cups, two socks that go on two feet. This class turns that noticing into a short game — looking at same and different, finding the match, sorting by color and shape, grouping fruit and animals, and spotting the one that is different.',
+  'There is no reading and nothing to test. You ask the question, your toddler taps or points, and every round ends in encouragement, never a score. Three to five playful minutes is plenty.'],
+ startHint:'Look, find, sort, then head off screen. Short and playful wins.',
+ viewerLabel:'Today’s class: matching and sorting for two-year-olds',
+ viewerHeading:'Today’s class.',
+ folder:'matching-and-sorting-age-2/learning-cards/',
+ r2Base:toddlerBase,
+ eagerFirst:false,
+ cover:{file:'cover.webp',w:1414,h:2000,alt:'Matching and Sorting class for 2-year-olds at Kiddo School'},
+ cards:[
+  {order:1,file:'01-same-balls.webp',w:1414,h:2000,alt:'Two matching red balls for a toddler same-and-match activity'},
+  {order:2,file:'02-same-apples.webp',w:1414,h:2000,alt:'Two matching red apples for a toddler matching activity'},
+  {order:3,file:'03-same-cups.webp',w:1414,h:2000,alt:'Two matching blue cups for a toddler matching activity'},
+  {order:4,file:'04-different-apple-banana.webp',w:1414,h:2000,alt:'Apple and banana for a toddler same-and-different activity'},
+  {order:5,file:'05-different-animals.webp',w:1414,h:2000,alt:'Cat and dog for a toddler same-and-different activity'},
+  {order:6,file:'06-different-shapes.webp',w:1414,h:2000,alt:'Circle and triangle for a toddler different-shapes activity'},
+  {order:7,file:'07-match-red.webp',w:1414,h:2000,alt:'Red color matching activity with visual choices'},
+  {order:8,file:'08-match-blue.webp',w:1414,h:2000,alt:'Blue color matching activity with visual choices'},
+  {order:9,file:'09-match-circle.webp',w:1414,h:2000,alt:'Circle matching activity with basic shape choices'},
+  {order:10,file:'10-match-triangle.webp',w:1414,h:2000,alt:'Triangle matching activity with basic shape choices'},
+  {order:11,file:'11-sort-by-color.webp',w:1414,h:2000,alt:'Red and blue objects for a toddler sorting-by-color activity'},
+  {order:12,file:'12-sort-by-shape.webp',w:1414,h:2000,alt:'Circles and squares for a toddler sorting-by-shape activity'},
+  {order:13,file:'13-fruit-together.webp',w:1414,h:2000,alt:'Apple, banana, car and shoe for a toddler grouping activity'},
+  {order:14,file:'14-animals-together.webp',w:1414,h:2000,alt:'Cat, dog, cup and ball for a toddler grouping activity'},
+  {order:15,file:'15-odd-one-out.webp',w:1414,h:2000,alt:'Three bananas and one apple for a toddler odd-one-out activity'}
+ ],
+ interactive:{
+  flow:{intro:'Seven little steps, in order: a welcome from your teacher, same and different, find the match, sort together, what belongs together, find the different one, then take it off screen. Stop after any step — that is a complete class, and there is never a score at the end.',
+   steps:[['1','Teacher welcome'],['2','Same &amp; different'],['3','Find the match'],['4','Sort together'],['5','What belongs together'],['6','Find the different one'],['7','Take it off screen']],
+   beginHref:'#same-different',beginHint:'Grown-up nearby, toddler on the lap, phone at a comfy distance.'},
+  teacher:{welcome:'Today we’re going to find things that match and things that are different. Let’s look together!',note:'Matching happens everywhere. Try noticing things that are the same, different or belong together during your day.'},
+  principal:{note:'There’s no need to turn matching into a test. Notice patterns together during play, tidying up, getting dressed and everyday routines.'},
+  complete:{heading:'Class complete!',copy:'Nice matching and sorting together.'},
+  offScreen:{heading:'Take it off screen.',copy:'Let’s find things that belong together. The class continues in real life with ordinary household objects — pick one or two during the day and keep it playful. Nothing to buy, nothing to collect and nothing to prove.',groups:[
+   {title:'A matching hunt',items:['Find two matching socks.','Find two spoons.','Put two red toys together.','Find two things that are the same shape.','Put toy animals together.','Find one object that is different from the others.']}
+  ],note:'Stay close by and follow your child’s lead. Any noticing counts — finding two matching socks together is a complete class.'},
+  sections:[
+   {type:'learn',id:'same-different',eyebrow:'LEARN · SAME &amp; DIFFERENT',heading:'Same and different.',copy:'Six cards to look at together: three pairs that are the same, three pairs that are different. Say what you see in your own words and pause — the questions are for you, and nothing here is a quiz.',label:'same and different',items:[
+    {file:'01-same-balls.webp',say:'Look — these are the same.',find:'Can you point to both balls?'},
+    {file:'02-same-apples.webp',say:'These two match.',find:'Can you touch each apple as you say apple?'},
+    {file:'03-same-cups.webp',say:'Look — two same cups.',find:'Can you point to both cups?'},
+    {file:'04-different-apple-banana.webp',say:'An apple and a banana.',find:'Are these the same or different?'},
+    {file:'05-different-animals.webp',say:'A cat and a dog.',find:'Are these the same or different?'},
+    {file:'06-different-shapes.webp',say:'A circle and a triangle.',find:'Look at what is different.'}
+   ]},
+   {type:'prompt',id:'find-match',eyebrow:'PLAY · FIND THE MATCH',heading:'Find the match.',copy:'One big picture up top, then tap the answer underneath. Say the question in your own words and let your child take their time — every round ends in encouragement, never a score.',rounds:[
+    {ask:'Can you find the red one?',say:'Here is red. Can you find the red one below?',file:'07-match-red.webp',correct:1,positions:['The red ball','The blue ball','The yellow ball']},
+    {ask:'Find the blue square.',say:'Here is blue. Find the blue square below.',file:'08-match-blue.webp',correct:2,positions:['The yellow square','The blue square','The red square']},
+    {ask:'Which one matches the circle?',say:'Here is a circle. Which one matches the circle below?',file:'09-match-circle.webp',correct:2,positions:['The triangle','The circle','The square']},
+    {ask:'Can you find the triangle?',say:'Here is a triangle. Can you find the triangle below?',file:'10-match-triangle.webp',correct:3,positions:['The circle','The square','The triangle']}
+   ]},
+   {type:'learn',id:'sort-together',eyebrow:'SORT TOGETHER',heading:'Sorting colors and shapes.',copy:'Sorting starts gently: noticing that some things go together and some do not. Talk through each card in your own words — pointing, helping and finishing each other’s taps is all playing.',label:'sorting',items:[
+    {file:'11-sort-by-color.webp',say:'Two red balls, two blue balls.',find:'Which ones are the same color? Can we put the red ones together?'},
+    {file:'12-sort-by-shape.webp',say:'Circles here, squares there.',find:'Which shapes belong together? Can you find the two circles?'}
+   ]},
+   {type:'match',id:'belongs',eyebrow:'WHAT BELONGS TOGETHER?',heading:'What belongs together?',copy:'Show the big picture, then ask which one shows the things that belong together. Fruit stay together and animals stay together — naming the group is enough for a two-year-old.',rounds:[
+    {ask:'Which picture shows the fruit?',say:'Apple and banana are fruit. Which picture shows the fruit together?',target:{file:'13-fruit-together.webp',name:'Fruit together'},choices:[{file:'13-fruit-together.webp',name:'Fruit together',correct:true},{file:'14-animals-together.webp',name:'Animals together'}]},
+    {ask:'Which picture shows the animals?',say:'Cat and dog are animals. Which picture shows the animals together?',target:{file:'14-animals-together.webp',name:'Animals together'},choices:[{file:'14-animals-together.webp',name:'Animals together',correct:true},{file:'13-fruit-together.webp',name:'Fruit together'}]}
+   ]},
+   {type:'prompt',id:'different-one',eyebrow:'FIND THE DIFFERENT ONE',heading:'Find the different one.',copy:'Three bananas and one apple. Ask your child which one is different, then tap the answer together — first, second, third or fourth. Pointing at the picture and tapping along counts too.',rounds:[
+    {ask:'Which one is different?',say:'Three bananas and one apple. Which one is different?',file:'15-odd-one-out.webp',correct:4,positions:['A banana','A banana','A banana','The apple']}
+   ]}
+  ]
+ },
+ howTo:{heading:'Tips for Parents',paragraphs:[
+  'Sit together where your child can see and reach. Start with the same-and-different cards, say what you see out loud, and pause — the pause is where your toddler answers in their own way.',
+  'The tap games use big numbered buttons under each picture. Read the question, then let your child tap. A wrong tap is simply a chance to look together; the class never shows a score, a cross or a fail.',
+  'Sorting language stays simple: same, different, match, together. You do not need category words like fruit or animal — although hearing them in passing is a bonus, not a lesson.',
+  'When the on-screen games are done, take the class off screen: match the socks, sort the spoons, find the toy that is different during tidy-up time.',
+  'There is no need to finish every section in one sitting, and no need for your toddler to name every color or shape.'
+ ],note:'<strong>Age ranges are a guide.</strong> Kiddo School age ranges are guides, not tests or developmental deadlines. Children learn at their own pace.'},
+ pills:{heading:'Where to next?',items:[['Toddler classes','/toddler/'],['Age 2','/toddler/2-years/'],['Think &amp; Talk','/subjects/talk-and-think/']]},
+ pathNav:{prev:{title:'Colors & Shapes',range:'Age 2',href:'/toddler/2-years/colors-and-shapes/'},next:null},
+ hubBlurb:'Same and different, big-button find-the-match games, gentle sorting and an odd-one-out finish — noticing relationships, made for two-year-old hands. Three to five playful minutes.',
+ schema:{resourceType:'Interactive toddler class',level:'Toddler (age 2)',teaches:'Same and different, matching colors and shapes, sorting and grouping, and spotting the odd one out through look, find and sort play',audience:'Parents of toddlers',keywords:'matching and sorting for 2 year olds, toddler matching activities, sorting activities for toddlers, same and different activities, odd one out for toddlers, toddler learning activities'}
+};
+export const lessons=[hcLesson,fvLesson,cfoLesson,fwftLesson,aeoLesson,fabLesson,fwfhLesson,fcLesson,csLesson,msLesson];
 export function classLessonSchema(site,L){
  return [
   {'@context':'https://schema.org','@type':'LearningResource',name:L.title,description:L.description,url:site+L.path,image:L.schemaImage,inLanguage:'en',learningResourceType:L.schema.resourceType||'Interactive baby class',educationalLevel:L.schema.level,isAccessibleForFree:true,educationalUse:'Home learning activity',teaches:L.schema.teaches,audience:{'@type':'Audience',audienceType:L.schema.audience},keywords:L.schema.keywords},
@@ -566,7 +654,8 @@ export const stages=[
  {name:'Explorer 2',age:'9–12 Months',href:'/baby/9-12-months/',lesson:fabLesson},
  {name:'Toddler 1',age:'12–18 Months',href:'/toddler/12-18-months/',lesson:fwfhLesson},
  {name:'Toddler 2',age:'18–24 Months',href:'/toddler/18-24-months/',lesson:fcLesson},
- {name:'Toddler 3',age:'Age 2',href:'/toddler/2-years/',lesson:csLesson}
+ {name:'Toddler 3',age:'Age 2',href:'/toddler/2-years/',lesson:csLesson},
+ {name:'Toddler 4',age:'Age 2',href:'/toddler/2-years/',lesson:msLesson}
 ];
 const tcImg=(base,file,w,h,alt,attrs='')=>`<img src="${base}${file}" width="${w}" height="${h}" alt="${alt}"${attrs}>`;
 export function toddlerClassBody(L){
@@ -606,11 +695,12 @@ export function toddlerClassBody(L){
   <p class="lesson-copy">${copy}</p>
   ${roundsHtml(game.rounds)}
  </section>`;
+ const flowList=F=>`<ol class="tc-flow">${F.steps.map(([n,label])=>`<li><span>${n}</span> ${label}</li>`).join('')}</ol>`;
  const welcome=`<section class="wrap lesson-section" id="todays-class" aria-label="Today’s class">
   <span class="eyebrow">TODAY’S CLASS</span>
   <h2>How today’s class works.</h2>
-  <p class="lesson-copy">Eight little steps, in order: a welcome from your teacher, learn colors, play with colors, learn shapes, play with shapes, match a pair, take it off screen, then print the activity pack if you’d like to continue away from the screen. Stop after any step — that is a complete class, and there is never a score at the end.</p>
-  <ol class="tc-flow">
+  <p class="lesson-copy">${I.flow?I.flow.intro:'Eight little steps, in order: a welcome from your teacher, learn colors, play with colors, learn shapes, play with shapes, match a pair, take it off screen, then print the activity pack if you’d like to continue away from the screen. Stop after any step — that is a complete class, and there is never a score at the end.'}</p>
+  ${I.flow?flowList(I.flow):`<ol class="tc-flow">
    <li><span>1</span> Teacher welcome</li>
    <li><span>2</span> Learn colors</li>
    <li><span>3</span> Play with colors</li>
@@ -619,18 +709,19 @@ export function toddlerClassBody(L){
    <li><span>6</span> Find &amp; match</li>
    <li><span>7</span> Take it off screen</li>
    <li><span>8</span> Download &amp; print</li>
-  </ol>
+  </ol>`}
   <div class="tc-note-block tc-teacher"><span class="eyebrow">TEACHER WELCOME</span><p class="tc-say">“${I.teacher.welcome}”</p><p class="tc-who">— Your Kiddo School teacher</p></div>
-  <div class="lesson-start"><a class="button" href="#learn-colors">Begin the class <span aria-hidden="true">↓</span></a><span class="lesson-start-hint">Grown-up nearby, toddler on the lap, phone at a comfy distance.</span></div>
+  <div class="lesson-start"><a class="button" href="${I.flow?I.flow.beginHref:'#learn-colors'}">Begin the class <span aria-hidden="true">↓</span></a><span class="lesson-start-hint">${I.flow?I.flow.beginHint:'Grown-up nearby, toddler on the lap, phone at a comfy distance.'}</span></div>
  </section>`;
+ const huntHtml=g=>`<div class="tc-hunt"><h3>${g.title}</h3><ul class="lesson-prompts">${g.items.map(p=>`<li>${p}</li>`).join('')}</ul></div>`;
  const offScreen=`<section class="wrap lesson-section" id="off-screen" aria-label="Take it off screen">
   <span class="eyebrow">TAKE IT OFF SCREEN</span>
   <h2>${I.offScreen.heading}</h2>
   <p class="lesson-copy">${I.offScreen.copy}</p>
-  <div class="tc-hunt"><h3>Color hunt</h3><ul class="lesson-prompts">${I.offScreen.colorHunt.map(p=>`<li>${p}</li>`).join('')}</ul></div>
-  <div class="tc-hunt"><h3>Shape hunt</h3><ul class="lesson-prompts">${I.offScreen.shapeHunt.map(p=>`<li>${p}</li>`).join('')}</ul></div>
+  ${I.offScreen.groups?I.offScreen.groups.map(huntHtml).join(''):`<div class="tc-hunt"><h3>Color hunt</h3><ul class="lesson-prompts">${I.offScreen.colorHunt.map(p=>`<li>${p}</li>`).join('')}</ul></div>
+  <div class="tc-hunt"><h3>Shape hunt</h3><ul class="lesson-prompts">${I.offScreen.shapeHunt.map(p=>`<li>${p}</li>`).join('')}</ul></div>`}
   <p class="lesson-note">${I.offScreen.note}</p>
-  <p class="fc-hint">There is a printable version of these hunts in the <a href="#printables">Download &amp; Print</a> pack below — handy for the fridge or the weekend.</p>
+  ${L.printables?`<p class="fc-hint">There is a printable version of these hunts in the <a href="#printables">Download &amp; Print</a> pack below — handy for the fridge or the weekend.</p>`:''}
  </section>`;
  const printSection=L.printables?(()=>{
   const P=L.printables;
@@ -652,7 +743,7 @@ export function toddlerClassBody(L){
  const teacherNote=`<section class="wrap lesson-section"><span class="eyebrow">TEACHER NOTE</span><h2>One last word from class.</h2><div class="tc-note-block tc-teacher"><p class="tc-say">“${I.teacher.note}”</p><p class="tc-who">— Your Kiddo School teacher</p></div></section>`;
  const principalNote=`<section class="wrap lesson-section tc-principal"><span class="eyebrow">A NOTE FROM THE PRINCIPAL</span><h2>For the grown-ups.</h2><p class="lesson-copy">${I.principal.note}</p><p class="lesson-copy"><a href="/about/#principal">More from the Principal’s Office <span aria-hidden="true">↗</span></a></p></section>`;
  const prevCard=L.pathNav&&L.pathNav.prev?`<a class="fc-stage lesson-card-link" href="${L.pathNav.prev.href}"><div class="fc-stage-pills"><span class="fc-age">Previous class</span><span class="fc-class">${esc(L.pathNav.prev.range)}</span></div><h3>${esc(L.pathNav.prev.title)}</h3><span class="fc-open">Open this class <span aria-hidden="true">↗</span></span></a>`:'';
- const nextCard=`<a class="fc-stage lesson-card-link" href="/learning-path/"><div class="fc-stage-pills"><span class="fc-age">Keep going</span><span class="fc-class">Learning path</span></div><h3>Explore the Learning Path</h3><p>More classes are on the drawing table. Find where your child is today and what comes next.</p><span class="fc-open">Open the Learning Path <span aria-hidden="true">↗</span></span></a>`;
+ const nextCard=L.pathNav&&L.pathNav.next?`<a class="fc-stage lesson-card-link" href="${L.pathNav.next.href}"><div class="fc-stage-pills"><span class="fc-age">Next class</span><span class="fc-class">${esc(L.pathNav.next.range)}</span></div><h3>${esc(L.pathNav.next.title)}</h3><span class="fc-open">Open this class <span aria-hidden="true">↗</span></span></a>`:`<a class="fc-stage lesson-card-link" href="/learning-path/"><div class="fc-stage-pills"><span class="fc-age">Keep going</span><span class="fc-class">Learning path</span></div><h3>Explore the Learning Path</h3><p>More classes are on the drawing table. Find where your child is today and what comes next.</p><span class="fc-open">Open the Learning Path <span aria-hidden="true">↗</span></span></a>`;
  const complete=`<section class="wrap lesson-section tc-complete" id="class-complete" aria-label="Class complete">
   <span class="eyebrow">CLASS COMPLETE</span>
   <h2>${I.complete.heading}</h2>
@@ -666,6 +757,38 @@ export function toddlerClassBody(L){
   <p class="lesson-note">${L.howTo.note}</p>
  </section>`;
  const pills=L.pills?`<section class="wrap lesson-section"><span class="eyebrow">KEEP EXPLORING</span><h2>${L.pills.heading}</h2><div class="lesson-linkrow">${L.pills.items.map(([label,href])=>`<a class="lesson-pill-link" href="${href}">${label}</a>`).join('')}</div></section>`:'';
+ if(I.sections){
+  const numBtn=(label,n,correct)=>`<button type="button" class="tc-choice tc-num"${correct?' data-tc-correct="true"':''} aria-label="${esc(label)}"><span aria-hidden="true">${n}</span></button>`;
+  const promptRoundsHtml=rs=>rs.map(r=>`<div class="tc-round tc-prompt" data-tc-round data-tc-ask="${esc(r.ask)}"><p class="tc-ask">${r.say}</p><figure class="tc-target">${tcImg(base,r.file,dimOf[r.file][0],dimOf[r.file][1],altOf[r.file],' loading="lazy"')}</figure><div class="tc-choices tc-nums" role="group" aria-label="${esc(r.ask)}">${r.positions.map((p,i)=>numBtn(p,i+1,i+1===r.correct)).join('')}</div><p class="tc-feedback" data-tc-feedback aria-live="polite" hidden></p></div>`).join('');
+  const renderSection=s=>{
+   if(s.type==='learn')return learnViewer(s.id,s.eyebrow,s.heading,s.copy,s.items.map(it=>({...it,alt:it.alt||altOf[it.file],w:dimOf[it.file][0],h:dimOf[it.file][1]})),s.label);
+   if(s.type==='play')return playSection(s.id,s.eyebrow,s.heading,s.copy,s);
+   if(s.type==='match')return `<section class="wrap lesson-section tc-game" id="${s.id}" aria-label="${esc(s.heading)}">
+  <span class="eyebrow">${s.eyebrow}</span>
+  <h2>${s.heading}</h2>
+  <p class="lesson-copy">${s.copy}</p>
+  ${matchRoundsHtml(s.rounds)}
+ </section>`;
+   if(s.type==='prompt')return `<section class="wrap lesson-section tc-game" id="${s.id}" aria-label="${esc(s.heading)}">
+  <span class="eyebrow">${s.eyebrow}</span>
+  <h2>${s.heading}</h2>
+  <p class="lesson-copy">${s.copy}</p>
+  ${promptRoundsHtml(s.rounds)}
+ </section>`;
+   return '';
+  };
+  return `${crumbNav(L.crumbs)}
+ ${hero}
+ ${welcome}
+ ${I.sections.map(renderSection).join('\n ')}
+ ${offScreen}
+ ${printSection}
+ ${teacherNote}
+ ${principalNote}
+ ${complete}
+ ${tips}
+ ${pills}`;
+ }
  return `${crumbNav(L.crumbs)}
  ${hero}
  ${welcome}

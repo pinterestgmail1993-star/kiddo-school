@@ -181,6 +181,12 @@ h1,h2,h3,.brand,.bean-links strong{font-family:var(--kid-font);letter-spacing:0}
 .tc-round.is-done .tc-choice.is-picked{opacity:1;outline:3px solid #71326d;outline-offset:2px}
 .tc-round.is-done .tc-choice{pointer-events:none}
 .tc-feedback{margin:14px 0 0;font-size:16px;font-weight:700;color:#71326d}
+/* Position-answer buttons: the card stays the prompt and the big numbered
+   buttons underneath are the honest tap targets — no fake image hitboxes. */
+.tc-nums{gap:16px}
+.tc-num{display:inline-flex;align-items:center;justify-content:center;min-width:88px;min-height:88px;padding:8px;font-size:30px;font-weight:800;line-height:1;color:var(--ink);border:1.5px solid var(--ink);border-radius:6px;font-family:inherit}
+.tc-num span{pointer-events:none}
+.tc-prompt .tc-target{max-width:280px}
 .tc-hunt{margin-top:18px}
 .tc-hunt h3{margin:0 0 6px}
 .parents-principal{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:start;max-width:980px}
