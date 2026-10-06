@@ -2,8 +2,9 @@
 // Every lesson (and future ones) is pure data: slug/path, age, class, subject,
 // cover, R2 folder, cards, parent instructions, previous/next lesson, SEO.
 export const lessonsBase='https://pub-f2fcb7c9b45a496cbeefef18dbba0ec0.r2.dev/flashcards/black-and-white-baby-cards/';
+export const toddlerBase='https://pub-f2fcb7c9b45a496cbeefef18dbba0ec0.r2.dev/flashcards/toddler-learning-cards/';
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-const img=(folder,file,w,h,alt,eager)=>`<img src="${lessonsBase}${folder}${file}" width="${w}" height="${h}" alt="${alt}"${eager?' fetchpriority="high"':' loading="lazy"'}>`;
+const img=(prefix,file,w,h,alt,eager)=>`<img src="${prefix}${file}" width="${w}" height="${h}" alt="${alt}"${eager?' fetchpriority="high"':' loading="lazy"'}>`;
 export const hcLesson={
  path:'/newborn/0-6-weeks/high-contrast-cards/',
  seoTitle:'High Contrast Cards for Newborns (0–6 Weeks)',
@@ -320,11 +321,58 @@ export const fwfhLesson={
  tryTogether:['Apple. This is an apple.','Banana. Yum!','Here is your cup.','Spoon.','Where is your shoe?','Bed. Time for sleep.'],
  realWorld:{heading:'Find It at Home',copy:'Turn the flashcards into a real-world activity. After looking at a card, find the same object around your home when appropriate.',examples:['Spoon → find a spoon.','Cup → find your toddler’s cup.','Shoe → find a shoe.','Sock → find a sock.','Chair → point to a chair.','Bed → point to the bed.']},
  pills:{heading:'Where to next?',items:[['Toddler classes','/toddler/'],['12–18 Months','/toddler/12-18-months/'],['Talk &amp; Think','/subjects/talk-and-think/']]},
- pathNav:{prev:{title:'First Actions & Body Parts',range:'9–12 Months',href:'/baby/9-12-months/first-actions-body-parts/'},next:null},
+ pathNav:{prev:{title:'First Actions & Body Parts',range:'9–12 Months',href:'/baby/9-12-months/first-actions-body-parts/'},next:{title:'First Concepts — Big, Small, Up & Down',range:'18–24 Months',href:'/toddler/18-24-months/first-concepts-big-small-up-down/'}},
  hubBlurb:'Everyday foods and home things — apple, cup, spoon, bed — name them, pause, and let the first words grow. Three to five playful minutes.',
  schema:{level:'Toddler (12–18 months)',teaches:'First food and home words, pointing, naming and shared attention',audience:'Parents of toddlers',keywords:'toddler first words flashcards, food words for toddlers, home objects flashcards, 12-18 months toddler activities'}
 };
-export const lessons=[hcLesson,fvLesson,cfoLesson,fwftLesson,aeoLesson,fabLesson,fwfhLesson];
+export const fcLesson={
+ path:'/toddler/18-24-months/first-concepts-big-small-up-down/',
+ seoTitle:'First Concepts for Toddlers 18–24 Months | Big, Small, Up & Down',
+ title:'First Concepts for Toddlers 18–24 Months',
+ h1:'First Concepts for Toddlers: Big, Small, Up & Down',
+ description:'Teach toddlers ages 18–24 months simple early concepts including big and small, up and down, open and closed, full and empty, one and many, and in and out.',
+ ogAlt:'Cover of the Kiddo School Toddler 2 class First Concepts: Big, Small, Up and Down for toddlers 18 to 24 months, with a big red ball and a small red ball',
+ ogImage:toddlerBase+'first-concepts-18-24-months/cover.webp',
+ schemaImage:toddlerBase+'first-concepts-18-24-months/cover.webp',
+ eyebrow:'TODDLER 2 · LESSON 8',
+ crumbs:[['Toddler','/toddler/'],['18–24 Months','/toddler/18-24-months/'],['First Concepts','/toddler/18-24-months/first-concepts-big-small-up-down/']],
+ chips:[['Age','18–24 Months'],['Subject','Think &amp; Talk'],['Class','Toddler 2'],['Duration','3–5 minutes']],
+ ledes:['Around eighteen to twenty-four months, toddlers love spotting differences: the big ball and the little ball, the box that opens and shuts, the cup that is full and then empty. This class uses twelve realistic pictures arranged in six concept pairs — big and small, up and down, open and closed, full and empty, one and many, in and out — shown one at a time in exact pair order, so each opposite appears right after its partner and the comparison is easy to see.',
+  'There is no script and nothing to test. Show a pair, say the concepts clearly — ‘Big. Small.’ — and give your toddler time to look at the difference. Short, playful sessions of three to five minutes are all it takes.'],
+ startHint:'Twelve cards, one at a time, in six matching pairs. Say each concept clearly — short and playful wins.',
+ viewerLabel:'Today’s class: twelve first-concept cards',
+ viewerHeading:'Twelve cards, one at a time.',
+ folder:'first-concepts-18-24-months/',
+ r2Base:toddlerBase,
+ eagerFirst:false,
+ cover:{file:'cover.webp',w:1414,h:2000,alt:'Cover of the First Concepts class for toddlers 18 to 24 months: a big red ball and a small red ball with the Toddler 2 Think and Talk label from Kiddo School'},
+ cards:[
+  {order:1,concept:'Big',file:'01-big.webp',w:1414,h:2000,alt:'Large object demonstrating the concept big for toddlers'},
+  {order:2,concept:'Small',file:'02-small.webp',w:1414,h:2000,alt:'Small object demonstrating the concept small for toddlers'},
+  {order:3,concept:'Up',file:'03-up.webp',w:1414,h:2000,alt:'Object positioned up for toddler concept learning'},
+  {order:4,concept:'Down',file:'04-down.webp',w:1414,h:2000,alt:'Object positioned down for toddler concept learning'},
+  {order:5,concept:'Open',file:'05-open.webp',w:1414,h:2000,alt:'Open object demonstrating the concept open for toddlers'},
+  {order:6,concept:'Closed',file:'06-closed.webp',w:1414,h:2000,alt:'Closed object demonstrating the concept closed for toddlers'},
+  {order:7,concept:'Full',file:'07-full.webp',w:1414,h:2000,alt:'Full container demonstrating the concept full for toddlers'},
+  {order:8,concept:'Empty',file:'08-empty.webp',w:1414,h:2000,alt:'Empty container demonstrating the concept empty for toddlers'},
+  {order:9,concept:'One',file:'09-one.webp',w:1414,h:2000,alt:'One object demonstrating the concept one for toddlers'},
+  {order:10,concept:'Many',file:'10-many.webp',w:1414,h:2000,alt:'Multiple objects demonstrating the concept many for toddlers'},
+  {order:11,concept:'In',file:'11-in.webp',w:1414,h:2000,alt:'Object inside a container demonstrating the concept in for toddlers'},
+  {order:12,concept:'Out',file:'12-out.webp',w:1414,h:2000,alt:'Object outside a container demonstrating the concept out for toddlers'}
+ ],
+ howTo:{heading:'How to Teach First Concepts',paragraphs:[
+  'Show the two cards in a pair one after the other and say the concept clearly. For example: ‘Big. Small.’ Give your toddler time to look at the difference.',
+  'Repeat the concepts naturally using real objects and everyday moments. You can show a big ball and a small ball, open and close a box, or point out when a cup is full or empty.',
+  'Keep the activity playful. Your toddler does not need to name every concept or answer questions correctly.'
+ ],note:'<strong>Every child develops differently.</strong> Kiddo School age ranges are guides, not tests or developmental deadlines.'},
+ tryTogether:['Big ball. Small ball.','Up! Now down.','Open the box. Close the box.','The cup is full. Now it’s empty.','One duck. Many ducks.','The ball is in. Now the ball is out.'],
+ realWorld:{heading:'Practice Around the House',copy:'Keep these activities parent-supervised and simple.',examples:['Big &amp; Small: Find one big object and one small object.','Up &amp; Down: Lift a toy up, then bring it down.','Open &amp; Closed: Open and close a safe box or container together.','Full &amp; Empty: Show a cup with water and an empty cup during an appropriate supervised activity.','One &amp; Many: Show one toy, then a small group of toys.','In &amp; Out: Put a toy in a basket, then take it out.']},
+ pills:{heading:'Where to next?',items:[['Toddler classes','/toddler/'],['18–24 Months','/toddler/18-24-months/'],['Think &amp; Talk','/subjects/talk-and-think/']]},
+ pathNav:{prev:{title:'First Words: Food & Home',range:'12–18 Months',href:'/toddler/12-18-months/first-words-food-home/'},next:null},
+ hubBlurb:'Big and small, up and down, full and empty — six concept pairs in realistic pictures, ready for a short game of say it and look. Three to five playful minutes.',
+ schema:{level:'Toddler (18–24 months)',teaches:'Early concepts and opposites through clear visual comparison',audience:'Parents of toddlers',keywords:'first concepts flashcards for toddlers, big and small, opposites for toddlers, toddler comparison activities, 18-24 months activities'}
+};
+export const lessons=[hcLesson,fvLesson,cfoLesson,fwftLesson,aeoLesson,fabLesson,fwfhLesson,fcLesson];
 export function classLessonSchema(site,L){
  return [
   {'@context':'https://schema.org','@type':'LearningResource',name:L.title,description:L.description,url:site+L.path,image:L.schemaImage,inLanguage:'en',learningResourceType:'Interactive baby class',educationalLevel:L.schema.level,isAccessibleForFree:true,educationalUse:'Home learning activity',teaches:L.schema.teaches,audience:{'@type':'Audience',audienceType:L.schema.audience},keywords:L.schema.keywords},
@@ -349,7 +397,7 @@ export function classLessonBody(L){
    <div class="lv-begin"><button type="button" class="button" data-lv-start>Start Today’s Class</button><span class="lv-beginhint">Or simply scroll: all ${L.cards.length} cards are below.</span></div>
    <p class="lv-done" data-lv-done hidden><strong>Class complete — well done.</strong> However many cards your baby saw, however long it took, that was a full class. Rest is part of it too.</p>
   </div>
-  <div class="lv-grid" data-lv-grid>${L.cards.map(c=>`<figure class="lv-card">${img(L.folder,c.file,c.w,c.h,c.alt,L.eagerFirst&&c.order===1)}</figure>`).join('')}</div>
+  <div class="lv-grid" data-lv-grid>${L.cards.map(c=>`<figure class="lv-card">${img((L.r2Base||lessonsBase)+L.folder,c.file,c.w,c.h,c.alt,L.eagerFirst&&c.order===1)}</figure>`).join('')}</div>
  </section>`;
  const howTo=`<section class="wrap lesson-section" id="how-to">
   <span class="eyebrow">PARENT INSTRUCTIONS</span>

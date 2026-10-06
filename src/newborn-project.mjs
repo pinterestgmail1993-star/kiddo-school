@@ -1,6 +1,6 @@
 import {lessons,lessonStageCard} from './lessons.mjs';
 export const newbornBase='https://pub-f2fcb7c9b45a496cbeefef18dbba0ec0.r2.dev/flashcards/black-and-white-baby-cards/';
-export const [hcLesson,fvLesson,cfoLesson,fwftLesson,aeoLesson,fabLesson,fwfhLesson]=lessons;
+export const [hcLesson,fvLesson,cfoLesson,fwftLesson,aeoLesson,fabLesson,fwfhLesson,fcLesson]=lessons;
 export function babyBody(){
  return `<section class="wrap section compact"><p class="lesson-lede">Kiddo.school began as hands-on activities for curious kids. It is growing into a whole school for parents: tiny, calm classes you can do at home in two to five minutes, sequenced from birth onward. Every class shows the exact age, the class name and the subjects it supports, so you always know what your little one is working on — and what comes next.</p>
  <div class="fc-stages">
@@ -41,12 +41,14 @@ export function talkBody(){
 }
 export function talkThinkBody(){
  return `<section class="wrap section compact"><p class="lesson-lede">Talk &amp; Think is the subject where language and little thoughts grow together. Long before children can answer, they recognise: the cat on the card, the cup in their hands, the sound you make when you say woof. Classes in this subject pair realistic animals, familiar objects, body parts and everyday actions with simple naming, sound play, action games and repetition, so early recognition grows at your child’s own pace. Every Talk &amp; Think class is short, calm and designed to be led by you.</p>
- <div class="fc-stages">${lessonStageCard(aeoLesson,'Lesson 5 · 6–9 months','Talk &amp; Think')}${lessonStageCard(fabLesson,'Lesson 6 · 9–12 months','Talk &amp; Think')}${lessonStageCard(fwfhLesson,'Lesson 7 · 12–18 months','Talk &amp; Think')}</div>
+ <div class="fc-stages">${lessonStageCard(aeoLesson,'Lesson 5 · 6–9 months','Talk &amp; Think')}${lessonStageCard(fabLesson,'Lesson 6 · 9–12 months','Talk &amp; Think')}${lessonStageCard(fwfhLesson,'Lesson 7 · 12–18 months','Talk &amp; Think')}${lessonStageCard(fcLesson,'Lesson 8 · 18–24 months','Think &amp; Talk')}</div>
  <p class="fc-hint">More Talk &amp; Think classes are on the drawing table. Browse the whole path in <a href="/newborn/">Newborn Learning</a>, <a href="/baby/">Baby classes</a> and <a href="/toddler/">Toddler classes</a>.</p></section>`;
 }
 export function toddlerBody(){
  return `<section class="wrap section compact"><p class="lesson-lede">Welcome to the toddler years. Kiddo.school classes keep the same calm rhythm — one card, one voice, one short moment — while your toddler’s world gets bigger: pointing, copying, first words and a name for everything they see. Every class shows the exact age, the class name and the subject it supports, and every class is led by you.</p>
  <h2 class="lesson-classheading">Toddler 1 · 12–18 months</h2>
  <div class="fc-stages">${lessonStageCard(fwfhLesson,'Lesson 7','Talk &amp; Think')}</div>
+ <h2 class="lesson-classheading">Toddler 2 · 18–24 months</h2>
+ <div class="fc-stages">${lessonStageCard(fcLesson,'Lesson 8','Think &amp; Talk')}</div>
  <p class="lesson-note"><strong>Every child develops differently.</strong> Kiddo School age ranges are guides, not tests or deadlines — follow your child’s cues. The earlier path lives in <a href="/newborn/">Newborn Learning</a> and <a href="/baby/">Baby classes</a>.</p></section>`;
 }
