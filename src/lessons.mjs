@@ -133,11 +133,56 @@ export const cfoLesson={
  ],note:'<strong>Every baby develops differently.</strong> Kiddo School age ranges are guides, not tests or developmental deadlines.'},
  tryTogether:['Look at the red circle.','Here is the ball.','Can you see the cup?','This is an apple.','Where is the sun?','Hello, teddy.'],
  pills:{heading:'Where to next?',items:[['Baby classes','/baby/'],['3–4 Months','/baby/3-4-months/'],['See','/subjects/see/']]},
- pathNav:{prev:{title:'Faces & Visual Tracking',range:'6–12 Weeks',href:'/newborn/6-12-weeks/faces-and-visual-tracking/'},next:null},
+ pathNav:{prev:{title:'Faces & Visual Tracking',range:'6–12 Weeks',href:'/newborn/6-12-weeks/faces-and-visual-tracking/'},next:{title:'First Words & Familiar Things',range:'4–6 Months',href:'/baby/4-6-months/first-words-familiar-things/'}},
  hubBlurb:'Bold red, yellow and blue alongside familiar objects — a ball, a cup, a spoon, a teddy. Name them if you like; there is nothing to test.',
  schema:{level:'Infant (3–4 months)',teaches:'Colour noticing, focusing and shared attention',audience:'Parents of babies',keywords:'baby colour cards, first objects flashcards, red yellow blue baby cards, visual activities for infants'}
 };
-export const lessons=[hcLesson,fvLesson,cfoLesson];
+export const fwftLesson={
+ path:'/baby/4-6-months/first-words-familiar-things/',
+ seoTitle:'First Words & Familiar Things for Babies 4–6 Months',
+ title:'First Words & Familiar Things for Babies 4–6 Months',
+ h1:'First Words & Familiar Things for Babies 4–6 Months',
+ description:'Explore simple familiar-object flashcards for babies 4–6 months, with parent-led talking activities using everyday objects, foods, animals and faces.',
+ ogAlt:'Cover of the Kiddo School Infant 2 class First Words and Familiar Things for babies 4 to 6 months, with a red ball, blue cup and yellow banana',
+ ogImage:lessonsBase+'first-words-familiar-things-4-6-months/cover.webp',
+ schemaImage:lessonsBase+'first-words-familiar-things-4-6-months/cover.webp',
+ eyebrow:'INFANT 2 · LESSON 4',
+ crumbs:[['Baby','/baby/'],['4–6 Months','/baby/4-6-months/'],['First Words & Familiar Things','/baby/4-6-months/first-words-familiar-things/']],
+ chips:[['Age','4–6 Months'],['Subject','Talk'],['Class','Infant 2'],['Duration','2–5 minutes']],
+ ledes:['Around four to six months, babies babble back, laugh at familiar faces and start to connect the sounds you make with the things they see. This class uses twelve simple familiar-object flashcards — a ball, a cup, a spoon, a bottle, an apple, a banana, a cat, a dog, a bird, a car, a teddy bear and a friendly baby face — shown one at a time while you name what you see in your own words.',
+  'There is no script and nothing to test. You talk, your baby listens, and the little everyday names — ball, cup, dog, hello — slowly grow into your baby’s first words. Short, calm sessions of two to five minutes are all it takes.'],
+ startHint:'Twelve cards, one at a time. Name each picture in your own words — short and natural wins.',
+ viewerLabel:'Today’s class: twelve familiar-object cards',
+ viewerHeading:'Twelve cards, one at a time.',
+ folder:'first-words-familiar-things-4-6-months/',
+ eagerFirst:false,
+ cover:{file:'cover.webp',w:1414,h:2000,alt:'Cover of the First Words and Familiar Things class for babies 4 to 6 months: a red ball, blue cup and yellow banana with the Infant 2 Talk label from Kiddo School'},
+ cards:[
+  {order:1,file:'01-ball.webp',w:1414,h:2000,alt:'Simple ball flashcard for babies'},
+  {order:2,file:'02-cup.webp',w:1414,h:2000,alt:'Simple cup flashcard for babies'},
+  {order:3,file:'03-spoon.webp',w:1414,h:2000,alt:'Simple spoon flashcard for babies'},
+  {order:4,file:'04-bottle.webp',w:1414,h:2000,alt:'Simple bottle flashcard for babies'},
+  {order:5,file:'05-apple.webp',w:1414,h:2000,alt:'Simple apple flashcard for babies'},
+  {order:6,file:'06-banana.webp',w:1414,h:2000,alt:'Simple banana flashcard for babies'},
+  {order:7,file:'07-cat.webp',w:1414,h:2000,alt:'Simple cat flashcard for babies'},
+  {order:8,file:'08-dog.webp',w:1414,h:2000,alt:'Simple dog flashcard for babies'},
+  {order:9,file:'09-bird.webp',w:1414,h:2000,alt:'Simple bird flashcard for babies'},
+  {order:10,file:'10-car.webp',w:1414,h:2000,alt:'Simple car flashcard for babies'},
+  {order:11,file:'11-teddy-bear.webp',w:1414,h:2000,alt:'Simple teddy bear flashcard for babies'},
+  {order:12,file:'12-baby-face.webp',w:1414,h:2000,alt:'Simple baby face flashcard for babies'}
+ ],
+ howTo:{heading:'How to use this activity',paragraphs:[
+  'Choose a time when your baby is awake, calm and comfortable. Show one picture at a time and name what you see using simple, natural language. For example, say ‘ball’ or ‘Here is the ball.’ Give your baby time to look and listen.',
+  'Repeat words naturally, smile, and respond to your baby’s sounds and expressions. There is no need to test your baby or expect them to say the words.',
+  'Keep the activity short and stop when your baby looks away, becomes tired or loses interest.'
+ ],note:'<strong>Every baby develops differently.</strong> Kiddo School age ranges are guides, not tests or developmental deadlines.'},
+ tryTogether:['Ball. Look at the ball.','Here is your cup.','Can you see the dog?','Hello, baby!'],
+ pills:{heading:'Where to next?',items:[['Baby classes','/baby/'],['4–6 Months','/baby/4-6-months/'],['Talk','/subjects/talk/']]},
+ pathNav:{prev:{title:'Colors & First Objects',range:'3–4 Months',href:'/baby/3-4-months/colors-and-first-objects/'},next:null},
+ hubBlurb:'Everyday objects, foods, animals and a friendly face — name what you see together and let the first words grow. Two to five calm minutes.',
+ schema:{level:'Infant (4–6 months)',teaches:'First words, listening and early language through familiar objects',audience:'Parents of babies',keywords:'first words flashcards, familiar objects for babies, baby talking activities, 4-6 months baby flashcards'}
+};
+export const lessons=[hcLesson,fvLesson,cfoLesson,fwftLesson];
 export function classLessonSchema(site,L){
  return [
   {'@context':'https://schema.org','@type':'LearningResource',name:L.title,description:L.description,url:site+L.path,image:L.schemaImage,inLanguage:'en',learningResourceType:'Interactive baby class',educationalLevel:L.schema.level,isAccessibleForFree:true,educationalUse:'Home learning activity',teaches:L.schema.teaches,audience:{'@type':'Audience',audienceType:L.schema.audience},keywords:L.schema.keywords},
@@ -193,8 +238,8 @@ export function classLessonBody(L){
 export function lessonStageCard(L,pillLeft,pillRight){
  return `<a class="fc-stage lesson-card-link" href="${L.path}"><div class="fc-stage-pills"><span class="fc-age">${pillLeft}</span><span class="fc-class">${pillRight}</span></div><h3>${esc(L.h1.split(' for ')[0])}</h3><p>${L.hubBlurb}</p><span class="fc-open">Start today’s class <span aria-hidden="true">↗</span></span></a>`;
 }
-export function stagePageBody({chips,stageLessons,soon}){
+export function stagePageBody({chips,stageLessons,soon,subject}){
  return `<section class="wrap section compact"><div class="fc-chips lesson-chips">${chips.map(([k,v])=>`<span><strong>${k}</strong> ${v}</span>`).join('')}</div>
- <div class="fc-stages">${stageLessons.map(L=>lessonStageCard(L,'Lesson '+(lessons.indexOf(L)+1),'See')).join('')}${soon||''}</div>
+ <div class="fc-stages">${stageLessons.map(L=>lessonStageCard(L,'Lesson '+(lessons.indexOf(L)+1),subject||'See')).join('')}${soon||''}</div>
  <p class="lesson-note"><strong>Every baby develops differently.</strong> Kiddo School age ranges are guides, not tests or developmental deadlines.</p></section>`;
 }
