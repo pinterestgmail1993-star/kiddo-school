@@ -107,3 +107,14 @@ test('leaf activities provide one preview, drawing, typing and safety guidance',
  assert.match(guide,/leaf-rubbing-cover\.webp/);assert.match(guide,/how-to-make-a-leaf-rubbing\//);
  assert.match(readFileSync('dist/nature/index.html','utf8'),/leaf-rubbing/);
 });
+
+test('shadow activities provide one preview, drawing, typing and safety guidance',async()=>{
+ const {shadowPages}=await import('../src/shadow-project.mjs');
+ for(const p of shadowPages){const html=readFileSync(`dist/science/shadow-detectives/${p.slug}/index.html`,'utf8');
+  assert.match(html,/activities\/science\/shadow-detectives\//);assert.match(html,/Never look straight into a torch/);assert.match(html,/data-export/);assert.match(html,/<textarea/);assert.match(html,/<canvas/);
+  assert.equal([...html.matchAll(new RegExp('<img[^>]+src="[^"]+/'+p.slug+'\\.webp"','g'))].length,1);
+ }
+ const guide=readFileSync('dist/science/shadow-detectives/index.html','utf8');
+ assert.match(guide,/shadow-detectives-cover\.webp/);assert.match(guide,/how-to-explore-shadows\//);
+ assert.match(readFileSync('dist/science/index.html','utf8'),/shadow-detectives/);
+});

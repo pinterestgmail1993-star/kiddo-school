@@ -1,658 +1,726 @@
 [
- {
-  "slug": "grow-a-bean",
-  "subject": "science",
-  "title": "Grow a bean",
-  "subtitle": "A tiny seed. A whole lot to discover.",
-  "description": "Watch roots and shoots appear, then draw the changes in your own bean diary.",
-  "ages": [
-   "6-8",
-   "9-12"
-  ],
-  "ageLabel": "6–12",
-  "time": "20 min + daily check-ins",
-  "place": "Indoors",
-  "art": "bean",
-  "alt": "Illustration of a bean sprout with two green leaves and visible roots in a clear jar.",
-  "skills": "Observation, plant life cycles, measuring",
-  "intro": "A clear container lets you look at the part of a plant that usually hides underground. Set up a bean, make a prediction, and return each day to see what has changed. Germination can take several days; every seed has its own pace.",
-  "materials": [
-   "2–3 untreated bean seeds sold for planting",
-   "A clear plastic cup or clean jar handled by an adult",
-   "Paper towels",
-   "Water and a spoon",
-   "Pencil, ruler and paper or the bean diary below"
-  ],
-  "safety": "An adult should help set up and supervise. Seeds are a choking hazard: keep them away from younger children and never eat the seeds or sprouts. Wash hands afterward. An adult should discard any mouldy seeds without children handling them.",
-  "steps": [
-   [
-    "Wake up the seeds",
-    "Soak the bean seeds in water overnight, then drain. Prepare two or three so you can compare them; some seeds may not sprout."
-   ],
-   [
-    "Make a window for the roots",
-    "Dampen a folded paper towel and place it against the inside of the container. It should feel damp, not drip. Tuck the beans between the towel and the container wall so you can see them."
-   ],
-   [
-    "Choose a place and predict",
-    "Stand the open container in a warm spot with indirect daylight, away from a hot windowsill. Draw the beans and predict what will appear first. Label the date."
-   ],
-   [
-    "Look a little every day",
-    "Check once a day. Add a spoonful of water if the towel is drying out, and tip out standing water. Draw any changes. Once a root appears, measure it gently through the container; do not pull the bean out."
-   ],
-   [
-    "Give your seedling a new home",
-    "When roots and leaves have developed, ask an adult to help transplant the seedling into potting soil. Keep the shoot above the soil. Continue observing in a bright place and water as needed."
-   ]
-  ],
-  "why": "Water allows the seed to start germinating. The first root anchors the seedling and takes up water; a shoot grows upward. Stored food in the seed supports early growth. Once leaves develop, light helps the plant make its own food.",
-  "questions": [
-   "What changed first: the seed coat, root or shoot?",
-   "Did every bean grow at the same speed?",
-   "What could you measure in the same way each day?"
-  ],
-  "younger": "An adult can write down a child's spoken observations. Draw just one bean each day.",
-  "older": "Measure the root at the same time each day and graph its length. Keep the light, seed type and amount of water consistent.",
-  "troubleshoot": "No change after about a week? Check that the towel stays damp and the spot is warm. Try fresh seeds if needed. A bad smell or fuzzy growth means an adult should discard the setup and start again with a clean container.",
-  "sheet": "My bean diary",
-  "sheetPrompt": "Draw your bean on three different days. Add the date and one thing you notice.",
-  "sheetLabels": [
-   "First look",
-   "A few days later",
-   "Look again"
-  ],
-  "tags": "plant seed roots biology germination garden"
- },
- {
-  "slug": "paper-shape-collage",
-  "subject": "art",
-  "title": "Make a shape collage",
-  "subtitle": "Little scraps become something wonderful.",
-  "description": "Tear, arrange and layer colourful paper to make a picture that is entirely your own.",
-  "ages": [
-   "3-5",
-   "6-8"
-  ],
-  "ageLabel": "3–8",
-  "time": "25 min",
-  "place": "Indoors",
-  "art": "collage",
-  "alt": "Illustration of a paper collage with a mustard sun, terracotta house and green tree.",
-  "skills": "Fine motor skills, shape recognition, composition",
-  "intro": "A scrap of paper can become a roof, a hill or a completely imaginary creature. This open-ended project starts with simple shapes and leaves room for children to decide what their picture will become.",
-  "materials": [
-   "A sheet of paper or reused cardboard",
-   "Coloured paper or clean packaging",
-   "Child-safe glue stick",
-   "Crayons",
-   "Optional: child-safe scissors with adult help"
-  ],
-  "safety": "Supervise cutting and gluing. Use clean paper without staples or sharp edges. Keep small scraps and glue out of mouths; tear larger shapes for younger children.",
-  "steps": [
-   [
-    "Gather a small palette",
-    "Choose three or four paper colours. Look for differences in texture, such as a smooth wrapper and a rough paper bag."
-   ],
-   [
-    "Make your shapes",
-    "Tear or cut several large shapes. Try a long strip, a rounded shape and a triangle. Exact shapes are not important."
-   ],
-   [
-    "Try before you glue",
-    "Move the pieces around your background. Can a triangle become a mountain? What happens when one shape overlaps another? Try two arrangements."
-   ],
-   [
-    "Build the picture",
-    "Glue the background shapes first, then add the smaller pieces on top. Press each piece down gently."
-   ],
-   [
-    "Add your last marks",
-    "Use crayons to add lines or details. Give your collage a title and tell someone about one choice you made."
-   ]
-  ],
-  "why": "Moving shapes before sticking them down gives children a chance to plan and revise. Overlapping creates layers, while different colours and textures help parts of a picture stand out.",
-  "questions": [
-   "Which shape did you use in an unexpected way?",
-   "What looks near, and what looks far away?",
-   "How would your picture change with one colour removed?"
-  ],
-  "younger": "Offer a few large, pre-torn shapes. Let the child place them and narrate the picture while an adult helps with glue.",
-  "older": "Limit the palette to three colours and show distance using overlapping shapes. Try another version with the same pieces.",
-  "troubleshoot": "Paper curling? Use less glue and let the collage dry flat. If choosing a picture feels difficult, start with an abstract arrangement of colours.",
-  "sheet": "My shape studio",
-  "sheetPrompt": "Try three different arrangements. Sketch your shapes before you glue.",
-  "sheetLabels": [
-   "Arrangement one",
-   "Arrangement two",
-   "My favourite idea"
-  ],
-  "tags": "craft colours colors cutting tearing shapes creativity"
- },
- {
-  "slug": "make-a-pattern",
-  "subject": "maths",
-  "title": "Make a repeating pattern",
-  "subtitle": "Find the rule, then keep it going.",
-  "description": "Turn big paper shapes into repeating patterns and challenge someone to find your rule.",
-  "ages": [
-   "3-5",
-   "6-8"
-  ],
-  "ageLabel": "3–8",
-  "time": "15 min",
-  "place": "Anywhere",
-  "art": "pattern",
-  "alt": "Cartoon Pattern Studio guide: two children place pink circles and yellow squares into an alternating repeating row.",
-  "skills": "Sequencing, identifying rules, early algebra",
-  "intro": "A pattern repeats a small unit in the same order. With a handful of large paper shapes, children can copy a rule, predict what comes next and invent a rule of their own. The five Pattern Studio pages below turn each step into a draw-and-save activity.",
-  "materials": [
-   "Paper in two or three colours",
-   "Crayons",
-   "A sheet of paper for a pattern mat",
-   "Optional: child-safe scissors used with an adult"
-  ],
-  "safety": "An adult can prepare large paper pieces in advance. Avoid beads, buttons or other small loose objects with children who might put them in their mouths.",
-  "steps": [
-   [
-    "Prepare your pieces",
-    "Tear or cut at least six large shapes in each of two colours. Keep the pieces easy to pick up."
-   ],
-   [
-    "Start a repeating unit",
-    "Place a pink shape, then a yellow shape. Say the order aloud. This pair is your repeating unit."
-   ],
-   [
-    "Keep the rule going",
-    "Repeat the pair three more times. Point to each piece and say the colours. Ask what should come next and why."
-   ],
-   [
-    "Become a pattern detective",
-    "Ask an adult to remove one piece while you look away. Find the gap and explain which piece belongs there."
-   ],
-   [
-    "Invent and swap",
-    "Make a new unit, such as pink-pink-yellow. Repeat it at least three times. Let someone else extend it, then swap roles."
-   ]
-  ],
-  "why": "A repeating pattern has a unit that appears again and again. Recognising the unit is more useful than guessing a single next item: it helps children explain and predict the entire sequence.",
-  "questions": [
-   "What is the smallest part that repeats?",
-   "Can you clap your pattern instead of showing it?",
-   "Is pink-pink-yellow the same rule as pink-yellow-pink?"
-  ],
-  "younger": "Use two highly contrasting colours and just one shape. Copy a short pattern together, then extend it by one piece.",
-  "older": "Change two features, such as colour and shape. Write AAB or ABC under each repeating unit and predict the twelfth piece. Then try the Finish My Pattern sheet and check the rules in the answers section.",
-  "troubleshoot": "If the rule gets lost, separate the repeating units with a little space. Say each unit as a short rhythm before joining the row again.",
-  "sheet": "My pattern notebook",
-  "sheetPrompt": "Draw a repeating unit, extend it, then invent a new rule.",
-  "sheetLabels": [
-   "My repeating unit",
-   "Keep it going",
-   "A new rule"
-  ],
-  "tags": "math mathematics sequence shapes numbers logic"
- },
- {
-  "slug": "story-map",
-  "subject": "literacy",
-  "title": "Draw a story map",
-  "subtitle": "Every adventure starts with a little idea.",
-  "description": "Invent a character, give them a problem and draw their way to an ending.",
-  "ages": [
-   "6-8",
-   "9-12"
-  ],
-  "ageLabel": "6–12",
-  "time": "30 min",
-  "place": "Indoors",
-  "art": "story",
-  "alt": "Two children sharing a picture book, with a dragon, explorer and rabbit as story character ideas.",
-  "skills": "Story structure, oral language, sequencing",
-  "intro": "You do not need a full page of writing to tell a good story. A map can hold the places, problems and surprises. Use pictures and a few words to plan an adventure, then tell it aloud.",
-  "materials": [
-   "A sheet of paper or the story map below",
-   "Pencil and crayons",
-   "Optional: a favourite toy as inspiration"
-  ],
-  "safety": "Choose age-appropriate drawing materials and provide adult help as needed. The story can be completely imaginary; children do not need to include real names or personal details.",
-  "steps": [
-   [
-    "Meet your character",
-    "Draw a character in the first space. Decide what they want: perhaps to find a lost kite or deliver a letter."
-   ],
-   [
-    "Choose a setting",
-    "Draw where the story begins. Add two details that tell us about the place, such as tall trees or a noisy market."
-   ],
-   [
-    "Put a problem in the way",
-    "In the middle space, draw something that stops the character getting what they want. Keep the problem small enough to explore in one story."
-   ],
-   [
-    "Find a way through",
-    "In the final space, draw what the character tries and how it turns out. An ending can be surprising without solving everything perfectly."
-   ],
-   [
-    "Tell the whole adventure",
-    "Trace a finger from beginning to middle to end as you tell the story. Ask a listener which part they would like to hear more about; add that detail."
-   ]
-  ],
-  "why": "A beginning, a problem and an ending create a structure a listener can follow. Drawing first can help children hold their ideas in order before adding words or sentences.",
-  "questions": [
-   "What does your character want most?",
-   "How does the problem change their plan?",
-   "Which detail helps a listener imagine the setting?"
-  ],
-  "younger": "An adult can scribe a sentence under each drawing. Tell the story together using first, next and finally.",
-  "older": "Add a second attempt that fails before the ending. Show how the character feels through an action or a line of dialogue.",
-  "troubleshoot": "Stuck for a problem? Try a closed gate, a missing object or a sudden change in weather. Ask what the character could try next rather than supplying the ending.",
-  "sheet": "My story map",
-  "sheetPrompt": "Draw your adventure in order. Tell it aloud using first, next and finally.",
-  "sheetLabels": [
-   "Beginning: who and where?",
-   "Middle: what goes wrong?",
-   "Ending: what happens next?"
-  ],
-  "tags": "reading writing language storytelling words drawing"
- },
- {
-  "slug": "sound-map",
-  "subject": "nature",
-  "title": "Make a sound map",
-  "subtitle": "Slow down. There is a world to hear.",
-  "description": "Listen from one safe spot and draw a map of the sounds around you.",
-  "ages": [
-   "3-5",
-   "6-8",
-   "9-12"
-  ],
-  "ageLabel": "3–12",
-  "time": "15 min",
-  "place": "Outdoors or by a window",
-  "art": "sound",
-  "alt": "Two children and a grown-up listening together, with bird, leaves and cricket picture examples.",
-  "skills": "Careful listening, spatial awareness, observation",
-  "intro": "A sound map records what you hear instead of what you see. A garden, schoolyard or open window can all be listening places. Stay in one spot and notice quiet sounds as well as loud ones.",
-  "materials": [
-   "Paper or the sound map below",
-   "Pencil or crayons",
-   "A clipboard or book to lean on",
-   "An adult to choose and supervise a safe listening spot"
-  ],
-  "safety": "Stay with an adult away from roads, water edges and unfamiliar animals. Keep your eyes open if that helps you stay aware of your surroundings. Do not follow a sound into an unsafe area. Listen from indoors if outdoors is unsuitable.",
-  "steps": [
-   [
-    "Choose your listening spot",
-    "Sit or stand comfortably in a safe place. Draw a small X in the centre of your paper to show where you are."
-   ],
-   [
-    "Listen for a short while",
-    "Pause for about one minute. You may hear birds, wind, voices or traffic. There is no need for complete silence."
-   ],
-   [
-    "Mark the directions",
-    "For each sound, draw a simple symbol on the side of the X where you heard it. A wavy line might mean wind; a dot might mean a tapping sound."
-   ],
-   [
-    "Listen again",
-    "Spend another minute listening. Add new sounds and circle any that repeat. Place distant sounds farther from the X if you can judge their distance."
-   ],
-   [
-    "Compare your discoveries",
-    "Share your map. Explain your symbols and describe one sound that was easy to miss. Return another time and see what changes."
-   ]
-  ],
-  "why": "Listening from a fixed position helps connect sounds with direction and distance. A symbol lets you record a sound without needing to spell its name. Different listeners may notice different things.",
-  "questions": [
-   "Which sound was closest? Which seemed far away?",
-   "What changed between your two listening moments?",
-   "Which sounds might be different in the evening?"
-  ],
-  "younger": "Listen for just 20–30 seconds. Point toward a sound and let an adult draw the mark.",
-  "older": "Create a key for natural and human-made sounds. Compare maps made at the same place at two different times.",
-  "troubleshoot": "Too much background noise? Try a quieter place with an adult or listen by a window. If hearing is limited, adapt this to a movement map and mark leaves, shadows or other visible changes.",
-  "sheet": "My sound map",
-  "sheetPrompt": "Draw the sounds around your listening spot and explain your symbols.",
-  "sheetLabels": [
-   "Listening map",
-   "My symbols mean…",
-   "One thing I noticed"
-  ],
-  "tags": "outside outdoors listening environment senses observation birds"
- },
- {
-  "slug": "paper-bridge",
-  "subject": "engineering",
-  "title": "Build a paper bridge",
-  "subtitle": "One sheet. A surprisingly strong idea.",
-  "description": "Test how folding changes a paper bridge, then improve your design with a fair comparison.",
-  "ages": [
-   "6-8",
-   "9-12"
-  ],
-  "ageLabel": "6–12",
-  "time": "30 min",
-  "place": "Indoors",
-  "art": "bridge",
-  "alt": "Two children testing a folded paper bridge supported on low stacks of books.",
-  "skills": "Design, fair testing, recording results",
-  "intro": "Can you make a sheet of paper hold more weight without adding another sheet? Build a small bridge between two stacks of books and compare a flat deck with a folded one.",
-  "materials": [
-   "Two matching sheets of paper",
-   "Two low stacks of books of equal height",
-   "Large identical lightweight blocks",
-   "Ruler",
-   "Pencil"
-  ],
-  "safety": "Work with a grown-up on a low surface. Use stable, low supports and large lightweight blocks. Keep fingers clear if the paper slips, and never stand on a model bridge.",
-  "steps": [
-   [
-    "Set the supports",
-    "Place two low, equal-height book stacks on a low surface. Leave a small gap with enough paper to rest securely on both stacks."
-   ],
-   [
-    "Test flat paper",
-    "Lay one sheet across the gap. Add blocks gently at the centre, one at a time. Stop at noticeable bending or slipping."
-   ],
-   [
-    "Record the result",
-    "Count only blocks held before bending or slipping. Record zero if the first block causes this. Describe what happened."
-   ],
-   [
-    "Fold another sheet",
-    "Use matching paper. Make alternating narrow accordion folds so ridges run from one support to the other. Keep both ends supported."
-   ],
-   [
-    "Compare fairly",
-    "Keep the gap, blocks and loading position the same. Use the same stopping rule, record the result and compare."
-   ],
-   [
-    "Improve one feature",
-    "Change one fold feature, test again and explain what you learned."
-   ]
-  ],
-  "why": "Folding changes the shape of the paper's cross-section. Ridges running across the gap can resist bending better than a flat sheet. The result also depends on the paper, fold shape and where you place the load.",
-  "questions": [
-   "What did you keep the same to make the comparison fair?",
-   "Where did each bridge start to bend?",
-   "Would turning the folds across the other direction change the result?"
-  ],
-  "younger": "Fold the paper together. Focus on comparing flat and folded, then count the blocks aloud.",
-  "older": "Repeat each design three times with fresh paper. Compare the results and explain why the numbers might vary.",
-  "troubleshoot": "Bridge slips off? Make the gap smaller for both designs and restart the comparison. Folds flattening? Sharpen the creases and check that the ridges run from support to support.",
-  "sheet": "My bridge test",
-  "sheetPrompt": "Sketch each design and record how many blocks it held before it bent.",
-  "sheetLabels": [
-   "Flat bridge: prediction / result",
-   "Folded bridge: prediction / result",
-   "My improved design"
-  ],
-  "tags": "stem building construction physics folding experiment design"
- },
- {
-  "slug": "sink-or-float",
-  "subject": "science",
-  "title": "Sink or Float?",
-  "subtitle": "Make a prediction. Put it to the test.",
-  "description": "Test everyday objects in water, record what happens and redesign a foil boat.",
-  "ages": [
-   "3-5",
-   "6-8"
-  ],
-  "ageLabel": "4–7",
-  "time": "20–30 minutes",
-  "place": "Water-safe surface",
-  "art": "sink",
-  "alt": "A clear tub with a floating cork and wooden block, and a spoon and stone on the bottom.",
-  "skills": "Prediction, observation, sorting, designing",
-  "intro": "Will a cork stay at the surface? What about a spoon? Choose four safe objects with a grown-up, make predictions and compare them with real observations. Then explore whether changing the shape of foil changes how it behaves.",
-  "materials": [
-   "A shallow plastic tub on a stable surface",
-   "Water and a towel",
-   "Four large safe objects: a cork, wooden block, metal spoon and smooth stone",
-   "One piece of foil for the optional boat challenge",
-   "Paper and pencil, or a dry device away from the water"
-  ],
-  "safety": "An adult stays beside you throughout water play. Use a shallow plastic tub and objects too large to swallow. Avoid glass, sharp objects and items with batteries. Keep your screen dry and away from the water. Do not drink the water. Dry spills and empty the tub when finished.",
-  "steps": [
-   [
-    "Set up together",
-    "Place a towel beneath a shallow plastic tub. An adult adds enough water for the objects to move freely without touching the bottom when floating. Keep electrical devices away from the tub."
-   ],
-   [
-    "Predict first",
-    "Look at each object before putting it in the water. Draw it, name it and predict sink or float. Explain your idea; it does not need to be right."
-   ],
-   [
-    "Test gently",
-    "Place one object in the water and let go. Do not push it down or drop it from a height. Watch whether it stays at the surface or settles on the bottom."
-   ],
-   [
-    "Record the evidence",
-    "Write or draw what happened. If an object changes after waiting, record both observations. Remove it before testing the next one."
-   ],
-   [
-    "Sort and compare",
-    "Group objects by what you observed. Which predictions matched the results? Discuss anything that surprised you."
-   ],
-   [
-    "Try a foil boat",
-    "Fold one piece of foil into a wide open boat with raised edges. Test it, dry it and reshape the same foil. Compare the two designs. An adult empties the tub afterward."
-   ]
-  ],
-  "why": "Water pushes upward on objects. An object floats when it displaces enough water for that upward push to balance its weight. Material, shape and trapped air can all matter, so weight alone does not tell us whether something floats. A wide foil boat can displace water while keeping its inside dry; if water enters, it may sink.",
-  "questions": [
-   "Which result surprised you?",
-   "Did anything change after waiting?",
-   "What changed when you reshaped the foil?"
-  ],
-  "younger": "Use two large objects. Invite the child to point to sink or float, and let an adult write their observations. Keep the session short.",
-  "older": "Test two shapes made from the same foil without adding material. Keep the tub and placing method the same. Explain which shape stayed dry for longer.",
-  "troubleshoot": "If an object rests on the bottom but extends above the water, the water may be too shallow to judge floating. Ask an adult to choose a suitable object and safe setup. Check foil for holes and folded edges; redesign rather than expecting every boat to work.",
-  "sheet": "Sink or Float experiment guide",
-  "sheetPrompt": "Use the illustrated instructions, then choose a prediction sheet, results diary, sorting page or boat challenge below.",
-  "sheetLabels": [
-   "My prediction",
-   "What happened",
-   "What surprised me"
-  ],
-  "tags": "water buoyancy sink float floating sinking boat foil predictions results sorting"
- },
- {
-  "slug": "weather-journal",
-  "subject": "science",
-  "title": "My Weather Journal",
-  "subtitle": "Look closely. Record a little. Discover a pattern.",
-  "description": "Observe the sky, keep a weather diary, choose an outfit and build a toy shelter.",
-  "ages": [
-   "3-5",
-   "6-8"
-  ],
-  "ageLabel": "4–7",
-  "time": "5–10 minutes a day",
-  "place": "Indoors with a view",
-  "art": "weather",
-  "alt": "A child drawing in a journal beside a closed window overlooking a cloudy sky.",
-  "skills": "Observation, comparison, describing, designing",
-  "intro": "Start with a view through a window. Choose one of the illustrated activities below to record the sky, compare a week of observations or try a small design challenge.",
-  "materials": [
-   "A safe view through a closed window",
-   "Paper and pencils or the drawing spaces on screen",
-   "A grown-up to help describe outdoor conditions",
-   "For the optional shelter: a small box, roof material, washable toy, tray and a little water"
-  ],
-  "safety": "Observe with a grown-up from a safe indoor spot. Never look directly at the sun. Stay indoors during storms. For the toy shelter, test over a tray with adult help and keep devices dry.",
-  "steps": [
-   [
-    "Choose a safe view",
-    "Look through a closed window with a grown-up. Do not climb or open a window to get a better view."
-   ],
-   [
-    "Record when you look",
-    "Write the date and time. Try a similar time each day if you are comparing the week."
-   ],
-   [
-    "Describe the sky",
-    "Notice clouds, clear areas or rain. Describe what you can see without looking directly at the sun."
-   ],
-   [
-    "Look for wind clues",
-    "Watch leaves or a flag. Say whether they are still or moving. If nothing suitable is visible, record that you cannot tell."
-   ],
-   [
-    "Draw and compare",
-    "Use the daily diary or weekly tracker. Save your picture before leaving. Ask a grown-up about how it feels outdoors, then compare your observations."
-   ]
-  ],
-  "why": "Weather is what the atmosphere is doing at a particular place and time. Looking regularly helps us notice changes in cloud cover, wind and other conditions. A short journal records this week’s weather; it does not establish a climate pattern.",
-  "questions": [
-   "What changed since your last observation?",
-   "What evidence tells you about the wind?",
-   "What would you wear for your planned activity?"
-  ],
-  "younger": "Choose one thing to describe, such as the clouds. A grown-up can write the child’s words while the child draws.",
-  "older": "Compare records from the same time over seven days. Explain differences using the observations rather than guessing what happened between visits.",
-  "troubleshoot": "If the view is blocked or you miss a day, write that down. Do not fill gaps with invented observations. Indoor temperature does not tell you the outdoor temperature.",
-  "sheet": "How to observe the weather",
-  "sheetPrompt": "Open the illustrated guide or choose a diary, tracker, clothing activity or toy-shelter challenge.",
-  "sheetLabels": [
-   "The sky",
-   "Evidence of wind",
-   "What changed"
-  ],
-  "tags": "weather clouds wind diary journal week clothes clothing shelter sky"
- },
- {
-  "slug": "mixing-colours",
-  "subject": "art",
-  "title": "Mixing Colours",
-  "subtitle": "A little paint. A new discovery.",
-  "description": "Predict paint mixtures, record your results, match colour cards and invent your own shade.",
-  "ages": [
-   "3-5",
-   "6-8"
-  ],
-  "ageLabel": "4–7",
-  "time": "20–30 minutes",
-  "place": "A protected table",
-  "art": "colours",
-  "alt": "Red, yellow and blue paint pots beside a mixing tray and brush.",
-  "skills": "Colour observation, comparison, creative expression",
-  "intro": "Choose an illustrated activity below. Start with a prediction, test it with paint, then use your new colours in a picture. The printable matching cards offer a dry activity too.",
-  "materials": [
-   "Washable child-safe red, yellow and blue paints",
-   "A mixing tray and brush",
-   "Paper, a table cover and a little water for cleaning brushes",
-   "For matching cards: a printer and scissors used by a grown-up"
-  ],
-  "safety": "Use washable child-safe paint with a grown-up. Keep paint away from your mouth and eyes. Wash hands afterward. Keep devices dry and away from paint. A grown-up should cut the matching cards.",
-  "steps": [
-   [
-    "Prepare your space",
-    "Cover the table and choose washable paints with a grown-up. Keep your device away from the paint and water."
-   ],
-   [
-    "Predict a mixture",
-    "Choose two colours. Draw or name what you think they might make before mixing."
-   ],
-   [
-    "Mix small amounts",
-    "Put a little of each paint into one tray space and mix gently. Observe the actual colour."
-   ],
-   [
-    "Record the result",
-    "Paint a sample on paper. Describe or name it in the results sheet. Clean your brush before the next mixture."
-   ],
-   [
-    "Change and create",
-    "Add more of one paint to explore a different shade. Name your own mixture and use it in a picture. Wash hands and clean the table afterward."
-   ]
-  ],
-  "why": "Paint mixtures depend on the pigments and their proportions. Common classroom red, yellow and blue mixtures can produce orange, green and purple, but real results vary. Watching and describing your own mixture is more useful than trying to match an exact screen colour.",
-  "questions": [
-   "Which result surprised you?",
-   "What changed when you added more of one paint?",
-   "What name would you give your colour?"
-  ],
-  "younger": "Offer two paints at a time and let the child describe the result aloud. A grown-up can write their words.",
-  "older": "Compare mixtures made with different proportions. Record which paint you added more of and describe the change.",
-  "troubleshoot": "If a colour looks muddy, try a clean tray space and brush. Some pigments make duller mixtures; record that honestly rather than treating it as a failure.",
-  "sheet": "How to mix colours",
-  "sheetPrompt": "Open the illustrated guide or choose a prediction sheet, results diary, matching cards or creative challenge.",
-  "sheetLabels": [
-   "My paints",
-   "My prediction",
-   "My result"
-  ],
-  "tags": "art paint colour color mixing matching cards shades primary secondary"
- },
- {
-  "slug": "leaf-rubbing",
-  "subject": "nature",
-  "title": "Make a leaf rubbing",
-  "subtitle": "Lay a leaf down. Rub. Watch the magic appear.",
-  "description": "Turn fallen leaves into crayon rubbings, compare their textures and build leaf creatures from your own art.",
-  "ages": [
-   "3-5",
-   "6-8"
-  ],
-  "ageLabel": "3–8",
-  "time": "15 min",
-  "place": "Outdoors & indoors",
-  "art": "leaf",
-  "alt": "Cartoon leaf rubbing guide: a child lays a crayon on its side and rubs across paper while three leaf-shaped prints appear.",
-  "skills": "Observation, comparing textures, fine motor control",
-  "intro": "Every leaf hides a pattern of veins and edges. With thick crayons and plain paper, children can lift that pattern into view, compare leaves side by side and turn their rubbings into creatures and big pictures. The five Leaf Studio pages below turn each step into a draw-and-save activity.",
-  "materials": [
-   "A handful of fallen leaves",
-   "Thick crayons with the paper peeled off",
-   "Plain paper, one thin sheet for rubbing",
-   "Optional: glue stick and child-safe scissors used with an adult"
-  ],
-  "safety": "Collect fallen leaves from the ground, or pick with permission, and brush off dirt and insects. Wash hands after handling leaves. An adult helps with scissors when cutting out rubbings, and nothing found outside goes in anyone's mouth.",
-  "steps": [
-   [
-    "Go on a leaf hunt",
-    "Collect five or six fallen leaves in different shapes and sizes. Brush or wipe them clean and let them dry flat."
-   ],
-   [
-    "Set up your rubbing station",
-    "Lay one leaf vein-side up on the table, cover it with a thin sheet of paper and hold it still."
-   ],
-   [
-    "Make the rubbing appear",
-    "Peel the paper off a thick crayon, lay it on its side and rub gently across the paper. The leaf appears like magic."
-   ],
-   [
-    "Try pressures and colours",
-    "Rub the same leaf lightly, then harder. Try two colours on one leaf and talk about which version you like best."
-   ],
-   [
-    "Compare your leaves",
-    "Make a rubbing of two different leaves on one sheet. Look closely: what is the same and what is different?"
-   ],
-   [
-    "Turn rubbings into art",
-    "Cut out your favourite rubbings and arrange them into a leaf creature or one big picture. Glue, then add details."
-   ]
-  ],
-  "why": "A rubbing captures texture rather than shape alone: the veins, edges and bumps that make every leaf different. Noticing those details builds observation skills, and controlling crayon pressure builds steady hands.",
-  "questions": [
-   "Which leaf made the darkest rubbing?",
-   "What happens if you turn the leaf over before you rub?",
-   "Can you find a leaf with teeth on its edge?"
-  ],
-  "younger": "Choose big, strong leaves with deep veins, such as sycamore or maple. Place your hand over your child's hand and rub together, naming the leaf parts as they appear.",
-  "older": "Sort your rubbings into a classification chart by edge shape or vein pattern, then label each group. Try hatching two colours across one leaf and predict the blended result.",
-  "troubleshoot": "If the rubbing looks patchy, the leaf has probably slipped. Tape the leaf to the table under the paper, or hold it steady with two fingers while you rub.",
-  "sheet": "My leaf rubbing book",
-  "sheetPrompt": "Draw your favourite rubbing, compare two leaves, then design a leaf creature.",
-  "sheetLabels": [
-   "My favourite rubbing",
-   "Compare two leaves",
-   "My leaf creature"
-  ],
-  "tags": "nature leaves autumn fall texture trees observation crayon forest outdoors"
- }
+  {
+    "slug": "grow-a-bean",
+    "subject": "science",
+    "title": "Grow a bean",
+    "subtitle": "A tiny seed. A whole lot to discover.",
+    "description": "Watch roots and shoots appear, then draw the changes in your own bean diary.",
+    "ages": [
+      "6-8",
+      "9-12"
+    ],
+    "ageLabel": "6–12",
+    "time": "20 min + daily check-ins",
+    "place": "Indoors",
+    "art": "bean",
+    "alt": "Illustration of a bean sprout with two green leaves and visible roots in a clear jar.",
+    "skills": "Observation, plant life cycles, measuring",
+    "intro": "A clear container lets you look at the part of a plant that usually hides underground. Set up a bean, make a prediction, and return each day to see what has changed. Germination can take several days; every seed has its own pace.",
+    "materials": [
+      "2–3 untreated bean seeds sold for planting",
+      "A clear plastic cup or clean jar handled by an adult",
+      "Paper towels",
+      "Water and a spoon",
+      "Pencil, ruler and paper or the bean diary below"
+    ],
+    "safety": "An adult should help set up and supervise. Seeds are a choking hazard: keep them away from younger children and never eat the seeds or sprouts. Wash hands afterward. An adult should discard any mouldy seeds without children handling them.",
+    "steps": [
+      [
+        "Wake up the seeds",
+        "Soak the bean seeds in water overnight, then drain. Prepare two or three so you can compare them; some seeds may not sprout."
+      ],
+      [
+        "Make a window for the roots",
+        "Dampen a folded paper towel and place it against the inside of the container. It should feel damp, not drip. Tuck the beans between the towel and the container wall so you can see them."
+      ],
+      [
+        "Choose a place and predict",
+        "Stand the open container in a warm spot with indirect daylight, away from a hot windowsill. Draw the beans and predict what will appear first. Label the date."
+      ],
+      [
+        "Look a little every day",
+        "Check once a day. Add a spoonful of water if the towel is drying out, and tip out standing water. Draw any changes. Once a root appears, measure it gently through the container; do not pull the bean out."
+      ],
+      [
+        "Give your seedling a new home",
+        "When roots and leaves have developed, ask an adult to help transplant the seedling into potting soil. Keep the shoot above the soil. Continue observing in a bright place and water as needed."
+      ]
+    ],
+    "why": "Water allows the seed to start germinating. The first root anchors the seedling and takes up water; a shoot grows upward. Stored food in the seed supports early growth. Once leaves develop, light helps the plant make its own food.",
+    "questions": [
+      "What changed first: the seed coat, root or shoot?",
+      "Did every bean grow at the same speed?",
+      "What could you measure in the same way each day?"
+    ],
+    "younger": "An adult can write down a child's spoken observations. Draw just one bean each day.",
+    "older": "Measure the root at the same time each day and graph its length. Keep the light, seed type and amount of water consistent.",
+    "troubleshoot": "No change after about a week? Check that the towel stays damp and the spot is warm. Try fresh seeds if needed. A bad smell or fuzzy growth means an adult should discard the setup and start again with a clean container.",
+    "sheet": "My bean diary",
+    "sheetPrompt": "Draw your bean on three different days. Add the date and one thing you notice.",
+    "sheetLabels": [
+      "First look",
+      "A few days later",
+      "Look again"
+    ],
+    "tags": "plant seed roots biology germination garden"
+  },
+  {
+    "slug": "paper-shape-collage",
+    "subject": "art",
+    "title": "Make a shape collage",
+    "subtitle": "Little scraps become something wonderful.",
+    "description": "Tear, arrange and layer colourful paper to make a picture that is entirely your own.",
+    "ages": [
+      "3-5",
+      "6-8"
+    ],
+    "ageLabel": "3–8",
+    "time": "25 min",
+    "place": "Indoors",
+    "art": "collage",
+    "alt": "Illustration of a paper collage with a mustard sun, terracotta house and green tree.",
+    "skills": "Fine motor skills, shape recognition, composition",
+    "intro": "A scrap of paper can become a roof, a hill or a completely imaginary creature. This open-ended project starts with simple shapes and leaves room for children to decide what their picture will become.",
+    "materials": [
+      "A sheet of paper or reused cardboard",
+      "Coloured paper or clean packaging",
+      "Child-safe glue stick",
+      "Crayons",
+      "Optional: child-safe scissors with adult help"
+    ],
+    "safety": "Supervise cutting and gluing. Use clean paper without staples or sharp edges. Keep small scraps and glue out of mouths; tear larger shapes for younger children.",
+    "steps": [
+      [
+        "Gather a small palette",
+        "Choose three or four paper colours. Look for differences in texture, such as a smooth wrapper and a rough paper bag."
+      ],
+      [
+        "Make your shapes",
+        "Tear or cut several large shapes. Try a long strip, a rounded shape and a triangle. Exact shapes are not important."
+      ],
+      [
+        "Try before you glue",
+        "Move the pieces around your background. Can a triangle become a mountain? What happens when one shape overlaps another? Try two arrangements."
+      ],
+      [
+        "Build the picture",
+        "Glue the background shapes first, then add the smaller pieces on top. Press each piece down gently."
+      ],
+      [
+        "Add your last marks",
+        "Use crayons to add lines or details. Give your collage a title and tell someone about one choice you made."
+      ]
+    ],
+    "why": "Moving shapes before sticking them down gives children a chance to plan and revise. Overlapping creates layers, while different colours and textures help parts of a picture stand out.",
+    "questions": [
+      "Which shape did you use in an unexpected way?",
+      "What looks near, and what looks far away?",
+      "How would your picture change with one colour removed?"
+    ],
+    "younger": "Offer a few large, pre-torn shapes. Let the child place them and narrate the picture while an adult helps with glue.",
+    "older": "Limit the palette to three colours and show distance using overlapping shapes. Try another version with the same pieces.",
+    "troubleshoot": "Paper curling? Use less glue and let the collage dry flat. If choosing a picture feels difficult, start with an abstract arrangement of colours.",
+    "sheet": "My shape studio",
+    "sheetPrompt": "Try three different arrangements. Sketch your shapes before you glue.",
+    "sheetLabels": [
+      "Arrangement one",
+      "Arrangement two",
+      "My favourite idea"
+    ],
+    "tags": "craft colours colors cutting tearing shapes creativity"
+  },
+  {
+    "slug": "make-a-pattern",
+    "subject": "maths",
+    "title": "Make a repeating pattern",
+    "subtitle": "Find the rule, then keep it going.",
+    "description": "Turn big paper shapes into repeating patterns and challenge someone to find your rule.",
+    "ages": [
+      "3-5",
+      "6-8"
+    ],
+    "ageLabel": "3–8",
+    "time": "15 min",
+    "place": "Anywhere",
+    "art": "pattern",
+    "alt": "Cartoon Pattern Studio guide: two children place pink circles and yellow squares into an alternating repeating row.",
+    "skills": "Sequencing, identifying rules, early algebra",
+    "intro": "A pattern repeats a small unit in the same order. With a handful of large paper shapes, children can copy a rule, predict what comes next and invent a rule of their own. The five Pattern Studio pages below turn each step into a draw-and-save activity.",
+    "materials": [
+      "Paper in two or three colours",
+      "Crayons",
+      "A sheet of paper for a pattern mat",
+      "Optional: child-safe scissors used with an adult"
+    ],
+    "safety": "An adult can prepare large paper pieces in advance. Avoid beads, buttons or other small loose objects with children who might put them in their mouths.",
+    "steps": [
+      [
+        "Prepare your pieces",
+        "Tear or cut at least six large shapes in each of two colours. Keep the pieces easy to pick up."
+      ],
+      [
+        "Start a repeating unit",
+        "Place a pink shape, then a yellow shape. Say the order aloud. This pair is your repeating unit."
+      ],
+      [
+        "Keep the rule going",
+        "Repeat the pair three more times. Point to each piece and say the colours. Ask what should come next and why."
+      ],
+      [
+        "Become a pattern detective",
+        "Ask an adult to remove one piece while you look away. Find the gap and explain which piece belongs there."
+      ],
+      [
+        "Invent and swap",
+        "Make a new unit, such as pink-pink-yellow. Repeat it at least three times. Let someone else extend it, then swap roles."
+      ]
+    ],
+    "why": "A repeating pattern has a unit that appears again and again. Recognising the unit is more useful than guessing a single next item: it helps children explain and predict the entire sequence.",
+    "questions": [
+      "What is the smallest part that repeats?",
+      "Can you clap your pattern instead of showing it?",
+      "Is pink-pink-yellow the same rule as pink-yellow-pink?"
+    ],
+    "younger": "Use two highly contrasting colours and just one shape. Copy a short pattern together, then extend it by one piece.",
+    "older": "Change two features, such as colour and shape. Write AAB or ABC under each repeating unit and predict the twelfth piece. Then try the Finish My Pattern sheet and check the rules in the answers section.",
+    "troubleshoot": "If the rule gets lost, separate the repeating units with a little space. Say each unit as a short rhythm before joining the row again.",
+    "sheet": "My pattern notebook",
+    "sheetPrompt": "Draw a repeating unit, extend it, then invent a new rule.",
+    "sheetLabels": [
+      "My repeating unit",
+      "Keep it going",
+      "A new rule"
+    ],
+    "tags": "math mathematics sequence shapes numbers logic"
+  },
+  {
+    "slug": "story-map",
+    "subject": "literacy",
+    "title": "Draw a story map",
+    "subtitle": "Every adventure starts with a little idea.",
+    "description": "Invent a character, give them a problem and draw their way to an ending.",
+    "ages": [
+      "6-8",
+      "9-12"
+    ],
+    "ageLabel": "6–12",
+    "time": "30 min",
+    "place": "Indoors",
+    "art": "story",
+    "alt": "Two children sharing a picture book, with a dragon, explorer and rabbit as story character ideas.",
+    "skills": "Story structure, oral language, sequencing",
+    "intro": "You do not need a full page of writing to tell a good story. A map can hold the places, problems and surprises. Use pictures and a few words to plan an adventure, then tell it aloud.",
+    "materials": [
+      "A sheet of paper or the story map below",
+      "Pencil and crayons",
+      "Optional: a favourite toy as inspiration"
+    ],
+    "safety": "Choose age-appropriate drawing materials and provide adult help as needed. The story can be completely imaginary; children do not need to include real names or personal details.",
+    "steps": [
+      [
+        "Meet your character",
+        "Draw a character in the first space. Decide what they want: perhaps to find a lost kite or deliver a letter."
+      ],
+      [
+        "Choose a setting",
+        "Draw where the story begins. Add two details that tell us about the place, such as tall trees or a noisy market."
+      ],
+      [
+        "Put a problem in the way",
+        "In the middle space, draw something that stops the character getting what they want. Keep the problem small enough to explore in one story."
+      ],
+      [
+        "Find a way through",
+        "In the final space, draw what the character tries and how it turns out. An ending can be surprising without solving everything perfectly."
+      ],
+      [
+        "Tell the whole adventure",
+        "Trace a finger from beginning to middle to end as you tell the story. Ask a listener which part they would like to hear more about; add that detail."
+      ]
+    ],
+    "why": "A beginning, a problem and an ending create a structure a listener can follow. Drawing first can help children hold their ideas in order before adding words or sentences.",
+    "questions": [
+      "What does your character want most?",
+      "How does the problem change their plan?",
+      "Which detail helps a listener imagine the setting?"
+    ],
+    "younger": "An adult can scribe a sentence under each drawing. Tell the story together using first, next and finally.",
+    "older": "Add a second attempt that fails before the ending. Show how the character feels through an action or a line of dialogue.",
+    "troubleshoot": "Stuck for a problem? Try a closed gate, a missing object or a sudden change in weather. Ask what the character could try next rather than supplying the ending.",
+    "sheet": "My story map",
+    "sheetPrompt": "Draw your adventure in order. Tell it aloud using first, next and finally.",
+    "sheetLabels": [
+      "Beginning: who and where?",
+      "Middle: what goes wrong?",
+      "Ending: what happens next?"
+    ],
+    "tags": "reading writing language storytelling words drawing"
+  },
+  {
+    "slug": "sound-map",
+    "subject": "nature",
+    "title": "Make a sound map",
+    "subtitle": "Slow down. There is a world to hear.",
+    "description": "Listen from one safe spot and draw a map of the sounds around you.",
+    "ages": [
+      "3-5",
+      "6-8",
+      "9-12"
+    ],
+    "ageLabel": "3–12",
+    "time": "15 min",
+    "place": "Outdoors or by a window",
+    "art": "sound",
+    "alt": "Two children and a grown-up listening together, with bird, leaves and cricket picture examples.",
+    "skills": "Careful listening, spatial awareness, observation",
+    "intro": "A sound map records what you hear instead of what you see. A garden, schoolyard or open window can all be listening places. Stay in one spot and notice quiet sounds as well as loud ones.",
+    "materials": [
+      "Paper or the sound map below",
+      "Pencil or crayons",
+      "A clipboard or book to lean on",
+      "An adult to choose and supervise a safe listening spot"
+    ],
+    "safety": "Stay with an adult away from roads, water edges and unfamiliar animals. Keep your eyes open if that helps you stay aware of your surroundings. Do not follow a sound into an unsafe area. Listen from indoors if outdoors is unsuitable.",
+    "steps": [
+      [
+        "Choose your listening spot",
+        "Sit or stand comfortably in a safe place. Draw a small X in the centre of your paper to show where you are."
+      ],
+      [
+        "Listen for a short while",
+        "Pause for about one minute. You may hear birds, wind, voices or traffic. There is no need for complete silence."
+      ],
+      [
+        "Mark the directions",
+        "For each sound, draw a simple symbol on the side of the X where you heard it. A wavy line might mean wind; a dot might mean a tapping sound."
+      ],
+      [
+        "Listen again",
+        "Spend another minute listening. Add new sounds and circle any that repeat. Place distant sounds farther from the X if you can judge their distance."
+      ],
+      [
+        "Compare your discoveries",
+        "Share your map. Explain your symbols and describe one sound that was easy to miss. Return another time and see what changes."
+      ]
+    ],
+    "why": "Listening from a fixed position helps connect sounds with direction and distance. A symbol lets you record a sound without needing to spell its name. Different listeners may notice different things.",
+    "questions": [
+      "Which sound was closest? Which seemed far away?",
+      "What changed between your two listening moments?",
+      "Which sounds might be different in the evening?"
+    ],
+    "younger": "Listen for just 20–30 seconds. Point toward a sound and let an adult draw the mark.",
+    "older": "Create a key for natural and human-made sounds. Compare maps made at the same place at two different times.",
+    "troubleshoot": "Too much background noise? Try a quieter place with an adult or listen by a window. If hearing is limited, adapt this to a movement map and mark leaves, shadows or other visible changes.",
+    "sheet": "My sound map",
+    "sheetPrompt": "Draw the sounds around your listening spot and explain your symbols.",
+    "sheetLabels": [
+      "Listening map",
+      "My symbols mean…",
+      "One thing I noticed"
+    ],
+    "tags": "outside outdoors listening environment senses observation birds"
+  },
+  {
+    "slug": "paper-bridge",
+    "subject": "engineering",
+    "title": "Build a paper bridge",
+    "subtitle": "One sheet. A surprisingly strong idea.",
+    "description": "Test how folding changes a paper bridge, then improve your design with a fair comparison.",
+    "ages": [
+      "6-8",
+      "9-12"
+    ],
+    "ageLabel": "6–12",
+    "time": "30 min",
+    "place": "Indoors",
+    "art": "bridge",
+    "alt": "Two children testing a folded paper bridge supported on low stacks of books.",
+    "skills": "Design, fair testing, recording results",
+    "intro": "Can you make a sheet of paper hold more weight without adding another sheet? Build a small bridge between two stacks of books and compare a flat deck with a folded one.",
+    "materials": [
+      "Two matching sheets of paper",
+      "Two low stacks of books of equal height",
+      "Large identical lightweight blocks",
+      "Ruler",
+      "Pencil"
+    ],
+    "safety": "Work with a grown-up on a low surface. Use stable, low supports and large lightweight blocks. Keep fingers clear if the paper slips, and never stand on a model bridge.",
+    "steps": [
+      [
+        "Set the supports",
+        "Place two low, equal-height book stacks on a low surface. Leave a small gap with enough paper to rest securely on both stacks."
+      ],
+      [
+        "Test flat paper",
+        "Lay one sheet across the gap. Add blocks gently at the centre, one at a time. Stop at noticeable bending or slipping."
+      ],
+      [
+        "Record the result",
+        "Count only blocks held before bending or slipping. Record zero if the first block causes this. Describe what happened."
+      ],
+      [
+        "Fold another sheet",
+        "Use matching paper. Make alternating narrow accordion folds so ridges run from one support to the other. Keep both ends supported."
+      ],
+      [
+        "Compare fairly",
+        "Keep the gap, blocks and loading position the same. Use the same stopping rule, record the result and compare."
+      ],
+      [
+        "Improve one feature",
+        "Change one fold feature, test again and explain what you learned."
+      ]
+    ],
+    "why": "Folding changes the shape of the paper's cross-section. Ridges running across the gap can resist bending better than a flat sheet. The result also depends on the paper, fold shape and where you place the load.",
+    "questions": [
+      "What did you keep the same to make the comparison fair?",
+      "Where did each bridge start to bend?",
+      "Would turning the folds across the other direction change the result?"
+    ],
+    "younger": "Fold the paper together. Focus on comparing flat and folded, then count the blocks aloud.",
+    "older": "Repeat each design three times with fresh paper. Compare the results and explain why the numbers might vary.",
+    "troubleshoot": "Bridge slips off? Make the gap smaller for both designs and restart the comparison. Folds flattening? Sharpen the creases and check that the ridges run from support to support.",
+    "sheet": "My bridge test",
+    "sheetPrompt": "Sketch each design and record how many blocks it held before it bent.",
+    "sheetLabels": [
+      "Flat bridge: prediction / result",
+      "Folded bridge: prediction / result",
+      "My improved design"
+    ],
+    "tags": "stem building construction physics folding experiment design"
+  },
+  {
+    "slug": "sink-or-float",
+    "subject": "science",
+    "title": "Sink or Float?",
+    "subtitle": "Make a prediction. Put it to the test.",
+    "description": "Test everyday objects in water, record what happens and redesign a foil boat.",
+    "ages": [
+      "3-5",
+      "6-8"
+    ],
+    "ageLabel": "4–7",
+    "time": "20–30 minutes",
+    "place": "Water-safe surface",
+    "art": "sink",
+    "alt": "A clear tub with a floating cork and wooden block, and a spoon and stone on the bottom.",
+    "skills": "Prediction, observation, sorting, designing",
+    "intro": "Will a cork stay at the surface? What about a spoon? Choose four safe objects with a grown-up, make predictions and compare them with real observations. Then explore whether changing the shape of foil changes how it behaves.",
+    "materials": [
+      "A shallow plastic tub on a stable surface",
+      "Water and a towel",
+      "Four large safe objects: a cork, wooden block, metal spoon and smooth stone",
+      "One piece of foil for the optional boat challenge",
+      "Paper and pencil, or a dry device away from the water"
+    ],
+    "safety": "An adult stays beside you throughout water play. Use a shallow plastic tub and objects too large to swallow. Avoid glass, sharp objects and items with batteries. Keep your screen dry and away from the water. Do not drink the water. Dry spills and empty the tub when finished.",
+    "steps": [
+      [
+        "Set up together",
+        "Place a towel beneath a shallow plastic tub. An adult adds enough water for the objects to move freely without touching the bottom when floating. Keep electrical devices away from the tub."
+      ],
+      [
+        "Predict first",
+        "Look at each object before putting it in the water. Draw it, name it and predict sink or float. Explain your idea; it does not need to be right."
+      ],
+      [
+        "Test gently",
+        "Place one object in the water and let go. Do not push it down or drop it from a height. Watch whether it stays at the surface or settles on the bottom."
+      ],
+      [
+        "Record the evidence",
+        "Write or draw what happened. If an object changes after waiting, record both observations. Remove it before testing the next one."
+      ],
+      [
+        "Sort and compare",
+        "Group objects by what you observed. Which predictions matched the results? Discuss anything that surprised you."
+      ],
+      [
+        "Try a foil boat",
+        "Fold one piece of foil into a wide open boat with raised edges. Test it, dry it and reshape the same foil. Compare the two designs. An adult empties the tub afterward."
+      ]
+    ],
+    "why": "Water pushes upward on objects. An object floats when it displaces enough water for that upward push to balance its weight. Material, shape and trapped air can all matter, so weight alone does not tell us whether something floats. A wide foil boat can displace water while keeping its inside dry; if water enters, it may sink.",
+    "questions": [
+      "Which result surprised you?",
+      "Did anything change after waiting?",
+      "What changed when you reshaped the foil?"
+    ],
+    "younger": "Use two large objects. Invite the child to point to sink or float, and let an adult write their observations. Keep the session short.",
+    "older": "Test two shapes made from the same foil without adding material. Keep the tub and placing method the same. Explain which shape stayed dry for longer.",
+    "troubleshoot": "If an object rests on the bottom but extends above the water, the water may be too shallow to judge floating. Ask an adult to choose a suitable object and safe setup. Check foil for holes and folded edges; redesign rather than expecting every boat to work.",
+    "sheet": "Sink or Float experiment guide",
+    "sheetPrompt": "Use the illustrated instructions, then choose a prediction sheet, results diary, sorting page or boat challenge below.",
+    "sheetLabels": [
+      "My prediction",
+      "What happened",
+      "What surprised me"
+    ],
+    "tags": "water buoyancy sink float floating sinking boat foil predictions results sorting"
+  },
+  {
+    "slug": "weather-journal",
+    "subject": "science",
+    "title": "My Weather Journal",
+    "subtitle": "Look closely. Record a little. Discover a pattern.",
+    "description": "Observe the sky, keep a weather diary, choose an outfit and build a toy shelter.",
+    "ages": [
+      "3-5",
+      "6-8"
+    ],
+    "ageLabel": "4–7",
+    "time": "5–10 minutes a day",
+    "place": "Indoors with a view",
+    "art": "weather",
+    "alt": "A child drawing in a journal beside a closed window overlooking a cloudy sky.",
+    "skills": "Observation, comparison, describing, designing",
+    "intro": "Start with a view through a window. Choose one of the illustrated activities below to record the sky, compare a week of observations or try a small design challenge.",
+    "materials": [
+      "A safe view through a closed window",
+      "Paper and pencils or the drawing spaces on screen",
+      "A grown-up to help describe outdoor conditions",
+      "For the optional shelter: a small box, roof material, washable toy, tray and a little water"
+    ],
+    "safety": "Observe with a grown-up from a safe indoor spot. Never look directly at the sun. Stay indoors during storms. For the toy shelter, test over a tray with adult help and keep devices dry.",
+    "steps": [
+      [
+        "Choose a safe view",
+        "Look through a closed window with a grown-up. Do not climb or open a window to get a better view."
+      ],
+      [
+        "Record when you look",
+        "Write the date and time. Try a similar time each day if you are comparing the week."
+      ],
+      [
+        "Describe the sky",
+        "Notice clouds, clear areas or rain. Describe what you can see without looking directly at the sun."
+      ],
+      [
+        "Look for wind clues",
+        "Watch leaves or a flag. Say whether they are still or moving. If nothing suitable is visible, record that you cannot tell."
+      ],
+      [
+        "Draw and compare",
+        "Use the daily diary or weekly tracker. Save your picture before leaving. Ask a grown-up about how it feels outdoors, then compare your observations."
+      ]
+    ],
+    "why": "Weather is what the atmosphere is doing at a particular place and time. Looking regularly helps us notice changes in cloud cover, wind and other conditions. A short journal records this week’s weather; it does not establish a climate pattern.",
+    "questions": [
+      "What changed since your last observation?",
+      "What evidence tells you about the wind?",
+      "What would you wear for your planned activity?"
+    ],
+    "younger": "Choose one thing to describe, such as the clouds. A grown-up can write the child’s words while the child draws.",
+    "older": "Compare records from the same time over seven days. Explain differences using the observations rather than guessing what happened between visits.",
+    "troubleshoot": "If the view is blocked or you miss a day, write that down. Do not fill gaps with invented observations. Indoor temperature does not tell you the outdoor temperature.",
+    "sheet": "How to observe the weather",
+    "sheetPrompt": "Open the illustrated guide or choose a diary, tracker, clothing activity or toy-shelter challenge.",
+    "sheetLabels": [
+      "The sky",
+      "Evidence of wind",
+      "What changed"
+    ],
+    "tags": "weather clouds wind diary journal week clothes clothing shelter sky"
+  },
+  {
+    "slug": "mixing-colours",
+    "subject": "art",
+    "title": "Mixing Colours",
+    "subtitle": "A little paint. A new discovery.",
+    "description": "Predict paint mixtures, record your results, match colour cards and invent your own shade.",
+    "ages": [
+      "3-5",
+      "6-8"
+    ],
+    "ageLabel": "4–7",
+    "time": "20–30 minutes",
+    "place": "A protected table",
+    "art": "colours",
+    "alt": "Red, yellow and blue paint pots beside a mixing tray and brush.",
+    "skills": "Colour observation, comparison, creative expression",
+    "intro": "Choose an illustrated activity below. Start with a prediction, test it with paint, then use your new colours in a picture. The printable matching cards offer a dry activity too.",
+    "materials": [
+      "Washable child-safe red, yellow and blue paints",
+      "A mixing tray and brush",
+      "Paper, a table cover and a little water for cleaning brushes",
+      "For matching cards: a printer and scissors used by a grown-up"
+    ],
+    "safety": "Use washable child-safe paint with a grown-up. Keep paint away from your mouth and eyes. Wash hands afterward. Keep devices dry and away from paint. A grown-up should cut the matching cards.",
+    "steps": [
+      [
+        "Prepare your space",
+        "Cover the table and choose washable paints with a grown-up. Keep your device away from the paint and water."
+      ],
+      [
+        "Predict a mixture",
+        "Choose two colours. Draw or name what you think they might make before mixing."
+      ],
+      [
+        "Mix small amounts",
+        "Put a little of each paint into one tray space and mix gently. Observe the actual colour."
+      ],
+      [
+        "Record the result",
+        "Paint a sample on paper. Describe or name it in the results sheet. Clean your brush before the next mixture."
+      ],
+      [
+        "Change and create",
+        "Add more of one paint to explore a different shade. Name your own mixture and use it in a picture. Wash hands and clean the table afterward."
+      ]
+    ],
+    "why": "Paint mixtures depend on the pigments and their proportions. Common classroom red, yellow and blue mixtures can produce orange, green and purple, but real results vary. Watching and describing your own mixture is more useful than trying to match an exact screen colour.",
+    "questions": [
+      "Which result surprised you?",
+      "What changed when you added more of one paint?",
+      "What name would you give your colour?"
+    ],
+    "younger": "Offer two paints at a time and let the child describe the result aloud. A grown-up can write their words.",
+    "older": "Compare mixtures made with different proportions. Record which paint you added more of and describe the change.",
+    "troubleshoot": "If a colour looks muddy, try a clean tray space and brush. Some pigments make duller mixtures; record that honestly rather than treating it as a failure.",
+    "sheet": "How to mix colours",
+    "sheetPrompt": "Open the illustrated guide or choose a prediction sheet, results diary, matching cards or creative challenge.",
+    "sheetLabels": [
+      "My paints",
+      "My prediction",
+      "My result"
+    ],
+    "tags": "art paint colour color mixing matching cards shades primary secondary"
+  },
+  {
+    "slug": "leaf-rubbing",
+    "subject": "nature",
+    "title": "Make a leaf rubbing",
+    "subtitle": "Lay a leaf down. Rub. Watch the magic appear.",
+    "description": "Turn fallen leaves into crayon rubbings, compare their textures and build leaf creatures from your own art.",
+    "ages": [
+      "3-5",
+      "6-8"
+    ],
+    "ageLabel": "3–8",
+    "time": "15 min",
+    "place": "Outdoors & indoors",
+    "art": "leaf",
+    "alt": "Cartoon leaf rubbing guide: a child lays a crayon on its side and rubs across paper while three leaf-shaped prints appear.",
+    "skills": "Observation, comparing textures, fine motor control",
+    "intro": "Every leaf hides a pattern of veins and edges. With thick crayons and plain paper, children can lift that pattern into view, compare leaves side by side and turn their rubbings into creatures and big pictures. The five Leaf Studio pages below turn each step into a draw-and-save activity.",
+    "materials": [
+      "A handful of fallen leaves",
+      "Thick crayons with the paper peeled off",
+      "Plain paper, one thin sheet for rubbing",
+      "Optional: glue stick and child-safe scissors used with an adult"
+    ],
+    "safety": "Collect fallen leaves from the ground, or pick with permission, and brush off dirt and insects. Wash hands after handling leaves. An adult helps with scissors when cutting out rubbings, and nothing found outside goes in anyone's mouth.",
+    "steps": [
+      [
+        "Go on a leaf hunt",
+        "Collect five or six fallen leaves in different shapes and sizes. Brush or wipe them clean and let them dry flat."
+      ],
+      [
+        "Set up your rubbing station",
+        "Lay one leaf vein-side up on the table, cover it with a thin sheet of paper and hold it still."
+      ],
+      [
+        "Make the rubbing appear",
+        "Peel the paper off a thick crayon, lay it on its side and rub gently across the paper. The leaf appears like magic."
+      ],
+      [
+        "Try pressures and colours",
+        "Rub the same leaf lightly, then harder. Try two colours on one leaf and talk about which version you like best."
+      ],
+      [
+        "Compare your leaves",
+        "Make a rubbing of two different leaves on one sheet. Look closely: what is the same and what is different?"
+      ],
+      [
+        "Turn rubbings into art",
+        "Cut out your favourite rubbings and arrange them into a leaf creature or one big picture. Glue, then add details."
+      ]
+    ],
+    "why": "A rubbing captures texture rather than shape alone: the veins, edges and bumps that make every leaf different. Noticing those details builds observation skills, and controlling crayon pressure builds steady hands.",
+    "questions": [
+      "Which leaf made the darkest rubbing?",
+      "What happens if you turn the leaf over before you rub?",
+      "Can you find a leaf with teeth on its edge?"
+    ],
+    "younger": "Choose big, strong leaves with deep veins, such as sycamore or maple. Place your hand over your child's hand and rub together, naming the leaf parts as they appear.",
+    "older": "Sort your rubbings into a classification chart by edge shape or vein pattern, then label each group. Try hatching two colours across one leaf and predict the blended result.",
+    "troubleshoot": "If the rubbing looks patchy, the leaf has probably slipped. Tape the leaf to the table under the paper, or hold it steady with two fingers while you rub.",
+    "sheet": "My leaf rubbing book",
+    "sheetPrompt": "Draw your favourite rubbing, compare two leaves, then design a leaf creature.",
+    "sheetLabels": [
+      "My favourite rubbing",
+      "Compare two leaves",
+      "My leaf creature"
+    ],
+    "tags": "nature leaves autumn fall texture trees observation crayon forest outdoors"
+  },
+  {
+    "slug": "shadow-detectives",
+    "subject": "science",
+    "title": "Shadow detectives",
+    "subtitle": "Make a shadow. Change it. Trap it on paper.",
+    "description": "Torch in hand, children make shadows grow and shrink, turn them into creatures, predict their shapes and trace them like real evidence.",
+    "ages": [
+      "3-5",
+      "6-8"
+    ],
+    "ageLabel": "3–8",
+    "time": "15 min",
+    "place": "Indoors & outdoors",
+    "art": "shadow",
+    "alt": "Cartoon shadow guide: a child holds a torch while a toy's long shadow stretches across the wall beside them.",
+    "skills": "Predicting, light and shadows, comparing shapes",
+    "intro": "A torch and a couple of toys are all a shadow detective needs. Children make shadows appear, move the light to see them change, invent shadow creatures, guess before they test and trace outlines like evidence. The five Shadow Detective Kit pages below turn each step into a draw-and-save activity.",
+    "materials": [
+      "A torch, or a lamp you can tip safely",
+      "Two or three small toys with clear shapes",
+      "Paper and a soft pencil for tracing",
+      "Optional: chunky chalk for pavement shadows"
+    ],
+    "safety": "Move lamps and torches with dry hands and keep them away from curtains and paper. Never look straight into a torch or the sun, and never stare at bright light. A grown-up dims the room and stays nearby, and an adult comes outside with you.",
+    "steps": [
+      [
+        "Make a shadow appear",
+        "Dim the lights with a grown-up. Shine a torch at a wall, stand a toy in the beam and watch a dark shape appear behind it."
+      ],
+      [
+        "Change your shadow",
+        "Move the light closer, then further away, then to the side. Watch the shadow grow, shrink and stretch. Say what changed each time."
+      ],
+      [
+        "Compare two shadows",
+        "Stand two toys in the same light. Look at both shadows: which is rounder, longer, fuzzier? What is the same and what is different?"
+      ],
+      [
+        "Invent a creature",
+        "Wiggle your fingers in the beam or lay a toy on its side. Turn the shadow into a bird, a wolf or a monster and give it a name."
+      ],
+      [
+        "Predict, then check",
+        "Before each move, guess what the shadow will do: long, short, or gone? Say your prediction out loud, then test it and compare."
+      ],
+      [
+        "Trace the evidence",
+        "Keep a toy and paper perfectly still and draw around the shadow's edge. Trace a few toys, then match shadows back to their owners."
+      ]
+    ],
+    "why": "A shadow is the shape where something blocks the light. Moving the light and watching the shadow respond teaches children that light travels in straight lines and that predictions can be tested: guess, check and compare is exactly how scientists work.",
+    "questions": [
+      "What happens to your shadow when the light moves closer?",
+      "Can you make a shadow that is taller than you?",
+      "Why does the same toy make different shadows in the morning and the afternoon?"
+    ],
+    "younger": "Hold the torch while your child moves the toys, and trace their hand shadow together. Name what you see out loud: long, short, big, small, wiggly.",
+    "older": "Trace the same outdoor shadow in the morning and after lunch with two colours of chalk, then explain why it moved. Try a shadow puppet show with a beginning, a middle and an end.",
+    "troubleshoot": "If the shadow looks faint, the room is probably too bright: dim the lights or move closer to the wall. If the shadow blurs, the light is very close; move it back a little for a crisper edge.",
+    "sheet": "My shadow detective kit",
+    "sheetPrompt": "Draw your first shadow, predict another, then trace a toy shadow like evidence.",
+    "sheetLabels": [
+      "My first shadow",
+      "My shadow prediction",
+      "Trace my toy shadow"
+    ],
+    "tags": "science shadows light torch dark prediction puppets sun tracing investigation outdoors"
+  }
 ]

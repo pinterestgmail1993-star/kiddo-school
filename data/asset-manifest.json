@@ -1,330 +1,378 @@
 [
- {
-  "key": "activities/science/grow-a-bean/grow-a-bean-activity.webp",
-  "alt": "Illustration of a bean sprout with two green leaves and visible roots in a clear jar.",
-  "width": 1200,
-  "height": 900,
-  "format": "webp",
-  "bytes": 31402
- },
- {
-  "key": "activities/science/grow-a-bean/grow-a-bean-activity.svg",
-  "alt": "Illustration of a bean sprout with two green leaves and visible roots in a clear jar.",
-  "width": 800,
-  "height": 600,
-  "format": "svg",
-  "bytes": 2533
- },
- {
-  "key": "activities/science/grow-a-bean/grow-a-bean-worksheet.png",
-  "alt": "My bean diary: printable drawing and observation sheet",
-  "width": 1600,
-  "height": 2200,
-  "format": "png",
-  "bytes": 72319
- },
- {
-  "key": "activities/science/grow-a-bean/grow-a-bean-worksheet.svg",
-  "alt": "My bean diary: printable drawing and observation sheet",
-  "width": 1600,
-  "height": 2200,
-  "format": "svg",
-  "bytes": 1280
- },
- {
-  "key": "activities/art/paper-shape-collage/paper-shape-collage-activity.webp",
-  "alt": "Illustration of a paper collage with a mustard sun, terracotta house and green tree.",
-  "width": 1200,
-  "height": 900,
-  "format": "webp",
-  "bytes": 19242
- },
- {
-  "key": "activities/art/paper-shape-collage/paper-shape-collage-activity.svg",
-  "alt": "Illustration of a paper collage with a mustard sun, terracotta house and green tree.",
-  "width": 800,
-  "height": 600,
-  "format": "svg",
-  "bytes": 1293
- },
- {
-  "key": "activities/art/paper-shape-collage/paper-shape-collage-worksheet.png",
-  "alt": "My shape studio: printable drawing and observation sheet",
-  "width": 1600,
-  "height": 2200,
-  "format": "png",
-  "bytes": 79006
- },
- {
-  "key": "activities/art/paper-shape-collage/paper-shape-collage-worksheet.svg",
-  "alt": "My shape studio: printable drawing and observation sheet",
-  "width": 1600,
-  "height": 2200,
-  "format": "svg",
-  "bytes": 1295
- },
- {
-  "key": "activities/maths/make-a-pattern/make-a-pattern-activity.webp",
-  "alt": "Illustration of rows of alternating terracotta circles, green squares and mustard triangles.",
-  "width": 1200,
-  "height": 900,
-  "format": "webp",
-  "bytes": 25358
- },
- {
-  "key": "activities/maths/make-a-pattern/make-a-pattern-activity.svg",
-  "alt": "Illustration of rows of alternating terracotta circles, green squares and mustard triangles.",
-  "width": 800,
-  "height": 600,
-  "format": "svg",
-  "bytes": 1529
- },
- {
-  "key": "activities/maths/make-a-pattern/make-a-pattern-worksheet.png",
-  "alt": "My pattern notebook: printable drawing and observation sheet",
-  "width": 1600,
-  "height": 2200,
-  "format": "png",
-  "bytes": 77413
- },
- {
-  "key": "activities/maths/make-a-pattern/make-a-pattern-worksheet.svg",
-  "alt": "My pattern notebook: printable drawing and observation sheet",
-  "width": 1600,
-  "height": 2200,
-  "format": "svg",
-  "bytes": 1296
- },
- {
-  "key": "activities/literacy/story-map/story-map-activity.webp",
-  "alt": "Illustrated story map showing a winding path from a house to a hill and a flag.",
-  "width": 1200,
-  "height": 900,
-  "format": "webp",
-  "bytes": 18776
- },
- {
-  "key": "activities/literacy/story-map/story-map-activity.svg",
-  "alt": "Illustrated story map showing a winding path from a house to a hill and a flag.",
-  "width": 800,
-  "height": 600,
-  "format": "svg",
-  "bytes": 1478
- },
- {
-  "key": "activities/literacy/story-map/story-map-worksheet.png",
-  "alt": "My story map: printable drawing and observation sheet",
-  "width": 1600,
-  "height": 2200,
-  "format": "png",
-  "bytes": 85613
- },
- {
-  "key": "activities/literacy/story-map/story-map-worksheet.svg",
-  "alt": "My story map: printable drawing and observation sheet",
-  "width": 1600,
-  "height": 2200,
-  "format": "svg",
-  "bytes": 1317
- },
- {
-  "key": "activities/nature/sound-map/sound-map-activity.webp",
-  "alt": "Illustration of a listening map with a centre point, bird, leaves and ripples representing sounds.",
-  "width": 1200,
-  "height": 900,
-  "format": "webp",
-  "bytes": 23232
- },
- {
-  "key": "activities/nature/sound-map/sound-map-activity.svg",
-  "alt": "Illustration of a listening map with a centre point, bird, leaves and ripples representing sounds.",
-  "width": 800,
-  "height": 600,
-  "format": "svg",
-  "bytes": 1797
- },
- {
-  "key": "activities/nature/sound-map/sound-map-worksheet.png",
-  "alt": "My sound map: printable drawing and observation sheet",
-  "width": 1600,
-  "height": 2200,
-  "format": "png",
-  "bytes": 76403
- },
- {
-  "key": "activities/nature/sound-map/sound-map-worksheet.svg",
-  "alt": "My sound map: printable drawing and observation sheet",
-  "width": 1600,
-  "height": 2200,
-  "format": "svg",
-  "bytes": 1367
- },
- {
-  "key": "activities/engineering/paper-bridge/paper-bridge-activity.webp",
-  "alt": "Illustration of a folded paper bridge between two stacks of books, supporting wooden blocks.",
-  "width": 1200,
-  "height": 900,
-  "format": "webp",
-  "bytes": 22986
- },
- {
-  "key": "activities/engineering/paper-bridge/paper-bridge-activity.svg",
-  "alt": "Illustration of a folded paper bridge between two stacks of books, supporting wooden blocks.",
-  "width": 800,
-  "height": 600,
-  "format": "svg",
-  "bytes": 1666
- },
- {
-  "key": "activities/engineering/paper-bridge/paper-bridge-worksheet.png",
-  "alt": "My bridge test: printable drawing and observation sheet",
-  "width": 1600,
-  "height": 2200,
-  "format": "png",
-  "bytes": 86739
- },
- {
-  "key": "activities/engineering/paper-bridge/paper-bridge-worksheet.svg",
-  "alt": "My bridge test: printable drawing and observation sheet",
-  "width": 1600,
-  "height": 2200,
-  "format": "svg",
-  "bytes": 1330
- },
- {
-  "key": "activities/literacy/handwriting-practice/handwriting-practice-activity.webp",
-  "alt": "Pink handwriting page with letters A and a, numbers 1 2 3 and a golden yellow pencil.",
-  "width": 1200,
-  "height": 900,
-  "format": "webp",
-  "bytes": 22620
- },
- {
-  "key": "activities/literacy/handwriting-practice/handwriting-practice-activity.svg",
-  "alt": "Pink handwriting page with letters A and a, numbers 1 2 3 and a golden yellow pencil.",
-  "width": 1200,
-  "height": 900,
-  "format": "svg",
-  "bytes": 1191
- },
- {
-  "key": "activities/literacy/handwriting-practice/handwriting-practice-worksheet.png",
-  "alt": "Printable lined handwriting sheet with faint A and a tracing examples.",
-  "width": 1600,
-  "height": 2200,
-  "format": "png",
-  "bytes": 66923
- },
- {
-  "key": "activities/literacy/handwriting-practice/handwriting-practice-worksheet.svg",
-  "alt": "Printable lined handwriting sheet with faint A and a tracing examples.",
-  "width": 1600,
-  "height": 2200,
-  "format": "svg",
-  "bytes": 2073
- },
- {
-  "key": "brand/kiddo-school-favicon.svg",
-  "alt": "Kiddo.school letter K icon.",
-  "width": 64,
-  "height": 64,
-  "format": "svg",
-  "bytes": 224
- },
- {
-  "key": "activities/maths/repeating-pattern/pattern-studio-cover.webp",
-  "alt": "Cartoon Pattern Studio cover: two children place pink circles and yellow squares into an alternating repeating row.",
-  "width": 1024,
-  "height": 1536,
-  "format": "webp",
-  "bytes": 88904
- },
- {
-  "key": "activities/maths/repeating-pattern/how-to-make-a-pattern.webp",
-  "alt": "Four-step cartoon guide: choose two pieces, make your repeat, repeat it again and say it aloud.",
-  "width": 1024,
-  "height": 1536,
-  "format": "webp",
-  "bytes": 67708
- },
- {
-  "key": "activities/maths/repeating-pattern/pattern-pieces-to-cut.webp",
-  "alt": "Twelve cut-out pattern cards: pink circles, yellow squares and purple triangles.",
-  "width": 1024,
-  "height": 1536,
-  "format": "webp",
-  "bytes": 48514
- },
- {
-  "key": "activities/maths/repeating-pattern/finish-my-pattern.webp",
-  "alt": "Four pattern rows with one empty box each; children draw the piece that comes next.",
-  "width": 1024,
-  "height": 1536,
-  "format": "webp",
-  "bytes": 62530
- },
- {
-  "key": "activities/maths/repeating-pattern/create-my-own-pattern.webp",
-  "alt": "Blank pattern planner with spaces for a repeating part, a whole pattern and a rule in words.",
-  "width": 1024,
-  "height": 1536,
-  "format": "webp",
-  "bytes": 54564
- },
- {
-  "key": "activities/maths/repeating-pattern/my-movement-pattern.webp",
-  "alt": "Clap, tap and reach movement cards with a box for drawing a repeating movement sequence.",
-  "width": 1024,
-  "height": 1536,
-  "format": "webp",
-  "bytes": 78510
- },
- {
-  "key": "activities/nature/leaf-rubbing/leaf-rubbing-cover.webp",
-  "alt": "Cartoon leaf rubbing cover: a child rubs the flat side of a crayon across paper while three leaf prints appear.",
-  "width": 1024,
-  "height": 1536,
-  "format": "webp",
-  "bytes": 117644
- },
- {
-  "key": "activities/nature/leaf-rubbing/how-to-make-a-leaf-rubbing.webp",
-  "alt": "Illustrated guide: laying a leaf vein-side up, covering it with paper and rubbing gently with a crayon.",
-  "width": 1024,
-  "height": 1536,
-  "format": "webp",
-  "bytes": 145758
- },
- {
-  "key": "activities/nature/leaf-rubbing/compare-two-leaves.webp",
-  "alt": "Illustrated worksheet: two leaves side by side with rubbings comparing edges, veins and sizes.",
-  "width": 1024,
-  "height": 1536,
-  "format": "webp",
-  "bytes": 55560
- },
- {
-  "key": "activities/nature/leaf-rubbing/look-closely-at-my-leaf.webp",
-  "alt": "Illustrated worksheet: a leaf shown with its tip, edge, veins and stem for close observation.",
-  "width": 1024,
-  "height": 1536,
-  "format": "webp",
-  "bytes": 59962
- },
- {
-  "key": "activities/nature/leaf-rubbing/make-a-leaf-creature.webp",
-  "alt": "Illustrated worksheet: cut-out leaf rubbings arranged into an imaginary leaf creature.",
-  "width": 1024,
-  "height": 1536,
-  "format": "webp",
-  "bytes": 113236
- },
- {
-  "key": "activities/nature/leaf-rubbing/my-leaf-rubbing-art.webp",
-  "alt": "Illustrated worksheet: a large composition made from layered leaf rubbings with a title line.",
-  "width": 1024,
-  "height": 1536,
-  "format": "webp",
-  "bytes": 41670
- }
+  {
+    "key": "activities/science/grow-a-bean/grow-a-bean-activity.webp",
+    "alt": "Illustration of a bean sprout with two green leaves and visible roots in a clear jar.",
+    "width": 1200,
+    "height": 900,
+    "format": "webp",
+    "bytes": 31402
+  },
+  {
+    "key": "activities/science/grow-a-bean/grow-a-bean-activity.svg",
+    "alt": "Illustration of a bean sprout with two green leaves and visible roots in a clear jar.",
+    "width": 800,
+    "height": 600,
+    "format": "svg",
+    "bytes": 2533
+  },
+  {
+    "key": "activities/science/grow-a-bean/grow-a-bean-worksheet.png",
+    "alt": "My bean diary: printable drawing and observation sheet",
+    "width": 1600,
+    "height": 2200,
+    "format": "png",
+    "bytes": 72319
+  },
+  {
+    "key": "activities/science/grow-a-bean/grow-a-bean-worksheet.svg",
+    "alt": "My bean diary: printable drawing and observation sheet",
+    "width": 1600,
+    "height": 2200,
+    "format": "svg",
+    "bytes": 1280
+  },
+  {
+    "key": "activities/art/paper-shape-collage/paper-shape-collage-activity.webp",
+    "alt": "Illustration of a paper collage with a mustard sun, terracotta house and green tree.",
+    "width": 1200,
+    "height": 900,
+    "format": "webp",
+    "bytes": 19242
+  },
+  {
+    "key": "activities/art/paper-shape-collage/paper-shape-collage-activity.svg",
+    "alt": "Illustration of a paper collage with a mustard sun, terracotta house and green tree.",
+    "width": 800,
+    "height": 600,
+    "format": "svg",
+    "bytes": 1293
+  },
+  {
+    "key": "activities/art/paper-shape-collage/paper-shape-collage-worksheet.png",
+    "alt": "My shape studio: printable drawing and observation sheet",
+    "width": 1600,
+    "height": 2200,
+    "format": "png",
+    "bytes": 79006
+  },
+  {
+    "key": "activities/art/paper-shape-collage/paper-shape-collage-worksheet.svg",
+    "alt": "My shape studio: printable drawing and observation sheet",
+    "width": 1600,
+    "height": 2200,
+    "format": "svg",
+    "bytes": 1295
+  },
+  {
+    "key": "activities/maths/make-a-pattern/make-a-pattern-activity.webp",
+    "alt": "Illustration of rows of alternating terracotta circles, green squares and mustard triangles.",
+    "width": 1200,
+    "height": 900,
+    "format": "webp",
+    "bytes": 25358
+  },
+  {
+    "key": "activities/maths/make-a-pattern/make-a-pattern-activity.svg",
+    "alt": "Illustration of rows of alternating terracotta circles, green squares and mustard triangles.",
+    "width": 800,
+    "height": 600,
+    "format": "svg",
+    "bytes": 1529
+  },
+  {
+    "key": "activities/maths/make-a-pattern/make-a-pattern-worksheet.png",
+    "alt": "My pattern notebook: printable drawing and observation sheet",
+    "width": 1600,
+    "height": 2200,
+    "format": "png",
+    "bytes": 77413
+  },
+  {
+    "key": "activities/maths/make-a-pattern/make-a-pattern-worksheet.svg",
+    "alt": "My pattern notebook: printable drawing and observation sheet",
+    "width": 1600,
+    "height": 2200,
+    "format": "svg",
+    "bytes": 1296
+  },
+  {
+    "key": "activities/literacy/story-map/story-map-activity.webp",
+    "alt": "Illustrated story map showing a winding path from a house to a hill and a flag.",
+    "width": 1200,
+    "height": 900,
+    "format": "webp",
+    "bytes": 18776
+  },
+  {
+    "key": "activities/literacy/story-map/story-map-activity.svg",
+    "alt": "Illustrated story map showing a winding path from a house to a hill and a flag.",
+    "width": 800,
+    "height": 600,
+    "format": "svg",
+    "bytes": 1478
+  },
+  {
+    "key": "activities/literacy/story-map/story-map-worksheet.png",
+    "alt": "My story map: printable drawing and observation sheet",
+    "width": 1600,
+    "height": 2200,
+    "format": "png",
+    "bytes": 85613
+  },
+  {
+    "key": "activities/literacy/story-map/story-map-worksheet.svg",
+    "alt": "My story map: printable drawing and observation sheet",
+    "width": 1600,
+    "height": 2200,
+    "format": "svg",
+    "bytes": 1317
+  },
+  {
+    "key": "activities/nature/sound-map/sound-map-activity.webp",
+    "alt": "Illustration of a listening map with a centre point, bird, leaves and ripples representing sounds.",
+    "width": 1200,
+    "height": 900,
+    "format": "webp",
+    "bytes": 23232
+  },
+  {
+    "key": "activities/nature/sound-map/sound-map-activity.svg",
+    "alt": "Illustration of a listening map with a centre point, bird, leaves and ripples representing sounds.",
+    "width": 800,
+    "height": 600,
+    "format": "svg",
+    "bytes": 1797
+  },
+  {
+    "key": "activities/nature/sound-map/sound-map-worksheet.png",
+    "alt": "My sound map: printable drawing and observation sheet",
+    "width": 1600,
+    "height": 2200,
+    "format": "png",
+    "bytes": 76403
+  },
+  {
+    "key": "activities/nature/sound-map/sound-map-worksheet.svg",
+    "alt": "My sound map: printable drawing and observation sheet",
+    "width": 1600,
+    "height": 2200,
+    "format": "svg",
+    "bytes": 1367
+  },
+  {
+    "key": "activities/engineering/paper-bridge/paper-bridge-activity.webp",
+    "alt": "Illustration of a folded paper bridge between two stacks of books, supporting wooden blocks.",
+    "width": 1200,
+    "height": 900,
+    "format": "webp",
+    "bytes": 22986
+  },
+  {
+    "key": "activities/engineering/paper-bridge/paper-bridge-activity.svg",
+    "alt": "Illustration of a folded paper bridge between two stacks of books, supporting wooden blocks.",
+    "width": 800,
+    "height": 600,
+    "format": "svg",
+    "bytes": 1666
+  },
+  {
+    "key": "activities/engineering/paper-bridge/paper-bridge-worksheet.png",
+    "alt": "My bridge test: printable drawing and observation sheet",
+    "width": 1600,
+    "height": 2200,
+    "format": "png",
+    "bytes": 86739
+  },
+  {
+    "key": "activities/engineering/paper-bridge/paper-bridge-worksheet.svg",
+    "alt": "My bridge test: printable drawing and observation sheet",
+    "width": 1600,
+    "height": 2200,
+    "format": "svg",
+    "bytes": 1330
+  },
+  {
+    "key": "activities/literacy/handwriting-practice/handwriting-practice-activity.webp",
+    "alt": "Pink handwriting page with letters A and a, numbers 1 2 3 and a golden yellow pencil.",
+    "width": 1200,
+    "height": 900,
+    "format": "webp",
+    "bytes": 22620
+  },
+  {
+    "key": "activities/literacy/handwriting-practice/handwriting-practice-activity.svg",
+    "alt": "Pink handwriting page with letters A and a, numbers 1 2 3 and a golden yellow pencil.",
+    "width": 1200,
+    "height": 900,
+    "format": "svg",
+    "bytes": 1191
+  },
+  {
+    "key": "activities/literacy/handwriting-practice/handwriting-practice-worksheet.png",
+    "alt": "Printable lined handwriting sheet with faint A and a tracing examples.",
+    "width": 1600,
+    "height": 2200,
+    "format": "png",
+    "bytes": 66923
+  },
+  {
+    "key": "activities/literacy/handwriting-practice/handwriting-practice-worksheet.svg",
+    "alt": "Printable lined handwriting sheet with faint A and a tracing examples.",
+    "width": 1600,
+    "height": 2200,
+    "format": "svg",
+    "bytes": 2073
+  },
+  {
+    "key": "brand/kiddo-school-favicon.svg",
+    "alt": "Kiddo.school letter K icon.",
+    "width": 64,
+    "height": 64,
+    "format": "svg",
+    "bytes": 224
+  },
+  {
+    "key": "activities/maths/repeating-pattern/pattern-studio-cover.webp",
+    "alt": "Cartoon Pattern Studio cover: two children place pink circles and yellow squares into an alternating repeating row.",
+    "width": 1024,
+    "height": 1536,
+    "format": "webp",
+    "bytes": 88904
+  },
+  {
+    "key": "activities/maths/repeating-pattern/how-to-make-a-pattern.webp",
+    "alt": "Four-step cartoon guide: choose two pieces, make your repeat, repeat it again and say it aloud.",
+    "width": 1024,
+    "height": 1536,
+    "format": "webp",
+    "bytes": 67708
+  },
+  {
+    "key": "activities/maths/repeating-pattern/pattern-pieces-to-cut.webp",
+    "alt": "Twelve cut-out pattern cards: pink circles, yellow squares and purple triangles.",
+    "width": 1024,
+    "height": 1536,
+    "format": "webp",
+    "bytes": 48514
+  },
+  {
+    "key": "activities/maths/repeating-pattern/finish-my-pattern.webp",
+    "alt": "Four pattern rows with one empty box each; children draw the piece that comes next.",
+    "width": 1024,
+    "height": 1536,
+    "format": "webp",
+    "bytes": 62530
+  },
+  {
+    "key": "activities/maths/repeating-pattern/create-my-own-pattern.webp",
+    "alt": "Blank pattern planner with spaces for a repeating part, a whole pattern and a rule in words.",
+    "width": 1024,
+    "height": 1536,
+    "format": "webp",
+    "bytes": 54564
+  },
+  {
+    "key": "activities/maths/repeating-pattern/my-movement-pattern.webp",
+    "alt": "Clap, tap and reach movement cards with a box for drawing a repeating movement sequence.",
+    "width": 1024,
+    "height": 1536,
+    "format": "webp",
+    "bytes": 78510
+  },
+  {
+    "key": "activities/nature/leaf-rubbing/leaf-rubbing-cover.webp",
+    "alt": "Cartoon leaf rubbing cover: a child rubs the flat side of a crayon across paper while three leaf prints appear.",
+    "width": 1024,
+    "height": 1536,
+    "format": "webp",
+    "bytes": 117644
+  },
+  {
+    "key": "activities/nature/leaf-rubbing/how-to-make-a-leaf-rubbing.webp",
+    "alt": "Illustrated guide: laying a leaf vein-side up, covering it with paper and rubbing gently with a crayon.",
+    "width": 1024,
+    "height": 1536,
+    "format": "webp",
+    "bytes": 145758
+  },
+  {
+    "key": "activities/nature/leaf-rubbing/compare-two-leaves.webp",
+    "alt": "Illustrated worksheet: two leaves side by side with rubbings comparing edges, veins and sizes.",
+    "width": 1024,
+    "height": 1536,
+    "format": "webp",
+    "bytes": 55560
+  },
+  {
+    "key": "activities/nature/leaf-rubbing/look-closely-at-my-leaf.webp",
+    "alt": "Illustrated worksheet: a leaf shown with its tip, edge, veins and stem for close observation.",
+    "width": 1024,
+    "height": 1536,
+    "format": "webp",
+    "bytes": 59962
+  },
+  {
+    "key": "activities/nature/leaf-rubbing/make-a-leaf-creature.webp",
+    "alt": "Illustrated worksheet: cut-out leaf rubbings arranged into an imaginary leaf creature.",
+    "width": 1024,
+    "height": 1536,
+    "format": "webp",
+    "bytes": 113236
+  },
+  {
+    "key": "activities/nature/leaf-rubbing/my-leaf-rubbing-art.webp",
+    "alt": "Illustrated worksheet: a large composition made from layered leaf rubbings with a title line.",
+    "width": 1024,
+    "height": 1536,
+    "format": "webp",
+    "bytes": 41670
+  },
+  {
+    "key": "activities/science/shadow-detectives/shadow-detectives-cover.webp",
+    "alt": "Cartoon shadow cover: a child shines a torch while a toy's long shadow stretches across the wall.",
+    "width": 1024,
+    "height": 1536,
+    "format": "webp",
+    "bytes": 82998
+  },
+  {
+    "key": "activities/science/shadow-detectives/how-to-explore-shadows.webp",
+    "alt": "Illustrated guide: shining a torch at a toy, moving the light closer and further to change the shadow.",
+    "width": 1024,
+    "height": 1536,
+    "format": "webp",
+    "bytes": 81584
+  },
+  {
+    "key": "activities/science/shadow-detectives/compare-my-shadows.webp",
+    "alt": "Illustrated worksheet: two toys in the same light with their different shadows side by side.",
+    "width": 1024,
+    "height": 1536,
+    "format": "webp",
+    "bytes": 54590
+  },
+  {
+    "key": "activities/science/shadow-detectives/my-shadow-creature.webp",
+    "alt": "Illustrated worksheet: hand and toy shadows combined into an imaginary shadow creature.",
+    "width": 1024,
+    "height": 1536,
+    "format": "webp",
+    "bytes": 51584
+  },
+  {
+    "key": "activities/science/shadow-detectives/my-shadow-prediction.webp",
+    "alt": "Illustrated worksheet: a guessed shadow beside the real one, checked like a small experiment.",
+    "width": 1024,
+    "height": 1536,
+    "format": "webp",
+    "bytes": 62462
+  },
+  {
+    "key": "activities/science/shadow-detectives/trace-my-toy-shadow.webp",
+    "alt": "Illustrated worksheet: a pencil tracing around a steady toy shadow on paper.",
+    "width": 1024,
+    "height": 1536,
+    "format": "webp",
+    "bytes": 49706
+  }
 ]
