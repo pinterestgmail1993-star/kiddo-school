@@ -96,3 +96,14 @@ test('pattern activities provide one preview, drawing, typing and a labelled ans
  const guide=readFileSync('dist/maths/make-a-pattern/index.html','utf8');
  assert.match(guide,/pattern-studio-cover\.webp/);assert.match(guide,/how-to-make-a-pattern\//);
 });
+
+test('leaf activities provide one preview, drawing, typing and safety guidance',async()=>{
+ const {leafPages}=await import('../src/leaf-project.mjs');
+ for(const p of leafPages){const html=readFileSync(`dist/nature/leaf-rubbing/${p.slug}/index.html`,'utf8');
+  assert.match(html,/activities\/nature\/leaf-rubbing\//);assert.match(html,/Wash hands after handling leaves/);assert.match(html,/data-export/);assert.match(html,/<textarea/);assert.match(html,/<canvas/);
+  assert.equal([...html.matchAll(new RegExp('<img[^>]+src="[^"]+/'+p.slug+'\\.webp"','g'))].length,1);
+ }
+ const guide=readFileSync('dist/nature/leaf-rubbing/index.html','utf8');
+ assert.match(guide,/leaf-rubbing-cover\.webp/);assert.match(guide,/how-to-make-a-leaf-rubbing\//);
+ assert.match(readFileSync('dist/nature/index.html','utf8'),/leaf-rubbing/);
+});

@@ -586,5 +586,73 @@
    "My result"
   ],
   "tags": "art paint colour color mixing matching cards shades primary secondary"
+ },
+ {
+  "slug": "leaf-rubbing",
+  "subject": "nature",
+  "title": "Make a leaf rubbing",
+  "subtitle": "Lay a leaf down. Rub. Watch the magic appear.",
+  "description": "Turn fallen leaves into crayon rubbings, compare their textures and build leaf creatures from your own art.",
+  "ages": [
+   "3-5",
+   "6-8"
+  ],
+  "ageLabel": "3–8",
+  "time": "15 min",
+  "place": "Outdoors & indoors",
+  "art": "leaf",
+  "alt": "Cartoon leaf rubbing guide: a child lays a crayon on its side and rubs across paper while three leaf-shaped prints appear.",
+  "skills": "Observation, comparing textures, fine motor control",
+  "intro": "Every leaf hides a pattern of veins and edges. With thick crayons and plain paper, children can lift that pattern into view, compare leaves side by side and turn their rubbings into creatures and big pictures. The five Leaf Studio pages below turn each step into a draw-and-save activity.",
+  "materials": [
+   "A handful of fallen leaves",
+   "Thick crayons with the paper peeled off",
+   "Plain paper, one thin sheet for rubbing",
+   "Optional: glue stick and child-safe scissors used with an adult"
+  ],
+  "safety": "Collect fallen leaves from the ground, or pick with permission, and brush off dirt and insects. Wash hands after handling leaves. An adult helps with scissors when cutting out rubbings, and nothing found outside goes in anyone's mouth.",
+  "steps": [
+   [
+    "Go on a leaf hunt",
+    "Collect five or six fallen leaves in different shapes and sizes. Brush or wipe them clean and let them dry flat."
+   ],
+   [
+    "Set up your rubbing station",
+    "Lay one leaf vein-side up on the table, cover it with a thin sheet of paper and hold it still."
+   ],
+   [
+    "Make the rubbing appear",
+    "Peel the paper off a thick crayon, lay it on its side and rub gently across the paper. The leaf appears like magic."
+   ],
+   [
+    "Try pressures and colours",
+    "Rub the same leaf lightly, then harder. Try two colours on one leaf and talk about which version you like best."
+   ],
+   [
+    "Compare your leaves",
+    "Make a rubbing of two different leaves on one sheet. Look closely: what is the same and what is different?"
+   ],
+   [
+    "Turn rubbings into art",
+    "Cut out your favourite rubbings and arrange them into a leaf creature or one big picture. Glue, then add details."
+   ]
+  ],
+  "why": "A rubbing captures texture rather than shape alone: the veins, edges and bumps that make every leaf different. Noticing those details builds observation skills, and controlling crayon pressure builds steady hands.",
+  "questions": [
+   "Which leaf made the darkest rubbing?",
+   "What happens if you turn the leaf over before you rub?",
+   "Can you find a leaf with teeth on its edge?"
+  ],
+  "younger": "Choose big, strong leaves with deep veins, such as sycamore or maple. Place your hand over your child's hand and rub together, naming the leaf parts as they appear.",
+  "older": "Sort your rubbings into a classification chart by edge shape or vein pattern, then label each group. Try hatching two colours across one leaf and predict the blended result.",
+  "troubleshoot": "If the rubbing looks patchy, the leaf has probably slipped. Tape the leaf to the table under the paper, or hold it steady with two fingers while you rub.",
+  "sheet": "My leaf rubbing book",
+  "sheetPrompt": "Draw your favourite rubbing, compare two leaves, then design a leaf creature.",
+  "sheetLabels": [
+   "My favourite rubbing",
+   "Compare two leaves",
+   "My leaf creature"
+  ],
+  "tags": "nature leaves autumn fall texture trees observation crayon forest outdoors"
  }
 ]
