@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
-import {lessons,fvLesson,cfoLesson,fwftLesson,aeoLesson,fabLesson,fwfhLesson,fcLesson,csLesson,msLesson,lessonsBase,toddlerBase} from '../src/lessons.mjs';
+import {lessons,fvLesson,cfoLesson,fwftLesson,aeoLesson,fabLesson,fwfhLesson,fcLesson,csLesson,msLesson,anLesson,lessonsBase,toddlerBase} from '../src/lessons.mjs';
 const read=f=>readFileSync(f,'utf8');
 const l2=read('dist/newborn/6-12-weeks/faces-and-visual-tracking/index.html');
 const l3=read('dist/baby/3-4-months/colors-and-first-objects/index.html');
@@ -12,6 +12,7 @@ const l7=read('dist/toddler/12-18-months/first-words-food-home/index.html');
 const l8=read('dist/toddler/18-24-months/first-concepts-big-small-up-down/index.html');
 const l9=read('dist/toddler/2-years/colors-and-shapes/index.html');
 const l10=read('dist/toddler/2-years/matching-and-sorting/index.html');
+const l11=read('dist/toddler/2-years/animals-and-sounds/index.html');
 const checkLesson=(html,L)=>{
  assert.ok(html.includes('rel="canonical" href="https://kiddo-school.pages.dev'+L.path+'"'));
  assert.ok(html.includes('<title>'+L.seoTitle.replace(/&/g,'&amp;')+' | Kiddo.school</title>'));
@@ -288,9 +289,10 @@ test('lesson 10 (Matching & Sorting, Toddler 4) follows its spec with the intera
  assert.ok(l10.includes('Previous class'));
  assert.ok(l10.includes('href="/toddler/2-years/colors-and-shapes/"'));
  assert.ok(l10.includes('Colors &amp; Shapes'));
- assert.ok(l10.includes('href="/learning-path/"'));
- assert.ok(l10.includes('Explore the Learning Path'));
- assert.ok(!l10.includes('Coming soon'),'no invented next class');
+ assert.ok(l10.includes('href="/toddler/2-years/animals-and-sounds/"'),'next class links to lesson 11');
+ assert.ok(l10.includes('Next class'));
+ assert.ok(l10.includes('Animals &amp; Sounds'));
+ assert.ok(!l10.includes('Coming soon'),'no invented next class placeholder');
  assert.ok(!/6\/10|Score|Failed|Wrong!|Try again until you pass/.test(l10),'no competitive scoring language');
  const files=[...l10.matchAll(new RegExp(toddlerBase.replace(/\./g,'\\.')+'matching-and-sorting-age-2/learning-cards/(\\d{2}-[a-z-]+)\\.webp','g'))].map(m=>m[1]);
  assert.ok(files.length>=15,'all 15 learning cards present');
@@ -312,9 +314,79 @@ test('lesson 10 (Matching & Sorting, Toddler 4) follows its spec with the intera
  assert.ok(l10.includes('name="twitter:card" content="summary_large_image"'));
  assert.ok(l10.includes('"learningResourceType":"Interactive toddler class"'));
 });
-test('lesson 9 links forward to lesson 10 and lesson 10 links back',()=>{
+test('lesson 11 (Animals & Sounds, Toddler 5) follows its spec with the interactive toddler class',()=>{
+ assert.ok(l11.includes('rel="canonical" href="https://kiddo-school.pages.dev/toddler/2-years/animals-and-sounds/"'));
+ assert.ok(l11.includes('<title>Animals and Sounds for 2-Year-Olds | Kiddo.school</title>'));
+ assert.ok(l11.includes('content="'+anLesson.description+'"'));
+ assert.equal(anLesson.description,'Meet twenty animals and make their sounds together. Farm friends, wild animals and two gentle tap games, made for two-year-olds and their grown-ups.');
+ assert.ok(l11.includes('<h1>Animals and Sounds for 2-Year-Olds</h1>'));
+ assert.ok(l11.includes('TODDLER 5 · LESSON 11'));
+ for(const [k,v] of anLesson.chips)assert.ok(l11.includes('<strong>'+k+'</strong> '+v),k);
+ assert.ok(l11.includes('<figure class="lesson-cover"><img src="'+anLesson.ogImage+'" width="1414" height="2000" alt="Animals and Sounds class for 2-year-olds at Kiddo School"'));
+ assert.ok(l11.includes('Moo, woof, quack!'));
+ assert.ok(l11.includes('Start Class <span aria-hidden="true">↓</span>'),'simple Start Class button per writing style');
+ assert.ok(!l11.includes('Start Today’s Class'),'style: no verbose start button');
+ assert.ok(l11.includes('TEACHER WELCOME'));
+ assert.ok(l11.includes('Let’s meet some animals! Can you make their sounds with me?'));
+ for(const id of ['farm-animals','who-says','wild-animals','find-animal','more-animals'])assert.ok(l11.includes('id="'+id+'"'),id);
+ assert.ok(l11.includes('LEARN · FARM ANIMALS'));
+ assert.ok(l11.includes('<h2>Meet the farm animals.</h2>'));
+ assert.ok(l11.includes('<h2>Who says moo?</h2>'));
+ assert.ok(l11.includes('<h2>Meet the wild animals.</h2>'));
+ assert.ok(l11.includes('<h2>Find the animal.</h2>'));
+ assert.ok(l11.includes('<h2>A few more friends.</h2>'));
+ assert.ok(l11.includes('TAKE IT OFF SCREEN'));
+ assert.ok(l11.includes('<h2>Animals are everywhere.</h2>'));
+ assert.ok(l11.includes('Spot a bird outside? Listen together.'));
+ assert.ok(!l11.includes('DOWNLOAD &amp; PRINT'),'no printables section without real printable assets');
+ assert.ok(!l11.includes('print/'),'no invented print view links');
+ assert.ok(!/download (the )?pdf/i.test(l11),'no fake PDF claims');
+ assert.ok(l11.includes('Seven little steps'));
+ assert.ok(l11.includes('<li><span>7</span> Take it off screen</li>'));
+ assert.ok(l11.includes('Meet the animals <span aria-hidden="true">↓</span>'),'welcome CTA uses warm simple wording');
+ assert.ok(l11.includes('TEACHER NOTE'));
+ assert.ok(l11.includes('If your child can’t make a sound yet, make it for them. Listening is learning too.'));
+ assert.ok(l11.includes('A NOTE FROM THE PRINCIPAL'));
+ assert.ok(l11.includes('You don’t need to cover every card today. Follow what your child enjoys.'));
+ assert.ok(l11.includes('<h2>Class complete!</h2>'));
+ assert.ok(l11.includes('Nice animal sounds together.'));
+ assert.ok(l11.includes('<h2>Tips for Parents</h2>'));
+ for(const p of anLesson.howTo.paragraphs)assert.ok(l11.includes(p),p.slice(0,40));
+ assert.ok(l11.includes('Age ranges are a guide'));
+ assert.ok(l11.includes('guides, not tests or developmental deadlines'));
+ assert.ok(l11.includes('Previous class'));
+ assert.ok(l11.includes('href="/toddler/2-years/matching-and-sorting/"'));
+ assert.ok(l11.includes('Matching &amp; Sorting'));
+ assert.ok(l11.includes('href="/learning-path/"'));
+ assert.ok(l11.includes('Explore the Learning Path'));
+ assert.ok(!l11.includes('Coming soon'),'no invented next class');
+ assert.ok(!/6\/11|Score|Failed|Wrong!|Try again until you pass/.test(l11),'no competitive scoring language');
+ const files=[...l11.matchAll(new RegExp(toddlerBase.replace(/\./g,'\\.')+'animals-and-sounds-age-2/(\\d{2}-[a-z-]+)\\.webp','g'))].map(m=>m[1]);
+ assert.ok(files.length>=20,'all 20 learning cards present');
+ assert.deepEqual([...new Set(files)],anLesson.cards.map(c=>c.file.replace('.webp','')));
+ assert.ok(l11.includes('src="'+anLesson.ogImage+'"'),'cover referenced exactly from its R2 path');
+ for(const c of anLesson.cards)assert.ok(l11.includes('width="'+c.w+'" height="'+c.h+'" alt="'+c.alt+'"'),c.file);
+ for(const alt of ['A dog saying woof for a toddler animal sounds activity','An elephant trumpeting for a toddler animal sounds activity','A donkey saying hee-haw for a toddler animal sounds activity'])assert.ok(l11.includes('alt="'+alt+'"'),alt);
+ assert.ok(l11.includes('data-tc-correct="true"'));
+ assert.equal((l11.match(/data-tc-round/g)||[]).length,8,'4 who-says + 4 find-the-animal rounds');
+ assert.equal((l11.match(/data-lesson-viewer/g)||[]).length,3,'three Learn viewers (farm, wild, more)');
+ assert.equal((l11.match(/class="tc-choice"/g)||[]).length,24,'8 rounds × 3 real image-choice buttons');
+ assert.ok(!l11.includes('class="tc-choice tc-num"'),'no numbered position buttons — every card is its own image');
+ for(const label of ['The cow','The duck','The dog','The cat','The lion','The elephant','The owl','The snake'])assert.ok(l11.includes('aria-label="'+label+'"'),label);
+ assert.ok(l11.includes('Who says moo?'));
+ assert.ok(l11.includes('Who says quack?'));
+ assert.ok(l11.includes('Find the lion.'));
+ assert.ok(l11.includes('Find the snake.'));
+ assert.match(l11,/BreadcrumbList[\s\S]*"name":"Toddler"[\s\S]*"name":"Age 2"[\s\S]*"name":"Animals & Sounds"/);
+ assert.ok(l11.includes('property="og:image" content="'+anLesson.ogImage+'"'));
+ assert.ok(l11.includes('name="twitter:card" content="summary_large_image"'));
+ assert.ok(l11.includes('"learningResourceType":"Interactive toddler class"'));
+});
+test('lesson 9 links forward to lesson 10, lesson 10 to lesson 11, and each links back',()=>{
  assert.ok(l9.includes('href="/toddler/2-years/matching-and-sorting/"'));
  assert.ok(l9.includes('Next class'));
+ assert.ok(l10.includes('href="/toddler/2-years/animals-and-sounds/"'));
+ assert.ok(l11.includes('href="/toddler/2-years/matching-and-sorting/"'));
 });
 test('stage pages exist, follow the school hierarchy and link their lessons',()=>{
  const w=read('dist/newborn/6-12-weeks/index.html');
@@ -361,20 +433,22 @@ test('stage pages exist, follow the school hierarchy and link their lessons',()=
  assert.ok(t3.includes('TODDLER 3'));
  assert.ok(t3.includes('href="/toddler/2-years/colors-and-shapes/"'));
  assert.ok(t3.includes('href="/toddler/2-years/matching-and-sorting/"'));
+ assert.ok(t3.includes('href="/toddler/2-years/animals-and-sounds/"'));
  assert.ok(t3.includes('Colors, shapes, matching'));
- assert.ok(t3.includes('Toddler 3 &amp; 4'));
+ assert.ok(t3.includes('Toddler 3, 4 &amp; 5'));
  const toddler=read('dist/toddler/index.html');
  assert.ok(toddler.includes('rel="canonical" href="https://kiddo-school.pages.dev/toddler/"'));
  assert.ok(toddler.includes('href="/toddler/12-18-months/first-words-food-home/"'));
  assert.ok(toddler.includes('href="/toddler/18-24-months/first-concepts-big-small-up-down/"'));
  assert.ok(toddler.includes('href="/toddler/2-years/colors-and-shapes/"'));
  assert.ok(toddler.includes('href="/toddler/2-years/matching-and-sorting/"'));
+ assert.ok(toddler.includes('href="/toddler/2-years/animals-and-sounds/"'));
 });
 test('the learning path page lists the real curriculum from birth to age 2 and beyond',()=>{
  const lp=read('dist/learning-path/index.html');
  assert.ok(lp.includes('rel="canonical" href="https://kiddo-school.pages.dev/learning-path/"'));
  assert.ok(lp.includes('Age ranges are a guide, not a test'));
- for(const s of [['Newborn 1','/newborn/0-6-weeks/high-contrast-cards/'],['Newborn 2','/newborn/6-12-weeks/faces-and-visual-tracking/'],['Infant 1','/baby/3-4-months/colors-and-first-objects/'],['Infant 2','/baby/4-6-months/first-words-familiar-things/'],['Explorer 1','/baby/6-9-months/animals-everyday-objects/'],['Explorer 2','/baby/9-12-months/first-actions-body-parts/'],['Toddler 1','/toddler/12-18-months/first-words-food-home/'],['Toddler 2','/toddler/18-24-months/first-concepts-big-small-up-down/'],['Toddler 3','/toddler/2-years/colors-and-shapes/'],['Toddler 4','/toddler/2-years/matching-and-sorting/']])assert.ok(lp.includes('>'+s[0])&&lp.includes('href="'+s[1]+'"'),s[0]);
+ for(const s of [['Newborn 1','/newborn/0-6-weeks/high-contrast-cards/'],['Newborn 2','/newborn/6-12-weeks/faces-and-visual-tracking/'],['Infant 1','/baby/3-4-months/colors-and-first-objects/'],['Infant 2','/baby/4-6-months/first-words-familiar-things/'],['Explorer 1','/baby/6-9-months/animals-everyday-objects/'],['Explorer 2','/baby/9-12-months/first-actions-body-parts/'],['Toddler 1','/toddler/12-18-months/first-words-food-home/'],['Toddler 2','/toddler/18-24-months/first-concepts-big-small-up-down/'],['Toddler 3','/toddler/2-years/colors-and-shapes/'],['Toddler 4','/toddler/2-years/matching-and-sorting/'],['Toddler 5','/toddler/2-years/animals-and-sounds/']])assert.ok(lp.includes('>'+s[0])&&lp.includes('href="'+s[1]+'"'),s[0]);
  for(const hub of ['/newborn/','/newborn/6-12-weeks/','/baby/3-4-months/','/baby/4-6-months/','/baby/6-9-months/','/baby/9-12-months/','/toddler/12-18-months/','/toddler/18-24-months/','/toddler/2-years/'])assert.ok(lp.includes('href="'+hub+'"'),hub);
  assert.ok(lp.includes('href="/art/"')&&lp.includes('href="/activities/"'));
  assert.ok(lp.includes('Start Today’s Class'));
@@ -426,7 +500,7 @@ test('the whole curriculum path is wired together and reusable markup is shared'
  assert.ok(talkThinkHub.includes('href="'+fwfhLesson.path+'"'));
  assert.ok(talkThinkHub.includes('href="'+fcLesson.path+'"'));
  assert.ok(talkThinkHub.includes('href="'+msLesson.path+'"'));
- for(const html of [l1,l2,l3,l4,l5,l6,l7,l8,l9,l10]){
+ for(const html of [l1,l2,l3,l4,l5,l6,l7,l8,l9,l10,l11]){
   assert.ok(html.includes('class="lv-frame" data-lesson-viewer'));
   assert.ok(html.includes('<div class="lv-stage" data-lv-stage></div>'));
  }

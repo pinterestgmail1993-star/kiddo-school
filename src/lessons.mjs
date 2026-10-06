@@ -574,11 +574,122 @@ export const msLesson={
   'There is no need to finish every section in one sitting, and no need for your toddler to name every color or shape.'
  ],note:'<strong>Age ranges are a guide.</strong> Kiddo School age ranges are guides, not tests or developmental deadlines. Children learn at their own pace.'},
  pills:{heading:'Where to next?',items:[['Toddler classes','/toddler/'],['Age 2','/toddler/2-years/'],['Think &amp; Talk','/subjects/talk-and-think/']]},
- pathNav:{prev:{title:'Colors & Shapes',range:'Age 2',href:'/toddler/2-years/colors-and-shapes/'},next:null},
+ pathNav:{prev:{title:'Colors & Shapes',range:'Age 2',href:'/toddler/2-years/colors-and-shapes/'},next:{title:'Animals & Sounds',range:'Age 2',href:'/toddler/2-years/animals-and-sounds/'}},
  hubBlurb:'Same and different, big-button find-the-match games, gentle sorting and an odd-one-out finish — noticing relationships, made for two-year-old hands. Three to five playful minutes.',
  schema:{resourceType:'Interactive toddler class',level:'Toddler (age 2)',teaches:'Same and different, matching colors and shapes, sorting and grouping, and spotting the odd one out through look, find and sort play',audience:'Parents of toddlers',keywords:'matching and sorting for 2 year olds, toddler matching activities, sorting activities for toddlers, same and different activities, odd one out for toddlers, toddler learning activities'}
 };
-export const lessons=[hcLesson,fvLesson,cfoLesson,fwftLesson,aeoLesson,fabLesson,fwfhLesson,fcLesson,csLesson,msLesson];
+export const anLesson={
+ path:'/toddler/2-years/animals-and-sounds/',
+ seoTitle:'Animals and Sounds for 2-Year-Olds',
+ title:'Animals and Sounds for 2-Year-Olds (Toddler 5)',
+ h1:'Animals and Sounds for 2-Year-Olds',
+ description:'Meet twenty animals and make their sounds together. Farm friends, wild animals and two gentle tap games, made for two-year-olds and their grown-ups.',
+ ogAlt:'Cover of the Kiddo School Toddler 5 class Animals and Sounds for 2-year-olds, with a puppy, a cow, a kitten and a lamb',
+ ogImage:toddlerBase+'animals-and-sounds-age-2/cover.webp',
+ schemaImage:toddlerBase+'animals-and-sounds-age-2/cover.webp',
+ eyebrow:'TODDLER 5 · LESSON 11',
+ crumbs:[['Toddler','/toddler/'],['Age 2','/toddler/2-years/'],['Animals & Sounds','/toddler/2-years/animals-and-sounds/']],
+ chips:[['Age','2 Years'],['Subject','Talk &amp; Explore'],['Class','Toddler 5'],['Duration','3–5 minutes']],
+ subject:'Talk &amp; Explore',
+ ledes:['Moo, woof, quack! At two, animal sounds are a game your toddler can already play. This class meets twenty animals — farm friends, wild ones and a few little extras — with big cards, two tap games and sounds to try all day.',
+  'There is no reading and nothing to test. You ask, your toddler answers — with the sound, the name, a point or a giggle. Three to five playful minutes is plenty.'],
+ startHint:'Moo first. Your toddler will join in.',
+ startLabel:'Start Class',
+ viewerLabel:'Today’s class: animals and sounds for two-year-olds',
+ viewerHeading:'Today’s class.',
+ folder:'animals-and-sounds-age-2/',
+ r2Base:toddlerBase,
+ eagerFirst:false,
+ cover:{file:'cover.webp',w:1414,h:2000,alt:'Animals and Sounds class for 2-year-olds at Kiddo School'},
+ cards:[
+  {order:1,file:'01-dog.webp',w:1414,h:2000,alt:'A dog saying woof for a toddler animal sounds activity'},
+  {order:2,file:'02-cat.webp',w:1414,h:2000,alt:'A cat saying meow for a toddler animal sounds activity'},
+  {order:3,file:'03-cow.webp',w:1414,h:2000,alt:'A cow saying moo for a toddler animal sounds activity'},
+  {order:4,file:'04-duck.webp',w:1414,h:2000,alt:'A duck saying quack for a toddler animal sounds activity'},
+  {order:5,file:'05-sheep.webp',w:1414,h:2000,alt:'A sheep saying baa for a toddler animal sounds activity'},
+  {order:6,file:'06-pig.webp',w:1414,h:2000,alt:'A pig saying oink for a toddler animal sounds activity'},
+  {order:7,file:'07-horse.webp',w:1414,h:2000,alt:'A horse saying neigh for a toddler animal sounds activity'},
+  {order:8,file:'08-chicken.webp',w:1414,h:2000,alt:'A chicken saying cluck for a toddler animal sounds activity'},
+  {order:9,file:'09-rooster.webp',w:1414,h:2000,alt:'A rooster saying cock-a-doodle-doo for a toddler animal sounds activity'},
+  {order:10,file:'10-frog.webp',w:1414,h:2000,alt:'A frog saying ribbit for a toddler animal sounds activity'},
+  {order:11,file:'11-lion.webp',w:1414,h:2000,alt:'A lion saying roar for a toddler animal sounds activity'},
+  {order:12,file:'12-elephant.webp',w:1414,h:2000,alt:'An elephant trumpeting for a toddler animal sounds activity'},
+  {order:13,file:'13-monkey.webp',w:1414,h:2000,alt:'A monkey saying ooh-ooh for a toddler animal sounds activity'},
+  {order:14,file:'14-owl.webp',w:1414,h:2000,alt:'An owl saying hoot for a toddler animal sounds activity'},
+  {order:15,file:'15-bee.webp',w:1414,h:2000,alt:'A bee saying buzz for a toddler animal sounds activity'},
+  {order:16,file:'16-snake.webp',w:1414,h:2000,alt:'A snake hissing for a toddler animal sounds activity'},
+  {order:17,file:'17-mouse.webp',w:1414,h:2000,alt:'A mouse saying squeak for a toddler animal sounds activity'},
+  {order:18,file:'18-donkey.webp',w:1414,h:2000,alt:'A donkey saying hee-haw for a toddler animal sounds activity'},
+  {order:19,file:'19-goat.webp',w:1414,h:2000,alt:'A goat saying baa for a toddler animal sounds activity'},
+  {order:20,file:'20-bird.webp',w:1414,h:2000,alt:'A bird saying tweet for a toddler animal sounds activity'}
+ ],
+ interactive:{
+  flow:{intro:'Seven little steps, in order: a welcome from your teacher, farm animals, a sounds game, wild animals, a find-it game, four more friends, then off screen. Every step stands on its own.',
+   steps:[['1','Teacher welcome'],['2','Farm animals'],['3','Who says moo?'],['4','Wild animals'],['5','Find the animal'],['6','A few more friends'],['7','Take it off screen']],
+   beginHref:'#farm-animals',beginLabel:'Meet the animals',beginHint:'Toddler on your lap, phone at a comfy distance.'},
+  teacher:{welcome:'Let’s meet some animals! Can you make their sounds with me?',note:'If your child can’t make a sound yet, make it for them. Listening is learning too.'},
+  principal:{note:'You don’t need to cover every card today. Follow what your child enjoys.'},
+  complete:{heading:'Class complete!',copy:'Nice animal sounds together.'},
+  offScreen:{heading:'Animals are everywhere.',copy:'Spot a bird outside? Listen together. Once you start listening, animals show up all day — no plan needed.',groups:[
+   {title:'Try one today',items:[
+    'Pass a dog on the way to the shop? Whisper woof.',
+    'Moo at breakfast. Quack at bath time.',
+    'Act out an animal. Can they guess which one?',
+    'Reading an animal book? Make every sound together.'
+   ]}
+  ],note:'Keep it playful and stay close by. One animal noticed together is a complete class.'},
+  sections:[
+   {type:'learn',id:'farm-animals',eyebrow:'LEARN · FARM ANIMALS',heading:'Meet the farm animals.',copy:'Old friends first — the dog, the cat, the cow. Say the name, then make the sound together.',label:'the farm animals',items:[
+    {file:'01-dog.webp',say:'The dog says woof.',find:'Your turn — woof woof!'},
+    {file:'02-cat.webp',say:'The cat says meow.',find:'Can you say meow?'},
+    {file:'03-cow.webp',say:'The cow says moo.',find:'Your turn — moo!'},
+    {file:'04-duck.webp',say:'The duck says quack.',find:'Can you say quack?'},
+    {file:'05-sheep.webp',say:'The sheep says baa.',find:'Your turn — baa!'},
+    {file:'06-pig.webp',say:'The pig says oink.',find:'Can you oink?'},
+    {file:'07-horse.webp',say:'The horse says neigh.',find:'Your turn — neigh!'},
+    {file:'08-chicken.webp',say:'The chicken says cluck.',find:'Can you cluck?'},
+    {file:'09-rooster.webp',say:'The rooster says cock-a-doodle-doo!',find:'A big one — try it together!'}
+   ]},
+   {type:'play',id:'who-says',eyebrow:'PLAY · WHO SAYS MOO?',heading:'Who says moo?',copy:'Say the sound out loud, then let your child tap the animal.',rounds:[
+    {ask:'Who says moo?',say:'Moo!',choices:[{file:'01-dog.webp',name:'The dog'},{file:'03-cow.webp',name:'The cow',correct:true},{file:'04-duck.webp',name:'The duck'}]},
+    {ask:'Who says quack?',say:'Who says quack?',choices:[{file:'02-cat.webp',name:'The cat'},{file:'05-sheep.webp',name:'The sheep'},{file:'04-duck.webp',name:'The duck',correct:true}]},
+    {ask:'Who says woof?',say:'Who says woof?',choices:[{file:'01-dog.webp',name:'The dog',correct:true},{file:'06-pig.webp',name:'The pig'},{file:'03-cow.webp',name:'The cow'}]},
+    {ask:'Who says meow?',say:'Who says meow?',choices:[{file:'07-horse.webp',name:'The horse'},{file:'02-cat.webp',name:'The cat',correct:true},{file:'09-rooster.webp',name:'The rooster'}]}
+   ]},
+   {type:'learn',id:'wild-animals',eyebrow:'LEARN · WILD ANIMALS',heading:'Meet the wild animals.',copy:'Now for the loud ones — roars and trumpets welcome.',label:'the wild animals',items:[
+    {file:'10-frog.webp',say:'The frog says ribbit.',find:'Your turn — ribbit!'},
+    {file:'11-lion.webp',say:'The lion says roar.',find:'A big roar — your turn!'},
+    {file:'12-elephant.webp',say:'The elephant trumpets!',find:'Swing your arm like a trunk.'},
+    {file:'13-monkey.webp',say:'The monkey says ooh-ooh!',find:'Your turn — ooh-ooh!'},
+    {file:'14-owl.webp',say:'The owl says hoot.',find:'Can you hoot?'},
+    {file:'15-bee.webp',say:'The bee says buzz.',find:'Your turn — buzz!'},
+    {file:'16-snake.webp',say:'The snake says hiss.',find:'Your turn — hiss!'}
+   ]},
+   {type:'play',id:'find-animal',eyebrow:'PLAY · FIND THE ANIMAL',heading:'Find the animal.',copy:'Now by name. You say the animal, your child taps it.',rounds:[
+    {ask:'Find the lion.',say:'Find the lion!',choices:[{file:'16-snake.webp',name:'The snake'},{file:'11-lion.webp',name:'The lion',correct:true},{file:'12-elephant.webp',name:'The elephant'}]},
+    {ask:'Find the elephant.',say:'Find the elephant!',choices:[{file:'12-elephant.webp',name:'The elephant',correct:true},{file:'13-monkey.webp',name:'The monkey'},{file:'10-frog.webp',name:'The frog'}]},
+    {ask:'Find the owl.',say:'Find the owl!',choices:[{file:'15-bee.webp',name:'The bee'},{file:'14-owl.webp',name:'The owl',correct:true},{file:'13-monkey.webp',name:'The monkey'}]},
+    {ask:'Find the snake.',say:'Find the snake!',choices:[{file:'11-lion.webp',name:'The lion'},{file:'10-frog.webp',name:'The frog'},{file:'16-snake.webp',name:'The snake',correct:true}]}
+   ]},
+   {type:'learn',id:'more-animals',eyebrow:'LEARN · A FEW MORE FRIENDS',heading:'A few more friends.',copy:'Four friends to finish — including one very loud hee-haw.',label:'a few more friends',items:[
+    {file:'17-mouse.webp',say:'The mouse says squeak.',find:'A tiny squeak — your turn!'},
+    {file:'18-donkey.webp',say:'The donkey says hee-haw!',find:'Can you say hee-haw?'},
+    {file:'19-goat.webp',say:'The goat says baa.',find:'Just like the sheep!'},
+    {file:'20-bird.webp',say:'The bird says tweet.',find:'Tweet tweet — your turn!'}
+   ]}
+  ]
+ },
+ howTo:{heading:'Tips for Parents',paragraphs:[
+  'Sounds come before names. Moo usually arrives before cow — both count as talking.',
+  'Add the body: flap like a duck, gallop like a horse, stomp like an elephant. It all counts.',
+  'A wrong tap is just a chance to look together. The class never shows a score or a cross.'
+ ],note:'<strong>Age ranges are a guide.</strong> Kiddo School age ranges are guides, not tests or developmental deadlines. Children learn at their own pace.'},
+ pills:{heading:'Where to next?',items:[['Toddler classes','/toddler/'],['Age 2','/toddler/2-years/'],['Learning Path','/learning-path/']]},
+ pathNav:{prev:{title:'Matching & Sorting',range:'Age 2',href:'/toddler/2-years/matching-and-sorting/'},next:null},
+ hubBlurb:'Twenty animals with big sounds and two tap games — meet the farm, roar with the wild ones, then listen for animals outside. Made for two-year-old hands.',
+ schema:{resourceType:'Interactive toddler class',level:'Toddler (age 2)',teaches:'Animal names and their sounds through look, name and make-the-sound play',audience:'Parents of toddlers',keywords:'animal sounds for 2 year olds, animals for toddlers, animal sounds activity, animal names for toddlers, toddler learning activities'}
+};
+export const lessons=[hcLesson,fvLesson,cfoLesson,fwftLesson,aeoLesson,fabLesson,fwfhLesson,fcLesson,csLesson,msLesson,anLesson];
 export function classLessonSchema(site,L){
  return [
   {'@context':'https://schema.org','@type':'LearningResource',name:L.title,description:L.description,url:site+L.path,image:L.schemaImage,inLanguage:'en',learningResourceType:L.schema.resourceType||'Interactive baby class',educationalLevel:L.schema.level,isAccessibleForFree:true,educationalUse:'Home learning activity',teaches:L.schema.teaches,audience:{'@type':'Audience',audienceType:L.schema.audience},keywords:L.schema.keywords},
@@ -642,7 +753,7 @@ export function lessonStageCard(L,pillLeft,pillRight){
 }
 export function stagePageBody({chips,stageLessons,soon,subject}){
  return `<section class="wrap section compact"><div class="fc-chips lesson-chips">${chips.map(([k,v])=>`<span><strong>${k}</strong> ${v}</span>`).join('')}</div>
- <div class="fc-stages">${stageLessons.map(L=>lessonStageCard(L,'Lesson '+(lessons.indexOf(L)+1),subject||'See')).join('')}${soon||''}</div>
+ <div class="fc-stages">${stageLessons.map(L=>lessonStageCard(L,'Lesson '+(lessons.indexOf(L)+1),L.subject||subject||'See')).join('')}${soon||''}</div>
  <p class="lesson-note"><strong>Every baby develops differently.</strong> Kiddo School age ranges are guides, not tests or developmental deadlines.</p></section>`;
 }
 export const stages=[
@@ -655,7 +766,8 @@ export const stages=[
  {name:'Toddler 1',age:'12–18 Months',href:'/toddler/12-18-months/',lesson:fwfhLesson},
  {name:'Toddler 2',age:'18–24 Months',href:'/toddler/18-24-months/',lesson:fcLesson},
  {name:'Toddler 3',age:'Age 2',href:'/toddler/2-years/',lesson:csLesson},
- {name:'Toddler 4',age:'Age 2',href:'/toddler/2-years/',lesson:msLesson}
+ {name:'Toddler 4',age:'Age 2',href:'/toddler/2-years/',lesson:msLesson},
+ {name:'Toddler 5',age:'Age 2',href:'/toddler/2-years/',lesson:anLesson}
 ];
 const tcImg=(base,file,w,h,alt,attrs='')=>`<img src="${base}${file}" width="${w}" height="${h}" alt="${alt}"${attrs}>`;
 export function toddlerClassBody(L){
@@ -667,7 +779,7 @@ export function toddlerClassBody(L){
   <h1>${esc(L.h1)}</h1>
   <div class="fc-chips lesson-chips">${L.chips.map(([k,v])=>`<span><strong>${k}</strong> ${v}</span>`).join('')}</div>
   ${L.ledes.map(p=>`<p class="lesson-lede">${p}</p>`).join('\n  ')}
-  <div class="lesson-start"><a class="button" href="#todays-class">Start Today’s Class <span aria-hidden="true">↓</span></a><span class="lesson-start-hint">${L.startHint}</span></div>`;
+  <div class="lesson-start"><a class="button" href="#todays-class">${L.startLabel||'Start Today’s Class'} <span aria-hidden="true">↓</span></a><span class="lesson-start-hint">${L.startHint}</span></div>`;
  const hero=`<article class="wrap lesson-hero lesson-hero-cover"><div class="lesson-hero-copy">${heroInner}</div><figure class="lesson-cover"><img src="${L.ogImage}" width="${L.cover.w}" height="${L.cover.h}" alt="${L.cover.alt}"></figure></article>`;
  const learnViewer=(id,eyebrow,heading,copy,items,label)=>{
   const total=items.length;
@@ -711,7 +823,7 @@ export function toddlerClassBody(L){
    <li><span>8</span> Download &amp; print</li>
   </ol>`}
   <div class="tc-note-block tc-teacher"><span class="eyebrow">TEACHER WELCOME</span><p class="tc-say">“${I.teacher.welcome}”</p><p class="tc-who">— Your Kiddo School teacher</p></div>
-  <div class="lesson-start"><a class="button" href="${I.flow?I.flow.beginHref:'#learn-colors'}">Begin the class <span aria-hidden="true">↓</span></a><span class="lesson-start-hint">${I.flow?I.flow.beginHint:'Grown-up nearby, toddler on the lap, phone at a comfy distance.'}</span></div>
+  <div class="lesson-start"><a class="button" href="${I.flow?I.flow.beginHref:'#learn-colors'}">${(I.flow&&I.flow.beginLabel)||'Begin the class'} <span aria-hidden="true">↓</span></a><span class="lesson-start-hint">${I.flow?I.flow.beginHint:'Grown-up nearby, toddler on the lap, phone at a comfy distance.'}</span></div>
  </section>`;
  const huntHtml=g=>`<div class="tc-hunt"><h3>${g.title}</h3><ul class="lesson-prompts">${g.items.map(p=>`<li>${p}</li>`).join('')}</ul></div>`;
  const offScreen=`<section class="wrap lesson-section" id="off-screen" aria-label="Take it off screen">
