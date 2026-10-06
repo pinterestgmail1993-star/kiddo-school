@@ -450,7 +450,7 @@ export const csLesson={
   ]},
   offScreen:{heading:'Find colors and shapes around you.',copy:'The class continues away from the screen. Pick one or two hunts during the day and keep them playful — there is nothing to collect and nothing to prove.',colorHunt:['Can you find something red?','Find something blue.','Can you spot something yellow?'],shapeHunt:['Can you find a circle in the room? A plate, a clock or a wheel is a good place to start.','Can you find something shaped like a rectangle? Try a book, a door or a box.'],note:'Keep hunts short and stay close by. Any noticing counts — naming one red thing together is a complete class.'},
   teacher:{welcome:'Today we’re exploring colors and shapes! Let’s look, find and play together.',note:'Colors and shapes are everywhere. Keep naming the ones you notice together today.'},
-  principal:{note:'Short, playful moments are enough. You can continue this class naturally during your day by noticing colors and shapes around you.'},
+  principal:{note:'Short, playful moments are enough. Use these printable activities whenever you’d like to continue exploring away from the screen.'},
   complete:{heading:'Class complete!',copy:'Nice exploring colors and shapes together.'},
   tips:{heading:'Tips for parents.',items:[
    'Let your child lead. Some two-year-olds will tap eagerly, others would rather watch you tap for a while. Both are doing the class.',
@@ -459,6 +459,25 @@ export const csLesson={
    'Stop while it is still fun. If your toddler wanders off, the class is done for now; you can always come back tomorrow.',
    '<strong>Age ranges are a guide.</strong> Kiddo School classes are invitations to explore, not tests or developmental deadlines. Children learn at their own pace.'
   ]}
+ },
+ printables:{
+  heading:'Download &amp; Print.',
+  intro:'Continue the class away from the screen with printable color cards, shape cards, matching activities and simple hunts to explore together.',
+  pack:'Colors &amp; Shapes Printable Activity Pack',
+  meta:'Age 2 · Toddler 3 · Think &amp; Talk',
+  audience:'Made for you to print and use with your child — eight pages, one activity per page.',
+  folder:'colors-and-shapes-age-2/printables/',
+  note:'Printing tip: use your browser’s Print button and choose “Fit to page” on A4 or Letter paper. The pack prints one activity per page, in order — no account, and nothing to install.',
+  pages:[
+   {file:'01-cover.webp',title:'Cover',alt:'Colors and Shapes printable activity pack for 2-year-olds'},
+   {file:'02-color-cards.webp',title:'Color Cards',alt:'Printable color cards for toddlers with labeled colors'},
+   {file:'03-shape-cards.webp',title:'Shape Cards',alt:'Printable shape cards for toddlers with labeled basic shapes'},
+   {file:'04-match-the-colors.webp',title:'Match the Colors',alt:'Match the Colors printable activity for 2-year-olds'},
+   {file:'05-match-the-shapes.webp',title:'Match the Shapes',alt:'Match the Shapes printable activity for 2-year-olds'},
+   {file:'06-color-hunt.webp',title:'Color Hunt',alt:'Color Hunt printable activity for toddlers'},
+   {file:'07-shape-hunt.webp',title:'Shape Hunt',alt:'Shape Hunt printable activity for toddlers'},
+   {file:'08-take-it-off-screen.webp',title:'Take It Off Screen',alt:'Take It Off Screen colors and shapes activity for toddlers'}
+  ]
  },
  howTo:{heading:'Tips for Parents',paragraphs:[
   'Sit together in a comfortable spot and let your child hold or tap where they can. Start with the color cards, say each color clearly, and pause — the pause is where your toddler answers in their own way.',
@@ -590,7 +609,7 @@ export function toddlerClassBody(L){
  const welcome=`<section class="wrap lesson-section" id="todays-class" aria-label="Today’s class">
   <span class="eyebrow">TODAY’S CLASS</span>
   <h2>How today’s class works.</h2>
-  <p class="lesson-copy">Seven little steps, in order: a welcome from your teacher, learn colors, play with colors, learn shapes, play with shapes, match a pair, then take it off screen. Stop after any step — that is a complete class, and there is never a score at the end.</p>
+  <p class="lesson-copy">Eight little steps, in order: a welcome from your teacher, learn colors, play with colors, learn shapes, play with shapes, match a pair, take it off screen, then print the activity pack if you’d like to continue away from the screen. Stop after any step — that is a complete class, and there is never a score at the end.</p>
   <ol class="tc-flow">
    <li><span>1</span> Teacher welcome</li>
    <li><span>2</span> Learn colors</li>
@@ -599,6 +618,7 @@ export function toddlerClassBody(L){
    <li><span>5</span> Play with shapes</li>
    <li><span>6</span> Find &amp; match</li>
    <li><span>7</span> Take it off screen</li>
+   <li><span>8</span> Download &amp; print</li>
   </ol>
   <div class="tc-note-block tc-teacher"><span class="eyebrow">TEACHER WELCOME</span><p class="tc-say">“${I.teacher.welcome}”</p><p class="tc-who">— Your Kiddo School teacher</p></div>
   <div class="lesson-start"><a class="button" href="#learn-colors">Begin the class <span aria-hidden="true">↓</span></a><span class="lesson-start-hint">Grown-up nearby, toddler on the lap, phone at a comfy distance.</span></div>
@@ -610,7 +630,25 @@ export function toddlerClassBody(L){
   <div class="tc-hunt"><h3>Color hunt</h3><ul class="lesson-prompts">${I.offScreen.colorHunt.map(p=>`<li>${p}</li>`).join('')}</ul></div>
   <div class="tc-hunt"><h3>Shape hunt</h3><ul class="lesson-prompts">${I.offScreen.shapeHunt.map(p=>`<li>${p}</li>`).join('')}</ul></div>
   <p class="lesson-note">${I.offScreen.note}</p>
+  <p class="fc-hint">There is a printable version of these hunts in the <a href="#printables">Download &amp; Print</a> pack below — handy for the fridge or the weekend.</p>
  </section>`;
+ const printSection=L.printables?(()=>{
+  const P=L.printables;
+  const pBase=(L.r2Base||lessonsBase)+P.folder;
+  const printPath=L.path+'print/';
+  return `<section class="wrap lesson-section tc-printables" id="printables" aria-label="Download and print">
+  <span class="eyebrow">DOWNLOAD &amp; PRINT</span>
+  <h2>${P.heading}</h2>
+  <p class="lesson-copy">${P.intro}</p>
+  <div class="tc-pack-head">
+   <div><span class="eyebrow">PRINTABLE ACTIVITY PACK</span><h3>${P.pack}</h3><p class="tc-pack-meta">${P.meta}</p><p class="tc-pack-audience">${P.audience}</p></div>
+   <div class="hero-actions tc-print-actions"><a class="button" href="${printPath}">View Printable Pack <span aria-hidden="true">↗</span></a><button type="button" class="button button-ghost" data-tc-print-open="${printPath}?print=1">Print Activity Pack</button></div>
+  </div>
+  <ol class="tc-pack-contents">${P.pages.map((p,i)=>`<li><span>${String(i+1).padStart(2,'0')}</span>${p.title}</li>`).join('')}</ol>
+  <div class="tc-pack-grid">${P.pages.map((p,i)=>`<figure class="tc-pack-card"><a href="${pBase}${p.file}" aria-label="Open full-size ${esc(p.title)} page"><img src="${pBase}${p.file}" width="1414" height="2000" alt="${p.alt}" loading="lazy"></a><figcaption><strong>${p.title}</strong><span>Page ${i+1} of ${P.pages.length}</span></figcaption></figure>`).join('')}</div>
+  <p class="lesson-note">${P.note}</p>
+ </section>`;
+ })():'';
  const teacherNote=`<section class="wrap lesson-section"><span class="eyebrow">TEACHER NOTE</span><h2>One last word from class.</h2><div class="tc-note-block tc-teacher"><p class="tc-say">“${I.teacher.note}”</p><p class="tc-who">— Your Kiddo School teacher</p></div></section>`;
  const principalNote=`<section class="wrap lesson-section tc-principal"><span class="eyebrow">A NOTE FROM THE PRINCIPAL</span><h2>For the grown-ups.</h2><p class="lesson-copy">${I.principal.note}</p><p class="lesson-copy"><a href="/about/#principal">More from the Principal’s Office <span aria-hidden="true">↗</span></a></p></section>`;
  const prevCard=L.pathNav&&L.pathNav.prev?`<a class="fc-stage lesson-card-link" href="${L.pathNav.prev.href}"><div class="fc-stage-pills"><span class="fc-age">Previous class</span><span class="fc-class">${esc(L.pathNav.prev.range)}</span></div><h3>${esc(L.pathNav.prev.title)}</h3><span class="fc-open">Open this class <span aria-hidden="true">↗</span></span></a>`:'';
@@ -645,9 +683,27 @@ export function toddlerClassBody(L){
   ${matchRoundsHtml(I.matchShape.rounds)}
  </section>
  ${offScreen}
+ ${printSection}
  ${teacherNote}
  ${principalNote}
  ${complete}
  ${tips}
  ${pills}`;
+}
+export function printPackBody(L){
+ const P=L.printables;
+ const pBase=(L.r2Base||lessonsBase)+P.folder;
+ const crumbs=[...L.crumbs,['Printable Pack','/toddler/2-years/colors-and-shapes/print/']];
+ return `${crumbNav(crumbs)}
+ <section class="wrap print-head">
+  <span class="eyebrow">PRINTABLE ACTIVITY PACK</span>
+  <h1>${P.pack}</h1>
+  <p class="tc-pack-meta">${P.meta}</p>
+  <p class="lesson-copy">${P.audience} Print all eight pages in order, or open any single page full size from the previews. When you are ready, choose Print Activity Pack and pick “Fit to page”.</p>
+  <div class="hero-actions tc-print-actions"><button type="button" class="button" data-tc-print-view>Print Activity Pack</button><a class="button button-ghost" href="${L.path}">Back to class <span aria-hidden="true">↗</span></a></div>
+  <p class="fc-hint">Printing happens in your browser — one activity per printed page, in order. Nothing is uploaded and nothing is installed.</p>
+ </section>
+ <section class="wrap tc-print-pages" aria-label="The eight printable pages">
+  ${P.pages.map((p,i)=>`<figure class="tc-print-page"><img src="${pBase}${p.file}" width="1414" height="2000" alt="${p.alt}"${i===0?'':' loading="lazy"'}><figcaption><strong>${String(i+1).padStart(2,'0')} · ${p.title}</strong></figcaption></figure>`).join('')}
+ </section>`;
 }

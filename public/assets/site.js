@@ -184,4 +184,22 @@
       }
     });
   });
+
+  /* Printable pack: "Print Activity Pack" opens the print view in a new tab;
+     on the print view itself the button opens the browser print dialog, and
+     ?print=1 triggers it once the pages have loaded. No PDF is involved. */
+  document.querySelectorAll('[data-tc-print-open]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const url = btn.getAttribute('data-tc-print-open');
+      if (url) window.open(url, '_blank', 'noopener');
+    });
+  });
+  const printButton = document.querySelector('[data-tc-print-view]');
+  if (printButton) printButton.addEventListener('click', () => window.print());
+  if (document.body && document.body.classList.contains('print-view') && new URLSearchParams(location.search).has('print')) {
+    const pages = [...document.querySelectorAll('.tc-print-pages img')];
+    const openDialog = () => { try { window.print(); } catch (e) { /* dialog unavailable */ } };
+    if (pages.length && pages.every(image => image.complete && image.naturalWidth > 0)) setTimeout(openDialog, 400);
+    else window.addEventListener('load', () => setTimeout(openDialog, 800));
+  }
 })();

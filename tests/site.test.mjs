@@ -8,8 +8,8 @@ const htmlFiles=files(root).filter(f=>f.endsWith('.html'));
 const activities=JSON.parse(readFileSync('data/activities.json','utf8'));
 const info=JSON.parse(readFileSync('dist/build-info.json','utf8'));
 const read=f=>readFileSync(f,'utf8');
-test('114 HTML pages, eleven permanent activity routes and activity sheets',()=>{
- assert.equal(htmlFiles.length,114);assert.equal(activities.length,11);
+test('115 HTML pages, eleven permanent activity routes and activity sheets',()=>{
+ assert.equal(htmlFiles.length,115);assert.equal(activities.length,11);
  for(const a of activities){assert.ok(existsSync(`dist/${a.subject}/${a.slug}/index.html`));assert.ok(existsSync(`dist/downloads/${a.slug}.svg`));assert.ok(a.steps.length>=5);assert.ok(a.safety.length>50);}
 });
 test('every local link, image, stylesheet, script and fragment resolves',()=>{
