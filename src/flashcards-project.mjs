@@ -7,10 +7,10 @@ export const flashcardSets=[
   h1:'Black and white baby flashcards.',
   subtitle:'Free printable high-contrast cards, made for newborn eyes.',
   hubTitle:'Black and White Baby Cards',
-  metaDescription:'Free printable black and white baby flashcards: eight high-contrast animal cards, cutout sheets and a parent guide for newborns 0–6 months. Print at home, no sign-up.',
+  metaDescription:'Free printable black and white baby flashcards: eight high-contrast animal cards for newborns 0–6 months. Print at home, no sign-up.',
   ageLabel:'0–6 months',
   thumb:'first-discoveries-bear-card.webp',
-  blurb:'Eight bold animal cards plus look-together guides for the very first months. Print, show one at a time and watch your baby stare, track and smile.',
+  blurb:'Eight bold animal cards for the very first months. Print, show one at a time and watch your baby stare, track and smile.',
   intro:'Newborn eyes see the world in black and white first. These eight animal cards use bold, high-contrast shapes that are easy for a baby to focus on, so early looking becomes calm, shared play. Print them at home, hold one up close and talk softly as your baby meets the bear, the bird, the butterfly, the fish, the cat, the elephant, the rabbit and the turtle. There is nothing to teach and nothing to test: the whole point is a quiet minute of looking together.',
   cards:[
    {file:'first-discoveries-bear-card.webp',word:'Bear',n:'01',alt:'Black and white baby flashcard of a bear face with the word Bear, from Kiddo.school First Discoveries set 01'},
@@ -22,13 +22,8 @@ export const flashcardSets=[
    {file:'black-and-white-baby-card-rabbit.webp',word:'Rabbit',n:'07',alt:'Black and white baby flashcard of a rabbit with the word Rabbit, from Kiddo.school First Discoveries set 01'},
    {file:'black-and-white-baby-card-turtle.webp',word:'Turtle',n:'08',alt:'Black and white baby flashcard of a turtle with the word Turtle, from Kiddo.school First Discoveries set 01'}
   ],
-  extras:[
-   {file:'first-discoveries-look-together-cutout-sheet.webp',title:'Look-together cutout sheet',alt:'Printable cutout sheet with four black and white baby cards to cut apart',blurb:'One sheet, four cards. Cut along the lines and keep them in a nappy bag for waiting rooms.'},
-   {file:'black-and-white-baby-cards-cutout-sheet-2.webp',title:'Cutout sheet 2',alt:'Second printable cutout sheet with more black and white baby cards to cut apart',blurb:'Four more cards to cut: cat, elephant, rabbit and turtle. Double-thick paper survives the pram test best.'},
-   {file:'first-discoveries-look-together-parent-guide.webp',title:'Parent guide',alt:'Printable parent guide showing how to use the black and white baby cards: print the cards, show one at a time, talk softly and pause, follow your baby’s cues',blurb:'The how-to on one page: print, show one at a time, talk softly, follow your baby’s cues.'}
-  ],
   steps:[
-   ['Print the cards','Print on A4 or Letter paper using fit to page. Plain paper works; cardstock or a photo setting makes the cards last longer. The parent guide and cutout sheet print on their own pages.'],
+   ['Print the cards','Print on A4 or Letter paper using fit to page. Plain paper works; cardstock or a photo setting makes the cards last longer.'],
    ['Find a calm moment','Pick a time when your baby is awake, fed and settled, such as after a feed or a nappy change. A few minutes is plenty: little ones work hard just by looking.'],
    ['Hold one card close','Hold a card about 25 to 40 centimetres from your baby’s face, roughly the distance from your chest to your face during a cuddle. An adult always holds the cards.'],
    ['Talk softly and pause','Name the animal in a gentle voice: bear. Then wait. Babies answer with stares, wiggles, coos or wide eyes, and the pause is where the conversation happens.'],
@@ -49,9 +44,8 @@ export function fcSoon(){
  return `<div class="fc-soon"><h2>More sets are on the drawing table.</h2><p>Parents tell us they want first words, animals, alphabet and number flashcards next, all in the same print-at-home style. If there is a set you are waiting for, the kitchen table decides what gets made first: tell someone at Kiddo.school what your little one is learning right now.</p></div>`;
 }
 export function fcSetBody(set){
- return `<section class="wrap fc-intro"><div class="fc-chips"><span>Ages ${set.ageLabel}</span><span>${set.cards.length} cards</span><span>Guide &amp; cutouts included</span><span>Free to print</span></div><p class="fc-lede">${set.intro}</p></section>
+ return `<section class="wrap fc-intro"><div class="fc-chips"><span>Ages ${set.ageLabel}</span><span>${set.cards.length} cards</span><span>Free to print</span></div><p class="fc-lede">${set.intro}</p></section>
  <section class="wrap fc-section"><span class="eyebrow">THE EIGHT CARDS</span><h2>Meet the animals.</h2><p class="fc-hint">Tap a card to open it full-size, then print from your browser. One card per page keeps every shape big and bold.</p><div class="fc-grid">${set.cards.map(c=>`<figure class="fc-card"><a href="${imgUrl(set,c.file)}" aria-label="Open full-size ${c.word} card"><img src="${imgUrl(set,c.file)}" width="1024" height="1536" alt="${c.alt}" loading="lazy"></a><figcaption><strong>${c.word}</strong><span>Card ${c.n}</span></figcaption></figure>`).join('')}</div></section>
- <section class="wrap fc-section"><span class="eyebrow">PRINT A LITTLE EXTRA</span><h2>The look-together extras.</h2><p class="fc-hint">Three bonus pages come with this set: two cutout sheets and a one-page guide for grown-ups.</p><div class="fc-grid fc-grid-2">${set.extras.map(x=>`<figure class="fc-card"><a href="${imgUrl(set,x.file)}" aria-label="Open full-size ${x.title}"><img src="${imgUrl(set,x.file)}" width="1024" height="1536" alt="${x.alt}" loading="lazy"></a><figcaption><strong>${x.title}</strong><span>${x.blurb}</span></figcaption></figure>`).join('')}</div></section>
  <section class="wrap fc-section"><span class="eyebrow">HOW TO LOOK TOGETHER</span><h2>One card, one quiet minute.</h2><ol class="fc-steps">${set.steps.map(([t,d],i)=>`<li><span class="fc-stepnum">${String(i+1).padStart(2,'0')}</span><div><h3>${t}</h3><p>${d}</p></div></li>`).join('')}</ol></section>
  <section class="wrap fc-section fc-why"><span class="eyebrow">THE LITTLE BIT OF LEARNING</span><h2>Why black and white?</h2><p>${set.why}</p></section>
  <section class="wrap fc-section"><h2>Make it work for you.</h2><div class="fc-adapt"><div><h3>Keep it simple</h3><p>${set.younger}</p></div><div><h3>Take it further</h3><p>${set.older}</p></div></div><p class="fc-safety"><strong>A note for grown-ups:</strong> ${set.safety}</p></section>

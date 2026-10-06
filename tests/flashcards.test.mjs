@@ -11,15 +11,15 @@ test('flashcards hub lists every set and links from home nav and footer',()=>{
  assert.match(home,/href="\/flashcards\/"/);
 });
 
-test('black and white baby cards page shows every card, extras, steps and safety',()=>{
+test('black and white baby cards page shows only flashcards, steps and safety',()=>{
  const s=flashcardSets[0];
  const html=readFileSync(`dist/flashcards/${s.slug}/index.html`,'utf8');
  assert.match(html,/Black and White Baby Flashcards – Free Printable Cards/);
  for(const c of s.cards){assert.match(html,new RegExp(c.file));assert.match(html,new RegExp(c.word));}
- for(const x of s.extras)assert.match(html,new RegExp(x.file));
+ assert.doesNotMatch(html,/cutout|parent-guide|look-together/i);
  assert.match(html,/shared looking, not a test\./i);
  assert.match(html,/25 to 40 centimetres/);
  assert.match(html,/out of sleep spaces/i);
  const urls=[...html.matchAll(/<img[^>]+src="(https:\/\/pub-f2fcb7[^"]+)"/g)].map(m=>m[1]);
- assert.ok(urls.length>=11,'set page should embed all eleven images');
+ assert.ok(urls.length>=8,'set page should embed the eight flashcard images only');
 });
