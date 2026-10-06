@@ -44,3 +44,101 @@
   catalogue.querySelector('[data-clear]').addEventListener('click', () => { form.reset(); query.focus(); });
   filter(false);
 })();
+
+/* Kiddo School newborn lesson: one-card-at-a-time class viewer */
+(() => {
+  const frame = document.querySelector('[data-lesson-viewer]');
+  const grid = document.querySelector('[data-lv-grid]');
+  if (!frame || !grid || typeof frame.querySelector !== 'function') return;
+  const stage = frame.querySelector('[data-lv-stage]');
+  const count = frame.querySelector('[data-lv-count]');
+  const prev = frame.querySelector('[data-lv-prev]');
+  const next = frame.querySelector('[data-lv-next]');
+  const full = frame.querySelector('[data-lv-full]');
+  const finish = frame.querySelector('[data-lv-finish]');
+  const done = frame.querySelector('[data-lv-done]');
+  const slides = [...grid.querySelectorAll('img')];
+  const total = slides.length;
+  if (!stage || !count || !prev || !next || !total) return;
+  let index = 0;
+  let live = false;
+  function preload(offset) {
+    const source = slides[index + offset];
+    if (!source) return;
+    const image = new Image();
+    image.src = source.currentSrc || source.src;
+  }
+  function render() {
+    const image = slides[index].cloneNode(true);
+    image.loading = 'eager';
+    const figure = document.createElement('figure');
+    figure.className = 'lv-figure';
+    figure.appendChild(image);
+    stage.replaceChildren(figure);
+    count.textContent = 'Card ' + (index + 1) + ' of ' + total;
+    prev.disabled = index === 0;
+    next.disabled = index === total - 1;
+    preload(1);
+    preload(-1);
+  }
+  function start() {
+    if (live) return;
+    live = true;
+    frame.classList.add('is-live');
+    done.hidden = true;
+    render();
+  }
+  function stop() {
+    live = false;
+    frame.classList.remove('is-live');
+    frame.classList.remove('is-fs');
+    if (document.fullscreenElement && document.exitFullscreen) document.exitFullscreen().catch(() => {});
+  }
+  function go(delta) {
+    const target = index + delta;
+    if (target < 0 || target >= total) return;
+    index = target;
+    render();
+  }
+  function toggleFullscreen() {
+    if (document.fullscreenElement) {
+      if (document.exitFullscreen) document.exitFullscreen().catch(() => {});
+      frame.classList.remove('is-fs');
+    } else if (frame.requestFullscreen) {
+      frame.requestFullscreen().catch(() => frame.classList.add('is-fs'));
+    } else {
+      frame.classList.add('is-fs');
+    }
+  }
+  document.addEventListener('fullscreenchange', () => {
+    if (!document.fullscreenElement) frame.classList.remove('is-fs');
+  });
+  document.querySelectorAll('[data-lv-start]').forEach(trigger => {
+    trigger.addEventListener('click', () => {
+      start();
+      if (trigger.tagName === 'BUTTON') frame.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+  prev.addEventListener('click', () => go(-1));
+  next.addEventListener('click', () => go(1));
+  if (full) full.addEventListener('click', toggleFullscreen);
+  if (finish) finish.addEventListener('click', () => {
+    stop();
+    done.hidden = false;
+    const howTo = document.querySelector('#how-to');
+    if (howTo) howTo.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+  let touchX = null;
+  stage.addEventListener('touchstart', event => { touchX = event.changedTouches[0].clientX; }, { passive: true });
+  stage.addEventListener('touchend', event => {
+    if (touchX === null) return;
+    const delta = event.changedTouches[0].clientX - touchX;
+    touchX = null;
+    if (Math.abs(delta) > 40) go(delta < 0 ? 1 : -1);
+  }, { passive: true });
+  document.addEventListener('keydown', event => {
+    if (!live) return;
+    if (event.key === 'ArrowRight') go(1);
+    if (event.key === 'ArrowLeft') go(-1);
+  });
+})();

@@ -374,5 +374,101 @@
     "height": 1536,
     "format": "webp",
     "bytes": 49706
+  },
+  {
+    "key": "flashcards/black-and-white-baby-cards/newborn-high-contrast-checkerboard.webp",
+    "alt": "Black and white checkerboard pattern card for newborns",
+    "width": 1080,
+    "height": 1350,
+    "format": "webp",
+    "bytes": 22166
+  },
+  {
+    "key": "flashcards/black-and-white-baby-cards/newborn-high-contrast-circle-card.webp",
+    "alt": "Black and white high-contrast circle card for newborns",
+    "width": 1080,
+    "height": 1350,
+    "format": "webp",
+    "bytes": 17586
+  },
+  {
+    "key": "flashcards/black-and-white-baby-cards/newborn-high-contrast-concentric-circles.webp",
+    "alt": "Black and white concentric circles card for newborns",
+    "width": 1080,
+    "height": 1350,
+    "format": "webp",
+    "bytes": 42450
+  },
+  {
+    "key": "flashcards/black-and-white-baby-cards/newborn-high-contrast-eyes.webp",
+    "alt": "Black and white high-contrast eyes card for newborns",
+    "width": 1080,
+    "height": 1350,
+    "format": "webp",
+    "bytes": 17638
+  },
+  {
+    "key": "flashcards/black-and-white-baby-cards/newborn-high-contrast-face.webp",
+    "alt": "Black and white high-contrast smiling face card for newborns",
+    "width": 1080,
+    "height": 1350,
+    "format": "webp",
+    "bytes": 38104
+  },
+  {
+    "key": "flashcards/black-and-white-baby-cards/newborn-high-contrast-horizontal-stripes.webp",
+    "alt": "Black and white high-contrast horizontal stripes card for newborns",
+    "width": 1080,
+    "height": 1350,
+    "format": "webp",
+    "bytes": 13188
+  },
+  {
+    "key": "flashcards/black-and-white-baby-cards/newborn-high-contrast-spiral.webp",
+    "alt": "Black and white high-contrast spiral card for newborns",
+    "width": 1080,
+    "height": 1350,
+    "format": "webp",
+    "bytes": 42086
+  },
+  {
+    "key": "flashcards/black-and-white-baby-cards/newborn-high-contrast-square-card.webp",
+    "alt": "Black and white high-contrast square card for newborns",
+    "width": 1080,
+    "height": 1350,
+    "format": "webp",
+    "bytes": 10878
+  },
+  {
+    "key": "flashcards/black-and-white-baby-cards/newborn-high-contrast-symmetrical-face.webp",
+    "alt": "Black and white symmetrical baby face card for newborns",
+    "width": 1080,
+    "height": 1350,
+    "format": "webp",
+    "bytes": 46526
+  },
+  {
+    "key": "flashcards/black-and-white-baby-cards/newborn-high-contrast-target.webp",
+    "alt": "Black and white bullseye target card for newborns",
+    "width": 1080,
+    "height": 1350,
+    "format": "webp",
+    "bytes": 43774
+  },
+  {
+    "key": "flashcards/black-and-white-baby-cards/newborn-high-contrast-triangle.webp",
+    "alt": "Black and white high-contrast triangle card for newborns",
+    "width": 1080,
+    "height": 1350,
+    "format": "webp",
+    "bytes": 19738
+  },
+  {
+    "key": "flashcards/black-and-white-baby-cards/newborn-high-contrast-vertical-stripes.webp",
+    "alt": "Black and white high-contrast vertical stripes card for newborns",
+    "width": 1080,
+    "height": 1350,
+    "format": "webp",
+    "bytes": 18934
   }
 ]

@@ -80,3 +80,49 @@ h1,h2,h3,.brand,.bean-links strong{font-family:var(--kid-font);letter-spacing:0}
 .fc-open{display:inline-block;margin-top:14px;font-weight:700;font-size:14px;color:#71326d;text-decoration:underline;text-underline-offset:4px}
 .fc-soon{margin-top:44px;border:1.5px dashed var(--ink);background:var(--sage);padding:24px 26px;max-width:880px}.fc-soon p{margin-top:8px}
 @media(max-width:700px){.fc-setcard{grid-template-columns:1fr}.fc-steps li{flex-direction:column;gap:6px}}
+/* Newborn lesson pages (Kiddo School classes) */
+.lesson-hero{margin-top:30px;max-width:860px}
+.lesson-chips span{border:1.5px solid var(--ink);background:var(--white);padding:6px 13px;border-radius:999px;font-size:12.5px;font-weight:600}
+.lesson-chips strong{font-weight:800;margin-right:5px;text-transform:uppercase;font-size:10.5px;letter-spacing:.8px}
+.lesson-lede{margin-top:16px;font-size:17px;max-width:74ch;color:var(--ink)}
+.lesson-start{margin-top:24px;display:flex;flex-wrap:wrap;align-items:center;gap:16px}
+.lesson-start-hint{font-size:13px;color:var(--muted);max-width:34ch}
+.lesson-section{margin-top:56px}
+.lesson-classheading{margin-top:30px}
+.lv-frame{margin-top:20px;border:1.5px solid var(--ink);background:var(--white);box-shadow:5px 5px 0 rgba(52,59,48,.14);padding:18px}
+.lv-stage{display:none;margin:0 auto;max-width:520px}
+.lv-figure{margin:0}
+.lv-stage img{width:100%;height:auto}
+.lv-controls{display:none;align-items:center;justify-content:center;gap:14px;margin-top:16px;flex-wrap:wrap}
+.lv-count{font-size:13px;font-weight:700;letter-spacing:.5px;min-width:9ch;text-align:center}
+.lv-btn{border:1.5px solid var(--ink);background:var(--white);padding:10px 16px;font-weight:700;font-size:13px;box-shadow:3px 3px 0 rgba(52,59,48,.18);min-height:44px}
+.lv-btn:hover:not(:disabled){transform:translate(-1px,-1px);box-shadow:4px 4px 0 rgba(52,59,48,.22)}
+.lv-btn:disabled{opacity:.35;cursor:default;box-shadow:none}
+.lv-actions{display:none;justify-content:center;gap:12px;margin-top:14px;flex-wrap:wrap}
+.lv-begin{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:14px;margin-top:6px}
+.lv-beginhint{font-size:13px;color:var(--muted)}
+.lv-done{margin-top:14px;border-left:4px solid #a9694e;background:var(--white);padding:12px 15px;font-size:14px;color:var(--ink)}
+.lv-done[hidden]{display:none}
+.lv-grid{margin-top:20px;display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px}
+.lv-card{margin:0;border:1.5px solid var(--ink);background:var(--white);box-shadow:4px 4px 0 rgba(52,59,48,.12)}
+.lv-card img{width:100%;height:auto}
+.is-live .lv-stage{display:block}
+.is-live .lv-controls,.is-live .lv-actions{display:flex}
+.is-live .lv-begin{display:none}
+.is-live ~ .lv-grid{display:none}
+.lv-frame:fullscreen{display:flex;flex-direction:column;justify-content:center;padding:14px;max-width:none}
+.lv-frame:fullscreen .lv-stage img{max-height:82vh;width:auto;max-width:100%;margin-inline:auto}
+.lv-frame.is-fs{position:fixed;inset:0;z-index:80;margin:0;display:flex;flex-direction:column;justify-content:center;padding:14px}
+.lv-frame.is-fs .lv-stage img{max-height:80vh;width:auto;max-width:92vw;margin-inline:auto}
+.lesson-note{margin-top:22px;border-left:4px solid #a9694e;background:var(--white);padding:13px 16px;font-size:14px;max-width:900px;color:var(--ink)}
+.lesson-linkrow{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}
+.lesson-pill-link{border:1.5px solid var(--ink);background:var(--white);padding:10px 18px;border-radius:999px;font-weight:700;text-decoration:none;font-size:14px;box-shadow:3px 3px 0 rgba(52,59,48,.14)}
+.lesson-pill-link:hover{background:var(--yellow);text-decoration:none}
+.lesson-next{margin-top:26px;font-size:15px;color:var(--ink)}
+.lesson-next strong{font-weight:800}
+.lesson-card-link{text-decoration:none}
+.lesson-card-link:hover{background:var(--sage)}
+.lesson-card-link h3{text-decoration:underline;text-underline-offset:4px}
+.lesson-soon{opacity:.8;border-style:dashed}
+.lesson-feature{max-width:900px}
+@media(max-width:700px){.lesson-hero{margin-top:20px}.lv-frame{padding:12px}.lv-grid{grid-template-columns:repeat(2,1fr);gap:10px}}
