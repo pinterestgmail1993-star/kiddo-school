@@ -1,53 +1,51 @@
 # Deploy Kiddo.school to Cloudflare Pages
 
-Nothing has been deployed. You do not need to buy a domain before previewing the site.
+The site is deployed at https://kiddo-school.pages.dev from the `main` branch of `pinterestgmail1993-star/kiddo-school`. Pushes to `main` trigger an automatic build; a GitHub commit alone does not prove deployment succeeded, so load the new routes after each build.
 
-## Option A: connect the private GitHub repository
+## Current Pages configuration
 
-This is convenient if future GitHub commits should update the site automatically.
+- Project URL: https://kiddo-school.pages.dev. Branch: `main`. Framework preset: None.
+- Build command: `npm run build`. Output directory: `dist`. Root: repository root.
+- Node: 22 or newer (set `NODE_VERSION=22` if required).
 
-1. In Cloudflare, open Workers & Pages and create a **Pages** project using Git integration.
-2. Authorize access to `pinterestgmail1993-star/kiddo-school`. The repository can remain private.
-3. Select production branch `main`, framework preset **None**, build command `npm run build`, build output directory `dist`, and leave the root directory at the repository root. Use Node.js 22 or newer (set `NODE_VERSION=22` if needed).
-4. For the first preview, leave `SITE_URL` unset and indexing disabled. Deploy to obtain your actual `https://...pages.dev` address. The first build deliberately has localhost canonicals and noindex protections; it is a review build, not an SEO launch.
-5. Copy the actual production Pages URL. Add `SITE_URL` with that origin only, without a path. Keep `SITE_INDEXABLE=false` while reviewing. Rebuild. Canonicals and sitemap now use the real preview address.
-6. Perform the browser checks in VERIFICATION.md. When ready to launch, set `SITE_INDEXABLE=true` for the production environment and rebuild. Keep preview environment indexing disabled.
+## Indexing stays off during review
 
-Use environment variables rather than changing the source config if you prefer. `SITE_URL` overrides `site.config.json`; `SITE_INDEXABLE=false` always disables indexing. Non-main Cloudflare branch builds are noindex regardless of the production setting.
+`site.config.json` sets `siteUrl` to the Pages URL and `indexable: false`. Environment variables `SITE_URL` and `SITE_INDEXABLE` can override the config. Keep noindex in place until domain ownership and launch readiness are confirmed; do not switch canonicals to a custom domain early. Non-main branch builds stay noindex regardless of settings.
 
-## Option B: upload the finished files yourself
+## Images and R2
 
-Use a Pages **Direct Upload** project if you prefer uploading folders or ZIP files manually. Choose this deliberately: Cloudflare documents that a Direct Upload project cannot later be switched to Git integration without making a new project.
+Website imagery is served from the public R2 development URL `https://pub-f2fcb7c9b45a496cbeefef18dbba0ec0.r2.dev/` (bucket `kiddo-school-assets`; the bucket name is not part of the public URL). Each activity folder lives under `activities/<subject>/<activity>/` and holds 1024×1536 WebP worksheets; the maths set is at `activities/maths/repeating-pattern/`. The Content-Security-Policy in `scripts/build.mjs` allow-lists this origin. If assets move to a custom domain later, update each `src/*-project.mjs` base and the CSP together, and verify every replacement URL.
 
-1. Use the repository's prebuilt `dist/` folder for an initial review upload. Upload the **contents of dist**, not the source repository. `index.html` must be at the upload root.
-2. In Workers & Pages, create a Pages application using drag and drop. Upload the `dist` folder (or a ZIP containing its contents) and deploy.
-3. Send back the actual Pages URL, or set it yourself in `site.config.json` as `siteUrl`, then run `npm run build` and upload the regenerated `dist/` folder. Leave `indexable: false` until review is complete.
-4. When ready to launch, set `indexable: true`, rebuild, run `npm test`, and upload again. Direct Upload has no build step after upload; environment variables there do not rewrite already-built HTML.
+## Option A: Git integration (current setup)
 
-All images, scripts and download sheets are bundled. No database, R2 bucket, Worker, Pages Function or paid image service is required for this pilot.
+1. Commit source, tests and the regenerated `dist/` folder, then push to `main`.
+2. Watch the Cloudflare Pages build, then load the actual new routes to confirm.
+3. Keep `SITE_INDEXABLE=false` while reviewing; set it to `true` only for launch, then rebuild.
+
+## Option B: direct upload
+
+Use a Pages **Direct Upload** project only deliberately: a Direct Upload project cannot later be switched to Git integration without creating a new project. Upload the **contents** of a freshly built `dist/` folder (with `index.html` at the root), not the repository. Rebuild and re-upload after any change; environment variables do not rewrite already-built HTML.
 
 ## Connect a domain when you own it
 
-1. Buy your chosen domain; verify availability and renewal cost with the registrar. The website does not assume you own `kiddo.school` yet.
-2. Open your Pages project → Custom domains → Set up a custom domain. Add the domain there before setting up DNS.
-3. Follow Cloudflare's DNS instructions. For an apex domain such as `kiddo.school`, Cloudflare requires the domain to be a zone in the same Cloudflare account with its nameservers configured. A subdomain can use a CNAME pointing to the Pages hostname according to the setup flow.
-4. Wait for the domain and HTTPS certificate to become active.
-5. Change `SITE_URL` (or `siteUrl`) to the verified HTTPS domain and rebuild/redeploy. Check the canonical tag and sitemap again.
-6. Pick one preferred hostname. Configure redirects for other owned hostnames and the old production Pages hostname using Cloudflare's documented redirect method, after the preferred domain works. Do not redirect to a domain you have not registered and activated.
+1. Buy the domain and verify availability and renewal cost with the registrar.
+2. Pages project → Custom domains → set up the domain before DNS changes.
+3. Follow Cloudflare's DNS instructions; an apex domain such as `kiddo.school` must be a zone in the same Cloudflare account.
+4. Wait for the domain and HTTPS certificate to activate.
+5. Change `SITE_URL` (or `siteUrl`) to the verified HTTPS origin and rebuild; recheck canonical tags and the sitemap.
+6. Redirect other owned hostnames and the old Pages hostname only after the preferred domain works.
 
 ## Final checks
 
-- Homepage, all six activity URLs and all subject/age pages load directly.
-- Refreshing an activity URL works; unknown paths return the 404 page and HTTP 404 (no SPA catch-all).
-- Search, age and subject filters, clear buttons and downloads work on a phone and desktop.
-- Inspect `build-info.json`: correct origin and intended `indexable` status.
-- Inspect page canonical tags, `/sitemap.xml`, `/robots.txt` and response headers.
-- Keep the repository private. Publishing a website does not require changing repository visibility.
-- Privacy text must be revisited if you add forms, analytics, advertisements or external services. No advertising integration or approval is included.
+- All nine activity guides, their sub-activity pages and all subject/age pages load directly.
+- Refreshing an activity URL works; unknown paths return the 404 page and HTTP 404.
+- Search, age and subject filters, clear buttons and downloads work on phone and desktop.
+- Inspect `build-info.json`, canonical tags, `/sitemap.xml`, `/robots.txt` and response headers.
+- Revisit the privacy text before adding forms, analytics or advertisements. No advertising integration or approval is included.
 
 ## Cloudflare references
 
-Checked on 4 October 2026:
+Checked on 6 October 2026:
 
 - Git integration: https://developers.cloudflare.com/pages/get-started/git-integration/
 - Direct Upload and its project-type limitation: https://developers.cloudflare.com/pages/get-started/direct-upload/

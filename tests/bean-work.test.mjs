@@ -83,3 +83,16 @@ test('bridge activities provide one preview, safe testing and recording controls
  assert.equal([...html.matchAll(new RegExp('<img[^>]+src="[^"]+/'+p.slug+'\\.webp"','g'))].length,1);
  }
 });
+
+test('pattern activities provide one preview, drawing, typing and a labelled answer reveal',async()=>{
+ const {patternPages}=await import('../src/pattern-project.mjs');
+ for(const p of patternPages){const html=readFileSync(`dist/maths/make-a-pattern/${p.slug}/index.html`,'utf8');
+  assert.match(html,/activities\/maths\/repeating-pattern\//);assert.match(html,/An adult helps with cutting/);assert.match(html,/data-export/);assert.match(html,/<textarea/);assert.match(html,/<canvas/);
+  assert.equal([...html.matchAll(new RegExp('<img[^>]+src="[^"]+/'+p.slug+'\\.webp"','g'))].length,1);
+ }
+ const fin=readFileSync('dist/maths/make-a-pattern/finish-my-pattern/index.html','utf8');
+ assert.match(fin,/Reveal the answers/);assert.match(fin,/pink circle/);assert.match(fin,/yellow circle/);assert.match(fin,/yellow triangle/);assert.match(fin,/pink triangle/);
+ for(const other of patternPages.filter(p=>p.slug!=='finish-my-pattern')){const html=readFileSync(`dist/maths/make-a-pattern/${other.slug}/index.html`,'utf8');assert.doesNotMatch(html,/Reveal the answers/);}
+ const guide=readFileSync('dist/maths/make-a-pattern/index.html','utf8');
+ assert.match(guide,/pattern-studio-cover\.webp/);assert.match(guide,/how-to-make-a-pattern\//);
+});

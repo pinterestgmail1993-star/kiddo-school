@@ -230,5 +230,53 @@
     "height": 64,
     "format": "svg",
     "bytes": 224
+  },
+  {
+    "key": "activities/maths/repeating-pattern/pattern-studio-cover.webp",
+    "alt": "Cartoon Pattern Studio cover: two children place pink circles and yellow squares into an alternating repeating row.",
+    "width": 1024,
+    "height": 1536,
+    "format": "webp",
+    "bytes": 88904
+  },
+  {
+    "key": "activities/maths/repeating-pattern/how-to-make-a-pattern.webp",
+    "alt": "Four-step cartoon guide: choose two pieces, make your repeat, repeat it again and say it aloud.",
+    "width": 1024,
+    "height": 1536,
+    "format": "webp",
+    "bytes": 67708
+  },
+  {
+    "key": "activities/maths/repeating-pattern/pattern-pieces-to-cut.webp",
+    "alt": "Twelve cut-out pattern cards: pink circles, yellow squares and purple triangles.",
+    "width": 1024,
+    "height": 1536,
+    "format": "webp",
+    "bytes": 48514
+  },
+  {
+    "key": "activities/maths/repeating-pattern/finish-my-pattern.webp",
+    "alt": "Four pattern rows with one empty box each; children draw the piece that comes next.",
+    "width": 1024,
+    "height": 1536,
+    "format": "webp",
+    "bytes": 62530
+  },
+  {
+    "key": "activities/maths/repeating-pattern/create-my-own-pattern.webp",
+    "alt": "Blank pattern planner with spaces for a repeating part, a whole pattern and a rule in words.",
+    "width": 1024,
+    "height": 1536,
+    "format": "webp",
+    "bytes": 54564
+  },
+  {
+    "key": "activities/maths/repeating-pattern/my-movement-pattern.webp",
+    "alt": "Clap, tap and reach movement cards with a box for drawing a repeating movement sequence.",
+    "width": 1024,
+    "height": 1536,
+    "format": "webp",
+    "bytes": 78510
   }
 ]
