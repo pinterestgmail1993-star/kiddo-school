@@ -225,11 +225,106 @@ export const aeoLesson={
  tryTogether:['Dog. Woof woof!','Look, a bird.','Here is the ball.','That’s a cup.','Can you see the cow? Moo!'],
  realWorld:{heading:'Find It in Real Life',copy:'Learning can continue away from the screen. When you see one of these animals or objects during your day, point it out and name it naturally.',examples:['See a dog → “Dog!”','Hold baby’s cup → “Your cup.”','Pick up a shoe → “Shoe.”','See a bird outside → “Bird!”']},
  pills:{heading:'Where to next?',items:[['Baby classes','/baby/'],['6–9 Months','/baby/6-9-months/'],['Talk &amp; Think','/subjects/talk-and-think/']]},
- pathNav:{prev:{title:'First Words & Familiar Things',range:'4–6 Months',href:'/baby/4-6-months/first-words-familiar-things/'},next:null},
+ pathNav:{prev:{title:'First Words & Familiar Things',range:'4–6 Months',href:'/baby/4-6-months/first-words-familiar-things/'},next:{title:'First Actions & Body Parts',range:'9–12 Months',href:'/baby/9-12-months/first-actions-body-parts/'}},
  hubBlurb:'Realistic animals alongside a ball, a shoe, a cup and more — name them, add the sounds, and let early recognition grow. Three to five playful minutes.',
  schema:{level:'Infant (6–9 months)',teaches:'Early recognition, listening and first thinking skills through animals and everyday objects',audience:'Parents of babies',keywords:'animal flashcards for babies, everyday objects flashcards, baby talking activities, 6-9 months baby flashcards'}
 };
-export const lessons=[hcLesson,fvLesson,cfoLesson,fwftLesson,aeoLesson];
+export const fabLesson={
+ path:'/baby/9-12-months/first-actions-body-parts/',
+ seoTitle:'Body Parts & First Actions for Babies 9–12 Months',
+ title:'First Actions & Body Parts for Babies 9–12 Months',
+ h1:'First Actions & Body Parts for Babies 9–12 Months',
+ description:'Explore body-part and action flashcards for babies 9–12 months, with simple parent-led activities for looking, listening, copying and connecting words with actions.',
+ ogAlt:'Cover of the Kiddo School Explorer 2 class First Actions and Body Parts for babies 9 to 12 months, with a baby hand, foot and clapping hands',
+ ogImage:lessonsBase+'first-actions-body-parts-9-12-months/cover.webp',
+ schemaImage:lessonsBase+'first-actions-body-parts-9-12-months/cover.webp',
+ eyebrow:'EXPLORER 2 · LESSON 6',
+ crumbs:[['Baby','/baby/'],['9–12 Months','/baby/9-12-months/'],['First Actions & Body Parts','/baby/9-12-months/first-actions-body-parts/']],
+ chips:[['Age','9–12 Months'],['Subject','Talk &amp; Think'],['Class','Explorer 2'],['Duration','3–5 minutes']],
+ ledes:['Between nine and twelve months, babies become little copiers: they wave, clap, point and love it when you name what they are doing. This class uses twelve simple cards — a hand, a foot, eyes, a nose, a mouth, then clapping, waving, eating, drinking, sleeping, pointing and smiling — shown one at a time while you say the word or do the action together.',
+  'There is no script and nothing to test. You talk and play, your baby looks and moves, and the words for their little body and everyday actions grow out of real, happy moments. Short sessions of three to five minutes are all it takes.'],
+ startHint:'Twelve cards, one at a time. Say the word, do the action — copy-me play wins at this age.',
+ viewerLabel:'Today’s class: twelve body-part and action cards',
+ viewerHeading:'Twelve cards, one at a time.',
+ folder:'first-actions-body-parts-9-12-months/',
+ eagerFirst:false,
+ cover:{file:'cover.webp',w:1414,h:2000,alt:'Cover of the First Actions and Body Parts class for babies 9 to 12 months: a baby hand, foot and clapping hands with the Explorer 2 Talk & Think label from Kiddo School'},
+ cards:[
+  {order:1,file:'01-hand.webp',w:1414,h:2000,alt:'Open hand visual card for babies'},
+  {order:2,file:'02-foot.webp',w:1414,h:2000,alt:'Baby foot visual card for babies'},
+  {order:3,file:'03-eyes.webp',w:1414,h:2000,alt:'Baby eyes visual card'},
+  {order:4,file:'04-nose.webp',w:1414,h:2000,alt:'Nose visual card for babies'},
+  {order:5,file:'05-mouth.webp',w:1414,h:2000,alt:'Baby mouth visual card'},
+  {order:6,file:'06-clapping.webp',w:794,h:1123,alt:'Baby clapping hands'},
+  {order:7,file:'07-waving.webp',w:794,h:1123,alt:'Baby waving a hand'},
+  {order:8,file:'08-eating.webp',w:794,h:1123,alt:'Baby eating'},
+  {order:9,file:'09-drinking.webp',w:794,h:1123,alt:'Baby drinking'},
+  {order:10,file:'10-sleeping.webp',w:794,h:1123,alt:'Sleeping baby'},
+  {order:11,file:'11-pointing.webp',w:794,h:1123,alt:'Baby pointing with an index finger'},
+  {order:12,file:'12-smiling.webp',w:1414,h:2000,alt:'Smiling baby face'}
+ ],
+ howTo:{heading:'How to use this activity',paragraphs:[
+  'Sit with your baby when they are awake, comfortable and interested. Show one card at a time and say the word or action naturally. Keep your language short and clear.',
+  'For example: ‘Hand.’ ‘These are eyes.’ ‘Clap, clap!’ ‘Wave bye-bye.’ ‘Baby is sleeping.’',
+  'When possible, connect the picture to your baby’s own body or to an action you can do together. For example, say ‘hand’ while gently showing your own hand, or clap your hands while saying ‘clap’.',
+  'Give your baby time to look, listen, move or respond in their own way. There is no need to test them or expect them to copy every action.',
+  'Keep the activity short and stop when your baby loses interest.'
+ ],note:'<strong>Every baby develops differently.</strong> Kiddo School age ranges are guides, not tests or developmental deadlines.'},
+ tryTogether:['Where are your hands? Here are your hands.','Clap, clap!','Wave bye-bye.','Point!','Smile!','Time to sleep.'],
+ realWorld:{heading:'Practice in Real Life',copy:'Continue the lesson naturally during your day.',examples:['During dressing: “Foot.”','During bath time: “Hand.”','When someone leaves: “Wave bye-bye.”','During play: “Clap, clap!”','When baby smiles: “Smile!”']},
+ pills:{heading:'Where to next?',items:[['Baby classes','/baby/'],['9–12 Months','/baby/9-12-months/'],['Talk &amp; Think','/subjects/talk-and-think/']]},
+ pathNav:{prev:{title:'Animals & Everyday Objects',range:'6–9 Months',href:'/baby/6-9-months/animals-everyday-objects/'},next:{title:'First Words: Food & Home',range:'12–18 Months',href:'/toddler/12-18-months/first-words-food-home/'}},
+ hubBlurb:'Body parts and first actions — hand, foot, clapping, waving — say the word, do the action, and let your little copier join in. Three to five playful minutes.',
+ schema:{level:'Infant (9–12 months)',teaches:'Body-part words, first actions, listening and copying through everyday play',audience:'Parents of babies',keywords:'body parts flashcards for babies, first actions flashcards, baby pointing clapping activities, 9-12 months baby flashcards'}
+};
+export const fwfhLesson={
+ path:'/toddler/12-18-months/first-words-food-home/',
+ seoTitle:'First Words for Toddlers 12–18 Months: Food & Home',
+ title:'First Words: Food & Home for Toddlers 12–18 Months',
+ h1:'First Words: Food & Home for Toddlers 12–18 Months',
+ description:'Explore simple food and home vocabulary flashcards for toddlers 12–18 months, with familiar objects and easy parent-led naming activities.',
+ ogAlt:'Cover of the Kiddo School Toddler 1 class First Words: Food and Home for toddlers 12 to 18 months, with an apple, a banana and a cup',
+ ogImage:lessonsBase+'first-words-food-home-12-18-months/cover.webp',
+ schemaImage:lessonsBase+'first-words-food-home-12-18-months/cover.webp',
+ eyebrow:'TODDLER 1 · LESSON 7',
+ crumbs:[['Toddler','/toddler/'],['12–18 Months','/toddler/12-18-months/'],['First Words: Food & Home','/toddler/12-18-months/first-words-food-home/']],
+ chips:[['Age','12–18 Months'],['Subject','Talk &amp; Think'],['Class','Toddler 1'],['Duration','3–5 minutes']],
+ ledes:['Between twelve and eighteen months, toddlers point at everything, understand far more than they can say and love hearing you name their world. This class pairs twelve everyday pictures — an apple, a banana, an orange, a cup of milk, bread, an egg, then a cup, a spoon, a shoe, a sock, a chair and a bed — shown one at a time while you say the word simply and clearly.',
+  'There is no script and nothing to test. You name it, your toddler looks, points or has a go in their own way, and every calm repetition — apple, cup, shoe, bed — feeds those growing first words. Short, playful sessions of three to five minutes are all it takes.'],
+ startHint:'Twelve cards, one at a time. Name it, pause, and let your toddler answer in their own way.',
+ viewerLabel:'Today’s class: twelve food and home cards',
+ viewerHeading:'Twelve cards, one at a time.',
+ folder:'first-words-food-home-12-18-months/',
+ eagerFirst:false,
+ cover:{file:'cover.webp',w:1414,h:2000,alt:'Cover of the First Words: Food and Home class for toddlers 12 to 18 months: an apple, a banana and a cup with the Toddler 1 Talk & Think label from Kiddo School'},
+ cards:[
+  {order:1,file:'01-apple.webp',w:1414,h:2000,alt:'Realistic red apple flashcard for toddlers'},
+  {order:2,file:'02-banana.webp',w:1414,h:2000,alt:'Realistic banana flashcard for toddlers'},
+  {order:3,file:'03-orange.webp',w:1414,h:2000,alt:'Realistic orange fruit flashcard for toddlers'},
+  {order:4,file:'04-milk-cup.webp',w:1414,h:2000,alt:'Cup of milk flashcard for toddlers'},
+  {order:5,file:'05-bread.webp',w:1414,h:2000,alt:'Bread flashcard for toddlers'},
+  {order:6,file:'06-egg.webp',w:1414,h:2000,alt:'Egg flashcard for toddlers'},
+  {order:7,file:'07-cup.webp',w:1414,h:2000,alt:'Cup flashcard for toddlers'},
+  {order:8,file:'08-spoon.webp',w:1414,h:2000,alt:'Spoon flashcard for toddlers'},
+  {order:9,file:'09-shoe.webp',w:1414,h:2000,alt:'Child shoe flashcard for toddlers'},
+  {order:10,file:'10-sock.webp',w:1414,h:2000,alt:'Child sock flashcard for toddlers'},
+  {order:11,file:'11-chair.webp',w:1414,h:2000,alt:'Child chair flashcard for toddlers'},
+  {order:12,file:'12-bed.webp',w:1414,h:2000,alt:'Toddler bed flashcard for toddlers'}
+ ],
+ howTo:{heading:'How to use this activity',paragraphs:[
+  'Show one picture at a time and clearly name what you see. Keep your words short and natural: ‘apple’, ‘banana’, ‘shoe’ or ‘This is your cup.’',
+  'Pause after saying the word and give your toddler time to look, point, gesture, make a sound or respond in their own way.',
+  'When possible, connect the picture with the real object. If you show the spoon card, find a spoon at home and name it again.',
+  'There is no need to test your toddler or require them to repeat every word.'
+ ],note:'<strong>Every child develops differently.</strong> Kiddo School age ranges are guides, not tests or developmental deadlines.'},
+ tryTogether:['Apple. This is an apple.','Banana. Yum!','Here is your cup.','Spoon.','Where is your shoe?','Bed. Time for sleep.'],
+ realWorld:{heading:'Find It at Home',copy:'Turn the flashcards into a real-world activity. After looking at a card, find the same object around your home when appropriate.',examples:['Spoon → find a spoon.','Cup → find your toddler’s cup.','Shoe → find a shoe.','Sock → find a sock.','Chair → point to a chair.','Bed → point to the bed.']},
+ pills:{heading:'Where to next?',items:[['Toddler classes','/toddler/'],['12–18 Months','/toddler/12-18-months/'],['Talk &amp; Think','/subjects/talk-and-think/']]},
+ pathNav:{prev:{title:'First Actions & Body Parts',range:'9–12 Months',href:'/baby/9-12-months/first-actions-body-parts/'},next:null},
+ hubBlurb:'Everyday foods and home things — apple, cup, spoon, bed — name them, pause, and let the first words grow. Three to five playful minutes.',
+ schema:{level:'Toddler (12–18 months)',teaches:'First food and home words, pointing, naming and shared attention',audience:'Parents of toddlers',keywords:'toddler first words flashcards, food words for toddlers, home objects flashcards, 12-18 months toddler activities'}
+};
+export const lessons=[hcLesson,fvLesson,cfoLesson,fwftLesson,aeoLesson,fabLesson,fwfhLesson];
 export function classLessonSchema(site,L){
  return [
   {'@context':'https://schema.org','@type':'LearningResource',name:L.title,description:L.description,url:site+L.path,image:L.schemaImage,inLanguage:'en',learningResourceType:'Interactive baby class',educationalLevel:L.schema.level,isAccessibleForFree:true,educationalUse:'Home learning activity',teaches:L.schema.teaches,audience:{'@type':'Audience',audienceType:L.schema.audience},keywords:L.schema.keywords},

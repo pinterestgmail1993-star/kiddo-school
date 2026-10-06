@@ -1,12 +1,14 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
-import {lessons,fvLesson,cfoLesson,fwftLesson,aeoLesson,lessonsBase} from '../src/lessons.mjs';
+import {lessons,fvLesson,cfoLesson,fwftLesson,aeoLesson,fabLesson,fwfhLesson,lessonsBase} from '../src/lessons.mjs';
 const read=f=>readFileSync(f,'utf8');
 const l2=read('dist/newborn/6-12-weeks/faces-and-visual-tracking/index.html');
 const l3=read('dist/baby/3-4-months/colors-and-first-objects/index.html');
 const l4=read('dist/baby/4-6-months/first-words-familiar-things/index.html');
 const l5=read('dist/baby/6-9-months/animals-everyday-objects/index.html');
+const l6=read('dist/baby/9-12-months/first-actions-body-parts/index.html');
+const l7=read('dist/toddler/12-18-months/first-words-food-home/index.html');
 const checkLesson=(html,L)=>{
  assert.ok(html.includes('rel="canonical" href="https://kiddo-school.pages.dev'+L.path+'"'));
  assert.ok(html.includes('<title>'+L.seoTitle.replace(/&/g,'&amp;')+' | Kiddo.school</title>'));
@@ -79,7 +81,7 @@ test('lesson 4 follows the Infant 2 spec with Try Together and a real link to le
  assert.deepEqual([...new Set(files)],fwftLesson.cards.map(c=>c.file.replace('.webp','')));
  assert.match(l4,/BreadcrumbList[\s\S]*"name":"Baby"[\s\S]*"name":"4–6 Months"[\s\S]*"name":"First Words & Familiar Things"/);
 });
-test('lesson 5 follows the Explorer 1 spec with Try Together, Find It in Real Life and coming-soon next',()=>{
+test('lesson 5 follows the Explorer 1 spec with Try Together, Find It in Real Life and a real link to lesson 6',()=>{
  checkLesson(l5,aeoLesson);
  assert.ok(l5.includes('EXPLORER 1 · LESSON 5'));
  assert.ok(l5.includes('TRY TOGETHER'));
@@ -92,12 +94,56 @@ test('lesson 5 follows the Explorer 1 spec with Try Together, Find It in Real Li
  assert.ok(l5.includes('Previous lesson'));
  assert.ok(l5.includes('href="/baby/4-6-months/first-words-familiar-things/"'));
  assert.ok(l5.includes('4–6 Months'));
- assert.match(l5,/fc-age">Next lesson<\/span><span class="fc-class">Coming soon<\/span><\/div><h3>Coming soon<\/h3>/);
- assert.doesNotMatch(l5,/lesson-card-link" href="[^"]*"[^>]*><div class="fc-stage-pills"><span class="fc-age">Next lesson/);
+ assert.ok(l5.includes('Next lesson'));
+ assert.ok(l5.includes('href="/baby/9-12-months/first-actions-body-parts/"'));
+ assert.ok(l5.includes('9–12 Months'));
  const files=[...l5.matchAll(new RegExp(lessonsBase.replace(/\./g,'\\.')+'animals-everyday-objects-6-9-months/(\\d{2}-[a-z-]+)\\.webp','g'))].map(m=>m[1]);
  assert.equal(files.length,12,'grid shows each card exactly once');
  assert.deepEqual([...new Set(files)],aeoLesson.cards.map(c=>c.file.replace('.webp','')));
  assert.match(l5,/BreadcrumbList[\s\S]*"name":"Baby"[\s\S]*"name":"6–9 Months"[\s\S]*"name":"Animals & Everyday Objects"/);
+});
+test('lesson 6 follows the Explorer 2 spec with Try Together, Practice in Real Life and a real link to lesson 7',()=>{
+ checkLesson(l6,fabLesson);
+ assert.ok(l6.includes('EXPLORER 2 · LESSON 6'));
+ assert.ok(l6.includes('TRY TOGETHER'));
+ assert.ok(l6.includes('<h2>Little things to say.</h2>'));
+ for(const p of fabLesson.tryTogether)assert.ok(l6.includes('<li>'+p+'</li>'),p);
+ assert.ok(l6.includes('REAL-WORLD CONNECTION'));
+ assert.ok(l6.includes('<h2>Practice in Real Life</h2>'));
+ assert.ok(l6.includes(fabLesson.realWorld.copy));
+ for(const p of fabLesson.realWorld.examples)assert.ok(l6.includes('<li>'+p+'</li>'),p);
+ assert.ok(l6.includes('Previous lesson'));
+ assert.ok(l6.includes('href="/baby/6-9-months/animals-everyday-objects/"'));
+ assert.ok(l6.includes('6–9 Months'));
+ assert.ok(l6.includes('Next lesson'));
+ assert.ok(l6.includes('href="/toddler/12-18-months/first-words-food-home/"'));
+ assert.ok(l6.includes('12–18 Months'));
+ const files=[...l6.matchAll(new RegExp(lessonsBase.replace(/\./g,'\\.')+'first-actions-body-parts-9-12-months/(\\d{2}-[a-z-]+)\\.webp','g'))].map(m=>m[1]);
+ assert.equal(files.length,12,'grid shows each card exactly once');
+ assert.deepEqual([...new Set(files)],fabLesson.cards.map(c=>c.file.replace('.webp','')));
+ for(const c of fabLesson.cards)assert.ok(l6.includes('width="'+c.w+'" height="'+c.h+'" alt="'+c.alt+'"'),c.file);
+ assert.match(l6,/BreadcrumbList[\s\S]*"name":"Baby"[\s\S]*"name":"9–12 Months"[\s\S]*"name":"First Actions & Body Parts"/);
+});
+test('lesson 7 follows the Toddler 1 spec with Try Together, Find It at Home and coming-soon next',()=>{
+ checkLesson(l7,fwfhLesson);
+ assert.ok(l7.includes('TODDLER 1 · LESSON 7'));
+ assert.ok(l7.includes('TRY TOGETHER'));
+ assert.ok(l7.includes('<h2>Little things to say.</h2>'));
+ for(const p of fwfhLesson.tryTogether)assert.ok(l7.includes('<li>'+p+'</li>'),p);
+ assert.ok(l7.includes('REAL-WORLD CONNECTION'));
+ assert.ok(l7.includes('<h2>Find It at Home</h2>'));
+ assert.ok(l7.includes(fwfhLesson.realWorld.copy));
+ for(const p of fwfhLesson.realWorld.examples)assert.ok(l7.includes('<li>'+p+'</li>'),p);
+ assert.ok(l7.includes('Every child develops differently'));
+ assert.ok(l7.includes('Previous lesson'));
+ assert.ok(l7.includes('href="/baby/9-12-months/first-actions-body-parts/"'));
+ assert.ok(l7.includes('9–12 Months'));
+ assert.match(l7,/fc-age">Next lesson<\/span><span class="fc-class">Coming soon<\/span><\/div><h3>Coming soon<\/h3>/);
+ assert.doesNotMatch(l7,/lesson-card-link" href="[^"]*"[^>]*><div class="fc-stage-pills"><span class="fc-age">Next lesson/);
+ const files=[...l7.matchAll(new RegExp(lessonsBase.replace(/\./g,'\\.')+'first-words-food-home-12-18-months/(\\d{2}-[a-z-]+)\\.webp','g'))].map(m=>m[1]);
+ assert.equal(files.length,12,'grid shows each card exactly once');
+ assert.deepEqual([...new Set(files)],fwfhLesson.cards.map(c=>c.file.replace('.webp','')));
+ assert.match(l7,/BreadcrumbList[\s\S]*"name":"Toddler"[\s\S]*"name":"12–18 Months"[\s\S]*"name":"First Words: Food & Home"/);
 });
 test('stage pages exist, follow the school hierarchy and link their lessons',()=>{
  const w=read('dist/newborn/6-12-weeks/index.html');
@@ -120,12 +166,24 @@ test('stage pages exist, follow the school hierarchy and link their lessons',()=
  assert.ok(e1.includes('EXPLORER 1'));
  assert.ok(e1.includes('href="/baby/6-9-months/animals-everyday-objects/"'));
  assert.ok(e1.includes('Talk, thinking, recognition'));
+ const e2=read('dist/baby/9-12-months/index.html');
+ assert.ok(e2.includes('rel="canonical" href="https://kiddo-school.pages.dev/baby/9-12-months/"'));
+ assert.ok(e2.includes('EXPLORER 2'));
+ assert.ok(e2.includes('href="/baby/9-12-months/first-actions-body-parts/"'));
+ assert.ok(e2.includes('Talk, thinking, movement'));
  const talk=read('dist/subjects/talk/index.html');
  assert.ok(talk.includes('rel="canonical" href="https://kiddo-school.pages.dev/subjects/talk/"'));
  assert.ok(talk.includes('href="/baby/4-6-months/first-words-familiar-things/"'));
  const tt=read('dist/subjects/talk-and-think/index.html');
  assert.ok(tt.includes('rel="canonical" href="https://kiddo-school.pages.dev/subjects/talk-and-think/"'));
  assert.ok(tt.includes('href="/baby/6-9-months/animals-everyday-objects/"'));
+ const t1=read('dist/toddler/12-18-months/index.html');
+ assert.ok(t1.includes('rel="canonical" href="https://kiddo-school.pages.dev/toddler/12-18-months/"'));
+ assert.ok(t1.includes('TODDLER 1'));
+ assert.ok(t1.includes('href="/toddler/12-18-months/first-words-food-home/"'));
+ const toddler=read('dist/toddler/index.html');
+ assert.ok(toddler.includes('rel="canonical" href="https://kiddo-school.pages.dev/toddler/"'));
+ assert.ok(toddler.includes('href="/toddler/12-18-months/first-words-food-home/"'));
 });
 test('the whole curriculum path is wired together and reusable markup is shared',()=>{
  const l1=read('dist/newborn/0-6-weeks/high-contrast-cards/index.html');
@@ -136,15 +194,21 @@ test('the whole curriculum path is wired together and reusable markup is shared'
  assert.ok(baby.includes('href="/baby/3-4-months/"'));
  assert.ok(baby.includes('href="/baby/4-6-months/"'));
  assert.ok(baby.includes('href="/baby/6-9-months/"'));
+ assert.ok(baby.includes('href="/baby/9-12-months/"'));
+ assert.ok(baby.includes('href="/toddler/12-18-months/"'));
  assert.ok(baby.includes('href="/newborn/6-12-weeks/"'));
  const see=read('dist/subjects/see/index.html');
  for(const L of [lessons[0],lessons[1],lessons[2]])assert.ok(see.includes('href="'+L.path+'"'));
  const talkHub=read('dist/subjects/talk/index.html');
  assert.ok(talkHub.includes('href="'+fwftLesson.path+'"'));
  assert.ok(talkHub.includes('href="'+aeoLesson.path+'"'));
+ assert.ok(talkHub.includes('href="'+fabLesson.path+'"'));
+ assert.ok(talkHub.includes('href="'+fwfhLesson.path+'"'));
  const talkThinkHub=read('dist/subjects/talk-and-think/index.html');
  assert.ok(talkThinkHub.includes('href="'+aeoLesson.path+'"'));
- for(const html of [l1,l2,l3,l4,l5]){
+ assert.ok(talkThinkHub.includes('href="'+fabLesson.path+'"'));
+ assert.ok(talkThinkHub.includes('href="'+fwfhLesson.path+'"'));
+ for(const html of [l1,l2,l3,l4,l5,l6,l7]){
   assert.ok(html.includes('class="lv-frame" data-lesson-viewer'));
   assert.ok(html.includes('<div class="lv-stage" data-lv-stage></div>'));
  }
