@@ -126,3 +126,15 @@ h1,h2,h3,.brand,.bean-links strong{font-family:var(--kid-font);letter-spacing:0}
 .lesson-soon{opacity:.8;border-style:dashed}
 .lesson-feature{max-width:900px}
 @media(max-width:700px){.lesson-hero{margin-top:20px}.lv-frame{padding:12px}.lv-grid{grid-template-columns:repeat(2,1fr);gap:10px}}
+/* Shared Kiddo School lesson engine (lessons 2+) */
+.lesson-hero-cover{display:grid;gap:28px;align-items:start}
+.lesson-cover{margin:0;border:1.5px solid var(--ink);background:var(--white);box-shadow:5px 5px 0 rgba(52,59,48,.14);max-width:400px}
+.lesson-cover img{width:100%;height:auto;object-fit:contain}
+@media(min-width:920px){.lesson-hero-cover{grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr)}.lesson-cover{justify-self:end}}
+.lesson-copy{margin-top:14px;max-width:76ch;color:var(--ink)}
+.lesson-copy:first-of-type{margin-top:22px}
+.lesson-prompts{margin-top:18px;padding:0;list-style:none;max-width:76ch;display:grid;gap:10px}
+.lesson-prompts li{border-left:4px solid var(--yellow);background:var(--white);padding:10px 14px;font-size:15px;color:var(--ink)}
+.lesson-path{margin-top:18px;display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.lv-stage img{object-fit:contain}
+.lv-frame:fullscreen .lv-stage img,.lv-frame.is-fs .lv-stage img{object-fit:contain}

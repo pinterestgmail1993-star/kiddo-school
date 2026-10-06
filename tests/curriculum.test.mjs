@@ -1,0 +1,88 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import {lessons,fvLesson,cfoLesson,lessonsBase} from '../src/lessons.mjs';
+const read=f=>readFileSync(f,'utf8');
+const l2=read('dist/newborn/6-12-weeks/faces-and-visual-tracking/index.html');
+const l3=read('dist/baby/3-4-months/colors-and-first-objects/index.html');
+const checkLesson=(html,L)=>{
+ assert.ok(html.includes('rel="canonical" href="https://kiddo-school.pages.dev'+L.path+'"'));
+ assert.ok(html.includes('<title>'+L.seoTitle.replace(/&/g,'&amp;')+' | Kiddo.school</title>'));
+ assert.ok(html.includes('content="'+L.description+'"'));
+ assert.ok(html.includes('<h1>'+L.h1.replace(/&/g,'&amp;')+'</h1>'));
+ assert.ok(html.includes(L.eyebrow));
+ for(const [k,v] of L.chips)assert.ok(html.includes('<strong>'+k+'</strong> '+v),k);
+ assert.ok([...html.matchAll(/Start Today’s Class/g)].length>=2);
+ assert.ok(html.includes('data-lesson-viewer'));
+ assert.ok(html.includes('data-lv-prev>Previous</button>'));
+ assert.ok(html.includes('data-lv-next>Next</button>'));
+ assert.ok(html.includes('data-lv-full>Full screen</button>'));
+ assert.ok(html.includes('data-lv-finish>Finish</button>'));
+ assert.ok(html.includes('Card 1 of '+L.cards.length));
+ assert.ok(html.includes('<figure class="lesson-cover"><img src="'+lessonsBase+L.folder+L.cover.file+'" width="'+L.cover.w+'" height="'+L.cover.h+'"'));
+ assert.ok(html.includes('<h2>'+L.howTo.heading+'</h2>'));
+ for(const p of L.howTo.paragraphs)assert.ok(html.includes(p),p.slice(0,40));
+ assert.ok(html.includes('guides, not tests or developmental deadlines'));
+ for(const [label,href] of L.pills.items)assert.ok(html.includes(`href="${href}">${label}</a>`));
+ assert.ok(html.includes('BreadcrumbList'));
+ assert.ok(html.includes('property="og:image" content="'+L.ogImage+'"'));
+ assert.ok(html.includes('name="twitter:card" content="summary_large_image"'));
+};
+test('lesson 2 follows the Newborn 2 spec with cover, cards and wiring',()=>{
+ checkLesson(l2,fvLesson);
+ assert.ok(l2.includes('NEWBORN 2 · LESSON 2'));
+ assert.ok(l2.includes('<img src="'+fvLesson.ogImage+'" width="1414" height="2000"'));
+ assert.doesNotMatch(l2,/loading="lazy"[^>]*cover\.webp|cover\.webp[^>]*loading="lazy"/);
+ assert.ok(l2.includes('Previous lesson'));
+ assert.ok(l2.includes('href="/newborn/0-6-weeks/high-contrast-cards/"'));
+ assert.ok(l2.includes('Birth–6 Weeks'));
+ assert.ok(l2.includes('Next lesson'));
+ assert.ok(l2.includes('href="/baby/3-4-months/colors-and-first-objects/"'));
+ const files=[...l2.matchAll(new RegExp(lessonsBase.replace(/\./g,'\\.')+'faces-and-visual-tracking-6-12-weeks/(\\d{2}-[a-z-]+)\\.webp','g'))].map(m=>m[1]);
+ assert.equal(files.length,12,'grid shows each card exactly once');
+ assert.deepEqual([...new Set(files)],fvLesson.cards.map(c=>c.file.replace('.webp','')));
+ assert.match(l2,/BreadcrumbList[\s\S]*"name":"Newborn"[\s\S]*"name":"6–12 Weeks"[\s\S]*"name":"Faces & Visual Tracking"/);
+});
+test('lesson 3 follows the Infant 1 spec with Try Together and coming-soon next',()=>{
+ checkLesson(l3,cfoLesson);
+ assert.ok(l3.includes('INFANT 1 · LESSON 3'));
+ assert.ok(l3.includes('TRY TOGETHER'));
+ assert.ok(l3.includes('<h2>Little things to say.</h2>'));
+ for(const p of cfoLesson.tryTogether)assert.ok(l3.includes('<li>'+p+'</li>'),p);
+ assert.ok(l3.includes('Previous lesson'));
+ assert.ok(l3.includes('href="/newborn/6-12-weeks/faces-and-visual-tracking/"'));
+ assert.ok(l3.includes('6–12 Weeks'));
+ assert.match(l3,/fc-age">Next lesson<\/span><span class="fc-class">Coming soon<\/span><\/div><h3>Coming soon<\/h3>/);
+ assert.doesNotMatch(l3,/lesson-card-link" href="[^"]*"[^>]*><div class="fc-stage-pills"><span class="fc-age">Next lesson/);
+ const files=[...l3.matchAll(new RegExp(lessonsBase.replace(/\./g,'\\.')+'colors-and-first-objects-3-4-months/(\\d{2}-[a-z-]+)\\.webp','g'))].map(m=>m[1]);
+ assert.equal(files.length,12,'grid shows each card exactly once');
+ assert.deepEqual([...new Set(files)],cfoLesson.cards.map(c=>c.file.replace('.webp','')));
+ assert.match(l3,/BreadcrumbList[\s\S]*"name":"Baby"[\s\S]*"name":"3–4 Months"[\s\S]*"name":"Colors & First Objects"/);
+});
+test('stage pages exist, follow the school hierarchy and link their lessons',()=>{
+ const w=read('dist/newborn/6-12-weeks/index.html');
+ assert.ok(w.includes('rel="canonical" href="https://kiddo-school.pages.dev/newborn/6-12-weeks/"'));
+ assert.ok(w.includes('NEWBORN 2'));
+ assert.ok(w.includes('href="/newborn/6-12-weeks/faces-and-visual-tracking/"'));
+ assert.ok(w.includes('Visual tracking, faces, sound'));
+ const m=read('dist/baby/3-4-months/index.html');
+ assert.ok(m.includes('rel="canonical" href="https://kiddo-school.pages.dev/baby/3-4-months/"'));
+ assert.ok(m.includes('INFANT 1'));
+ assert.ok(m.includes('href="/baby/3-4-months/colors-and-first-objects/"'));
+ assert.ok(m.includes('Vision, movement, communication'));
+});
+test('the whole curriculum path is wired together and reusable markup is shared',()=>{
+ const l1=read('dist/newborn/0-6-weeks/high-contrast-cards/index.html');
+ assert.ok(l1.includes('href="/newborn/6-12-weeks/faces-and-visual-tracking/"'));
+ const hub=read('dist/newborn/index.html');
+ assert.ok(hub.includes('href="/newborn/6-12-weeks/faces-and-visual-tracking/"'));
+ const baby=read('dist/baby/index.html');
+ assert.ok(baby.includes('href="/baby/3-4-months/"'));
+ assert.ok(baby.includes('href="/newborn/6-12-weeks/"'));
+ const see=read('dist/subjects/see/index.html');
+ for(const L of lessons)assert.ok(see.includes('href="'+L.path+'"'));
+ for(const html of [l1,l2,l3]){
+  assert.ok(html.includes('class="lv-frame" data-lesson-viewer'));
+  assert.ok(html.includes('<div class="lv-stage" data-lv-stage></div>'));
+ }
+});

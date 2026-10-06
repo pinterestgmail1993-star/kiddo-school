@@ -65,7 +65,7 @@ test('baby, newborn, 0-6 weeks and See hub pages exist and interlink',()=>{
  for(const file of ['dist/newborn/index.html','dist/newborn/0-6-weeks/index.html','dist/subjects/see/index.html'])assert.match(read(file),/high-contrast-cards\//);
  const weeks=read('dist/newborn/0-6-weeks/index.html');
  assert.match(weeks,/Vision, bonding, sound/);
- assert.match(read('dist/newborn/index.html'),/Faces &amp; Eye Contact/);
+ assert.match(read('dist/newborn/index.html'),/href="\/newborn\/6-12-weeks\/faces-and-visual-tracking\/"/);
 });
 
 test('home page and navigation surface the newborn school',()=>{
