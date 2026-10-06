@@ -368,14 +368,113 @@ export const fcLesson={
  tryTogether:['Big ball. Small ball.','Up! Now down.','Open the box. Close the box.','The cup is full. Now it’s empty.','One duck. Many ducks.','The ball is in. Now the ball is out.'],
  realWorld:{heading:'Practice Around the House',copy:'Keep these activities parent-supervised and simple.',examples:['Big &amp; Small: Find one big object and one small object.','Up &amp; Down: Lift a toy up, then bring it down.','Open &amp; Closed: Open and close a safe box or container together.','Full &amp; Empty: Show a cup with water and an empty cup during an appropriate supervised activity.','One &amp; Many: Show one toy, then a small group of toys.','In &amp; Out: Put a toy in a basket, then take it out.']},
  pills:{heading:'Where to next?',items:[['Toddler classes','/toddler/'],['18–24 Months','/toddler/18-24-months/'],['Think &amp; Talk','/subjects/talk-and-think/']]},
- pathNav:{prev:{title:'First Words: Food & Home',range:'12–18 Months',href:'/toddler/12-18-months/first-words-food-home/'},next:null},
+ pathNav:{prev:{title:'First Words: Food & Home',range:'12–18 Months',href:'/toddler/12-18-months/first-words-food-home/'},next:{title:'Colors & Shapes',range:'Age 2',href:'/toddler/2-years/colors-and-shapes/'}},
  hubBlurb:'Big and small, up and down, full and empty — six concept pairs in realistic pictures, ready for a short game of say it and look. Three to five playful minutes.',
  schema:{level:'Toddler (18–24 months)',teaches:'Early concepts and opposites through clear visual comparison',audience:'Parents of toddlers',keywords:'first concepts flashcards for toddlers, big and small, opposites for toddlers, toddler comparison activities, 18-24 months activities'}
 };
-export const lessons=[hcLesson,fvLesson,cfoLesson,fwftLesson,aeoLesson,fabLesson,fwfhLesson,fcLesson];
+export const csLesson={
+ path:'/toddler/2-years/colors-and-shapes/',
+ seoTitle:'Colors and Shapes for 2-Year-Olds',
+ title:'Colors and Shapes for 2-Year-Olds (Toddler 3)',
+ h1:'Colors and Shapes for 2-Year-Olds',
+ description:'Explore colors and basic shapes with your 2-year-old through simple visual learning, matching games and playful real-world activities from Kiddo School.',
+ ogAlt:'Cover of the Kiddo School Toddler 3 class Colors and Shapes for 2-year-olds, with a red circle, a blue square and a yellow star',
+ ogImage:toddlerBase+'colors-and-shapes-age-2/learning-cards/cover.webp',
+ schemaImage:toddlerBase+'colors-and-shapes-age-2/learning-cards/cover.webp',
+ eyebrow:'TODDLER 3 · LESSON 9',
+ crumbs:[['Toddler','/toddler/'],['Age 2','/toddler/2-years/'],['Colors & Shapes','/toddler/2-years/colors-and-shapes/']],
+ chips:[['Age','2 Years'],['Subject','Think &amp; Talk'],['Class','Toddler 3'],['Duration','3–5 minutes']],
+ ledes:['At two, everyday life becomes a classroom: the red cup, the round plate, the square window. This class explores eight colors and seven shapes through a short sequence your toddler can join in — look at the cards together, play a few big-button find-it games, match a pair, then take the learning off screen and find colors and shapes around your home.',
+  'There is no reading required and nothing to test. You say the words, your toddler taps and points, and every round ends in encouragement, never a score. Short, playful sessions of three to five minutes are all it takes.'],
+ startHint:'Look, play, match, then head off screen. Short and playful wins.',
+ viewerLabel:'Today’s class: colors and shapes for two-year-olds',
+ viewerHeading:'Today’s class.',
+ folder:'colors-and-shapes-age-2/learning-cards/',
+ r2Base:toddlerBase,
+ eagerFirst:false,
+ cover:{file:'cover.webp',w:1414,h:2000,alt:'Colors and Shapes class for 2-year-olds at Kiddo School'},
+ cards:[
+  {order:1,file:'01-red.webp',w:1414,h:2000,alt:'Red color learning card for toddlers'},
+  {order:2,file:'02-blue.webp',w:1414,h:2000,alt:'Blue color learning card for toddlers'},
+  {order:3,file:'03-yellow.webp',w:1414,h:2000,alt:'Yellow color learning card for toddlers'},
+  {order:4,file:'04-green.webp',w:1414,h:2000,alt:'Green color learning card for toddlers'},
+  {order:5,file:'05-orange.webp',w:1414,h:2000,alt:'Orange color learning card for toddlers'},
+  {order:6,file:'06-purple.webp',w:1414,h:2000,alt:'Purple color learning card for toddlers'},
+  {order:7,file:'07-pink.webp',w:1414,h:2000,alt:'Pink color learning card for toddlers'},
+  {order:8,file:'08-black.webp',w:1414,h:2000,alt:'Black color learning card for toddlers'},
+  {order:9,file:'09-circle.webp',w:1414,h:2000,alt:'Circle shape learning card for toddlers'},
+  {order:10,file:'10-square.webp',w:1414,h:2000,alt:'Square shape learning card for toddlers'},
+  {order:11,file:'11-triangle.webp',w:1414,h:2000,alt:'Triangle shape learning card for toddlers'},
+  {order:12,file:'12-rectangle.webp',w:2000,h:1414,alt:'Rectangle shape learning card for toddlers'},
+  {order:13,file:'13-star.webp',w:2000,h:1414,alt:'Star shape learning card for toddlers'},
+  {order:14,file:'14-heart.webp',w:2000,h:1414,alt:'Heart shape learning card for toddlers'},
+  {order:15,file:'15-oval.webp',w:2000,h:1414,alt:'Oval shape learning card for toddlers'}
+ ],
+ interactive:{
+  colors:[
+   {file:'01-red.webp',w:1414,h:2000,alt:'Red color learning card for toddlers',say:'Red.',find:'Can you find something red?'},
+   {file:'02-blue.webp',w:1414,h:2000,alt:'Blue color learning card for toddlers',say:'Blue.',find:'Can you find something blue?'},
+   {file:'03-yellow.webp',w:1414,h:2000,alt:'Yellow color learning card for toddlers',say:'Yellow.',find:'Can you find something yellow?'},
+   {file:'04-green.webp',w:1414,h:2000,alt:'Green color learning card for toddlers',say:'Green.',find:'Can you find something green?'},
+   {file:'05-orange.webp',w:1414,h:2000,alt:'Orange color learning card for toddlers',say:'Orange.',find:'Can you find something orange?'},
+   {file:'06-purple.webp',w:1414,h:2000,alt:'Purple color learning card for toddlers',say:'Purple.',find:'Can you find something purple?'},
+   {file:'07-pink.webp',w:1414,h:2000,alt:'Pink color learning card for toddlers',say:'Pink.',find:'Can you find something pink?'},
+   {file:'08-black.webp',w:1414,h:2000,alt:'Black color learning card for toddlers',say:'Black.',find:'Can you find something black?'}
+  ],
+  shapes:[
+   {file:'09-circle.webp',w:1414,h:2000,alt:'Circle shape learning card for toddlers',say:'Circle.',find:'Can you trace the circle in the air with your finger?'},
+   {file:'10-square.webp',w:1414,h:2000,alt:'Square shape learning card for toddlers',say:'Square.',find:'Can you trace the square in the air with your finger?'},
+   {file:'11-triangle.webp',w:1414,h:2000,alt:'Triangle shape learning card for toddlers',say:'Triangle.',find:'Can you trace the triangle in the air with your finger?'},
+   {file:'12-rectangle.webp',w:2000,h:1414,alt:'Rectangle shape learning card for toddlers',say:'Rectangle.',find:'Can you trace the rectangle in the air with your finger?'},
+   {file:'13-star.webp',w:2000,h:1414,alt:'Star shape learning card for toddlers',say:'Star.',find:'Can you twinkle like a star?'},
+   {file:'14-heart.webp',w:2000,h:1414,alt:'Heart shape learning card for toddlers',say:'Heart.',find:'Can you draw a heart on my hand?'},
+   {file:'15-oval.webp',w:2000,h:1414,alt:'Oval shape learning card for toddlers',say:'Oval.',find:'Can you trace the oval in the air with your finger?'}
+  ],
+  playColors:{rounds:[
+   {ask:'Find red.',say:'Red. Can you find red?',choices:[{file:'01-red.webp',name:'Red',correct:true},{file:'03-yellow.webp',name:'Yellow'},{file:'02-blue.webp',name:'Blue'}]},
+   {ask:'Where is blue?',say:'Blue. Where is blue?',choices:[{file:'02-blue.webp',name:'Blue',correct:true},{file:'04-green.webp',name:'Green'},{file:'07-pink.webp',name:'Pink'}]},
+   {ask:'Can you find yellow?',say:'Yellow. Can you find yellow?',choices:[{file:'03-yellow.webp',name:'Yellow',correct:true},{file:'08-black.webp',name:'Black'},{file:'05-orange.webp',name:'Orange'}]}
+  ]},
+  playShapes:{rounds:[
+   {ask:'Find the circle.',say:'Find the circle.',choices:[{file:'09-circle.webp',name:'Circle',correct:true},{file:'10-square.webp',name:'Square'},{file:'13-star.webp',name:'Star'}]},
+   {ask:'Which one is the star?',say:'Which one is the star?',choices:[{file:'13-star.webp',name:'Star',correct:true},{file:'14-heart.webp',name:'Heart'},{file:'11-triangle.webp',name:'Triangle'}]},
+   {ask:'Can you find the triangle?',say:'Can you find the triangle?',choices:[{file:'11-triangle.webp',name:'Triangle',correct:true},{file:'12-rectangle.webp',name:'Rectangle'},{file:'15-oval.webp',name:'Oval'}]}
+  ]},
+  matchColor:{rounds:[
+   {ask:'Find the same color.',say:'Here is blue. Find the same color.',target:{file:'02-blue.webp',name:'Blue'},choices:[{file:'02-blue.webp',name:'Blue',correct:true},{file:'04-green.webp',name:'Green'}]},
+   {ask:'Find the same color.',say:'Here is pink. Find the same color.',target:{file:'07-pink.webp',name:'Pink'},choices:[{file:'07-pink.webp',name:'Pink',correct:true},{file:'03-yellow.webp',name:'Yellow'}]}
+  ]},
+  matchShape:{rounds:[
+   {ask:'Find the same shape.',say:'Here is the circle. Find the same shape.',target:{file:'09-circle.webp',name:'Circle'},choices:[{file:'09-circle.webp',name:'Circle',correct:true},{file:'11-triangle.webp',name:'Triangle'}]},
+   {ask:'Find the same shape.',say:'Here is the heart. Find the same shape.',target:{file:'14-heart.webp',name:'Heart'},choices:[{file:'14-heart.webp',name:'Heart',correct:true},{file:'10-square.webp',name:'Square'}]}
+  ]},
+  offScreen:{heading:'Find colors and shapes around you.',copy:'The class continues away from the screen. Pick one or two hunts during the day and keep them playful — there is nothing to collect and nothing to prove.',colorHunt:['Can you find something red?','Find something blue.','Can you spot something yellow?'],shapeHunt:['Can you find a circle in the room? A plate, a clock or a wheel is a good place to start.','Can you find something shaped like a rectangle? Try a book, a door or a box.'],note:'Keep hunts short and stay close by. Any noticing counts — naming one red thing together is a complete class.'},
+  teacher:{welcome:'Today we’re exploring colors and shapes! Let’s look, find and play together.',note:'Colors and shapes are everywhere. Keep naming the ones you notice together today.'},
+  principal:{note:'Short, playful moments are enough. You can continue this class naturally during your day by noticing colors and shapes around you.'},
+  complete:{heading:'Class complete!',copy:'Nice exploring colors and shapes together.'},
+  tips:{heading:'Tips for parents.',items:[
+   'Let your child lead. Some two-year-olds will tap eagerly, others would rather watch you tap for a while. Both are doing the class.',
+   'Say the color or shape name clearly and keep it short: ‘Red.’ ‘Circle.’ Repetition over days matters more than getting through everything today.',
+   'Wrong taps are part of playing. The class never shows a score, a cross or a fail — a gentle ‘let’s look together’ keeps it fun.',
+   'Stop while it is still fun. If your toddler wanders off, the class is done for now; you can always come back tomorrow.',
+   '<strong>Age ranges are a guide.</strong> Kiddo School classes are invitations to explore, not tests or developmental deadlines. Children learn at their own pace.'
+  ]}
+ },
+ howTo:{heading:'Tips for Parents',paragraphs:[
+  'Sit together in a comfortable spot and let your child hold or tap where they can. Start with the color cards, say each color clearly, and pause — the pause is where your toddler answers in their own way.',
+  'Keep the games light. A wrong tap is simply a chance to look together, and every round ends with encouragement rather than a score.',
+  'When the on-screen games are done, take the class off screen: hunt for colors and shapes around your home during an everyday moment.',
+  'There is no need to finish every section in one sitting, and no need for your toddler to name every color or shape.'
+ ],note:'<strong>Age ranges are a guide.</strong> Kiddo School age ranges are guides, not tests or developmental deadlines. Children learn at their own pace.'},
+ pills:{heading:'Where to next?',items:[['Toddler classes','/toddler/'],['Age 2','/toddler/2-years/'],['Think &amp; Talk','/subjects/talk-and-think/']]},
+ pathNav:{prev:{title:'First Concepts — Big, Small, Up & Down',range:'18–24 Months',href:'/toddler/18-24-months/first-concepts-big-small-up-down/'},next:null},
+ hubBlurb:'Eight colors, seven shapes, big-button find-it games and real-world hunts — a first interactive class made for two-year-old hands. Three to five playful minutes.',
+ schema:{level:'Toddler (age 2)',teaches:'Color names, shape names and early matching through look, find and match play',audience:'Parents of toddlers',keywords:'colors and shapes for 2 year olds, toddler color activities, shapes for toddlers, matching games for toddlers, toddler learning activities'}
+};
+export const lessons=[hcLesson,fvLesson,cfoLesson,fwftLesson,aeoLesson,fabLesson,fwfhLesson,fcLesson,csLesson];
 export function classLessonSchema(site,L){
  return [
-  {'@context':'https://schema.org','@type':'LearningResource',name:L.title,description:L.description,url:site+L.path,image:L.schemaImage,inLanguage:'en',learningResourceType:'Interactive baby class',educationalLevel:L.schema.level,isAccessibleForFree:true,educationalUse:'Home learning activity',teaches:L.schema.teaches,audience:{'@type':'Audience',audienceType:L.schema.audience},keywords:L.schema.keywords},
+  {'@context':'https://schema.org','@type':'LearningResource',name:L.title,description:L.description,url:site+L.path,image:L.schemaImage,inLanguage:'en',learningResourceType:L.schema.resourceType||'Interactive baby class',educationalLevel:L.schema.level,isAccessibleForFree:true,educationalUse:'Home learning activity',teaches:L.schema.teaches,audience:{'@type':'Audience',audienceType:L.schema.audience},keywords:L.schema.keywords},
   {'@context':'https://schema.org','@type':'BreadcrumbList',itemListElement:[['Home','/'],...L.crumbs].map(([name,path],i)=>({'@type':'ListItem',position:i+1,name,item:site+path}))}
  ];
 }
@@ -438,4 +537,117 @@ export function stagePageBody({chips,stageLessons,soon,subject}){
  return `<section class="wrap section compact"><div class="fc-chips lesson-chips">${chips.map(([k,v])=>`<span><strong>${k}</strong> ${v}</span>`).join('')}</div>
  <div class="fc-stages">${stageLessons.map(L=>lessonStageCard(L,'Lesson '+(lessons.indexOf(L)+1),subject||'See')).join('')}${soon||''}</div>
  <p class="lesson-note"><strong>Every baby develops differently.</strong> Kiddo School age ranges are guides, not tests or developmental deadlines.</p></section>`;
+}
+export const stages=[
+ {name:'Newborn 1',age:'Birth–6 Weeks',href:'/newborn/0-6-weeks/',lesson:hcLesson},
+ {name:'Newborn 2',age:'6–12 Weeks',href:'/newborn/6-12-weeks/',lesson:fvLesson},
+ {name:'Infant 1',age:'3–4 Months',href:'/baby/3-4-months/',lesson:cfoLesson},
+ {name:'Infant 2',age:'4–6 Months',href:'/baby/4-6-months/',lesson:fwftLesson},
+ {name:'Explorer 1',age:'6–9 Months',href:'/baby/6-9-months/',lesson:aeoLesson},
+ {name:'Explorer 2',age:'9–12 Months',href:'/baby/9-12-months/',lesson:fabLesson},
+ {name:'Toddler 1',age:'12–18 Months',href:'/toddler/12-18-months/',lesson:fwfhLesson},
+ {name:'Toddler 2',age:'18–24 Months',href:'/toddler/18-24-months/',lesson:fcLesson},
+ {name:'Toddler 3',age:'Age 2',href:'/toddler/2-years/',lesson:csLesson}
+];
+const tcImg=(base,file,w,h,alt,attrs='')=>`<img src="${base}${file}" width="${w}" height="${h}" alt="${alt}"${attrs}>`;
+export function toddlerClassBody(L){
+ const base=(L.r2Base||lessonsBase)+L.folder;
+ const altOf=Object.fromEntries(L.cards.map(c=>[c.file,c.alt]));
+ const dimOf=Object.fromEntries(L.cards.map(c=>[c.file,[c.w,c.h]]));
+ const I=L.interactive;
+ const heroInner=`<span class="eyebrow">${L.eyebrow}</span>
+  <h1>${esc(L.h1)}</h1>
+  <div class="fc-chips lesson-chips">${L.chips.map(([k,v])=>`<span><strong>${k}</strong> ${v}</span>`).join('')}</div>
+  ${L.ledes.map(p=>`<p class="lesson-lede">${p}</p>`).join('\n  ')}
+  <div class="lesson-start"><a class="button" href="#todays-class">Start Today’s Class <span aria-hidden="true">↓</span></a><span class="lesson-start-hint">${L.startHint}</span></div>`;
+ const hero=`<article class="wrap lesson-hero lesson-hero-cover"><div class="lesson-hero-copy">${heroInner}</div><figure class="lesson-cover"><img src="${L.ogImage}" width="${L.cover.w}" height="${L.cover.h}" alt="${L.cover.alt}"></figure></article>`;
+ const learnViewer=(id,eyebrow,heading,copy,items,label)=>{
+  const total=items.length;
+  const grid=items.map(it=>`<figure class="lv-card">${tcImg(base,it.file,it.w,it.h,it.alt,` loading="lazy" data-lv-say="${esc(it.say)}" data-lv-find="${esc(it.find)}"`)}</figure>`).join('');
+  return `<section class="wrap lesson-section" id="${id}" aria-label="${esc(heading)}">
+  <span class="eyebrow">${eyebrow}</span>
+  <h2>${heading}</h2>
+  <p class="lesson-copy">${copy}</p>
+  <div class="lv-frame" data-lesson-viewer>
+   <div class="lv-stage" data-lv-stage></div>
+   <p class="lv-caption" data-lv-caption hidden></p>
+   <div class="lv-controls" data-lv-controls><button type="button" class="lv-btn" data-lv-prev>Previous</button><span class="lv-count" data-lv-count aria-live="polite" aria-atomic="true">Card 1 of ${total}</span><button type="button" class="lv-btn" data-lv-next>Next</button></div>
+   <div class="lv-actions" data-lv-actions><button type="button" class="lv-btn lv-ghost" data-lv-full>Full screen</button></div>
+   <div class="lv-begin"><button type="button" class="button" data-lv-start>Start ${label}</button><span class="lv-beginhint">Or simply scroll: all ${total} cards are below.</span></div>
+  </div>
+  <div class="lv-grid" data-lv-grid>${grid}</div>
+ </section>`;
+ };
+ const choiceBtn=c=>`<button type="button" class="tc-choice"${c.correct?' data-tc-correct="true"':''} aria-label="${esc(c.name)}">${tcImg(base,c.file,dimOf[c.file][0],dimOf[c.file][1],altOf[c.file],' loading="lazy"')}</button>`;
+ const roundsHtml=rs=>rs.map(r=>`<div class="tc-round" data-tc-round data-tc-ask="${esc(r.ask)}"><p class="tc-ask">${r.say}</p><div class="tc-choices" role="group" aria-label="${esc(r.ask)}">${r.choices.map(choiceBtn).join('')}</div><p class="tc-feedback" data-tc-feedback aria-live="polite" hidden></p></div>`).join('');
+ const matchRoundsHtml=rs=>rs.map(r=>`<div class="tc-round tc-match" data-tc-round data-tc-ask="${esc(r.ask)}"><p class="tc-ask">${r.say}</p><figure class="tc-target">${tcImg(base,r.target.file,dimOf[r.target.file][0],dimOf[r.target.file][1],altOf[r.target.file],' loading="lazy"')}</figure><div class="tc-choices" role="group" aria-label="${esc(r.ask)}">${r.choices.map(choiceBtn).join('')}</div><p class="tc-feedback" data-tc-feedback aria-live="polite" hidden></p></div>`).join('');
+ const playSection=(id,eyebrow,heading,copy,game)=>`<section class="wrap lesson-section tc-game" id="${id}" aria-label="${esc(heading)}">
+  <span class="eyebrow">${eyebrow}</span>
+  <h2>${heading}</h2>
+  <p class="lesson-copy">${copy}</p>
+  ${roundsHtml(game.rounds)}
+ </section>`;
+ const welcome=`<section class="wrap lesson-section" id="todays-class" aria-label="Today’s class">
+  <span class="eyebrow">TODAY’S CLASS</span>
+  <h2>How today’s class works.</h2>
+  <p class="lesson-copy">Seven little steps, in order: a welcome from your teacher, learn colors, play with colors, learn shapes, play with shapes, match a pair, then take it off screen. Stop after any step — that is a complete class, and there is never a score at the end.</p>
+  <ol class="tc-flow">
+   <li><span>1</span> Teacher welcome</li>
+   <li><span>2</span> Learn colors</li>
+   <li><span>3</span> Play with colors</li>
+   <li><span>4</span> Learn shapes</li>
+   <li><span>5</span> Play with shapes</li>
+   <li><span>6</span> Find &amp; match</li>
+   <li><span>7</span> Take it off screen</li>
+  </ol>
+  <div class="tc-note-block tc-teacher"><span class="eyebrow">TEACHER WELCOME</span><p class="tc-say">“${I.teacher.welcome}”</p><p class="tc-who">— Your Kiddo School teacher</p></div>
+  <div class="lesson-start"><a class="button" href="#learn-colors">Begin the class <span aria-hidden="true">↓</span></a><span class="lesson-start-hint">Grown-up nearby, toddler on the lap, phone at a comfy distance.</span></div>
+ </section>`;
+ const offScreen=`<section class="wrap lesson-section" id="off-screen" aria-label="Take it off screen">
+  <span class="eyebrow">TAKE IT OFF SCREEN</span>
+  <h2>${I.offScreen.heading}</h2>
+  <p class="lesson-copy">${I.offScreen.copy}</p>
+  <div class="tc-hunt"><h3>Color hunt</h3><ul class="lesson-prompts">${I.offScreen.colorHunt.map(p=>`<li>${p}</li>`).join('')}</ul></div>
+  <div class="tc-hunt"><h3>Shape hunt</h3><ul class="lesson-prompts">${I.offScreen.shapeHunt.map(p=>`<li>${p}</li>`).join('')}</ul></div>
+  <p class="lesson-note">${I.offScreen.note}</p>
+ </section>`;
+ const teacherNote=`<section class="wrap lesson-section"><span class="eyebrow">TEACHER NOTE</span><h2>One last word from class.</h2><div class="tc-note-block tc-teacher"><p class="tc-say">“${I.teacher.note}”</p><p class="tc-who">— Your Kiddo School teacher</p></div></section>`;
+ const principalNote=`<section class="wrap lesson-section tc-principal"><span class="eyebrow">A NOTE FROM THE PRINCIPAL</span><h2>For the grown-ups.</h2><p class="lesson-copy">${I.principal.note}</p><p class="lesson-copy"><a href="/about/#principal">More from the Principal’s Office <span aria-hidden="true">↗</span></a></p></section>`;
+ const prevCard=L.pathNav&&L.pathNav.prev?`<a class="fc-stage lesson-card-link" href="${L.pathNav.prev.href}"><div class="fc-stage-pills"><span class="fc-age">Previous class</span><span class="fc-class">${esc(L.pathNav.prev.range)}</span></div><h3>${esc(L.pathNav.prev.title)}</h3><span class="fc-open">Open this class <span aria-hidden="true">↗</span></span></a>`:'';
+ const nextCard=`<a class="fc-stage lesson-card-link" href="/learning-path/"><div class="fc-stage-pills"><span class="fc-age">Keep going</span><span class="fc-class">Learning path</span></div><h3>Explore the Learning Path</h3><p>More classes are on the drawing table. Find where your child is today and what comes next.</p><span class="fc-open">Open the Learning Path <span aria-hidden="true">↗</span></span></a>`;
+ const complete=`<section class="wrap lesson-section tc-complete" id="class-complete" aria-label="Class complete">
+  <span class="eyebrow">CLASS COMPLETE</span>
+  <h2>${I.complete.heading}</h2>
+  <p class="lesson-copy">${I.complete.copy} However many rounds you played, however long it took, that was the whole class — and stopping early is allowed too.</p>
+  <div class="lesson-path">${prevCard}${nextCard}</div>
+ </section>`;
+ const tips=`<section class="wrap lesson-section" id="how-to">
+  <span class="eyebrow">TIPS FOR PARENTS</span>
+  <h2>${L.howTo.heading}</h2>
+  ${L.howTo.paragraphs.map(p=>`<p class="lesson-copy">${p}</p>`).join('\n  ')}
+  <p class="lesson-note">${L.howTo.note}</p>
+ </section>`;
+ const pills=L.pills?`<section class="wrap lesson-section"><span class="eyebrow">KEEP EXPLORING</span><h2>${L.pills.heading}</h2><div class="lesson-linkrow">${L.pills.items.map(([label,href])=>`<a class="lesson-pill-link" href="${href}">${label}</a>`).join('')}</div></section>`:'';
+ return `${crumbNav(L.crumbs)}
+ ${hero}
+ ${welcome}
+ ${learnViewer('learn-colors','LEARN · COLORS','Learn colors together.','Show one card at a time and say the color clearly. The names on the screen are for you — your toddler does not need to read. After a card, pause and let the color sink in.',I.colors,'the colors')}
+ ${playSection('play-colors','PLAY · COLORS','Play with colors.','Big pictures, one question at a time. Ask the question, let your child tap, and celebrate every try — a wrong tap simply means look together.',I.playColors)}
+ ${learnViewer('learn-shapes','LEARN · SHAPES','Learn basic shapes.','This is a circle. Look at the triangle. Names first, tracing second: little fingers can trace each shape in the air while you say the word.',I.shapes,'the shapes')}
+ ${playSection('play-shapes','PLAY · SHAPES','Play with shapes.','Same game, new shapes. Keep it playful and let your child take the lead — tapping the wrong shape is part of learning.',I.playShapes)}
+ <section class="wrap lesson-section tc-game" id="find-match" aria-label="Play and match">
+  <span class="eyebrow">FIND &amp; MATCH</span>
+  <h2>Play and match.</h2>
+  <p class="lesson-copy">Show the big picture at the top, then ask your child to find the same one below. Two rounds for colors, two for shapes — plenty for one sitting.</p>
+  <h3>Color match</h3>
+  ${matchRoundsHtml(I.matchColor.rounds)}
+  <h3>Shape match</h3>
+  ${matchRoundsHtml(I.matchShape.rounds)}
+ </section>
+ ${offScreen}
+ ${teacherNote}
+ ${principalNote}
+ ${complete}
+ ${tips}
+ ${pills}`;
 }

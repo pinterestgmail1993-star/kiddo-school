@@ -45,11 +45,13 @@
   filter(false);
 })();
 
-/* Kiddo School newborn lesson: one-card-at-a-time class viewer */
+/* Kiddo School class viewer: one-card-at-a-time. Supports any number of
+   viewers per page (baby lessons have one; toddler classes have two). */
 (() => {
-  const frame = document.querySelector('[data-lesson-viewer]');
-  const grid = document.querySelector('[data-lv-grid]');
-  if (!frame || !grid || typeof frame.querySelector !== 'function') return;
+  if (typeof document.querySelectorAll !== 'function') return; // minimal DOM mock (search test harness)
+  document.querySelectorAll('[data-lesson-viewer]').forEach(frame => {
+  const grid = frame.parentElement && frame.parentElement.querySelector ? frame.parentElement.querySelector('[data-lv-grid]') : null;
+  if (!grid || typeof frame.querySelector !== 'function') return;
   const stage = frame.querySelector('[data-lv-stage]');
   const count = frame.querySelector('[data-lv-count]');
   const prev = frame.querySelector('[data-lv-prev]');
@@ -57,6 +59,7 @@
   const full = frame.querySelector('[data-lv-full]');
   const finish = frame.querySelector('[data-lv-finish]');
   const done = frame.querySelector('[data-lv-done]');
+  const caption = frame.querySelector('[data-lv-caption]');
   const slides = [...grid.querySelectorAll('img')];
   const total = slides.length;
   if (!stage || !count || !prev || !next || !total) return;
@@ -76,6 +79,12 @@
     figure.appendChild(image);
     stage.replaceChildren(figure);
     count.textContent = 'Card ' + (index + 1) + ' of ' + total;
+    if (caption) {
+      const say = slides[index].getAttribute('data-lv-say') || '';
+      const find = slides[index].getAttribute('data-lv-find') || '';
+      caption.textContent = [say, find].filter(Boolean).join(' ');
+      caption.hidden = !caption.textContent;
+    }
     prev.disabled = index === 0;
     next.disabled = index === total - 1;
     preload(1);
@@ -85,7 +94,7 @@
     if (live) return;
     live = true;
     frame.classList.add('is-live');
-    done.hidden = true;
+    if (done) done.hidden = true;
     render();
   }
   function stop() {
@@ -114,6 +123,7 @@
     if (!document.fullscreenElement) frame.classList.remove('is-fs');
   });
   document.querySelectorAll('[data-lv-start]').forEach(trigger => {
+    if (trigger.closest('[data-lesson-viewer]') !== frame) return;
     trigger.addEventListener('click', () => {
       start();
       if (trigger.tagName === 'BUTTON') frame.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -124,7 +134,7 @@
   if (full) full.addEventListener('click', toggleFullscreen);
   if (finish) finish.addEventListener('click', () => {
     stop();
-    done.hidden = false;
+    if (done) done.hidden = false;
     const howTo = document.querySelector('#how-to');
     if (howTo) howTo.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
@@ -140,5 +150,38 @@
     if (!live) return;
     if (event.key === 'ArrowRight') go(1);
     if (event.key === 'ArrowLeft') go(-1);
+  });
+  frame.__lvStart = start;
+  });
+  /* Hero "Start" anchors live outside the viewer frame: route them to the
+     page's first viewer (identical behavior on the single-viewer lessons). */
+  document.querySelectorAll('[data-lv-start]').forEach(trigger => {
+    if (trigger.closest('[data-lesson-viewer]')) return; // handled inside its frame
+    const frame = document.querySelector('[data-lesson-viewer]');
+    if (!frame || typeof frame.__lvStart !== 'function') return;
+    trigger.addEventListener('click', () => frame.__lvStart());
+  });
+
+  /* Toddler class games: find-it and match rounds with gentle, score-free feedback */
+  const praise = ['You found it!', 'Great finding!', 'Nice exploring!'];
+  document.querySelectorAll('[data-tc-round]').forEach((round, roundIndex) => {
+    const feedback = round.querySelector('[data-tc-feedback]');
+    if (!feedback) return;
+    round.addEventListener('click', event => {
+      const choice = event.target.closest('.tc-choice');
+      if (!choice || round.classList.contains('is-done')) return;
+      if (choice.hasAttribute('data-tc-correct')) {
+        round.classList.add('is-done');
+        choice.classList.add('is-picked');
+        feedback.hidden = false;
+        feedback.textContent = praise[roundIndex % praise.length];
+      } else {
+        round.classList.remove('is-look');
+        void round.offsetWidth; // restart the gentle look-again cue
+        round.classList.add('is-look');
+        feedback.hidden = false;
+        feedback.textContent = 'Let’s look together.';
+      }
+    });
   });
 })();

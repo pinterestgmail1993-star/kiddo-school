@@ -138,3 +138,59 @@ h1,h2,h3,.brand,.bean-links strong{font-family:var(--kid-font);letter-spacing:0}
 .lesson-path{margin-top:18px;display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
 .lv-stage img{object-fit:contain}
 .lv-frame:fullscreen .lv-stage img,.lv-frame.is-fs .lv-stage img{object-fit:contain}
+
+/* Kiddo School: digital school upgrade — learning path, toddler class games, school voice */
+.button-ghost{background:var(--white);color:var(--ink);box-shadow:3px 3px 0 var(--sage)}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:6px}
+.lp-stages{margin-top:26px;display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+.lp-stage{display:flex;flex-wrap:wrap;align-items:center;gap:8px;border:1.5px solid var(--ink);background:var(--white);padding:11px 13px;text-decoration:none;color:var(--ink);box-shadow:3px 3px 0 rgba(52,59,48,.14);min-height:46px}
+.lp-stage:hover{transform:translate(-1px,-1px);box-shadow:4px 4px 0 rgba(52,59,48,.2)}
+.lp-range{font-weight:700;font-size:13px}
+.lp-open{margin-left:auto;font-weight:700;color:#71326d}
+.lp-path{margin-top:26px;display:grid;gap:22px;max-width:820px}
+.lp-row{display:grid;grid-template-columns:54px 1fr;gap:16px;align-items:start}
+.lp-marker span{display:flex;align-items:center;justify-content:center;width:54px;height:54px;border:1.5px solid var(--ink);border-radius:999px;background:var(--yellow);font-weight:700;font-size:16px}
+.lp-stage-card{border:1.5px solid var(--ink);background:var(--white);box-shadow:4px 4px 0 rgba(52,59,48,.14);padding:20px 22px}
+.lp-stage-card h2{margin:12px 0 4px;font-size:23px}
+.lp-class{margin:2px 0 0;font-size:15px}
+.lp-class a{font-weight:700}
+.lp-hublink{margin:8px 0 0;font-size:13px;color:var(--muted)}
+.lp-next{border-style:dashed;background:var(--sage)}
+.lv-caption{display:none;margin:14px auto 0;max-width:520px;text-align:center;font-size:16px;font-weight:700;color:var(--ink)}
+.is-live .lv-caption{display:block}
+.lv-caption:after{content:"";display:block;margin-top:2px}
+.tc-flow{margin:22px 0 0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px;counter-reset:none}
+.tc-flow li{display:flex;align-items:center;gap:10px;border:1.5px solid var(--line);background:var(--white);padding:10px 12px;font-size:14px;font-weight:600}
+.tc-flow li span{display:inline-flex;align-items:center;justify-content:center;min-width:26px;height:26px;border-radius:999px;background:var(--ink);color:var(--white);font-size:12px;font-weight:700}
+.tc-note-block{border:1.5px solid var(--ink);background:var(--white);box-shadow:4px 4px 0 rgba(52,59,48,.14);padding:20px 22px;max-width:760px}
+.tc-teacher{background:#fdf6ec}
+.tc-principal{background:var(--sage)}
+.tc-parents{background:var(--white)}
+.tc-say{font-size:18px;font-weight:600;margin:10px 0 4px}
+.tc-who{margin:6px 0 0;font-size:13.5px;color:var(--muted)}
+.tc-round{margin-top:26px;border:1.5px solid var(--ink);background:var(--white);box-shadow:4px 4px 0 rgba(52,59,48,.12);padding:20px;max-width:640px}
+.tc-ask{margin:0 0 14px;font-size:19px;font-weight:700}
+.tc-target{margin:0 0 14px;border:1.5px solid var(--ink);background:var(--white);padding:8px;max-width:250px}
+.tc-target img{width:100%;height:auto;display:block}
+.tc-choices{display:flex;flex-wrap:wrap;gap:14px}
+.tc-choice{border:1.5px solid var(--ink);background:var(--white);padding:8px;box-shadow:3px 3px 0 rgba(52,59,48,.16);cursor:pointer;min-width:88px;min-height:88px;transition:transform .15s,box-shadow .15s}
+.tc-choice img{width:96px;height:auto;display:block;object-fit:contain}
+.tc-match .tc-choice img{width:78px}
+.tc-choice:hover,.tc-choice:focus-visible{transform:translate(-1px,-1px);box-shadow:4px 4px 0 rgba(52,59,48,.24)}
+.tc-round.is-done .tc-choice{opacity:.55}
+.tc-round.is-done .tc-choice.is-picked{opacity:1;outline:3px solid #71326d;outline-offset:2px}
+.tc-round.is-done .tc-choice{pointer-events:none}
+.tc-feedback{margin:14px 0 0;font-size:16px;font-weight:700;color:#71326d}
+.tc-hunt{margin-top:18px}
+.tc-hunt h3{margin:0 0 6px}
+.parents-principal{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:start;max-width:980px}
+.parents-principal .tc-note-block h2{margin:0 0 10px;font-size:27px}
+.final-cta{border:1.5px solid var(--ink);background:#d8e0c9;box-shadow:5px 6px 0 var(--ink);padding:44px 40px;text-align:center;transform:rotate(-.4deg)}
+.final-cta h2{margin:0 0 10px;font-size:38px}
+.final-cta p{margin:0 auto 20px;max-width:52ch}
+.final-cta .hero-actions{justify-content:center;margin-top:0}
+@media(max-width:950px){.parents-principal{grid-template-columns:1fr}}
+@media(max-width:700px){.hero-actions .button{width:100%}.lp-row{grid-template-columns:40px 1fr}.lp-marker span{width:40px;height:40px;font-size:13px}.lp-stage-card{padding:16px}.lp-stage-card h2{font-size:19px}.tc-choice img{width:82px}.tc-round{padding:16px}.tc-ask{font-size:17px}.final-cta h2{font-size:29px}.final-cta{padding:32px 22px}.tc-flow{grid-template-columns:1fr 1fr}.parents-principal .tc-note-block h2{font-size:22px}}
+@media(max-width:360px){.tc-flow{grid-template-columns:1fr}.tc-choice img{width:72px}.tc-choice{min-width:76px;min-height:76px}}
+@media(prefers-reduced-motion:reduce){.tc-choice,.lp-stage{transition:none}}
+@media(max-width:680px){.site-header nav{flex-wrap:wrap;row-gap:8px}}

@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
-import {lessons,fvLesson,cfoLesson,fwftLesson,aeoLesson,fabLesson,fwfhLesson,fcLesson,lessonsBase,toddlerBase} from '../src/lessons.mjs';
+import {lessons,fvLesson,cfoLesson,fwftLesson,aeoLesson,fabLesson,fwfhLesson,fcLesson,csLesson,lessonsBase,toddlerBase} from '../src/lessons.mjs';
 const read=f=>readFileSync(f,'utf8');
 const l2=read('dist/newborn/6-12-weeks/faces-and-visual-tracking/index.html');
 const l3=read('dist/baby/3-4-months/colors-and-first-objects/index.html');
@@ -10,6 +10,7 @@ const l5=read('dist/baby/6-9-months/animals-everyday-objects/index.html');
 const l6=read('dist/baby/9-12-months/first-actions-body-parts/index.html');
 const l7=read('dist/toddler/12-18-months/first-words-food-home/index.html');
 const l8=read('dist/toddler/18-24-months/first-concepts-big-small-up-down/index.html');
+const l9=read('dist/toddler/2-years/colors-and-shapes/index.html');
 const checkLesson=(html,L)=>{
  assert.ok(html.includes('rel="canonical" href="https://kiddo-school.pages.dev'+L.path+'"'));
  assert.ok(html.includes('<title>'+L.seoTitle.replace(/&/g,'&amp;')+' | Kiddo.school</title>'));
@@ -161,16 +162,62 @@ test('lesson 8 follows the Toddler 2 spec with six concept pairs, Try Together, 
  assert.ok(l8.includes('Previous lesson'));
  assert.ok(l8.includes('href="/toddler/12-18-months/first-words-food-home/"'));
  assert.ok(l8.includes('12–18 Months'));
- assert.match(l8,/fc-age">Next lesson<\/span><span class="fc-class">Coming soon<\/span><\/div><h3>Coming soon<\/h3>/);
- assert.doesNotMatch(l8,/lesson-card-link" href="[^"]*"[^>]*><div class="fc-stage-pills"><span class="fc-age">Next lesson/);
+ assert.ok(l8.includes('Next lesson'));
+ assert.ok(l8.includes('href="/toddler/2-years/colors-and-shapes/"'));
+ assert.ok(l8.includes('Age 2'));
  const files=[...l8.matchAll(new RegExp(toddlerBase.replace(/\./g,'\\.')+'first-concepts-18-24-months/(\\d{2}-[a-z-]+)\\.webp','g'))].map(m=>m[1]);
  assert.equal(files.length,12,'grid shows each card exactly once');
  assert.deepEqual([...new Set(files)],fcLesson.cards.map(c=>c.file.replace('.webp','')));
  for(const c of fcLesson.cards)assert.ok(l8.includes('width="'+c.w+'" height="'+c.h+'" alt="'+c.alt+'"'),c.file);
- for(const c of fcLesson.cards)assert.ok(!l8.includes('<figure class="lv-card"><span>'+c.concept),c.concept+' must never overlay the card image');
- const concepts=fcLesson.cards.map(c=>c.concept);
+ for(const c of fcLesson.cards)assert.ok(!l8.includes('<figure class="lv-card"><span>'+c.concept),c.concept+' must never overlay the card image'); const concepts=fcLesson.cards.map(c=>c.concept);
  for(const [a,b] of [['Big','Small'],['Up','Down'],['Open','Closed'],['Full','Empty'],['One','Many'],['In','Out']]){const i=concepts.indexOf(a);assert.ok(i>-1&&concepts[i+1]===b,a+' pairs with '+b);}
  assert.match(l8,/BreadcrumbList[\s\S]*"name":"Toddler"[\s\S]*"name":"18–24 Months"[\s\S]*"name":"First Concepts"/);
+});
+test('lesson 9 (Colors & Shapes, Toddler 3) follows its spec with the interactive toddler class',()=>{
+ assert.ok(l9.includes('rel="canonical" href="https://kiddo-school.pages.dev/toddler/2-years/colors-and-shapes/"'));
+ assert.ok(l9.includes('<title>Colors and Shapes for 2-Year-Olds | Kiddo.school</title>'));
+ assert.ok(l9.includes('content="'+csLesson.description+'"'));
+ assert.ok(l9.includes('<h1>Colors and Shapes for 2-Year-Olds</h1>'));
+ assert.ok(l9.includes('TODDLER 3 · LESSON 9'));
+ for(const [k,v] of csLesson.chips)assert.ok(l9.includes('<strong>'+k+'</strong> '+v),k);
+ assert.ok(l9.includes('<figure class="lesson-cover"><img src="'+csLesson.ogImage+'" width="1414" height="2000" alt="Colors and Shapes class for 2-year-olds at Kiddo School"'));
+ assert.ok(l9.includes('TEACHER WELCOME'));
+ assert.ok(l9.includes('Today we’re exploring colors and shapes! Let’s look, find and play together.'));
+ assert.ok(l9.includes('id="learn-colors"'));
+ assert.ok(l9.includes('id="play-colors"'));
+ assert.ok(l9.includes('id="learn-shapes"'));
+ assert.ok(l9.includes('id="play-shapes"'));
+ assert.ok(l9.includes('id="find-match"'));
+ assert.ok(l9.includes('TAKE IT OFF SCREEN'));
+ assert.ok(l9.includes('<h2>Find colors and shapes around you.</h2>'));
+ assert.ok(l9.includes('Can you find something red?'));
+ assert.ok(l9.includes('A plate, a clock or a wheel is a good place to start.'));
+ assert.ok(l9.includes('TEACHER NOTE'));
+ assert.ok(l9.includes('Colors and shapes are everywhere. Keep naming the ones you notice together today.'));
+ assert.ok(l9.includes('A NOTE FROM THE PRINCIPAL'));
+ assert.ok(l9.includes('Short, playful moments are enough. You can continue this class naturally during your day by noticing colors and shapes around you.'));
+ assert.ok(l9.includes('<h2>Class complete!</h2>'));
+ assert.ok(l9.includes('Nice exploring colors and shapes together.'));
+ assert.ok(l9.includes('<h2>Play and match.</h2>'));
+ assert.ok(l9.includes('<h2>Tips for Parents</h2>'));
+ for(const p of csLesson.howTo.paragraphs)assert.ok(l9.includes(p),p.slice(0,40));
+ assert.ok(l9.includes('Age ranges are a guide'));
+ assert.ok(l9.includes('guides, not tests or developmental deadlines'));
+ assert.ok(l9.includes('Previous class'));
+ assert.ok(l9.includes('href="/toddler/18-24-months/first-concepts-big-small-up-down/"'));
+ assert.ok(l9.includes('href="/learning-path/"'));
+ assert.ok(l9.includes('Explore the Learning Path'));
+ assert.ok(!/6\/10|Score|Failed|Wrong!|Try again until you pass/.test(l9),'no competitive scoring language');
+ const files=[...l9.matchAll(new RegExp(toddlerBase.replace(/\./g,'\\.')+'colors-and-shapes-age-2/learning-cards/(\\d{2}-[a-z-]+)\\.webp','g'))].map(m=>m[1]);
+ assert.ok(files.length>=15,'all 15 learning cards present');
+ assert.deepEqual([...new Set(files)],csLesson.cards.map(c=>c.file.replace('.webp','')));
+ for(const c of csLesson.cards)assert.ok(l9.includes('width="'+c.w+'" height="'+c.h+'" alt="'+c.alt+'"'),c.file);
+ assert.ok(l9.includes('data-tc-correct="true"'));
+ assert.equal((l9.match(/data-tc-round/g)||[]).length,10);
+ assert.equal((l9.match(/data-lesson-viewer/g)||[]).length,2,'two Learn viewers, no duplicate main viewer');
+ assert.match(l9,/BreadcrumbList[\s\S]*"name":"Toddler"[\s\S]*"name":"Age 2"[\s\S]*"name":"Colors & Shapes"/);
+ assert.ok(l9.includes('property="og:image" content="'+csLesson.ogImage+'"'));
+ assert.ok(l9.includes('name="twitter:card" content="summary_large_image"'));
 });
 test('stage pages exist, follow the school hierarchy and link their lessons',()=>{
  const w=read('dist/newborn/6-12-weeks/index.html');
@@ -212,10 +259,47 @@ test('stage pages exist, follow the school hierarchy and link their lessons',()=
  assert.ok(t2.includes('rel="canonical" href="https://kiddo-school.pages.dev/toddler/18-24-months/"'));
  assert.ok(t2.includes('TODDLER 2'));
  assert.ok(t2.includes('href="/toddler/18-24-months/first-concepts-big-small-up-down/"'));
+ const t3=read('dist/toddler/2-years/index.html');
+ assert.ok(t3.includes('rel="canonical" href="https://kiddo-school.pages.dev/toddler/2-years/"'));
+ assert.ok(t3.includes('TODDLER 3'));
+ assert.ok(t3.includes('href="/toddler/2-years/colors-and-shapes/"'));
+ assert.ok(t3.includes('Colors, shapes, matching'));
  const toddler=read('dist/toddler/index.html');
  assert.ok(toddler.includes('rel="canonical" href="https://kiddo-school.pages.dev/toddler/"'));
  assert.ok(toddler.includes('href="/toddler/12-18-months/first-words-food-home/"'));
  assert.ok(toddler.includes('href="/toddler/18-24-months/first-concepts-big-small-up-down/"'));
+ assert.ok(toddler.includes('href="/toddler/2-years/colors-and-shapes/"'));
+});
+test('the learning path page lists the real curriculum from birth to age 2 and beyond',()=>{
+ const lp=read('dist/learning-path/index.html');
+ assert.ok(lp.includes('rel="canonical" href="https://kiddo-school.pages.dev/learning-path/"'));
+ assert.ok(lp.includes('Age ranges are a guide, not a test'));
+ for(const s of [['Newborn 1','/newborn/0-6-weeks/high-contrast-cards/'],['Newborn 2','/newborn/6-12-weeks/faces-and-visual-tracking/'],['Infant 1','/baby/3-4-months/colors-and-first-objects/'],['Infant 2','/baby/4-6-months/first-words-familiar-things/'],['Explorer 1','/baby/6-9-months/animals-everyday-objects/'],['Explorer 2','/baby/9-12-months/first-actions-body-parts/'],['Toddler 1','/toddler/12-18-months/first-words-food-home/'],['Toddler 2','/toddler/18-24-months/first-concepts-big-small-up-down/'],['Toddler 3','/toddler/2-years/colors-and-shapes/']])assert.ok(lp.includes('>'+s[0])&&lp.includes('href="'+s[1]+'"'),s[0]);
+ for(const hub of ['/newborn/','/newborn/6-12-weeks/','/baby/3-4-months/','/baby/4-6-months/','/baby/6-9-months/','/baby/9-12-months/','/toddler/12-18-months/','/toddler/18-24-months/','/toddler/2-years/'])assert.ok(lp.includes('href="'+hub+'"'),hub);
+ assert.ok(lp.includes('href="/art/"')&&lp.includes('href="/activities/"'));
+ assert.ok(lp.includes('Start Today’s Class'));
+});
+test('the school homepage leads with the learning journey and keeps the classrooms',()=>{
+ const home=read('dist/index.html');
+ assert.ok(home.includes('<h1>Their first school<br><em>starts with you.</em></h1>'));
+ assert.ok(home.includes('href="/newborn/0-6-weeks/high-contrast-cards/"'));
+ assert.equal((home.match(/Start Today’s Class/g)||[]).length>=3,true);
+ assert.ok(home.includes('href="/learning-path/"'));
+ assert.ok(home.includes('newborn-high-contrast-face.webp'));
+ assert.ok(home.includes('Age ranges are a guide, not a test'));
+ assert.ok(home.includes('HOW SCHOOL WORKS'));
+ assert.ok(home.includes('Take it off screen'));
+ assert.ok(home.includes('FROM THE PRINCIPAL’S OFFICE'));
+ assert.ok(home.includes('href="/about/#principal"'));
+ assert.ok(home.includes('href="/grown-ups/"'));
+ assert.ok(home.includes('OUR LITTLE CLASSROOMS'));
+ assert.ok(home.includes('href="/art/"'));
+ assert.ok(home.includes('href="/activities/"'));
+ assert.ok(home.includes('id="ages"'));
+ const about=read('dist/about/index.html');
+ assert.ok(about.includes('id="principal"'));
+ assert.ok(about.includes('From the Principal’s Office'));
+ assert.ok(about.includes('href="/learning-path/"'));
 });
 test('the whole curriculum path is wired together and reusable markup is shared',()=>{
  const l1=read('dist/newborn/0-6-weeks/high-contrast-cards/index.html');
@@ -241,7 +325,7 @@ test('the whole curriculum path is wired together and reusable markup is shared'
  assert.ok(talkThinkHub.includes('href="'+fabLesson.path+'"'));
  assert.ok(talkThinkHub.includes('href="'+fwfhLesson.path+'"'));
  assert.ok(talkThinkHub.includes('href="'+fcLesson.path+'"'));
- for(const html of [l1,l2,l3,l4,l5,l6,l7,l8]){
+ for(const html of [l1,l2,l3,l4,l5,l6,l7,l8,l9]){
   assert.ok(html.includes('class="lv-frame" data-lesson-viewer'));
   assert.ok(html.includes('<div class="lv-stage" data-lv-stage></div>'));
  }

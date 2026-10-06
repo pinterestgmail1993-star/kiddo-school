@@ -73,6 +73,7 @@ test('home page and navigation surface the newborn school',()=>{
  assert.match(home,/href="\/newborn\/0-6-weeks\/high-contrast-cards\/"/);
  assert.match(home,/newborn-high-contrast-face\.webp/);
  const anyPage=read('dist/about/index.html');
- assert.match(anyPage,/href="\/newborn\/">Newborn<\/a>/);
+ assert.match(anyPage,/href="\/baby\/">Baby<\/a>/);
+ assert.match(anyPage,/href="\/learning-path\/">Learning Path<\/a>/);
  assert.match(anyPage,/href="\/newborn\/">Baby classes<\/a>/);
 });
