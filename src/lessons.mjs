@@ -685,11 +685,144 @@ export const anLesson={
   'A wrong tap is just a chance to look together. The class never shows a score or a cross.'
  ],note:'<strong>Age ranges are a guide.</strong> Kiddo School age ranges are guides, not tests or developmental deadlines. Children learn at their own pace.'},
  pills:{heading:'Where to next?',items:[['Toddler classes','/toddler/'],['Age 2','/toddler/2-years/'],['Learning Path','/learning-path/']]},
- pathNav:{prev:{title:'Matching & Sorting',range:'Age 2',href:'/toddler/2-years/matching-and-sorting/'},next:null},
+ pathNav:{prev:{title:'Matching & Sorting',range:'Age 2',href:'/toddler/2-years/matching-and-sorting/'},next:{title:'Vehicles & Sounds',range:'Age 2',href:'/toddler/2-years/vehicles-and-sounds/'}},
  hubBlurb:'Twenty animals with big sounds and two tap games — meet the farm, roar with the wild ones, then listen for animals outside. Made for two-year-old hands.',
  schema:{resourceType:'Interactive toddler class',level:'Toddler (age 2)',teaches:'Animal names and their sounds through look, name and make-the-sound play',audience:'Parents of toddlers',keywords:'animal sounds for 2 year olds, animals for toddlers, animal sounds activity, animal names for toddlers, toddler learning activities'}
 };
-export const lessons=[hcLesson,fvLesson,cfoLesson,fwftLesson,aeoLesson,fabLesson,fwfhLesson,fcLesson,csLesson,msLesson,anLesson];
+export const vhLesson={
+ path:'/toddler/2-years/vehicles-and-sounds/',
+ seoTitle:'Vehicles and Sounds for 2-Year-Olds',
+ title:'Vehicles and Sounds for 2-Year-Olds (Toddler 6)',
+ h1:'Vehicles and Sounds for 2-Year-Olds',
+ description:'Explore cars, buses, trains and more with colorful vehicle cards, simple sound games and playful activities for 2-year-olds.',
+ ogAlt:'Vehicles and Sounds class for 2-year-olds at Kiddo School',
+ ogImage:toddlerBase+'vehicles-and-sounds-age-2/cover.webp',
+ schemaImage:toddlerBase+'vehicles-and-sounds-age-2/cover.webp',
+ eyebrow:'TODDLER 6 · LESSON 12',
+ crumbs:[['Toddler','/toddler/'],['Age 2','/toddler/2-years/'],['Vehicles & Sounds','/toddler/2-years/vehicles-and-sounds/']],
+ chips:[['Age','2 Years'],['Subject','Talk &amp; Explore'],['Class','Toddler 6'],['Duration','3–5 minutes']],
+ subject:'Talk &amp; Explore',
+ ledes:['Beep beep! Vroom! Choo choo! At two, vehicles are sound machines on wheels, wings and water — and this class meets twenty of them, with big cards and three quick games.',
+  'Nothing to read and nothing to test. A sound in, a sound back — a tap, a point or a giggle all count. A few playful minutes is plenty.'],
+ startHint:'Beep beep first. Works every time.',
+ startLabel:'Start Class',
+ folder:'vehicles-and-sounds-age-2/',
+ r2Base:toddlerBase,
+ eagerFirst:false,
+ cover:{file:'cover.webp',w:2000,h:1294,alt:'Vehicles and Sounds class for 2-year-olds at Kiddo School'},
+ cards:[
+  {order:1,file:'01-car.webp',name:'Car',sound:'Beep beep!',w:2000,h:1294,alt:'Cartoon car learning card labeled Car with Beep beep'},
+  {order:2,file:'02-bus.webp',name:'Bus',sound:'Beep beep!',w:2000,h:1294,alt:'Cartoon bus learning card labeled Bus with Beep beep'},
+  {order:3,file:'03-truck.webp',name:'Truck',sound:'Rumble!',w:2000,h:1294,alt:'Cartoon truck learning card labeled Truck with Rumble'},
+  {order:4,file:'04-fire-truck.webp',name:'Fire Truck',sound:'Nee-naw!',w:2000,h:1294,alt:'Cartoon fire truck learning card labeled Fire Truck with Nee-naw'},
+  {order:5,file:'05-ambulance.webp',name:'Ambulance',sound:'Nee-naw!',w:2000,h:1294,alt:'Cartoon ambulance learning card labeled Ambulance with Nee-naw'},
+  {order:6,file:'06-police-car.webp',name:'Police Car',sound:'Woo-woo!',w:2000,h:1294,alt:'Cartoon police car learning card labeled Police Car with Woo-woo'},
+  {order:7,file:'07-motorcycle.webp',name:'Motorcycle',sound:'Vroom!',w:2000,h:1294,alt:'Cartoon motorcycle learning card labeled Motorcycle with Vroom'},
+  {order:8,file:'08-bicycle.webp',name:'Bicycle',sound:'Ring ring!',w:2000,h:1294,alt:'Cartoon bicycle learning card labeled Bicycle with Ring ring'},
+  {order:9,file:'09-train.webp',name:'Train',sound:'Choo choo!',w:2000,h:1294,alt:'Cartoon train learning card labeled Train with Choo choo'},
+  {order:10,file:'10-tractor.webp',name:'Tractor',sound:'Rumble!',w:2000,h:1294,alt:'Cartoon tractor learning card labeled Tractor with Rumble'},
+  {order:11,file:'11-excavator.webp',name:'Excavator',sound:'Dig dig!',w:2000,h:1294,alt:'Cartoon excavator learning card labeled Excavator with Dig dig'},
+  {order:12,file:'12-dump-truck.webp',name:'Dump Truck',sound:'Rumble!',w:2000,h:1294,alt:'Cartoon dump truck learning card labeled Dump Truck with Rumble'},
+  {order:13,file:'13-airplane.webp',name:'Airplane',sound:'Whoosh!',w:2000,h:1294,alt:'Cartoon airplane learning card labeled Airplane with Whoosh'},
+  {order:14,file:'14-helicopter.webp',name:'Helicopter',sound:'Whirr!',w:2000,h:1294,alt:'Cartoon helicopter learning card labeled Helicopter with Whirr'},
+  {order:15,file:'15-boat.webp',name:'Boat',sound:'Splash!',w:2000,h:1294,alt:'Cartoon boat learning card labeled Boat with Splash'},
+  {order:16,file:'16-ship.webp',name:'Ship',sound:'Toot toot!',w:2000,h:1294,alt:'Cartoon ship learning card labeled Ship with Toot toot'},
+  {order:17,file:'17-rocket.webp',name:'Rocket',sound:'Whoosh!',w:2000,h:1294,alt:'Cartoon rocket learning card labeled Rocket with Whoosh'},
+  {order:18,file:'18-taxi.webp',name:'Taxi',sound:'Beep beep!',w:2000,h:1294,alt:'Cartoon taxi learning card labeled Taxi with Beep beep'},
+  {order:19,file:'19-van.webp',name:'Van',sound:'Vroom!',w:2000,h:1294,alt:'Cartoon van learning card labeled Van with Vroom'},
+  {order:20,file:'20-scooter.webp',name:'Scooter',sound:'Zoom!',w:2000,h:1294,alt:'Kick scooter learning card labeled Scooter with Zoom'}
+ ],
+ interactive:{
+  flow:{intro:'Ten little steps, in order: a welcome from your teacher, the vehicles in three small groups, three quick games, then a hunt off screen and cards to print. Every step stands on its own.',
+   steps:[['1','Teacher welcome'],['2','Meet the vehicles'],['3','Make the sounds'],['4','Vehicles that work'],['5','Who makes this sound?'],['6','Boats, planes and a rocket'],['7','Find the vehicle'],['8','Where does it go?'],['9','Take it off screen'],['10','Print the cards']],
+   beginHref:'#meet-the-vehicles',beginLabel:'Meet the vehicles',beginHint:'Toddler on your lap, phone at a comfy distance.'},
+  teacher:{welcome:'Let’s meet some vehicles! Can you make their sounds with me?',note:'Keep naming the vehicles you notice together today.'},
+  principal:{note:'Your child doesn’t need to learn every card today. Follow what catches their interest.'},
+  complete:{heading:'Class complete!',copy:'Nice beeps, toots and choo choos together.'},
+  offScreen:{heading:'Vehicle hunt.',copy:'Look out the window or take a walk. Spot a car, bus or truck and name it together.',groups:[
+   {title:'Try one today',items:[
+    'Count the buses you see.',
+    'Listen for a beep.',
+    'Pretend to drive a car.',
+    'Make a train go choo choo.',
+    'Spot something that flies.'
+   ]}
+  ],note:'Keep it playful and stay close by. One spotted bus is a complete class.'},
+  sections:[
+   {type:'learn',id:'meet-the-vehicles',eyebrow:'LEARN · MEET THE VEHICLES',heading:'Meet the vehicles.',copy:'Cars and rescue friends first. Say the name and the sound, then let your toddler have a go.',label:'the vehicles',items:[
+    {file:'01-car.webp',say:'The car goes beep beep.',find:'Your turn — beep beep!'},
+    {file:'02-bus.webp',say:'The bus goes beep beep as well.',find:'Can you beep like a bus?'},
+    {file:'03-truck.webp',say:'The truck goes rumble.',find:'Rumble rumble — your turn!'},
+    {file:'04-fire-truck.webp',say:'The fire truck goes nee-naw!',find:'Nee-naw, nee-naw!'},
+    {file:'05-ambulance.webp',say:'The ambulance goes nee-naw too.',find:'Nee-naw — louder!'},
+    {file:'06-police-car.webp',say:'The police car goes woo-woo.',find:'Woo-woo — your turn!'}
+   ]},
+   {type:'learn',id:'make-the-sounds',eyebrow:'PLAY · MAKE THE SOUNDS',heading:'Make the sounds.',copy:'Five sounds to try. Make it big, wait a beat, and see what comes back.',label:'the sounds',items:[
+    {file:'01-car.webp',say:'Beep beep!',find:'Can you beep like a car?'},
+    {file:'09-train.webp',say:'Choo choo!',find:'Choo choo — louder!'},
+    {file:'07-motorcycle.webp',say:'Vroom!',find:'Vroom vroom — your turn!'},
+    {file:'16-ship.webp',say:'Toot toot!',find:'Can you toot like a big ship?'},
+    {file:'14-helicopter.webp',say:'Whirr!',find:'Whirr — round and round!'}
+   ]},
+   {type:'learn',id:'working-vehicles',eyebrow:'LEARN · VEHICLES THAT WORK',heading:'Vehicles that work.',copy:'Wheels, tracks and diggers. These ones rumble, ring and dig.',label:'the working vehicles',items:[
+    {file:'07-motorcycle.webp',say:'The motorcycle goes vroom!',find:'Vroom — your turn!'},
+    {file:'08-bicycle.webp',say:'The bicycle goes ring ring.',find:'Ring ring — your turn!'},
+    {file:'09-train.webp',say:'The train goes choo choo!',find:'You made this sound — choo choo!'},
+    {file:'10-tractor.webp',say:'The tractor goes rumble.',find:'Slow and loud — rumble!'},
+    {file:'11-excavator.webp',say:'The excavator goes dig dig.',find:'Dig with your hands — dig dig!'},
+    {file:'12-dump-truck.webp',say:'The dump truck goes rumble too.',find:'A big rumble — can you do it?'}
+   ]},
+   {type:'play',id:'who-makes-this-sound',eyebrow:'PLAY · WHO MAKES THIS SOUND?',heading:'Who makes this sound?',copy:'Say the sound out loud, then let your child tap the vehicle.',rounds:[
+    {ask:'Who goes choo choo?',say:'Who goes choo choo?',choices:[{file:'06-police-car.webp',name:'The police car'},{file:'09-train.webp',name:'The train',correct:true},{file:'03-truck.webp',name:'The truck'}]},
+    {ask:'Who goes beep beep?',say:'Who goes beep beep?',choices:[{file:'01-car.webp',name:'The car',correct:true},{file:'15-boat.webp',name:'The boat'},{file:'10-tractor.webp',name:'The tractor'}]},
+    {ask:'Who goes vroom?',say:'Who goes vroom?',choices:[{file:'02-bus.webp',name:'The bus'},{file:'16-ship.webp',name:'The ship'},{file:'07-motorcycle.webp',name:'The motorcycle',correct:true}]},
+    {ask:'Who goes toot toot?',say:'Who goes toot toot?',choices:[{file:'08-bicycle.webp',name:'The bicycle'},{file:'16-ship.webp',name:'The ship',correct:true},{file:'18-taxi.webp',name:'The taxi'}]},
+    {ask:'Who goes whirr?',say:'Who goes whirr?',choices:[{file:'14-helicopter.webp',name:'The helicopter',correct:true},{file:'11-excavator.webp',name:'The excavator'},{file:'05-ambulance.webp',name:'The ambulance'}]},
+    {ask:'Who goes ring ring?',say:'Who goes ring ring?',choices:[{file:'13-airplane.webp',name:'The airplane'},{file:'19-van.webp',name:'The van'},{file:'08-bicycle.webp',name:'The bicycle',correct:true}]}
+   ]},
+   {type:'learn',id:'sky-vehicles',eyebrow:'LEARN · SKY, WATER AND A ROCKET',heading:'Boats, planes and a rocket.',copy:'Now for the flyers, floaters and zoomers — up, away and all around.',label:'the flyers and floaters',items:[
+    {file:'13-airplane.webp',say:'The airplane goes whoosh!',find:'Arms out — whoosh!'},
+    {file:'14-helicopter.webp',say:'The helicopter goes whirr.',find:'Spin your hand — whirr!'},
+    {file:'15-boat.webp',say:'The boat goes splash!',find:'A little splash — your turn!'},
+    {file:'16-ship.webp',say:'The big ship goes toot toot!',find:'Toot toot — your turn!'},
+    {file:'17-rocket.webp',say:'The rocket goes whoosh!',find:'Up, up and away — whoosh!'},
+    {file:'18-taxi.webp',say:'The taxi goes beep beep.',find:'Just like the car!'},
+    {file:'19-van.webp',say:'The van goes vroom.',find:'Vroom vroom — your turn!'},
+    {file:'20-scooter.webp',say:'The scooter goes zoom!',find:'Zoom — here we go!'}
+   ]},
+   {type:'play',id:'find-the-vehicle',eyebrow:'PLAY · FIND THE VEHICLE',heading:'Find the vehicle.',copy:'Now by name. You say the vehicle, your child taps it.',rounds:[
+    {ask:'Find the bus.',say:'Find the bus!',choices:[{file:'05-ambulance.webp',name:'The ambulance'},{file:'02-bus.webp',name:'The bus',correct:true},{file:'12-dump-truck.webp',name:'The dump truck'}]},
+    {ask:'Where’s the airplane?',say:'Where is the airplane?',choices:[{file:'13-airplane.webp',name:'The airplane',correct:true},{file:'09-train.webp',name:'The train'},{file:'20-scooter.webp',name:'The scooter'}]},
+    {ask:'Can you find the tractor?',say:'Can you find the tractor?',choices:[{file:'01-car.webp',name:'The car'},{file:'16-ship.webp',name:'The ship'},{file:'10-tractor.webp',name:'The tractor',correct:true}]},
+    {ask:'Find the boat.',say:'Find the boat!',choices:[{file:'18-taxi.webp',name:'The taxi'},{file:'15-boat.webp',name:'The boat',correct:true},{file:'07-motorcycle.webp',name:'The motorcycle'}]}
+   ]},
+   {type:'play',id:'where-does-it-go',eyebrow:'PLAY · WHERE DOES IT GO?',heading:'Where does it go?',copy:'One last idea: road, tracks, water or sky. You ask the question, your child picks the vehicle.',rounds:[
+    {ask:'Which one goes on tracks?',say:'Which one goes on tracks?',choices:[{file:'01-car.webp',name:'The car'},{file:'09-train.webp',name:'The train',correct:true},{file:'15-boat.webp',name:'The boat'}]},
+    {ask:'Which one flies in the sky?',say:'Which one flies in the sky?',choices:[{file:'13-airplane.webp',name:'The airplane',correct:true},{file:'03-truck.webp',name:'The truck'},{file:'18-taxi.webp',name:'The taxi'}]},
+    {ask:'Which one goes on water?',say:'Which one goes on water?',choices:[{file:'10-tractor.webp',name:'The tractor'},{file:'20-scooter.webp',name:'The scooter'},{file:'15-boat.webp',name:'The boat',correct:true}]}
+   ]}
+  ]
+ },
+ printables:{
+  mode:'cards',
+  heading:'Print the vehicle cards.',
+  intro:'Print the cards for vehicle hunts, matching and sound games.',
+  pack:'Vehicle Learning Cards',
+  meta:'Age 2 · Toddler 6 · Talk &amp; Explore',
+  audience:'Made for you to print and use with your child — twenty cards, two to a page.',
+  note:'The same twenty cards from today’s class, two to a page. Any paper works — cards just need to be big enough to point at.'
+ },
+ howTo:{heading:'Tips for Parents',paragraphs:[
+  'A toddler who answers every vehicle with vroom is doing the class exactly right. Any sound back is them talking.',
+  'Bring sounds into the body — steer a car, chug your arms like a train, rock like a boat. Movement helps words stick.',
+  'Repeats are the point. The tenth choo choo is still funny — and still teaching.'
+ ],note:'<strong>Age ranges are a guide.</strong> Go at your child’s pace.'},
+ pills:{heading:'Where to next?',items:[['Toddler classes','/toddler/'],['Age 2','/toddler/2-years/'],['Learning Path','/learning-path/']]},
+ pathNav:{prev:{title:'Animals & Sounds',range:'Age 2',href:'/toddler/2-years/animals-and-sounds/'},next:null},
+ hubBlurb:'Beep beep! Twenty vehicles with big sounds and three quick games — cars, trains, boats and one loud rocket.',
+ schema:{resourceType:'Interactive toddler class',level:'Toddler (age 2)',teaches:'Vehicle names and their sounds through look, say and tap-along play',audience:'Parents of toddlers',keywords:'vehicles for toddlers, vehicle sounds, transportation activities for toddlers, vehicle learning cards, printable vehicle cards'}
+};
+export const lessons=[hcLesson,fvLesson,cfoLesson,fwftLesson,aeoLesson,fabLesson,fwfhLesson,fcLesson,csLesson,msLesson,anLesson,vhLesson];
 export function classLessonSchema(site,L){
  return [
   {'@context':'https://schema.org','@type':'LearningResource',name:L.title,description:L.description,url:site+L.path,image:L.schemaImage,inLanguage:'en',learningResourceType:L.schema.resourceType||'Interactive baby class',educationalLevel:L.schema.level,isAccessibleForFree:true,educationalUse:'Home learning activity',teaches:L.schema.teaches,audience:{'@type':'Audience',audienceType:L.schema.audience},keywords:L.schema.keywords},
@@ -767,7 +900,8 @@ export const stages=[
  {name:'Toddler 2',age:'18–24 Months',href:'/toddler/18-24-months/',lesson:fcLesson},
  {name:'Toddler 3',age:'Age 2',href:'/toddler/2-years/',lesson:csLesson},
  {name:'Toddler 4',age:'Age 2',href:'/toddler/2-years/',lesson:msLesson},
- {name:'Toddler 5',age:'Age 2',href:'/toddler/2-years/',lesson:anLesson}
+ {name:'Toddler 5',age:'Age 2',href:'/toddler/2-years/',lesson:anLesson},
+ {name:'Toddler 6',age:'Age 2',href:'/toddler/2-years/',lesson:vhLesson}
 ];
 const tcImg=(base,file,w,h,alt,attrs='')=>`<img src="${base}${file}" width="${w}" height="${h}" alt="${alt}"${attrs}>`;
 export function toddlerClassBody(L){
@@ -833,10 +967,20 @@ export function toddlerClassBody(L){
   ${I.offScreen.groups?I.offScreen.groups.map(huntHtml).join(''):`<div class="tc-hunt"><h3>Color hunt</h3><ul class="lesson-prompts">${I.offScreen.colorHunt.map(p=>`<li>${p}</li>`).join('')}</ul></div>
   <div class="tc-hunt"><h3>Shape hunt</h3><ul class="lesson-prompts">${I.offScreen.shapeHunt.map(p=>`<li>${p}</li>`).join('')}</ul></div>`}
   <p class="lesson-note">${I.offScreen.note}</p>
-  ${L.printables?`<p class="fc-hint">There is a printable version of these hunts in the <a href="#printables">Download &amp; Print</a> pack below — handy for the fridge or the weekend.</p>`:''}
+  ${L.printables&&L.printables.mode!=='cards'?`<p class="fc-hint">There is a printable version of these hunts in the <a href="#printables">Download &amp; Print</a> pack below — handy for the fridge or the weekend.</p>`:''}
  </section>`;
  const printSection=L.printables?(()=>{
   const P=L.printables;
+  if(P.mode==='cards'){
+   const printPath=L.path+'print/';
+   return `<section class="wrap lesson-section tc-printables" id="printables" aria-label="Print the cards">
+  <span class="eyebrow">PRINT THE CARDS</span>
+  <h2>${P.heading}</h2>
+  <p class="lesson-copy">${P.intro}</p>
+  <div class="hero-actions tc-print-actions"><a class="button" href="${printPath}">View Printable Cards <span aria-hidden="true">↗</span></a><button type="button" class="button button-ghost" data-tc-print-open="${printPath}?print=1">Print Cards</button></div>
+  <p class="lesson-note">${P.note}</p>
+ </section>`;
+  }
   const pBase=(L.r2Base||lessonsBase)+P.folder;
   const printPath=L.path+'print/';
   return `<section class="wrap lesson-section tc-printables" id="printables" aria-label="Download and print">
@@ -924,6 +1068,24 @@ export function toddlerClassBody(L){
  ${complete}
  ${tips}
  ${pills}`;
+}
+export function printCardsBody(L){
+ const P=L.printables;
+ const base=(L.r2Base||lessonsBase)+L.folder;
+ const crumbs=[...L.crumbs,['Printable Cards',L.path+'print/']];
+ const sheets=L.cards.reduce((rows,c,i)=>{if(i%2===0)rows.push([]);rows[rows.length-1].push(c);return rows;},[]);
+ return `${crumbNav(crumbs)}
+ <section class="wrap print-head">
+  <span class="eyebrow">PRINTABLE VEHICLE CARDS</span>
+  <h1>${P.pack}</h1>
+  <p class="tc-pack-meta">${P.meta}</p>
+  <p class="lesson-copy">${P.audience} The cards print in card order — cut them out or use them as they are. When you are ready, choose Print Cards.</p>
+  <div class="hero-actions tc-print-actions"><button type="button" class="button" data-tc-print-view>Print Cards</button><a class="button button-ghost" href="${L.path}">Back to class <span aria-hidden="true">↗</span></a></div>
+  <p class="fc-hint">Printing happens in your browser — nothing is uploaded and nothing is installed. No PDF is involved.</p>
+ </section>
+ <section class="wrap tc-print-pages" aria-label="The twenty vehicle learning cards">
+  ${sheets.map(pair=>`<div class="tc-print-sheet">${pair.map(c=>`<figure class="tc-print-page"><img src="${base}${c.file}" width="${c.w}" height="${c.h}" alt="${c.alt}"></figure>`).join('')}</div>`).join('\n  ')}
+ </section>`;
 }
 export function printPackBody(L){
  const P=L.printables;

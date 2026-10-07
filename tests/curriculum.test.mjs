@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
-import {lessons,fvLesson,cfoLesson,fwftLesson,aeoLesson,fabLesson,fwfhLesson,fcLesson,csLesson,msLesson,anLesson,lessonsBase,toddlerBase} from '../src/lessons.mjs';
+import {lessons,fvLesson,cfoLesson,fwftLesson,aeoLesson,fabLesson,fwfhLesson,fcLesson,csLesson,msLesson,anLesson,vhLesson,lessonsBase,toddlerBase} from '../src/lessons.mjs';
 const read=f=>readFileSync(f,'utf8');
 const l2=read('dist/newborn/6-12-weeks/faces-and-visual-tracking/index.html');
 const l3=read('dist/baby/3-4-months/colors-and-first-objects/index.html');
@@ -13,6 +13,7 @@ const l8=read('dist/toddler/18-24-months/first-concepts-big-small-up-down/index.
 const l9=read('dist/toddler/2-years/colors-and-shapes/index.html');
 const l10=read('dist/toddler/2-years/matching-and-sorting/index.html');
 const l11=read('dist/toddler/2-years/animals-and-sounds/index.html');
+const l12=read('dist/toddler/2-years/vehicles-and-sounds/index.html');
 const checkLesson=(html,L)=>{
  assert.ok(html.includes('rel="canonical" href="https://kiddo-school.pages.dev'+L.path+'"'));
  assert.ok(html.includes('<title>'+L.seoTitle.replace(/&/g,'&amp;')+' | Kiddo.school</title>'));
@@ -357,8 +358,10 @@ test('lesson 11 (Animals & Sounds, Toddler 5) follows its spec with the interact
  assert.ok(l11.includes('Previous class'));
  assert.ok(l11.includes('href="/toddler/2-years/matching-and-sorting/"'));
  assert.ok(l11.includes('Matching &amp; Sorting'));
+ assert.ok(l11.includes('href="/toddler/2-years/vehicles-and-sounds/"'),'next class links to lesson 12');
+ assert.ok(l11.includes('Next class'));
+ assert.ok(l11.includes('Vehicles &amp; Sounds'));
  assert.ok(l11.includes('href="/learning-path/"'));
- assert.ok(l11.includes('Explore the Learning Path'));
  assert.ok(!l11.includes('Coming soon'),'no invented next class');
  assert.ok(!/6\/11|Score|Failed|Wrong!|Try again until you pass/.test(l11),'no competitive scoring language');
  const files=[...l11.matchAll(new RegExp(toddlerBase.replace(/\./g,'\\.')+'animals-and-sounds-age-2/(\\d{2}-[a-z-]+)\\.webp','g'))].map(m=>m[1]);
@@ -382,11 +385,109 @@ test('lesson 11 (Animals & Sounds, Toddler 5) follows its spec with the interact
  assert.ok(l11.includes('name="twitter:card" content="summary_large_image"'));
  assert.ok(l11.includes('"learningResourceType":"Interactive toddler class"'));
 });
-test('lesson 9 links forward to lesson 10, lesson 10 to lesson 11, and each links back',()=>{
+test('lesson 12 (Vehicles & Sounds, Toddler 6) follows its spec with the interactive toddler class',()=>{
+ assert.ok(l12.includes('rel="canonical" href="https://kiddo-school.pages.dev/toddler/2-years/vehicles-and-sounds/"'));
+ assert.ok(l12.includes('<title>Vehicles and Sounds for 2-Year-Olds | Kiddo.school</title>'));
+ assert.ok(l12.includes('content="'+vhLesson.description+'"'));
+ assert.equal(vhLesson.description,'Explore cars, buses, trains and more with colorful vehicle cards, simple sound games and playful activities for 2-year-olds.');
+ assert.ok(l12.includes('<h1>Vehicles and Sounds for 2-Year-Olds</h1>'));
+ assert.ok(l12.includes('TODDLER 6 · LESSON 12'));
+ for(const [k,v] of vhLesson.chips)assert.ok(l12.includes('<strong>'+k+'</strong> '+v),k);
+ assert.ok(l12.includes('<figure class="lesson-cover"><img src="'+vhLesson.ogImage+'" width="2000" height="1294" alt="Vehicles and Sounds class for 2-year-olds at Kiddo School"'));
+ assert.ok(l12.includes('Beep beep! Vroom! Choo choo!'));
+ assert.ok(l12.includes('Start Class <span aria-hidden="true">↓</span>'),'simple Start Class button per writing style');
+ assert.ok(!l12.includes('Start Today’s Class'),'style: no verbose start button');
+ assert.ok(l12.includes('TEACHER WELCOME'));
+ assert.ok(l12.includes('Let’s meet some vehicles! Can you make their sounds with me?'));
+ for(const id of ['meet-the-vehicles','make-the-sounds','working-vehicles','who-makes-this-sound','sky-vehicles','find-the-vehicle','where-does-it-go','off-screen','printables'])assert.ok(l12.includes('id="'+id+'"'),id);
+ assert.ok(l12.includes('<h2>Meet the vehicles.</h2>'));
+ assert.ok(l12.includes('<h2>Make the sounds.</h2>'));
+ assert.ok(l12.includes('<h2>Vehicles that work.</h2>'));
+ assert.ok(l12.includes('<h2>Who makes this sound?</h2>'));
+ assert.ok(l12.includes('<h2>Boats, planes and a rocket.</h2>'));
+ assert.ok(l12.includes('<h2>Find the vehicle.</h2>'));
+ assert.ok(l12.includes('<h2>Where does it go?</h2>'));
+ assert.ok(l12.includes('TAKE IT OFF SCREEN'));
+ assert.ok(l12.includes('<h2>Vehicle hunt.</h2>'));
+ assert.ok(l12.includes('Look out the window or take a walk. Spot a car, bus or truck and name it together.'));
+ assert.ok(l12.includes('Count the buses you see.'));
+ assert.ok(l12.includes('Spot something that flies.'));
+ assert.ok(l12.includes('PRINT THE CARDS'));
+ assert.ok(l12.includes('<h2>Print the vehicle cards.</h2>'));
+ assert.ok(l12.includes('Print the cards for vehicle hunts, matching and sound games.'));
+ assert.ok(l12.includes('href="/toddler/2-years/vehicles-and-sounds/print/"'));
+ assert.ok(l12.includes('View Printable Cards'));
+ assert.ok(l12.includes('data-tc-print-open="/toddler/2-years/vehicles-and-sounds/print/?print=1"'));
+ assert.ok(l12.includes('Print Cards'));
+ assert.ok(!/download (the )?pdf/i.test(l12),'no fake PDF claims');
+ assert.ok(l12.includes('Ten little steps'));
+ assert.ok(l12.includes('<li><span>10</span> Print the cards</li>'));
+ assert.ok(l12.includes('TEACHER NOTE'));
+ assert.ok(l12.includes('Keep naming the vehicles you notice together today.'));
+ assert.ok(l12.includes('A NOTE FROM THE PRINCIPAL'));
+ assert.ok(l12.includes('Your child doesn’t need to learn every card today. Follow what catches their interest.'));
+ assert.ok(l12.includes('<h2>Class complete!</h2>'));
+ assert.ok(l12.includes('Nice beeps, toots and choo choos together.'));
+ assert.ok(l12.includes('<h2>Tips for Parents</h2>'));
+ for(const p of vhLesson.howTo.paragraphs)assert.ok(l12.includes(p),p.slice(0,40));
+ assert.ok(l12.includes('Age ranges are a guide'));
+ assert.ok(l12.includes('Go at your child’s pace'),'short safety line, once only, per spec');
+ assert.equal((l12.match(/Age ranges are a guide/g)||[]).length,1,'age-guide line appears exactly once on the page');
+ assert.ok(l12.includes('Previous class'));
+ assert.ok(l12.includes('href="/toddler/2-years/animals-and-sounds/"'));
+ assert.ok(l12.includes('Animals &amp; Sounds'));
+ assert.ok(!l12.includes('Coming soon'),'no invented next class');
+ assert.ok(!/Score|Failed|Wrong!|Try again until you pass/.test(l12),'no competitive scoring language');
+ assert.ok(!l12.includes('vehicles-and-sounds-age-2/learning-cards/'),'NO learning-cards subfolder requests');
+ assert.ok(!l12.includes('printables/'),'no printables folder — digital and print share the SAME card assets');
+ const files=[...l12.matchAll(new RegExp(toddlerBase.replace(/\./g,'\\.')+'vehicles-and-sounds-age-2/([\\w-]+)\\.webp','g'))].map(m=>m[1]);
+ assert.equal([...new Set(files)].length,21,'all 21 R2 files referenced (cover + 20 cards)');
+ assert.deepEqual([...new Set(files)].sort(),['cover',...vhLesson.cards.map(c=>c.file.replace('.webp',''))].sort());
+ assert.ok(l12.includes('src="'+vhLesson.ogImage+'"'),'cover referenced exactly from its R2 path');
+ for(const c of vhLesson.cards)assert.ok(l12.includes('alt="'+c.alt+'"'),c.file);
+ assert.ok(l12.includes('alt="Cartoon car learning card labeled Car with Beep beep"'));
+ assert.ok(l12.includes('alt="Kick scooter learning card labeled Scooter with Zoom"'),'scooter alt uses the exact spec wording');
+ for(const c of vhLesson.cards)assert.ok(l12.includes('width="2000" height="1294"'),'landscape cards keep true dimensions');
+ assert.ok(l12.includes('data-tc-correct="true"'));
+ assert.equal((l12.match(/data-tc-round/g)||[]).length,13,'6 who-makes + 4 find + 3 where-goes rounds');
+ assert.equal((l12.match(/data-lesson-viewer/g)||[]).length,4,'four viewers (meet, sounds, working, sky)');
+ assert.equal((l12.match(/class="tc-choice"/g)||[]).length,39,'13 rounds × 3 real image-choice buttons');
+ assert.ok(!l12.includes('class="tc-choice tc-num"'),'no numbered position buttons — every card is its own image');
+ for(const label of ['The car','The train','The ship','The helicopter','The bicycle','The tractor','The boat','The airplane'])assert.ok(l12.includes('aria-label="'+label+'"'),label);
+ for(const q of ['Who goes choo choo?','Who goes beep beep?','Who goes vroom?','Who goes toot toot?','Who goes whirr?','Who goes ring ring?','Find the bus.','Where is the airplane?','Can you find the tractor?','Find the boat.','Which one goes on tracks?','Which one flies in the sky?','Which one goes on water?'])assert.ok(l12.includes(q),q);
+ for(const r of vhLesson.interactive.sections.filter(s=>s.type==='play').flatMap(s=>s.rounds)){
+  const tail=l12.split('data-tc-ask="'+r.ask+'"')[1];
+  const cut=tail.indexOf('data-tc-round');
+  const roundHtml=cut===-1?tail:tail.slice(0,cut);
+  assert.equal((roundHtml.match(/data-tc-correct="true"/g)||[]).length,1,r.ask+' has exactly one correct choice');
+  for(const c of r.choices)assert.ok(roundHtml.includes('alt="'+vhLesson.cards.find(x=>x.file===c.file).alt+'"'),r.ask+' shows '+c.name);
+ }
+ assert.match(l12,/BreadcrumbList[\s\S]*"name":"Toddler"[\s\S]*"name":"Age 2"[\s\S]*"name":"Vehicles & Sounds"/);
+ assert.ok(l12.includes('property="og:image" content="'+vhLesson.ogImage+'"'));
+ assert.ok(l12.includes('name="twitter:card" content="summary_large_image"'));
+ assert.ok(l12.includes('"learningResourceType":"Interactive toddler class"'));
+ const pv=read('dist/toddler/2-years/vehicles-and-sounds/print/index.html');
+ assert.ok(pv.includes('content="noindex,follow"'),'print view is noindex');
+ assert.ok(pv.includes('<body class="print-view">'));
+ assert.ok(pv.includes('<h1>Vehicle Learning Cards</h1>'));
+ assert.ok(pv.includes('data-tc-print-view'));
+ assert.ok(pv.includes('Back to class'));
+ assert.ok(!pv.includes('vehicles-and-sounds-age-2/learning-cards/'),'print view uses the same direct R2 path, no subfolder');
+ assert.ok(!pv.includes('printables/'),'no printables folder anywhere');
+ const pvFiles=[...pv.matchAll(new RegExp(toddlerBase.replace(/\./g,'\\.')+'vehicles-and-sounds-age-2/([\\w-]+)\\.webp','g'))].map(m=>m[1]);
+ assert.equal(pvFiles.length,20,'each card referenced exactly once in the print view');
+ assert.deepEqual([...new Set(pvFiles)],vhLesson.cards.map(c=>c.file.replace('.webp','')),'print view uses the SAME 20 card assets, in card order');
+ assert.equal((pv.match(/class="tc-print-sheet"/g)||[]).length,10,'ten sheets — two cards per printed page');
+ assert.ok(!pv.includes('loading="lazy"'),'print images load eagerly for printing');
+});
+test('lesson 9 links forward to lesson 10, lesson 10 to lesson 11, lesson 11 to lesson 12, and each links back',()=>{
  assert.ok(l9.includes('href="/toddler/2-years/matching-and-sorting/"'));
  assert.ok(l9.includes('Next class'));
  assert.ok(l10.includes('href="/toddler/2-years/animals-and-sounds/"'));
- assert.ok(l11.includes('href="/toddler/2-years/matching-and-sorting/"'));
+ assert.ok(l10.includes('Next class'));
+ assert.ok(l11.includes('href="/toddler/2-years/vehicles-and-sounds/"'),'lesson 11 links to lesson 12');
+ assert.ok(l11.includes('Next class'));
+ assert.ok(l12.includes('href="/toddler/2-years/animals-and-sounds/"'),'lesson 12 links back to lesson 11');
 });
 test('stage pages exist, follow the school hierarchy and link their lessons',()=>{
  const w=read('dist/newborn/6-12-weeks/index.html');
@@ -434,8 +535,9 @@ test('stage pages exist, follow the school hierarchy and link their lessons',()=
  assert.ok(t3.includes('href="/toddler/2-years/colors-and-shapes/"'));
  assert.ok(t3.includes('href="/toddler/2-years/matching-and-sorting/"'));
  assert.ok(t3.includes('href="/toddler/2-years/animals-and-sounds/"'));
+ assert.ok(t3.includes('href="/toddler/2-years/vehicles-and-sounds/"'));
  assert.ok(t3.includes('Colors, shapes, matching'));
- assert.ok(t3.includes('Toddler 3, 4 &amp; 5'));
+ assert.ok(t3.includes('Toddler 3, 4, 5 &amp; 6'));
  const toddler=read('dist/toddler/index.html');
  assert.ok(toddler.includes('rel="canonical" href="https://kiddo-school.pages.dev/toddler/"'));
  assert.ok(toddler.includes('href="/toddler/12-18-months/first-words-food-home/"'));
@@ -443,12 +545,13 @@ test('stage pages exist, follow the school hierarchy and link their lessons',()=
  assert.ok(toddler.includes('href="/toddler/2-years/colors-and-shapes/"'));
  assert.ok(toddler.includes('href="/toddler/2-years/matching-and-sorting/"'));
  assert.ok(toddler.includes('href="/toddler/2-years/animals-and-sounds/"'));
+ assert.ok(toddler.includes('href="/toddler/2-years/vehicles-and-sounds/"'));
 });
 test('the learning path page lists the real curriculum from birth to age 2 and beyond',()=>{
  const lp=read('dist/learning-path/index.html');
  assert.ok(lp.includes('rel="canonical" href="https://kiddo-school.pages.dev/learning-path/"'));
  assert.ok(lp.includes('Age ranges are a guide, not a test'));
- for(const s of [['Newborn 1','/newborn/0-6-weeks/high-contrast-cards/'],['Newborn 2','/newborn/6-12-weeks/faces-and-visual-tracking/'],['Infant 1','/baby/3-4-months/colors-and-first-objects/'],['Infant 2','/baby/4-6-months/first-words-familiar-things/'],['Explorer 1','/baby/6-9-months/animals-everyday-objects/'],['Explorer 2','/baby/9-12-months/first-actions-body-parts/'],['Toddler 1','/toddler/12-18-months/first-words-food-home/'],['Toddler 2','/toddler/18-24-months/first-concepts-big-small-up-down/'],['Toddler 3','/toddler/2-years/colors-and-shapes/'],['Toddler 4','/toddler/2-years/matching-and-sorting/'],['Toddler 5','/toddler/2-years/animals-and-sounds/']])assert.ok(lp.includes('>'+s[0])&&lp.includes('href="'+s[1]+'"'),s[0]);
+ for(const s of [['Newborn 1','/newborn/0-6-weeks/high-contrast-cards/'],['Newborn 2','/newborn/6-12-weeks/faces-and-visual-tracking/'],['Infant 1','/baby/3-4-months/colors-and-first-objects/'],['Infant 2','/baby/4-6-months/first-words-familiar-things/'],['Explorer 1','/baby/6-9-months/animals-everyday-objects/'],['Explorer 2','/baby/9-12-months/first-actions-body-parts/'],['Toddler 1','/toddler/12-18-months/first-words-food-home/'],['Toddler 2','/toddler/18-24-months/first-concepts-big-small-up-down/'],['Toddler 3','/toddler/2-years/colors-and-shapes/'],['Toddler 4','/toddler/2-years/matching-and-sorting/'],['Toddler 5','/toddler/2-years/animals-and-sounds/'],['Toddler 6','/toddler/2-years/vehicles-and-sounds/']])assert.ok(lp.includes('>'+s[0])&&lp.includes('href="'+s[1]+'"'),s[0]);
  for(const hub of ['/newborn/','/newborn/6-12-weeks/','/baby/3-4-months/','/baby/4-6-months/','/baby/6-9-months/','/baby/9-12-months/','/toddler/12-18-months/','/toddler/18-24-months/','/toddler/2-years/'])assert.ok(lp.includes('href="'+hub+'"'),hub);
  assert.ok(lp.includes('href="/art/"')&&lp.includes('href="/activities/"'));
  assert.ok(lp.includes('Start Today’s Class'));
@@ -500,7 +603,7 @@ test('the whole curriculum path is wired together and reusable markup is shared'
  assert.ok(talkThinkHub.includes('href="'+fwfhLesson.path+'"'));
  assert.ok(talkThinkHub.includes('href="'+fcLesson.path+'"'));
  assert.ok(talkThinkHub.includes('href="'+msLesson.path+'"'));
- for(const html of [l1,l2,l3,l4,l5,l6,l7,l8,l9,l10,l11]){
+ for(const html of [l1,l2,l3,l4,l5,l6,l7,l8,l9,l10,l11,l12]){
   assert.ok(html.includes('class="lv-frame" data-lesson-viewer'));
   assert.ok(html.includes('<div class="lv-stage" data-lv-stage></div>'));
  }

@@ -237,3 +237,11 @@ h1,h2,h3,.brand,.bean-links strong{font-family:var(--kid-font);letter-spacing:0}
  .print-view .tc-print-actions{display:none}
  .print-view .print-head{display:none}
 }
+/* Vehicle Learning Cards print view: landscape cards, two per sheet */
+.tc-print-sheet{margin-top:14px;display:grid;gap:14px}
+@media print{
+ .print-view .tc-print-sheet{gap:10mm;page-break-after:always;break-after:page;margin:0}
+ .print-view .tc-print-sheet:last-child{page-break-after:auto;break-after:auto}
+ .print-view .tc-print-sheet .tc-print-page{page-break-after:auto;break-after:auto;page-break-inside:avoid}
+ .print-view .tc-print-sheet .tc-print-page img{max-height:105mm;object-fit:contain}
+}
