@@ -21,8 +21,8 @@
 import {
   json, badRequest, tooLarge, unsupported, unavailable, serverError, methodGuard, originGuard,
   readJson, cleanText, cleanEmail, honeypot, rateLimit, turnstileGuard, LIMITS,
-} from '../lib/security.js';
-import { validateAndScrubImage } from '../lib/images.js';
+} from '../../lib/security.js';
+import { validateAndScrubImage } from '../../lib/images.js';
 
 const PATH_RE = /^\/[a-z0-9-]+(\/[a-z0-9-]+)*\/$/;
 const REACTIONS = ['love', 'like', 'okay', 'not_for_us'];

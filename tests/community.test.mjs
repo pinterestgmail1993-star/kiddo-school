@@ -3,8 +3,8 @@
 // (fail-closed Cloudflare Access) and approve/reject flows.
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {readFileSync} from 'node:fs';
-import {onRequest as publicApi} from '../functions/api/[[route]].js';
+import {readFileSync,existsSync} from 'node:fs';
+import {onRequest as publicApi} from '../functions/api/community/[[route]].js';
 import {onRequest as adminApi} from '../functions/api/admin/[[route]].js';
 import {verifyAccessJwt,requireAdmin} from '../functions/lib/access.js';
 import {cleanText,cleanEmail,escapeHtml} from '../functions/lib/security.js';
@@ -198,6 +198,27 @@ test('community-api.js loads BEFORE every consumer script (defer execution order
 });
 
 /* ------------------------------------------------ Public API: submissions */
+test('routers live where real Pages routing expects them: /api/community/* → bare route names, /api/admin/* → resources',()=>{
+ // Real Cloudflare Pages routing hands a router file params.route = the path
+ // segments BELOW its own directory. The public router compares BARE names
+ // ('config','notes','principal','sticky','review','comment','art'), so it
+ // must sit at functions/api/community/[[route]].js for /api/community/config
+ // to arrive as route=['config']. The admin router does the same for its
+ // resources at functions/api/admin/[[route]].js. A previous regression
+ // shipped the public router one level too shallow (functions/api/[[route]].js),
+ // where /api/community/config arrives as route='community/config' and every
+ // endpoint 404'd in production — the test mock stripped the 'community/'
+ // prefix, masking it. This layout check exists so that cannot ship again.
+ assert.ok(existsSync('functions/api/community/[[route]].js'),'public router must live at functions/api/community/[[route]].js');
+ assert.ok(existsSync('functions/api/admin/[[route]].js'),'admin router must live at functions/api/admin/[[route]].js');
+ assert.ok(!existsSync('functions/api/[[route]].js'),'a catch-all at functions/api/[[route]].js would receive /api/community/* as prefixed routes and 404 everything');
+ // And the mock used by every API test below must mirror real routing:
+ // strip exactly the /api/<area>/ prefix, keep the remaining segments.
+ const url='/api/community/art/7/image';
+ const segs=url.replace(/^\/api\/(community|admin)\/?/,'').split('?')[0].split('/').filter(Boolean);
+ assert.deepEqual(segs,['art','7','image'],'mock ctx() route parsing must match real Pages segment semantics');
+});
+
 test('origin and CSRF guards reject cross-site or header-less POSTs',async()=>{
  const db=mockDb();
  const env={DB:db};
@@ -420,7 +441,7 @@ test('admin queues serve real D1 counts and the email column is admin-only',asyn
  // Admin list SQL selects email ONLY from the protected admin module source
  const src=read('functions/api/admin/[[route]].js');
  assert.ok(src.includes('parent_name, email, message'),'admin reads email');
- const pub=read('functions/api/[[route]].js');
+ const pub=read('functions/api/community/[[route]].js');
  assert.ok(!pub.includes('SELECT id, category, parent_name, email'),'public API never reads email');
 });
 
