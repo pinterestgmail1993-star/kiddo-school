@@ -543,3 +543,21 @@ h1,h2,h3,.brand,.bean-links strong{font-family:var(--kid-font);letter-spacing:0}
 .mc-hot-shelf{left:69%;top:55%}
 .mc-hot-desk{left:76%;top:78%}
 .mc-hot-bag{left:93%;top:87%}
+
+/* Main navigation: Parents dropdown (desktop + mobile), School Home active state */
+.nav-parents{position:relative;display:inline-flex}
+.nav-parents-btn{background:none;border:0;padding:0;display:inline-flex;align-items:center;gap:6px;font:inherit;font-size:13px;font-weight:600;color:inherit;min-height:44px}
+.nav-parents-btn svg{flex:0 0 auto;transition:transform .15s ease}
+.nav-parents[data-open="true"] .nav-parents-btn svg{transform:rotate(180deg)}
+.nav-parents[data-active="true"]>.nav-parents-btn,.nav-parents[data-open="true"]>.nav-parents-btn{text-decoration:underline;text-decoration-thickness:3px;text-decoration-color:var(--yellow)}
+.nav-parents-menu{position:absolute;top:calc(100% + 12px);right:0;min-width:215px;background:var(--white);border:1.5px solid var(--ink);box-shadow:4px 4px 0 var(--ink);padding:8px;z-index:40}
+.nav-parents-menu a{display:flex;align-items:center;min-height:46px;padding:10px 14px;font-size:13px;font-weight:600;text-decoration:none;white-space:nowrap}
+.nav-parents-menu a:hover,.nav-parents-menu a[aria-current]{text-decoration:underline;text-decoration-thickness:3px;text-decoration-color:var(--yellow)}
+@media(max-width:950px){.nav-parents-btn{font-size:13px}}
+@media(max-width:680px){
+ .nav-parents{flex:1 1 100%;flex-direction:column;align-items:center;justify-content:center}
+ .nav-parents-menu{position:static;min-width:0;width:100%;max-width:360px;box-shadow:none;margin-top:6px}
+ .nav-parents-menu a{justify-content:center;min-height:48px}
+}
+@media(max-width:360px){.nav-parents-btn{font-size:12px}}
+@media (prefers-reduced-motion:reduce){.nav-parents-btn svg{transition:none}}

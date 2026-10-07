@@ -203,3 +203,35 @@
     else window.addEventListener('load', () => setTimeout(openDialog, 800));
   }
 })();
+
+/* Main navigation: Parents dropdown. Works with mouse, touch and keyboard.
+   Escape closes and returns focus to the button; clicking outside or moving
+   focus out closes it too. Progressive enhancement: without JS the menu links
+   are hidden, and the same destinations remain reachable in the footer. */
+(() => {
+  if (typeof document.querySelector !== 'function' || typeof document.addEventListener !== 'function') return;
+  const navParents = document.querySelector('.nav-parents');
+  if (!navParents) return;
+  const button = navParents.querySelector('.nav-parents-btn');
+  const menu = navParents.querySelector('.nav-parents-menu');
+  if (!button || !menu) return;
+  const isOpen = () => button.getAttribute('aria-expanded') === 'true';
+  function setOpen(open) {
+    button.setAttribute('aria-expanded', open ? 'true' : 'false');
+    navParents.setAttribute('data-open', open ? 'true' : 'false');
+    menu.hidden = !open;
+  }
+  button.addEventListener('click', () => setOpen(!isOpen()));
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && isOpen()) { setOpen(false); button.focus(); }
+  });
+  document.addEventListener('click', event => {
+    if (isOpen() && !navParents.contains(event.target)) setOpen(false);
+  });
+  navParents.addEventListener('focusout', event => {
+    if (isOpen() && event.relatedTarget && !navParents.contains(event.relatedTarget)) setOpen(false);
+  });
+  menu.addEventListener('click', event => {
+    if (event.target && event.target.closest && event.target.closest('a')) setOpen(false);
+  });
+})();
