@@ -1018,9 +1018,9 @@ export function classLessonBody(L){
 export function lessonStageCard(L,pillLeft,pillRight){
  return `<a class="fc-stage lesson-card-link" href="${L.path}"><div class="fc-stage-pills"><span class="fc-age">${pillLeft}</span><span class="fc-class">${pillRight}</span></div><h3>${esc(L.h1.split(' for ')[0])}</h3><p>${L.hubBlurb}</p><span class="fc-open">Start today’s class <span aria-hidden="true">↗</span></span></a>`;
 }
-export function stagePageBody({chips,stageLessons,soon,subject}){
+export function stagePageBody({chips,stageLessons,soon,subject,extra=''}){
  return `<section class="wrap section compact"><div class="fc-chips lesson-chips">${chips.map(([k,v])=>`<span><strong>${k}</strong> ${v}</span>`).join('')}</div>
- <div class="fc-stages">${stageLessons.map(L=>lessonStageCard(L,'Lesson '+(lessons.indexOf(L)+1),L.subject||subject||'See')).join('')}${soon||''}</div>
+ <div class="fc-stages">${stageLessons.map(L=>lessonStageCard(L,'Lesson '+(lessons.indexOf(L)+1),L.subject||subject||'See')).join('')}${soon||''}</div>${extra}
  <p class="lesson-note"><strong>Every baby develops differently.</strong> Kiddo School age ranges are guides, not tests or developmental deadlines.</p></section>`;
 }
 export const stages=[

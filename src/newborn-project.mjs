@@ -1,4 +1,5 @@
 import {lessons,lessonStageCard} from './lessons.mjs';
+import {helloSchool} from './circle-time.mjs';
 export const newbornBase='https://pub-f2fcb7c9b45a496cbeefef18dbba0ec0.r2.dev/flashcards/black-and-white-baby-cards/';
 export const [hcLesson,fvLesson,cfoLesson,fwftLesson,aeoLesson,fabLesson,fwfhLesson,fcLesson,csLesson,msLesson,anLesson,vhLesson,emLesson]=lessons;
 export function babyBody(){
@@ -60,5 +61,7 @@ export function toddlerBody(){
  <div class="fc-stages">${lessonStageCard(vhLesson,'Lesson 12','Talk &amp; Explore')}</div>
  <h2 class="lesson-classheading">Toddler 7 · Age 2</h2>
  <div class="fc-stages">${lessonStageCard(emLesson,'Lesson 13','Talk &amp; Connect')}</div>
+ <h2 class="lesson-classheading">Circle Time · Age 2</h2>
+ <div class="fc-stages">${lessonStageCard(helloSchool,'Circle Time 1','Age 2')}</div>
  <p class="lesson-note"><strong>Every child develops differently.</strong> Kiddo School age ranges are guides, not tests or deadlines — follow your child’s cues. The earlier path lives in <a href="/newborn/">Newborn Learning</a> and <a href="/baby/">Baby classes</a>.</p></section>`;
 }

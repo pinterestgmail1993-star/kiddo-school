@@ -252,3 +252,66 @@ h1,h2,h3,.brand,.bean-links strong{font-family:var(--kid-font);letter-spacing:0}
  .print-view .tc-print-sheet .tc-print-page{page-break-after:auto;break-after:auto;page-break-inside:avoid}
  .print-view .tc-print-sheet .tc-print-page img{max-height:105mm;object-fit:contain}
 }
+
+/* ---- Circle Time: one moment at a time (hello-school) ---- */
+.ct-wrap{max-width:880px;margin-inline:auto;padding-inline:20px}
+.ct-runner{scroll-margin-top:24px}
+.ct-runner .ct-live{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.ct-dots{display:flex;justify-content:center;gap:9px;padding:4px 0 22px}
+.ct-dots span{width:11px;height:11px;border:1.5px solid var(--ink);border-radius:50%;background:var(--white);transition:background .2s}
+.ct-dots span.is-on{background:var(--ink)}
+.ct-step{border:1.5px solid var(--ink);background:var(--white);box-shadow:5px 5px 0 rgba(52,59,48,.14);padding:30px 34px 34px;text-align:center;animation:ctIn .35s ease}
+.ct-step:focus{outline:none}
+.ct-step:focus-visible{outline:3px solid #81543e;outline-offset:5px}
+.ct-step .eyebrow{margin-bottom:8px}
+.ct-step h2{font-size:clamp(28px,4vw,38px);margin-bottom:14px}
+@keyframes ctIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.ct-scene{margin:0 0 20px;border:1.5px solid var(--line)}
+.ct-scene img{width:100%;height:auto;display:block}
+.ct-scene-small{max-width:520px;margin-inline:auto}
+.ct-sayblock{max-width:560px;margin:0 auto 6px}
+.ct-say{font-family:var(--serif);font-size:clamp(20px,3vw,25px);line-height:1.35;color:var(--ink)}
+.ct-who{margin-top:8px;font-size:13.5px;color:var(--muted)}
+.ct-lead{font-family:var(--serif);font-size:clamp(21px,3vw,26px);color:var(--ink);max-width:560px;margin:0 auto 18px}
+.ct-big{font-family:var(--serif);font-size:clamp(30px,5.6vw,44px);line-height:1.15;color:var(--ink);max-width:640px;margin:6px auto 0}
+.ct-big-say{font-size:clamp(24px,4vw,34px)}
+.ct-hint{font-size:13px;margin-top:14px}
+.ct-actions{display:flex;justify-content:center;align-items:center;gap:14px;flex-wrap:wrap;margin-top:22px}
+.ct-actions .button{min-height:52px;font-size:15px;padding-inline:26px}
+.ct-rhythm{display:flex;justify-content:center;align-items:flex-end;gap:clamp(14px,4vw,30px);font-size:clamp(58px,13vw,96px);line-height:1;margin-top:6px;min-height:1.2em}
+.ct-rhythm span{opacity:.25;transform:scale(.72)}
+.ct-rhythm.is-playing span{animation:ctBeat .55s ease forwards}
+.ct-rhythm.is-playing span:nth-child(2){animation-delay:.55s}
+.ct-rhythm.is-playing span:nth-child(3){animation-delay:1.1s}
+@keyframes ctBeat{0%{opacity:.25;transform:scale(.72)}55%{opacity:1;transform:scale(1.14)}100%{opacity:1;transform:scale(1)}}
+.ct-rhythm:not(.is-playing) span{opacity:1;transform:none}
+.ct-storynav{display:flex;justify-content:center;align-items:center;gap:16px;margin-top:22px;flex-wrap:wrap}
+.ct-storynav .button{min-height:44px}
+.ct-complete{border-top:1.5px dashed var(--line);margin-top:26px;padding-top:24px}
+.ct-stamp{display:inline-block;border:2px solid var(--ink);background:var(--sage);padding:9px 18px;font-weight:800;font-size:13px;letter-spacing:2px;text-transform:uppercase;transform:rotate(-2deg)}
+.ct-complete .hero-actions{margin-top:20px;justify-content:center}
+@media (max-width:640px){.ct-step{padding:22px 18px 26px}.ct-actions{gap:10px}.ct-actions .button{width:100%;max-width:340px}.ct-storynav .button{width:auto}}
+@media (prefers-reduced-motion:reduce){.ct-step{animation:none}.ct-rhythm span{opacity:1;transform:none}.ct-rhythm.is-playing span{animation:none}}
+
+/* ---- My Classroom ---- */
+.mc-stage{position:relative;border:1.5px solid var(--ink);background:var(--white);box-shadow:5px 5px 0 rgba(52,59,48,.14)}
+.mc-stage>img{width:100%;height:auto;display:block}
+.mc-hotspots{position:absolute;inset:0;pointer-events:none}
+.mc-hot{pointer-events:auto;position:absolute;transform:translate(-50%,-50%);background:var(--white);border:1.5px solid var(--ink);box-shadow:2px 2px 0 var(--ink);padding:9px 15px;font-size:12.5px;font-weight:700;letter-spacing:.4px;text-decoration:none;white-space:nowrap;min-height:40px;display:inline-flex;align-items:center;transition:transform .15s}
+.mc-hot:hover{transform:translate(-50%,-50%) translateY(-2px)}
+.mc-hot-board{left:38%;top:13%}
+.mc-hot-library{left:16%;top:35%}
+.mc-hot-principal{left:80%;top:41%}
+.mc-hot-door{left:auto;right:2%;top:9%;transform:translateY(-50%)}
+.mc-hot-door:hover{transform:translateY(-50%) translateY(-2px)}
+.mc-hot-rug{left:41%;top:81%;background:var(--sage)}
+.mc-panel{border:1.5px solid var(--ink);border-top:0;background:var(--white);box-shadow:5px 5px 0 rgba(52,59,48,.14);padding:28px 34px 32px;scroll-margin-top:24px}
+.mc-panel h2{font-size:clamp(30px,4vw,40px)}
+.mc-panel p{max-width:60ch;margin-top:10px}
+.mc-panel .hero-actions{margin-top:18px}
+@media (max-width:719px){
+ .mc-stage>img{border-bottom:1.5px solid var(--ink)}
+ .mc-hotspots{position:static;pointer-events:auto;display:flex;flex-wrap:wrap;gap:10px;padding:16px;justify-content:center}
+ .mc-hot,.mc-hot-door{position:static;transform:none}
+ .mc-hot:hover{transform:translateY(-2px)}
+}

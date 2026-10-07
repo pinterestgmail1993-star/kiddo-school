@@ -1990,5 +1990,53 @@
   "height": 1414,
   "format": "webp",
   "bytes": 127946
+ },
+ {
+  "key": "circle-time/age-2/hello-school/cover.webp",
+  "alt": "Kiddo School teacher welcoming children to Circle Time",
+  "width": 1920,
+  "height": 1080,
+  "format": "webp",
+  "bytes": 192474
+ },
+ {
+  "key": "circle-time/age-2/hello-school/01-hello-and-move.webp",
+  "alt": "Teacher and young children moving together during Circle Time",
+  "width": 1920,
+  "height": 1080,
+  "format": "webp",
+  "bytes": 174994
+ },
+ {
+  "key": "circle-time/age-2/hello-school/02-listen-and-do.webp",
+  "alt": "Teacher and children doing a simple listening and movement activity",
+  "width": 1920,
+  "height": 1080,
+  "format": "webp",
+  "bytes": 162682
+ },
+ {
+  "key": "circle-time/age-2/hello-school/03-story-time.webp",
+  "alt": "Young child arriving at school with a backpack and greeting the teacher",
+  "width": 1920,
+  "height": 1080,
+  "format": "webp",
+  "bytes": 162676
+ },
+ {
+  "key": "circle-time/age-2/hello-school/04-goodbye.webp",
+  "alt": "Teacher and children waving goodbye at the end of Circle Time",
+  "width": 1920,
+  "height": 1080,
+  "format": "webp",
+  "bytes": 183650
+ },
+ {
+  "key": "school/my-classroom/my-classroom-age-2.webp",
+  "alt": "Illustrated classroom with a teacher by the blackboard, a library shelf, a toy shelf, a big circle rug, a desk and a green door",
+  "width": 1366,
+  "height": 768,
+  "format": "webp",
+  "bytes": 59124
  }
 ]

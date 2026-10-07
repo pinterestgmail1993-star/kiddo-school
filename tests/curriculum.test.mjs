@@ -16,6 +16,9 @@ const l11=read('dist/toddler/2-years/animals-and-sounds/index.html');
 const l12=read('dist/toddler/2-years/vehicles-and-sounds/index.html');
 const l13=read('dist/toddler/2-years/emotions-and-feelings/index.html');
 const l13pv=read('dist/toddler/2-years/emotions-and-feelings/print/index.html');
+const ct1=read('dist/toddler/2-years/circle-time/hello-school/index.html');
+const cthub=read('dist/toddler/2-years/circle-time/index.html');
+const mc=read('dist/my-classroom/index.html');
 const checkLesson=(html,L)=>{
  assert.ok(html.includes('rel="canonical" href="https://kiddo-school.pages.dev'+L.path+'"'));
  assert.ok(html.includes('<title>'+L.seoTitle.replace(/&/g,'&amp;')+' | Kiddo.school</title>'));
@@ -590,6 +593,71 @@ test('lesson 13 (Emotions & Feelings, Toddler 7) follows its spec with the inter
  assert.equal((l13pv.match(/class="tc-print-sheet"/g)||[]).length,10,'ten sheets — two cards per printed page');
  assert.ok(!l13pv.includes('loading="lazy"'),'print images load eagerly for printing');
 });
+test('circle time 1 (Hello School!) follows its spec with the one-moment session runner',()=>{
+ assert.ok(ct1.includes('rel="canonical" href="https://kiddo-school.pages.dev/toddler/2-years/circle-time/hello-school/"'));
+ assert.ok(ct1.includes('<title>Circle Time for 2-Year-Olds: Hello School! | Kiddo.school</title>'));
+ assert.ok(ct1.includes('content="Join a short Circle Time for 2-year-olds with movement, simple directions, a tiny story and an off-screen activity to do together."'),'exact spec meta description');
+ assert.ok(ct1.includes('<h1>Hello School! Circle Time</h1>'),'spec H1');
+ assert.ok(ct1.includes('CIRCLE TIME 1 · AGE 2'));
+ for(const [k,v] of [['Age','2 Years'],['Class','Circle Time 1'],['Duration','5–8 minutes']])assert.ok(ct1.includes('<strong>'+k+'</strong> '+v),k);
+ assert.ok(ct1.includes('Start Circle Time'));
+ assert.ok(ct1.includes('Read the prompts aloud and do them together.'),'the one parent note');
+ assert.equal((ct1.match(/Read the prompts aloud and do them together\./g)||[]).length,1,'parent note appears exactly once');
+ assert.ok(ct1.includes('property="og:image" content="https://pub-f2fcb7c9b45a496cbeefef18dbba0ec0.r2.dev/circle-time/age-2/hello-school/cover.webp"'),'cover.webp is the social image');
+ assert.ok(ct1.includes('name="twitter:card" content="summary_large_image"'));
+ for(const [f,alt] of [
+  ['cover.webp','Kiddo School teacher welcoming children to Circle Time'],
+  ['01-hello-and-move.webp','Teacher and young children moving together during Circle Time'],
+  ['02-listen-and-do.webp','Teacher and children doing a simple listening and movement activity'],
+  ['03-story-time.webp','Young child arriving at school with a backpack and greeting the teacher'],
+  ['04-goodbye.webp','Teacher and children waving goodbye at the end of Circle Time']])assert.ok(ct1.includes('alt="'+alt+'"'),'spec alt for '+f);
+ const files=[...ct1.matchAll(/circle-time\/age-2\/hello-school\/([\w-]+)\.webp/g)].map(m=>m[1]);
+ assert.equal([...new Set(files)].length,5,'exactly the five spec scene images');
+ assert.deepEqual([...new Set(files)].sort(),['01-hello-and-move','02-listen-and-do','03-story-time','04-goodbye','cover']);
+ assert.ok(!ct1.includes('learning-cards/')&&!ct1.includes('printables/')&&!ct1.includes('.r2.dev/flashcards/'),'NO flashcard, learning-card or printable assets (footer nav link aside)');
+ assert.equal((ct1.match(/data-ct-step="/g)||[]).length,8,'eight moments in the session');
+ for(const id of ['hello','rhythm','copy','listen','faces','story','rug','goodbye'])assert.ok(ct1.includes('data-ct-step="'+id+'"'),id);
+ assert.equal((ct1.match(/data-ct-dot/g)||[]).length,9,'eight dots plus their container');
+ for(const h2 of ['<h2>Hello &amp; Move</h2>','<h2>Listen &amp; Do</h2>','<h2>Story Time</h2>','<h2>Off the Rug</h2>'])assert.ok(ct1.includes(h2),h2);
+ for(const line of ['Hi! Come sit with me. Ready?','I’m Ready','data-ct-rhythm','Clap, clap, wave!','>Again<','Touch your head.','Clap your hands.','Stomp your feet.','Reach up high.','Sit down.','Listen carefully. Can you do it?','Wave!','Point up!','Touch your toes!','Give someone a high five!','Let’s make some faces.','Make a happy face!','Make a silly face!','Show me sleepy.','Give me a big smile!','A little child packed a school bag.','They came to school.','The teacher waved. “Hello!”','The child waved back. It was time to learn and play.','Part 1 of 4','Can you find your favorite book?','Go get it and bring it back!','I Found One!','>Skip<','Take your time.','Great! You brought a book.','That was fun. See you next time!','Circle Time Complete'])assert.ok(ct1.includes(line),line);
+ assert.ok(ct1.includes('data-ct-next hidden>I’m Ready</button>'),'real button, hidden until JS');
+ assert.ok(ct1.includes('data-ct-replay hidden'),'Again replays the visual cue');
+ assert.ok(ct1.includes('data-ct-found hidden')&&ct1.includes('data-ct-skip hidden'),'I Found One! and Skip both exist');
+ assert.ok(ct1.includes('data-ct-back hidden'),'story Previous exists');
+ assert.ok(ct1.includes('aria-live="polite"'),'step announcer');
+ assert.ok(ct1.includes('— Your Kiddo School teacher'),'existing teacher identity, attributed once');
+ assert.equal((ct1.match(/Your Kiddo School teacher/g)||[]).length,1,'teacher attribution not repeated');
+ assert.ok(ct1.includes('href="/my-classroom/"'),'Back to My Classroom');
+ assert.ok(ct1.includes('href="/learning-path/"'),'Learning Path');
+ assert.ok(ct1.includes('href="/toddler/2-years/"'),'Age 2');
+ assert.equal((ct1.match(/guide, not a test/g)||[]).length,1,'age-guide line appears exactly once');
+ assert.ok(!/\b(scores?|failed|quiz|quizzes|percent|stars?|badges?|streaks?|leaderboards?|grades?)\b/i.test(ct1)&&!ct1.includes('Wrong!'),'no scores, grades, quizzes or gamification');
+ assert.ok(!/camera|microphone|audio|autoplay/.test(ct1),'no camera, microphone or fake audio');
+ assert.ok(!/timer|countdown/.test(ct1),'no timer or pressure');
+ assert.ok(!/must|should already|needs to be able to/.test(ct1),'no developmental pressure language');
+ assert.ok(!/gross motor|fine motor|developmental benefit|educational benefit/i.test(ct1),'no developmental lectures');
+ assert.match(ct1,/BreadcrumbList[\s\S]*"name":"Toddler"[\s\S]*"name":"Age 2"[\s\S]*"name":"Circle Time"[\s\S]*"name":"Hello School!"/);
+ assert.ok(ct1.includes('"learningResourceType":"Interactive circle time"'));
+});
+test('the circle time index page lists circle time 1 and nothing invented',()=>{
+ assert.ok(cthub.includes('rel="canonical" href="https://kiddo-school.pages.dev/toddler/2-years/circle-time/"'));
+ assert.ok(cthub.includes('<h1>Circle Time</h1>'));
+ assert.ok(cthub.includes('href="/toddler/2-years/circle-time/hello-school/"'));
+ assert.ok(cthub.includes('href="/my-classroom/"'));
+ assert.ok(cthub.includes('href="/learning-path/"'));
+ assert.ok(!cthub.includes('Circle Time 2'),'no invented circle time 2');
+});
+test('my classroom connects the rug to circle time and every hotspot to a real page',()=>{
+ assert.ok(mc.includes('rel="canonical" href="https://kiddo-school.pages.dev/my-classroom/"'));
+ assert.ok(mc.includes('<h1>My Classroom</h1>'));
+ assert.ok(mc.includes('src="https://pub-f2fcb7c9b45a496cbeefef18dbba0ec0.r2.dev/school/my-classroom/my-classroom-age-2.webp" width="1366" height="768"'));
+ for(const [label,href] of [['Today’s class','/learning-path/'],['Library','/flashcards/'],['Principal','/about/#principal'],['Let’s explore','/activities/'],['Circle Time','#circle-time']])assert.ok(mc.includes('href="'+href+'"')&&mc.includes('>'+label+'</a>'),label);
+ assert.ok(mc.includes('id="circle-time"'),'the rug panel exists');
+ assert.ok(mc.includes('<h2>Hello School!</h2>'),'rug panel says Hello School!');
+ assert.ok(mc.includes('href="/toddler/2-years/circle-time/hello-school/"')&&mc.includes('Start Circle Time'),'clear Start Circle Time action');
+ assert.ok(mc.includes('/assets/circle-time.js'),'runner script loads on my classroom');
+ assert.ok(mc.includes('aria-label="Places in the classroom"'));
+});
 test('lesson 9 links forward to lesson 10, lesson 10 to lesson 11, lesson 11 to lesson 12, lesson 12 to lesson 13, and each links back',()=>{
  assert.ok(l9.includes('href="/toddler/2-years/matching-and-sorting/"'));
  assert.ok(l9.includes('Next class'));
@@ -650,6 +718,8 @@ test('stage pages exist, follow the school hierarchy and link their lessons',()=
  assert.ok(t3.includes('href="/toddler/2-years/animals-and-sounds/"'));
  assert.ok(t3.includes('href="/toddler/2-years/vehicles-and-sounds/"'));
  assert.ok(t3.includes('href="/toddler/2-years/emotions-and-feelings/"'));
+ assert.ok(t3.includes('href="/toddler/2-years/circle-time/hello-school/"'),'age-2 hub links circle time');
+ assert.ok(t3.includes('href="/my-classroom/"'),'age-2 hub links my classroom');
  assert.ok(t3.includes('Colors, shapes, matching'));
  assert.ok(t3.includes('Toddler 3, 4, 5, 6 &amp; 7'));
  const toddler=read('dist/toddler/index.html');
@@ -661,6 +731,7 @@ test('stage pages exist, follow the school hierarchy and link their lessons',()=
  assert.ok(toddler.includes('href="/toddler/2-years/animals-and-sounds/"'));
  assert.ok(toddler.includes('href="/toddler/2-years/vehicles-and-sounds/"'));
  assert.ok(toddler.includes('href="/toddler/2-years/emotions-and-feelings/"'));
+ assert.ok(toddler.includes('href="/toddler/2-years/circle-time/hello-school/"'),'toddler hub links circle time');
 });
 test('the learning path page lists the real curriculum from birth to age 2 and beyond',()=>{
  const lp=read('dist/learning-path/index.html');
