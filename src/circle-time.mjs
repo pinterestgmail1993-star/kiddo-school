@@ -141,5 +141,11 @@ export function myClassroomBody(){
   <p>A short circle time for two-year-olds — hello, move, listen, a tiny story, then off the rug. About five minutes.</p>
   <div class="hero-actions"><a class="button" href="/toddler/2-years/circle-time/hello-school/">Start Circle Time <span aria-hidden="true">↗</span></a></div>
  </div>
+ <div class="mc-panel">
+  <span class="eyebrow">ON THE WALL · ART WALL</span>
+  <h2>Our Art Wall</h2>
+  <p>The classroom wall where the drawings go. Eleven starter pieces are pinned up — come and look, then make something for the wall at home.</p>
+  <div class="hero-actions"><a class="button button-ghost" href="/art-wall/">Visit the Art Wall <span aria-hidden="true">↗</span></a></div>
+ </div>
  </section>`;
 }

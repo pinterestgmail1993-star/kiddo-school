@@ -2038,5 +2038,93 @@
   "height": 768,
   "format": "webp",
   "bytes": 59124
+ },
+ {
+  "key": "school/art-wall/starter-art/01-family.webp",
+  "alt": "Child-style crayon drawing of a family",
+  "width": 1587,
+  "height": 2245,
+  "format": "webp",
+  "bytes": 450848
+ },
+ {
+  "key": "school/art-wall/starter-art/02-rainbow.webp",
+  "alt": "Child-style drawing of a colorful rainbow",
+  "width": 1587,
+  "height": 2245,
+  "format": "webp",
+  "bytes": 739000
+ },
+ {
+  "key": "school/art-wall/starter-art/03-cat.webp",
+  "alt": "Child-style crayon drawing of a cat",
+  "width": 1587,
+  "height": 2245,
+  "format": "webp",
+  "bytes": 389880
+ },
+ {
+  "key": "school/art-wall/starter-art/04-house.webp",
+  "alt": "Child-style drawing of a house",
+  "width": 1587,
+  "height": 2245,
+  "format": "webp",
+  "bytes": 417124
+ },
+ {
+  "key": "school/art-wall/starter-art/05-dinosaur.webp",
+  "alt": "Child-style drawing of a green dinosaur",
+  "width": 1587,
+  "height": 2245,
+  "format": "webp",
+  "bytes": 548790
+ },
+ {
+  "key": "school/art-wall/starter-art/06-flowers.webp",
+  "alt": "Child-style drawing of colorful flowers",
+  "width": 1587,
+  "height": 2245,
+  "format": "webp",
+  "bytes": 438706
+ },
+ {
+  "key": "school/art-wall/starter-art/07-car.webp",
+  "alt": "Child-style drawing of a red car",
+  "width": 1587,
+  "height": 2245,
+  "format": "webp",
+  "bytes": 484316
+ },
+ {
+  "key": "school/art-wall/starter-art/08-happy-face.webp",
+  "alt": "Child-style drawing of a large happy face",
+  "width": 1587,
+  "height": 2245,
+  "format": "webp",
+  "bytes": 448782
+ },
+ {
+  "key": "school/art-wall/starter-art/09-under-the-sea.webp",
+  "alt": "Child-style drawing of fish under the sea",
+  "width": 1587,
+  "height": 2245,
+  "format": "webp",
+  "bytes": 602224
+ },
+ {
+  "key": "school/art-wall/starter-art/10-shapes.webp",
+  "alt": "Child-style colorful shape drawing",
+  "width": 1587,
+  "height": 2245,
+  "format": "webp",
+  "bytes": 594212
+ },
+ {
+  "key": "school/art-wall/starter-art/11-butterfly.webp",
+  "alt": "Child-style drawing of a colorful butterfly",
+  "width": 1587,
+  "height": 2245,
+  "format": "webp",
+  "bytes": 391080
  }
 ]
