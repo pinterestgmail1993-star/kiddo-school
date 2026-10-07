@@ -64,9 +64,19 @@ test('art wall is wired in: sitemap, my classroom panel and honest grown-ups not
  // Honest framing: classroom examples, not individual children's work; review-first principle
  assert.match(html,/classroom examples made for the wall/);
  assert.match(html,/not artwork by individual children/);
- assert.match(html,/with a grown-up&rsquo;s permission and a quick review first/);
- // No fake submission features (no backend exists — nothing is pretended)
- assert.doesNotMatch(html,/Add Artwork|Upload|upload/i);
+ assert.match(html,/reviews?[^<]*before it goes up|reviewed by the school office before/);
+ // Real submission flow (replaces the old no-backend state): the form exists,
+ // is reviewed-first, and pending artwork is never promised public instantly.
+ assert.match(html,/Add your artwork\./);
+ assert.match(html,/data-aw-form/);
+ assert.match(html,/accept="image\/jpeg,image\/png,image\/webp/);
+ assert.match(html,/I&rsquo;m the parent or guardian and I&rsquo;m okay with this artwork being reviewed/);
+ assert.match(html,/Artwork only, please/); // artwork, never photos of children
+ assert.match(html,/Don&rsquo;t include private information/);
+ // The starter-art folder and the private submissions area stay separated:
+ // nothing on the page mixes family art into the eleven classroom examples.
+ assert.equal((html.match(/starter-art\//g)||[]).length>=11,true);
+ assert.doesNotMatch(html,/starter-art\/(?!01-family|02-rainbow|03-cat|04-house|05-dinosaur|06-flowers|07-car|08-happy-face|09-under-the-sea|10-shapes|11-butterfly)/);
  // Breadcrumb schema
  assert.match(html,/"@type":"BreadcrumbList"/);
  assert.match(html,/"Our Art Wall"/);

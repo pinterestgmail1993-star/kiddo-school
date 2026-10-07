@@ -1,16 +1,14 @@
 // Kiddo School Principal's Office: a private note box for parents and
-// grown-ups. THIS SITE HAS NO BACKEND — there is no form handler, mailbox or
-// storage anywhere in this static pilot, so the form below never pretends to
-// send: a visible notice says so up front, and /assets/principal-office.js
-// repeats it politely if the form is submitted anyway. No success message
-// exists anywhere in this code by design, and none may be added until a real,
-// verified backend exists (see the deployment notes). No email field is
-// collected yet — replies are impossible without a backend, so there is
-// nothing to collect an address for. The form is for grown-ups: nothing here
-// asks for a child's name, age or any details about a child.
+// grown-ups, connected to the school's private records room (Cloudflare D1).
+// Submissions are stored with status 'new', read only in the protected admin
+// panel — never published anywhere on the site. Email is OPTIONAL and is
+// used only if the parent wants a reply; there is no other collection. The
+// form is for grown-ups: nothing here asks for a child's name, age or any
+// details about a child. The client (principal-office.js) claims success
+// ONLY when the server confirms the message was stored.
 export function principalOfficeBody(){
- const cats=['Question','Request','Feedback','Suggestion','Complaint','Technical Problem'];
- const catField=cats.map((c,i)=>`<span class="po-cat"><input type="radio" id="po-cat-${i}" name="po-category" value="${c}"${i===0?' checked':''}><label for="po-cat-${i}">${c}</label></span>`).join('');
+ const cats=[['Question','question'],['Request','request'],['Feedback','feedback'],['Suggestion','suggestion'],['Complaint','complaint'],['Technical Problem','technical_problem']];
+ const catField=cats.map((c,i)=>`<span class="po-cat"><input type="radio" id="po-cat-${i}" name="po-category" value="${c[1]}"${i===0?' checked':''}><label for="po-cat-${i}">${c[0]}</label></span>`).join('');
  return `<section class="wrap section compact">
  <div class="po-room">
   <div class="tc-note-block tc-principal po-hello">
@@ -19,7 +17,7 @@ export function principalOfficeBody(){
    <p class="tc-who">&mdash; The Principal, Kiddo.school</p>
   </div>
   <form class="po-form" data-po-form action="#" method="post">
-   <p class="po-offline"><strong>The mailbox isn&rsquo;t connected yet.</strong> This little school is a static site, so this form can&rsquo;t send or store anything right now &mdash; nothing you type here leaves your browser. There is no email field yet, because replies aren&rsquo;t possible until the mailbox is connected. When it is, every message will go only to the Principal: complaints and requests are never published anywhere on the site.</p>
+   <p class="po-offline"><strong>This note goes straight to the Principal.</strong> Messages sent here land in the Principal&rsquo;s private records &mdash; they are never published on the site, and only the Principal reads them. Adding your email is optional; it is used only if you&rsquo;d like a reply.</p>
    <fieldset class="po-cats">
     <legend>What kind of note is it?</legend>
     ${catField}
@@ -33,7 +31,11 @@ export function principalOfficeBody(){
    <label class="po-field" for="po-name">Parent name <span class="po-opt">Optional</span>
     <input type="text" id="po-name" name="po-name" maxlength="80" autocomplete="name" placeholder="However you like to be called">
    </label>
+   <label class="po-field" for="po-email">Your email <span class="po-opt">Optional &mdash; only if you&rsquo;d like a reply</span>
+    <input type="email" id="po-email" name="po-email" maxlength="200" autocomplete="email" placeholder="you@example.com">
+   </label>
    <p class="po-privacy"><strong>Please don&rsquo;t include private information about your child.</strong> This form is for grown-ups, and it doesn&rsquo;t ask for a child&rsquo;s name, age or anything else about a child &mdash; please keep those details out of your message too.</p>
+   <p class="po-hp" aria-hidden="true"><label for="po-company">Company</label><input type="text" id="po-company" name="company" tabindex="-1" autocomplete="off"></p>
    <div class="po-actions">
     <button type="submit" class="button">Send to the Principal&rsquo;s Office</button>
     <p class="po-status" data-po-status role="status" aria-live="polite"></p>
@@ -50,5 +52,5 @@ export function principalOfficeBody(){
    <li><strong>No child details, ever.</strong> The school doesn&rsquo;t collect children&rsquo;s names, ages, photos or school names through this page &mdash; please don&rsquo;t put them in your message either.</li>
   </ul>
  </section>
- <section class="wrap lesson-section"><span class="eyebrow">KEEP EXPLORING</span><h2>Where next?</h2><div class="lesson-linkrow"><a class="lesson-pill-link" href="/my-classroom/">My Classroom</a><a class="lesson-pill-link" href="/about/">About the school</a><a class="lesson-pill-link" href="/grown-ups/">Grown-ups&rsquo; guide</a></div></section>`;
+ <section class="wrap lesson-section"><span class="eyebrow">KEEP EXPLORING</span><h2>Where next?</h2><div class="lesson-linkrow"><a class="lesson-pill-link" href="/my-classroom/">My Classroom</a><a class="lesson-pill-link" href="/school-community/">School Community</a><a class="lesson-pill-link" href="/about/">About the school</a></div></section>`;
 }

@@ -263,10 +263,16 @@ test('sticky note wall shows classroom examples and an honest form',()=>{
  assert.ok(wall.includes('maxlength="120"'),'120 character limit');
  assert.ok(wall.includes('I’m the parent or guardian and I’m okay with this note being reviewed for the public Sticky Note Wall.'));
  assert.ok(wall.includes('data-wall-send')&&wall.includes('Send Note'));
- assert.ok(!wall.includes('review your note before it goes on the wall'),'the page never promises a submission was received');
+ assert.ok(!wall.includes('review your note before it goes on the wall'),'the page never promises instant publishing');
  const rooms=read('dist/assets/rooms.js');
- assert.ok(rooms.includes('the wall can’t receive notes yet, so nothing was sent'),'honest no-backend message');
+ // The wall is now connected to the real backend: notes POST to the API and
+ // land as pending — success is claimed only after the server confirms.
+ assert.ok(rooms.includes('/api/community/sticky'),'notes POST to the real API');
+ assert.ok(rooms.includes('Thanks! Your note will go up after the school office reads it.'),'honest pending message');
+ assert.ok(rooms.includes('We couldn’t send that. Please try again.'),'honest failure message');
  assert.ok(rooms.includes('Write a little note first.')&&rooms.includes('Please tick the parent box first.'));
+ assert.ok(wall.includes('data-wall-family-wrap'),'approved family notes area exists');
+ assert.match(wall,/src="\/assets\/community-api\.js"/);
  noBanned(wall,['testimonial','email address','phone number'],'sticky wall');
 });
 

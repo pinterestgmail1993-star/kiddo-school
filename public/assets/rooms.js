@@ -349,13 +349,67 @@
     const live = $('[data-wall-live]', form);
     const send = $('[data-wall-send]', form);
     const confirmBox = form.querySelector('input[name="confirm"]');
+    const api = window.KiddoCommunity;
+    let turnstileGetter = null;
+    if (api && api.ensureTurnstile) api.ensureTurnstile(form).then((g) => { turnstileGetter = g; });
     send.addEventListener('click', () => {
       const text = msg.value.trim();
       if (!text) { live.textContent = 'Write a little note first.'; msg.focus(); return; }
       if (!confirmBox.checked) { live.textContent = 'Please tick the parent box first.'; confirmBox.focus(); return; }
-      /* Honest state: no review inbox is connected yet, so nothing is sent
-         and nothing is published. The note stays in this form. */
-      live.textContent = 'Thanks! Your note is ready — but the wall can’t receive notes yet, so nothing was sent.';
+      if (!api) { /* no helper: stay honest, send nothing */
+        live.textContent = 'Sending needs a browser with JavaScript enabled. Your note is still here in the form.';
+        return;
+      }
+      const nameField = $('#wall-name', form);
+      send.disabled = true;
+      live.textContent = 'Sending…';
+      api.postJson('/api/community/sticky', {
+        display_name: nameField ? nameField.value.trim() : '',
+        message: text,
+        confirm: true,
+        company: (form.querySelector('[name="company"]') || {}).value || '',
+        turnstileToken: turnstileGetter ? turnstileGetter() : null
+      }).then((res) => {
+        if (res.ok && res.data && res.data.ok) {
+          msg.value = ''; if (nameField) nameField.value = '';
+          confirmBox.checked = false; update();
+          live.textContent = 'Thanks! Your note will go up after the school office reads it.';
+        } else {
+          send.disabled = false;
+          live.textContent = api.errorText(res, 'We couldn’t send that. Please try again.');
+        }
+      }).catch(() => {
+        send.disabled = false;
+        live.textContent = 'We couldn’t send that. Please try again.';
+      });
     });
+
+    /* Approved notes from families — rendered only from the server's
+       APPROVED list, textContent only (submitted HTML is never injected).
+       The classroom example notes above stay clearly labeled as examples. */
+    const list = $('[data-wall-family]');
+    if (list) {
+      fetch('/api/community/notes').then((r) => r.json()).then((data) => {
+        if (!data || !data.ok || !data.notes || !data.notes.length) return;
+        const wrap = $('[data-wall-family-wrap]');
+        list.textContent = '';
+        data.notes.forEach((note) => {
+          const li = document.createElement('li');
+          li.className = 'wall-note wall-note-family';
+          const text = document.createElement('span');
+          text.className = 'wall-text';
+          text.textContent = note.message;
+          li.appendChild(text);
+          if (note.display_name) {
+            const who = document.createElement('span');
+            who.className = 'wall-name';
+            who.textContent = '— ' + note.display_name;
+            li.appendChild(who);
+          }
+          list.appendChild(li);
+        });
+        if (wrap) wrap.hidden = false;
+      }).catch(() => {});
+    }
   }
 })();

@@ -952,11 +952,150 @@ export const emLesson={
   'Name your own feelings too. “I’m happy you’re here” or “I’m tired tonight” — your face is the best flashcard in the house.'
  ],note:'<strong>Age ranges are a guide.</strong> Go at your child’s pace.'},
  pills:{heading:'Where to next?',items:[['Toddler classes','/toddler/'],['Age 2','/toddler/2-years/'],['Learning Path','/learning-path/']]},
- pathNav:{prev:{title:'Vehicles & Sounds',range:'Age 2',href:'/toddler/2-years/vehicles-and-sounds/'},next:null},
+ pathNav:{prev:{title:'Vehicles & Sounds',range:'Age 2',href:'/toddler/2-years/vehicles-and-sounds/'},next:{title:'Garden Bugs & Friends',range:'Age 2',href:'/toddler/2-years/garden-bugs-and-friends/'}},
  hubBlurb:'Twenty feelings with friendly faces and two quick games — name them together, make the faces, then spot those feelings in your own day. Made for two-year-olds.',
  schema:{resourceType:'Interactive toddler class',level:'Toddler (age 2)',teaches:'Feeling words — happy, sad, angry, scared and more — through looking, face-making and naming together',audience:'Parents of toddlers',keywords:'emotions for 2 year olds, feelings for toddlers, emotion cards for toddlers, feelings activities for toddlers, printable emotion cards, teaching feelings to toddlers, emotion faces for toddlers, social emotional activities for 2 year olds'}
 };
-export const lessons=[hcLesson,fvLesson,cfoLesson,fwftLesson,aeoLesson,fabLesson,fwfhLesson,fcLesson,csLesson,msLesson,anLesson,vhLesson,emLesson];
+// Lesson 14 — Garden Bugs & Friends (Toddler 8, Age 2, Nature & Talk).
+// Twenty cards + cover, all HEAD-verified (HTTP 200) at
+// toddlerBase+folder, byte sizes matching the Cloudflare dashboard, with
+// dimensions parsed from each WebP: eighteen cards at 1587x2245, four
+// (ant, caterpillar, dragonfly, grasshopper) at 1414x2000, cover 2000x1294.
+export const gbLesson={
+ path:'/toddler/2-years/garden-bugs-and-friends/',
+ seoTitle:'Garden Bugs & Friends for 2-Year-Olds',
+ title:'Garden Bugs & Friends for 2-Year-Olds (Toddler 8)',
+ h1:'Garden Bugs & Friends for 2-Year-Olds',
+ description:'Meet twenty little garden friends with your 2-year-old — a bee, a butterfly, a snail and more — with look-and-name cards, two gentle games and a garden hunt for after class.',
+ ogAlt:'Garden Bugs and Friends class for 2-year-olds at Kiddo School',
+ ogImage:toddlerBase+'garden-bugs-and-friends-age-2/cover.webp',
+ schemaImage:toddlerBase+'garden-bugs-and-friends-age-2/cover.webp',
+ eyebrow:'TODDLER 8 · LESSON 14',
+ crumbs:[['Toddler','/toddler/'],['Age 2','/toddler/2-years/'],['Garden Bugs &amp; Friends','/toddler/2-years/garden-bugs-and-friends/']],
+ chips:[['Age','2 Years'],['Subject','Nature &amp; Talk'],['Class','Toddler 8'],['Duration','3–5 minutes']],
+ subject:'Nature &amp; Talk',
+ ledes:['There is a whole little world wobbling around the garden. Meet it together, one friendly face at a time — a busy bee, a slow snail, a roly-poly that rolls right up.',
+  'Nothing to read and nothing to prepare. You say the name, your toddler points or giggles — a moment on a card counts, and the real garden can wait until you step outside.'],
+ startHint:'Start with the bee — the one that is probably already buzzing in their books.',
+ startLabel:'Start Class',
+ folder:'garden-bugs-and-friends-age-2/',
+ r2Base:toddlerBase,
+ eagerFirst:false,
+ cover:{file:'cover.webp',w:2000,h:1294,alt:'Garden Bugs and Friends class for 2-year-olds at Kiddo School'},
+ cards:[
+  {order:1,file:'01-bee.webp',name:'Bee',phrase:'Buzz, buzz!',w:1587,h:2245,alt:'2D illustration of a friendly smiling bee'},
+  {order:2,file:'02-butterfly.webp',name:'Butterfly',phrase:'Flutter, flutter!',w:1587,h:2245,alt:'2D illustration of an orange and black butterfly'},
+  {order:3,file:'03-ladybug.webp',name:'Ladybug',phrase:'Tiny red beetle!',w:1587,h:2245,alt:'2D illustration of a red spotted ladybug'},
+  {order:4,file:'04-snail.webp',name:'Snail',phrase:'Slow and steady.',w:1587,h:2245,alt:'2D illustration of a smiling snail with a brown shell'},
+  {order:5,file:'05-ant.webp',name:'Ant',phrase:'March, march!',w:1414,h:2000,alt:'2D illustration of a small black ant'},
+  {order:6,file:'06-caterpillar.webp',name:'Caterpillar',phrase:'Munch, munch!',w:1414,h:2000,alt:'2D illustration of a green caterpillar'},
+  {order:7,file:'07-dragonfly.webp',name:'Dragonfly',phrase:'Zoom!',w:1414,h:2000,alt:'2D illustration of a dragonfly with shiny wings'},
+  {order:8,file:'08-grasshopper.webp',name:'Grasshopper',phrase:'Boing!',w:1414,h:2000,alt:'2D illustration of a green grasshopper ready to jump'},
+  {order:9,file:'09-beetle.webp',name:'Beetle',phrase:'A shiny little friend.',w:1587,h:2245,alt:'2D illustration of a round shiny beetle'},
+  {order:10,file:'10-spider.webp',name:'Spider',phrase:'Eight wiggly legs!',w:1587,h:2245,alt:'2D illustration of a friendly spider'},
+  {order:11,file:'11-moth.webp',name:'Moth',phrase:'A soft night flyer.',w:1587,h:2245,alt:'2D illustration of a soft brown moth'},
+  {order:12,file:'12-cricket.webp',name:'Cricket',phrase:'Chirp, chirp!',w:1587,h:2245,alt:'2D illustration of a chirping cricket'},
+  {order:13,file:'13-roly-poly.webp',name:'Roly-poly',phrase:'Roll up!',w:1587,h:2245,alt:'2D illustration of a grey roly-poly pill bug'},
+  {order:14,file:'14-firefly.webp',name:'Firefly',phrase:'A tiny light in the dark.',w:1587,h:2245,alt:'2D illustration of a glowing firefly'},
+  {order:15,file:'15-praying-mantis.webp',name:'Praying mantis',phrase:'Arms up, hello!',w:1587,h:2245,alt:'2D illustration of a green praying mantis'},
+  {order:16,file:'16-centipede.webp',name:'Centipede',phrase:'So many legs!',w:1587,h:2245,alt:'2D illustration of a long centipede with many legs'},
+  {order:17,file:'17-earthworm.webp',name:'Earthworm',phrase:'Wiggle, wiggle!',w:1587,h:2245,alt:'2D illustration of a pink earthworm'},
+  {order:18,file:'18-bird.webp',name:'Bird',phrase:'A garden visitor.',w:1587,h:2245,alt:'2D illustration of a bluebird on a branch'},
+  {order:19,file:'19-frog.webp',name:'Frog',phrase:'Ribbit, ribbit!',w:1587,h:2245,alt:'2D illustration of a green frog'},
+  {order:20,file:'20-squirrel.webp',name:'Squirrel',phrase:'Twitchy tail!',w:1587,h:2245,alt:'2D illustration of a squirrel with a fluffy tail'}
+ ],
+ interactive:{
+  flow:{intro:'Eight little steps, in order: a welcome from your teacher, all twenty garden friends, two quick games, a wiggle-and-move break, a few bug facts, then off to the real garden and cards to print. Every step stands on its own.',
+   steps:[['1','Teacher welcome'],['2','Meet the garden friends'],['3','Who is hiding?'],['4','Find the bug'],['5','Wiggle & move'],['6','Little bug facts'],['7','Take it off screen'],['8','Print the cards']],
+   beginHref:'#meet-the-garden-friends',beginLabel:'Meet the garden friends',beginHint:'Cards work best up close — toddler on your lap.'},
+  teacher:{welcome:'Let’s meet some little garden friends. Who is this?',note:'Next time you step outside, the whole garden is a name-them-together game.'},
+  principal:{note:'Your child doesn’t need every bug name to stick. You’re opening a door to the small world at their feet — curiosity does the rest.'},
+  complete:{heading:'Class complete!',copy:'From the buzzy bee to the twitchy-tailed squirrel — what a little garden tour.'},
+  offScreen:{heading:'Garden hunt.',copy:'Take the names outside — or to a window, a book or a video if the garden is far away.',groups:[
+   {title:'Try one today',items:[
+    'Look for a bee visiting a flower.',
+    'Count the snails after it rains.',
+    'Find a bird and say hello to it.',
+    'Wiggle like a worm, then hop like a grasshopper.',
+    'Peek under a stone for a roly-poly — look, then gently roll it back.'
+   ]}
+  ],note:'One found friend is a complete hunt. If nothing turns up, the squirrel outside the window counts too.'},
+  sections:[
+   {type:'learn',id:'meet-the-garden-friends',eyebrow:'LEARN · MEET THE GARDEN FRIENDS',heading:'Meet the garden friends.',copy:'Twenty little friends, one at a time. Say the name clearly, make the sound together, and let your toddler point, giggle or move along.',label:'the garden friends',items:[
+    {file:'01-bee.webp',say:'A fuzzy striped friend that visits flowers.',find:'Can you buzz like a bee?'},
+    {file:'02-butterfly.webp',say:'Wings like painted sunshine.',find:'Can you flutter your arms?'},
+    {file:'03-ladybug.webp',say:'Tiny, round and red with dots.',find:'Can you count her spots?'},
+    {file:'04-snail.webp',say:'Carries its little house everywhere.',find:'Can you move in slow motion?'},
+    {file:'05-ant.webp',say:'Small, strong and always busy.',find:'Can you march like an ant?'},
+    {file:'06-caterpillar.webp',say:'Munch, munch — all day long.',find:'Can you munch like a caterpillar?'},
+    {file:'07-dragonfly.webp',say:'Shiny wings and a speedy zoom.',find:'Can you zoom around the room?'},
+    {file:'08-grasshopper.webp',say:'Legs made for big jumps.',find:'Can you jump like a grasshopper?'},
+    {file:'09-beetle.webp',say:'A shiny little coat of armor.',find:'Can you rub your shiny arms?'},
+    {file:'10-spider.webp',say:'Eight legs, all of them wiggly.',find:'Can you wiggle eight legs?'},
+    {file:'11-moth.webp',say:'A soft flyer who loves the night.',find:'Can you flap your quiet wings?'},
+    {file:'12-cricket.webp',say:'Sings with tiny wings — chirp!',find:'Can you chirp like a cricket?'},
+    {file:'13-roly-poly.webp',say:'Rolls into a little ball when shy.',find:'Can you curl up in a ball?'},
+    {file:'14-firefly.webp',say:'Carries its own tiny lantern.',find:'Can you blink your light on and off?'},
+    {file:'15-praying-mantis.webp',say:'Stands tall with arms folded — hello!',find:'Can you fold your arms up high?'},
+    {file:'16-centipede.webp',say:'So many legs, all going somewhere.',find:'Can you wiggle all your legs?'},
+    {file:'17-earthworm.webp',say:'Wiggles deep in the garden soil.',find:'Can you wiggle like a worm?'},
+    {file:'18-bird.webp',say:'A garden visitor with a song.',find:'Can you tweet like a bird?'},
+    {file:'19-frog.webp',say:'Sits by the pond and says ribbit.',find:'Can you hop like a frog?'},
+    {file:'20-squirrel.webp',say:'A fluffy tail that never sits still.',find:'Can you twitch your squirrel tail?'}
+   ]},
+   {type:'match',id:'who-is-hiding',eyebrow:'PLAY · WHO IS HIDING?',heading:'Who is hiding?',copy:'A friend up top, the same friend below. You ask the question, your child taps the match.',rounds:[
+    {ask:'Who is hiding?',say:'Who is hiding?',target:{file:'01-bee.webp',name:'The bee'},choices:[{file:'02-butterfly.webp',name:'The butterfly'},{file:'01-bee.webp',name:'The bee',correct:true}]},
+    {ask:'Who is hiding?',say:'Who is hiding?',target:{file:'03-ladybug.webp',name:'The ladybug'},choices:[{file:'03-ladybug.webp',name:'The ladybug',correct:true},{file:'09-beetle.webp',name:'The beetle'},{file:'04-snail.webp',name:'The snail'}]},
+    {ask:'Who is hiding?',say:'Who is hiding?',target:{file:'19-frog.webp',name:'The frog'},choices:[{file:'18-bird.webp',name:'The bird'},{file:'19-frog.webp',name:'The frog',correct:true}]},
+    {ask:'Who is hiding?',say:'Who is hiding?',target:{file:'17-earthworm.webp',name:'The earthworm'},choices:[{file:'16-centipede.webp',name:'The centipede'},{file:'17-earthworm.webp',name:'The earthworm',correct:true},{file:'06-caterpillar.webp',name:'The caterpillar'}]},
+    {ask:'Who is hiding?',say:'Who is hiding?',target:{file:'20-squirrel.webp',name:'The squirrel'},choices:[{file:'20-squirrel.webp',name:'The squirrel',correct:true},{file:'18-bird.webp',name:'The bird'}]}
+   ]},
+   {type:'play',id:'find-the-bug',eyebrow:'PLAY · FIND THE BUG',heading:'Find the bug.',copy:'Now by name. You say the friend, your child taps it.',rounds:[
+    {ask:'Find the butterfly.',say:'Find the butterfly!',choices:[{file:'01-bee.webp',name:'The bee'},{file:'02-butterfly.webp',name:'The butterfly',correct:true},{file:'11-moth.webp',name:'The moth'}]},
+    {ask:'Where is the snail?',say:'Where is the snail?',choices:[{file:'04-snail.webp',name:'The snail',correct:true},{file:'13-roly-poly.webp',name:'The roly-poly'}]},
+    {ask:'Can you find the spider?',say:'Can you find the spider?',choices:[{file:'10-spider.webp',name:'The spider',correct:true},{file:'05-ant.webp',name:'The ant'},{file:'15-praying-mantis.webp',name:'The praying mantis'}]},
+    {ask:'Find the frog.',say:'Find the frog!',choices:[{file:'19-frog.webp',name:'The frog',correct:true},{file:'18-bird.webp',name:'The bird'}]},
+    {ask:'Where is the firefly?',say:'Where is the firefly?',choices:[{file:'14-firefly.webp',name:'The firefly',correct:true},{file:'12-cricket.webp',name:'The cricket'},{file:'07-dragonfly.webp',name:'The dragonfly'}]}
+   ]},
+   {type:'learn',id:'wiggle-and-move',eyebrow:'PLAY · WIGGLE &amp; MOVE',heading:'Wiggle &amp; move.',copy:'No tapping needed now — this is the get-up-and-move part. Copy the friend together and see who wobbles most.',label:'the moves',items:[
+    {file:'02-butterfly.webp',say:'Flutter around the room!',find:'Big, slow arm wings.'},
+    {file:'08-grasshopper.webp',say:'Jump, jump, jump!',find:'Crouch low — and boing!'},
+    {file:'04-snail.webp',say:'Now sloooow motion.',find:'Slow as honey.'},
+    {file:'13-roly-poly.webp',say:'Roll into a tiny ball.',find:'Knees hugged tight.'},
+    {file:'19-frog.webp',say:'Hop like you have a pond to cross.',find:'One, two, ribbit!'},
+    {file:'20-squirrel.webp',say:'Twitch your fluffy tail.',find:'A little wiggle behind you.'}
+   ]},
+   {type:'guide',id:'little-bug-facts',eyebrow:'TOGETHER · LITTLE BUG FACTS',heading:'Little bug facts.',copy:'Five true things to share while you look — little facts stick when they come with a face.',items:[
+    {file:'03-ladybug.webp',feeling:'Ladybug',phrase:'Ladybugs are garden helpers — they eat tiny pests off the plants.'},
+    {file:'04-snail.webp',feeling:'Snail',phrase:'A snail’s shell is its house, and it carries it everywhere it goes.'},
+    {file:'01-bee.webp',feeling:'Bee',phrase:'Bees visit flowers to make honey — and help gardens grow.'},
+    {file:'14-firefly.webp',feeling:'Firefly',phrase:'A firefly makes its own light so it can glow at night.'},
+    {file:'17-earthworm.webp',feeling:'Earthworm',phrase:'Earthworms wiggle through the soil and keep it cozy for roots.'}
+   ]}
+  ]
+ },
+ printables:{
+  mode:'cards',
+  heading:'Print the garden cards.',
+  intro:'Print the cards for simple naming games and garden-hunt warm-ups.',
+  pack:'Garden Bugs &amp; Friends Learning Cards',
+  meta:'Age 2 · Toddler 8 · Nature &amp; Talk',
+  audience:'Made for you to print and use with your child — twenty cards, two to a page.',
+  note:'The same twenty cards from today’s class — handy for a quiet naming chat at the kitchen table.',
+  printEyebrow:'PRINTABLE GARDEN BUG CARDS',
+  printAria:'The twenty garden bug and friends cards'
+ },
+ howTo:{heading:'Tips for Parents',paragraphs:[
+  'Follow your toddler’s favourites. If they want the snail five times in a row, the snail five times in a row it is — repetition is how little ones learn.',
+  'Sounds before facts. Buzzing, hopping and wiggling teach the names better than any explanation, so be as silly as your toddler needs you to be.',
+  'Bring the class outside when you can. A found ladybug, a heard cricket or a visiting bird turns every name on these cards into something real.'
+ ],note:'<strong>Age ranges are a guide.</strong> Go at your child’s pace.'},
+ pills:{heading:'Where to next?',items:[['Toddler classes','/toddler/'],['Age 2','/toddler/2-years/'],['Learning Path','/learning-path/']]},
+ pathNav:{prev:{title:'Emotions & Feelings',range:'Age 2',href:'/toddler/2-years/emotions-and-feelings/'},next:null},
+ hubBlurb:'Twenty little garden friends — a bee, a butterfly, a snail and more — with two gentle games and a garden hunt for after class. Made for two-year-olds.',
+ schema:{resourceType:'Interactive toddler class',level:'Toddler (age 2)',teaches:'Garden creature names — bee, butterfly, ladybug, snail and more — through looking, naming, matching and moving together',audience:'Parents of toddlers',keywords:'garden bugs for 2 year olds, insect activities for toddlers, bug flashcards for toddlers, bug activities for 2 year olds, nature activities for toddlers, teaching bugs to toddlers, printable bug cards, garden animals for toddlers'}
+};
+export const lessons=[hcLesson,fvLesson,cfoLesson,fwftLesson,aeoLesson,fabLesson,fwfhLesson,fcLesson,csLesson,msLesson,anLesson,vhLesson,emLesson,gbLesson];
 export function classLessonSchema(site,L){
  return [
   {'@context':'https://schema.org','@type':'LearningResource',name:L.title,description:L.description,url:site+L.path,image:L.schemaImage,inLanguage:'en',learningResourceType:L.schema.resourceType||'Interactive baby class',educationalLevel:L.schema.level,isAccessibleForFree:true,educationalUse:'Home learning activity',teaches:L.schema.teaches,audience:{'@type':'Audience',audienceType:L.schema.audience},keywords:L.schema.keywords},
@@ -1036,7 +1175,8 @@ export const stages=[
  {name:'Toddler 4',age:'Age 2',href:'/toddler/2-years/',lesson:msLesson},
  {name:'Toddler 5',age:'Age 2',href:'/toddler/2-years/',lesson:anLesson},
  {name:'Toddler 6',age:'Age 2',href:'/toddler/2-years/',lesson:vhLesson},
- {name:'Toddler 7',age:'Age 2',href:'/toddler/2-years/',lesson:emLesson}
+ {name:'Toddler 7',age:'Age 2',href:'/toddler/2-years/',lesson:emLesson},
+ {name:'Toddler 8',age:'Age 2',href:'/toddler/2-years/',lesson:gbLesson}
 ];
 const tcImg=(base,file,w,h,alt,attrs='')=>`<img src="${base}${file}" width="${w}" height="${h}" alt="${alt}"${attrs}>`;
 export function toddlerClassBody(L){

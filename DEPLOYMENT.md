@@ -43,6 +43,48 @@ Use a Pages **Direct Upload** project only deliberately: a Direct Upload project
 - Inspect `build-info.json`, canonical tags, `/sitemap.xml`, `/robots.txt` and response headers.
 - Revisit the privacy text before adding forms, analytics or advertisements. No advertising integration or approval is included.
 
+## Community backend (D1 + R2 + Access)
+
+The community features (Principal's Office, Sticky Note Wall, Art Wall submissions, page reviews and comments) run on Pages Functions (`functions/`) with Cloudflare D1 (binding `DB`) and a private R2 bucket (binding `ART_UPLOADS`). Everything is fail-closed and honest: until a binding or migration exists, the affected endpoints return a clear 503 — they never fake success.
+
+### 1. D1 database (binding `DB`)
+
+The production D1 database is `kiddo-school-db`. Its tables are created by `migrations/0001_community.sql` (idempotent `IF NOT EXISTS`; nothing existing is dropped or deleted). Run it once:
+
+- Dashboard: Cloudflare → Storage & Databases → D1 → `kiddo-school-db` → Console → paste the file contents → Run, **or**
+- CLI: `npx wrangler d1 execute kiddo-school-db --remote --file migrations/0001_community.sql`
+
+Pages → Settings → Bindings: confirm the D1 binding name is exactly `DB` → `kiddo-school-db`. Tables: `principal_messages`, `sticky_notes`, `art_submissions`, `page_reviews`, `page_comments`, `rate_limits`.
+
+### 2. R2 bucket for submitted artwork (binding `ART_UPLOADS`)
+
+Create a **private** bucket (dashboard → R2 → Create bucket → name it `kiddo-school-community-uploads`; do NOT enable the public r2.dev access) and bind it in Pages → Settings → Bindings → R2 → binding name exactly `ART_UPLOADS`. Pending submissions land under `pending/…` keys and are served only through the Access-protected admin preview or, after approval, `/api/community/art/<id>/image`. The bucket is separate from the public `kiddo-school-assets` bucket that holds the 11 starter drawings; starter art is never written to. Until this binding exists, artwork uploads answer 503 honestly.
+
+### 3. Optional: Turnstile (spam protection)
+
+Set Pages environment variables `TURNSTILE_SITE_KEY` and `TURNSTILE_SECRET_KEY` (Turnstile dashboard → Add site, managed widget). Without them the forms simply skip the human check; the honeypot, same-origin + custom-header CSRF guard, per-IP D1 rate limits and server-side validation remain active.
+
+### 4. Admin access (Cloudflare Access — fail-closed)
+
+`/admin/*` and `/api/admin/*` are protected by Cloudflare Access JWT verification (`functions/lib/access.js`). Until Access is configured the admin is a locked door (503) — there is no password fallback, no hidden URL, and nothing to discover. To unlock:
+
+1. Cloudflare dashboard → Zero Trust → Access → Applications → Add an application → **Self-hosted**.
+2. Application domain: `kiddo-school.pages.dev` with path `/admin` (and a second application or the same app covering `/api/admin`). OneTimePIN / Google / whatever identity providers you prefer.
+3. Add a policy: Allow → Emails → your address (a strict allowlist; never "Everyone").
+4. After saving, open the application → copy the **AUD tag**.
+5. Pages → Settings → Environment variables (production): set
+   - `CF_ACCESS_TEAM` = your team domain, e.g. `your-team.cloudflareaccess.com` (Zero Trust dashboard shows it under Settings → Custom Pages), and
+   - `CF_ACCESS_AUD` = the AUD tag copied above.
+6. Redeploy (Environment variable changes need a new deployment), then load `/admin/` → the Access login appears → after approving, the Kiddo School Admin dashboard shows the five real queues.
+
+Notes: `CF_ACCESS_JWKS` is a test/local-dev override (pins the JWKS instead of fetching the team's certificate endpoint) and must stay unset in production. Admin pages/APIs send `X-Robots-Tag: noindex, nofollow`, are excluded from the sitemap, and never appear in the public navigation.
+
+### 5. Migration status checks
+
+- `GET /api/community/config` → `{"ok":true,"turnstileSiteKey":null|…}` proves the Functions are live.
+- Before the migration, submissions answer 503 with the honest "records room isn't connected" message; after it, they return the real success strings.
+- The admin dashboard cards show real `COUNT(*)` values from D1 — zeros are real zeros.
+
 ## Cloudflare references
 
 Checked on 6 October 2026:

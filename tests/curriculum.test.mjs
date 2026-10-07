@@ -722,7 +722,8 @@ test('stage pages exist, follow the school hierarchy and link their lessons',()=
  assert.ok(t3.includes('href="/toddler/2-years/circle-time/hello-school/"'),'age-2 hub links circle time');
  assert.ok(t3.includes('href="/my-classroom/"'),'age-2 hub links my classroom');
  assert.ok(t3.includes('Colors, shapes, matching'));
- assert.ok(t3.includes('Toddler 3, 4, 5, 6 &amp; 7'));
+ assert.ok(t3.includes('Toddler 3, 4, 5, 6, 7 &amp; 8'));
+ assert.ok(t3.includes('href="/toddler/2-years/garden-bugs-and-friends/"'),'age-2 hub links lesson 14');
  const toddler=read('dist/toddler/index.html');
  assert.ok(toddler.includes('rel="canonical" href="https://kiddo-school.pages.dev/toddler/"'));
  assert.ok(toddler.includes('href="/toddler/12-18-months/first-words-food-home/"'));
@@ -732,13 +733,14 @@ test('stage pages exist, follow the school hierarchy and link their lessons',()=
  assert.ok(toddler.includes('href="/toddler/2-years/animals-and-sounds/"'));
  assert.ok(toddler.includes('href="/toddler/2-years/vehicles-and-sounds/"'));
  assert.ok(toddler.includes('href="/toddler/2-years/emotions-and-feelings/"'));
+ assert.ok(toddler.includes('href="/toddler/2-years/garden-bugs-and-friends/"'),'toddler hub links lesson 14');
  assert.ok(toddler.includes('href="/toddler/2-years/circle-time/hello-school/"'),'toddler hub links circle time');
 });
 test('the learning path page lists the real curriculum from birth to age 2 and beyond',()=>{
  const lp=read('dist/learning-path/index.html');
  assert.ok(lp.includes('rel="canonical" href="https://kiddo-school.pages.dev/learning-path/"'));
  assert.ok(lp.includes('Age ranges are a guide, not a test'));
- for(const s of [['Newborn 1','/newborn/0-6-weeks/high-contrast-cards/'],['Newborn 2','/newborn/6-12-weeks/faces-and-visual-tracking/'],['Infant 1','/baby/3-4-months/colors-and-first-objects/'],['Infant 2','/baby/4-6-months/first-words-familiar-things/'],['Explorer 1','/baby/6-9-months/animals-everyday-objects/'],['Explorer 2','/baby/9-12-months/first-actions-body-parts/'],['Toddler 1','/toddler/12-18-months/first-words-food-home/'],['Toddler 2','/toddler/18-24-months/first-concepts-big-small-up-down/'],['Toddler 3','/toddler/2-years/colors-and-shapes/'],['Toddler 4','/toddler/2-years/matching-and-sorting/'],['Toddler 5','/toddler/2-years/animals-and-sounds/'],['Toddler 6','/toddler/2-years/vehicles-and-sounds/'],['Toddler 7','/toddler/2-years/emotions-and-feelings/']])assert.ok(lp.includes('>'+s[0])&&lp.includes('href="'+s[1]+'"'),s[0]);
+ for(const s of [['Newborn 1','/newborn/0-6-weeks/high-contrast-cards/'],['Newborn 2','/newborn/6-12-weeks/faces-and-visual-tracking/'],['Infant 1','/baby/3-4-months/colors-and-first-objects/'],['Infant 2','/baby/4-6-months/first-words-familiar-things/'],['Explorer 1','/baby/6-9-months/animals-everyday-objects/'],['Explorer 2','/baby/9-12-months/first-actions-body-parts/'],['Toddler 1','/toddler/12-18-months/first-words-food-home/'],['Toddler 2','/toddler/18-24-months/first-concepts-big-small-up-down/'],['Toddler 3','/toddler/2-years/colors-and-shapes/'],['Toddler 4','/toddler/2-years/matching-and-sorting/'],['Toddler 5','/toddler/2-years/animals-and-sounds/'],['Toddler 6','/toddler/2-years/vehicles-and-sounds/'],['Toddler 7','/toddler/2-years/emotions-and-feelings/'],['Toddler 8','/toddler/2-years/garden-bugs-and-friends/']])assert.ok(lp.includes('>'+s[0])&&lp.includes('href="'+s[1]+'"'),s[0]);
  for(const hub of ['/newborn/','/newborn/6-12-weeks/','/baby/3-4-months/','/baby/4-6-months/','/baby/6-9-months/','/baby/9-12-months/','/toddler/12-18-months/','/toddler/18-24-months/','/toddler/2-years/'])assert.ok(lp.includes('href="'+hub+'"'),hub);
  assert.ok(lp.includes('href="/art/"')&&lp.includes('href="/activities/"'));
  assert.ok(lp.includes('Start Today’s Class'));

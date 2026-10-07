@@ -1,35 +1,11 @@
 [
  {
-  "key": "activities/science/grow-a-bean/grow-a-bean-activity.webp",
-  "alt": "Illustration of a bean sprout with two green leaves and visible roots in a clear jar.",
-  "width": 1200,
-  "height": 900,
-  "format": "webp",
-  "bytes": 31402
- },
- {
-  "key": "activities/science/grow-a-bean/grow-a-bean-activity.svg",
-  "alt": "Illustration of a bean sprout with two green leaves and visible roots in a clear jar.",
+  "key": "activities/art/paper-shape-collage/paper-shape-collage-activity.svg",
+  "alt": "Illustration of a paper collage with a mustard sun, terracotta house and green tree.",
   "width": 800,
   "height": 600,
   "format": "svg",
-  "bytes": 2533
- },
- {
-  "key": "activities/science/grow-a-bean/grow-a-bean-worksheet.png",
-  "alt": "My bean diary: printable drawing and observation sheet",
-  "width": 1600,
-  "height": 2200,
-  "format": "png",
-  "bytes": 72319
- },
- {
-  "key": "activities/science/grow-a-bean/grow-a-bean-worksheet.svg",
-  "alt": "My bean diary: printable drawing and observation sheet",
-  "width": 1600,
-  "height": 2200,
-  "format": "svg",
-  "bytes": 1280
+  "bytes": 1293
  },
  {
   "key": "activities/art/paper-shape-collage/paper-shape-collage-activity.webp",
@@ -38,14 +14,6 @@
   "height": 900,
   "format": "webp",
   "bytes": 19242
- },
- {
-  "key": "activities/art/paper-shape-collage/paper-shape-collage-activity.svg",
-  "alt": "Illustration of a paper collage with a mustard sun, terracotta house and green tree.",
-  "width": 800,
-  "height": 600,
-  "format": "svg",
-  "bytes": 1293
  },
  {
   "key": "activities/art/paper-shape-collage/paper-shape-collage-worksheet.png",
@@ -64,100 +32,12 @@
   "bytes": 1295
  },
  {
-  "key": "activities/maths/make-a-pattern/make-a-pattern-activity.webp",
-  "alt": "Illustration of rows of alternating terracotta circles, green squares and mustard triangles.",
-  "width": 1200,
-  "height": 900,
-  "format": "webp",
-  "bytes": 25358
- },
- {
-  "key": "activities/maths/make-a-pattern/make-a-pattern-activity.svg",
-  "alt": "Illustration of rows of alternating terracotta circles, green squares and mustard triangles.",
+  "key": "activities/engineering/paper-bridge/paper-bridge-activity.svg",
+  "alt": "Illustration of a folded paper bridge between two stacks of books, supporting wooden blocks.",
   "width": 800,
   "height": 600,
   "format": "svg",
-  "bytes": 1529
- },
- {
-  "key": "activities/maths/make-a-pattern/make-a-pattern-worksheet.png",
-  "alt": "My pattern notebook: printable drawing and observation sheet",
-  "width": 1600,
-  "height": 2200,
-  "format": "png",
-  "bytes": 77413
- },
- {
-  "key": "activities/maths/make-a-pattern/make-a-pattern-worksheet.svg",
-  "alt": "My pattern notebook: printable drawing and observation sheet",
-  "width": 1600,
-  "height": 2200,
-  "format": "svg",
-  "bytes": 1296
- },
- {
-  "key": "activities/literacy/story-map/story-map-activity.webp",
-  "alt": "Illustrated story map showing a winding path from a house to a hill and a flag.",
-  "width": 1200,
-  "height": 900,
-  "format": "webp",
-  "bytes": 18776
- },
- {
-  "key": "activities/literacy/story-map/story-map-activity.svg",
-  "alt": "Illustrated story map showing a winding path from a house to a hill and a flag.",
-  "width": 800,
-  "height": 600,
-  "format": "svg",
-  "bytes": 1478
- },
- {
-  "key": "activities/literacy/story-map/story-map-worksheet.png",
-  "alt": "My story map: printable drawing and observation sheet",
-  "width": 1600,
-  "height": 2200,
-  "format": "png",
-  "bytes": 85613
- },
- {
-  "key": "activities/literacy/story-map/story-map-worksheet.svg",
-  "alt": "My story map: printable drawing and observation sheet",
-  "width": 1600,
-  "height": 2200,
-  "format": "svg",
-  "bytes": 1317
- },
- {
-  "key": "activities/nature/sound-map/sound-map-activity.webp",
-  "alt": "Illustration of a listening map with a centre point, bird, leaves and ripples representing sounds.",
-  "width": 1200,
-  "height": 900,
-  "format": "webp",
-  "bytes": 23232
- },
- {
-  "key": "activities/nature/sound-map/sound-map-activity.svg",
-  "alt": "Illustration of a listening map with a centre point, bird, leaves and ripples representing sounds.",
-  "width": 800,
-  "height": 600,
-  "format": "svg",
-  "bytes": 1797
- },
- {
-  "key": "activities/nature/sound-map/sound-map-worksheet.png",
-  "alt": "My sound map: printable drawing and observation sheet",
-  "width": 1600,
-  "height": 2200,
-  "format": "png",
-  "bytes": 76403
- },
- {
-  "key": "activities/nature/sound-map/sound-map-worksheet.svg",
-  "alt": "My sound map: printable drawing and observation sheet",
-  "width": 1600,
-  "height": 2200,
-  "format": "svg",
-  "bytes": 1367
+  "bytes": 1666
  },
  {
   "key": "activities/engineering/paper-bridge/paper-bridge-activity.webp",
@@ -166,14 +46,6 @@
   "height": 900,
   "format": "webp",
   "bytes": 22986
- },
- {
-  "key": "activities/engineering/paper-bridge/paper-bridge-activity.svg",
-  "alt": "Illustration of a folded paper bridge between two stacks of books, supporting wooden blocks.",
-  "width": 800,
-  "height": 600,
-  "format": "svg",
-  "bytes": 1666
  },
  {
   "key": "activities/engineering/paper-bridge/paper-bridge-worksheet.png",
@@ -192,20 +64,20 @@
   "bytes": 1330
  },
  {
-  "key": "activities/literacy/handwriting-practice/handwriting-practice-activity.webp",
-  "alt": "Pink handwriting page with letters A and a, numbers 1 2 3 and a golden yellow pencil.",
-  "width": 1200,
-  "height": 900,
-  "format": "webp",
-  "bytes": 22620
- },
- {
   "key": "activities/literacy/handwriting-practice/handwriting-practice-activity.svg",
   "alt": "Pink handwriting page with letters A and a, numbers 1 2 3 and a golden yellow pencil.",
   "width": 1200,
   "height": 900,
   "format": "svg",
   "bytes": 1191
+ },
+ {
+  "key": "activities/literacy/handwriting-practice/handwriting-practice-activity.webp",
+  "alt": "Pink handwriting page with letters A and a, numbers 1 2 3 and a golden yellow pencil.",
+  "width": 1200,
+  "height": 900,
+  "format": "webp",
+  "bytes": 22620
  },
  {
   "key": "activities/literacy/handwriting-practice/handwriting-practice-worksheet.png",
@@ -224,44 +96,68 @@
   "bytes": 2073
  },
  {
-  "key": "brand/kiddo-school-favicon.svg",
-  "alt": "Kiddo.school letter K icon.",
-  "width": 64,
-  "height": 64,
+  "key": "activities/literacy/story-map/story-map-activity.svg",
+  "alt": "Illustrated story map showing a winding path from a house to a hill and a flag.",
+  "width": 800,
+  "height": 600,
   "format": "svg",
-  "bytes": 224
+  "bytes": 1478
  },
  {
-  "key": "activities/maths/repeating-pattern/pattern-studio-cover.webp",
-  "alt": "Cartoon Pattern Studio cover: two children place pink circles and yellow squares into an alternating repeating row.",
-  "width": 1024,
-  "height": 1536,
+  "key": "activities/literacy/story-map/story-map-activity.webp",
+  "alt": "Illustrated story map showing a winding path from a house to a hill and a flag.",
+  "width": 1200,
+  "height": 900,
   "format": "webp",
-  "bytes": 88904
+  "bytes": 18776
  },
  {
-  "key": "activities/maths/repeating-pattern/how-to-make-a-pattern.webp",
-  "alt": "Four-step cartoon guide: choose two pieces, make your repeat, repeat it again and say it aloud.",
-  "width": 1024,
-  "height": 1536,
-  "format": "webp",
-  "bytes": 67708
+  "key": "activities/literacy/story-map/story-map-worksheet.png",
+  "alt": "My story map: printable drawing and observation sheet",
+  "width": 1600,
+  "height": 2200,
+  "format": "png",
+  "bytes": 85613
  },
  {
-  "key": "activities/maths/repeating-pattern/pattern-pieces-to-cut.webp",
-  "alt": "Twelve cut-out pattern cards: pink circles, yellow squares and purple triangles.",
-  "width": 1024,
-  "height": 1536,
-  "format": "webp",
-  "bytes": 48514
+  "key": "activities/literacy/story-map/story-map-worksheet.svg",
+  "alt": "My story map: printable drawing and observation sheet",
+  "width": 1600,
+  "height": 2200,
+  "format": "svg",
+  "bytes": 1317
  },
  {
-  "key": "activities/maths/repeating-pattern/finish-my-pattern.webp",
-  "alt": "Four pattern rows with one empty box each; children draw the piece that comes next.",
-  "width": 1024,
-  "height": 1536,
+  "key": "activities/maths/make-a-pattern/make-a-pattern-activity.svg",
+  "alt": "Illustration of rows of alternating terracotta circles, green squares and mustard triangles.",
+  "width": 800,
+  "height": 600,
+  "format": "svg",
+  "bytes": 1529
+ },
+ {
+  "key": "activities/maths/make-a-pattern/make-a-pattern-activity.webp",
+  "alt": "Illustration of rows of alternating terracotta circles, green squares and mustard triangles.",
+  "width": 1200,
+  "height": 900,
   "format": "webp",
-  "bytes": 62530
+  "bytes": 25358
+ },
+ {
+  "key": "activities/maths/make-a-pattern/make-a-pattern-worksheet.png",
+  "alt": "My pattern notebook: printable drawing and observation sheet",
+  "width": 1600,
+  "height": 2200,
+  "format": "png",
+  "bytes": 77413
+ },
+ {
+  "key": "activities/maths/make-a-pattern/make-a-pattern-worksheet.svg",
+  "alt": "My pattern notebook: printable drawing and observation sheet",
+  "width": 1600,
+  "height": 2200,
+  "format": "svg",
+  "bytes": 1296
  },
  {
   "key": "activities/maths/repeating-pattern/create-my-own-pattern.webp",
@@ -272,6 +168,22 @@
   "bytes": 54564
  },
  {
+  "key": "activities/maths/repeating-pattern/finish-my-pattern.webp",
+  "alt": "Four pattern rows with one empty box each; children draw the piece that comes next.",
+  "width": 1024,
+  "height": 1536,
+  "format": "webp",
+  "bytes": 62530
+ },
+ {
+  "key": "activities/maths/repeating-pattern/how-to-make-a-pattern.webp",
+  "alt": "Four-step cartoon guide: choose two pieces, make your repeat, repeat it again and say it aloud.",
+  "width": 1024,
+  "height": 1536,
+  "format": "webp",
+  "bytes": 67708
+ },
+ {
   "key": "activities/maths/repeating-pattern/my-movement-pattern.webp",
   "alt": "Clap, tap and reach movement cards with a box for drawing a repeating movement sequence.",
   "width": 1024,
@@ -280,12 +192,28 @@
   "bytes": 78510
  },
  {
-  "key": "activities/nature/leaf-rubbing/leaf-rubbing-cover.webp",
-  "alt": "Cartoon leaf rubbing cover: a child rubs the flat side of a crayon across paper while three leaf prints appear.",
+  "key": "activities/maths/repeating-pattern/pattern-pieces-to-cut.webp",
+  "alt": "Twelve cut-out pattern cards: pink circles, yellow squares and purple triangles.",
   "width": 1024,
   "height": 1536,
   "format": "webp",
-  "bytes": 117644
+  "bytes": 48514
+ },
+ {
+  "key": "activities/maths/repeating-pattern/pattern-studio-cover.webp",
+  "alt": "Cartoon Pattern Studio cover: two children place pink circles and yellow squares into an alternating repeating row.",
+  "width": 1024,
+  "height": 1536,
+  "format": "webp",
+  "bytes": 88904
+ },
+ {
+  "key": "activities/nature/leaf-rubbing/compare-two-leaves.webp",
+  "alt": "Illustrated worksheet: two leaves side by side with rubbings comparing edges, veins and sizes.",
+  "width": 1024,
+  "height": 1536,
+  "format": "webp",
+  "bytes": 55560
  },
  {
   "key": "activities/nature/leaf-rubbing/how-to-make-a-leaf-rubbing.webp",
@@ -296,12 +224,12 @@
   "bytes": 145758
  },
  {
-  "key": "activities/nature/leaf-rubbing/compare-two-leaves.webp",
-  "alt": "Illustrated worksheet: two leaves side by side with rubbings comparing edges, veins and sizes.",
+  "key": "activities/nature/leaf-rubbing/leaf-rubbing-cover.webp",
+  "alt": "Cartoon leaf rubbing cover: a child rubs the flat side of a crayon across paper while three leaf prints appear.",
   "width": 1024,
   "height": 1536,
   "format": "webp",
-  "bytes": 55560
+  "bytes": 117644
  },
  {
   "key": "activities/nature/leaf-rubbing/look-closely-at-my-leaf.webp",
@@ -328,20 +256,68 @@
   "bytes": 41670
  },
  {
-  "key": "activities/science/shadow-detectives/shadow-detectives-cover.webp",
-  "alt": "Cartoon shadow cover: a child shines a torch while a toy's long shadow stretches across the wall.",
-  "width": 1024,
-  "height": 1536,
-  "format": "webp",
-  "bytes": 82998
+  "key": "activities/nature/sound-map/sound-map-activity.svg",
+  "alt": "Illustration of a listening map with a centre point, bird, leaves and ripples representing sounds.",
+  "width": 800,
+  "height": 600,
+  "format": "svg",
+  "bytes": 1797
  },
  {
-  "key": "activities/science/shadow-detectives/how-to-explore-shadows.webp",
-  "alt": "Illustrated guide: shining a torch at a toy, moving the light closer and further to change the shadow.",
-  "width": 1024,
-  "height": 1536,
+  "key": "activities/nature/sound-map/sound-map-activity.webp",
+  "alt": "Illustration of a listening map with a centre point, bird, leaves and ripples representing sounds.",
+  "width": 1200,
+  "height": 900,
   "format": "webp",
-  "bytes": 81584
+  "bytes": 23232
+ },
+ {
+  "key": "activities/nature/sound-map/sound-map-worksheet.png",
+  "alt": "My sound map: printable drawing and observation sheet",
+  "width": 1600,
+  "height": 2200,
+  "format": "png",
+  "bytes": 76403
+ },
+ {
+  "key": "activities/nature/sound-map/sound-map-worksheet.svg",
+  "alt": "My sound map: printable drawing and observation sheet",
+  "width": 1600,
+  "height": 2200,
+  "format": "svg",
+  "bytes": 1367
+ },
+ {
+  "key": "activities/science/grow-a-bean/grow-a-bean-activity.svg",
+  "alt": "Illustration of a bean sprout with two green leaves and visible roots in a clear jar.",
+  "width": 800,
+  "height": 600,
+  "format": "svg",
+  "bytes": 2533
+ },
+ {
+  "key": "activities/science/grow-a-bean/grow-a-bean-activity.webp",
+  "alt": "Illustration of a bean sprout with two green leaves and visible roots in a clear jar.",
+  "width": 1200,
+  "height": 900,
+  "format": "webp",
+  "bytes": 31402
+ },
+ {
+  "key": "activities/science/grow-a-bean/grow-a-bean-worksheet.png",
+  "alt": "My bean diary: printable drawing and observation sheet",
+  "width": 1600,
+  "height": 2200,
+  "format": "png",
+  "bytes": 72319
+ },
+ {
+  "key": "activities/science/grow-a-bean/grow-a-bean-worksheet.svg",
+  "alt": "My bean diary: printable drawing and observation sheet",
+  "width": 1600,
+  "height": 2200,
+  "format": "svg",
+  "bytes": 1280
  },
  {
   "key": "activities/science/shadow-detectives/compare-my-shadows.webp",
@@ -350,6 +326,14 @@
   "height": 1536,
   "format": "webp",
   "bytes": 54590
+ },
+ {
+  "key": "activities/science/shadow-detectives/how-to-explore-shadows.webp",
+  "alt": "Illustrated guide: shining a torch at a toy, moving the light closer and further to change the shadow.",
+  "width": 1024,
+  "height": 1536,
+  "format": "webp",
+  "bytes": 81584
  },
  {
   "key": "activities/science/shadow-detectives/my-shadow-creature.webp",
@@ -368,6 +352,14 @@
   "bytes": 62462
  },
  {
+  "key": "activities/science/shadow-detectives/shadow-detectives-cover.webp",
+  "alt": "Cartoon shadow cover: a child shines a torch while a toy's long shadow stretches across the wall.",
+  "width": 1024,
+  "height": 1536,
+  "format": "webp",
+  "bytes": 82998
+ },
+ {
   "key": "activities/science/shadow-detectives/trace-my-toy-shadow.webp",
   "alt": "Illustrated worksheet: a pencil tracing around a steady toy shadow on paper.",
   "width": 1024,
@@ -376,404 +368,52 @@
   "bytes": 49706
  },
  {
-  "key": "flashcards/black-and-white-baby-cards/newborn-high-contrast-checkerboard.webp",
-  "alt": "Black and white checkerboard pattern card for newborns",
-  "width": 1080,
-  "height": 1350,
-  "format": "webp",
-  "bytes": 22166
+  "key": "brand/kiddo-school-favicon.svg",
+  "alt": "Kiddo.school letter K icon.",
+  "width": 64,
+  "height": 64,
+  "format": "svg",
+  "bytes": 224
  },
  {
-  "key": "flashcards/black-and-white-baby-cards/newborn-high-contrast-circle-card.webp",
-  "alt": "Black and white high-contrast circle card for newborns",
-  "width": 1080,
-  "height": 1350,
+  "key": "circle-time/age-2/hello-school/01-hello-and-move.webp",
+  "alt": "Teacher and young children moving together during Circle Time",
+  "width": 1920,
+  "height": 1080,
   "format": "webp",
-  "bytes": 17586
+  "bytes": 174994
  },
  {
-  "key": "flashcards/black-and-white-baby-cards/newborn-high-contrast-concentric-circles.webp",
-  "alt": "Black and white concentric circles card for newborns",
-  "width": 1080,
-  "height": 1350,
+  "key": "circle-time/age-2/hello-school/02-listen-and-do.webp",
+  "alt": "Teacher and children doing a simple listening and movement activity",
+  "width": 1920,
+  "height": 1080,
   "format": "webp",
-  "bytes": 42450
+  "bytes": 162682
  },
  {
-  "key": "flashcards/black-and-white-baby-cards/newborn-high-contrast-eyes.webp",
-  "alt": "Black and white high-contrast eyes card for newborns",
-  "width": 1080,
-  "height": 1350,
+  "key": "circle-time/age-2/hello-school/03-story-time.webp",
+  "alt": "Young child arriving at school with a backpack and greeting the teacher",
+  "width": 1920,
+  "height": 1080,
   "format": "webp",
-  "bytes": 17638
+  "bytes": 162676
  },
  {
-  "key": "flashcards/black-and-white-baby-cards/newborn-high-contrast-face.webp",
-  "alt": "Black and white high-contrast smiling face card for newborns",
-  "width": 1080,
-  "height": 1350,
+  "key": "circle-time/age-2/hello-school/04-goodbye.webp",
+  "alt": "Teacher and children waving goodbye at the end of Circle Time",
+  "width": 1920,
+  "height": 1080,
   "format": "webp",
-  "bytes": 38104
+  "bytes": 183650
  },
  {
-  "key": "flashcards/black-and-white-baby-cards/newborn-high-contrast-horizontal-stripes.webp",
-  "alt": "Black and white high-contrast horizontal stripes card for newborns",
-  "width": 1080,
-  "height": 1350,
+  "key": "circle-time/age-2/hello-school/cover.webp",
+  "alt": "Kiddo School teacher welcoming children to Circle Time",
+  "width": 1920,
+  "height": 1080,
   "format": "webp",
-  "bytes": 13188
- },
- {
-  "key": "flashcards/black-and-white-baby-cards/newborn-high-contrast-spiral.webp",
-  "alt": "Black and white high-contrast spiral card for newborns",
-  "width": 1080,
-  "height": 1350,
-  "format": "webp",
-  "bytes": 42086
- },
- {
-  "key": "flashcards/black-and-white-baby-cards/newborn-high-contrast-square-card.webp",
-  "alt": "Black and white high-contrast square card for newborns",
-  "width": 1080,
-  "height": 1350,
-  "format": "webp",
-  "bytes": 10878
- },
- {
-  "key": "flashcards/black-and-white-baby-cards/newborn-high-contrast-symmetrical-face.webp",
-  "alt": "Black and white symmetrical baby face card for newborns",
-  "width": 1080,
-  "height": 1350,
-  "format": "webp",
-  "bytes": 46526
- },
- {
-  "key": "flashcards/black-and-white-baby-cards/newborn-high-contrast-target.webp",
-  "alt": "Black and white bullseye target card for newborns",
-  "width": 1080,
-  "height": 1350,
-  "format": "webp",
-  "bytes": 43774
- },
- {
-  "key": "flashcards/black-and-white-baby-cards/newborn-high-contrast-triangle.webp",
-  "alt": "Black and white high-contrast triangle card for newborns",
-  "width": 1080,
-  "height": 1350,
-  "format": "webp",
-  "bytes": 19738
- },
- {
-  "key": "flashcards/black-and-white-baby-cards/newborn-high-contrast-vertical-stripes.webp",
-  "alt": "Black and white high-contrast vertical stripes card for newborns",
-  "width": 1080,
-  "height": 1350,
-  "format": "webp",
-  "bytes": 18934
- },
- {
-  "key": "flashcards/black-and-white-baby-cards/faces-and-visual-tracking-6-12-weeks/cover.webp",
-  "alt": "Cover of the Faces and Visual Tracking class for babies 6 to 12 weeks: a bold black spiral card with the Newborn 2 See label from Kiddo School",
-  "width": 1414,
-  "height": 2000,
-  "format": "webp",
-  "bytes": 106614
- },
- {
-  "key": "flashcards/black-and-white-baby-cards/faces-and-visual-tracking-6-12-weeks/01-eyes.webp",
-  "alt": "Simple high-contrast eyes card for babies",
-  "width": 1414,
-  "height": 2000,
-  "format": "webp",
-  "bytes": 22396
- },
- {
-  "key": "flashcards/black-and-white-baby-cards/faces-and-visual-tracking-6-12-weeks/02-happy-face.webp",
-  "alt": "Simple high-contrast happy face card for babies",
-  "width": 1414,
-  "height": 2000,
-  "format": "webp",
-  "bytes": 247612
- },
- {
-  "key": "flashcards/black-and-white-baby-cards/faces-and-visual-tracking-6-12-weeks/03-different-face.webp",
-  "alt": "High-contrast face card for babies",
-  "width": 1414,
-  "height": 2000,
-  "format": "webp",
-  "bytes": 43552
- },
- {
-  "key": "flashcards/black-and-white-baby-cards/faces-and-visual-tracking-6-12-weeks/04-face-pattern.webp",
-  "alt": "High-contrast symmetrical face pattern for babies",
-  "width": 1414,
-  "height": 2000,
-  "format": "webp",
-  "bytes": 35070
- },
- {
-  "key": "flashcards/black-and-white-baby-cards/faces-and-visual-tracking-6-12-weeks/05-concentric-circles.webp",
-  "alt": "Black and white concentric circles card for babies",
-  "width": 1414,
-  "height": 2000,
-  "format": "webp",
-  "bytes": 75428
- },
- {
-  "key": "flashcards/black-and-white-baby-cards/faces-and-visual-tracking-6-12-weeks/06-wavy-lines.webp",
-  "alt": "Black and white wavy line card for babies",
-  "width": 1414,
-  "height": 2000,
-  "format": "webp",
-  "bytes": 48080
- },
- {
-  "key": "flashcards/black-and-white-baby-cards/faces-and-visual-tracking-6-12-weeks/07-zigzag.webp",
-  "alt": "Black and white zigzag card for babies",
-  "width": 1414,
-  "height": 2000,
-  "format": "webp",
-  "bytes": 60568
- },
- {
-  "key": "flashcards/black-and-white-baby-cards/faces-and-visual-tracking-6-12-weeks/08-large-dots.webp",
-  "alt": "Large high-contrast dots card for babies",
-  "width": 1414,
-  "height": 2000,
-  "format": "webp",
-  "bytes": 41542
- },
- {
-  "key": "flashcards/black-and-white-baby-cards/faces-and-visual-tracking-6-12-weeks/09-curved-path.webp",
-  "alt": "High-contrast curved path card for babies",
-  "width": 1414,
-  "height": 2000,
-  "format": "webp",
-  "bytes": 29196
- },
- {
-  "key": "flashcards/black-and-white-baby-cards/faces-and-visual-tracking-6-12-weeks/10-red-circle.webp",
-  "alt": "Simple red circle visual card for babies",
-  "width": 1414,
-  "height": 2000,
-  "format": "webp",
-  "bytes": 66920
- },
- {
-  "key": "flashcards/black-and-white-baby-cards/faces-and-visual-tracking-6-12-weeks/11-red-and-black.webp",
-  "alt": "Red and black high-contrast visual card for babies",
-  "width": 1414,
-  "height": 2000,
-  "format": "webp",
-  "bytes": 35370
- },
- {
-  "key": "flashcards/black-and-white-baby-cards/faces-and-visual-tracking-6-12-weeks/12-red-face-detail.webp",
-  "alt": "Simple face card with red visual detail for babies",
-  "width": 1414,
-  "height": 2000,
-  "format": "webp",
-  "bytes": 144230
- },
- {
-  "key": "flashcards/black-and-white-baby-cards/colors-and-first-objects-3-4-months/cover.webp",
-  "alt": "Cover of the Colors and First Objects class for babies 3 to 4 months: red, blue and yellow shapes with the Infant 1 See label from Kiddo School",
-  "width": 1414,
-  "height": 2000,
-  "format": "webp",
-  "bytes": 70030
- },
- {
-  "key": "flashcards/black-and-white-baby-cards/colors-and-first-objects-3-4-months/01-red-circle.webp",
-  "alt": "Large red circle visual card for babies",
-  "width": 1414,
-  "height": 2000,
-  "format": "webp",
-  "bytes": 58480
- },
- {
-  "key": "flashcards/black-and-white-baby-cards/colors-and-first-objects-3-4-months/02-yellow-circle.webp",
-  "alt": "Large yellow circle visual card for babies",
-  "width": 1414,
-  "height": 2000,
-  "format": "webp",
-  "bytes": 59066
- },
- {
-  "key": "flashcards/black-and-white-baby-cards/colors-and-first-objects-3-4-months/03-blue-circle.webp",
-  "alt": "Large blue circle visual card for babies",
-  "width": 1414,
-  "height": 2000,
-  "format": "webp",
-  "bytes": 56038
- },
- {
-  "key": "flashcards/black-and-white-baby-cards/colors-and-first-objects-3-4-months/04-three-colors.webp",
-  "alt": "Red yellow and blue color card for babies",
-  "width": 1414,
-  "height": 2000,
-  "format": "webp",
-  "bytes": 59854
- },
- {
-  "key": "flashcards/black-and-white-baby-cards/colors-and-first-objects-3-4-months/05-ball.webp",
-  "alt": "Simple colorful ball visual card for babies",
-  "width": 1414,
-  "height": 2000,
-  "format": "webp",
-  "bytes": 60544
- },
- {
-  "key": "flashcards/black-and-white-baby-cards/colors-and-first-objects-3-4-months/06-cup.webp",
-  "alt": "Simple blue cup visual card for babies",
-  "width": 1414,
-  "height": 2000,
-  "format": "webp",
-  "bytes": 47428
- },
- {
-  "key": "flashcards/black-and-white-baby-cards/colors-and-first-objects-3-4-months/07-spoon.webp",
-  "alt": "Simple spoon visual card for babies",
-  "width": 1414,
-  "height": 2000,
-  "format": "webp",
-  "bytes": 35950
- },
- {
-  "key": "flashcards/black-and-white-baby-cards/colors-and-first-objects-3-4-months/08-apple.webp",
-  "alt": "Simple red apple visual card for babies",
-  "width": 1414,
-  "height": 2000,
-  "format": "webp",
-  "bytes": 45360
- },
- {
-  "key": "flashcards/black-and-white-baby-cards/colors-and-first-objects-3-4-months/09-sun.webp",
-  "alt": "Simple yellow sun visual card for babies",
-  "width": 1414,
-  "height": 2000,
-  "format": "webp",
-  "bytes": 52196
- },
- {
-  "key": "flashcards/black-and-white-baby-cards/colors-and-first-objects-3-4-months/10-ball-and-cup.webp",
-  "alt": "Ball and cup visual card for babies",
-  "width": 1414,
-  "height": 2000,
-  "format": "webp",
-  "bytes": 46808
- },
- {
-  "key": "flashcards/black-and-white-baby-cards/colors-and-first-objects-3-4-months/11-teddy-bear.webp",
-  "alt": "Simple teddy bear visual card for babies",
-  "width": 1414,
-  "height": 2000,
-  "format": "webp",
-  "bytes": 65868
- },
- {
-  "key": "flashcards/black-and-white-baby-cards/colors-and-first-objects-3-4-months/12-simple-face.webp",
-  "alt": "Simple human face visual card for babies",
-  "width": 1414,
-  "height": 2000,
-  "format": "webp",
-  "bytes": 27344
- },
- {
-  "key": "flashcards/black-and-white-baby-cards/first-words-familiar-things-4-6-months/cover.webp",
-  "alt": "Cover of the First Words and Familiar Things class for babies 4 to 6 months: a red ball, blue cup and yellow banana with the Infant 2 Talk label from Kiddo School",
-  "width": 1414,
-  "height": 2000,
-  "format": "webp",
-  "bytes": 122560
- },
- {
-  "key": "flashcards/black-and-white-baby-cards/first-words-familiar-things-4-6-months/01-ball.webp",
-  "alt": "Simple ball flashcard for babies",
-  "width": 1414,
-  "height": 2000,
-  "format": "webp",
-  "bytes": 77472
- },
- {
-  "key": "flashcards/black-and-white-baby-cards/first-words-familiar-things-4-6-months/02-cup.webp",
-  "alt": "Simple cup flashcard for babies",
-  "width": 1414,
-  "height": 2000,
-  "format": "webp",
-  "bytes": 58506
- },
- {
-  "key": "flashcards/black-and-white-baby-cards/first-words-familiar-things-4-6-months/03-spoon.webp",
-  "alt": "Simple spoon flashcard for babies",
-  "width": 1414,
-  "height": 2000,
-  "format": "webp",
-  "bytes": 26574
- },
- {
-  "key": "flashcards/black-and-white-baby-cards/first-words-familiar-things-4-6-months/04-bottle.webp",
-  "alt": "Simple bottle flashcard for babies",
-  "width": 1414,
-  "height": 2000,
-  "format": "webp",
-  "bytes": 61388
- },
- {
-  "key": "flashcards/black-and-white-baby-cards/first-words-familiar-things-4-6-months/05-apple.webp",
-  "alt": "Simple apple flashcard for babies",
-  "width": 1414,
-  "height": 2000,
-  "format": "webp",
-  "bytes": 60140
- },
- {
-  "key": "flashcards/black-and-white-baby-cards/first-words-familiar-things-4-6-months/06-banana.webp",
-  "alt": "Simple banana flashcard for babies",
-  "width": 1414,
-  "height": 2000,
-  "format": "webp",
-  "bytes": 57474
- },
- {
-  "key": "flashcards/black-and-white-baby-cards/first-words-familiar-things-4-6-months/07-cat.webp",
-  "alt": "Simple cat flashcard for babies",
-  "width": 1414,
-  "height": 2000,
-  "format": "webp",
-  "bytes": 83798
- },
- {
-  "key": "flashcards/black-and-white-baby-cards/first-words-familiar-things-4-6-months/08-dog.webp",
-  "alt": "Simple dog flashcard for babies",
-  "width": 1414,
-  "height": 2000,
-  "format": "webp",
-  "bytes": 81454
- },
- {
-  "key": "flashcards/black-and-white-baby-cards/first-words-familiar-things-4-6-months/09-bird.webp",
-  "alt": "Simple bird flashcard for babies",
-  "width": 1414,
-  "height": 2000,
-  "format": "webp",
-  "bytes": 71384
- },
- {
-  "key": "flashcards/black-and-white-baby-cards/first-words-familiar-things-4-6-months/10-car.webp",
-  "alt": "Simple car flashcard for babies",
-  "width": 1414,
-  "height": 2000,
-  "format": "webp",
-  "bytes": 68160
- },
- {
-  "key": "flashcards/black-and-white-baby-cards/first-words-familiar-things-4-6-months/11-teddy-bear.webp",
-  "alt": "Simple teddy bear flashcard for babies",
-  "width": 1414,
-  "height": 2000,
-  "format": "webp",
-  "bytes": 83488
+  "bytes": 192474
  },
  {
   "key": "flashcards/black-and-white-baby-cards/animals-everyday-objects-6-9-months/01-cat.webp",
@@ -872,12 +512,212 @@
   "bytes": 330634
  },
  {
-  "key": "flashcards/black-and-white-baby-cards/first-actions-body-parts-9-12-months/cover.webp",
-  "alt": "Cover of the First Actions and Body Parts class for babies 9 to 12 months: a baby hand, foot and clapping hands with the Explorer 2 Talk & Think label from Kiddo School",
+  "key": "flashcards/black-and-white-baby-cards/colors-and-first-objects-3-4-months/01-red-circle.webp",
+  "alt": "Large red circle visual card for babies",
   "width": 1414,
   "height": 2000,
   "format": "webp",
-  "bytes": 178614
+  "bytes": 58480
+ },
+ {
+  "key": "flashcards/black-and-white-baby-cards/colors-and-first-objects-3-4-months/02-yellow-circle.webp",
+  "alt": "Large yellow circle visual card for babies",
+  "width": 1414,
+  "height": 2000,
+  "format": "webp",
+  "bytes": 59066
+ },
+ {
+  "key": "flashcards/black-and-white-baby-cards/colors-and-first-objects-3-4-months/03-blue-circle.webp",
+  "alt": "Large blue circle visual card for babies",
+  "width": 1414,
+  "height": 2000,
+  "format": "webp",
+  "bytes": 56038
+ },
+ {
+  "key": "flashcards/black-and-white-baby-cards/colors-and-first-objects-3-4-months/04-three-colors.webp",
+  "alt": "Red yellow and blue color card for babies",
+  "width": 1414,
+  "height": 2000,
+  "format": "webp",
+  "bytes": 59854
+ },
+ {
+  "key": "flashcards/black-and-white-baby-cards/colors-and-first-objects-3-4-months/05-ball.webp",
+  "alt": "Simple colorful ball visual card for babies",
+  "width": 1414,
+  "height": 2000,
+  "format": "webp",
+  "bytes": 60544
+ },
+ {
+  "key": "flashcards/black-and-white-baby-cards/colors-and-first-objects-3-4-months/06-cup.webp",
+  "alt": "Simple blue cup visual card for babies",
+  "width": 1414,
+  "height": 2000,
+  "format": "webp",
+  "bytes": 47428
+ },
+ {
+  "key": "flashcards/black-and-white-baby-cards/colors-and-first-objects-3-4-months/07-spoon.webp",
+  "alt": "Simple spoon visual card for babies",
+  "width": 1414,
+  "height": 2000,
+  "format": "webp",
+  "bytes": 35950
+ },
+ {
+  "key": "flashcards/black-and-white-baby-cards/colors-and-first-objects-3-4-months/08-apple.webp",
+  "alt": "Simple red apple visual card for babies",
+  "width": 1414,
+  "height": 2000,
+  "format": "webp",
+  "bytes": 45360
+ },
+ {
+  "key": "flashcards/black-and-white-baby-cards/colors-and-first-objects-3-4-months/09-sun.webp",
+  "alt": "Simple yellow sun visual card for babies",
+  "width": 1414,
+  "height": 2000,
+  "format": "webp",
+  "bytes": 52196
+ },
+ {
+  "key": "flashcards/black-and-white-baby-cards/colors-and-first-objects-3-4-months/10-ball-and-cup.webp",
+  "alt": "Ball and cup visual card for babies",
+  "width": 1414,
+  "height": 2000,
+  "format": "webp",
+  "bytes": 46808
+ },
+ {
+  "key": "flashcards/black-and-white-baby-cards/colors-and-first-objects-3-4-months/11-teddy-bear.webp",
+  "alt": "Simple teddy bear visual card for babies",
+  "width": 1414,
+  "height": 2000,
+  "format": "webp",
+  "bytes": 65868
+ },
+ {
+  "key": "flashcards/black-and-white-baby-cards/colors-and-first-objects-3-4-months/12-simple-face.webp",
+  "alt": "Simple human face visual card for babies",
+  "width": 1414,
+  "height": 2000,
+  "format": "webp",
+  "bytes": 27344
+ },
+ {
+  "key": "flashcards/black-and-white-baby-cards/colors-and-first-objects-3-4-months/cover.webp",
+  "alt": "Cover of the Colors and First Objects class for babies 3 to 4 months: red, blue and yellow shapes with the Infant 1 See label from Kiddo School",
+  "width": 1414,
+  "height": 2000,
+  "format": "webp",
+  "bytes": 70030
+ },
+ {
+  "key": "flashcards/black-and-white-baby-cards/faces-and-visual-tracking-6-12-weeks/01-eyes.webp",
+  "alt": "Simple high-contrast eyes card for babies",
+  "width": 1414,
+  "height": 2000,
+  "format": "webp",
+  "bytes": 22396
+ },
+ {
+  "key": "flashcards/black-and-white-baby-cards/faces-and-visual-tracking-6-12-weeks/02-happy-face.webp",
+  "alt": "Simple high-contrast happy face card for babies",
+  "width": 1414,
+  "height": 2000,
+  "format": "webp",
+  "bytes": 247612
+ },
+ {
+  "key": "flashcards/black-and-white-baby-cards/faces-and-visual-tracking-6-12-weeks/03-different-face.webp",
+  "alt": "High-contrast face card for babies",
+  "width": 1414,
+  "height": 2000,
+  "format": "webp",
+  "bytes": 43552
+ },
+ {
+  "key": "flashcards/black-and-white-baby-cards/faces-and-visual-tracking-6-12-weeks/04-face-pattern.webp",
+  "alt": "High-contrast symmetrical face pattern for babies",
+  "width": 1414,
+  "height": 2000,
+  "format": "webp",
+  "bytes": 35070
+ },
+ {
+  "key": "flashcards/black-and-white-baby-cards/faces-and-visual-tracking-6-12-weeks/05-concentric-circles.webp",
+  "alt": "Black and white concentric circles card for babies",
+  "width": 1414,
+  "height": 2000,
+  "format": "webp",
+  "bytes": 75428
+ },
+ {
+  "key": "flashcards/black-and-white-baby-cards/faces-and-visual-tracking-6-12-weeks/06-wavy-lines.webp",
+  "alt": "Black and white wavy line card for babies",
+  "width": 1414,
+  "height": 2000,
+  "format": "webp",
+  "bytes": 48080
+ },
+ {
+  "key": "flashcards/black-and-white-baby-cards/faces-and-visual-tracking-6-12-weeks/07-zigzag.webp",
+  "alt": "Black and white zigzag card for babies",
+  "width": 1414,
+  "height": 2000,
+  "format": "webp",
+  "bytes": 60568
+ },
+ {
+  "key": "flashcards/black-and-white-baby-cards/faces-and-visual-tracking-6-12-weeks/08-large-dots.webp",
+  "alt": "Large high-contrast dots card for babies",
+  "width": 1414,
+  "height": 2000,
+  "format": "webp",
+  "bytes": 41542
+ },
+ {
+  "key": "flashcards/black-and-white-baby-cards/faces-and-visual-tracking-6-12-weeks/09-curved-path.webp",
+  "alt": "High-contrast curved path card for babies",
+  "width": 1414,
+  "height": 2000,
+  "format": "webp",
+  "bytes": 29196
+ },
+ {
+  "key": "flashcards/black-and-white-baby-cards/faces-and-visual-tracking-6-12-weeks/10-red-circle.webp",
+  "alt": "Simple red circle visual card for babies",
+  "width": 1414,
+  "height": 2000,
+  "format": "webp",
+  "bytes": 66920
+ },
+ {
+  "key": "flashcards/black-and-white-baby-cards/faces-and-visual-tracking-6-12-weeks/11-red-and-black.webp",
+  "alt": "Red and black high-contrast visual card for babies",
+  "width": 1414,
+  "height": 2000,
+  "format": "webp",
+  "bytes": 35370
+ },
+ {
+  "key": "flashcards/black-and-white-baby-cards/faces-and-visual-tracking-6-12-weeks/12-red-face-detail.webp",
+  "alt": "Simple face card with red visual detail for babies",
+  "width": 1414,
+  "height": 2000,
+  "format": "webp",
+  "bytes": 144230
+ },
+ {
+  "key": "flashcards/black-and-white-baby-cards/faces-and-visual-tracking-6-12-weeks/cover.webp",
+  "alt": "Cover of the Faces and Visual Tracking class for babies 6 to 12 weeks: a bold black spiral card with the Newborn 2 See label from Kiddo School",
+  "width": 1414,
+  "height": 2000,
+  "format": "webp",
+  "bytes": 106614
  },
  {
   "key": "flashcards/black-and-white-baby-cards/first-actions-body-parts-9-12-months/01-hand.webp",
@@ -976,12 +816,108 @@
   "bytes": 122126
  },
  {
-  "key": "flashcards/black-and-white-baby-cards/first-words-food-home-12-18-months/cover.webp",
-  "alt": "Cover of the First Words: Food and Home class for toddlers 12 to 18 months: an apple, a banana and a cup with the Toddler 1 Talk & Think label from Kiddo School",
+  "key": "flashcards/black-and-white-baby-cards/first-actions-body-parts-9-12-months/cover.webp",
+  "alt": "Cover of the First Actions and Body Parts class for babies 9 to 12 months: a baby hand, foot and clapping hands with the Explorer 2 Talk & Think label from Kiddo School",
   "width": 1414,
   "height": 2000,
   "format": "webp",
-  "bytes": 166382
+  "bytes": 178614
+ },
+ {
+  "key": "flashcards/black-and-white-baby-cards/first-words-familiar-things-4-6-months/01-ball.webp",
+  "alt": "Simple ball flashcard for babies",
+  "width": 1414,
+  "height": 2000,
+  "format": "webp",
+  "bytes": 77472
+ },
+ {
+  "key": "flashcards/black-and-white-baby-cards/first-words-familiar-things-4-6-months/02-cup.webp",
+  "alt": "Simple cup flashcard for babies",
+  "width": 1414,
+  "height": 2000,
+  "format": "webp",
+  "bytes": 58506
+ },
+ {
+  "key": "flashcards/black-and-white-baby-cards/first-words-familiar-things-4-6-months/03-spoon.webp",
+  "alt": "Simple spoon flashcard for babies",
+  "width": 1414,
+  "height": 2000,
+  "format": "webp",
+  "bytes": 26574
+ },
+ {
+  "key": "flashcards/black-and-white-baby-cards/first-words-familiar-things-4-6-months/04-bottle.webp",
+  "alt": "Simple bottle flashcard for babies",
+  "width": 1414,
+  "height": 2000,
+  "format": "webp",
+  "bytes": 61388
+ },
+ {
+  "key": "flashcards/black-and-white-baby-cards/first-words-familiar-things-4-6-months/05-apple.webp",
+  "alt": "Simple apple flashcard for babies",
+  "width": 1414,
+  "height": 2000,
+  "format": "webp",
+  "bytes": 60140
+ },
+ {
+  "key": "flashcards/black-and-white-baby-cards/first-words-familiar-things-4-6-months/06-banana.webp",
+  "alt": "Simple banana flashcard for babies",
+  "width": 1414,
+  "height": 2000,
+  "format": "webp",
+  "bytes": 57474
+ },
+ {
+  "key": "flashcards/black-and-white-baby-cards/first-words-familiar-things-4-6-months/07-cat.webp",
+  "alt": "Simple cat flashcard for babies",
+  "width": 1414,
+  "height": 2000,
+  "format": "webp",
+  "bytes": 83798
+ },
+ {
+  "key": "flashcards/black-and-white-baby-cards/first-words-familiar-things-4-6-months/08-dog.webp",
+  "alt": "Simple dog flashcard for babies",
+  "width": 1414,
+  "height": 2000,
+  "format": "webp",
+  "bytes": 81454
+ },
+ {
+  "key": "flashcards/black-and-white-baby-cards/first-words-familiar-things-4-6-months/09-bird.webp",
+  "alt": "Simple bird flashcard for babies",
+  "width": 1414,
+  "height": 2000,
+  "format": "webp",
+  "bytes": 71384
+ },
+ {
+  "key": "flashcards/black-and-white-baby-cards/first-words-familiar-things-4-6-months/10-car.webp",
+  "alt": "Simple car flashcard for babies",
+  "width": 1414,
+  "height": 2000,
+  "format": "webp",
+  "bytes": 68160
+ },
+ {
+  "key": "flashcards/black-and-white-baby-cards/first-words-familiar-things-4-6-months/11-teddy-bear.webp",
+  "alt": "Simple teddy bear flashcard for babies",
+  "width": 1414,
+  "height": 2000,
+  "format": "webp",
+  "bytes": 83488
+ },
+ {
+  "key": "flashcards/black-and-white-baby-cards/first-words-familiar-things-4-6-months/cover.webp",
+  "alt": "Cover of the First Words and Familiar Things class for babies 4 to 6 months: a red ball, blue cup and yellow banana with the Infant 2 Talk label from Kiddo School",
+  "width": 1414,
+  "height": 2000,
+  "format": "webp",
+  "bytes": 122560
  },
  {
   "key": "flashcards/black-and-white-baby-cards/first-words-food-home-12-18-months/01-apple.webp",
@@ -1072,428 +1008,108 @@
   "bytes": 109078
  },
  {
-  "key": "flashcards/toddler-learning-cards/first-concepts-18-24-months/cover.webp",
-  "alt": "Cover of the First Concepts class for toddlers 18 to 24 months",
+  "key": "flashcards/black-and-white-baby-cards/first-words-food-home-12-18-months/cover.webp",
+  "alt": "Cover of the First Words: Food and Home class for toddlers 12 to 18 months: an apple, a banana and a cup with the Toddler 1 Talk & Think label from Kiddo School",
   "width": 1414,
   "height": 2000,
   "format": "webp",
-  "bytes": 241106
+  "bytes": 166382
  },
  {
-  "key": "flashcards/toddler-learning-cards/first-concepts-18-24-months/01-big.webp",
-  "alt": "Large object demonstrating the concept big for toddlers",
-  "width": 1414,
-  "height": 2000,
+  "key": "flashcards/black-and-white-baby-cards/newborn-high-contrast-checkerboard.webp",
+  "alt": "Black and white checkerboard pattern card for newborns",
+  "width": 1080,
+  "height": 1350,
   "format": "webp",
-  "bytes": 175780
+  "bytes": 22166
  },
  {
-  "key": "flashcards/toddler-learning-cards/first-concepts-18-24-months/02-small.webp",
-  "alt": "Small object demonstrating the concept small for toddlers",
-  "width": 1414,
-  "height": 2000,
+  "key": "flashcards/black-and-white-baby-cards/newborn-high-contrast-circle-card.webp",
+  "alt": "Black and white high-contrast circle card for newborns",
+  "width": 1080,
+  "height": 1350,
   "format": "webp",
-  "bytes": 24538
+  "bytes": 17586
  },
  {
-  "key": "flashcards/toddler-learning-cards/first-concepts-18-24-months/03-up.webp",
-  "alt": "Object positioned up for toddler concept learning",
-  "width": 1414,
-  "height": 2000,
+  "key": "flashcards/black-and-white-baby-cards/newborn-high-contrast-concentric-circles.webp",
+  "alt": "Black and white concentric circles card for newborns",
+  "width": 1080,
+  "height": 1350,
   "format": "webp",
-  "bytes": 38242
+  "bytes": 42450
  },
  {
-  "key": "flashcards/toddler-learning-cards/first-concepts-18-24-months/04-down.webp",
-  "alt": "Object positioned down for toddler concept learning",
-  "width": 1414,
-  "height": 2000,
+  "key": "flashcards/black-and-white-baby-cards/newborn-high-contrast-eyes.webp",
+  "alt": "Black and white high-contrast eyes card for newborns",
+  "width": 1080,
+  "height": 1350,
   "format": "webp",
-  "bytes": 24914
+  "bytes": 17638
  },
  {
-  "key": "flashcards/toddler-learning-cards/first-concepts-18-24-months/05-open.webp",
-  "alt": "Open object demonstrating the concept open for toddlers",
-  "width": 1414,
-  "height": 2000,
+  "key": "flashcards/black-and-white-baby-cards/newborn-high-contrast-face.webp",
+  "alt": "Black and white high-contrast smiling face card for newborns",
+  "width": 1080,
+  "height": 1350,
   "format": "webp",
-  "bytes": 69064
+  "bytes": 38104
  },
  {
-  "key": "flashcards/toddler-learning-cards/first-concepts-18-24-months/06-closed.webp",
-  "alt": "Closed object demonstrating the concept closed for toddlers",
-  "width": 1414,
-  "height": 2000,
+  "key": "flashcards/black-and-white-baby-cards/newborn-high-contrast-horizontal-stripes.webp",
+  "alt": "Black and white high-contrast horizontal stripes card for newborns",
+  "width": 1080,
+  "height": 1350,
   "format": "webp",
-  "bytes": 26762
+  "bytes": 13188
  },
  {
-  "key": "flashcards/toddler-learning-cards/first-concepts-18-24-months/07-full.webp",
-  "alt": "Full container demonstrating the concept full for toddlers",
-  "width": 1414,
-  "height": 2000,
+  "key": "flashcards/black-and-white-baby-cards/newborn-high-contrast-spiral.webp",
+  "alt": "Black and white high-contrast spiral card for newborns",
+  "width": 1080,
+  "height": 1350,
   "format": "webp",
-  "bytes": 27910
+  "bytes": 42086
  },
  {
-  "key": "flashcards/toddler-learning-cards/first-concepts-18-24-months/08-empty.webp",
-  "alt": "Empty container demonstrating the concept empty for toddlers",
-  "width": 1414,
-  "height": 2000,
+  "key": "flashcards/black-and-white-baby-cards/newborn-high-contrast-square-card.webp",
+  "alt": "Black and white high-contrast square card for newborns",
+  "width": 1080,
+  "height": 1350,
   "format": "webp",
-  "bytes": 21434
+  "bytes": 10878
  },
  {
-  "key": "flashcards/toddler-learning-cards/first-concepts-18-24-months/09-one.webp",
-  "alt": "One object demonstrating the concept one for toddlers",
-  "width": 1414,
-  "height": 2000,
+  "key": "flashcards/black-and-white-baby-cards/newborn-high-contrast-symmetrical-face.webp",
+  "alt": "Black and white symmetrical baby face card for newborns",
+  "width": 1080,
+  "height": 1350,
   "format": "webp",
-  "bytes": 55242
+  "bytes": 46526
  },
  {
-  "key": "flashcards/toddler-learning-cards/first-concepts-18-24-months/10-many.webp",
-  "alt": "Multiple objects demonstrating the concept many for toddlers",
-  "width": 1414,
-  "height": 2000,
+  "key": "flashcards/black-and-white-baby-cards/newborn-high-contrast-target.webp",
+  "alt": "Black and white bullseye target card for newborns",
+  "width": 1080,
+  "height": 1350,
   "format": "webp",
-  "bytes": 67976
+  "bytes": 43774
  },
  {
-  "key": "flashcards/toddler-learning-cards/first-concepts-18-24-months/11-in.webp",
-  "alt": "Object inside a container demonstrating the concept in for toddlers",
-  "width": 1414,
-  "height": 2000,
+  "key": "flashcards/black-and-white-baby-cards/newborn-high-contrast-triangle.webp",
+  "alt": "Black and white high-contrast triangle card for newborns",
+  "width": 1080,
+  "height": 1350,
   "format": "webp",
-  "bytes": 122114
+  "bytes": 19738
  },
  {
-  "key": "flashcards/toddler-learning-cards/colors-and-shapes-age-2/learning-cards//cover.webp",
-  "alt": "Colors and Shapes class for 2-year-olds at Kiddo School",
-  "width": 1414,
-  "height": 2000,
+  "key": "flashcards/black-and-white-baby-cards/newborn-high-contrast-vertical-stripes.webp",
+  "alt": "Black and white high-contrast vertical stripes card for newborns",
+  "width": 1080,
+  "height": 1350,
   "format": "webp",
-  "bytes": 159434
- },
- {
-  "key": "flashcards/toddler-learning-cards/colors-and-shapes-age-2/learning-cards//01-red.webp",
-  "alt": "Red color learning card for toddlers",
-  "width": 1414,
-  "height": 2000,
-  "format": "webp",
-  "bytes": 61404
- },
- {
-  "key": "flashcards/toddler-learning-cards/colors-and-shapes-age-2/learning-cards//02-blue.webp",
-  "alt": "Blue color learning card for toddlers",
-  "width": 1414,
-  "height": 2000,
-  "format": "webp",
-  "bytes": 51422
- },
- {
-  "key": "flashcards/toddler-learning-cards/colors-and-shapes-age-2/learning-cards//03-yellow.webp",
-  "alt": "Yellow color learning card for toddlers",
-  "width": 1414,
-  "height": 2000,
-  "format": "webp",
-  "bytes": 49864
- },
- {
-  "key": "flashcards/toddler-learning-cards/colors-and-shapes-age-2/learning-cards//04-green.webp",
-  "alt": "Green color learning card for toddlers",
-  "width": 1414,
-  "height": 2000,
-  "format": "webp",
-  "bytes": 49736
- },
- {
-  "key": "flashcards/toddler-learning-cards/colors-and-shapes-age-2/learning-cards//05-orange.webp",
-  "alt": "Orange color learning card for toddlers",
-  "width": 1414,
-  "height": 2000,
-  "format": "webp",
-  "bytes": 55488
- },
- {
-  "key": "flashcards/toddler-learning-cards/colors-and-shapes-age-2/learning-cards//06-purple.webp",
-  "alt": "Purple color learning card for toddlers",
-  "width": 1414,
-  "height": 2000,
-  "format": "webp",
-  "bytes": 54032
- },
- {
-  "key": "flashcards/toddler-learning-cards/colors-and-shapes-age-2/learning-cards//07-pink.webp",
-  "alt": "Pink color learning card for toddlers",
-  "width": 1414,
-  "height": 2000,
-  "format": "webp",
-  "bytes": 89926
- },
- {
-  "key": "flashcards/toddler-learning-cards/colors-and-shapes-age-2/learning-cards//08-black.webp",
-  "alt": "Black color learning card for toddlers",
-  "width": 1414,
-  "height": 2000,
-  "format": "webp",
-  "bytes": 31144
- },
- {
-  "key": "flashcards/toddler-learning-cards/colors-and-shapes-age-2/learning-cards//09-circle.webp",
-  "alt": "Circle shape learning card for toddlers",
-  "width": 1414,
-  "height": 2000,
-  "format": "webp",
-  "bytes": 59916
- },
- {
-  "key": "flashcards/toddler-learning-cards/colors-and-shapes-age-2/learning-cards//10-square.webp",
-  "alt": "Square shape learning card for toddlers",
-  "width": 1414,
-  "height": 2000,
-  "format": "webp",
-  "bytes": 46520
- },
- {
-  "key": "flashcards/toddler-learning-cards/colors-and-shapes-age-2/learning-cards//11-triangle.webp",
-  "alt": "Triangle shape learning card for toddlers",
-  "width": 1414,
-  "height": 2000,
-  "format": "webp",
-  "bytes": 48646
- },
- {
-  "key": "flashcards/toddler-learning-cards/colors-and-shapes-age-2/learning-cards//12-rectangle.webp",
-  "alt": "Rectangle shape learning card for toddlers",
-  "width": 2000,
-  "height": 1414,
-  "format": "webp",
-  "bytes": 73924
- },
- {
-  "key": "flashcards/toddler-learning-cards/colors-and-shapes-age-2/learning-cards//13-star.webp",
-  "alt": "Star shape learning card for toddlers",
-  "width": 2000,
-  "height": 1414,
-  "format": "webp",
-  "bytes": 108600
- },
- {
-  "key": "flashcards/toddler-learning-cards/colors-and-shapes-age-2/learning-cards//14-heart.webp",
-  "alt": "Heart shape learning card for toddlers",
-  "width": 2000,
-  "height": 1414,
-  "format": "webp",
-  "bytes": 71192
- },
- {
-  "key": "flashcards/toddler-learning-cards/colors-and-shapes-age-2/learning-cards//15-oval.webp",
-  "alt": "Oval shape learning card for toddlers",
-  "width": 2000,
-  "height": 1414,
-  "format": "webp",
-  "bytes": 115888
- },
- {
-  "key": "flashcards/toddler-learning-cards/colors-and-shapes-age-2/printables//01-cover.webp",
-  "alt": "Colors and Shapes printable activity pack for 2-year-olds",
-  "width": 1414,
-  "height": 2000,
-  "format": "webp",
-  "bytes": 147590
- },
- {
-  "key": "flashcards/toddler-learning-cards/colors-and-shapes-age-2/printables//02-color-cards.webp",
-  "alt": "Printable color cards for toddlers with labeled colors",
-  "width": 1414,
-  "height": 2000,
-  "format": "webp",
-  "bytes": 170106
- },
- {
-  "key": "flashcards/toddler-learning-cards/colors-and-shapes-age-2/printables//03-shape-cards.webp",
-  "alt": "Printable shape cards for toddlers with labeled basic shapes",
-  "width": 1414,
-  "height": 2000,
-  "format": "webp",
-  "bytes": 136786
- },
- {
-  "key": "flashcards/toddler-learning-cards/colors-and-shapes-age-2/printables//04-match-the-colors.webp",
-  "alt": "Match the Colors printable activity for 2-year-olds",
-  "width": 1414,
-  "height": 2000,
-  "format": "webp",
-  "bytes": 93474
- },
- {
-  "key": "flashcards/toddler-learning-cards/colors-and-shapes-age-2/printables//05-match-the-shapes.webp",
-  "alt": "Match the Shapes printable activity for 2-year-olds",
-  "width": 1414,
-  "height": 2000,
-  "format": "webp",
-  "bytes": 118814
- },
- {
-  "key": "flashcards/toddler-learning-cards/colors-and-shapes-age-2/printables//06-color-hunt.webp",
-  "alt": "Color Hunt printable activity for toddlers",
-  "width": 1414,
-  "height": 2000,
-  "format": "webp",
-  "bytes": 128580
- },
- {
-  "key": "flashcards/toddler-learning-cards/colors-and-shapes-age-2/printables//07-shape-hunt.webp",
-  "alt": "Shape Hunt printable activity for toddlers",
-  "width": 1414,
-  "height": 2000,
-  "format": "webp",
-  "bytes": 180052
- },
- {
-  "key": "flashcards/toddler-learning-cards/colors-and-shapes-age-2/printables//08-take-it-off-screen.webp",
-  "alt": "Take It Off Screen colors and shapes activity for toddlers",
-  "width": 1414,
-  "height": 2000,
-  "format": "webp",
-  "bytes": 242206
- },
- {
-  "key": "flashcards/toddler-learning-cards/matching-and-sorting-age-2/learning-cards//cover.webp",
-  "alt": "Matching and Sorting class for 2-year-olds at Kiddo School",
-  "width": 1414,
-  "height": 2000,
-  "format": "webp",
-  "bytes": 140392
- },
- {
-  "key": "flashcards/toddler-learning-cards/matching-and-sorting-age-2/learning-cards//01-same-balls.webp",
-  "alt": "Two matching red balls for a toddler same-and-match activity",
-  "width": 1414,
-  "height": 2000,
-  "format": "webp",
-  "bytes": 75082
- },
- {
-  "key": "flashcards/toddler-learning-cards/matching-and-sorting-age-2/learning-cards//02-same-apples.webp",
-  "alt": "Two matching red apples for a toddler matching activity",
-  "width": 1414,
-  "height": 2000,
-  "format": "webp",
-  "bytes": 130988
- },
- {
-  "key": "flashcards/toddler-learning-cards/matching-and-sorting-age-2/learning-cards//03-same-cups.webp",
-  "alt": "Two matching blue cups for a toddler matching activity",
-  "width": 1414,
-  "height": 2000,
-  "format": "webp",
-  "bytes": 55596
- },
- {
-  "key": "flashcards/toddler-learning-cards/matching-and-sorting-age-2/learning-cards//04-different-apple-banana.webp",
-  "alt": "Apple and banana for a toddler same-and-different activity",
-  "width": 1414,
-  "height": 2000,
-  "format": "webp",
-  "bytes": 119664
- },
- {
-  "key": "flashcards/toddler-learning-cards/matching-and-sorting-age-2/learning-cards//05-different-animals.webp",
-  "alt": "Cat and dog for a toddler same-and-different activity",
-  "width": 1414,
-  "height": 2000,
-  "format": "webp",
-  "bytes": 177628
- },
- {
-  "key": "flashcards/toddler-learning-cards/matching-and-sorting-age-2/learning-cards//06-different-shapes.webp",
-  "alt": "Circle and triangle for a toddler different-shapes activity",
-  "width": 1414,
-  "height": 2000,
-  "format": "webp",
-  "bytes": 39974
- },
- {
-  "key": "flashcards/toddler-learning-cards/matching-and-sorting-age-2/learning-cards//07-match-red.webp",
-  "alt": "Red color matching activity with visual choices",
-  "width": 1414,
-  "height": 2000,
-  "format": "webp",
-  "bytes": 78488
- },
- {
-  "key": "flashcards/toddler-learning-cards/matching-and-sorting-age-2/learning-cards//08-match-blue.webp",
-  "alt": "Blue color matching activity with visual choices",
-  "width": 1414,
-  "height": 2000,
-  "format": "webp",
-  "bytes": 32252
- },
- {
-  "key": "flashcards/toddler-learning-cards/matching-and-sorting-age-2/learning-cards//09-match-circle.webp",
-  "alt": "Circle matching activity with basic shape choices",
-  "width": 1414,
-  "height": 2000,
-  "format": "webp",
-  "bytes": 55658
- },
- {
-  "key": "flashcards/toddler-learning-cards/matching-and-sorting-age-2/learning-cards//10-match-triangle.webp",
-  "alt": "Triangle matching activity with basic shape choices",
-  "width": 1414,
-  "height": 2000,
-  "format": "webp",
-  "bytes": 43908
- },
- {
-  "key": "flashcards/toddler-learning-cards/matching-and-sorting-age-2/learning-cards//11-sort-by-color.webp",
-  "alt": "Red and blue objects for a toddler sorting-by-color activity",
-  "width": 1414,
-  "height": 2000,
-  "format": "webp",
-  "bytes": 104152
- },
- {
-  "key": "flashcards/toddler-learning-cards/matching-and-sorting-age-2/learning-cards//12-sort-by-shape.webp",
-  "alt": "Circles and squares for a toddler sorting-by-shape activity",
-  "width": 1414,
-  "height": 2000,
-  "format": "webp",
-  "bytes": 41642
- },
- {
-  "key": "flashcards/toddler-learning-cards/matching-and-sorting-age-2/learning-cards//13-fruit-together.webp",
-  "alt": "Apple, banana, car and shoe for a toddler grouping activity",
-  "width": 1414,
-  "height": 2000,
-  "format": "webp",
-  "bytes": 174546
- },
- {
-  "key": "flashcards/toddler-learning-cards/matching-and-sorting-age-2/learning-cards//14-animals-together.webp",
-  "alt": "Cat, dog, cup and ball for a toddler grouping activity",
-  "width": 1414,
-  "height": 2000,
-  "format": "webp",
-  "bytes": 166084
- },
- {
-  "key": "flashcards/toddler-learning-cards/matching-and-sorting-age-2/learning-cards//15-odd-one-out.webp",
-  "alt": "Three bananas and one apple for a toddler odd-one-out activity",
-  "width": 1414,
-  "height": 2000,
-  "format": "webp",
-  "bytes": 88532
- },
- {
-  "key": "flashcards/toddler-learning-cards/animals-and-sounds-age-2/cover.webp",
-  "alt": "Animals and Sounds class for 2-year-olds at Kiddo School",
-  "width": 1414,
-  "height": 2000,
-  "format": "webp",
-  "bytes": 225772
+  "bytes": 18934
  },
  {
   "key": "flashcards/toddler-learning-cards/animals-and-sounds-age-2/01-dog.webp",
@@ -1656,180 +1272,204 @@
   "bytes": 124760
  },
  {
-  "key": "flashcards/toddler-learning-cards/vehicles-and-sounds-age-2/cover.webp",
-  "alt": "Vehicles and Sounds class for 2-year-olds at Kiddo School",
-  "width": 2000,
-  "height": 1294,
+  "key": "flashcards/toddler-learning-cards/animals-and-sounds-age-2/cover.webp",
+  "alt": "Animals and Sounds class for 2-year-olds at Kiddo School",
+  "width": 1414,
+  "height": 2000,
   "format": "webp",
-  "bytes": 188588
+  "bytes": 225772
  },
  {
-  "key": "flashcards/toddler-learning-cards/vehicles-and-sounds-age-2/01-car.webp",
-  "alt": "Cartoon car learning card labeled Car with Beep beep",
-  "width": 2000,
-  "height": 1294,
+  "key": "flashcards/toddler-learning-cards/colors-and-shapes-age-2/learning-cards//01-red.webp",
+  "alt": "Red color learning card for toddlers",
+  "width": 1414,
+  "height": 2000,
   "format": "webp",
-  "bytes": 152736
+  "bytes": 61404
  },
  {
-  "key": "flashcards/toddler-learning-cards/vehicles-and-sounds-age-2/02-bus.webp",
-  "alt": "Cartoon bus learning card labeled Bus with Beep beep",
-  "width": 2000,
-  "height": 1294,
+  "key": "flashcards/toddler-learning-cards/colors-and-shapes-age-2/learning-cards//02-blue.webp",
+  "alt": "Blue color learning card for toddlers",
+  "width": 1414,
+  "height": 2000,
   "format": "webp",
-  "bytes": 156954
+  "bytes": 51422
  },
  {
-  "key": "flashcards/toddler-learning-cards/vehicles-and-sounds-age-2/03-truck.webp",
-  "alt": "Cartoon truck learning card labeled Truck with Rumble",
-  "width": 2000,
-  "height": 1294,
+  "key": "flashcards/toddler-learning-cards/colors-and-shapes-age-2/learning-cards//03-yellow.webp",
+  "alt": "Yellow color learning card for toddlers",
+  "width": 1414,
+  "height": 2000,
   "format": "webp",
-  "bytes": 156894
+  "bytes": 49864
  },
  {
-  "key": "flashcards/toddler-learning-cards/vehicles-and-sounds-age-2/04-fire-truck.webp",
-  "alt": "Cartoon fire truck learning card labeled Fire Truck with Nee-naw",
-  "width": 2000,
-  "height": 1294,
+  "key": "flashcards/toddler-learning-cards/colors-and-shapes-age-2/learning-cards//04-green.webp",
+  "alt": "Green color learning card for toddlers",
+  "width": 1414,
+  "height": 2000,
   "format": "webp",
-  "bytes": 181874
+  "bytes": 49736
  },
  {
-  "key": "flashcards/toddler-learning-cards/vehicles-and-sounds-age-2/05-ambulance.webp",
-  "alt": "Cartoon ambulance learning card labeled Ambulance with Nee-naw",
-  "width": 2000,
-  "height": 1294,
+  "key": "flashcards/toddler-learning-cards/colors-and-shapes-age-2/learning-cards//05-orange.webp",
+  "alt": "Orange color learning card for toddlers",
+  "width": 1414,
+  "height": 2000,
   "format": "webp",
-  "bytes": 158428
+  "bytes": 55488
  },
  {
-  "key": "flashcards/toddler-learning-cards/vehicles-and-sounds-age-2/06-police-car.webp",
-  "alt": "Cartoon police car learning card labeled Police Car with Woo-woo",
-  "width": 2000,
-  "height": 1294,
+  "key": "flashcards/toddler-learning-cards/colors-and-shapes-age-2/learning-cards//06-purple.webp",
+  "alt": "Purple color learning card for toddlers",
+  "width": 1414,
+  "height": 2000,
   "format": "webp",
-  "bytes": 138674
+  "bytes": 54032
  },
  {
-  "key": "flashcards/toddler-learning-cards/vehicles-and-sounds-age-2/07-motorcycle.webp",
-  "alt": "Cartoon motorcycle learning card labeled Motorcycle with Vroom",
-  "width": 2000,
-  "height": 1294,
+  "key": "flashcards/toddler-learning-cards/colors-and-shapes-age-2/learning-cards//07-pink.webp",
+  "alt": "Pink color learning card for toddlers",
+  "width": 1414,
+  "height": 2000,
   "format": "webp",
-  "bytes": 148232
+  "bytes": 89926
  },
  {
-  "key": "flashcards/toddler-learning-cards/vehicles-and-sounds-age-2/08-bicycle.webp",
-  "alt": "Cartoon bicycle learning card labeled Bicycle with Ring ring",
-  "width": 2000,
-  "height": 1294,
+  "key": "flashcards/toddler-learning-cards/colors-and-shapes-age-2/learning-cards//08-black.webp",
+  "alt": "Black color learning card for toddlers",
+  "width": 1414,
+  "height": 2000,
   "format": "webp",
-  "bytes": 152514
+  "bytes": 31144
  },
  {
-  "key": "flashcards/toddler-learning-cards/vehicles-and-sounds-age-2/09-train.webp",
-  "alt": "Cartoon train learning card labeled Train with Choo choo",
-  "width": 2000,
-  "height": 1294,
+  "key": "flashcards/toddler-learning-cards/colors-and-shapes-age-2/learning-cards//09-circle.webp",
+  "alt": "Circle shape learning card for toddlers",
+  "width": 1414,
+  "height": 2000,
   "format": "webp",
-  "bytes": 158758
+  "bytes": 59916
  },
  {
-  "key": "flashcards/toddler-learning-cards/vehicles-and-sounds-age-2/10-tractor.webp",
-  "alt": "Cartoon tractor learning card labeled Tractor with Rumble",
-  "width": 2000,
-  "height": 1294,
+  "key": "flashcards/toddler-learning-cards/colors-and-shapes-age-2/learning-cards//10-square.webp",
+  "alt": "Square shape learning card for toddlers",
+  "width": 1414,
+  "height": 2000,
   "format": "webp",
-  "bytes": 139308
+  "bytes": 46520
  },
  {
-  "key": "flashcards/toddler-learning-cards/vehicles-and-sounds-age-2/11-excavator.webp",
-  "alt": "Cartoon excavator learning card labeled Excavator with Dig dig",
-  "width": 2000,
-  "height": 1294,
+  "key": "flashcards/toddler-learning-cards/colors-and-shapes-age-2/learning-cards//11-triangle.webp",
+  "alt": "Triangle shape learning card for toddlers",
+  "width": 1414,
+  "height": 2000,
   "format": "webp",
-  "bytes": 155540
+  "bytes": 48646
  },
  {
-  "key": "flashcards/toddler-learning-cards/vehicles-and-sounds-age-2/12-dump-truck.webp",
-  "alt": "Cartoon dump truck learning card labeled Dump Truck with Rumble",
-  "width": 2000,
-  "height": 1294,
-  "format": "webp",
-  "bytes": 159838
- },
- {
-  "key": "flashcards/toddler-learning-cards/vehicles-and-sounds-age-2/13-airplane.webp",
-  "alt": "Cartoon airplane learning card labeled Airplane with Whoosh",
-  "width": 2000,
-  "height": 1294,
-  "format": "webp",
-  "bytes": 119560
- },
- {
-  "key": "flashcards/toddler-learning-cards/vehicles-and-sounds-age-2/14-helicopter.webp",
-  "alt": "Cartoon helicopter learning card labeled Helicopter with Whirr",
-  "width": 2000,
-  "height": 1294,
-  "format": "webp",
-  "bytes": 136160
- },
- {
-  "key": "flashcards/toddler-learning-cards/vehicles-and-sounds-age-2/15-boat.webp",
-  "alt": "Cartoon boat learning card labeled Boat with Splash",
-  "width": 2000,
-  "height": 1294,
-  "format": "webp",
-  "bytes": 102480
- },
- {
-  "key": "flashcards/toddler-learning-cards/vehicles-and-sounds-age-2/16-ship.webp",
-  "alt": "Cartoon ship learning card labeled Ship with Toot toot",
-  "width": 2000,
-  "height": 1294,
-  "format": "webp",
-  "bytes": 121538
- },
- {
-  "key": "flashcards/toddler-learning-cards/vehicles-and-sounds-age-2/17-rocket.webp",
-  "alt": "Cartoon rocket learning card labeled Rocket with Whoosh",
-  "width": 2000,
-  "height": 1294,
-  "format": "webp",
-  "bytes": 89770
- },
- {
-  "key": "flashcards/toddler-learning-cards/vehicles-and-sounds-age-2/18-taxi.webp",
-  "alt": "Cartoon taxi learning card labeled Taxi with Beep beep",
-  "width": 2000,
-  "height": 1294,
-  "format": "webp",
-  "bytes": 147608
- },
- {
-  "key": "flashcards/toddler-learning-cards/vehicles-and-sounds-age-2/19-van.webp",
-  "alt": "Cartoon van learning card labeled Van with Vroom",
-  "width": 2000,
-  "height": 1294,
-  "format": "webp",
-  "bytes": 135722
- },
- {
-  "key": "flashcards/toddler-learning-cards/vehicles-and-sounds-age-2/20-scooter.webp",
-  "alt": "Kick scooter learning card labeled Scooter with Zoom",
-  "width": 2000,
-  "height": 1294,
-  "format": "webp",
-  "bytes": 99958
- },
- {
-  "key": "flashcards/toddler-learning-cards/emotions-and-feelings-age-2/cover.webp",
-  "alt": "Emotions and Feelings class for 2-year-olds at Kiddo School",
+  "key": "flashcards/toddler-learning-cards/colors-and-shapes-age-2/learning-cards//12-rectangle.webp",
+  "alt": "Rectangle shape learning card for toddlers",
   "width": 2000,
   "height": 1414,
   "format": "webp",
-  "bytes": 258156
+  "bytes": 73924
+ },
+ {
+  "key": "flashcards/toddler-learning-cards/colors-and-shapes-age-2/learning-cards//13-star.webp",
+  "alt": "Star shape learning card for toddlers",
+  "width": 2000,
+  "height": 1414,
+  "format": "webp",
+  "bytes": 108600
+ },
+ {
+  "key": "flashcards/toddler-learning-cards/colors-and-shapes-age-2/learning-cards//14-heart.webp",
+  "alt": "Heart shape learning card for toddlers",
+  "width": 2000,
+  "height": 1414,
+  "format": "webp",
+  "bytes": 71192
+ },
+ {
+  "key": "flashcards/toddler-learning-cards/colors-and-shapes-age-2/learning-cards//15-oval.webp",
+  "alt": "Oval shape learning card for toddlers",
+  "width": 2000,
+  "height": 1414,
+  "format": "webp",
+  "bytes": 115888
+ },
+ {
+  "key": "flashcards/toddler-learning-cards/colors-and-shapes-age-2/learning-cards//cover.webp",
+  "alt": "Colors and Shapes class for 2-year-olds at Kiddo School",
+  "width": 1414,
+  "height": 2000,
+  "format": "webp",
+  "bytes": 159434
+ },
+ {
+  "key": "flashcards/toddler-learning-cards/colors-and-shapes-age-2/printables//01-cover.webp",
+  "alt": "Colors and Shapes printable activity pack for 2-year-olds",
+  "width": 1414,
+  "height": 2000,
+  "format": "webp",
+  "bytes": 147590
+ },
+ {
+  "key": "flashcards/toddler-learning-cards/colors-and-shapes-age-2/printables//02-color-cards.webp",
+  "alt": "Printable color cards for toddlers with labeled colors",
+  "width": 1414,
+  "height": 2000,
+  "format": "webp",
+  "bytes": 170106
+ },
+ {
+  "key": "flashcards/toddler-learning-cards/colors-and-shapes-age-2/printables//03-shape-cards.webp",
+  "alt": "Printable shape cards for toddlers with labeled basic shapes",
+  "width": 1414,
+  "height": 2000,
+  "format": "webp",
+  "bytes": 136786
+ },
+ {
+  "key": "flashcards/toddler-learning-cards/colors-and-shapes-age-2/printables//04-match-the-colors.webp",
+  "alt": "Match the Colors printable activity for 2-year-olds",
+  "width": 1414,
+  "height": 2000,
+  "format": "webp",
+  "bytes": 93474
+ },
+ {
+  "key": "flashcards/toddler-learning-cards/colors-and-shapes-age-2/printables//05-match-the-shapes.webp",
+  "alt": "Match the Shapes printable activity for 2-year-olds",
+  "width": 1414,
+  "height": 2000,
+  "format": "webp",
+  "bytes": 118814
+ },
+ {
+  "key": "flashcards/toddler-learning-cards/colors-and-shapes-age-2/printables//06-color-hunt.webp",
+  "alt": "Color Hunt printable activity for toddlers",
+  "width": 1414,
+  "height": 2000,
+  "format": "webp",
+  "bytes": 128580
+ },
+ {
+  "key": "flashcards/toddler-learning-cards/colors-and-shapes-age-2/printables//07-shape-hunt.webp",
+  "alt": "Shape Hunt printable activity for toddlers",
+  "width": 1414,
+  "height": 2000,
+  "format": "webp",
+  "bytes": 180052
+ },
+ {
+  "key": "flashcards/toddler-learning-cards/colors-and-shapes-age-2/printables//08-take-it-off-screen.webp",
+  "alt": "Take It Off Screen colors and shapes activity for toddlers",
+  "width": 1414,
+  "height": 2000,
+  "format": "webp",
+  "bytes": 242206
  },
  {
   "key": "flashcards/toddler-learning-cards/emotions-and-feelings-age-2/01-happy.webp",
@@ -1992,52 +1632,572 @@
   "bytes": 127946
  },
  {
-  "key": "circle-time/age-2/hello-school/cover.webp",
-  "alt": "Kiddo School teacher welcoming children to Circle Time",
-  "width": 1920,
-  "height": 1080,
+  "key": "flashcards/toddler-learning-cards/emotions-and-feelings-age-2/cover.webp",
+  "alt": "Emotions and Feelings class for 2-year-olds at Kiddo School",
+  "width": 2000,
+  "height": 1414,
   "format": "webp",
-  "bytes": 192474
+  "bytes": 258156
  },
  {
-  "key": "circle-time/age-2/hello-school/01-hello-and-move.webp",
-  "alt": "Teacher and young children moving together during Circle Time",
-  "width": 1920,
-  "height": 1080,
+  "key": "flashcards/toddler-learning-cards/first-concepts-18-24-months/01-big.webp",
+  "alt": "Large object demonstrating the concept big for toddlers",
+  "width": 1414,
+  "height": 2000,
   "format": "webp",
-  "bytes": 174994
+  "bytes": 175780
  },
  {
-  "key": "circle-time/age-2/hello-school/02-listen-and-do.webp",
-  "alt": "Teacher and children doing a simple listening and movement activity",
-  "width": 1920,
-  "height": 1080,
+  "key": "flashcards/toddler-learning-cards/first-concepts-18-24-months/02-small.webp",
+  "alt": "Small object demonstrating the concept small for toddlers",
+  "width": 1414,
+  "height": 2000,
   "format": "webp",
-  "bytes": 162682
+  "bytes": 24538
  },
  {
-  "key": "circle-time/age-2/hello-school/03-story-time.webp",
-  "alt": "Young child arriving at school with a backpack and greeting the teacher",
-  "width": 1920,
-  "height": 1080,
+  "key": "flashcards/toddler-learning-cards/first-concepts-18-24-months/03-up.webp",
+  "alt": "Object positioned up for toddler concept learning",
+  "width": 1414,
+  "height": 2000,
   "format": "webp",
-  "bytes": 162676
+  "bytes": 38242
  },
  {
-  "key": "circle-time/age-2/hello-school/04-goodbye.webp",
-  "alt": "Teacher and children waving goodbye at the end of Circle Time",
-  "width": 1920,
-  "height": 1080,
+  "key": "flashcards/toddler-learning-cards/first-concepts-18-24-months/04-down.webp",
+  "alt": "Object positioned down for toddler concept learning",
+  "width": 1414,
+  "height": 2000,
   "format": "webp",
-  "bytes": 183650
+  "bytes": 24914
  },
  {
-  "key": "school/my-classroom/my-classroom-age-2.webp",
-  "alt": "Illustrated classroom with a teacher by the blackboard, a library shelf, a toy shelf, a big circle rug, a desk and a green door",
-  "width": 1366,
-  "height": 768,
+  "key": "flashcards/toddler-learning-cards/first-concepts-18-24-months/05-open.webp",
+  "alt": "Open object demonstrating the concept open for toddlers",
+  "width": 1414,
+  "height": 2000,
   "format": "webp",
-  "bytes": 59124
+  "bytes": 69064
+ },
+ {
+  "key": "flashcards/toddler-learning-cards/first-concepts-18-24-months/06-closed.webp",
+  "alt": "Closed object demonstrating the concept closed for toddlers",
+  "width": 1414,
+  "height": 2000,
+  "format": "webp",
+  "bytes": 26762
+ },
+ {
+  "key": "flashcards/toddler-learning-cards/first-concepts-18-24-months/07-full.webp",
+  "alt": "Full container demonstrating the concept full for toddlers",
+  "width": 1414,
+  "height": 2000,
+  "format": "webp",
+  "bytes": 27910
+ },
+ {
+  "key": "flashcards/toddler-learning-cards/first-concepts-18-24-months/08-empty.webp",
+  "alt": "Empty container demonstrating the concept empty for toddlers",
+  "width": 1414,
+  "height": 2000,
+  "format": "webp",
+  "bytes": 21434
+ },
+ {
+  "key": "flashcards/toddler-learning-cards/first-concepts-18-24-months/09-one.webp",
+  "alt": "One object demonstrating the concept one for toddlers",
+  "width": 1414,
+  "height": 2000,
+  "format": "webp",
+  "bytes": 55242
+ },
+ {
+  "key": "flashcards/toddler-learning-cards/first-concepts-18-24-months/10-many.webp",
+  "alt": "Multiple objects demonstrating the concept many for toddlers",
+  "width": 1414,
+  "height": 2000,
+  "format": "webp",
+  "bytes": 67976
+ },
+ {
+  "key": "flashcards/toddler-learning-cards/first-concepts-18-24-months/11-in.webp",
+  "alt": "Object inside a container demonstrating the concept in for toddlers",
+  "width": 1414,
+  "height": 2000,
+  "format": "webp",
+  "bytes": 122114
+ },
+ {
+  "key": "flashcards/toddler-learning-cards/first-concepts-18-24-months/cover.webp",
+  "alt": "Cover of the First Concepts class for toddlers 18 to 24 months",
+  "width": 1414,
+  "height": 2000,
+  "format": "webp",
+  "bytes": 241106
+ },
+ {
+  "key": "flashcards/toddler-learning-cards/garden-bugs-and-friends-age-2/01-bee.webp",
+  "alt": "2D illustration of a friendly smiling bee",
+  "width": 1587,
+  "height": 2245,
+  "format": "webp",
+  "bytes": 76982
+ },
+ {
+  "key": "flashcards/toddler-learning-cards/garden-bugs-and-friends-age-2/02-butterfly.webp",
+  "alt": "2D illustration of an orange and black butterfly",
+  "width": 1587,
+  "height": 2245,
+  "format": "webp",
+  "bytes": 123844
+ },
+ {
+  "key": "flashcards/toddler-learning-cards/garden-bugs-and-friends-age-2/03-ladybug.webp",
+  "alt": "2D illustration of a red spotted ladybug",
+  "width": 1587,
+  "height": 2245,
+  "format": "webp",
+  "bytes": 84892
+ },
+ {
+  "key": "flashcards/toddler-learning-cards/garden-bugs-and-friends-age-2/04-snail.webp",
+  "alt": "2D illustration of a smiling snail with a brown shell",
+  "width": 1587,
+  "height": 2245,
+  "format": "webp",
+  "bytes": 85134
+ },
+ {
+  "key": "flashcards/toddler-learning-cards/garden-bugs-and-friends-age-2/05-ant.webp",
+  "alt": "2D illustration of a small black ant",
+  "width": 1414,
+  "height": 2000,
+  "format": "webp",
+  "bytes": 65292
+ },
+ {
+  "key": "flashcards/toddler-learning-cards/garden-bugs-and-friends-age-2/06-caterpillar.webp",
+  "alt": "2D illustration of a green caterpillar",
+  "width": 1414,
+  "height": 2000,
+  "format": "webp",
+  "bytes": 74966
+ },
+ {
+  "key": "flashcards/toddler-learning-cards/garden-bugs-and-friends-age-2/07-dragonfly.webp",
+  "alt": "2D illustration of a dragonfly with shiny wings",
+  "width": 1414,
+  "height": 2000,
+  "format": "webp",
+  "bytes": 79922
+ },
+ {
+  "key": "flashcards/toddler-learning-cards/garden-bugs-and-friends-age-2/08-grasshopper.webp",
+  "alt": "2D illustration of a green grasshopper ready to jump",
+  "width": 1414,
+  "height": 2000,
+  "format": "webp",
+  "bytes": 79690
+ },
+ {
+  "key": "flashcards/toddler-learning-cards/garden-bugs-and-friends-age-2/09-beetle.webp",
+  "alt": "2D illustration of a round shiny beetle",
+  "width": 1587,
+  "height": 2245,
+  "format": "webp",
+  "bytes": 77016
+ },
+ {
+  "key": "flashcards/toddler-learning-cards/garden-bugs-and-friends-age-2/10-spider.webp",
+  "alt": "2D illustration of a friendly spider",
+  "width": 1587,
+  "height": 2245,
+  "format": "webp",
+  "bytes": 78526
+ },
+ {
+  "key": "flashcards/toddler-learning-cards/garden-bugs-and-friends-age-2/11-moth.webp",
+  "alt": "2D illustration of a soft brown moth",
+  "width": 1587,
+  "height": 2245,
+  "format": "webp",
+  "bytes": 95578
+ },
+ {
+  "key": "flashcards/toddler-learning-cards/garden-bugs-and-friends-age-2/12-cricket.webp",
+  "alt": "2D illustration of a chirping cricket",
+  "width": 1587,
+  "height": 2245,
+  "format": "webp",
+  "bytes": 84746
+ },
+ {
+  "key": "flashcards/toddler-learning-cards/garden-bugs-and-friends-age-2/13-roly-poly.webp",
+  "alt": "2D illustration of a grey roly-poly pill bug",
+  "width": 1587,
+  "height": 2245,
+  "format": "webp",
+  "bytes": 76554
+ },
+ {
+  "key": "flashcards/toddler-learning-cards/garden-bugs-and-friends-age-2/14-firefly.webp",
+  "alt": "2D illustration of a glowing firefly",
+  "width": 1587,
+  "height": 2245,
+  "format": "webp",
+  "bytes": 83398
+ },
+ {
+  "key": "flashcards/toddler-learning-cards/garden-bugs-and-friends-age-2/15-praying-mantis.webp",
+  "alt": "2D illustration of a green praying mantis",
+  "width": 1587,
+  "height": 2245,
+  "format": "webp",
+  "bytes": 92236
+ },
+ {
+  "key": "flashcards/toddler-learning-cards/garden-bugs-and-friends-age-2/16-centipede.webp",
+  "alt": "2D illustration of a long centipede with many legs",
+  "width": 1587,
+  "height": 2245,
+  "format": "webp",
+  "bytes": 94296
+ },
+ {
+  "key": "flashcards/toddler-learning-cards/garden-bugs-and-friends-age-2/17-earthworm.webp",
+  "alt": "2D illustration of a pink earthworm",
+  "width": 1587,
+  "height": 2245,
+  "format": "webp",
+  "bytes": 77184
+ },
+ {
+  "key": "flashcards/toddler-learning-cards/garden-bugs-and-friends-age-2/18-bird.webp",
+  "alt": "2D illustration of a bluebird on a branch",
+  "width": 1587,
+  "height": 2245,
+  "format": "webp",
+  "bytes": 74386
+ },
+ {
+  "key": "flashcards/toddler-learning-cards/garden-bugs-and-friends-age-2/19-frog.webp",
+  "alt": "2D illustration of a green frog",
+  "width": 1587,
+  "height": 2245,
+  "format": "webp",
+  "bytes": 76662
+ },
+ {
+  "key": "flashcards/toddler-learning-cards/garden-bugs-and-friends-age-2/20-squirrel.webp",
+  "alt": "2D illustration of a squirrel with a fluffy tail",
+  "width": 1587,
+  "height": 2245,
+  "format": "webp",
+  "bytes": 94218
+ },
+ {
+  "key": "flashcards/toddler-learning-cards/garden-bugs-and-friends-age-2/cover.webp",
+  "alt": "Garden Bugs and Friends class for 2-year-olds at Kiddo School",
+  "width": 2000,
+  "height": 1294,
+  "format": "webp",
+  "bytes": 129326
+ },
+ {
+  "key": "flashcards/toddler-learning-cards/matching-and-sorting-age-2/learning-cards//01-same-balls.webp",
+  "alt": "Two matching red balls for a toddler same-and-match activity",
+  "width": 1414,
+  "height": 2000,
+  "format": "webp",
+  "bytes": 75082
+ },
+ {
+  "key": "flashcards/toddler-learning-cards/matching-and-sorting-age-2/learning-cards//02-same-apples.webp",
+  "alt": "Two matching red apples for a toddler matching activity",
+  "width": 1414,
+  "height": 2000,
+  "format": "webp",
+  "bytes": 130988
+ },
+ {
+  "key": "flashcards/toddler-learning-cards/matching-and-sorting-age-2/learning-cards//03-same-cups.webp",
+  "alt": "Two matching blue cups for a toddler matching activity",
+  "width": 1414,
+  "height": 2000,
+  "format": "webp",
+  "bytes": 55596
+ },
+ {
+  "key": "flashcards/toddler-learning-cards/matching-and-sorting-age-2/learning-cards//04-different-apple-banana.webp",
+  "alt": "Apple and banana for a toddler same-and-different activity",
+  "width": 1414,
+  "height": 2000,
+  "format": "webp",
+  "bytes": 119664
+ },
+ {
+  "key": "flashcards/toddler-learning-cards/matching-and-sorting-age-2/learning-cards//05-different-animals.webp",
+  "alt": "Cat and dog for a toddler same-and-different activity",
+  "width": 1414,
+  "height": 2000,
+  "format": "webp",
+  "bytes": 177628
+ },
+ {
+  "key": "flashcards/toddler-learning-cards/matching-and-sorting-age-2/learning-cards//06-different-shapes.webp",
+  "alt": "Circle and triangle for a toddler different-shapes activity",
+  "width": 1414,
+  "height": 2000,
+  "format": "webp",
+  "bytes": 39974
+ },
+ {
+  "key": "flashcards/toddler-learning-cards/matching-and-sorting-age-2/learning-cards//07-match-red.webp",
+  "alt": "Red color matching activity with visual choices",
+  "width": 1414,
+  "height": 2000,
+  "format": "webp",
+  "bytes": 78488
+ },
+ {
+  "key": "flashcards/toddler-learning-cards/matching-and-sorting-age-2/learning-cards//08-match-blue.webp",
+  "alt": "Blue color matching activity with visual choices",
+  "width": 1414,
+  "height": 2000,
+  "format": "webp",
+  "bytes": 32252
+ },
+ {
+  "key": "flashcards/toddler-learning-cards/matching-and-sorting-age-2/learning-cards//09-match-circle.webp",
+  "alt": "Circle matching activity with basic shape choices",
+  "width": 1414,
+  "height": 2000,
+  "format": "webp",
+  "bytes": 55658
+ },
+ {
+  "key": "flashcards/toddler-learning-cards/matching-and-sorting-age-2/learning-cards//10-match-triangle.webp",
+  "alt": "Triangle matching activity with basic shape choices",
+  "width": 1414,
+  "height": 2000,
+  "format": "webp",
+  "bytes": 43908
+ },
+ {
+  "key": "flashcards/toddler-learning-cards/matching-and-sorting-age-2/learning-cards//11-sort-by-color.webp",
+  "alt": "Red and blue objects for a toddler sorting-by-color activity",
+  "width": 1414,
+  "height": 2000,
+  "format": "webp",
+  "bytes": 104152
+ },
+ {
+  "key": "flashcards/toddler-learning-cards/matching-and-sorting-age-2/learning-cards//12-sort-by-shape.webp",
+  "alt": "Circles and squares for a toddler sorting-by-shape activity",
+  "width": 1414,
+  "height": 2000,
+  "format": "webp",
+  "bytes": 41642
+ },
+ {
+  "key": "flashcards/toddler-learning-cards/matching-and-sorting-age-2/learning-cards//13-fruit-together.webp",
+  "alt": "Apple, banana, car and shoe for a toddler grouping activity",
+  "width": 1414,
+  "height": 2000,
+  "format": "webp",
+  "bytes": 174546
+ },
+ {
+  "key": "flashcards/toddler-learning-cards/matching-and-sorting-age-2/learning-cards//14-animals-together.webp",
+  "alt": "Cat, dog, cup and ball for a toddler grouping activity",
+  "width": 1414,
+  "height": 2000,
+  "format": "webp",
+  "bytes": 166084
+ },
+ {
+  "key": "flashcards/toddler-learning-cards/matching-and-sorting-age-2/learning-cards//15-odd-one-out.webp",
+  "alt": "Three bananas and one apple for a toddler odd-one-out activity",
+  "width": 1414,
+  "height": 2000,
+  "format": "webp",
+  "bytes": 88532
+ },
+ {
+  "key": "flashcards/toddler-learning-cards/matching-and-sorting-age-2/learning-cards//cover.webp",
+  "alt": "Matching and Sorting class for 2-year-olds at Kiddo School",
+  "width": 1414,
+  "height": 2000,
+  "format": "webp",
+  "bytes": 140392
+ },
+ {
+  "key": "flashcards/toddler-learning-cards/vehicles-and-sounds-age-2/01-car.webp",
+  "alt": "Cartoon car learning card labeled Car with Beep beep",
+  "width": 2000,
+  "height": 1294,
+  "format": "webp",
+  "bytes": 152736
+ },
+ {
+  "key": "flashcards/toddler-learning-cards/vehicles-and-sounds-age-2/02-bus.webp",
+  "alt": "Cartoon bus learning card labeled Bus with Beep beep",
+  "width": 2000,
+  "height": 1294,
+  "format": "webp",
+  "bytes": 156954
+ },
+ {
+  "key": "flashcards/toddler-learning-cards/vehicles-and-sounds-age-2/03-truck.webp",
+  "alt": "Cartoon truck learning card labeled Truck with Rumble",
+  "width": 2000,
+  "height": 1294,
+  "format": "webp",
+  "bytes": 156894
+ },
+ {
+  "key": "flashcards/toddler-learning-cards/vehicles-and-sounds-age-2/04-fire-truck.webp",
+  "alt": "Cartoon fire truck learning card labeled Fire Truck with Nee-naw",
+  "width": 2000,
+  "height": 1294,
+  "format": "webp",
+  "bytes": 181874
+ },
+ {
+  "key": "flashcards/toddler-learning-cards/vehicles-and-sounds-age-2/05-ambulance.webp",
+  "alt": "Cartoon ambulance learning card labeled Ambulance with Nee-naw",
+  "width": 2000,
+  "height": 1294,
+  "format": "webp",
+  "bytes": 158428
+ },
+ {
+  "key": "flashcards/toddler-learning-cards/vehicles-and-sounds-age-2/06-police-car.webp",
+  "alt": "Cartoon police car learning card labeled Police Car with Woo-woo",
+  "width": 2000,
+  "height": 1294,
+  "format": "webp",
+  "bytes": 138674
+ },
+ {
+  "key": "flashcards/toddler-learning-cards/vehicles-and-sounds-age-2/07-motorcycle.webp",
+  "alt": "Cartoon motorcycle learning card labeled Motorcycle with Vroom",
+  "width": 2000,
+  "height": 1294,
+  "format": "webp",
+  "bytes": 148232
+ },
+ {
+  "key": "flashcards/toddler-learning-cards/vehicles-and-sounds-age-2/08-bicycle.webp",
+  "alt": "Cartoon bicycle learning card labeled Bicycle with Ring ring",
+  "width": 2000,
+  "height": 1294,
+  "format": "webp",
+  "bytes": 152514
+ },
+ {
+  "key": "flashcards/toddler-learning-cards/vehicles-and-sounds-age-2/09-train.webp",
+  "alt": "Cartoon train learning card labeled Train with Choo choo",
+  "width": 2000,
+  "height": 1294,
+  "format": "webp",
+  "bytes": 158758
+ },
+ {
+  "key": "flashcards/toddler-learning-cards/vehicles-and-sounds-age-2/10-tractor.webp",
+  "alt": "Cartoon tractor learning card labeled Tractor with Rumble",
+  "width": 2000,
+  "height": 1294,
+  "format": "webp",
+  "bytes": 139308
+ },
+ {
+  "key": "flashcards/toddler-learning-cards/vehicles-and-sounds-age-2/11-excavator.webp",
+  "alt": "Cartoon excavator learning card labeled Excavator with Dig dig",
+  "width": 2000,
+  "height": 1294,
+  "format": "webp",
+  "bytes": 155540
+ },
+ {
+  "key": "flashcards/toddler-learning-cards/vehicles-and-sounds-age-2/12-dump-truck.webp",
+  "alt": "Cartoon dump truck learning card labeled Dump Truck with Rumble",
+  "width": 2000,
+  "height": 1294,
+  "format": "webp",
+  "bytes": 159838
+ },
+ {
+  "key": "flashcards/toddler-learning-cards/vehicles-and-sounds-age-2/13-airplane.webp",
+  "alt": "Cartoon airplane learning card labeled Airplane with Whoosh",
+  "width": 2000,
+  "height": 1294,
+  "format": "webp",
+  "bytes": 119560
+ },
+ {
+  "key": "flashcards/toddler-learning-cards/vehicles-and-sounds-age-2/14-helicopter.webp",
+  "alt": "Cartoon helicopter learning card labeled Helicopter with Whirr",
+  "width": 2000,
+  "height": 1294,
+  "format": "webp",
+  "bytes": 136160
+ },
+ {
+  "key": "flashcards/toddler-learning-cards/vehicles-and-sounds-age-2/15-boat.webp",
+  "alt": "Cartoon boat learning card labeled Boat with Splash",
+  "width": 2000,
+  "height": 1294,
+  "format": "webp",
+  "bytes": 102480
+ },
+ {
+  "key": "flashcards/toddler-learning-cards/vehicles-and-sounds-age-2/16-ship.webp",
+  "alt": "Cartoon ship learning card labeled Ship with Toot toot",
+  "width": 2000,
+  "height": 1294,
+  "format": "webp",
+  "bytes": 121538
+ },
+ {
+  "key": "flashcards/toddler-learning-cards/vehicles-and-sounds-age-2/17-rocket.webp",
+  "alt": "Cartoon rocket learning card labeled Rocket with Whoosh",
+  "width": 2000,
+  "height": 1294,
+  "format": "webp",
+  "bytes": 89770
+ },
+ {
+  "key": "flashcards/toddler-learning-cards/vehicles-and-sounds-age-2/18-taxi.webp",
+  "alt": "Cartoon taxi learning card labeled Taxi with Beep beep",
+  "width": 2000,
+  "height": 1294,
+  "format": "webp",
+  "bytes": 147608
+ },
+ {
+  "key": "flashcards/toddler-learning-cards/vehicles-and-sounds-age-2/19-van.webp",
+  "alt": "Cartoon van learning card labeled Van with Vroom",
+  "width": 2000,
+  "height": 1294,
+  "format": "webp",
+  "bytes": 135722
+ },
+ {
+  "key": "flashcards/toddler-learning-cards/vehicles-and-sounds-age-2/20-scooter.webp",
+  "alt": "Kick scooter learning card labeled Scooter with Zoom",
+  "width": 2000,
+  "height": 1294,
+  "format": "webp",
+  "bytes": 99958
+ },
+ {
+  "key": "flashcards/toddler-learning-cards/vehicles-and-sounds-age-2/cover.webp",
+  "alt": "Vehicles and Sounds class for 2-year-olds at Kiddo School",
+  "width": 2000,
+  "height": 1294,
+  "format": "webp",
+  "bytes": 188588
  },
  {
   "key": "school/art-wall/starter-art/01-family.webp",
@@ -2126,5 +2286,13 @@
   "height": 2245,
   "format": "webp",
   "bytes": 391080
+ },
+ {
+  "key": "school/my-classroom/my-classroom-age-2.webp",
+  "alt": "Illustrated classroom with a teacher by the blackboard, a library shelf, a toy shelf, a big circle rug, a desk and a green door",
+  "width": 1366,
+  "height": 768,
+  "format": "webp",
+  "bytes": 59124
  }
 ]

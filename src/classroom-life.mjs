@@ -281,6 +281,10 @@ export function stickyWallBody(W){
   <p class="wall-examples-label">${W.examplesLabel}</p>
   <ul class="wall-notes">${notes}</ul>
  </div>
+ <div class="wall-board" data-wall-family-wrap hidden>
+  <p class="wall-examples-label">From our families</p>
+  <ul class="wall-notes" data-wall-family></ul>
+ </div>
  <div class="wall-formwrap" id="add-a-note">
   <h2>${W.form.heading}</h2>
   <p class="fc-hint" data-wall-nojs>Sending a note needs JavaScript.</p>
@@ -293,6 +297,7 @@ export function stickyWallBody(W){
    <textarea id="wall-message" name="message" maxlength="120" rows="3" required></textarea>
    <p class="fc-hint wall-count" data-wall-count aria-live="polite">120 ${W.form.counter}</p>
    <label class="wall-confirm"><input type="checkbox" name="confirm" required> ${W.form.confirm}</label>
+   <p class="wall-hp" aria-hidden="true"><label for="wall-company">Company</label><input id="wall-company" name="company" type="text" tabindex="-1" autocomplete="off"></p>
    <p class="mw-live" data-wall-live aria-live="polite"></p>
    <button type="button" class="button" data-wall-send>${W.form.send}</button>
   </form>

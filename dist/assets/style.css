@@ -642,3 +642,45 @@ h1,h2,h3,.brand,.bean-links strong{font-family:var(--kid-font);letter-spacing:0}
  .po-form{padding:22px 18px 28px}
  .po-actions .button{width:100%}
 }
+
+/* ---- Family feedback: four-reaction review + approved comments (cm-) ---- */
+.cm .cm-reactions{display:flex;flex-wrap:wrap;gap:12px;margin:18px 0 6px}
+.cm-btn{display:flex;flex-direction:column;align-items:center;gap:6px;padding:16px 20px;border:1.5px solid var(--line,#d9d2c0);border-radius:14px;background:#fff;font:inherit;font-size:15px;cursor:pointer;min-width:118px;color:inherit;transition:transform .12s ease,border-color .12s ease}
+.cm-btn .cm-emoji{font-size:28px;line-height:1}
+.cm-btn:hover,.cm-btn:focus-visible{border-color:var(--sage,#5b7a63);outline:3px solid rgba(91,122,99,.35);outline-offset:2px}
+.cm-btn[aria-pressed="true"]{border-color:var(--sage,#5b7a63);background:#eef3ee;transform:translateY(-2px)}
+.cm-form{margin:16px 0 8px;padding:20px;border:1px solid var(--line,#d9d2c0);border-radius:14px;background:#fffdf7;max-width:620px}
+.cm-form label{display:block;font-weight:600;margin:14px 0 6px}
+.cm-form textarea,.cm-form input[type="text"]{width:100%;padding:10px 12px;border:1px solid var(--line,#d9d2c0);border-radius:10px;font:inherit;background:#fff}
+.cm-optional{font-weight:400;font-style:italic;color:#6b6553;font-size:14px}
+.cm-confirm{display:flex;gap:10px;align-items:flex-start;font-weight:400!important;font-size:15px;margin-top:16px}
+.cm-confirm input{width:20px;height:20px;margin-top:2px;flex:none}
+.cm-status{min-height:1.4em;font-style:italic;color:#4c5b3c}
+.cm-form .button{margin-top:6px}
+.cm-chosen{font-style:italic;color:#4c5b3c;margin:0 0 4px}
+.cm-comments{margin-top:26px}
+.cm-comments h3{margin-bottom:10px}
+.cm-list{list-style:none;padding:0;margin:0;display:grid;gap:12px}
+.cm-comment{background:#fff;border:1px solid var(--line,#d9d2c0);border-radius:12px;padding:14px 18px}
+.cm-comment .cm-who{font-size:14px;font-weight:700;color:#4c5b3c;margin:0}
+.cm-comment .cm-text{margin:6px 0 0;overflow-wrap:anywhere}
+.cm-family .cm-empty{font-style:italic;color:#6b6553}
+/* honeypot fields are removed from view and from the tab order, but stay
+   real inputs so naive bots still fill them */
+.po-hp,.wall-hp,.aw-hp{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+/* ---- Sticky Note Wall: approved family notes ---------------------------- */
+.wall-note-family{background:#fff8e0}
+.wall-note .wall-name{display:block;margin-top:6px;font-size:14px;color:#6b6553;font-style:italic}
+/* ---- Art Wall: submission form + approved family artwork ---------------- */
+.aw-form{margin:18px 0;padding:22px;border:1px solid var(--line,#d9d2c0);border-radius:14px;background:#fffdf7;max-width:620px}
+.aw-form .aw-field{display:block;margin:14px 0}
+.aw-form .aw-field input[type="text"]{display:block;width:100%;margin-top:6px;padding:10px 12px;border:1px solid var(--line,#d9d2c0);border-radius:10px;font:inherit;background:#fff}
+.aw-form .aw-field input[type="file"]{display:block;margin-top:6px;font:inherit}
+.aw-confirm{display:flex;gap:10px;align-items:flex-start;font-size:15px;margin-top:16px}
+.aw-confirm input{width:20px;height:20px;margin-top:2px;flex:none}
+.aw-status{min-height:1.4em;font-style:italic;color:#4c5b3c}
+.aw-piece-family .aw-family-meta{font-size:14px;color:#6b6553;font-style:italic;margin:8px 0 0;text-align:center}
+@media (max-width:640px){
+ .cm-btn{flex:1 1 40%;min-width:0}
+ .cm-form,.aw-form{padding:16px}
+}

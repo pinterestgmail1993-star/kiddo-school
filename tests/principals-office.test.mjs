@@ -26,32 +26,34 @@ test('principal office: exact SEO title, one H1, discoverable from the classroom
 });
 
 test('the form offers exactly the six categories and requires only the two message fields',()=>{
- for(const c of ['Question','Request','Feedback','Suggestion','Complaint','Technical Problem']){
+ // Categories are stored as their API values and shown with their friendly labels
+ for(const c of ['question','request','feedback','suggestion','complaint','technical_problem']){
   assert.ok(html.includes(`value="${c}"`),c);
+ }
+ for(const label of ['Question','Request','Feedback','Suggestion','Complaint','Technical Problem']){
+  assert.ok(html.includes('>'+label+'</label>'),label);
  }
  assert.match(html,/for="po-subject"[^]*What is this about\?/);
  assert.match(html,/id="po-subject" name="po-subject" required/);
  assert.match(html,/id="po-message" name="po-message" rows="6" required/);
- // Parent name is optional; there is no email field at all (no backend, so no
- // replies are possible and nothing may be collected for them)
+ // Parent name stays optional; email is OPTIONAL and used only if a reply is wanted
  assert.match(html,/Parent name <span class="po-opt">Optional</);
- assert.ok(!/type="email"/.test(html));
- assert.ok(!/po-email/.test(html));
+ assert.match(html,/id="po-email" name="po-email" maxlength="200"/);
+ assert.match(html,/only if you&rsquo;d like a reply/);
 });
 
-test('the form is honest: no fake sending, no success message, no data leaving the browser',()=>{
- // The offline notice is visible in the static page, before anyone types
- assert.match(html,/The mailbox isn&rsquo;t connected yet\./);
- assert.match(html,/can&rsquo;t send or store anything/);
- // Submitting states the truth and never pretends success
+test('the form is honest about the real backend: success only after the server confirms',()=>{
+ // The static page describes the real destination — the Principal's private records
+ assert.match(html,/goes straight to the Principal/);
+ assert.match(html,/never published on the site/);
+ // The client POSTs to the real API and claims success ONLY on a server ok
  assert.match(js,/preventDefault/);
- assert.match(js,/couldn\\u2019t be sent/);
- assert.doesNotMatch(js,/has been sent|was sent successfully|thanks/i);
- assert.doesNotMatch(html,/Thanks\. Your message has been sent/);
- // No network, no storage: nothing typed leaves the browser
- assert.ok(!js.includes('fetch(')&&!js.includes('XMLHttpRequest'));
- assert.ok(!js.includes('localStorage')&&!js.includes('sessionStorage')&&!js.includes('document.cookie'));
- // No form handler exists anywhere in the build (static site)
+ assert.match(js,/\/api\/community\/principal/);
+ assert.match(js,/has been sent to the Principal/);
+ assert.match(js,/We couldn\\u2019t send that\. Please try again\./,'honest failure message');
+ // No offline-only faking remains, and no storage is used client-side
+ assert.doesNotMatch(js,/localStorage|sessionStorage|document\.cookie/);
+ // The form still posts nowhere itself — the JS is the only sender
  assert.ok(!/action="https?:/.test(html));
 });
 
@@ -59,6 +61,6 @@ test('child privacy: the form is for grown-ups and says so, twice, in the right 
  assert.equal((html.match(/Please don&rsquo;t include private information about your child\./g)||[]).length,1);
  assert.match(html,/doesn&rsquo;t ask for a child&rsquo;s name, age or anything else about a child/);
  // Complaints never become public content
- assert.match(html,/never published|never public/i);
- assert.match(html,/only to the Principal/i);
+ assert.match(html,/never published, never quoted/);
+ assert.match(html,/only the Principal reads them|Only the Principal reads it/);
 });

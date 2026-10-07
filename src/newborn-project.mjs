@@ -1,7 +1,7 @@
 import {lessons,lessonStageCard} from './lessons.mjs';
 import {helloSchool} from './circle-time.mjs';
 export const newbornBase='https://pub-f2fcb7c9b45a496cbeefef18dbba0ec0.r2.dev/flashcards/black-and-white-baby-cards/';
-export const [hcLesson,fvLesson,cfoLesson,fwftLesson,aeoLesson,fabLesson,fwfhLesson,fcLesson,csLesson,msLesson,anLesson,vhLesson,emLesson]=lessons;
+export const [hcLesson,fvLesson,cfoLesson,fwftLesson,aeoLesson,fabLesson,fwfhLesson,fcLesson,csLesson,msLesson,anLesson,vhLesson,emLesson,gbLesson]=lessons;
 export function babyBody(){
  return `<section class="wrap section compact"><p class="lesson-lede">Kiddo.school began as hands-on activities for curious kids. It is growing into a whole school for parents: tiny, calm classes you can do at home in two to five minutes, sequenced from birth onward. Every class shows the exact age, the class name and the subjects it supports, so you always know what your little one is working on — and what comes next.</p>
  <div class="fc-stages">
@@ -61,6 +61,8 @@ export function toddlerBody(){
  <div class="fc-stages">${lessonStageCard(vhLesson,'Lesson 12','Talk &amp; Explore')}</div>
  <h2 class="lesson-classheading">Toddler 7 · Age 2</h2>
  <div class="fc-stages">${lessonStageCard(emLesson,'Lesson 13','Talk &amp; Connect')}</div>
+ <h2 class="lesson-classheading">Toddler 8 · Age 2</h2>
+ <div class="fc-stages">${lessonStageCard(gbLesson,'Lesson 14','Nature &amp; Talk')}</div>
  <h2 class="lesson-classheading">Circle Time · Age 2</h2>
  <div class="fc-stages">${lessonStageCard(helloSchool,'Circle Time 1','Age 2')}</div>
  <h2 class="lesson-classheading">My Classroom · Age 2</h2>

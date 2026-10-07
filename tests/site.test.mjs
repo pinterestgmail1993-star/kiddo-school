@@ -8,8 +8,8 @@ const htmlFiles=files(root).filter(f=>f.endsWith('.html'));
 const activities=JSON.parse(readFileSync('data/activities.json','utf8'));
 const info=JSON.parse(readFileSync('dist/build-info.json','utf8'));
 const read=f=>readFileSync(f,'utf8');
-test('139 HTML pages, eleven permanent activity routes and activity sheets',()=>{
- assert.equal(htmlFiles.length,139);assert.equal(activities.length,11);
+test('142 HTML pages, eleven permanent activity routes and activity sheets',()=>{
+ assert.equal(htmlFiles.length,142);assert.equal(activities.length,11);
  for(const a of activities){assert.ok(existsSync(`dist/${a.subject}/${a.slug}/index.html`));assert.ok(existsSync(`dist/downloads/${a.slug}.svg`));assert.ok(a.steps.length>=5);assert.ok(a.safety.length>50);}
 });
 test('every local link, image, stylesheet, script and fragment resolves',()=>{
@@ -40,15 +40,20 @@ test('unique descriptive metadata, one heading, valid structured data, and absol
 });
 test('sitemap includes all indexable pages and excludes search and errors',()=>{
  const xml=read('dist/sitemap.xml');const links=[...xml.matchAll(/<loc>(.*?)<\/loc>/g)].map(m=>m[1]);
- assert.equal(links.length,133);assert.equal(new Set(links).size,133);
+ assert.equal(links.length,135);assert.equal(new Set(links).size,135);
  for(const link of links){const u=new URL(link);assert.equal(u.origin,info.siteUrl);assert.ok(existsSync(join(root,u.pathname,'index.html')));assert.ok(!u.pathname.includes('search'));}
+ assert.ok(!links.some(l=>l.includes('/admin')||l.includes('/api/')),'no admin or API routes in sitemap');
+ assert.ok(links.includes(info.siteUrl+'/school-community/'),'school community is indexable');
+ assert.ok(!links.includes(info.siteUrl+'/toddler/2-years/garden-bugs-and-friends/print/'),'print view stays out of the sitemap');
 });
 test('preview safeguards, no missing content, and static-only runtime',()=>{
  if(!info.indexable){assert.match(read('dist/robots.txt'),/Disallow: \//);assert.match(read('dist/_headers'),/X-Robots-Tag: noindex/);for(const file of htmlFiles)assert.match(read(file),/content="noindex,follow"/);}
  else{assert.match(read('dist/robots.txt'),/Allow: \//);assert.match(read('dist/index.html'),/content="index,follow"/);}
  for(const file of htmlFiles){assert.doesNotMatch(read(file),/TODO|lorem ipsum|Activity preview|AdSense approved|testimonial/i);
   // Emoji are banned in copy, EXCEPT the two Circle Time rhythm glyphs (👏 U+1F44F, 👋 U+1F44B)
-  // that the Hello School! spec explicitly requires as the visual beat.
-  assert.doesNotMatch(read(file),/[\u{1F300}-\u{1F44A}\u{1F44C}-\u{1F44E}\u{1F450}-\u{1FAFF}]/u);}
+  // that the Hello School! spec requires, and the FOUR family-feedback reaction emoji
+  // (😍 U+1F60D, 😊 U+1F60A, 😐 U+1F610, 😕 U+1F615) whose accessible labels are the
+  // real control names — the emoji are never the only label. All other emoji stay banned.
+  assert.doesNotMatch(read(file),/[\u{1F300}-\u{1F44A}\u{1F44C}-\u{1F44E}\u{1F450}-\u{1F609}\u{1F60B}-\u{1F60C}\u{1F60E}-\u{1F60F}\u{1F611}-\u{1F614}\u{1F616}-\u{1FAFF}]/u);}
  const js=read('dist/assets/site.js');assert.doesNotMatch(js,/fetch\(|localStorage|sessionStorage|document.cookie/);
 });
