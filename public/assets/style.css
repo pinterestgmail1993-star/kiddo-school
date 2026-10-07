@@ -331,3 +331,68 @@ h1,h2,h3,.brand,.bean-links strong{font-family:var(--kid-font);letter-spacing:0}
  .aw-piece{padding:7px 7px 10px}
 }
 @media (max-width:380px){.aw-wall{grid-template-columns:1fr;max-width:340px;margin-inline:auto}}
+
+/* My Classroom: two more hotspots, aligned to what the classroom picture
+   already shows — the pinned-up drawings (the art wall) and the wall calendar. */
+.mc-hot-artwall{left:77%;top:24%}
+.mc-hot-calendar{left:85%;top:49%}
+
+/* School Calendar (/school-calendar/): a gentle weekly rhythm. All dates are
+   filled locally by calendar.js; without JS the rhythm rows still work. */
+.sc-today{background:var(--white);border:1.5px solid var(--ink);box-shadow:5px 5px 0 rgba(52,59,48,.14);padding:30px 34px 34px}
+.sc-today h2{font-size:clamp(30px,4vw,40px)}
+.sc-date-line{font-family:var(--serif);font-size:21px;margin-top:8px;color:var(--ink)}
+.sc-today-plain{margin-top:10px;max-width:60ch}
+.sc-plan-line{margin-top:16px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.sc-plan-line .text-link{font-weight:700}
+.sc-nearby{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.sc-near-chip{border:1.5px dashed var(--line);background:var(--paper);padding:9px 14px;font-size:13px;display:inline-flex;gap:8px;align-items:baseline}
+.sc-near-chip strong{letter-spacing:.4px}
+.sc-near-now{border:1.5px solid var(--ink);background:var(--sage)}
+.sc-live{margin-top:12px;font-size:13px;min-height:1em}
+.sc-week-lede{max-width:70ch;margin-top:10px}
+.sc-weeknav{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:24px 0 2px}
+.sc-weeklabel{font-family:var(--serif);font-size:19px;min-width:200px;text-align:center}
+.sc-week{list-style:none;margin:16px 0 0;padding:0;display:grid;gap:14px}
+.sc-day{display:grid;grid-template-columns:190px minmax(0,1fr);gap:10px 26px;background:var(--white);border:1.5px solid var(--line);padding:18px 22px 20px}
+.sc-day.is-today{border:1.5px solid var(--ink);background:var(--sage);box-shadow:4px 4px 0 rgba(52,59,48,.14)}
+.sc-when{display:flex;flex-direction:column;gap:3px}
+.sc-dayname{font-weight:900;font-size:17px;letter-spacing:.2px}
+.sc-date{font-size:13px;color:var(--muted)}
+.sc-theme{display:inline-block;width:max-content;font-size:10.5px;font-weight:900;letter-spacing:1.6px;text-transform:uppercase;border:1.5px solid var(--ink);background:var(--yellow);padding:4px 9px}
+.sc-day .sc-plan p{margin-top:9px;max-width:65ch}
+.sc-day .text-link{display:inline-block;margin-top:9px;font-weight:700}
+.sc-missed{margin-top:32px}
+@media (max-width:700px){
+ .sc-day{grid-template-columns:1fr;gap:7px;padding:16px 16px 18px}
+ .sc-today{padding:24px 18px 28px}
+ .sc-weeknav{gap:10px}
+ .sc-weeknav .button{flex:1;min-width:0}
+ .sc-weeklabel{min-width:0;flex-basis:100%;order:-1;text-align:left}
+}
+
+/* Principal's Office (/principals-office/): a grown-ups' note box. The form is
+   honest about the fact that no backend exists — nothing is sent or stored. */
+.po-room{display:grid;gap:26px}
+.po-form{background:var(--white);border:1.5px solid var(--ink);box-shadow:5px 5px 0 rgba(52,59,48,.14);padding:30px 34px 34px}
+.po-offline{border:1.5px dashed var(--ink);background:var(--paper);padding:14px 16px;font-size:14px;margin:0 0 24px}
+.po-cats{border:0;padding:0;margin:0}
+.po-cats legend{font-weight:900;font-size:14px;letter-spacing:.3px;padding:0}
+.po-cat{display:inline-flex;align-items:center;gap:7px;margin:10px 16px 0 0}
+.po-cat input{width:17px;height:17px;accent-color:#81543e;flex:none}
+.po-cat label{font-size:14px;font-weight:700;cursor:pointer}
+.po-field{display:grid;gap:8px;font-weight:900;font-size:14px;margin-top:20px}
+.po-req,.po-opt{font-size:10px;font-weight:700;letter-spacing:1.1px;text-transform:uppercase;color:var(--muted);font-family:Arial,Helvetica,sans-serif}
+.po-field input,.po-field textarea{border:1.5px solid var(--line);background:var(--white);padding:12px 14px;font-size:16px;width:100%}
+.po-field input::placeholder,.po-field textarea::placeholder{color:#9a9b8c}
+.po-field textarea{resize:vertical;min-height:130px}
+.po-privacy{margin:22px 0 0;font-size:14px;border-top:1.5px dashed var(--line);padding-top:16px}
+.po-actions{margin-top:22px;display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.po-status{font-size:14px;font-weight:700;margin:0}
+.po-rules{list-style:none;padding:0;margin:16px 0 0;display:grid;gap:14px;max-width:820px}
+.po-rules li{background:var(--white);border:1.5px solid var(--line);padding:16px 20px}
+.po-rules li p{margin-top:6px}
+@media (max-width:700px){
+ .po-form{padding:22px 18px 28px}
+ .po-actions .button{width:100%}
+}

@@ -130,7 +130,9 @@ export function myClassroomBody(){
   <nav class="mc-hotspots" aria-label="Places in the classroom">
    ${hot('mc-hot-board','Today’s class','/learning-path/')}
    ${hot('mc-hot-library','Library','/flashcards/')}
-   ${hot('mc-hot-principal','Principal','/about/#principal')}
+   ${hot('mc-hot-artwall','Art Wall','/art-wall/')}
+   ${hot('mc-hot-principal','Principal','/principals-office/')}
+   ${hot('mc-hot-calendar','Calendar','/school-calendar/')}
    ${hot('mc-hot-door','Let’s explore','/activities/')}
    ${hot('mc-hot-rug','Circle Time','#circle-time')}
   </nav>
@@ -146,6 +148,12 @@ export function myClassroomBody(){
   <h2>Our Art Wall</h2>
   <p>The classroom wall where the drawings go. Eleven starter pieces are pinned up — come and look, then make something for the wall at home.</p>
   <div class="hero-actions"><a class="button button-ghost" href="/art-wall/">Visit the Art Wall <span aria-hidden="true">↗</span></a></div>
+ </div>
+ <div class="mc-panel">
+  <span class="eyebrow">ON THE WALL · CALENDAR</span>
+  <h2>School Calendar</h2>
+  <p>A gentle rhythm for the week — one small, real idea for each day, from Monday’s class to Sunday’s slow together day. Miss a day? Pick up whenever you’re ready.</p>
+  <div class="hero-actions"><a class="button button-ghost" href="/school-calendar/">Open the calendar <span aria-hidden="true">↗</span></a></div>
  </div>
  </section>`;
 }
