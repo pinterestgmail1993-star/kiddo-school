@@ -1096,6 +1096,139 @@ export const gbLesson={
  schema:{resourceType:'Interactive toddler class',level:'Toddler (age 2)',teaches:'Garden creature names — bee, butterfly, ladybug, snail and more — through looking, naming, matching and moving together',audience:'Parents of toddlers',keywords:'garden bugs for 2 year olds, insect activities for toddlers, bug flashcards for toddlers, bug activities for 2 year olds, nature activities for toddlers, teaching bugs to toddlers, printable bug cards, garden animals for toddlers'}
 };
 export const lessons=[hcLesson,fvLesson,cfoLesson,fwftLesson,aeoLesson,fabLesson,fwfhLesson,fcLesson,csLesson,msLesson,anLesson,vhLesson,emLesson,gbLesson];
+// School Garden collection — Garden Animals & Friends (Age 2). This is NOT a
+// numbered Learning Path lesson: it lives in the School Garden alongside the
+// real garden collections and is exported separately on purpose. SEO copy
+// uses natural parent-search wording (garden animals, animals for toddlers) —
+// "Garden Friends" is the collection's inside name, not a phrase to force.
+// There is NO cover image in the R2 folder (verified 404) and none is claimed.
+export const gfLesson={
+ path:'/toddler/2-years/school-garden/garden-friends/',
+ seoTitle:'Garden Animals for Toddlers | Picture Cards & Activities',
+ title:'Garden Animals for Toddlers | Picture Cards & Activities',
+ h1:'Garden Animals & Friends',
+ description:'Help your toddler learn garden and outdoor animals with picture cards, simple animal vocabulary games and playful nature activities.',
+ ogAlt:'Garden animals picture cards for toddlers from Kiddo School',
+ ogImage:toddlerBase+'garden-friends-age-2/01-bird.webp',
+ schemaImage:toddlerBase+'garden-friends-age-2/01-bird.webp',
+ eyebrow:'SCHOOL GARDEN · GARDEN FRIENDS',
+ crumbs:[['Toddler','/toddler/'],['Age 2','/toddler/2-years/'],['School Garden','/toddler/2-years/school-garden/'],['Garden Animals & Friends']],
+ chips:[['Age','2 Years'],['Subject','Nature &amp; Talk'],['Class','School Garden'],['Duration','3–5 minutes']],
+ subject:'Nature &amp; Talk',
+ ledes:['A bird in the hedge, a worm after the rain, an owl you might only hear — meet the animals that live around gardens and the great outdoors, one big picture at a time.',
+  'Nothing to prepare and nothing to read to your toddler. You say the name, they point or hop — a moment on a card counts, and the real outdoors can wait for your next walk.'],
+ startHint:'Start with the bird — the easiest friend to spot from a window.',
+ startLabel:'Start the Class',
+ folder:'garden-friends-age-2/',
+ r2Base:toddlerBase,
+ eagerFirst:false,
+ cover:null,
+ cards:[
+  {order:1,file:'01-bird.webp',name:'Bird',phrase:'Tweet, tweet!',w:1414,h:2000,alt:'Bird picture card for toddlers'},
+  {order:2,file:'02-frog.webp',name:'Frog',phrase:'Ribbit, ribbit!',w:1414,h:2000,alt:'Frog picture card for toddlers'},
+  {order:3,file:'03-squirrel.webp',name:'Squirrel',phrase:'Twitchy tail!',w:1414,h:2000,alt:'Squirrel picture card for toddlers'},
+  {order:4,file:'04-rabbit.webp',name:'Rabbit',phrase:'Big ears, quick hops!',w:1414,h:2000,alt:'Rabbit picture card for toddlers'},
+  {order:5,file:'05-hedgehog.webp',name:'Hedgehog',phrase:'Prickly little friend!',w:1414,h:2000,alt:'Hedgehog picture card for toddlers'},
+  {order:6,file:'06-worm.webp',name:'Worm',phrase:'Wiggle, wiggle!',w:1414,h:2000,alt:'Worm picture card for toddlers'},
+  {order:7,file:'07-duck.webp',name:'Duck',phrase:'Quack, quack!',w:1414,h:2000,alt:'Duck picture card for toddlers'},
+  {order:8,file:'08-turtle.webp',name:'Turtle',phrase:'Slow and steady.',w:1414,h:2000,alt:'Turtle picture card for toddlers'},
+  {order:9,file:'09-mouse.webp',name:'Mouse',phrase:'Squeak, squeak!',w:1414,h:2000,alt:'Mouse picture card for toddlers'},
+  {order:10,file:'10-mole.webp',name:'Mole',phrase:'Dig, dig, dig!',w:1414,h:2000,alt:'Mole picture card for toddlers'},
+  {order:11,file:'11-lizard.webp',name:'Lizard',phrase:'Sunning on a rock.',w:1414,h:2000,alt:'Lizard picture card for toddlers'},
+  {order:12,file:'12-toad.webp',name:'Toad',phrase:'A bumpy little hopper.',w:1414,h:2000,alt:'Toad picture card for toddlers'},
+  {order:13,file:'13-chipmunk.webp',name:'Chipmunk',phrase:'Cheeks full of snacks!',w:1414,h:2000,alt:'Chipmunk picture card for toddlers'},
+  {order:14,file:'14-raccoon.webp',name:'Raccoon',phrase:'Clever little paws!',w:1414,h:2000,alt:'Raccoon picture card for toddlers'},
+  {order:15,file:'15-deer.webp',name:'Deer',phrase:'Quiet in the woods.',w:1414,h:2000,alt:'Deer picture card for toddlers'},
+  {order:16,file:'16-snake.webp',name:'Snake',phrase:'A long, slow slither.',w:1414,h:2000,alt:'Snake picture card for toddlers'},
+  {order:17,file:'17-bat.webp',name:'Bat',phrase:'A night-time flyer.',w:1414,h:2000,alt:'Bat picture card for toddlers'},
+  {order:18,file:'18-owl.webp',name:'Owl',phrase:'Whooo is awake at night?',w:1414,h:2000,alt:'Owl picture card for toddlers'}
+ ],
+ interactive:{
+  flow:{intro:'Ten little steps, in order: a welcome from your teacher, all eighteen garden friends, two gentle games, a look-don’t-touch outdoors hunt, cards to print, a note from your teacher and one last check-in from you. Stop after any step — that is a complete class.',
+   steps:[['1','Teacher welcome'],['2','Meet the garden friends'],['3','Find the animal'],['4','Who am I?'],['5','Where might we see it?'],['6','Take it off screen'],['7','Print the cards'],['8','Teacher note'],['9','Parent review'],['10','Class complete']],
+   beginHref:'#meet-the-garden-friends',beginLabel:'Meet the garden friends',beginHint:'Cards work best up close — toddler on your lap.'},
+  teacher:{welcome:'Let’s meet some animals we might see around gardens and outdoors!',note:'A duck on the pond, a bird in the hedge — every walk becomes a naming game. You do not need a garden; a window and a little patience will do.'},
+  principal:{note:'Your toddler does not need every animal name to stick. Saying words while they look and hop is the whole lesson — the vocabulary rides along, and no garden is required. Some of these friends live in gardens, some only visit, and some live in the wider outdoors — all of that is fine to wonder about together.'},
+  complete:{heading:'Class complete!',copy:'From the twitchy squirrel to the owl you may only ever hear — what a little tour of the outdoors.'},
+  offScreen:{heading:'A look-don’t-touch nature hunt.',copy:'Take the names outside — or to a window, a book or a video if the outdoors is far away. Wild animals are looked at, never touched, chased or fed.',groups:[
+   {title:'Try one today',items:[
+    'Spot a bird from the window and say its name together.',
+    'Watch a squirrel’s tail twitch in the park.',
+    'After rain, look for a worm on the path — look with your eyes, then walk on by.',
+    'At dusk, look up and search for bats — pointing and whispering is plenty.',
+    'Hop like a frog and wiggle like a worm yourselves — the safest animals to touch are you two.'
+   ]}
+  ],note:'Never feed wild animals, never touch or pick up an unknown animal, and never follow one for a closer look. A grown-up stays close the whole time — one spotted friend is a complete hunt.'},
+  sections:[
+   {type:'learn',id:'meet-the-garden-friends',eyebrow:'LEARN · MEET THE GARDEN FRIENDS',heading:'Meet the garden friends.',copy:'Eighteen big picture cards, one at a time. Say the name clearly, make the sound together, and let your toddler point, giggle or move along.',label:'the garden friends',items:[
+    {file:'01-bird.webp',say:'A feathered friend with a song.',find:'Can you flap your wings?'},
+    {file:'02-frog.webp',say:'Sits by the pond and hops high.',find:'Can you hop like a frog?'},
+    {file:'03-squirrel.webp',say:'A bushy tail and quick little feet.',find:'Can you twitch your squirrel tail?'},
+    {file:'04-rabbit.webp',say:'Long ears that listen for you.',find:'Can you hop two times?'},
+    {file:'05-hedgehog.webp',say:'A tiny friend with prickly spikes.',find:'Can you curl up small?'},
+    {file:'06-worm.webp',say:'Wiggles through the garden soil.',find:'Can you wiggle like a worm?'},
+    {file:'07-duck.webp',say:'Paddles on the water — quack!',find:'Can you waddle like a duck?'},
+    {file:'08-turtle.webp',say:'Carries its home on its back.',find:'Can you go slow… so slow?'},
+    {file:'09-mouse.webp',say:'Small, quick and squeaky.',find:'Can you tiptoe like a mouse?'},
+    {file:'10-mole.webp',say:'Digs tunnels under the ground.',find:'Can you dig with your paws?'},
+    {file:'11-lizard.webp',say:'Loves to warm up in the sun.',find:'Can you freeze like a lizard?'},
+    {file:'12-toad.webp',say:'A bumpy friend who likes damp spots.',find:'Can you make a big hop?'},
+    {file:'13-chipmunk.webp',say:'Carries snacks in its cheeks.',find:'Can you puff up your cheeks?'},
+    {file:'14-raccoon.webp',say:'Clever paws that explore at night.',find:'Can you pat your clever paws?'},
+    {file:'15-deer.webp',say:'Gentle steps through the quiet woods.',find:'Can you take soft deer steps?'},
+    {file:'16-snake.webp',say:'Slithers along without any legs.',find:'Can you slither side to side?'},
+    {file:'17-bat.webp',say:'Wakes up when the sun goes down.',find:'Can you flap your night wings?'},
+    {file:'18-owl.webp',say:'A wise looker who loves the night.',find:'Can you turn your head slowly… whooo?'}
+   ]},
+   {type:'play',id:'find-the-animal',eyebrow:'PLAY · FIND THE ANIMAL',heading:'Find the animal.',copy:'Three big pictures, one question. You say the animal, your child taps it — a wrong tap simply means look together.',correctFeedback:'You found it!',incorrectFeedback:'Look again.',rounds:[
+    {ask:'Find the bird.',say:'Find the bird.',choices:[{file:'07-duck.webp',name:'The duck'},{file:'01-bird.webp',name:'The bird',correct:true},{file:'17-bat.webp',name:'The bat'}]},
+    {ask:'Where’s the frog?',say:'Where’s the frog?',choices:[{file:'02-frog.webp',name:'The frog',correct:true},{file:'08-turtle.webp',name:'The turtle'},{file:'07-duck.webp',name:'The duck'}]},
+    {ask:'Find the rabbit.',say:'Find the rabbit.',choices:[{file:'13-chipmunk.webp',name:'The chipmunk'},{file:'05-hedgehog.webp',name:'The hedgehog'},{file:'04-rabbit.webp',name:'The rabbit',correct:true}]},
+    {ask:'Can you find the squirrel?',say:'Can you find the squirrel?',choices:[{file:'03-squirrel.webp',name:'The squirrel',correct:true},{file:'14-raccoon.webp',name:'The raccoon'},{file:'13-chipmunk.webp',name:'The chipmunk'}]},
+    {ask:'Where’s the owl?',say:'Where’s the owl?',choices:[{file:'18-owl.webp',name:'The owl',correct:true},{file:'17-bat.webp',name:'The bat'},{file:'01-bird.webp',name:'The bird'}]}
+   ]},
+   {type:'play',id:'who-am-i',eyebrow:'PLAY · WHO AM I?',heading:'Who am I?',copy:'A little clue, then three friends. Say the clue slowly and let your child solve it — every guess is a good guess.',correctFeedback:'You found it!',incorrectFeedback:'Look again.',rounds:[
+    {ask:'I have long ears. Who am I?',say:'I have long ears. Who am I?',choices:[{file:'15-deer.webp',name:'The deer'},{file:'04-rabbit.webp',name:'The rabbit',correct:true},{file:'03-squirrel.webp',name:'The squirrel'}]},
+    {ask:'I hop. Who am I?',say:'I hop. Who am I?',choices:[{file:'06-worm.webp',name:'The worm'},{file:'02-frog.webp',name:'The frog',correct:true},{file:'07-duck.webp',name:'The duck'}]},
+    {ask:'I have a bushy tail. Who am I?',say:'I have a bushy tail. Who am I?',choices:[{file:'14-raccoon.webp',name:'The raccoon'},{file:'03-squirrel.webp',name:'The squirrel',correct:true},{file:'15-deer.webp',name:'The deer'}]},
+    {ask:'I fly at night. Who am I?',say:'I fly at night. Who am I?',choices:[{file:'17-bat.webp',name:'The bat',correct:true},{file:'01-bird.webp',name:'The bird'},{file:'07-duck.webp',name:'The duck'}]},
+    {ask:'I say quack. Who am I?',say:'I say quack. Who am I?',choices:[{file:'07-duck.webp',name:'The duck',correct:true},{file:'02-frog.webp',name:'The frog'},{file:'01-bird.webp',name:'The bird'}]},
+    {ask:'I have a shell. Who am I?',say:'I have a shell. Who am I?',choices:[{file:'05-hedgehog.webp',name:'The hedgehog'},{file:'08-turtle.webp',name:'The turtle',correct:true},{file:'12-toad.webp',name:'The toad'}]}
+   ]},
+   {type:'guide',id:'where-might-we-see-it',eyebrow:'TOGETHER · WHERE MIGHT WE SEE IT?',heading:'Where might we see it?',copy:'Some of these friends live in gardens, some just visit, and some live in the wider outdoors — here is where to look, gently and from a distance.',items:[
+    {file:'01-bird.webp',feeling:'Bird',phrase:'Hedges, parks and balconies — you will hear one before you see it.'},
+    {file:'03-squirrel.webp',feeling:'Squirrel',phrase:'Up in the trees of any leafy park, tail twitching.'},
+    {file:'07-duck.webp',feeling:'Duck',phrase:'On ponds and canals, paddling along in a little line.'},
+    {file:'04-rabbit.webp',feeling:'Rabbit',phrase:'At the edges of meadows and gardens, early in the morning.'},
+    {file:'02-frog.webp',feeling:'Frog',phrase:'Near ponds, puddles and damp grass, especially after rain.'},
+    {file:'06-worm.webp',feeling:'Worm',phrase:'In the soil and under flowerpots after it rains — look, then leave them be.'},
+    {file:'05-hedgehog.webp',feeling:'Hedgehog',phrase:'In hedges and leaf piles after dark, if you are lucky.'},
+    {file:'17-bat.webp',feeling:'Bat',phrase:'Flitting through the evening sky just after sunset.'},
+    {file:'18-owl.webp',feeling:'Owl',phrase:'High in old trees at night — usually a whooo long before a look.'}
+   ]}
+  ]
+ },
+ printables:{
+  mode:'cards',
+  heading:'Print the garden animal cards.',
+  intro:'Print the cards for simple naming games and window-spotting warm-ups.',
+  pack:'Garden Animals &amp; Friends Learning Cards',
+  meta:'Age 2 · School Garden · Nature &amp; Talk',
+  audience:'Made for you to print and use with your child — eighteen cards, two to a page.',
+  note:'The same eighteen cards from today’s class — handy for a quiet naming chat at the kitchen table.',
+  printEyebrow:'PRINTABLE GARDEN ANIMAL CARDS',
+  printAria:'The eighteen garden animals and friends cards'
+ },
+ howTo:{heading:'Tips for Parents',paragraphs:[
+  'Follow your toddler’s favourites. If the frog gets five rounds in a row, the frog gets five rounds in a row — repetition is how little ones learn.',
+  'Sounds and movement before facts. Hopping, wiggling and quacking teach the names better than any explanation, so be as silly as your toddler needs you to be.',
+  'Keep it honest and gentle: some of these animals live in gardens, some just visit and some stay far outdoors — and all of them stay wild. Looking is the game; touching, feeding and chasing are not part of it.'
+ ],note:'<strong>Age ranges are a guide.</strong> Go at your child’s pace.'},
+ pills:{heading:'Where to next?',items:[['School Garden','/toddler/2-years/school-garden/'],['Age 2 classes','/toddler/2-years/'],['Learning Library','/learning-library/']]},
+ hubBlurb:'Eighteen garden and outdoor animals — a bird, a frog, a squirrel and more — with two gentle games and a look-don’t-touch nature hunt. Made for two-year-olds.',
+ schema:{resourceType:'Interactive toddler class',level:'Toddler (age 2)',teaches:'Animal names for toddlers — bird, frog, squirrel, rabbit and more — through looking, naming and playing together',audience:'Parents of toddlers',keywords:'garden animals for kids, garden animals for toddlers, animals for toddlers, animal vocabulary for toddlers, animal flashcards for toddlers, animal picture cards, learning animal names, nature activities for toddlers'}
+};
+
 export function classLessonSchema(site,L){
  return [
   {'@context':'https://schema.org','@type':'LearningResource',name:L.title,description:L.description,url:site+L.path,image:L.schemaImage,inLanguage:'en',learningResourceType:L.schema.resourceType||'Interactive baby class',educationalLevel:L.schema.level,isAccessibleForFree:true,educationalUse:'Home learning activity',teaches:L.schema.teaches,audience:{'@type':'Audience',audienceType:L.schema.audience},keywords:L.schema.keywords},
@@ -1189,7 +1322,7 @@ export function toddlerClassBody(L){
   <div class="fc-chips lesson-chips">${L.chips.map(([k,v])=>`<span><strong>${k}</strong> ${v}</span>`).join('')}</div>
   ${L.ledes.map(p=>`<p class="lesson-lede">${p}</p>`).join('\n  ')}
   <div class="lesson-start"><a class="button" href="#todays-class">${L.startLabel||'Start Today’s Class'} <span aria-hidden="true">↓</span></a><span class="lesson-start-hint">${L.startHint}</span></div>`;
- const hero=`<article class="wrap lesson-hero lesson-hero-cover"><div class="lesson-hero-copy">${heroInner}</div><figure class="lesson-cover"><img src="${L.ogImage}" width="${L.cover.w}" height="${L.cover.h}" alt="${L.cover.alt}"></figure></article>`;
+ const hero=L.cover?`<article class="wrap lesson-hero lesson-hero-cover"><div class="lesson-hero-copy">${heroInner}</div><figure class="lesson-cover"><img src="${L.ogImage}" width="${L.cover.w}" height="${L.cover.h}" alt="${L.cover.alt}"></figure></article>`:`<article class="wrap lesson-hero"><div class="lesson-hero-copy">${heroInner}</div></article>`;
  const learnViewer=(id,eyebrow,heading,copy,items,label)=>{
   const total=items.length;
   const grid=items.map(it=>`<figure class="lv-card">${tcImg(base,it.file,it.w,it.h,it.alt,` loading="lazy" data-lv-say="${esc(it.say)}" data-lv-find="${esc(it.find)}"`)}</figure>`).join('');
@@ -1210,7 +1343,7 @@ export function toddlerClassBody(L){
  const choiceBtn=c=>`<button type="button" class="tc-choice"${c.correct?' data-tc-correct="true"':''} aria-label="${esc(c.name)}">${tcImg(base,c.file,dimOf[c.file][0],dimOf[c.file][1],altOf[c.file],' loading="lazy"')}</button>`;
  const roundsHtml=rs=>rs.map(r=>`<div class="tc-round" data-tc-round data-tc-ask="${esc(r.ask)}"><p class="tc-ask">${r.say}</p><div class="tc-choices" role="group" aria-label="${esc(r.ask)}">${r.choices.map(choiceBtn).join('')}</div><p class="tc-feedback" data-tc-feedback aria-live="polite" hidden></p></div>`).join('');
  const matchRoundsHtml=rs=>rs.map(r=>`<div class="tc-round tc-match" data-tc-round data-tc-ask="${esc(r.ask)}"><p class="tc-ask">${r.say}</p><figure class="tc-target">${tcImg(base,r.target.file,dimOf[r.target.file][0],dimOf[r.target.file][1],altOf[r.target.file],' loading="lazy"')}</figure><div class="tc-choices" role="group" aria-label="${esc(r.ask)}">${r.choices.map(choiceBtn).join('')}</div><p class="tc-feedback" data-tc-feedback aria-live="polite" hidden></p></div>`).join('');
- const playSection=(id,eyebrow,heading,copy,game)=>`<section class="wrap lesson-section tc-game" id="${id}" aria-label="${esc(heading)}">
+ const playSection=(id,eyebrow,heading,copy,game)=>`<section class="wrap lesson-section tc-game" id="${id}" aria-label="${esc(heading)}"${game.correctFeedback?` data-tc-correct="${esc(game.correctFeedback)}"`:''}${game.incorrectFeedback?` data-tc-incorrect="${esc(game.incorrectFeedback)}"`:''}>
   <span class="eyebrow">${eyebrow}</span>
   <h2>${heading}</h2>
   <p class="lesson-copy">${copy}</p>
@@ -1300,7 +1433,7 @@ export function toddlerClassBody(L){
   <p class="lesson-copy">${s.copy}</p>
   ${matchRoundsHtml(s.rounds)}
  </section>`;
-   if(s.type==='prompt')return `<section class="wrap lesson-section tc-game" id="${s.id}" aria-label="${esc(s.heading)}">
+   if(s.type==='prompt')return `<section class="wrap lesson-section tc-game" id="${s.id}" aria-label="${esc(s.heading)}"${s.correctFeedback?` data-tc-correct="${esc(s.correctFeedback)}"`:''}${s.incorrectFeedback?` data-tc-incorrect="${esc(s.incorrectFeedback)}"`:''}>
   <span class="eyebrow">${s.eyebrow}</span>
   <h2>${s.heading}</h2>
   <p class="lesson-copy">${s.copy}</p>

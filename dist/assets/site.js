@@ -162,11 +162,19 @@
     trigger.addEventListener('click', () => frame.__lvStart());
   });
 
-  /* Toddler class games: find-it and match rounds with gentle, score-free feedback */
-  const praise = ['You found it!', 'Great finding!', 'Nice exploring!'];
+  /* Toddler class games: find-it and match rounds with gentle, score-free feedback.
+     A game section may carry data-tc-correct / data-tc-incorrect (a single string,
+     or strings separated by |) to use its own words — the defaults below keep the
+     original lesson wording for every existing page. */
+  const defaultPraise = ['You found it!', 'Great finding!', 'Nice exploring!'];
+  const defaultLook = 'Let’s look together.';
   document.querySelectorAll('[data-tc-round]').forEach((round, roundIndex) => {
     const feedback = round.querySelector('[data-tc-feedback]');
     if (!feedback) return;
+    const game = round.closest('[data-tc-correct], [data-tc-incorrect]');
+    const customPraise = game ? (game.getAttribute('data-tc-correct') || '').split('|').filter(Boolean) : [];
+    const customLook = game ? game.getAttribute('data-tc-incorrect') : '';
+    const praise = customPraise.length ? customPraise : defaultPraise;
     round.addEventListener('click', event => {
       const choice = event.target.closest('.tc-choice');
       if (!choice || round.classList.contains('is-done')) return;
@@ -180,7 +188,7 @@
         void round.offsetWidth; // restart the gentle look-again cue
         round.classList.add('is-look');
         feedback.hidden = false;
-        feedback.textContent = 'Let’s look together.';
+        feedback.textContent = customLook || defaultLook;
       }
     });
   });

@@ -1,11 +1,12 @@
 // Kiddo School admin API (Pages Function) — /api/admin/*.
-// EVERY request must pass Cloudflare Access verification (fail-closed: with
-// Access unconfigured, everything here answers 503 and nothing is readable).
-// One admin system for all incoming community content: Principal's Office
-// messages, sticky notes, artwork, page reviews and page comments.
+// EVERY request must pass the admin session check (fail-closed: with
+// ADMIN_USERNAME/ADMIN_PASSWORD_HASH unset, everything here answers 503 and
+// nothing is readable; without a valid session cookie, 401). One admin
+// system for all incoming community content: Principal's Office messages,
+// sticky notes, artwork, page reviews and page comments.
 
 import { requireAdmin } from '../../lib/access.js';
-import { json, badRequest, methodGuard, serverError } from '../../lib/security.js';
+import { json, badRequest, methodGuard, serverError, originGuard } from '../../lib/security.js';
 
 const TABLES = {
   principal: { table: 'principal_messages', statuses: ['new', 'read', 'resolved', 'archived'] },
@@ -22,6 +23,13 @@ export async function onRequest(context) {
   const { request, env, params } = context;
   const denied = await requireAdmin(request, env);
   if (denied) return denied;
+  // State-changing requests additionally require the same-origin +
+  // custom-header guard (admin.js sends the header on every call), so a
+  // cross-site page cannot ride the admin session cookie.
+  if (request.method !== 'GET' && request.method !== 'HEAD') {
+    const guard = originGuard(request);
+    if (guard) return guard;
+  }
 
   const url = new URL(request.url);
   const route = (params.route || []).join('/');

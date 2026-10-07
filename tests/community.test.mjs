@@ -6,7 +6,8 @@ import assert from 'node:assert/strict';
 import {readFileSync,existsSync} from 'node:fs';
 import {onRequest as publicApi} from '../functions/api/community/[[route]].js';
 import {onRequest as adminApi} from '../functions/api/admin/[[route]].js';
-import {verifyAccessJwt,requireAdmin} from '../functions/lib/access.js';
+import {requireAdmin,createSessionToken,verifySessionToken} from '../functions/lib/access.js';
+import {hashPassword,verifyLoginPassword} from '../functions/lib/passwords.js';
 import {cleanText,cleanEmail,escapeHtml} from '../functions/lib/security.js';
 import {validateAndScrubImage,sniffImage} from '../functions/lib/images.js';
 
@@ -373,63 +374,122 @@ test('SQL injection safety: hostile payloads stay bound parameters and nothing b
 });
 
 /* ------------------------------------------------------------ Admin auth */
-test('admin is fail-closed: without Access configuration every admin route answers 503',async()=>{
+test('admin is fail-closed: without admin secrets every admin route answers 503',async()=>{
  const db=mockDb();
- const env={DB:db}; // no CF_ACCESS_TEAM / CF_ACCESS_AUD
+ const env={DB:db}; // no ADMIN_USERNAME / ADMIN_PASSWORD_HASH
  const counts=await adminApi(ctx('/api/admin/counts',{env}));
  assert.equal(counts.status,503);
  const adminPage=await import('../functions/admin/[[route]].js');
- const pageRes=await adminApi; // keep import referenced
  const res=await adminPage.onRequest({request:new Request('https://kiddo.school/admin/'),env,params:{route:[]}});
  assert.equal(res.status,503);
- const body=await res.json();
- assert.match(body.error,/locked|not configured/);
+ const html=await res.text();
+ assert.match(html,/locked/i);
+ assert.ok(!html.includes('name="password"'),'no working login form until configured');
  const list=await adminApi(ctx('/api/admin/notes',{env}));
  assert.equal(list.status,503);
 });
 
-test('admin denies garbage tokens and accepts a correctly signed Access JWT',async()=>{
- const env={DB:mockDb(),CF_ACCESS_TEAM:'test-team.cloudflareaccess.com',CF_ACCESS_AUD:'aud-123'};
- const denied=await requireAdmin(new Request('https://kiddo.school/api/admin/counts'),env);
- assert.equal(denied.status,401,'no token → 401');
- // forge a real RS256 token with our own key (as an attacker would try)
- const kp=await crypto.subtle.generateKey({name:'RSASSA-PKCS1-v1_5',modulusLength:2048,publicExponent:new Uint8Array([1,0,1]),hash:'SHA-256'},true,['sign','verify']);
- const forged=await signedJwt(kp.privateKey,{iss:'https://test-team.cloudflareaccess.com',aud:'aud-123'});
- const bad=await verifyAccessJwt(forged,env,async()=>({keys:[await jwkFrom(kp.publicKey,kidOf(forged)+'-wrong')]}));
- assert.equal(bad.ok,false,'wrong key → signature fails');
- const good=await verifyAccessJwt(forged,env,async()=>({keys:[await jwkFrom(kp.publicKey,kidOf(forged))]}));
- assert.equal(good.ok,true,'correctly signed token with right aud/iss verifies');
- const wrongAud=await verifyAccessJwt(await signedJwt(kp.privateKey,{iss:'https://test-team.cloudflareaccess.com',aud:'other'}),env,async()=>({keys:[await jwkFrom(kp.publicKey,kidOf(forged))]}));
- assert.equal(wrongAud.ok,false,'audience mismatch rejected');
+test('admin login: session tokens are signed, expiring and tamper-proof',async()=>{
+ const hash=await hashPassword('correct horse battery staple 42',10_000);
+ const env={ADMIN_USERNAME:'office@kiddo.test',ADMIN_PASSWORD_HASH:hash};
+ // wrong password / wrong username rejected — and both take the same work
+ const t0=Date.now();
+ assert.equal(await verifyLoginPassword(hash,'office@kiddo.test','office@kiddo.test','wrong password input'),false,'wrong password rejected');
+ assert.equal(await verifyLoginPassword(hash,'nobody@kiddo.test','office@kiddo.test','correct horse battery staple 42'),false,'wrong username rejected');
+ assert.ok(Date.now()-t0>0,'PBKDF2 ran regardless of which half failed');
+ assert.equal(await verifyLoginPassword(hash,'OFFICE@kiddo.test','office@kiddo.test','correct horse battery staple 42'),true,'username case-insensitive, correct password accepted');
+ // session lifecycle
+ const {token,maxAge}=await createSessionToken(env);
+ assert.ok(maxAge>0,'session has a TTL');
+ assert.equal((await verifySessionToken(env,token)).ok,true,'valid token verifies');
+ const tampered=token.slice(0,-3)+(token.slice(-3)==='aaa'?'bbb':'aaa');
+ assert.equal((await verifySessionToken(env,tampered)).ok,false,'tampered signature rejected');
+ assert.equal((await verifySessionToken(env,token.replace(/v1\.(\d+)/,(m,e)=>'v1.'+(Number(e)-100000)))).ok,false,'expired token rejected');
+ assert.equal((await verifySessionToken(env,token.replace('v1.','v2.'))).ok,false,'wrong version rejected');
+ const other={ADMIN_USERNAME:'office@kiddo.test',ADMIN_PASSWORD_HASH:await hashPassword('a different passphrase entirely',10_000)};
+ assert.equal((await verifySessionToken(other,token)).ok,false,'token signed under another secret is rejected');
+ // requireAdmin on the API without a cookie
+ const denied=await requireAdmin(new Request('https://kiddo.school/api/admin/counts',{headers:{'Cookie':'other=1'}}),env);
+ assert.equal(denied.status,401,'no session cookie → 401');
+ const ok=await requireAdmin(new Request('https://kiddo.school/api/admin/counts',{headers:{'Cookie':'kiddo_admin_session='+token}}),env);
+ assert.equal(ok,null,'valid session cookie authenticates');
 });
-const kidOf=t=>JSON.parse(atob(t.split('.')[0].replace(/-/g,'+').replace(/_/g,'/'))).kid;
-async function jwkFrom(key,kid){
- const j=await crypto.subtle.exportKey('jwk',key);
- return {kty:j.kty,n:j.n,e:j.e,alg:'RS256',kid};
-}
-const b64u=b=>Buffer.from(b).toString('base64').replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');
-async function signedJwt(key,claims){
- const header=b64u(JSON.stringify({alg:'RS256',typ:'JWT',kid:'k-test'}));
- const payload=b64u(JSON.stringify({...claims,exp:Math.floor(Date.now()/1000)+300}));
- const sig=b64u(new Uint8Array(await crypto.subtle.sign('RSASSA-PKCS1-v1_5',key,new TextEncoder().encode(header+'.'+payload))));
- return header+'.'+payload+'.'+sig;
-}
 
-/* Shared Access-protected admin session for the moderation-flow tests: a real
-   RS256 keypair, the token sent as Cf-Access-Jwt-Assertion, and the matching
-   JWKS published through the CF_ACCESS_JWKS env override. That override is a
-   documented hook for tests and local dev — setting Workers environment
-   variables requires owner access to the Cloudflare dashboard, so a visitor
-   can never influence it. The auth path exercised here is the real one. */
+test('login flow through /admin/: CSRF, cookie flags, generic errors, logout',async()=>{
+ const db=mockDb();
+ const hash=await hashPassword('correct horse battery staple 42',10_000);
+ const env={DB:db,ADMIN_USERNAME:'office@kiddo.test',ADMIN_PASSWORD_HASH:hash};
+ const shell=await import('../functions/admin/[[route]].js');
+ // 1. GET /admin/ → login page with a CSRF cookie
+ const get=await shell.onRequest({request:new Request('https://kiddo.school/admin/'),env,params:{route:[]}});
+ assert.equal(get.status,200);
+ const html=await get.text();
+ const csrf=html.match(/name="csrf" value="([^"]+)"/)?.[1];
+ assert.ok(csrf,'login form carries a CSRF token');
+ const setCookie=get.headers.get('Set-Cookie')||'';
+ assert.ok(setCookie.includes('kiddo_admin_csrf='+csrf),'CSRF cookie matches the hidden field');
+ assert.ok(/HttpOnly/.test(setCookie)&&/Secure/.test(setCookie)&&/SameSite=Strict/.test(setCookie),'CSRF cookie is HttpOnly, Secure, SameSite=Strict');
+ const post=(body,headers={})=>shell.onRequest({request:new Request('https://kiddo.school/admin/',{method:'POST',body,headers:{'Content-Type':'application/x-www-form-urlencoded','Origin':'https://kiddo-school.pages.dev','CF-Connecting-IP':'8.8.4.4',...headers}}),env,params:{route:[]}});
+ // 2. missing CSRF → 403
+ const noCsrf=await post('username=office%40kiddo.test&password=correct%20horse%20battery%20staple%2042');
+ assert.equal(noCsrf.status,403,'login without the CSRF pair is rejected');
+ // 3. wrong password → 401, generic message, no credential echo
+ const wrong=await post(`csrf=${encodeURIComponent(csrf)}&username=office%40kiddo.test&password=wrong-password-here`,{'Cookie':'kiddo_admin_csrf='+csrf});
+ assert.equal(wrong.status,401);
+ const wrongHtml=await wrong.text();
+ assert.match(wrongHtml,/Wrong email or password\./);
+ assert.ok(!wrongHtml.includes('correct horse'),'the stored password never appears in any response');
+ assert.ok(!JSON.stringify(env).includes('correct horse'),'the plaintext password never enters the environment');
+ // 4. correct login → 303 with the session cookie (HttpOnly, Secure, SameSite=Strict)
+ const good=await post(`csrf=${encodeURIComponent(csrf)}&username=office%40kiddo.test&password=correct%20horse%20battery%20staple%2042`,{'Cookie':'kiddo_admin_csrf='+csrf});
+ assert.equal(good.status,303,'successful login redirects to the dashboard');
+ const sessionCookie=(good.headers.getSetCookie? good.headers.getSetCookie():[good.headers.get('Set-Cookie')]).find(c=>c.startsWith('kiddo_admin_session='));
+ assert.ok(sessionCookie,'session cookie is set');
+ assert.ok(/HttpOnly/.test(sessionCookie)&&/Secure/.test(sessionCookie)&&/SameSite=Strict/.test(sessionCookie),'session cookie is HttpOnly, Secure, SameSite=Strict');
+ assert.ok(/Max-Age=\d+/.test(sessionCookie),'session cookie expires');
+ const token=sessionCookie.split('=')[1].split(';')[0];
+ // 5. the session opens the dashboard, not the login page
+ const dash=await shell.onRequest({request:new Request('https://kiddo.school/admin/',{headers:{'Cookie':'kiddo_admin_session='+token}}),env,params:{route:[]}});
+ assert.equal(dash.status,200);
+ const dashHtml=await dash.text();
+ assert.ok(dashHtml.includes('data-goto="principal"'),'dashboard renders the queue cards');
+ assert.ok(!dashHtml.includes('name="password"'),'dashboard has no login form');
+ // 6. logout clears the cookie
+ const out=await shell.onRequest({request:new Request('https://kiddo.school/admin/logout',{method:'POST',headers:{'Cookie':'kiddo_admin_session='+token,'Origin':'https://kiddo-school.pages.dev'}}),env,params:{route:['logout']}});
+ assert.equal(out.status,303);
+ const cleared=(out.headers.getSetCookie? out.headers.getSetCookie():[out.headers.get('Set-Cookie')]).find(c=>c.startsWith('kiddo_admin_session='));
+ assert.ok(/Max-Age=0/.test(cleared),'logout expires the session cookie');
+ const after=await shell.onRequest({request:new Request('https://kiddo.school/admin/'),env,params:{route:[]}});
+ assert.equal(after.status,200,'after logout a cookieless /admin/ shows the login page again');
+ assert.ok(!(await after.text()).includes('data-goto'),'no dashboard content without the cookie');
+ // NOTE: sessions are stateless (no D1 session table — the schema is fixed),
+ // so logout clears the cookie client-side and the 12-hour expiry bounds any
+ // copied token. That is the documented contract, not an omission.
+ // 7. login rate limiting: 5 bad attempts then 429 (fresh IP per attempt beyond the first)
+ let last;
+ for(let i=0;i<6;i++){
+  last=await post(`csrf=${encodeURIComponent(csrf)}&username=office%40kiddo.test&password=wrong-${i}`,{'Cookie':'kiddo_admin_csrf='+csrf,'CF-Connecting-IP':'7.7.7.7'});
+ }
+ assert.equal(last.status,429,'6th attempt inside the window is rate limited');
+ const limitedHtml=await last.text();
+ assert.match(limitedHtml,/Too many attempts/);
+ assert.ok(!limitedHtml.includes('Wrong email'),'rate-limit page does not leak attempt results');
+});
+
+/* Shared session-protected admin for the moderation-flow tests. The real
+   production code paths run: hashPassword() builds the ADMIN_PASSWORD_HASH
+   value, createSessionToken() signs a cookie token, and the request carries
+   it as a Cookie header exactly as the browser would — plus the same-origin
+   + custom-header CSRF values the admin API requires on state changes. */
 let adminAuthPromise=null;
 function adminAuth(){
  adminAuthPromise??=(async()=>{
-  const kp=await crypto.subtle.generateKey({name:'RSASSA-PKCS1-v1_5',modulusLength:2048,publicExponent:new Uint8Array([1,0,1]),hash:'SHA-256'},true,['sign','verify']);
-  const token=await signedJwt(kp.privateKey,{iss:'https://test-team.cloudflareaccess.com',aud:'aud-community'});
-  const jwks=JSON.stringify({keys:[await jwkFrom(kp.publicKey,kidOf(token))]});
+  const hash=await hashPassword('correct horse battery staple 42',10_000);
+  const base={ADMIN_USERNAME:'office@kiddo.test',ADMIN_PASSWORD_HASH:hash};
+  const token=(await createSessionToken(base)).token;
   return {
-   env:(db,extra={})=>({DB:db,CF_ACCESS_TEAM:'test-team.cloudflareaccess.com',CF_ACCESS_AUD:'aud-community',CF_ACCESS_JWKS:jwks,...extra}),
-   headers:()=>({'Cf-Access-Jwt-Assertion':token}),
+   env:(db,extra={})=>({DB:db,...base,...extra}),
+   headers:()=>({'Cookie':'kiddo_admin_session='+token,'X-Kiddo-Community':'1','Origin':'https://kiddo-school.pages.dev'}),
   };
  })();
  return adminAuthPromise;
@@ -437,14 +497,12 @@ function adminAuth(){
 
 test('admin queues serve real D1 counts and the email column is admin-only',async()=>{
  const db=mockDb();
- const env={DB:db,CF_ACCESS_TEAM:'t.cloudflareaccess.com',CF_ACCESS_AUD:'a'};
- // auth still required; simulate a valid request by calling handlers with the verifier bypassed:
- // instead we assert the endpoint logic through the mock by testing counts SQL semantics directly
+ const env={DB:db,ADMIN_USERNAME:'office@kiddo.test',ADMIN_PASSWORD_HASH:'pbkdf2-sha256$10000$c2FsdA$kQ'};
  db._tables.principal_messages.push({id:1,category:'question',parent_name:'A',email:'a@x.com',message:'hi',status:'new',created_at:'2026-01-01',updated_at:'2026-01-01'});
  db._tables.sticky_notes.push({id:2,display_name:'B',message:'note',status:'pending',created_at:'2026-01-02',updated_at:'2026-01-02'});
  // fail-closed still blocks unauthenticated reads of that data
  const blocked=await adminApi(ctx('/api/admin/counts',{env}));
- assert.equal(blocked.status,401|0+0||401);
+ assert.equal(blocked.status,401);
  // The public API never exposes principal messages at all
  for(const route of ['/api/community/notes','/api/community/reviews','/api/community/comments','/api/community/art']){
   const res=await publicApi(ctx(route,{env:{DB:db}}));

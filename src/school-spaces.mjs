@@ -2,7 +2,7 @@
 // printables) and the Learning Library (the bookshelf: every real destination,
 // organised for browsing). Nothing fake: no certificates, no favorites, no
 // invented content — every visible item goes somewhere real.
-import {csLesson,vhLesson,emLesson,anLesson,msLesson,fwfhLesson,fcLesson,lessonsBase} from './lessons.mjs';
+import {csLesson,vhLesson,emLesson,anLesson,msLesson,fwfhLesson,fcLesson,gbLesson,gfLesson,lessonsBase} from './lessons.mjs';
 import {helloSchool as helloSchoolCt,circleBase} from './circle-time.mjs';
 export const bagBase='/my-school-bag/';
 export const libraryBase='/learning-library/';
@@ -107,6 +107,10 @@ export const learningLibrary={
   {id:'animals',title:'Animals',items:[
    {kind:'Class',href:anLesson.path,name:'Animals & Sounds',lesson:anLesson},
    {kind:'Game',href:'/toddler/2-years/play-and-practice/match-it/',name:'Match It',doodle:'match'}]},
+  {id:'school-garden',title:'School Garden',items:[
+   {kind:'Collections',href:'/toddler/2-years/school-garden/',name:'School Garden'},
+   {kind:'Class',href:'/toddler/2-years/garden-bugs-and-friends/',name:'Bugs & Insects',lesson:gbLesson},
+   {kind:'Class',href:gfLesson.path,name:'Garden Animals & Friends',img:`<img src="${gfLesson.ogImage}" width="1414" height="2000" alt="${gfLesson.ogAlt}" loading="lazy">`}]},
   {id:'vehicles',title:'Vehicles',items:[
    {kind:'Class',href:vhLesson.path,name:'Vehicles & Sounds',lesson:vhLesson}]},
   {id:'feelings',title:'Feelings',items:[
@@ -129,7 +133,7 @@ export const learningLibrary={
 };
 export function learningLibraryBody(Lb){
  const item=it=>`<a class="lib-item" href="${it.href}">
-  <span class="lib-thumb">${it.ct?ctCover:it.lesson?coverImg(it.lesson):`<span class="lib-doodle">${doodle(it.doodle)}</span>`}</span>
+  <span class="lib-thumb">${it.img?it.img:it.ct?ctCover:it.lesson?coverImg(it.lesson):`<span class="lib-doodle">${doodle(it.doodle)}</span>`}</span>
   <span class="lib-copy"><strong>${esc(it.name)}</strong><span class="lib-kind">${it.kind}</span></span>
   <span class="fc-open">Open <span aria-hidden="true">↗</span></span></a>`;
  return `${crumbs([['Learning Library',null]])}

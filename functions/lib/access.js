@@ -1,118 +1,149 @@
-// Cloudflare Access verification for /admin/* and /api/admin/*.
-// FAIL-CLOSED: if CF_ACCESS_TEAM or CF_ACCESS_AUD is not configured, every
-// admin request is denied — the admin area simply does not open until the
-// user turns on Cloudflare Access in the Zero Trust dashboard and sets the
-// two environment variables. There is no fallback password, token or bypass.
+// Kiddo School admin authentication — session-cookie login.
 //
-// How it works: Cloudflare Access injects a signed JWT (Cf-Access-Assertion)
-// into every request that passed the Access login. We verify the RS256
-// signature against the team's published JWKS, then check issuer, audience
-// and expiry. Verification uses WebCrypto (available in Workers and Node 18+).
+// Replaces the previous Cloudflare Access JWT check. The operator sets TWO
+// Cloudflare secrets in the Pages dashboard:
+//
+//   ADMIN_USERNAME       the login name (an email or username)
+//   ADMIN_PASSWORD_HASH  a PBKDF2 hash string produced by
+//                        scripts/hash-admin-password.mjs — NEVER a plaintext
+//                        password (optionally ADMIN_SESSION_SECRET as an
+//                        independent signing key; when unset the signing key
+//                        is derived from ADMIN_PASSWORD_HASH, which is a
+//                        high-entropy secret that never leaves the runtime).
+//
+// FAIL-CLOSED: with either secret unset every admin request is denied (503)
+// — the admin area simply does not open until setup is finished. There is no
+// bypass, no default account and no client-side check. Sessions are signed
+// HMAC-SHA256 tokens in a Secure, HttpOnly, SameSite=Strict cookie with a
+// 12-hour expiry; there is no session table, so the D1 schema is untouched.
+//
+// State-changing admin API requests additionally require the same-origin +
+// custom-header guard (see the API router), so a cross-site page can neither
+// read nor write anything in the admin.
 
-const JWKS_CACHE_TTL = 15 * 60 * 1000; // 15 minutes
+import { verifyLoginPassword, normalizeUsername } from './passwords.js';
 
-function b64urlToBytes(str) {
+const SESSION_COOKIE = 'kiddo_admin_session';
+const CSRF_COOKIE = 'kiddo_admin_csrf';
+const SESSION_TTL_SECONDS = 12 * 60 * 60; // 12 hours
+const CSRF_TTL_SECONDS = 10 * 60; // login form tokens live 10 minutes
+
+function b64urlEncode(bytes) {
+  let bin = '';
+  for (const b of bytes) bin += String.fromCharCode(b);
+  return btoa(bin).replace(/\+/g, '-').replace(/_/g, '/').replace(/=+$/, '');
+}
+
+function b64urlDecode(str) {
   const pad = str.length % 4 === 0 ? '' : '='.repeat(4 - (str.length % 4));
-  const normalized = str.replace(/-/g, '+').replace(/_/g, '/') + pad;
-  const binary = atob(normalized);
-  const bytes = new Uint8Array(binary.length);
-  for (let i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
+  const bin = atob(str.replace(/-/g, '+').replace(/_/g, '/') + pad);
+  const bytes = new Uint8Array(bin.length);
+  for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
   return bytes;
 }
 
-function decodeSegment(segment) {
-  try {
-    return JSON.parse(new TextDecoder().decode(b64urlToBytes(segment)));
-  } catch {
-    return null;
+export function adminConfigured(env) {
+  return Boolean(env && env.ADMIN_USERNAME && env.ADMIN_PASSWORD_HASH);
+}
+
+async function signingKey(env) {
+  let material = env.ADMIN_SESSION_SECRET;
+  if (!material) {
+    // Deterministic derivation from the password-hash secret. The hash string
+    // contains a random salt and a random digest, so this key is high-entropy
+    // and unknown to anyone without the secret.
+    const base = await crypto.subtle.digest('SHA-256', new TextEncoder().encode('kiddo-admin-session-v1:' + env.ADMIN_PASSWORD_HASH));
+    material = b64urlEncode(new Uint8Array(base));
   }
+  return crypto.subtle.importKey('raw', new TextEncoder().encode(material), { name: 'HMAC', hash: 'SHA-256' }, false, ['sign', 'verify']);
 }
 
-async function fetchJwks(teamDomain, env) {
-  // Test / local-dev override: CF_ACCESS_JWKS holds the exact JWKS JSON.
-  // Changing Workers environment variables requires owner access to the
-  // Cloudflare dashboard, so a visitor can never influence this; production
-  // leaves it unset and always verifies against the live certificate endpoint.
-  const override = env && typeof env.CF_ACCESS_JWKS === 'string' ? env.CF_ACCESS_JWKS.trim() : '';
-  if (override.startsWith('{')) {
-    try {
-      const jwks = JSON.parse(override);
-      if (jwks && Array.isArray(jwks.keys)) return jwks;
-    } catch { /* fall through to the real endpoint */ }
-  }
-  const url = `https://${teamDomain}/cdn-cgi/access/certs`;
-  const cacheKey = `cf-access-jwks:${teamDomain}`;
-  const cached = globalThis.__kiddoJwksCache;
-  if (cached && cached.key === cacheKey && Date.now() - cached.at < JWKS_CACHE_TTL) return cached.jwks;
-  const res = await fetch(url, { cache: 'no-store' });
-  if (!res.ok) throw new Error('jwks fetch failed');
-  const jwks = await res.json();
-  globalThis.__kiddoJwksCache = { key: cacheKey, at: Date.now(), jwks };
-  return jwks;
+async function hmac(env, message) {
+  const key = await signingKey(env);
+  const sig = await crypto.subtle.sign('HMAC', key, new TextEncoder().encode(message));
+  return b64urlEncode(new Uint8Array(sig));
 }
 
-async function verifySignature(jwtParts, jwks) {
-  const [headerB64, payloadB64, signatureB64] = jwtParts;
-  const header = decodeSegment(headerB64);
-  if (!header || header.alg !== 'RS256' || !header.kid) return false;
-  const jwk = (jwks.keys || []).find(k => k.kid === header.kid && k.kty === 'RSA');
-  if (!jwk) return false;
-  const key = await crypto.subtle.importKey(
-    'jwk',
-    { kty: jwk.kty, n: jwk.n, e: jwk.e, alg: 'RS256', ext: true },
-    { name: 'RSASSA-PKCS1-v1_5', hash: 'SHA-256' },
-    false,
-    ['verify']
-  );
-  const data = new TextEncoder().encode(`${headerB64}.${payloadB64}`);
-  const signature = b64urlToBytes(signatureB64);
-  return crypto.subtle.verify('RSASSA-PKCS1-v1_5', key, signature, data);
+// createSessionToken(env) → { token, maxAge }. Token format:
+//   v1.<expiry-epoch>.<nonce-base64url>.<hmac-base64url>
+export async function createSessionToken(env) {
+  const exp = Math.floor(Date.now() / 1000) + SESSION_TTL_SECONDS;
+  const nonce = b64urlEncode(crypto.getRandomValues(new Uint8Array(32)));
+  const body = `v1.${exp}.${nonce}`;
+  const sig = await hmac(env, body);
+  return { token: `${body}.${sig}`, maxAge: SESSION_TTL_SECONDS };
 }
 
-// verifyAccessJwt(token, env, fetchJwksImpl?) — fetchJwksImpl is injectable
-// for tests. Returns { ok:true, payload } or { ok:false, reason }.
-export async function verifyAccessJwt(token, env, fetchJwksImpl) {
-  if (!token || typeof token !== 'string') return { ok: false, reason: 'missing token' };
+// verifySessionToken(env, token) → { ok:true, exp } | { ok:false }
+export async function verifySessionToken(env, token) {
+  if (typeof token !== 'string' || !adminConfigured(env)) return { ok: false };
   const parts = token.split('.');
-  if (parts.length !== 3) return { ok: false, reason: 'malformed token' };
-  const payload = decodeSegment(parts[1]);
-  if (!payload) return { ok: false, reason: 'malformed payload' };
+  if (parts.length !== 4 || parts[0] !== 'v1') return { ok: false };
+  const exp = Number(parts[1]);
+  if (!Number.isInteger(exp) || exp * 1000 < Date.now()) return { ok: false };
+  const expected = await hmac(env, `${parts[0]}.${parts[1]}.${parts[2]}`);
+  if (expected.length !== parts[3].length) return { ok: false };
+  // constant-time compare
+  const a = new TextEncoder().encode(expected);
+  const b = new TextEncoder().encode(parts[3]);
+  let diff = 0;
+  for (let i = 0; i < a.length; i++) diff |= a[i] ^ b[i];
+  if (diff !== 0) return { ok: false };
+  return { ok: true, exp };
+}
 
-  const teamDomain = env.CF_ACCESS_TEAM;
-  const aud = env.CF_ACCESS_AUD;
-  if (!teamDomain || !aud) return { ok: false, reason: 'access not configured' };
+export function sessionCookieValue(token, maxAge) {
+  return `${SESSION_COOKIE}=${token}; HttpOnly; Secure; SameSite=Strict; Path=/; Max-Age=${maxAge}`;
+}
 
-  const expectedIss = `https://${teamDomain}`;
-  if (payload.iss !== expectedIss) return { ok: false, reason: 'bad issuer' };
-  const auds = Array.isArray(payload.aud) ? payload.aud : [payload.aud];
-  if (!auds.includes(aud)) return { ok: false, reason: 'bad audience' };
-  const now = Math.floor(Date.now() / 1000);
-  if (!payload.exp || payload.exp < now + 30) return { ok: false, reason: 'expired' };
+export function clearSessionCookieValue() {
+  return `${SESSION_COOKIE}=; HttpOnly; Secure; SameSite=Strict; Path=/; Max-Age=0`;
+}
 
-  let jwks;
-  try {
-    jwks = await (fetchJwksImpl || fetchJwks)(teamDomain, env);
-  } catch {
-    return { ok: false, reason: 'jwks unavailable' };
+function cookieValue(request, name) {
+  const header = request.headers.get('Cookie');
+  if (!header) return null;
+  for (const part of header.split(/;\s*/)) {
+    const eq = part.indexOf('=');
+    if (eq > -1 && part.slice(0, eq) === name) return part.slice(eq + 1);
   }
-  const signatureOk = await verifySignature(parts, jwks);
-  if (!signatureOk) return { ok: false, reason: 'bad signature' };
-  return { ok: true, payload };
+  return null;
 }
 
-function accessConfigured(env) {
-  return Boolean(env.CF_ACCESS_TEAM && env.CF_ACCESS_AUD);
+export function readSessionCookie(request) {
+  return cookieValue(request, SESSION_COOKIE);
 }
 
-// Guard used by every admin handler. Denies with 503 when Access has not been
-// configured yet (so nobody can silently "discover" the admin), 401 when a
-// token is present but fails verification.
+export function readCsrfCookie(request) {
+  return cookieValue(request, CSRF_COOKIE);
+}
+
+// CSRF token for the login form (double-submit: cookie + hidden field).
+export function newCsrfToken() {
+  return b64urlEncode(crypto.getRandomValues(new Uint8Array(24)));
+}
+
+export function csrfCookieValue(token) {
+  return `${CSRF_COOKIE}=${token}; HttpOnly; Secure; SameSite=Strict; Path=/; Max-Age=${CSRF_TTL_SECONDS}`;
+}
+
+export function clearCsrfCookieValue() {
+  return `${CSRF_COOKIE}=; HttpOnly; Secure; SameSite=Strict; Path=/; Max-Age=0`;
+}
+
+// verifyLogin(env, username, password) → true | false
+export async function verifyLogin(env, username, password) {
+  if (!adminConfigured(env)) return false;
+  return verifyLoginPassword(env.ADMIN_PASSWORD_HASH, username, env.ADMIN_USERNAME, password);
+}
+
+// Guard used by every admin handler. Denies with 503 when the secrets are not
+// configured yet, 401 when the session cookie is missing or invalid.
 export async function requireAdmin(request, env) {
-  if (!accessConfigured(env)) {
-    return json503('The admin room is locked — Cloudflare Access is not configured yet. See the deployment notes.');
+  if (!adminConfigured(env)) {
+    return json503('The admin room is locked — admin login is not configured yet. See the deployment notes.');
   }
-  const token = request.headers.get('Cf-Access-Jwt-Assertion') || '';
-  const result = await verifyAccessJwt(token, env);
+  const result = await verifySessionToken(env, readSessionCookie(request));
   if (!result.ok) return json401('Admin access denied.');
   return null; // authenticated
 }
@@ -129,3 +160,5 @@ export function json401(error) {
     headers: { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store', 'X-Robots-Tag': 'noindex, nofollow' },
   });
 }
+
+export { normalizeUsername };

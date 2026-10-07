@@ -1,5 +1,5 @@
 // Kiddo School Admin client logic. Public file, zero secrets: every admin
-// capability exists only behind the server-side Cloudflare Access check on
+// capability exists only behind the server-side session check on
 // /api/admin/* — this script can only render what the APIs return.
 (function () {
   'use strict';
@@ -205,6 +205,7 @@
     var query = '?status=' + encodeURIComponent(currentStatus) + (currentCategory ? '&category=' + encodeURIComponent(currentCategory) : '');
     api(current + query).then(function (r) {
       list.setAttribute('aria-busy', 'false');
+      if (r.status === 401) { location.assign('/admin/'); return; } // session ended
       if (!r.data.ok) { list.appendChild(el('p', 'empty', r.data.error || 'Could not load this queue.')); return; }
       var items = r.data.items || [];
       if (!items.length) { list.appendChild(el('p', 'empty', 'Nothing here right now.')); return; }
@@ -225,12 +226,33 @@
     });
   });
 
+  // Log out: same-origin POST, the server clears the HttpOnly session cookie
+  // and the browser lands back on the login page.
+  var logoutBtn = document.getElementById('logout');
+  if (logoutBtn) {
+    logoutBtn.hidden = false;
+    logoutBtn.addEventListener('click', function () {
+      logoutBtn.disabled = true;
+      fetch('/admin/logout', {
+        method: 'POST',
+        headers: { 'Origin': location.origin },
+        credentials: 'same-origin'
+      }).then(function () { location.assign('/admin/'); }).catch(function () {
+        logoutBtn.disabled = false;
+      });
+    });
+  }
+
+  function showLockedNote(message) {
+    var note = document.getElementById('db-note');
+    if (!note) return;
+    note.hidden = false;
+    note.textContent = message;
+  }
+
   api('counts').then(function (r) {
-    if (r.status === 503 && document.getElementById('db-note')) {
-      var note = document.getElementById('db-note');
-      note.hidden = false;
-      note.textContent = r.data.error || 'The admin room is locked.';
-    }
+    if (r.status === 503) showLockedNote(r.data.error || 'The admin room is locked.');
+    if (r.status === 401) { location.assign('/admin/'); return; }
     loadCounts();
   });
   renderQueue();

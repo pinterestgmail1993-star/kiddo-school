@@ -82,20 +82,32 @@ DELETE FROM page_comments      WHERE display_name = 'QA Deploy Check';
 DELETE FROM art_submissions    WHERE display_name = 'QA Deploy Check';
 ```
 
-### 4. Admin access (Cloudflare Access — fail-closed)
+### 4. Admin login (username + password — fail-closed)
 
-`/admin/*` and `/api/admin/*` are protected by Cloudflare Access JWT verification (`functions/lib/access.js`). Until Access is configured the admin is a locked door (503) — there is no password fallback, no hidden URL, and nothing to discover. To unlock:
+`/admin/*` and `/api/admin/*` are protected by a server-side session login (`functions/lib/access.js` + `functions/lib/passwords.js`). Until two secrets are configured the admin is a locked door (503) — there is no default account, no hidden URL and nothing to discover.
 
-1. Cloudflare dashboard → Zero Trust → Access → Applications → Add an application → **Self-hosted**.
-2. Application domain: `kiddo-school.pages.dev` with path `/admin` (and a second application or the same app covering `/api/admin`). OneTimePIN / Google / whatever identity providers you prefer.
-3. Add a policy: Allow → Emails → your address (a strict allowlist; never "Everyone").
-4. After saving, open the application → copy the **AUD tag**.
-5. Pages → Settings → Environment variables (production): set
-   - `CF_ACCESS_TEAM` = your team domain, e.g. `your-team.cloudflareaccess.com` (Zero Trust dashboard shows it under Settings → Custom Pages), and
-   - `CF_ACCESS_AUD` = the AUD tag copied above.
-6. Redeploy (Environment variable changes need a new deployment), then load `/admin/` → the Access login appears → after approving, the Kiddo School Admin dashboard shows the five real queues.
+How it works: the password is stored ONLY as a PBKDF2-HMAC-SHA256 hash (100,000 iterations, random salt) in the `ADMIN_PASSWORD_HASH` secret — never plaintext, never in the repo. Login sets a signed, HttpOnly + Secure + SameSite=Strict session cookie (12-hour expiry). Login attempts are rate-limited per IP in D1 (5 per 10-minute window), the login form carries a CSRF token, and state-changing admin API calls additionally require the same-origin + custom-header guard. Logout expires the cookie.
 
-Notes: `CF_ACCESS_JWKS` is a test/local-dev override (pins the JWKS instead of fetching the team's certificate endpoint) and must stay unset in production. Admin pages/APIs send `X-Robots-Tag: noindex, nofollow`, are excluded from the sitemap, and never appear in the public navigation.
+To set it up:
+
+1. On your own machine, in the repo root, run:
+
+   ```
+   node scripts/hash-admin-password.mjs
+   ```
+
+   Type a long password (12+ characters) twice. It prints one `ADMIN_PASSWORD_HASH` value. The password itself never touches the repo, GitHub, the shell history, the database or any log.
+
+2. Cloudflare dashboard → Pages → kiddo-school → Settings → Environment variables → Add (production):
+   - `ADMIN_USERNAME` — your login name (an email or a username), type **Secret**
+   - `ADMIN_PASSWORD_HASH` — the printed value, type **Secret**
+   - optional `ADMIN_SESSION_SECRET` — any long random string; when omitted the session-signing key is derived from the password hash (also fine)
+3. **Redeploy** — environment variables are baked into NEW deployments only (Deployments → latest → Retry deployment, or push any commit).
+4. Load `/admin/` → the login page appears → log in with the username + password → the Kiddo School Admin dashboard shows the five real queues. Use **Log out** when you are done.
+
+If your plan enforces tight CPU limits and login ever returns a 500, regenerate the hash with fewer iterations (`node scripts/hash-admin-password.mjs --iterations 50000`) and update the secret — the parameters travel inside the hash string, so the runtime honors them without code changes. The old Cloudflare Access variables (`CF_ACCESS_TEAM`, `CF_ACCESS_AUD`) and any Access applications for this domain can be removed; the code no longer reads them.
+
+Notes: admin pages/APIs send `X-Robots-Tag: noindex, nofollow`, are excluded from the sitemap, and never appear in the public navigation. Sessions are stateless signed tokens (no session table — the D1 schema is untouched); logout clears the cookie, and the 12-hour expiry bounds anything copied from an unlocked browser.
 
 ### 5. Migration status checks
 
