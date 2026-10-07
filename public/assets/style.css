@@ -187,6 +187,12 @@ h1,h2,h3,.brand,.bean-links strong{font-family:var(--kid-font);letter-spacing:0}
 .tc-num{display:inline-flex;align-items:center;justify-content:center;min-width:88px;min-height:88px;padding:8px;font-size:30px;font-weight:800;line-height:1;color:var(--ink);border:1.5px solid var(--ink);border-radius:6px;font-family:inherit}
 .tc-num span{pointer-events:none}
 .tc-prompt .tc-target{max-width:280px}
+/* What-can-we-do guide rows: a small card thumb and one sentence to borrow. */
+.tc-guide{margin:20px 0 0;padding:0;list-style:none;display:grid;gap:12px;max-width:640px}
+.tc-guide-row{display:flex;align-items:center;gap:16px;border:1.5px solid var(--ink);background:var(--white);box-shadow:3px 3px 0 rgba(52,59,48,.12);padding:10px 14px}
+.tc-guide-row img{width:110px;height:auto;border:1px solid var(--line)}
+.tc-guide-row h3{margin:0;font-size:17px}
+.tc-guide-say{margin:2px 0 0;font-size:16px;font-weight:600;color:var(--ink)}
 .tc-hunt{margin-top:18px}
 .tc-hunt h3{margin:0 0 6px}
 .parents-principal{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:start;max-width:980px}
@@ -198,6 +204,7 @@ h1,h2,h3,.brand,.bean-links strong{font-family:var(--kid-font);letter-spacing:0}
 @media(max-width:950px){.parents-principal{grid-template-columns:1fr}}
 @media(max-width:700px){.hero-actions .button{width:100%}.lp-row{grid-template-columns:40px 1fr}.lp-marker span{width:40px;height:40px;font-size:13px}.lp-stage-card{padding:16px}.lp-stage-card h2{font-size:19px}.tc-choice img{width:82px}.tc-round{padding:16px}.tc-ask{font-size:17px}.final-cta h2{font-size:29px}.final-cta{padding:32px 22px}.tc-flow{grid-template-columns:1fr 1fr}.parents-principal .tc-note-block h2{font-size:22px}}
 @media(max-width:360px){.tc-flow{grid-template-columns:1fr}.tc-choice img{width:72px}.tc-choice{min-width:76px;min-height:76px}}
+@media(max-width:700px){.tc-guide-row{padding:8px 10px;gap:10px}.tc-guide-row img{width:82px}}
 @media(prefers-reduced-motion:reduce){.tc-choice,.lp-stage{transition:none}}
 @media(max-width:680px){.site-header nav{flex-wrap:wrap;row-gap:8px}}
 

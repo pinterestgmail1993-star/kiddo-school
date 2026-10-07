@@ -8,8 +8,8 @@ const htmlFiles=files(root).filter(f=>f.endsWith('.html'));
 const activities=JSON.parse(readFileSync('data/activities.json','utf8'));
 const info=JSON.parse(readFileSync('dist/build-info.json','utf8'));
 const read=f=>readFileSync(f,'utf8');
-test('119 HTML pages, eleven permanent activity routes and activity sheets',()=>{
- assert.equal(htmlFiles.length,119);assert.equal(activities.length,11);
+test('121 HTML pages, eleven permanent activity routes and activity sheets',()=>{
+ assert.equal(htmlFiles.length,121);assert.equal(activities.length,11);
  for(const a of activities){assert.ok(existsSync(`dist/${a.subject}/${a.slug}/index.html`));assert.ok(existsSync(`dist/downloads/${a.slug}.svg`));assert.ok(a.steps.length>=5);assert.ok(a.safety.length>50);}
 });
 test('every local link, image, stylesheet, script and fragment resolves',()=>{
@@ -40,7 +40,7 @@ test('unique descriptive metadata, one heading, valid structured data, and absol
 });
 test('sitemap includes all indexable pages and excludes search and errors',()=>{
  const xml=read('dist/sitemap.xml');const links=[...xml.matchAll(/<loc>(.*?)<\/loc>/g)].map(m=>m[1]);
- assert.equal(links.length,115);assert.equal(new Set(links).size,115);
+ assert.equal(links.length,116);assert.equal(new Set(links).size,116);
  for(const link of links){const u=new URL(link);assert.equal(u.origin,info.siteUrl);assert.ok(existsSync(join(root,u.pathname,'index.html')));assert.ok(!u.pathname.includes('search'));}
 });
 test('preview safeguards, no missing content, and static-only runtime',()=>{

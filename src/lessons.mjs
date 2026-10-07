@@ -818,11 +818,145 @@ export const vhLesson={
   'Repeats are the point. The tenth choo choo is still funny — and still teaching.'
  ],note:'<strong>Age ranges are a guide.</strong> Go at your child’s pace.'},
  pills:{heading:'Where to next?',items:[['Toddler classes','/toddler/'],['Age 2','/toddler/2-years/'],['Learning Path','/learning-path/']]},
- pathNav:{prev:{title:'Animals & Sounds',range:'Age 2',href:'/toddler/2-years/animals-and-sounds/'},next:null},
+ pathNav:{prev:{title:'Animals & Sounds',range:'Age 2',href:'/toddler/2-years/animals-and-sounds/'},next:{title:'Emotions & Feelings',range:'Age 2',href:'/toddler/2-years/emotions-and-feelings/'}},
  hubBlurb:'Beep beep! Twenty vehicles with big sounds and three quick games — cars, trains, boats and one loud rocket.',
  schema:{resourceType:'Interactive toddler class',level:'Toddler (age 2)',teaches:'Vehicle names and their sounds through look, say and tap-along play',audience:'Parents of toddlers',keywords:'vehicles for toddlers, vehicle sounds, transportation activities for toddlers, vehicle learning cards, printable vehicle cards'}
 };
-export const lessons=[hcLesson,fvLesson,cfoLesson,fwftLesson,aeoLesson,fabLesson,fwfhLesson,fcLesson,csLesson,msLesson,anLesson,vhLesson];
+export const emLesson={
+ path:'/toddler/2-years/emotions-and-feelings/',
+ seoTitle:'Emotions & Feelings for 2-Year-Olds',
+ title:'Emotions & Feelings for 2-Year-Olds (Toddler 7)',
+ h1:'Emotions & Feelings for 2-Year-Olds',
+ description:'Help your 2-year-old explore feelings with simple emotion cards, face-matching games and printable activities you can use together.',
+ ogAlt:'Emotions and Feelings class for 2-year-olds at Kiddo School',
+ ogImage:toddlerBase+'emotions-and-feelings-age-2/cover.webp',
+ schemaImage:toddlerBase+'emotions-and-feelings-age-2/cover.webp',
+ eyebrow:'TODDLER 7 · LESSON 13',
+ crumbs:[['Toddler','/toddler/'],['Age 2','/toddler/2-years/'],['Emotions & Feelings','/toddler/2-years/emotions-and-feelings/']],
+ chips:[['Age','2 Years'],['Subject','Talk &amp; Connect'],['Class','Toddler 7'],['Duration','3–5 minutes']],
+ subject:'Talk &amp; Connect',
+ ledes:['Happy, sad, angry, excited — little feelings can have big names. Look at the faces together and give those feelings simple words.',
+  'Nothing to read and nothing to fix. You name the feeling, your toddler makes the face — a point or a giggle counts. Stop whenever they have had enough.'],
+ startHint:'Start with happy — the one they know best.',
+ startLabel:'Start Class',
+ folder:'emotions-and-feelings-age-2/',
+ r2Base:toddlerBase,
+ eagerFirst:false,
+ cover:{file:'cover.webp',w:2000,h:1414,alt:'Emotions and Feelings class for 2-year-olds at Kiddo School'},
+ cards:[
+  {order:1,file:'01-happy.webp',name:'Happy',phrase:'I feel happy!',w:2000,h:1414,alt:'2D illustrated child showing a happy feeling'},
+  {order:2,file:'02-sad.webp',name:'Sad',phrase:'I feel sad.',w:2000,h:1414,alt:'2D illustrated child showing a sad feeling'},
+  {order:3,file:'03-angry.webp',name:'Angry',phrase:'I feel angry.',w:2000,h:1414,alt:'2D illustrated child showing an angry feeling'},
+  {order:4,file:'04-scared.webp',name:'Scared',phrase:'I feel scared.',w:2000,h:1414,alt:'2D illustrated child showing a scared feeling'},
+  {order:5,file:'05-surprised.webp',name:'Surprised',phrase:'Oh!',w:2000,h:1414,alt:'2D illustrated child showing a surprised feeling'},
+  {order:6,file:'06-excited.webp',name:'Excited',phrase:'I’m excited!',w:2000,h:1414,alt:'2D illustrated child showing an excited feeling'},
+  {order:7,file:'07-tired.webp',name:'Tired',phrase:'I’m tired.',w:2000,h:1414,alt:'2D illustrated child showing a tired feeling'},
+  {order:8,file:'08-calm.webp',name:'Calm',phrase:'I feel calm.',w:2000,h:1414,alt:'2D illustrated child showing a calm feeling'},
+  {order:9,file:'09-shy.webp',name:'Shy',phrase:'I feel shy.',w:2000,h:1414,alt:'2D illustrated child showing a shy feeling'},
+  {order:10,file:'10-silly.webp',name:'Silly',phrase:'I feel silly!',w:2000,h:1414,alt:'2D illustrated child showing a silly feeling'},
+  {order:11,file:'11-proud.webp',name:'Proud',phrase:'I did it!',w:2000,h:1414,alt:'2D illustrated child showing a proud feeling'},
+  {order:12,file:'12-worried.webp',name:'Worried',phrase:'I’m worried.',w:2000,h:1414,alt:'2D illustrated child showing a worried feeling'},
+  {order:13,file:'13-frustrated.webp',name:'Frustrated',phrase:'This is hard.',w:2000,h:1414,alt:'2D illustrated child showing a frustrated feeling'},
+  {order:14,file:'14-confused.webp',name:'Confused',phrase:'Hmm?',w:2000,h:1414,alt:'2D illustrated child showing a confused feeling'},
+  {order:15,file:'15-bored.webp',name:'Bored',phrase:'I’m bored.',w:2000,h:1414,alt:'2D illustrated child showing a bored feeling'},
+  {order:16,file:'16-hurt.webp',name:'Hurt',phrase:'Ouch!',w:2000,h:1414,alt:'2D illustrated child showing a mild hurt feeling'},
+  {order:17,file:'17-loved.webp',name:'Loved',phrase:'I feel loved.',w:2000,h:1414,alt:'2D illustration showing a child feeling loved'},
+  {order:18,file:'18-friendly.webp',name:'Friendly',phrase:'Hello!',w:2000,h:1414,alt:'2D illustrated child giving a friendly wave'},
+  {order:19,file:'19-kind.webp',name:'Kind',phrase:'I can help.',w:2000,h:1414,alt:'2D illustration showing a child being kind and helpful'},
+  {order:20,file:'20-brave.webp',name:'Brave',phrase:'I can try.',w:2000,h:1414,alt:'2D illustrated child showing bravery by trying'}
+ ],
+ interactive:{
+  flow:{intro:'Eight little steps, in order: a welcome from your teacher, all twenty feelings, two quick games, faces to make, a few words that help, then off screen and cards to print. Every step stands on its own.',
+   steps:[['1','Teacher welcome'],['2','Meet the feelings'],['3','How do they feel?'],['4','Find the feeling'],['5','Faces &amp; feelings'],['6','What can we do?'],['7','Take it off screen'],['8','Print the cards']],
+   beginHref:'#meet-the-feelings',beginLabel:'Meet the feelings',beginHint:'Faces work best up close — toddler on your lap.'},
+  teacher:{welcome:'Let’s look at some faces. How do they feel?',note:'When the next wobble arrives — and it will — you both have words for it now.'},
+  principal:{note:'Your child doesn’t need to name every feeling. You’re simply giving them words they can grow into.'},
+  complete:{heading:'Class complete!',copy:'All those feelings together — happy, sad, silly and brave.'},
+  offScreen:{heading:'Feelings in our day.',copy:'Name feelings when they naturally come up today.',groups:[
+   {title:'Try one today',items:[
+    '“You’re smiling. You look happy!”',
+    '“That was frustrating.”',
+    '“You look tired.”',
+    '“Are you feeling excited?”',
+    'Make silly faces together in a mirror.'
+   ]}
+  ],note:'You name it and move on — no quizzing, no waiting for an answer. One feeling shared together is a complete class.'},
+  sections:[
+   {type:'learn',id:'meet-the-feelings',eyebrow:'LEARN · MEET THE FEELINGS',heading:'Meet the feelings.',copy:'Twenty faces, one at a time. Look together, say the feeling word, then try the face yourselves.',label:'the feelings',items:[
+    {file:'01-happy.webp',say:'A grin from ear to ear.',find:'Can you make that face?'},
+    {file:'02-sad.webp',say:'A down, droopy sort of day.',find:'Have you felt like this?'},
+    {file:'03-angry.webp',say:'Fists balled, eyebrows down.',find:'Can you scrunch your face?'},
+    {file:'04-scared.webp',say:'Wide eyes, arms tucked in.',find:'Everyone feels scared sometimes.'},
+    {file:'05-surprised.webp',say:'Whoa — what was that?',find:'Can you look surprised?'},
+    {file:'06-excited.webp',say:'Too wiggly to sit still.',find:'What makes you feel this way?'},
+    {file:'07-tired.webp',say:'Slow blinks, one big yawn.',find:'Can you yawn like that?'},
+    {file:'08-calm.webp',say:'Quiet hands, cozy heart.',find:'Peaceful as a sleeping cat.'},
+    {file:'09-shy.webp',say:'A little peek from behind.',find:'New people can feel like a lot.'},
+    {file:'10-silly.webp',say:'Goofy and loving it.',find:'Can you be silly too?'},
+    {file:'11-proud.webp',say:'Chest up, chin high.',find:'A job well done looks like this.'},
+    {file:'12-worried.webp',say:'Hmm — what if…',find:'Whisper “I’m here.”'},
+    {file:'13-frustrated.webp',say:'When it just will not fit.',find:'Some things take practice.'},
+    {file:'14-confused.webp',say:'A tilted head and a shrug.',find:'Can you make a puzzled face?'},
+    {file:'15-bored.webp',say:'Nothing feels fun right now.',find:'It happens to everyone.'},
+    {file:'16-hurt.webp',say:'Holding a sore knee.',find:'Cuddles and a kiss make it better.'},
+    {file:'17-loved.webp',say:'Snuggled in tight.',find:'Who do you love?'},
+    {file:'18-friendly.webp',say:'Arms up, big smile — hi there!',find:'Can you wave like that?'},
+    {file:'19-kind.webp',say:'Helping with little hands.',find:'Can you share like that?'},
+    {file:'20-brave.webp',say:'Standing up tall and having a go.',find:'Show me your brave pose!'}
+   ]},
+   {type:'match',id:'how-do-they-feel',eyebrow:'PLAY · HOW DO THEY FEEL?',heading:'How do they feel?',copy:'A face up top, the same feeling below. You ask the question, your child taps the match.',rounds:[
+    {ask:'How do they feel?',say:'How do they feel?',target:{file:'01-happy.webp',name:'The happy face'},choices:[{file:'01-happy.webp',name:'The happy face',correct:true},{file:'02-sad.webp',name:'The sad face'}]},
+    {ask:'How do they feel?',say:'How do they feel?',target:{file:'03-angry.webp',name:'The angry face'},choices:[{file:'08-calm.webp',name:'The calm face'},{file:'03-angry.webp',name:'The angry face',correct:true}]},
+    {ask:'How do they feel?',say:'How do they feel?',target:{file:'04-scared.webp',name:'The scared face'},choices:[{file:'04-scared.webp',name:'The scared face',correct:true},{file:'06-excited.webp',name:'The excited face'}]},
+    {ask:'How do they feel?',say:'How do they feel?',target:{file:'07-tired.webp',name:'The tired face'},choices:[{file:'10-silly.webp',name:'The silly face'},{file:'07-tired.webp',name:'The tired face',correct:true}]},
+    {ask:'How do they feel?',say:'How do they feel?',target:{file:'12-worried.webp',name:'The worried face'},choices:[{file:'11-proud.webp',name:'The proud face'},{file:'12-worried.webp',name:'The worried face',correct:true},{file:'08-calm.webp',name:'The calm face'}]}
+   ]},
+   {type:'play',id:'find-the-feeling',eyebrow:'PLAY · FIND THE FEELING',heading:'Find the feeling.',copy:'Now by name. You say the feeling, your child taps the face.',rounds:[
+    {ask:'Find happy.',say:'Find happy!',choices:[{file:'02-sad.webp',name:'The sad face'},{file:'01-happy.webp',name:'The happy face',correct:true},{file:'03-angry.webp',name:'The angry face'}]},
+    {ask:'Where’s sad?',say:'Where is sad?',choices:[{file:'02-sad.webp',name:'The sad face',correct:true},{file:'08-calm.webp',name:'The calm face'}]},
+    {ask:'Can you find tired?',say:'Can you find tired?',choices:[{file:'05-surprised.webp',name:'The surprised face'},{file:'07-tired.webp',name:'The tired face',correct:true},{file:'06-excited.webp',name:'The excited face'}]},
+    {ask:'Find surprised.',say:'Find surprised!',choices:[{file:'05-surprised.webp',name:'The surprised face',correct:true},{file:'10-silly.webp',name:'The silly face'}]},
+    {ask:'Where’s calm?',say:'Where is calm?',choices:[{file:'07-tired.webp',name:'The tired face'},{file:'08-calm.webp',name:'The calm face',correct:true},{file:'01-happy.webp',name:'The happy face'}]}
+   ]},
+   {type:'learn',id:'faces-and-feelings',eyebrow:'PLAY · FACES &amp; FEELINGS',heading:'Faces &amp; feelings.',copy:'Now your turn — no tapping needed. Make the face together and see who looks silliest.',label:'the faces',items:[
+    {file:'01-happy.webp',say:'Can you make a happy face?',find:'Wide awake and smiling!'},
+    {file:'05-surprised.webp',say:'Show me surprised!',find:'Hands on cheeks — gasp!'},
+    {file:'06-excited.webp',say:'Show me your excited face!',find:'Jumpy, bouncy, loud.'},
+    {file:'08-calm.webp',say:'Can you look calm like this?',find:'Soft face, slow breath.'},
+    {file:'07-tired.webp',say:'What does tired look like?',find:'Heavy eyes, droopy shoulders.'},
+    {file:'10-silly.webp',say:'Can you make a silly face?',find:'The sillier the better.'}
+   ]},
+   {type:'guide',id:'what-can-we-do',eyebrow:'TOGETHER · WHAT CAN WE DO?',heading:'What can we do?',copy:'No scripts needed. When feelings run big, one calm sentence is enough — a few to keep in your pocket.',items:[
+    {file:'02-sad.webp',feeling:'Sad',phrase:'Want a hug?'},
+    {file:'03-angry.webp',feeling:'Angry',phrase:'Let’s slow down together.'},
+    {file:'04-scared.webp',feeling:'Scared',phrase:'Stay close.'},
+    {file:'13-frustrated.webp',feeling:'Frustrated',phrase:'Let’s try together.'},
+    {file:'07-tired.webp',feeling:'Tired',phrase:'Maybe it’s time for a rest.'}
+   ]}
+  ]
+ },
+ printables:{
+  mode:'cards',
+  heading:'Print the feeling cards.',
+  intro:'Print the cards for simple feeling games and conversations.',
+  pack:'Feelings Learning Cards',
+  meta:'Age 2 · Toddler 7 · Talk &amp; Connect',
+  audience:'Made for you to print and use with your child — twenty cards, two to a page.',
+  note:'The same twenty cards from today’s class — handy for a quiet feeling chat at the kitchen table.',
+  printEyebrow:'PRINTABLE FEELING CARDS',
+  printAria:'The twenty feeling cards'
+ },
+ howTo:{heading:'Tips for Parents',paragraphs:[
+  'All feelings are welcome here. Angry, sad and scared are not bad feelings — they are simply feelings, and every one of them has a name.',
+  'Go face first. Pull the expression yourself and your toddler will copy it — copying comes long before naming.',
+  'Name your own feelings too. “I’m happy you’re here” or “I’m tired tonight” — your face is the best flashcard in the house.'
+ ],note:'<strong>Age ranges are a guide.</strong> Go at your child’s pace.'},
+ pills:{heading:'Where to next?',items:[['Toddler classes','/toddler/'],['Age 2','/toddler/2-years/'],['Learning Path','/learning-path/']]},
+ pathNav:{prev:{title:'Vehicles & Sounds',range:'Age 2',href:'/toddler/2-years/vehicles-and-sounds/'},next:null},
+ hubBlurb:'Twenty feelings with friendly faces and two quick games — name them together, make the faces, then spot those feelings in your own day. Made for two-year-olds.',
+ schema:{resourceType:'Interactive toddler class',level:'Toddler (age 2)',teaches:'Feeling words — happy, sad, angry, scared and more — through looking, face-making and naming together',audience:'Parents of toddlers',keywords:'emotions for 2 year olds, feelings for toddlers, emotion cards for toddlers, feelings activities for toddlers, printable emotion cards, teaching feelings to toddlers, emotion faces for toddlers, social emotional activities for 2 year olds'}
+};
+export const lessons=[hcLesson,fvLesson,cfoLesson,fwftLesson,aeoLesson,fabLesson,fwfhLesson,fcLesson,csLesson,msLesson,anLesson,vhLesson,emLesson];
 export function classLessonSchema(site,L){
  return [
   {'@context':'https://schema.org','@type':'LearningResource',name:L.title,description:L.description,url:site+L.path,image:L.schemaImage,inLanguage:'en',learningResourceType:L.schema.resourceType||'Interactive baby class',educationalLevel:L.schema.level,isAccessibleForFree:true,educationalUse:'Home learning activity',teaches:L.schema.teaches,audience:{'@type':'Audience',audienceType:L.schema.audience},keywords:L.schema.keywords},
@@ -901,7 +1035,8 @@ export const stages=[
  {name:'Toddler 3',age:'Age 2',href:'/toddler/2-years/',lesson:csLesson},
  {name:'Toddler 4',age:'Age 2',href:'/toddler/2-years/',lesson:msLesson},
  {name:'Toddler 5',age:'Age 2',href:'/toddler/2-years/',lesson:anLesson},
- {name:'Toddler 6',age:'Age 2',href:'/toddler/2-years/',lesson:vhLesson}
+ {name:'Toddler 6',age:'Age 2',href:'/toddler/2-years/',lesson:vhLesson},
+ {name:'Toddler 7',age:'Age 2',href:'/toddler/2-years/',lesson:emLesson}
 ];
 const tcImg=(base,file,w,h,alt,attrs='')=>`<img src="${base}${file}" width="${w}" height="${h}" alt="${alt}"${attrs}>`;
 export function toddlerClassBody(L){
@@ -1031,6 +1166,12 @@ export function toddlerClassBody(L){
   <p class="lesson-copy">${s.copy}</p>
   ${promptRoundsHtml(s.rounds)}
  </section>`;
+   if(s.type==='guide')return `<section class="wrap lesson-section" id="${s.id}" aria-label="${esc(s.heading)}">
+  <span class="eyebrow">${s.eyebrow}</span>
+  <h2>${s.heading}</h2>
+  <p class="lesson-copy">${s.copy}</p>
+  <ul class="tc-guide">${s.items.map(it=>`<li class="tc-guide-row">${tcImg(base,it.file,dimOf[it.file][0],dimOf[it.file][1],altOf[it.file],' loading="lazy"')}<div><h3>${esc(it.feeling)}</h3><p class="tc-guide-say">“${it.phrase}”</p></div></li>`).join('')}</ul>
+ </section>`;
    return '';
   };
   return `${crumbNav(L.crumbs)}
@@ -1076,14 +1217,14 @@ export function printCardsBody(L){
  const sheets=L.cards.reduce((rows,c,i)=>{if(i%2===0)rows.push([]);rows[rows.length-1].push(c);return rows;},[]);
  return `${crumbNav(crumbs)}
  <section class="wrap print-head">
-  <span class="eyebrow">PRINTABLE VEHICLE CARDS</span>
+  <span class="eyebrow">${P.printEyebrow||'PRINTABLE VEHICLE CARDS'}</span>
   <h1>${P.pack}</h1>
   <p class="tc-pack-meta">${P.meta}</p>
   <p class="lesson-copy">${P.audience} The cards print in card order — cut them out or use them as they are. When you are ready, choose Print Cards.</p>
   <div class="hero-actions tc-print-actions"><button type="button" class="button" data-tc-print-view>Print Cards</button><a class="button button-ghost" href="${L.path}">Back to class <span aria-hidden="true">↗</span></a></div>
   <p class="fc-hint">Printing happens in your browser — nothing is uploaded and nothing is installed. No PDF is involved.</p>
  </section>
- <section class="wrap tc-print-pages" aria-label="The twenty vehicle learning cards">
+ <section class="wrap tc-print-pages" aria-label="${esc(P.printAria||'The twenty vehicle learning cards')}">
   ${sheets.map(pair=>`<div class="tc-print-sheet">${pair.map(c=>`<figure class="tc-print-page"><img src="${base}${c.file}" width="${c.w}" height="${c.h}" alt="${c.alt}"></figure>`).join('')}</div>`).join('\n  ')}
  </section>`;
 }
