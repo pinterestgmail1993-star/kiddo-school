@@ -64,6 +64,24 @@ Create a **private** bucket (dashboard → R2 → Create bucket → name it `kid
 
 Set Pages environment variables `TURNSTILE_SITE_KEY` and `TURNSTILE_SECRET_KEY` (Turnstile dashboard → Add site, managed widget). Without them the forms simply skip the human check; the honeypot, same-origin + custom-header CSRF guard, per-IP D1 rate limits and server-side validation remain active.
 
+### Verifying a deployment (no admin needed)
+
+After every deploy — and specifically after adding a new binding, which Pages bakes into NEW deployments only — run the public verification suite from the repo root:
+
+```
+node scripts/qa-community-live.mjs
+```
+
+It checks the GET endpoints, CSRF guards, validation errors, all five submission endpoints, pending-content privacy (nothing pending is ever publicly readable) and the fail-closed admin. It writes a small number of rows clearly labeled `QA Deploy Check` (plus one bare `x` sticky row if an older version of the script ran) — delete them any time from the D1 console:
+
+```sql
+DELETE FROM sticky_notes       WHERE display_name = 'QA Deploy Check' OR message = 'x';
+DELETE FROM principal_messages WHERE parent_name   = 'QA Deploy Check';
+DELETE FROM page_reviews       WHERE display_name = 'QA Deploy Check';
+DELETE FROM page_comments      WHERE display_name = 'QA Deploy Check';
+DELETE FROM art_submissions    WHERE display_name = 'QA Deploy Check';
+```
+
 ### 4. Admin access (Cloudflare Access — fail-closed)
 
 `/admin/*` and `/api/admin/*` are protected by Cloudflare Access JWT verification (`functions/lib/access.js`). Until Access is configured the admin is a locked door (503) — there is no password fallback, no hidden URL, and nothing to discover. To unlock:
