@@ -8,11 +8,11 @@ export function schoolCalendarBody(){
  const day=(n,name,theme,copy,linkLabel,href)=>`<li class="sc-day" data-sc-day="${n}"><div class="sc-when"><span class="sc-dayname">${name}</span><span class="sc-date" data-sc-date hidden></span></div><div class="sc-plan"><span class="sc-theme">${theme}</span><p>${copy}</p><a class="text-link" href="${href}">${linkLabel} <span aria-hidden="true">↗</span></a></div></li>`;
  const week=`<ol class="sc-week">
  ${day(1,'Monday','Learn','Start the week with a class from the Learning Path — one short, playful lesson is plenty for a Monday.','Start a class','/learning-path/')}
- ${day(2,'Tuesday','Play &amp; practice','Trace a letter, write a number or draw something small on screen — and save the picture.','Practise handwriting','/literacy/handwriting-practice/')}
+ ${day(2,'Tuesday','Play &amp; practice','Match it, sort it, spot the different one — three gentle little games with the cards your toddler already knows.','Play &amp; practice together','/toddler/2-years/play-and-practice/')}
  ${day(3,'Wednesday','Circle Time','Hello, move, listen, a tiny story and goodbye — a little preschool morning, at home.','Sit down for Circle Time','/toddler/2-years/circle-time/hello-school/')}
- ${day(4,'Thursday','My work','Make something with your hands. A shape collage is a good one — and it can go up on your own wall at home.','Make a shape collage','/art/paper-shape-collage/')}
- ${day(5,'Friday','Let&rsquo;s explore','Fill a bowl of water, guess what sinks and find out together. The <a href="/activities/">activity cupboard</a> has more ideas like this.','Try Sink or Float?','/science/sink-or-float/')}
- ${day(6,'Saturday','Library','A quiet couch moment: print a set of flashcards and look through them together.','Visit the Library','/flashcards/')}
+ ${day(4,'Thursday','My work','Sit at the desk together: draw and scribble, or trace a line with one finger — real work to be proud of.','Go to My Work','/toddler/2-years/my-work/')}
+ ${day(5,'Friday','Let&rsquo;s explore','A little mission away from the screen — a color hunt, a listening walk, or whatever the day suggests.','Pick a mission','/toddler/2-years/lets-explore/')}
+ ${day(6,'Saturday','Library','One quiet look through the Learning Library: a class, the flashcards or Circle Time again — whatever feels good.','Visit the Library','/learning-library/')}
  ${day(0,'Sunday','Together day','A slow one. Go outside, listen carefully and map the sounds you hear along the way.','Make a sound map','/nature/sound-map/')}
  </ol>`;
  return `<section class="wrap section compact sc-today-wrap">

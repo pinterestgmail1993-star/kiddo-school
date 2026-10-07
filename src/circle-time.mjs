@@ -126,14 +126,18 @@ export function myClassroomBody(){
  const hot=(cls,label,href)=>`<a class="mc-hot ${cls}" href="${href}">${label}</a>`;
  return `<section class="wrap section compact">
  <div class="mc-stage">
-  <img src="${classroomBase}" width="1366" height="768" alt="Illustrated classroom with a teacher by the blackboard, a library shelf, a toy shelf, a big circle rug, a desk and a green door" fetchpriority="high">
+  <img src="${classroomBase}" width="1366" height="768" alt="Illustrated classroom with a teacher by the blackboard, a class rules poster, a library shelf, a toy shelf, a big circle rug, a child’s desk with a backpack, a sticky note wall and a green door" fetchpriority="high">
   <nav class="mc-hotspots" aria-label="Places in the classroom">
    ${hot('mc-hot-board','Today’s class','/learning-path/')}
-   ${hot('mc-hot-library','Library','/flashcards/')}
-   ${hot('mc-hot-artwall','Art Wall','/art-wall/')}
+   ${hot('mc-hot-rules','Our Classroom','/toddler/2-years/our-classroom/')}
+   ${hot('mc-hot-wall','Sticky Notes','/sticky-note-wall/')}
+   ${hot('mc-hot-library','Library','/learning-library/')}
    ${hot('mc-hot-principal','Principal','/principals-office/')}
    ${hot('mc-hot-calendar','Calendar','/school-calendar/')}
-   ${hot('mc-hot-door','Let’s explore','/activities/')}
+   ${hot('mc-hot-shelf','Play &amp; Practice','/toddler/2-years/play-and-practice/')}
+   ${hot('mc-hot-door','Let’s explore','/toddler/2-years/lets-explore/')}
+   ${hot('mc-hot-desk','My Work','/toddler/2-years/my-work/')}
+   ${hot('mc-hot-bag','My School Bag','/my-school-bag/')}
    ${hot('mc-hot-rug','Circle Time','#circle-time')}
   </nav>
  </div>

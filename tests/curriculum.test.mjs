@@ -651,7 +651,8 @@ test('my classroom connects the rug to circle time and every hotspot to a real p
  assert.ok(mc.includes('rel="canonical" href="https://kiddo-school.pages.dev/my-classroom/"'));
  assert.ok(mc.includes('<h1>My Classroom</h1>'));
  assert.ok(mc.includes('src="https://pub-f2fcb7c9b45a496cbeefef18dbba0ec0.r2.dev/school/my-classroom/my-classroom-age-2.webp" width="1366" height="768"'));
- for(const [label,href] of [['Today’s class','/learning-path/'],['Library','/flashcards/'],['Art Wall','/art-wall/'],['Principal','/principals-office/'],['Calendar','/school-calendar/'],['Let’s explore','/activities/'],['Circle Time','#circle-time']])assert.ok(mc.includes('href="'+href+'"')&&mc.includes('>'+label+'</a>'),label);
+ for(const [label,href] of [['Today’s class','/learning-path/'],['Our Classroom','/toddler/2-years/our-classroom/'],['Sticky Notes','/sticky-note-wall/'],['Library','/learning-library/'],['Principal','/principals-office/'],['Calendar','/school-calendar/'],['Play &amp; Practice','/toddler/2-years/play-and-practice/'],['Let’s explore','/toddler/2-years/lets-explore/'],['My Work','/toddler/2-years/my-work/'],['My School Bag','/my-school-bag/'],['Circle Time','#circle-time']])assert.ok(mc.includes('href="'+href+'"')&&mc.includes('>'+label+'</a>'),label);
+ assert.ok(mc.includes('mc-hot-desk')&&mc.includes('mc-hot-shelf')&&mc.includes('mc-hot-bag')&&mc.includes('mc-hot-rules')&&mc.includes('mc-hot-wall')&&mc.includes('mc-hot-calendar'),'desk, shelf, bag, rules poster, wall and calendar hotspots exist');
  assert.ok(mc.includes('id="circle-time"'),'the rug panel exists');
  assert.ok(mc.includes('<h2>Hello School!</h2>'),'rug panel says Hello School!');
  assert.ok(mc.includes('href="/toddler/2-years/circle-time/hello-school/"')&&mc.includes('Start Circle Time'),'clear Start Circle Time action');
