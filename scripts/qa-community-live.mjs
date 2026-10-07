@@ -71,9 +71,11 @@ console.log('=== 2. CSRF / origin guards (no writes) ===');
   // allowed through the CSRF guard by design (CSRF is a browser threat and
   // this API holds no ambient credentials). To verify the guard passed
   // WITHOUT writing anything, send a body that then fails validation → 400.
-  const noOrigin = await fetch(BASE + '/api/community/sticky', {
+  // Uses the comment route to keep this run's sticky POSTs inside its
+  // per-IP rate limit of 3 (see section 3 + 4).
+  const noOrigin = await fetch(BASE + '/api/community/comment', {
     method: 'POST', headers: { 'Content-Type': 'application/json', 'X-Kiddo-Community': '1' },
-    body: JSON.stringify({ message: 'x' }), // no confirm → validation must reject
+    body: JSON.stringify({ page_path: '/no/such/page', comment: 'x' }), // bad path → validation must reject
   });
   check('POST no Origin + valid header → guard passes, validation 400 (no write)', noOrigin.status === 400, `status ${noOrigin.status}`);
 }

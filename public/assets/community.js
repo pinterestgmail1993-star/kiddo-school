@@ -57,7 +57,7 @@
           confirmBox.focus();
           return;
         }
-        var payload = { page_path: path, reaction: reaction, comment: comment || '', display_name: nameField ? nameField.value.trim() : '', turnstileToken: turnstileGetter ? turnstileGetter() : null };
+        var payload = { page_path: path, reaction: reaction, comment: comment || '', display_name: nameField ? nameField.value.trim() : '', confirm: !!(confirmBox && confirmBox.checked), turnstileToken: turnstileGetter ? turnstileGetter() : null };
         send.disabled = true;
         status.textContent = 'Sending…';
         api.postJson('/api/community/review', payload).then(function (res) {

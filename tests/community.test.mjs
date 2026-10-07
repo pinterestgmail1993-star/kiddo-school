@@ -197,6 +197,20 @@ test('community-api.js loads BEFORE every consumer script (defer execution order
  }
 });
 
+test('review UI payload carries the parent-confirmation flag the server requires',()=>{
+ // The API rejects any review that has a comment but no confirm field
+ // (defense in depth). The client-side handler checks the box before sending
+ // — and must therefore SEND that state. A regression here made every
+ // review with a comment answer 400 from the real UI while all API-level
+ // tests (which pass confirm explicitly) stayed green.
+ const src=read('public/assets/community.js');
+ const payloadLine=src.split('\n').find(l=>l.includes("api.postJson('/api/community/review'"));
+ const payloadSrc=src.split('\n').filter(l=>l.includes('var payload =')).join('\n');
+ assert.ok(payloadSrc.includes('confirm:'), 'review payload must include the confirm flag');
+ assert.ok(payloadSrc.includes("confirmBox && confirmBox.checked"), 'confirm flag must come from the actual checkbox state');
+ assert.ok(payloadLine, 'review POST call present');
+});
+
 /* ------------------------------------------------ Public API: submissions */
 test('routers live where real Pages routing expects them: /api/community/* → bare route names, /api/admin/* → resources',()=>{
  // Real Cloudflare Pages routing hands a router file params.route = the path
