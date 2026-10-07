@@ -63,5 +63,7 @@ export function toddlerBody(){
  <div class="fc-stages">${lessonStageCard(emLesson,'Lesson 13','Talk &amp; Connect')}</div>
  <h2 class="lesson-classheading">Circle Time · Age 2</h2>
  <div class="fc-stages">${lessonStageCard(helloSchool,'Circle Time 1','Age 2')}</div>
+ <h2 class="lesson-classheading">My Classroom · Age 2</h2>
+ <div class="fc-stages"><a class="fc-stage lesson-card-link" href="/my-classroom/"><div class="fc-stage-pills"><span class="fc-age">Age 2</span><span class="fc-class">The school room</span></div><h3>My Classroom</h3><p>Circle Time starts on the rug — and the desk, the toy shelf, the School Bag and the Sticky Notes wall are close by.</p><span class="fc-open">Open My Classroom <span aria-hidden="true">↗</span></span></a></div>
  <p class="lesson-note"><strong>Every child develops differently.</strong> Kiddo School age ranges are guides, not tests or deadlines — follow your child’s cues. The earlier path lives in <a href="/newborn/">Newborn Learning</a> and <a href="/baby/">Baby classes</a>.</p></section>`;
 }
