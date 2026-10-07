@@ -4,6 +4,7 @@
 // invented content — every visible item goes somewhere real.
 import {csLesson,vhLesson,emLesson,anLesson,msLesson,fwfhLesson,fcLesson,gbLesson,gfLesson,lessonsBase} from './lessons.mjs';
 import {helloSchool as helloSchoolCt,circleBase} from './circle-time.mjs';
+import {bunnyBook} from './books.mjs';
 export const bagBase='/my-school-bag/';
 export const libraryBase='/learning-library/';
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
@@ -97,6 +98,8 @@ export const learningLibrary={
  ages:{heading:'Browse by age',items:[
   ['Newborn','/newborn/'],['Baby','/baby/'],['12–18 Months','/toddler/12-18-months/'],['18–24 Months','/toddler/18-24-months/'],['Age 2','/toddler/2-years/']]},
  sections:[
+  {id:'books',title:'Books & Stories',items:[
+   {kind:'Age 2 · Picture Story',href:bunnyBook.path,name:'Bunny Finds a Friend',cta:'Read Book',bookThumb:`<img src="${bunnyBook.base}${bunnyBook.cover.file}" width="2000" height="1545" alt="Cover of the picture book Bunny Finds a Friend: a smiling rabbit in a garden" loading="lazy">`}]},
   {id:'words',title:'Words & Talking',items:[
    {kind:'Class',href:anLesson.path,name:'Animals & Sounds',lesson:anLesson},
    {kind:'Class',href:vhLesson.path,name:'Vehicles & Sounds',lesson:vhLesson},
@@ -133,9 +136,9 @@ export const learningLibrary={
 };
 export function learningLibraryBody(Lb){
  const item=it=>`<a class="lib-item" href="${it.href}">
-  <span class="lib-thumb">${it.img?it.img:it.ct?ctCover:it.lesson?coverImg(it.lesson):`<span class="lib-doodle">${doodle(it.doodle)}</span>`}</span>
+  <span class="lib-thumb${it.bookThumb?' lib-thumb--book':''}">${it.img?it.img:it.bookThumb?it.bookThumb:it.ct?ctCover:it.lesson?coverImg(it.lesson):`<span class="lib-doodle">${doodle(it.doodle)}</span>`}</span>
   <span class="lib-copy"><strong>${esc(it.name)}</strong><span class="lib-kind">${it.kind}</span></span>
-  <span class="fc-open">Open <span aria-hidden="true">↗</span></span></a>`;
+  <span class="fc-open">${it.cta||'Open'} <span aria-hidden="true">↗</span></span></a>`;
  return `${crumbs([['Learning Library',null]])}
  <section class="wrap section compact"><span class="eyebrow">${Lb.eyebrow}</span>
  <h1>${esc(Lb.h1)}</h1>

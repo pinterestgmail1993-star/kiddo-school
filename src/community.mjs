@@ -10,13 +10,14 @@ const crumbNav=parts=>`<nav class="breadcrumbs wrap" aria-label="Breadcrumb"><a 
 // The four reactions use EXACTLY these values: love | like | okay | not_for_us.
 // Emoji are never the only label — each button has an accessible text name.
 const REACTIONS=[['love','😍','Loved it'],['like','😊','Liked it'],['okay','😐','It was okay'],['not_for_us','😕','Not for us']];
-export function communityMount(path){
+export function communityMount(path,heading){
+ const h=heading||'How was this activity?';
  return `<section class="wrap lesson-section cm" data-cm-root data-page-path="${esc(path)}" aria-label="Family feedback">
  <span class="eyebrow">FAMILY FEEDBACK</span>
- <h2>How was this activity?</h2>
+ <h2>${h}</h2>
  <p class="lesson-copy">Your feedback helps us make Kiddo School better. This is feedback about the activity, for the grown-ups who make it — it is never about a child.</p>
  <noscript><p class="fc-hint">Sending feedback needs JavaScript. You can still enjoy the class together — and you are always welcome to write to the <a href="/principals-office/">Principal&rsquo;s Office</a> instead.</p></noscript>
- <div class="cm-reactions" data-cm-reactions hidden role="group" aria-label="How was this activity? Choose one.">
+ <div class="cm-reactions" data-cm-reactions hidden role="group" aria-label="${h} Choose one.">
   ${REACTIONS.map(([v,emoji,label])=>`<button type="button" class="cm-btn" data-cm-reaction="${v}" aria-pressed="false"><span class="cm-emoji" aria-hidden="true">${emoji}</span><span>${label}</span></button>`).join('')}
  </div>
  <form class="cm-form" data-cm-form hidden novalidate>
