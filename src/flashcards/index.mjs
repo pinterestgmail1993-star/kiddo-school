@@ -15,6 +15,7 @@ import * as gfData from './data-garden-friends.mjs';
 import * as alData from './data-alphabet.mjs';
 import * as nmData from './data-numbers.mjs';
 import * as shData from './data-shapes.mjs';
+import * as clData from './data-colors.mjs';
 
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const cardSlug=file=>file.replace(/^\d+-/,'').replace(/\.webp$/,'');
@@ -30,7 +31,10 @@ const SOURCES=[
  // The numbers and shapes modules are the same pattern (Age 3 Classes 2 and 3).
  [{meta:alData.alphabetMeta,cards:alData.alphabetCardContent},alData.alphabetLesson],
  [{meta:nmData.numbersMeta,cards:nmData.numbersCardContent},nmData.numbersLesson],
- [{meta:shData.shapesMeta,cards:shData.shapesCardContent},shData.shapesLesson]
+ [{meta:shData.shapesMeta,cards:shData.shapesCardContent},shData.shapesLesson],
+ // Age 3 Class 4: each color card carries BOTH faces — the splash (file)
+ // and the matching picture (picFile) — rendered together on its card page.
+ [{meta:clData.colorsMeta,cards:clData.colorsCardContent},clData.colorsLesson]
 ];
 
 function buildSet([data,lesson]){
@@ -45,6 +49,7 @@ function buildSet([data,lesson]){
   const d=data.cards[s];
   if(!d) throw Error('flashcards: missing content for '+slug+'/'+s);
   return {slug:s,word:d.word||titleWord(s),file:c.file,w:c.w,h:c.h,alt:c.alt,
+   img2:c.picFile?base+c.picFile:null,alt2:c.picAlt||null,picWord:d.picWord||null,
    letter:c.letter||d.letter||null,numeral:c.numeral||d.numeral||null,sound:d.sound||null,metaDescription:d.metaDescription||null,cardTitle:d.cardTitle||null,
    intro:d.intro,say:d.say,try:d.try,note:d.note,url:url+s+'/',img:base+c.file,n:i+1};
  });
@@ -187,13 +192,22 @@ export function fcCardPageBody(set,card,ctx){
  const enc=encodeURIComponent;
  const pageUrl=site+card.url;
  const shareTitle=`${card.word} flashcard for ${noun.toLowerCase()} — ${set.name} · Kiddo School`;
- const figure=`<figure class="fc2-hero"><img src="${card.img}" width="${card.w}" height="${card.h}" alt="${esc(card.alt)}"><figcaption><strong>${esc(card.word)}</strong><span>Card ${card.n} of ${set.cards.length} · ${esc(set.name)}</span></figcaption></figure>`;
+ // A color card has TWO faces: the splash and the matching picture. They
+ // render side by side at their true 1414×2000 ratio (stacking on mobile);
+ // single-image cards keep the original hero figure untouched.
+ const heroFig=(src,w,h,cap,alt,lazy)=>`<figure class="fc2-hero fc2-hero-half"><img src="${src}" width="${w}" height="${h}" alt="${esc(alt)}"${lazy?' loading="lazy"':''}><figcaption><strong>${esc(cap)}</strong><span>Card ${card.n} of ${set.cards.length} · ${esc(set.name)}</span></figcaption></figure>`;
+ const figure=card.img2
+  ?`<div class="fc2-pair">${heroFig(card.img,card.w,card.h,card.word+' splash',card.alt,false)}${heroFig(card.img2,card.w,card.h,card.picWord||(card.word+' in real life'),card.alt2,true)}</div>`
+  :`<figure class="fc2-hero"><img src="${card.img}" width="${card.w}" height="${card.h}" alt="${esc(card.alt)}"><figcaption><strong>${esc(card.word)}</strong><span>Card ${card.n} of ${set.cards.length} · ${esc(set.name)}</span></figcaption></figure>`;
  const pn=`<nav class="fc2-pn" aria-label="Previous and next card"><a class="fc2-pn-btn" href="${prev.url}" rel="prev"><span aria-hidden="true">←</span> <strong>${esc(prev.word)}</strong><span>Previous card</span></a><a class="fc2-pn-btn fc2-pn-next" href="${next.url}" rel="next"><strong>${esc(next.word)}</strong> <span aria-hidden="true">→</span><span>Next card</span></a></nav>`;
  const say=`<div class="fc2-do"><h2>Say it together</h2><p class="fc2-say">&ldquo;${esc(card.say)}&rdquo;</p><p class="fc-hint">Say it naturally, then wait. Whatever comes back — the word, the sound, a point, a giggle — is the right answer.</p></div>`;
  const sound=card.sound?`<div class="fc2-do fc2-sound"><h2>Letter sound</h2><p>${esc(card.sound)}</p></div>`:'';
  const tryThis=`<div class="fc2-do"><h2>Try this</h2><p>${esc(card.try)}</p></div>`;
  const note=`<div class="fc2-do fc2-note"><h2>Quick parent note</h2><p>${esc(card.note)}</p></div>`;
- const actions=`<div class="fc2-actions"><a class="button" href="${card.img}" download="${esc(card.word.toLowerCase().replace(/[^a-z0-9]+/g,'-'))}.webp">Download card <span aria-hidden="true">↓</span></a>${set.printPath?`<a class="button" href="${set.printPath}">Print full set</a>`:''}<a class="button" href="${set.url}">View full set</a></div>`;
+ const dlName=f=>f.replace(/^\d+-/,'').replace(/\.webp$/,'');
+ const actions=`<div class="fc2-actions">${card.img2
+  ?`<a class="button" href="${card.img}" download="${dlName(card.file)}.webp">Download splash <span aria-hidden="true">↓</span></a><a class="button" href="${card.img2}" download="${dlName(card.img2.split('/').pop())}.webp">Download picture <span aria-hidden="true">↓</span></a>`
+  :`<a class="button" href="${card.img}" download="${esc(card.word.toLowerCase().replace(/[^a-z0-9]+/g,'-'))}.webp">Download card <span aria-hidden="true">↓</span></a>`}${set.printPath?`<a class="button" href="${set.printPath}">Print full set</a>`:''}<a class="button" href="${set.url}">View full set</a></div>`;
  const share=`<div class="fc2-block fc2-share-block"><span class="eyebrow">SHARE THIS CARD</span><h2>Pass it on.</h2><div class="fc2-share"><a class="fc2-share-btn" href="https://twitter.com/intent/tweet?url=${enc(pageUrl)}&text=${enc(shareTitle)}" target="_blank" rel="noopener" aria-label="Share this card on X">X</a><a class="fc2-share-btn" href="https://www.facebook.com/sharer/sharer.php?u=${enc(pageUrl)}" target="_blank" rel="noopener" aria-label="Share this card on Facebook">Facebook</a><a class="fc2-share-btn" href="https://wa.me/?text=${enc(shareTitle+' '+pageUrl)}" target="_blank" rel="noopener" aria-label="Share this card on WhatsApp">WhatsApp</a><a class="fc2-share-btn" href="https://pinterest.com/pin/create/button/?url=${enc(pageUrl)}&media=${enc(card.img)}&description=${enc(shareTitle)}" target="_blank" rel="noopener" aria-label="Save this card on Pinterest">Pinterest</a><button type="button" class="fc2-share-btn" data-fc-copy>Copy link</button></div><p class="fc-hint">Share buttons open in a new tab. The copy button copies this page&rsquo;s address — nothing is tracked.</p></div>`;
  const lesson=set.lessonPath?`<p class="fc2-lesson">These cards come from the <a href="${set.lessonPath}">${esc(set.lessonTitle)}</a> — the full interactive class with games, sounds and a print view.</p>`:'';
  const relGrid=related&&related.length?`<section class="wrap fc-section"><span class="eyebrow">RELATED CARDS</span><h2>More cards to try.</h2><p class="fc-hint">${esc(ctx.relatedHint||'Nearby cards from this set and its closest friends.')}</p><div class="fc2-cards">${related.map(r=>`<a class="fc-card fc2-cardlink" href="${r.card.url}"><span class="fc2-cardimg"><img src="${r.card.img}" width="${r.card.w}" height="${r.card.h}" alt="${esc(r.card.alt)}" loading="lazy"></span><span class="fc2-cardword"><strong>${esc(r.card.word)}</strong><span>From ${esc(r.setName)}</span></span></a>`).join('')}</div></section>`:'';

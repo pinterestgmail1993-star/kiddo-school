@@ -921,3 +921,52 @@ button.ord-tile:disabled{cursor:default}
  .pat-gap{width:38px;height:38px}
 }
 @media (prefers-reduced-motion:reduce){button.ord-tile{transition:none}}
+
+/* ---- Age 3 Class 4: Colors & Color Mixing ---- */
+/* Color swatch tiles: programmatic paint-splash blobs. Pure CSS — the
+   find-the-color game never depends on a picture that might not load. */
+.color-face{display:inline-block;width:84px;height:84px;border-radius:46% 54% 52% 48%/50% 44% 56% 50%;box-shadow:inset -6px -8px 0 rgba(0,0,0,.14),0 3px 8px rgba(52,59,48,.18);border:2px solid rgba(52,59,48,.28)}
+.color-face.is-target{width:96px;height:96px}
+.cf-red{background:#d93a3a}.cf-blue{background:#2f6fd0}.cf-yellow{background:#f5c531}.cf-green{background:#4d9e3f}
+.cf-orange{background:#f07f28}.cf-purple{background:#8f4fc0}.cf-pink{background:#f28ab8}.cf-brown{background:#8a5a33}
+.cf-black{background:#2b2b2b}.cf-gray{background:#a9a9a9}
+.cf-white{background:#fffdf5}
+.cf-rainbow{background:linear-gradient(180deg,#e8483f 0%,#f4a12c 20%,#f5d327 40%,#5cb548 60%,#3b7fd4 80%,#8f4fc0 100%)}
+button.tc-color{padding:10px}
+button.tc-color .color-face{pointer-events:none}
+/* The paint mixer: three stations. Without JS the results stay visible as
+   a chart; with JS colors-class.js parks each result behind the button. */
+.mix-board{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:6px 0 4px}
+.mix-station{border:1.5px solid var(--ink);background:var(--white);padding:20px 18px;box-shadow:4px 4px 0 rgba(52,59,48,.14);display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center}
+.mix-drops{display:flex;align-items:center;gap:9px}
+.mix-drop{width:52px;height:52px;border-radius:46% 54% 52% 48%/50% 44% 56% 50%;box-shadow:inset -4px -6px 0 rgba(0,0,0,.14);border:2px solid rgba(52,59,48,.28)}
+.mix-result{transition:transform .25s ease,opacity .25s ease}
+.mix-result.is-unknown{opacity:.18;transform:scale(.72);filter:grayscale(1)}
+.mix-result.is-mixed{opacity:1;transform:scale(1.12)}
+.mix-plus{font-size:24px;font-weight:800;color:rgba(52,59,48,.6)}
+.mix-line{font-size:15px;color:var(--muted)}
+.mix-line strong{color:var(--ink)}
+@media (max-width:760px){.mix-board{grid-template-columns:1fr}}
+/* Rainbow strip: an ordered legend without JS; tappable check-offs with it. */
+.rb-strip{display:flex;flex-wrap:wrap;gap:12px;list-style:none;padding:0;margin:0 0 14px}
+.rb-chip{display:flex;align-items:center;gap:9px;padding:10px 18px;border-radius:999px;border:2px solid rgba(52,59,48,.35);color:#fff;font-weight:800;text-shadow:0 1px 3px rgba(0,0,0,.5);box-shadow:3px 3px 0 rgba(52,59,48,.16);font-size:15px}
+.rb-chip .rb-num{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:rgba(255,255,255,.85);color:var(--ink);font-size:12px;text-shadow:none}
+.rb-chip .rb-check{opacity:0;font-size:17px;transition:opacity .2s}
+button.rb-chip{cursor:pointer;transition:transform .15s,box-shadow .15s;font-family:inherit}
+button.rb-chip:hover,button.rb-chip:focus-visible{transform:translate(-1px,-1px);box-shadow:4px 4px 0 rgba(52,59,48,.24)}
+button.rb-chip.is-found .rb-check{opacity:1}
+button.rb-chip.is-found{outline:3px solid #71326d;outline-offset:2px}
+.rb-chip.cf-white .rb-name,.rb-chip.cf-yellow .rb-name{color:var(--ink);text-shadow:none}
+@media (prefers-reduced-motion:reduce){.mix-result,.rb-check,button.rb-chip{transition:none}}
+/* Color card pages: the splash and its picture side by side, both at the
+   true 1414×2000 ratio — never cropped, stacking on small screens. */
+.fc2-pair{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:720px;margin:0 0 16px}
+.fc2-pair .fc2-hero{margin:0}
+.fc2-pair .fc2-hero img{width:100%;height:auto;object-fit:contain;background:#fff;border-radius:14px;box-shadow:0 10px 30px rgba(63,52,32,.14)}
+@media (max-width:640px){.fc2-pair{grid-template-columns:1fr 1fr;gap:8px}.fc2-pair .fc2-hero figcaption{flex-direction:column;gap:2px;font-size:.78rem}}
+@media (max-width:400px){.fc2-pair{grid-template-columns:1fr}}
+/* Mixer drops share the swatch palette (md- prefix on mix stations). */
+.md-red{background:#d93a3a}.md-blue{background:#2f6fd0}.md-yellow{background:#f5c531}.md-green{background:#4d9e3f}
+.md-orange{background:#f07f28}.md-purple{background:#8f4fc0}.md-pink{background:#f28ab8}.md-brown{background:#8a5a33}
+.md-black{background:#2b2b2b}.md-gray{background:#a9a9a9}.md-white{background:#fffdf5}
+.mix-drop.md-white{box-shadow:inset -4px -6px 0 rgba(0,0,0,.08),0 0 0 2px rgba(52,59,48,.2)}
