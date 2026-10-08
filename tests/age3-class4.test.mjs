@@ -107,9 +107,9 @@ test('class page: eight steps, games with exactly one correct answer each, paint
  assert.ok(!/\b(scores?|streaks?|timers?|countdown)\b/i.test(reassured),'no scores/timers/streaks language');
  assert.ok(html.includes('TEACHER WELCOME'),'teacher welcome');
  assert.ok(html.includes('CLASS COMPLETE'),'class complete');
- // completion links are real — no invented Class 5
+ // completion links are real — Class 5 now exists and is linked
  assert.ok(html.includes('href="/learning-path/"')&&html.includes('href="/preschool/3-years/"'),'honest next-step navigation');
- assert.ok(!html.includes('Class 5')&&!html.includes('class-5'),'no invented next class');
+ assert.ok(html.includes('href="/preschool/3-years/opposites-and-comparing/"'),'links the real next class (Class 5)');
 });
 
 test('print view: twelve splash+picture pairs, one pair per page, excluded from sitemap',()=>{
@@ -129,12 +129,12 @@ test('whole-school wiring: hubs, learning path, library, spaces and homepage all
  assert.ok(page('preschool/3-years').includes('colors-and-color-mixing'),'Age 3 stage lists class');
  assert.ok(page('preschool/3-years').includes('/flashcards/colors/'),'Age 3 stage lists set');
  assert.ok(page('learning-path').includes('Class 18: <a href="/preschool/3-years/colors-and-color-mixing/">Colors &amp; Color Mixing</a>'),'learning path row 18');
- assert.ok(page('learning-path').includes('Eighteen classes are ready now'),'eighteen-classes copy');
+ assert.ok(page('learning-path').includes('Nineteen classes are ready now'),'nineteen-classes copy');
  assert.ok(page('flashcards').includes('/flashcards/colors/'),'library lists colors set');
  assert.ok(page('learning-library').includes('/flashcards/colors/'),'learning library lists set');
  assert.ok(page('learning-library').includes('Colors &amp; Color Mixing'),'learning library lists class');
- assert.ok(page('').includes('Eighteen classes are ready now'),'homepage says eighteen');
- assert.ok(page('about').includes('Eighteen classes from birth to age three are ready today'),'about says eighteen');
+ assert.ok(page('').includes('Nineteen classes are ready now'),'homepage says nineteen');
+ assert.ok(page('about').includes('Nineteen classes from birth to age three are ready today'),'about says nineteen');
  // lesson hero uses the real rainbow splash cover at true dims
  const cls=page('preschool/3-years/colors-and-color-mixing');
  assert.ok(cls.includes(`src="${R2}12-rainbow-splash.webp" width="1414" height="2000"`),'true-ratio cover in hero');

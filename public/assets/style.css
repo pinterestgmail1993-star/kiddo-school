@@ -970,3 +970,31 @@ button.rb-chip.is-found{outline:3px solid #71326d;outline-offset:2px}
 .md-orange{background:#f07f28}.md-purple{background:#8f4fc0}.md-pink{background:#f28ab8}.md-brown{background:#8a5a33}
 .md-black{background:#2b2b2b}.md-gray{background:#a9a9a9}.md-white{background:#fffdf5}
 .mix-drop.md-white{box-shadow:inset -4px -6px 0 rgba(0,0,0,.08),0 0 0 2px rgba(52,59,48,.2)}
+
+/* ---- Age 3 Class 5: Opposites & Comparing ---- */
+/* Learn slides get a small word line under each card; the pair order means
+   every opposite sits right beside its partner in the scroll grid. */
+.lv-grid .lv-word{display:block;padding:8px 12px;font-weight:800;font-size:15px;border-top:1.5px solid rgba(52,59,48,.14)}
+/* Match the opposite pairs: six cards on the left, their opposites
+   deliberately unaligned on the right. Without JS this is an honest chart
+   for pointing; with JS, opposites-class.js runs the tap-tap game. */
+.match-board{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:8px 0 4px}
+.match-col{border:1.5px solid var(--ink,#343b30);background:var(--white,#fff);padding:16px;box-shadow:4px 4px 0 rgba(52,59,48,.14)}
+.match-col h3{margin:0 0 10px;font-size:16px}
+.match-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+button.op-card{display:flex;flex-direction:column;align-items:center;gap:6px;border:1.5px solid var(--ink,#343b30);background:#fff;padding:8px;box-shadow:3px 3px 0 rgba(52,59,48,.16);cursor:pointer;font-family:inherit;transition:transform .15s,box-shadow .15s}
+button.op-card img{width:100%;max-width:160px;height:auto;border-radius:6px;background:#fff}
+button.op-card .op-word{font-weight:800;font-size:14px;color:var(--ink,#343b30)}
+button.op-card:hover,button.op-card:focus-visible{transform:translate(-1px,-1px);box-shadow:4px 4px 0 rgba(52,59,48,.24)}
+button.op-card.is-picked{outline:3px solid #71326d;outline-offset:2px}
+button.op-card.is-matched{opacity:.55;outline:3px solid #2e6b3f;outline-offset:2px;pointer-events:none}
+.match-status{margin-top:12px;font-weight:700;min-height:1.4em}
+/* Compare two pictures: the two choice cards render bigger than in the
+   find-it rounds, because the whole point is seeing the size difference. */
+.tc-round.tc-compare .tc-choices{gap:18px}
+.tc-choice.tc-op img{width:210px;max-width:44vw}
+@media (max-width:700px){
+ .match-board{grid-template-columns:1fr}
+ .tc-choice.tc-op img{width:150px}
+}
+@media (prefers-reduced-motion:reduce){button.op-card{transition:none}}

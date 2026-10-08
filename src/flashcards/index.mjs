@@ -16,6 +16,7 @@ import * as alData from './data-alphabet.mjs';
 import * as nmData from './data-numbers.mjs';
 import * as shData from './data-shapes.mjs';
 import * as clData from './data-colors.mjs';
+import * as opData from './data-opposites.mjs';
 
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const cardSlug=file=>file.replace(/^\d+-/,'').replace(/\.webp$/,'');
@@ -34,7 +35,11 @@ const SOURCES=[
  [{meta:shData.shapesMeta,cards:shData.shapesCardContent},shData.shapesLesson],
  // Age 3 Class 4: each color card carries BOTH faces — the splash (file)
  // and the matching picture (picFile) — rendered together on its card page.
- [{meta:clData.colorsMeta,cards:clData.colorsCardContent},clData.colorsLesson]
+ [{meta:clData.colorsMeta,cards:clData.colorsCardContent},clData.colorsLesson],
+ // Age 3 Class 5: six honest opposite pairs — one card per opposite, its own
+ // page, its own words. Slugs come from the real filenames (big-ball,
+ // small-ball…), exactly the URLs the owner specified.
+ [{meta:opData.oppositesMeta,cards:opData.oppositesCardContent},opData.oppositesLesson]
 ];
 
 function buildSet([data,lesson]){
