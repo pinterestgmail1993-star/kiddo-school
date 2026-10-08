@@ -66,7 +66,11 @@ function buildSet([data,lesson]){
   lessonPath:lesson.path,
   lessonTitle:lesson.seoTitle||lesson.title,
   base,
-  cover:{file:coverFile,w:1414,h:2000,alt:data.meta.coverAlt||('Cover of the '+data.meta.name+' flashcards set from Kiddo School')},
+  // Cover dims come from the lesson's own probe (vehicles 2000×1294 and
+  // emotions 2000×1414 are LANDSCAPE — hardcoding 1414×2000 here is what
+  // squashed them on the library wall). Garden Friends has no lesson cover;
+  // its cover file is the 1414×2000 bird card, so the portrait fallback holds.
+  cover:{file:coverFile,w:lesson.cover?lesson.cover.w:1414,h:lesson.cover?lesson.cover.h:2000,alt:data.meta.coverAlt||('Cover of the '+data.meta.name+' flashcards set from Kiddo School')},
   coverUrl:base+coverFile,
   cards
  };
@@ -147,13 +151,17 @@ export function fcCommunityMount(path){
 
 // ---- The library card for /flashcards/ --------------------------------------
 export function fcSetCard(s){
- // 707×1000 is the true ratio of every 1414×2000 card image — never distort.
- return `<a class="fc-setcard" href="${s.url}"><div class="fc-setcard-visual"><img src="${s.coverUrl}" width="707" height="1000" alt="${esc(s.cover.alt)}" loading="lazy"></div><div class="fc-setcard-copy"><span class="eyebrow">AGES ${esc(s.ageLabel.toUpperCase())}</span><h2>${esc(s.name)}</h2><p>${esc(s.hubBlurb)}</p><span class="fc-open">Open this set · ${s.cards.length} cards <span aria-hidden="true">↗</span></span></div></a>`;
+ // True cover dimensions in the HTML attrs — landscape covers (vehicles,
+ // emotions, garden bugs) keep their real ratio on the library wall.
+ return `<a class="fc-setcard" href="${s.url}"><div class="fc-setcard-visual"><img src="${s.coverUrl}" width="${s.cover.w}" height="${s.cover.h}" alt="${esc(s.cover.alt)}" loading="lazy"></div><div class="fc-setcard-copy"><span class="eyebrow">AGES ${esc(s.ageLabel.toUpperCase())}</span><h2>${esc(s.name)}</h2><p>${esc(s.hubBlurb)}</p><span class="fc-open">Open this set · ${s.cards.length} cards <span aria-hidden="true">↗</span></span></div></a>`;
 }
 
 // ---- Set page ----------------------------------------------------------------
 export function fcSetPageBody(s){
- const cover=`<figure class="fc2-cover"><img src="${s.coverUrl}" width="1414" height="2000" alt="${esc(s.cover.alt)}" loading="lazy"><figcaption><strong>${esc(s.name)}</strong><span>${s.cards.length} cards · free to print</span></figcaption></figure>`;
+ // No cover/thumbnail figure here: visitors just saw the set's cover on the
+ // /flashcards/ library wall, and repeating it pushed the cards below the
+ // fold. Landscape covers were also forced into a portrait box and cropped.
+ // The page now opens straight on the cards themselves.
  const grid=`<div class="fc2-cards">${s.cards.map(c=>`<a class="fc-card fc2-cardlink" href="${c.url}"><span class="fc2-cardimg"><img src="${c.img}" width="${c.w}" height="${c.h}" alt="${esc(c.alt)}" loading="lazy"></span><span class="fc2-cardword"><strong>${esc(c.word)}</strong><span>Card ${c.n} of ${s.cards.length}</span></span></a>`).join('')}</div>`;
  const ideas=`<ol class="fc-steps">${s.useIdeas.map(([t,d],i)=>`<li><span class="fc-stepnum">${String(i+1).padStart(2,'0')}</span><div><h3>${esc(t)}</h3><p>${esc(d)}</p></div></li>`).join('')}</ol>`;
  const related=s.relatedSlugs.map(k=>fcSetBySlug[k]).filter(Boolean);
@@ -161,7 +169,6 @@ export function fcSetPageBody(s){
  const printBtn=s.printPath?`<a class="button" href="${s.printPath}">Print the full set</a>`:'';
  return `${crumbNav([['Flashcards','/flashcards/'],[s.name]])}
  ${heading('FLASHCARD SET · AGES '+esc(s.ageLabel.toUpperCase()),s.h1,esc(s.lede))}
- <section class="wrap fc-section">${cover}</section>
  <section class="wrap fc-section"><span class="eyebrow">THE CARDS</span><h2>Every card in the set.</h2><p class="fc-hint">Each card has its own page with the picture, the words to say and one thing to try together. Tap any card to open it.</p>${grid}</section>
  <section class="wrap fc-section"><span class="eyebrow">HOW TO USE THESE CARDS</span><h2>Four ways that work.</h2><p class="fc-hint">You do not need a plan or a printer schedule. Pick one idea, try it for two minutes and see what happens.</p>${ideas}</section>
  <section class="wrap fc-section"><span class="eyebrow">PRINT &amp; DOWNLOAD</span><h2>Print the set, download a card.</h2><div class="fc2-actions"><a class="button" href="${s.lessonPath}">View the class these cards come from <span aria-hidden="true">↗</span></a>${printBtn}<a class="button" href="/flashcards/">All flashcard sets</a></div><p class="fc-hint">Every card page has its own download button with the full-size image. ${s.printPath?'The full set has a print-ready page too.':'This set is printed straight from its class page.'}</p></section>

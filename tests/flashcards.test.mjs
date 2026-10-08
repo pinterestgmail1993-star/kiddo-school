@@ -184,6 +184,24 @@ test('card images render at their true aspect ratio — no portrait cropping any
  assert.ok(css.includes('.fc2-dual'),'dual layout styles shipped');
 });
 
+test('set pages never repeat the library cover thumbnail, and landscape covers keep their real ratio on the library wall',()=>{
+ const css=read('dist/assets/style.css');
+ for(const s of fcSets){
+  const html=page(s.url.slice(1));
+  assert.ok(!html.includes('fc2-cover'),`${s.url} still repeats the set cover — it was just shown on the library wall`);
+  assert.ok(!html.includes('aspect-ratio="1414/2000"')&&!/<figure class="fc2-cover"/.test(html),`${s.url} cover figure leaked back in`);
+ }
+ assert.ok(!/\.fc2-cover img\{[^}]*aspect-ratio/.test(css),'no CSS may force 1414/2000 onto covers again');
+ // The three landscape covers must carry their true intrinsic dims so the
+ // browser reserves the right box before the file loads (no squash-then-jump).
+ const lib=page('flashcards');
+ for(const [slug,w,h] of [['emotions-and-feelings',2000,1414],['vehicles-and-sounds',2000,1294],['garden-bugs-and-friends',2000,1294]]){
+  const set=fcSets.find(x=>x.slug===slug);
+  assert.ok(set,'set exists: '+slug);
+  assert.ok(lib.includes(`<img src="${set.coverUrl}" width="${w}" height="${h}"`),`library wall uses true ${w}×${h} cover dims for ${slug}`);
+ }
+});
+
 test('reactions, reviews and comments are three separate systems',()=>{
  const mount=page('flashcards/animals-and-sounds');
  assert.ok(mount.includes('data-fc-reactions'),'reactions block');

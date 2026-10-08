@@ -768,9 +768,9 @@ h1,h2,h3,.brand,.bean-links strong{font-family:var(--kid-font);letter-spacing:0}
 
 /* ===== Flashcards: set pages, card pages, reactions, reviews, comments ===== */
 .fc2-h2{font-size:1.15rem;letter-spacing:.02em;margin:26px 0 4px;color:#4a4438}
-.fc2-cover{max-width:520px;margin:0 auto}
-.fc2-cover img{width:100%;height:auto;aspect-ratio:1414/2000;object-fit:cover;border-radius:14px;box-shadow:0 10px 30px rgba(63,52,32,.14)}
-.fc2-cover figcaption{display:flex;justify-content:space-between;gap:12px;margin-top:10px;font-size:.9rem;color:#6b6353}
+/* .fc2-cover removed — the set cover was the library thumbnail shown twice
+   (library wall, then again atop every set page) and landscape covers were
+   cropped into a 1414/2000 portrait box. Set pages now open on the cards. */
 .fc2-cards{display:flex;flex-wrap:wrap;align-items:flex-end;gap:16px}
 .fc2-cardlink{display:flex;flex-direction:column;gap:0;background:#fff;border-radius:14px;overflow:hidden;text-decoration:none;color:inherit;box-shadow:0 4px 14px rgba(63,52,32,.10);transition:transform .15s ease,box-shadow .15s ease;max-width:100%}
 .fc2-cardlink:hover,.fc2-cardlink:focus-visible{transform:translateY(-3px);box-shadow:0 10px 24px rgba(63,52,32,.16)}
