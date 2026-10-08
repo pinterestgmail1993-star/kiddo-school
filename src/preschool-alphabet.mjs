@@ -202,7 +202,7 @@ export function preschoolHubBody(){
  return `${crumbNav([['Preschool']])}
  ${heading('THE NEXT STAGE','Preschool: the school grows up.','Kiddo School began with newborn eyes and grew through the toddler years. Preschool is the next stage of the same school — same calm pacing, same parent-led classes, now with letters, numbers, shapes, patterns, colors and opposites.')}
  <section class="wrap section compact"><div class="fc-stages">
-  <a class="fc-stage lesson-card-link" href="/preschool/3-years/"><div class="fc-stage-pills"><span class="fc-age">Age 3</span><span class="fc-class">Preschool</span></div><h3>Age 3</h3><p>Five classes ready now: letters and sounds, counting to ten, shapes with patterns, colors with mixing — and opposites for comparing. Always playful, never a test.</p><span class="fc-open">Open Age 3 <span aria-hidden="true">↗</span></span></a>
+  <a class="fc-stage lesson-card-link" href="/preschool/3-years/"><div class="fc-stage-pills"><span class="fc-age">Age 3</span><span class="fc-class">Preschool</span></div><h3>Age 3</h3><p>Six classes ready now: letters and sounds, counting to ten, shapes with patterns, colors with mixing, opposites for comparing — and a barnyard of animal sounds. Always playful, never a test.</p><span class="fc-open">Open Age 3 <span aria-hidden="true">↗</span></span></a>
   <div class="fc-stage lesson-soon"><div class="fc-stage-pills"><span class="fc-age">Coming soon</span><span class="fc-class">More classes</span></div><h3>More preschool classes are on the drawing table</h3><p>Age 3 is just getting started. Meanwhile, the toddler stages and the <a href="/activities/">activity classrooms</a> have plenty to explore.</p></div>
  </div>
  <p class="lesson-note"><strong>Age ranges are guides, not tests.</strong> If your child is two and curious about letters, or four and new to Kiddo School — welcome in; start where it is fun.</p></section>`;
@@ -214,18 +214,20 @@ export function preschoolStageBody(){
   {href:'/preschool/3-years/numbers-and-counting/',cls:'Class 2',title:'Numbers &amp; Counting (1–10)',copy:'Ten counting cards, find-the-number, count-and-match and putting numbers in order — counting games with calm feedback and no scores.'},
   {href:'/preschool/3-years/shapes-and-patterns/',cls:'Class 3',title:'Shapes &amp; Patterns',copy:'Twelve shape cards, find-and-match games and playful AB and AAB patterns with simple shape tiles — pattern play at preschool pace.'},
   {href:'/preschool/3-years/colors-and-color-mixing/',cls:'Class 4',title:'Colors &amp; Color Mixing',copy:'Twelve color pairs — a splash and a matching picture — find-and-match games, a paint-mixing pot (red + yellow = orange) and a rainbow to explore.'},
-  {href:'/preschool/3-years/opposites-and-comparing/',cls:'Class 5',title:'Opposites &amp; Comparing',copy:'Six honest opposite pairs — big and small, tall and short, full and empty, hot and cold, open and closed — with tap-the-opposite, bigger-taller-longer games and a match board.'}
+  {href:'/preschool/3-years/opposites-and-comparing/',cls:'Class 5',title:'Opposites &amp; Comparing',copy:'Six honest opposite pairs — big and small, tall and short, full and empty, hot and cold, open and closed — with tap-the-opposite, bigger-taller-longer games and a match board.'},
+  {href:'/preschool/3-years/animals-and-their-sounds/',cls:'Class 6',title:'Animals &amp; Their Sounds',copy:'Twelve animal friends with real sounds to hear — a guess-the-animal listening game, a match-the-sound board and off-screen barnyard play.'}
  ];
  const setCards=[
   {href:'/flashcards/alphabet/',title:'Alphabet Flashcards A–Z',copy:'Every letter card has its own page with the picture, the words to say together and a download button — print the whole set from the class.'},
   {href:'/flashcards/numbers-and-counting/',title:'Numbers 1–10 Flashcards',copy:'One to ten with apples, ducks and butterflies — every counting card has its own page, its own prompt and its own download.'},
   {href:'/flashcards/shapes/',title:'Shape Flashcards',copy:'Twelve shapes from circle to octagon, each with its own page, a real-life shape hunt and a download button.'},
   {href:'/flashcards/colors/',title:'Color Flashcards',copy:'Twelve colors from red to rainbow — every card pairs a paint splash with a real-world picture, each with its own page and downloads.'},
-  {href:'/flashcards/opposites/',title:'Opposite Flashcards',copy:'Six opposite pairs from big and small to open and closed — every card has its own page, a comparing game and a download button.'}
+  {href:'/flashcards/opposites/',title:'Opposite Flashcards',copy:'Six opposite pairs from big and small to open and closed — every card has its own page, a comparing game and a download button.'},
+  {href:'/flashcards/animal-sounds/',title:'Animal Flashcards',copy:'Twelve animal cards from dog to bird — every card has its own page, its own sound to hear where a recording is ready and a download button.'}
  ];
  return `${crumbNav([['Preschool','/preschool/'],['Age 3']])}
- ${heading('PRESCHOOL · AGE 3','Age 3: letters, numbers, shapes, colors — and opposites.','The preschool stage of Kiddo School. Three-year-olds love to name, spot and show off what they know — so this stage starts with the alphabet, keeps counting calm, makes patterns a game, mixes colors like paint and lines up opposites side by side, at exactly their pace.')}
- <section class="wrap section compact"><div class="fc-chips lesson-chips"><span><strong>Age</strong> 3 Years</span><span><strong>Stage</strong> Preschool</span><span><strong>Status</strong> Five classes ready now</span></div>
+ ${heading('PRESCHOOL · AGE 3','Age 3: letters, numbers, shapes, colors — and opposites.','The preschool stage of Kiddo School. Three-year-olds love to name, spot and show off what they know — so this stage starts with the alphabet, keeps counting calm, makes patterns a game, mixes colors like paint, lines up opposites side by side and ends with a barnyard full of animal sounds, at exactly their pace.')}
+ <section class="wrap section compact"><div class="fc-chips lesson-chips"><span><strong>Age</strong> 3 Years</span><span><strong>Stage</strong> Preschool</span><span><strong>Status</strong> Six classes ready now</span></div>
  <h2 class="lesson-classheading">The classes</h2>
  <div class="fc-stages">${classCards.map(c=>`<a class="fc-stage lesson-card-link" href="${c.href}"><div class="fc-stage-pills"><span class="fc-age">Age 3</span><span class="fc-class">${c.cls}</span></div><h3>${c.title}</h3><p>${c.copy}</p><span class="fc-open">Start today’s class <span aria-hidden="true">↗</span></span></a>`).join('')}
  </div>

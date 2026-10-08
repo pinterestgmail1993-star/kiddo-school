@@ -207,7 +207,7 @@ test('learning path rows 16 and 17 follow the alphabet class',()=>{
  const lp=page('/learning-path/');
  assert.ok(lp.includes('Class 16: <a href="/preschool/3-years/numbers-and-counting/">'));
  assert.ok(lp.includes('Class 17: <a href="/preschool/3-years/shapes-and-patterns/">'));
- assert.ok(lp.includes('Eighteen classes are ready now')===false&&lp.includes('Nineteen classes are ready now'));
+ assert.ok(lp.includes('Nineteen classes are ready now')===false&&lp.includes('Twenty classes are ready now'));
 });
 test('preschool hubs and library list all five classes and five sets',()=>{
  const stage=page('/preschool/3-years/');
@@ -218,7 +218,7 @@ test('preschool hubs and library list all five classes and five sets',()=>{
  const fc=page('/flashcards/');
  assert.ok(fc.includes('href="/flashcards/numbers-and-counting/"')&&fc.includes('href="/flashcards/shapes/"'));
  const home=page('/');
- assert.ok(home.includes('Nineteen classes are ready now'));
+ assert.ok(home.includes('Twenty classes are ready now'));
 });
 test('sitemap, indexing stance and lesson wiring',()=>{
  const map=read('sitemap.xml');

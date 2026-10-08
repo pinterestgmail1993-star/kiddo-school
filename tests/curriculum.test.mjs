@@ -745,16 +745,25 @@ test('the learning path page lists the real curriculum from birth to age 2 and b
  assert.ok(lp.includes('href="/art/"')&&lp.includes('href="/activities/"'));
  assert.ok(lp.includes('Start Today’s Class'));
 });
-test('the school homepage leads with the learning journey and keeps the classrooms',()=>{
+test('the school homepage: short hero, age chooser, real classes, how school works',()=>{
  const home=read('dist/index.html');
  assert.ok(home.includes('<h1>Their first school<br><em>starts with you.</em></h1>'));
+ assert.ok(home.includes('A playful digital school from birth onward. Explore age-guided classes, hands-on activities, and simple ways to learn together at home.'),'single approved hero paragraph');
+ assert.ok(!home.includes('hero-footnote'),'tiny text below the buttons is gone');
+ assert.ok(!home.includes('promise-strip'),'the strip under the hero is gone');
  assert.ok(home.includes('href="/newborn/0-6-weeks/high-contrast-cards/"'));
  assert.equal((home.match(/Start Today’s Class/g)||[]).length>=3,true);
  assert.ok(home.includes('href="/learning-path/"'));
  assert.ok(home.includes('newborn-high-contrast-face.webp'));
- assert.ok(home.includes('Age ranges are a guide, not a test'));
- assert.ok(home.includes('HOW SCHOOL WORKS'));
- assert.ok(home.includes('Take it off screen'));
+ assert.ok(home.includes('CHOOSE YOUR CHILD’S AGE'),'age chooser directly below the hero');
+ assert.ok(home.includes('id="choose-age"'));
+ assert.ok(home.includes('href="/newborn/"')&&home.includes('href="/baby/"')&&home.includes('href="/toddler/"')&&home.includes('href="/preschool/3-years/"'),'four real stage cards');
+ assert.ok(home.includes('EXPLORE REAL CLASSES'),'real-classes section');
+ assert.ok(home.includes('Twenty classes are ready now, from birth to age three'),'honest class count');
+ assert.ok(home.includes('HOW OUR SCHOOL WORKS'));
+ assert.ok(home.includes('id="how-school-works"'));
+ for(const step of ['Learn','Play','Practice','Off-Screen'])assert.ok(new RegExp('<h3>'+step+'</h3>').test(home),'step '+step);
+ assert.ok(!home.includes('<h3>Explore</h3>'),'old five-step notebook replaced');
  assert.ok(home.includes('FROM THE PRINCIPAL’S OFFICE'));
  assert.ok(home.includes('href="/about/#principal"'));
  assert.ok(home.includes('href="/grown-ups/"'));
@@ -766,6 +775,7 @@ test('the school homepage leads with the learning journey and keeps the classroo
  assert.ok(about.includes('id="principal"'));
  assert.ok(about.includes('From the Principal’s Office'));
  assert.ok(about.includes('href="/learning-path/"'));
+ assert.ok(about.includes('Twenty classes from birth to age three are ready today'),'about count updated');
 });
 test('the whole curriculum path is wired together and reusable markup is shared',()=>{
  const l1=read('dist/newborn/0-6-weeks/high-contrast-cards/index.html');

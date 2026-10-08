@@ -17,6 +17,7 @@ import * as nmData from './data-numbers.mjs';
 import * as shData from './data-shapes.mjs';
 import * as clData from './data-colors.mjs';
 import * as opData from './data-opposites.mjs';
+import * as amData from './data-animals.mjs';
 
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const cardSlug=file=>file.replace(/^\d+-/,'').replace(/\.webp$/,'');
@@ -39,7 +40,11 @@ const SOURCES=[
  // Age 3 Class 5: six honest opposite pairs — one card per opposite, its own
  // page, its own words. Slugs come from the real filenames (big-ball,
  // small-ball…), exactly the URLs the owner specified.
- [{meta:opData.oppositesMeta,cards:opData.oppositesCardContent},opData.oppositesLesson]
+ [{meta:opData.oppositesMeta,cards:opData.oppositesCardContent},opData.oppositesLesson],
+ // Age 3 Class 6: twelve animal friends — nine with a real recording in
+ // /assets/sounds/animals/ (card.audio). The play button renders only where
+ // a recording exists; duck, elephant and frog say theirs are on the way.
+ [{meta:amData.animalsMeta,cards:amData.animalsCardContent},amData.animalsLesson]
 ];
 
 function buildSet([data,lesson]){
@@ -55,7 +60,7 @@ function buildSet([data,lesson]){
   if(!d) throw Error('flashcards: missing content for '+slug+'/'+s);
   return {slug:s,word:d.word||titleWord(s),file:c.file,w:c.w,h:c.h,alt:c.alt,
    img2:c.picFile?base+c.picFile:null,alt2:c.picAlt||null,picWord:d.picWord||null,
-   letter:c.letter||d.letter||null,numeral:c.numeral||d.numeral||null,sound:d.sound||null,metaDescription:d.metaDescription||null,cardTitle:d.cardTitle||null,
+   letter:c.letter||d.letter||null,numeral:c.numeral||d.numeral||null,sound:d.sound||null,audio:c.audio||null,metaDescription:d.metaDescription||null,cardTitle:d.cardTitle||null,
    intro:d.intro,say:d.say,try:d.try,note:d.note,url:url+s+'/',img:base+c.file,n:i+1};
  });
  const coverFile=data.meta.coverFile||'cover.webp';
@@ -71,6 +76,7 @@ function buildSet([data,lesson]){
   noun:data.meta.noun||'Toddlers',
   group:data.meta.group||'toddler',
   useIdeas:data.meta.useIdeas,
+  downloadHint:data.meta.downloadHint||null,
   printPath:data.meta.printPath||null,
   relatedSlugs:data.meta.relatedSets||[],
   lessonPath:lesson.path,
@@ -181,7 +187,7 @@ export function fcSetPageBody(s){
  ${heading('FLASHCARD SET · AGES '+esc(s.ageLabel.toUpperCase()),s.h1,esc(s.lede))}
  <section class="wrap fc-section"><span class="eyebrow">THE CARDS</span><h2>Every card in the set.</h2><p class="fc-hint">Each card has its own page with the picture, the words to say and one thing to try together. Tap any card to open it.</p>${grid}</section>
  <section class="wrap fc-section"><span class="eyebrow">HOW TO USE THESE CARDS</span><h2>Four ways that work.</h2><p class="fc-hint">You do not need a plan or a printer schedule. Pick one idea, try it for two minutes and see what happens.</p>${ideas}</section>
- <section class="wrap fc-section"><span class="eyebrow">PRINT &amp; DOWNLOAD</span><h2>Print the set, download a card.</h2><div class="fc2-actions"><a class="button" href="${s.lessonPath}">View the class these cards come from <span aria-hidden="true">↗</span></a>${printBtn}<a class="button" href="/flashcards/">All flashcard sets</a></div><p class="fc-hint">Every card page has its own download button with the full-size image. ${s.printPath?'The full set has a print-ready page too.':'This set is printed straight from its class page.'}</p></section>
+ <section class="wrap fc-section"><span class="eyebrow">PRINT &amp; DOWNLOAD</span><h2>Print the set, download a card.</h2><div class="fc2-actions"><a class="button" href="${s.lessonPath}">View the class these cards come from <span aria-hidden="true">↗</span></a>${printBtn}<a class="button" href="/flashcards/">All flashcard sets</a></div><p class="fc-hint">${s.downloadHint||'Every card page has its own download button with the full-size image.'}${s.printPath?' The full set has a print-ready page too.':' This set is printed straight from its class page.'}</p></section>
  ${relatedRow?`<section class="wrap fc-section"><span class="eyebrow">MORE CARDS LIKE THESE</span><h2>Families of cards that pair well.</h2>${relatedRow}</section>`:''}
  ${fcCommunityMount(s.url)}`;
 }
@@ -205,7 +211,11 @@ export function fcCardPageBody(set,card,ctx){
   ?`<div class="fc2-pair">${heroFig(card.img,card.w,card.h,card.word+' splash',card.alt,false)}${heroFig(card.img2,card.w,card.h,card.picWord||(card.word+' in real life'),card.alt2,true)}</div>`
   :`<figure class="fc2-hero"><img src="${card.img}" width="${card.w}" height="${card.h}" alt="${esc(card.alt)}"><figcaption><strong>${esc(card.word)}</strong><span>Card ${card.n} of ${set.cards.length} · ${esc(set.name)}</span></figcaption></figure>`;
  const pn=`<nav class="fc2-pn" aria-label="Previous and next card"><a class="fc2-pn-btn" href="${prev.url}" rel="prev"><span aria-hidden="true">←</span> <strong>${esc(prev.word)}</strong><span>Previous card</span></a><a class="fc2-pn-btn fc2-pn-next" href="${next.url}" rel="next"><strong>${esc(next.word)}</strong> <span aria-hidden="true">→</span><span>Next card</span></a></nav>`;
- const say=`<div class="fc2-do"><h2>Say it together</h2><p class="fc2-say">&ldquo;${esc(card.say)}&rdquo;</p><p class="fc-hint">Say it naturally, then wait. Whatever comes back — the word, the sound, a point, a giggle — is the right answer.</p></div>`;
+ // Cards with a real recording (Age 3 Class 6) get a real play control in
+ // the say block — wired to /assets/sounds/animals/ by animal-sounds-class.js.
+ // Cards without a recording render nothing here; nothing is faked.
+ const sayAudio=card.audio?`<button type="button" class="an-play an-play-card" data-an-sound="${esc(card.slug)}" data-an-src="/assets/sounds/animals/${esc(card.audio)}.mp3" aria-label="Play the ${esc(card.word.toLowerCase())} sound, then play it again"><span class="an-play-icon" aria-hidden="true">▶</span><span class="an-play-label">Hear the ${esc(card.word.toLowerCase())}</span><span class="an-replay">Play again</span></button>`:'';
+ const say=`<div class="fc2-do"><h2>Say it together</h2><p class="fc2-say">&ldquo;${esc(card.say)}&rdquo;</p>${sayAudio}<p class="fc-hint">Say it naturally, then wait. Whatever comes back — the word, the sound, a point, a giggle — is the right answer.</p></div>`;
  const sound=card.sound?`<div class="fc2-do fc2-sound"><h2>Letter sound</h2><p>${esc(card.sound)}</p></div>`:'';
  const tryThis=`<div class="fc2-do"><h2>Try this</h2><p>${esc(card.try)}</p></div>`;
  const note=`<div class="fc2-do fc2-note"><h2>Quick parent note</h2><p>${esc(card.note)}</p></div>`;
