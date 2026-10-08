@@ -852,3 +852,72 @@ button.tc-letter-big{min-width:116px;min-height:116px;font-size:58px}
 /* Letter-sound note on alphabet card pages. */
 .fc2-sound{border-left:5px solid #a66446}
 @media (max-width:700px){button.tc-letter,.tc-letter-face{min-width:80px;min-height:80px;font-size:36px}button.tc-letter-big,.tc-letter-face.tc-letter-big{min-width:92px;min-height:92px;font-size:46px}.tc-choices{gap:10px}}
+
+/* ---- Age 3 Class 2 & 3: Numbers & Counting + Shapes & Patterns ---- */
+/* Screen-reader-only helper (count-and-match dot groups). */
+.vh{position:absolute;width:1px;height:1px;margin:-1px;padding:0;border:0;clip:rect(0 0 0 0);clip-path:inset(50%);overflow:hidden;white-space:nowrap}
+/* Count-and-match: dot groups are generated to be EXACTLY n dots, in tidy,
+   uncrowded rows — the counting is always mathematically correct. */
+.dots{display:inline-flex;flex-direction:column;gap:10px;padding:4px 0}
+.dot-row{display:flex;gap:10px}
+.dot{width:26px;height:26px;border-radius:50%;background:#e2495b;border:2px solid rgba(52,59,48,.85);box-shadow:inset -3px -3px 0 rgba(52,59,48,.14)}
+.tc-target-dots{display:flex;flex-direction:column;align-items:flex-start;gap:10px}
+/* Number Order boards: tiles render in order without JS (a counting line);
+   with JS they become real buttons, shuffle, and are tapped back into order. */
+.ord-pool{display:flex;flex-wrap:wrap;gap:12px;align-items:center;min-height:92px}
+.ord-tile{display:inline-flex;align-items:center;justify-content:center;min-width:84px;min-height:84px;padding:6px 10px;border:2px solid var(--ink,#343b30);border-radius:10px;background:#fff;color:var(--ink,#343b30);font-family:inherit;font-size:40px;font-weight:800;line-height:1;box-shadow:3px 3px 0 rgba(52,59,48,.16)}
+button.ord-tile{cursor:pointer;transition:transform .15s,box-shadow .15s}
+button.ord-tile:hover,button.ord-tile:focus-visible{transform:translate(-1px,-1px);box-shadow:5px 5px 0 rgba(52,59,48,.24)}
+button.ord-tile.is-picked{outline:3px solid #71326d;outline-offset:2px}
+button.ord-tile:disabled{cursor:default}
+.ord-status{margin-top:12px;font-weight:700}
+.ord-status.is-good{color:#2e6b3f}
+/* Programmatic shape tiles for Find the Shape / Match Shapes / patterns —
+   drawn by the page itself, never dependent on an image asset. Flat, calm,
+   no animation beyond the shared gentle hover. */
+.shape-face{display:inline-block;width:56px;height:56px;flex:0 0 auto}
+.sf-circle{border-radius:50%;background:#e2495b;border:3px solid var(--ink,#343b30)}
+.sf-square{background:#f2c14e;border:3px solid var(--ink,#343b30)}
+.sf-rectangle{width:84px;height:52px;background:#6aa84f;border:3px solid var(--ink,#343b30)}
+.sf-oval{width:74px;height:52px;border-radius:50%;background:#9b59d0;border:3px solid var(--ink,#343b30)}
+.sf-diamond{width:46px;height:46px;background:#2aa7a0;border:3px solid var(--ink,#343b30);transform:rotate(45deg)}
+.sf-triangle,.sf-star,.sf-pentagon,.sf-hexagon,.sf-octagon{position:relative;border:0;background:var(--ink,#343b30)}
+.sf-triangle{width:64px;height:56px;clip-path:polygon(50% 0%,100% 100%,0% 100%)}
+.sf-triangle::before,.sf-star::before,.sf-pentagon::before,.sf-hexagon::before,.sf-octagon::before{content:'';position:absolute;inset:3px;background:#6aa84f}
+.sf-triangle::before{clip-path:polygon(50% 0%,100% 100%,0% 100%);background:#6aa84f}
+.sf-star{width:60px;height:58px;clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%)}
+.sf-star::before{clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);background:#f2b01e}
+.sf-pentagon{width:60px;height:58px;clip-path:polygon(50% 0%,100% 38%,82% 100%,18% 100%,0% 38%)}
+.sf-pentagon::before{clip-path:polygon(50% 0%,100% 38%,82% 100%,18% 100%,0% 38%);background:#e2607f}
+.sf-hexagon{width:64px;height:58px;clip-path:polygon(25% 0%,75% 0%,100% 50%,75% 100%,25% 100%,0% 50%)}
+.sf-hexagon::before{clip-path:polygon(25% 0%,75% 0%,100% 50%,75% 100%,25% 100%,0% 50%);background:#2aa7a0}
+.sf-octagon{width:62px;height:62px;clip-path:polygon(30% 0%,70% 0%,100% 30%,100% 70%,70% 100%,30% 100%,0% 70%,0% 30%)}
+.sf-octagon::before{clip-path:polygon(30% 0%,70% 0%,100% 30%,100% 70%,70% 100%,30% 100%,0% 70%,0% 30%);background:#e2812e}
+.sf-heart{position:relative;width:56px;height:50px}
+.sf-heart::before,.sf-heart::after{content:'';position:absolute;top:0;width:28px;height:44px;border-radius:28px 28px 0 0;background:#d9455c}
+.sf-heart::before{left:28px;transform:rotate(-45deg);transform-origin:0 100%}
+.sf-heart::after{left:0;transform:rotate(45deg);transform-origin:100% 100%}
+.sf-crescent{width:56px;height:56px;border-radius:50%;box-shadow:inset 16px 9px 0 0 #f2c14e}
+/* Shape choices sit inside the shared .tc-choice buttons. */
+.tc-choice.tc-shape{display:inline-flex;align-items:center;justify-content:center}
+.tc-target-shape{display:flex;align-items:center;justify-content:center;min-height:132px}
+/* Pattern rows: read the rhythm aloud, then tap what lands next. */
+.pat-row{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin:2px 0 16px}
+.pat-row .shape-face{width:44px;height:44px}
+.pat-row .sf-rectangle{width:66px;height:40px}
+.pat-row .sf-oval{width:58px;height:40px}
+.pat-row .sf-triangle,.pat-row .sf-pentagon,.pat-row .sf-hexagon,.pat-row .sf-star{width:50px;height:46px}
+.pat-row .sf-octagon,.pat-row .sf-crescent{width:48px;height:48px}
+.pat-row .sf-heart{width:46px;height:42px}
+.pat-row .sf-heart::before,.pat-row .sf-heart::after{width:23px;height:36px;border-radius:23px 23px 0 0}
+.pat-row .sf-heart::before{left:23px}
+.pat-row .sf-diamond{width:36px;height:36px}
+.pat-gap{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border:2.5px dashed rgba(52,59,48,.55);border-radius:8px;font-size:22px;font-weight:800;color:rgba(52,59,48,.6)}
+@media (max-width:700px){
+ .dot{width:22px;height:22px}.dots{gap:8px}.dot-row{gap:8px}
+ .ord-tile{min-width:68px;min-height:68px;font-size:32px}
+ .shape-face{width:46px;height:46px}
+ .sf-rectangle{width:68px;height:42px}.sf-oval{width:60px;height:42px}
+ .pat-gap{width:38px;height:38px}
+}
+@media (prefers-reduced-motion:reduce){button.ord-tile{transition:none}}

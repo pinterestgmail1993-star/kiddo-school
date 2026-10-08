@@ -6,6 +6,8 @@ import {csLesson,vhLesson,emLesson,anLesson,msLesson,fwfhLesson,fcLesson,gbLesso
 import {helloSchool as helloSchoolCt,circleBase} from './circle-time.mjs';
 import {bunnyBook} from './books.mjs';
 import {alphabetLesson} from './flashcards/data-alphabet.mjs';
+import {numbersLesson} from './flashcards/data-numbers.mjs';
+import {shapesLesson} from './flashcards/data-shapes.mjs';
 export const bagBase='/my-school-bag/';
 export const libraryBase='/learning-library/';
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
@@ -99,9 +101,13 @@ export const learningLibrary={
  ages:{heading:'Browse by age',items:[
   ['Newborn','/newborn/'],['Baby','/baby/'],['12–18 Months','/toddler/12-18-months/'],['18–24 Months','/toddler/18-24-months/'],['Age 2','/toddler/2-years/'],['Age 3','/preschool/3-years/']]},
  sections:[
-  {id:'preschool',title:'Preschool · Letters & Sounds',items:[
+  {id:'preschool',title:'Preschool · Letters, Numbers & Shapes',items:[
    {kind:'Class · Age 3',href:alphabetLesson.path,name:'Alphabet & Letter Sounds',lesson:alphabetLesson},
-   {kind:'Flashcards · Age 3',href:'/flashcards/alphabet/',name:'Alphabet Flashcards A–Z',lesson:alphabetLesson}]},
+   {kind:'Class · Age 3',href:numbersLesson.path,name:'Numbers & Counting (1–10)',lesson:numbersLesson},
+   {kind:'Class · Age 3',href:shapesLesson.path,name:'Shapes & Patterns',lesson:shapesLesson},
+   {kind:'Flashcards · Age 3',href:'/flashcards/alphabet/',name:'Alphabet Flashcards A–Z',lesson:alphabetLesson},
+   {kind:'Flashcards · Age 3',href:'/flashcards/numbers-and-counting/',name:'Numbers 1–10 Flashcards',lesson:numbersLesson},
+   {kind:'Flashcards · Age 3',href:'/flashcards/shapes/',name:'Shape Flashcards',lesson:shapesLesson}]},
   {id:'books',title:'Books & Stories',items:[
    {kind:'Age 2 · Picture Story',href:bunnyBook.path,name:'Bunny Finds a Friend',cta:'Read Book',bookThumb:`<img src="${bunnyBook.base}${bunnyBook.cover.file}" width="2000" height="1545" alt="Cover of the picture book Bunny Finds a Friend: a smiling rabbit in a garden" loading="lazy">`}]},
   {id:'words',title:'Words & Talking',items:[

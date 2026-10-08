@@ -143,7 +143,7 @@ test('preschool hubs exist and link the class; class links back to the path',()=
 test('Age 3 is wired into the whole school, not a separate website',()=>{
  const home=read('dist/index.html');
  assert.ok(home.includes('href="/preschool/3-years/"'),'homepage links the Age 3 stage');
- assert.ok(home.includes('Fifteen classes are ready now, from birth to age three'),'homepage counts the new class');
+ assert.ok(home.includes('Seventeen classes are ready now, from birth to age three'),'homepage counts the new class');
  const lp=read('dist/learning-path/index.html');
  assert.ok(lp.includes('href="/preschool/3-years/alphabet-and-letter-sounds/"'),'learning path lists Class 15');
  assert.ok(lp.includes('Alphabet &amp; Letter Sounds'),'learning path names the class');

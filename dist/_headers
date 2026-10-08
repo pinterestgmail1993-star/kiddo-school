@@ -4,3 +4,4 @@
   X-Frame-Options: DENY
   Permissions-Policy: camera=(), microphone=(), geolocation=()
   Content-Security-Policy: default-src 'self'; script-src 'self' https://challenges.cloudflare.com; style-src 'self'; img-src 'self' https://pub-f2fcb7c9b45a496cbeefef18dbba0ec0.r2.dev; font-src 'self'; connect-src 'self' https://challenges.cloudflare.com; object-src 'none'; base-uri 'none'; frame-ancestors 'none'; frame-src https://challenges.cloudflare.com
+  X-Robots-Tag: noindex, follow

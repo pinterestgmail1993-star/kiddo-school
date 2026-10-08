@@ -4,6 +4,9 @@
 // viewer (data-lesson-viewer in site.js) for Learn the Letters, and the calm
 // find-it game engine (data-tc-round) for the letter and matching games.
 // Letter tiles are programmatic text buttons — no new images are invented.
+// Classes 2 (Numbers & Counting) and 3 (Shapes & Patterns) live in
+// preschool-numbers.mjs and preschool-shapes.mjs; the hub bodies here list
+// the whole Age 3 stage.
 import {alphabetLesson,alphabetCardContent} from './flashcards/data-alphabet.mjs';
 
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -197,21 +200,33 @@ export function alphabetClassBody(L){
 
 export function preschoolHubBody(){
  return `${crumbNav([['Preschool']])}
- ${heading('THE NEXT STAGE','Preschool: the school grows up.','Kiddo School began with newborn eyes and grew through the toddler years. Preschool is the next stage of the same school — same calm pacing, same parent-led classes, now with letters, sounds and bigger kid games.')}
+ ${heading('THE NEXT STAGE','Preschool: the school grows up.','Kiddo School began with newborn eyes and grew through the toddler years. Preschool is the next stage of the same school — same calm pacing, same parent-led classes, now with letters, numbers, shapes and patterns.')}
  <section class="wrap section compact"><div class="fc-stages">
-  <a class="fc-stage lesson-card-link" href="/preschool/3-years/"><div class="fc-stage-pills"><span class="fc-age">Age 3</span><span class="fc-class">Preschool</span></div><h3>Age 3</h3><p>The first preschool stage: classes that grow listening, letters and matching — always playful, never a test.</p><span class="fc-open">Open Age 3 <span aria-hidden="true">↗</span></span></a>
+  <a class="fc-stage lesson-card-link" href="/preschool/3-years/"><div class="fc-stage-pills"><span class="fc-age">Age 3</span><span class="fc-class">Preschool</span></div><h3>Age 3</h3><p>Three classes ready now: letters and sounds, counting to ten, and shapes with patterns — always playful, never a test.</p><span class="fc-open">Open Age 3 <span aria-hidden="true">↗</span></span></a>
   <div class="fc-stage lesson-soon"><div class="fc-stage-pills"><span class="fc-age">Coming soon</span><span class="fc-class">More classes</span></div><h3>More preschool classes are on the drawing table</h3><p>Age 3 is just getting started. Meanwhile, the toddler stages and the <a href="/activities/">activity classrooms</a> have plenty to explore.</p></div>
  </div>
  <p class="lesson-note"><strong>Age ranges are guides, not tests.</strong> If your child is two and curious about letters, or four and new to Kiddo School — welcome in; start where it is fun.</p></section>`;
 }
 
 export function preschoolStageBody(){
+ const classCards=[
+  {href:'/preschool/3-years/alphabet-and-letter-sounds/',cls:'Class 1',title:'Alphabet &amp; Letter Sounds',copy:'Twenty-six alphabet cards, three gentle find-and-match games and easy activities for home — one short class, no score at the end.'},
+  {href:'/preschool/3-years/numbers-and-counting/',cls:'Class 2',title:'Numbers &amp; Counting (1–10)',copy:'Ten counting cards, find-the-number, count-and-match and putting numbers in order — counting games with calm feedback and no scores.'},
+  {href:'/preschool/3-years/shapes-and-patterns/',cls:'Class 3',title:'Shapes &amp; Patterns',copy:'Twelve shape cards, find-and-match games and playful AB and AAB patterns with simple shape tiles — pattern play at preschool pace.'}
+ ];
+ const setCards=[
+  {href:'/flashcards/alphabet/',title:'Alphabet Flashcards A–Z',copy:'Every letter card has its own page with the picture, the words to say together and a download button — print the whole set from the class.'},
+  {href:'/flashcards/numbers-and-counting/',title:'Numbers 1–10 Flashcards',copy:'One to ten with apples, ducks and butterflies — every counting card has its own page, its own prompt and its own download.'},
+  {href:'/flashcards/shapes/',title:'Shape Flashcards',copy:'Twelve shapes from circle to octagon, each with its own page, a real-life shape hunt and a download button.'}
+ ];
  return `${crumbNav([['Preschool','/preschool/'],['Age 3']])}
- ${heading('PRESCHOOL · AGE 3','Age 3: letters, sounds and matching games.','The first preschool stage. Three-year-olds love to name, spot and show off what they know — so this stage starts with the alphabet, at exactly their pace.')}
- <section class="wrap section compact"><div class="fc-chips lesson-chips"><span><strong>Age</strong> 3 Years</span><span><strong>Stage</strong> Preschool</span><span><strong>Status</strong> First class ready now</span></div>
- <div class="fc-stages">
-  <a class="fc-stage lesson-card-link" href="${CLASS_PATH}"><div class="fc-stage-pills"><span class="fc-age">Age 3</span><span class="fc-class">Class 1</span></div><h3>Alphabet &amp; Letter Sounds</h3><p>Twenty-six alphabet cards, three gentle find-and-match games and easy activities for home — one short class, no score at the end.</p><span class="fc-open">Start today’s class <span aria-hidden="true">↗</span></span></a>
-  <a class="fc-stage lesson-card-link" href="${SET_URL}"><div class="fc-stage-pills"><span class="fc-age">Age 3</span><span class="fc-class">Flashcards</span></div><h3>Alphabet Flashcards A–Z</h3><p>Every card has its own page with the picture, the words to say together and a download button — print the whole set from the class.</p><span class="fc-open">Open the flashcards <span aria-hidden="true">↗</span></span></a>
+ ${heading('PRESCHOOL · AGE 3','Age 3: letters, numbers, shapes and patterns.','The preschool stage of Kiddo School. Three-year-olds love to name, spot and show off what they know — so this stage starts with the alphabet, keeps counting calm and makes patterns a game, at exactly their pace.')}
+ <section class="wrap section compact"><div class="fc-chips lesson-chips"><span><strong>Age</strong> 3 Years</span><span><strong>Stage</strong> Preschool</span><span><strong>Status</strong> Three classes ready now</span></div>
+ <h2 class="lesson-classheading">The classes</h2>
+ <div class="fc-stages">${classCards.map(c=>`<a class="fc-stage lesson-card-link" href="${c.href}"><div class="fc-stage-pills"><span class="fc-age">Age 3</span><span class="fc-class">${c.cls}</span></div><h3>${c.title}</h3><p>${c.copy}</p><span class="fc-open">Start today’s class <span aria-hidden="true">↗</span></span></a>`).join('')}
+ </div>
+ <h2 class="lesson-classheading">The flashcards</h2>
+ <div class="fc-stages">${setCards.map(c=>`<a class="fc-stage lesson-card-link" href="${c.href}"><div class="fc-stage-pills"><span class="fc-age">Age 3</span><span class="fc-class">Flashcards</span></div><h3>${c.title}</h3><p>${c.copy}</p><span class="fc-open">Open the flashcards <span aria-hidden="true">↗</span></span></a>`).join('')}
  </div>
  <p class="lesson-note">Looking for earlier stages? The <a href="/toddler/2-years/">Age 2 classes</a> and the full <a href="/learning-path/">Learning Path</a> are right where you left them.</p></section>`;
 }

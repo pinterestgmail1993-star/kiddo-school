@@ -13,6 +13,8 @@ import * as fcData from './data-first-concepts.mjs';
 import * as gbData from './data-garden-bugs-and-friends.mjs';
 import * as gfData from './data-garden-friends.mjs';
 import * as alData from './data-alphabet.mjs';
+import * as nmData from './data-numbers.mjs';
+import * as shData from './data-shapes.mjs';
 
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const cardSlug=file=>file.replace(/^\d+-/,'').replace(/\.webp$/,'');
@@ -25,7 +27,10 @@ const SOURCES=[
  [emData,emLesson],[fcData,fcLesson],[gbData,gbLesson],[gfData,gfLesson],
  // The alphabet module keeps explicit export names (alphabetMeta/alphabetCardContent)
  // because it also carries the Age 3 lesson object; adapt it to the common shape.
- [{meta:alData.alphabetMeta,cards:alData.alphabetCardContent},alData.alphabetLesson]
+ // The numbers and shapes modules are the same pattern (Age 3 Classes 2 and 3).
+ [{meta:alData.alphabetMeta,cards:alData.alphabetCardContent},alData.alphabetLesson],
+ [{meta:nmData.numbersMeta,cards:nmData.numbersCardContent},nmData.numbersLesson],
+ [{meta:shData.shapesMeta,cards:shData.shapesCardContent},shData.shapesLesson]
 ];
 
 function buildSet([data,lesson]){
@@ -40,7 +45,7 @@ function buildSet([data,lesson]){
   const d=data.cards[s];
   if(!d) throw Error('flashcards: missing content for '+slug+'/'+s);
   return {slug:s,word:d.word||titleWord(s),file:c.file,w:c.w,h:c.h,alt:c.alt,
-   letter:c.letter||d.letter||null,sound:d.sound||null,metaDescription:d.metaDescription||null,
+   letter:c.letter||d.letter||null,numeral:c.numeral||d.numeral||null,sound:d.sound||null,metaDescription:d.metaDescription||null,cardTitle:d.cardTitle||null,
    intro:d.intro,say:d.say,try:d.try,note:d.note,url:url+s+'/',img:base+c.file,n:i+1};
  });
  const coverFile=data.meta.coverFile||'cover.webp';
@@ -186,7 +191,7 @@ export function fcCardPageBody(set,card,ctx){
  const lesson=set.lessonPath?`<p class="fc2-lesson">These cards come from the <a href="${set.lessonPath}">${esc(set.lessonTitle)}</a> — the full interactive class with games, sounds and a print view.</p>`:'';
  const relGrid=related&&related.length?`<section class="wrap fc-section"><span class="eyebrow">RELATED CARDS</span><h2>More cards to try.</h2><p class="fc-hint">${esc(ctx.relatedHint||'Nearby cards from this set and its closest friends.')}</p><div class="fc2-cards">${related.map(r=>`<a class="fc-card fc2-cardlink" href="${r.card.url}"><span class="fc2-cardimg"><img src="${r.card.img}" width="${r.card.w}" height="${r.card.h}" alt="${esc(r.card.alt)}" loading="lazy"></span><span class="fc2-cardword"><strong>${esc(r.card.word)}</strong><span>From ${esc(r.setName)}</span></span></a>`).join('')}</div></section>`:'';
  return `${crumbNav([['Flashcards','/flashcards/'],[set.name,set.url],[card.word]])}
- <div class="page-heading wrap"><span class="eyebrow">FLASHCARD · ${esc(set.name.toUpperCase())} · AGES ${esc(set.ageLabel.toUpperCase())}</span><h1>${card.letter?`${esc(card.word)} Flashcard — Letter ${esc(card.letter.toUpperCase())} for ${esc(noun)}`:`${esc(card.word)} Flashcard for ${esc(noun)}`}</h1><p>${esc(card.intro)}</p></div>
+ <div class="page-heading wrap"><span class="eyebrow">FLASHCARD · ${esc(set.name.toUpperCase())} · AGES ${esc(set.ageLabel.toUpperCase())}</span><h1>${card.numeral?`Number ${esc(card.numeral)} Flashcard — ${esc(card.word)} for ${esc(noun)}`:card.letter?`${esc(card.word)} Flashcard — Letter ${esc(card.letter.toUpperCase())} for ${esc(noun)}`:`${esc(card.word)} Flashcard for ${esc(noun)}`}</h1><p>${esc(card.intro)}</p></div>
  <div class="fc2-dual wrap">
   <div class="fc2-main">${figure}${pn}<section class="fc2-learn" aria-label="How to use this card">${say}${sound}${tryThis}${note}</section>${lesson}</div>
   <aside class="fc2-rail" aria-label="Download, share and family feedback"><section class="fc2-block fc2-first-block"><span class="eyebrow">TAKE IT WITH YOU</span><h2>Download, print, keep going.</h2>${actions}</section>${share}${fcCommunityMount(card.url)}</aside>
