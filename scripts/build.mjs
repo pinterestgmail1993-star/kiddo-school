@@ -39,7 +39,10 @@ const origin=new URL(configured||'http://localhost:4173');
 if(!['https:','http:'].includes(origin.protocol)||origin.pathname!=='/'||origin.search||origin.hash||origin.username||origin.password)throw Error('SITE_URL must be a bare http(s) origin without path, query or credentials');
 if(configured&&origin.protocol!=='https:'&&origin.hostname!=='localhost')throw Error('Public SITE_URL must use HTTPS');
 const site=origin.origin;
-const indexable=!!configured&&(process.env.SITE_INDEXABLE==='true'||config.indexable===true)&&process.env.SITE_INDEXABLE!=='false'&&(!process.env.CF_PAGES_BRANCH||process.env.CF_PAGES_BRANCH==='main');
+// The repo config (site.config.json) decides indexing — the owner keeps the
+// site OUT of search engines while it is in development. Environment
+// variables may only VETO indexing, never force it on.
+const indexable=!!configured&&config.indexable===true&&process.env.SITE_INDEXABLE!=='false'&&(!process.env.CF_PAGES_BRANCH||process.env.CF_PAGES_BRANCH==='main');
 const subjects=[['art','Art Studio','Make a little mess. Make something yours.','collage'],['science','Science Lab','Ask a question. Follow your curiosity.','bean'],['nature','Nature Club','There is a whole world just outside.','sound'],['maths','Maths Room','Spot patterns. Play with possibilities.','pattern'],['literacy','Story Corner','Find the words for your next adventure.','story'],['engineering','Build & Tinker','Think it up. Build it. Try it again.','bridge']];
 const ageGroups=[['3-5','3–5','Little explorers','Simple choices, big discoveries.'],['6-8','6–8','Curious makers','A little more independence.'],['9-12','9–12','Big thinkers','Room to test your own ideas.']];
 const e=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
