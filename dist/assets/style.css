@@ -831,3 +831,24 @@ h1,h2,h3,.brand,.bean-links strong{font-family:var(--kid-font);letter-spacing:0}
 .fc2-share-btn:hover,.fc2-share-btn:focus-visible{background:#fdf6ec;box-shadow:2px 2px 0 rgba(52,59,48,.18)}
 @media (max-width:920px){.fc2-dual{grid-template-columns:1fr}.fc2-rail{font-size:1rem}}
 @media (max-width:640px){.fc2-cardimg img{height:150px}}
+
+/* ---- Alphabet class (Age 3): letter tiles, group chips, sound block ---- */
+/* Big letter tiles: programmatic text buttons for find-the-letter and
+   big-and-little play. Buttons are real <button>s; the "face" variant is a
+   non-interactive span used for the prompt side of a round. */
+button.tc-letter{display:inline-flex;align-items:center;justify-content:center;min-width:96px;min-height:96px;padding:6px 12px;border:2px solid var(--ink,#343b30);border-radius:10px;background:#fff;color:var(--ink,#343b30);font-family:inherit;font-size:44px;font-weight:800;line-height:1;cursor:pointer;box-shadow:3px 3px 0 rgba(52,59,48,.16);transition:transform .15s,box-shadow .15s}
+button.tc-letter:hover,button.tc-letter:focus-visible{transform:translate(-1px,-1px);box-shadow:5px 5px 0 rgba(52,59,48,.24)}
+button.tc-letter-big{min-width:116px;min-height:116px;font-size:58px}
+.tc-letter-face{display:inline-flex;align-items:center;justify-content:center;min-width:96px;min-height:96px;padding:6px 12px;border:2px dashed rgba(52,59,48,.55);border-radius:10px;background:#fff;font-size:44px;font-weight:800;line-height:1;color:var(--ink,#343b30)}
+.tc-letter-face.tc-letter-big{min-width:116px;min-height:116px;font-size:58px}
+.tc-target-letter{display:flex;align-items:center;justify-content:center;min-height:132px}
+.tc-pair-arrow{align-self:center;font-size:26px;font-weight:800;color:rgba(52,59,48,.55);padding:0 2px}
+/* Group chips under the letter-card viewer (revealed by alphabet-class.js). */
+.lv-groups{display:none;flex-wrap:wrap;gap:10px;margin:20px 0 4px}
+.lv-groups[data-ready="true"]{display:flex}
+.lv-group-chip{border:2px solid var(--ink,#343b30);border-radius:999px;background:#fff;color:var(--ink,#343b30);padding:9px 18px;font-family:inherit;font-size:14px;font-weight:700;cursor:pointer;transition:transform .15s}
+.lv-group-chip:hover,.lv-group-chip:focus-visible{transform:translate(-1px,-1px)}
+.lv-group-chip.is-on{background:var(--ink,#343b30);color:#fff}
+/* Letter-sound note on alphabet card pages. */
+.fc2-sound{border-left:5px solid #a66446}
+@media (max-width:700px){button.tc-letter,.tc-letter-face{min-width:80px;min-height:80px;font-size:36px}button.tc-letter-big,.tc-letter-face.tc-letter-big{min-width:92px;min-height:92px;font-size:46px}.tc-choices{gap:10px}}
