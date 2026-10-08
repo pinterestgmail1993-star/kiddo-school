@@ -73,7 +73,7 @@ export async function onRequest(context) {
           ? 'id, display_name, title, image_key, image_type, image_size, status, created_at'
           : resource === 'notes'
             ? 'id, display_name, message, status, created_at'
-            : 'id, page_path, reaction, comment, display_name, status, created_at';
+            : 'id, page_path, reaction, rating, comment, display_name, status, created_at';
         stmt = env.DB.prepare(`SELECT ${cols} FROM ${spec.table} WHERE status = ?1 ORDER BY created_at DESC LIMIT 50`).bind(status);
       }
       const { results } = await stmt.all();

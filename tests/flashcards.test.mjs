@@ -2,6 +2,12 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {flashcardSets} from '../src/flashcards-project.mjs';
+import {join,resolve} from 'node:path';
+import {existsSync} from 'node:fs';
+import {fcSets} from '../src/flashcards/index.mjs';
+const root=resolve('dist');
+const read=f=>readFileSync(f,'utf8');
+const page=f=>readFileSync(join(root,f,'index.html'),'utf8');
 
 test('flashcards hub lists every set and links from home nav and footer',()=>{
  const hub=readFileSync('dist/flashcards/index.html','utf8');
@@ -30,4 +36,120 @@ test('black and white baby cards page shows flashcards, stages grid, guide and s
  assert.match(html,/out of sleep spaces/i);
  const urls=[...html.matchAll(/<img[^>]+src="(https:\/\/pub-f2fcb7[^"]+)"/g)].map(m=>m[1]);
  assert.ok(urls.length>=16,'set page should embed the fifteen flashcards plus the parents guide');
+});
+
+test('flashcard data: eight toddler sets, every card complete and linked to its real lesson',()=>{
+ assert.equal(fcSets.length,8);
+ for(const s of fcSets){
+  assert.ok(s.cards.length>=12,`${s.slug} has ${s.cards.length} cards`);
+  assert.ok(existsSync(join(root,s.url.slice(1),'index.html')),`${s.url} missing`);
+  for(const c of s.cards){
+   assert.ok(c.intro.length>80,`${s.slug}/${c.slug} intro too thin`);
+   assert.ok(c.say.length>5,`${s.slug}/${c.slug} missing say line`);
+   assert.ok(c.try.length>40,`${s.slug}/${c.slug} missing try activity`);
+   assert.ok(c.note.length>40,`${s.slug}/${c.slug} missing parent note`);
+   assert.match(c.img,/https:\/\/pub-f2fcb7c9b45a496cbeefef18dbba0ec0\.r2\.dev\/flashcards\//);
+  }
+ }
+});
+
+test('set pages: honest card grid, four use ideas, related sets, community mount',()=>{
+ for(const s of fcSets){
+  const html=page(s.url.slice(1));
+  assert.equal([...html.matchAll(/<h1[ >]/g)].length,1,s.url);
+  assert.ok(html.includes(`href="${s.lessonPath}"`),'set links back to its lesson');
+  assert.equal(html.split('data-page-path').length-1,1,'exactly one community mount');
+  assert.ok(html.includes('data-page-path="'+s.url+'"'),'mount scoped to the set page path');
+  assert.ok(html.includes('How did your kiddo like this?'),'reactions heading');
+  assert.ok(html.includes('No parent reviews yet'),'honest empty reviews state');
+  assert.ok(html.includes('No parent comments yet'),'honest empty comments state');
+  for(const [idea] of s.useIdeas)assert.ok(html.includes(idea.replace(/'/g,'&#39;')),`use idea "${idea}" missing`);
+  for(const c of s.cards)assert.ok(html.includes(`href="${c.url}"`),`card link ${c.url} missing`);
+  if(s.printPath)assert.ok(html.includes(`href="${s.printPath}"`),'print link when a real print page exists');
+  else assert.ok(!/Print the full set/.test(html),'no fake print button without a real print page');
+ }
+});
+
+test('card pages: unique titles and descriptions, say/try/note, download, prev/next, related',()=>{
+ const titles=new Set(),descriptions=new Set();
+ let downloads=0;
+ for(const s of fcSets)for(const c of s.cards){
+  const html=page(c.url.slice(1));
+  const title=html.match(/<title>(.*?)<\/title>/)[1];
+  assert.ok(!titles.has(title),`duplicate title: ${title}`);titles.add(title);
+  const desc=html.match(/name="description" content="([^"]+)"/)[1];
+  assert.ok(!descriptions.has(desc),`duplicate description on ${c.url}`);descriptions.add(desc);
+  assert.ok(html.includes('Say it together'),`${c.url} missing say-it-together`);
+  assert.ok(html.includes('Try this'),`${c.url} missing try-this`);
+  assert.ok(html.includes('Quick parent note'),`${c.url} missing parent note`);
+  assert.ok(html.includes(`href="${c.img}" download=`),'download button points at the real card image');
+  downloads++;
+  // prev/next: links resolve to real pages and cover the set cycle
+  const prevMatch=html.match(/class="fc2-pn-btn" href="([^"]+)" rel="prev"/);const nextMatch=html.match(/class="fc2-pn-btn fc2-pn-next" href="([^"]+)" rel="next"/);
+  assert.ok(prevMatch&&nextMatch,`${c.url} missing prev/next`);
+  assert.ok(existsSync(join(root,prevMatch[1].slice(1),'index.html')),`${c.url} prev target missing`);
+  assert.ok(existsSync(join(root,nextMatch[1].slice(1),'index.html')),`${c.url} next target missing`);
+  // related cards: three, all real pages, at least one from another set when available
+  const rel=[...html.matchAll(/class="fc-card fc2-cardlink" href="([^"]+)"/g)].map(m=>m[1]);
+  assert.ok(rel.length===3,`${c.url} expected 3 related cards, got ${rel.length}`);
+  for(const r of rel)assert.ok(existsSync(join(root,r.slice(1),'index.html')),`${c.url} related target missing ${r}`);
+  // community mount scoped to the card URL
+  assert.ok(html.includes('data-page-path="'+c.url+'"'),'card mount path');
+  // breadcrumb: Home > Flashcards > Set > Card
+  const bc=html.match(/"breadcrumbList","itemListElement":\[.*?\]/s)||html.match(/"BreadcrumbList"(.*?)<\/script>/s);
+  assert.ok(html.includes('"BreadcrumbList"'),`${c.url} missing breadcrumb schema`);
+  assert.ok(html.includes('item":"https://kiddo-school.pages.dev'+c.url+'"'),'breadcrumb includes card item');
+  // honesty guards
+  assert.ok(!html.includes('aggregateRating'),'no fabricated ratings schema');
+  assert.ok(!html.includes('★★★★★</span>'),'no fabricated review text in HTML');
+ }
+ assert.equal(downloads,140);
+});
+
+test('library: every set is listed, baby collection included, no orphan sets',()=>{
+ const html=page('flashcards');
+ for(const s of fcSets)assert.ok(html.includes(`href="${s.url}"`),`library missing ${s.url}`);
+ assert.ok(html.includes('/flashcards/black-and-white-baby-cards/'),'baby collection still listed');
+});
+
+test('sitemap: all set and card URLs are indexable, print views excluded',()=>{
+ const xml=read('dist/sitemap.xml');
+ for(const s of fcSets){
+  assert.ok(xml.includes(`<loc>https://kiddo-school.pages.dev${s.url}</loc>`),`sitemap missing ${s.url}`);
+  for(const c of s.cards)assert.ok(xml.includes(`<loc>https://kiddo-school.pages.dev${c.url}</loc>`),`sitemap missing ${c.url}`);
+ }
+ assert.ok(!xml.includes('/print/'),'print views stay unindexed');
+});
+
+test('reactions, reviews and comments are three separate systems',()=>{
+ const mount=page('flashcards/animals-and-sounds');
+ assert.ok(mount.includes('data-fc-reactions'),'reactions block');
+ assert.ok(mount.includes('data-fc-review-form'),'reviews form');
+ assert.ok(mount.includes('data-fc-comment-form'),'comments form');
+ const js=read('dist/assets/flashcards-community.js');
+ assert.ok(js.includes('/api/community/reaction'),'reaction API call');
+ assert.ok(js.includes('/api/community/review'),'review API call');
+ assert.ok(js.includes('/api/community/comment'),'comment API call');
+ assert.ok(js.includes("reaction: 'star'"),'star reviews flagged with reaction=star');
+ const api=read('functions/api/community/[[route]].js');
+ assert.ok(api.includes("INSERT INTO page_reactions"),'reactions go to their own table');
+ assert.ok(api.includes("rating"),"reviews accept a rating");
+ assert.ok(api.includes("'Ratings go from 1 to 5 stars.'"),'rating is validated 1-5');
+});
+
+test('migration 0002 creates the reactions table and the rating column safely',()=>{
+ const sql=read('migrations/0002_reactions_reviews.sql');
+ assert.ok(sql.includes('CREATE TABLE IF NOT EXISTS page_reactions'));
+ assert.ok(sql.includes('reaction TEXT NOT NULL'));
+ assert.ok(sql.includes('ALTER TABLE page_reviews ADD COLUMN rating INTEGER'));
+ assert.ok(!/DROP TABLE|DELETE FROM/i.test(sql),'nothing is dropped or deleted');
+});
+
+test('lesson pages link to their flashcard sets and the links resolve',()=>{
+ const checks={'/toddler/2-years/animals-and-sounds/':'/flashcards/animals-and-sounds/','/toddler/2-years/vehicles-and-sounds/':'/flashcards/vehicles-and-sounds/','/toddler/2-years/colors-and-shapes/':'/flashcards/colors-and-shapes/','/toddler/2-years/matching-and-sorting/':'/flashcards/matching-and-sorting/','/toddler/2-years/emotions-and-feelings/':'/flashcards/emotions-and-feelings/','/toddler/18-24-months/first-concepts-big-small-up-down/':'/flashcards/first-concepts/','/toddler/2-years/garden-bugs-and-friends/':'/flashcards/garden-bugs-and-friends/','/toddler/2-years/school-garden/garden-friends/':'/flashcards/garden-friends/'};
+ for(const [lesson,set] of Object.entries(checks)){
+  const html=page(lesson.slice(1));
+  assert.ok(html.includes(`href="${set}"`),`${lesson} missing flashcards link`);
+  assert.ok(existsSync(join(root,set.slice(1),'index.html')),`${set} does not exist`);
+ }
 });

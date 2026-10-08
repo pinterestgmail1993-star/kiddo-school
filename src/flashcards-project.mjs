@@ -56,7 +56,7 @@ export function fcSetCard(set){
  return `<a class="fc-setcard" href="${setUrl(set)}"><div class="fc-setcard-visual"><img src="${imgUrl(set,set.cover)}" width="1024" height="1536" alt="${set.coverAlt}" loading="lazy"></div><div class="fc-setcard-copy"><span class="eyebrow">${set.setLabel} · AGES ${set.ageLabel}</span><h2>${set.hubTitle}</h2><p>${set.blurb}</p><span class="fc-open">Open this set <span aria-hidden="true">↗</span></span></div></a>`;
 }
 export function fcSoon(){
- return `<div class="fc-soon"><h2>More sets are on the drawing table.</h2><p>Parents tell us they want first words, animals, alphabet and number flashcards next, all in the same print-at-home style. If there is a set you are waiting for, the kitchen table decides what gets made first: tell someone at Kiddo.school what your little one is learning right now.</p></div>`;
+ return `<div class="fc-soon"><h2>More sets are on the drawing table.</h2><p>Alphabet and number flashcards are on the drawing table, in the same print-at-home style. If there is a set you are waiting for, the kitchen table decides what gets made first: tell someone at Kiddo.school what your little one is learning right now.</p></div>`;
 }
 export function fcSetBody(set){
  return `<section class="wrap fc-intro"><div class="fc-chips"><span>Ages ${set.ageLabel}</span><span>${set.cards.length} cards</span><span>Free to print</span></div><p class="fc-lede">${set.intro}</p></section>

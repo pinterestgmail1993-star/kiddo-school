@@ -765,3 +765,50 @@ h1,h2,h3,.brand,.bean-links strong{font-family:var(--kid-font);letter-spacing:0}
 .lib-thumb--book{flex:0 0 96px;width:96px;height:74px}
 .lib-thumb--book img{width:100%;height:100%;object-fit:cover}
 
+
+/* ===== Flashcards: set pages, card pages, reactions, reviews, comments ===== */
+.fc2-h2{font-size:1.15rem;letter-spacing:.02em;margin:26px 0 4px;color:#4a4438}
+.fc2-cover{max-width:520px;margin:0 auto}
+.fc2-cover img{width:100%;height:auto;aspect-ratio:1414/2000;object-fit:cover;border-radius:14px;box-shadow:0 10px 30px rgba(63,52,32,.14)}
+.fc2-cover figcaption{display:flex;justify-content:space-between;gap:12px;margin-top:10px;font-size:.9rem;color:#6b6353}
+.fc2-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:16px}
+.fc2-cardlink{display:flex;flex-direction:column;gap:0;background:#fff;border-radius:14px;overflow:hidden;text-decoration:none;color:inherit;box-shadow:0 4px 14px rgba(63,52,32,.10);transition:transform .15s ease,box-shadow .15s ease}
+.fc2-cardlink:hover,.fc2-cardlink:focus-visible{transform:translateY(-3px);box-shadow:0 10px 24px rgba(63,52,32,.16)}
+.fc2-cardimg{display:block}
+.fc2-cardimg img{width:100%;height:auto;aspect-ratio:1414/2000;object-fit:cover;display:block}
+.fc2-cardword{display:flex;flex-direction:column;gap:2px;padding:10px 12px 12px}
+.fc2-cardword strong{font-size:1rem}
+.fc2-cardword span{font-size:.78rem;color:#8a8172}
+.fc2-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.fc2-hero{max-width:560px;margin:0 auto}
+.fc2-hero img{width:100%;height:auto;aspect-ratio:1414/2000;object-fit:contain;background:#fff;border-radius:14px;box-shadow:0 10px 30px rgba(63,52,32,.14)}
+.fc2-hero figcaption{display:flex;justify-content:space-between;gap:12px;margin-top:10px;font-size:.9rem;color:#6b6353}
+.fc2-do{background:#fff;border-radius:14px;padding:20px 22px;box-shadow:0 4px 14px rgba(63,52,32,.08);margin:0 0 14px}
+.fc2-do h2{font-size:1.05rem;letter-spacing:.06em;text-transform:uppercase;color:#b3552e;margin:0 0 8px}
+.fc2-do p{margin:0}
+.fc2-say{font-size:1.25rem;line-height:1.5;color:#3f3420}
+.fc2-note{background:#f1ead9}
+.fc2-note h2{color:#5c7a4d}
+.fc2-lesson{margin:14px 0 0;font-size:.95rem;color:#6b6353}
+.fc2-pn{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.fc2-pn-btn{display:flex;flex-direction:column;gap:4px;padding:14px 16px;background:#fff;border-radius:14px;box-shadow:0 4px 14px rgba(63,52,32,.08);text-decoration:none;color:inherit}
+.fc2-pn-next{text-align:right}
+.fc2-pn-btn strong{font-size:1.05rem}
+.fc2-pn-btn span:last-child{font-size:.78rem;color:#8a8172}
+.fc2-pn-btn:hover,.fc2-pn-btn:focus-visible{box-shadow:0 10px 24px rgba(63,52,32,.16)}
+.fc2-relrow{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.fc2-relcard{display:flex;flex-direction:column;gap:4px;background:#fff;border-radius:14px;padding:16px;text-decoration:none;color:inherit;box-shadow:0 4px 14px rgba(63,52,32,.08)}
+.fc2-relcard span{font-size:.85rem;color:#8a8172}
+.fc2-block{margin-top:34px;padding-top:22px;border-top:2px solid #e7dfcc}
+.fc2-count{display:inline-block;min-width:1.4em;padding:0 6px;border-radius:999px;background:#f1ead9;color:#4a4438;font-size:.8rem;line-height:1.4}
+.fc2-inline{margin:12px 0 0;color:#5c7a4d;font-size:.95rem}
+.fc2-listwrap{margin:0 0 14px}
+.fc2-stars{border:0;padding:0;margin:0 0 12px}
+.fc2-stars legend{font-size:.95rem;padding:0}
+.fc2-star-row{display:flex;gap:6px;flex-wrap:wrap}
+.fc2-star{display:flex;align-items:center;gap:6px;padding:8px 12px;border:2px solid #e7dfcc;border-radius:12px;cursor:pointer;background:#fff}
+.fc2-star input{accent-color:#b3552e}
+.fc2-star .fc2-star-text{font-size:.85rem}
+.fc2-star:has(input:checked){border-color:#b3552e;background:#fdf6ec}
+.fc2-review-stars{color:#d99a2b;font-size:1.1rem;letter-spacing:.12em;margin:0}
+@media (max-width:640px){.fc2-pn{grid-template-columns:1fr}.fc2-pn-next{text-align:left}}

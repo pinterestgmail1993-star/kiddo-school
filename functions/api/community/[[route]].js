@@ -3,8 +3,10 @@
 //   GET  config                  → public runtime config (Turnstile site key only)
 //   POST principal               → Principal's Office message  → status 'new'
 //   POST sticky                  → Sticky Note Wall submission → status 'pending'
-//   POST review                  → page review (4 reactions)   → status 'pending'
+//   POST review                  → page review (4 reactions or star rating) → status 'pending'
 //   POST comment                 → page comment                → status 'pending'
+//   POST reaction                → emoji tap, no text, counted live (no moderation — nothing to read)
+//   GET  reactions?page_path=…   → live reaction counts for one page
 //   POST art                     → artwork upload (multipart)  → status 'pending' (private R2)
 //   GET  notes                   → APPROVED sticky notes only
 //   GET  reviews?page_path=…     → APPROVED reviews (optionally for one page)
@@ -26,6 +28,7 @@ import { validateAndScrubImage } from '../../lib/images.js';
 
 const PATH_RE = /^\/[a-z0-9-]+(\/[a-z0-9-]+)*\/$/;
 const REACTIONS = ['love', 'like', 'okay', 'not_for_us'];
+const ALL_REACTION_KEYS = ['love', 'like', 'okay', 'not_for_us'];
 const PRINCIPAL_CATEGORIES = ['question', 'request', 'feedback', 'suggestion', 'complaint', 'technical_problem'];
 
 function nowIso() { return new Date().toISOString(); }
@@ -71,6 +74,20 @@ export async function onRequest(context) {
         return json({ ok: true, notes: results });
       } catch (e) { return dbError(e); }
     }
+    if (route === 'reactions') {
+      if (!await dbReady(env)) return notReady();
+      const pagePath = url.searchParams.get('page_path');
+      if (!pagePathOk(pagePath)) return badRequest('Unknown page.');
+      try {
+        const { results } = await env.DB.prepare(
+          'SELECT reaction, COUNT(*) AS n FROM page_reactions WHERE page_path = ?1 GROUP BY reaction'
+        ).bind(pagePath).all();
+        const counts = {};
+        for (const key of ALL_REACTION_KEYS) counts[key] = 0;
+        for (const row of results) if (ALL_REACTION_KEYS.includes(row.reaction)) counts[row.reaction] = row.n;
+        return json({ ok: true, counts });
+      } catch (e) { return dbError(e); }
+    }
     if (route === 'reviews') {
       if (!await dbReady(env)) return notReady();
       const pagePath = url.searchParams.get('page_path');
@@ -78,8 +95,8 @@ export async function onRequest(context) {
       const limit = Math.min(Number(url.searchParams.get('limit')) || 12, 24);
       try {
         const stmt = pagePath
-          ? env.DB.prepare('SELECT id, page_path, reaction, comment, display_name, approved_at FROM page_reviews WHERE status = ?1 AND page_path = ?2 ORDER BY approved_at DESC LIMIT ?3').bind('approved', pagePath, limit)
-          : env.DB.prepare('SELECT id, page_path, reaction, comment, display_name, approved_at FROM page_reviews WHERE status = ?1 AND comment IS NOT NULL ORDER BY approved_at DESC LIMIT ?2').bind('approved', limit);
+          ? env.DB.prepare('SELECT id, page_path, reaction, rating, comment, display_name, approved_at FROM page_reviews WHERE status = ?1 AND page_path = ?2 ORDER BY approved_at DESC LIMIT ?3').bind('approved', pagePath, limit)
+          : env.DB.prepare('SELECT id, page_path, reaction, rating, comment, display_name, approved_at FROM page_reviews WHERE status = ?1 AND comment IS NOT NULL ORDER BY approved_at DESC LIMIT ?2').bind('approved', limit);
         const { results } = await stmt.all();
         return json({ ok: true, reviews: results });
       } catch (e) { return dbError(e); }
@@ -178,6 +195,29 @@ export async function onRequest(context) {
       } catch (e) { return dbError(e); }
     }
 
+    if (route === 'reaction') {
+      if (!await dbReady(env)) return notReady();
+      const limited = await rateLimit(env, request, 'reaction', 12); if (!limited.ok) return limited.response;
+      const read = await readJson(request); if (read.error) return read.error;
+      const data = read.data;
+      if (honeypot(data)) return json({ ok: true });
+      if (!pagePathOk(data.page_path)) return badRequest('Unknown page.');
+      if (!REACTIONS.includes(data.reaction)) return badRequest('Unknown reaction.');
+      try {
+        const ts2 = nowIso();
+        await env.DB.prepare(
+          'INSERT INTO page_reactions (page_path, reaction, created_at) VALUES (?1, ?2, ?3)'
+        ).bind(data.page_path, data.reaction, ts2).run();
+        const { results } = await env.DB.prepare(
+          'SELECT reaction, COUNT(*) AS n FROM page_reactions WHERE page_path = ?1 GROUP BY reaction'
+        ).bind(data.page_path).all();
+        const counts = {};
+        for (const key of ALL_REACTION_KEYS) counts[key] = 0;
+        for (const row of results) if (ALL_REACTION_KEYS.includes(row.reaction)) counts[row.reaction] = row.n;
+        return json({ ok: true, counts });
+      } catch (e) { return dbError(e); }
+    }
+
     if (route === 'review') {
       if (!await dbReady(env)) return notReady();
       const limited = await rateLimit(env, request, 'review', 8); if (!limited.ok) return limited.response;
@@ -186,7 +226,18 @@ export async function onRequest(context) {
       if (honeypot(data)) return json({ ok: true });
       const ts = await turnstileGuard(env, data.turnstileToken); if (ts) return ts;
       if (!pagePathOk(data.page_path)) return badRequest('Unknown page.');
-      if (!REACTIONS.includes(data.reaction)) return badRequest('Please pick one of the four reactions.');
+      // A review is either one of the four emoji reactions (class pages) or a
+      // star rating (flashcard pages, reaction 'star'). Optional text rides along.
+      let rating = null;
+      if (data.rating !== undefined && data.rating !== null && data.rating !== '') {
+        rating = Number(data.rating);
+        if (!Number.isInteger(rating) || rating < 1 || rating > 5) return badRequest('Ratings go from 1 to 5 stars.');
+      }
+      if (rating && data.reaction === 'star') {
+        // star review — fine
+      } else if (!REACTIONS.includes(data.reaction)) {
+        return badRequest('Please pick one of the four reactions.');
+      }
       let comment = null;
       if (data.comment !== undefined && data.comment !== null && data.comment !== '') {
         comment = cleanText(data.comment, 300, { multiline: true });
@@ -199,8 +250,8 @@ export async function onRequest(context) {
       try {
         const ts2 = nowIso();
         await env.DB.prepare(
-          'INSERT INTO page_reviews (page_path, reaction, comment, display_name, status, created_at, updated_at) VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?6)'
-        ).bind(data.page_path, data.reaction, comment, displayName, 'pending', ts2).run();
+          'INSERT INTO page_reviews (page_path, reaction, comment, display_name, rating, status, created_at, updated_at) VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?7)'
+        ).bind(data.page_path, data.reaction, comment, displayName, rating, 'pending', ts2).run();
         return json({ ok: true, message: 'Thanks for sharing your feedback!' });
       } catch (e) { return dbError(e); }
     }

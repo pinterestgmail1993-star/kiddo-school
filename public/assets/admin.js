@@ -7,6 +7,7 @@
   if (!queueEl) return;
 
   var REACTION_LABELS = {
+    star: { emoji: '\u2B50', label: 'Star rating' },
     love: { emoji: '\uD83D\uDE0D', label: 'Loved it' },
     like: { emoji: '\uD83D\uDE0A', label: 'Liked it' },
     okay: { emoji: '\uD83D\uDE10', label: 'It was okay' },
@@ -125,7 +126,14 @@
     var box = el('div', 'item');
     box.appendChild(badge(it.status));
     var r = REACTION_LABELS[it.reaction] || { emoji: '', label: it.reaction };
-    box.appendChild(el('p', null, r.emoji + ' ' + r.label));
+    if (it.reaction === 'star' && it.rating) {
+      var n = Math.max(1, Math.min(5, Number(it.rating)));
+      var shown = '';
+      for (var si = 1; si <= 5; si++) shown += (si <= n ? '\u2605' : '\u2606');
+      box.appendChild(el('p', null, shown + ' (' + n + '/5)'));
+    } else {
+      box.appendChild(el('p', null, r.emoji + ' ' + r.label));
+    }
     if (it.comment) box.appendChild(el('p', 'msg', '\u201C' + it.comment + '\u201D'));
     box.appendChild(el('p', 'meta', meta(0, [
       { label: 'Page', value: it.page_path },
