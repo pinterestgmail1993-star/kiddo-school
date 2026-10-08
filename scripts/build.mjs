@@ -9,7 +9,7 @@ import {beanPages,beanLinks,beanActivity,beanAssetBase} from '../src/bean-projec
 import {patternPages,patternLinks,patternActivity,patternBase} from '../src/pattern-project.mjs';
 import {leafPages,leafLinks,leafActivity,leafBase} from '../src/leaf-project.mjs';
 import {shadowPages,shadowLinks,shadowActivity,shadowBase} from '../src/shadow-project.mjs';
-import {flashcardSets,fcSetCard,fcSetBody,fcSoon} from '../src/flashcards-project.mjs';
+import {flashcardSets,fcSetCard,fcSetBody,fcSoon,babySet} from '../src/flashcards-project.mjs';
 import {fcSets,fcSetCard as fcToddlerSetCard,fcSetPageBody,fcCardPageBody,fcRelatedFor} from '../src/flashcards/index.mjs';
 import {babyBody,newbornBody,weeksBody,seeBody,talkBody,talkThinkBody,toddlerBody,newbornBase} from '../src/newborn-project.mjs';
 import {hcLesson,fvLesson,cfoLesson,fwftLesson,aeoLesson,fabLesson,fwfhLesson,fcLesson,csLesson,msLesson,anLesson,vhLesson,emLesson,gbLesson,gfLesson,classLessonBody,classLessonSchema,stagePageBody,stages,toddlerClassBody,printPackBody,printCardsBody,lessonStageCard} from '../src/lessons.mjs';
@@ -128,7 +128,16 @@ for(const p of patternPages)page('/maths/make-a-pattern/'+p.slug+'/',p.title+' �
 for(const p of leafPages)page('/nature/leaf-rubbing/'+p.slug+'/',p.title+' — draw and write',p.intro+' Includes an illustrated worksheet, drawing space and typed answers.',crumb([['Nature','/nature/'],['Make a leaf rubbing','/nature/leaf-rubbing/'],[p.title]])+heading('MY LEAF STUDIO',p.title,p.intro)+leafActivity(p));
 for(const p of shadowPages)page('/science/shadow-detectives/'+p.slug+'/',p.title+' — draw and write',p.intro+' Includes an illustrated worksheet, drawing space and typed answers.',crumb([['Science Lab','/science/'],['Shadow Detectives','/science/shadow-detectives/'],[p.title]])+heading('MY SHADOW DETECTIVE KIT',p.title,p.intro)+shadowActivity(p));
 page('/flashcards/','Free printable flashcards for babies and toddlers','Free printable flashcard sets to print and play at home: high-contrast baby cards, plus animals, vehicles, colours, feelings and garden friends for toddlers. No sign-up.',crumb([['Flashcards']])+heading('PRINT · SHOW · SMILE','Flashcards to print and play.','Every set below is free, image-based and made for time away from a screen: open the cards one at a time here, or print them for the kitchen table.')+`<section class="wrap section compact"><h2 class="fc2-h2">For babies</h2>${flashcardSets.map(fcSetCard).join('')}<h2 class="fc2-h2">For toddlers</h2>${fcSets.map(fcToddlerSetCard).join('')}</section><div class="wrap">${fcSoon()}</div>`);
-for(const s of flashcardSets)page('/flashcards/'+s.slug+'/',s.title,s.metaDescription,crumb([['Flashcards','/flashcards/'],[s.hubTitle]])+heading('FLASHCARD SET · '+s.setLabel.toUpperCase(),s.h1,s.subtitle)+fcSetBody(s));
+for(const s of flashcardSets)page('/flashcards/'+s.slug+'/',s.title,s.metaDescription,crumb([['Flashcards','/flashcards/'],[s.hubTitle]])+heading('FLASHCARD SET · '+s.setLabel.toUpperCase(),s.h1,s.subtitle)+fcSetBody(s),{schema:[ssBc(site,[['Flashcards','/flashcards/'],[s.hubTitle,'/flashcards/'+s.slug+'/']])]});
+babySet.cards.forEach((c,i)=>{
+ const n=babySet.cards.length;
+ const next=babySet.cards[(i+1)%n];
+ const prev=babySet.cards[(i-1+n)%n];
+ const m=c.intro.match(/^[^.!?]*[.!?]/);
+ let introLine=m?m[0]:c.intro;
+ if(introLine.length>150)introLine=introLine.slice(0,147).replace(/[,;:\s]+\S*$/,'')+'…';
+ page(c.url,`${c.word} Flashcard for Babies — ${babySet.name} Set`,introLine+' Free to print at home from Kiddo School.',fcCardPageBody(babySet,c,{prev,next,related:fcRelatedFor(babySet,c),site,noun:'Babies',relatedHint:'More bold, high-contrast cards from this same set — all made for brand-new eyes.'}),{schema:[ssBc(site,[['Flashcards','/flashcards/'],[babySet.name,babySet.url],[c.word,c.url]])],ogImage:c.img,ogAlt:c.alt});
+});
 for(const s of fcSets){
  page(s.url,s.seoTitle,s.metaDescription,fcSetPageBody(s),{schema:[ssBc(site,[['Flashcards','/flashcards/'],[s.name,s.url]])],ogImage:s.coverUrl,ogAlt:s.cover.alt});
  s.cards.forEach((c,i)=>{
@@ -137,7 +146,7 @@ for(const s of fcSets){
   const m=c.intro.match(/^[^.!?]*[.!?]/);
   let introLine=m?m[0]:c.intro;
   if(introLine.length>150)introLine=introLine.slice(0,147).replace(/[,;:\s]+\S*$/,'')+'…';
-  page(c.url,`${c.word} Flashcard for Toddlers — ${s.name} Set`,introLine+' Free to print at home from Kiddo School.',fcCardPageBody(s,c,{prev,next,related:fcRelatedFor(s,c)}),{schema:[ssBc(site,[['Flashcards','/flashcards/'],[s.name,s.url],[c.word,c.url]])],ogImage:c.img,ogAlt:c.alt});
+  page(c.url,`${c.word} Flashcard for Toddlers — ${s.name} Set`,introLine+' Free to print at home from Kiddo School.',fcCardPageBody(s,c,{prev,next,related:fcRelatedFor(s,c),site}),{schema:[ssBc(site,[['Flashcards','/flashcards/'],[s.name,s.url],[c.word,c.url]])],ogImage:c.img,ogAlt:c.alt});
  });
 }
 page('/baby/','Baby classes from birth: Kiddo School','Kiddo.school baby classes: short, calm, high-contrast lessons from birth onward. Start with Newborn 1 and grow class by class, stage by stage.',crumb([['Baby']])+heading('FROM BIRTH ONWARD','The school for your smallest student.','Short, calm classes for babies — high-contrast cards, gentle sounds and everyday moments, organised step by step from birth onward.')+babyBody());

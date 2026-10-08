@@ -214,4 +214,39 @@
       });
     });
   }
+  // ---- 4. SHARE — copy this page's address (the network share buttons are
+  // plain links; this only powers the "Copy link" button) --------------------
+  var copyBtn = root.querySelector('[data-fc-copy]');
+  if (copyBtn) {
+    var copyLabel = copyBtn.textContent;
+    var resetTimer = null;
+    function flashCopied() {
+      copyBtn.textContent = 'Link copied \u2713';
+      if (resetTimer) clearTimeout(resetTimer);
+      resetTimer = setTimeout(function () { copyBtn.textContent = copyLabel; }, 2200);
+    }
+    function legacyCopy(text) {
+      var input = document.createElement('textarea');
+      input.value = text;
+      input.setAttribute('readonly', '');
+      input.style.position = 'fixed';
+      input.style.left = '-9999px';
+      document.body.appendChild(input);
+      input.select();
+      var ok = false;
+      try { ok = document.execCommand('copy'); } catch (e) {}
+      document.body.removeChild(input);
+      copyBtn.textContent = ok ? 'Link copied \u2713' : 'Copy failed \u2014 long-press the address bar';
+      if (resetTimer) clearTimeout(resetTimer);
+      resetTimer = setTimeout(function () { copyBtn.textContent = copyLabel; }, 2600);
+    }
+    copyBtn.addEventListener('click', function () {
+      var href = window.location.href;
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(href).then(flashCopied, function () { legacyCopy(href); });
+      } else {
+        legacyCopy(href);
+      }
+    });
+  }
 })();

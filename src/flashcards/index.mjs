@@ -138,7 +138,7 @@ export function fcSetCard(s){
 // ---- Set page ----------------------------------------------------------------
 export function fcSetPageBody(s){
  const cover=`<figure class="fc2-cover"><img src="${s.coverUrl}" width="1414" height="2000" alt="${esc(s.cover.alt)}" loading="lazy"><figcaption><strong>${esc(s.name)}</strong><span>${s.cards.length} cards · free to print</span></figcaption></figure>`;
- const grid=`<div class="fc-grid fc2-cards">${s.cards.map(c=>`<a class="fc-card fc2-cardlink" href="${c.url}"><span class="fc2-cardimg"><img src="${c.img}" width="440" height="622" alt="${esc(c.alt)}" loading="lazy"></span><span class="fc2-cardword"><strong>${esc(c.word)}</strong><span>Card ${c.n} of ${s.cards.length}</span></span></a>`).join('')}</div>`;
+ const grid=`<div class="fc2-cards">${s.cards.map(c=>`<a class="fc-card fc2-cardlink" href="${c.url}"><span class="fc2-cardimg"><img src="${c.img}" width="${c.w}" height="${c.h}" alt="${esc(c.alt)}" loading="lazy"></span><span class="fc2-cardword"><strong>${esc(c.word)}</strong><span>Card ${c.n} of ${s.cards.length}</span></span></a>`).join('')}</div>`;
  const ideas=`<ol class="fc-steps">${s.useIdeas.map(([t,d],i)=>`<li><span class="fc-stepnum">${String(i+1).padStart(2,'0')}</span><div><h3>${esc(t)}</h3><p>${esc(d)}</p></div></li>`).join('')}</ol>`;
  const related=s.relatedSlugs.map(k=>fcSetBySlug[k]).filter(Boolean);
  const relatedRow=related.length?`<div class="fc2-relrow">${related.map(r=>`<a class="fc2-relcard" href="${r.url}"><strong>${esc(r.name)}</strong><span>${r.cards.length} cards</span><span class="fc-open">Open <span aria-hidden="true">↗</span></span></a>`).join('')}</div>`:'';
@@ -154,24 +154,32 @@ export function fcSetPageBody(s){
 }
 
 // ---- Card page ----------------------------------------------------------------
+// Layout: the card and its teaching notes sit in the left column; downloads,
+// share buttons and the three community blocks (reactions, reviews, comments)
+// sit in a right-hand rail, so nothing important hides below the fold.
 export function fcCardPageBody(set,card,ctx){
  const {prev,next,related}=ctx;
+ const noun=ctx.noun||'Toddlers';
+ const site=String(ctx.site||'').replace(/\/$/,'');
+ const enc=encodeURIComponent;
+ const pageUrl=site+card.url;
+ const shareTitle=`${card.word} flashcard for ${noun.toLowerCase()} — ${set.name} · Kiddo School`;
  const figure=`<figure class="fc2-hero"><img src="${card.img}" width="${card.w}" height="${card.h}" alt="${esc(card.alt)}"><figcaption><strong>${esc(card.word)}</strong><span>Card ${card.n} of ${set.cards.length} · ${esc(set.name)}</span></figcaption></figure>`;
+ const pn=`<nav class="fc2-pn" aria-label="Previous and next card"><a class="fc2-pn-btn" href="${prev.url}" rel="prev"><span aria-hidden="true">←</span> <strong>${esc(prev.word)}</strong><span>Previous card</span></a><a class="fc2-pn-btn fc2-pn-next" href="${next.url}" rel="next"><strong>${esc(next.word)}</strong> <span aria-hidden="true">→</span><span>Next card</span></a></nav>`;
  const say=`<div class="fc2-do"><h2>Say it together</h2><p class="fc2-say">&ldquo;${esc(card.say)}&rdquo;</p><p class="fc-hint">Say it naturally, then wait. Whatever comes back — the word, the sound, a point, a giggle — is the right answer.</p></div>`;
  const tryThis=`<div class="fc2-do"><h2>Try this</h2><p>${esc(card.try)}</p></div>`;
  const note=`<div class="fc2-do fc2-note"><h2>Quick parent note</h2><p>${esc(card.note)}</p></div>`;
- const actions=`<div class="fc2-actions"><a class="button" href="${card.img}" download="${esc(card.word.toLowerCase().replace(/[^a-z0-9]+/g,'-'))}.webp">Download card <span aria-hidden="true">↓</span></a><a class="button" href="${set.url}">View full set</a>${set.printPath?`<a class="button" href="${set.printPath}">Print full set</a>`:''}</div>`;
- const lesson=`<p class="fc2-lesson">These cards come from the <a href="${set.lessonPath}">${esc(set.lessonTitle)}</a> — the full interactive class with games, sounds and a print view.</p>`;
- const relGrid=related&&related.length?`<section class="wrap fc-section"><span class="eyebrow">RELATED CARDS</span><h2>More cards to try.</h2><p class="fc-hint">${esc(ctx.relatedHint||'Nearby cards from this set and its closest friends.')}</p><div class="fc-grid fc2-cards">${related.map(r=>`<a class="fc-card fc2-cardlink" href="${r.card.url}"><span class="fc2-cardimg"><img src="${r.card.img}" width="440" height="622" alt="${esc(r.card.alt)}" loading="lazy"></span><span class="fc2-cardword"><strong>${esc(r.card.word)}</strong><span>From ${esc(r.setName)}</span></span></a>`).join('')}</div></section>`:'';
- const prevNext=`<nav class="fc2-pn" aria-label="Previous and next card"><a class="fc2-pn-btn" href="${prev.url}" rel="prev"><span aria-hidden="true">←</span> <strong>${esc(prev.word)}</strong><span>Previous card</span></a><a class="fc2-pn-btn fc2-pn-next" href="${next.url}" rel="next"><strong>${esc(next.word)}</strong> <span aria-hidden="true">→</span><span>Next card</span></a></nav>`;
+ const actions=`<div class="fc2-actions"><a class="button" href="${card.img}" download="${esc(card.word.toLowerCase().replace(/[^a-z0-9]+/g,'-'))}.webp">Download card <span aria-hidden="true">↓</span></a>${set.printPath?`<a class="button" href="${set.printPath}">Print full set</a>`:''}<a class="button" href="${set.url}">View full set</a></div>`;
+ const share=`<div class="fc2-block fc2-share-block"><span class="eyebrow">SHARE THIS CARD</span><h2>Pass it on.</h2><div class="fc2-share"><a class="fc2-share-btn" href="https://twitter.com/intent/tweet?url=${enc(pageUrl)}&text=${enc(shareTitle)}" target="_blank" rel="noopener" aria-label="Share this card on X">X</a><a class="fc2-share-btn" href="https://www.facebook.com/sharer/sharer.php?u=${enc(pageUrl)}" target="_blank" rel="noopener" aria-label="Share this card on Facebook">Facebook</a><a class="fc2-share-btn" href="https://wa.me/?text=${enc(shareTitle+' '+pageUrl)}" target="_blank" rel="noopener" aria-label="Share this card on WhatsApp">WhatsApp</a><a class="fc2-share-btn" href="https://pinterest.com/pin/create/button/?url=${enc(pageUrl)}&media=${enc(card.img)}&description=${enc(shareTitle)}" target="_blank" rel="noopener" aria-label="Save this card on Pinterest">Pinterest</a><button type="button" class="fc2-share-btn" data-fc-copy>Copy link</button></div><p class="fc-hint">Share buttons open in a new tab. The copy button copies this page&rsquo;s address — nothing is tracked.</p></div>`;
+ const lesson=set.lessonPath?`<p class="fc2-lesson">These cards come from the <a href="${set.lessonPath}">${esc(set.lessonTitle)}</a> — the full interactive class with games, sounds and a print view.</p>`:'';
+ const relGrid=related&&related.length?`<section class="wrap fc-section"><span class="eyebrow">RELATED CARDS</span><h2>More cards to try.</h2><p class="fc-hint">${esc(ctx.relatedHint||'Nearby cards from this set and its closest friends.')}</p><div class="fc2-cards">${related.map(r=>`<a class="fc-card fc2-cardlink" href="${r.card.url}"><span class="fc2-cardimg"><img src="${r.card.img}" width="${r.card.w}" height="${r.card.h}" alt="${esc(r.card.alt)}" loading="lazy"></span><span class="fc2-cardword"><strong>${esc(r.card.word)}</strong><span>From ${esc(r.setName)}</span></span></a>`).join('')}</div></section>`:'';
  return `${crumbNav([['Flashcards','/flashcards/'],[set.name,set.url],[card.word]])}
- <div class="page-heading wrap"><span class="eyebrow">FLASHCARD · ${esc(set.name.toUpperCase())} · AGES ${esc(set.ageLabel.toUpperCase())}</span><h1>${esc(card.word)} Flashcard for Toddlers</h1><p>${esc(card.intro)}</p></div>
- <section class="wrap fc-section">${figure}</section>
- <section class="wrap fc-section">${say}${tryThis}${note}</section>
- <section class="wrap fc-section"><span class="eyebrow">TAKE IT WITH YOU</span><h2>Download, print, keep going.</h2>${actions}${lesson}</section>
- ${relGrid}
- <section class="wrap fc-section"><h2 class="fc2-visually-hidden">Previous and next card</h2>${prevNext}</section>
- ${fcCommunityMount(card.url)}`;
+ <div class="page-heading wrap"><span class="eyebrow">FLASHCARD · ${esc(set.name.toUpperCase())} · AGES ${esc(set.ageLabel.toUpperCase())}</span><h1>${esc(card.word)} Flashcard for ${esc(noun)}</h1><p>${esc(card.intro)}</p></div>
+ <div class="fc2-dual wrap">
+  <div class="fc2-main">${figure}${pn}<section class="fc2-learn" aria-label="How to use this card">${say}${tryThis}${note}</section>${lesson}</div>
+  <aside class="fc2-rail" aria-label="Download, share and family feedback"><section class="fc2-block fc2-first-block"><span class="eyebrow">TAKE IT WITH YOU</span><h2>Download, print, keep going.</h2>${actions}</section>${share}${fcCommunityMount(card.url)}</aside>
+ </div>
+ ${relGrid}`;
 }
 
 // Related cards for a card: the next two in the set (wrapping) plus one
@@ -189,6 +197,7 @@ export function fcRelatedFor(set,card){
   if(pick&&pick.url!==card.url){cross={card:pick,setName:rset.name};break;}
  }
  const related=[...inSet.map(c=>({card:c,setName:set.name}))];
- if(cross) related.push(cross);
+ if(cross){related.push(cross);}
+ else{const third=set.cards[(card.n+2)%n];if(third&&third.url!==card.url)related.push({card:third,setName:set.name});}
  return related.slice(0,3);
 }

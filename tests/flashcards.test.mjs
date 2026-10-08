@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
-import {flashcardSets} from '../src/flashcards-project.mjs';
+import {flashcardSets,babySet} from '../src/flashcards-project.mjs';
 import {join,resolve} from 'node:path';
 import {existsSync} from 'node:fs';
 import {fcSets} from '../src/flashcards/index.mjs';
@@ -118,7 +118,70 @@ test('sitemap: all set and card URLs are indexable, print views excluded',()=>{
   assert.ok(xml.includes(`<loc>https://kiddo-school.pages.dev${s.url}</loc>`),`sitemap missing ${s.url}`);
   for(const c of s.cards)assert.ok(xml.includes(`<loc>https://kiddo-school.pages.dev${c.url}</loc>`),`sitemap missing ${c.url}`);
  }
+ for(const c of babySet.cards)assert.ok(xml.includes(`<loc>https://kiddo-school.pages.dev${c.url}</loc>`),`sitemap missing baby card ${c.url}`);
  assert.ok(!xml.includes('/print/'),'print views stay unindexed');
+});
+
+test('black and white baby cards: every card opens its own page, not the raw image',()=>{
+ const s=flashcardSets[0];
+ const html=page(`flashcards/${s.slug}`);
+ for(const c of s.cards)assert.ok(html.includes(`href="${babySet.url}${c.slug}/"`),`card page link for ${c.slug} missing`);
+ const rawAnchors=[...html.matchAll(/<a [^>]*href="(https:\/\/pub-f2fcb7[^"]+)"/g)].map(m=>m[1]);
+ assert.equal(rawAnchors.length,1,`only the parents guide may link straight to R2, found: ${rawAnchors.join(', ')}`);
+ assert.ok(rawAnchors[0].includes(s.guide),'the one raw R2 link is the parents guide');
+ assert.ok(html.includes(`data-page-path="${babySet.url}"`),'baby set page has its own community mount');
+ assert.ok(html.includes('How did your kiddo like this?'),'baby set reactions present');
+});
+
+test('baby card pages: fifteen unique pages with say/try/note, downloads above community, share, prev/next',()=>{
+ assert.equal(babySet.cards.length,15);
+ const titles=new Set();
+ for(const c of babySet.cards){
+  const html=page(c.url.slice(1));
+  const title=html.match(/<title>(.*?)<\/title>/)[1];
+  assert.ok(!titles.has(title),`duplicate title: ${title}`);titles.add(title);
+  assert.match(html,/Flashcard for Babies/,`${c.url} baby H1`);
+  assert.ok(html.includes('Say it together'),`${c.url} missing say`);
+  assert.ok(html.includes('Try this'),`${c.url} missing try`);
+  assert.ok(html.includes('Quick parent note'),`${c.url} missing note`);
+  assert.ok(html.includes(`href="${c.img}" download=`),`${c.url} download button`);
+  assert.ok(html.includes('fc2-dual'),`${c.url} two-column layout`);
+  assert.ok(html.includes('data-fc-copy'),`${c.url} copy-link button`);
+  assert.ok(html.includes('twitter.com/intent/tweet'),`${c.url} X share`);
+  assert.ok(html.includes('facebook.com/sharer'),`${c.url} Facebook share`);
+  assert.ok(html.includes('wa.me/'),`${c.url} WhatsApp share`);
+  assert.ok(html.includes('pinterest.com/pin/create'),`${c.url} Pinterest share`);
+  const dIdx=html.indexOf('TAKE IT WITH YOU');const rIdx=html.indexOf('data-fc-reactions');
+  assert.ok(dIdx>-1&&rIdx>-1&&dIdx<rIdx,`${c.url} downloads must sit above reactions and comments`);
+  const prevMatch=html.match(/class="fc2-pn-btn" href="([^"]+)" rel="prev"/);const nextMatch=html.match(/class="fc2-pn-btn fc2-pn-next" href="([^"]+)" rel="next"/);
+  assert.ok(prevMatch&&nextMatch,`${c.url} prev/next present beside the image`);
+  assert.ok(existsSync(join(root,prevMatch[1].slice(1),'index.html')),`${c.url} prev target missing`);
+  assert.ok(existsSync(join(root,nextMatch[1].slice(1),'index.html')),`${c.url} next target missing`);
+  const rel=[...html.matchAll(/class="fc-card fc2-cardlink" href="([^"]+)"/g)].map(m=>m[1]);
+  assert.equal(rel.length,3,`${c.url} expected 3 related cards`);
+  for(const r of rel){
+   assert.ok(existsSync(join(root,r.slice(1),'index.html')),`${c.url} related target missing ${r}`);
+   assert.ok(r.startsWith(babySet.url),`${c.url} related stays inside the baby set`);
+  }
+  assert.ok(html.includes(`data-page-path="${c.url}"`),'mount path');
+  assert.ok(html.includes('"BreadcrumbList"'),`${c.url} breadcrumb schema`);
+  assert.ok(!html.includes('aggregateRating'),'no fabricated ratings schema');
+ }
+});
+
+test('card images render at their true aspect ratio — no portrait cropping anywhere',()=>{
+ for(const s of fcSets){
+  const html=page(s.url.slice(1));
+  assert.ok(!html.includes('width="440"'),`${s.url} still hardcodes portrait dims`);
+  for(const c of s.cards)assert.ok(html.includes(`width="${c.w}" height="${c.h}"`),`${s.url} missing true dims for ${c.slug}`);
+  const cardPage=page(s.cards[0].url.slice(1));
+  assert.ok(cardPage.includes('fc2-dual'),'card page uses the dual layout');
+  assert.ok(cardPage.includes(`width="${s.cards[0].w}" height="${s.cards[0].h}"`),'hero uses true dims');
+ }
+ const css=read('dist/assets/style.css');
+ assert.ok(/\.fc2-cardimg img\{[^}]*object-fit:contain/.test(css)&&!/\.fc2-cardimg img\{[^}]*aspect-ratio/.test(css),'card grid shows true ratios, no crop');
+ assert.ok(!/\.fc2-hero img\{[^}]*aspect-ratio/.test(css),'hero shows the true ratio');
+ assert.ok(css.includes('.fc2-dual'),'dual layout styles shipped');
 });
 
 test('reactions, reviews and comments are three separate systems',()=>{
