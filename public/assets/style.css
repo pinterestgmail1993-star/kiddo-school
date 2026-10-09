@@ -1265,3 +1265,13 @@ a.tc-day-class.is-rec{border:2px solid #71326d;background:#faf6ff}
 .dt-card-copy strong{font-family:var(--serif);font-weight:400;font-size:21px;color:var(--ink);letter-spacing:-.3px}
 @media(max-width:680px){.dt{padding:16px 14px 20px}.dt-stage{padding:10px}.dt-stage img{max-height:54vh}.dt-controls{gap:10px}.dt-steptitle{font-size:24px}.dt-detail{font-size:18px}}
 @media(prefers-reduced-motion:reduce){.dt-card{transition:none}}
+/* Whole-school search results (/search/) */
+.sr{margin-top:20px}
+.sr-list{list-style:none;margin:12px 0 0;padding:0;display:grid;gap:10px}
+.sr-list a{display:grid;grid-template-columns:auto 1fr;gap:2px 12px;align-items:baseline;border:1.5px solid var(--line);background:var(--white);padding:12px 14px;text-decoration:none;transition:transform .15s}
+.sr-list a:hover{transform:translate(-2px,-2px)}
+.sr-kind{grid-row:1/3;align-self:start;border:1.5px solid var(--ink);background:var(--yellow);padding:2px 8px;font-size:12px;font-weight:800;letter-spacing:.3px;white-space:nowrap;color:var(--ink)}
+.sr-title{font-weight:800;font-size:17px;color:var(--ink)}
+.sr-desc{grid-column:2;font-size:14px;line-height:1.55;color:var(--muted)}
+@media(max-width:680px){.sr-list a{grid-template-columns:1fr}.sr-kind{grid-row:auto;justify-self:start}.sr-desc{grid-column:1}}
+@media(prefers-reduced-motion:reduce){.sr-list a{transition:none}}
