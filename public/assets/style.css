@@ -1148,33 +1148,47 @@ button.mg-play-snd{display:inline-flex;align-items:center;gap:10px;border:2px so
 button.mg-play-snd:active{transform:translateY(3px);box-shadow:0 1px 0 #d592b8}
 .mg-play-ic{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;background:#602865;color:#f9d2e8;font-size:12px}
 button.mg-play-snd.is-playing .mg-play-ic{animation:mg-pulse .9s ease-in-out infinite}
-@keyframes mg-pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.18)}}
-/* ---- Magic Shape Builder ---- */
+@keyframes mg-pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.18)}}/* ---- Magic Shape Builder v2: one clean spot at a time ---- */
 .sb-layout{margin-top:18px;display:grid;gap:22px;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:start}
 .sb-refcard{border:1.5px solid var(--ink);background:var(--white);box-shadow:4px 4px 0 rgba(52,59,48,.14);padding:12px;text-align:center}
-.sb-refcard img{width:100%;height:auto;max-width:230px;margin:0 auto}
+.sb-refcard img{width:100%;height:auto;max-width:250px;margin:0 auto}
 .sb-refcard figcaption{font-size:13px;font-weight:700;color:var(--muted);margin-top:6px}
-.sb-board{position:relative;width:100%;max-width:460px;aspect-ratio:1/1;margin-inline:auto;border:1.5px solid var(--ink);background:var(--white);box-shadow:4px 4px 0 rgba(52,59,48,.14);touch-action:manipulation}
+.sb-playcol{min-width:0}
+.sb-board{position:relative;width:100%;max-width:440px;aspect-ratio:1/1;margin-inline:auto;border:1.5px solid var(--ink);background:var(--white);box-shadow:4px 4px 0 rgba(52,59,48,.14);touch-action:manipulation}
+.sb-board.is-target{outline:3px solid #71326d;outline-offset:3px}
 .sb-board.is-cheer{animation:mgm-bounce 1s ease-in-out 1}
-button.sb-slot{position:absolute;border:0;background:none;padding:0;margin:0;cursor:pointer;font-family:inherit}
-button.sb-slot svg{width:100%;height:auto;display:block;overflow:visible}
-.sb-slot .sb-shape{fill:rgba(255,255,255,.55);stroke:rgba(52,59,48,.6);stroke-width:5;stroke-dasharray:14 12}
-.sb-slot .sb-slot-word{display:block;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-size:11px;font-weight:800;color:rgba(52,59,48,.55);pointer-events:none}
-button.sb-slot.is-filled{cursor:default}
-button.sb-slot.is-filled .sb-shape{stroke:rgba(52,59,48,.85);stroke-dasharray:none;animation:mg-pop .5s ease}
-button.sb-slot.is-filled .sb-slot-word{display:none}
-button.sb-slot.is-hint .sb-shape{stroke:#71326d;animation:mg-hint 1s ease-in-out infinite}
-@keyframes mg-hint{0%,100%{stroke-width:5}50%{stroke-width:11}}
-button.sb-slot:focus-visible{outline:3px solid #81543e;outline-offset:4px}
-.sb-tray{margin-top:14px;display:flex;flex-wrap:wrap;gap:12px;justify-content:center;border-top:2px dashed var(--line);padding-top:16px}
+/* every slot renders as its solid shape (the finished picture, also the
+   no-JS state); the JS game adds .sb-live and switches to reveal mode */
+.sb-slotbox{position:absolute;display:block}
+.sb-slotbox svg{width:100%;height:100%;display:block;overflow:visible}
+.sb-slotbox .sb-geo{fill:var(--sc);stroke:#2f3628;stroke-width:2.5}
+.sb-slotbox .sb-slot-word{display:none}
+.sb-live .sb-slotbox{display:none}
+.sb-live .sb-slotbox.is-done{display:block;animation:sb-in .45s ease}
+.sb-live .sb-slotbox.is-current{display:block}
+.sb-live .sb-slotbox.is-current .sb-geo{fill:rgba(255,255,255,.12);stroke:var(--sc);stroke-width:3.5;stroke-dasharray:9 7;animation:sb-breathe 1.6s ease-in-out infinite}
+.sb-live .sb-slotbox.is-current .sb-slot-word{display:block;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-size:clamp(10px,1.6vw,13px);font-weight:800;color:var(--sc);background:rgba(255,255,255,.85);padding:1px 6px;border-radius:8px;white-space:nowrap;pointer-events:none}
+.sb-live .sb-slotbox.is-current::after{content:'';position:absolute;inset:-14px}
+.sb-live .sb-slotbox.is-current:focus-visible{outline:3px solid #81543e;outline-offset:4px}
+@keyframes sb-in{0%{transform:scale(.6);opacity:.4}70%{transform:scale(1.05)}100%{transform:scale(1);opacity:1}}
+@keyframes sb-breathe{0%,100%{stroke-dashoffset:0;opacity:1}50%{stroke-dashoffset:16;opacity:.75}}
+.sb-progress{margin:10px 0 0;text-align:center;font-size:13px;font-weight:700;color:var(--muted)}
+.sb-tray{margin-top:12px;display:flex;flex-wrap:wrap;gap:12px;justify-content:center;border-top:2px dashed var(--line);padding-top:14px}
 button.sb-piece{display:inline-flex;flex-direction:column;align-items:center;gap:3px;border:1.5px solid var(--ink);background:#fff;border-radius:12px;box-shadow:3px 3px 0 rgba(52,59,48,.16);padding:10px 12px;cursor:pointer;font-family:inherit;transition:transform .15s}
-button.sb-piece svg{width:44px;height:44px;display:block;overflow:visible}
-button.sb-piece span{font-size:11.5px;font-weight:800;color:var(--ink)}
+button.sb-piece svg{width:52px;height:52px;display:block;overflow:visible}
+button.sb-piece svg *{fill:var(--sc);stroke:#2f3628;stroke-width:3}
+button.sb-piece span{font-size:12px;font-weight:800;color:var(--ink)}
 button.sb-piece:hover,button.sb-piece:focus-visible{transform:translate(-1px,-1px)}
-button.sb-piece.is-picked{outline:3px solid #71326d;outline-offset:2px;background:var(--yellow)}
-button.sb-piece.is-used{opacity:.3;pointer-events:none}
+button.sb-piece[aria-pressed="true"]{outline:3px solid #71326d;outline-offset:2px;background:var(--yellow);transform:translateY(-2px)}
+button.sb-piece.is-used{opacity:.32}
+button.sb-piece.is-hint{outline:3px dashed #71326d;outline-offset:3px;animation:sb-hint 1s ease-in-out infinite}
+@keyframes sb-hint{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
+button.sb-piece.is-drag{position:relative;z-index:30;opacity:.9}
 .sb-status{margin-top:12px;font-weight:700;min-height:1.5em}
+.sb-choose .sb-choose-tile.is-locked{opacity:.55;border-style:dashed;cursor:not-allowed;box-shadow:none}
+.sb-choose .sb-choose-tile.is-locked img{filter:grayscale(.7)}
+.sb-choose .sb-tile-sub{display:block;font-size:12.5px;font-weight:700;color:var(--muted);margin-top:2px}
 @media(max-width:760px){.sb-layout{grid-template-columns:1fr}}
 /* ---- Magic games: calm + reduced-motion gates ---- */
-body.calm-mode .mg-landed.mg-pop,body.calm-mode .mg-basket-glow,body.calm-mode .mg-mixing .mg-drip-a,body.calm-mode .mg-mixing .mg-drip-b,body.calm-mode button.mg-animal.is-moving img,body.calm-mode .sb-board.is-cheer,body.calm-mode button.sb-slot.is-filled .sb-shape,body.calm-mode button.sb-slot.is-hint .sb-shape{animation:none!important}
-@media(prefers-reduced-motion:reduce){.mg-landed.mg-pop,.mg-basket-glow,.mg-mixing .mg-drip-a,.mg-mixing .mg-drip-b,button.mg-animal.is-moving img,.sb-board.is-cheer,button.sb-slot.is-filled .sb-shape,button.sb-slot.is-hint .sb-shape{animation:none!important}button.mg-tile,button.mg-fruit,button.mg-animal,button.sb-piece,button.mg-splash{transition:none}.mg-result-blob{transition:none}}
+body.calm-mode .mg-landed.mg-pop,body.calm-mode .mg-basket-glow,body.calm-mode .mg-mixing .mg-drip-a,body.calm-mode .mg-mixing .mg-drip-b,body.calm-mode button.mg-animal.is-moving img,body.calm-mode .sb-board.is-cheer,body.calm-mode .sb-live .sb-slotbox.is-done,body.calm-mode .sb-live .sb-slotbox.is-current .sb-geo,body.calm-mode button.sb-piece.is-hint{animation:none!important}
+@media(prefers-reduced-motion:reduce){.mg-landed.mg-pop,.mg-basket-glow,.mg-mixing .mg-drip-a,.mg-mixing .mg-drip-b,button.mg-animal.is-moving img,.sb-board.is-cheer,.sb-live .sb-slotbox.is-done,.sb-live .sb-slotbox.is-current .sb-geo,button.sb-piece.is-hint{animation:none!important}button.mg-tile,button.mg-fruit,button.mg-animal,button.sb-piece,button.mg-splash{transition:none}.mg-result-blob{transition:none}}

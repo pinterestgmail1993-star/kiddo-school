@@ -117,28 +117,34 @@ test('magic animal playground: real recordings only where they exist, honest wor
  assert.ok(animal.includes('<h1>Magic Animal Playground</h1>'));
  for(const f of AP)assert.ok(animal.includes(R2+'/magic-animal-playground-age-3/'+f),f);
  assert.ok(animal.includes('width="1080" height="1080"'),'true probed dims');
- // only the four real recordings are claimed, and the files really ship
- for(const a of ['dog','cat','cow','sheep']){
-  assert.ok(animal.includes('/assets/sounds/animals/'+a+'.mp3')===false,'page carries no hardcoded mp3 URL for '+a+' (playback resolves at runtime)');
+ // the R2 filenames are shifted one slot against their contents (verified
+ // visually): cat=03-cow.webp, cow=04-duck.webp, duck=05-sheep.webp,
+ // sheep=06-frog.webp, frog=07-…-cover.webp, group cover=02-cat.webp.
+ // The page must map by CONTENT so every animal card shows the right
+ // picture — the duck card must show the duck, never the cow.
+ const MAP={cat:'03-cow.webp',cow:'04-duck.webp',duck:'05-sheep.webp',sheep:'06-frog.webp',frog:'07-animal-playground-cover.webp'};
+ for(const [a,f] of Object.entries(MAP))assert.ok(animal.includes(f),a+' uses its content-correct file '+f);
+ assert.ok(animal.includes('10-fruit-basket-cover')===false);
+ assert.ok(animal.includes('07-animal-playground-cover.webp" width="1080" height="1080" alt="A small green frog')||animal.includes('alt="A small green frog ready to hop"'),'the frog card shows the frog picture');
+ assert.ok(animal.includes('welcome')&&animal.includes('02-cat.webp'),'the group illustration fronts the welcome screen');
+ // all six recordings are claimed and all six files really ship
+ for(const a of ['dog','cat','cow','sheep','duck','frog']){
+  assert.ok(!animal.includes(a+'.mp3'),'page carries no hardcoded mp3 URL for '+a+' (playback resolves at runtime)');
+  assert.ok(existsSync(resolve(root,'assets/sounds/animals/'+a+'.mp3')),'recording ships: '+a);
  }
- for(const a of ['duck','frog']){
-  assert.ok(!animal.includes(a+'.mp3'),'no recording claimed for '+a);
- }
- for(const a of ['dog','cat','cow','sheep'])assert.ok(existsSync(resolve(root,'assets/sounds/animals/'+a+'.mp3')),'recording ships: '+a);
  // sound words are the visible text alternatives
  for(const w of ['Woof, woof!','Meow!','Moo!','Quack, quack!','Baa!','Ribbit, ribbit!'])assert.ok(animal.includes(w),'sound word on the card: '+w);
- assert.ok(animal.includes('Kiddo School has no recording for them yet'),'honest duck/frog disclosure');
- assert.ok(animal.includes('no recording claimed')===false);
- // listening game: four rounds on the recorded animals only
- assert.equal([...animal.matchAll(/data-mg-listen="/g)].length,4,'four listen rounds');
- for(const m of animal.matchAll(/data-mg-listen="([a-z]+)"/g))assert.ok(['dog','cat','cow','sheep'].includes(m[1]),'listen round uses a real recording: '+m[1]);
+ assert.ok(!animal.includes('stretchs'),'no misspelled movement word');
+ assert.ok(animal.includes('stretches'),'cat stretches (fixed)');
+ // the listening game uses all six real recordings
+ assert.equal([...animal.matchAll(/data-mg-listen="/g)].length,6,'six listen rounds');
+ for(const m of animal.matchAll(/data-mg-listen="([a-z]+)"/g))assert.ok(['dog','cat','cow','sheep','duck','frog'].includes(m[1]),'listen round uses a real recording: '+m[1]);
  const listenSegs=animal.split('data-mg-listen=').slice(1);
  for(const seg of listenSegs){
   const round=seg.slice(0,seg.indexOf('</section>'));
   assert.equal([...round.matchAll(/data-mg-correct="true"/g)].length,1,'exactly one correct animal per listen round');
   assert.equal([...round.matchAll(/data-mg-play="/g)].length,1,'each round has its play control');
  }
- // find rounds: five, one correct, ask names the answer
  assert.equal([...animal.matchAll(/data-tc-ask="Tap the/g)].length,5,'five find rounds');
  const findSegs=animal.split('data-tc-round').slice(1,6);
  for(const seg of findSegs){
@@ -153,28 +159,37 @@ test('magic animal playground: real recordings only where they exist, honest wor
  assert.ok(animal.includes('Calm Mode toggle in the footer')||animal.includes('parent Calm Mode toggle'),'calm mode mentioned');
 });
 
-test('magic shape builder: five playable designs with matching slots, pieces and real references',()=>{
+test('magic shape builder: five hand-defined boards, easy to hard, with matching slots, pieces and real references',()=>{
  assert.ok(shape.includes('rel="canonical" href="https://kiddo-school.pages.dev/preschool/3-years/magic-shape-builder/"'));
  assert.ok(shape.includes('<h1>Magic Shape Builder</h1>'));
  for(const f of SB)assert.ok(shape.includes(R2+'/magic-shape-builder-age-3/'+f),f);
- const designs={house:4,rocket:6,tree:4,robot:7,butterfly:6};
+ // difficulty climbs: the house is 3 pieces and the robot (7) comes last
+ const designs={house:3,rocket:6,tree:4,robot:7,butterfly:6};
+ const order=[...shape.matchAll(/data-sb-build="([a-z]+)"/g)].map(m=>m[1]);
+ assert.deepEqual(order,['house','tree','rocket','butterfly','robot'],'easy-to-hard build order');
+ assert.ok(shape.includes('3 shapes · start here'),'house introduced as the first build');
  for(const [d,n] of Object.entries(designs)){
   const seg=shape.slice(shape.indexOf('data-sb-build="'+d+'"'));
-  const board=seg.slice(0,seg.indexOf('sb-tray'));
+  const board=seg.slice(0,seg.indexOf('sb-progress'));
   const tray=seg.slice(seg.indexOf('sb-tray'),seg.indexOf('sb-status'));
   assert.equal([...board.matchAll(/data-sb-slot="/g)].length,n,d+' has '+n+' slots');
   assert.equal([...tray.matchAll(/data-sb-piece="/g)].length,n,d+' tray holds exactly '+n+' pieces');
-  // every slot shape has at least one matching piece in the tray
-  for(const m of board.matchAll(/data-sb-slot="([a-z]+)"/g)){
-   assert.ok(tray.includes('data-sb-piece="'+m[1]+'"'),d+': a '+m[1]+' piece exists for its slot');
+  // every slot has a piece matching BOTH shape and color (so the finished
+  // board always matches the reference picture)
+  for(const m of board.matchAll(/data-sb-slot="([a-z]+)" data-sb-color="([^"]+)"/g)){
+   const want='data-sb-piece="'+m[1]+'" data-sb-piece-color="'+m[2]+'"';
+   assert.ok(tray.includes(want),d+': a '+m[2]+' '+m[1]+' piece exists for its slot');
   }
   // every slot carries its design color for the filled state
   assert.equal([...board.matchAll(/data-sb-color="/g)].length,n,d+': slots carry fill colors');
  }
+ // unlock progression: each tile after the first declares what it requires
+ const reqs=[...shape.matchAll(/data-sb-requires="([a-z]+)"/g)].map(m=>m[1]);
+ assert.deepEqual(reqs,['house','tree','rocket','butterfly'],'each design unlocks after the previous one');
+ assert.ok(!shape.includes('data-sb-requires="robot"'),'nothing locks behind the robot');
  // reference picture travels with every board
  assert.equal([...shape.matchAll(/The picture you are building/g)].length,5,'five reference cards');
- assert.ok(shape.includes('You built the ')===false||shape.includes('data-sb-status'),'completion reported through the live status');
- assert.ok(shape.includes('Start Over'),'boards can be reset');
+ assert.ok(shape.includes('data-sb-reset'),'boards can be reset');
  assert.ok(shape.includes('paper cutouts')||shape.includes('Paper shape cutouts'),'off-screen cutout play');
  assert.ok(shape.includes('grown-ups handle scissors'),'scissors safety note');
  assert.ok(shape.includes('data-cm-root data-page-path="/preschool/3-years/magic-shape-builder/"'));

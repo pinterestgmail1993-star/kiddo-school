@@ -2,30 +2,35 @@
 // /preschool/3-years/magic-animal-playground/ — built on the seven
 // owner-uploaded transparent WebP illustrations in
 // school/interactive-activities/magic-animal-playground-age-3/ (all probed
-// 1080×1080). Six animals, seven screens: welcome, Meet the Animals, Who
-// Made That Sound?, Find the Animal, Animal Movement, off-screen play and
-// a celebration. AUDIO IS HONEST: dog, cat, cow and sheep play the site's
-// real recordings (/assets/sounds/animals/*.mp3, the same files as the
-// Animals & Their Sounds class). Kiddo School has NO duck or frog
-// recording, so none is claimed: those two buttons speak their sound word
-// ("Quack, quack!") with the device's screen voice, and the words are
-// written under every animal as the visible text alternative. Find rounds
-// run on the shared find-it engine; screens, playback and movement live in
-// magic-animal-playground.js as progressive enhancement. No scores, no
-// timers, no streaks, no download buttons for the game assets.
+// 1080×1080). IMPORTANT: the R2 filenames are shifted one slot against
+// their contents (verified visually from the owner's uploads — the file
+// named 02-cat.webp actually contains the six-animal group illustration,
+// 03-cow.webp the cat, 04-duck.webp the cow, 05-sheep.webp the duck,
+// 06-frog.webp the sheep and 07-animal-playground-cover.webp the frog).
+// The mapping below is BY CONTENT, so every animal card shows the right
+// picture: the duck card shows a duck, the cow card a cow. Permanent R2
+// filenames stay untouched. Six animals, seven screens: welcome, Meet the
+// Animals, Who Made That Sound?, Find the Animal, Animal Movement,
+// off-screen play and a celebration. ALL SIX animals play real recordings
+// (/assets/sounds/animals/*.mp3; duck and frog recordings are Wikimedia
+// Commons CC BY-SA 4.0, credited below and in sounds/animals/CREDITS.md).
+// Find rounds run on the shared find-it engine; screens, playback and
+// movement live in magic-animal-playground.js as progressive enhancement.
+// No scores, no timers, no streaks, no download buttons for the game assets.
 const R2='https://pub-f2fcb7c9b45a496cbeefef18dbba0ec0.r2.dev/';
 const P='school/interactive-activities/magic-animal-playground-age-3/';
 const W=1080,H=1080;
 const SND='/assets/sounds/animals/';
 
 const ANIMALS=[
- {slug:'dog',file:'01-dog.webp',bg:'#f7ddd2',rec:true,word:'Woof, woof!',alt:'A friendly brown dog with a wagging tail',move:'trot',moveLine:'The dog trots around the playground! Can you trot too?'},
- {slug:'cat',file:'02-cat.webp',bg:'#f6ecc4',rec:true,word:'Meow!',alt:'A soft striped cat sitting up tall',move:'stretch',moveLine:'The cat stretches long and slow! Can you stretch like a cat?'},
- {slug:'cow',file:'03-cow.webp',bg:'#dcead2',rec:true,word:'Moo!',alt:'A spotted cow with gentle eyes',move:'sway',moveLine:'The cow sways side to side! Sway along with her.'},
- {slug:'duck',file:'04-duck.webp',bg:'#d6e4ee',rec:false,word:'Quack, quack!',alt:'A yellow duck with an orange beak',move:'waddle',moveLine:'The duck waddles left and right! Waddle like a duck!'},
- {slug:'sheep',file:'05-sheep.webp',bg:'#efe9dc',rec:true,word:'Baa!',alt:'A fluffy sheep with a woolly coat',move:'bounce',moveLine:'The sheep bounces on the grass! Boing, boing — bounce too!'},
- {slug:'frog',file:'06-frog.webp',bg:'#e3f0d3',rec:false,word:'Ribbit, ribbit!',alt:'A small green frog ready to hop',move:'hop',moveLine:'The frog hops high in the air! Can you hop like a frog?'}
+ {slug:'dog',file:'01-dog.webp',bg:'#f7ddd2',rec:true,word:'Woof, woof!',alt:'A friendly brown dog with a wagging tail',move:'trot',verb:'trots',moveLine:'The dog trots around the playground! Can you trot too?'},
+ {slug:'cat',file:'03-cow.webp',bg:'#f6ecc4',rec:true,word:'Meow!',alt:'A soft orange striped cat sitting up tall',move:'stretch',verb:'stretches',moveLine:'The cat stretches long and slow! Can you stretch like a cat?'},
+ {slug:'cow',file:'04-duck.webp',bg:'#dcead2',rec:true,word:'Moo!',alt:'A black-and-white spotted cow with gentle eyes',move:'sway',verb:'sways',moveLine:'The cow sways side to side! Sway along with her.'},
+ {slug:'duck',file:'05-sheep.webp',bg:'#d6e4ee',rec:true,word:'Quack, quack!',alt:'A yellow duck with an orange beak',move:'waddle',verb:'waddles',moveLine:'The duck waddles left and right! Waddle like a duck!'},
+ {slug:'sheep',file:'06-frog.webp',bg:'#efe9dc',rec:true,word:'Baa!',alt:'A fluffy sheep with a woolly coat',move:'bounce',verb:'bounces',moveLine:'The sheep bounces on the grass! Boing, boing — bounce too!'},
+ {slug:'frog',file:'07-animal-playground-cover.webp',bg:'#e3f0d3',rec:true,word:'Ribbit, ribbit!',alt:'A small green frog ready to hop',move:'hop',verb:'hops',moveLine:'The frog hops high in the air! Can you hop like a frog?'}
 ];
+const GROUP='02-cat.webp'; // the six-animal group illustration (content-verified)
 const img=(f,extra='')=>`<img src="${R2+P+f.file}" width="${W}" height="${H}" alt="${f.alt}" loading="lazy"${extra}>`;
 const cap=slug=>slug.charAt(0).toUpperCase()+slug.slice(1);
 const FIND_ROUNDS=[
@@ -35,13 +40,15 @@ const FIND_ROUNDS=[
  {ask:'Tap the sheep!',choices:['frog','duck','sheep'],correct:2},
  {ask:'Tap the cat!',choices:['sheep','cat','cow'],correct:1}
 ];
-/* The listening game uses ONLY the four animals with real recordings —
-   nothing is faked. */
+/* The listening game now uses ALL SIX animals — every one has a real
+   recording, so nothing is faked. */
 const LISTEN_ROUNDS=[
  {target:'dog',choices:['dog','cow','duck'],correct:0},
  {target:'cat',choices:['cow','cat','sheep'],correct:1},
+ {target:'duck',choices:['sheep','duck','frog'],correct:1},
  {target:'cow',choices:['sheep','dog','cow'],correct:2},
- {target:'sheep',choices:['cat','sheep','frog'],correct:1}
+ {target:'frog',choices:['cat','frog','sheep'],correct:1},
+ {target:'sheep',choices:['cow','sheep','frog'],correct:1}
 ];
 const MOVE_NAMES={trot:'trot',stretch:'stretch',sway:'sway',waddle:'waddle',bounce:'bounce',hop:'hop'};
 
@@ -52,8 +59,8 @@ export const magicAnimal={
  description:'Play at the animal playground with your 3-year-old: tap six animals to hear their real sounds, guess who made each sound, find the right animal and copy their moves — then play it off screen. No scores.',
  eyebrow:'PRESCHOOL · AGE 3 · CLASS 6 MAGIC GAME',
  crumbs:[['Preschool','/preschool/'],['Age 3','/preschool/3-years/'],['Animals & Their Sounds','/preschool/3-years/animals-and-their-sounds/'],['Magic Animal Playground',null]],
- ogImage:R2+P+'07-animal-playground-cover.webp',
- ogAlt:'Cover of the Magic Animal Playground game: six friendly animal illustrations on a cheerful playground',
+ ogImage:R2+P+GROUP,
+ ogAlt:'Six friendly animal illustrations — dog, cat, cow, duck, sheep and frog — gathered together',
  classPath:'/preschool/3-years/animals-and-their-sounds/',
  classTitle:'Animals &amp; Their Sounds'
 };
@@ -62,13 +69,13 @@ export function magicAnimalBody(G){
  const hero=`<section class="wrap section compact">
   <span class="eyebrow">${G.eyebrow}</span>
   <h1>${G.h1}</h1>
-  <p class="mw-lede">Six animal friends are playing on the playground today. Tap them to hear their sounds, guess who is speaking, find them hiding and copy their moves. Grown-ups read the words; little ones do the tapping — and the hopping.</p>
+  <p class="mw-lede">Six animal friends are playing on the playground today. Tap them to hear their real sounds, guess who is speaking, find them hiding and copy their moves. Grown-ups read the words; little ones do the tapping — and the hopping.</p>
   <div class="mg-game" data-mg-game="animal-playground">
    <p class="mg-live" data-mg-live aria-live="polite"></p>
    <div class="mg-screens">`;
 
  const welcome=`<section class="mg-screen" data-mg-screen="welcome" aria-label="Welcome to the Magic Animal Playground">
-   <figure class="mg-cover"><img src="${R2+P}07-animal-playground-cover.webp" width="${W}" height="${H}" alt="The Magic Animal Playground cover: six friendly animals gathered on a cheerful playground" fetchpriority="high"><figcaption class="fc-hint">Welcome to the animal playground!</figcaption></figure>
+   <figure class="mg-cover"><img src="${R2+P+GROUP}" width="${W}" height="${H}" alt="The Magic Animal Playground cover: six friendly animals — dog, cat, cow, duck, sheep and frog — gathered together" fetchpriority="high"><figcaption class="fc-hint">Welcome to the animal playground!</figcaption></figure>
    <div class="mg-actions" style="justify-content:center"><button type="button" class="button" data-mg-go="meet">Start Playing <span aria-hidden="true">↗</span></button></div>
    <p class="mg-hint" style="text-align:center">No scores, no timers — just animal friends.</p>
   </section>`;
@@ -78,7 +85,7 @@ export function magicAnimalBody(G){
    <h2>Six friends, six voices.</h2>
    <p class="lesson-copy">Tap an animal to hear its sound and watch it gently move. Say the sound together — animal sounds are twice as fun in two voices.</p>
    <div class="mg-playground">${ANIMALS.map(a=>`<button type="button" class="mg-animal mgm-${MOVE_NAMES[a.move]}" data-mg-sound="${a.slug}" style="background:${a.bg}" aria-label="${cap(a.slug)} — tap to hear it say ${a.word}">${img(a)}<span class="mg-tile-word">${cap(a.slug)}</span><span class="mg-tile-say">${a.word}</span></button>`).join('')}</div>
-   <p class="mg-hint">Dog, cat, cow and sheep play real recordings from the Animals &amp; Their Sounds class. Duck and frog “sing” with your device&rsquo;s friendly screen voice — Kiddo School has no recording for them yet, so none is faked. Every animal also shows its sound word right on the card.</p>
+   <p class="mg-hint">Every animal plays a real recording. The sound word is written right on the card too — saying it in your own voice is the best version of all.</p>
    <div class="mg-next"><button type="button" class="button" data-mg-go="listen">Who Made That Sound? <span aria-hidden="true">↓</span></button></div>
   </section>`;
 
@@ -92,7 +99,7 @@ export function magicAnimalBody(G){
 <div class="tc-choices" role="group" aria-label="Who made that sound? Choose an animal.">${r.choices.map((slug,i)=>{const a=ANIMALS.find(x=>x.slug===slug);return `<button type="button" class="tc-choice mg-listen-choice" aria-label="${cap(a.slug)}"${i===r.correct?' data-mg-correct="true"':''}>${img(a)}<span class="mg-tile-word">${cap(a.slug)}</span></button>`;}).join('')}</div>
 <p class="tc-feedback" data-mg-feedback aria-live="polite" hidden></p>
 </div>`;}).join('')}
-   <p class="mg-hint">The listening game uses the four animals with real recordings — dog, cat, cow and sheep. Nothing is faked.</p>
+   <p class="mg-hint">All six sounds come from the site&rsquo;s real recordings — the same ones the Animals &amp; Their Sounds class plays.</p>
    <div class="mg-next"><button type="button" class="button" data-mg-go="find">Find the Animal <span aria-hidden="true">↓</span></button></div>
   </section>`;
 
@@ -112,7 +119,7 @@ export function magicAnimalBody(G){
    <span class="eyebrow">STEP 5 · ANIMAL MOVEMENT</span>
    <h2>Move like the animals do.</h2>
    <p class="lesson-copy">Tap an animal to see how it moves — then stand up and copy it. Frogs hop, ducks waddle, cats stretch… your living room is the playground.</p>
-   <div class="mg-playground">${ANIMALS.map(a=>`<button type="button" class="mg-animal mgm-${MOVE_NAMES[a.move]}" data-mg-move="${a.slug}" style="background:${a.bg}" aria-label="${cap(a.slug)} — tap to watch it ${a.move}">${img(a)}<span class="mg-tile-word">${cap(a.slug)} ${a.move}s${a.move==='stretch'?'':'!'}</span></button>`).join('')}</div>
+   <div class="mg-playground">${ANIMALS.map(a=>`<button type="button" class="mg-animal mgm-${MOVE_NAMES[a.move]}" data-mg-move="${a.slug}" style="background:${a.bg}" aria-label="${cap(a.slug)} — tap to watch how it ${a.verb}">${img(a)}<span class="mg-tile-word">${cap(a.slug)} ${a.verb}!</span></button>`).join('')}</div>
    <div class="tc-hunt"><h3>Copy me</h3><ul class="lesson-prompts"><li>After each tap, do the move together: hop for the frog, waddle for the duck, stretch for the cat. Moving is how three-year-olds remember.</li></ul></div>
    <div class="mg-next"><button type="button" class="button" data-mg-go="offscreen">Off-Screen Play <span aria-hidden="true">↓</span></button></div>
   </section>`;
@@ -152,8 +159,8 @@ ${complete}
  </section>
  <section class="wrap lesson-section" id="for-grown-ups" aria-label="About this game">
   <span class="eyebrow">FOR GROWN-UPS</span>
-  <h2>About the sounds — the honest version.</h2>
-  <p class="lesson-copy">Dog, cat, cow and sheep play real recordings — the very same files as the Animals &amp; Their Sounds class, so the sounds stay consistent across the school. Kiddo School does not yet have recordings for the duck and the frog, so their buttons use your device&rsquo;s built-in screen voice to say “Quack, quack!” and “Ribbit, ribbit!” — nothing is pretended to be a recording, and the sound word is written under every animal so you can perform it yourself, which is honestly the best version.</p>
+  <h2>About the sounds.</h2>
+  <p class="lesson-copy">Every animal in this game plays a real recording. Dog, cat, cow and sheep use the very same files as the Animals &amp; Their Sounds class, so the sounds stay consistent across the school. The duck and frog recordings come from Wikimedia Commons under the CC BY-SA 4.0 license: the duck is an excerpt of “Pekin duck &amp; mallard” by WaderClub, and the frog is “Single Frog Croak” by MichaeltheFox8621 — both trimmed and volume-matched, with the full credits kept in the sound folder. The sound word is written under every animal so you can perform it yourself, which is honestly the best version.</p>
   <p class="lesson-copy">Every movement in Step 5 is deliberately small and calm. If your child is sensitive to motion, the parent Calm Mode toggle in the footer (or your device&rsquo;s reduced-motion setting) stills every animation while all sounds, words and games keep working.</p>
   <p class="lesson-note">Being the frog is still the most popular role in this school. Assign accordingly.</p>
  </section>`;

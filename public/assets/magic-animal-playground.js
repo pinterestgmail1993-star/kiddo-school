@@ -1,13 +1,14 @@
 /* Kiddo School — Magic Animal Playground (Age 3): screen flow, real animal
    sound playback, the listening game, and gentle movement animations.
-   AUDIO IS HONEST: dog/cat/cow/sheep play the site's real recordings from
-   /assets/sounds/animals/; duck and frog have NO recording anywhere on the
-   site, so their buttons speak the sound word with the device's screen
-   voice (speechSynthesis) and never claim to be recordings. Progressive
-   enhancement only — without JavaScript every screen is visible and the
-   noscript note invites grown-ups to be the duck. No scores, no timers,
-   nothing stored. Animations respect body.calm-mode and
-   prefers-reduced-motion through the shared CSS gates in style.css. */
+   ALL SIX animals play the site's real recordings from
+   /assets/sounds/animals/ (duck and frog recordings: Wikimedia Commons,
+   CC BY-SA 4.0 — credited on the page and in sounds/animals/CREDITS.md).
+   The sound word is also written under every animal as the visible text
+   alternative. Progressive enhancement only — without JavaScript every
+   screen is visible and the noscript note invites grown-ups to be the
+   duck. No scores, no timers, nothing stored. Animations respect
+   body.calm-mode and prefers-reduced-motion through the shared CSS gates
+   in style.css. */
 (() => {
   const game = document.querySelector('[data-mg-game="animal-playground"]');
   if (!game) return;
@@ -18,7 +19,7 @@
   const live = $('[data-mg-live]');
 
   const WORD = { dog: 'Woof, woof!', cat: 'Meow!', cow: 'Moo!', duck: 'Quack, quack!', sheep: 'Baa!', frog: 'Ribbit, ribbit!' };
-  const RECORDED = ['dog', 'cat', 'cow', 'sheep'];
+  const RECORDED = ['dog', 'cat', 'cow', 'duck', 'sheep', 'frog'];
   const MOVE_LINE = {
     dog: 'The dog trots around the playground! Can you trot too?',
     cat: 'The cat stretches long and slow! Can you stretch like a cat?',
@@ -41,6 +42,7 @@
   }
   function talk(text) {
     if (live) live.textContent = text;
+    if (document.body.classList.contains('lwy-quiet')) return; // Learning Your Way: prefer quiet
     try {
       if (!('speechSynthesis' in window)) return;
       window.speechSynthesis.cancel();
