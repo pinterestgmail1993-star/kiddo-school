@@ -631,7 +631,7 @@ test('circle time 1 (Hello School!) follows its spec with the one-moment session
  assert.ok(ct1.includes('href="/learning-path/"'),'Learning Path');
  assert.ok(ct1.includes('href="/toddler/2-years/"'),'Age 2');
  assert.equal((ct1.match(/guide, not a test/g)||[]).length,1,'age-guide line appears exactly once');
- assert.ok(!/\b(scores?|failed|quiz|quizzes|percent|stars?|badges?|streaks?|leaderboards?|grades?)\b/i.test(ct1)&&!ct1.includes('Wrong!'),'no scores, grades, quizzes or gamification');
+ assert.ok(!/\b(scores?|failed|quiz|quizzes|percent|stars?|badges?|streaks?|leaderboards?|grades?)\b/i.test(ct1.replace(/<img class="doodle[^>]*>/g,''))&&!ct1.includes('Wrong!'),'no scores, grades, quizzes or gamification (doodle mascot asset names excluded)');
  assert.ok(!/camera|microphone|audio|autoplay/.test(ct1),'no camera, microphone or fake audio');
  assert.ok(!/timer|countdown/.test(ct1),'no timer or pressure');
  assert.ok(!/must|should already|needs to be able to/.test(ct1),'no developmental pressure language');

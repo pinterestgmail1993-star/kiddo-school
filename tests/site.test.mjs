@@ -34,7 +34,7 @@ test('unique descriptive metadata, one heading, valid structured data, and absol
   const desc=html.match(/name="description" content="([^"]+)"/)[1];assert.ok(desc.length>45);assert.ok(!descriptions.has(desc));descriptions.add(desc);
   const canonical=html.match(/rel="canonical" href="([^"]+)"/)[1];assert.equal(new URL(canonical).origin,info.siteUrl);
   for(const match of html.matchAll(/<script type="application\/ld\+json">(.*?)<\/script>/g))assert.ok(Array.isArray(JSON.parse(match[1])));
-  for(const tag of html.matchAll(/<img\b[^>]+>/g)){assert.match(tag[0],/alt="[^"]+"/);assert.match(tag[0],/width="\d+"/);assert.match(tag[0],/height="\d+"/);}
+  for(const tag of html.matchAll(/<img\b[^>]+>/g)){assert.match(tag[0],/alt="[^"]*"/);assert.match(tag[0],/width="\d+"/);assert.match(tag[0],/height="\d+"/);if(/alt=""/.test(tag[0]))assert.match(tag[0],/aria-hidden="true"/,'decorative images must be aria-hidden');}
   assert.match(html,/<html lang="en">/);assert.match(html,/class="skip"/);
  }
 });

@@ -1026,3 +1026,31 @@ button.op-card.is-matched{opacity:.55;outline:3px solid #2e6b3f;outline-offset:2
 .fv-thumb{display:block;width:86px;flex:none}
 .fv-thumb img{width:100%;height:auto;border-radius:6px;display:block}
 @media(max-width:640px){.fv-thumb{width:64px}.tc-guide-row{gap:12px}}
+
+/* Animated doodle characters (school/animated-doodles on R2): small,
+   in-flow greeting images. Animations start only when doodles.js marks the
+   doodle .doodle-live (scroll into view); body.calm-mode (the parent
+   toggle in the footer) and prefers-reduced-motion both stop everything.
+   Doodles are normal flow images — they can never cover text or buttons. */
+.doodle{display:block;width:clamp(64px,9vw,96px);height:auto;margin:6px auto 2px;border-radius:18px}
+.doodle-pencil{transform-origin:50% 92%;margin-bottom:10px}
+.doodle-star{margin-bottom:8px}
+.doodle-book,.doodle-butterfly,.doodle-moon{margin-bottom:8px}
+.doodle-rainbow{margin:0 auto 10px}
+.doodle-live.doodle-pencil{animation:doodle-wave 2.4s ease-in-out infinite}
+.doodle-live.doodle-star{animation:doodle-bounce 1.8s cubic-bezier(.34,1.56,.64,1) infinite}
+.doodle-live.doodle-book{animation:doodle-wiggle 3.2s ease-in-out infinite}
+.doodle-live.doodle-butterfly{animation:doodle-flutter 2.6s ease-in-out infinite}
+.doodle-live.doodle-rainbow{animation:doodle-float 4.5s ease-in-out infinite}
+.doodle-live.doodle-moon{animation:doodle-sway 5.5s ease-in-out infinite}
+@keyframes doodle-wave{0%,100%{transform:rotate(-5deg)}50%{transform:rotate(6deg)}}
+@keyframes doodle-bounce{0%,100%{transform:translateY(0)}35%{transform:translateY(-8px)}70%{transform:translateY(-2px)}}
+@keyframes doodle-wiggle{0%,100%{transform:rotate(-2.5deg)}50%{transform:rotate(2.5deg)}}
+@keyframes doodle-flutter{0%,100%{transform:rotate(-3deg) translateY(0)}50%{transform:rotate(3deg) translateY(-5px)}}
+@keyframes doodle-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes doodle-sway{0%,100%{transform:rotate(-3deg)}50%{transform:rotate(3deg)}}
+body.calm-mode .doodle{animation:none!important;transform:none}
+@media(prefers-reduced-motion:reduce){.doodle{animation:none!important;transform:none}}
+.doodle-calm{display:inline-flex;align-items:center;gap:7px;border:1.5px solid var(--ink,#343b30);border-radius:999px;background:var(--white,#fff);color:var(--ink,#343b30);font-family:inherit;font-size:12.5px;font-weight:700;padding:6px 13px;cursor:pointer;transition:transform .15s}
+.doodle-calm:hover,.doodle-calm:focus-visible{transform:translate(-1px,-1px)}
+.doodle-calm[aria-pressed="true"]{background:var(--ink,#343b30);color:#fff}
