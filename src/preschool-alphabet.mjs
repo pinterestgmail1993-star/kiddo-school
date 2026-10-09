@@ -238,5 +238,13 @@ export function preschoolStageBody(){
  <h2 class="lesson-classheading">The flashcards</h2>
  <div class="fc-stages">${setCards.map(c=>`<a class="fc-stage lesson-card-link" href="${c.href}"><div class="fc-stage-pills"><span class="fc-age">Age 3</span><span class="fc-class">Flashcards</span></div><h3>${c.title}</h3><p>${c.copy}</p><span class="fc-open">Open the flashcards <span aria-hidden="true">↗</span></span></a>`).join('')}
  </div>
- <p class="lesson-note">Looking for earlier stages? The <a href="/toddler/2-years/">Age 2 classes</a> and the full <a href="/learning-path/">Learning Path</a> are right where you left them.</p></section>`;
+ <h2 class="lesson-classheading">The magic games</h2>
+ <div class="fc-stages">${[
+  {href:'/preschool/3-years/magic-shape-builder/',title:'Magic Shape Builder',copy:'Rebuild a house, a rocket, a tree, a robot and a butterfly from circles, squares, triangles and ovals — tap a shape, tap its spot. Plays with Class 3: Shapes &amp; Patterns.'},
+  {href:'/preschool/3-years/magic-color-mixing/',title:'Magic Color Mixing',copy:'Tap two paint splashes — red, yellow or blue — and watch them mix into orange, green or purple. Plays with Class 4: Colors &amp; Color Mixing.'},
+  {href:'/preschool/3-years/magic-animal-playground/',title:'Magic Animal Playground',copy:'Tap six animal friends to hear their real sounds, guess who made each sound and copy their gentle moves. Plays with Class 6: Animals &amp; Their Sounds.'},
+  {href:'/preschool/3-years/magic-fruit-basket/',title:'Magic Fruit Basket',copy:'Meet the eight fruits, fill a magic basket by tapping or dragging, find them hiding and count them out loud. Plays with Class 8: Fruits &amp; Vegetables.'}
+ ].map(g=>`<a class="fc-stage lesson-card-link" href="${g.href}"><div class="fc-stage-pills"><span class="fc-age">Age 3</span><span class="fc-class">Magic game</span></div><h3>${g.title}</h3><p>${g.copy}</p><span class="fc-open">Play the game <span aria-hidden="true">↗</span></span></a>`).join('')}
+ </div>
+ <p class="lesson-note">Every magic game has no scores, no timers and no sign-up — just extra play with the things each class teaches. Looking for earlier stages? The <a href="/toddler/2-years/">Age 2 classes</a> and the full <a href="/learning-path/">Learning Path</a> are right where you left them.</p></section>`;
 }

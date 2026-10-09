@@ -220,6 +220,14 @@ export function fruitsClassBody(L){
   <p class="lesson-note">Age 3 is a guide, not a deadline. If today’s class was one banana and two claps, today’s class was a success.</p>
  </section>`;
 
+ // Classroom activities: this class's Age 3 magic game.
+ const magicGameSection=`<section class="wrap lesson-section" id="classroom-activities" aria-label="Classroom activities">
+  <span class="eyebrow">CLASSROOM ACTIVITIES</span>
+  <h2>Fill a basket with fruit — magically.</h2>
+  <p class="lesson-copy">The fruits from this class have a game of their own. Magic Fruit Basket lets your child meet the eight fruits again, fill a magic basket by tapping or dragging, find the right fruit and count them out loud — then head to the real kitchen.</p>
+  <div class="lesson-linkrow"><a class="lesson-pill-link" href="/preschool/3-years/magic-fruit-basket/">Play the Magic Fruit Basket game <span aria-hidden="true">↗</span></a></div>
+ </section>`;
+
  return `${crumbNav(L.crumbs.slice(0,-1).concat([['Fruits & Vegetables']]))}
  <article class="wrap lesson-hero"><div class="lesson-hero-copy">${heroInner}</div></article>
  ${`<section class="wrap lesson-section" id="todays-class" aria-label="Today’s class">
@@ -248,6 +256,7 @@ export function fruitsClassBody(L){
  ${printSection}
  ${teacherNoteSection}
  ${principalSection}
+ ${magicGameSection}
  ${completeSection}
  ${tipsSection}`;
 }

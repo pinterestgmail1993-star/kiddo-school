@@ -95,6 +95,9 @@ export function schoolBagBody(B){
 }
 
 /* ------------------------------------------------------- LEARNING LIBRARY */
+const MG='https://pub-f2fcb7c9b45a496cbeefef18dbba0ec0.r2.dev/school/interactive-activities/';
+const mgThumb=(file,alt)=>`<img src="${MG}${file}" width="1080" height="1080" alt="${alt}" loading="lazy">`;
+const mgSplash='<svg viewBox="0 0 120 90" width="120" height="90" focusable="false" aria-hidden="true"><path d="M42 8 C58 4 78 15 83 33 C88 50 78 61 81 75 C84 88 66 95 47 92 C32 90 24 95 12 87 C0 79 -3 61 1 46 C5 31 2 19 12 10 C21 2 32 4 42 8 Z" fill="#d93a3a" transform="translate(2,0) scale(.62)"/><path d="M42 8 C58 4 78 15 83 33 C88 50 78 61 81 75 C84 88 66 95 47 92 C32 90 24 95 12 87 C0 79 -3 61 1 46 C5 31 2 19 12 10 C21 2 32 4 42 8 Z" fill="#f5c531" transform="translate(46,2) scale(.62)"/><path d="M42 8 C58 4 78 15 83 33 C88 50 78 61 81 75 C84 88 66 95 47 92 C32 90 24 95 12 87 C0 79 -3 61 1 46 C5 31 2 19 12 10 C21 2 32 4 42 8 Z" fill="#2f6fd0" transform="translate(88,4) scale(.62)"/></svg>';
 export const learningLibrary={
  path:libraryBase,
  seoTitle:'Learning Library — Toddler Activities & Classes',
@@ -107,6 +110,10 @@ export const learningLibrary={
   ['Newborn','/newborn/'],['Baby','/baby/'],['12–18 Months','/toddler/12-18-months/'],['18–24 Months','/toddler/18-24-months/'],['Age 2','/toddler/2-years/'],['Age 3','/preschool/3-years/']]},
  sections:[
   {id:'preschool',title:'Preschool · Letters, Numbers & Shapes',items:[
+   {kind:'Magic game · Age 3',href:'/preschool/3-years/magic-shape-builder/',name:'Magic Shape Builder',img:mgThumb('magic-shape-builder-age-3/06-magic-shape-builder-cover.webp','The Magic Shape Builder cover: a house, rocket, tree, robot and butterfly built from colorful shapes')},
+   {kind:'Magic game · Age 3',href:'/preschool/3-years/magic-color-mixing/',name:'Magic Color Mixing',img:mgSplash},
+   {kind:'Magic game · Age 3',href:'/preschool/3-years/magic-animal-playground/',name:'Magic Animal Playground',img:mgThumb('magic-animal-playground-age-3/07-animal-playground-cover.webp','The Magic Animal Playground cover: six friendly animals on a playground')},
+   {kind:'Magic game · Age 3',href:'/preschool/3-years/magic-fruit-basket/',name:'Magic Fruit Basket',img:mgThumb('magic-fruit-basket-age-3/10-fruit-basket-cover.webp','The Magic Fruit Basket cover: a woven basket surrounded by colorful fruit')},
    {kind:'Class · Age 3',href:alphabetLesson.path,name:'Alphabet & Letter Sounds',lesson:alphabetLesson},
    {kind:'Class · Age 3',href:numbersLesson.path,name:'Numbers & Counting (1–10)',lesson:numbersLesson},
    {kind:'Class · Age 3',href:shapesLesson.path,name:'Shapes & Patterns',lesson:shapesLesson},

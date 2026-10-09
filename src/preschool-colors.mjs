@@ -190,6 +190,14 @@ export function colorsClassBody(L){
   <p class="lesson-note">Age 3 is a guide, not a deadline. If today’s class was one red thing found in the garden, today’s class was a success.</p>
  </section>`;
 
+ // Classroom activities: this class's Age 3 magic game.
+ const magicGameSection=`<section class="wrap lesson-section" id="classroom-activities" aria-label="Classroom activities">
+  <span class="eyebrow">CLASSROOM ACTIVITIES</span>
+  <h2>Mix paint colors — without the mess.</h2>
+  <p class="lesson-copy">The class mix pot now has a game of its own. Magic Color Mixing lets your child tap two paint splashes — red, yellow or blue — and watch them combine into orange, green or purple, with a friendly explanation for every recipe.</p>
+  <div class="lesson-linkrow"><a class="lesson-pill-link" href="/preschool/3-years/magic-color-mixing/">Play the Magic Color Mixing game <span aria-hidden="true">↗</span></a></div>
+ </section>`;
+
  return `${crumbNav([['Preschool','/preschool/'],['Age 3','/preschool/3-years/'],['Colors & Color Mixing']])}
  <article class="wrap lesson-hero"><div class="lesson-hero-copy">${heroInner}</div></article>
  ${`<section class="wrap lesson-section" id="todays-class" aria-label="Today’s class">
@@ -218,6 +226,7 @@ export function colorsClassBody(L){
  ${printSection}
  ${teacherNoteSection}
  ${principalSection}
+ ${magicGameSection}
  ${completeSection}
  ${tipsSection}`;
 }

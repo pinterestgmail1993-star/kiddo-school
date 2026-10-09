@@ -187,6 +187,14 @@ ${playBtn(t,'Play the sound',true)}
   <p class="lesson-note">Age 3 is a guide, not a deadline. If today’s class was one big woof and one bigger roar, today’s class was a success.</p>
  </section>`;
 
+ // Classroom activities: this class's Age 3 magic game.
+ const magicGameSection=`<section class="wrap lesson-section" id="classroom-activities" aria-label="Classroom activities">
+  <span class="eyebrow">CLASSROOM ACTIVITIES</span>
+  <h2>A playground full of animal voices.</h2>
+  <p class="lesson-copy">The animals from this class are waiting at the playground. Magic Animal Playground lets your child tap six animal friends to hear their sounds (the same real recordings as this class), guess who made a sound, find the right animal and copy their gentle moves.</p>
+  <div class="lesson-linkrow"><a class="lesson-pill-link" href="/preschool/3-years/magic-animal-playground/">Play the Magic Animal Playground game <span aria-hidden="true">↗</span></a></div>
+ </section>`;
+
  return `${crumbNav(L.crumbs.slice(0,-1).concat([['Animals & Their Sounds']]))}
  <article class="wrap lesson-hero"><div class="lesson-hero-copy">${heroInner}</div></article>
  ${`<section class="wrap lesson-section" id="todays-class" aria-label="Today’s class">
@@ -213,6 +221,7 @@ ${playBtn(t,'Play the sound',true)}
  ${printSection}
  ${teacherNoteSection}
  ${principalSection}
+ ${magicGameSection}
  ${completeSection}
  ${tipsSection}`;
 }
