@@ -320,17 +320,24 @@ test('magic games respect calm mode, reduced motion and the no-score/no-timer/no
 });
 
 test('magic games are wired into the whole school',()=>{
- // stage shelf lists all six
- for(const g of ['magic-number-garden','magic-shape-builder','magic-color-mixing','magic-animal-playground','magic-opposites-adventure','magic-fruit-basket']){
+ // stage shelf lists the five shelf games (Color Lab is deliberately NOT on the magic-games shelves, owner request)
+ for(const g of ['magic-number-garden','magic-shape-builder','magic-animal-playground','magic-opposites-adventure','magic-fruit-basket']){
   assert.ok(stage.includes('href="/preschool/3-years/'+g+'/"'),'stage shelf: '+g);
   assert.ok(lp.includes('href="/preschool/3-years/'+g+'/"'),'learning path: '+g);
   assert.ok(library.includes('href="/preschool/3-years/'+g+'/"'),'learning library: '+g);
   assert.ok(classroom.includes('href="/preschool/3-years/'+g+'/"'),'my classroom: '+g);
   assert.ok(sitemap.includes('<loc>https://kiddo-school.pages.dev/preschool/3-years/'+g+'/</loc>'),'sitemap: '+g);
  }
+ // Color Lab stays live and wired to Class 4, but is absent from every magic-games shelf
+ assert.ok(sitemap.includes('<loc>https://kiddo-school.pages.dev/preschool/3-years/magic-color-mixing/</loc>'),'sitemap: magic-color-mixing');
+ for(const [label,doc] of [['stage shelf',stage],['learning path',lp],['learning library',library],['my classroom',classroom]]){
+  assert.ok(!doc.includes('href="/preschool/3-years/magic-color-mixing/"'),'Color Lab removed from '+label);
+ }
  assert.ok(stage.includes('The magic games'),'stage section heading');
  assert.ok(lp.includes('Age 3 magic games'),'learning path row label');
  assert.ok(classroom.includes('ON THE SHELF · MAGIC GAMES'),'my classroom panel');
+ // the library magic shelf sits at the bottom of the page (after My Work), owner request
+ assert.ok(library.indexOf('id="magic-games"')>library.indexOf('id="my-work"'),'library magic shelf is the last shelf');
  // each class links its own game (under its real name)
  assert.ok(c3.includes('href="/preschool/3-years/magic-shape-builder/"')&&c3.includes('Play Look &amp; Draw — Magic Shapes'),'Class 3 links its game');
  assert.ok(c4.includes('href="/preschool/3-years/magic-color-mixing/"')&&c4.includes('Play the Magic Color Lab game'),'Class 4 links its game');

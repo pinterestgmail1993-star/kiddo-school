@@ -1224,23 +1224,24 @@ button[data-ng-plantbtn].is-done,button[data-ng-waterbtn].is-done{opacity:.55}
 @keyframes oa-soft{0%{background:#fdfbf5}45%{background:#f4efe0}100%{background:#fdfbf5}}
 .oa-word{margin-top:12px;text-align:center;font-size:clamp(20px,3vw,26px);font-weight:800;color:#71326d;min-height:1.5em}
 .oa-ballscene .oa-ball{width:min(46%,240px);transition:transform .55s ease}
-.oa-ballscene .is-big .oa-crop{transform:scale(1.32)}
-.oa-ballscene .is-small .oa-crop{transform:scale(.5)}
-.oa-ballscene .is-mid .oa-crop{transform:scale(1)}
+.oa-ballscene.is-big .oa-crop{transform:scale(1.32)}
+.oa-ballscene.is-small .oa-crop{transform:scale(.5)}
+.oa-ballscene.is-mid .oa-crop{transform:scale(1)}
 .oa-pencilscene .oa-pencil{width:min(34%,190px);display:flex;justify-content:center}
 .oa-pencilscene .oa-pencil img{transform-origin:50% 96%;transition:transform .55s ease}
-.oa-pencilscene .is-long .oa-pencil img{transform:scale(1)}
-.oa-pencilscene .is-short .oa-pencil img{transform:scale(.55)}
-.oa-glassscene .oa-glass{width:min(34%,190px);transition:transform .3s}
-.oa-water{position:absolute;left:21%;width:58%;bottom:9%;height:0;background:rgba(90,167,214,.72);border-radius:6px 6px 10px 10px;transition:height .6s ease}
-.oa-glassscene .is-full .oa-water{height:62%}
-.oa-glassscene .is-empty .oa-water{height:0}
-.oa-doorscene .oa-doorhold{position:relative;width:min(44%,230px);display:block;perspective:700px}
+.oa-pencilscene.is-long .oa-pencil img{transform:scale(1)}
+.oa-pencilscene.is-short .oa-pencil img{transform:scale(.55)}
+.oa-glassscene .oa-glass{width:min(38%,210px);transition:transform .3s}
+.oa-water{position:absolute;left:12%;width:76%;bottom:6%;height:0;background:rgba(90,167,214,.72);border-radius:6px 6px 10px 10px;transition:height .6s ease}
+.oa-glassscene.is-full .oa-water{height:58%}
+.oa-glassscene.is-empty .oa-water{height:0}
+.oa-doorhold{position:relative;display:block;aspect-ratio:524/731}
+.oa-doorscene .oa-doorhold{width:min(40%,210px);perspective:700px}
 .oa-room{position:absolute;inset:6%;border-radius:12px;background:radial-gradient(circle at 60% 40%,#ffe9b8,#f3c86e 70%);opacity:0;transition:opacity .5s ease}
-.oa-doorscene .is-open .oa-room{opacity:1}
+.oa-doorscene.is-open .oa-room{opacity:1}
 .oa-doorleaf{position:absolute;inset:0;transform-origin:left center;transition:transform .7s ease;transform-style:preserve-3d}
-.oa-doorscene .is-open .oa-doorleaf{transform:rotateY(-62deg)}
-.oa-doorscene .is-closed .oa-doorleaf{transform:rotateY(0)}
+.oa-doorscene.is-open .oa-doorleaf{transform:rotateY(-62deg)}
+.oa-doorscene.is-closed .oa-doorleaf{transform:rotateY(0)}
 .oa-tree{display:flex;align-items:flex-end;justify-content:center;width:100%;height:100%}
 .oa-tree img{transform-origin:50% 97%;transition:transform .55s ease}
 .oa-tree.is-tall img{transform:scale(1)}
@@ -1250,7 +1251,8 @@ button[data-ng-plantbtn].is-done,button[data-ng-waterbtn].is-done{opacity:.55}
 .oa-souphold{display:block;width:100%}
 .oa-souphold.is-cold{padding:0}
 .oa-matchc .oa-crop,.oa-matchc .oa-souphold,.oa-matchc .oa-tree,.oa-matchc .oa-doorhold,.oa-matchc .oa-pencil{pointer-events:none}
-.oa-matchc .oa-doorhold{width:min(30vw,150px);height:auto;aspect-ratio:726/894}
+.oa-matchc .oa-doorhold{width:min(30vw,150px)}
+.oa-matchc .oa-glass{width:min(60%,110px)}
 .oa-matchc .oa-tree{width:min(30vw,150px);height:min(34vw,180px)}
 body.calm-mode .ng-itembtn.is-pop,body.calm-mode .oa-scene.is-changing,body.calm-mode button[data-ng-waterbtn].is-pouring .ng-can,body.calm-mode .ng-bloom{animation:none!important}
 body.calm-mode .oa-ballscene .oa-ball,body.calm-mode .oa-pencilscene .oa-pencil img,body.calm-mode .oa-water,body.calm-mode .oa-doorleaf,body.calm-mode .oa-room,body.calm-mode .oa-tree img{transition:none!important}

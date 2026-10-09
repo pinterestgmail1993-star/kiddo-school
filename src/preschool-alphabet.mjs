@@ -241,7 +241,6 @@ export function preschoolStageBody(){
  <h2 class="lesson-classheading">The magic games</h2>
  <div class="fc-stages">${[
   {href:'/preschool/3-years/magic-shape-builder/',title:'Look & Draw — Magic Shapes',copy:'Look at a picture — a house, a tree, a rocket, a robot or a butterfly — then draw your own on a big white canvas, with six big colors, easy tools and gentle “Show me how” steps. Plays with Class 3: Shapes &amp; Patterns.'},
-  {href:'/preschool/3-years/magic-color-mixing/',title:'Magic Color Lab',copy:'Tap two paint splashes — red, yellow or blue — and watch them mix into orange, green or purple. Plays with Class 4: Colors &amp; Color Mixing.'},
   {href:'/preschool/3-years/magic-animal-playground/',title:'Animal Sound Safari',copy:'Tap six animal friends to hear their real sounds, guess who made each sound and copy their gentle moves. Plays with Class 6: Animals &amp; Their Sounds.'},
   {href:'/preschool/3-years/magic-fruit-basket/',title:'Magic Fruit Basket',copy:'Meet the eight fruits, fill a magic basket by tapping or dragging, find them hiding and count them out loud. Plays with Class 8: Fruits &amp; Vegetables.'},
   {href:'/preschool/3-years/magic-number-garden/',title:'Magic Counting Garden',copy:'Count flowers, butterflies, bees and ladybugs by tapping each one, plant what the garden asks for, match numbers to groups and water the flowers until they bloom. Plays with Class 2: Numbers &amp; Counting.'},

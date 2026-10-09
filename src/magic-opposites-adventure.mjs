@@ -20,20 +20,24 @@ const P='school/interactive-activities/magic-opposites-adventure-age-3/';
 const W=1080,H=1080;
 
 /* Content crop windows (measured from the real files' alpha channels):
-   the ball sits below its banner, the door beside it, the soup bowl below
-   its steam. Regions keep the original aspect — the image is slid, never
-   stretched. */
-const BALL={file:'01-red-ball.webp',x:132,y:280,w:818,h:704,alt:'A shiny red ball'};
+   the ball sits below its two banner arcs, the door below its banner, the
+   soup bowl below its steam, the glass fills its file edge to edge. Regions
+   keep the original aspect — the image is slid, never stretched. */
+const BALL={file:'01-red-ball.webp',x:276,y:472,w:512,h:518,alt:'A shiny red ball'};
 const TREE='02-green-tree.webp';
 const PENCIL='03-yellow-pencil.webp';
-const GLASS={file:'04-clear-glass.webp',alt:'A clear glass with a dark outline'};
+/* Glass and hot-soup regions measured from each file's alpha channel the same
+   way as ball/door/soup — the glass object fills x 212-865, y 133-946; the
+   steaming bowl (steam + bowl) fills x 173-906, y 136-929. */
+const GLASS={file:'04-clear-glass.webp',x:212,y:133,w:654,h:814,alt:'A clear glass with a dark outline'};
 const SOUP={file:'05-soup-bowl.webp',x:173,y:470,w:734,h:460,alt:'A blue bowl of soup'};
-const DOOR={file:'06-blue-door.webp',x:200,y:135,w:726,h:894,alt:'A blue arched door with a round golden handle'};
+const HOTSOUP={file:'05-soup-bowl.webp',x:173,y:136,w:734,h:794,alt:'A steaming blue bowl of soup'};
+const DOOR={file:'06-blue-door.webp',x:277,y:300,w:524,h:731,alt:'A blue arched door with a round golden handle'};
 
 const cropBox=(r,cls='',inner='')=>`<span class="oa-crop ${cls}" style="aspect-ratio:${r.w}/${r.h}"><img src="${R2+P}${r.file}" width="${W}" height="${H}" alt="${r.alt||''}" aria-hidden="true" loading="lazy" style="width:${(1080/r.w*100).toFixed(3)}%;left:${(-(r.x/r.w)*100).toFixed(3)}%;top:${(-(r.y/r.h)*100).toFixed(3)}%">${inner}</span>`;
 const ball=(cls='')=>cropBox(BALL,'oa-ball '+cls);
 const glass=(cls='',withWater=false)=>cropBox(GLASS,'oa-glass '+cls,withWater?'<span class="oa-water" aria-hidden="true"></span>':'');
-const soup=(cls='')=>`<span class="oa-souphold ${cls}"><img src="${R2+P}${SOUP.file}" width="${W}" height="${H}" alt="${SOUP.alt}" aria-hidden="true" loading="lazy"></span>`;
+const soupHot=(cls='')=>cropBox(HOTSOUP,'oa-souphold '+cls);
 const soupCold=(cls='')=>cropBox(SOUP,'oa-souphold '+cls);
 const door=(cls='')=>`<span class="oa-doorhold ${cls}"><span class="oa-room" aria-hidden="true"></span><span class="oa-doorleaf">${cropBox(DOOR)}</span></span>`;
 const treeImg=(cls='',label='')=>`<span class="oa-tree ${cls}"><img src="${R2+P}${TREE}" width="${W}" height="${H}" alt="${label||'A leafy green tree'}" aria-hidden="true" loading="lazy"></span>`;
@@ -135,12 +139,12 @@ export function magicOppositesBody(G){
    <p class="lesson-copy">The wavy lines above the bowl are steam — that is how we know soup is HOT. Tap the bowl I ask for.</p>
    <div class="tc-round" data-tc-round data-tc-ask="Tap the HOT soup!">
 <p class="tc-ask">Tap the <strong>HOT</strong> soup! (Look for the steam!)</p>
-<div class="tc-choices" role="group" aria-label="Tap the HOT soup.">${[1,0].map(h=>h?soup('is-hot'):soupCold('is-cold')).map((b,i)=>`<button type="button" class="tc-choice oa-soupc" aria-label="${i===0?'The hot soup with steam':'The cold soup'}"${i===0?' data-tc-correct="true"':''}>${b}</button>`).join('')}</div>
+<div class="tc-choices" role="group" aria-label="Tap the HOT soup.">${[1,0].map(h=>h?soupHot('is-hot'):soupCold('is-cold')).map((b,i)=>`<button type="button" class="tc-choice oa-soupc" aria-label="${i===0?'The hot soup with steam':'The cold soup'}"${i===0?' data-tc-correct="true"':''}>${b}</button>`).join('')}</div>
 <p class="tc-feedback" data-tc-feedback aria-live="polite" hidden></p>
    </div>
    <div class="tc-round" data-tc-round data-tc-ask="Tap the COLD soup!">
 <p class="tc-ask">Tap the <strong>COLD</strong> soup! (No steam!)</p>
-<div class="tc-choices" role="group" aria-label="Tap the COLD soup.">${[1,0].map(h=>h?soup('is-hot'):soupCold('is-cold')).map((b,i)=>`<button type="button" class="tc-choice oa-soupc" aria-label="${i===0?'The cold soup':'The hot soup with steam'}"${i===1?' data-tc-correct="true"':''}>${b}</button>`).join('')}</div>
+<div class="tc-choices" role="group" aria-label="Tap the COLD soup.">${[1,0].map(h=>h?soupHot('is-hot'):soupCold('is-cold')).map((b,i)=>`<button type="button" class="tc-choice oa-soupc" aria-label="${i===0?'The cold soup':'The hot soup with steam'}"${i===1?' data-tc-correct="true"':''}>${b}</button>`).join('')}</div>
 <p class="tc-feedback" data-tc-feedback aria-live="polite" hidden></p>
    </div>
    <p class="mg-hint">Real soup is hot enough to hurt — tasting is always a grown-up&rsquo;s job. Blow first, like this: fffff!</p>
@@ -167,7 +171,7 @@ export function magicOppositesBody(G){
   {word:'TALL',ask:'Tap the <strong>SHORT</strong> tree!',correct:'short',choices:['tall','short'],render:s=>treeImg(s==='tall'?'is-tall':'is-short'),label:s=>s==='tall'?'The tall tree':'The short tree'},
   {word:'LONG',ask:'Tap the <strong>SHORT</strong> pencil!',correct:'short',choices:['long','short'],render:s=>pencilImg(s==='long'?'is-long':'is-short'),label:s=>s==='long'?'The long pencil':'The short pencil'},
   {word:'FULL',ask:'Tap the <strong>EMPTY</strong> glass!',correct:'empty',choices:['full','empty'],render:s=>glass(s==='full'?'is-full':'is-empty',s==='full'),label:s=>s==='full'?'The full glass':'The empty glass'},
-  {word:'HOT',ask:'Tap the <strong>COLD</strong> soup!',correct:'cold',choices:['hot','cold'],render:s=>s==='hot'?soup('is-hot'):soupCold('is-cold'),label:s=>s==='hot'?'The hot soup with steam':'The cold soup'},
+  {word:'HOT',ask:'Tap the <strong>COLD</strong> soup!',correct:'cold',choices:['hot','cold'],render:s=>s==='hot'?soupHot('is-hot'):soupCold('is-cold'),label:s=>s==='hot'?'The hot soup with steam':'The cold soup'},
   {word:'OPEN',ask:'Tap the <strong>CLOSED</strong> door!',correct:'closed',choices:['open','closed'],render:s=>door(s==='open'?'is-open':'is-closed'),label:s=>s==='open'?'The open door':'The closed door'}
  ];
  const match=`<section class="mg-screen" data-mg-screen="match" aria-label="The opposite challenge" data-tc-correct="That is the opposite!|Perfect match!|You know your opposites!" data-tc-incorrect="Not quite — the opposite of that word. Try the other one!">
