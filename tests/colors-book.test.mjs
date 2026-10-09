@@ -1,8 +1,10 @@
 // Kiddo School — My First Colors book. Verifies the R2 asset contract (the
-// owner's exact eleven files, exact uploaded order, nothing invented), the
-// built page (SEO, schema, review mount, reader data, honest premium copy)
-// and the Library listing (Educational Books shelf, ages 2–3, Read Free
-// label, page-1 cover thumbnail). Runs against dist/ after `npm run build`.
+// owner's exact eleven files, the owner's reading order — all eight colors
+// first, then the find-the-colors challenge, then the celebration ending —
+// nothing invented), the built page (SEO, schema, review mount, reader data,
+// honest premium copy) and the Library listing (Educational Books shelf,
+// ages 2–3, Read Free label, page-1 cover thumbnail). Runs against dist/
+// after `npm run build`.
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
@@ -25,11 +27,11 @@ const STORY=[
  ['my-first-colors-page-04.png','Purple — a bunch of purple grapes!'],
  ['my-first-colors-page-05.png','Pink — a pretty pink flower!'],
  ['my-first-colors-page-06.png','Brown — a cuddly brown teddy bear!'],
- ['my-first-colors-page-07.png','Let’s find the colors — can you find all the colors? Point and say their names!'],
- ['my-first-colors-page-08.png','Wonderful work, little explorer! The world is full of colors. Keep looking, learning, and discovering.'],
  ['my-first-colors-page-09.png','Yellow — a bright yellow sun!'],
  ['my-first-colors-page-10.png','Blue — a beautiful blue butterfly!'],
- ['my-first-colors-page-11.png','Green — a fresh green leaf!']
+ ['my-first-colors-page-11.png','Green — a fresh green leaf!'],
+ ['my-first-colors-page-07.png','Let’s find the colors — can you find all the colors? Point and say their names!'],
+ ['my-first-colors-page-08.png','Wonderful work, little explorer! The world is full of colors. Keep looking, learning, and discovering.']
 ];
 
 test('book data: the owner’s exact eleven files, first page as cover, nothing invented',()=>{
@@ -43,8 +45,12 @@ test('book data: the owner’s exact eleven files, first page as cover, nothing 
   assert.equal(myFirstColors.pages[i].text,text,'transcribed line '+i);
   assert.ok(myFirstColors.pages[i].alt.length>=20,'alt text on page '+i);
  });
- const last=myFirstColors.pages[9];
- assert.equal(last.w,1999);assert.equal(last.h,1545,'page 11 ships at its own true size');
+ // the reading flow the owner asked for: eight colors, then the challenge, then the ending
+ assert.equal(myFirstColors.pages[7].file,'my-first-colors-page-11.png','green is the last color page');
+ assert.match(myFirstColors.pages[8].text,/find all the colors/,'the challenge comes after every color');
+ assert.match(myFirstColors.pages[9].text,/Wonderful work/,'the celebration ends the book');
+ const green=myFirstColors.pages[7];
+ assert.equal(green.w,1999);assert.equal(green.h,1545,'page 11 ships at its own true size');
  // exactly eleven distinct files are referenced and no twelfth page exists
  const files=new Set([COVER,...myFirstColors.pages.map(p=>p.file)]);
  assert.equal(files.size,11,'eleven files, no duplicates');
@@ -68,7 +74,7 @@ test('reader data carries the whole book: cover first, then pages in order',()=>
   assert.equal(p.text,STORY[i][1]);
   assert.ok(p.w>0&&p.h>0,'reserved dimensions on page '+i);
  });
- assert.equal(data.pages[9].w,1999,'page 11 keeps its own true width');
+ assert.equal(data.pages[7].w,1999,'page 11 keeps its own true width');
  assert.match(data.completionTitle,/You finished My First Colors!/);
  assert.equal(data.backHref,'/learning-library/');
  assert.equal(data.backLabel,'Back to the Library');

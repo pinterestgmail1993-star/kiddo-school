@@ -82,9 +82,10 @@ export const bunnyBook={
 // first page is the book's cover, exactly as the owner designated; the ten
 // pages after it are the story pages. Every page's words are printed inside
 // the illustration itself; the text below transcribes them so the reader
-// shows the same words as visible text. Page order is the owner's file order
-// — red, orange, purple, pink, brown, a find-the-colors game, a celebration,
-// then yellow, blue and green — nothing reordered, no twelfth page invented.
+// shows the same words as visible text. Page order follows the owner's flow:
+// every color first — red, orange, purple, pink, brown, yellow, blue and green
+// — then the find-the-colors challenge, then the celebration ending; nothing
+// else reordered, no twelfth page invented.
 export const myFirstColors={
  slug:'my-first-colors',
  path:'/library/books/age-2/my-first-colors/',
@@ -114,15 +115,15 @@ export const myFirstColors={
   {file:'my-first-colors-page-04.png',text:'Purple — a bunch of purple grapes!',prompt:'Can you count the grapes with one finger?',alt:'The word PURPLE in purple letters above a smiling bunch of purple watercolor grapes with a green leaf'},
   {file:'my-first-colors-page-05.png',text:'Pink — a pretty pink flower!',prompt:'Can you find something pink?',alt:'The word PINK in pink letters above a pretty pink watercolor flower with a yellow center'},
   {file:'my-first-colors-page-06.png',text:'Brown — a cuddly brown teddy bear!',prompt:'Can you give your teddy a hug?',alt:'The word BROWN in brown letters above a cuddly brown watercolor teddy bear with a bow'},
-  {file:'my-first-colors-page-07.png',text:'Let’s find the colors — can you find all the colors? Point and say their names!',prompt:'Point at each picture and say its color!',alt:'Let’s Find the Colors game page: a smiling red apple, yellow sun, blue butterfly, green leaf, orange flower, purple grapes, pink flower and brown teddy bear in two rows'},
-  {file:'my-first-colors-page-08.png',text:'Wonderful work, little explorer! The world is full of colors. Keep looking, learning, and discovering.',prompt:'What colors can you see around you?',alt:'A rainbow with a smiling sun and a blue butterfly above a red apple, green leaf, orange flower, purple grapes and pink flower, with little stars'},
   {file:'my-first-colors-page-09.png',text:'Yellow — a bright yellow sun!',prompt:'Can you stretch your arms out like sun rays?',alt:'The word YELLOW in yellow letters above a bright smiling yellow watercolor sun'},
   {file:'my-first-colors-page-10.png',text:'Blue — a beautiful blue butterfly!',prompt:'Can you flutter like a butterfly?',alt:'The word BLUE in blue letters above a beautiful smiling blue watercolor butterfly'},
-  {file:'my-first-colors-page-11.png',w:1999,h:1545,text:'Green — a fresh green leaf!',prompt:'Can you find something green outside?',alt:'The word GREEN in green letters above a fresh smiling green watercolor leaf'}
+  {file:'my-first-colors-page-11.png',w:1999,h:1545,text:'Green — a fresh green leaf!',prompt:'Can you find something green outside?',alt:'The word GREEN in green letters above a fresh smiling green watercolor leaf'},
+  {file:'my-first-colors-page-07.png',text:'Let’s find the colors — can you find all the colors? Point and say their names!',prompt:'Point at each picture and say its color!',alt:'Let’s Find the Colors game page: a smiling red apple, yellow sun, blue butterfly, green leaf, orange flower, purple grapes, pink flower and brown teddy bear in two rows'},
+  {file:'my-first-colors-page-08.png',text:'Wonderful work, little explorer! The world is full of colors. Keep looking, learning, and discovering.',prompt:'What colors can you see around you?',alt:'A rainbow with a smiling sun and a blue butterfly above a red apple, green leaf, orange flower, purple grapes and pink flower, with little stars'}
  ],
  grownups:{
   title:'Read together, not on a schedule.',
-  paras:['This little book walks through eight colors with smiling friends: a red apple, an orange flower, purple grapes, a pink flower, a brown teddy bear, a yellow sun, a blue butterfly and a green leaf — plus a find-the-colors game in the middle and a rainbow cheer at the end. There are no scores, no timers and nothing to finish — the pages turn only when your child is ready.','Let your child shout the color words, point at the pictures and hunt for each color around the room. The small questions on each page are invitations, never tests: answer them together, or ignore them completely and make up your own.']
+  paras:['This little book walks through eight colors with smiling friends: a red apple, an orange flower, purple grapes, a pink flower, a brown teddy bear, a yellow sun, a blue butterfly and a green leaf — then a find-the-colors challenge and a rainbow cheer end the book. There are no scores, no timers and nothing to finish — the pages turn only when your child is ready.','Let your child shout the color words, point at the pictures and hunt for each color around the room. The small questions on each page are invitations, never tests: answer them together, or ignore them completely and make up your own.']
  },
  related:[['Back to the Library','/learning-library/'],['Age 2 classes','/toddler/2-years/'],['Colors &amp; Shapes class','/toddler/2-years/colors-and-shapes/']]
 };
