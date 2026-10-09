@@ -1229,3 +1229,36 @@ a.tc-day-class.is-rec{border:2px solid #71326d;background:#faf6ff}
 .explore-eyebrow{font-size:11px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;color:#a9694e}
 .explore-card h3{font-size:25px}
 .explore-card p{font-size:14.5px;flex:1}
+/* ---- How-to-draw tutorials (Activities → Drawing, reusable step viewer) ---- */
+.dt-sub{font-size:19px;color:var(--ink);font-weight:700;margin-top:10px}
+.dt-lede{max-width:62ch;margin-top:12px}
+.dt{margin-top:20px;border:1.5px solid var(--ink);background:var(--white);box-shadow:4px 4px 0 rgba(52,59,48,.14);padding:22px 24px 26px}
+.dt-topbar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;min-height:26px}
+.dt-count{font-weight:800;font-size:15px;letter-spacing:.4px;color:var(--ink);margin:0}
+.dt-dots{display:flex;gap:7px}
+.dt-dot{width:11px;height:11px;border:1.5px solid var(--ink);border-radius:50%;background:transparent}
+.dt-dot.is-on{background:var(--rose)}
+.dt-js .dt-step{display:none}
+.dt-js .dt-step.is-current{display:block}
+.dt-stage{margin-top:14px;border:1.5px solid var(--line);background:var(--paper);display:flex;justify-content:center;padding:16px}
+.dt-stage img{width:auto;height:auto;max-width:100%;max-height:min(58vh,540px)}
+.dt-say{margin-top:14px;display:flex;gap:10px;align-items:baseline;font-size:17px;color:var(--ink);font-weight:700}
+.dt-stepnum{flex:none;border:1.5px solid var(--ink);background:var(--yellow);padding:2px 10px;font-size:13px;font-weight:800;letter-spacing:.3px}
+.dt-controls{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;margin-top:18px}
+.dt-complete{margin-top:20px;border:2px dashed var(--line);border-radius:14px;background:var(--white);padding:20px 18px;text-align:center}
+.dt-cheer{font-family:var(--serif);font-size:24px;color:var(--ink)}
+.dt-hint{margin-top:18px;font-size:14px}
+.dt-hint{color:var(--muted)}
+.dt-back{margin-top:14px}
+.dt-shelf{margin-bottom:26px;border:1.5px solid var(--ink);background:var(--white);box-shadow:4px 4px 0 rgba(52,59,48,.14);padding:20px 22px 22px}
+.dt-shelf h2{font-size:clamp(24px,2.6vw,32px)}
+.dt-shelf-head p{margin-top:8px;max-width:62ch}
+.dt-shelf-grid{margin-top:16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.dt-card{display:flex;flex-direction:column;border:1.5px solid var(--line);background:var(--paper);text-decoration:none;transition:transform .15s}
+.dt-card:hover{transform:translate(-2px,-2px)}
+.dt-card-stage{display:flex;justify-content:center;background:var(--white);border-bottom:1.5px solid var(--line);padding:12px}
+.dt-card-stage img{width:auto;height:auto;max-width:100%;max-height:210px}
+.dt-card-copy{display:flex;flex-direction:column;gap:4px;padding:14px 16px 16px;font-size:15px;color:var(--muted)}
+.dt-card-copy strong{font-family:var(--serif);font-weight:400;font-size:21px;color:var(--ink);letter-spacing:-.3px}
+@media(max-width:680px){.dt{padding:16px 14px 20px}.dt-stage{padding:10px}.dt-stage img{max-height:54vh}.dt-controls{gap:10px}}
+@media(prefers-reduced-motion:reduce){.dt-card{transition:none}}

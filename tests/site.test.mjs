@@ -8,8 +8,8 @@ const htmlFiles=files(root).filter(f=>f.endsWith('.html'));
 const activities=JSON.parse(readFileSync('data/activities.json','utf8'));
 const info=JSON.parse(readFileSync('dist/build-info.json','utf8'));
 const read=f=>readFileSync(f,'utf8');
-test('493 HTML pages, eleven permanent activity routes and activity sheets',()=>{
- assert.equal(htmlFiles.length,493);assert.equal(activities.length,11);
+test('495 HTML pages, eleven permanent activity routes and activity sheets',()=>{
+ assert.equal(htmlFiles.length,495);assert.equal(activities.length,11);
  for(const a of activities){assert.ok(existsSync(`dist/${a.subject}/${a.slug}/index.html`));assert.ok(existsSync(`dist/downloads/${a.slug}.svg`));assert.ok(a.steps.length>=5);assert.ok(a.safety.length>50);}
 });
 test('every local link, image, stylesheet, script and fragment resolves',()=>{
@@ -40,7 +40,7 @@ test('unique descriptive metadata, one heading, valid structured data, and absol
 });
 test('sitemap includes all indexable pages and excludes search and errors',()=>{
  const xml=read('dist/sitemap.xml');const links=[...xml.matchAll(/<loc>(.*?)<\/loc>/g)].map(m=>m[1]);
- assert.equal(links.length,475);assert.equal(new Set(links).size,475);
+ assert.equal(links.length,477);assert.equal(new Set(links).size,477);
  for(const link of links){const u=new URL(link);assert.equal(u.origin,info.siteUrl);assert.ok(existsSync(join(root,u.pathname,'index.html')));assert.ok(!u.pathname.includes('search'));}
  assert.ok(!links.some(l=>l.includes('/admin')||l.includes('/api/')),'no admin or API routes in sitemap');
  assert.ok(links.includes(info.siteUrl+'/school-community/'),'school community is indexable');
@@ -54,6 +54,8 @@ test('sitemap includes all indexable pages and excludes search and errors',()=>{
  assert.ok(links.includes(info.siteUrl+'/flashcards/body-parts-and-five-senses/'),'the Body Parts flashcard set is indexable');
  assert.ok(links.includes(info.siteUrl+'/flashcards/body-parts-and-five-senses/head/'),'a body parts card page is indexable');
  assert.ok(links.includes(info.siteUrl+'/library/books/age-2/my-first-colors/'),'My First Colors is indexable');
+ assert.ok(links.includes(info.siteUrl+'/how-to-draw-a-cat/'),'the cat drawing tutorial is indexable');
+ assert.ok(links.includes(info.siteUrl+'/how-to-draw-a-dog/'),'the dog drawing tutorial is indexable');
  assert.ok(!links.some(l=>l.includes('/print/')),'print views stay out of the sitemap');
 });
 test('preview safeguards, no missing content, and static-only runtime',()=>{

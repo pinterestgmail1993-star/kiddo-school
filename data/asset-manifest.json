@@ -2638,5 +2638,101 @@
   "height": 768,
   "format": "webp",
   "bytes": 59124
+ },
+ {
+  "key": "school/drawing/how-to-draw-a-cat/how-to-draw-a-cat-step-01.png",
+  "alt": "A large circle drawn with one thick dark pencil line.",
+  "width": 1080,
+  "height": 1920,
+  "format": "png",
+  "bytes": 513178
+ },
+ {
+  "key": "school/drawing/how-to-draw-a-cat/how-to-draw-a-cat-step-02.png",
+  "alt": "The same circle with two pointed cat ears added on top.",
+  "width": 1080,
+  "height": 1920,
+  "format": "png",
+  "bytes": 309049
+ },
+ {
+  "key": "school/drawing/how-to-draw-a-cat/how-to-draw-a-cat-step-03.png",
+  "alt": "The cat face: two round eyes, a small triangle nose and a curved smile inside the circle.",
+  "width": 1080,
+  "height": 1920,
+  "format": "png",
+  "bytes": 834606
+ },
+ {
+  "key": "school/drawing/how-to-draw-a-cat/how-to-draw-a-cat-step-04.png",
+  "alt": "The cat face with three long whiskers added on each cheek.",
+  "width": 1080,
+  "height": 1920,
+  "format": "png",
+  "bytes": 462270
+ },
+ {
+  "key": "school/drawing/how-to-draw-a-cat/how-to-draw-a-cat-step-05.png",
+  "alt": "The cat now has a rounded body, two front paws and a long curled tail.",
+  "width": 1080,
+  "height": 1920,
+  "format": "png",
+  "bytes": 681048
+ },
+ {
+  "key": "school/drawing/how-to-draw-a-cat/how-to-draw-a-cat-step-06.png",
+  "alt": "The finished cartoon cat, colored orange with pink ears and pink cheeks.",
+  "width": 1080,
+  "height": 1920,
+  "format": "png",
+  "bytes": 931875
+ },
+ {
+  "key": "school/drawing/how-to-draw-a-dog/how-to-draw-a-dog-step-01.png",
+  "alt": "A big circle drawn with one thick dark pencil line.",
+  "width": 1240,
+  "height": 1748,
+  "format": "png",
+  "bytes": 714450
+ },
+ {
+  "key": "school/drawing/how-to-draw-a-dog/how-to-draw-a-dog-step-02.png",
+  "alt": "The circle with two long floppy ears added on either side.",
+  "width": 1240,
+  "height": 1748,
+  "format": "png",
+  "bytes": 585317
+ },
+ {
+  "key": "school/drawing/how-to-draw-a-dog/how-to-draw-a-dog-step-03.png",
+  "alt": "The dog face: two round eyes, an oval nose and a wide smile inside the circle.",
+  "width": 1240,
+  "height": 1748,
+  "format": "png",
+  "bytes": 768766
+ },
+ {
+  "key": "school/drawing/how-to-draw-a-dog/how-to-draw-a-dog-step-04.png",
+  "alt": "The dog head with an oval body added below it.",
+  "width": 1240,
+  "height": 1748,
+  "format": "png",
+  "bytes": 1042910
+ },
+ {
+  "key": "school/drawing/how-to-draw-a-dog/how-to-draw-a-dog-step-05.png",
+  "alt": "The dog now has two front paws and a curled tail.",
+  "width": 1240,
+  "height": 1748,
+  "format": "png",
+  "bytes": 1230995
+ },
+ {
+  "key": "school/drawing/how-to-draw-a-dog/how-to-draw-a-dog-step-06.png",
+  "alt": "The finished cartoon dog, colored brown with darker brown ears.",
+  "width": 1240,
+  "height": 1748,
+  "format": "png",
+  "bytes": 1325479
  }
 ]
