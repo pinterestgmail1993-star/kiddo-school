@@ -770,7 +770,12 @@ test('the school homepage: short hero, age chooser, real classes, how school wor
  assert.ok(home.includes('OUR LITTLE CLASSROOMS'));
  assert.ok(home.includes('href="/art/"'));
  assert.ok(home.includes('href="/activities/"'));
- assert.ok(home.includes('id="ages"'));
+ assert.ok(!home.includes('id="ages"'),'the older-kid activity ages panel no longer competes on the homepage');
+ assert.ok(!home.includes('FROM THE ACTIVITY WALL'),'the activity strip no longer competes on the homepage');
+ assert.ok(!home.includes('A QUESTION WORTH TRYING'),'the bridge feature no longer competes on the homepage');
+ assert.ok(home.includes('data-tc-today'),'Today’s Class buttons are smart (age + progress aware)');
+ assert.ok(home.includes('data-tc-hint'),'the recommendation hint travels with the buttons');
+ assert.ok(read('dist/ages/index.html').includes('id="ages"')||read('dist/ages/index.html').includes('age-panel'),'the /ages/ page still exists for older-kid activities');
  const about=read('dist/about/index.html');
  assert.ok(about.includes('id="principal"'));
  assert.ok(about.includes('From the Principal’s Office'));
@@ -806,4 +811,42 @@ test('the whole curriculum path is wired together and reusable markup is shared'
   assert.ok(html.includes('class="lv-frame" data-lesson-viewer'));
   assert.ok(html.includes('<div class="lv-stage" data-lv-stage></div>'));
  }
+});
+
+test("today's class: one curriculum source, smart buttons, real progress machinery",()=>{
+ const home=read('dist/index.html');
+ const classroom=read('dist/my-classroom/index.html');
+ const curriculum=read('dist/assets/curriculum.js');
+ const engine=read('dist/assets/school-progress.js');
+ // the curriculum ships to the client straight from the single source
+ assert.ok(curriculum.includes('window.KIDDO_CURRICULUM'));
+ const list=JSON.parse(curriculum.slice(curriculum.indexOf('['),curriculum.lastIndexOf(']')+1));
+ assert.equal(list.length,22,'exactly 22 classes in the shipped curriculum');
+ assert.equal(list.filter(c=>c.band==='age3').length,8,'eight Age 3 classes');
+ assert.equal(list[0].path,'/newborn/0-6-weeks/high-contrast-cards/','class 1 is the newborn class');
+ // smart today's-class links on nav + homepage, with the Learning Path fallback
+ assert.ok((home.match(/data-tc-today/g)||[]).length>=3,'three smart CTAs on the homepage');
+ assert.ok(home.includes('data-tc-today${')===false);
+ assert.ok(classroom.includes('data-tc-today'),'nav link is smart on My Classroom too');
+ // homepage CTAs keep the honest class-1 fallback for no-JS guests
+ assert.ok(home.includes('href="/newborn/0-6-weeks/high-contrast-cards/" data-tc-today'));
+ // the desk exists and the engine knows how to fill it
+ assert.ok(classroom.includes('data-tc-desk'),'My Classroom has the child desk mount');
+ assert.ok(classroom.includes('curriculum.js')&&classroom.includes('school-progress.js'),'My Classroom loads the progress scripts');
+ for(const marker of ['recommendFor','kiddo-children','kiddo-progress','data-tc-desk','data-tc-mark','localStorage']){
+  assert.ok(engine.includes(marker),'progress engine has '+marker);
+ }
+ // privacy: nothing personal leaves the device; the engine never posts anywhere
+ assert.ok(!engine.includes('fetch('),'progress engine never talks to the network');
+ assert.ok(engine.includes('no account')||engine.includes('No account'),'honest privacy note in the engine copy');
+ // the class pages carry the engine so visits + completion are recorded
+ for(const p of ['/preschool/3-years/shapes-and-patterns/','/newborn/0-6-weeks/high-contrast-cards/']){
+  const html=read('dist'+p+'index.html');
+  assert.ok(html.includes('/assets/school-progress.js'),'engine loads on '+p);
+  assert.ok(html.includes('/assets/curriculum.js'),'curriculum loads on '+p);
+ }
+ assert.ok(read('dist/preschool/3-years/shapes-and-patterns/index.html').includes('id="class-complete"'),'preschool classes have the completion anchor');
+ assert.ok(engine.includes("querySelector('#class-complete')")&&engine.includes("getElementById('main')"),'completion bar lands on every class page shape');
+ // guest age picker copy is honest about device-only storage
+ assert.ok(engine.includes('no sign-up'));
 });

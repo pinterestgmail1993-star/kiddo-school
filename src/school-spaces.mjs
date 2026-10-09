@@ -109,11 +109,14 @@ export const learningLibrary={
  ages:{heading:'Browse by age',items:[
   ['Newborn','/newborn/'],['Baby','/baby/'],['12–18 Months','/toddler/12-18-months/'],['18–24 Months','/toddler/18-24-months/'],['Age 2','/toddler/2-years/'],['Age 3','/preschool/3-years/']]},
  sections:[
+  {id:'magic-games',title:'Magic Games · playful practice for Age 3',items:[
+   {kind:'Magic game · Class 2',href:'/preschool/3-years/magic-number-garden/',name:'Magic Counting Garden',img:mgThumb('magic-number-garden-age-3/06-magic-number-garden-cover.webp','The Magic Counting Garden cover: a smiling garden with flowers, a bee, a butterfly, ladybugs and a watering can')},
+   {kind:'Magic game · Class 3',href:'/preschool/3-years/magic-shape-builder/',name:'Look & Draw — Magic Shapes',img:mgThumb('magic-shape-builder-age-3/06-magic-shape-builder-cover.webp','The Look & Draw — Magic Shapes cover: a house, rocket, tree, robot and butterfly built from colorful shapes')},
+   {kind:'Magic game · Class 4',href:'/preschool/3-years/magic-color-mixing/',name:'Magic Color Lab',img:mgSplash},
+   {kind:'Magic game · Class 5',href:'/preschool/3-years/magic-opposites-adventure/',name:'Magic Opposites Finder',img:mgThumb('magic-opposites-adventure-age-3/07-magic-opposites-adventure-cover.webp','The Magic Opposites Finder cover: a ball, a tree, a pencil, a glass, a soup bowl and a door')},
+   {kind:'Magic game · Class 6',href:'/preschool/3-years/magic-animal-playground/',name:'Animal Sound Safari',img:mgThumb('magic-animal-playground-age-3/07-animal-playground-cover.webp','The Animal Sound Safari cover: six friendly animals on a playground')},
+   {kind:'Magic game · Class 8',href:'/preschool/3-years/magic-fruit-basket/',name:'Magic Fruit Basket',img:mgThumb('magic-fruit-basket-age-3/10-fruit-basket-cover.webp','The Magic Fruit Basket cover: a woven basket surrounded by colorful fruit')}]},
   {id:'preschool',title:'Preschool · Letters, Numbers & Shapes',items:[
-   {kind:'Magic game · Age 3',href:'/preschool/3-years/magic-shape-builder/',name:'Magic Shape Builder',img:mgThumb('magic-shape-builder-age-3/06-magic-shape-builder-cover.webp','The Magic Shape Builder cover: a house, rocket, tree, robot and butterfly built from colorful shapes')},
-   {kind:'Magic game · Age 3',href:'/preschool/3-years/magic-color-mixing/',name:'Magic Color Mixing',img:mgSplash},
-   {kind:'Magic game · Age 3',href:'/preschool/3-years/magic-animal-playground/',name:'Magic Animal Playground',img:mgThumb('magic-animal-playground-age-3/07-animal-playground-cover.webp','The Magic Animal Playground cover: six friendly animals on a playground')},
-   {kind:'Magic game · Age 3',href:'/preschool/3-years/magic-fruit-basket/',name:'Magic Fruit Basket',img:mgThumb('magic-fruit-basket-age-3/10-fruit-basket-cover.webp','The Magic Fruit Basket cover: a woven basket surrounded by colorful fruit')},
    {kind:'Class · Age 3',href:alphabetLesson.path,name:'Alphabet & Letter Sounds',lesson:alphabetLesson},
    {kind:'Class · Age 3',href:numbersLesson.path,name:'Numbers & Counting (1–10)',lesson:numbersLesson},
    {kind:'Class · Age 3',href:shapesLesson.path,name:'Shapes & Patterns',lesson:shapesLesson},

@@ -159,6 +159,14 @@ export function oppositesClassBody(L){
   <div class="lesson-path"><a class="fc-stage lesson-card-link" href="/preschool/3-years/"><div class="fc-stage-pills"><span class="fc-age">Where next</span><span class="fc-class">More Age 3 classes</span></div><h3>More preschool classes</h3><p>Revisit Alphabet &amp; Letter Sounds, Numbers &amp; Counting (1–10), Shapes &amp; Patterns or Colors &amp; Color Mixing — or open the Learning Path to see the whole journey from birth to age three.</p><span class="fc-open">Choose the next class <span aria-hidden="true">↗</span></span></a></div>
  </section>`;
 
+ // Classroom activities: this class's Age 3 magic game.
+ const magicGameSection=`<section class="wrap lesson-section" id="classroom-activities" aria-label="Classroom activities">
+  <span class="eyebrow">CLASSROOM ACTIVITIES</span>
+  <h2>Opposites you can make happen.</h2>
+  <p class="lesson-copy">The opposites from this class have an adventure of their own. Magic Opposites Finder lets your child grow the ball big and small, tap the tall and short trees, stretch and shrink the pencil, fill and empty the glass, find the hot and cold soup and swing the door open and closed — every word spoken and written as it happens.</p>
+  <div class="lesson-linkrow"><a class="lesson-pill-link" href="/preschool/3-years/magic-opposites-adventure/">Play the Magic Opposites Finder game <span aria-hidden="true">↗</span></a></div>
+ </section>`;
+
  const tipsSection=`<section class="wrap lesson-section" id="how-to">
   <span class="eyebrow">TIPS FOR PARENTS</span>
   <h2>How to use this class.</h2>
@@ -194,5 +202,6 @@ export function oppositesClassBody(L){
  ${teacherNoteSection}
  ${principalSection}
  ${completeSection}
+ ${magicGameSection}
  ${tipsSection}`;
 }

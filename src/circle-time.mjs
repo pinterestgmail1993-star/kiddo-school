@@ -141,8 +141,11 @@ export function myClassroomBody(){
    ${hot('mc-hot-rug','Circle Time','#circle-time')}
   </nav>
  </div>
+ <div class="mc-panel mc-desk" data-tc-desk>
+  <noscript><p class="fc-hint">Progress saving needs JavaScript. Without it, the <a href="/learning-path/">Learning Path</a> is still the full class list — start at any class and simply carry on next time.</p></noscript>
+ </div>
  <div class="mc-panel" id="circle-time">
-  <span class="eyebrow">ON THE RUG · CIRCLE TIME</span>
+  <span class="eyebrow">ON THE RUG · CIRCLE TIME · AGE 2</span>
   <h2>Hello School!</h2>
   <p>A short circle time for two-year-olds — hello, move, listen, a tiny story, then off the rug. About five minutes.</p>
   <div class="hero-actions"><a class="button" href="/toddler/2-years/circle-time/hello-school/">Start Circle Time <span aria-hidden="true">↗</span></a></div>
@@ -156,12 +159,14 @@ export function myClassroomBody(){
  <div class="mc-panel">
   <span class="eyebrow">ON THE SHELF · MAGIC GAMES</span>
   <h2>Magic games for Age 3</h2>
-  <p>Four gentle games for preschoolers, each wired to its class: build pictures from shapes, mix paint colors, play at the animal playground and fill a magic fruit basket. No scores, no timers, nothing to install.</p>
+  <p>Six gentle games for preschoolers, each wired to its class: count in a magic garden, look and draw magic shapes, mix paint colors, make six opposites happen, play at the animal playground and fill a magic fruit basket. No scores, no timers, nothing to install.</p>
   <div class="lesson-linkrow">
-   <a class="lesson-pill-link" href="/preschool/3-years/magic-shape-builder/">Magic Shape Builder <span aria-hidden="true">↗</span></a>
-   <a class="lesson-pill-link" href="/preschool/3-years/magic-color-mixing/">Magic Color Mixing <span aria-hidden="true">↗</span></a>
-   <a class="lesson-pill-link" href="/preschool/3-years/magic-animal-playground/">Magic Animal Playground <span aria-hidden="true">↗</span></a>
-   <a class="lesson-pill-link" href="/preschool/3-years/magic-fruit-basket/">Magic Fruit Basket <span aria-hidden="true">↗</span></a>
+   <a class="lesson-pill-link" href="/preschool/3-years/magic-number-garden/">Magic Counting Garden <span>· Class 2</span> <span aria-hidden="true">↗</span></a>
+   <a class="lesson-pill-link" href="/preschool/3-years/magic-shape-builder/">Look & Draw — Magic Shapes <span>· Class 3</span> <span aria-hidden="true">↗</span></a>
+   <a class="lesson-pill-link" href="/preschool/3-years/magic-color-mixing/">Magic Color Lab <span>· Class 4</span> <span aria-hidden="true">↗</span></a>
+   <a class="lesson-pill-link" href="/preschool/3-years/magic-opposites-adventure/">Magic Opposites Finder <span>· Class 5</span> <span aria-hidden="true">↗</span></a>
+   <a class="lesson-pill-link" href="/preschool/3-years/magic-animal-playground/">Animal Sound Safari <span>· Class 6</span> <span aria-hidden="true">↗</span></a>
+   <a class="lesson-pill-link" href="/preschool/3-years/magic-fruit-basket/">Magic Fruit Basket <span>· Class 8</span> <span aria-hidden="true">↗</span></a>
   </div>
  </div>
  <div class="mc-panel">

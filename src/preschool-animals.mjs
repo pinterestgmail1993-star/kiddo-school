@@ -191,8 +191,8 @@ ${playBtn(t,'Play the sound',true)}
  const magicGameSection=`<section class="wrap lesson-section" id="classroom-activities" aria-label="Classroom activities">
   <span class="eyebrow">CLASSROOM ACTIVITIES</span>
   <h2>A playground full of animal voices.</h2>
-  <p class="lesson-copy">The animals from this class are waiting at the playground. Magic Animal Playground lets your child tap six animal friends to hear their sounds (the same real recordings as this class), guess who made a sound, find the right animal and copy their gentle moves.</p>
-  <div class="lesson-linkrow"><a class="lesson-pill-link" href="/preschool/3-years/magic-animal-playground/">Play the Magic Animal Playground game <span aria-hidden="true">↗</span></a></div>
+  <p class="lesson-copy">The animals from this class are waiting at the playground. Animal Sound Safari lets your child tap six animal friends to hear their sounds (the same real recordings as this class), guess who made a sound, find the right animal and copy their gentle moves.</p>
+  <div class="lesson-linkrow"><a class="lesson-pill-link" href="/preschool/3-years/magic-animal-playground/">Play the Animal Sound Safari game <span aria-hidden="true">↗</span></a></div>
  </section>`;
 
  return `${crumbNav(L.crumbs.slice(0,-1).concat([['Animals & Their Sounds']]))}

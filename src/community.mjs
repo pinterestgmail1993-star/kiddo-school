@@ -45,8 +45,7 @@ export function schoolCommunityBody(){
  </div>`;
  return `${crumbNav([['School Community']])}
  <section class="wrap section compact">
-  <p class="mw-lede" style="margin-top:6px">See what families are making, learning and sharing at Kiddo School.</p>
-  <p class="lesson-copy">Kiddo School stays small and safe on purpose. There are no accounts, no profiles, no following and no private messages here — just three simple places where families can take part, with the school office reading everything before it appears. Grown-ups send things in; little learners stay out of it.</p>
+  <p class="lesson-copy">Kiddo School stays small and safe on purpose. There are no accounts here — no sign-up, no following, no private messages. Your child&rsquo;s classroom details (an age band, an optional first name and progress marks) live only on your own device and never reach the school&rsquo;s servers. And just three simple places let families take part, with the school office reading everything before it appears. Grown-ups send things in; little learners stay out of it.</p>
   ${cards}
  </section>
  <section class="wrap section compact" id="family-reviews" aria-label="Family reviews">

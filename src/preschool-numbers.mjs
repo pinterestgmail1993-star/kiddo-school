@@ -149,6 +149,14 @@ export function numbersClassBody(L){
   <div class="lesson-path"><a class="fc-stage lesson-card-link" href="/learning-path/"><div class="fc-stage-pills"><span class="fc-age">Where next</span><span class="fc-class">The path so far</span></div><h3>Back to the Learning Path</h3><p>See the whole journey from birth to age three, and find the next class whenever your child is ready.</p><span class="fc-open">Open the Learning Path <span aria-hidden="true">↗</span></span></a></div>
  </section>`;
 
+ // Classroom activities: this class's Age 3 magic game.
+ const magicGameSection=`<section class="wrap lesson-section" id="classroom-activities" aria-label="Classroom activities">
+  <span class="eyebrow">CLASSROOM ACTIVITIES</span>
+  <h2>Counting has a garden.</h2>
+  <p class="lesson-copy">The numbers from this class grow in a game of their own. Magic Counting Garden lets your child tap flowers, butterflies, bees and ladybugs to count aloud from 1 to 10, plant exactly the flowers the garden asks for, match big numerals to the right groups and water the garden until every flower blooms — each press counted out loud.</p>
+  <div class="lesson-linkrow"><a class="lesson-pill-link" href="/preschool/3-years/magic-number-garden/">Play the Magic Counting Garden game <span aria-hidden="true">↗</span></a></div>
+ </section>`;
+
  const tipsSection=`<section class="wrap lesson-section" id="how-to">
   <span class="eyebrow">TIPS FOR PARENTS</span>
   <h2>How to use this class.</h2>
@@ -184,5 +192,6 @@ export function numbersClassBody(L){
  ${teacherNoteSection}
  ${principalSection}
  ${completeSection}
+ ${magicGameSection}
  ${tipsSection}`;
 }

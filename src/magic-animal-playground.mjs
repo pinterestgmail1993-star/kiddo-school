@@ -1,4 +1,4 @@
-// Kiddo School — Magic Animal Playground (Age 3 interactive game).
+// Kiddo School — Animal Sound Safari (Age 3 interactive game).
 // /preschool/3-years/magic-animal-playground/ — built on the seven
 // owner-uploaded transparent WebP illustrations in
 // school/interactive-activities/magic-animal-playground-age-3/ (all probed
@@ -54,11 +54,11 @@ const MOVE_NAMES={trot:'trot',stretch:'stretch',sway:'sway',waddle:'waddle',boun
 
 export const magicAnimal={
  path:'/preschool/3-years/magic-animal-playground/',
- seoTitle:'Magic Animal Playground — an Animal Sound Game for 3 Year Olds',
- h1:'Magic Animal Playground',
+ seoTitle:'Animal Sound Safari — an Animal Sound Game for 3 Year Olds',
+ h1:'Animal Sound Safari',
  description:'Play at the animal playground with your 3-year-old: tap six animals to hear their real sounds, guess who made each sound, find the right animal and copy their moves — then play it off screen. No scores.',
  eyebrow:'PRESCHOOL · AGE 3 · CLASS 6 MAGIC GAME',
- crumbs:[['Preschool','/preschool/'],['Age 3','/preschool/3-years/'],['Animals & Their Sounds','/preschool/3-years/animals-and-their-sounds/'],['Magic Animal Playground',null]],
+ crumbs:[['Preschool','/preschool/'],['Age 3','/preschool/3-years/'],['Animals & Their Sounds','/preschool/3-years/animals-and-their-sounds/'],['Animal Sound Safari',null]],
  ogImage:R2+P+GROUP,
  ogAlt:'Six friendly animal illustrations — dog, cat, cow, duck, sheep and frog — gathered together',
  classPath:'/preschool/3-years/animals-and-their-sounds/',
@@ -74,8 +74,8 @@ export function magicAnimalBody(G){
    <p class="mg-live" data-mg-live aria-live="polite"></p>
    <div class="mg-screens">`;
 
- const welcome=`<section class="mg-screen" data-mg-screen="welcome" aria-label="Welcome to the Magic Animal Playground">
-   <figure class="mg-cover"><img src="${R2+P+GROUP}" width="${W}" height="${H}" alt="The Magic Animal Playground cover: six friendly animals — dog, cat, cow, duck, sheep and frog — gathered together" fetchpriority="high"><figcaption class="fc-hint">Welcome to the animal playground!</figcaption></figure>
+ const welcome=`<section class="mg-screen" data-mg-screen="welcome" aria-label="Welcome to the Animal Sound Safari">
+   <figure class="mg-cover"><img src="${R2+P+GROUP}" width="${W}" height="${H}" alt="The Animal Sound Safari cover: six friendly animals — dog, cat, cow, duck, sheep and frog — gathered together" fetchpriority="high"><figcaption class="fc-hint">Welcome to the animal playground!</figcaption></figure>
    <div class="mg-actions" style="justify-content:center"><button type="button" class="button" data-mg-go="meet">Start Playing <span aria-hidden="true">↗</span></button></div>
    <p class="mg-hint" style="text-align:center">No scores, no timers — just animal friends.</p>
   </section>`;
@@ -141,7 +141,7 @@ export function magicAnimalBody(G){
    <div class="mg-actions"><button type="button" class="button" data-mg-replay>Play Again <span aria-hidden="true">↺</span></button><a class="button button-ghost" href="${G.classPath}">Back to Animals &amp; Their Sounds <span aria-hidden="true">↗</span></a><a class="button button-ghost" href="/learning-path/">Learning Path <span aria-hidden="true">↗</span></a></div>
    <div class="lesson-path">
     <a class="fc-stage lesson-card-link" href="${G.classPath}"><div class="fc-stage-pills"><span class="fc-age">Age 3</span><span class="fc-class">Class 6</span></div><h3>Animals &amp; Their Sounds</h3><p>The full class: twelve animal friends with real sounds, a match-the-sound board and barnyard play.</p><span class="fc-open">Open this class <span aria-hidden="true">↗</span></span></a>
-    <a class="fc-stage lesson-card-link" href="/preschool/3-years/"><div class="fc-stage-pills"><span class="fc-age">Age 3</span><span class="fc-class">Magic games</span></div><h3>More magic games</h3><p>Try Magic Fruit Basket, Magic Color Mixing or Magic Shape Builder — every Age 3 game lives on the stage shelf.</p><span class="fc-open">Choose another game <span aria-hidden="true">↗</span></span></a>
+    <a class="fc-stage lesson-card-link" href="/preschool/3-years/"><div class="fc-stage-pills"><span class="fc-age">Age 3</span><span class="fc-class">Magic games</span></div><h3>More magic games</h3><p>Try Magic Fruit Basket, Magic Color Lab or Look & Draw — Magic Shapes — every Age 3 game lives on the stage shelf.</p><span class="fc-open">Choose another game <span aria-hidden="true">↗</span></span></a>
    </div>
   </section>`;
 
@@ -160,7 +160,7 @@ ${complete}
  <section class="wrap lesson-section" id="for-grown-ups" aria-label="About this game">
   <span class="eyebrow">FOR GROWN-UPS</span>
   <h2>About the sounds.</h2>
-  <p class="lesson-copy">Every animal in this game plays a real recording. Dog, cat, cow and sheep use the very same files as the Animals &amp; Their Sounds class, so the sounds stay consistent across the school. The duck and frog recordings come from Wikimedia Commons under the CC BY-SA 4.0 license: the duck is an excerpt of “Pekin duck &amp; mallard” by WaderClub, and the frog is “Single Frog Croak” by MichaeltheFox8621 — both trimmed and volume-matched, with the full credits kept in the sound folder. The sound word is written under every animal so you can perform it yourself, which is honestly the best version.</p>
+  <p class="lesson-copy">Every animal in this game plays a real recording. Dog, cat, cow and sheep use the very same files as the Animals &amp; Their Sounds class, so the sounds stay consistent across the school. The duck recording is “Anas platyrhynchos - Mallard - XC62258” by Jonathon Jongsma (xeno-canto via Wikimedia Commons, CC BY-SA 3.0) — a close-up of a mallard giving the classic quack — and the frog is “Single Frog Croak” by MichaeltheFox8621 (Wikimedia Commons, CC BY-SA 4.0); both are trimmed and volume-matched, with the full credits kept in the sound folder. The sound word is written under every animal so you can perform it yourself, which is honestly the best version.</p>
   <p class="lesson-copy">Every movement in Step 5 is deliberately small and calm. If your child is sensitive to motion, the parent Calm Mode toggle in the footer (or your device&rsquo;s reduced-motion setting) stills every animation while all sounds, words and games keep working.</p>
   <p class="lesson-note">Being the frog is still the most popular role in this school. Assign accordingly.</p>
  </section>`;

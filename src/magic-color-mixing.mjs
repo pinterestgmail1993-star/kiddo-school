@@ -1,4 +1,4 @@
-// Kiddo School — Magic Color Mixing (Age 3 interactive game).
+// Kiddo School — Magic Color Lab (Age 3 interactive game).
 // /preschool/3-years/magic-color-mixing/ — a paint-mixing game drawn
 // entirely with CSS and inline SVG: NO image assets, no R2 files. Children
 // tap two paint splashes (red, yellow, blue), watch them combine in the
@@ -23,13 +23,13 @@ const splash=(hex,label,extra='')=>`<svg viewBox="0 0 100 100" aria-hidden="true
 
 export const magicColor={
  path:'/preschool/3-years/magic-color-mixing/',
- seoTitle:'Magic Color Mixing — a Paint Mixing Game for 3 Year Olds',
- h1:'Magic Color Mixing',
+ seoTitle:'Magic Color Lab — a Paint Mixing Game for 3 Year Olds',
+ h1:'Magic Color Lab',
  description:'Mix colors like paint with your preschooler: tap two splashes — red, yellow or blue — watch them combine into orange, green or purple, then try real paint off screen. No scores, no sign-up.',
  eyebrow:'PRESCHOOL · AGE 3 · CLASS 4 MAGIC GAME',
- crumbs:[['Preschool','/preschool/'],['Age 3','/preschool/3-years/'],['Colors & Color Mixing','/preschool/3-years/colors-and-color-mixing/'],['Magic Color Mixing',null]],
+ crumbs:[['Preschool','/preschool/'],['Age 3','/preschool/3-years/'],['Colors & Color Mixing','/preschool/3-years/colors-and-color-mixing/'],['Magic Color Lab',null]],
  ogImage:null,
- ogAlt:'Three paint splashes in red, yellow and blue mixing into orange, green and purple — the Magic Color Mixing game from Kiddo School',
+ ogAlt:'Three paint splashes in red, yellow and blue mixing into orange, green and purple — the Magic Color Lab game from Kiddo School',
  classPath:'/preschool/3-years/colors-and-color-mixing/',
  classTitle:'Colors &amp; Color Mixing'
 };
@@ -43,7 +43,7 @@ export function magicColorBody(G){
    <p class="mg-live" data-mg-live aria-live="polite"></p>
    <div class="mg-screens">`;
 
- const welcome=`<section class="mg-screen" data-mg-screen="welcome" aria-label="Welcome to Magic Color Mixing">
+ const welcome=`<section class="mg-screen" data-mg-screen="welcome" aria-label="Welcome to Magic Color Lab">
    <div class="mg-cover" role="img" aria-label="Three big paint splashes: red, yellow and blue">
     <svg viewBox="0 0 300 120" aria-hidden="true" focusable="false"><path class="mg-blob" d="${BLOB}" fill="#d93a3a" transform="translate(4,12) scale(1.05)"/><path class="mg-blob" d="${BLOB}" fill="#f5c531" transform="translate(106,6) scale(1.05)"/><path class="mg-blob" d="${BLOB}" fill="#2f6fd0" transform="translate(202,14) scale(1.05)"/></svg>
     <figcaption class="fc-hint">Red, yellow and blue — the three magic paints.</figcaption>
@@ -101,7 +101,7 @@ export function magicColorBody(G){
    <div class="mg-actions"><button type="button" class="button" data-mg-replay>Play Again <span aria-hidden="true">↺</span></button><a class="button button-ghost" href="${G.classPath}">Back to Colors &amp; Color Mixing <span aria-hidden="true">↗</span></a><a class="button button-ghost" href="/learning-path/">Learning Path <span aria-hidden="true">↗</span></a></div>
    <div class="lesson-path">
     <a class="fc-stage lesson-card-link" href="${G.classPath}"><div class="fc-stage-pills"><span class="fc-age">Age 3</span><span class="fc-class">Class 4</span></div><h3>Colors &amp; Color Mixing</h3><p>The full class: twelve color pairs, find-the-color, the mix pot and a rainbow to explore.</p><span class="fc-open">Open this class <span aria-hidden="true">↗</span></span></a>
-    <a class="fc-stage lesson-card-link" href="/preschool/3-years/"><div class="fc-stage-pills"><span class="fc-age">Age 3</span><span class="fc-class">Magic games</span></div><h3>More magic games</h3><p>Try Magic Fruit Basket, Magic Animal Playground or Magic Shape Builder — every Age 3 game lives on the stage shelf.</p><span class="fc-open">Choose another game <span aria-hidden="true">↗</span></span></a>
+    <a class="fc-stage lesson-card-link" href="/preschool/3-years/"><div class="fc-stage-pills"><span class="fc-age">Age 3</span><span class="fc-class">Magic games</span></div><h3>More magic games</h3><p>Try Magic Fruit Basket, Animal Sound Safari or Look & Draw — Magic Shapes — every Age 3 game lives on the stage shelf.</p><span class="fc-open">Choose another game <span aria-hidden="true">↗</span></span></a>
    </div>
   </section>`;
 

@@ -155,9 +155,9 @@ export function shapesClassBody(L){
  // Classroom activities: this class's Age 3 magic game.
  const magicGameSection=`<section class="wrap lesson-section" id="classroom-activities" aria-label="Classroom activities">
   <span class="eyebrow">CLASSROOM ACTIVITIES</span>
-  <h2>Build with shapes — for real.</h2>
-  <p class="lesson-copy">The shapes from this class have a game of their own. Magic Shape Builder lets your child rebuild a house, a rocket, a tree, a robot and a butterfly from circles, squares, rectangles, triangles and ovals — tap a shape, tap its spot, watch the picture come together.</p>
-  <div class="lesson-linkrow"><a class="lesson-pill-link" href="/preschool/3-years/magic-shape-builder/">Play the Magic Shape Builder game <span aria-hidden="true">↗</span></a></div>
+  <h2>Draw with shapes — for real.</h2>
+  <p class="lesson-copy">The shapes from this class have a drawing activity of their own. Look &amp; Draw — Magic Shapes shows a picture — a house, a rocket, a tree, a robot or a butterfly — beside a big white canvas where your child draws their own version with six big colors, easy tools and gentle “Show me how” steps. Look at the shapes, then draw them.</p>
+  <div class="lesson-linkrow"><a class="lesson-pill-link" href="/preschool/3-years/magic-shape-builder/">Play Look &amp; Draw — Magic Shapes <span aria-hidden="true">↗</span></a></div>
  </section>`;
 
  return `${crumbNav([['Preschool','/preschool/'],['Age 3','/preschool/3-years/'],['Shapes & Patterns']])}
