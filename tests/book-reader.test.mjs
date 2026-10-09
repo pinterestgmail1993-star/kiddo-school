@@ -65,12 +65,11 @@ test('page SEO: title, meta, canonical, one H1, breadcrumbs',()=>{
  assert.equal(page.match(/rel="canonical" href="([^"]+)"/)[1],site+PATH);
  assert.equal([...page.matchAll(/<h1[ >]/g)].length,1);
  assert.match(page,/<h1>Bunny Finds a Friend<\/h1>/);
- assert.match(page,/href="\/learning-library\/">Learning Library<\/a>/);
- assert.match(page,/href="\/learning-library\/#books">Books<\/a>/);
+ assert.match(page,/href="\/learning-library\/">Library<\/a>/);
  assert.match(page,/href="\/toddler\/2-years\/">Age 2<\/a>/);
 });
 
-test('structured data: a factual Book and a 5-step BreadcrumbList, nothing invented',()=>{
+test('structured data: a factual Book and a 4-step BreadcrumbList, nothing invented',()=>{
  const types=schema.map(s=>s['@type']);
  assert.ok(types.includes('Book')&&types.includes('BreadcrumbList'));
  const bk=schema.find(s=>s['@type']==='Book');
@@ -83,8 +82,8 @@ test('structured data: a factual Book and a 5-step BreadcrumbList, nothing inven
   assert.ok(!/ISBN|isbn|AggregateRating|publisher|award|reviewCount/i.test(json),'no invented credentials in schema');
  }
  const bc=schema.find(s=>s['@type']==='BreadcrumbList');
- assert.equal(bc.itemListElement.length,5);
- assert.deepEqual(bc.itemListElement.map(i=>i.name),['Home','Learning Library','Books','Age 2','Bunny Finds a Friend']);
+ assert.equal(bc.itemListElement.length,4);
+ assert.deepEqual(bc.itemListElement.map(i=>i.name),['Home','Library','Age 2','Bunny Finds a Friend']);
 });
 
 test('the review system is the real moderated backend, asked as a story',()=>{
@@ -106,19 +105,35 @@ test('reader component: mounted with the reusable script and cover-first HTML',(
 test('gentle age language: guides, never requirements',()=>{
  const banned=/your 2-year-old should|your child must|by age 2 they should|test your toddler|should know/i;
  assert.doesNotMatch(page,banned);
- assert.match(page,/For ages around 2/);
+ assert.match(page,/Age 2/);
+ assert.doesNotMatch(page,/For ages around 2/);
  assert.match(page,/Read together at your child/);
 });
 
-test('library: Books & Stories section with the Read Book card',()=>{
- assert.match(library,/id="books"/);
- assert.match(library,/<h2>Books &amp; Stories<\/h2>/);
- const card=library.match(/<a class="lib-item" href="\/library\/books\/age-2\/bunny-finds-a-friend\/">[\s\S]*?<\/a>/);
- assert.ok(card,'book card exists in the library');
+test('library: a books-only bookshelf with the Read Book card and honest empty shelves',()=>{
+ assert.match(library,/data-library/);
+ assert.match(library,/<h1>Library<\/h1>/);
+ // four real category shelves, nothing else listed
+ for(const c of ['storybooks','educational','activity','life-skills'])assert.match(library,new RegExp('data-cat="'+c+'"'),'shelf '+c);
+ assert.doesNotMatch(library,/href="\/preschool\/3-years\//,'no class listings on the library');
+ assert.doesNotMatch(library,/href="\/flashcards\/[a-z-]+\//,'no flashcard set listings on the library (the hub pointer is fine)');
+ assert.doesNotMatch(library,/href="\/preschool\/3-years\/magic-/,'no magic game listings on the library');
+ const card=library.match(/<article class="bookcard"[\s\S]*?<\/article>/);
+ assert.ok(card,'book card exists on the bookshelf');
+ assert.match(card[0],/href="\/library\/books\/age-2\/bunny-finds-a-friend\/"/);
  assert.match(card[0],/Bunny Finds a Friend/);
- assert.match(card[0],/Age 2 · Picture Story/);
  assert.match(card[0],/Read Book/);
- assert.match(card[0],/lib-thumb--book/);
+ assert.match(card[0],/data-age="age-2"/);
+ assert.match(card[0],/Storybooks/);
+ // age filter only offers ages that really have books
+ assert.match(library,/data-age-chip="age-2"/);
+ assert.doesNotMatch(library,/data-age-chip="newborn"/);
+ // three shelves hold no books yet and say so honestly
+ const empties=[...library.matchAll(/class="lib-empty"[^>]*>([\s\S]*?)<\/div>/g)].map(m=>m[1]);
+ assert.ok(empties.length>=3,'empty states rendered for the empty shelves');
+ // premium PDF is announced, coming soon, with no checkout and no price
+ assert.match(library,/coming soon/i);
+ assert.doesNotMatch(library,/\$\d|checkout|Buy now/i);
 });
 
 test('reader behaviour: keyboard, swipe, reduced motion, honest controls',()=>{

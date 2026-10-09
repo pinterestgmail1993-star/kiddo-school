@@ -324,20 +324,20 @@ test('magic games are wired into the whole school',()=>{
  for(const g of ['magic-number-garden','magic-shape-builder','magic-animal-playground','magic-opposites-adventure','magic-fruit-basket']){
   assert.ok(stage.includes('href="/preschool/3-years/'+g+'/"'),'stage shelf: '+g);
   assert.ok(lp.includes('href="/preschool/3-years/'+g+'/"'),'learning path: '+g);
-  assert.ok(library.includes('href="/preschool/3-years/'+g+'/"'),'learning library: '+g);
   assert.ok(classroom.includes('href="/preschool/3-years/'+g+'/"'),'my classroom: '+g);
   assert.ok(sitemap.includes('<loc>https://kiddo-school.pages.dev/preschool/3-years/'+g+'/</loc>'),'sitemap: '+g);
  }
  // Color Lab stays live and wired to Class 4, but is absent from every magic-games shelf
  assert.ok(sitemap.includes('<loc>https://kiddo-school.pages.dev/preschool/3-years/magic-color-mixing/</loc>'),'sitemap: magic-color-mixing');
- for(const [label,doc] of [['stage shelf',stage],['learning path',lp],['learning library',library],['my classroom',classroom]]){
+ for(const [label,doc] of [['stage shelf',stage],['learning path',lp],['my classroom',classroom]]){
   assert.ok(!doc.includes('href="/preschool/3-years/magic-color-mixing/"'),'Color Lab removed from '+label);
  }
  assert.ok(stage.includes('The magic games'),'stage section heading');
  assert.ok(lp.includes('Age 3 magic games'),'learning path row label');
  assert.ok(classroom.includes('ON THE SHELF · MAGIC GAMES'),'my classroom panel');
- // the library magic shelf sits at the bottom of the page (after My Work), owner request
- assert.ok(library.indexOf('id="magic-games"')>library.indexOf('id="my-work"'),'library magic shelf is the last shelf');
+ // the library is books-only now: magic games live on the stage shelf, the
+ // learning path row and My Classroom — never as library listings
+ assert.ok(!library.includes('/preschool/3-years/magic-'),'no magic game listings on the books-only library');
  // each class links its own game (under its real name)
  assert.ok(c3.includes('href="/preschool/3-years/magic-shape-builder/"')&&c3.includes('Play Look &amp; Draw — Magic Shapes'),'Class 3 links its game');
  assert.ok(c4.includes('href="/preschool/3-years/magic-color-mixing/"')&&c4.includes('Play the Magic Color Lab game'),'Class 4 links its game');
@@ -349,5 +349,4 @@ test('magic games are wired into the whole school',()=>{
  assert.ok(c5.includes('href="/preschool/3-years/magic-opposites-adventure/"')&&c5.includes('Play the Magic Opposites Finder game'),'Class 5 links its game');
  // the magic games shelf is separate everywhere it appears
  assert.ok(lp.includes('lp-row lp-magic')&&lp.includes('outside the class sequence'),'learning path magic shelf is separated');
- assert.ok(library.includes('Magic Games · playful practice for Age 3'),'library has its own magic games shelf');
 });

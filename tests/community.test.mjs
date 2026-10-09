@@ -157,7 +157,7 @@ test('homepage gains one clean community section; primary nav stays six items; P
   // asserted separately below.
   const topNav=nav.replace(/<div class="nav-parents"[\s\S]*?<\/div><\/div>/,'');
   const primary=(topNav.match(/<a\s/g)||[]).length;
-  assert.ok(primary===6,'primary nav keeps 6 links (5 anchors + search): '+file);
+  assert.ok(primary===7,'primary nav keeps 7 links (6 anchors + search): '+file);
   assert.ok(!topNav.includes('/school-community/'),'School Community stays out of the primary bar');
   assert.ok(nav.includes('School Community'),'Parents dropdown carries School Community');
   assert.ok(nav.includes('Principal’s Office'),'PO stays under Parents');

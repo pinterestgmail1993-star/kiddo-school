@@ -173,29 +173,28 @@ test('drawings stay private: no sitemap entry, no public ids',()=>{
 });
 
 /* ------------------------------------------------------ LEARNING LIBRARY */
-test('learning library organizes only real destinations',()=>{
+test('the library is a books-only bookshelf: real books, honest empty shelves, premium PDFs coming soon',()=>{
  assert.ok(lib.includes(`rel="canonical" href="${site}/learning-library/"`));
- assert.ok(lib.includes('<title>Learning Library — Toddler Activities &amp; Classes | Kiddo.school</title>'));
- assert.ok(lib.includes('<meta name="description" content="Explore Kiddo School classes, games, Circle Time and creative activities for toddlers, all organized in one simple Learning Library.">'));
- assert.ok(lib.includes('<h1>Learning Library</h1>'));
- assert.ok(lib.includes('Find something to learn, play or explore.'));
- for(const s of learningLibrary.sections){
-  assert.ok(lib.includes(`<h2>${s.title.replace('&','&amp;')}</h2>`),'section '+s.title);
-  for(const it of s.items){
-   assert.ok(lib.includes(`href="${it.href}"`),'item '+it.name);
-   assert.ok(read('dist'+it.href+'index.html'),'real destination for '+it.name);
-  }
- }
- for(const a of learningLibrary.ages.items)assert.ok(read('dist'+a[1]+'index.html'),'age hub '+a[0]);
- assert.ok(lib.includes('>Class</span>'),'"Class" type label');
- assert.ok(lib.includes('>Game</span>'),'"Game" type label');
- assert.ok(lib.includes('>Circle Time</span>'),'"Circle Time" type label');
- assert.ok(lib.includes('>Activity</span>'),'"Activity" type label');
+ assert.ok(lib.includes('<title>Library — Free Picture Books to Read Online | Kiddo.school</title>'));
+ // scope content checks to the page body: the footer and header are sitewide
+ const body=lib.match(/<main id="main">[\s\S]*<\/main>/)[0];
+ assert.ok(lib.includes('<h1>Library</h1>'));
+ assert.ok(lib.includes('data-library'),'filter root present');
+ // books only: no classes, games, flashcards, circle time or activities listed
+ assert.ok(!body.includes('href="/preschool/3-years/'),'no class listings');
+ assert.ok(!/href="\/flashcards\/[a-z-]+\//.test(body),'no flashcard set listings (hub pointer allowed)');
+ assert.ok(!body.includes('href="/toddler/2-years/play-and-practice/'),'no game listings');
+ assert.ok(!body.includes('href="/toddler/2-years/my-work/'),'no activity listings');
+ assert.ok(!body.includes('href="/toddler/2-years/circle-time/'),'no circle time listings');
+ // every category shelf renders, each book card points at a real readable book
+ for(const c of ['storybooks','educational','activity','life-skills'])assert.ok(lib.includes(`data-cat="${c}"`),'shelf '+c);
+ assert.ok(lib.includes('href="/library/books/age-2/bunny-finds-a-friend/"'),'the real book is listed');
+ assert.ok(read('dist/library/books/age-2/bunny-finds-a-friend/index.html'),'book page exists');
+ assert.ok(lib.includes('Read Book'),'free reading CTA');
+ assert.ok(lib.includes('coming soon'),'premium PDF labelled coming soon');
+ assert.ok(!/\$\d|Buy now|checkout/i.test(lib),'no fake checkout or invented prices');
  assert.ok(lib.includes('href="/my-classroom/"')&&lib.includes('Back to My Classroom'));
- assert.ok(lib.includes('BreadcrumbList')&&lib.includes('"name":"Learning Library"'));
- assert.ok(lib.includes('today’s class'),'distinction from today’s class');
- assert.ok(!/Coming Soon/i.test(lib),'no placeholder cards');
- assert.ok(lib.includes('width="1920" height="1080"'),'circle time cover keeps its true ratio');
+ assert.ok(lib.includes('BreadcrumbList')&&lib.includes('"name":"Library"'));
 });
 
 /* -------------------------------------------------------- OUR CLASSROOM */

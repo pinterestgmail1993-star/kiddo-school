@@ -147,15 +147,14 @@ test('print view: twelve cards, two to a page, excluded from sitemap',()=>{
  assert.ok(!map.includes('opposites-and-comparing/print/'),'print stays out of sitemap');
 });
 
-test('whole-school wiring: hubs, learning path, library, spaces and homepage all know Class 5',()=>{
+test('whole-school wiring: hubs, learning path, spaces and homepage all know Class 5',()=>{
  assert.ok(page('preschool').includes('opposites for comparing'),'preschool hub lists the class');
  assert.ok(page('preschool/3-years').includes('opposites-and-comparing'),'Age 3 stage lists class');
  assert.ok(page('preschool/3-years').includes('/flashcards/opposites/'),'Age 3 stage lists set');
  assert.ok(page('learning-path').includes('Class 19: <a href="/preschool/3-years/opposites-and-comparing/">Opposites &amp; Comparing</a>'),'learning path row 19');
  assert.ok(page('learning-path').includes('Twenty-two classes are ready now'),'twenty-classes copy');
  assert.ok(page('flashcards').includes('/flashcards/opposites/'),'library lists opposites set');
- assert.ok(page('learning-library').includes('/flashcards/opposites/'),'learning library lists set');
- assert.ok(page('learning-library').includes('Opposites &amp; Comparing'),'learning library lists class');
+ assert.ok(!page('learning-library').includes('/preschool/3-years/magic-opposites-adventure/'),'books-only library lists no games');
  assert.ok(page('').includes('Twenty-two classes are ready now'),'homepage says twenty');
  assert.ok(page('about').includes('Twenty-two classes from birth to age three are ready today'),'about says twenty');
  // the class 4 completion now honestly links the real next class

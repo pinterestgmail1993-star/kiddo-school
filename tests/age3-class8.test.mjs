@@ -157,9 +157,7 @@ test('class 8 is wired into the whole school honestly',()=>{
  assert.ok(stage.includes('href="/preschool/3-years/fruits-and-vegetables/"'));
  assert.ok(stage.includes('Fruits &amp; Vegetables'));
  assert.ok(stage.includes('href="/flashcards/fruits-and-vegetables/"'));
- assert.ok(library.includes('href="/preschool/3-years/fruits-and-vegetables/"'));
- assert.ok(library.includes("name:'Fruits & Vegetables'")||library.includes('Fruits &amp; Vegetables'));
- assert.ok(library.includes('href="/flashcards/fruits-and-vegetables/"'));
+ assert.ok(!library.includes('/preschool/3-years/fruits-and-vegetables/'),'books-only library lists no classes');
  // class 7 completion links class 8 as the real next stop
  assert.ok(c7.includes('href="/preschool/3-years/fruits-and-vegetables/"'));
  assert.ok(c7.includes('Go to the next class'));

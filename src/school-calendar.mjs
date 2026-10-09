@@ -12,7 +12,7 @@ export function schoolCalendarBody(){
  ${day(3,'Wednesday','Circle Time','Hello, move, listen, a tiny story and goodbye — a little preschool morning, at home.','Sit down for Circle Time','/toddler/2-years/circle-time/hello-school/')}
  ${day(4,'Thursday','My work','Sit at the desk together: draw and scribble, or trace a line with one finger — real work to be proud of.','Go to My Work','/toddler/2-years/my-work/')}
  ${day(5,'Friday','Let&rsquo;s explore','A little mission away from the screen — a color hunt, a listening walk, or whatever the day suggests.','Pick a mission','/toddler/2-years/lets-explore/')}
- ${day(6,'Saturday','Library','One quiet look through the Learning Library: a class, the flashcards or Circle Time again — whatever feels good.','Visit the Library','/learning-library/')}
+ ${day(6,'Saturday','Library','One quiet look through the Library: a book, the flashcards or Circle Time again — whatever feels good.','Visit the Library','/learning-library/')}
  ${day(0,'Sunday','Together day','A slow one. Go outside, listen carefully and map the sounds you hear along the way.','Make a sound map','/nature/sound-map/')}
  </ol>`;
  return `<section class="wrap section compact sc-today-wrap">

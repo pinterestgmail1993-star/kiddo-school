@@ -4,7 +4,7 @@
 // invented content — every visible item goes somewhere real.
 import {csLesson,vhLesson,emLesson,anLesson,msLesson,fwfhLesson,fcLesson,gbLesson,gfLesson,lessonsBase} from './lessons.mjs';
 import {helloSchool as helloSchoolCt,circleBase} from './circle-time.mjs';
-import {bunnyBook} from './books.mjs';
+import {BOOKS,BOOK_CATEGORIES,BOOK_AGES} from './books.mjs';
 import {alphabetLesson} from './flashcards/data-alphabet.mjs';
 import {numbersLesson} from './flashcards/data-numbers.mjs';
 import {shapesLesson} from './flashcards/data-shapes.mjs';
@@ -95,94 +95,65 @@ export function schoolBagBody(B){
 }
 
 /* ------------------------------------------------------- LEARNING LIBRARY */
-const MG='https://pub-f2fcb7c9b45a496cbeefef18dbba0ec0.r2.dev/school/interactive-activities/';
-const mgThumb=(file,alt)=>`<img src="${MG}${file}" width="1080" height="1080" alt="${alt}" loading="lazy">`;
+/* ------------------------------------------------------- LEARNING LIBRARY */
+// The Library is the school bookshelf: books only. Classes, games,
+// flashcards and activities keep their own homes (Learning Path, My
+// Classroom, the stage pages, the flashcards library) — this page stays a
+// calm place to find and read real books. Nothing invented: a card exists
+// only when the book's artwork and story are really uploaded.
 export const learningLibrary={
  path:libraryBase,
- seoTitle:'Learning Library — Toddler Activities & Classes',
- title:'Learning Library — Toddler Activities & Classes',
- h1:'Learning Library',
- description:'Explore Kiddo School classes, games, Circle Time and creative activities for toddlers, all organized in one simple Learning Library.',
+ seoTitle:'Library — Free Picture Books to Read Online',
+ title:'Library — Free Picture Books to Read Online',
+ h1:'Library',
+ description:'The Kiddo School Library: real picture books for toddlers, free to read online as often as you like, organized by age and category. Printable book PDFs are premium products, coming soon.',
  eyebrow:'THE BOOKSHELF',
- intro:'Find something to learn, play or explore.',
- ages:{heading:'Browse by age',items:[
-  ['Newborn','/newborn/'],['Baby','/baby/'],['12–18 Months','/toddler/12-18-months/'],['18–24 Months','/toddler/18-24-months/'],['Age 2','/toddler/2-years/'],['Age 3','/preschool/3-years/']]},
- sections:[
-  {id:'preschool',title:'Preschool · Letters, Numbers & Shapes',items:[
-   {kind:'Class · Age 3',href:alphabetLesson.path,name:'Alphabet & Letter Sounds',lesson:alphabetLesson},
-   {kind:'Class · Age 3',href:numbersLesson.path,name:'Numbers & Counting (1–10)',lesson:numbersLesson},
-   {kind:'Class · Age 3',href:shapesLesson.path,name:'Shapes & Patterns',lesson:shapesLesson},
-   {kind:'Class · Age 3',href:colorsLesson.path,name:'Colors & Color Mixing',lesson:colorsLesson},
-   {kind:'Class · Age 3',href:oppositesLesson.path,name:'Opposites & Comparing',lesson:oppositesLesson},
-   {kind:'Class · Age 3',href:animalsLesson.path,name:'Animals & Their Sounds',lesson:animalsLesson},
-   {kind:'Class · Age 3',href:bodyPartsLesson.path,name:'Body Parts & My Five Senses',lesson:bodyPartsLesson},
-   {kind:'Class · Age 3',href:fruitsLesson.path,name:'Fruits & Vegetables',lesson:fruitsLesson},
-   {kind:'Flashcards · Age 3',href:'/flashcards/alphabet/',name:'Alphabet Flashcards A–Z',lesson:alphabetLesson},
-   {kind:'Flashcards · Age 3',href:'/flashcards/numbers-and-counting/',name:'Numbers 1–10 Flashcards',lesson:numbersLesson},
-   {kind:'Flashcards · Age 3',href:'/flashcards/shapes/',name:'Shape Flashcards',lesson:shapesLesson},
-   {kind:'Flashcards · Age 3',href:'/flashcards/colors/',name:'Color Flashcards',lesson:colorsLesson},
-   {kind:'Flashcards · Age 3',href:'/flashcards/opposites/',name:'Opposite Flashcards',lesson:oppositesLesson},
-   {kind:'Flashcards · Age 3',href:'/flashcards/animal-sounds/',name:'Animal Flashcards',lesson:animalsLesson},
-   {kind:'Flashcards · Age 3',href:'/flashcards/body-parts-and-five-senses/',name:'Body Parts & Five Senses Flashcards',lesson:bodyPartsLesson},
-   {kind:'Flashcards · Age 3',href:'/flashcards/fruits-and-vegetables/',name:'Fruit & Vegetable Flashcards',lesson:fruitsLesson}]},
-  {id:'books',title:'Books & Stories',items:[
-   {kind:'Age 2 · Picture Story',href:bunnyBook.path,name:'Bunny Finds a Friend',cta:'Read Book',bookThumb:`<img src="${bunnyBook.base}${bunnyBook.cover.file}" width="2000" height="1545" alt="Cover of the picture book Bunny Finds a Friend: a smiling rabbit in a garden" loading="lazy">`}]},
-  {id:'words',title:'Words & Talking',items:[
-   {kind:'Class',href:anLesson.path,name:'Animals & Sounds',lesson:anLesson},
-   {kind:'Class',href:vhLesson.path,name:'Vehicles & Sounds',lesson:vhLesson},
-   {kind:'Class',href:fwfhLesson.path,name:'First Words: Food & Home',lesson:fwfhLesson}]},
-  {id:'colors',title:'Colors & Shapes',items:[
-   {kind:'Class',href:csLesson.path,name:'Colors & Shapes',lesson:csLesson},
-   {kind:'Game',href:'/toddler/2-years/play-and-practice/sort-it/',name:'Sort It',doodle:'sort'}]},
-  {id:'animals',title:'Animals',items:[
-   {kind:'Class',href:anLesson.path,name:'Animals & Sounds',lesson:anLesson},
-   {kind:'Game',href:'/toddler/2-years/play-and-practice/match-it/',name:'Match It',doodle:'match'}]},
-  {id:'school-garden',title:'School Garden',items:[
-   {kind:'Collections',href:'/toddler/2-years/school-garden/',name:'School Garden'},
-   {kind:'Class',href:'/toddler/2-years/garden-bugs-and-friends/',name:'Bugs & Insects',lesson:gbLesson},
-   {kind:'Class',href:gfLesson.path,name:'Garden Animals & Friends',img:`<img src="${gfLesson.ogImage}" width="1414" height="2000" alt="${gfLesson.ogAlt}" loading="lazy">`}]},
-  {id:'vehicles',title:'Vehicles',items:[
-   {kind:'Class',href:vhLesson.path,name:'Vehicles & Sounds',lesson:vhLesson}]},
-  {id:'feelings',title:'Feelings',items:[
-   {kind:'Class',href:emLesson.path,name:'Emotions & Feelings',lesson:emLesson}]},
-  {id:'thinking',title:'Thinking & Matching',items:[
-   {kind:'Class',href:msLesson.path,name:'Matching & Sorting',lesson:msLesson},
-   {kind:'Class',href:fcLesson.path,name:'First Concepts: Big & Small, Up & Down',lesson:fcLesson},
-   {kind:'Game',href:'/toddler/2-years/play-and-practice/match-it/',name:'Match It',doodle:'match'},
-   {kind:'Game',href:'/toddler/2-years/play-and-practice/sort-it/',name:'Sort It',doodle:'sort'},
-   {kind:'Game',href:'/toddler/2-years/play-and-practice/whats-different/',name:'What’s Different?',doodle:'diff'}]},
-  {id:'circle-time',title:'Circle Time',items:[
-   {kind:'Circle Time',href:helloSchoolCt.path,name:'Hello School!',ct:true}]},
-  {id:'play',title:'Play & Practice',items:[
-   {kind:'Games',href:'/toddler/2-years/play-and-practice/',name:'Play & Practice',doodle:'diff'}]},
-  {id:'my-work',title:'My Work',items:[
-   {kind:'Activities',href:'/toddler/2-years/my-work/',name:'My Work',doodle:'draw'},
-   {kind:'Activity',href:'/toddler/2-years/my-work/draw-and-scribble/',name:'Draw & Scribble',doodle:'draw'},
-   {kind:'Activity',href:'/toddler/2-years/my-work/trace-and-follow/',name:'Trace & Follow',doodle:'trace'}]},
-  {id:'magic-games',title:'Magic Games · playful practice for Age 3',items:[
-   {kind:'Magic game · Class 2',href:'/preschool/3-years/magic-number-garden/',name:'Magic Counting Garden',img:mgThumb('magic-number-garden-age-3/06-magic-number-garden-cover.webp','The Magic Counting Garden cover: a smiling garden with flowers, a bee, a butterfly, ladybugs and a watering can')},
-   {kind:'Magic game · Class 3',href:'/preschool/3-years/magic-shape-builder/',name:'Look & Draw — Magic Shapes',img:mgThumb('magic-shape-builder-age-3/06-magic-shape-builder-cover.webp','The Look & Draw — Magic Shapes cover: a house, rocket, tree, robot and butterfly built from colorful shapes')},
-   {kind:'Magic game · Class 5',href:'/preschool/3-years/magic-opposites-adventure/',name:'Magic Opposites Finder',img:mgThumb('magic-opposites-adventure-age-3/07-magic-opposites-adventure-cover.webp','The Magic Opposites Finder cover: a ball, a tree, a pencil, a glass, a soup bowl and a door')},
-   {kind:'Magic game · Class 6',href:'/preschool/3-years/magic-animal-playground/',name:'Animal Sound Safari',img:mgThumb('magic-animal-playground-age-3/07-animal-playground-cover.webp','The Animal Sound Safari cover: six friendly animals on a playground')},
-   {kind:'Magic game · Class 8',href:'/preschool/3-years/magic-fruit-basket/',name:'Magic Fruit Basket',img:mgThumb('magic-fruit-basket-age-3/10-fruit-basket-cover.webp','The Magic Fruit Basket cover: a woven basket surrounded by colorful fruit')}]}
- ]
+ intro:'Every book in the school, on one shelf. Reading online is free and unlimited — no account, no payment, no limits.'
 };
 export function learningLibraryBody(Lb){
- const item=it=>`<a class="lib-item" href="${it.href}">
-  <span class="lib-thumb${it.bookThumb?' lib-thumb--book':''}">${it.img?it.img:it.bookThumb?it.bookThumb:it.ct?ctCover:it.lesson?coverImg(it.lesson):`<span class="lib-doodle">${doodle(it.doodle)}</span>`}</span>
-  <span class="lib-copy"><strong>${esc(it.name)}</strong><span class="lib-kind">${it.kind}</span></span>
-  <span class="fc-open">${it.cta||'Open'} <span aria-hidden="true">↗</span></span></a>`;
- return `${crumbs([['Learning Library',null]])}
- <section class="wrap section compact"><span class="eyebrow">${Lb.eyebrow}</span>
- <h1>${esc(Lb.h1)}</h1>
- <p class="mw-lede">${Lb.intro}</p>
- <div class="lib-ages"><span class="lib-ages-label">${Lb.ages.heading}:</span>
-  ${Lb.ages.items.map(([label,href])=>`<a class="lib-age${href==='/toddler/2-years/'?' is-on':''}" href="${href}">${label}</a>`).join('')}
- </div>
- ${Lb.sections.map(s=>`<div class="lib-section" id="${s.id}"><h2>${esc(s.title)}</h2>
-  <div class="lib-grid">${s.items.map(item).join('\n  ')}</div></div>`).join('\n')}
- <p class="fc-hint">Looking for today’s class? It is on the board in <a href="/my-classroom/">My Classroom</a>, and the whole journey is on the <a href="/learning-path/">Learning Path</a>.</p>
- <div class="hero-actions"><a class="button button-ghost" href="/my-classroom/">Back to My Classroom</a></div>
+ const catCount=id=>BOOKS.filter(b=>b.category===id).length;
+ const catName=id=>(BOOK_CATEGORIES.find(c=>c.id===id)||{}).name||id;
+ const agesWithBooks=BOOK_AGES.filter(a=>BOOKS.some(b=>b.age===a.id));
+ const ageHome=id=>{const b=BOOKS.find(x=>x.age===id);return b?'#cat-'+b.category:'#top';};
+ const card=b=>`<article class="bookcard" data-lib-card data-age="${b.age}">
+  <a class="bookcard-cover" href="${b.path}"><img src="${b.base}${b.cover.file}" width="${b.cover.w||b.w}" height="${b.cover.h||b.h}" alt="${esc(b.cover.alt)}" loading="lazy"></a>
+  <div class="bookcard-body">
+   <span class="lib-kind">${esc(b.kind)}</span>
+   <h3><a href="${b.path}">${esc(b.title)}</a></h3>
+   <p>${esc(b.description)}</p>
+   <div class="bookcard-pills"><span class="pill">${esc(b.ageLabel)}</span><span class="pill">${esc(catName(b.category))}</span></div>
+   <a class="button bookcard-read" href="${b.path}">Read Book <span aria-hidden="true">↗</span></a>
+  </div>
+ </article>`;
+ return `${crumbs([['Library',null]])}
+ <section class="wrap section compact" data-library id="top">
+  <span class="eyebrow">${Lb.eyebrow}</span>
+  <h1>${esc(Lb.h1)}</h1>
+  <p class="mw-lede">${Lb.intro}</p>
+  <p class="fc-hint">Printable book PDFs are premium products and are <strong>coming soon</strong> — reading every book right here on the site is free, with no account and no limits.</p>
+  <div class="lib-ages" role="group" aria-label="Browse by category">
+   <span class="lib-ages-label">Browse by category:</span>
+   ${BOOK_CATEGORIES.map(c=>`<a class="lib-age" href="#cat-${c.id}" data-cat="${c.id}">${esc(c.name)} <span class="chip-count">${catCount(c.id)}</span></a>`).join('')}
+  </div>
+  <div class="lib-ages" role="group" aria-label="Browse by age">
+   <span class="lib-ages-label">Browse by age:</span>
+   ${agesWithBooks.length?agesWithBooks.map(a=>`<a class="lib-age" href="${ageHome(a.id)}" data-age-chip="${a.id}">${esc(a.label)}</a>`).join(''):'<span class="fc-hint">The first books are on their way.</span>'}
+  </div>
+  ${BOOK_CATEGORIES.map(c=>{
+   const books=BOOKS.filter(b=>b.category===c.id);
+   const label=books.length===1?'1 book':books.length+' books';
+   const shelf=books.length
+    ?`<div class="lib-grid bookshelf">${books.map(card).join('\n  ')}</div>`
+    :`<div class="lib-empty"><p><strong>No books on this shelf yet.</strong></p><p>Nothing here is a placeholder — this shelf stays empty until a real book is ready to read.</p></div>`;
+   return `<div class="lib-section lib-shelf" id="cat-${c.id}" data-lib-section data-cat="${c.id}">
+    <h2>${esc(c.name)} <span class="chip-count">${label}</span></h2>
+    <p class="lib-blurb">${esc(c.blurb)}</p>
+    ${books.length?`<div class="lib-empty" data-lib-empty hidden><p><strong>No books on this shelf for that age yet.</strong></p><p>Try another age, or clear the filter to see the whole shelf.</p></div>`:''}
+    ${shelf}
+   </div>`;
+  }).join('\n')}
+  <p class="fc-hint">Looking for classes, games or flashcards? They keep their own rooms: the <a href="/learning-path/">Learning Path</a>, <a href="/my-classroom/">My Classroom</a> and the <a href="/flashcards/">Flashcards</a> library. The <a href="/toddler/2-years/school-garden/">School Garden</a> lives in Explore Our School on the <a href="/">School Home</a> page.</p>
+  <div class="hero-actions"><a class="button button-ghost" href="/my-classroom/">Back to My Classroom</a></div>
  </section>`;
 }
 export {bcSchema};

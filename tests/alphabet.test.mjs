@@ -153,8 +153,8 @@ test('Age 3 is wired into the whole school, not a separate website',()=>{
  assert.ok(lib.includes('For preschoolers'),'flashcards library gains a preschool shelf');
  assert.ok(lib.includes('href="/flashcards/alphabet/"'),'library lists the alphabet set');
  const library=read('dist/learning-library/index.html');
- assert.ok(library.includes('href="/preschool/3-years/alphabet-and-letter-sounds/"'),'Learning Library links the class');
- assert.ok(library.includes('>Age 3</a>'),'Learning Library has an Age 3 chip');
+ assert.ok(!library.includes('/preschool/3-years/'),'books-only library lists no classes');
+ assert.ok(!library.includes('data-age-chip="age-3"'),'no Age 3 chip while no Age 3 book exists');
  const map=read('dist/sitemap.xml');
  for(const u of ['/preschool/','/preschool/3-years/','/preschool/3-years/alphabet-and-letter-sounds/','/flashcards/alphabet/','/flashcards/alphabet/apple/','/flashcards/alphabet/zebra/'])
   assert.ok(map.includes(`<loc>https://kiddo-school.pages.dev${u}</loc>`),`sitemap includes ${u}`);

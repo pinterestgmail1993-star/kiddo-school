@@ -124,15 +124,14 @@ test('print view: twelve splash+picture pairs, one pair per page, excluded from 
  assert.ok(!map.includes('colors-and-color-mixing/print/'),'print stays out of sitemap');
 });
 
-test('whole-school wiring: hubs, learning path, library, spaces and homepage all know Class 4',()=>{
+test('whole-school wiring: hubs, learning path, spaces and homepage all know Class 4',()=>{
  assert.ok(page('preschool').includes('colors with mixing'),'preschool hub lists the class');
  assert.ok(page('preschool/3-years').includes('colors-and-color-mixing'),'Age 3 stage lists class');
  assert.ok(page('preschool/3-years').includes('/flashcards/colors/'),'Age 3 stage lists set');
  assert.ok(page('learning-path').includes('Class 18: <a href="/preschool/3-years/colors-and-color-mixing/">Colors &amp; Color Mixing</a>'),'learning path row 18');
  assert.ok(page('learning-path').includes('Twenty-two classes are ready now'),'twenty-classes copy');
  assert.ok(page('flashcards').includes('/flashcards/colors/'),'library lists colors set');
- assert.ok(page('learning-library').includes('/flashcards/colors/'),'learning library lists set');
- assert.ok(page('learning-library').includes('Colors &amp; Color Mixing'),'learning library lists class');
+ assert.ok(!page('learning-library').includes('/preschool/3-years/magic-color-mixing/'),'books-only library lists no games');
  assert.ok(page('').includes('Twenty-two classes are ready now'),'homepage says twenty');
  assert.ok(page('about').includes('Twenty-two classes from birth to age three are ready today'),'about says twenty');
  // lesson hero uses the real rainbow splash cover at true dims

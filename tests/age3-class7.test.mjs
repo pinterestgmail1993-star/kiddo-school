@@ -155,12 +155,8 @@ test('class 7 is wired into the whole school honestly',()=>{
  assert.ok(stage.includes('href="/preschool/3-years/body-parts-and-five-senses/"'));
  assert.ok(stage.includes('Body Parts &amp; My Five Senses'));
  assert.ok(stage.includes('href="/flashcards/body-parts-and-five-senses/"'));
- // learning library preschool shelf: class + flashcards, and the missing Class 6 entries
- assert.ok(library.includes('href="/preschool/3-years/body-parts-and-five-senses/"'));
- assert.ok(library.includes('Body Parts &amp; My Five Senses'));
- assert.ok(library.includes('href="/preschool/3-years/animals-and-their-sounds/"'));
- assert.ok(library.includes('href="/flashcards/body-parts-and-five-senses/"'));
- assert.ok(library.includes('href="/flashcards/animal-sounds/"'));
+ // the library is books-only now: classes and flashcards live on hubs
+ assert.ok(!library.includes('/preschool/3-years/'),'books-only library lists no classes');
  // class 6 completion links class 7 as the real next stop
  assert.ok(c6.includes('href="/preschool/3-years/body-parts-and-five-senses/"'));
  assert.ok(c6.includes('Go to the next class'));

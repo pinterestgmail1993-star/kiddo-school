@@ -1224,7 +1224,7 @@ export const gfLesson={
   'Sounds and movement before facts. Hopping, wiggling and quacking teach the names better than any explanation, so be as silly as your toddler needs you to be.',
   'Keep it honest and gentle: some of these animals live in gardens, some just visit and some stay far outdoors — and all of them stay wild. Looking is the game; touching, feeding and chasing are not part of it.'
  ],note:'<strong>Age ranges are a guide.</strong> Go at your child’s pace.'},
- pills:{heading:'Where to next?',items:[['School Garden','/toddler/2-years/school-garden/'],['Age 2 classes','/toddler/2-years/'],['Learning Library','/learning-library/']]},
+ pills:{heading:'Where to next?',items:[['School Garden','/toddler/2-years/school-garden/'],['Age 2 classes','/toddler/2-years/'],['Library','/learning-library/']]},
  hubBlurb:'Eighteen garden and outdoor animals — a bird, a frog, a squirrel and more — with two gentle games and a look-don’t-touch nature hunt. Made for two-year-olds.',
  schema:{resourceType:'Interactive toddler class',level:'Toddler (age 2)',teaches:'Animal names for toddlers — bird, frog, squirrel, rabbit and more — through looking, naming and playing together',audience:'Parents of toddlers',keywords:'garden animals for kids, garden animals for toddlers, animals for toddlers, animal vocabulary for toddlers, animal flashcards for toddlers, animal picture cards, learning animal names, nature activities for toddlers'}
 };

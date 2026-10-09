@@ -160,10 +160,15 @@ test('School Garden hub links the real collections; Learning Library links the g
  assert.ok(hub.includes('Garden Animals &amp; Friends'));
  assert.ok(!hub.includes('Garden Vocabulary'), 'the unfinished Garden Vocabulary collection is NOT faked');
  assert.ok(!hub.includes('coming soon') || !/coming soon/i.test(hub.replace(/keeps growing[^<]*/, '')), 'no unfinished-section teasers');
- assert.ok(library.includes('id="school-garden"'), 'library has the School Garden section');
- const gardenSection = library.slice(library.indexOf('id="school-garden"'));
- assert.ok(gardenSection.includes('href="/toddler/2-years/school-garden/garden-friends/"'), 'library links the new lesson');
- assert.ok(gardenSection.includes('href="/toddler/2-years/garden-bugs-and-friends/"'), 'library links the bugs collection');
+ // The library is books-only now: the School Garden is reached from the
+ // homepage Explore Our School section and the footer instead.
+ const home = read('dist/index.html');
+ assert.ok(home.includes('id="explore-our-school"'), 'homepage has Explore Our School');
+ const explore = home.slice(home.indexOf('id="explore-our-school"'));
+ assert.ok(explore.includes('href="/toddler/2-years/school-garden/"'), 'Explore links the School Garden');
+ assert.ok(explore.includes('School Garden') && explore.includes('School Library'), 'both locations named');
+ assert.ok(explore.includes('href="/learning-library/"'), 'Explore links the School Library');
+ assert.ok(!explore.includes('Art Studio') && !explore.includes('Playroom'), 'no unbuilt locations promised');
  // main navigation is untouched — no garden links in the site header
  const nav = html.slice(html.indexOf('<nav aria-label="Main navigation"'), html.indexOf('</nav>'));
  assert.ok(!nav.includes('garden'), 'School Garden stays out of the main navigation');
