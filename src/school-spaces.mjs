@@ -122,7 +122,7 @@ export function learningLibraryBody(Lb){
    <h3><a href="${b.path}">${esc(b.title)}</a></h3>
    <p>${esc(b.description)}</p>
    <div class="bookcard-pills"><span class="pill">${esc(b.ageLabel)}</span><span class="pill">${esc(catName(b.category))}</span></div>
-   <a class="button bookcard-read" href="${b.path}">Read Book <span aria-hidden="true">↗</span></a>
+   <a class="button bookcard-read" href="${b.path}">${esc(b.readLabel||'Read Book')} <span aria-hidden="true">↗</span></a>
   </div>
  </article>`;
  return `${crumbs([['Library',null]])}

@@ -1084,32 +1084,6 @@ button.mg-tile img{width:100%;height:auto;pointer-events:none}
 .mg-tile-say{display:block;font-size:12.5px;font-weight:600;color:var(--muted)}
 button.mg-tile.is-playing{outline:3px solid #71326d;outline-offset:2px}
 .mg-note{margin-top:22px;border-left:4px solid #a9694e;background:var(--white);padding:13px 16px;font-size:14px;max-width:900px;color:var(--ink)}
-/* ---- Fill the Basket ---- */
-.mg-basket-stage{margin-top:18px;display:flex;flex-direction:column;align-items:center;gap:10px}
-.mg-basket{position:relative;max-width:420px;width:100%;border:0;background:none;padding:0}
-.mg-basket img{width:100%;height:auto}
-.mg-basket-count{margin:4px 0 0;font-weight:800;font-size:clamp(18px,3vw,24px);color:#5d3d1f;text-align:center}
-.mg-tray{margin-top:14px;display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
-button.mg-fruit{position:relative;border:1.5px solid var(--ink);background:var(--white);box-shadow:3px 3px 0 rgba(52,59,48,.16);border-radius:14px;padding:8px;cursor:pointer;font-family:inherit;width:104px;transition:transform .15s,box-shadow .15s}
-button.mg-fruit img{width:100%;height:auto;pointer-events:none}
-button.mg-fruit span{display:block;font-weight:800;font-size:13px;color:var(--ink);margin-top:2px}
-button.mg-fruit:hover,button.mg-fruit:focus-visible{transform:translate(-1px,-1px);box-shadow:5px 5px 0 rgba(52,59,48,.24)}
-button.mg-fruit.is-picked{outline:3px solid #71326d;outline-offset:2px}
-button.mg-fruit.is-in{opacity:.35;pointer-events:none}
-.mg-basket.is-target{outline:4px dashed #71326d;outline-offset:6px;border-radius:20px}
-.mg-fruit.is-drag{position:relative;z-index:5;box-shadow:8px 8px 0 rgba(52,59,48,.2)}
-.mg-landed{position:absolute;display:flex;flex-wrap:wrap;justify-content:center;align-content:flex-end;top:46%;left:24%;width:52%;height:34%;pointer-events:none}
-.mg-landed img{width:34%;height:auto;margin:-3%;transform:rotate(var(--tilt,0deg))}
-.mg-landed.mg-pop{animation:mg-pop .5s ease}
-@keyframes mg-pop{0%{transform:scale(.5) translateY(-30px);opacity:0}60%{transform:scale(1.12) translateY(0);opacity:1}100%{transform:scale(1)}}
-.mg-basket-glow{animation:mg-glow .6s ease}
-@keyframes mg-glow{0%,100%{filter:none}50%{filter:brightness(1.08) saturate(1.1)}}
-/* ---- Find rounds reuse .tc-round/.tc-choice; count rows ---- */
-.mg-count-row{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:0 0 16px}
-.mg-count-row img{width:84px;height:auto}
-.mg-numbers{display:flex;flex-wrap:wrap;gap:12px}
-button.mg-num{display:inline-flex;align-items:center;justify-content:center;min-width:76px;min-height:76px;border:2px solid var(--ink);border-radius:12px;background:#fff;font-size:38px;font-weight:800;box-shadow:3px 3px 0 rgba(52,59,48,.16);cursor:pointer;font-family:inherit;transition:transform .15s}
-button.mg-num:hover,button.mg-num:focus-visible{transform:translate(-1px,-1px)}
 /* ---- Magic Color Mixing (pure CSS/SVG, no image assets) ---- */
 .mg-palette{margin-top:18px;display:flex;flex-wrap:wrap;gap:22px;justify-content:center}
 button.mg-splash{width:112px;height:112px;border:0;background:none;padding:0;cursor:pointer;font-family:inherit;transition:transform .18s}
@@ -1153,7 +1127,6 @@ button.mg-play-snd:active{transform:translateY(3px);box-shadow:0 1px 0 #d592b8}
 .mg-play-ic{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;background:#602865;color:#f9d2e8;font-size:12px}
 button.mg-play-snd.is-playing .mg-play-ic{animation:mg-pulse .9s ease-in-out infinite}
 @keyframes mg-pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.18)}}/* ---- Look & Draw — Magic Shapes: free drawing on a white canvas ---- */
-@keyframes sb-in{0%{transform:scale(.6);opacity:.4}70%{transform:scale(1.05)}100%{transform:scale(1);opacity:1}}
 .ld-layout{margin-top:18px;display:grid;gap:22px;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);align-items:start}
 .ld-ref{border:1.5px solid var(--ink);background:var(--white);box-shadow:4px 4px 0 rgba(52,59,48,.14);padding:12px;text-align:center}
 .ld-ref img{width:100%;height:auto;max-width:250px;margin:0 auto}
@@ -1184,79 +1157,18 @@ button.ld-tool[aria-pressed="true"]{background:#71326d;color:#fff;border-color:#
 .ld-status{margin-top:12px;font-weight:700;min-height:1.5em}
 .ld-parent{margin-top:8px;font-size:15px;color:var(--ink);border-left:4px solid var(--yellow);padding-left:12px}
 .ld-choose .ld-tile-sub{display:block;font-size:12.5px;font-weight:700;color:var(--muted);margin-top:2px}
+/* grouped gallery: shelf lines + letterboxed tiles + overflow-crop windows
+   for the files whose object is cut out of its raw square (banner-free) */
+.ld-groupline{grid-column:1/-1;font-weight:800;font-size:19px;color:var(--ink);margin:10px 0 2px;padding-bottom:6px;border-bottom:2px dashed var(--line)}
+.ld-tilebox{display:flex;align-items:center;justify-content:center;width:100%;aspect-ratio:1/1;background:var(--white)}
+.ld-tilebox img{width:100%;height:auto;pointer-events:none}
+.ld-crop{position:relative;display:block;overflow:hidden}
+.ld-crop img{position:absolute;height:auto;max-width:none;display:block}
+.ld-ref .ld-crop{width:100%;max-width:250px;margin:0 auto}
 @media(max-width:860px){.ld-layout{grid-template-columns:1fr}.ld-canvas-wrap,.ld-tools{max-width:520px}}
 /* ---- Magic games: calm + reduced-motion gates ---- */
-body.calm-mode .mg-landed.mg-pop,body.calm-mode .mg-basket-glow,body.calm-mode .mg-mixing .mg-drip-a,body.calm-mode .mg-mixing .mg-drip-b,body.calm-mode button.mg-animal.is-moving img{animation:none!important}
-@media(prefers-reduced-motion:reduce){.mg-landed.mg-pop,.mg-basket-glow,.mg-mixing .mg-drip-a,.mg-mixing .mg-drip-b,button.mg-animal.is-moving img{animation:none!important}button.mg-tile,button.mg-fruit,button.mg-animal,button.mg-splash,button.ld-color,button.ld-size,button.ld-tool{transition:none}.mg-result-blob{transition:none}}
-/* ---- Magic Number Garden ---- */
-.ng-round{margin-top:22px;border:1.5px solid var(--ink);background:var(--white);box-shadow:3px 3px 0 rgba(52,59,48,.12);padding:16px}
-.ng-bigword{font-size:clamp(26px,4vw,34px);font-weight:800;color:#4a6b3f;margin:2px 0 10px}
-.ng-numchip{display:inline-flex;align-items:center;justify-content:center;min-width:1.6em;height:1.6em;padding:0 .2em;border:2px solid var(--ink);border-radius:10px;background:var(--yellow);font-weight:800}
-.ng-plot{position:relative;aspect-ratio:100/56;margin-top:8px;border:2px solid #b9cf9f;border-radius:14px;background:linear-gradient(180deg,#eef5e2,#dceac6);overflow:hidden}
-.ng-itembtn{position:absolute;width:clamp(46px,9.5vw,76px);aspect-ratio:1;border:0;background:none;padding:0;margin:0;cursor:pointer;font-family:inherit;transform:translate(-50%,-50%)}
-.ng-itembtn img{width:100%;height:auto;pointer-events:none}
-.ng-badge{position:absolute;right:-6px;top:-8px;min-width:1.5em;height:1.5em;display:none;align-items:center;justify-content:center;padding:0 .25em;border:2px solid var(--ink);border-radius:999px;background:var(--yellow);font-size:15px;font-weight:800;color:var(--ink)}
-.ng-itembtn.is-counted{cursor:default}
-.ng-itembtn.is-counted .ng-badge{display:inline-flex}
-.ng-itembtn.is-counted img{opacity:.55}
-.ng-itembtn.is-pop{animation:sb-in .4s ease}
-.ng-itembtn:focus-visible{outline:3px solid #81543e;outline-offset:3px;border-radius:10px}
-.ng-roundmsg{margin-top:10px;font-weight:700;min-height:1.5em}
-.ng-spot{position:absolute;width:15%;aspect-ratio:1.5/1;border-radius:50%;background:#c9a06a;border:2px solid #a97f4b;transform:translate(-50%,-50%)}
-.ng-spot.is-used{opacity:0}
-.ng-plantedbox{position:absolute;inset:0}
-.ng-bloom{position:absolute;width:22%;transform:translate(-50%,-72%);animation:sb-in .5s ease}
-.ng-plantbtn svg{display:none}
-button[data-ng-plantbtn],button[data-ng-waterbtn]{display:inline-flex;align-items:center;gap:10px}
-.ng-can{width:44px;height:auto;display:inline-block}
-button[data-ng-waterbtn].is-pouring .ng-can{animation:oa-pour .7s ease}
-button[data-ng-plantbtn].is-done,button[data-ng-waterbtn].is-done{opacity:.55}
-@keyframes oa-pour{0%,100%{transform:rotate(0)}40%{transform:rotate(-24deg)}}
-.ng-group{position:relative;aspect-ratio:100/56;border:2px solid var(--ink);border-radius:12px;background:linear-gradient(180deg,#eef5e2,#dceac6);padding:0}
-.ng-group .ng-mini{position:absolute;width:26%;transform:translate(-50%,-50%)}
-.ng-group .ng-mini img{width:100%;height:auto}
-.tc-choice.ng-group{min-width:0;width:min(30vw,220px)}
-/* ---- Magic Opposites Adventure ---- */
-.oa-crop{position:relative;display:block;overflow:hidden;margin:0 auto}
-.oa-crop img{position:absolute;height:auto;max-width:none;display:block}
-.oa-scene{display:flex;align-items:flex-end;justify-content:center;min-height:min(46vw,320px);margin-top:14px;padding:14px;border:2px dashed var(--line);border-radius:16px;background:#fdfbf5}
-.oa-scene.is-changing{animation:oa-soft .5s ease}
-@keyframes oa-soft{0%{background:#fdfbf5}45%{background:#f4efe0}100%{background:#fdfbf5}}
-.oa-word{margin-top:12px;text-align:center;font-size:clamp(20px,3vw,26px);font-weight:800;color:#71326d;min-height:1.5em}
-.oa-ballscene .oa-ball{width:min(46%,240px);transition:transform .55s ease}
-.oa-ballscene.is-big .oa-crop{transform:scale(1.32)}
-.oa-ballscene.is-small .oa-crop{transform:scale(.5)}
-.oa-ballscene.is-mid .oa-crop{transform:scale(1)}
-.oa-pencilscene .oa-pencil{width:min(34%,190px);display:flex;justify-content:center}
-.oa-pencilscene .oa-pencil img{transform-origin:50% 96%;transition:transform .55s ease}
-.oa-pencilscene.is-long .oa-pencil img{transform:scale(1)}
-.oa-pencilscene.is-short .oa-pencil img{transform:scale(.55)}
-.oa-glassscene .oa-glass{width:min(38%,210px);transition:transform .3s}
-.oa-water{position:absolute;left:12%;width:76%;bottom:6%;height:0;background:rgba(90,167,214,.72);border-radius:6px 6px 10px 10px;transition:height .6s ease}
-.oa-glassscene.is-full .oa-water{height:58%}
-.oa-glassscene.is-empty .oa-water{height:0}
-.oa-doorhold{position:relative;display:block;aspect-ratio:524/731}
-.oa-doorscene .oa-doorhold{width:min(40%,210px);perspective:700px}
-.oa-room{position:absolute;inset:6%;border-radius:12px;background:radial-gradient(circle at 60% 40%,#ffe9b8,#f3c86e 70%);opacity:0;transition:opacity .5s ease}
-.oa-doorscene.is-open .oa-room{opacity:1}
-.oa-doorleaf{position:absolute;inset:0;transform-origin:left center;transition:transform .7s ease;transform-style:preserve-3d}
-.oa-doorscene.is-open .oa-doorleaf{transform:rotateY(-62deg)}
-.oa-doorscene.is-closed .oa-doorleaf{transform:rotateY(0)}
-.oa-tree{display:flex;align-items:flex-end;justify-content:center;width:100%;height:100%}
-.oa-tree img{transform-origin:50% 97%;transition:transform .55s ease}
-.oa-tree.is-tall img{transform:scale(1)}
-.oa-tree.is-short img{transform:scale(.6)}
-.tc-choice.oa-treec{width:min(34vw,240px);height:min(40vw,270px);padding:8px}
-.tc-choice.oa-soupc{width:min(36vw,250px);padding:10px}
-.oa-souphold{display:block;width:100%}
-.oa-souphold.is-cold{padding:0}
-.oa-matchc .oa-crop,.oa-matchc .oa-souphold,.oa-matchc .oa-tree,.oa-matchc .oa-doorhold,.oa-matchc .oa-pencil{pointer-events:none}
-.oa-matchc .oa-doorhold{width:min(30vw,150px)}
-.oa-matchc .oa-glass{width:min(60%,110px)}
-.oa-matchc .oa-tree{width:min(30vw,150px);height:min(34vw,180px)}
-body.calm-mode .ng-itembtn.is-pop,body.calm-mode .oa-scene.is-changing,body.calm-mode button[data-ng-waterbtn].is-pouring .ng-can,body.calm-mode .ng-bloom{animation:none!important}
-body.calm-mode .oa-ballscene .oa-ball,body.calm-mode .oa-pencilscene .oa-pencil img,body.calm-mode .oa-water,body.calm-mode .oa-doorleaf,body.calm-mode .oa-room,body.calm-mode .oa-tree img{transition:none!important}
-@media(prefers-reduced-motion:reduce){.ng-itembtn.is-pop,.oa-scene.is-changing,button[data-ng-waterbtn].is-pouring .ng-can,.ng-bloom{animation:none!important}.oa-ballscene .oa-ball,.oa-pencilscene .oa-pencil img,.oa-water,.oa-doorleaf,.oa-room,.oa-tree img{transition:none!important}}
+body.calm-mode .mg-mixing .mg-drip-a,body.calm-mode .mg-mixing .mg-drip-b,body.calm-mode button.mg-animal.is-moving img{animation:none!important}
+@media(prefers-reduced-motion:reduce){.mg-mixing .mg-drip-a,.mg-mixing .mg-drip-b,button.mg-animal.is-moving img{animation:none!important}button.mg-tile,button.mg-animal,button.mg-splash,button.ld-color,button.ld-size,button.ld-tool{transition:none}.mg-result-blob{transition:none}}
 /* ---- Today's Class recommendation, child profiles & real progress ---- */
 .tc-day-hint{margin-top:10px;font-size:13.5px;color:var(--muted)}
 .tc-day-panel{margin-top:16px;border:1.5px solid var(--ink);background:var(--white);box-shadow:5px 5px 0 rgba(52,59,48,.14);padding:18px 20px}

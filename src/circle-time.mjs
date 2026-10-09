@@ -165,13 +165,10 @@ export function myClassroomBody(){
  <div class="mc-panel">
   <span class="eyebrow">ON THE SHELF · MAGIC GAMES</span>
   <h2>Magic games for Age 3</h2>
-  <p>Five gentle games for preschoolers, each wired to its class: count in a magic garden, look and draw magic shapes, make six opposites happen, play at the animal playground and fill a magic fruit basket. No scores, no timers, nothing to install.</p>
+  <p>Two gentle games for preschoolers, each wired to its class: look and draw magic shapes, and play at the animal playground. No scores, no timers, nothing to install.</p>
   <div class="lesson-linkrow">
-   <a class="lesson-pill-link" href="/preschool/3-years/magic-number-garden/">Magic Counting Garden <span>· Class 2</span> <span aria-hidden="true">↗</span></a>
    <a class="lesson-pill-link" href="/preschool/3-years/magic-shape-builder/">Look & Draw — Magic Shapes <span>· Class 3</span> <span aria-hidden="true">↗</span></a>
-   <a class="lesson-pill-link" href="/preschool/3-years/magic-opposites-adventure/">Magic Opposites Finder <span>· Class 5</span> <span aria-hidden="true">↗</span></a>
    <a class="lesson-pill-link" href="/preschool/3-years/magic-animal-playground/">Animal Sound Safari <span>· Class 6</span> <span aria-hidden="true">↗</span></a>
-   <a class="lesson-pill-link" href="/preschool/3-years/magic-fruit-basket/">Magic Fruit Basket <span>· Class 8</span> <span aria-hidden="true">↗</span></a>
   </div>
  </div>
  </section>`;

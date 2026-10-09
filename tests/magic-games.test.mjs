@@ -1,12 +1,13 @@
-// Magic games (Age 3) — Fruit Basket, Color Mixing, Animal Playground
-// (Animal Sound Safari), Look & Draw — Magic Shapes, Number Garden (Magic
-// Counting Garden), Opposites Adventure (Magic Opposites Finder). Guards
-// for the six interactive game pages, their real R2 assets (exact owner
-// filenames, true probed dimensions), honest audio (only real recordings
-// claimed), genuinely playable structure (basket physics, find/count
-// honesty, listen rounds, real drawing tools), whole-school wiring
-// (classes, stage shelf, learning path, library, My Classroom, sitemap),
-// calm-mode / reduced-motion gates, and the no-score / no-timer /
+// Magic games (Age 3) — after the owner's retirement of Magic Counting
+// Garden, Magic Opposites Finder and Magic Fruit Basket, exactly two games
+// remain on the magic-games shelf: Look & Draw — Magic Shapes (Class 3) and
+// Animal Sound Safari (Class 6), plus Magic Color Lab, which stays live and
+// wired to Class 4 but deliberately off every shelf. The retired games'
+// illustrations live on inside Look & Draw's gallery. Guards below cover the
+// remaining game pages, their real R2 assets (exact owner filenames, true
+// probed dimensions), the full 25-picture Look & Draw gallery, honest audio
+// (only real recordings claimed), genuinely playable structure, whole-school
+// wiring, calm-mode / reduced-motion gates, and the no-score / no-timer /
 // no-download rules.
 import test from 'node:test';
 import assert from 'node:assert/strict';
@@ -16,19 +17,16 @@ import {resolve} from 'node:path';
 const root=resolve('dist');
 const read=p=>readFileSync(resolve(root,p),'utf8');
 
-const fruit=read('preschool/3-years/magic-fruit-basket/index.html');
 const color=read('preschool/3-years/magic-color-mixing/index.html');
 const animal=read('preschool/3-years/magic-animal-playground/index.html');
 const shape=read('preschool/3-years/magic-shape-builder/index.html');
-const garden=read('preschool/3-years/magic-number-garden/index.html');
-const opposites=read('preschool/3-years/magic-opposites-adventure/index.html');
 const R2='https://pub-f2fcb7c9b45a496cbeefef18dbba0ec0.r2.dev/school/interactive-activities';
-const FB=['01-apple.webp','02-banana.webp','03-orange.webp','04-strawberry.webp','05-grapes.webp','06-watermelon.webp','07-pineapple.webp','08-mango.webp','09-fruit-basket.webp','10-fruit-basket-cover.webp'];
 const AP=['01-dog.webp','02-cat.webp','03-cow.webp','04-duck.webp','05-sheep.webp','06-frog.webp','07-animal-playground-cover.webp'];
 const SB=['01-shape-house.webp','02-shape-rocket.webp','03-shape-tree.webp','04-shape-robot.webp','05-shape-butterfly.webp','06-magic-shape-builder-cover.webp'];
-const NG=['01-pink-flower.webp','02-blue-butterfly.webp','03-yellow-bee.webp','04-red-ladybug.webp','05-green-watering-can.webp','06-magic-number-garden-cover.webp'];
-const OA=['01-red-ball.webp','02-green-tree.webp','03-yellow-pencil.webp','04-clear-glass.webp','05-soup-bowl.webp','06-blue-door.webp','07-magic-opposites-adventure-cover.webp'];
-const FRUIT_SLUGS=['apple','banana','orange','strawberry','grapes','watermelon','pineapple','mango'];
+const NG=['01-pink-flower.webp','02-blue-butterfly.webp','03-yellow-bee.webp','04-red-ladybug.webp','05-green-watering-can.webp'];
+const OA=['01-red-ball.webp','02-green-tree.webp','03-yellow-pencil.webp','04-clear-glass.webp','05-soup-bowl.webp','06-blue-door.webp'];
+const FB=['01-apple.webp','02-banana.webp','03-orange.webp','04-strawberry.webp','05-grapes.webp','06-watermelon.webp','07-pineapple.webp','08-mango.webp','09-fruit-basket.webp'];
+const ORDER=['house','tree','rocket','robot','butterfly','flower','blue-butterfly','bee','ladybug','watering-can','ball','tall-tree','pencil','glass','soup','door','apple','banana','orange','strawberry','grapes','watermelon','pineapple','mango','basket'];
 const stage=read('preschool/3-years/index.html');
 const lp=read('learning-path/index.html');
 const library=read('learning-library/index.html');
@@ -37,63 +35,17 @@ const sitemap=read('sitemap.xml');
 const c3=read('preschool/3-years/shapes-and-patterns/index.html');
 const c4=read('preschool/3-years/colors-and-color-mixing/index.html');
 const c6=read('preschool/3-years/animals-and-their-sounds/index.html');
+const c2=read('preschool/3-years/numbers-and-counting/index.html');
+const c5=read('preschool/3-years/opposites-and-comparing/index.html');
 const c8=read('preschool/3-years/fruits-and-vegetables/index.html');
 const css=read('assets/style.css');
 
 const clean=h=>h
  .replace(/No scores, no timers[^.<]*/g,'')
  .replace(/no scores, no timers and no sign-up/g,'')
- .replace(/no scores, no timers, no streaks/g,'')
  .replace(/never a score to worry about/g,'')
- .replace(/no score at the end/g,'')
- .replace(/there was never a score/g,'')
  .replace(/nothing to win here/g,'')
- .replace(/no scores, no sign-up/g,'');
-
-test('magic fruit basket: spec page with all ten real R2 assets at true dims',()=>{
- assert.ok(fruit.includes('rel="canonical" href="https://kiddo-school.pages.dev/preschool/3-years/magic-fruit-basket/"'));
- assert.ok(fruit.includes('<title>Magic Fruit Basket — a Fruit Game for 3 Year Olds | Kiddo.school</title>'));
- assert.ok(fruit.includes('<h1>Magic Fruit Basket</h1>'));
- assert.ok(fruit.includes('PRESCHOOL · AGE 3 · CLASS 8 MAGIC GAME'));
- for(const f of FB)assert.ok(fruit.includes(R2+'/magic-fruit-basket-age-3/'+f),f);
- assert.ok(fruit.includes('width="1264" height="1264"'),'true probed dims on the square cards');
- assert.ok(fruit.includes('data-mg-game="fruit-basket"'));
- assert.equal([...fruit.matchAll(/data-mg-screen="/g)].length,7,'seven screens');
- for(const id of ['welcome','meet','fill','find','count','offscreen','complete'])assert.ok(fruit.includes('data-mg-screen="'+id+'"'),id);
- assert.ok(fruit.includes('/assets/magic-fruit-basket.js'));
- assert.ok(fruit.includes('data-cm-root data-page-path="/preschool/3-years/magic-fruit-basket/"'),'family feedback mount');
- assert.ok(fruit.includes('href="/preschool/3-years/fruits-and-vegetables/"'),'links back to Class 8');
- assert.ok(fruit.includes('The kitchen fruit hunt'),'off-screen kitchen play');
- assert.ok(fruit.includes('wash fruits before touching mouths'),'food safety note');
- assert.ok(!fruit.includes('aria-label="undefined"'),'no broken aria-labels');
-});
-
-test('magic fruit basket: meet, fill, find and count are genuinely playable and honest',()=>{
- assert.equal([...fruit.matchAll(/data-mg-say="/g)].length,8,'eight tap-to-hear fruits');
- for(const s of FRUIT_SLUGS)assert.ok(fruit.includes('data-mg-say="'+s+'"'),'meet tile '+s);
- assert.equal([...fruit.matchAll(/data-mg-drop="/g)].length,8,'eight basket fruits');
- assert.ok(fruit.includes('09-fruit-basket.webp')&&fruit.includes('data-mg-basket'),'real empty basket is the drop zone');
- // find rounds: five rounds, exactly one correct each, ask names the answer
- const findRounds=[...fruit.matchAll(/data-tc-round data-tc-ask="(Tap the [a-z]+!)">[\s\S]*?<\/div>\s*<p class="tc-feedback"/g)];
- assert.equal([...fruit.matchAll(/data-tc-ask="Tap the/g)].length,5,'five find rounds');
- const askSegs=fruit.split('data-tc-round').slice(1,6);
- for(const seg of askSegs){
-  const ask=seg.match(/data-tc-ask="Tap the ([a-z]+)!"/)[1];
-  assert.equal([...seg.matchAll(/data-tc-correct="true"/g)].length,1,'exactly one correct in '+ask);
-  assert.ok(seg.includes('aria-label="'+ask.charAt(0).toUpperCase()+ask.slice(1)+'" data-tc-correct="true"')||seg.includes('aria-label="'+ask+'"'),'round names the answer: '+ask);
- }
- // count rounds: the claimed number matches the rendered images exactly
- const counts=[...fruit.matchAll(/data-mg-count="(\d)"/g)].map(m=>+m[1]);
- assert.deepEqual(counts,[3,2,5,4],'four counting rounds, one to five');
- for(const n of counts){
-  const seg=fruit.slice(fruit.indexOf('data-mg-count="'+n+'"'));
-  const row=seg.slice(0,seg.indexOf('data-tc-feedback'));
-  assert.equal([...row.matchAll(/<img /g)].length,n,'counting row shows exactly '+n);
-  const numSeg=row.slice(row.indexOf('mg-numbers'));
-  assert.equal([...numSeg.matchAll(/data-tc-correct="true"/g)].length,1,'exactly one correct number for '+n);
-  assert.ok(numSeg.includes('>'+n+'<'),'the correct number tile is '+n);
- }
-});
+ .replace(/there is never a score at the end/g,'');
 
 test('magic color mixing: pure CSS/SVG, three true paint recipes, nothing faked',()=>{
  assert.ok(color.includes('rel="canonical" href="https://kiddo-school.pages.dev/preschool/3-years/magic-color-mixing/"'));
@@ -165,20 +117,28 @@ test('magic animal playground: real recordings only where they exist, honest wor
  assert.ok(animal.includes('Calm Mode toggle in the footer')||animal.includes('parent Calm Mode toggle'),'calm mode mentioned');
 });
 
-test('look & draw — magic shapes: five reference pictures, a real white drawing canvas and honest tools',()=>{
+test('look & draw: a 25-picture gallery on four shelves, gathered from the retired games',()=>{
  assert.ok(shape.includes('rel="canonical" href="https://kiddo-school.pages.dev/preschool/3-years/magic-shape-builder/"'));
  assert.ok(shape.includes('<h1>Look & Draw — Magic Shapes</h1>'));
- for(const f of SB)assert.ok(shape.includes(R2+'/magic-shape-builder-age-3/'+f),f);
  assert.ok(shape.includes('data-mg-game="look-draw"'));
- // nine screens: welcome, choose, five draw rounds, offscreen, complete
- for(const id of ['welcome','choose','draw-house','draw-tree','draw-rocket','draw-robot','draw-butterfly','offscreen','complete'])assert.ok(shape.includes('data-mg-screen="'+id+'"'),id);
+ // every reference artwork really ships, from its true owner folder
+ for(const f of SB)assert.ok(shape.includes(R2+'/magic-shape-builder-age-3/'+f),f);
+ for(const f of NG)assert.ok(shape.includes(R2+'/magic-number-garden-age-3/'+f),f);
+ for(const f of OA)assert.ok(shape.includes(R2+'/magic-opposites-adventure-age-3/'+f),f);
+ for(const f of FB)assert.ok(shape.includes(R2+'/magic-fruit-basket-age-3/'+f),f);
+ assert.ok(shape.includes('width="1264" height="1264"'),'fruit cards at their true probed dims');
+ assert.ok(shape.includes('width="1080" height="1080"'),'garden/opposites/shape cards at their true probed dims');
+ // 29 screens: welcome, choose, 25 draw rounds, offscreen, complete
+ assert.equal([...shape.matchAll(/data-mg-screen="/g)].length,29,'welcome + choose + 25 draws + offscreen + complete');
+ for(const id of ['welcome','choose','offscreen','complete'])assert.ok(shape.includes('data-mg-screen="'+id+'"'),id);
  // the old shape-placement puzzle is fully gone
  assert.ok(!shape.includes('data-sb-slot')&&!shape.includes('data-sb-piece')&&!shape.includes('sb-board'),'no slot/piece puzzle markup remains');
- assert.ok(!shape.includes('tap its spot'),'no drag-into-slots language remains');
- // five draw layouts, one per design, each with a 900×900 white canvas
- const order=[...shape.matchAll(/data-ld-draw="([a-z]+)"/g)].map(m=>m[1]);
- assert.deepEqual(order,['house','tree','rocket','robot','butterfly'],'five drawing rounds in order');
- assert.equal([...shape.matchAll(/<canvas data-ld-canvas width="900" height="900"/g)].length,5,'five big square canvases');
+ // 25 draw layouts in the gallery order, each with a 900×900 white canvas
+ const order=[...shape.matchAll(/data-ld-draw="([a-z-]+)"/g)].map(m=>m[1]);
+ assert.deepEqual(order,ORDER,'25 drawing rounds in gallery order');
+ assert.equal([...shape.matchAll(/<canvas data-ld-canvas width="900" height="900"/g)].length,25,'25 big square canvases');
+ // four shelf lines on the choose screen
+ for(const g of ['Magic shapes','Garden friends','Opposites','Fruits'])assert.ok(shape.includes('ld-groupline">'+g),g+' shelf line');
  // each round: six color buttons, three brush sizes, eraser, undo, clear, save
  for(const d of order){
   const seg=shape.slice(shape.indexOf('data-ld-draw="'+d+'"'));
@@ -191,9 +151,17 @@ test('look & draw — magic shapes: five reference pictures, a real white drawin
   assert.ok(round.includes('Can you find the shapes in your drawing?'),d+': parent prompt present');
   assert.ok(round.includes('Look at this — then draw your own.'),d+': reference travels with the canvas');
   assert.ok(round.includes('data-ld-steps'),d+': written how-to steps');
-  // next picture keeps the session flowing (house wraps to close the loop)
+  // next picture keeps the session flowing (basket wraps to the house)
   assert.ok(round.includes('Next picture: the'),'next picture button on '+d);
  }
+ // the four banner-bearing / close-up files render through crop windows
+ for(const d of ['ball','glass','soup','door']){
+  const seg=shape.slice(shape.indexOf('data-ld-draw="'+d+'"'));
+  const round=seg.slice(0,seg.indexOf('data-ld-draw="',12)>0?seg.indexOf('data-ld-draw="',12):undefined);
+  assert.ok(round.includes('class="ld-crop"'),d+' shown through an object crop window');
+ }
+ // every choose tile letterboxes its picture in the same square box
+ assert.equal([...shape.matchAll(/class="ld-tilebox"/g)].length,25,'25 letterboxed choose tiles');
  // save downloads ONLY the child's canvas: the client engine never embeds
  // or links a reference image, and the page itself has no download attribute
  const engine=readFileSync(resolve(root,'assets/magic-shape-builder.js'),'utf8');
@@ -213,115 +181,26 @@ test('look & draw — magic shapes: five reference pictures, a real white drawin
  assert.ok(!shape.includes('aria-label="undefined"'),'no broken aria-labels');
 });
 
-
-test('magic number garden: six real R2 assets, four genuinely playable counting activities',()=>{
- assert.ok(garden.includes('rel="canonical" href="https://kiddo-school.pages.dev/preschool/3-years/magic-number-garden/"'));
- assert.ok(garden.includes('<h1>Magic Counting Garden</h1>'));
- assert.ok(garden.includes('PRESCHOOL · AGE 3 · CLASS 2 MAGIC GAME'));
- for(const f of NG)assert.ok(garden.includes(R2+'/magic-number-garden-age-3/'+f),f);
- assert.ok(garden.includes('width="1080" height="1080"'),'true probed dims');
- assert.ok(garden.includes('data-mg-game="number-garden"'));
- for(const id of ['welcome','count','plant','find','water','offscreen','complete'])assert.ok(garden.includes('data-mg-screen="'+id+'"'),id);
- // count rounds: rendered item count equals the asked count exactly
- const counts=[...garden.matchAll(/data-ng-count="(\d+)"/g)].map(m=>+m[1]);
- assert.deepEqual(counts,[3,5,8,10],'count rounds climb to ten');
- for(const n of counts){
-  const seg=garden.slice(garden.indexOf('data-ng-count="'+n+'"'));
-  const row=seg.slice(0,seg.indexOf('ng-roundmsg'));
-  assert.equal([...row.matchAll(/data-ng-tap/g)].length,n,'count round shows exactly '+n+' tappable items');
-  assert.ok(row.includes('Tap each'),round_name(row));
-  function round_name(){}
- }
- // plant rounds: the asked numbers
- const plants=[...garden.matchAll(/data-ng-plant="(\d+)"/g)].map(m=>+m[1]);
- assert.deepEqual(plants,[4,2,6],'plant rounds');
- // plant plots hold exactly 8 spots
- for(const p of plants){
-  const seg=garden.slice(garden.indexOf('data-ng-plant="'+p+'"'));
-  const row=seg.slice(0,seg.indexOf('ng-roundmsg'));
-  assert.equal([...row.matchAll(/data-ng-spot/g)].length,8,'plant plot has 8 spots for '+p);
- }
- // find rounds: exactly one group holds the asked number; groups render their counts
- const finds=[...garden.matchAll(/data-tc-ask="Which group has (\d+)\?"/g)].map(m=>+m[1]);
- assert.deepEqual(finds,[4,2,7,5],'find rounds');
- for(const m of garden.matchAll(/data-tc-ask="Which group has (\d+)\?"/g)){
-  const seg=garden.slice(garden.indexOf(m[0]));
-  const segEnd=seg.indexOf('data-tc-feedback');
-  const round=seg.slice(0,segEnd);
-  const num=+m[1];
-  const groups=[...round.matchAll(/aria-label="A group of (\d+) [a-z]+"/g)].map(x=>+x[1]);
-  assert.equal(groups.filter(x=>x===num).length,1,'exactly one group of '+num);
-  // each group's rendered mini count matches its label
-  const labels=[...round.matchAll(/aria-label="A group of (\d+)/g)].map(x=>+x[1]);
-  const minis=[...round.matchAll(/class="tc-choice ng-group"[^>]*>[\s\S]*?<\/button>/g)].map(b=>[...b[0].matchAll(/ng-mini/g)].length);
-  assert.deepEqual(minis,labels,'group mini counts match their labels: '+labels);
- }
- // water rounds: can + spots
- const waters=[...garden.matchAll(/data-ng-water="(\d+)"/g)].map(m=>+m[1]);
- assert.deepEqual(waters,[3,5],'water rounds');
- assert.ok(garden.includes('05-green-watering-can.webp'),'the watering can illustration is the water button');
- for(const w of waters){
-  const seg=garden.slice(garden.indexOf('data-ng-water="'+w+'"'));
-  const row=seg.slice(0,seg.indexOf('ng-roundmsg'));
-  assert.equal([...row.matchAll(/data-ng-wspot/g)].length,8,'water plot has 8 spots for '+w);
- }
- assert.ok(garden.includes('count real leaves')||garden.includes('Leaf hunt'),'off-screen leaf counting');
- assert.ok(garden.includes('data-cm-root data-page-path="/preschool/3-years/magic-number-garden/"'),'family feedback mount');
- assert.ok(garden.includes('/assets/magic-number-garden.js'));
- assert.ok(garden.includes('href="/preschool/3-years/numbers-and-counting/"'),'links back to Class 2');
- assert.ok(!garden.includes('aria-label="undefined"'),'no broken aria-labels');
-});
-
-test('magic opposites adventure: six opposites that really transform',()=>{
- assert.ok(opposites.includes('rel="canonical" href="https://kiddo-school.pages.dev/preschool/3-years/magic-opposites-adventure/"'));
- assert.ok(opposites.includes('<h1>Magic Opposites Finder</h1>'));
- assert.ok(opposites.includes('PRESCHOOL · AGE 3 · CLASS 5 MAGIC GAME'));
- for(const f of OA)assert.ok(opposites.includes(R2+'/magic-opposites-adventure-age-3/'+f),f);
- assert.ok(opposites.includes('width="1080" height="1080"'),'true probed dims');
- assert.ok(opposites.includes('data-mg-game="opposites-adventure"'));
- for(const id of ['welcome','bigsmall','tallshort','longshort','fullempty','hotcold','openclosed','match','offscreen','complete'])assert.ok(opposites.includes('data-mg-screen="'+id+'"'),id);
- // four transformation stations with both states wired
- for(const k of ['ball','pencil','glass','door'])assert.ok(opposites.includes('data-oa-toggle="'+k+'"'),'station: '+k);
- for(const s of ['data-oa-set="big"','data-oa-set="small"','data-oa-set="long"','data-oa-set="short"','data-oa-set="full"','data-oa-set="empty"','data-oa-set="open"','data-oa-set="closed"'])assert.ok(opposites.includes(s),s);
- assert.ok(opposites.includes('oa-water'),'glass has a real water fill');
- assert.ok(opposites.includes('oa-doorleaf')&&opposites.includes('oa-room'),'door swings open over a revealed room');
- // tap rounds: tall/short trees + hot/cold soups + six challenge rounds
- assert.equal([...opposites.matchAll(/data-tc-ask="Tap the (TALL|SHORT) tree!"/g)].length,2,'two tree rounds');
- assert.equal([...opposites.matchAll(/data-tc-ask="Tap the (HOT|COLD) soup!"/g)].length,2,'two soup rounds');
- const rounds=[...opposites.matchAll(/data-tc-round data-tc-ask="The word is ([A-Z]+) — tap the opposite!"/g)].map(m=>m[1]);
- assert.deepEqual(rounds,['BIG','TALL','LONG','FULL','HOT','OPEN'],'six challenge rounds, one per opposite');
- for(const m of opposites.matchAll(/data-tc-round data-tc-ask="The word is ([A-Z]+)[^"]*">[\s\S]*?<p class="tc-feedback"/g)){
-  assert.equal([...m[0].matchAll(/data-tc-correct="true"/g)].length,1,'exactly one opposite choice in round '+m[1]);
- }
- // safety + honesty
- assert.ok(opposites.includes('tasting is always a grown-up'),'hot soup safety');
- assert.ok(opposites.includes('Fill and pour')||opposites.includes('fill a cup and empty it'),'off-screen fill-and-pour');
- assert.ok(opposites.includes('crops to just the object')||opposites.includes('shown through a quiet window'),'banner-crop disclosed to grown-ups');
- assert.ok(opposites.includes('data-cm-root data-page-path="/preschool/3-years/magic-opposites-adventure/"'),'family feedback mount');
- assert.ok(opposites.includes('/assets/magic-opposites-adventure.js'));
- assert.ok(opposites.includes('href="/preschool/3-years/opposites-and-comparing/"'),'links back to Class 5');
- assert.ok(!opposites.includes('aria-label="undefined"'),'no broken aria-labels');
-});
-
-test('magic games respect calm mode, reduced motion and the no-score/no-timer/no-download promises',()=>{
- for(const [name,html] of [['fruit',fruit],['color',color],['animal',animal],['shape',shape],['garden',garden],['opposites',opposites]]){
+test('remaining magic games respect calm mode, reduced motion and the no-score/no-timer/no-download promises',()=>{
+ for(const [name,html] of [['color',color],['animal',animal],['shape',shape]]){
   assert.doesNotMatch(clean(html),/\bscore\b|\btimer\b|\bstreak\b|leaderboard|countdown/i,name+' stays score-free');
   assert.ok(!html.includes('setInterval'),'no timers in '+name);
   assert.ok(!html.includes('download="'),'no download buttons for game assets in '+name);
-  assert.ok(html.includes('body class')===false||true);
  }
- // the shared CSS gates every new animation behind calm-mode and reduced-motion
- assert.ok(css.includes('body.calm-mode .mg-landed.mg-pop'),'calm-mode gate for the basket pop');
- assert.ok(css.includes('body.calm-mode button.mg-animal.is-moving img'),'calm-mode gate for animal movement');
+ // the shared CSS gates every animation behind calm-mode and reduced-motion
  assert.ok(css.includes('body.calm-mode .mg-mixing .mg-drip-a'),'calm-mode gate for the mixing drips');
- assert.ok(css.includes('body.calm-mode .ng-itembtn.is-pop'),'calm-mode gate for the garden pops');
+ assert.ok(css.includes('body.calm-mode button.mg-animal.is-moving img'),'calm-mode gate for animal movement');
  assert.ok(css.includes('button.ld-color,button.ld-size,button.ld-tool{transition:none}'),'reduced-motion gate covers the drawing tools');
- assert.ok(/@media\(prefers-reduced-motion:reduce\)\{[^}]*mg-landed[^}]*\}/.test(css),'reduced-motion gate for the magic animations');
+ assert.ok(/@media\(prefers-reduced-motion:reduce\)\{[^}]*mg-animal[^}]*\}/.test(css),'reduced-motion gate for the magic animations');
+ // the retired games' CSS is gone for good
+ assert.ok(!/\.ng-[a-z]/.test(css),'no counting-garden CSS remains');
+ assert.ok(!/\.oa-[a-z]/.test(css),'no opposites CSS remains');
+ assert.ok(!css.includes('.mg-fruit')&&!css.includes('.mg-basket'),'no fruit-basket CSS remains');
 });
 
-test('magic games are wired into the whole school',()=>{
- // stage shelf lists the five shelf games (Color Lab is deliberately NOT on the magic-games shelves, owner request)
- for(const g of ['magic-number-garden','magic-shape-builder','magic-animal-playground','magic-opposites-adventure','magic-fruit-basket']){
+test('magic games are wired into the whole school — two games on the shelf',()=>{
+ // only the two shelf games are listed everywhere
+ for(const g of ['magic-shape-builder','magic-animal-playground']){
   assert.ok(stage.includes('href="/preschool/3-years/'+g+'/"'),'stage shelf: '+g);
   assert.ok(lp.includes('href="/preschool/3-years/'+g+'/"'),'learning path: '+g);
   assert.ok(classroom.includes('href="/preschool/3-years/'+g+'/"'),'my classroom: '+g);
@@ -335,18 +214,38 @@ test('magic games are wired into the whole school',()=>{
  assert.ok(stage.includes('The magic games'),'stage section heading');
  assert.ok(lp.includes('Age 3 magic games'),'learning path row label');
  assert.ok(classroom.includes('ON THE SHELF · MAGIC GAMES'),'my classroom panel');
- // the library is books-only now: magic games live on the stage shelf, the
- // learning path row and My Classroom — never as library listings
+ assert.ok(classroom.includes('Two gentle games for preschoolers'),'my classroom panel describes two games');
+ assert.ok(lp.includes('Two gentle interactive games'),'learning path row describes two games');
+ // the library is books-only: no magic games there
  assert.ok(!library.includes('/preschool/3-years/magic-'),'no magic game listings on the books-only library');
- // each class links its own game (under its real name)
+ // each remaining game's class links it (under its real name)
  assert.ok(c3.includes('href="/preschool/3-years/magic-shape-builder/"')&&c3.includes('Play Look &amp; Draw — Magic Shapes'),'Class 3 links its game');
  assert.ok(c4.includes('href="/preschool/3-years/magic-color-mixing/"')&&c4.includes('Play the Magic Color Lab game'),'Class 4 links its game');
  assert.ok(c6.includes('href="/preschool/3-years/magic-animal-playground/"')&&c6.includes('Play the Animal Sound Safari game'),'Class 6 links its game');
- assert.ok(c8.includes('href="/preschool/3-years/magic-fruit-basket/"')&&c8.includes('Play the Magic Fruit Basket game'),'Class 8 links its game');
- const c2=read('preschool/3-years/numbers-and-counting/index.html');
- const c5=read('preschool/3-years/opposites-and-comparing/index.html');
- assert.ok(c2.includes('href="/preschool/3-years/magic-number-garden/"')&&c2.includes('Play the Magic Counting Garden game'),'Class 2 links its game');
- assert.ok(c5.includes('href="/preschool/3-years/magic-opposites-adventure/"')&&c5.includes('Play the Magic Opposites Finder game'),'Class 5 links its game');
+ // the retired games' classes no longer point at them
+ for(const [label,doc,slug] of [['Class 2',c2,'magic-number-garden'],['Class 5',c5,'magic-opposites-adventure'],['Class 8',c8,'magic-fruit-basket']]){
+  assert.ok(!doc.includes('/preschool/3-years/'+slug+'/'),label+' no longer links the retired game');
+ }
  // the magic games shelf is separate everywhere it appears
  assert.ok(lp.includes('lp-row lp-magic')&&lp.includes('outside the class sequence'),'learning path magic shelf is separated');
+});
+
+test('the three retired games are completely gone: pages, sitemap, scripts, shelves',()=>{
+ for(const slug of ['magic-number-garden','magic-opposites-adventure','magic-fruit-basket']){
+  assert.ok(!existsSync(resolve(root,'preschool/3-years/'+slug+'/index.html')),'page removed: '+slug);
+  assert.ok(!existsSync(resolve(root,'assets/magic-'+({['magic-number-garden']:'number-garden',['magic-opposites-adventure']:'opposites-adventure',['magic-fruit-basket']:'fruit-basket'})[slug]+'.js'))||true,'js check '+slug);
+  assert.ok(!sitemap.includes('/preschool/3-years/'+slug+'/'),'sitemap entry removed: '+slug);
+  for(const [label,doc] of [['stage',stage],['learning path',lp],['my classroom',classroom],['library',library]]){
+   assert.ok(!doc.includes('/preschool/3-years/'+slug+'/'),label+' no longer mentions '+slug);
+  }
+ }
+ assert.ok(!existsSync(resolve(root,'assets/magic-number-garden.js')),'garden engine removed');
+ assert.ok(!existsSync(resolve(root,'assets/magic-opposites-adventure.js')),'opposites engine removed');
+ assert.ok(!existsSync(resolve(root,'assets/magic-fruit-basket.js')),'basket engine removed');
+ // no page on the school links the retired games any more
+ for(const doc of [c2,c5,c8,shape,animal,color]){
+  assert.ok(!doc.includes('/preschool/3-years/magic-number-garden/'),'no link to the garden game');
+  assert.ok(!doc.includes('/preschool/3-years/magic-opposites-adventure/'),'no link to the opposites game');
+  assert.ok(!doc.includes('/preschool/3-years/magic-fruit-basket/'),'no link to the basket game');
+ }
 });
