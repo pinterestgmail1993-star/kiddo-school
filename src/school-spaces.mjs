@@ -12,6 +12,7 @@ import {colorsLesson} from './flashcards/data-colors.mjs';
 import {oppositesLesson} from './flashcards/data-opposites.mjs';
 import {animalsLesson} from './flashcards/data-animals.mjs';
 import {bodyPartsLesson} from './flashcards/data-body-parts.mjs';
+import {fruitsLesson} from './flashcards/data-fruits-vegetables.mjs';
 export const bagBase='/my-school-bag/';
 export const libraryBase='/learning-library/';
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
@@ -113,13 +114,15 @@ export const learningLibrary={
    {kind:'Class · Age 3',href:oppositesLesson.path,name:'Opposites & Comparing',lesson:oppositesLesson},
    {kind:'Class · Age 3',href:animalsLesson.path,name:'Animals & Their Sounds',lesson:animalsLesson},
    {kind:'Class · Age 3',href:bodyPartsLesson.path,name:'Body Parts & My Five Senses',lesson:bodyPartsLesson},
+   {kind:'Class · Age 3',href:fruitsLesson.path,name:'Fruits & Vegetables',lesson:fruitsLesson},
    {kind:'Flashcards · Age 3',href:'/flashcards/alphabet/',name:'Alphabet Flashcards A–Z',lesson:alphabetLesson},
    {kind:'Flashcards · Age 3',href:'/flashcards/numbers-and-counting/',name:'Numbers 1–10 Flashcards',lesson:numbersLesson},
    {kind:'Flashcards · Age 3',href:'/flashcards/shapes/',name:'Shape Flashcards',lesson:shapesLesson},
    {kind:'Flashcards · Age 3',href:'/flashcards/colors/',name:'Color Flashcards',lesson:colorsLesson},
    {kind:'Flashcards · Age 3',href:'/flashcards/opposites/',name:'Opposite Flashcards',lesson:oppositesLesson},
    {kind:'Flashcards · Age 3',href:'/flashcards/animal-sounds/',name:'Animal Flashcards',lesson:animalsLesson},
-   {kind:'Flashcards · Age 3',href:'/flashcards/body-parts-and-five-senses/',name:'Body Parts & Five Senses Flashcards',lesson:bodyPartsLesson}]},
+   {kind:'Flashcards · Age 3',href:'/flashcards/body-parts-and-five-senses/',name:'Body Parts & Five Senses Flashcards',lesson:bodyPartsLesson},
+   {kind:'Flashcards · Age 3',href:'/flashcards/fruits-and-vegetables/',name:'Fruit & Vegetable Flashcards',lesson:fruitsLesson}]},
   {id:'books',title:'Books & Stories',items:[
    {kind:'Age 2 · Picture Story',href:bunnyBook.path,name:'Bunny Finds a Friend',cta:'Read Book',bookThumb:`<img src="${bunnyBook.base}${bunnyBook.cover.file}" width="2000" height="1545" alt="Cover of the picture book Bunny Finds a Friend: a smiling rabbit in a garden" loading="lazy">`}]},
   {id:'words',title:'Words & Talking',items:[

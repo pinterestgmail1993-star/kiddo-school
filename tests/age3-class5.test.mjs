@@ -152,12 +152,12 @@ test('whole-school wiring: hubs, learning path, library, spaces and homepage all
  assert.ok(page('preschool/3-years').includes('opposites-and-comparing'),'Age 3 stage lists class');
  assert.ok(page('preschool/3-years').includes('/flashcards/opposites/'),'Age 3 stage lists set');
  assert.ok(page('learning-path').includes('Class 19: <a href="/preschool/3-years/opposites-and-comparing/">Opposites &amp; Comparing</a>'),'learning path row 19');
- assert.ok(page('learning-path').includes('Twenty-one classes are ready now'),'twenty-classes copy');
+ assert.ok(page('learning-path').includes('Twenty-two classes are ready now'),'twenty-classes copy');
  assert.ok(page('flashcards').includes('/flashcards/opposites/'),'library lists opposites set');
  assert.ok(page('learning-library').includes('/flashcards/opposites/'),'learning library lists set');
  assert.ok(page('learning-library').includes('Opposites &amp; Comparing'),'learning library lists class');
- assert.ok(page('').includes('Twenty-one classes are ready now'),'homepage says twenty');
- assert.ok(page('about').includes('Twenty-one classes from birth to age three are ready today'),'about says twenty');
+ assert.ok(page('').includes('Twenty-two classes are ready now'),'homepage says twenty');
+ assert.ok(page('about').includes('Twenty-two classes from birth to age three are ready today'),'about says twenty');
  // the class 4 completion now honestly links the real next class
  assert.ok(page('preschool/3-years/colors-and-color-mixing').includes('href="/preschool/3-years/opposites-and-comparing/"'),'Class 4 links Class 5');
  // the class hero and slides use the true 1024×768 landscape files

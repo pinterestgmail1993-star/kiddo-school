@@ -39,7 +39,7 @@ test('black and white baby cards page shows flashcards, stages grid, guide and s
 });
 
 test('flashcard data: fifteen flashcard sets, every card complete and linked to its real lesson',()=>{
- assert.equal(fcSets.length,15);
+ assert.equal(fcSets.length,16);
  for(const s of fcSets){
   assert.ok(s.cards.length>=10,`${s.slug} has ${s.cards.length} cards`);
   assert.ok(existsSync(join(root,s.url.slice(1),'index.html')),`${s.url} missing`);
@@ -103,7 +103,7 @@ test('card pages: unique titles and descriptions, say/try/note, download, prev/n
   assert.ok(!html.includes('aggregateRating'),'no fabricated ratings schema');
   assert.ok(!html.includes('★★★★★</span>'),'no fabricated review text in HTML');
  }
- assert.equal(downloads,248);
+ assert.equal(downloads,264);
 });
 
 test('library: every set is listed, baby collection included, no orphan sets',()=>{

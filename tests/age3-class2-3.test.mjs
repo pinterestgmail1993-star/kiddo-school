@@ -207,9 +207,9 @@ test('learning path rows 16 and 17 follow the alphabet class',()=>{
  const lp=page('/learning-path/');
  assert.ok(lp.includes('Class 16: <a href="/preschool/3-years/numbers-and-counting/">'));
  assert.ok(lp.includes('Class 17: <a href="/preschool/3-years/shapes-and-patterns/">'));
- assert.ok(lp.includes('Twenty classes are ready now')===false&&lp.includes('Twenty-one classes are ready now'));
+ assert.ok(lp.includes('Twenty classes are ready now')===false&&lp.includes('Twenty-two classes are ready now'));
 });
-test('preschool hubs and library list all seven classes and seven sets',()=>{
+test('preschool hubs and library list all eight classes and eight sets',()=>{
  const stage=page('/preschool/3-years/');
  ['alphabet-and-letter-sounds','numbers-and-counting','shapes-and-patterns','colors-and-color-mixing','opposites-and-comparing'].forEach(s=>assert.ok(stage.includes(`/preschool/3-years/${s}/`),'class in stage hub: '+s));
  ['/flashcards/alphabet/','/flashcards/numbers-and-counting/','/flashcards/shapes/','/flashcards/colors/','/flashcards/opposites/'].forEach(u=>assert.ok(stage.includes(u),'set in stage hub: '+u));
@@ -218,7 +218,7 @@ test('preschool hubs and library list all seven classes and seven sets',()=>{
  const fc=page('/flashcards/');
  assert.ok(fc.includes('href="/flashcards/numbers-and-counting/"')&&fc.includes('href="/flashcards/shapes/"'));
  const home=page('/');
- assert.ok(home.includes('Twenty-one classes are ready now'));
+ assert.ok(home.includes('Twenty-two classes are ready now'));
 });
 test('sitemap, indexing stance and lesson wiring',()=>{
  const map=read('sitemap.xml');
