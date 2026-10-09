@@ -3,7 +3,7 @@
 // card (file, dimensions, alt text); the data-* files beside this module add
 // the parent-facing words. Nothing is invented: a card exists here only if its
 // image exists on R2 and its lesson exists on the site.
-import {anLesson,vhLesson,csLesson,msLesson,emLesson,fcLesson,gbLesson,gfLesson} from '../lessons.mjs';
+import {anLesson,vhLesson,csLesson,msLesson,emLesson,fcLesson,gbLesson,gfLesson,gflLesson,gthLesson} from '../lessons.mjs';
 import * as anData from './data-animals-and-sounds.mjs';
 import * as vhData from './data-vehicles-and-sounds.mjs';
 import * as csData from './data-colors-and-shapes.mjs';
@@ -12,6 +12,8 @@ import * as emData from './data-emotions-and-feelings.mjs';
 import * as fcData from './data-first-concepts.mjs';
 import * as gbData from './data-garden-bugs-and-friends.mjs';
 import * as gfData from './data-garden-friends.mjs';
+import * as gflData from './data-garden-flowers.mjs';
+import * as gthData from './data-garden-things.mjs';
 import * as alData from './data-alphabet.mjs';
 import * as nmData from './data-numbers.mjs';
 import * as shData from './data-shapes.mjs';
@@ -30,6 +32,11 @@ const REACTIONS=[['love','😍','Loved it'],['like','😊','Liked it'],['okay','
 const SOURCES=[
  [anData,anLesson],[vhData,vhLesson],[csData,csLesson],[msData,msLesson],
  [emData,emLesson],[fcData,fcLesson],[gbData,gbLesson],[gfData,gfLesson],
+ // The two newest School Garden collections — flowers and things. The flowers
+ // folder ships its own cover.webp (a landscape preview sheet, true dims come
+ // from the lesson); the things folder has no cover, so its first card fronts
+ // the set (Garden Friends precedent).
+ [gflData,gflLesson],[gthData,gthLesson],
  // The alphabet module keeps explicit export names (alphabetMeta/alphabetCardContent)
  // because it also carries the Age 3 lesson object; adapt it to the common shape.
  // The numbers and shapes modules are the same pattern (Age 3 Classes 2 and 3).

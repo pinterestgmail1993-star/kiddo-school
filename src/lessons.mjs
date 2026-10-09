@@ -1229,6 +1229,229 @@ export const gfLesson={
  schema:{resourceType:'Interactive toddler class',level:'Toddler (age 2)',teaches:'Animal names for toddlers — bird, frog, squirrel, rabbit and more — through looking, naming and playing together',audience:'Parents of toddlers',keywords:'garden animals for kids, garden animals for toddlers, animals for toddlers, animal vocabulary for toddlers, animal flashcards for toddlers, animal picture cards, learning animal names, nature activities for toddlers'}
 };
 
+export const gflLesson={
+ path:'/toddler/2-years/school-garden/garden-flowers/',
+ seoTitle:'Garden Flowers for Toddlers | Picture Cards & Activities',
+ title:'Garden Flowers for Toddlers | Picture Cards & Activities',
+ h1:'Garden Flowers',
+ description:'Walk through the flower garden with your 2-year-old — twelve big, bright blooms to name together, with two gentle games and a look-and-smell hunt for outside.',
+ ogAlt:'Garden flowers picture cards for toddlers from Kiddo School',
+ ogImage:toddlerBase+'garden-flowers-age-2/cover.webp',
+ schemaImage:toddlerBase+'garden-flowers-age-2/cover.webp',
+ eyebrow:'SCHOOL GARDEN · GARDEN FLOWERS',
+ crumbs:[['Toddler','/toddler/'],['Age 2','/toddler/2-years/'],['School Garden','/toddler/2-years/school-garden/'],['Garden Flowers']],
+ chips:[['Age','2 Years'],['Subject','Nature &amp; Talk'],['Class','School Garden'],['Duration','3–5 minutes']],
+ subject:'Nature &amp; Talk',
+ ledes:['Big yellow sunflowers, roses, tulips and bluebells — the flower bed is full of names waiting to be learned. Twelve bright blooms, one big picture at a time.',
+  'Nothing to prepare and nothing to read. You say the flower name, your toddler points, sniffs the air or giggles — a moment on a card counts, and the real garden can wait for your next walk.'],
+ startHint:'Start with the sunflower — the tallest friend in the bed.',
+ startLabel:'Start the Class',
+ folder:'garden-flowers-age-2/',
+ r2Base:toddlerBase,
+ eagerFirst:false,
+ cover:{file:'cover.webp',w:2476,h:2032,alt:'Garden Flowers class for 2-year-olds at Kiddo School'},
+ cards:[
+  {order:1,file:'01-sunflower.webp',name:'Sunflower',phrase:'Tall and yellow!',w:1920,h:2954,alt:'Sunflower picture card for toddlers'},
+  {order:2,file:'02-rose.webp',name:'Rose',phrase:'Sniff, sniff — lovely!',w:1916,h:2952,alt:'Rose picture card for toddlers'},
+  {order:3,file:'03-tulip.webp',name:'Tulip',phrase:'A cup of pink!',w:1914,h:2954,alt:'Tulip picture card for toddlers'},
+  {order:4,file:'04-daisy.webp',name:'Daisy',phrase:'White petals, round gold middle.',w:1910,h:2952,alt:'Daisy picture card for toddlers'},
+  {order:5,file:'05-daffodil.webp',name:'Daffodil',phrase:'Golden trumpet!',w:1914,h:2954,alt:'Daffodil picture card for toddlers'},
+  {order:6,file:'06-poppy.webp',name:'Poppy',phrase:'Bright as red can be.',w:1912,h:2954,alt:'Poppy picture card for toddlers'},
+  {order:7,file:'07-lavender.webp',name:'Lavender',phrase:'Purple and calm.',w:1918,h:2936,alt:'Lavender picture card for toddlers'},
+  {order:8,file:'08-hibiscus.webp',name:'Hibiscus',phrase:'Big as a saucer!',w:1928,h:2956,alt:'Hibiscus picture card for toddlers'},
+  {order:9,file:'09-lotus.webp',name:'Lotus',phrase:'Floating on the pond.',w:1924,h:2952,alt:'Lotus picture card for toddlers'},
+  {order:10,file:'10-lily.webp',name:'Lily',phrase:'Elegant and white.',w:1920,h:2950,alt:'Lily picture card for toddlers'},
+  {order:11,file:'11-marigold.webp',name:'Marigold',phrase:'A ball of orange!',w:1916,h:2952,alt:'Marigold picture card for toddlers'},
+  {order:12,file:'12-bluebell.webp',name:'Bluebell',phrase:'Little blue bells.',w:1912,h:2954,alt:'Bluebell picture card for toddlers'}
+ ],
+ interactive:{
+  flow:{intro:'Ten little steps, in order: a welcome from your teacher, all twelve flowers, two gentle games, a look-and-smell walk, cards to print, a note from your teacher and one last check-in from you. Stop after any step — that is a complete class.',
+   steps:[['1','Teacher welcome'],['2','Meet the flowers'],['3','Find the flower'],['4','Who am I?'],['5','Where flowers grow'],['6','Take it off screen'],['7','Print the cards'],['8','Teacher note'],['9','Parent review'],['10','Class complete']],
+   beginHref:'#meet-the-flowers',beginLabel:'Meet the flowers',beginHint:'Cards work best up close — toddler on your lap.'},
+  teacher:{welcome:'Let’s walk through the flower garden! Can you say their names with me?',note:'Roses to bluebells — every walk becomes a naming game. You do not need a garden; a window box, a park or a bunch of flowers at home works beautifully.'},
+  principal:{note:'Your toddler does not need every flower name to stick. Big, bright pictures and your voice are doing the teaching — the words ride along, and one favourite flower repeated happily is a complete lesson.'},
+  complete:{heading:'Class complete!',copy:'From the tall sunflower to the little bluebells — what a colourful walk.'},
+  offScreen:{heading:'A look-and-smell flower hunt.',copy:'Take the names outside — or to a window box, a park or a bunch of flowers at home. Flowers are for looking at and smelling, not picking.',groups:[
+   {title:'Try one today',items:[
+    'Spot a flower on your walk and say its colour together.',
+    'Smell a rose or a herb together — snif, snif, what does it smell like?',
+    'Count the petals on a daisy — one, two, three… as far as your toddler goes.',
+    'Find a bee visiting a flower and watch it quietly — the bee is working.',
+    'Point at every yellow flower you can find, then try pink.'
+   ]}
+  ],note:'Flowers stay on the plant — picking is for grown-ups. One flower noticed and named together is a complete hunt, and a grown-up stays close the whole time.'},
+  sections:[
+   {type:'learn',id:'meet-the-flowers',eyebrow:'LEARN · MEET THE FLOWERS',heading:'Meet the flowers.',copy:'Twelve big, bright blooms, one at a time. Say the name clearly, and let your toddler point, sniff the air or sign along.',label:'the flowers',items:[
+    {file:'01-sunflower.webp',say:'Tall and yellow, with a big brown middle.',find:'Can you reach up tall like a sunflower?'},
+    {file:'02-rose.webp',say:'A rose — snif, snif, it smells lovely.',find:'Can you sniff the air like smelling a rose?'},
+    {file:'03-tulip.webp',say:'A tulip is shaped like a little cup.',find:'Can you cup your hands like a tulip?'},
+    {file:'04-daisy.webp',say:'White petals and a round gold middle.',find:'Can you make a big circle with your arms?'},
+    {file:'05-daffodil.webp',say:'A daffodil blows its golden trumpet.',find:'Can you trumpet like a daffodil?'},
+    {file:'06-poppy.webp',say:'A poppy is bright, bright red.',find:'Can you say a big hello-red?'},
+    {file:'07-lavender.webp',say:'Lavender is purple and smells calm.',find:'Can you take one slow, calm breath?'},
+    {file:'08-hibiscus.webp',say:'A hibiscus is big as a saucer.',find:'Can you open your hands wide, wide, wide?'},
+    {file:'09-lotus.webp',say:'A lotus floats on the pond.',find:'Can you float your hand on the air like water?'},
+    {file:'10-lily.webp',say:'A lily stands elegant and white.',find:'Can you stand up tall and still like a lily?'},
+    {file:'11-marigold.webp',say:'A marigold is a ball of orange.',find:'Can you roll your hands round and round?'},
+    {file:'12-bluebell.webp',say:'Bluebells are little blue bells.',find:'Can you ding-dong like a little bell?'}
+   ]},
+   {type:'play',id:'find-the-flower',eyebrow:'PLAY · FIND THE FLOWER',heading:'Find the flower.',copy:'Three big blooms, one question. You say the flower, your child taps it — a wrong tap simply means look together.',correctFeedback:'You found it!',incorrectFeedback:'Look again.',rounds:[
+    {ask:'Find the sunflower.',say:'Find the sunflower.',choices:[{file:'04-daisy.webp',name:'The daisy'},{file:'01-sunflower.webp',name:'The sunflower',correct:true},{file:'12-bluebell.webp',name:'The bluebell'}]},
+    {ask:'Where is the rose?',say:'Where is the rose?',choices:[{file:'02-rose.webp',name:'The rose',correct:true},{file:'06-poppy.webp',name:'The poppy'},{file:'03-tulip.webp',name:'The tulip'}]},
+    {ask:'Find the bluebells.',say:'Find the bluebells.',choices:[{file:'07-lavender.webp',name:'The lavender'},{file:'09-lotus.webp',name:'The lotus'},{file:'12-bluebell.webp',name:'The bluebell',correct:true}]},
+    {ask:'Can you find the marigold?',say:'Can you find the marigold?',choices:[{file:'11-marigold.webp',name:'The marigold',correct:true},{file:'05-daffodil.webp',name:'The daffodil'},{file:'10-lily.webp',name:'The lily'}]},
+    {ask:'Where is the lotus?',say:'Where is the lotus?',choices:[{file:'09-lotus.webp',name:'The lotus',correct:true},{file:'08-hibiscus.webp',name:'The hibiscus'},{file:'04-daisy.webp',name:'The daisy'}]}
+   ]},
+   {type:'play',id:'who-am-i',eyebrow:'PLAY · WHO AM I?',heading:'Who am I?',copy:'A little clue, then three blooms. Say the clue slowly and let your child solve it — every guess is a good guess.',correctFeedback:'You found it!',incorrectFeedback:'Look again.',rounds:[
+    {ask:'I am tall and yellow. Who am I?',say:'I am tall and yellow. Who am I?',choices:[{file:'03-tulip.webp',name:'The tulip'},{file:'01-sunflower.webp',name:'The sunflower',correct:true},{file:'06-poppy.webp',name:'The poppy'}]},
+    {ask:'I smell lovely. Who am I?',say:'I smell lovely. Who am I?',choices:[{file:'02-rose.webp',name:'The rose',correct:true},{file:'11-marigold.webp',name:'The marigold'},{file:'10-lily.webp',name:'The lily'}]},
+    {ask:'I am shaped like a cup. Who am I?',say:'I am shaped like a cup. Who am I?',choices:[{file:'03-tulip.webp',name:'The tulip',correct:true},{file:'04-daisy.webp',name:'The daisy'},{file:'07-lavender.webp',name:'The lavender'}]},
+    {ask:'I float on the pond. Who am I?',say:'I float on the pond. Who am I?',choices:[{file:'08-hibiscus.webp',name:'The hibiscus'},{file:'09-lotus.webp',name:'The lotus',correct:true},{file:'05-daffodil.webp',name:'The daffodil'}]},
+    {ask:'My bells are blue. Who am I?',say:'My bells are blue. Who am I?',choices:[{file:'12-bluebell.webp',name:'The bluebell',correct:true},{file:'07-lavender.webp',name:'The lavender'},{file:'06-poppy.webp',name:'The poppy'}]},
+    {ask:'I am a ball of orange. Who am I?',say:'I am a ball of orange. Who am I?',choices:[{file:'11-marigold.webp',name:'The marigold',correct:true},{file:'01-sunflower.webp',name:'The sunflower'},{file:'10-lily.webp',name:'The lily'}]}
+   ]},
+   {type:'guide',id:'where-flowers-grow',eyebrow:'TOGETHER · WHERE FLOWERS GROW',heading:'Where flowers grow.',copy:'Flowers turn up in the most ordinary places — here is where to look, gently and without picking.',items:[
+    {file:'01-sunflower.webp',feeling:'Sunflower',phrase:'In gardens and on farms, standing taller than you by summer.'},
+    {file:'04-daisy.webp',feeling:'Daisy',phrase:'Right in the grass — little white stars on any lawn.'},
+    {file:'07-lavender.webp',feeling:'Lavender',phrase:'In purple rows in gardens; bees visit it all day long.'},
+    {file:'09-lotus.webp',feeling:'Lotus',phrase:'On warm, still ponds — floating on a big green pad.'},
+    {file:'12-bluebell.webp',feeling:'Bluebell',phrase:'In woods in spring, ringing blue under the trees.'},
+    {file:'02-rose.webp',feeling:'Rose',phrase:'In rose beds and parks — smell first, touch very gently if a grown-up says it is okay.'}
+   ]}
+  ]
+ },
+ printables:{
+  mode:'cards',
+  heading:'Print the garden flower cards.',
+  intro:'Print the cards for simple naming games and colour-spotting warm-ups.',
+  pack:'Garden Flowers Learning Cards',
+  meta:'Age 2 · School Garden · Nature &amp; Talk',
+  audience:'Made for you to print and use with your child — twelve cards, two to a page.',
+  note:'The same twelve flowers from today’s class — handy for a quiet naming chat at the kitchen table.',
+  printEyebrow:'PRINTABLE GARDEN FLOWER CARDS',
+  printAria:'The twelve garden flower cards'
+ },
+ howTo:{heading:'Tips for Parents',paragraphs:[
+  'Colours before names. Yellow! Pink! Purple! — a colour shouted happily is already flower learning.',
+  'Add the senses: reach tall like a sunflower, sniff like a rose, ding like a bluebell. Movement sticks the words.',
+  'Flowers stay on the plant. Looking and smelling is the game; picking is for grown-ups with a reason.'
+ ],note:'<strong>Age ranges are a guide.</strong> Go at your child’s pace.'},
+ pills:{heading:'Where to next?',items:[['School Garden','/toddler/2-years/school-garden/'],['Age 2 classes','/toddler/2-years/'],['Library','/learning-library/']]},
+ hubBlurb:'Twelve big, bright blooms — sunflower, rose, tulip and more — with two gentle games and a look-and-smell flower hunt. Made for two-year-olds.',
+ schema:{resourceType:'Interactive toddler class',level:'Toddler (age 2)',teaches:'Flower names for toddlers — sunflower, rose, tulip, daisy and more — through looking, naming and playing together',audience:'Parents of toddlers',keywords:'flowers for toddlers, flower names for kids, garden flowers for kids, flower flashcards for toddlers, flower picture cards, nature activities for toddlers, learning flower names'}
+};
+
+export const gthLesson={
+ path:'/toddler/2-years/school-garden/garden-things/',
+ seoTitle:'Garden Things for Toddlers | Picture Cards & Activities',
+ title:'Garden Things for Toddlers | Picture Cards & Activities',
+ h1:'Garden Things',
+ description:'Name the things in the garden with your 2-year-old — the tree, the watering can, the wheelbarrow and more — with picture cards, two gentle games and a garden walk.',
+ ogAlt:'Garden things picture cards for toddlers from Kiddo School',
+ ogImage:toddlerBase+'garden-things-age-2/01-flower.webp',
+ schemaImage:toddlerBase+'garden-things-age-2/01-flower.webp',
+ eyebrow:'SCHOOL GARDEN · GARDEN THINGS',
+ crumbs:[['Toddler','/toddler/'],['Age 2','/toddler/2-years/'],['School Garden','/toddler/2-years/school-garden/'],['Garden Things']],
+ chips:[['Age','2 Years'],['Subject','Nature &amp; Talk'],['Class','School Garden'],['Duration','3–5 minutes']],
+ subject:'Nature &amp; Talk',
+ ledes:['A garden is full of things with names: the tree at the gate, the watering can, the wheelbarrow, the bench where you sit. Twelve garden things, one big picture at a time.',
+  'Nothing to prepare and nothing to read. You say the name, your toddler points or wanders over — a moment on a card counts, and the real garden can wait for your next walk.'],
+ startHint:'Start with the flower — the one they already know.',
+ startLabel:'Start the Class',
+ folder:'garden-things-age-2/',
+ r2Base:toddlerBase,
+ eagerFirst:false,
+ cover:null,
+ cards:[
+  {order:1,file:'01-flower.webp',name:'Flower',phrase:'A flower!',w:1414,h:2000,alt:'Flower picture card for toddlers'},
+  {order:2,file:'02-tree.webp',name:'Tree',phrase:'Big and green.',w:1414,h:2000,alt:'Tree picture card for toddlers'},
+  {order:3,file:'03-grass.webp',name:'Grass',phrase:'Soft and tickly.',w:1414,h:2000,alt:'Grass picture card for toddlers'},
+  {order:4,file:'04-bush.webp',name:'Bush',phrase:'Round and leafy.',w:1414,h:2000,alt:'Bush picture card for toddlers'},
+  {order:5,file:'05-garden-hose.webp',name:'Garden hose',phrase:'Whoosh — water!',w:1414,h:2000,alt:'Garden hose picture card for toddlers'},
+  {order:6,file:'06-watering-can.webp',name:'Watering can',phrase:'Pss-pss — drink up, plants!',w:1414,h:2000,alt:'Watering can picture card for toddlers'},
+  {order:7,file:'07-shovel.webp',name:'Shovel',phrase:'Dig, dig, dig!',w:1414,h:2000,alt:'Shovel picture card for toddlers'},
+  {order:8,file:'08-rake.webp',name:'Rake',phrase:'Scratch, scratch.',w:1414,h:2000,alt:'Rake picture card for toddlers'},
+  {order:9,file:'09-wheelbarrow.webp',name:'Wheelbarrow',phrase:'Carry it all!',w:1414,h:2000,alt:'Wheelbarrow picture card for toddlers'},
+  {order:10,file:'10-plant-pot.webp',name:'Plant pot',phrase:'A little home for a plant.',w:1414,h:2000,alt:'Plant pot picture card for toddlers'},
+  {order:11,file:'11-fence.webp',name:'Fence',phrase:'Around the garden.',w:1414,h:2000,alt:'Fence picture card for toddlers'},
+  {order:12,file:'12-garden-bench.webp',name:'Garden bench',phrase:'Time to sit and rest.',w:1414,h:2000,alt:'Garden bench picture card for toddlers'}
+ ],
+ interactive:{
+  flow:{intro:'Ten little steps, in order: a welcome from your teacher, all twelve garden things, two gentle games, a name-it-as-you-go walk, cards to print, a note from your teacher and one last check-in from you. Stop after any step — that is a complete class.',
+   steps:[['1','Teacher welcome'],['2','Meet the garden things'],['3','Find the thing'],['4','What is it for?'],['5','Around the garden'],['6','Take it off screen'],['7','Print the cards'],['8','Teacher note'],['9','Parent review'],['10','Class complete']],
+   beginHref:'#meet-the-garden-things',beginLabel:'Meet the garden things',beginHint:'Cards work best up close — toddler on your lap.'},
+  teacher:{welcome:'Let’s look around the garden! What things can we name together?',note:'The watering can, the bench, the fence — every trip outside becomes a name-it game. No garden? A park, a balcony or a street tree all count.'},
+  principal:{note:'Tool words are everyday words. Saying watering can while you water a plant is the whole lesson — and the tools themselves stay grown-up territory.'},
+  complete:{heading:'Class complete!',copy:'From the tall tree to the bench where you rest — what a garden full of names.'},
+  offScreen:{heading:'A name-it-as-you-go garden walk.',copy:'Take the names outside — or to a park, a balcony or a window box if a garden is far away.',groups:[
+   {title:'Try one today',items:[
+    'Water a plant together — pss-pss with the watering can or a cup.',
+    'Touch the tree trunk on your walk and say tree, big tree.',
+    'Sit on a bench and name three things you can see from it.',
+    'Spot a fence, a wheelie bin, a gate — garden words live on every street.',
+    'Dig in a sandpit or a pot of soil with a spoon — your own little shovel.'
+   ]}
+  ],note:'Real tools are grown-up tools: shovels and rakes and hoses stay in grown-up hands. Watching, naming and your own spoon-digging is the toddler version — with a grown-up close the whole time.'},
+  sections:[
+   {type:'learn',id:'meet-the-garden-things',eyebrow:'LEARN · MEET THE GARDEN THINGS',heading:'Meet the garden things.',copy:'Twelve garden things, one at a time. Say the name clearly, and let your toddler point, wiggle or wander along.',label:'the garden things',items:[
+    {file:'01-flower.webp',say:'A flower — bright and pretty.',find:'Can you point at something flowery?'},
+    {file:'02-tree.webp',say:'A tree — big, with a woody trunk.',find:'Can you reach up high like a tree?'},
+    {file:'03-grass.webp',say:'Grass — soft and tickly on your toes.',find:'Can you wiggle your toes in grass?'},
+    {file:'04-bush.webp',say:'A bush — round and leafy.',find:'Can you make yourself round like a bush?'},
+    {file:'05-garden-hose.webp',say:'A garden hose — whoosh, water!',find:'Can you say whoosh?'},
+    {file:'06-watering-can.webp',say:'A watering can — the plants drink from it.',find:'Can you tip-pour like watering?'},
+    {file:'07-shovel.webp',say:'A shovel digs big holes — dig, dig!',find:'Can you dig with your hands?'},
+    {file:'08-rake.webp',say:'A rake pulls leaves into a pile — scratch, scratch.',find:'Can you rake the leaves with your arm?'},
+    {file:'09-wheelbarrow.webp',say:'A wheelbarrow carries everything.',find:'Can you push an invisible wheelbarrow?'},
+    {file:'10-plant-pot.webp',say:'A plant pot — a little home for a plant.',find:'Can you hold a little pot in your hands?'},
+    {file:'11-fence.webp',say:'A fence goes around the garden.',find:'Can you make fence arms — up, up, up?'},
+    {file:'12-garden-bench.webp',say:'A garden bench — time to sit and rest.',find:'Can you sit down slowly like on a bench?'}
+   ]},
+   {type:'play',id:'find-the-thing',eyebrow:'PLAY · FIND THE THING',heading:'Find the thing.',copy:'Three pictures, one question. You say the garden thing, your child taps it — a wrong tap simply means look together.',correctFeedback:'You found it!',incorrectFeedback:'Look again.',rounds:[
+    {ask:'Find the tree.',say:'Find the tree.',choices:[{file:'04-bush.webp',name:'The bush'},{file:'02-tree.webp',name:'The tree',correct:true},{file:'03-grass.webp',name:'The grass'}]},
+    {ask:'Where is the watering can?',say:'Where is the watering can?',choices:[{file:'05-garden-hose.webp',name:'The garden hose'},{file:'06-watering-can.webp',name:'The watering can',correct:true},{file:'07-shovel.webp',name:'The shovel'}]},
+    {ask:'Find the wheelbarrow.',say:'Find the wheelbarrow.',choices:[{file:'09-wheelbarrow.webp',name:'The wheelbarrow',correct:true},{file:'10-plant-pot.webp',name:'The plant pot'},{file:'12-garden-bench.webp',name:'The garden bench'}]},
+    {ask:'Can you find the rake?',say:'Can you find the rake?',choices:[{file:'07-shovel.webp',name:'The shovel'},{file:'08-rake.webp',name:'The rake',correct:true},{file:'11-fence.webp',name:'The fence'}]},
+    {ask:'Where is the garden bench?',say:'Where is the garden bench?',choices:[{file:'11-fence.webp',name:'The fence'},{file:'12-garden-bench.webp',name:'The garden bench',correct:true},{file:'02-tree.webp',name:'The tree'}]}
+   ]},
+   {type:'play',id:'what-is-it-for',eyebrow:'PLAY · WHAT IS IT FOR?',heading:'What is it for?',copy:'A little clue about the job each thing does, then three pictures. Every guess is a good guess.',correctFeedback:'You found it!',incorrectFeedback:'Look again.',rounds:[
+    {ask:'I water the plants. What am I?',say:'I water the plants. What am I?',choices:[{file:'05-garden-hose.webp',name:'The garden hose'},{file:'06-watering-can.webp',name:'The watering can',correct:true},{file:'10-plant-pot.webp',name:'The plant pot'}]},
+    {ask:'I dig big holes. What am I?',say:'I dig big holes. What am I?',choices:[{file:'08-rake.webp',name:'The rake'},{file:'07-shovel.webp',name:'The shovel',correct:true},{file:'06-watering-can.webp',name:'The watering can'}]},
+    {ask:'I carry soil and plants. What am I?',say:'I carry soil and plants. What am I?',choices:[{file:'09-wheelbarrow.webp',name:'The wheelbarrow',correct:true},{file:'12-garden-bench.webp',name:'The garden bench'},{file:'02-tree.webp',name:'The tree'}]},
+    {ask:'You sit and rest on me. What am I?',say:'You sit and rest on me. What am I?',choices:[{file:'11-fence.webp',name:'The fence'},{file:'10-plant-pot.webp',name:'The plant pot'},{file:'12-garden-bench.webp',name:'The garden bench',correct:true}]},
+    {ask:'I am a home for a little plant. What am I?',say:'I am a home for a little plant. What am I?',choices:[{file:'10-plant-pot.webp',name:'The plant pot',correct:true},{file:'03-grass.webp',name:'The grass'},{file:'05-garden-hose.webp',name:'The garden hose'}]}
+   ]},
+   {type:'guide',id:'around-the-garden',eyebrow:'TOGETHER · AROUND THE GARDEN',heading:'Around the garden.',copy:'Where each thing lives and what it does — a little tour for your next walk outside.',items:[
+    {file:'02-tree.webp',feeling:'Tree',phrase:'Standing at the gate or in the park — bark to touch, leaves to peek at.'},
+    {file:'06-watering-can.webp',feeling:'Watering can',phrase:'By the tap or the shed, ready for plant drink time.'},
+    {file:'11-fence.webp',feeling:'Fence',phrase:'Around the edge — follow it all the way round the garden.'},
+    {file:'12-garden-bench.webp',feeling:'Garden bench',phrase:'In a sunny or shady spot — the best seat for a snack.'},
+    {file:'09-wheelbarrow.webp',feeling:'Wheelbarrow',phrase:'Tipped by the shed — one wheel, two handles, big jobs.'},
+    {file:'03-grass.webp',feeling:'Grass',phrase:'Under your feet everywhere — bare toes love it in summer.'}
+   ]}
+  ]
+ },
+ printables:{
+  mode:'cards',
+  heading:'Print the garden things cards.',
+  intro:'Print the cards for simple naming games and garden-walk warm-ups.',
+  pack:'Garden Things Learning Cards',
+  meta:'Age 2 · School Garden · Nature &amp; Talk',
+  audience:'Made for you to print and use with your child — twelve cards, two to a page.',
+  note:'The same twelve garden things from today’s class — handy for a quiet naming chat at the kitchen table.',
+  printEyebrow:'PRINTABLE GARDEN THING CARDS',
+  printAria:'The twelve garden things cards'
+ },
+ howTo:{heading:'Tips for Parents',paragraphs:[
+  'Name the things you pass — tree, gate, bench. Everyday objects are the easiest words to practise.',
+  'Let them do the toddler version: water with a cup, dig with a spoon, push an invisible wheelbarrow.',
+  'Real tools stay in grown-up hands. Naming a shovel is plenty — touching it can wait for big-kid years.'
+ ],note:'<strong>Age ranges are a guide.</strong> Go at your child’s pace.'},
+ pills:{heading:'Where to next?',items:[['School Garden','/toddler/2-years/school-garden/'],['Age 2 classes','/toddler/2-years/'],['Library','/learning-library/']]},
+ hubBlurb:'Twelve things every garden holds — tree, watering can, wheelbarrow, bench and more — with two gentle games and a name-it-as-you-go walk. Made for two-year-olds.',
+ schema:{resourceType:'Interactive toddler class',level:'Toddler (age 2)',teaches:'Everyday garden words for toddlers — tree, grass, watering can, wheelbarrow and more — through looking, naming and playing together',audience:'Parents of toddlers',keywords:'garden words for toddlers, garden vocabulary for kids, things in the garden for kids, garden objects flashcards, picture cards for toddlers, nature activities for toddlers'}
+};
+
 export function classLessonSchema(site,L){
  return [
   {'@context':'https://schema.org','@type':'LearningResource',name:L.title,description:L.description,url:site+L.path,image:L.schemaImage,inLanguage:'en',learningResourceType:L.schema.resourceType||'Interactive baby class',educationalLevel:L.schema.level,isAccessibleForFree:true,educationalUse:'Home learning activity',teaches:L.schema.teaches,audience:{'@type':'Audience',audienceType:L.schema.audience},keywords:L.schema.keywords},
