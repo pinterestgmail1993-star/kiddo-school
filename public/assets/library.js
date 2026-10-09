@@ -8,8 +8,13 @@
   var root = document.querySelector('[data-library]');
   if (!root) return;
   var sections = [].slice.call(root.querySelectorAll('[data-lib-section]'));
-  var catChips = [].slice.call(root.querySelectorAll('[data-cat]'));
-  var ageChips = [].slice.call(root.querySelectorAll('[data-age-chip]'));
+  // Chips are the filter anchors only ('a[data-cat]'). The shelf sections
+  // carry data-cat too — selecting them would attach the toggle handler to
+  // every shelf, so a click on any book card would bubble up, swallow the
+  // navigation (preventDefault) and collapse the other shelves instead of
+  // opening the book.
+  var catChips = [].slice.call(root.querySelectorAll('a[data-cat]'));
+  var ageChips = [].slice.call(root.querySelectorAll('a[data-age-chip]'));
   if (!sections.length) return;
   var activeCat = null, activeAge = null;
 
