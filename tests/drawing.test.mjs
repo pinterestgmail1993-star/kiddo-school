@@ -1,10 +1,13 @@
 // Kiddo School — How-to-draw tutorials (/how-to-draw-a-cat/, /how-to-draw-a-dog/).
 // Verifies the R2 asset contract (the owner's exact twelve files, uploaded
 // order, nothing invented), the reusable one-template-two-animals build,
-// SEO/schema, the step viewer markup (six ordered pictures, instructions,
-// Previous/Next, Step N of 6, restart, Back to Activities, ivory stage for
-// the transparent PNGs), the Activities → Drawing shelf and live reachability
-// of every referenced file. Runs against dist/ after `npm run build`.
+// SEO/schema, the step viewer markup (six ordered pictures, short step title
+// above detailed teach-a-child instructions, a Listen button that only
+// appears when the browser truly supports speech, Previous/Next, Step N of 6,
+// restart, Back to Activities, ivory stage for the transparent PNGs), the
+// Activities → Drawing shelf and live reachability of every referenced file.
+// Every instruction answers WHERE to start, WHAT shape to draw and HOW it
+// connects — verified line by line against the actual artwork.
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
@@ -16,20 +19,20 @@ const sitemap=read('dist/sitemap.xml');
 const activities=read('dist/activities/index.html');
 
 const CAT_STEPS=[
- ['how-to-draw-a-cat-step-01.png','Draw a circle.'],
- ['how-to-draw-a-cat-step-02.png','Add two ears.'],
- ['how-to-draw-a-cat-step-03.png','Draw the face.'],
- ['how-to-draw-a-cat-step-04.png','Add whiskers.'],
- ['how-to-draw-a-cat-step-05.png','Draw the body and tail.'],
- ['how-to-draw-a-cat-step-06.png','Color your cat!']
+ ['how-to-draw-a-cat-step-01.png','Draw the head','Put your pencil in the middle of your paper, a little above the center. Draw one big round circle, like a ball. Leave lots of space underneath for the body.'],
+ ['how-to-draw-a-cat-step-02.png','Add the ears','At the top-left of the circle, draw a small triangle pointing up. Draw another triangle on the top-right, the same size. Now your cat has two pointy ears!'],
+ ['how-to-draw-a-cat-step-03.png','Make the face','Inside the circle, draw two little round eyes, side by side. Below them, draw a tiny upside-down triangle for the nose. Under the nose, add two small curved lines to make a smile.'],
+ ['how-to-draw-a-cat-step-04.png','Draw the whiskers','Start at the left side of the face, on the cheek. Draw three short straight lines going outward, one above the other. Do the same on the right cheek. Now your cat has six whiskers!'],
+ ['how-to-draw-a-cat-step-05.png','Draw the body and tail','Start just below the head. Draw a long curved line down the left side and another down the right side to make a rounded body. From the bottom of the head, draw two long lines down to the bottom — these are the front legs. At the bottom, draw two small rounded paws next to each other, with two tiny lines inside each paw for the toes. On the right side of the body, draw a long curved line that goes outward and curls upward. Draw another curved line beside it and join the tips to make a thick, curly tail.'],
+ ['how-to-draw-a-cat-step-06.png','Color your cat','Pick your favorite crayon. Color the cat’s head, body, paws, and tail. Try orange for the fur and pink for the inside of the ears. You can add two pink circles for cheeks, just like the picture. Leave the eyes and nose dark and easy to see.']
 ];
 const DOG_STEPS=[
- ['how-to-draw-a-dog-step-01.png','Draw a big circle for the head.'],
- ['how-to-draw-a-dog-step-02.png','Add two floppy ears.'],
- ['how-to-draw-a-dog-step-03.png','Draw the eyes, nose, and smile.'],
- ['how-to-draw-a-dog-step-04.png','Add an oval body.'],
- ['how-to-draw-a-dog-step-05.png','Draw two paws and a tail.'],
- ['how-to-draw-a-dog-step-06.png','Color your dog!']
+ ['how-to-draw-a-dog-step-01.png','Draw the head','Put your pencil in the upper half of your paper. Draw one large round circle, like a balloon. Leave plenty of room underneath for the puppy’s body.'],
+ ['how-to-draw-a-dog-step-02.png','Add floppy ears','Start at the top-left side of the head. Draw a long curved shape hanging down like a soft leaf. Repeat on the right side. Make both ears hang beside the puppy’s cheeks.'],
+ ['how-to-draw-a-dog-step-03.png','Draw the puppy’s face','Inside the head, draw two small circles for eyes. Below them, draw a little oval for the nose. Under the nose, draw one wide curved line to make a happy smile.'],
+ ['how-to-draw-a-dog-step-04.png','Draw the body','Start just underneath the head. Draw one curved line downward on the left and another on the right. Connect them with a rounded line at the bottom to make an oval-shaped body.'],
+ ['how-to-draw-a-dog-step-05.png','Add paws and tail','At the bottom of the body, draw two small rounded paws side by side. Add two short lines inside each paw to show the toes. On the right side of the body, draw a curved line going outward and upward. Draw a second line back toward the body to make a wagging tail.'],
+ ['how-to-draw-a-dog-step-06.png','Color your puppy','Use a light-brown crayon to color the puppy’s head, body, paws, and tail. Make the floppy ears a darker brown. Color the nose dark, and leave the eyes white and shiny so they sparkle.']
 ];
 const TUTORIALS=[{t:howToDrawCat,steps:CAT_STEPS,path:'/how-to-draw-a-cat/'},{t:howToDrawDog,steps:DOG_STEPS,path:'/how-to-draw-a-dog/'}];
 
@@ -40,7 +43,8 @@ test('the data is the owner’s exact twelve files in uploaded order, nothing in
   assert.equal(t.steps.length,6);
   t.steps.forEach((s,i)=>{
    assert.equal(s.file,steps[i][0],'file order '+i+' for '+t.slug);
-   assert.equal(s.text,steps[i][1],'the owner’s exact instruction '+i+' for '+t.slug);
+   assert.equal(s.title,steps[i][1],'the short step title '+i+' for '+t.slug);
+   assert.equal(s.detail,steps[i][2],'the detailed step instruction '+i+' for '+t.slug);
    assert.ok(s.w>0&&s.h>0,'true probed dims on '+s.file);
   });
   const files=new Set(t.steps.map(s=>s.file));
@@ -77,8 +81,40 @@ for(const {t,steps,path} of TUTORIALS){
    assert.equal(w,t.steps[i].w);assert.equal(h,t.steps[i].h,'true dims, ratio preserved');
    assert.equal(alt,t.steps[i].alt);
   });
-  steps.forEach(([_,text],i)=>assert.ok(page.includes(text),'instruction '+(i+1)+' present'));
+  steps.forEach(([_,title,detail],i)=>{
+   assert.ok(page.includes(title),'step title '+(i+1)+' present');
+   assert.ok(page.includes(detail),'detailed instruction '+(i+1)+' present verbatim');
+  });
   assert.match(page,/loading="lazy"/,'later steps lazy-load');
+ });
+
+ test(path+' teaches: short title above detailed instructions, both beneath the picture',()=>{
+  const figs=[...page.matchAll(/<figure class="dt-step"[\s\S]*?<\/figure>/g)].map(m=>m[0]);
+  assert.equal(figs.length,6);
+  figs.forEach((fig,i)=>{
+   const stageEnd=fig.indexOf('</div>');
+   const caption=fig.slice(fig.indexOf('<figcaption'));
+   assert.ok(stageEnd<fig.indexOf('<figcaption'),'the caption sits after the picture stage');
+   const num=caption.indexOf('dt-stepnum'),title=caption.indexOf('dt-steptitle'),detail=caption.indexOf('dt-detail');
+   assert.ok(num>-1&&title>num&&detail>title,'Step badge, then the short title, then the detailed instructions');
+   assert.ok(caption.includes('dt-steptitle">'+steps[i][1]),'step '+(i+1)+' keeps its short title');
+   assert.ok(fig.includes('data-dt-say hidden'),'step '+(i+1)+' ships a Listen button that is hidden until speech is supported');
+  });
+  const css=read('dist/assets/style.css');
+  assert.match(css,/\.dt-detail\{[^}]*font-size:19px/,'instruction text is large on desktop');
+  assert.match(css,/\.dt-detail\{font-size:18px\}/,'instruction text stays large on mobile');
+ });
+
+ test(path+' “Listen to this step”: wired to the browser voice, never a dead button',()=>{
+  assert.equal([...page.matchAll(/data-dt-say hidden/g)].length,6,'one hidden Listen button per step');
+  const js=read('dist/assets/drawing.js');
+  assert.match(js,/window\.speechSynthesis/,'the script feature-detects the browser voice');
+  assert.match(js,/if \(!synth \|\| !sayBtns\.length\) return;/,'without speech support the buttons stay hidden');
+  assert.match(js,/btn\.hidden = false/,'supported browsers reveal the buttons');
+  assert.match(js,/stopSpeech/,'speaking stops when the family moves on');
+  assert.match(js,/SpeechSynthesisUtterance/);
+  assert.match(js,/\.dt-steptitle/,'the voice reads the short step title');
+  assert.match(js,/\.dt-detail/,'the voice reads the detailed instructions');
  });
 
  test(path+' viewer: controls, Step N of 6 counter, restart after the last step, Back to Activities',()=>{
@@ -110,7 +146,8 @@ for(const {t,steps,path} of TUTORIALS){
   assert.equal(howTo.step.length,6);
   howTo.step.forEach((s,i)=>{
    assert.equal(s.position,i+1);
-   assert.equal(s.text,steps[i][1],'HowTo step '+(i+1)+' is the owner’s instruction');
+   assert.equal(s.name,'Step '+(i+1)+': '+steps[i][1],'HowTo step '+(i+1)+' is titled with the short step title');
+   assert.equal(s.text,steps[i][2],'HowTo step '+(i+1)+' carries the detailed instruction');
    assert.equal(s.image,R2_DRAWING+t.folder+steps[i][0]);
   });
   assert.ok(!JSON.stringify(schema).match(/ISBN|AggregateRating|award|reviewCount/i),'no invented credentials');

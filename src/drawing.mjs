@@ -29,17 +29,23 @@ export const howToDrawCat={
  supplies:['Paper','A pencil','Crayons or markers'],
  sibling:{href:'/how-to-draw-a-dog/',label:'Draw a dog next'},
  steps:[
-  {file:'how-to-draw-a-cat-step-01.png',w:1080,h:1920,text:'Draw a circle.',
+  {file:'how-to-draw-a-cat-step-01.png',w:1080,h:1920,title:'Draw the head',
+   detail:'Put your pencil in the middle of your paper, a little above the center. Draw one big round circle, like a ball. Leave lots of space underneath for the body.',
    alt:'A large circle drawn with one thick dark pencil line.'},
-  {file:'how-to-draw-a-cat-step-02.png',w:1080,h:1920,text:'Add two ears.',
+  {file:'how-to-draw-a-cat-step-02.png',w:1080,h:1920,title:'Add the ears',
+   detail:'At the top-left of the circle, draw a small triangle pointing up. Draw another triangle on the top-right, the same size. Now your cat has two pointy ears!',
    alt:'The same circle with two pointed cat ears added on top.'},
-  {file:'how-to-draw-a-cat-step-03.png',w:1080,h:1920,text:'Draw the face.',
+  {file:'how-to-draw-a-cat-step-03.png',w:1080,h:1920,title:'Make the face',
+   detail:'Inside the circle, draw two little round eyes, side by side. Below them, draw a tiny upside-down triangle for the nose. Under the nose, add two small curved lines to make a smile.',
    alt:'The cat face: two round eyes, a small triangle nose and a curved smile inside the circle.'},
-  {file:'how-to-draw-a-cat-step-04.png',w:1080,h:1920,text:'Add whiskers.',
+  {file:'how-to-draw-a-cat-step-04.png',w:1080,h:1920,title:'Draw the whiskers',
+   detail:'Start at the left side of the face, on the cheek. Draw three short straight lines going outward, one above the other. Do the same on the right cheek. Now your cat has six whiskers!',
    alt:'The cat face with three long whiskers added on each cheek.'},
-  {file:'how-to-draw-a-cat-step-05.png',w:1080,h:1920,text:'Draw the body and tail.',
+  {file:'how-to-draw-a-cat-step-05.png',w:1080,h:1920,title:'Draw the body and tail',
+   detail:'Start just below the head. Draw a long curved line down the left side and another down the right side to make a rounded body. From the bottom of the head, draw two long lines down to the bottom — these are the front legs. At the bottom, draw two small rounded paws next to each other, with two tiny lines inside each paw for the toes. On the right side of the body, draw a long curved line that goes outward and curls upward. Draw another curved line beside it and join the tips to make a thick, curly tail.',
    alt:'The cat now has a rounded body, two front paws and a long curled tail.'},
-  {file:'how-to-draw-a-cat-step-06.png',w:1080,h:1920,text:'Color your cat!',
+  {file:'how-to-draw-a-cat-step-06.png',w:1080,h:1920,title:'Color your cat',
+   detail:'Pick your favorite crayon. Color the cat’s head, body, paws, and tail. Try orange for the fur and pink for the inside of the ears. You can add two pink circles for cheeks, just like the picture. Leave the eyes and nose dark and easy to see.',
    alt:'The finished cartoon cat, colored orange with pink ears and pink cheeks.'}
  ]
 };
@@ -61,17 +67,23 @@ export const howToDrawDog={
  supplies:['Paper','A pencil','Crayons or markers'],
  sibling:{href:'/how-to-draw-a-cat/',label:'Draw a cat next'},
  steps:[
-  {file:'how-to-draw-a-dog-step-01.png',w:1240,h:1748,text:'Draw a big circle for the head.',
+  {file:'how-to-draw-a-dog-step-01.png',w:1240,h:1748,title:'Draw the head',
+   detail:'Put your pencil in the upper half of your paper. Draw one large round circle, like a balloon. Leave plenty of room underneath for the puppy’s body.',
    alt:'A big circle drawn with one thick dark pencil line.'},
-  {file:'how-to-draw-a-dog-step-02.png',w:1240,h:1748,text:'Add two floppy ears.',
+  {file:'how-to-draw-a-dog-step-02.png',w:1240,h:1748,title:'Add floppy ears',
+   detail:'Start at the top-left side of the head. Draw a long curved shape hanging down like a soft leaf. Repeat on the right side. Make both ears hang beside the puppy’s cheeks.',
    alt:'The circle with two long floppy ears added on either side.'},
-  {file:'how-to-draw-a-dog-step-03.png',w:1240,h:1748,text:'Draw the eyes, nose, and smile.',
+  {file:'how-to-draw-a-dog-step-03.png',w:1240,h:1748,title:'Draw the puppy’s face',
+   detail:'Inside the head, draw two small circles for eyes. Below them, draw a little oval for the nose. Under the nose, draw one wide curved line to make a happy smile.',
    alt:'The dog face: two round eyes, an oval nose and a wide smile inside the circle.'},
-  {file:'how-to-draw-a-dog-step-04.png',w:1240,h:1748,text:'Add an oval body.',
+  {file:'how-to-draw-a-dog-step-04.png',w:1240,h:1748,title:'Draw the body',
+   detail:'Start just underneath the head. Draw one curved line downward on the left and another on the right. Connect them with a rounded line at the bottom to make an oval-shaped body.',
    alt:'The dog head with an oval body added below it.'},
-  {file:'how-to-draw-a-dog-step-05.png',w:1240,h:1748,text:'Draw two paws and a tail.',
+  {file:'how-to-draw-a-dog-step-05.png',w:1240,h:1748,title:'Add paws and tail',
+   detail:'At the bottom of the body, draw two small rounded paws side by side. Add two short lines inside each paw to show the toes. On the right side of the body, draw a curved line going outward and upward. Draw a second line back toward the body to make a wagging tail.',
    alt:'The dog now has two front paws and a curled tail.'},
-  {file:'how-to-draw-a-dog-step-06.png',w:1240,h:1748,text:'Color your dog!',
+  {file:'how-to-draw-a-dog-step-06.png',w:1240,h:1748,title:'Color your puppy',
+   detail:'Use a light-brown crayon to color the puppy’s head, body, paws, and tail. Make the floppy ears a darker brown. Color the nose dark, and leave the eyes white and shiny so they sparkle.',
    alt:'The finished cartoon dog, colored brown with darker brown ears.'}
  ]
 };
@@ -83,7 +95,7 @@ const stepUrl=(t,i)=>drawingBase(t)+t.steps[i].file;
 /* ------------------------------------------------------------ the body */
 export function drawingTutorialBody(t){
  const crumbs=`<nav class="breadcrumbs wrap" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><a href="/activities/">Activities</a><span aria-hidden="true">/</span><a href="/activities/#drawing">Drawing</a><span aria-hidden="true">/</span><span aria-current="page">${esc(t.h1)}</span></nav>`;
- const steps=t.steps.map((s,i)=>`<figure class="dt-step" data-dt-step aria-label="Step ${i+1} of ${t.steps.length}"><div class="dt-stage"><img src="${stepUrl(t,i)}" alt="${esc(s.alt)}" width="${s.w}" height="${s.h}"${i<2?'':' loading="lazy"'} decoding="async"></div><figcaption class="dt-say"><span class="dt-stepnum">Step ${i+1}</span><span>${esc(s.text)}</span></figcaption></figure>`).join('\n');
+ const steps=t.steps.map((s,i)=>`<figure class="dt-step" data-dt-step aria-label="Step ${i+1} of ${t.steps.length}"><div class="dt-stage"><img src="${stepUrl(t,i)}" alt="${esc(s.alt)}" width="${s.w}" height="${s.h}"${i<2?'':' loading="lazy"'} decoding="async"></div><figcaption class="dt-say"><span class="dt-stepnum">Step ${i+1}</span><span class="dt-steptitle">${esc(s.title)}</span><span class="dt-detail">${esc(s.detail)}</span><button type="button" class="button button-ghost dt-listen" data-dt-say hidden>Listen to this step</button></figcaption></figure>`).join('\n');
  const dots=t.steps.map((_,i)=>`<span class="dt-dot${i===0?' is-on':''}" data-dt-dot></span>`).join('');
  return `${crumbs}
  <section class="wrap section compact"><span class="eyebrow">${t.eyebrow}</span>
@@ -119,7 +131,7 @@ export function drawingSchema(t,site){
  const bc={'@context':'https://schema.org','@type':'BreadcrumbList',itemListElement:[['Home','/'],['Activities','/activities/'],['Drawing','/activities/#drawing'],[t.h1,t.path]].map(([name,path],i)=>({'@type':'ListItem',position:i+1,name,item:site+path}))};
  const howTo={'@context':'https://schema.org','@type':'HowTo',name:t.h1,description:t.description,image:stepUrl(t,t.steps.length-1),
   supply:t.supplies.map(s=>({'@type':'HowToSupply',name:s})),
-  step:t.steps.map((s,i)=>({'@type':'HowToStep',position:i+1,name:`Step ${i+1}: ${s.text}`,text:s.text,image:stepUrl(t,i)}))};
+  step:t.steps.map((s,i)=>({'@type':'HowToStep',position:i+1,name:`Step ${i+1}: ${s.title}`,text:s.detail,image:stepUrl(t,i)}))};
  return [howTo,bc];
 }
 

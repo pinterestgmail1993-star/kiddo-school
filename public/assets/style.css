@@ -1242,8 +1242,11 @@ a.tc-day-class.is-rec{border:2px solid #71326d;background:#faf6ff}
 .dt-js .dt-step.is-current{display:block}
 .dt-stage{margin-top:14px;border:1.5px solid var(--line);background:var(--paper);display:flex;justify-content:center;padding:16px}
 .dt-stage img{width:auto;height:auto;max-width:100%;max-height:min(58vh,540px)}
-.dt-say{margin-top:14px;display:flex;gap:10px;align-items:baseline;font-size:17px;color:var(--ink);font-weight:700}
-.dt-stepnum{flex:none;border:1.5px solid var(--ink);background:var(--yellow);padding:2px 10px;font-size:13px;font-weight:800;letter-spacing:.3px}
+.dt-say{margin-top:16px;display:block;font-size:17px;color:var(--ink)}
+.dt-stepnum{display:inline-block;border:1.5px solid var(--ink);background:var(--yellow);padding:2px 10px;font-size:13px;font-weight:800;letter-spacing:.3px}
+.dt-steptitle{display:block;margin-top:9px;font-family:var(--serif);font-size:27px;letter-spacing:-.2px;color:var(--ink)}
+.dt-detail{display:block;margin-top:8px;font-size:19px;line-height:1.65;font-weight:600;max-width:62ch}
+.dt-listen{margin-top:14px}
 .dt-controls{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;margin-top:18px}
 .dt-complete{margin-top:20px;border:2px dashed var(--line);border-radius:14px;background:var(--white);padding:20px 18px;text-align:center}
 .dt-cheer{font-family:var(--serif);font-size:24px;color:var(--ink)}
@@ -1260,5 +1263,5 @@ a.tc-day-class.is-rec{border:2px solid #71326d;background:#faf6ff}
 .dt-card-stage img{width:auto;height:auto;max-width:100%;max-height:210px}
 .dt-card-copy{display:flex;flex-direction:column;gap:4px;padding:14px 16px 16px;font-size:15px;color:var(--muted)}
 .dt-card-copy strong{font-family:var(--serif);font-weight:400;font-size:21px;color:var(--ink);letter-spacing:-.3px}
-@media(max-width:680px){.dt{padding:16px 14px 20px}.dt-stage{padding:10px}.dt-stage img{max-height:54vh}.dt-controls{gap:10px}}
+@media(max-width:680px){.dt{padding:16px 14px 20px}.dt-stage{padding:10px}.dt-stage img{max-height:54vh}.dt-controls{gap:10px}.dt-steptitle{font-size:24px}.dt-detail{font-size:18px}}
 @media(prefers-reduced-motion:reduce){.dt-card{transition:none}}
