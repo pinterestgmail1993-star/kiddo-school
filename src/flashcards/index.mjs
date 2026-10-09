@@ -18,6 +18,7 @@ import * as shData from './data-shapes.mjs';
 import * as clData from './data-colors.mjs';
 import * as opData from './data-opposites.mjs';
 import * as amData from './data-animals.mjs';
+import * as bpData from './data-body-parts.mjs';
 
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const cardSlug=file=>file.replace(/^\d+-/,'').replace(/\.webp$/,'');
@@ -44,7 +45,11 @@ const SOURCES=[
  // Age 3 Class 6: twelve animal friends — nine with a real recording in
  // /assets/sounds/animals/ (card.audio). The play button renders only where
  // a recording exists; duck, elephant and frog say theirs are on the way.
- [{meta:amData.animalsMeta,cards:amData.animalsCardContent},amData.animalsLesson]
+ [{meta:amData.animalsMeta,cards:amData.animalsCardContent},amData.animalsLesson],
+ // Age 3 Class 7: twenty-four body parts and five senses cards — fifteen
+ // body parts + eight sense words (skin does double duty). Each card has
+ // its own page; the set cover is the owner's real 1264×1264 square cover.
+ [{meta:bpData.bodyPartsMeta,cards:bpData.bodyPartsCardContent},bpData.bodyPartsLesson]
 ];
 
 function buildSet([data,lesson]){

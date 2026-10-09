@@ -759,7 +759,7 @@ test('the school homepage: short hero, age chooser, real classes, how school wor
  assert.ok(home.includes('id="choose-age"'));
  assert.ok(home.includes('href="/newborn/"')&&home.includes('href="/baby/"')&&home.includes('href="/toddler/"')&&home.includes('href="/preschool/3-years/"'),'four real stage cards');
  assert.ok(home.includes('EXPLORE REAL CLASSES'),'real-classes section');
- assert.ok(home.includes('Twenty classes are ready now, from birth to age three'),'honest class count');
+ assert.ok(home.includes('Twenty-one classes are ready now, from birth to age three'),'honest class count');
  assert.ok(home.includes('HOW OUR SCHOOL WORKS'));
  assert.ok(home.includes('id="how-school-works"'));
  for(const step of ['Learn','Play','Practice','Off-Screen'])assert.ok(new RegExp('<h3>'+step+'</h3>').test(home),'step '+step);
@@ -775,7 +775,7 @@ test('the school homepage: short hero, age chooser, real classes, how school wor
  assert.ok(about.includes('id="principal"'));
  assert.ok(about.includes('From the Principal’s Office'));
  assert.ok(about.includes('href="/learning-path/"'));
- assert.ok(about.includes('Twenty classes from birth to age three are ready today'),'about count updated');
+ assert.ok(about.includes('Twenty-one classes from birth to age three are ready today'),'about count updated');
 });
 test('the whole curriculum path is wired together and reusable markup is shared',()=>{
  const l1=read('dist/newborn/0-6-weeks/high-contrast-cards/index.html');

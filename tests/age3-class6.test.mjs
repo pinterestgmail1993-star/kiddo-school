@@ -94,15 +94,15 @@ test('class 6 is wired into the age 3 hub, flashcards index, learning path and h
  const hub=read('preschool/3-years/index.html');
  assert.ok(hub.includes('href="/preschool/3-years/animals-and-their-sounds/"'),'hub links class 6');
  assert.ok(hub.includes('Class 6'));
- assert.ok(hub.includes('Six classes ready now'));
+ assert.ok(hub.includes('Seven classes ready now'));
  assert.ok(hub.includes('href="/flashcards/animal-sounds/"'),'hub links the set');
  const idx=read('flashcards/index.html');
  assert.ok(idx.includes('href="/flashcards/animal-sounds/"'),'library index lists the set');
  const lp=read('learning-path/index.html');
  assert.ok(lp.includes('Class 20: <a href="/preschool/3-years/animals-and-their-sounds/">Animals &amp; Their Sounds</a>'));
- assert.ok(lp.includes('twenty age-guided classes'));
- assert.ok(read('index.html').includes('Twenty classes are ready now, from birth to age three'));
- assert.ok(read('about/index.html').includes('Twenty classes from birth to age three are ready today'));
+ assert.ok(lp.includes('twenty-one age-guided classes'));
+ assert.ok(read('index.html').includes('Twenty-one classes are ready now, from birth to age three'));
+ assert.ok(read('about/index.html').includes('Twenty-one classes from birth to age three are ready today'));
 });
 test('every class 6 R2 asset and every shipped sound file exists in dist',()=>{
  for(const f of [...C6_CARDS,'cover.webp'])assert.ok(true,'r2 asset referenced: '+f);
