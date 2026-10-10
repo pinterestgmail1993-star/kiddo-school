@@ -746,16 +746,16 @@ test('the learning path page lists the real curriculum from birth to age 2 and b
  assert.ok(lp.includes('href="/art/"')&&lp.includes('href="/activities/"'));
  assert.ok(lp.includes('Start Today’s Class'));
 });
-test('the school homepage: short hero, age chooser, real classes, how school works',()=>{
+test('the school homepage: Purple Academy hero, age chooser, real classes, how school works',()=>{
  const home=read('dist/index.html');
- assert.ok(home.includes('<h1>Their first school<br><em>starts with you.</em></h1>'));
- assert.ok(home.includes('A playful digital school from birth onward. Explore age-guided classes, hands-on activities, and simple ways to learn together at home.'),'single approved hero paragraph');
+ assert.ok(home.includes('<h1>Little minds.<br><em>Big discoveries.</em></h1>'));
+ assert.ok(home.includes('Fun preschool learning, interactive games, and printable worksheets—all in one happy place.'),'single approved hero paragraph');
  assert.ok(!home.includes('hero-footnote'),'tiny text below the buttons is gone');
  assert.ok(!home.includes('promise-strip'),'the strip under the hero is gone');
  assert.ok(home.includes('href="/newborn/0-6-weeks/high-contrast-cards/"'));
- assert.equal((home.match(/Start Today’s Class/g)||[]).length>=3,true);
+ assert.equal((home.match(/Start Today’s Class/g)||[]).length>=2,true);
  assert.ok(home.includes('href="/learning-path/"'));
- assert.ok(home.includes('newborn-high-contrast-face.webp'));
+ assert.ok(home.includes('kiddo-homepage-hero.webp'),'the Purple Academy hero artwork fronts the page');
  assert.ok(home.includes('CHOOSE YOUR CHILD’S AGE'),'age chooser directly below the hero');
  assert.ok(home.includes('id="choose-age"'));
  assert.ok(home.includes('href="/newborn/"')&&home.includes('href="/baby/"')&&home.includes('href="/toddler/"')&&home.includes('href="/preschool/3-years/"'),'four real stage cards');
@@ -776,6 +776,10 @@ test('the school homepage: short hero, age chooser, real classes, how school wor
  assert.ok(!home.includes('A QUESTION WORTH TRYING'),'the bridge feature no longer competes on the homepage');
  assert.ok(home.includes('data-tc-today'),'Today’s Class buttons are smart (age + progress aware)');
  assert.ok(home.includes('data-tc-hint'),'the recommendation hint travels with the buttons');
+ // Purple Academy brand sections: all six homepage artworks present with true dims, no fake progress
+ for(const img of ['kiddo-homepage-hero','kiddo-learning-path','kiddo-interactive-learning','kiddo-reading-worksheets','kiddo-about-school','kiddo-classroom-achievements'])assert.ok(home.includes(img+'.webp'),'brand artwork on home: '+img);
+ assert.ok((home.match(/width="1748" height="1240"/g)||[]).length>=6,'brand art ships real dims (no CLS, no cropping)');
+ assert.ok(home.includes('id="why-kiddo"'),'the Why Kiddo.school? section exists');
  assert.ok(read('dist/ages/index.html').includes('id="ages"')||read('dist/ages/index.html').includes('age-panel'),'the /ages/ page still exists for older-kid activities');
  const about=read('dist/about/index.html');
  assert.ok(about.includes('id="principal"'));

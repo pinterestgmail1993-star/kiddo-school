@@ -71,7 +71,10 @@ test('baby, newborn, 0-6 weeks and See hub pages exist and interlink',()=>{
 test('home page and navigation surface the newborn school',()=>{
  const home=read('dist/index.html');
  assert.match(home,/href="\/newborn\/0-6-weeks\/high-contrast-cards\/"/);
- assert.match(home,/newborn-high-contrast-face\.webp/);
+ // the Purple Academy hero replaced the newborn scrapbook; Class 1 is surfaced
+ // through the Start Today's Class buttons and the smart hint instead.
+ assert.match(home,/kiddo-homepage-hero\.webp/);
+ assert.match(home,/data-tc-today/);
  const anyPage=read('dist/about/index.html');
  // Footer was simplified: Baby, Baby classes, Toddler, All subjects and
  // Browse by age no longer sit in the footer — their pages still exist.

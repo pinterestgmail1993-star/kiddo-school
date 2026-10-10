@@ -48,6 +48,15 @@ export function worksheetSVG(w){
  return layoutToSVG(worksheetEls(w),595,842,{label:'Preview of the printable '+w.title+' worksheet'});
 }
 
+/* the six Purple Academy subject illustrations (R2, 1264×1264 probed). Shared
+   subjects (shapes+colors, writing+phonics) reuse one illustration on purpose. */
+const SUBJECT_IMG={
+ maths:'kiddo-subject-maths.webp',shapes:'kiddo-subject-shapes-colors.webp',colors:'kiddo-subject-shapes-colors.webp',
+ writing:'kiddo-subject-writing-phonics.webp',phonics:'kiddo-subject-writing-phonics.webp',
+ reading:'kiddo-subject-alphabet-reading.webp',logic:'kiddo-subject-logic.webp',science:'kiddo-subject-science.webp'
+};
+const BRAND_R2='https://pub-f2fcb7c9b45a496cbeefef18dbba0ec0.r2.dev/school/branding/';
+
 /* ---------- the main library ---------- */
 export function worksheetsHubBody(){
  const cards=SUBJECT_ORDER.map(k=>{
@@ -55,7 +64,7 @@ export function worksheetsHubBody(){
   const planned=k==='maths'?`<span class="ws-count-note">${n} of ${MATHS_PLANNED} ready \u2014 more arrive with their artwork</span>`:`<span class="ws-count-note">${n} free worksheets</span>`;
   const picks=bySubject(k).slice(0,3);
   return `<a class="ws-cat" href="${WS_BASE}${k}/">
-   <span class="ws-cat-head"><span class="ws-cat-pill" style="--tint:${s.tint};--accent:${s.accent}">Class ${s.classNum}</span><strong>${esc(s.label)}</strong></span>
+   <span class="ws-cat-head"><img src="${BRAND_R2}${SUBJECT_IMG[k]}" width="1264" height="1264" alt="" aria-hidden="true" loading="lazy"><span class="ws-cat-pill" style="--tint:${s.tint};--accent:${s.accent}">Class ${s.classNum}</span><strong>${esc(s.label)}</strong></span>
    <p>${catDesc[k]}</p>
    ${planned}
    <span class="ws-cat-picks">${picks.map(p=>`<span>${esc(p.title)}</span>`).join('')}</span>
