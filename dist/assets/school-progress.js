@@ -22,7 +22,7 @@
   if (typeof document === 'undefined' || typeof document.addEventListener !== 'function' || !window.localStorage) return;
   const C = Array.isArray(window.KIDDO_CURRICULUM) ? window.KIDDO_CURRICULUM : [];
   if (!C.length) return;
-  const BANDS = [['newborn','Newborn'],['baby','Baby'],['12-18','12–18 Months'],['18-24','18–24 Months'],['age2','Age 2'],['age3','Age 3']];
+  const BANDS = [['newborn','Newborn'],['baby','Baby'],['12-18','12–18 Months'],['18-24','18–24 Months'],['age2','Age 2'],['age3','Age 3'],['age4','Age 4']];
   const esc = s => String(s).replace(/[&<>"]/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[ch]));
 
   /* ---------- storage ---------- */

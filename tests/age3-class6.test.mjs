@@ -100,9 +100,9 @@ test('class 6 is wired into the age 3 hub, flashcards index, learning path and h
  assert.ok(idx.includes('href="/flashcards/animal-sounds/"'),'library index lists the set');
  const lp=read('learning-path/index.html');
  assert.ok(lp.includes('Class 20: <a href="/preschool/3-years/animals-and-their-sounds/">Animals &amp; Their Sounds</a>'));
- assert.ok(lp.includes('twenty-two age-guided classes'));
- assert.ok(read('index.html').includes('Twenty-two classes are ready now, from birth to age three'));
- assert.ok(read('about/index.html').includes('Twenty-two classes from birth to age three are ready today'));
+ assert.ok(lp.includes('twenty-five age-guided classes'));
+ assert.ok(read('index.html').includes('Twenty-five classes are ready now, from birth to age four'));
+ assert.ok(read('about/index.html').includes('Twenty-five classes from birth to age four are ready today'));
 });
 test('every class 6 R2 asset and every shipped sound file exists in dist',()=>{
  for(const f of [...C6_CARDS,'cover.webp'])assert.ok(true,'r2 asset referenced: '+f);

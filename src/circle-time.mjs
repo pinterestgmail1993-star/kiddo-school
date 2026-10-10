@@ -144,6 +144,21 @@ export function myClassroomBody(){
  <div class="mc-panel mc-desk" data-tc-desk>
   <noscript><p class="fc-hint">Progress saving needs JavaScript. Without it, the <a href="/learning-path/">Learning Path</a> is still the full class list — start at any class and simply carry on next time.</p></noscript>
  </div>
+ <div class="mc-panel" data-my-creations>
+  <span class="eyebrow">ON THE DESK · MY CREATIONS</span>
+  <h2>My Creations</h2>
+  <p>Artwork saved from the <a href="/preschool/colors/adventures/">Colors &amp; Creativity studio</a> lives here — reopen it to keep going, or download it again.</p>
+  <div class="gal-grid" data-gal-grid></div>
+  <p class="fc-hint" data-gal-empty hidden>No saved artwork yet for this child — paint something in the <a href="/preschool/colors/adventures/">Colors &amp; Creativity studio</a> and press Save.</p>
+  <noscript><p class="fc-hint">Saved artwork and adventure progress need JavaScript on this device.</p></noscript>
+ </div>
+ <div class="mc-panel" data-adventure-progress>
+  <span class="eyebrow">ADVENTURE PROGRESS</span>
+  <h2>Adventures on the path.</h2>
+  <p>Real progress for the selected child across the three Age 4 shelves — opening a page never counts; finishing a game, artwork or traced line does.</p>
+  <div data-ap-rows></div>
+  <p class="fc-hint">Progress is kept in this browser only — no account, no sign-up, nothing uploaded.</p>
+ </div>
  <div class="mc-panel" id="circle-time">
   <span class="eyebrow">ON THE RUG · CIRCLE TIME · AGE 2</span>
   <h2>Hello School!</h2>

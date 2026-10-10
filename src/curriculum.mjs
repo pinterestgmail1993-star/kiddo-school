@@ -1,9 +1,10 @@
-// Kiddo School — the ONE list of the school's 22 real classes, in path
+// Kiddo School — the ONE list of the school's real classes, in path
 // order, with the age band each class belongs to. Everything that counts
 // classes, recommends "Today's Class" or renders the Learning Path rows
 // reads from here, so no page can drift out of sync with another.
 // Bands: newborn (classes 1–2), baby (3–6), 12-18 (7), 18-24 (8),
-// age2 (9–14), age3 (15–22).
+// age2 (9–14), age3 (15–22), age4 (25–27, the owner's own class numbers —
+// 23 and 24 are reserved for future Age 4 classes and intentionally absent).
 import {hcLesson,fvLesson,cfoLesson,fwftLesson,aeoLesson,fabLesson,fwfhLesson,fcLesson,csLesson,msLesson,anLesson,vhLesson,emLesson,gbLesson} from './lessons.mjs';
 
 const P15='/preschool/3-years/alphabet-and-letter-sounds/';
@@ -37,7 +38,10 @@ export const CURRICULUM=[
  {n:19,stage:'Preschool',band:'age3',   bandLabel:'Age 3',        title:'Opposites & Comparing',          path:P19},
  {n:20,stage:'Preschool',band:'age3',   bandLabel:'Age 3',        title:'Animals & Their Sounds',         path:P20},
  {n:21,stage:'Preschool',band:'age3',   bandLabel:'Age 3',        title:'Body Parts & My Five Senses',    path:P21},
- {n:22,stage:'Preschool',band:'age3',   bandLabel:'Age 3',        title:'Fruits & Vegetables',            path:P22}
+ {n:22,stage:'Preschool',band:'age3',   bandLabel:'Age 3',        title:'Fruits & Vegetables',            path:P22},
+ {n:25,stage:'Preschool',band:'age4',   bandLabel:'Age 4',        title:'Shapes, Patterns & Sorting',     path:'/preschool/4-years/shapes-patterns-and-sorting/'},
+ {n:26,stage:'Preschool',band:'age4',   bandLabel:'Age 4',        title:'Colors, Mixing & Creativity',    path:'/preschool/4-years/colors-mixing-and-creativity/'},
+ {n:27,stage:'Preschool',band:'age4',   bandLabel:'Age 4',        title:'Early Writing & Pencil Control', path:'/preschool/4-years/early-writing-and-pencil-control/'}
 ];
 
 export const BANDS=[
@@ -46,5 +50,6 @@ export const BANDS=[
  ['12-18','12–18 Months'],
  ['18-24','18–24 Months'],
  ['age2','Age 2'],
- ['age3','Age 3']
+ ['age3','Age 3'],
+ ['age4','Age 4']
 ];
