@@ -39,7 +39,7 @@ export const alphabetLesson={
  seoTitle:'Alphabet & Letter Sounds for 3 Year Olds',
  title:'Alphabet & Letter Sounds for 3 Year Olds',
  h1:'Alphabet & Letter Sounds',
- description:'Explore A–Z letters with your preschooler using colorful alphabet cards, beginning-sound games, letter matching and easy activities to try at home.',
+ description:'Explore A–Z letters with your preschooler using colorful alphabet cards, beginning sounds, printable letter sheets to solve and easy activities to try at home.',
  eyebrow:'PRESCHOOL · AGE 3 · CLASS 1',
  crumbs:[['Preschool','/preschool/'],['Age 3','/preschool/3-years/'],['Alphabet & Letter Sounds','/preschool/3-years/alphabet-and-letter-sounds/']],
  schemaImage:R2+'flashcards/preschool-learning-cards/alphabet-and-letter-sounds-age-3/01-a-apple.webp',

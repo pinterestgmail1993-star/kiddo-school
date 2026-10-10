@@ -119,7 +119,7 @@ test('shapes card pages: 12 unique titles, one H1 each, downloads, cross-set twi
 });
 
 /* ---- The Numbers & Counting class ---- */
-test('numbers class: spec structure, welcome + closing quotes, games with exact dot counts',()=>{
+test('numbers class: learn + solve-the-sheets structure, no coded games (owner instruction)',()=>{
  const html=page('/preschool/3-years/numbers-and-counting/');
  assert.ok(html.includes('<title>Numbers &amp; Counting 1–10 for 3 Year Olds | Kiddo.school</title>'));
  assert.ok(html.includes('rel="canonical" href="https://kiddo-school.pages.dev/preschool/3-years/numbers-and-counting/"'));
@@ -127,38 +127,25 @@ test('numbers class: spec structure, welcome + closing quotes, games with exact 
  assert.ok(html.includes('Today we’re counting'),'teacher welcome');
  assert.ok(html.includes('Start with the numbers your child enjoys'));
  assert.ok(html.includes('You did some lovely counting today'),'teacher closing');
+ // The class teaches the cards, then teaches how to SOLVE the printable
+ // sheets — the owner removed the coded games from the learning path.
  assert.ok(html.includes('id="learn-the-numbers"'),'learn section');
- assert.ok(html.includes('id="find-the-number"'),'find game');
- assert.ok(html.includes('id="count-and-match"'),'count and match');
- assert.ok(html.includes('id="number-order"'),'number order');
+ assert.ok(html.includes('id="solve-the-sheets"'),'solve-the-sheets section');
+ ['id="find-the-number"','id="count-and-match"','id="number-order"'].forEach(id=>assert.ok(!html.includes(id),'coded game removed: '+id));
+ assert.ok(!html.includes('data-tc-round'),'no tap-a-choice game rounds anywhere');
  assert.ok(html.includes('id="off-screen"'),'off screen');
  assert.ok(html.includes('id="class-complete"'),'completion');
  assert.ok(html.includes('Play Again')&&html.includes('View Number Flashcards')&&html.includes('Learning Path'),'completion buttons');
- assert.ok(html.includes('Play Again'));
- // No fake next class: completion links the real Learning Path instead.
  assert.ok(!html.includes('Next Class'),'no invented next-class button');
+ // Solve-the-sheets guidance: honest, pointing at the real print page and set.
+ assert.ok(html.includes('href="/preschool/3-years/numbers-and-counting/print/"'),'links the printable cards');
+ assert.ok(html.includes('href="/flashcards/numbers-and-counting/"'),'links the flashcard set');
+ assert.ok(html.includes('Write &amp; Color'),'names the on-screen drawing layer');
+ assert.ok(html.includes('Build the staircase'),'concrete solving steps, not generic copy');
  // 1–5 / 6–10 group chips (progressive enhancement) + 10 slides.
  assert.ok(html.includes('data-num-groups'),'group chips present');
  assert.equal((html.match(/data-num-group="1-5"/g)||[]).length,5,'five cards in 1–5');
  assert.equal((html.match(/data-num-group="6-10"/g)||[]).length,5,'five cards in 6–10');
- // Find the Number: 6 rounds of three numeral choices.
- const find=html.split('id="find-the-number"')[1].split('</section>')[0];
- assert.equal((find.match(/data-tc-round/g)||[]).length,6);
- assert.equal((find.match(/data-tc-correct="true"/g)||[]).length,6,'one right answer per round');
- // Count and Match: dots are ALWAYS mathematically correct.
- const cm=html.split('id="count-and-match"')[1].split('id="number-order"')[0];
- const rounds=cm.split('data-tc-round').slice(1);
- assert.equal(rounds.length,5);
- rounds.forEach((r,i)=>{
-  const dots=(r.match(/class="dot"/g)||[]).length;
-  const correct=r.match(/aria-label="The number (\d+)"[^>]*data-tc-correct="true"/)||r.match(/data-tc-correct="true"[^>]*aria-label="The number (\d+)"/);
-  assert.ok(correct,'correct choice in round '+i);
-  assert.equal(dots,Number(correct[1]),`round ${i+1}: ${dots} dots must equal the answer ${correct[1]}`);
- });
- // Number order: two honest boards (1–5, 1–10) rendered in order, plus the JS note.
- const ord=html.split('id="number-order"')[1].split('</section>')[0];
- assert.ok(ord.includes('data-ord-max="5"')&&ord.includes('data-ord-max="10"'));
- assert.ok(ord.includes('needs JavaScript'),'honest no-JS note');
  // Off-screen: the five real-life ideas from the brief.
  ['Count three toys','Count steps together','Count fingers','Count blocks as you stack','Five in a row'].forEach(t=>assert.ok(html.includes(t),'off-screen idea: '+t));
  // Real D1 community mount with the class path.
@@ -166,27 +153,24 @@ test('numbers class: spec structure, welcome + closing quotes, games with exact 
 });
 
 /* ---- The Shapes & Patterns class ---- */
-test('shapes class: learn/find/match/pattern structure, AB + AAB rounds, shape tiles not images',()=>{
+test('shapes class: learn + solve-the-sheets structure, no coded games (owner instruction)',()=>{
  const html=page('/preschool/3-years/shapes-and-patterns/');
  assert.ok(html.includes('<title>Shapes &amp; Patterns for 3 Year Olds | Kiddo.school</title>'));
  assert.ok(html.includes('rel="canonical" href="https://kiddo-school.pages.dev/preschool/3-years/shapes-and-patterns/"'));
  assert.match(html,/<h1>Shapes &amp; Patterns<\/h1>/);
- ['id="learn-shapes"','id="find-the-shape"','id="match-shapes"','id="complete-a-pattern"','id="off-screen"','id="class-complete"'].forEach(id=>assert.ok(html.includes(id),'section '+id));
- // Pattern rounds: three AB + three AAB, built from programmatic tiles.
- const pat=html.split('id="complete-a-pattern"')[1].split('</section>')[0];
- assert.equal((pat.match(/data-tc-round/g)||[]).length,6);
- assert.equal((pat.match(/pat-gap/g)||[]).length,6,'one gap per pattern round');
- assert.equal((pat.match(/data-tc-correct="true"/g)||[]).length,6,'one right answer per round');
- // The pattern rows must NOT embed card images — tiles only.
- assert.ok(!pat.includes('<img'),'pattern rows use shape tiles, not images');
- // Find + match rounds: one correct answer each, real card pictures in match.
- const find=html.split('id="find-the-shape"')[1].split('</section>')[0];
- assert.equal((find.match(/data-tc-round/g)||[]).length,6);
- const match=html.split('id="match-shapes"')[1].split('</section>')[0];
- assert.equal((match.match(/data-tc-round/g)||[]).length,6);
- assert.ok(match.includes('01-circle.webp'),'match game uses the real card pictures');
+ assert.ok(html.includes('id="learn-shapes"'),'learn section');
+ assert.ok(html.includes('id="solve-the-sheets"'),'solve-the-sheets section');
+ ['id="find-the-shape"','id="match-shapes"','id="complete-a-pattern"'].forEach(id=>assert.ok(!html.includes(id),'coded game removed: '+id));
+ assert.ok(!html.includes('data-tc-round'),'no tap-a-choice game rounds anywhere');
+ assert.ok(html.includes('id="off-screen"'),'off screen');
+ assert.ok(html.includes('id="class-complete"'),'completion');
  assert.ok(html.includes('Explore Again')&&html.includes('View Shape Flashcards')&&html.includes('Learning Path'),'completion buttons');
  assert.ok(!html.includes('Next Class'),'no invented next-class button');
+ // Solve-the-sheets guidance: the real print page, the real set, honest steps.
+ assert.ok(html.includes('href="/preschool/3-years/shapes-and-patterns/print/"'),'links the printable cards');
+ assert.ok(html.includes('href="/flashcards/shapes/"'),'links the flashcard set');
+ assert.ok(html.includes('Write &amp; Color'),'names the on-screen drawing layer');
+ assert.ok(html.includes('Hunt the twins'),'concrete solving steps, not generic copy');
 });
 
 /* ---- Print views (real, browser-based; no PDF claims) ---- */
@@ -197,8 +181,8 @@ test('both classes have genuine print views: all cards two-up, noindex, no PDF',
   assert.ok(html.includes('content="noindex,follow"'),'print noindex '+L.path);
   assert.ok(!/\.pdf/i.test(html),'no PDF claims '+L.path);
   assert.ok(html.includes('Printing happens in your browser'),'honest print copy '+L.path);
-  const imgs=(html.match(/<img /g)||[]).length;
-  assert.equal(imgs,count,'all cards in print view '+L.path);
+  const cardImgs=(html.match(/<img [^>]*>/g)||[]).filter(t=>!t.includes('brand-logo')).length;
+  assert.equal(cardImgs,count,'all cards in print view '+L.path);
  }
 });
 

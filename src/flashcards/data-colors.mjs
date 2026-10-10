@@ -42,7 +42,7 @@ export const colorsLesson={
  seoTitle:'Colors & Color Mixing for 3 Year Olds',
  title:'Colors & Color Mixing for 3 Year Olds',
  h1:'Colors & Color Mixing',
- description:'Learn colors with your preschooler using color splash and picture cards, find-the-color and match games, paint-mixing play (red + yellow = orange) and a rainbow activity to try at home.',
+ description:'Learn colors with your preschooler using color splash and picture cards, a rainbow to explore, printable color sheets to solve and color hunts to try at home.',
  eyebrow:'PRESCHOOL · AGE 3 · CLASS 4',
  crumbs:[['Preschool','/preschool/'],['Age 3','/preschool/3-years/'],['Colors & Color Mixing','/preschool/3-years/colors-and-color-mixing/']],
  schemaImage:R2+P+'12-rainbow-splash.webp',

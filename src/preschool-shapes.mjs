@@ -7,6 +7,7 @@
 // no new images are invented, and the pattern games never depend on
 // nonexistent assets.
 import {shapesLesson,shapesCardContent} from './flashcards/data-shapes.mjs';
+import {age3SolveSheets} from './lessons.mjs';
 
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const base=shapesLesson.r2Base+shapesLesson.folder;
@@ -64,7 +65,7 @@ const patternRounds=[
 export function shapesClassBody(L){
  const chips=[['Age','3 Years'],['Class','Preschool 3'],['Subjects','Shapes &amp; patterns']];
  const ledes=[
-  'Twelve shape cards, three gentle games and a house full of shapes waiting to be found. This class follows Numbers &amp; Counting on the preschool path — same calm pacing, now with circles, stars and simple patterns.',
+  'Twelve shape cards, printable shape sheets to solve and a house full of shapes waiting to be found. This class follows Numbers &amp; Counting on the preschool path — same calm pacing, now with circles, stars and simple patterns.',
   'Two shapes are a fine first day. Start with the ones your child will spot around the house — circle and star are the classics — and let the rest of the set wait its turn.'
  ];
  const heroInner=`<span class="eyebrow">${esc(L.eyebrow)}</span>
@@ -78,6 +79,19 @@ export function shapesClassBody(L){
   const d=contentOf(c.slug);
   return `<figure class="lv-card"><img src="${base}${c.file}" width="${c.w}" height="${c.h}" alt="${esc(c.alt)}"${i===0?'':' loading="lazy"'} data-lv-say="${esc(d.say)}" data-lv-find="${esc('Can you say '+d.word.toLowerCase()+' and trace its shape in the air?')}"></figure>`;
  }).join('');
+ /* SOLVE THE SHEETS — the class's real printable work: the owner asked for
+    worksheet-solving guidance here instead of coded games. */
+ const solveSection=age3SolveSheets({
+  heading:'Solve the shape sheets together.',
+  copy:'The twelve shape cards print two to a page, straight from your browser. Printed, cut and named, they are the class\u2019s real worksheets — and on screen, every card page can be drawn on directly.',
+  steps:[
+   ['Print the cards','Open the printable cards and print all twelve, two to a page. Cut them out together, naming each shape as it is cut.'],
+   ['Name the shape','Hold up a card and name the shape, then count its sides together — one, two, three. Sides and names grow up side by side.'],
+   ['Hunt the twins','Find each shape\u2019s real twin in the room: the clock is a circle, the book is a rectangle. One real twin per shape is plenty.'],
+   ['Trace the edge','Trace around each card\u2019s edge with one finger, then a crayon. On screen, the card page\u2019s Write & Color layer does the same job.']
+  ],
+  printHref:'/preschool/3-years/shapes-and-patterns/print/',fcHref:'/flashcards/shapes/'
+ });
  const learnSection=`<section class="wrap lesson-section" id="learn-shapes" aria-label="Learn shapes">
   <span class="eyebrow">LEARN SHAPES</span>
   <h2>Twelve shapes, from circle to octagon.</h2>
@@ -165,23 +179,19 @@ export function shapesClassBody(L){
  ${`<section class="wrap lesson-section" id="todays-class" aria-label="Today’s class">
   <span class="eyebrow">TODAY’S CLASS</span>
   <h2>How today’s class works.</h2>
-  <p class="lesson-copy">Seven little steps, in any order that suits you: a welcome from your teacher, the shape cards, two find-and-match games, pattern play, an off-screen hunt, and a warm goodbye. Stop after any step — that is a complete class, and there is never a score at the end.</p>
+  <p class="lesson-copy">Four little steps, in any order that suits you: a welcome from your teacher, the shape cards, solving the shape sheets together, an off-screen hunt, and a warm goodbye. Stop after any step — that is a complete class, and there is never a score at the end.</p>
   <ol class="tc-flow">
    <li><span>1</span> Teacher welcome</li>
    <li><span>2</span> Learn shapes</li>
-   <li><span>3</span> Play: find the shape</li>
-   <li><span>4</span> Practice: match shapes</li>
-   <li><span>5</span> Practice: complete a pattern</li>
-   <li><span>6</span> Take it off screen</li>
-   <li><span>7</span> Class complete</li>
+   <li><span>3</span> Solve the sheets</li>
+   <li><span>4</span> Take it off screen</li>
+   <li><span>5</span> Class complete</li>
   </ol>
   <div class="tc-note-block tc-teacher"><span class="eyebrow">TEACHER WELCOME</span><p class="tc-say">“Hello, my friend — and hello to you, grown-up helper! Today we’re playing with shapes. Start with the ones your child already loves — circles and stars are old friends — and let the rest introduce themselves.”</p><p class="tc-who">— Your Kiddo School teacher</p></div>
-  <div class="lesson-start"><a class="button" href="#learn-shapes">Begin the class <span aria-hidden="true">↓</span></a><span class="lesson-start-hint">First stop: the shape cards. Or jump straight to a game below.</span></div>
+  <div class="lesson-start"><a class="button" href="#learn-shapes">Begin the class <span aria-hidden="true">↓</span></a><span class="lesson-start-hint">First stop: the shape cards.</span></div>
  </section>`}
  ${learnSection}
- ${findSection}
- ${matchSection}
- ${patternSection}
+ ${solveSection}
  ${offScreenSection}
  ${printSection}
  ${teacherNoteSection}

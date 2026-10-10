@@ -94,23 +94,27 @@ test('Garden Things: exactly the 12 verified cards, no cover (first card fronts 
  }
 });
 
-test('both classes: ten flow steps, teacher welcome, two games each, honest off-screen safety', () => {
+test('both classes: flow steps, teacher welcome, solve-the-sheets, honest off-screen safety', () => {
  for (const L of [gflLesson, gthLesson]) {
   const { html } = classPage(L, L.folder);
-  for (const step of ['Teacher welcome', 'Take it off screen', 'Print the cards', 'Teacher note', 'Parent review', 'Class complete']) {
+  for (const step of ['Teacher welcome', 'Solve the sheets', 'Take it off screen', 'Print the cards', 'Teacher note', 'Parent review', 'Class complete']) {
    assert.ok(html.includes(step), `${L.h1} flow step: ${step}`);
   }
-  // Two find-it games with exactly one correct choice per round
+  // The coded games are retired from the page (owner instruction); the game
+  // DATA stays guarded so the retired rounds never drift.
   const games = L.interactive.sections.filter(s => s.type === 'play');
-  assert.equal(games.length, 2, L.h1 + ' has two play games');
+  assert.equal(games.length, 2, L.h1 + ' keeps its two play sections in data');
   for (const g of games) {
-   assert.ok(g.rounds.length >= 5, L.h1 + ' game rounds');
+   assert.ok(g.rounds.length >= 5, L.h1 + ' game rounds in data');
    for (const r of g.rounds) {
     assert.equal(r.choices.filter(c => c.correct).length, 1, L.h1 + ' round answerable: ' + r.ask);
     assert.equal(r.choices.length, 3, L.h1 + ' three choices');
     for (const ch of r.choices) assert.ok(L.cards.some(c => c.file === ch.file), 'choice file is a real card');
    }
   }
+  assert.ok(!html.includes('data-tc-round'), L.h1 + ' renders zero coded rounds');
+  assert.ok(html.includes('id="solve-the-sheets"'), L.h1 + ' has solve-the-sheets guidance');
+  assert.ok(html.includes('href="' + L.path + 'print/"'), L.h1 + ' links its printable cards');
   // Every learn item references a real card with say + find
   const learn = L.interactive.sections.find(s => s.type === 'learn');
   assert.equal(learn.items.length, 12, L.h1 + ' learns all 12');

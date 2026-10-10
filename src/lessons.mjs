@@ -526,8 +526,8 @@ export const msLesson={
   {order:15,file:'15-odd-one-out.webp',w:1414,h:2000,alt:'Three bananas and one apple for a toddler odd-one-out activity'}
  ],
  interactive:{
-  flow:{intro:'Seven little steps, in order: a welcome from your teacher, same and different, find the match, sort together, what belongs together, find the different one, then take it off screen. Stop after any step — that is a complete class, and there is never a score at the end.',
-   steps:[['1','Teacher welcome'],['2','Same &amp; different'],['3','Find the match'],['4','Sort together'],['5','What belongs together'],['6','Find the different one'],['7','Take it off screen']],
+  flow:{intro:'Five little steps, in order: a welcome from your teacher, same and different, sort together, solve the matching cards on paper, then take it off screen. Stop after any step — that is a complete class, and there is never a score at the end.',
+   steps:[['1','Teacher welcome'],['2','Same &amp; different'],['3','Sort together'],['4','Solve the sheets'],['5','Take it off screen']],
    beginHref:'#same-different',beginHint:'Grown-up nearby, toddler on the lap, phone at a comfy distance.'},
   teacher:{welcome:'Today we’re going to find things that match and things that are different. Let’s look together!',note:'Matching happens everywhere. Try noticing things that are the same, different or belong together during your day.'},
   principal:{note:'There’s no need to turn matching into a test. Notice patterns together during play, tidying up, getting dressed and everyday routines.'},
@@ -621,8 +621,8 @@ export const anLesson={
   {order:20,file:'20-bird.webp',w:1414,h:2000,alt:'A bird saying tweet for a toddler animal sounds activity'}
  ],
  interactive:{
-  flow:{intro:'Seven little steps, in order: a welcome from your teacher, farm animals, a sounds game, wild animals, a find-it game, four more friends, then off screen. Every step stands on its own.',
-   steps:[['1','Teacher welcome'],['2','Farm animals'],['3','Who says moo?'],['4','Wild animals'],['5','Find the animal'],['6','A few more friends'],['7','Take it off screen']],
+  flow:{intro:'Six little steps, in order: a welcome from your teacher, farm animals, wild animals, a few more friends, solve the animal cards on paper, then off screen. Every step stands on its own.',
+   steps:[['1','Teacher welcome'],['2','Farm animals'],['3','Wild animals'],['4','A few more friends'],['5','Solve the sheets'],['6','Take it off screen']],
    beginHref:'#farm-animals',beginLabel:'Meet the animals',beginHint:'Toddler on your lap, phone at a comfy distance.'},
   teacher:{welcome:'Let’s meet some animals! Can you make their sounds with me?',note:'If your child can’t make a sound yet, make it for them. Listening is learning too.'},
   principal:{note:'You don’t need to cover every card today. Follow what your child enjoys.'},
@@ -730,8 +730,8 @@ export const vhLesson={
   {order:20,file:'20-scooter.webp',name:'Scooter',sound:'Zoom!',w:2000,h:1294,alt:'Kick scooter learning card labeled Scooter with Zoom'}
  ],
  interactive:{
-  flow:{intro:'Ten little steps, in order: a welcome from your teacher, the vehicles in three small groups, three quick games, then a hunt off screen and cards to print. Every step stands on its own.',
-   steps:[['1','Teacher welcome'],['2','Meet the vehicles'],['3','Make the sounds'],['4','Vehicles that work'],['5','Who makes this sound?'],['6','Boats, planes and a rocket'],['7','Find the vehicle'],['8','Where does it go?'],['9','Take it off screen'],['10','Print the cards']],
+  flow:{intro:'Eight little steps, in order: a welcome from your teacher, the vehicles in three small groups, solve the vehicle cards on paper, then a hunt off screen and cards to print. Every step stands on its own.',
+   steps:[['1','Teacher welcome'],['2','Meet the vehicles'],['3','Make the sounds'],['4','Vehicles that work'],['5','Boats, planes and a rocket'],['6','Solve the sheets'],['7','Take it off screen'],['8','Print the cards']],
    beginHref:'#meet-the-vehicles',beginLabel:'Meet the vehicles',beginHint:'Toddler on your lap, phone at a comfy distance.'},
   teacher:{welcome:'Let’s meet some vehicles! Can you make their sounds with me?',note:'Keep naming the vehicles you notice together today.'},
   principal:{note:'Your child doesn’t need to learn every card today. Follow what catches their interest.'},
@@ -863,8 +863,8 @@ export const emLesson={
   {order:20,file:'20-brave.webp',name:'Brave',phrase:'I can try.',w:2000,h:1414,alt:'2D illustrated child showing bravery by trying'}
  ],
  interactive:{
-  flow:{intro:'Eight little steps, in order: a welcome from your teacher, all twenty feelings, two quick games, faces to make, a few words that help, then off screen and cards to print. Every step stands on its own.',
-   steps:[['1','Teacher welcome'],['2','Meet the feelings'],['3','How do they feel?'],['4','Find the feeling'],['5','Faces &amp; feelings'],['6','What can we do?'],['7','Take it off screen'],['8','Print the cards']],
+  flow:{intro:'Seven little steps, in order: a welcome from your teacher, all twenty feelings, faces to make, a few words that help, solve the feelings cards on paper, then off screen and cards to print. Every step stands on its own.',
+   steps:[['1','Teacher welcome'],['2','Meet the feelings'],['3','Faces &amp; feelings'],['4','What can we do?'],['5','Solve the sheets'],['6','Take it off screen'],['7','Print the cards']],
    beginHref:'#meet-the-feelings',beginLabel:'Meet the feelings',beginHint:'Faces work best up close — toddler on your lap.'},
   teacher:{welcome:'Let’s look at some faces. How do they feel?',note:'When the next wobble arrives — and it will — you both have words for it now.'},
   principal:{note:'Your child doesn’t need to name every feeling. You’re simply giving them words they can grow into.'},
@@ -963,7 +963,7 @@ export const gbLesson={
  seoTitle:'Garden Bugs & Friends for 2-Year-Olds',
  title:'Garden Bugs & Friends for 2-Year-Olds (Toddler 8)',
  h1:'Garden Bugs & Friends for 2-Year-Olds',
- description:'Meet twenty little garden friends with your 2-year-old — a bee, a butterfly, a snail and more — with look-and-name cards, two gentle games and a garden hunt for after class.',
+ description:'Meet twenty little garden friends with your 2-year-old — a bee, a butterfly, a snail and more — with look-and-name cards, printable sheets to solve and a garden hunt for after class.',
  ogAlt:'Garden Bugs and Friends class for 2-year-olds at Kiddo School',
  ogImage:toddlerBase+'garden-bugs-and-friends-age-2/cover.webp',
  schemaImage:toddlerBase+'garden-bugs-and-friends-age-2/cover.webp',
@@ -1002,8 +1002,8 @@ export const gbLesson={
   {order:20,file:'20-squirrel.webp',name:'Squirrel',phrase:'Twitchy tail!',w:1587,h:2245,alt:'2D illustration of a squirrel with a fluffy tail'}
  ],
  interactive:{
-  flow:{intro:'Eight little steps, in order: a welcome from your teacher, all twenty garden friends, two quick games, a wiggle-and-move break, a few bug facts, then off to the real garden and cards to print. Every step stands on its own.',
-   steps:[['1','Teacher welcome'],['2','Meet the garden friends'],['3','Who is hiding?'],['4','Find the bug'],['5','Wiggle & move'],['6','Little bug facts'],['7','Take it off screen'],['8','Print the cards']],
+  flow:{intro:'Seven little steps, in order: a welcome from your teacher, all twenty garden friends, a wiggle-and-move break, a few bug facts, solve the garden cards on paper, then off to the real garden and cards to print. Every step stands on its own.',
+   steps:[['1','Teacher welcome'],['2','Meet the garden friends'],['3','Wiggle & move'],['4','Little bug facts'],['5','Solve the sheets'],['6','Take it off screen'],['7','Print the cards']],
    beginHref:'#meet-the-garden-friends',beginLabel:'Meet the garden friends',beginHint:'Cards work best up close — toddler on your lap.'},
   teacher:{welcome:'Let’s meet some little garden friends. Who is this?',note:'Next time you step outside, the whole garden is a name-them-together game.'},
   principal:{note:'Your child doesn’t need every bug name to stick. You’re opening a door to the small world at their feet — curiosity does the rest.'},
@@ -1089,7 +1089,7 @@ export const gbLesson={
  ],note:'<strong>Age ranges are a guide.</strong> Go at your child’s pace.'},
  pills:{heading:'Where to next?',items:[['Toddler classes','/toddler/'],['Age 2','/toddler/2-years/'],['Learning Path','/learning-path/']]},
  pathNav:{prev:{title:'Emotions & Feelings',range:'Age 2',href:'/toddler/2-years/emotions-and-feelings/'},next:null},
- hubBlurb:'Twenty little garden friends — a bee, a butterfly, a snail and more — with two gentle games and a garden hunt for after class. Made for two-year-olds.',
+ hubBlurb:'Twenty little garden friends — a bee, a butterfly, a snail and more — with printable sheets to solve and a garden hunt for after class. Made for two-year-olds.',
  schema:{resourceType:'Interactive toddler class',level:'Toddler (age 2)',teaches:'Garden creature names — bee, butterfly, ladybug, snail and more — through looking, naming, matching and moving together',audience:'Parents of toddlers',keywords:'garden bugs for 2 year olds, insect activities for toddlers, bug flashcards for toddlers, bug activities for 2 year olds, nature activities for toddlers, teaching bugs to toddlers, printable bug cards, garden animals for toddlers'}
 };
 export const lessons=[hcLesson,fvLesson,cfoLesson,fwftLesson,aeoLesson,fabLesson,fwfhLesson,fcLesson,csLesson,msLesson,anLesson,vhLesson,emLesson,gbLesson];
@@ -1141,8 +1141,8 @@ export const gfLesson={
   {order:18,file:'18-owl.webp',name:'Owl',phrase:'Whooo is awake at night?',w:1414,h:2000,alt:'Owl picture card for toddlers'}
  ],
  interactive:{
-  flow:{intro:'Ten little steps, in order: a welcome from your teacher, all eighteen garden friends, two gentle games, a look-don’t-touch outdoors hunt, cards to print, a note from your teacher and one last check-in from you. Stop after any step — that is a complete class.',
-   steps:[['1','Teacher welcome'],['2','Meet the garden friends'],['3','Find the animal'],['4','Who am I?'],['5','Where might we see it?'],['6','Take it off screen'],['7','Print the cards'],['8','Teacher note'],['9','Parent review'],['10','Class complete']],
+  flow:{intro:'Seven little steps, in order: a welcome from your teacher, all eighteen garden friends, where might we see it, solve the garden cards on paper, then off to the real garden and cards to print. Stop after any step — that is a complete class.',
+   steps:[['1','Teacher welcome'],['2','Meet the garden friends'],['3','Where might we see it?'],['4','Solve the sheets'],['5','Take it off screen'],['6','Print the cards'],['7','Teacher note']],
    beginHref:'#meet-the-garden-friends',beginLabel:'Meet the garden friends',beginHint:'Cards work best up close — toddler on your lap.'},
   teacher:{welcome:'Let’s meet some animals we might see around gardens and outdoors!',note:'A duck on the pond, a bird in the hedge — every walk becomes a naming game. You do not need a garden; a window and a little patience will do.'},
   principal:{note:'Your toddler does not need every animal name to stick. Saying words while they look and hop is the whole lesson — the vocabulary rides along, and no garden is required. Some of these friends live in gardens, some only visit, and some live in the wider outdoors — all of that is fine to wonder about together.'},
@@ -1222,7 +1222,7 @@ export const gfLesson={
   'Keep it honest and gentle: some of these animals live in gardens, some just visit and some stay far outdoors — and all of them stay wild. Looking is the game; touching, feeding and chasing are not part of it.'
  ],note:'<strong>Age ranges are a guide.</strong> Go at your child’s pace.'},
  pills:{heading:'Where to next?',items:[['School Garden','/toddler/2-years/school-garden/'],['Age 2 classes','/toddler/2-years/'],['Library','/learning-library/']]},
- hubBlurb:'Eighteen garden and outdoor animals — a bird, a frog, a squirrel and more — with two gentle games and a look-don’t-touch nature hunt. Made for two-year-olds.',
+ hubBlurb:'Eighteen garden and outdoor animals — a bird, a frog, a squirrel and more — with printable sheets to solve and a look-don’t-touch nature hunt. Made for two-year-olds.',
  schema:{resourceType:'Interactive toddler class',level:'Toddler (age 2)',teaches:'Animal names for toddlers — bird, frog, squirrel, rabbit and more — through looking, naming and playing together',audience:'Parents of toddlers',keywords:'garden animals for kids, garden animals for toddlers, animals for toddlers, animal vocabulary for toddlers, animal flashcards for toddlers, animal picture cards, learning animal names, nature activities for toddlers'}
 };
 
@@ -1231,7 +1231,7 @@ export const gflLesson={
  seoTitle:'Garden Flowers for Toddlers | Picture Cards & Activities',
  title:'Garden Flowers for Toddlers | Picture Cards & Activities',
  h1:'Garden Flowers',
- description:'Walk through the flower garden with your 2-year-old — twelve big, bright blooms to name together, with two gentle games and a look-and-smell hunt for outside.',
+ description:'Walk through the flower garden with your 2-year-old — twelve big, bright blooms to name together, with printable sheets to solve and a look-and-smell hunt for outside.',
  ogAlt:'Garden flowers picture cards for toddlers from Kiddo School',
  ogImage:toddlerBase+'garden-flowers-age-2/cover.webp',
  schemaImage:toddlerBase+'garden-flowers-age-2/cover.webp',
@@ -1262,8 +1262,8 @@ export const gflLesson={
   {order:12,file:'12-bluebell.webp',name:'Bluebell',phrase:'Little blue bells.',w:1912,h:2954,alt:'Bluebell picture card for toddlers'}
  ],
  interactive:{
-  flow:{intro:'Ten little steps, in order: a welcome from your teacher, all twelve flowers, two gentle games, a look-and-smell walk, cards to print, a note from your teacher and one last check-in from you. Stop after any step — that is a complete class.',
-   steps:[['1','Teacher welcome'],['2','Meet the flowers'],['3','Find the flower'],['4','Who am I?'],['5','Where flowers grow'],['6','Take it off screen'],['7','Print the cards'],['8','Teacher note'],['9','Parent review'],['10','Class complete']],
+  flow:{intro:'Eight little steps, in order: a welcome from your teacher, all twelve flowers, a look-and-smell walk, solve the flower cards on paper, cards to print, a note from your teacher and one last check-in from you. Stop after any step — that is a complete class.',
+   steps:[['1','Teacher welcome'],['2','Meet the flowers'],['3','Where flowers grow'],['4','Solve the sheets'],['5','Take it off screen'],['6','Print the cards'],['7','Teacher note'],['8','Parent review']],
    beginHref:'#meet-the-flowers',beginLabel:'Meet the flowers',beginHint:'Cards work best up close — toddler on your lap.'},
   teacher:{welcome:'Let’s walk through the flower garden! Can you say their names with me?',note:'Roses to bluebells — every walk becomes a naming game. You do not need a garden; a window box, a park or a bunch of flowers at home works beautifully.'},
   principal:{note:'Your toddler does not need every flower name to stick. Big, bright pictures and your voice are doing the teaching — the words ride along, and one favourite flower repeated happily is a complete lesson.'},
@@ -1334,7 +1334,7 @@ export const gflLesson={
   'Flowers stay on the plant. Looking and smelling is the game; picking is for grown-ups with a reason.'
  ],note:'<strong>Age ranges are a guide.</strong> Go at your child’s pace.'},
  pills:{heading:'Where to next?',items:[['School Garden','/toddler/2-years/school-garden/'],['Age 2 classes','/toddler/2-years/'],['Library','/learning-library/']]},
- hubBlurb:'Twelve big, bright blooms — sunflower, rose, tulip and more — with two gentle games and a look-and-smell flower hunt. Made for two-year-olds.',
+ hubBlurb:'Twelve big, bright blooms — sunflower, rose, tulip and more — with printable sheets to solve and a look-and-smell flower hunt. Made for two-year-olds.',
  schema:{resourceType:'Interactive toddler class',level:'Toddler (age 2)',teaches:'Flower names for toddlers — sunflower, rose, tulip, daisy and more — through looking, naming and playing together',audience:'Parents of toddlers',keywords:'flowers for toddlers, flower names for kids, garden flowers for kids, flower flashcards for toddlers, flower picture cards, nature activities for toddlers, learning flower names'}
 };
 
@@ -1343,7 +1343,7 @@ export const gthLesson={
  seoTitle:'Garden Things for Toddlers | Picture Cards & Activities',
  title:'Garden Things for Toddlers | Picture Cards & Activities',
  h1:'Garden Things',
- description:'Name the things in the garden with your 2-year-old — the tree, the watering can, the wheelbarrow and more — with picture cards, two gentle games and a garden walk.',
+ description:'Name the things in the garden with your 2-year-old — the tree, the watering can, the wheelbarrow and more — with picture cards, printable sheets to solve and a garden walk.',
  ogAlt:'Garden things picture cards for toddlers from Kiddo School',
  ogImage:toddlerBase+'garden-things-age-2/01-flower.webp',
  schemaImage:toddlerBase+'garden-things-age-2/01-flower.webp',
@@ -1374,8 +1374,8 @@ export const gthLesson={
   {order:12,file:'12-garden-bench.webp',name:'Garden bench',phrase:'Time to sit and rest.',w:1414,h:2000,alt:'Garden bench picture card for toddlers'}
  ],
  interactive:{
-  flow:{intro:'Ten little steps, in order: a welcome from your teacher, all twelve garden things, two gentle games, a name-it-as-you-go walk, cards to print, a note from your teacher and one last check-in from you. Stop after any step — that is a complete class.',
-   steps:[['1','Teacher welcome'],['2','Meet the garden things'],['3','Find the thing'],['4','What is it for?'],['5','Around the garden'],['6','Take it off screen'],['7','Print the cards'],['8','Teacher note'],['9','Parent review'],['10','Class complete']],
+  flow:{intro:'Eight little steps, in order: a welcome from your teacher, all twelve garden things, a name-it-as-you-go walk, solve the garden things on paper, cards to print, a note from your teacher and one last check-in from you. Stop after any step — that is a complete class.',
+   steps:[['1','Teacher welcome'],['2','Meet the garden things'],['3','Around the garden'],['4','Solve the sheets'],['5','Take it off screen'],['6','Print the cards'],['7','Teacher note'],['8','Parent review']],
    beginHref:'#meet-the-garden-things',beginLabel:'Meet the garden things',beginHint:'Cards work best up close — toddler on your lap.'},
   teacher:{welcome:'Let’s look around the garden! What things can we name together?',note:'The watering can, the bench, the fence — every trip outside becomes a name-it game. No garden? A park, a balcony or a street tree all count.'},
   principal:{note:'Tool words are everyday words. Saying watering can while you water a plant is the whole lesson — and the tools themselves stay grown-up territory.'},
@@ -1445,7 +1445,7 @@ export const gthLesson={
   'Real tools stay in grown-up hands. Naming a shovel is plenty — touching it can wait for big-kid years.'
  ],note:'<strong>Age ranges are a guide.</strong> Go at your child’s pace.'},
  pills:{heading:'Where to next?',items:[['School Garden','/toddler/2-years/school-garden/'],['Age 2 classes','/toddler/2-years/'],['Library','/learning-library/']]},
- hubBlurb:'Twelve things every garden holds — tree, watering can, wheelbarrow, bench and more — with two gentle games and a name-it-as-you-go walk. Made for two-year-olds.',
+ hubBlurb:'Twelve things every garden holds — tree, watering can, wheelbarrow, bench and more — with printable sheets to solve and a name-it-as-you-go walk. Made for two-year-olds.',
  schema:{resourceType:'Interactive toddler class',level:'Toddler (age 2)',teaches:'Everyday garden words for toddlers — tree, grass, watering can, wheelbarrow and more — through looking, naming and playing together',audience:'Parents of toddlers',keywords:'garden words for toddlers, garden vocabulary for kids, things in the garden for kids, garden objects flashcards, picture cards for toddlers, nature activities for toddlers'}
 };
 
@@ -1515,6 +1515,114 @@ export function stagePageBody({chips,stageLessons,soon,subject,extra=''}){
  <div class="fc-stages">${stageLessons.map(L=>lessonStageCard(L,'Lesson '+(lessons.indexOf(L)+1),L.subject||subject||'See')).join('')}${soon||''}</div>${extra}
  <p class="lesson-note"><strong>Every baby develops differently.</strong> Kiddo School age ranges are guides, not tests or developmental deadlines.</p></section>`;
 }
+/* ---- SOLVE THE SHEETS: the owner asked the learning-path classes to stop
+   being little coded games and instead teach how to solve the real
+   printable sheets — or draw on them on screen. Every entry is honest
+   per-class guidance grounded in what the printable pages really contain. ---- */
+const SOLVE_SHEETS={
+ '/toddler/2-years/colors-and-shapes/':{
+  heading:'Solve the colors and shapes pack together.',
+  copy:'The printable pack turns this class into eight paper pages: the color cards, the shape cards, two match pages and two hunt pages. Print the pack once and this class keeps working all week — at the table, not on a screen.',
+  steps:[
+   ['Print the pack','Open the printable pack and print the eight pages. The card pages love thick paper, but any paper plays.'],
+   ['Name before cutting','Cut the color and shape cards out together, naming each one as it is cut — red, circle, blue, square. The cutting is the class.'],
+   ['Match the pages','On the match pages, lay each card on its twin and ask “which one goes here?”. One wrong guess is welcome — comparing two things is the thinking work.'],
+   ['Hunt on paper','On the hunt pages, circle every red thing, then every circle. A crayon is the right tool, and circling is the right skill.']
+  ],
+  printHref:'/toddler/2-years/colors-and-shapes/print/',fcHref:'/flashcards/colors-and-shapes/'},
+ '/toddler/2-years/matching-and-sorting/':{
+  heading:'Solve the matching cards together.',
+  copy:'This class&rsquo;s cards live in the flashcards library — every card has its own page, and every card page can be printed, downloaded or drawn on right on the screen.',
+  steps:[
+   ['Print the cards','Print the matching and sorting cards from the flashcards library, two to a page, and cut them out together.'],
+   ['Make the pairs','Lay the cards out and find the pairs that are the same. Say “same!” every time a pair lands — the word and the match grow up together.'],
+   ['Sort into groups','Sort the rest into little groups — animals here, cups there. Sorting is the quiet thinking work of this whole class.'],
+   ['Find the different one','Line up three cards that match and one that does not, then ask “which one is different?”. Swap roles and let your child fool you.']
+  ],
+  printHref:null,fcHref:'/flashcards/matching-and-sorting/'},
+ '/toddler/2-years/animals-and-sounds/':{
+  heading:'Solve the animal cards together.',
+  copy:'The twelve animal cards live in the flashcards library, each on its own page — with its real sound to hear where a recording is ready — and every page can be printed or drawn on.',
+  steps:[
+   ['Print the cards','Print the animal cards from the flashcards library and cut them out together, naming each animal as it is cut.'],
+   ['Say the sound','Hold up one card and make its sound — moo, woof, tweet — then wait. Whatever your toddler sends back is the lesson working.'],
+   ['Act it out','Act each animal out with your body: waddle, hop, flap. Toddlers learn the word with the whole body, not just the ears.'],
+   ['Match card to world','Keep one card on the fridge and find its twin in a book or out the window. Picture to world, world to picture — that is the whole game.']
+  ],
+  printHref:null,fcHref:'/flashcards/animals-and-sounds/'},
+ '/toddler/2-years/vehicles-and-sounds/':{
+  heading:'Solve the vehicle cards together.',
+  copy:'The vehicle cards print two to a page, straight from your browser. Printed and cut, they become a week of sorting, naming and sound-making at the kitchen table.',
+  steps:[
+   ['Print the cards','Open the printable cards and print all twenty, two to a page. Cut them out together, naming each vehicle as it is cut.'],
+   ['Make the sounds','Hold up a card and make its sound — beep, vroom, choo choo, nee-naw — then let your toddler conduct: card up, sound on.'],
+   ['Sort by where they go','Sort the cards into little fleets: things on the road, things in the sky, things on the water. Where-it-goes is real sorting work.'],
+   ['Count the wheels','Pick three cards and count the wheels on each — one, two, lots. Counting inside a favourite topic is the friendliest maths there is.']
+  ],
+  printHref:'/toddler/2-years/vehicles-and-sounds/print/',fcHref:'/flashcards/vehicles-and-sounds/'},
+ '/toddler/2-years/emotions-and-feelings/':{
+  heading:'Solve the feelings cards together.',
+  copy:'The twenty feeling cards print two to a page. On paper they become the best kind of feelings practice — naming a face, making the face, and finding your own.',
+  steps:[
+   ['Print the cards','Open the printable cards and print all twenty, two to a page. Cut them out together, naming each feeling as it is cut.'],
+   ['Make the face','Pick a card and make that face in a mirror together — happy, sad, silly, brave. The face teaches the word.'],
+   ['Guess my feeling','Make a feeling face and let your toddler find the matching card. Then swap: your child makes the face, you guess.'],
+   ['Find today&rsquo;s feeling','Ask “how do you feel right now?” and lay that card on the table. One honest card, chosen freely, is the whole exercise.']
+  ],
+  printHref:'/toddler/2-years/emotions-and-feelings/print/',fcHref:'/flashcards/emotions-and-feelings/'},
+ '/toddler/2-years/garden-bugs-and-friends/':{
+  heading:'Solve the garden cards together.',
+  copy:'The twenty garden cards print two to a page. Printed, cut and named, they turn the next walk outside into the class&rsquo;s final page.',
+  steps:[
+   ['Print the cards','Open the printable cards and print all twenty, two to a page. Cut them out together, saying each garden friend&rsquo;s name.'],
+   ['Name and greet','Hold up a card and greet the friend — “hello, bee!”. Naming warmly is how words stick at two.'],
+   ['Move like them','Wiggle like a worm, flutter like a butterfly, roll like a roly-poly. Bodies remember what ears forget.'],
+   ['Take it outside','Carry two or three cards on the next walk and find their real twins. We look, we talk, and the bugs stay where they live.']
+  ],
+  printHref:'/toddler/2-years/garden-bugs-and-friends/print/',fcHref:'/flashcards/garden-bugs-and-friends/'},
+ '/toddler/2-years/school-garden/garden-friends/':{
+  heading:'Solve the garden animal cards together.',
+  copy:'The twenty garden animal cards print two to a page, straight from your browser. Printed, cut and named, they are the collection\u2019s real worksheets — and on screen, every card page can be drawn on directly.',
+  steps:[
+   ['Print the cards','Open the printable cards and print all twenty, two to a page. Cut them out together, naming each garden animal as it is cut.'],
+   ['Name and greet','Hold up a card and greet the friend — “hello, owl!”. Naming warmly is how animal words stick at two.'],
+   ['Move like them','Hop like a frog, flap like a bird, twitch like a squirrel. Guessing from a movement is the game the whole room can play.'],
+   ['Find them outside','Carry two or three cards on the next walk and find their real twins. We look, we talk, and the animals stay where they live.']
+  ],
+  printHref:'/toddler/2-years/school-garden/garden-friends/print/',fcHref:'/flashcards/garden-friends/'},
+ '/toddler/2-years/school-garden/garden-flowers/':{
+  heading:'Solve the garden flower cards together.',
+  copy:'The twelve flower cards print two to a page, straight from your browser. Printed, cut and named, they are the collection\u2019s real worksheets — and on screen, every card page can be drawn on directly.',
+  steps:[
+   ['Print the cards','Open the printable cards and print all twelve, two to a page. Cut them out together, saying each flower\u2019s name.'],
+   ['Name the colors','Say each flower\u2019s color as you name it — a pink flower, a yellow flower. Colors hide inside this collection for free.'],
+   ['Smell around you','Flowers are the smell-it collection: on the next walk, sniff (gently!) one real flower and name its card.'],
+   ['Draw a flower','Pick a favourite card and draw the flower on paper — or on its card page with the Write & Color layer.']
+  ],
+  printHref:'/toddler/2-years/school-garden/garden-flowers/print/',fcHref:'/flashcards/garden-flowers/'},
+ '/toddler/2-years/school-garden/garden-things/':{
+  heading:'Solve the garden things cards together.',
+  copy:'The twelve garden things print two to a page, straight from your browser. Printed, cut and named, they are the collection\u2019s real worksheets — and on screen, every card page can be drawn on directly.',
+  steps:[
+   ['Print the cards','Open the printable cards and print all twelve, two to a page. Cut them out together, naming each garden thing as it is cut.'],
+   ['Name what it does','Every garden thing has a job — the watering can pours, the boot splashes. Say the job with the name.'],
+   ['Find them at home','A watering can, gloves, a flowerpot — the house and the shed are full of these twins. One real find per card is plenty.'],
+   ['Draw the tools','Pick a favourite card and draw it on paper — or on its card page with the Write & Color layer.']
+  ],
+  printHref:'/toddler/2-years/school-garden/garden-things/print/',fcHref:'/flashcards/garden-things/'}
+};
+function solveSheetsSection(L){
+ const g=SOLVE_SHEETS[L.path];if(!g)return '';
+ const steps=g.steps.map(([t,d],i)=>`<li><span class="fc-stepnum">${String(i+1).padStart(2,'0')}</span><div><h3>${t}</h3><p>${d}</p></div></li>`).join('');
+ return `<section class="wrap lesson-section" id="solve-the-sheets" aria-label="Solve the sheets together">
+  <span class="eyebrow">SOLVE THE SHEETS — ON PAPER OR ON SCREEN</span>
+  <h2>${g.heading}</h2>
+  <p class="lesson-copy">${g.copy}</p>
+  <ol class="fc-steps">${steps}</ol>
+  <div class="lesson-linkrow">${g.printHref?`<a class="button" href="${g.printHref}">Open the printable sheets <span aria-hidden="true">↗</span></a>`:''}${g.fcHref?`<a class="button button-ghost" href="${g.fcHref}">Draw on the cards on screen <span aria-hidden="true">↗</span></a>`:''}</div>
+  <p class="lesson-note">Every card page has a Write &amp; Color layer: your child can draw right on the card with a finger, a stylus or the mouse, then save the finished work. Nothing is uploaded anywhere.</p>
+ </section>`;
+}
 export const stages=[
  {name:'Newborn 1',age:'Birth–6 Weeks',href:'/newborn/0-6-weeks/',lesson:hcLesson},
  {name:'Newborn 2',age:'6–12 Weeks',href:'/newborn/6-12-weeks/',lesson:fvLesson},
@@ -1573,16 +1681,14 @@ export function toddlerClassBody(L){
  const welcome=`<section class="wrap lesson-section" id="todays-class" aria-label="Today’s class">
   <span class="eyebrow">TODAY’S CLASS</span>
   <h2>How today’s class works.</h2>
-  <p class="lesson-copy">${I.flow?I.flow.intro:'Eight little steps, in order: a welcome from your teacher, learn colors, play with colors, learn shapes, play with shapes, match a pair, take it off screen, then print the activity pack if you’d like to continue away from the screen. Stop after any step — that is a complete class, and there is never a score at the end.'}</p>
+  <p class="lesson-copy">${I.flow?I.flow.intro:'Six little steps, in order: a welcome from your teacher, learn colors, learn shapes, solve the sheets together, take it off screen, then print the activity pack if you’d like to continue away from the screen. Stop after any step — that is a complete class, and there is never a score at the end.'}</p>
   ${I.flow?flowList(I.flow):`<ol class="tc-flow">
    <li><span>1</span> Teacher welcome</li>
    <li><span>2</span> Learn colors</li>
-   <li><span>3</span> Play with colors</li>
-   <li><span>4</span> Learn shapes</li>
-   <li><span>5</span> Play with shapes</li>
-   <li><span>6</span> Find &amp; match</li>
-   <li><span>7</span> Take it off screen</li>
-   <li><span>8</span> Download &amp; print</li>
+   <li><span>3</span> Learn shapes</li>
+   <li><span>4</span> Solve the sheets</li>
+   <li><span>5</span> Take it off screen</li>
+   <li><span>6</span> Download &amp; print</li>
   </ol>`}
   <div class="tc-note-block tc-teacher"><span class="eyebrow">TEACHER WELCOME</span><p class="tc-say">“${I.teacher.welcome}”</p><p class="tc-who">— Your Kiddo School teacher</p></div>
   <div class="lesson-start"><a class="button" href="${I.flow?I.flow.beginHref:'#learn-colors'}">${(I.flow&&I.flow.beginLabel)||'Begin the class'} <span aria-hidden="true">↓</span></a><span class="lesson-start-hint">${I.flow?I.flow.beginHint:'Grown-up nearby, toddler on the lap, phone at a comfy distance.'}</span></div>
@@ -1670,7 +1776,8 @@ export function toddlerClassBody(L){
   return `${crumbNav(L.crumbs)}
  ${hero}
  ${welcome}
- ${I.sections.map(renderSection).join('\n ')}
+ ${I.sections.filter(s=>s.type==='learn'||s.type==='guide').map(renderSection).join('\n ')}
+ ${solveSheetsSection(L)}
  ${offScreen}
  ${printSection}
  ${teacherNote}
@@ -1683,18 +1790,8 @@ export function toddlerClassBody(L){
  ${hero}
  ${welcome}
  ${learnViewer('learn-colors','LEARN · COLORS','Learn colors together.','Show one card at a time and say the color clearly. The names on the screen are for you — your toddler does not need to read. After a card, pause and let the color sink in.',I.colors,'the colors')}
- ${playSection('play-colors','PLAY · COLORS','Play with colors.','Big pictures, one question at a time. Ask the question, let your child tap, and celebrate every try — a wrong tap simply means look together.',I.playColors)}
  ${learnViewer('learn-shapes','LEARN · SHAPES','Learn basic shapes.','This is a circle. Look at the triangle. Names first, tracing second: little fingers can trace each shape in the air while you say the word.',I.shapes,'the shapes')}
- ${playSection('play-shapes','PLAY · SHAPES','Play with shapes.','Same game, new shapes. Keep it playful and let your child take the lead — tapping the wrong shape is part of learning.',I.playShapes)}
- <section class="wrap lesson-section tc-game" id="find-match" aria-label="Play and match">
-  <span class="eyebrow">FIND &amp; MATCH</span>
-  <h2>Play and match.</h2>
-  <p class="lesson-copy">Show the big picture at the top, then ask your child to find the same one below. Two rounds for colors, two for shapes — plenty for one sitting.</p>
-  <h3>Color match</h3>
-  ${matchRoundsHtml(I.matchColor.rounds)}
-  <h3>Shape match</h3>
-  ${matchRoundsHtml(I.matchShape.rounds)}
- </section>
+ ${solveSheetsSection(L)}
  ${offScreen}
  ${printSection}
  ${teacherNote}
@@ -1736,5 +1833,21 @@ export function printPackBody(L){
  </section>
  <section class="wrap tc-print-pages" aria-label="The eight printable pages">
   ${P.pages.map((p,i)=>`<figure class="tc-print-page"><img src="${pBase}${p.file}" width="1414" height="2000" alt="${p.alt}"${i===0?'':' loading="lazy"'}><figcaption><strong>${String(i+1).padStart(2,'0')} · ${p.title}</strong></figcaption></figure>`).join('')}
+ </section>`;
+}
+
+/* ---- Shared "solve the sheets" builder for the Age 3 classes. The owner
+   asked the learning-path classes to teach how to solve the real printable
+   sheets instead of playing coded games. Each caller supplies honest,
+   class-specific steps; this renders the section. ---- */
+export function age3SolveSheets({heading,copy,steps,printHref,fcHref}){
+ const lis=steps.map(([t,d],i)=>`<li><span class="fc-stepnum">${String(i+1).padStart(2,'0')}</span><div><h3>${t}</h3><p>${d}</p></div></li>`).join('');
+ return `<section class="wrap lesson-section" id="solve-the-sheets" aria-label="Solve the sheets together">
+  <span class="eyebrow">SOLVE THE SHEETS — ON PAPER OR ON SCREEN</span>
+  <h2>${heading}</h2>
+  <p class="lesson-copy">${copy}</p>
+  <ol class="fc-steps">${lis}</ol>
+  <div class="lesson-linkrow"><a class="button" href="${printHref}">Open the printable cards <span aria-hidden="true">↗</span></a><a class="button button-ghost" href="${fcHref}">Draw on the cards on screen <span aria-hidden="true">↗</span></a></div>
+  <p class="lesson-note">Every card page has a Write &amp; Color layer: your child can draw right on the card with a finger, a stylus or the mouse, then save the finished work. Nothing is uploaded anywhere.</p>
  </section>`;
 }

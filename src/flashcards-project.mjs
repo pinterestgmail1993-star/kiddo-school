@@ -8,6 +8,8 @@ export const flashcardsBase='https://pub-f2fcb7c9b45a496cbeefef18dbba0ec0.r2.dev
 export const flashcardSets=[
  {
   slug:'black-and-white-baby-cards',
+  stageName:'Newborn 1',
+  stageHref:'/newborn/0-6-weeks/',
   setLabel:'First Discoveries 01',
   title:'Black and White Baby Flashcards – Free Printable Cards',
   h1:'Black and white baby flashcards.',

@@ -89,22 +89,24 @@ test('phonics honesty: X ends words, I says its name here, Q brings u, no false 
 test('class page: exact SEO copy, spec H1, canonical and full section structure',()=>{
  const html=page('preschool/3-years/alphabet-and-letter-sounds');
  assert.ok(html.includes('<title>Alphabet &amp; Letter Sounds for 3 Year Olds | Kiddo.school</title>'),'spec SEO title');
- assert.ok(html.includes('content="Explore A–Z letters with your preschooler using colorful alphabet cards, beginning-sound games, letter matching and easy activities to try at home."'),'spec meta description');
+ assert.ok(html.includes('content="Explore A–Z letters with your preschooler using colorful alphabet cards, beginning sounds, printable letter sheets to solve and easy activities to try at home."'),'spec meta description');
  assert.ok(html.includes('<h1>Alphabet &amp; Letter Sounds</h1>'),'spec H1');
  assert.ok((html.match(/<h1>/g)||[]).length===1,'exactly one H1');
  assert.ok(html.includes('rel="canonical" href="https://kiddo-school.pages.dev/preschool/3-years/alphabet-and-letter-sounds/"'));
- // the seven-step class
- for(const id of ['todays-class','learn-the-letters','find-the-letter','match-the-picture','big-and-little','off-screen','class-complete'])
+ // the honest class: learn the letters, solve the sheets, off screen (owner
+ // removed the coded games from the learning-path classes)
+ for(const id of ['todays-class','learn-the-letters','solve-the-sheets','off-screen','class-complete'])
   assert.ok(html.includes(`id="${id}"`),`section #${id} present`);
+ for(const id of ['find-the-letter','match-the-picture','big-and-little'])
+  assert.ok(!html.includes(`id="${id}"`),`coded game #${id} removed`);
  // teacher welcome speaks directly to the parent
  assert.ok(html.includes('TEACHER WELCOME')&&html.includes('playing with letters'),'teacher welcome present');
  // 26 cards in the learn section + group chips A–F … Y–Z
  assert.equal((html.match(/class="lv-card"/g)||[]).length,26,'all 26 cards in the letter grid');
  for(const g of ['A–F','G–L','M–R','S–X','Y–Z'])assert.ok(html.includes(`>${g}</button>`),`group chip ${g}`);
- // games: letter tiles and picture choices, calm feedback strings
- assert.equal((html.match(/data-tc-round/g)||[]).length,20,'8 find + 6 match + 6 big-and-little rounds');
- assert.ok(html.includes('class="tc-choice tc-letter'),'programmatic letter tiles used');
- assert.ok(html.includes('no points, no timers'),'calm-play promise stated');
+ // no coded games anywhere on the class page
+ assert.equal((html.match(/data-tc-round/g)||[]).length,0,'no coded game rounds');
+ assert.ok(html.includes('Write &amp; Color'),'the drawing layer is named for on-screen solving');
  // off-screen activities cover the four spec ideas
  for(const phrase of ['first letter of your child','book cover','playdough','signs'])assert.ok(html.toLowerCase().includes(phrase.toLowerCase()),`off-screen idea: ${phrase}`);
  // completion is honest: no fake next class, no certificate, no progress
@@ -151,7 +153,7 @@ test('Age 3 is wired into the whole school, not a separate website',()=>{
  const age2=read('dist/toddler/2-years/index.html');
  assert.ok(age2.includes('href="/preschool/3-years/"'),'Age 2 hub shows the next stage');
  const lib=read('dist/flashcards/index.html');
- assert.ok(lib.includes('For preschoolers'),'flashcards library gains a preschool shelf');
+ assert.ok(lib.includes('Preschool · Age 3'),'flashcards library is organised by stage with a preschool section');
  assert.ok(lib.includes('href="/flashcards/alphabet/"'),'library lists the alphabet set');
  const library=read('dist/learning-library/index.html');
  assert.ok(!library.includes('/preschool/3-years/'),'books-only library lists no classes');

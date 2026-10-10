@@ -767,7 +767,7 @@ h1,h2,h3,.brand,.bean-links strong{font-family:var(--kid-font);letter-spacing:0}
 }
 /* landscape book cover inside the library's portrait thumbnail box */
 .lib-thumb--book{flex:0 0 96px;width:96px;height:74px}
-.lib-thumb--book img{width:100%;height:100%;object-fit:cover}
+.lib-thumb--book img{width:100%;height:100%;object-fit:contain;background:#fff}
 
 
 /* ===== Flashcards: set pages, card pages, reactions, reviews, comments ===== */
@@ -1398,7 +1398,7 @@ a.tc-day-class.is-rec{border:2px solid #71326d;background:#faf6ff}
 .sa-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:26px}
 .sa-card{position:relative;display:flex;flex-direction:column;background:var(--white);border:1.5px solid var(--ink);box-shadow:4px 4px 0 var(--ink);text-decoration:none;color:var(--ink);transition:transform .15s ease,box-shadow .15s ease}
 .sa-card:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
-.sa-card img{width:100%;aspect-ratio:4/3;object-fit:cover;border-bottom:1.5px solid var(--ink)}
+.sa-card img{width:100%;aspect-ratio:4/3;object-fit:contain;background:#fff;border-bottom:1.5px solid var(--ink)}
 .sa-card-num{position:absolute;top:12px;left:12px;z-index:2;width:34px;height:34px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;font-weight:700;font-size:15px}
 .sa-card-done{position:absolute;top:12px;right:12px;z-index:2;background:#4a9e4f;color:#fff;font-size:11px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;padding:5px 10px;border-radius:999px}
 .sa-card-body{display:flex;flex-direction:column;gap:6px;padding:16px 18px 6px}
@@ -1487,7 +1487,7 @@ a.tc-day-class.is-rec{border:2px solid #71326d;background:#faf6ff}
 .cc-gallery-title{font-weight:700;color:var(--ink);margin-bottom:8px}
 .cc-gallery-row{display:flex;flex-wrap:wrap;gap:14px}
 .cc-gal-card{width:150px;border:1.5px solid var(--ink);background:#fff;padding:8px;display:flex;flex-direction:column;gap:8px}
-.cc-gal-card img{width:100%;aspect-ratio:9/5.6;object-fit:cover}
+.cc-gal-card img{width:100%;aspect-ratio:9/5.6;object-fit:contain;background:#fff}
 .cc-gal-actions{display:flex;gap:6px}
 .cc-gal-actions .button{font-size:12px;padding:6px 10px}
 .cc-mix-ui{margin-top:14px;display:flex;flex-direction:column;gap:10px}
@@ -1550,7 +1550,7 @@ a.tc-day-class.is-rec{border:2px solid #71326d;background:#faf6ff}
 /* ---- my classroom: creations + adventure progress ---- */
 .gal-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:14px;margin-top:14px}
 .gal-card{border:1.5px solid var(--ink);background:#fff;padding:8px;display:flex;flex-direction:column;gap:8px}
-.gal-card img{width:100%;aspect-ratio:9/5.6;object-fit:cover}
+.gal-card img{width:100%;aspect-ratio:9/5.6;object-fit:contain;background:#fff}
 .gal-actions{display:flex;gap:6px}
 .gal-actions .button{font-size:12px;padding:6px 10px}
 .ap-row{margin-top:14px}
@@ -1741,3 +1741,45 @@ h1 em,h2 em{color:#7b4b99}
 .sr-empty[hidden]{display:none}
 @media (max-width:680px){.search-hero-grid{grid-template-columns:1fr}.search-hero-art{max-width:190px;margin:0 auto}.search-hero-form{flex-direction:column}.search-hero-form .button{width:100%}}
 .brand-art-pair{display:grid;grid-template-columns:1fr 1fr;gap:12px}.brand-art-pair img{width:100%;height:auto}
+
+/* ---- Flashcards hub: stage-organised grid (Newborn → Preschool) ---- */
+.fc2-h2{margin-top:34px}
+.fc-stagegrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
+.fc-stage-link{max-width:1160px;margin:0 auto;padding:0 40px;color:#626456;font-size:.95rem}
+.fc-stage-link a{font-weight:600}
+@media (max-width:680px){.fc-stagegrid{grid-template-columns:1fr}.fc-stage-link{padding:0 20px}}
+
+/* ---- Alphabet letter-set pages (uppercase / lowercase / pairs / silhouettes):
+       a wall of cards where every card carries its own download button ---- */
+.fcv-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:18px}
+.fcv-card{margin:0;background:#fff;border-radius:14px;padding:12px;box-shadow:0 4px 14px rgba(63,52,32,.08);display:flex;flex-direction:column;gap:10px}
+.fcv-img{display:block}
+.fcv-img img{width:100%;height:auto;display:block;border-radius:8px;background:#fff}
+.fcv-card figcaption{display:flex;align-items:baseline;justify-content:space-between;gap:8px}
+.fcv-card figcaption strong{font-size:1rem}
+.fcv-letter{font-family:var(--serif);font-size:1.15rem;color:#8a8172}
+.fcv-actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.fcv-actions .button{min-height:40px;padding:8px 14px;font-size:.82rem;gap:8px}
+.fcv-link{font-size:.85rem;font-weight:600;color:#7a4a94;text-decoration:none}
+.fcv-link:hover{text-decoration:underline}
+@media (max-width:680px){.fcv-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}}
+
+/* ---- Write & Color: transparent drawing layer over the worksheet image ---- */
+.wc-section{margin-top:26px}
+.wc-head{margin-bottom:16px}
+.wc-head h2{margin-bottom:10px}
+.wc-stage{position:relative;background:#fff;border:1px solid #ccc5b5;border-radius:14px;box-shadow:0 10px 30px rgba(63,52,32,.10);overflow:hidden}
+.wc-stage .wc-img{display:block;width:100%;height:auto}
+.wc-canvas{position:absolute;inset:0;width:100%;height:100%;touch-action:none;cursor:crosshair}
+.wc-toolbar{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:14px}
+.wc-btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:9px 16px;border:1.5px solid var(--ink);border-radius:999px;background:#fff;color:var(--ink);font:inherit;font-size:.9rem;font-weight:600;cursor:pointer}
+.wc-btn:hover,.wc-btn:focus-visible{background:#fdf6ec;box-shadow:2px 2px 0 rgba(52,59,48,.18)}
+.wc-btn[aria-pressed="true"]{background:var(--kiddo-purple);border-color:var(--kiddo-purple);color:#fff}
+.wc-swatch{width:34px;height:34px;min-height:34px;padding:0;border-radius:50%;border:2px solid #fff;box-shadow:0 0 0 1.5px #ccc5b5;cursor:pointer}
+.wc-swatch[aria-pressed="true"]{box-shadow:0 0 0 3px var(--kiddo-purple);transform:scale(1.08)}
+.wc-save{margin-left:auto;background:var(--kiddo-purple);border-color:var(--kiddo-purple);color:#fff}
+.wc-save:hover,.wc-save:focus-visible{background:#46265a}
+.wc-note{flex-basis:100%;margin:2px 0 0;font-size:.8rem;color:#626456}
+@media (max-width:680px){.wc-save{margin-left:0;width:100%}.wc-btn{padding:9px 13px;font-size:.85rem}}
+
+/* every flashcard card on a set page keeps its download button in the rail */

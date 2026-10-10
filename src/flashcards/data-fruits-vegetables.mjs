@@ -42,7 +42,7 @@ export const fruitsLesson={
  seoTitle:'Fruits & Vegetables for 3 Year Olds',
  title:'Fruits & Vegetables for 3 Year Olds',
  h1:'Fruits & Vegetables',
- description:'Learn fruits and vegetables with your preschooler: sixteen picture cards, a fruit-or-vegetable sorting game, find-the-food and matching play, color rows, counting together and kitchen activities — no scores, no sign-up.',
+ description:'Learn fruits and vegetables with your preschooler: sixteen picture cards, printable food sheets to sort and solve at the table, color rows, counting together and kitchen activities — no scores, no sign-up.',
  eyebrow:'PRESCHOOL · AGE 3 · CLASS 8',
  crumbs:[['Preschool','/preschool/'],['Age 3','/preschool/3-years/'],['Fruits & Vegetables','/preschool/3-years/fruits-and-vegetables/']],
  schemaImage:R2+P+'04-strawberry.webp',

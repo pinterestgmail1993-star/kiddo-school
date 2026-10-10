@@ -26,8 +26,9 @@ test('class 6 (Animals & Their Sounds, Preschool 6) follows the preschool class 
  assert.ok(c6.includes('PRESCHOOL · AGE 3 · CLASS 6'));
  assert.ok(c6.includes('<strong>Class</strong> Preschool 6'));
  assert.ok(c6.includes('this class follows Opposites &amp; Comparing on the preschool path'));
- for(const step of ['Teacher welcome','Meet the animals','Listen: hear the sounds','Play: guess the animal','Play: match animals to sounds','Take it off screen','Class complete'])assert.ok(c6.includes('<span>'+step+'</span>')||c6.includes(step),step);
- for(const id of ['meet-the-animals','hear-the-sounds','guess-the-animal','match-animals-sounds','off-screen','printables','class-complete','how-to'])assert.ok(c6.includes('id="'+id+'"'),id);
+ for(const step of ['Teacher welcome','Meet the animals','Listen: hear the sounds','Solve the sheets','Take it off screen','Class complete'])assert.ok(c6.includes('<span>'+step+'</span>')||c6.includes(step),step);
+ for(const id of ['meet-the-animals','hear-the-sounds','solve-the-sheets','off-screen','printables','class-complete','how-to'])assert.ok(c6.includes('id="'+id+'"'),id);
+ for(const id of ['guess-the-animal','match-animals-sounds'])assert.ok(!c6.includes('id="'+id+'"'),'coded game removed: '+id);
  for(const f of C6_CARDS)assert.ok(c6.includes('/'+f+'"'),'card file '+f);
  assert.equal([...c6.matchAll(/data-lv-grid/g)].length,1);
  assert.ok(c6.includes('data-an-groups'),'group chips');
@@ -39,18 +40,16 @@ test('class 6 (Animals & Their Sounds, Preschool 6) follows the preschool class 
  assert.ok(!c6.includes('/assets/sounds/animals/duck.mp3'),'no duck recording claimed');
  assert.ok(!c6.includes('/assets/sounds/animals/elephant.mp3'),'no elephant recording claimed');
  assert.ok(!c6.includes('/assets/sounds/animals/frog.mp3'),'no frog recording claimed');
- // guess game: 6 rounds, three real-image choices each, exactly one correct
- assert.equal([...c6.matchAll(/data-an-guess=/g)].length,6);
- assert.equal([...c6.matchAll(/class="tc-choice"/g)].length,18);
- for(const r of ['dog','cow','cat','lion','horse','bird'])assert.ok(c6.includes('data-an-guess="'+r+'"'),'guess round '+r);
- // match board: 6 animals left, 6 sound words right
- assert.ok(c6.includes('data-an-match-board'));
- assert.equal([...c6.matchAll(/data-match-side="left"/g)].length,6);
- assert.equal([...c6.matchAll(/data-match-side="right"/g)].length,6);
- for(const w of ['Woof!','Moo!','Baa!','Quack!','Roar!','Ribbit!'])assert.ok(c6.includes('<span class="an-wordcard">'+w+'</span>'),'sound word '+w);
+ // the guess game and match board are gone (owner instruction)
+ assert.ok(!c6.includes('data-an-guess='),'no guess rounds');
+ assert.ok(!c6.includes('data-an-match-board'),'no match board');
+ // solve-the-sheets: honest guidance pointing at the real print page and set
+ assert.ok(c6.includes('id="solve-the-sheets"'),'solve section present');
+ assert.ok(c6.includes('href="/preschool/3-years/animals-and-their-sounds/print/"'),'links the printable cards');
+ assert.ok(c6.includes('href="/flashcards/animal-sounds/"'),'links the flashcard set');
+ assert.ok(c6.includes('Write &amp; Color'),'names the on-screen drawing layer');
  // family feedback + flashcards pill, same as every class
  assert.ok(c6.includes('data-cm-root data-page-path="/preschool/3-years/animals-and-their-sounds/"'));
- assert.ok(c6.includes('href="/flashcards/animal-sounds/"'));
  assert.ok(c6.includes('/assets/animal-sounds-class.js'),'class script loads');
  assert.ok(c6.includes('no scores'),'no-score promise stated');
  assert.ok(!c6.includes('aria-label="undefined"'),'no broken aria-labels');

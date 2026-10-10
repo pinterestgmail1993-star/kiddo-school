@@ -9,6 +9,7 @@
 // two-column chart without JavaScript — pointing works, nothing depends on
 // a script that might not load.
 import {oppositesLesson,oppositesCardContent} from './flashcards/data-opposites.mjs';
+import {age3SolveSheets} from './lessons.mjs';
 
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const base=oppositesLesson.r2Base+oppositesLesson.folder;
@@ -62,7 +63,7 @@ const oppositeOf=c=>CARDS.find(x=>pairNum(x.slug)===pairNum(c.slug)&&x.slug!==c.
 export function oppositesClassBody(L){
  const chips=[['Age','3 Years'],['Class','Preschool 5'],['Subjects','Opposites &amp; comparing']];
  const ledes=[
-  'Twelve cards in six honest opposite pairs — big and small, tall and short, long and short, full and empty, hot and cold, open and closed. Three gentle games, one match board and a house full of things to compare: this class follows Colors &amp; Color Mixing on the preschool path.',
+  'Twelve cards in six honest opposite pairs — big and small, tall and short, long and short, full and empty, hot and cold, open and closed. Printable opposite sheets to compare at the table, and a house full of things to compare: this class follows Colors &amp; Color Mixing on the preschool path.',
   'Opposites only work side by side, so show every pair together: the big ball next to the small ball, the open door next to the closed one. Start with the pair your child already feels — full and empty at snack time is a fine one — and let the rest of the set wait its turn.'
  ];
  const heroInner=`<span class="eyebrow">${esc(L.eyebrow)}</span>
@@ -80,6 +81,19 @@ export function oppositesClassBody(L){
   const say=i%2===0?d.say:`${d.word}! ${contentOf(CARDS[i-1].slug).word}’s opposite — say both together!`;
   return `<figure class="lv-card" data-op-group="${i<6?'measure':'everyday'}"><img src="${base}${c.file}" width="${c.w}" height="${c.h}" alt="${esc(c.alt)}"${i===0?'':' loading="lazy"'} data-lv-say="${esc(say)}" data-lv-find="${esc(d.spot)}"><figcaption class="lv-word">${esc(d.word)}</figcaption></figure>`;
  }).join('');
+ /* SOLVE THE SHEETS — the class's real printable work: the owner asked for
+    worksheet-solving guidance here instead of coded games. */
+ const solveSection=age3SolveSheets({
+  heading:'Solve the opposite sheets together.',
+  copy:'The six opposite pairs print two to a page, straight from your browser. Printed, cut and compared, they are the class\u2019s real worksheets — and on screen, every card page can be drawn on directly.',
+  steps:[
+   ['Print the pairs','Open the printable cards and print all twelve, two to a page. Cut them out together, saying each word as it is cut.'],
+   ['Lay the pairs side by side','Put big next to little, tall next to short. Comparing two real cards is where the word difference actually means something.'],
+   ['Act the pair out','Arms wide for big, arms close for small; a tall stretch, a short crouch. Bodies learn opposites fastest.'],
+   ['Find them at home','Find one pair in the house — a full cup and an empty cup is the classic. Then draw the pair on the card page with the Write & Color layer.']
+  ],
+  printHref:'/preschool/3-years/opposites-and-comparing/print/',fcHref:'/flashcards/opposites/'
+ });
  const learnSection=`<section class="wrap lesson-section" id="learn-the-pairs" aria-label="Learn the opposite pairs">
   <span class="eyebrow">LEARN THE PAIRS</span>
   <h2>Six pairs, twelve cards, one glance apart.</h2>
@@ -175,23 +189,19 @@ export function oppositesClassBody(L){
  ${`<section class="wrap lesson-section" id="todays-class" aria-label="Today’s class">
   <span class="eyebrow">TODAY’S CLASS</span>
   <h2>How today’s class works.</h2>
-  <p class="lesson-copy">Seven little steps, in any order that suits you: a welcome from your teacher, the opposite pairs, two find-and-compare games, the match board, an off-screen hunt, and a warm goodbye. Stop after any step — that is a complete class, and there is never a score at the end.</p>
+  <p class="lesson-copy">Four little steps, in any order that suits you: a welcome from your teacher, the opposite pairs, solving the opposite sheets together, an off-screen hunt, and a warm goodbye. Stop after any step — that is a complete class, and there is never a score at the end.</p>
   <ol class="tc-flow">
    <li><span>1</span> Teacher welcome</li>
    <li><span>2</span> Learn the opposite pairs</li>
-   <li><span>3</span> Play: tap the opposite</li>
-   <li><span>4</span> Practice: compare two pictures</li>
-   <li><span>5</span> Play: match opposite pairs</li>
-   <li><span>6</span> Take it off screen</li>
-   <li><span>7</span> Class complete</li>
+   <li><span>3</span> Solve the sheets</li>
+   <li><span>4</span> Take it off screen</li>
+   <li><span>5</span> Class complete</li>
   </ol>
   <div class="tc-note-block tc-teacher"><span class="eyebrow">TEACHER WELCOME</span><p class="tc-say">“Hello, my friend — and hello to you, grown-up helper! Today we are playing the opposite game: big and little, full and empty, open and shut. Show each pair side by side, say both words together, and let your child shout the difference. Ready?”</p><p class="tc-who">— Your Kiddo School teacher</p></div>
-  <div class="lesson-start"><a class="button" href="#learn-the-pairs">Begin the class <span aria-hidden="true">↓</span></a><span class="lesson-start-hint">First stop: the opposite pairs. Or jump straight to a game below.</span></div>
+  <div class="lesson-start"><a class="button" href="#learn-the-pairs">Begin the class <span aria-hidden="true">↓</span></a><span class="lesson-start-hint">First stop: the opposite pairs.</span></div>
  </section>`}
  ${learnSection}
- ${tapSection}
- ${compareSection}
- ${matchSection}
+ ${solveSection}
  ${offScreenSection}
  ${printSection}
  ${teacherNoteSection}

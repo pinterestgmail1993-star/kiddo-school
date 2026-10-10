@@ -38,7 +38,7 @@ export const shapesLesson={
  seoTitle:'Shapes & Patterns for 3 Year Olds',
  title:'Shapes & Patterns for 3 Year Olds',
  h1:'Shapes & Patterns',
- description:'Play with circles, squares, stars and simple repeating patterns with your preschooler using colorful shape cards, find-and-match games and pattern play to try at home.',
+ description:'Play with circles, squares, stars and simple repeating patterns with your preschooler using colorful shape cards, printable shape sheets to solve and pattern play to try at home.',
  eyebrow:'PRESCHOOL · AGE 3 · CLASS 3',
  crumbs:[['Preschool','/preschool/'],['Age 3','/preschool/3-years/'],['Shapes & Patterns','/preschool/3-years/shapes-and-patterns/']],
  schemaImage:R2+P+'cover.webp',

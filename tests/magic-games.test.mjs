@@ -51,8 +51,11 @@ test('magic color mixing: pure CSS/SVG, three true paint recipes, nothing faked'
  assert.ok(color.includes('rel="canonical" href="https://kiddo-school.pages.dev/preschool/3-years/magic-color-mixing/"'));
  assert.ok(color.includes('<h1>Magic Color Lab</h1>'));
  assert.ok(color.includes('PRESCHOOL · AGE 3 · CLASS 4 MAGIC GAME'));
- assert.ok(!color.includes(R2),'no R2 assets at all — the game is drawn by CSS/SVG');
- assert.ok(!color.includes('<img'),'no bitmap images on the page');
+ // the GAME itself stays CSS/SVG-only; the site chrome (header/footer brand
+ // logo) legitimately streams from R2, so slice the page to its <main>.
+ const main=color.slice(color.indexOf('<main id="main">'),color.indexOf('</main>'));
+ assert.ok(!main.includes(R2),'no R2 assets inside the game — it is drawn by CSS/SVG');
+ assert.ok(!main.includes('<img'),'no bitmap images inside the game');
  const recipes=[...color.matchAll(/data-mg-recipe|mg-mini/g)];
  assert.ok(recipes.length>=9,'three recipes charted with mini blobs');
  // recipes stated in text, paint-true: R+Y=O, B+Y=G, R+B=P

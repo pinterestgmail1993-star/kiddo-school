@@ -38,14 +38,16 @@ test('class 8 (Fruits & Vegetables, Preschool 8) follows the preschool class spe
  assert.ok(c8.includes('PRESCHOOL · AGE 3 · CLASS 8'));
  assert.ok(c8.includes('<strong>Class</strong> Preschool 8'));
  assert.ok(c8.includes('this class follows Body Parts &amp; My Five Senses on the preschool path'));
- for(const step of ['Teacher welcome','Meet the foods','Fruit or vegetable?','Find the food','Match &amp; remember','Colors &amp; counting','Take it off screen','Class complete'])assert.ok(c8.includes(step),step);
- for(const id of ['meet-the-foods','fruit-or-vegetable','find-the-food','match-and-remember','colors-and-counting','off-screen','printables','class-complete','how-to','todays-class'])assert.ok(c8.includes('id="'+id+'"'),id);
+ for(const step of ['Teacher welcome','Meet the foods','Colors &amp; counting','Solve the sheets','Take it off screen','Class complete'])assert.ok(c8.includes(step),step);
+ for(const id of ['meet-the-foods','colors-and-counting','solve-the-sheets','off-screen','printables','class-complete','how-to','todays-class'])assert.ok(c8.includes('id="'+id+'"'),id);
+ for(const id of ['fruit-or-vegetable','find-the-food','match-and-remember'])assert.ok(!c8.includes('id="'+id+'"'),'coded game removed: '+id);
  for(const f of C8_CARDS)assert.ok(c8.includes('/'+f+'"'),'card file '+f);
  assert.equal([...c8.matchAll(/data-lv-grid/g)].length,1,'one learn viewer');
  assert.equal([...c8.matchAll(/data-fv-groups/g)].length,1,'one chip bar');
  for(const g of ['data-fv-group-filter="all"','data-fv-group-filter="fruit"','data-fv-group-filter="vegetable"'])assert.ok(c8.includes(g),g);
  assert.equal([...c8.matchAll(/data-lv-say=/g)].length,16,'say caption on every viewer card');
  assert.equal([...c8.matchAll(/data-lv-find=/g)].length,16);
+ assert.ok(!c8.includes('data-tc-round'),'no coded rounds anywhere');
  assert.ok(c8.includes('data-cm-root data-page-path="/preschool/3-years/fruits-and-vegetables/"'));
  assert.ok(c8.includes('href="/flashcards/fruits-and-vegetables/"'));
  assert.ok(c8.includes('Prefer printed cards?'),'flashcards pill injected');
@@ -59,47 +61,25 @@ test('class 8 ships no audio controls — nothing is faked',()=>{
  assert.ok(!c8set.includes('.mp3'),'no mp3 references on the set page');
 });
 
-test('class 8 sorting game: eight rounds, two honest buckets, one correct each',()=>{
- assert.equal([...c8.matchAll(/data-fv-sort=/g)].length,8);
- const buckets=[...c8.matchAll(/class="tc-choice fv-bucket" aria-label="([^{"]*)"[^>]*>/g)];
- assert.equal(buckets.length,16,'two buckets per round');
- assert.equal([...c8.matchAll(/aria-label="The fruit bowl"/g)].length,8);
- assert.equal([...c8.matchAll(/aria-label="The vegetable bowl"/g)].length,8);
- for(const slug of ['apple','carrot','grapes','potato','mango','broccoli','watermelon','pumpkin']){
-  const round=c8.slice(c8.indexOf('data-fv-sort="'+slug+'"'));
-  const seg=round.slice(0,round.indexOf('data-tc-feedback'));
-  const isFruit=FRUITS.includes(slug);
-  const correctBucket=seg.includes('aria-label="The '+(isFruit?'fruit':'vegetable')+' bowl" data-tc-correct="true"');
-  assert.ok(correctBucket,slug+' sorts to '+(isFruit?'fruit':'vegetable'));
-  // the wrong bucket must NOT be marked correct
-  assert.ok(!seg.includes('aria-label="The '+(isFruit?'vegetable':'fruit')+' bowl" data-tc-correct="true"'),slug+' wrong bucket unmarked');
- }
+test('class 8 solve-the-sheets: sorting and counting live on paper now',()=>{
+ assert.ok(!c8.includes('data-fv-sort='),'no coded sort rounds');
+ assert.ok(!c8.includes('data-tc-round'),'no coded rounds anywhere');
+ // the solve guidance is concrete and points at the real sheets and set
+ for(const t of ['Print the cards','Fruit or vegetable?','Count the bowls','Find them in the kitchen'])assert.ok(c8.includes(t),'solve step: '+t);
+ assert.ok(c8.includes('href="/preschool/3-years/fruits-and-vegetables/print/"'),'links the printable cards');
 });
 
-test('class 8 find rounds and match board are structurally honest',()=>{
- assert.equal([...c8.matchAll(/data-tc-round/g)].length,13,'8 sort + 5 find rounds');
- assert.equal([...c8.matchAll(/data-tc-correct="true"/g)].length,13,'exactly one correct per round');
- const findRounds=[...c8.matchAll(/data-fv-find="([a-z]+)" data-tc-ask="([^"]*)">[\s\S]*?<\/p>\s*<div class="tc-choices"[^>]*>([\s\S]*?)<\/div>/g)];
- assert.equal(findRounds.length,5);
- for(const r of findRounds){
-  const ask=r[2].toLowerCase();
-  const correct=[...r[3].matchAll(/class="tc-choice" aria-label="([^\"]*)" data-tc-correct="true"/g)].map(m=>m[1].toLowerCase());
-  assert.equal(correct.length,1);
-  assert.ok(ask.includes(correct[0].toLowerCase()),'ask names the answer: '+ask);
- }
- // match board: six pairs of the SAME six slugs, both sides
- assert.equal([...c8.matchAll(/data-match-side="left"/g)].length,6);
- assert.equal([...c8.matchAll(/data-match-side="right"/g)].length,6);
- const pair=(side)=>[...c8.matchAll(new RegExp('data-match-pair="([a-z]+)" data-match-side="'+side+'"','g'))].map(m=>m[1]).sort();
- assert.deepEqual(pair('left'),pair('right'),'same six foods on both sides');
- assert.equal(new Set(pair('left')).size,6,'six distinct pairs');
+test('class 8 keeps the colors-and-counting display and its honest counts',()=>{
  // colors & counting: five rows built from real cards, counts stay honest
  assert.ok(c8.includes('id="colors-and-counting"'));
  assert.equal([...c8.matchAll(/class="fv-thumb"/g)].length,15,'five rows of three foods');
  assert.ok(c8.includes('eight fruits!')&&c8.includes('eight too!'),'counting says eight and eight');
- assert.ok(c8.includes('scientists sort the tomato with the fruits, cooks sort it with the vegetables'),'tomato honesty note present');
+ assert.ok(/scientists sort the tomato with the fruits, cooks sort it with the vegetables/i.test(c8),'tomato honesty note present');
  assert.ok(c8.includes('wash foods before touching mouths'),'food hygiene guidance present');
  assert.ok(c8.includes('grown-ups do all the cutting'),'age-appropriate safety guidance present');
+ // the match board and find rounds are gone
+ assert.ok(!c8.includes('data-match-side'),'no match board');
+ assert.ok(!c8.includes('data-fv-find='),'no find rounds');
 });
 
 test('class 8 print view prints the same sixteen R2 assets two to a page',()=>{

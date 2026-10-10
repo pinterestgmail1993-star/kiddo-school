@@ -85,47 +85,24 @@ test('opposites set page: no cover repeat, spec SEO strings, honest grid of 12',
  for(const s of SLUGS)assert.ok(html.includes(`/flashcards/opposites/${s}/`),'grid links '+s);
 });
 
-test('class page: seven steps, tap-the-opposite answers are TRUE opposites, compare rounds correct',()=>{
+test('class page: learn + solve-the-sheets, no coded games (owner instruction)',()=>{
  const html=page('preschool/3-years/opposites-and-comparing');
  assert.ok(html.includes('<title>Opposites &amp; Comparing for 3 Year Olds | Kiddo.school</title>')||html.includes('<title>Opposites & Comparing for 3 Year Olds | Kiddo.school</title>'),'class title');
  // 12 learn slides: 6 measuring words + 6 everyday opposites
  assert.equal([...html.matchAll(/<figure class="lv-card" data-op-group="measure"/g)].length,6,'6 measuring-word slides');
  assert.equal([...html.matchAll(/<figure class="lv-card" data-op-group="everyday"/g)].length,6,'6 everyday-opposite slides');
  assert.equal([...html.matchAll(/data-lv-say="/g)].length,12,'every slide carries its say line');
- // 9 game rounds (6 tap + 3 compare), exactly one correct each
- const rounds=[...html.matchAll(/<div class="tc-round[^"]*" data-tc-round data-tc-ask="([^"]+)">([\s\S]*?)<p class="tc-feedback/g)];
- assert.equal(rounds.length,9,'6 tap + 3 compare rounds');
- for(const [,ask,inner] of rounds){
-  assert.equal([...inner.matchAll(/data-tc-correct="true"/g)].length,1,'exactly one correct: '+ask.slice(0,30));
- }
- // tap rounds: the correct card is the opposite of the target card
- const opp={ '01-big-ball.webp':'02-small-ball.webp','03-tall-tree.webp':'04-short-tree.webp','05-long-pencil.webp':'06-short-pencil.webp','07-full-glass.webp':'08-empty-glass.webp','09-hot-soup.webp':'10-cold-ice-cream.webp','11-open-door.webp':'12-closed-door.webp' };
- for(const [,inner] of rounds){
-  const target=[...inner.matchAll(/<figure class="tc-target"[\s\S]*?img src="([^"]+)"/g)].map(m=>m[1].split('/').pop())[0];
-  if(!target)continue;
-  const correct=[...inner.matchAll(/data-tc-correct="true"[^>]*>\s*<img src="([^"]+)"/g)].map(m=>m[1].split('/').pop())[0];
-  assert.equal(correct,opp[target],'correct answer is the true opposite of '+target);
-  assert.equal((inner.match(/class="tc-choice"/g)||[]).length,3,'3 choices per tap round');
- }
- // compare rounds: the correct side is the bigger/taller/longer card
- const cmp=[...html.matchAll(/tc-compare[\s\S]*?data-tc-ask="([^"]+)">([\s\S]*?)<p class="tc-feedback/g)];
- assert.equal(cmp.length,3,'three compare rounds');
- const winners=cmp.map(([,ask,inner])=>{
-  const imgs=[...inner.matchAll(/class="tc-choice[^"]*"[^>]*>\s*<img src="([^"]+)"/g)].map(m=>m[1].split('/').pop());
-  const ok=[...inner.matchAll(/class="tc-choice[^"]*" data-tc-correct="true"[^>]*>\s*<img src="([^"]+)"/g)].map(m=>m[1].split('/').pop());
-  return {ask:ask.slice(0,30),ok:ok[0],imgs,n:imgs.length};
- });
- assert.ok(winners.every(w=>w.n===2),'two pictures per compare round');
- assert.equal(winners[0].ok,'01-big-ball.webp','bigger ball wins');
- assert.equal(winners[1].ok,'03-tall-tree.webp','taller tree wins');
- assert.equal(winners[2].ok,'05-long-pencil.webp','longer pencil wins');
- // match board: six per side, each pair once per side, rows unaligned
- const left=[...html.matchAll(/data-match-pair="(\d)" data-match-side="left"/g)].map(m=>m[1]);
- const right=[...html.matchAll(/data-match-pair="(\d)" data-match-side="right"/g)].map(m=>m[1]);
- assert.equal(left.length,6);assert.equal(right.length,6);
- assert.deepEqual([...left].sort(),['1','2','3','4','5','6']);
- assert.deepEqual([...right].sort(),['1','2','3','4','5','6']);
- left.forEach((n,i)=>assert.notEqual(n,right[i],'no pair aligned on the same row'));
+ // the coded games are GONE from the learning path (owner instruction)
+ assert.ok(!html.includes('data-tc-round'),'no tap-a-choice or compare rounds anywhere');
+ assert.ok(!html.includes('id="tap-the-opposite"'),'tap game removed');
+ assert.ok(!html.includes('id="match-opposite-pairs"'),'match board removed');
+ assert.ok(!html.includes('data-match-board'),'no match-board chrome');
+ // solve-the-sheets: honest guidance pointing at the real print page and set
+ assert.ok(html.includes('id="solve-the-sheets"'),'solve section present');
+ assert.ok(html.includes('href="/preschool/3-years/opposites-and-comparing/print/"'),'links the printable cards');
+ assert.ok(html.includes('href="/flashcards/opposites/"'),'links the flashcard set');
+ assert.ok(html.includes('Write &amp; Color'),'names the on-screen drawing layer');
+ assert.ok(html.includes('Act the pair out'),'concrete solving steps');
  // no pressure mechanics anywhere — reassurance phrases are whitelisted
  const reassured=html.replace(/no (points, )?(scores?|timers?)[^<.]*|never a [^<.]{0,14}score[^<.]*|nothing to lose|no hurry, no score[^<.]*/g,'');
  assert.ok(!/\b(scores?|streaks?|timers?|countdown)\b/i.test(reassured),'no scores/timers/streaks language');
@@ -164,19 +141,15 @@ test('whole-school wiring: hubs, learning path, spaces and homepage all know Cla
  assert.ok(cls.includes(`src="${R2}01-big-ball.webp" width="1024" height="768"`),'true-ratio cards in class');
 });
 
-test('assets: opposites-class.js ships with chips and match-board hooks; CSS draws the board',()=>{
+test('assets: opposites-class.js ships with chips; CSS keeps the honest chart styles',()=>{
  const js=readFileSync(join(root,'assets','opposites-class.js'),'utf8');
- assert.ok(js.includes('[data-op-groups]'),'chips hook');
- assert.ok(js.includes('[data-match-board]'),'match board hook');
- assert.ok(js.includes('is-matched'),'pair lock-in class');
+ assert.ok(js.includes('[data-op-groups]'),'chips hook (still powers the learn grid)');
  assert.ok(js.includes('aria-pressed'),'accessible state');
  const style=css();
- assert.ok(style.includes('.match-board'),'board CSS');
  assert.ok(style.includes('.op-card'),'card CSS');
  assert.ok(style.includes('.tc-choice.tc-op'),'compare-image CSS');
- // progressive enhancement: the static board is an honest chart — the status
- // line stays hidden in HTML and is only revealed by JS.
+ // the match board is retired from the page; the chips stay.
  const cls=page('preschool/3-years/opposites-and-comparing');
- assert.ok(cls.includes('<p class="match-status" data-match-status aria-live="polite" hidden></p>'),'status parked until JS');
- assert.ok(cls.includes('match board still works')||cls.includes('The board still works'),'no-JS pointing fallback explained');
+ assert.ok(!cls.includes('data-match-status'),'no parked match-status line without the board');
+ assert.ok(cls.includes('data-op-groups'),'learn chips stay');
 });

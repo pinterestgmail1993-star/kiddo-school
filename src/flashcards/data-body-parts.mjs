@@ -42,7 +42,7 @@ export const bodyPartsLesson={
  seoTitle:'Body Parts & My Five Senses for 3 Year Olds',
  title:'Body Parts & My Five Senses for 3 Year Olds',
  h1:'Body Parts & My Five Senses',
- description:'Learn body parts and the five senses with your preschooler: twenty-four picture cards, a point-and-find game, sense-matching play, off-screen activities and a print view — no scores, no sign-up.',
+ description:'Learn body parts and the five senses with your preschooler: twenty-four picture cards, printable body sheets to solve at the table, sense play and off-screen activities — no scores, no sign-up.',
  eyebrow:'PRESCHOOL · AGE 3 · CLASS 7',
  crumbs:[['Preschool','/preschool/'],['Age 3','/preschool/3-years/'],['Body Parts & My Five Senses','/preschool/3-years/body-parts-and-five-senses/']],
  schemaImage:R2+P+'cover.webp',

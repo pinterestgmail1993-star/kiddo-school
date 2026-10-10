@@ -13,6 +13,7 @@
 // feedback section and the flashcards pill are injected by the build for
 // every class page — the body here ends at the tips section.
 import {fruitsLesson,fruitsCardContent} from './flashcards/data-fruits-vegetables.mjs';
+import {age3SolveSheets} from './lessons.mjs';
 
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const base=fruitsLesson.r2Base+fruitsLesson.folder;
@@ -102,6 +103,19 @@ export function fruitsClassBody(L){
   const c=cardBySlug[v.slug];
   return `<figure class="lv-card" data-fv-group="${FRUIT_OF[v.slug]}"><img src="${base}${c.file}" width="${c.w}" height="${c.h}" alt="${esc(c.alt)}"${i===0?'':' loading="lazy"'} data-lv-say="${esc(v.say)}" data-lv-find="${esc(v.find)}"><figcaption class="lv-word">${esc(nameOf(v.slug))}</figcaption></figure>`;
  }).join('');
+ /* SOLVE THE SHEETS — the class's real printable work: the owner asked for
+    worksheet-solving guidance here instead of coded games. */
+ const solveSection=age3SolveSheets({
+  heading:'Solve the food sheets together.',
+  copy:'The sixteen food cards print two to a page, straight from your browser. Printed, cut and named, they are the class\u2019s real worksheets — and on screen, every card page can be drawn on directly.',
+  steps:[
+   ['Print the cards','Open the printable cards and print all sixteen, two to a page. Cut them out together, naming each food as it is cut.'],
+   ['Fruit or vegetable?','Sort the cut cards into two bowls — fruits here, vegetables there. Scientists sort the tomato with the fruits, cooks sort it with the vegetables — both are right.'],
+   ['Count the bowls','Count the cards in each bowl together. Then line them up by color: a red row, a green row, a yellow row.'],
+   ['Find them in the kitchen','Take two or three cards to the real kitchen and find their twins in the fruit bowl. Then color a favourite card with the Write & Color layer.']
+  ],
+  printHref:'/preschool/3-years/fruits-and-vegetables/print/',fcHref:'/flashcards/fruits-and-vegetables/'
+ });
  const learnSection=`<section class="wrap lesson-section" id="meet-the-foods" aria-label="Meet the foods">
   <span class="eyebrow">MEET THE FOODS</span>
   <h2>Sixteen foods, one happy market.</h2>
@@ -209,7 +223,7 @@ export function fruitsClassBody(L){
   <h2>Delicious work!</h2>
   <p class="lesson-copy">Whether you met four foods or all sixteen, that was the whole class — and stopping early is always allowed. The cards will be right here, and so will the sorting bowls and the match board, whenever you come back. The food words are already busy in your house: in the fruit bowl, in the shopping bag, at every snack.</p>
   <div class="hero-actions"><a class="button" href="#todays-class">Explore Again <span aria-hidden="true">↑</span></a><a class="button button-ghost" href="${SET_URL}">View Food Flashcards <span aria-hidden="true">↗</span></a><a class="button button-ghost" href="/learning-path/">Learning Path <span aria-hidden="true">↗</span></a></div>
-  <div class="lesson-path"><a class="fc-stage lesson-card-link" href="/preschool/3-years/body-parts-and-five-senses/"><div class="fc-stage-pills"><span class="fc-age">Previous class</span><span class="fc-class">Class 7</span></div><h3>Body Parts &amp; My Five Senses</h3><p>Twenty-four cards about your own body — point-and-find games, the five senses and a sense-matching board.</p><span class="fc-open">Open this class <span aria-hidden="true">↗</span></span></a><a class="fc-stage lesson-card-link" href="/preschool/3-years/"><div class="fc-stage-pills"><span class="fc-age">Where next</span><span class="fc-class">More Age 3 classes</span></div><h3>More preschool classes</h3><p>Revisit Alphabet &amp; Letter Sounds, Numbers &amp; Counting (1–10), Shapes &amp; Patterns, Colors &amp; Color Mixing, Opposites &amp; Comparing, Animals &amp; Their Sounds or Body Parts &amp; My Five Senses — or open the Learning Path to see the whole journey from birth to age three.</p><span class="fc-open">Choose the next class <span aria-hidden="true">↗</span></span></a></div>
+  <div class="lesson-path"><a class="fc-stage lesson-card-link" href="/preschool/3-years/body-parts-and-five-senses/"><div class="fc-stage-pills"><span class="fc-age">Previous class</span><span class="fc-class">Class 7</span></div><h3>Body Parts &amp; My Five Senses</h3><p>Twenty-four cards about your own body — the five senses, printable sheets to solve and safe off-screen exploring.</p><span class="fc-open">Open this class <span aria-hidden="true">↗</span></span></a><a class="fc-stage lesson-card-link" href="/preschool/3-years/"><div class="fc-stage-pills"><span class="fc-age">Where next</span><span class="fc-class">More Age 3 classes</span></div><h3>More preschool classes</h3><p>Revisit Alphabet &amp; Letter Sounds, Numbers &amp; Counting (1–10), Shapes &amp; Patterns, Colors &amp; Color Mixing, Opposites &amp; Comparing, Animals &amp; Their Sounds or Body Parts &amp; My Five Senses — or open the Learning Path to see the whole journey from birth to age three.</p><span class="fc-open">Choose the next class <span aria-hidden="true">↗</span></span></a></div>
  </section>`;
 
  const tipsSection=`<section class="wrap lesson-section" id="how-to">
@@ -228,25 +242,21 @@ export function fruitsClassBody(L){
  ${`<section class="wrap lesson-section" id="todays-class" aria-label="Today’s class">
   <span class="eyebrow">TODAY’S CLASS</span>
   <h2>How today’s class works.</h2>
-  <p class="lesson-copy">Eight little steps, in any order that suits you: a welcome from your teacher, all sixteen food cards, a fruit-or-vegetable sorting game, find-the-food, a matching board, colors and counting, off-screen kitchen play, and a warm goodbye. Stop after any step — that is a complete class, and there is never a score at the end.</p>
+  <p class="lesson-copy">Five little steps, in any order that suits you: a welcome from your teacher, all sixteen food cards, colors and counting, solving the food sheets together, off-screen kitchen play, and a warm goodbye. Stop after any step — that is a complete class, and there is never a score at the end.</p>
   <ol class="tc-flow">
    <li><span>1</span> Teacher welcome</li>
    <li><span>2</span> Meet the foods</li>
-   <li><span>3</span> Fruit or vegetable?</li>
-   <li><span>4</span> Find the food</li>
-   <li><span>5</span> Match &amp; remember</li>
-   <li><span>6</span> Colors &amp; counting</li>
-   <li><span>7</span> Take it off screen</li>
-   <li><span>8</span> Class complete</li>
+   <li><span>3</span> Colors &amp; counting</li>
+   <li><span>4</span> Solve the sheets</li>
+   <li><span>5</span> Take it off screen</li>
+   <li><span>6</span> Class complete</li>
   </ol>
   <div class="tc-note-block tc-teacher"><span class="eyebrow">TEACHER WELCOME</span><p class="tc-say">“Hello, my friend — and hello to you, grown-up helper! Today’s class smells wonderful: sixteen foods are waiting — fruits for one bowl, vegetables for the other, and a whole rainbow to count. Wash your hands and let’s begin!”</p><p class="tc-who">— Your Kiddo School teacher</p></div>
   <div class="lesson-start"><a class="button" href="#meet-the-foods">Begin the class <span aria-hidden="true">↓</span></a><span class="lesson-start-hint">First stop: the whole market, sixteen cards long.</span></div>
  </section>`}
  ${learnSection}
- ${sortSection}
- ${findSection}
- ${matchSection}
  ${colorsSection}
+ ${solveSection}
  ${offScreenSection}
  ${printSection}
  ${teacherNoteSection}

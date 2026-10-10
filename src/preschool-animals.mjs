@@ -11,6 +11,7 @@
 // feedback section and the flashcards pill are injected by the build for
 // every class page — the body here ends at the tips section.
 import {animalsLesson} from './flashcards/data-animals.mjs';
+import {age3SolveSheets} from './lessons.mjs';
 
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const base=animalsLesson.r2Base+animalsLesson.folder;
@@ -85,6 +86,19 @@ export function animalsClassBody(L){
   const d=VIEWER[c.slug];
   return `<figure class="lv-card" data-an-group="${/^(dog|cat|cow|sheep|duck|chicken|horse|pig)$/.test(c.slug)?'farm':'wild'}"><img src="${base}${c.file}" width="${c.w}" height="${c.h}" alt="${esc(c.alt)}"${i===0?'':' loading="lazy"'} data-lv-say="${esc(d.say)}" data-lv-find="${esc(d.find)}"><figcaption class="lv-word">${esc(nameOf(c))}</figcaption></figure>`;
  }).join('');
+ /* SOLVE THE SHEETS — the class's real printable work: the owner asked for
+    worksheet-solving guidance here instead of coded games. */
+ const solveSection=age3SolveSheets({
+  heading:'Solve the animal sheets together.',
+  copy:'The twelve animal cards print two to a page, straight from your browser. Printed, cut and named, they are the class\u2019s real worksheets — and on screen, every card page can be drawn on directly.',
+  steps:[
+   ['Print the cards','Open the printable cards and print all twelve, two to a page. Cut them out together, naming each animal as it is cut.'],
+   ['Say the sound','Hold up a card, make its sound — woof, moo, tweet — then wait for your child\u2019s turn. Any attempt counts, and silliness counts double.'],
+   ['Act the animal out','Walk like a dog, waddle like a duck, stomp like an elephant. Guessing from a movement is the game, and the whole room can play.'],
+   ['Match card to world','Lay three cards on the table and find their twins in an animal book. Then color a favourite card on its page with the Write & Color layer.']
+  ],
+  printHref:'/preschool/3-years/animals-and-their-sounds/print/',fcHref:'/flashcards/animal-sounds/'
+ });
  const learnSection=`<section class="wrap lesson-section" id="meet-the-animals" aria-label="Meet the animals">
   <span class="eyebrow">MEET THE ANIMALS</span>
   <h2>Twelve animal friends.</h2>
@@ -176,7 +190,7 @@ ${playBtn(t,'Play the sound',true)}
   <h2>Wonderful listening!</h2>
   <p class="lesson-copy">Whether you met two animals or all twelve, that was the whole class — and stopping early is always allowed. The sounds will be right here, and so will the match board, whenever you come back. The animal voices are already busy in your house: at the window, in the bath, in every storybook.</p>
   <div class="hero-actions"><a class="button" href="#todays-class">Explore Again <span aria-hidden="true">↑</span></a><a class="button button-ghost" href="${SET_URL}">View Animal Flashcards <span aria-hidden="true">↗</span></a><a class="button button-ghost" href="/learning-path/">Learning Path <span aria-hidden="true">↗</span></a></div>
-  <div class="lesson-path"><a class="fc-stage lesson-card-link" href="/preschool/3-years/body-parts-and-five-senses/"><div class="fc-stage-pills"><span class="fc-age">Where next</span><span class="fc-class">Class 7</span></div><h3>Body Parts &amp; My Five Senses</h3><p>The next preschool class is ready: twenty-four cards about your own body — point-and-find games, the five senses and a sense-matching board.</p><span class="fc-open">Go to the next class <span aria-hidden="true">↗</span></span></a></div>
+  <div class="lesson-path"><a class="fc-stage lesson-card-link" href="/preschool/3-years/body-parts-and-five-senses/"><div class="fc-stage-pills"><span class="fc-age">Where next</span><span class="fc-class">Class 7</span></div><h3>Body Parts &amp; My Five Senses</h3><p>The next preschool class is ready: twenty-four cards about your own body — the five senses, printable sheets to solve and safe off-screen exploring.</p><span class="fc-open">Go to the next class <span aria-hidden="true">↗</span></span></a></div>
  </section>`;
 
  const tipsSection=`<section class="wrap lesson-section" id="how-to">
@@ -200,23 +214,21 @@ ${playBtn(t,'Play the sound',true)}
  ${`<section class="wrap lesson-section" id="todays-class" aria-label="Today’s class">
   <span class="eyebrow">TODAY’S CLASS</span>
   <h2>How today’s class works.</h2>
-  <p class="lesson-copy">Seven little steps, in any order that suits you: a welcome from your teacher, the animal cards, real sounds to hear, a guess-the-animal game, a match board, off-screen play, and a warm goodbye. Stop after any step — that is a complete class, and there is never a score at the end.</p>
+  <p class="lesson-copy">Five little steps, in any order that suits you: a welcome from your teacher, the animal cards, real sounds to hear, solving the animal sheets together, off-screen play, and a warm goodbye. Stop after any step — that is a complete class, and there is never a score at the end.</p>
   <ol class="tc-flow">
    <li><span>1</span> Teacher welcome</li>
    <li><span>2</span> Meet the animals</li>
    <li><span>3</span> Listen: hear the sounds</li>
-   <li><span>4</span> Play: guess the animal</li>
-   <li><span>5</span> Play: match animals to sounds</li>
-   <li><span>6</span> Take it off screen</li>
-   <li><span>7</span> Class complete</li>
+   <li><span>4</span> Solve the sheets</li>
+   <li><span>5</span> Take it off screen</li>
+   <li><span>6</span> Class complete</li>
   </ol>
   <div class="tc-note-block tc-teacher"><span class="eyebrow">TEACHER WELCOME</span><p class="tc-say">“Hello, my friend — and hello to you, grown-up helper! Today the classroom is a barnyard: we will meet twelve animal friends, listen to their real sounds and make every single one of them ourselves. Woof, moo, roar — ready when you are!”</p><p class="tc-who">— Your Kiddo School teacher</p></div>
   <div class="lesson-start"><a class="button" href="#meet-the-animals">Begin the class <span aria-hidden="true">↓</span></a><span class="lesson-start-hint">First stop: the animal cards. Or jump straight to the sounds below.</span></div>
  </section>`}
  ${learnSection}
  ${soundSection}
- ${guessSection}
- ${matchSection}
+ ${solveSection}
  ${offScreenSection}
  ${printSection}
  ${teacherNoteSection}

@@ -37,16 +37,18 @@ test('lesson 14 shows exactly the twenty verified R2 cards at their true dimensi
  assert.ok(html.includes(`<img src="${toddlerBase}garden-bugs-and-friends-age-2/cover.webp" width="2000" height="1294"`));
 });
 
-test('lesson 14 has the real interactive structure: learn, two games, wiggle, facts, off-screen, print',()=>{
+test('lesson 14 has the real interactive structure: learn, wiggle, facts, solve, off-screen, print',()=>{
  assert.ok(html.includes('Meet the garden friends.'));
- assert.ok(html.includes('Who is hiding?'));
- assert.ok(html.includes('Find the bug.'));
+ assert.ok(!html.includes('Who is hiding?'),'coded match game removed (owner instruction)');
+ assert.ok(!html.includes('Find the bug.'),'coded find game removed');
  assert.ok(html.includes('Wiggle &amp; move.'));
  assert.ok(html.includes('Little bug facts.'));
+ assert.ok(html.includes('id="solve-the-sheets"'),'solve-the-sheets guidance present');
+ assert.ok(html.includes('Solve the garden cards together.'));
+ assert.ok(html.includes('href="/flashcards/garden-bugs-and-friends/"'),'links the flashcard set');
  assert.ok(html.includes('Garden hunt.'));
  assert.ok(html.includes('Print the garden cards.'));
- assert.equal((html.match(/data-tc-round/g)||[]).length,10,'5 match rounds + 5 find rounds');
- assert.ok(html.includes('data-tc-correct="true"'));
+ assert.equal((html.match(/data-tc-round/g)||[]).length,0,'zero coded rounds');
  assert.ok(!/Score|Failed|Wrong!|Try again until you pass/.test(html),'no competitive language');
  assert.ok(html.includes('Ladybugs are garden helpers'),'true facts only');
  assert.ok(html.includes('href="/toddler/2-years/garden-bugs-and-friends/print/"'));

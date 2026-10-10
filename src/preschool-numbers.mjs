@@ -7,6 +7,7 @@
 // images are invented. Number Order is enhanced by /assets/numbers-class.js;
 // without JavaScript the tiles simply show in order as a counting line.
 import {numbersLesson,numbersCardContent} from './flashcards/data-numbers.mjs';
+import {age3SolveSheets} from './lessons.mjs';
 
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const base=numbersLesson.r2Base+numbersLesson.folder;
@@ -61,7 +62,7 @@ const orderBoards=[
 export function numbersClassBody(L){
  const chips=[['Age','3 Years'],['Class','Preschool 2'],['Subjects','Counting &amp; number recognition']];
  const ledes=[
-  'Ten counting cards, three gentle games and a pocketful of real-life counting ideas. This class follows Alphabet &amp; Letter Sounds on the preschool path — same calm pacing, now with numbers.',
+  'Ten counting cards, printable number sheets to solve and a pocketful of real-life counting ideas. This class follows Alphabet &amp; Letter Sounds on the preschool path — same calm pacing, now with numbers.',
   'You do not need to reach ten today. Counting one to three with a pointing finger is a genuine maths lesson at three; five is a triumph; ten is a party. Let your child set the pace.'
  ];
  const heroInner=`<span class="eyebrow">${esc(L.eyebrow)}</span>
@@ -77,6 +78,19 @@ export function numbersClassBody(L){
   const d=contentOf(c.slug);
   return `<figure class="lv-card" data-num-group="${i<5?'1-5':'6-10'}"><img src="${base}${c.file}" width="${c.w}" height="${c.h}" alt="${esc(c.alt)}"${i===0?'':' loading="lazy"'} data-lv-say="${esc(d.say)}" data-lv-find="${esc('Can you point to the big '+c.numeral+' and the word '+d.word.split(' ')[0].toLowerCase()+'?')}"></figure>`;
  }).join('');
+ /* SOLVE THE SHEETS — the class's real printable work: the owner asked for
+    worksheet-solving guidance here instead of coded games. */
+ const solveSection=age3SolveSheets({
+  heading:'Solve the number sheets together.',
+  copy:'The ten number cards print two to a page, straight from your browser. Printed, cut and counted, they are the class\u2019s real worksheets — and on screen, every card page can be drawn on directly.',
+  steps:[
+   ['Print the cards','Open the printable cards and print all ten, two to a page. Cut them out together, counting up as each number is cut.'],
+   ['Count the pictures','Each card carries its own little group — one apple, two ducks, three cats. Count the pictures aloud together before naming the numeral.'],
+   ['Build the staircase','Lay the cards in a line from 1 to 10 on the floor. Gaps and swaps are welcome — putting right a wobbly staircase is the thinking work.'],
+   ['Match card to things','Pick a card and find its count in the house: one spoon, five ladybugs on a page. Then trace the numeral on the card page with the Write & Color layer.']
+  ],
+  printHref:'/preschool/3-years/numbers-and-counting/print/',fcHref:'/flashcards/numbers-and-counting/'
+ });
  const learnSection=`<section class="wrap lesson-section" id="learn-the-numbers" aria-label="Learn the numbers">
   <span class="eyebrow">LEARN THE NUMBERS</span>
   <h2>Ten counting cards, from 1 to 10.</h2>
@@ -165,23 +179,19 @@ export function numbersClassBody(L){
  ${`<section class="wrap lesson-section" id="todays-class" aria-label="Today’s class">
   <span class="eyebrow">TODAY’S CLASS</span>
   <h2>How today’s class works.</h2>
-  <p class="lesson-copy">Seven little steps, in any order that suits you: a welcome from your teacher, the number cards, two gentle counting games, putting numbers in order, an off-screen hunt, and a warm goodbye. Stop after any step — that is a complete class, and there is never a score at the end.</p>
+  <p class="lesson-copy">Four little steps, in any order that suits you: a welcome from your teacher, the number cards, solving the number sheets together, an off-screen hunt, and a warm goodbye. Stop after any step — that is a complete class, and there is never a score at the end.</p>
   <ol class="tc-flow">
    <li><span>1</span> Teacher welcome</li>
    <li><span>2</span> Learn the numbers</li>
-   <li><span>3</span> Play: find the number</li>
-   <li><span>4</span> Practice: count and match</li>
-   <li><span>5</span> Practice: number order</li>
-   <li><span>6</span> Take it off screen</li>
-   <li><span>7</span> Class complete</li>
+   <li><span>3</span> Solve the sheets</li>
+   <li><span>4</span> Take it off screen</li>
+   <li><span>5</span> Class complete</li>
   </ol>
-  <div class="tc-note-block tc-teacher"><span class="eyebrow">TEACHER WELCOME</span><p class="tc-say">“Hello, my friend — and hello to you, grown-up helper! Today we’re counting. We’ll look at numbers, count pictures and play a few little games. Start with the numbers your child enjoys.”</p><p class="tc-who">— Your Kiddo School teacher</p></div>
-  <div class="lesson-start"><a class="button" href="#learn-the-numbers">Begin the class <span aria-hidden="true">↓</span></a><span class="lesson-start-hint">First stop: the number cards. Or jump straight to a game below.</span></div>
+  <div class="tc-note-block tc-teacher"><span class="eyebrow">TEACHER WELCOME</span><p class="tc-say">“Hello, my friend — and hello to you, grown-up helper! Today we’re counting. We’ll look at numbers and count pictures together. Start with the numbers your child enjoys.”</p><p class="tc-who">— Your Kiddo School teacher</p></div>
+  <div class="lesson-start"><a class="button" href="#learn-the-numbers">Begin the class <span aria-hidden="true">↓</span></a><span class="lesson-start-hint">First stop: the number cards.</span></div>
  </section>`}
  ${learnSection}
- ${findSection}
- ${countMatchSection}
- ${orderSection}
+ ${solveSection}
  ${offScreenSection}
  ${printSection}
  ${teacherNoteSection}

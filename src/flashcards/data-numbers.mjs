@@ -44,7 +44,7 @@ export const numbersLesson={
  seoTitle:'Numbers & Counting 1–10 for 3 Year Olds',
  title:'Numbers & Counting 1–10 for 3 Year Olds',
  h1:'Numbers & Counting (1–10)',
- description:'Count from 1 to 10 with your preschooler using colorful number cards, counting games, number matching and simple activities to try at home.',
+ description:'Count from 1 to 10 with your preschooler using colorful number cards, printable number sheets to solve, number ordering and simple activities to try at home.',
  eyebrow:'PRESCHOOL · AGE 3 · CLASS 2',
  crumbs:[['Preschool','/preschool/'],['Age 3','/preschool/3-years/'],['Numbers & Counting','/preschool/3-years/numbers-and-counting/']],
  schemaImage:R2+P+'cover.webp',

@@ -42,7 +42,7 @@ export const animalsLesson={
  seoTitle:'Animals & Their Sounds for 3 Year Olds',
  title:'Animals & Their Sounds for 3 Year Olds',
  h1:'Animals & Their Sounds',
- description:'Play with animals and your preschooler: twelve picture cards with real animal sounds to hear, a guess-the-animal listening game, a match-the-sound board, off-screen play and a print view — no scores, no sign-up.',
+ description:'Play with animals and your preschooler: twelve picture cards with real animal sounds to hear, printable animal sheets to solve at the table, off-screen barnyard play and a print view — no scores, no sign-up.',
  eyebrow:'PRESCHOOL · AGE 3 · CLASS 6',
  crumbs:[['Preschool','/preschool/'],['Age 3','/preschool/3-years/'],['Animals & Their Sounds','/preschool/3-years/animals-and-their-sounds/']],
  schemaImage:R2+P+'cover.webp',

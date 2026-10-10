@@ -122,19 +122,20 @@ test('letter pages: x never pretends xylophone begins with the ks sound',()=>{
  assert.match(g,/goat/,'g names the hard g too');
 });
 
-test('hub: /flashcards/alphabet/ keeps its word cards and gains the five-mode center',()=>{
+test('hub: /flashcards/alphabet/ is cards and downloads, not an Alphabet Centre clone',()=>{
  const html=page('/flashcards/alphabet/');
- assert.match(html,/data-al-center/,'center mount');
- assert.match(html,/data-al-viewer hidden/,'viewer ships hidden (no dead UI without JS)');
- assert.match(html,/data-al-mode="up"/)&&assert.match(html,/data-al-mode="say"/,'five card kinds');
- for(const m of ['up','lo','pic','pair','say'])assert.ok(html.includes('data-al-mode="'+m+'"'),'mode '+m);
- assert.equal([...html.matchAll(/data-al-tile=/g)].length,26,'26 grid tiles');
- assert.match(html,/data-al-center-data/,'player data mount');
- assert.match(html,/src="\/assets\/alphabet-cards.js"/,'player script');
- // the existing set page sections stay untouched
+ // The owner removed the embedded Alphabet Centre from the flashcards hub:
+ // flashcards are about the individual card pages and the downloads.
+ assert.ok(!html.includes('data-al-center'),'no centre mount cloned onto the hub');
+ assert.ok(!html.includes('data-al-mode="say"'),'no five-mode player on the hub');
+ // the set page keeps its own honest sections
  assert.match(html,/THE CARDS/,'word cards remain');
  assert.match(html,/HOW TO USE THESE CARDS/,'usage ideas remain');
  assert.equal([...html.matchAll(/class="fc-card fc2-cardlink"/g)].length,26,'all 26 word cards remain on the wall');
+ // the stage link back to the learning path, and the four letter-set pages
+ assert.match(html,/fc-stage-link/,'stage link to the learning path');
+ for(const u of ['/flashcards/alphabet-uppercase/','/flashcards/alphabet-lowercase/','/flashcards/alphabet-letters/','/flashcards/alphabet-silhouette/'])
+  assert.ok(html.includes('href="'+u+'"'),'letter-set link '+u);
 });
 
 test('beginning sounds: 26 honest rounds, exactly one correct choice, reveals aligned to rounds',()=>{
@@ -204,17 +205,18 @@ test('cupboard: the alphabet shelf leads /activities/ and /search/ with all four
  }
 });
 
-test('Class 15: the lesson now opens with A, B, C and links the center, progress untouched',()=>{
+test('Class 15: the lesson opens with A, B, C and teaches solving the sheets',()=>{
  const html=page('/preschool/3-years/alphabet-and-letter-sounds/');
  assert.match(html,/TODAY’S LETTERS/,'ABC intro section');
  assert.match(html,/Start with A, B and C\./,'intro heading');
  for(const l of ['a','b','c'])assert.ok(html.includes(R2+l+'/sound.png'),'ABC card for '+l.toUpperCase());
- assert.ok(html.includes('href="/flashcards/alphabet/"'),'Alphabet Center link');
- // the existing lesson machinery is preserved
+ assert.ok(html.includes('href="/flashcards/alphabet/"'),'Alphabet set link');
+ // the honest lesson machinery is preserved, the coded games are gone
  assert.match(html,/data-lesson-viewer/,'26-card viewer remains');
  assert.match(html,/id="class-complete"/,'completion section remains');
- assert.match(html,/data-tc-round/,'existing game engine remains');
+ assert.ok(!html.includes('data-tc-round'),'coded games removed (owner instruction)');
  assert.match(html,/id="learn-the-letters"/,'learn section remains');
+ assert.match(html,/id="solve-the-sheets"/,'solve-the-sheets guidance remains');
 });
 
 test('search and sitemap: the whole alphabet center is findable',()=>{

@@ -36,20 +36,27 @@ test('class 7 (Body Parts & My Five Senses, Preschool 7) follows the preschool c
  assert.ok(c7.includes('PRESCHOOL · AGE 3 · CLASS 7'));
  assert.ok(c7.includes('<strong>Class</strong> Preschool 7'));
  assert.ok(c7.includes('this class follows Animals &amp; Their Sounds on the preschool path'));
- for(const step of ['Teacher welcome','Meet your body','Point &amp; find','My five senses','Match the sense','Let’s play','Take it off screen','Class complete'])assert.ok(c7.includes(step),step);
- for(const id of ['meet-your-body','point-and-find','my-five-senses','match-the-sense','lets-play','off-screen','printables','class-complete','how-to','todays-class'])assert.ok(c7.includes('id="'+id+'"'),id);
+ for(const step of ['Teacher welcome','Meet your body','My five senses','Solve the sheets','Take it off screen','Class complete'])assert.ok(c7.includes(step),step);
+ for(const id of ['meet-your-body','my-five-senses','solve-the-sheets','off-screen','printables','class-complete','how-to','todays-class'])assert.ok(c7.includes('id="'+id+'"'),id);
+ for(const id of ['point-and-find','match-the-sense','lets-play'])assert.ok(!c7.includes('id="'+id+'"'),'coded game removed: '+id);
  for(const f of C7_CARDS)assert.ok(c7.includes('/'+f+'"'),'card file '+f);
  // two learn viewers, two group-chip bars, every card carrying say + find data
  assert.equal([...c7.matchAll(/data-lv-grid/g)].length,2);
  assert.equal([...c7.matchAll(/data-bp-groups/g)].length,2);
  for(const g of ['data-bp-group-filter="all"','data-bp-group-filter="face"','data-bp-group-filter="hands"','data-bp-group-filter="limbs"','data-bp-group-filter="senses"','data-bp-group-filter="words"'])assert.ok(c7.includes(g),g);
- assert.equal([...c7.matchAll(/data-lv-say=/g)].length,23,'say caption on every viewer card except the first of each viewer');
- assert.equal([...c7.matchAll(/data-lv-find=/g)].length,23);
+ assert.equal([...c7.matchAll(/data-lv-say=/g)].length,24,'say caption on every viewer card except the first of each viewer');
+ assert.equal([...c7.matchAll(/data-lv-find=/g)].length,24);
  // the five senses sentence: eyes see, ears hear, nose smells, tongue tastes, skin touches
  assert.ok(c7.includes('Eyes see, ears hear, the nose smells, the tongue tastes, the skin touches'));
+ // no coded games left, and the solve section points at the real sheets
+ assert.ok(!c7.includes('data-tc-round'),'no tap-a-choice rounds anywhere');
+ assert.ok(!c7.includes('data-match-side'),'no sense match board');
+ assert.ok(c7.includes('id="solve-the-sheets"'),'solve section present');
+ assert.ok(c7.includes('href="/preschool/3-years/body-parts-and-five-senses/print/"'),'links the printable cards');
+ assert.ok(c7.includes('href="/flashcards/body-parts-and-five-senses/"'),'links the flashcard set');
+ assert.ok(c7.includes('Write &amp; Color'),'names the on-screen drawing layer');
  // family feedback + flashcards pill, same as every class
  assert.ok(c7.includes('data-cm-root data-page-path="/preschool/3-years/body-parts-and-five-senses/"'));
- assert.ok(c7.includes('href="/flashcards/body-parts-and-five-senses/"'));
  assert.ok(c7.includes('Prefer printed cards?'),'flashcards pill injected');
  assert.ok(c7.includes('/assets/body-parts-class.js'),'class script loads');
  assert.ok(c7.includes('no scores'),'no-score promise stated');
@@ -63,32 +70,12 @@ test('class 7 ships no audio controls at all — honesty over fake sound',()=>{
  for(const s of C7_SLUGS)assert.ok(!c7.includes('sounds/'+s+'.mp3'),'no sound file claimed for '+s);
 });
 
-test('class 7 games: ten rounds, three real-card choices each, exactly one correct',()=>{
- // ten rounds total: five point-and-find + five lets-play
- assert.equal([...c7.matchAll(/data-tc-round/g)].length,10);
- assert.equal([...c7.matchAll(/class="tc-choice"/g)].length,30);
- assert.equal([...c7.matchAll(/data-tc-correct="true"/g)].length,10,'exactly one correct choice per round');
- // every round's ask is present and each correct card is the card the ask names
- const rounds=[...c7.matchAll(/data-tc-ask="([^"]*)">[\s\S]*?<\/p>\s*<div class="tc-choices"[^>]*>([\s\S]*?)<\/div>/g)];
- assert.equal(rounds.length,10);
- const WORDS={head:'head',eyes:'eyes',ears:'ears',nose:'nose',mouth:'mouth',hands:'hands',feet:'feet',arms:'arms',legs:'legs',see:'see',hear:'hear',smell:'smell',fingers:'fingers',toes:'toes',skin:'skin',tongue:'tongue',touch:'touch',taste:'taste',hair:'hair',chin:'chin',cheeks:'cheeks',look:'look',listen:'listen',feel:'feel'};
- for(const r of rounds){
-  const ask=r[1].toLowerCase();
-  const correct=[...r[2].matchAll(/class="tc-choice" aria-label="([^"]*)" data-tc-correct="true"/g)].map(m=>m[1].toLowerCase());
-  assert.equal(correct.length,1,'one correct per round: '+ask);
-  const word=correct[0];
-  const stem=word.endsWith('e')?word.slice(0,-1):word;
-  assert.ok(ask.includes(stem),'ask "'+ask+'" names the correct card "'+word+'"');
- }
- // match board: 5 organs left, 5 sense words right, true pairs
- assert.equal([...c7.matchAll(/data-match-side="left"/g)].length,5);
- assert.equal([...c7.matchAll(/data-match-side="right"/g)].length,5);
- const TRUE_PAIRS={eyes:'see',ears:'hear',nose:'smell',tongue:'taste',skin:'touch'};
- for(const [organ,sense] of Object.entries(TRUE_PAIRS)){
-  const left=new RegExp('data-match-pair="'+sense+'" data-match-side="left" aria-label="'+organ);
-  assert.ok(new RegExp('data-match-pair=\"'+sense+'\" data-match-side=\"left\" aria-label=\"'+organ,'i').test(c7),'left card '+organ+' paired to '+sense);
-  assert.ok(c7.includes('data-match-pair="'+sense+'" data-match-side="right"'),'right word card for '+sense);
- }
+test('class 7 solve-the-sheets: honest guidance for the real printable body cards',()=>{
+ assert.ok(!c7.includes('data-tc-round'),'no coded rounds anywhere');
+ assert.ok(!c7.includes('data-match-pair'),'no match pairs without the board');
+ // the guidance is concrete, per-class, and points at the real sheets
+ for(const t of ['Print the cards','Point to your own','Try the senses','Trace the body'])assert.ok(c7.includes(t),'solve step: '+t);
+ assert.ok(c7.includes('trace your child\u2019s hand')||c7.includes('trace your child’s hand'),'hand-tracing step is real');
 });
 
 test('class 7 print view prints the same twenty-four R2 assets two to a page',()=>{

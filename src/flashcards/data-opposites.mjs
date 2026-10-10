@@ -41,7 +41,7 @@ export const oppositesLesson={
  seoTitle:'Opposites & Comparing for 3 Year Olds',
  title:'Opposites & Comparing for 3 Year Olds',
  h1:'Opposites & Comparing',
- description:'Play with opposites and your preschooler: six opposite pairs on real picture cards, a tap-the-opposite game, bigger-taller-longer comparing games, a match-the-pairs board and household hunts to try at home.',
+ description:'Play with opposites and your preschooler: six opposite pairs on real picture cards, printable opposite sheets to compare at the table, bigger-taller-longer word play and household hunts to try at home.',
  eyebrow:'PRESCHOOL · AGE 3 · CLASS 5',
  crumbs:[['Preschool','/preschool/'],['Age 3','/preschool/3-years/'],['Opposites & Comparing','/preschool/3-years/opposites-and-comparing/']],
  schemaImage:R2+P+'cover.webp',

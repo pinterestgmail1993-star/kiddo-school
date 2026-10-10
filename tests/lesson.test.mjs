@@ -39,8 +39,8 @@ test('first lesson page follows the Kiddo School class spec',()=>{
 });
 
 test('all twelve cards are real verified R2 images at their natural 4:5 size',()=>{
- const urls=[...lesson.matchAll(/src="(https:\/\/pub-f2fcb7[^"]+\.webp)"/g)].map(m=>m[1]);
- assert.equal(new Set(urls).size,12);
+ const urls=[...lesson.matchAll(/src="(https:\/\/pub-f2fcb7[^"]+\.webp)"/g)].map(m=>m[1]).filter(u=>!u.includes('/school/branding/'));
+ assert.equal(new Set(urls).size,12,'the twelve class cards, brand chrome excluded');
  for(const c of hcLesson.cards){
   const tag=lesson.match(new RegExp('<img src="[^"]*'+c.file.replace(/\./g,'\\.')+'" width="(\\d+)" height="(\\d+)"'));
   assert.ok(tag,c.file+' embedded');

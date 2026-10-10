@@ -53,53 +53,45 @@ test('exactly the 18 verified R2 cards, true dimensions, spec alt text, no cover
  }
 });
 
-test('the ten spec flow steps render in order, teacher welcome verbatim', () => {
- for (const step of ['Teacher welcome', 'Meet the garden friends', 'Find the animal', 'Who am I?', 'Where might we see it?', 'Take it off screen', 'Print the cards', 'Teacher note', 'Parent review', 'Class complete']) {
+test('the seven flow steps render in order, teacher welcome verbatim, no coded games', () => {
+ for (const step of ['Teacher welcome', 'Meet the garden friends', 'Where might we see it?', 'Solve the sheets', 'Take it off screen', 'Print the cards', 'Teacher note']) {
   assert.ok(html.includes(step), 'flow step: ' + step);
  }
  assert.ok(html.includes('Let’s meet some animals we might see around gardens and outdoors!'), 'teacher welcome verbatim');
  assert.ok((html.match(/tc-flow/g) || []).length >= 1);
- // section anchors for the flow
- for (const id of ['meet-the-garden-friends', 'find-the-animal', 'who-am-i', 'where-might-we-see-it', 'off-screen', 'printables', 'class-complete']) {
+ // section anchors for the flow — the games are gone, the solve guidance is in
+ for (const id of ['meet-the-garden-friends', 'where-might-we-see-it', 'solve-the-sheets', 'off-screen', 'printables', 'class-complete']) {
   assert.ok(html.includes(`id="${id}"`), 'section #' + id);
  }
+ for (const id of ['find-the-animal', 'who-am-i']) {
+  assert.ok(!html.includes(`id="${id}"`), 'coded game removed: #' + id);
+ }
 });
 
-test('find the animal: 5 spec rounds, 3 picture choices, spec feedback strings', () => {
- assert.ok(html.includes('Find the animal.'));
- for (const ask of ['Find the bird.', 'Where’s the frog?', 'Find the rabbit.', 'Can you find the squirrel?', 'Where’s the owl?']) {
-  assert.ok(html.includes(`data-tc-ask="${ask}"`), 'round: ' + ask);
- }
- const findSection = html.slice(html.indexOf('id="find-the-animal"'), html.indexOf('id="who-am-i"'));
- assert.equal((findSection.match(/data-tc-round/g) || []).length, 5, '5 rounds');
- for (const round of findSection.split('data-tc-round').slice(1)) {
-  assert.equal((round.match(/class="tc-choice"/g) || []).length, 3, '3 choices per round');
-  assert.equal((round.match(/data-tc-correct="true"/g) || []).length, 1, 'exactly one correct per round');
- }
- assert.ok(findSection.includes('data-tc-correct="You found it!"'), 'spec correct feedback');
- assert.ok(findSection.includes('data-tc-incorrect="Look again."'), 'spec incorrect feedback');
+test('solve the sheets: the garden cards point at honest paper work, no coded rounds', () => {
+ assert.ok(html.includes('id="solve-the-sheets"'), 'solve section present');
+ assert.ok(html.includes('Solve the garden animal cards together.'));
+ for (const t of ['Print the cards', 'Name and greet', 'Move like them', 'Find them outside']) assert.ok(html.includes(t), 'solve step: ' + t);
+ assert.ok(html.includes('href="/toddler/2-years/school-garden/garden-friends/print/"'), 'links the printable cards');
+ assert.ok(html.includes('href="/flashcards/garden-friends/"'), 'links the flashcard set');
+ assert.ok(html.includes('Write &amp; Color'), 'names the on-screen drawing layer');
+ assert.ok(!html.includes('data-tc-round'), 'zero coded rounds anywhere');
+ assert.ok(!html.includes('Find the bird.'), 'coded round asks gone');
 });
 
-test('who am I: the six spec clues, each mapping to the right animal', () => {
- assert.ok(html.includes('Who am I?'));
- const whoSection = html.slice(html.indexOf('id="who-am-i"'), html.indexOf('id="where-might-we-see-it"'));
- assert.equal((whoSection.match(/data-tc-round/g) || []).length, 6, '6 clue rounds');
- const clues = [
-  ['I have long ears. Who am I?', '04-rabbit.webp'],
-  ['I hop. Who am I?', '02-frog.webp'],
-  ['I have a bushy tail. Who am I?', '03-squirrel.webp'],
-  ['I fly at night. Who am I?', '17-bat.webp'],
-  ['I say quack. Who am I?', '07-duck.webp'],
-  ['I have a shell. Who am I?', '08-turtle.webp'],
- ];
- for (const [clue, file] of clues) {
-  const round = whoSection.split('data-tc-ask="' + clue + '"')[1] || '';
-  assert.ok(round, 'clue present: ' + clue);
-  const choices = round.slice(0, round.indexOf('data-tc-feedback'));
-  assert.match(choices, new RegExp('data-tc-correct="true"[\\s\\S]{0,600}?' + file.replace('.', '\\.')), clue + ' → correct animal paired with the correct flag');
+test('who am I clues live in the data, honest on paper now', () => {
+ // the coded who-am-I game is retired; its clever clue pairs stay guarded in
+ // the lesson data so the card content itself never drifts.
+ const I = gfLesson.interactive.sections.find(x => x.id === 'who-am-i');
+ assert.ok(I, 'who-am-i section data retained');
+ assert.equal(I.rounds.length, 6, 'six clue rounds in data');
+ const pairs = { '04-rabbit.webp': 1, '02-frog.webp': 1, '03-squirrel.webp': 1, '17-bat.webp': 1, '07-duck.webp': 1, '08-turtle.webp': 1 };
+ for (const r of I.rounds) {
+  const correct = r.choices.filter(c => c.correct);
+  assert.equal(correct.length, 1, 'one correct choice: ' + r.ask);
+  assert.ok(pairs[correct[0].file] === 1, r.ask + ' maps to the right animal');
  }
- assert.ok(whoSection.includes('data-tc-correct="You found it!"'));
- assert.ok(whoSection.includes('data-tc-incorrect="Look again."'));
+ assert.ok(!html.includes('id="who-am-i"'), 'no coded who-am-i game on the page');
 });
 
 test('where might we see it: honest, hedged wording — no claim that every animal lives in a garden', () => {

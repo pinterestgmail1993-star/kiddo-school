@@ -9,6 +9,7 @@
 // the whole Age 3 stage.
 import {alphabetLesson,alphabetCardContent} from './flashcards/data-alphabet.mjs';
 import {abcClassIntro} from './alphabet-center.mjs';
+import {age3SolveSheets} from './lessons.mjs';
 
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const base=alphabetLesson.r2Base+alphabetLesson.folder;
@@ -69,7 +70,7 @@ const bigLittleRounds=[
 export function alphabetClassBody(L){
  const chips=[['Age','3 Years'],['Class','Preschool 1'],['Subjects','Letters, sounds &amp; matching']];
  const ledes=[
-  'Twenty-six alphabet cards, three gentle games and a whole pile of familiar things to name. This is the first preschool class on the path — built for three-year-old pacing, which means short, playful and always allowed to stop.',
+  'Twenty-six alphabet cards, a whole pile of familiar things to name, and printable sheets to solve at the table. This is the first preschool class on the path — built for three-year-old pacing, which means short, playful and always allowed to stop.',
   'You do not need to teach the whole alphabet today. Start with a few letters that catch your child’s eye — the first letter of their name is the classic winner — and let the rest wait for next time.'
  ];
  const heroInner=`<span class="eyebrow">${esc(L.eyebrow)}</span>
@@ -129,6 +130,19 @@ export function alphabetClassBody(L){
   ${bigLittleRounds.map(r=>`<div class="tc-round" data-tc-round data-tc-ask="${esc(r.say)}"><p class="tc-ask">${r.say}</p><div class="tc-choices" role="group" aria-label="${esc(r.say)}">${letterFace(r.big,{big:true})}<span class="tc-pair-arrow" aria-hidden="true">→</span>${r.littles.map(([l,ok])=>letterTile(l,{correct:ok})).join('')}</div><p class="tc-feedback" data-tc-feedback aria-live="polite" hidden></p></div>`).join('')}
  </section>`;
 
+ /* SOLVE THE SHEETS — the class's real printable work: the owner asked for
+    worksheet-solving guidance here instead of coded games. */
+ const solveSection=age3SolveSheets({
+  heading:'Solve the alphabet sheets together.',
+  copy:'The twenty-six letter cards print two to a page, straight from your browser. Printed, cut and named, they are the class\u2019s real worksheets — and on screen, every card page can be drawn on directly.',
+  steps:[
+   ['Print the cards','Open the printable cards and print all twenty-six, two to a page. Cut them out together, saying each letter\u2019s name as it is cut.'],
+   ['Say letter, then sound','Hold up a card and say both in one breath — “B, and it says buh”. Then let your child have the card and take a turn.'],
+   ['Sort big and little','Lay the cards out and find each big letter\u2019s little partner. Same letter, different size — matching them is real letter work.'],
+   ['Trace, then color','Pick today\u2019s card and trace its big letter with one finger, then a crayon. On screen, the card page has a Write & Color layer that does the same job.']
+  ],
+  printHref:'/preschool/3-years/alphabet-and-letter-sounds/print/',fcHref:'/flashcards/alphabet/'
+ });
  const offScreenSection=`<section class="wrap lesson-section" id="off-screen" aria-label="Take it off screen">
   <span class="eyebrow">TAKE IT OFF SCREEN</span>
   <h2>Letters that live in your house.</h2>
@@ -157,14 +171,14 @@ export function alphabetClassBody(L){
  </section>`;
 
  const teacherNoteSection=`<section class="wrap lesson-section"><span class="eyebrow">TEACHER NOTE</span><h2>One last word from class.</h2><div class="tc-note-block tc-teacher"><p class="tc-say">“Letters are neighbours, not lessons — wave at a few each day and they introduce themselves. See you at class two!”</p><p class="tc-who">— Your Kiddo School teacher</p></div></section>`;
- const principalSection=`<section class="wrap lesson-section tc-principal"><span class="eyebrow">A NOTE FROM THE PRINCIPAL</span><h2>For the grown-ups.</h2><p class="lesson-copy">At three, letter play is recognition play: naming, noticing and tapping — not drilling or handwriting. If your child mixes up b and d, or loves Q only for its tail, that is exactly on track. The games here give calm feedback with no scores, and every sound claim on the cards is kept honest — including x, which mostly ends words rather than starting them.</p><p class="lesson-copy"><a href="/about/#principal">More from the Principal’s Office <span aria-hidden="true">↗</span></a></p></section>`;
+ const principalSection=`<section class="wrap lesson-section tc-principal"><span class="eyebrow">A NOTE FROM THE PRINCIPAL</span><h2>For the grown-ups.</h2><p class="lesson-copy">At three, letter play is recognition play: naming, noticing and drawing — not drilling or handwriting. If your child mixes up b and d, or loves Q only for its tail, that is exactly on track. The printed sheets and the Write &amp; Color layer keep every sound claim on the cards honest — including x, which mostly ends words rather than starting them.</p><p class="lesson-copy"><a href="/about/#principal">More from the Principal’s Office <span aria-hidden="true">↗</span></a></p></section>`;
 
  const tipsSection=`<section class="wrap lesson-section" id="how-to">
   <span class="eyebrow">TIPS FOR PARENTS</span>
   <h2>How to use this class.</h2>
-  <p class="lesson-copy">Sit together for the card viewing — laps are the best seats in the house. Let your child do the tapping in the games, even when the answer looks obvious to you; the finger teaches the eye.</p>
-  <p class="lesson-copy">Name the letter and say its sound in the same breath — “B, and it says buh” — then move on quickly. Letter names and letter sounds are both worth knowing, and mixing them in play keeps either one from feeling like a test.</p>
-  <p class="lesson-note">Age 3 is a guide, not a deadline. If today’s class is two letters and a game of find-the-letter, today’s class was a success.</p>
+  <p class="lesson-copy">Sit together for the card viewing — laps are the best seats in the house. Name the letter and say its sound in the same breath — “B, and it says buh” — then move on quickly. Letter names and letter sounds are both worth knowing, and mixing them in play keeps either one from feeling like a test.</p>
+  <p class="lesson-copy">On the printed sheets, let the finger do the tracing first and the crayon second. On screen, let your child do the drawing in the Write &amp; Color layer — even when the letter looks wobbly; the finger teaches the eye.</p>
+  <p class="lesson-note">Age 3 is a guide, not a deadline. If today’s class is two letters traced on a printed sheet, today’s class was a success.</p>
  </section>`;
 
  return `${crumbNav([['Preschool','/preschool/'],['Age 3','/preschool/3-years/'],['Alphabet & Letter Sounds']])}
@@ -173,23 +187,19 @@ export function alphabetClassBody(L){
  ${`<section class="wrap lesson-section" id="todays-class" aria-label="Today’s class">
   <span class="eyebrow">TODAY’S CLASS</span>
   <h2>How today’s class works.</h2>
-  <p class="lesson-copy">Seven little steps, in any order that suits you: a welcome from your teacher, the letter cards, two gentle find-and-match games, big-and-little letters, an off-screen hunt, and a warm goodbye. Stop after any step — that is a complete class, and there is never a score at the end.</p>
+  <p class="lesson-copy">Five little steps, in any order that suits you: a welcome from your teacher, the letter cards, big-and-little letters on the printed sheets, an off-screen hunt, and a warm goodbye. Stop after any step — that is a complete class, and there is never a score at the end.</p>
   <ol class="tc-flow">
    <li><span>1</span> Teacher welcome</li>
    <li><span>2</span> Learn the letters</li>
-   <li><span>3</span> Play: find the letter</li>
-   <li><span>4</span> Practice: match the picture</li>
-   <li><span>5</span> Practice: big and little</li>
-   <li><span>6</span> Take it off screen</li>
-   <li><span>7</span> Class complete</li>
+   <li><span>3</span> Solve the sheets</li>
+   <li><span>4</span> Take it off screen</li>
+   <li><span>5</span> Class complete</li>
   </ol>
   <div class="tc-note-block tc-teacher"><span class="eyebrow">TEACHER WELCOME</span><p class="tc-say">“Hello, my friend — and hello to you, grown-up helper! Today we are playing with letters. Start with a few that catch your child’s eye; you can always come back for more.”</p><p class="tc-who">— Your Kiddo School teacher</p></div>
-  <div class="lesson-start"><a class="button" href="#learn-the-letters">Begin the class <span aria-hidden="true">↓</span></a><span class="lesson-start-hint">First stop: the letter cards. Or jump straight to a game below.</span></div>
+  <div class="lesson-start"><a class="button" href="#learn-the-letters">Begin the class <span aria-hidden="true">↓</span></a><span class="lesson-start-hint">First stop: the letter cards.</span></div>
  </section>`}
  ${learnSection}
- ${findSection}
- ${matchSection}
- ${bigLittleSection}
+ ${solveSection}
  ${offScreenSection}
  ${printSection}
  ${teacherNoteSection}
@@ -213,24 +223,24 @@ export function preschoolHubBody(){
 
 export function preschoolStageBody(){
  const classCards=[
-  {href:'/preschool/3-years/alphabet-and-letter-sounds/',cls:'Class 1',title:'Alphabet &amp; Letter Sounds',copy:'Twenty-six alphabet cards, three gentle find-and-match games and easy activities for home — one short class, no score at the end.'},
-  {href:'/preschool/3-years/numbers-and-counting/',cls:'Class 2',title:'Numbers &amp; Counting (1–10)',copy:'Ten counting cards, find-the-number, count-and-match and putting numbers in order — counting games with calm feedback and no scores.'},
-  {href:'/preschool/3-years/shapes-and-patterns/',cls:'Class 3',title:'Shapes &amp; Patterns',copy:'Twelve shape cards, find-and-match games and playful AB and AAB patterns with simple shape tiles — pattern play at preschool pace.'},
-  {href:'/preschool/3-years/colors-and-color-mixing/',cls:'Class 4',title:'Colors &amp; Color Mixing',copy:'Twelve color pairs — a splash and a matching picture — find-and-match games, a paint-mixing pot (red + yellow = orange) and a rainbow to explore.'},
-  {href:'/preschool/3-years/opposites-and-comparing/',cls:'Class 5',title:'Opposites &amp; Comparing',copy:'Six honest opposite pairs — big and small, tall and short, full and empty, hot and cold, open and closed — with tap-the-opposite, bigger-taller-longer games and a match board.'},
-  {href:'/preschool/3-years/animals-and-their-sounds/',cls:'Class 6',title:'Animals &amp; Their Sounds',copy:'Twelve animal friends with real sounds to hear — a guess-the-animal listening game, a match-the-sound board and off-screen barnyard play.'},
-  {href:'/preschool/3-years/body-parts-and-five-senses/',cls:'Class 7',title:'Body Parts &amp; My Five Senses',copy:'Twenty-four cards about your own body — fifteen body parts and the five senses, with point-and-find games, a sense-matching board and safe off-screen exploring.'},
-  {href:'/preschool/3-years/fruits-and-vegetables/',cls:'Class 8',title:'Fruits &amp; Vegetables',copy:'Sixteen food cards — eight fruits, eight vegetables — with a fruit-or-vegetable sorting game, find-the-food, matching twins, color rows and counting together.'}
+  {href:'/preschool/3-years/alphabet-and-letter-sounds/',cls:'Class 1',title:'Alphabet &amp; Letter Sounds',copy:'Twenty-six alphabet cards to learn together, printable sheets to solve at the table and card pages to draw on — one short class, no score at the end.'},
+  {href:'/preschool/3-years/numbers-and-counting/',cls:'Class 2',title:'Numbers &amp; Counting (1–10)',copy:'Ten counting cards to learn together, printable number sheets to solve at the table and card pages to draw on — counting, calmly, with no scores.'},
+  {href:'/preschool/3-years/shapes-and-patterns/',cls:'Class 3',title:'Shapes &amp; Patterns',copy:'Twelve shape cards to learn together, printable shape sheets to solve at the table and card pages to draw on — pattern play at preschool pace.'},
+  {href:'/preschool/3-years/colors-and-color-mixing/',cls:'Class 4',title:'Colors &amp; Color Mixing',copy:'Twelve color pairs — a splash and a matching picture — a rainbow to explore, printable sheets to solve at the table and card pages to draw on.'},
+  {href:'/preschool/3-years/opposites-and-comparing/',cls:'Class 5',title:'Opposites &amp; Comparing',copy:'Six honest opposite pairs — big and small, tall and short, full and empty, hot and cold, open and closed — with printable sheets to compare at the table and card pages to draw on.'},
+  {href:'/preschool/3-years/animals-and-their-sounds/',cls:'Class 6',title:'Animals &amp; Their Sounds',copy:'Twelve animal friends with real sounds to hear, printable sheets to solve at the table, and off-screen barnyard play that never ends.'},
+  {href:'/preschool/3-years/body-parts-and-five-senses/',cls:'Class 7',title:'Body Parts &amp; My Five Senses',copy:'Twenty-four cards about your own body — fifteen body parts and the five senses — with printable sheets to solve at the table and safe off-screen exploring.'},
+  {href:'/preschool/3-years/fruits-and-vegetables/',cls:'Class 8',title:'Fruits &amp; Vegetables',copy:'Sixteen food cards — eight fruits, eight vegetables — with printable sheets to sort and solve at the table, color rows and counting together.'}
  ];
  const setCards=[
   {href:'/flashcards/alphabet/',title:'Alphabet Flashcards A–Z',copy:'Every letter card has its own page with the picture, the words to say together and a download button — print the whole set from the class.'},
   {href:'/flashcards/numbers-and-counting/',title:'Numbers 1–10 Flashcards',copy:'One to ten with apples, ducks and butterflies — every counting card has its own page, its own prompt and its own download.'},
   {href:'/flashcards/shapes/',title:'Shape Flashcards',copy:'Twelve shapes from circle to octagon, each with its own page, a real-life shape hunt and a download button.'},
   {href:'/flashcards/colors/',title:'Color Flashcards',copy:'Twelve colors from red to rainbow — every card pairs a paint splash with a real-world picture, each with its own page and downloads.'},
-  {href:'/flashcards/opposites/',title:'Opposite Flashcards',copy:'Six opposite pairs from big and small to open and closed — every card has its own page, a comparing game and a download button.'},
+  {href:'/flashcards/opposites/',title:'Opposite Flashcards',copy:'Six opposite pairs from big and small to open and closed — every card has its own page, a comparing idea for the table and a download button.'},
   {href:'/flashcards/animal-sounds/',title:'Animal Flashcards',copy:'Twelve animal cards from dog to bird — every card has its own page, its own sound to hear where a recording is ready and a download button.'},
-  {href:'/flashcards/body-parts-and-five-senses/',title:'Body Parts & Five Senses Flashcards',copy:'Twenty-four cards from head to feel — every body part and every sense word has its own page, a pointing game and a download button.'},
-  {href:'/flashcards/fruits-and-vegetables/',title:'Fruit & Vegetable Flashcards',copy:'Sixteen food cards from apple to pumpkin — every food has its own page, a kitchen game and a download button.'}
+  {href:'/flashcards/body-parts-and-five-senses/',title:'Body Parts & Five Senses Flashcards',copy:'Twenty-four cards from head to feel — every body part and every sense word has its own page, a pointing idea for the table and a download button.'},
+  {href:'/flashcards/fruits-and-vegetables/',title:'Fruit & Vegetable Flashcards',copy:'Sixteen food cards from apple to pumpkin — every food has its own page, a kitchen idea and a download button.'}
  ];
  return `${crumbNav([['Preschool','/preschool/'],['Age 3']])}
  ${heading('PRESCHOOL · AGE 3','Age 3: letters, numbers, shapes, colors — your five senses, your food.','The preschool stage of Kiddo School. Three-year-olds love to name, spot and show off what they know — so this stage starts with the alphabet, keeps counting calm, makes patterns a game, mixes colors like paint, lines up opposites side by side, fills a barnyard with animal sounds, explores your own body with all five senses and ends in the kitchen with the fruits and vegetables your child eats every day, at exactly their pace.')}

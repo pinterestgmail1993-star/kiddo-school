@@ -145,11 +145,17 @@ export function worksheetPageBody(w,site){
  <div class="page-heading wrap"><span class="eyebrow">WORKSHEET \u00b7 CLASS ${s.classNum} \u00b7 AGES ${ageLabel(w).toUpperCase()}</span><h1>${esc(w.title)} Worksheet${w.subject==='phonics'?' for Ages 4\u20135':' for Age 4'}</h1><p>${esc(w.lede)}</p></div>
  <div class="fc2-dual wrap">
   <div class="fc2-main">
-   <figure class="fc2-hero ws-hero-art"><img src="${esc(w.art.img)}" width="${w.art.w}" height="${w.art.h}" alt="${esc(w.art.alt)}" fetchpriority="high"><figcaption><strong>${esc(w.title)}</strong><span>Class ${s.classNum} \u00b7 ${esc(s.label)}</span></figcaption></figure>
+   <section class="wc-section" aria-label="Write and color on this worksheet" id="write-and-color">
+    <div class="wc-head"><span class="eyebrow">WRITE &amp; COLOR — RIGHT HERE</span><h2>Solve it on screen.</h2><p class="lesson-copy">Write, trace, circle, connect and color with a finger, a stylus or the mouse — pick a pen below, draw on the sheet, then save your finished work as a picture. Nothing is uploaded anywhere.</p></div>
+    <div class="wc-mount" data-wc data-wc-src="${esc(w.art.img)}" data-wc-name="${esc(w.title)}" data-wc-w="${w.art.w}" data-wc-h="${w.art.h}">
+     <figure class="fc2-hero ws-hero-art"><img src="${esc(w.art.img)}" width="${w.art.w}" height="${w.art.h}" alt="${esc(w.art.alt)}" fetchpriority="high" crossorigin="anonymous"><figcaption><strong>${esc(w.title)}</strong><span>Class ${s.classNum} \u00b7 ${esc(s.label)}</span></figcaption></figure>
+    </div>
+    <noscript><p class="fc-hint">Drawing on screen needs JavaScript. The download and print buttons always work without it.</p></noscript>
+   </section>
    ${pn}
-   <section class="fc2-learn" aria-label="About this worksheet">${about}${howto}${tips}${connect}</section>
+   <section class="fc2-learn" aria-label="About this worksheet">${about}${connect}</section>
   </div>
-  <aside class="fc2-rail" aria-label="Download, print, share and family feedback"><section class="fc2-block fc2-first-block"><span class="eyebrow">PRINT &amp; PLAY ON PAPER</span><h2>Take it to the table.</h2>${actions}</section>${share}${fcCommunityMount(wsUrl(w.subject,w.slug))}</aside>
+  <aside class="fc2-rail" aria-label="Download, print, instructions, share and family feedback"><section class="fc2-block fc2-first-block"><span class="eyebrow">PRINT &amp; PLAY ON PAPER</span><h2>Take it to the table.</h2>${actions}</section>${howto}${tips}${share}${fcCommunityMount(wsUrl(w.subject,w.slug))}</aside>
  </div>
  <section class="wrap fc-section" aria-label="Related worksheets"><span class="eyebrow">RELATED WORKSHEETS</span><h2>More sheets like this one.</h2>
   <p class="fc-hint">Nearby worksheets from ${esc(s.label)} and its friends \u2014 each with its own page, preview and PDF.</p>

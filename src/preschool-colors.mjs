@@ -8,6 +8,7 @@
 // tiles are programmatic CSS swatches — no new images are invented, and
 // the mixer never depends on a picture that might not load.
 import {colorsLesson,colorsCardContent} from './flashcards/data-colors.mjs';
+import {age3SolveSheets} from './lessons.mjs';
 
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const base=colorsLesson.r2Base+colorsLesson.folder;
@@ -66,7 +67,7 @@ const mixes=[
 export function colorsClassBody(L){
  const chips=[['Age','3 Years'],['Class','Preschool 4'],['Subjects','Colors &amp; color mixing']];
  const ledes=[
-  'Twenty-four cards in twelve color pairs, three gentle games and a real mixing experiment — this class follows Shapes &amp; Patterns on the preschool path. Red, blue and yellow are old friends by now; today they learn to mix.',
+  'Twenty-four cards in twelve color pairs, a rainbow to explore and printable sheets to solve at the table — this class follows Shapes &amp; Patterns on the preschool path. Red, blue and yellow are old friends by now; today they learn to mix.',
   'These mixing results are paint colors — the kind you get with real paints at the craft table. Start with the two colors your child already names best, and let the rest of the set wait its turn.'
  ];
  const heroInner=`<span class="eyebrow">${esc(L.eyebrow)}</span>
@@ -91,6 +92,19 @@ export function colorsClassBody(L){
          `<figure class="lv-card" data-cl-group="rainbow"><img src="${base}${c.picFile}" width="${c.w}" height="${c.h}" alt="${esc(c.picAlt)}" loading="lazy" data-lv-say="${esc(d.sayPic)}" data-lv-find="Draw a rainbow together — six crayons, six arcs!"></figure>`;
  }).join('');
  const slides=splashSlides+picSlides+rainbowSlides;
+ /* SOLVE THE SHEETS — the class's real printable work: the owner asked for
+    worksheet-solving guidance here instead of coded games. */
+ const solveSection=age3SolveSheets({
+  heading:'Solve the color sheets together.',
+  copy:'The twelve color cards print two to a page — each color as a paint splash beside its matching picture. Printed, cut and named, they are the class\u2019s real worksheets — and on screen, every card page can be drawn on directly.',
+  steps:[
+   ['Print the cards','Open the printable cards and print all twelve pairs, two to a page. Cut them out together, naming each color as it is cut.'],
+   ['Name the splash','Hold up a splash and name its color, then check the picture twin — red like a strawberry, yellow like a sun. Picture to color, color to picture.'],
+   ['Sort the piles','Sort the cards into little piles by color, then line them up rainbow-style: red, orange, yellow, green, blue, purple.'],
+   ['Color the pictures','On the picture cards, color the real twin with its crayon — the red strawberry gets red. On screen, the card page\u2019s Write & Color layer is the crayon.']
+  ],
+  printHref:'/preschool/3-years/colors-and-color-mixing/print/',fcHref:'/flashcards/colors/'
+ });
  const learnSection=`<section class="wrap lesson-section" id="learn-colors" aria-label="Learn colors">
   <span class="eyebrow">LEARN COLORS</span>
   <h2>Eleven splashes, eleven pictures, one rainbow.</h2>
@@ -203,25 +217,21 @@ export function colorsClassBody(L){
  ${`<section class="wrap lesson-section" id="todays-class" aria-label="Today’s class">
   <span class="eyebrow">TODAY’S CLASS</span>
   <h2>How today’s class works.</h2>
-  <p class="lesson-copy">Eight little steps, in any order that suits you: a welcome from your teacher, the color cards, two find-and-match games, the mixing pot, a rainbow to explore, an off-screen hunt, and a warm goodbye. Stop after any step — that is a complete class, and there is never a score at the end.</p>
+  <p class="lesson-copy">Five little steps, in any order that suits you: a welcome from your teacher, the color cards, the rainbow, solving the color sheets together, an off-screen hunt, and a warm goodbye. Stop after any step — that is a complete class, and there is never a score at the end.</p>
   <ol class="tc-flow">
    <li><span>1</span> Teacher welcome</li>
    <li><span>2</span> Learn colors</li>
-   <li><span>3</span> Play: find the color</li>
-   <li><span>4</span> Practice: match colors</li>
-   <li><span>5</span> Play: mix colors</li>
-   <li><span>6</span> Rainbow activity</li>
-   <li><span>7</span> Take it off screen</li>
-   <li><span>8</span> Class complete</li>
+   <li><span>3</span> Rainbow activity</li>
+   <li><span>4</span> Solve the sheets</li>
+   <li><span>5</span> Take it off screen</li>
+   <li><span>6</span> Class complete</li>
   </ol>
-  <div class="tc-note-block tc-teacher"><span class="eyebrow">TEACHER WELCOME</span><p class="tc-say">“Hello, my friend — and hello to you, grown-up helper! Today we’re playing with colors. We’ll look at splashes, find colors in pictures, and even mix a few — like real paints. Start with the colors your child already loves.”</p><p class="tc-who">— Your Kiddo School teacher</p></div>
-  <div class="lesson-start"><a class="button" href="#learn-colors">Begin the class <span aria-hidden="true">↓</span></a><span class="lesson-start-hint">First stop: the color cards. Or jump straight to a game below.</span></div>
+  <div class="tc-note-block tc-teacher"><span class="eyebrow">TEACHER WELCOME</span><p class="tc-say">“Hello, my friend — and hello to you, grown-up helper! Today we’re playing with colors. We’ll look at splashes and name what we see — red like a strawberry, blue like the sky. Start with the colors your child already loves.”</p><p class="tc-who">— Your Kiddo School teacher</p></div>
+  <div class="lesson-start"><a class="button" href="#learn-colors">Begin the class <span aria-hidden="true">↓</span></a><span class="lesson-start-hint">First stop: the color cards.</span></div>
  </section>`}
  ${learnSection}
- ${findSection}
- ${matchSection}
- ${mixSection}
  ${rainbowSection}
+ ${solveSection}
  ${offScreenSection}
  ${printSection}
  ${teacherNoteSection}

@@ -11,6 +11,7 @@
 // family feedback section and the flashcards pill are injected by the build
 // for every class page — the body here ends at the tips section.
 import {bodyPartsLesson,bodyPartsCardContent} from './flashcards/data-body-parts.mjs';
+import {age3SolveSheets} from './lessons.mjs';
 
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const base=bodyPartsLesson.r2Base+bodyPartsLesson.folder;
@@ -47,9 +48,9 @@ const BODY_VIEWER=[
 /* Group key per body card: face (head..cheeks), hands (hands..toes), limbs. */
 const BODY_GROUP={head:'face',eyes:'face',ears:'face',nose:'face',mouth:'face',tongue:'face',hair:'face',chin:'face',cheeks:'face',hands:'hands',fingers:'hands',feet:'hands',toes:'hands',arms:'limbs',legs:'limbs'};
 
-/* Viewer captions, My Five Senses: the five sense organs' words first, then
-   three everyday doing-words. Eight cards in card order (see, hear, smell,
-   touch, taste, look, listen, feel). */
+/* Viewer captions, My Five Senses: the five sense words, skin, then three
+   everyday doing-words. Nine cards (see, hear, smell, touch, taste, look,
+   listen, feel, skin) — the tongue lives in the body viewer above. */
 const SENSE_VIEWER=[
  {slug:'see',say:'Eyes see — the butterfly, the sky, your own reflection.',find:'Look around the room. What do you see first?'},
  {slug:'hear',say:'Ears hear — a dog, a song, someone calling your name.',find:'Be very quiet… what do you hear right now?'},
@@ -58,10 +59,11 @@ const SENSE_VIEWER=[
  {slug:'taste',say:'The tongue tastes — sweet, salty, sour and yummy.',find:'What did you taste at breakfast?'},
  {slug:'look',say:'Look! Eyes working hard, up close and far away.',find:'Look up high, then look down low — what changed?'},
  {slug:'listen',say:'Listen… cup your ear for the quiet sounds.',find:'Whisper a word — can your grown-up hear it?'},
- {slug:'feel',say:'Feel how soft — or how bumpy — the world is.',find:'Feel three things nearby. Which is softest?'}
+ {slug:'feel',say:'Feel how soft — or how bumpy — the world is.',find:'Feel three things nearby. Which is softest?'},
+ {slug:'skin',say:'Skin covers you from head to toes — and it feels everything.',find:'Gently press a fingertip to the back of your hand — hello, skin!'}
 ];
 /* Group key per sense card: the five senses vs more doing-words. */
-const SENSE_GROUP={see:'senses',hear:'senses',smell:'senses',touch:'senses',taste:'senses',look:'words',listen:'words',feel:'words'};
+const SENSE_GROUP={see:'senses',hear:'senses',smell:'senses',touch:'senses',taste:'senses',skin:'senses',tongue:'senses',look:'words',listen:'words',feel:'words'};
 
 /* Point & Find rounds: touch it on yourself first, then tap the card.
    Three real cards each, exactly one correct, positions varied. */
@@ -109,6 +111,19 @@ export function bodyPartsClassBody(L){
   const c=cardBySlug[v.slug];
   return `<figure class="lv-card" data-bp-group="${BODY_GROUP[v.slug]}"><img src="${base}${c.file}" width="${c.w}" height="${c.h}" alt="${esc(c.alt)}"${i===0?'':' loading="lazy"'} data-lv-say="${esc(v.say)}" data-lv-find="${esc(v.find)}"><figcaption class="lv-word">${esc(nameOf(v.slug))}</figcaption></figure>`;
  }).join('');
+ /* SOLVE THE SHEETS — the class's real printable work: the owner asked for
+    worksheet-solving guidance here instead of coded games. */
+ const solveSection=age3SolveSheets({
+  heading:'Solve the body sheets together.',
+  copy:'The twenty-four body and sense cards print two to a page, straight from your browser. Printed, cut and named, they are the class\u2019s real worksheets — and on screen, every card page can be drawn on directly.',
+  steps:[
+   ['Print the cards','Open the printable cards and print all twenty-four, two to a page. Cut them out together, naming each body part as it is cut.'],
+   ['Point to your own','Hold up a card — head, chin, knee — and point to that part on your own body. The word lands where the part lives.'],
+   ['Try the senses','On the sense cards — see, hear, smell, taste, touch — try each sense out loud: what can you hear right now? One sense a day is a lovely pace.'],
+   ['Trace the body','On paper, trace your child\u2019s hand on the back of a card and label the fingers together. On screen, the card page\u2019s Write & Color layer is the crayon.']
+  ],
+  printHref:'/preschool/3-years/body-parts-and-five-senses/print/',fcHref:'/flashcards/body-parts-and-five-senses/'
+ });
  const bodySection=`<section class="wrap lesson-section" id="meet-your-body" aria-label="Meet your body">
   <span class="eyebrow">MEET YOUR BODY</span>
   <h2>Fifteen parts, one amazing kid.</h2>
@@ -148,7 +163,7 @@ export function bodyPartsClassBody(L){
   <span class="eyebrow">MY FIVE SENSES</span>
   <h2>Five ways to know the world.</h2>
   <p class="lesson-copy">Eyes see, ears hear, the nose smells, the tongue tastes, the skin touches — five senses, always working together. Read each card slowly, then try the little experiment it offers.</p>
-  <div class="lv-groups" data-bp-groups hidden><button type="button" class="lv-group-chip is-on" data-bp-group-filter="all" aria-pressed="true">All 8</button><button type="button" class="lv-group-chip" data-bp-group-filter="senses" aria-pressed="false">The five senses</button><button type="button" class="lv-group-chip" data-bp-group-filter="words" aria-pressed="false">More sense words</button></div>
+  <div class="lv-groups" data-bp-groups hidden><button type="button" class="lv-group-chip is-on" data-bp-group-filter="all" aria-pressed="true">All 9</button><button type="button" class="lv-group-chip" data-bp-group-filter="senses" aria-pressed="false">The five senses</button><button type="button" class="lv-group-chip" data-bp-group-filter="words" aria-pressed="false">More sense words</button></div>
   <div class="lv-frame" data-lesson-viewer>
    <div class="lv-stage" data-lv-stage></div>
    <p class="lv-caption" data-lv-caption hidden></p>
@@ -238,25 +253,21 @@ export function bodyPartsClassBody(L){
  ${`<section class="wrap lesson-section" id="todays-class" aria-label="Today’s class">
   <span class="eyebrow">TODAY’S CLASS</span>
   <h2>How today’s class works.</h2>
-  <p class="lesson-copy">Eight little steps, in any order that suits you: a welcome from your teacher, the body-part cards, a point-and-find game, the five senses, a sense-matching board, a mixed-up play round, off-screen play, and a warm goodbye. Stop after any step — that is a complete class, and there is never a score at the end.</p>
+  <p class="lesson-copy">Five little steps, in any order that suits you: a welcome from your teacher, the body-part cards, the five senses, solving the body sheets together, off-screen play, and a warm goodbye. Stop after any step — that is a complete class, and there is never a score at the end.</p>
   <ol class="tc-flow">
    <li><span>1</span> Teacher welcome</li>
    <li><span>2</span> Meet your body</li>
-   <li><span>3</span> Point &amp; find</li>
-   <li><span>4</span> My five senses</li>
-   <li><span>5</span> Match the sense</li>
-   <li><span>6</span> Let’s play</li>
-   <li><span>7</span> Take it off screen</li>
-   <li><span>8</span> Class complete</li>
+   <li><span>3</span> My five senses</li>
+   <li><span>4</span> Solve the sheets</li>
+   <li><span>5</span> Take it off screen</li>
+   <li><span>6</span> Class complete</li>
   </ol>
   <div class="tc-note-block tc-teacher"><span class="eyebrow">TEACHER WELCOME</span><p class="tc-say">“Hello, my friend — and hello to you, grown-up helper! Today’s class is all about YOU: your head, your wiggly fingers, your stomping feet — and the five amazing senses that help you explore the whole world. Hands on your head — let’s go!”</p><p class="tc-who">— Your Kiddo School teacher</p></div>
   <div class="lesson-start"><a class="button" href="#meet-your-body">Begin the class <span aria-hidden="true">↓</span></a><span class="lesson-start-hint">First stop: your body, from head to toes.</span></div>
  </section>`}
  ${bodySection}
- ${pointSection}
  ${sensesSection}
- ${matchSection}
- ${playSection}
+ ${solveSection}
  ${offScreenSection}
  ${printSection}
  ${teacherNoteSection}
