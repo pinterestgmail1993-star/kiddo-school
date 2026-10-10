@@ -1573,3 +1573,84 @@ a.tc-day-class.is-rec{border:2px solid #71326d;background:#faf6ff}
 /* ---- responsive ---- */
 @media (max-width:960px){.sa-hero{grid-template-columns:1fr;gap:24px}.sa-grid{grid-template-columns:repeat(2,1fr)}.sa-prevnext{grid-template-columns:1fr}}
 @media (max-width:640px){.sa-grid{grid-template-columns:1fr;gap:20px}.sa-board,.cc-board,.wa-board{padding:12px}.sa-controls{flex-direction:column;align-items:flex-start}.sa-piece{--ps:64px}.sa-token,.sa-choice,.sa-gap{width:54px;height:54px}.cc-color{width:46px;height:46px}.cc-piece{width:62px;height:74px}.sa-prevnext{grid-template-columns:1fr}.cc-toolbtns .button{padding:10px 14px}}
+
+/* ---- Worksheet Library (worksheets stay a separate resource type from flashcards) ---- */
+.ws-cats{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:22px}
+.ws-cat{background:var(--white);border:1.5px solid var(--ink);box-shadow:4px 4px 0 var(--ink);padding:24px;display:flex;flex-direction:column;gap:12px;text-decoration:none}
+.ws-cat:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
+.ws-cat-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.ws-cat-head strong{font-family:var(--serif);font-size:22px;line-height:1.15}
+.ws-cat-pill{display:inline-block;background:var(--tint,#f4efe3);color:var(--accent,#a9694e);border:1.5px solid currentColor;border-radius:999px;padding:3px 12px;font-size:11px;font-weight:700;letter-spacing:.5px;text-transform:uppercase}
+.ws-cat p{font-size:14px;margin:0}
+.ws-count-note{font-size:12.5px;font-weight:700;color:var(--accent,#a9694e)}
+.ws-cat-picks{display:flex;flex-direction:column;gap:4px;font-size:12.5px;color:var(--muted)}
+.ws-cat-picks span::before{content:"— "}
+.ws-cat .fc-open{margin-top:auto}
+.ws-hl{background:#fdf3d8;padding:0 4px}
+.ws-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:22px}
+.ws-card{background:var(--white);border:1.5px solid var(--ink);box-shadow:4px 4px 0 var(--ink);text-decoration:none;display:flex;flex-direction:column;overflow:hidden}
+.ws-card:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
+.ws-card-art{display:block;aspect-ratio:400/284;overflow:hidden;background:#faf6ec}
+.ws-card-art img{width:100%;height:100%;object-fit:cover;display:block}
+.ws-card-body{padding:16px 18px 6px;display:flex;flex-direction:column;gap:8px}
+.ws-card-body strong{font-family:var(--serif);font-size:19px;line-height:1.2;color:var(--ink)}
+.ws-card-meta{display:flex;gap:8px;flex-wrap:wrap}
+.ws-card-meta span{background:var(--sage);border-radius:999px;padding:2px 10px;font-size:11px;font-weight:700;color:var(--ink)}
+.ws-card-desc{font-size:13px;color:var(--muted);line-height:1.55}
+.ws-card-open{margin-top:auto;padding:12px 18px;font-size:13px;font-weight:700;border-top:1.5px dashed var(--line)}
+.ws-card:hover .ws-card-open{text-decoration:underline;text-decoration-thickness:3px;text-decoration-color:var(--yellow)}
+.ws-hero{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,4fr);gap:35px;align-items:start}
+.ws-hero-art{margin:0;background:var(--white);border:1.5px solid var(--ink);box-shadow:4px 4px 0 var(--ink);padding:10px}
+.ws-hero-art img{width:100%;height:auto;display:block}
+.ws-hero-cap{font-size:12px;color:var(--muted);padding:8px 4px 2px;display:block}
+.ws-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin:18px 0 6px}
+.ws-action-hint{width:100%;font-size:12px;color:var(--muted);margin:4px 0 0}
+.ws-preview-sec .ws-actions{margin-top:14px}
+.ws-print-root{background:var(--white);border:1.5px solid var(--ink);box-shadow:4px 4px 0 var(--ink);padding:clamp(8px,2vw,22px);margin-top:14px}
+.ws-sheet svg{width:100%;height:auto;display:block}
+.ws-skills{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px;padding:0;margin:16px 0 0;list-style:none}
+.ws-skills li{background:var(--sage);border-radius:12px;padding:12px 16px;font-size:14px;color:var(--ink)}
+.ws-tips{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;margin-top:8px}
+.ws-answers{background:#fff7ea;border:1.5px solid #e9d9a4;border-radius:14px;padding:16px 20px;margin-top:18px}
+.ws-answers h3{font-size:16px;margin-bottom:6px}
+.ws-answers p{font-size:14px;color:var(--muted);margin:0}
+/* print: only the worksheet sheet, never the site chrome. The nuke-all
+   approach is deliberate — hiding a list of selectors lets stray wrappers
+   leak; hiding everything except the sheet cannot. */
+@media print{
+ body:has(.ws-print-root) main > *{display:none!important}
+ body:has(.ws-print-root) main > .ws-preview-sec{display:block!important}
+ body:has(.ws-print-root) .ws-preview-sec > *{display:none!important}
+ body:has(.ws-print-root) .ws-preview-sec > .ws-print-root{display:block!important}
+ body:has(.ws-print-root) main{padding:0!important;margin:0!important}
+ body:has(.ws-print-root){background:#fff!important;background-image:none!important}
+ .ws-preview-sec{padding:0!important;margin:0!important}
+ .ws-print-root{border:0!important;box-shadow:none!important;padding:0!important;margin:0!important;background:#fff}
+ .ws-sheet{margin:0!important;padding:0!important}
+ .ws-sheet svg{width:auto!important;max-width:100%!important;height:96vh!important;max-height:96vh!important;margin:0 auto!important;display:block}
+}
+@media (max-width:960px){.ws-hero{grid-template-columns:1fr;gap:24px}}
+@media (max-width:640px){.ws-grid{grid-template-columns:1fr}.ws-cats{grid-template-columns:1fr}.ws-actions .button{width:100%;justify-content:center}}
+
+/* ---- Phonics Adventures (Class 28) ---- */
+.ph-board{background:var(--white)}
+.ph-audio-bar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.ph-progress{font-size:13px;color:var(--muted);min-height:20px}
+.ph-svg{width:100%;height:auto;display:block}
+.ph-card,.ph-tile,.ph-item,.ph-bin,.ph-counter{cursor:pointer}
+.ph-card:hover rect,.ph-tile:hover rect,.ph-item:hover rect,.ph-counter:hover rect{stroke-width:5.5}
+.ph-held rect{stroke:#8f4fc0!important;stroke-width:6!important}
+.ph-held{filter:brightness(1.05)}
+.ph-found rect,.ph-won rect{stroke:#4a9e4f!important}
+.ph-found,.ph-won{opacity:.85}
+.ph-gone{opacity:.25;pointer-events:none}
+.ph-miss{animation:ph-shake .5s ease}
+@keyframes ph-shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+@media (prefers-reduced-motion:reduce){.ph-miss{animation:none}}
+body.calm-mode .ph-miss{animation:none}
+.sa-cheer{background:#eef4e6;border:1.5px solid var(--ink);border-radius:16px;padding:22px;text-align:center;margin-top:16px}
+.sa-cheer-title{font-family:var(--serif);font-size:26px;color:var(--ink)}
+.sa-cheer-sub{font-size:14px;color:var(--muted);margin:6px 0 0}
+.tool-btn[aria-pressed="true"]{background:#fdeeee;border-color:#e04b3f}
+/* the hidden attribute has no effect on SVG elements — round switching relies on this rule */
+.ph-svg [hidden]{display:none}

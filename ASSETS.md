@@ -148,3 +148,24 @@ Folder: `flashcards/preschool-learning-cards/body-parts-and-five-senses-age-3/` 
 ## Fruits & Vegetables — Age 3, Class 8
 
 Folder: `flashcards/preschool-learning-cards/fruits-and-vegetables-age-3/` — 16 verified R2 files, all 200 with dashboard-matching bytes, every card 1240×1748 portrait. The folder has NO cover file (probed 404), so the set cover is the owner's real 04-strawberry card at its true card dims (same precedent as the Colors class). Cards: eight fruits (01-apple, 02-banana, 03-orange, 04-strawberry, 05-grapes, 06-watermelon, 07-pineapple, 08-mango) and eight vegetables (09-carrot, 10-potato, 11-tomato, 12-cucumber, 13-broccoli, 14-corn, 15-onion, 16-pumpkin), each a flat illustration with its lowercase word and a colored border (apple red, banana yellow, orange orange, grapes purple, watermelon green). No audio exists for food and none is faked. Class at `/preschool/3-years/fruits-and-vegetables/`: Meet the Foods viewer with Fruits/Vegetables chips, Fruit or Vegetable? sorting game (8 rounds on the shared find-it engine with two word buckets; honest tomato note for grown-ups), Find the Food (5 rounds), Match & Remember (6 identical-picture pairs via `fruits-class.js` progressive enhancement), Colors & Counting (five color rows of three real card thumbs + verifiable 8/8 counts), four off-screen kitchen hunts with food-hygiene and age-appropriate safety notes (wash first, grown-ups cut, grapes cut small, sit to eat), print view printing all 16 cards two to a page (8 sheets, no PDF). Set at `/flashcards/fruits-and-vegetables/` with 16 card pages.
+
+## Phonics Adventures (Class 28) — school/phonics/adventures/
+
+Twenty-four 1748×1240 WebP story cards (all verified live 2026-10-10, listed
+in `data/asset-manifest.json`). The games are our own server-rendered SVG
+boards; the artwork fronts each game page and its worksheet page. Game audio
+ships IN the repo at `public/assets/sounds/phonics/` (28 MP3s: 25 picture
+words + pure phoneme sounds s/m/b/t/p/f/c/d/g/h/n/r/a/e/i/o/u/x, generated
+with a TTS voice — pure phonemes use stretched spellings "sss"/"mmmm";
+the engine falls back to the device screen voice if a file is missing, and
+every game carries a mute switch + replay).
+
+## Maths Adventures (Class 24) — school/maths/adventures/
+
+Only two maths artworks have been uploaded to R2 so far:
+`counting-caterpillar.webp` and `counting-apples.webp` (both 1748×1240,
+verified live). Their two worksheets are built from them. The other 28
+planned maths adventures have NO artwork, NO games and NO pages yet — the
+worksheet registry reserves 30 slots and each becomes a one-entry addition
+when its artwork lands (see `src/ws-data-maths.mjs`). The 18 Shape
+Adventures also live in this folder (see their section above).

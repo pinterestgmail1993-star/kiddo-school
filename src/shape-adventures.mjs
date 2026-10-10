@@ -674,7 +674,7 @@ export function shapeAdventureBody(g){
    <h1>${esc(g.h1)}</h1>
    <div class="fc-chips lesson-chips"><span><strong>Age</strong> 4 Years</span><span><strong>Class</strong> 25 · Shapes</span><span><strong>Skill</strong> ${esc(g.skill)}</span></div>
    <p class="lesson-lede">${esc(g.tag)}</p>
-   <div class="lesson-start"><a class="button" href="#play">Play <span aria-hidden="true">↓</span></a><span class="lesson-start-hint">Works with a finger, a stylus, or a mouse. Nothing to install.</span></div>
+   <div class="lesson-start"><a class="button" href="#play">Play <span aria-hidden="true">↓</span></a><a class="button button-ghost" href="/worksheets/shapes/${g.slug}/">Print the worksheet <span aria-hidden="true">↓</span></a><span class="lesson-start-hint">Works with a finger, a stylus, or a mouse. Nothing to install.</span></div>
   </div>
  </article>
  ${engineWrap}

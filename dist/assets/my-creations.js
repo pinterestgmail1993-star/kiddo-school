@@ -60,7 +60,8 @@
   const LIBS = {
     shapes: { name: 'Shape Adventures', href: '/preschool/shapes/adventures/', total: 18 },
     colors: { name: 'Colors & Creativity', href: '/preschool/colors/adventures/', total: 18 },
-    writing: { name: 'Writing Adventures', href: '/preschool/writing/adventures/', total: 30 }
+    writing: { name: 'Writing Adventures', href: '/preschool/writing/adventures/', total: 30 },
+    phonics: { name: 'Phonics Adventures', href: '/preschool/phonics/adventures/', total: 24 }
   };
   function renderProgress() {
     if (!progressPanel) return;
@@ -73,7 +74,7 @@
     const parts = [];
     Object.entries(LIBS).forEach(([key, meta]) => {
       const section = mine[key] || {};
-      const doneCount = Object.keys(section).length;
+      const doneCount = section.completed ? Object.keys(section.completed).length : Object.keys(section).length;
       const pct = Math.round(doneCount / meta.total * 100);
       parts.push(`<div class="ap-row">
         <div class="ap-row-head"><a href="${meta.href}"><strong>${meta.name}</strong></a>
@@ -88,6 +89,7 @@
       Object.entries(mine[k] || {}).forEach(([slug, ts]) => recent.push({ slug, ts, lib: k }));
     });
     Object.entries(writing.completed || {}).forEach(([slug, ts]) => recent.push({ slug, ts, lib: 'writing' }));
+    Object.entries((mine.phonics && mine.phonics.completed) || {}).forEach(([slug, ts]) => recent.push({ slug, ts, lib: 'phonics' }));
     recent.sort((a, b) => b.ts - a.ts);
     const recentHTML = recent.length
       ? `<p class="ap-recent"><strong>Latest cleared:</strong> ${recent.slice(0, 4).map(r => {

@@ -129,11 +129,11 @@ test('whole-school wiring: hubs, learning path, spaces and homepage all know Cla
  assert.ok(page('preschool/3-years').includes('colors-and-color-mixing'),'Age 3 stage lists class');
  assert.ok(page('preschool/3-years').includes('/flashcards/colors/'),'Age 3 stage lists set');
  assert.ok(page('learning-path').includes('Class 18: <a href="/preschool/3-years/colors-and-color-mixing/">Colors &amp; Color Mixing</a>'),'learning path row 18');
- assert.ok(page('learning-path').includes('Twenty-five classes are ready now'),'honest class copy');
+ assert.ok(page('learning-path').includes('Twenty-six classes are ready now'),'honest class copy');
  assert.ok(page('flashcards').includes('/flashcards/colors/'),'library lists colors set');
  assert.ok(!page('learning-library').includes('/preschool/3-years/magic-color-mixing/'),'books-only library lists no games');
- assert.ok(page('').includes('Twenty-five classes are ready now'),'homepage says twenty-five');
- assert.ok(page('about').includes('Twenty-five classes from birth to age four are ready today'),'about says twenty');
+ assert.ok(page('').includes('Twenty-six classes are ready now'),'homepage says twenty-five');
+ assert.ok(page('about').includes('Twenty-six classes from birth to age five are ready today'),'about says twenty');
  // lesson hero uses the real rainbow splash cover at true dims
  const cls=page('preschool/3-years/colors-and-color-mixing');
  assert.ok(cls.includes(`src="${R2}12-rainbow-splash.webp" width="1414" height="2000"`),'true-ratio cover in hero');

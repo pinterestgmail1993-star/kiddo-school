@@ -71,9 +71,9 @@ test('lesson 14 is discoverable: hubs, learning path, sitemap, print view privat
  const lp=read('dist/learning-path/index.html');
  assert.ok(lp.includes('Toddler 8')&&lp.includes('href="/toddler/2-years/garden-bugs-and-friends/"'));
  const home=read('dist/index.html');
- assert.ok(home.includes('Twenty-five classes are ready now'),'homepage counts the classes honestly');
+ assert.ok(home.includes('Twenty-six classes are ready now'),'homepage counts the classes honestly');
  const about=read('dist/about/index.html');
- assert.ok(about.includes('Twenty-five classes from birth to age four are ready today'));
+ assert.ok(about.includes('Twenty-six classes from birth to age five are ready today'));
  assert.match(map,/<loc>https:\/\/kiddo-school\.pages\.dev\/toddler\/2-years\/garden-bugs-and-friends\/<\/loc>/);
  assert.ok(!map.includes('garden-bugs-and-friends/print/'),'print view stays out of the sitemap');
  assert.ok(pv.includes('content="noindex,follow"'),'print view noindex');

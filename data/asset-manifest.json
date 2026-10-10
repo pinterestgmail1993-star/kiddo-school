@@ -2734,5 +2734,213 @@
   "height": 1748,
   "format": "png",
   "bytes": 1325479
+ },
+ {
+  "key": "school/phonics/adventures/sound-detective.webp",
+  "alt": "A detective fox with a magnifying glass beside pictures of a sun, a sock, a cat and a dog.",
+  "width": 1748,
+  "height": 1240,
+  "format": "webp",
+  "bytes": 102026
+ },
+ {
+  "key": "school/phonics/adventures/treasure-chest-sounds.webp",
+  "alt": "Two treasure chests waiting for picture cards to be sorted by their beginning sound.",
+  "width": 1748,
+  "height": 1240,
+  "format": "webp",
+  "bytes": 98812
+ },
+ {
+  "key": "school/phonics/adventures/rhyming-frog-hop.webp",
+  "alt": "Frogs on lily pads with pictures of a cat, a hat, a dog and a log.",
+  "width": 1748,
+  "height": 1240,
+  "format": "webp",
+  "bytes": 109786
+ },
+ {
+  "key": "school/phonics/adventures/robot-sound-blender.webp",
+  "alt": "A friendly robot with sound boxes showing the word cat built letter by letter.",
+  "width": 1748,
+  "height": 1240,
+  "format": "webp",
+  "bytes": 112634
+ },
+ {
+  "key": "school/phonics/adventures/birdsong-sound-match.webp",
+  "alt": "Songbirds beside pairs of pictures that share beginning sounds.",
+  "width": 1748,
+  "height": 1240,
+  "format": "webp",
+  "bytes": 98540
+ },
+ {
+  "key": "school/phonics/adventures/elephants-sound-bubbles.webp",
+  "alt": "A friendly elephant blowing sound bubbles beside rows of small pictures.",
+  "width": 1748,
+  "height": 1240,
+  "format": "webp",
+  "bytes": 85040
+ },
+ {
+  "key": "school/phonics/adventures/pirates-missing-sound.webp",
+  "alt": "A pirate parrot beside words with missing first letters and picture clues.",
+  "width": 1748,
+  "height": 1240,
+  "format": "webp",
+  "bytes": 107200
+ },
+ {
+  "key": "school/phonics/adventures/ice-cream-rhyme-shop.webp",
+  "alt": "An ice cream shop counter with rhyming picture pairs waiting to be matched.",
+  "width": 1748,
+  "height": 1240,
+  "format": "webp",
+  "bytes": 98336
+ },
+ {
+  "key": "school/phonics/adventures/crocodile-sound-chomper.webp",
+  "alt": "A smiling crocodile beside words waiting for their ending sounds to be chomped.",
+  "width": 1748,
+  "height": 1240,
+  "format": "webp",
+  "bytes": 112620
+ },
+ {
+  "key": "school/phonics/adventures/kangaroo-sound-jumps.webp",
+  "alt": "A kangaroo beside words with jump circles waiting to be counted.",
+  "width": 1748,
+  "height": 1240,
+  "format": "webp",
+  "bytes": 131220
+ },
+ {
+  "key": "school/phonics/adventures/muffin-middle-sounds.webp",
+  "alt": "Muffin words with missing middle vowels beside a bank of the five vowels.",
+  "width": 1748,
+  "height": 1240,
+  "format": "webp",
+  "bytes": 133774
+ },
+ {
+  "key": "school/phonics/adventures/owls-sound-sorting-library.webp",
+  "alt": "An owl librarian beside two shelves waiting for picture cards sorted by first sound.",
+  "width": 1748,
+  "height": 1240,
+  "format": "webp",
+  "bytes": 104492
+ },
+ {
+  "key": "school/phonics/adventures/penguin-syllable-drums.webp",
+  "alt": "A penguin drummer beside words and drum circles waiting to be tapped.",
+  "width": 1748,
+  "height": 1240,
+  "format": "webp",
+  "bytes": 128934
+ },
+ {
+  "key": "school/phonics/adventures/raccoons-odd-sound-hunt.webp",
+  "alt": "A raccoon sneaking between rows of three pictures where one begins differently.",
+  "width": 1748,
+  "height": 1240,
+  "format": "webp",
+  "bytes": 111864
+ },
+ {
+  "key": "school/phonics/adventures/submarine-sound-scanner.webp",
+  "alt": "A submarine scanner beside words with first and last sound boxes.",
+  "width": 1748,
+  "height": 1240,
+  "format": "webp",
+  "bytes": 103172
+ },
+ {
+  "key": "school/phonics/adventures/bunny-word-family-village.webp",
+  "alt": "A bunny village with an -at house and an -an house waiting for word cards.",
+  "width": 1748,
+  "height": 1240,
+  "format": "webp",
+  "bytes": 124342
+ },
+ {
+  "key": "school/phonics/adventures/sloths-blending-slide.webp",
+  "alt": "A sloth on a slide beside s-words whose first letter is already placed.",
+  "width": 1748,
+  "height": 1240,
+  "format": "webp",
+  "bytes": 88640
+ },
+ {
+  "key": "school/phonics/adventures/unicorn-sound-swap.webp",
+  "alt": "A unicorn beside words transforming into new words with swapped first letters.",
+  "width": 1748,
+  "height": 1240,
+  "format": "webp",
+  "bytes": 93708
+ },
+ {
+  "key": "school/phonics/adventures/dinosaur-sound-train.webp",
+  "alt": "A dinosaur conductor beside train cars waiting for the letters of cat, dog and sun.",
+  "width": 1748,
+  "height": 1240,
+  "format": "webp",
+  "bytes": 123576
+ },
+ {
+  "key": "school/phonics/adventures/monkeys-missing-middle.webp",
+  "alt": "A monkey beside b_d, p_g, c_p, f_x and h_t with the five vowels waiting.",
+  "width": 1748,
+  "height": 1240,
+  "format": "webp",
+  "bytes": 100192
+ },
+ {
+  "key": "school/phonics/adventures/firefly-sound-counting.webp",
+  "alt": "Fireflies glowing beside words whose sounds must be counted, not their letters.",
+  "width": 1748,
+  "height": 1240,
+  "format": "webp",
+  "bytes": 109598
+ },
+ {
+  "key": "school/phonics/adventures/polar-bear-word-builder.webp",
+  "alt": "A polar bear beside frozen words waiting to be rebuilt letter by letter.",
+  "width": 1748,
+  "height": 1240,
+  "format": "webp",
+  "bytes": 119348
+ },
+ {
+  "key": "school/phonics/adventures/mermaids-sound-switch.webp",
+  "alt": "A mermaid beside words whose last letters switch to make new words.",
+  "width": 1748,
+  "height": 1240,
+  "format": "webp",
+  "bytes": 122230
+ },
+ {
+  "key": "school/phonics/adventures/dragons-secret-sound-paths.webp",
+  "alt": "A winding path to a dragon\u2019s cave lined with pictures, some starting with the s sound.",
+  "width": 1748,
+  "height": 1240,
+  "format": "webp",
+  "bytes": 107510
+ },
+ {
+  "key": "school/maths/adventures/counting-caterpillar.webp",
+  "alt": "A cheerful caterpillar made of ten colorful circle segments with a smiling red head.",
+  "width": 1748,
+  "height": 1240,
+  "format": "webp",
+  "bytes": 46232
+ },
+ {
+  "key": "school/maths/adventures/counting-apples.webp",
+  "alt": "Ten red apples arranged above an empty woven basket.",
+  "width": 1748,
+  "height": 1240,
+  "format": "webp",
+  "bytes": 103570
  }
 ]

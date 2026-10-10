@@ -9,12 +9,14 @@
 import {shapeAdventures,SHAPE_BASE,SHAPE_LIB_PATH} from './shape-adventures.mjs';
 import {colorCreativities,COLOR_BASE,COLOR_LIB_PATH} from './color-creativity.mjs';
 import {writingAdventures,WRITING_BASE,WRITING_LIB_PATH,GROUP_NAMES} from './writing-adventures.mjs';
+import {C28_PATH,PHONICS_LIB_PATH,WS28_PATH} from './phonics-adventures.mjs';
 import {crumbNav,heading,esc} from './adventure-kit.mjs';
 
 const HUB='/preschool/4-years/';
 export const C25_PATH=HUB+'shapes-patterns-and-sorting/';
 export const C26_PATH=HUB+'colors-mixing-and-creativity/';
 export const C27_PATH=HUB+'early-writing-and-pencil-control/';
+export {C28_PATH};
 
 const chips=(rows)=>`<div class="fc-chips lesson-chips">${rows.map(([k,v])=>`<span><strong>${k}</strong> ${v}</span>`).join('')}</div>`;
 const shapeFaces={circle:'circle',square:'square',triangle:'triangle',rectangle:'rectangle',oval:'oval',star:'star',heart:'heart',diamond:'diamond',hexagon:'hexagon'};
@@ -25,11 +27,12 @@ const face=(s,correct,asChoice)=>asChoice
 /* ---------- the hub ---------- */
 export function stage4HubBody(){
  return `${crumbNav([['Preschool','/preschool/'],['Age 4']])}
- ${heading('PRESCHOOL · AGE 4','Age 4: shapes, colors and pencil control.','Three big classes for four-year-olds — Shapes, Patterns &amp; Sorting (Class 25), Colors, Mixing &amp; Creativity (Class 26) and Early Writing &amp; Pencil Control (Class 27) — each with its own shelf of real, playable adventures built on our own storybook artwork.')}
+ ${heading('PRESCHOOL · AGE 4','Age 4: shapes, colors and pencil control.','Four big classes for four-year-olds — Shapes, Patterns &amp; Sorting (Class 25), Colors, Mixing &amp; Creativity (Class 26), Early Writing &amp; Pencil Control (Class 27) and Phonics &amp; Beginning Sounds (Class 28) — each with its own shelf of real, playable adventures built on our own storybook artwork.')}
  <section class="wrap section compact"><div class="fc-stages">
   <a class="fc-stage lesson-card-link" href="${C25_PATH}"><div class="fc-stage-pills"><span class="fc-age">Age 4</span><span class="fc-class">Class 25</span></div><h3>Shapes, Patterns &amp; Sorting</h3><p>Nine shapes, three pattern games and the whole <a href="${SHAPE_LIB_PATH}">Shape Adventures</a> shelf: a spaceship to build, a monster factory, candy sorting and a shape detective.</p><span class="fc-open">Open Class 25 <span aria-hidden="true">↗</span></span></a>
   <a class="fc-stage lesson-card-link" href="${C26_PATH}"><div class="fc-stage-pills"><span class="fc-age">Age 4</span><span class="fc-class">Class 26</span></div><h3>Colors, Mixing &amp; Creativity</h3><p>Real paint mixing, tap-to-fill coloring you can actually stay inside, movable decorations and a free splatter canvas in the <a href="${COLOR_LIB_PATH}">Colors &amp; Creativity</a> studio.</p><span class="fc-open">Open Class 26 <span aria-hidden="true">↗</span></span></a>
   <a class="fc-stage lesson-card-link" href="${C27_PATH}"><div class="fc-stage-pills"><span class="fc-age">Age 4</span><span class="fc-class">Class 27</span></div><h3>Early Writing &amp; Pencil Control</h3><p>Thirty on-screen tracing adventures in the <a href="${WRITING_LIB_PATH}">Writing Adventures</a> library — winding paths, loops, mazes and dot-to-dots with a finger, stylus or mouse.</p><span class="fc-open">Open Class 27 <span aria-hidden="true">↗</span></span></a>
+  <a class="fc-stage lesson-card-link" href="${C28_PATH}"><div class="fc-stage-pills"><span class="fc-age">Ages 4–5</span><span class="fc-class">Class 28</span></div><h3>Phonics &amp; Beginning Sounds</h3><p>Twenty-four listening games with real recorded sound in the <a href="${PHONICS_LIB_PATH}">Phonics Adventures</a> library — first sounds, rhymes, blending and sound swaps, plus a printable worksheet for every game.</p><span class="fc-open">Open Class 28 <span aria-hidden="true">↗</span></span></a>
  </div>
  <p class="lesson-note"><strong>Age ranges are guides, not tests.</strong> Start where it is fun, stop while it is fun, and come back whenever you like. Progress saves on this device for the child chosen in <a href="/my-classroom/">My Classroom</a>.</p></section>`;
 }
@@ -56,7 +59,7 @@ export function class25Body(){
  <article class="wrap lesson-hero"><div class="lesson-hero-copy">
   <span class="eyebrow">CLASS 25 · PRESCHOOL AGE 4</span>
   <h1>Shapes, Patterns &amp; Sorting</h1>
-  ${chips([['Age','4 Years'],['Class','25 of 27'],['Adventures','18 shape games'],['Subjects','Shapes · patterns · sorting']])}
+  ${chips([['Age','4 Years'],['Class','25 of 28'],['Adventures','18 shape games'],['Subjects','Shapes · patterns · sorting']])}
   <p class="lesson-lede">At four, shapes stop being names and start being tools: things to match, sort, pattern and build with. This class revisits the nine core shapes, plays with pattern rhythm, and opens the door to the Shape Adventures — eighteen real games built on our own storybook artwork.</p>
   <p class="lesson-lede">Everything gives calm, gentle feedback. No scores, no timers, no penalties — a miss is just a look-again.</p>
   <div class="lesson-start"><a class="button" href="#todays-class">Start Today’s Class <span aria-hidden="true">↓</span></a><span class="lesson-start-hint">Grown-up nearby, little one in charge of the tapping.</span></div>
@@ -130,7 +133,7 @@ export function class26Body(){
  <article class="wrap lesson-hero"><div class="lesson-hero-copy">
   <span class="eyebrow">CLASS 26 · PRESCHOOL AGE 4</span>
   <h1>Colors, Mixing &amp; Creativity</h1>
-  ${chips([['Age','4 Years'],['Class','26 of 27'],['Activities','18 studios'],['Subjects','Colors · mixing · making']])}
+  ${chips([['Age','4 Years'],['Class','26 of 28'],['Activities','18 studios'],['Subjects','Colors · mixing · making']])}
   <p class="lesson-lede">This class turns colors from names into materials: paints that really mix, outlines that really fill, decorations that really move. The Colors &amp; Creativity studio next door holds eighteen real activities — from a chameleon that changes color to a free splatter canvas.</p>
   <p class="lesson-lede">Creative choices are never graded here. The only goal is the joy of making — and a little true color science along the way.</p>
   <div class="lesson-start"><a class="button" href="#todays-class">Start Today’s Class <span aria-hidden="true">↓</span></a><span class="lesson-start-hint">Fingers, styluses and mice all work. Aprons optional on screen.</span></div>
@@ -198,7 +201,7 @@ export function class27Body(){
  <article class="wrap lesson-hero"><div class="lesson-hero-copy">
   <span class="eyebrow">CLASS 27 · PRESCHOOL AGE 4</span>
   <h1>Early Writing &amp; Pencil Control</h1>
-  ${chips([['Age','4 Years'],['Class','27 of 27'],['Adventures','30 tracing games'],['Subjects','Strokes · paths · shapes']])}
+  ${chips([['Age','4 Years'],['Class','27 of 28'],['Adventures','30 tracing games'],['Subjects','Strokes · paths · shapes']])}
   <p class="lesson-lede">Before letters come strokes: the winding path, the loop, the wave, the zigzag, the spiral, the careful corner. This class builds them all with thirty real on-screen tracing adventures — played with a finger on a phone, a stylus on a tablet, or a mouse on a laptop.</p>
   <p class="lesson-lede">The tracing engine asks for honest effort, never perfection: guides reward generous coverage, completed lines turn into your child’s own pencil color, and every page prints a worksheet for away-from-screen practice.</p>
   <div class="lesson-start"><a class="button" href="#todays-class">Start Today’s Class <span aria-hidden="true">↓</span></a><span class="lesson-start-hint">The library keeps every adventure and your child’s progress in one place.</span></div>
@@ -254,6 +257,6 @@ export function class27Body(){
   <span class="eyebrow">CLASS COMPLETE</span>
   <h2>Strong strokes, steady hands!</h2>
   <p class="lesson-copy">One adventure or ten, every traced line is a real step toward writing. The shelf remembers exactly where you left off.</p>
-  <div class="hero-actions"><a class="button" href="${WRITING_LIB_PATH}">Play more Writing Adventures <span aria-hidden="true">↗</span></a><a class="button button-ghost" href="/learning-path/">Back to the Learning Path <span aria-hidden="true">↗</span></a></div>
+  <div class="hero-actions"><a class="button" href="${WRITING_LIB_PATH}">Play more Writing Adventures <span aria-hidden="true">↗</span></a><a class="button button-ghost" href="${C28_PATH}">Next class: Phonics &amp; Beginning Sounds <span aria-hidden="true">→</span></a><a class="button button-ghost" href="/learning-path/">Learning Path <span aria-hidden="true">↗</span></a></div>
  </section>`;
 }

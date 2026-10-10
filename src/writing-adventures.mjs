@@ -737,7 +737,7 @@ export function writingPageBody(a){
    <h1>${esc(a.h1)}</h1>
    <div class="fc-chips lesson-chips"><span><strong>Age</strong> 4 Years</span><span><strong>Class</strong> 27 · Writing</span><span><strong>Skill</strong> ${esc(a.skill)}</span></div>
    <p class="lesson-lede">${esc(a.tag)}</p>
-   <div class="lesson-start"><a class="button" href="#play">Start tracing <span aria-hidden="true">↓</span></a><span class="lesson-start-hint">Finger, stylus or mouse. Undo and Clear are always one tap away.</span></div>
+   <div class="lesson-start"><a class="button" href="#play">Start tracing <span aria-hidden="true">↓</span></a><a class="button button-ghost" href="/worksheets/writing/${a.slug}/">Print the worksheet <span aria-hidden="true">↓</span></a><span class="lesson-start-hint">Finger, stylus or mouse. Undo and Clear are always one tap away.</span></div>
   </div>
  </article>
  ${board}
