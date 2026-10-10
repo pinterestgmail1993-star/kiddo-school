@@ -11,7 +11,9 @@ export const SUBJECTS={
  colors:{key:'colors',label:'Colors, Mixing & Creativity',crumb:'Colors',classNum:26,classPath:'/preschool/4-years/colors-mixing-and-creativity/',classTitle:'Colors, Mixing & Creativity (Class 26)',gameLib:'/preschool/colors/adventures/',gameLibTitle:'Colors & Creativity',tint:'#fdeeee',accent:'#e0568c'},
  writing:{key:'writing',label:'Early Writing & Pencil Control',crumb:'Writing',classNum:27,classPath:'/preschool/4-years/early-writing-and-pencil-control/',classTitle:'Early Writing & Pencil Control (Class 27)',gameLib:'/preschool/writing/adventures/',gameLibTitle:'Writing Adventures',tint:'#eaf2fb',accent:'#5aa7d6'},
  maths:{key:'maths',label:'Maths',crumb:'Maths',classNum:24,classPath:'/preschool/4-years/',classTitle:'Counting & Number Recognition (Class 24)',gameLib:'/maths/',gameLibTitle:'Maths Room',tint:'#f4efe3',accent:'#a9694e'},
- phonics:{key:'phonics',label:'Phonics & Beginning Sounds',crumb:'Phonics',classNum:28,classPath:'/preschool/4-years/phonics-and-beginning-sounds/',classTitle:'Phonics & Beginning Sounds (Class 28)',gameLib:'/preschool/phonics/adventures/',gameLibTitle:'Phonics Adventures',tint:'#f3ecfa',accent:'#8f4fc0'}
+ phonics:{key:'phonics',label:'Phonics & Beginning Sounds',crumb:'Phonics',classNum:28,classPath:'/preschool/4-years/phonics-and-beginning-sounds/',classTitle:'Phonics & Beginning Sounds (Class 28)',gameLib:'/preschool/phonics/adventures/',gameLibTitle:'Phonics Adventures',tint:'#f3ecfa',accent:'#8f4fc0'},
+ reading:{key:'reading',label:'Storytime & Pre-Reading',crumb:'Reading',classNum:29,classPath:'/preschool/4-years/storytime-and-pre-reading/',classTitle:'Storytime & Pre-Reading Comprehension (Class 29)',gameLib:'/preschool/reading/adventures/',gameLibTitle:'Storytime Adventures',tint:'#fdf3e7',accent:'#e07f3e'},
+ logic:{key:'logic',label:'Logic & Problem-Solving',crumb:'Logic',classNum:30,classPath:'/preschool/4-years/logic-thinking-and-problem-solving/',classTitle:'Logic, Thinking & Problem-Solving (Class 30)',gameLib:'/preschool/logic/adventures/',gameLibTitle:'Logic Adventures',tint:'#eaf3f6',accent:'#2e9bb5'}
 };
 
 export const wsUrl=(subject,slug)=>`${WS_BASE}${subject}/${slug}/`;
@@ -79,6 +81,30 @@ export const CLASS_GUIDE={
    ['Sounds, not letter names','The letter is m, but the sound is \u201cmmm\u201d. Stretch the sounds you can hold (mmm, sss, fff) and keep stops snappy (t, p, k).'],
    ['Play the online game afterwards','Every worksheet has a matching game at kiddo.school where the sounds are played aloud \u2014 paper first, screen second works beautifully.'],
    ['Answers are at the bottom','Each phonics sheet ends with a grown-up answer line, so you can check together without guessing.']
+  ]
+ },
+ reading:{
+  howto:[
+   ['Tell the story together','Read the title and instruction aloud, then let your child point at the picture and say what happens. The picture carries the whole activity \u2014 no reading needed.'],
+   ['Mark the picture, then retell','Circle, number or draw on the sheet exactly as the game plays on screen. Afterwards ask \u201ccan you tell me the whole story?\u201d \u2014 the retelling is the comprehension.'],
+   ['Use the draw box','Every sheet ends with room to draw the next part of the story. A drawing plus one spoken sentence is a complete session.']
+  ],
+  tips:[
+   ['Wrong answers are information','If the story comes out in the wrong order, retell it together and try again tomorrow. Comprehension grows from talking, not from being right first time.'],
+   ['Say the WHY out loud','\u201cWhy does Rabbit need the umbrella?\u201d Asking for the reason turns a matching task into real story thinking.'],
+   ['Print it twice','Once to do, once to keep. Children love redoing a favorite story a week later and feeling how easy it got.']
+  ]
+ },
+ logic:{
+  howto:[
+   ['Say the rule first','Every puzzle has a rule \u2014 a pattern, a size order, two clues together. Say it aloud before solving, and the sheet solves itself.'],
+   ['Point before circling','Have your child point at the answer and say why, then circle it. The pointing keeps the thinking honest.'],
+   ['Check together with the answer line','The grown-up answer strip at the bottom lets you check without guessing \u2014 and lets your child play teacher.']
+  ],
+  tips:[
+   ['Sort real things too','After the sorting sheets, sort socks or spoons the same way. Real objects make the rule permanent.'],
+   ['Patterns everywhere','Lay out apple-grape-apple snacks and ask what comes next. The sheet teaches the skill; the kitchen keeps it.'],
+   ['Mazes build pencil control too','The maze sheet doubles as pencil practice \u2014 slow and steady on the path matters more than speed.']
   ]
  }
 };

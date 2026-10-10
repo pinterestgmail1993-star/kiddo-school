@@ -28,7 +28,7 @@ const hexRGB=h=>{
 };
 const num=n=>Math.round(n*1000)/1000;
 
-export function buildPDF({els,W,H,size='a4',title,subject}){
+export function buildPDF({els,W,H,size='a4',title,subject,images}){
  const [PW,PH]=size==='letter'?LETTER:A4;
  const scale=PW/W; // fit width; A4 and Letter only differ by a few points
  const sh=H*scale;
@@ -77,6 +77,10 @@ export function buildPDF({els,W,H,size='a4',title,subject}){
    if(s){c.push(`${s.map(num).join(' ')} RG`,`${num((el.w||2)*scale)} w`);if(el.dash)c.push(`[${el.dash.split(',').map(d=>num(parseFloat(d)*scale)).join(' ')}] 0 d`);}
    c.push(f&&s?'B':f?'f':'S');
    if(el.dash)c.push('[] 0 d');
+  }else if(el.t==='image'){
+   const im=images[el.img]; // {w,h} pixel dims; raw JPEG bytes appended later
+   const iw=el.w*scale, ih=el.h*scale, ix=el.x*scale, iy=sh-(el.y+el.h)*scale;
+   c.push('q',`${num(iw)} 0 0 ${num(ih)} ${num(ix)} ${num(iy)} cm`,`/Im${el.img+1} Do`,'Q');
   }else if(el.t==='text'){
    const f=el.f==='b'?'F2':'F1';
    const w=textWidth(el.s,el.size,el.f)*scale;
@@ -94,31 +98,43 @@ export function buildPDF({els,W,H,size='a4',title,subject}){
  const objs=[]; // string bodies; index = object number - 1
  const addObj=body=>{objs.push(body);return objs.length;};
  // 1: catalog, 2: pages — reserved after we know counts; build in fixed order:
- // 3: page, 4: contents, 5: font F1, 6: font F2
+ // 3: page, 4: contents, 5..(4+n): image XObjects, then fonts
+ const nImg=images?images.length:0;
  objs.push('<< /Type /Catalog /Pages 2 0 R >>');            // 1
  objs.push('<< /Type /Pages /Kids [3 0 R] /Count 1 >>');    // 2
- objs.push(`<< /Type /Page /Parent 2 0 R /MediaBox [0 0 ${num(PW)} ${num(PH)}] /Contents 4 0 R /Resources << /Font << /F1 5 0 R /F2 6 0 R >> >> >>`); // 3
+ const xobjs=nImg?` /XObject <<${images.map((_,i)=>` /Im${i+1} ${5+i} 0 R`).join('')} >>`:'';
+ objs.push(`<< /Type /Page /Parent 2 0 R /MediaBox [0 0 ${num(PW)} ${num(PH)}] /Contents 4 0 R /Resources << /Font << /F1 ${5+nImg} 0 R /F2 ${6+nImg} 0 R >>${xobjs} >> >>`); // 3
  objs.push({stream:content});                               // 4 placeholder obj with stream
- objs.push('<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>');       // 5
- objs.push('<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>');  // 6
+ for(let i=0;i<nImg;i++){
+  const im=images[i];
+  objs.push({stream:im.data,dict:`<< /Type /XObject /Subtype /Image /Width ${im.w} /Height ${im.h} /ColorSpace /DeviceRGB /BitsPerComponent 8 /Filter /DCTDecode /Length ${im.data.length} >>`});
+ }
+ objs.push('<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>');       // F1
+ objs.push('<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>');  // F2
  // info
  const info=`<< /Title (${pdfEsc(title||'Kiddo School worksheet')}) /Author (Kiddo.school) /Subject (${pdfEsc(subject||'Free printable preschool worksheet')}) /Creator (Kiddo.school) >>`;
  objs.push(info); // 7
 
- let out='%PDF-1.4\n%\xE2\xE3\xCF\xD3\n';
+ /* assemble with real buffers so JPEG XObjects stay binary-exact */
+ const chunks=[Buffer.from('%PDF-1.4\n%\xE2\xE3\xCF\xD3\n','binary')];
+ let pos=chunks[0].length;
  const xref=[0];
  for(let i=0;i<objs.length;i++){
-  xref.push(out.length);
+  xref.push(pos);
   const o=objs[i];
+  let piece;
   if(o&&o.stream!==undefined){
-   out+=`${i+1} 0 obj\n<< /Length ${o.stream.length} >>\nstream\n${o.stream}\nendstream\nendobj\n`;
+   const head=o.dict||`<< /Length ${o.stream.length} >>\n`;
+   if(Buffer.isBuffer(o.stream))piece=Buffer.concat([Buffer.from(`${i+1} 0 obj\n${head}\nstream\n`,'binary'),o.stream,Buffer.from('\nendstream\nendobj\n','binary')]);
+   else piece=Buffer.from(`${i+1} 0 obj\n${head}\nstream\n${o.stream}\nendstream\nendobj\n`,'binary');
   }else{
-   out+=`${i+1} 0 obj\n${o}\nendobj\n`;
+   piece=Buffer.from(`${i+1} 0 obj\n${o}\nendobj\n`,'binary');
   }
+  chunks.push(piece);pos+=piece.length;
  }
- const xrefStart=out.length;
- out+=`xref\n0 ${objs.length+1}\n0000000000 65535 f \n`;
- for(let i=1;i<=objs.length;i++)out+=String(xref[i]).padStart(10,'0')+' 00000 n \n';
- out+=`trailer\n<< /Size ${objs.length+1} /Root 1 0 R /Info 7 0 R >>\nstartxref\n${xrefStart}\n%%EOF`;
- return Buffer.from(out,'binary');
+ const xrefStart=pos;
+ chunks.push(Buffer.from(`xref\n0 ${objs.length+1}\n0000000000 65535 f \n`,'binary'));
+ for(let i=1;i<=objs.length;i++)chunks.push(Buffer.from(String(xref[i]).padStart(10,'0')+' 00000 n \n','binary'));
+ chunks.push(Buffer.from(`trailer\n<< /Size ${objs.length+1} /Root 1 0 R /Info ${objs.length} 0 R >>\nstartxref\n${xrefStart}\n%%EOF`,'binary'));
+ return Buffer.concat(chunks);
 }

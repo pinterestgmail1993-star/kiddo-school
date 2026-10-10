@@ -12,20 +12,24 @@ import {esc} from './adventure-kit.mjs';
 const crumbNav=parts=>`<nav class="breadcrumbs wrap" aria-label="Breadcrumb"><a href="/">Home</a>${parts.map(([label,href])=>`<span aria-hidden="true">/</span>${href?`<a href="${esc(href)}">${esc(label)}</a>`:`<span aria-current="page">${esc(label)}</span>`}`).join('')}</nav>`;
 const heading=(eyebrow,title,desc)=>`<div class="page-heading wrap"><span class="eyebrow">${eyebrow}</span><h1>${title}</h1><p>${desc}</p></div>`;
 
-const SUBJECT_ORDER=['maths','shapes','colors','writing','phonics'];
+const SUBJECT_ORDER=['maths','shapes','colors','writing','phonics','reading','logic'];
 const catDesc={
  maths:'Counting, numbers and number writing \u2014 printable maths practice built from our own artwork.',
  shapes:'Shape matching, patterns, sorting and symmetry \u2014 the printable twins of the Shape Adventures games.',
  colors:'Coloring, mixing, sorting and design \u2014 print the studio activities and color them for real.',
  writing:'Tracing guides, mazes and dot-to-dots \u2014 the exact strokes the Writing Adventures trace on screen.',
- phonics:'Beginning sounds, rhymes, blending and word building \u2014 every sheet works on paper with a parent sound script.'
+ phonics:'Beginning sounds, rhymes, blending and word building \u2014 every sheet works on paper with a parent sound script.',
+ reading:'Sequencing, clues, feelings and retelling \u2014 the paper twins of the Storytime Adventures, with draw-and-tell panels.',
+ logic:'Patterns, odd ones, keys and clues \u2014 the printable twins of the Logic Adventures, each with a grown-up answer line.'
 };
 
 /* the raw layout elements (PDF backend consumes these) */
 export function worksheetEls(w){
  const fn=L[LAYOUT_BY_TYPE[w.wsType]];
  if(!fn)throw Error('no layout builder for '+w.wsType);
- return fn(w.ws);
+ const els=fn(w.ws);
+ for(const el of els)if(el.t==='image')el.img=0;
+ return els;
 }
 /* build the SVG for a worksheet (page preview + print source) */
 export function worksheetSVG(w){

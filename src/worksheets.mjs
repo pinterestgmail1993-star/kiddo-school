@@ -8,8 +8,10 @@ import {colorWorksheets} from './ws-data-colors.mjs';
 import {writingWorksheets} from './ws-data-writing.mjs';
 import {mathsWorksheets,MATHS_TOTAL} from './ws-data-maths.mjs';
 import {buildPhonicsWorksheets} from './ws-data-phonics.mjs';
+import {buildReadingWorksheets} from './ws-data-reading.mjs';
+import {buildLogicWorksheets} from './ws-data-logic.mjs';
 
-const all=[...shapeWorksheets,...colorWorksheets,...writingWorksheets,...mathsWorksheets,...buildPhonicsWorksheets()];
+const all=[...shapeWorksheets,...colorWorksheets,...writingWorksheets,...mathsWorksheets,...buildPhonicsWorksheets(),...buildReadingWorksheets(),...buildLogicWorksheets()];
 /* the layout builders render the header from the spec itself — give every
    worksheet its title, instruction line and sheet footer note */
 for(const w of all){
@@ -52,7 +54,7 @@ export function neighbours(w){
 export const LAYOUT_BY_TYPE={
  trace:'traceSheet',traceMulti:'traceMultiSheet',count:'countSheet',caterpillar:'caterpillarSheet',
  apples:'applesSheet',pattern:'patternSheet',sort:'sortSheet',match:'matchSheet',colorKey:'colorKeySheet',
- mix:'mixSheet',symmetry:'symmetrySheet',buildWord:'buildWordSheet',letterPick:'letterPickSheet',
+ mix:'mixSheet',symmetry:'symmetrySheet',buildWord:'buildWordSheet',letterPick:'letterPickSheet',story:'storySheet',
  writeMissing:'writeMissingSheet',counters:'countersSheet',oddOne:'oddOneSheet',pathFind:'pathFindSheet',
  wordSort:'wordSortSheet',soundSwap:'soundSwapSheet',decorate:'decorateSheet',maze:'mazeSheet',
  dotToDot:'dotToDotSheet',find:'findSheet',sequence:'sequenceSheet',position:'positionSheet'

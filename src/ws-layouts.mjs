@@ -841,3 +841,46 @@ export function positionSheet(spec){
  footer(els);
  return els;
 }
+
+/* =========== 26. STORY & LOGIC SHEETS (Classes 29–30) ===========
+   The artwork IS the activity: the sheet prints the adventure illustration
+   (title + instruction baked into the art), then a retell/draw panel and a
+   grown-up answer line. Sheets stay usable on a black-and-white printer for
+   every activity EXCEPT the few whose answers name a color — those keep the
+   art in full color and the grown-up note says so. */
+export function storySheet(spec){
+ const els=[];
+ const y0=header(els,spec.title,spec.instr);
+ // illustration block
+ const iw=CW, ih=Math.min(iw*spec.ar,470);
+ els.push({t:'rect',x:MX-1,y:y0-1,w:iw+2,h:ih+2,rx:8,fill:'#ffffff',stroke:RULE,sw:1.4});
+ els.push({t:'image',x:MX,y:y0,w:iw,h:ih,img:spec.imgIndex,href:spec.imgHref,ar:spec.ar});
+ let y=y0+ih+18;
+ // retell panel: what the child does on paper besides circling on the art
+ const panelH=Math.max(120,Math.min(200,PH-64-y-(spec.answers?58:30)));
+ els.push(...writePanel(els,sectionLabel(els,MX,y,spec.panelTitle),panelH,spec.panelHint));
+ y+=panelH+26;
+ // lines for early writers
+ if(spec.lines){
+  for(let i=0;i<2;i++){
+   els.push(...startDot(MX+8,y,4));
+   els.push(wline(MX+22,y+8,PW-MX,y+8,FAINT,1.1,'2,8'));
+   y+=26;
+  }
+  y+=4;
+ }
+ if(spec.answers){
+  const ay=PH-58;
+  els.push(wline(MX,ay-12,PW-MX,ay-12,RULE,1.2));
+  els.push({t:'text',x:MX,y:ay,s:'For grown-ups',size:10,f:'b',color:INK});
+  const asz=Math.min(10,(CW-20)/(textWidth(spec.answers,10)/10));
+  els.push({t:'text',x:MX,y:ay+15,s:spec.answers,size:asz,color:MUT});
+ }
+ footer(els,'kiddo.school · free printable story & logic worksheet · plays online with its matching game');
+ return els;
+}
+function writePanel(els,y,h,hint){
+ els.push(rrect(MX,y,CW,h,12,'#ffffff',RULE,1.5));
+ els.push({t:'text',x:MX+16,y:y+24,s:hint,size:11,color:MUT});
+ return [];
+}

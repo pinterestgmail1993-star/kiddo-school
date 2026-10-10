@@ -1,5 +1,5 @@
 // Kiddo School — worksheet library test suite.
-// Proves the worksheet system is real: 92 individual pages, real PDFs on
+// Proves the worksheet system is real: 151 individual pages, real PDFs on
 // disk, honest maths coverage, print-only styling, and the game twins.
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
@@ -13,8 +13,8 @@ const read=f=>readFileSync('dist'+f,'utf8');
 const page=p=>read(p+'index.html');
 const TEST_ORIGIN='https://kiddo-school.pages.dev';
 
-test('the worksheet registry: 92 worksheets across five subjects',()=>{
- assert.equal(worksheets.length,92);
+test('the worksheet registry: 151 worksheets across seven subjects',()=>{
+ assert.equal(worksheets.length,151);
  assert.equal(bySubject('shapes').length,18);
  assert.equal(bySubject('colors').length,18);
  assert.equal(bySubject('writing').length,30);
@@ -22,10 +22,10 @@ test('the worksheet registry: 92 worksheets across five subjects',()=>{
  assert.equal(bySubject('maths').length,2); // honest: only two artworks uploaded
  assert.equal(MATHS_PLANNED,30);
  const slugs=new Set(worksheets.map(w=>w.subject+'/'+w.slug));
- assert.equal(slugs.size,92,'no duplicate slugs within or across subjects');
+ assert.equal(slugs.size,151,'no duplicate slugs within or across subjects');
 });
 
-test('every worksheet has its own clean URL page with unique SEO',()=>{
+test('worksheet pages (151) each have their own clean URL page with unique SEO',()=>{
  const titles=new Set(),descs=new Set();
  for(const w of worksheets){
   const p=wsUrl(w.subject,w.slug);
@@ -44,8 +44,8 @@ test('every worksheet has its own clean URL page with unique SEO',()=>{
   assert.ok(html.includes('data-ws-print'),'Print button on '+p);
   if(w.game)assert.ok(html.includes(`href="${w.game.path}"`),'Play online link on '+p);
  }
- assert.equal(titles.size,92,'92 unique SEO titles');
- assert.equal(descs.size,92,'92 unique meta descriptions');
+ assert.equal(titles.size,151,'151 unique SEO titles');
+ assert.equal(descs.size,151,'151 unique meta descriptions');
 });
 
 test('every worksheet page twins with a real game and links its class',()=>{
@@ -98,7 +98,7 @@ test('the print stylesheet prints ONLY the worksheet sheet',()=>{
  assert.ok(js.includes("add('ws-printing')"),'print button flags the page');
 });
 
-test('all 92 PDFs exist in dist and are real PDF files',()=>{
+test('all 151 PDFs exist in dist and are real PDF files',()=>{
  let count=0;
  for(const w of worksheets){
   const f='dist'+pdfUrl(w.subject,w.slug);
@@ -108,7 +108,7 @@ test('all 92 PDFs exist in dist and are real PDF files',()=>{
   assert.ok(buf.slice(0,5).toString()==='%PDF-','PDF magic bytes: '+w.slug);
   count++;
  }
- assert.equal(count,92);
+ assert.equal(count,151);
  const dir=sub=>readdirSync('dist/downloads/worksheets/'+sub).length;
  assert.equal(dir('shapes'),18);assert.equal(dir('colors'),18);assert.equal(dir('writing'),30);
  assert.equal(dir('phonics'),24);assert.equal(dir('maths'),2);
@@ -167,7 +167,7 @@ test('worksheet pages include genuinely unique parent content',()=>{
   const html=page(wsUrl(w.subject,w.slug));
   assert.ok(html.includes(w.learn),'learn copy rendered on '+w.slug);
  }
- assert.equal(learns.size,92,'no boilerplate learn copy reused');
+ assert.equal(learns.size,151,'no boilerplate learn copy reused');
 });
 
 test('every worksheet page ships the print enhancement and R2 art with alt text',()=>{
@@ -187,16 +187,16 @@ test('the two real maths worksheets are built from the uploaded artwork',()=>{
  }
 });
 
-test('sitemap carries the hub, five categories and all 92 worksheets',()=>{
+test('sitemap carries the hub, seven categories and all 151 worksheets',()=>{
  const xml=read('/sitemap.xml');
  assert.ok(xml.includes(`<loc>${TEST_ORIGIN}/worksheets/</loc>`));
  for(const w of worksheets)assert.ok(xml.includes(`<loc>${TEST_ORIGIN}${wsUrl(w.subject,w.slug)}</loc>`),'sitemap '+w.slug);
  const n=(xml.match(/\/worksheets\//g)||[]).length;
- assert.ok(n>=98,'hub + 5 categories + 92 worksheets in sitemap');
+ assert.ok(n>=159,'hub + 7 categories + 151 worksheets in sitemap');
 });
 
 test('the whole-school search index knows worksheets',()=>{
  const idx=JSON.parse(read('/assets/search-index.json'));
  const ws=idx.filter(e=>e.k==='Worksheet');
- assert.equal(ws.length,98,'92 worksheets + hub + 5 categories searchable');
+ assert.equal(ws.length,159,'151 worksheets + hub + 7 categories searchable');
 });

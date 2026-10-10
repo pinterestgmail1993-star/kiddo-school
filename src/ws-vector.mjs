@@ -131,6 +131,7 @@ export function elToSVG(el){
  if(el.t==='circle')return `<circle cx="${r2(el.cx)}" cy="${r2(el.cy)}" r="${r2(el.r)}" fill="${hx(el.fill)}" stroke="${hx(el.stroke)}"${el.stroke?` stroke-width="${el.w||2}"`:''}${el.dash?` stroke-dasharray="${el.dash}"`:''}/>`;
  if(el.t==='ellipse')return `<ellipse cx="${r2(el.cx)}" cy="${r2(el.cy)}" rx="${r2(el.rx)}" ry="${r2(el.ry)}" fill="${hx(el.fill)}" stroke="${hx(el.stroke)}"${el.stroke?` stroke-width="${el.w||2}"`:''}${el.dash?` stroke-dasharray="${el.dash}"`:''}/>`;
  if(el.t==='rect')return `<rect x="${r2(el.x)}" y="${r2(el.y)}" width="${r2(el.w)}" height="${r2(el.h)}"${el.rx?` rx="${el.rx}"`:''} fill="${hx(el.fill)}" stroke="${hx(el.stroke)}"${el.stroke?` stroke-width="${el.sw||2}"`:''}${el.dash?` stroke-dasharray="${el.dash}"`:''}/>`;
+ if(el.t==='image')return `<image x="${r2(el.x)}" y="${r2(el.y)}" width="${r2(el.w)}" height="${r2(el.h)}" href="${esc(el.href)}" preserveAspectRatio="xMidYMid meet"/>`;
  return '';
 }
 export function layoutToSVG(els,W,H,opts={}){

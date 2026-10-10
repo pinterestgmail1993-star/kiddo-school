@@ -61,7 +61,9 @@
     shapes: { name: 'Shape Adventures', href: '/preschool/shapes/adventures/', total: 18 },
     colors: { name: 'Colors & Creativity', href: '/preschool/colors/adventures/', total: 18 },
     writing: { name: 'Writing Adventures', href: '/preschool/writing/adventures/', total: 30 },
-    phonics: { name: 'Phonics Adventures', href: '/preschool/phonics/adventures/', total: 24 }
+    phonics: { name: 'Phonics Adventures', href: '/preschool/phonics/adventures/', total: 24 },
+    reading: { name: 'Storytime Adventures', href: '/preschool/reading/adventures/', total: 27 },
+    logic: { name: 'Logic Adventures', href: '/preschool/logic/adventures/', total: 27 }
   };
   function renderProgress() {
     if (!progressPanel) return;
@@ -90,6 +92,8 @@
     });
     Object.entries(writing.completed || {}).forEach(([slug, ts]) => recent.push({ slug, ts, lib: 'writing' }));
     Object.entries((mine.phonics && mine.phonics.completed) || {}).forEach(([slug, ts]) => recent.push({ slug, ts, lib: 'phonics' }));
+    Object.entries((mine.reading && mine.reading.completed) || {}).forEach(([slug, ts]) => recent.push({ slug, ts, lib: 'reading' }));
+    Object.entries((mine.logic && mine.logic.completed) || {}).forEach(([slug, ts]) => recent.push({ slug, ts, lib: 'logic' }));
     recent.sort((a, b) => b.ts - a.ts);
     const recentHTML = recent.length
       ? `<p class="ap-recent"><strong>Latest cleared:</strong> ${recent.slice(0, 4).map(r => {
