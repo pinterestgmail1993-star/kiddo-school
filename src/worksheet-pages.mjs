@@ -1,5 +1,5 @@
 // Kiddo School — worksheet page bodies: the main library (/worksheets/),
-// the five subject categories and the individual worksheet pages.
+// the eight subject categories and the individual worksheet pages.
 // The individual page mirrors the flashcard page architecture (fc2-dual
 // layout, breadcrumbs, related cards, rail with actions) while keeping
 // worksheets their own resource type with their own URLs and schema.
@@ -12,7 +12,7 @@ import {esc} from './adventure-kit.mjs';
 const crumbNav=parts=>`<nav class="breadcrumbs wrap" aria-label="Breadcrumb"><a href="/">Home</a>${parts.map(([label,href])=>`<span aria-hidden="true">/</span>${href?`<a href="${esc(href)}">${esc(label)}</a>`:`<span aria-current="page">${esc(label)}</span>`}`).join('')}</nav>`;
 const heading=(eyebrow,title,desc)=>`<div class="page-heading wrap"><span class="eyebrow">${eyebrow}</span><h1>${title}</h1><p>${desc}</p></div>`;
 
-const SUBJECT_ORDER=['maths','shapes','colors','writing','phonics','reading','logic'];
+const SUBJECT_ORDER=['maths','shapes','colors','writing','phonics','reading','logic','science'];
 const catDesc={
  maths:'Counting, numbers and number writing \u2014 printable maths practice built from our own artwork.',
  shapes:'Shape matching, patterns, sorting and symmetry \u2014 the printable twins of the Shape Adventures games.',
@@ -20,8 +20,20 @@ const catDesc={
  writing:'Tracing guides, mazes and dot-to-dots \u2014 the exact strokes the Writing Adventures trace on screen.',
  phonics:'Beginning sounds, rhymes, blending and word building \u2014 every sheet works on paper with a parent sound script.',
  reading:'Sequencing, clues, feelings and retelling \u2014 the paper twins of the Storytime Adventures, with draw-and-tell panels.',
- logic:'Patterns, odd ones, keys and clues \u2014 the printable twins of the Logic Adventures, each with a grown-up answer line.'
+ logic:'Patterns, odd ones, keys and clues \u2014 the printable twins of the Logic Adventures, each with a grown-up answer line.',
+ science:'Predict, sort, count and discover \u2014 the printable twins of the Science Adventures: plant growth, weather, insects, magnets, habitats and one graduation lab.'
 };
+
+/* spelled-out count for the library heading (worksheets.length is the honest
+   number; it changes as classes ship, so it is never hard-coded) */
+const countWords=n=>{
+ const ones=['zero','one','two','three','four','five','six','seven','eight','nine','ten','eleven','twelve','thirteen','fourteen','fifteen','sixteen','seventeen','eighteen','nineteen'];
+ const tens=['','','twenty','thirty','forty','fifty','sixty','seventy','eighty','ninety'];
+ const under100=x=>x<20?ones[x]:(tens[Math.floor(x/10)]+(x%10?'-'+ones[x%10]:''));
+ if(n<100)return under100(n);
+ return ones[Math.floor(n/100)]+' hundred'+(n%100?' '+under100(n%100):'');
+};
+const libraryCount=()=>{const w=countWords(worksheets.length);return w[0].toUpperCase()+w.slice(1);};
 
 /* the raw layout elements (PDF backend consumes these) */
 export function worksheetEls(w){
@@ -51,7 +63,7 @@ export function worksheetsHubBody(){
   </a>`;
  }).join('');
  return `${crumbNav([['Worksheets']])}
- ${heading('THE WORKSHEET LIBRARY','Free printable worksheets for little hands.','Ninety-two printable activities, each the paper twin of a real Kiddo.school game: tracing guides with the same strokes, counting rows, coloring outlines, sound sorts with parent scripts. Download a real PDF, print straight from the page, or play the matching game online.')}
+ ${heading('THE WORKSHEET LIBRARY','Free printable worksheets for little hands.',`${libraryCount()} printable activities \u2014 the paper twins of our games: tracing guides with the same strokes, counting rows, coloring outlines, sound sorts with parent scripts, and science labs with a grown-up answer line. Download a real PDF, print straight from the page, or play the matching game online.`)}
  <section class="wrap section compact" aria-label="Worksheet categories"><div class="ws-cats">${cards}</div>
  <p class="lesson-note">Every worksheet is free, needs no sign-up, and prints on A4 or US Letter. The <span class="ws-hl">Play online</span> links open the matching interactive game \u2014 paper and screen practice the same skill.</p></section>
  <section class="wrap lesson-section" aria-label="How to use the library"><span class="eyebrow">FOR GROWN-UPS</span><h2>How the library works.</h2>
@@ -74,7 +86,7 @@ export function worksheetCategoryBody(subjectKey){
   <div class="fc-stages">
    <a class="fc-stage lesson-card-link" href="${s.classPath}"><div class="fc-stage-pills"><span class="fc-age">Age 4</span><span class="fc-class">Class ${s.classNum}</span></div><h3>${esc(s.classTitle)}</h3><p>The class behind these worksheets \u2014 the full interactive lesson.</p><span class="fc-open">Open Class ${s.classNum} <span aria-hidden="true">↗</span></span></a>
    <a class="fc-stage lesson-card-link" href="${s.gameLib}"><div class="fc-stage-pills"><span class="fc-age">Age 4</span><span class="fc-class">Games</span></div><h3>${esc(s.gameLibTitle)}</h3><p>The interactive games these worksheets twin with \u2014 playable with finger, stylus or mouse.</p><span class="fc-open">Open the library <span aria-hidden="true">↗</span></span></a>
-   <a class="fc-stage lesson-card-link" href="${WS_BASE}"><div class="fc-stage-pills"><span class="fc-age">All ages</span><span class="fc-class">Library</span></div><h3>The Worksheet Library</h3><p>All five subjects \u2014 maths, shapes, colors, writing and phonics.</p><span class="fc-open">Browse all worksheets <span aria-hidden="true">↗</span></span></a>
+   <a class="fc-stage lesson-card-link" href="${WS_BASE}"><div class="fc-stage-pills"><span class="fc-age">All ages</span><span class="fc-class">Library</span></div><h3>The Worksheet Library</h3><p>All eight subjects \u2014 maths, shapes, colors, writing, phonics, reading, logic and science.</p><span class="fc-open">Browse all worksheets <span aria-hidden="true">↗</span></span></a>
   </div>
  </section>`;
 }

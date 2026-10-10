@@ -161,6 +161,60 @@
       });
       return;
     }
+    if (type === 'multi') {
+      // tap every picture that belongs; wrong taps shake, count ticks up
+      const countEl = st.querySelector('[data-st-multicount]');
+      const oks = cards.filter(c => c.dataset.stOk === '1').length;
+      const sync = () => { if (countEl) countEl.textContent = st.querySelectorAll('[data-st-card].st-locked').length + ' of ' + oks + ' found'; };
+      cards.forEach(c => c.addEventListener('click', () => {
+        if (c.classList.contains('st-locked')) return;
+        if (c.dataset.stOk === '1') {
+          c.classList.add('st-locked');
+          voice(c.dataset.stSay || praise());
+          sync();
+          if (st.querySelectorAll('[data-st-card].st-locked').length === oks)
+            setTimeout(() => { if (step < steps.length - 1) showStep(step + 1); else celebrate(); }, 800);
+        } else {
+          c.classList.add('st-miss');
+          setTimeout(() => c.classList.remove('st-miss'), 700);
+          voice(c.dataset.stSay || 'Not one of those!');
+          hint('Look again \u2014 is that one really in the group?');
+        }
+      }));
+      return;
+    }
+    if (type === 'sort') {
+      // tap a picture, then the bin where it belongs
+      const bins = Array.from(st.querySelectorAll('.st-bin'));
+      let picked = null;
+      const clearPick = () => { if (picked) { picked.classList.remove('st-picked'); picked = null; } };
+      cards.forEach(c => c.addEventListener('click', () => {
+        if (c.classList.contains('st-locked')) return;
+        if (picked === c) { clearPick(); return; }
+        clearPick();
+        picked = c; c.classList.add('st-picked');
+        voice(c.dataset.stSay || c.dataset.stCard);
+        hint('Now tap the bin where it belongs.');
+      }));
+      bins.forEach(b => b.addEventListener('click', () => {
+        if (!picked) { hint('Tap a picture first, then its bin.'); return; }
+        if (picked.dataset.stBin === b.getAttribute('data-st-accept')) {
+          const c = picked; clearPick();
+          c.classList.remove('st-picked'); c.classList.add('st-locked');
+          b.appendChild(c);
+          voice(c.dataset.stSay || praise());
+          note(praise() + ' Sorted!');
+          const left = st.querySelectorAll('.st-tray [data-st-card]').length;
+          if (left === 0) setTimeout(() => { if (step < steps.length - 1) showStep(step + 1); else celebrate(); }, 750);
+        } else {
+          picked.classList.add('st-miss');
+          const c = picked; clearPick();
+          setTimeout(() => c.classList.remove('st-miss'), 700);
+          hint('Not that bin \u2014 look at the picture again!');
+        }
+      }));
+      return;
+    }
     cards.forEach(c => c.addEventListener('click', () => {
       if (c.classList.contains('st-locked')) return;
       const say = c.dataset.stSay;
@@ -211,6 +265,16 @@
     if (restartBtn) restartBtn.addEventListener('click', () => {
       board.querySelectorAll('.st-locked,.st-picked,.st-miss').forEach(el => el.classList.remove('st-locked', 'st-picked', 'st-miss'));
       board.querySelectorAll('.st-badge').forEach(b => { b.hidden = true; b.textContent = ''; });
+      // sort steps: return sorted cards from bins to their tray
+      board.querySelectorAll('.st-bin .st-card').forEach(c => {
+        const tray = c.closest('[data-st-step]').querySelector('.st-tray');
+        if (tray) tray.appendChild(c);
+      });
+      board.querySelectorAll('.st-found').forEach(h => h.classList.remove('st-found'));
+      board.querySelectorAll('[data-st-findcount],[data-st-multicount]').forEach(el => {
+        const total = el.parentElement.querySelectorAll('.st-hot').length || el.parentElement.querySelectorAll('[data-st-card][data-st-ok="1"]').length;
+        el.textContent = '0 of ' + total + ' found';
+      });
       showStep(0);
     });
   }

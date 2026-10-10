@@ -44,7 +44,8 @@ export const CURRICULUM=[
  {n:27,stage:'Preschool',band:'age4',   bandLabel:'Age 4',        title:'Early Writing & Pencil Control', path:'/preschool/4-years/early-writing-and-pencil-control/'},
  {n:28,stage:'Preschool',band:'age4',   bandLabel:'Age 4',        title:'Phonics & Beginning Sounds',    path:'/preschool/4-years/phonics-and-beginning-sounds/'},
  {n:29,stage:'Preschool',band:'age4',   bandLabel:'Age 4',        title:'Storytime & Pre-Reading Comprehension', path:'/preschool/4-years/storytime-and-pre-reading/'},
- {n:30,stage:'Preschool',band:'age4',   bandLabel:'Age 4',        title:'Logic, Thinking & Problem-Solving',     path:'/preschool/4-years/logic-thinking-and-problem-solving/'}
+ {n:30,stage:'Preschool',band:'age4',   bandLabel:'Age 4',        title:'Logic, Thinking & Problem-Solving',     path:'/preschool/4-years/logic-thinking-and-problem-solving/'},
+ {n:31,stage:'Preschool',band:'age4',   bandLabel:'Age 4',        title:'Science, Nature & Discovery',           path:'/preschool/4-years/science-nature-and-discovery/'}
 ];
 
 export const BANDS=[

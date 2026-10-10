@@ -227,13 +227,16 @@ test('the 4-years hub, preschool hub, homepage and learning path all know Age 4'
  assert.ok(preschool.includes('href="/preschool/4-years/"'),'preschool hub links Age 4');
  const home=page('/');
  assert.ok(home.includes('href="/preschool/4-years/"'),'homepage links Age 4');
- assert.ok(home.includes('Twenty-eight classes are ready now, from birth to age five'),'honest class count');
+ assert.ok(home.includes('Twenty-nine classes are ready now, from birth to age five'),'honest class count');
  const lp=page('/learning-path/');
- assert.ok(lp.includes('twenty-eight age-guided classes'),'learning path title updated');
+ assert.ok(lp.includes('twenty-nine age-guided classes'),'learning path title updated');
  assert.ok(lp.includes('Class 25: <a href="/preschool/4-years/shapes-patterns-and-sorting/">'),'learning path row 25');
  assert.ok(lp.includes('Class 26: <a href="/preschool/4-years/colors-mixing-and-creativity/">'),'learning path row 26');
  assert.ok(lp.includes('Class 27: <a href="/preschool/4-years/early-writing-and-pencil-control/">'),'learning path row 27');
  assert.ok(lp.includes('Class 28: <a href="/preschool/4-years/phonics-and-beginning-sounds/">'),'learning path row 28');
+ assert.ok(lp.includes('Class 29: <a href="/preschool/4-years/storytime-and-pre-reading/">'),'learning path row 29');
+ assert.ok(lp.includes('Class 30: <a href="/preschool/4-years/logic-thinking-and-problem-solving/">'),'learning path row 30');
+ assert.ok(lp.includes('Class 31: <a href="/preschool/4-years/science-nature-and-discovery/">'),'learning path row 31');
 });
 test('sitemap carries all 74 new Age 4 URLs',()=>{
  const xml=read('/sitemap.xml');
@@ -242,7 +245,7 @@ test('sitemap carries all 74 new Age 4 URLs',()=>{
  assert.ok(xml.includes('/preschool/shapes/adventures/build-a-shape-spaceship/'),'sitemap spaceship');
  assert.ok(xml.includes('/preschool/writing/adventures/sunshine-stroke-challenge/'),'sitemap sunshine');
  const count=xml.split('/preschool/4-years/').length-1;
- assert.equal(count,7,'hub + six classes in sitemap');
+ assert.equal(count,8,'hub + seven classes in sitemap');
 });
 test('My Classroom mounts the creations gallery and adventure progress',()=>{
  const mc=page('/my-classroom/');

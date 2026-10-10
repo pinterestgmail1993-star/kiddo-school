@@ -11,7 +11,7 @@ import {colorCreativities,COLOR_BASE,COLOR_LIB_PATH} from './color-creativity.mj
 import {writingAdventures,WRITING_BASE,WRITING_LIB_PATH,GROUP_NAMES} from './writing-adventures.mjs';
 import {C28_PATH,PHONICS_LIB_PATH,WS28_PATH} from './phonics-adventures.mjs';
 import {C29_PATH,READING_LIB_PATH,WS29_PATH} from './story-kit.mjs';
-import {C30_PATH,LOGIC_LIB_PATH,WS30_PATH} from './story-kit.mjs';
+import {C30_PATH,LOGIC_LIB_PATH,WS30_PATH,C31_PATH,SCIENCE_LIB_PATH,WS31_PATH} from './story-kit.mjs';
 import {crumbNav,heading,esc} from './adventure-kit.mjs';
 
 const HUB='/preschool/4-years/';
@@ -29,7 +29,7 @@ const face=(s,correct,asChoice)=>asChoice
 /* ---------- the hub ---------- */
 export function stage4HubBody(){
  return `${crumbNav([['Preschool','/preschool/'],['Age 4']])}
- ${heading('PRESCHOOL · AGE 4','Age 4: stories, puzzles and getting ready to read.','Six big classes for four-year-olds — Shapes, Patterns &amp; Sorting (Class 25), Colors, Mixing &amp; Creativity (Class 26), Early Writing &amp; Pencil Control (Class 27), Phonics &amp; Beginning Sounds (Class 28), Storytime &amp; Pre-Reading (Class 29) and Logic, Thinking &amp; Problem-Solving (Class 30) — each with its own shelf of real, playable adventures built on our own storybook artwork.')}
+ ${heading('PRESCHOOL · AGE 4','Age 4: stories, puzzles and getting ready to read.','Seven big classes for four-year-olds — Shapes, Patterns &amp; Sorting (Class 25), Colors, Mixing &amp; Creativity (Class 26), Early Writing &amp; Pencil Control (Class 27), Phonics &amp; Beginning Sounds (Class 28), Storytime &amp; Pre-Reading (Class 29), Logic, Thinking &amp; Problem-Solving (Class 30) and Science, Nature &amp; Discovery (Class 31) — each with its own shelf of real, playable adventures built on our own artwork.')}
  <section class="wrap section compact"><div class="fc-stages">
   <a class="fc-stage lesson-card-link" href="${C25_PATH}"><div class="fc-stage-pills"><span class="fc-age">Age 4</span><span class="fc-class">Class 25</span></div><h3>Shapes, Patterns &amp; Sorting</h3><p>Nine shapes, three pattern games and the whole <a href="${SHAPE_LIB_PATH}">Shape Adventures</a> shelf: a spaceship to build, a monster factory, candy sorting and a shape detective.</p><span class="fc-open">Open Class 25 <span aria-hidden="true">↗</span></span></a>
   <a class="fc-stage lesson-card-link" href="${C26_PATH}"><div class="fc-stage-pills"><span class="fc-age">Age 4</span><span class="fc-class">Class 26</span></div><h3>Colors, Mixing &amp; Creativity</h3><p>Real paint mixing, tap-to-fill coloring you can actually stay inside, movable decorations and a free splatter canvas in the <a href="${COLOR_LIB_PATH}">Colors &amp; Creativity</a> studio.</p><span class="fc-open">Open Class 26 <span aria-hidden="true">↗</span></span></a>
@@ -38,6 +38,7 @@ export function stage4HubBody(){
  </div>
   <a class="fc-stage lesson-card-link" href="${C29_PATH}"><div class="fc-stage-pills"><span class="fc-age">Ages 4–5</span><span class="fc-class">Class 29</span></div><h3>Storytime &amp; Pre-Reading Comprehension</h3><p>Twenty-nine picture-story games with spoken instructions in the <a href="${READING_LIB_PATH}">Storytime Adventures</a> library — sequencing, clues, feelings and retelling, plus a printable worksheet for every story.</p><span class="fc-open">Open Class 29 <span aria-hidden="true">↗</span></span></a>
   <a class="fc-stage lesson-card-link" href="${C30_PATH}"><div class="fc-stage-pills"><span class="fc-age">Ages 4–5</span><span class="fc-class">Class 30</span></div><h3>Logic, Thinking &amp; Problem-Solving</h3><p>Thirty picture puzzles with spoken instructions in the <a href="${LOGIC_LIB_PATH}">Logic Adventures</a> library — patterns, odd ones out, secret codes and one traceable maze, plus a printable worksheet for every puzzle.</p><span class="fc-open">Open Class 30 <span aria-hidden="true">↗</span></span></a>
+  <a class="fc-stage lesson-card-link" href="${C31_PATH}"><div class="fc-stage-pills"><span class="fc-age">Ages 4–5</span><span class="fc-class">Class 31</span></div><h3>Science, Nature &amp; Discovery</h3><p>Thirty discovery games with spoken instructions in the <a href="${SCIENCE_LIB_PATH}">Science Adventures</a> library — plant growth, weather, insects, magnets, habitats, life cycles and a graduation lab, plus a printable worksheet for every experiment.</p><span class="fc-open">Open Class 31 <span aria-hidden="true">↗</span></span></a>
  </div>
  <p class="lesson-note"><strong>Age ranges are guides, not tests.</strong> Start where it is fun, stop while it is fun, and come back whenever you like. Progress saves on this device for the child chosen in <a href="/my-classroom/">My Classroom</a>.</p></section>`;
 }

@@ -13,7 +13,8 @@ export const SUBJECTS={
  maths:{key:'maths',label:'Maths',crumb:'Maths',classNum:24,classPath:'/preschool/4-years/',classTitle:'Counting & Number Recognition (Class 24)',gameLib:'/maths/',gameLibTitle:'Maths Room',tint:'#f4efe3',accent:'#a9694e'},
  phonics:{key:'phonics',label:'Phonics & Beginning Sounds',crumb:'Phonics',classNum:28,classPath:'/preschool/4-years/phonics-and-beginning-sounds/',classTitle:'Phonics & Beginning Sounds (Class 28)',gameLib:'/preschool/phonics/adventures/',gameLibTitle:'Phonics Adventures',tint:'#f3ecfa',accent:'#8f4fc0'},
  reading:{key:'reading',label:'Storytime & Pre-Reading',crumb:'Reading',classNum:29,classPath:'/preschool/4-years/storytime-and-pre-reading/',classTitle:'Storytime & Pre-Reading Comprehension (Class 29)',gameLib:'/preschool/reading/adventures/',gameLibTitle:'Storytime Adventures',tint:'#fdf3e7',accent:'#e07f3e'},
- logic:{key:'logic',label:'Logic & Problem-Solving',crumb:'Logic',classNum:30,classPath:'/preschool/4-years/logic-thinking-and-problem-solving/',classTitle:'Logic, Thinking & Problem-Solving (Class 30)',gameLib:'/preschool/logic/adventures/',gameLibTitle:'Logic Adventures',tint:'#eaf3f6',accent:'#2e9bb5'}
+ logic:{key:'logic',label:'Logic & Problem-Solving',crumb:'Logic',classNum:30,classPath:'/preschool/4-years/logic-thinking-and-problem-solving/',classTitle:'Logic, Thinking & Problem-Solving (Class 30)',gameLib:'/preschool/logic/adventures/',gameLibTitle:'Logic Adventures',tint:'#eaf3f6',accent:'#2e9bb5'},
+ science:{key:'science',label:'Science, Nature & Discovery',crumb:'Science',classNum:31,classPath:'/preschool/4-years/science-nature-and-discovery/',classTitle:'Science, Nature & Discovery (Class 31)',gameLib:'/preschool/science/adventures/',gameLibTitle:'Science Adventures',tint:'#eef6ee',accent:'#4a9e4f'}
 };
 
 export const wsUrl=(subject,slug)=>`${WS_BASE}${subject}/${slug}/`;
@@ -105,6 +106,18 @@ export const CLASS_GUIDE={
    ['Sort real things too','After the sorting sheets, sort socks or spoons the same way. Real objects make the rule permanent.'],
    ['Patterns everywhere','Lay out apple-grape-apple snacks and ask what comes next. The sheet teaches the skill; the kitchen keeps it.'],
    ['Mazes build pencil control too','The maze sheet doubles as pencil practice \u2014 slow and steady on the path matters more than speed.']
+  ]
+ },
+ science:{
+  howto:[
+   ['Predict out loud first','Ask \u201cwhat do YOU think will happen?\u201d BEFORE any marking begins. A wrong prediction is not a failure \u2014 it is the experiment starting.'],
+   ['Point, then mark','Every answer on these sheets can be pointed at in the picture first. Pointing is thinking made visible \u2014 let the finger lead the pencil.'],
+   ['Run the real version','Each sheet has a real experiment hiding in it: float a spoon, melt an ice cube, blow a dandelion. The worksheet is the invitation, the kitchen is the lab.']
+  ],
+  tips:[
+   ['Say the WHY','\u201cThe metal sinks BECAUSE\u2026\u201d \u2014 the explaining is where the science lives. Accept any reasoning that is trying honestly.'],
+   ['Wrong answers are data','Scientists love surprises. \u201cThe cork floated \u2014 I thought it would sink!\u201d is a genuine discovery worth circling twice.'],
+   ['Keep it short and hands-on','Five minutes of marking plus five minutes of real splashing beats a half hour of paper. One sheet, one experiment, one happy scientist.']
   ]
  }
 };

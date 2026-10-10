@@ -10,8 +10,9 @@ import {mathsWorksheets,MATHS_TOTAL} from './ws-data-maths.mjs';
 import {buildPhonicsWorksheets} from './ws-data-phonics.mjs';
 import {buildReadingWorksheets} from './ws-data-reading.mjs';
 import {buildLogicWorksheets} from './ws-data-logic.mjs';
+import {buildScienceWorksheets} from './ws-data-science.mjs';
 
-const all=[...shapeWorksheets,...colorWorksheets,...writingWorksheets,...mathsWorksheets,...buildPhonicsWorksheets(),...buildReadingWorksheets(),...buildLogicWorksheets()];
+const all=[...shapeWorksheets,...colorWorksheets,...writingWorksheets,...mathsWorksheets,...buildPhonicsWorksheets(),...buildReadingWorksheets(),...buildLogicWorksheets(),...buildScienceWorksheets()];
 /* the layout builders render the header from the spec itself — give every
    worksheet its title, instruction line and sheet footer note */
 for(const w of all){

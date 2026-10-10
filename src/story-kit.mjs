@@ -7,14 +7,19 @@ import {R2} from './adventure-kit.mjs';
 
 export const READING_BASE=R2+'school/reading/adventures/';
 export const LOGIC_BASE=R2+'school/logic/adventures/';
+export const SCIENCE_BASE=R2+'school/science/adventures/';
 export const READING_LIB_PATH='/preschool/reading/adventures/';
 export const READING_LIB=READING_LIB_PATH;
 export const LOGIC_LIB_PATH='/preschool/logic/adventures/';
 export const LOGIC_LIB=LOGIC_LIB_PATH;
+export const SCIENCE_LIB_PATH='/preschool/science/adventures/';
+export const SCIENCE_LIB=SCIENCE_LIB_PATH;
 export const C29_PATH='/preschool/4-years/storytime-and-pre-reading/';
 export const C30_PATH='/preschool/4-years/logic-thinking-and-problem-solving/';
+export const C31_PATH='/preschool/4-years/science-nature-and-discovery/';
 export const WS29_PATH='/worksheets/reading/';
 export const WS30_PATH='/worksheets/logic/';
+export const WS31_PATH='/worksheets/science/';
 
 /* crop boxes are [x0,y0,x1,y1] in percent of the artwork — helpers turn them
    into the CSS background geometry that shows exactly that slice of the art */
@@ -25,7 +30,7 @@ export function cropStyle(c,W,H){
  return `--bsx:${bsx.toFixed(3)}%;--bsy:${bsy.toFixed(3)}%;--bpx:${px.toFixed(3)}%;--bpy:${py.toFixed(3)}%;--ar:${(w/h).toFixed(4)}`;
 }
 /* a picture card cropped out of the artwork (engine wires taps) */
-export function card(img,W,H,c,label,{ok,seq,pair,group,bad,say,cls=''}={}){
+export function card(img,W,H,c,label,{ok,seq,pair,group,bad,bin,say,cls=''}={}){
  const d=[
   `data-st-card="${escAttr(label)}"`,
   ok!==undefined?`data-st-ok="${ok?1:0}"`:null,
@@ -33,6 +38,7 @@ export function card(img,W,H,c,label,{ok,seq,pair,group,bad,say,cls=''}={}){
   pair?`data-st-pair="${pair}"`:null,
   group?`data-st-group="${group}"`:null,
   bad?`data-st-bad="1"`:null,
+  bin?`data-st-bin="${escAttr(bin)}"`:null,
   say?`data-st-say="${escAttr(say)}"`:null
  ].filter(Boolean).join(' ');
  return `<button type="button" class="st-card ${cls}" ${d} aria-label="${escAttr(label)}"><span class="st-card-img" style="--st-src:url('${escAttr(img)}');${cropStyle(c,W,H)}" aria-hidden="true"></span><span class="st-badge" hidden aria-hidden="true"></span></button>`;
@@ -58,6 +64,17 @@ export function board(base,game,W,H){
       taps into found rings and counts them up */
    const hots=(s.hots||[]).map((h,j)=>`<button type="button" class="st-hot" data-st-say="${escAttr(h.say||'')}" aria-label="Difference ${j+1} of ${(s.hots||[]).length}" style="--hx:${h.c[0]}%;--hy:${h.c[1]}%;--hw:${(h.c[2]-h.c[0]).toFixed(2)}%;--hh:${(h.c[3]-h.c[1]).toFixed(2)}%"><span class="st-ring" aria-hidden="true"></span></button>`).join('');
    parts.push(`<div class="st-finds"><figure class="st-scene"><span class="st-scene-img" style="--st-src:url('${escAttr(base+game.img)}');${cropStyle(s.scenes[0],W,H)}" aria-hidden="true"></span><figcaption>Picture 1</figcaption></figure><figure class="st-scene"><span class="st-scene-img" style="--st-src:url('${escAttr(base+game.img)}');${cropStyle(s.scenes[1],W,H)}" aria-hidden="true">${hots}</span><figcaption>Picture 2 — find what is different</figcaption></figure></div><p class="st-findcount" data-st-findcount aria-live="polite">0 of ${(s.hots||[]).length} found</p>`);
+  }else if(s.type==='multi'){
+   /* tap every picture that belongs (insects, ocean animals, living things…) */
+   const groups={};
+   for(const c of s.cards||[]){(groups[c.group||'all']=groups[c.group||'all']||[]).push(card(base+game.img,W,H,c.crop,c.label,c));}
+   const oks=(s.cards||[]).filter(c=>c.ok).length;
+   parts.push('<div class="st-tray">'+(groups.all||[]).join('')+'</div><p class="st-findcount" data-st-multicount aria-live="polite">0 of '+oks+' found</p>');
+  }else if(s.type==='sort'){
+   /* tap a picture, then the bin where it belongs (sink/float, magnets, recycling) */
+   const cards=(s.cards||[]).map(c=>card(base+game.img,W,H,c.crop,c.label,c)).join('');
+   const bins=(s.bins||[]).map(b=>`<button type="button" class="st-bin" data-st-accept="${escAttr(b.key)}" aria-label="Bin: ${escAttr(b.label)}"><span class="st-bin-img" style="--st-src:url('${escAttr(base+game.img)}');${cropStyle(b.crop,W,H)}" aria-hidden="true"></span><span class="st-bin-label">${escHtml(b.label)}</span></button>`).join('');
+   parts.push('<div class="st-tray st-sorttray">'+cards+'</div><div class="st-bins">'+bins+'</div>');
   }else{
    const groups={};
    for(const c of s.cards||[]){(groups[c.group||'all']=groups[c.group||'all']||[]).push(card(base+game.img,W,H,c.crop,c.label,c));}

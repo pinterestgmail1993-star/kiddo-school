@@ -2942,5 +2942,245 @@
   "height": 1240,
   "format": "webp",
   "bytes": 103570
+ },
+ {
+  "key": "school/science/adventures/01-bunnys-plant-growth-lab.webp",
+  "alt": "Bunny the rabbit beside four growth boxes: seeds in soil, a sprout, a seedling and a tall sunflower.",
+  "width": 1748,
+  "height": 1240,
+  "format": "webp",
+  "bytes": 95718
+ },
+ {
+  "key": "school/science/adventures/02-penguins-weather-lab.webp",
+  "alt": "Penguin scientist with three weather cards and three outfit cards: winter coat, raincoat, sun hat.",
+  "width": 1748,
+  "height": 1240,
+  "format": "webp",
+  "bytes": 115536
+ },
+ {
+  "key": "school/science/adventures/03-foxes-bug-detective.webp",
+  "alt": "Fox detective beside six animal cards: butterfly, spider, ladybug, snail, ant and earthworm.",
+  "width": 1748,
+  "height": 1240,
+  "format": "webp",
+  "bytes": 127210
+ },
+ {
+  "key": "school/science/adventures/04-bears-sink-or-float-lab.webp",
+  "alt": "Bear scientist with six objects, a water tub, and FLOAT and SINK sorting bins.",
+  "width": 1748,
+  "height": 1240,
+  "format": "webp",
+  "bytes": 104014
+ },
+ {
+  "key": "school/science/adventures/05-turtles-animal-homes.webp",
+  "alt": "Turtle beside a bird, a bee and a rabbit, and three homes: a burrow, a nest and a beehive.",
+  "width": 1748,
+  "height": 1240,
+  "format": "webp",
+  "bytes": 111062
+ },
+ {
+  "key": "school/science/adventures/06-owls-day-and-night-discovery.webp",
+  "alt": "Owl with four scenes: a boy playing football, a sleeping child, day butterflies and a night owl, each with DAY and NIGHT circles.",
+  "width": 1748,
+  "height": 1240,
+  "format": "webp",
+  "bytes": 151526
+ },
+ {
+  "key": "school/science/adventures/07-foxes-rainbow-light-lab.webp",
+  "alt": "Fox scientist with three light clues (prism, flashlight, sunlit dinosaur) and three results (shadow, rainbow, bright circle).",
+  "width": 1748,
+  "height": 1240,
+  "format": "webp",
+  "bytes": 107830
+ },
+ {
+  "key": "school/science/adventures/08-squirrels-leaf-detective.webp",
+  "alt": "Squirrel detective with three leaves (oak, maple, pine needles) and three trees (pine, oak, maple).",
+  "width": 1748,
+  "height": 1240,
+  "format": "webp",
+  "bytes": 103018
+ },
+ {
+  "key": "school/science/adventures/09-dolphins-ocean-discovery.webp",
+  "alt": "Dolphin with six animal cards: dolphin, camel, sea turtle, lion, octopus and clownfish.",
+  "width": 1748,
+  "height": 1240,
+  "format": "webp",
+  "bytes": 152956
+ },
+ {
+  "key": "school/science/adventures/10-hedgehogs-five-senses-lab.webp",
+  "alt": "Hedgehog with five sense organs (eye, ear, nose, tongue, hand) and five senses-in-action scenes.",
+  "width": 1748,
+  "height": 1240,
+  "format": "webp",
+  "bytes": 121532
+ },
+ {
+  "key": "school/science/adventures/11-bears-magnet-mystery.webp",
+  "alt": "Bear scientist with a big magnet, six objects, and ATTRACTS and DOES NOT ATTRACT bins.",
+  "width": 1748,
+  "height": 1240,
+  "format": "webp",
+  "bytes": 129616
+ },
+ {
+  "key": "school/science/adventures/12-penguins-seasons-discovery.webp",
+  "alt": "Penguin with four season chips (spring, summer, autumn, winter) and four tree pictures.",
+  "width": 1748,
+  "height": 1240,
+  "format": "webp",
+  "bytes": 126186
+ },
+ {
+  "key": "school/science/adventures/13-butterflys-life-cycle.webp",
+  "alt": "Butterfly life cycle boxes: adult butterfly, eggs on a leaf, caterpillar and chrysalis, with number squares.",
+  "width": 1748,
+  "height": 1240,
+  "format": "webp",
+  "bytes": 95502
+ },
+ {
+  "key": "school/science/adventures/14-raccoons-footprint-hunt.webp",
+  "alt": "Raccoon detective with a duck, a cat and a horse, and three prints: hoofprint, pawprint, webbed footprint.",
+  "width": 1748,
+  "height": 1240,
+  "format": "webp",
+  "bytes": 91618
+ },
+ {
+  "key": "school/science/adventures/15-polar-bears-ice-lab.webp",
+  "alt": "Polar bear scientist beside a melting ice cube in a bowl under the sun, with three answer cards.",
+  "width": 1748,
+  "height": 1240,
+  "format": "webp",
+  "bytes": 126390
+ },
+ {
+  "key": "school/science/adventures/16-pandas-living-or-nonliving-discovery.webp",
+  "alt": "Panda with six cards: tree, toy car, butterfly, rock, baby rabbit and wooden chair.",
+  "width": 1748,
+  "height": 1240,
+  "format": "webp",
+  "bytes": 117760
+ },
+ {
+  "key": "school/science/adventures/17-owls-shadow-science.webp",
+  "alt": "Owl scientist with three toys (teddy, airplane, dinosaur) and three shadow choices each.",
+  "width": 1748,
+  "height": 1240,
+  "format": "webp",
+  "bytes": 103556
+ },
+ {
+  "key": "school/science/adventures/18-elephants-plant-care-lab.webp",
+  "alt": "Elephant watering a seedling, with six option cards: water, sunlight, air, candy, toy car, shoes.",
+  "width": 1748,
+  "height": 1240,
+  "format": "webp",
+  "bytes": 144366
+ },
+ {
+  "key": "school/science/adventures/19-lions-animal-food-lab.webp",
+  "alt": "Lion with three animals (rabbit, lion, panda) and three foods (bamboo leaves, meat, grass).",
+  "width": 1748,
+  "height": 1240,
+  "format": "webp",
+  "bytes": 117810
+ },
+ {
+  "key": "school/science/adventures/20-monkeys-sound-lab.webp",
+  "alt": "Fox with a big compass and four direction words: east, north, west, south.",
+  "width": 1748,
+  "height": 1240,
+  "format": "webp",
+  "bytes": 100514
+ },
+ {
+  "key": "school/science/adventures/21-turtles-recycling-mission.webp",
+  "alt": "Chameleon with three habitat photos (leaves, bark, snow) and a row of small animal cards.",
+  "width": 1748,
+  "height": 1240,
+  "format": "webp",
+  "bytes": 207630
+ },
+ {
+  "key": "school/science/adventures/22-squirrels-seed-travel-discovery.webp",
+  "alt": "Elephant scientist with six items: pinwheel, rock, kite, brick, feather and anvil.",
+  "width": 1748,
+  "height": 1240,
+  "format": "webp",
+  "bytes": 119824
+ },
+ {
+  "key": "school/science/adventures/23-hippos-water-cycle-lab.webp",
+  "alt": "Panda ranger with four animals (camel, polar bear, frog, monkey) and four habitats.",
+  "width": 1748,
+  "height": 1240,
+  "format": "webp",
+  "bytes": 139506
+ },
+ {
+  "key": "school/science/adventures/24-owls-earth-and-sun-discovery.webp",
+  "alt": "Penguin scientist with four temperature cards: soup, ice bowl, cocoa and popsicle, each with HOT and COLD circles.",
+  "width": 1748,
+  "height": 1240,
+  "format": "webp",
+  "bytes": 105382
+ },
+ {
+  "key": "school/science/adventures/25-foxes-compass-adventure.webp",
+  "alt": "Owl graduate with three science puzzles: plant growth, polar bear habitat, and a boat that floats.",
+  "width": 1748,
+  "height": 1240,
+  "format": "webp",
+  "bytes": 139874
+ },
+ {
+  "key": "school/science/adventures/26-chameleons-camouflage-hunt.webp",
+  "alt": "Monkey with a drum, a bell and a guitar, and three actions: plucking, striking, ringing.",
+  "width": 1748,
+  "height": 1240,
+  "format": "webp",
+  "bytes": 130366
+ },
+ {
+  "key": "school/science/adventures/27-elephants-air-power-lab.webp",
+  "alt": "Turtle with six clean items and three recycling bins: paper, plastic, metal.",
+  "width": 1748,
+  "height": 1240,
+  "format": "webp",
+  "bytes": 163248
+ },
+ {
+  "key": "school/science/adventures/28-pandas-habitat-rescue.webp",
+  "alt": "Squirrel with three seeds (dandelion, coconut, burdock burr) and three travel cards (fur, water, wind).",
+  "width": 1748,
+  "height": 1240,
+  "format": "webp",
+  "bytes": 133322
+ },
+ {
+  "key": "school/science/adventures/29-penguins-hot-and-cold-lab.webp",
+  "alt": "Hippo scientist with three water-cycle panels: rain, evaporation, cloud formation.",
+  "width": 1748,
+  "height": 1240,
+  "format": "webp",
+  "bytes": 136578
+ },
+ {
+  "key": "school/science/adventures/30-owls-science-graduation.webp",
+  "alt": "Astronaut owl watching the sun shine on one side of planet Earth, with two answer cards.",
+  "width": 1748,
+  "height": 1240,
+  "format": "webp",
+  "bytes": 113950
  }
 ]
