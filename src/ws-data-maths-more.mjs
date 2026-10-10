@@ -1,0 +1,222 @@
+// Kiddo School — Class 24 maths worksheets 3–11: the owner's Maths
+// Adventures artwork batch uploaded 10 Oct 2026 (school/maths/adventures/ on
+// R2), audited tile by tile before writing a single line of copy. Every
+// entry mirrors what its artwork really shows. No games exist for these
+// adventures yet (game:null) — the honest state.
+import {SUBJECTS,R2} from './ws-common.mjs';
+
+const S=SUBJECTS.maths;
+const M2='school/maths/adventures/';
+
+export const mathsWorksheetsMore=[
+ {
+  slug:'apple-counting-game',num:3,subject:S.key,title:'Apple Counting Game',
+  art:{img:R2+M2+'apple-counting-game.webp',alt:'Ten red apples in two rows above an empty wooden basket, beside a big blue answer frame.'},
+  game:null,
+  classNum:S.classNum,classPath:S.classPath,classTitle:S.classTitle,
+  seoTitle:'Apple Counting Game Worksheet \u2014 Free Printable Counting to 10 for Age 4 (Class 24)',
+  metaDescription:'Free printable Apple Counting Game worksheet for 4-year-olds: count ten apples in two rows, write the number and draw apples in the basket. Real PDF from Kiddo.school.',
+  lede:'Count the apples row by row, write how many, then draw the whole basketful.',
+  learn:'Two rows of five apples give counting-to-ten a clear shape: five here, five there, ten all together. Writing the number after counting connects how many with what it looks like, and drawing apples into the basket checks the count from the other direction \u2014 your child must produce exactly the number they just said.',
+  skills:['Counting objects one by one to 10','Seeing 5 and 5 as two parts of 10','Writing the numeral 10','Drawing a given number of objects'],
+  task:'Count each row, write the total, and draw the apples in the basket.',
+  wsType:'appleGame',ws:{},
+  answers:'Each row has 5 apples, so 10 all together. The basket drawing should hold 10 apples \u2014 count them together to check.'
+ },
+ {
+  slug:'balloon-number-writing',num:4,subject:S.key,title:'Balloon Number Writing',
+  art:{img:R2+M2+'balloon-number-writing.webp',alt:'Ten colorful balloons with empty centres, arranged in two rows of five.'},
+  game:null,
+  classNum:S.classNum,classPath:S.classPath,classTitle:S.classTitle,
+  seoTitle:'Balloon Number Writing Worksheet \u2014 Free Printable Numbers 1 to 10 for Age 4 (Class 24)',
+  metaDescription:'Free printable Balloon Number Writing worksheet for 4-year-olds: write numbers 1 to 10, one per balloon, then trace 10. Real PDF from Kiddo.school.',
+  lede:'Ten balloons, ten numbers: write 1 to 10, one balloon at a time.',
+  learn:'Writing numbers in order is sequencing practice \u2014 every numeral has its place. The empty balloon centres give each number a big, friendly home, and saying the number out loud while writing it ties the name, the shape and the order together. One balloon per number also gives a natural stopping point: ten small wins instead of one long line.',
+  skills:['Writing numerals 1 to 10 in order','Saying number names while writing','Left-to-right, top-to-bottom order','Careful pencil control inside a shape'],
+  task:'Write 1 to 10 in the balloons, then trace the 10.',
+  wsType:'balloonNumbers',ws:{},
+  answers:'The balloons carry 1, 2, 3, 4, 5 across the first row and 6, 7, 8, 9, 10 across the second.'
+ },
+ {
+  slug:'busy-bee-honey-factory',num:5,subject:S.key,title:'Busy Bee Honey Factory',
+  art:{img:R2+M2+'busy-bee-honey-factory.webp',alt:'A beehive on a branch with two bees, ten golden honey drops, and three empty honey jars with blank labels among flowers.'},
+  game:null,
+  classNum:S.classNum,classPath:S.classPath,classTitle:S.classTitle,
+  seoTitle:'Busy Bee Honey Factory Worksheet \u2014 Free Printable Counting to 10 for Age 4 (Class 24)',
+  metaDescription:'Free printable Busy Bee Honey Factory worksheet for 4-year-olds: count the honey drops, write the numbers, and fill the three jars. Real PDF from Kiddo.school.',
+  lede:'Count the honey drops, then fill the three jars for the busy bees.',
+  learn:'Counting the drops row by row practices one-to-one counting, and the jars turn the total into parts: four, three and three. Sharing a set into jars is an early taste of part-whole thinking \u2014 the same idea that later becomes 4+3+3=10 \u2014 but here it stays hands-on: draw the drops, count the jar, say the number.',
+  skills:['Counting groups of 4 and 6','Sharing a set into three groups','Drawing a given number of drops','Writing numerals to 10'],
+  task:'Count the drops in each row, then draw 4, 3 and 3 drops into the jars.',
+  wsType:'honeyFactory',ws:{},
+  answers:'Row 1 has 4 drops, row 2 has 6 \u2014 10 drops all together. The jars hold 4, 3 and 3.'
+ },
+ {
+  slug:'butterfly-pattern-magic',num:6,subject:S.key,title:'Butterfly Pattern Magic',
+  art:{img:R2+M2+'butterfly-pattern-magic.webp',alt:'A pink butterfly whose left wing carries colored shapes and whose right wing has the same shapes as empty outlines, with five color pots beside it.'},
+  game:null,
+  classNum:S.classNum,classPath:S.classPath,classTitle:S.classTitle,
+  seoTitle:'Butterfly Pattern Magic Worksheet \u2014 Free Printable Symmetry Coloring for Age 4 (Class 24)',
+  metaDescription:'Free printable Butterfly Pattern Magic worksheet for 4-year-olds: color the right wing to match the left, shape by shape. Real PDF from Kiddo.school.',
+  lede:'One wing is dressed, the other is waiting: color the right wing to match the left.',
+  learn:'Matching a colored shape to its empty twin is visual discrimination \u2014 the eyes must hold the color AND the shape in mind while finding its partner. It is also a first symmetry lesson: butterfly wings are the friendliest mirror there is. Finishing the wing gives a satisfying pattern moment without a single wrong answer.',
+  skills:['Matching colors shape by shape','Noticing mirror symmetry','Naming colors and shapes out loud','Coloring with some care inside outlines'],
+  task:'Color each shape on the right wing to match the left wing.',
+  wsType:'butterflyMatch',ws:{},
+  answers:'Right wing, top to bottom: the small oval and big circle are blue, the triangle is pink, the big lower oval is teal and the small lower oval is orange \u2014 exactly the left wing set. The yellow pot stays unused, and noticing that is clever, not wrong.'
+ },
+{
+  slug:'caterpillar-number-writing',num:7,subject:S.key,title:'Caterpillar Number Writing',
+  art:{img:R2+M2+'caterpillar-number-writing.webp',alt:'A smiling green caterpillar head followed by nine empty colored body circles, waiting for numbers.'},
+  game:null,
+  classNum:S.classNum,classPath:S.classPath,classTitle:S.classTitle,
+  seoTitle:'Caterpillar Number Writing Worksheet \u2014 Free Printable Numbers 1 to 9 for Age 4 (Class 24)',
+  metaDescription:'Free printable Caterpillar Number Writing worksheet for 4-year-olds: write 1 to 9 on the caterpillar circles and trace the 9. Real PDF from Kiddo.school.',
+  lede:'The caterpillar circles are empty \u2014 fill them with 1 to 9, in order.',
+  learn:'This cousin of the Counting Caterpillar flips the job: instead of counting printed numbers, your child writes them. Filling a familiar caterpillar shape keeps the order visible \u2014 each circle holds exactly one number, and the row itself shows the sequence growing. Counting backwards afterwards (9, 8, 7) is bonus flexibility for little brains.',
+  skills:['Writing numerals 1 to 9 in order','One number per circle discipline','Counting backwards from 9','Tracing the numeral 9'],
+  task:'Write 1 to 9 on the caterpillar, then trace the 9.',
+  wsType:'caterpillarWrite',ws:{},
+  answers:'The nine circles carry 1 through 9 in order, starting next to the head.'
+ },
+{
+  slug:'cloud-castle-number-adventure',num:8,subject:S.key,title:'Cloud Castle Number Adventure',
+  art:{img:R2+M2+'cloud-castle-number-adventure.webp',alt:'A little bird at the start of a winding path of ten empty cloud stepping stones leading up to a pink castle under a rainbow.'},
+  game:null,
+  classNum:S.classNum,classPath:S.classPath,classTitle:S.classTitle,
+  seoTitle:'Cloud Castle Number Adventure Worksheet \u2014 Free Printable Counting to 10 for Age 4 (Class 24)',
+  metaDescription:'Free printable Cloud Castle Number Adventure worksheet for 4-year-olds: count the cloud stepping stones and write 1 to 10 on the path to the castle. Real PDF from Kiddo.school.',
+  lede:'Fly the path: write 1 to 10 on the cloud stones, from the bird to the castle.',
+  learn:'A numbered path makes order physical: each stone is one hop, and the numbers grow exactly as the bird gets closer to the castle. Writing on a curved, zigzagging path also builds the flexibility that straight-line worksheets cannot \u2014 numbers must land neatly inside clouds that tilt and wander.',
+  skills:['Writing numerals 1 to 10 in order','Following a winding path left to right','One number per stone','Counting forward and backwards'],
+  task:'Write 1 to 10 on the cloud stones along the path.',
+  wsType:'cloudPath',ws:{tint:'#f3ecfa',accent:'#8f4fc0',band:'#eaf4fb',bandEdge:'#9cc8e8',rowLabel:'Write the numbers in order, from the little bird to the castle.'},
+  answers:'The stones carry 1 to 10 in order; stone 10 sits just below the castle door.'
+ },
+{
+  slug:'counting-balloons',num:9,subject:S.key,title:'Counting Balloons',
+  art:{img:R2+M2+'counting-balloons.webp',alt:'Ten colorful balloons in two rows of five: red, yellow, blue, green, orange, pink, purple, red, yellow and blue.'},
+  game:null,
+  classNum:S.classNum,classPath:S.classPath,classTitle:S.classTitle,
+  seoTitle:'Counting Balloons Worksheet \u2014 Free Printable Counting to 10 for Age 4 (Class 24)',
+  metaDescription:'Free printable Counting Balloons worksheet for 4-year-olds: count the balloons in each row, write the numbers and count along the number line. Real PDF from Kiddo.school.',
+  lede:'A party of balloons: count each row, then count them all.',
+  learn:'Two neat rows of five balloons make the count honest and checkable: touch each balloon, say the number, write it. The number line underneath gives the count a second life \u2014 pointing along 1 to 10 after counting objects is exactly how children move from counting things to knowing the sequence itself.',
+  skills:['Counting objects one by one to 5','Combining 5 and 5 into 10','Writing numerals','Pointing along a number line'],
+  task:'Count the balloons in each row and write the numbers.',
+  wsType:'count',ws:{iconScale:0.75,rows:[{items:['balloon','balloon','balloon','balloon','balloon']},{items:['balloon','balloon','balloon','balloon','balloon']}]},
+  answers:'Each row has 5 balloons, so 10 all together.'
+ },
+{
+  slug:'cupcake-bakery',num:10,subject:S.key,title:'Cupcake Bakery',
+  art:{img:R2+M2+'cupcake-bakery.webp',alt:'A young baker at a striped stand with two empty plates and ten colorful cupcakes waiting below in two rows.'},
+  game:null,
+  classNum:S.classNum,classPath:S.classPath,classTitle:S.classTitle,
+  seoTitle:'Cupcake Bakery Worksheet \u2014 Free Printable Counting and Sharing for Age 4 (Class 24)',
+  metaDescription:'Free printable Cupcake Bakery worksheet for 4-year-olds: count ten cupcakes, write the total and share them onto two plates. Real PDF from Kiddo.school.',
+  lede:'Count the cupcakes, then share them onto the baker two plates.',
+  learn:'Counting comes first \u2014 ten cupcakes, five to a row \u2014 and then the bakery turns the count into a job: share them onto two plates. Drawing five on each plate is early division with pencils: the same total, two fair groups. Saying five here, five there, ten altogether out loud is the whole lesson in one sentence.',
+  skills:['Counting objects to 10','Sharing a set into two equal groups','Drawing a given number of items','Saying part-whole sentences'],
+  task:'Count the cupcakes, write the total, and draw 5 on each plate.',
+  wsType:'cupcakePlates',ws:{},
+  answers:'Each row has 5 cupcakes \u2014 10 all together \u2014 so each plate gets 5.'
+ },
+{
+  slug:'dinosaur-egg-rescue',num:11,subject:S.key,title:'Dinosaur Egg Rescue',
+  art:{img:R2+M2+'dinosaur-egg-rescue.webp',alt:'A friendly baby dinosaur beside a nest holding five big colored eggs, with empty egg outlines drawn in the grass below.'},
+  game:null,
+  classNum:S.classNum,classPath:S.classPath,classTitle:S.classTitle,
+  seoTitle:'Dinosaur Egg Rescue Worksheet \u2014 Free Printable Counting to 5 for Age 4 (Class 24)',
+  metaDescription:'Free printable Dinosaur Egg Rescue worksheet for 4-year-olds: number the five eggs in the nest, then draw five more eggs in the grass. Real PDF from Kiddo.school.',
+  lede:'Number the five eggs in the nest, then draw five more for the rescue.',
+  learn:'Five is the friendliest small number: enough to count with one careful finger, small enough to write with growing control. Numbering the nest eggs in order gives 1 to 5 a home, and drawing five more eggs doubles the practice \u2014 once as writing numbers, once as producing a set of exactly five.',
+  skills:['Counting to 5','Writing numerals 1 to 5 in order','Drawing a given number of objects','Decorating with care'],
+  task:'Write 1 to 5 on the nest eggs, then draw 5 more eggs below.',
+  wsType:'eggRescue',ws:{},
+  answers:'The nest eggs carry 1 to 5, left to right. Five new eggs should hatch in the grass \u2014 count them together to check.'
+ },
+{
+  slug:'farm-animal-lineup',num:12,subject:S.key,title:'Farm Animal Lineup',
+  art:{img:R2+M2+'farm-animal-lineup.webp',alt:'A mouse, a rabbit, a cat, a sheep and a horse lined up in front of a red barn, with five empty numbered badges below.'},
+  game:null,
+  classNum:S.classNum,classPath:S.classPath,classTitle:S.classTitle,
+  seoTitle:'Farm Animal Lineup Worksheet \u2014 Free Printable Ordinal Numbers for Age 4 (Class 24)',
+  metaDescription:'Free printable Farm Animal Lineup worksheet for 4-year-olds: write 1 to 5 on the badges to number the animal line from first to last. Real PDF from Kiddo.school.',
+  lede:'Five friends are queueing for the barn: number them first to fifth.',
+  learn:'Numbering a line is ordinal thinking \u2014 not how many, but which one. The mouse is first, the horse is last, and every animal between has a position to find. Talking through the lineup (who is first? who is between the cat and the horse?) builds the position words children use all day: first, next, last.',
+  skills:['Ordinal position 1 to 5','Writing numerals in line order','Using first and last','Finding between positions'],
+  task:'Write 1 to 5 on the badges, in line order.',
+  wsType:'lineup',ws:{names:['mouse','rabbit','cat','sheep','horse']},
+  answers:'The badges read 1 mouse, 2 rabbit, 3 cat, 4 sheep, 5 horse \u2014 and the missing-number row finishes 4, 5.'
+ },
+{
+  slug:'garden-number-path',num:13,subject:S.key,title:'Garden Number Path',
+  art:{img:R2+M2+'garden-number-path.webp',alt:'A winding sandy garden path with ten empty colored stepping stones, tulips at the start and bushes at the end.'},
+  game:null,
+  classNum:S.classNum,classPath:S.classPath,classTitle:S.classTitle,
+  seoTitle:'Garden Number Path Worksheet \u2014 Free Printable Numbers 1 to 10 for Age 4 (Class 24)',
+  metaDescription:'Free printable Garden Number Path worksheet for 4-year-olds: write 1 to 10 on the stepping stones from the tulips to the bushes. Real PDF from Kiddo.school.',
+  lede:'Ten stepping stones wind through the garden \u2014 number them 1 to 10.',
+  learn:'Walking a path with numbers is the oldest counting game there is. Each stone takes exactly one numeral, the curve keeps attention moving forward, and the finish gives a natural stop-and-check: count the stones backwards to see the numbers shrink. Backwards counting sneaks in subtraction rhythm without a single minus sign.',
+  skills:['Writing numerals 1 to 10 in order','Following a curved path','Counting forward and backwards','One number per stone'],
+  task:'Write 1 to 10 on the stepping stones along the garden path.',
+  wsType:'stonePath',ws:{tint:'#eef4e6',accent:'#4a9e4f',band:'#f0e3c0',bandEdge:'#d9b778',rowLabel:'Write the numbers in order, from the tulips to the bushes.'},
+  answers:'The stones carry 1 to 10 in order, starting beside the tulips.'
+ },
+{
+  slug:'giraffe-height-challenge',num:14,subject:S.key,title:'Giraffe Height Challenge',
+  art:{img:R2+M2+'giraffe-height-challenge.webp',alt:'Four giraffes of different heights standing in a row: a medium one, a very short baby, a tall one and the tallest.'},
+  game:null,
+  classNum:S.classNum,classPath:S.classPath,classTitle:S.classTitle,
+  seoTitle:'Giraffe Height Challenge Worksheet \u2014 Free Printable Ordering by Height for Age 4 (Class 24)',
+  metaDescription:'Free printable Giraffe Height Challenge worksheet for 4-year-olds: compare four giraffes and number them from shortest to tallest. Real PDF from Kiddo.school.',
+  lede:'Four giraffes, four heights: number them 1 to 4 from shortest to tallest.',
+  learn:'Comparing heights means holding a rule in mind and applying it four times \u2014 and the artwork trick is that the tallest giraffe is not the first one. Finding the shortest first, then the next, builds systematic comparison instead of pointing at the obvious. The size words at the end (short, shorter, shortest) turn the numbers back into language.',
+  skills:['Comparing heights','Ordering four objects by size','Writing numerals 1 to 4','Using comparing words'],
+  task:'Number the giraffes 1 to 4: 1 is the shortest, 4 is the tallest.',
+  wsType:'heightOrder',ws:{},
+  answers:'The baby giraffe second from the left is 1, the left giraffe is 2, the third giraffe is 3 and the right-hand giraffe is 4.'
+ },
+{
+  slug:'ice-cream-number-shop',num:15,subject:S.key,title:'Ice Cream Number Shop',
+  art:{img:R2+M2+'ice-cream-number-shop.webp',alt:'An ice cream stand with ten scoops in two rows and three empty cones waiting on the counter.'},
+  game:null,
+  classNum:S.classNum,classPath:S.classPath,classTitle:S.classTitle,
+  seoTitle:'Ice Cream Number Shop Worksheet \u2014 Free Printable Counting to 10 for Age 4 (Class 24)',
+  metaDescription:'Free printable Ice Cream Number Shop worksheet for 4-year-olds: count ten scoops, write the total and build cones with 1, 2 and 3 scoops. Real PDF from Kiddo.school.',
+  lede:'Count the scoops, then build the cones: 1 scoop, 2 scoops, 3 scoops.',
+  learn:'The shop counts twice: first the whole tub of ten scoops, then little orders of one, two and three. Building cones from the top down \u2014 draw one, then two, then three \u2014 turns numerals into quantities your child controls. It is counting, drawing and number sense stacked like scoops.',
+  skills:['Counting objects to 10','Drawing 1, 2 and 3 objects','Matching numerals to quantities','Careful drawing inside a shape'],
+  task:'Count the scoops in each row, write the total, and build the three cones.',
+  wsType:'iceCream',ws:{},
+  answers:'Each row has 5 scoops \u2014 10 all together. The cones get 1, 2 and 3 scoops.'
+ },
+{
+  slug:'little-builder-challenge',num:16,subject:S.key,title:'Little Builder Challenge',
+  art:{img:R2+M2+'little-builder-challenge.webp',alt:'A smiling crane in front of three empty building platforms, with twelve colorful blocks waiting in two rows below.'},
+  game:null,
+  classNum:S.classNum,classPath:S.classPath,classTitle:S.classTitle,
+  seoTitle:'Little Builder Challenge Worksheet \u2014 Free Printable Counting and Building for Age 4 (Class 24)',
+  metaDescription:'Free printable Little Builder Challenge worksheet for 4-year-olds: count twelve blocks, then build towers of 3, 4 and 5 blocks. Real PDF from Kiddo.school.',
+  lede:'Count the blocks, then build: towers of 3, 4 and 5 on the platforms.',
+  learn:'Counting the mixed block row \u2014 seven here, five there \u2014 is honest counting practice with real shapes: squares, rectangles, triangles, arches. The build task then draws numbers as heights: three blocks stack lower than five, which is how children first feel that 5 is more than 3. Counting the towers afterwards closes the loop.',
+  skills:['Counting mixed objects to 7','Combining 7 and 5 into 12','Building sets of 3, 4 and 5','Comparing tower heights'],
+  task:'Count the blocks in each row, write the total, and build the towers.',
+  wsType:'builderBlocks',ws:{},
+  answers:'Row 1 has 7 blocks, row 2 has 5 \u2014 12 all together. The towers hold 3, 4 and 5 blocks, and 3+4+5 makes 12 more.'
+ },
+{
+  slug:'little-pizza-chef',num:17,subject:S.key,title:'Little Pizza Chef',
+  art:{img:R2+M2+'little-pizza-chef.webp',alt:'A proud little chef beside a big tomato pizza base, with five mushroom slices, five tomato slices and five olive rings ready to top it.'},
+  game:null,
+  classNum:S.classNum,classPath:S.classPath,classTitle:S.classTitle,
+  seoTitle:'Little Pizza Chef Worksheet \u2014 Free Printable Counting to 5 for Age 4 (Class 24)',
+  metaDescription:'Free printable Little Pizza Chef worksheet for 4-year-olds: decorate the pizza with exactly 5 tomatoes, 5 mushrooms and 5 olives. Real PDF from Kiddo.school.',
+  lede:'Top the pizza like a real chef: 5 tomatoes, 5 mushrooms, 5 olives.',
+  learn:'A pizza is the happiest counting board in the world. Topping it with exactly five of each ingredient turns draw-5 into a game with a delicious finish, and counting each topping as it lands builds one-to-one discipline: five means five, not six, however hungry the chef. Fifteen toppings all together is a proud big number made of three friendly fives.',
+  skills:['Drawing a given number of items','Counting to 5 three times','Keeping count across three groups','Saying 5+5+5=15 with fingers'],
+  task:'Draw 5 tomato slices, 5 mushrooms and 5 olive rings on the pizza.',
+  wsType:'pizza',ws:{},
+  answers:'Each topping appears exactly 5 times \u2014 15 pieces of pizza art in all.'
+ }
+];

@@ -13,19 +13,19 @@ const read=f=>readFileSync('dist'+f,'utf8');
 const page=p=>read(p+'index.html');
 const TEST_ORIGIN='https://kiddo-school.pages.dev';
 
-test('the worksheet registry: 181 worksheets across eight subjects',()=>{
- assert.equal(worksheets.length,181);
+test('the worksheet registry: 196 worksheets across eight subjects',()=>{
+ assert.equal(worksheets.length,196);
  assert.equal(bySubject('shapes').length,18);
  assert.equal(bySubject('colors').length,18);
  assert.equal(bySubject('writing').length,30);
  assert.equal(bySubject('phonics').length,24);
- assert.equal(bySubject('maths').length,2); // honest: only two artworks uploaded
+ assert.equal(bySubject('maths').length,17); // honest: seventeen artworks uploaded and audited
  assert.equal(MATHS_PLANNED,30);
  const slugs=new Set(worksheets.map(w=>w.subject+'/'+w.slug));
- assert.equal(slugs.size,181,'no duplicate slugs within or across subjects');
+ assert.equal(slugs.size,196,'no duplicate slugs within or across subjects');
 });
 
-test('worksheet pages (181) each have their own clean URL page with unique SEO',()=>{
+test('worksheet pages (196) each have their own clean URL page with unique SEO',()=>{
  const titles=new Set(),descs=new Set();
  for(const w of worksheets){
   const p=wsUrl(w.subject,w.slug);
@@ -39,34 +39,40 @@ test('worksheet pages (181) each have their own clean URL page with unique SEO',
   assert.equal(myRobots,adventureRobots,'same crawl stance as other content pages: '+p);
   titles.add(html.match(/<title>([^<]*)<\/title>/)[1]);
   descs.add(html.match(/<meta name="description" content="([^"]*)"/)[1]);
-  // the three action buttons
+  // the two action buttons (download + print-open-PDF) in the rail
   assert.ok(html.includes(`href="${pdfUrl(w.subject,w.slug)}" download="`),'Download button on '+p);
-  assert.ok(html.includes('data-ws-print'),'Print button on '+p);
-  if(w.game)assert.ok(html.includes(`href="${w.game.path}"`),'Play online link on '+p);
+  assert.ok(html.includes(`href="${pdfUrl(w.subject,w.slug)}" target="_blank"`),'Print (open PDF) button on '+p);
+  // no coded activity anywhere: no play buttons, no embedded sheet SVG
+  assert.ok(!html.includes('Play This Activity Online'),'no play button on '+p);
+  assert.ok(!html.includes('ws-print-root'),'no coded sheet on '+p);
+  assert.ok(!html.includes('viewBox="0 0 595 842"'),'no vector sheet recreation on '+p);
+  // real art dims from the probe ship in the hero attrs
+  assert.ok(html.includes(`width="${w.art.w}" height="${w.art.h}"`),'true art dims on '+p);
  }
- assert.equal(titles.size,181,'151 unique SEO titles');
- assert.equal(descs.size,181,'151 unique meta descriptions');
+ assert.equal(titles.size,196,'unique SEO titles');
+ assert.equal(descs.size,196,'unique meta descriptions');
 });
 
-test('every worksheet page twins with a real game and links its class',()=>{
+test('every worksheet page links its class, and games still link their worksheet twins',()=>{
  for(const w of worksheets){
   const html=page(wsUrl(w.subject,w.slug));
   const s=SUBJECTS[w.subject];
   assert.ok(html.includes(`href="${s.classPath}"`),'class link on '+w.slug);
   assert.ok(html.includes(`href="${WS_BASE}${w.subject}/"`),'subject category link on '+w.slug);
   assert.ok(html.includes('href="/worksheets/"'),'hub link on '+w.slug);
+  // owner decision: no coded activities or play buttons on worksheet pages
+  assert.ok(!html.includes(`href="${w.game?w.game.path:s.gameLib}"`),'no game link on worksheet page '+w.slug);
   if(w.game){
    assert.ok(existsSync('dist'+w.game.path+'index.html'),'game exists for '+w.slug);
-   // and the game page links back to its worksheet
+   // and the game page still links back to its worksheet
    const game=page(w.game.path);
    assert.ok(game.includes(wsUrl(w.subject,w.slug)),'game '+w.game.path+' links its worksheet');
   }
  }
- // the two maths worksheets must NOT pretend a matching game exists
+ // the seventeen maths worksheets must NOT pretend a matching game exists
  for(const w of bySubject('maths')){
   const html=page(wsUrl(w.subject,w.slug));
   assert.ok(!html.includes('Play This Activity Online'),'no fake play button on maths '+w.slug);
-  assert.ok(html.includes('Maths Room'),'maths sheets offer the Maths Room instead');
  }
 });
 
@@ -81,24 +87,15 @@ test('worksheets never borrow flashcard URLs or components',()=>{
  assert.ok(!existsSync('dist/flashcards/worksheets'),'no worksheet section inside flashcards');
 });
 
-test('every worksheet page shows the real printable sheet inline (print source)',()=>{
- for(const w of worksheets){
-  const html=page(wsUrl(w.subject,w.slug));
-  assert.ok(html.includes('ws-print-root'),'embedded sheet on '+w.slug);
-  assert.ok(html.includes('viewBox="0 0 595 842"'),'A4 sheet SVG on '+w.slug);
- }
-});
-
-test('the print stylesheet prints ONLY the worksheet sheet',()=>{
+test('the old print machinery is gone: no worksheets.js, no print-flag CSS',()=>{
+ assert.ok(!existsSync('dist/assets/worksheets.js'),'worksheets.js removed from dist');
+ assert.ok(!existsSync('public/assets/worksheets.js'),'worksheets.js removed from source');
  const css=read('/assets/style.css');
- assert.ok(css.includes('main > *{display:none!important}'),'nuke-all print rule');
- assert.ok(css.includes('.ws-preview-sec > .ws-print-root{display:block!important}'),'only the sheet survives');
- assert.ok(css.includes('height:96vh!important'),'sheet scaled to one page');
- const js=read('/assets/worksheets.js');
- assert.ok(js.includes("add('ws-printing')"),'print button flags the page');
+ assert.ok(!css.includes('ws-printing'),'no print flag css');
+ assert.ok(!css.includes('ws-print-root'),'no print-root css');
 });
 
-test('all 181 PDFs exist in dist and are real PDF files',()=>{
+test('all 196 PDFs exist in dist and are real PDF files',()=>{
  let count=0;
  for(const w of worksheets){
   const f='dist'+pdfUrl(w.subject,w.slug);
@@ -108,10 +105,10 @@ test('all 181 PDFs exist in dist and are real PDF files',()=>{
   assert.ok(buf.slice(0,5).toString()==='%PDF-','PDF magic bytes: '+w.slug);
   count++;
  }
- assert.equal(count,181);
+ assert.equal(count,196);
  const dir=sub=>readdirSync('dist/downloads/worksheets/'+sub).length;
  assert.equal(dir('shapes'),18);assert.equal(dir('colors'),18);assert.equal(dir('writing'),30);
- assert.equal(dir('phonics'),24);assert.equal(dir('maths'),2);
+ assert.equal(dir('phonics'),24);assert.equal(dir('maths'),17);
 });
 
 test('spot-check PDF renders: each sampled sheet carries its title and instructions',()=>{
@@ -128,7 +125,7 @@ test('spot-check PDF renders: each sampled sheet carries its title and instructi
 test('the hub and category pages list everything honestly',()=>{
  const hub=page('/worksheets/');
  assert.ok(hub.includes('href="/worksheets/maths/"')&&hub.includes('href="/worksheets/shapes/"')&&hub.includes('href="/worksheets/colors/"')&&hub.includes('href="/worksheets/writing/"')&&hub.includes('href="/worksheets/phonics/"'),'five categories');
- assert.ok(hub.includes('2 of 30 ready'),'honest maths note on hub');
+ assert.ok(hub.includes('17 of 30 ready'),'honest maths note on hub');
  for(const key of Object.keys(SUBJECTS)){
   const cat=page(WS_BASE+key+'/');
   const n=subjectCounts[key];
@@ -167,15 +164,18 @@ test('worksheet pages include genuinely unique parent content',()=>{
   const html=page(wsUrl(w.subject,w.slug));
   assert.ok(html.includes(w.learn),'learn copy rendered on '+w.slug);
  }
- assert.equal(learns.size,181,'no boilerplate learn copy reused');
+ assert.equal(learns.size,196,'no boilerplate learn copy reused');
 });
 
-test('every worksheet page ships the print enhancement and R2 art with alt text',()=>{
+test('every worksheet page ships R2 art with alt text and the community mount',()=>{
  for(const w of worksheets){
   const html=page(wsUrl(w.subject,w.slug));
-  assert.ok(html.includes('/assets/worksheets.js'),'worksheets.js on '+w.slug);
+  assert.ok(html.includes('flashcards-community.js'),'community script on '+w.slug);
+  assert.ok(html.includes('data-fc-root'),'family feedback mount on '+w.slug);
+  assert.ok(html.includes('fc2-dual'),'flashcard-style dual layout on '+w.slug);
   assert.ok(html.includes(`alt="${w.art.alt}"`),'descriptive alt on '+w.slug);
   assert.ok(html.includes('loading="lazy"')||html.includes('fetchpriority="high"'),'lazy or priority art on '+w.slug);
+  assert.ok(html.includes('SHARE THIS WORKSHEET'),'share block on '+w.slug);
  }
 });
 
@@ -198,5 +198,5 @@ test('sitemap carries the hub, seven categories and all 181 worksheets',()=>{
 test('the whole-school search index knows worksheets',()=>{
  const idx=JSON.parse(read('/assets/search-index.json'));
  const ws=idx.filter(e=>e.k==='Worksheet');
- assert.equal(ws.length,190,'181 worksheets + hub + 8 categories searchable');
+ assert.equal(ws.length,205,'196 worksheets + hub + 8 categories searchable');
 });

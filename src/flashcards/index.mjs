@@ -125,7 +125,7 @@ const heading=(eyebrow,title,desc)=>`<div class="page-heading wrap"><span class=
 export function fcCommunityMount(path){
  return `<section class="wrap lesson-section cm" data-fc-root data-page-path="${esc(path)}" aria-label="Family feedback">
  <span class="eyebrow">REACTIONS</span>
- <h2>How did your kiddo like this?</h2>
+ <h2>How did it go?</h2>
  <p class="lesson-copy">One tap, no writing, no name. Pick the face that matches how it went — reactions are counted instantly and stay anonymous.</p>
  <noscript><p class="fc-hint">Tapping a reaction needs JavaScript. Everything else on this page works without it — and you are always welcome to write to the <a href="/principals-office/">Principal&rsquo;s Office</a> instead.</p></noscript>
  <div class="fc2-reactions" data-fc-reactions hidden role="group" aria-label="How did your kiddo like this? Choose one.">
@@ -163,7 +163,7 @@ export function fcCommunityMount(path){
  <div class="fc2-block">
   <span class="eyebrow">PARENT COMMENTS</span>
   <h2>Parent comments.</h2>
-  <p class="lesson-copy">How did you use these cards? Share the game, the moment or the trick that worked in your house. Comments are read by the school office before they appear, and they are about your ideas — never about your child.</p>
+  <p class="lesson-copy">How did you use this page Share the game, the moment or the trick that worked in your house. Comments are read by the school office before they appear, and they are about your ideas — never about your child.</p>
   <noscript><p class="fc-hint">Sending a comment needs JavaScript. The cards themselves work fine without it.</p></noscript>
   <div class="fc2-listwrap" data-fc-comments-box hidden>
    <ul class="cm-list" data-fc-comments></ul>

@@ -186,5 +186,6 @@ export function myClassroomBody(){
    <a class="lesson-pill-link" href="/preschool/3-years/magic-animal-playground/">Animal Sound Safari <span>· Class 6</span> <span aria-hidden="true">↗</span></a>
   </div>
  </div>
- </section>`;
+ </section>
+ <div class="wrap section compact"><div class="brand-duo"><div class="brand-copy"><span class="eyebrow">CELEBRATE THE REAL THING</span><h3>Little milestones, honestly counted.</h3><p class="lesson-copy">Everything on this shelf comes from something your child really did — a class finished, a game played, a picture saved. Nothing here is a score, and nothing is shared anywhere: it is your room, on your device.</p></div><div class="brand-art"><img src="https://pub-f2fcb7c9b45a496cbeefef18dbba0ec0.r2.dev/school/branding/kiddo-class-completion.webp" width="1264" height="1264" alt="A smiling grown-up hands a big certificate to a proud child in a purple school uniform, from the Kiddo.school celebration illustration." loading="lazy"></div></div></div>`;
 }

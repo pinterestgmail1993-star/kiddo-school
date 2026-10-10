@@ -5,9 +5,10 @@
 // worksheets their own resource type with their own URLs and schema.
 import {SUBJECTS,CLASS_GUIDE,wsUrl,pdfUrl,WS_BASE} from './ws-common.mjs';
 import {worksheets,bySubject,subjectCounts,relatedFor,neighbours,MATHS_PLANNED,LAYOUT_BY_TYPE} from './worksheets.mjs';
-import {layoutToSVG} from './ws-vector.mjs';
 import * as L from './ws-layouts.mjs';
+import * as ML from './ws-maths-layouts.mjs';
 import {esc} from './adventure-kit.mjs';
+import {fcCommunityMount} from './flashcards/index.mjs';
 
 const crumbNav=parts=>`<nav class="breadcrumbs wrap" aria-label="Breadcrumb"><a href="/">Home</a>${parts.map(([label,href])=>`<span aria-hidden="true">/</span>${href?`<a href="${esc(href)}">${esc(label)}</a>`:`<span aria-current="page">${esc(label)}</span>`}`).join('')}</nav>`;
 const heading=(eyebrow,title,desc)=>`<div class="page-heading wrap"><span class="eyebrow">${eyebrow}</span><h1>${title}</h1><p>${desc}</p></div>`;
@@ -37,16 +38,14 @@ const libraryCount=()=>{const w=countWords(worksheets.length);return w[0].toUppe
 
 /* the raw layout elements (PDF backend consumes these) */
 export function worksheetEls(w){
- const fn=L[LAYOUT_BY_TYPE[w.wsType]];
+ const name=LAYOUT_BY_TYPE[w.wsType];
+ const fn=L[name]||ML[name];
  if(!fn)throw Error('no layout builder for '+w.wsType);
  const els=fn(w.ws);
  for(const el of els)if(el.t==='image')el.img=0;
  return els;
 }
-/* build the SVG for a worksheet (page preview + print source) */
-export function worksheetSVG(w){
- return layoutToSVG(worksheetEls(w),595,842,{label:'Preview of the printable '+w.title+' worksheet'});
-}
+
 
 /* the six Purple Academy subject illustrations (R2, 1264×1264 probed). Shared
    subjects (shapes+colors, writing+phonics) reuse one illustration on purpose. */
@@ -74,9 +73,9 @@ export function worksheetsHubBody(){
  return `${crumbNav([['Worksheets']])}
  ${heading('THE WORKSHEET LIBRARY','Free printable worksheets for little hands.',`${libraryCount()} printable activities \u2014 the paper twins of our games: tracing guides with the same strokes, counting rows, coloring outlines, sound sorts with parent scripts, and science labs with a grown-up answer line. Download a real PDF, print straight from the page, or play the matching game online.`)}
  <section class="wrap section compact" aria-label="Worksheet categories"><div class="ws-cats">${cards}</div>
- <p class="lesson-note">Every worksheet is free, needs no sign-up, and prints on A4 or US Letter. The <span class="ws-hl">Play online</span> links open the matching interactive game \u2014 paper and screen practice the same skill.</p></section>
+ <p class="lesson-note">Every worksheet is free, needs no sign-up, and prints on A4 or US Letter. Each sheet&rsquo;s page keeps everything in reach: the artwork, the download and print buttons, and a place for families to react and comment.</p></section>
  <section class="wrap lesson-section" aria-label="How to use the library"><span class="eyebrow">FOR GROWN-UPS</span><h2>How the library works.</h2>
- <p class="lesson-copy">Each worksheet belongs to a class on the Learning Path and to the interactive game it twins with. The page for every worksheet shows a true preview of what prints, a <strong>Download Free Worksheet</strong> button (a real PDF file), a <strong>Print Worksheet</strong> button that prints only the sheet \u2014 never the website \u2014 and a <strong>Play This Activity Online</strong> link to its game.</p>
+ <p class="lesson-copy">Each worksheet belongs to a class on the Learning Path. The page for every worksheet shows its artwork, a <strong>Download Free Worksheet</strong> button (a real PDF file) and a <strong>Print Worksheet</strong> button that opens the same PDF ready to print \u2014 never the website around it.</p>
  <p class="lesson-copy">Downloading or printing never marks anything complete in <a href="/my-classroom/">My Classroom</a> \u2014 worksheets are for tables, kitchens and fridge doors. Only the games save progress, and only for the child chosen there.</p></section>`;
 }
 
@@ -102,8 +101,11 @@ export function worksheetCategoryBody(subjectKey){
 
 export function wsCard(w){
  const s=SUBJECTS[w.subject];
+ // Real probed art dimensions in the attrs — the bucket mixes four ratios
+ // (1264×1264, 1024×768, 1920×1080, 1748×1240); the CSS box letterboxes the
+ // file's own ratio with object-fit:contain instead of cover-cropping it.
  return `<a class="ws-card" href="${wsUrl(w.subject,w.slug)}">
-  <span class="ws-card-art"><img src="${esc(w.art.img)}" width="400" height="284" alt="${esc(w.art.alt)}" loading="lazy"></span>
+  <span class="ws-card-art"><img src="${esc(w.art.img)}" width="${w.art.w}" height="${w.art.h}" alt="${esc(w.art.alt)}" loading="lazy"></span>
   <span class="ws-card-body">
    <strong>${esc(w.title)}</strong>
    <span class="ws-card-meta"><span>Age 4</span><span>Class ${s.classNum}</span><span>${esc(s.crumb)}</span></span>
@@ -114,58 +116,41 @@ export function wsCard(w){
 }
 
 /* ---------- the individual worksheet page ---------- */
-const ageLabel=w=>w.subject==='phonics'?'4–5 Years':'4 Years';
+// Layout: the worksheet's artwork and its teaching notes sit in the left
+// column; download, print, share buttons and the three community blocks
+// (reactions, reviews, comments) sit in a right-hand rail — the same
+// fc2-dual architecture as the flashcard pages, so both resources feel
+// like the same school. Nothing on this page is a coded activity: the
+// page shows the real artwork and hands over the real PDF, nothing else.
+const ageLabel=w=>w.subject==='phonics'?'4\u20135 Years':'4 Years';
 
-export function worksheetPageBody(w){
+export function worksheetPageBody(w,site){
  const s=SUBJECTS[w.subject];
  const guide=CLASS_GUIDE[w.subject];
  const {prev,next}=neighbours(w);
  const related=relatedFor(w,6);
- const svg=worksheetSVG(w);
- const skillChips=`<div class="fc-chips lesson-chips"><span><strong>Age</strong> ${ageLabel(w)}</span><span><strong>Class</strong> ${s.classNum} · ${esc(s.crumb)}</span><span><strong>Type</strong> Printable PDF</span><span><strong>Plays with</strong> ${esc(w.game?`<a href="${esc(w.game.path)}">the online game</a>`:'the Maths Room')}</span></div>`;
- const hero=`<div class="ws-actions" aria-label="Worksheet actions">
-   <a class="button ws-dl" href="${pdfUrl(w.subject,w.slug)}" download="${w.subject}-${w.slug}.pdf">Download Free Worksheet <span aria-hidden="true">↓</span></a>
-   <button type="button" class="button button-ghost ws-print" data-ws-print>Print Worksheet <span aria-hidden="true">⎙</span></button>
-   ${w.game?`<a class="button button-ghost ws-play" href="${esc(w.game.path)}">Play This Activity Online <span aria-hidden="true">↗</span></a>`:`<a class="button button-ghost ws-play" href="${esc(s.gameLib)}">Explore the Maths Room <span aria-hidden="true">↗</span></a>`}
-   <p class="ws-action-hint">The PDF is a real printable file (A4, prints fine on US Letter). The print button prints only the worksheet \u2014 never the website around it. No sign-up, nothing stored.</p>
-  </div>`;
+ const dl=pdfUrl(w.subject,w.slug);
+ const enc=encodeURIComponent;
+ const pageUrl=(site||'').replace(/\/$/,'')+wsUrl(w.subject,w.slug);
+ const shareTitle=`${w.title} Worksheet for Age 4 \u2014 free printable from Kiddo.school`;
+ const about=`<section class="ws-rail-sec" aria-label="About this worksheet"><span class="eyebrow">ABOUT THIS WORKSHEET</span><h2>What your child practices.</h2><p class="lesson-copy">${esc(w.learn)}</p><ul class="ws-skills">${w.skills.map(k=>`<li>${esc(k)}</li>`).join('')}</ul><p class="lesson-lede"><strong>On the sheet:</strong> ${esc(w.task)}</p></section>`;
+ const howto=`<section class="ws-rail-sec" aria-label="How to use"><span class="eyebrow">HOW TO USE IT</span><h2>Three easy steps.</h2><ol class="fc-steps">${guide.howto.map(([t,d])=>`<li><div><h3>${esc(t)}</h3><p>${esc(d)}</p></div></li>`).join('')}</ol></section>`;
+ const tips=`<section class="ws-rail-sec" aria-label="Tips"><span class="eyebrow">TEACHING TIPS</span><h2>Little things that help.</h2><div class="ws-tips">${guide.tips.map(([t,d])=>`<div class="tc-hunt"><h3>${esc(t)}</h3><p>${esc(d)}</p></div>`).join('')}</div>${w.answers?`<div class="ws-answers"><h3>Answer guide</h3><p>${esc(w.answers)}</p></div>`:''}</section>`;
+ const connect=`<section class="ws-rail-sec" aria-label="Where this fits"><span class="eyebrow">WHERE THIS FITS</span><h2>The class behind it.</h2><p class="lesson-copy">This worksheet belongs to <a href="${esc(s.classPath)}">${esc(s.classTitle)}</a> on the Age 4 learning path, and the whole ${esc(s.crumb.toLowerCase())} collection lives at <a href="${WS_BASE+s.key+'/'}">/worksheets/${s.key}/</a>. One finished sheet is a full session \u2014 download it, print it, and let the fridge door be the gallery.</p></section>`;
+ const pn=`<nav class="fc2-pn" aria-label="Previous and next worksheet"><a class="fc2-pn-btn" href="${wsUrl(prev.subject,prev.slug)}" rel="prev"><span aria-hidden="true">\u2190</span> <strong>${esc(prev.title)}</strong><span>Previous worksheet</span></a><a class="fc2-pn-btn fc2-pn-next" href="${wsUrl(next.subject,next.slug)}" rel="next"><strong>${esc(next.title)}</strong> <span aria-hidden="true">\u2192</span><span>Next worksheet</span></a></nav>`;
+ const actions=`<div class="fc2-actions"><a class="button ws-dl" href="${dl}" download="${w.subject}-${w.slug}.pdf">Download Free Worksheet <span aria-hidden="true">\u2193</span></a><a class="button button-ghost ws-print" href="${dl}" target="_blank" rel="noopener">Print Worksheet <span aria-hidden="true">\u2318</span></a></div>
+  <p class="fc-hint">The PDF is a real printable file (A4, prints fine on US Letter). The print button opens the same PDF ready to print \u2014 no sign-up, nothing stored.</p>`;
+ const share=`<div class="fc2-block fc2-share-block"><span class="eyebrow">SHARE THIS WORKSHEET</span><h2>Pass it on.</h2><div class="fc2-share"><a class="fc2-share-btn" href="https://twitter.com/intent/tweet?url=${enc(pageUrl)}&text=${enc(shareTitle)}" target="_blank" rel="noopener" aria-label="Share this worksheet on X">X</a><a class="fc2-share-btn" href="https://www.facebook.com/sharer/sharer.php?u=${enc(pageUrl)}" target="_blank" rel="noopener" aria-label="Share this worksheet on Facebook">Facebook</a><a class="fc2-share-btn" href="https://wa.me/?text=${enc(shareTitle+' '+pageUrl)}" target="_blank" rel="noopener" aria-label="Share this worksheet on WhatsApp">WhatsApp</a><a class="fc2-share-btn" href="https://pinterest.com/pin/create/button/?url=${enc(pageUrl)}&media=${enc(w.art.img)}&description=${enc(shareTitle)}" target="_blank" rel="noopener" aria-label="Save this worksheet on Pinterest">Pinterest</a><button type="button" class="fc2-share-btn" data-fc-copy>Copy link</button></div><p class="fc-hint">Share buttons open in a new tab. The copy button copies this page&rsquo;s address \u2014 nothing is tracked.</p></div>`;
  return `${crumbNav([['Worksheets',WS_BASE],[s.label,WS_BASE+s.key+'/'],[w.title]])}
- <article class="wrap lesson-hero ws-hero">
-  <div class="ws-hero-art"><img src="${esc(w.art.img)}" width="800" height="568" alt="${esc(w.art.alt)}" fetchpriority="high"><figcaption class="ws-hero-cap">From the interactive adventure \u2014 the worksheet below brings it to paper.</figcaption></div>
-  <div class="lesson-hero-copy">
-   <span class="eyebrow">WORKSHEET · CLASS ${s.classNum} · AGES ${ageLabel(w).toUpperCase()}</span>
-   <h1>${esc(w.title)} Worksheet${w.subject==='phonics'?' for Ages 4–5':' for Age 4'}</h1>
-   ${skillChips}
-   <p class="lesson-lede">${esc(w.lede)}</p>
-   <p class="lesson-lede"><strong>On the sheet:</strong> ${esc(w.task)}</p>
+ <div class="page-heading wrap"><span class="eyebrow">WORKSHEET \u00b7 CLASS ${s.classNum} \u00b7 AGES ${ageLabel(w).toUpperCase()}</span><h1>${esc(w.title)} Worksheet${w.subject==='phonics'?' for Ages 4\u20135':' for Age 4'}</h1><p>${esc(w.lede)}</p></div>
+ <div class="fc2-dual wrap">
+  <div class="fc2-main">
+   <figure class="fc2-hero ws-hero-art"><img src="${esc(w.art.img)}" width="${w.art.w}" height="${w.art.h}" alt="${esc(w.art.alt)}" fetchpriority="high"><figcaption><strong>${esc(w.title)}</strong><span>Class ${s.classNum} \u00b7 ${esc(s.label)}</span></figcaption></figure>
+   ${pn}
+   <section class="fc2-learn" aria-label="About this worksheet">${about}${howto}${tips}${connect}</section>
   </div>
- </article>
- <section class="wrap lesson-section ws-preview-sec" aria-label="The worksheet">
-  <span class="eyebrow">THE ACTUAL WORKSHEET</span>
-  <h2>Exactly what you\u2019ll print.</h2>
-  <p class="lesson-copy">This is the real sheet \u2014 the same file the buttons above hand you. Title, instructions, the activity itself, and a grown-up answer line where it helps.</p>
-  ${hero}
-  <div class="ws-print-root"><div class="ws-sheet">${svg}</div></div>
- </section>
- <section class="wrap lesson-section" aria-label="About this worksheet"><span class="eyebrow">ABOUT THIS WORKSHEET</span><h2>What your child practices.</h2>
-  <p class="lesson-copy">${esc(w.learn)}</p>
-  <ul class="ws-skills">${w.skills.map(k=>`<li>${esc(k)}</li>`).join('')}</ul>
- </section>
- <section class="wrap lesson-section" aria-label="How to use"><span class="eyebrow">HOW TO USE IT</span><h2>Three easy steps.</h2>
-  <ol class="fc-steps">${guide.howto.map(([t,d])=>`<li><div><h3>${esc(t)}</h3><p>${esc(d)}</p></div></li>`).join('')}</ol>
- </section>
- <section class="wrap lesson-section" aria-label="Tips"><span class="eyebrow">TEACHING TIPS</span><h2>Little things that help.</h2>
-  <div class="ws-tips">${guide.tips.map(([t,d])=>`<div class="tc-hunt"><h3>${esc(t)}</h3><p>${esc(d)}</p></div>`).join('')}</div>
-  ${w.answers?`<div class="ws-answers"><h3>Answer guide</h3><p>${esc(w.answers)}</p></div>`:''}
- </section>
- <section class="wrap lesson-section ws-connect" aria-label="Where this fits"><span class="eyebrow">WHERE THIS FITS</span><h2>The class and the game behind it.</h2>
-  <p class="lesson-copy">This worksheet is the paper twin of <strong>${esc(w.title)}</strong>${w.game?`, a real game in the <a href="${esc(s.gameLib)}">${esc(s.gameLibTitle)}</a> library`:''}. It belongs to <a href="${esc(s.classPath)}">${esc(s.classTitle)}</a> on the Age 4 learning path, and the whole ${esc(s.crumb.toLowerCase())} collection lives at <a href="${WS_BASE+s.key+'/'}">/worksheets/${s.key}/</a>. Play the game on screen first, print the worksheet second \u2014 or the other way round; they practice the same skill in two languages.</p>
- </section>
- <nav class="wrap lesson-section sa-prevnext" aria-label="More worksheets">
-  <a class="sa-navcard" href="${wsUrl(prev.subject,prev.slug)}"><span class="eyebrow">Previous</span><strong>${esc(prev.title)}</strong></a>
-  <a class="sa-navcard" href="${WS_BASE+s.key+'/'}"><span class="eyebrow">All ${esc(s.crumb.toLowerCase())}</span><strong>${esc(s.label)} worksheets</strong></a>
-  <a class="sa-navcard" href="${wsUrl(next.subject,next.slug)}"><span class="eyebrow">Next</span><strong>${esc(next.title)}</strong></a>
- </nav>
+  <aside class="fc2-rail" aria-label="Download, print, share and family feedback"><section class="fc2-block fc2-first-block"><span class="eyebrow">PRINT &amp; PLAY ON PAPER</span><h2>Take it to the table.</h2>${actions}</section>${share}${fcCommunityMount(wsUrl(w.subject,w.slug))}</aside>
+ </div>
  <section class="wrap fc-section" aria-label="Related worksheets"><span class="eyebrow">RELATED WORKSHEETS</span><h2>More sheets like this one.</h2>
   <p class="fc-hint">Nearby worksheets from ${esc(s.label)} and its friends \u2014 each with its own page, preview and PDF.</p>
   <div class="ws-grid">${related.map(r=>wsCard(r)).join('')}</div>

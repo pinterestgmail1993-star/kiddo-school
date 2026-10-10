@@ -1590,8 +1590,8 @@ a.tc-day-class.is-rec{border:2px solid #71326d;background:#faf6ff}
 .ws-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:22px}
 .ws-card{background:var(--white);border:1.5px solid var(--ink);box-shadow:4px 4px 0 var(--ink);text-decoration:none;display:flex;flex-direction:column;overflow:hidden}
 .ws-card:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
-.ws-card-art{display:block;aspect-ratio:400/284;overflow:hidden;background:#faf6ec}
-.ws-card-art img{width:100%;height:100%;object-fit:cover;display:block}
+.ws-card-art{display:block;aspect-ratio:4/3;overflow:hidden;background:#fff;border-bottom:1.5px solid var(--line)}
+.ws-card-art img{width:100%;height:100%;object-fit:contain;display:block}
 .ws-card-body{padding:16px 18px 6px;display:flex;flex-direction:column;gap:8px}
 .ws-card-body strong{font-family:var(--serif);font-size:19px;line-height:1.2;color:var(--ink)}
 .ws-card-meta{display:flex;gap:8px;flex-wrap:wrap}
@@ -1599,15 +1599,10 @@ a.tc-day-class.is-rec{border:2px solid #71326d;background:#faf6ff}
 .ws-card-desc{font-size:13px;color:var(--muted);line-height:1.55}
 .ws-card-open{margin-top:auto;padding:12px 18px;font-size:13px;font-weight:700;border-top:1.5px dashed var(--line)}
 .ws-card:hover .ws-card-open{text-decoration:underline;text-decoration-thickness:3px;text-decoration-color:var(--yellow)}
-.ws-hero{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,4fr);gap:35px;align-items:start}
-.ws-hero-art{margin:0;background:var(--white);border:1.5px solid var(--ink);box-shadow:4px 4px 0 var(--ink);padding:10px}
-.ws-hero-art img{width:100%;height:auto;display:block}
-.ws-hero-cap{font-size:12px;color:var(--muted);padding:8px 4px 2px;display:block}
-.ws-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin:18px 0 6px}
-.ws-action-hint{width:100%;font-size:12px;color:var(--muted);margin:4px 0 0}
-.ws-preview-sec .ws-actions{margin-top:14px}
-.ws-print-root{background:var(--white);border:1.5px solid var(--ink);box-shadow:4px 4px 0 var(--ink);padding:clamp(8px,2vw,22px);margin-top:14px}
-.ws-sheet svg{width:100%;height:auto;display:block}
+.ws-hero-art{max-width:none}
+.ws-hero-art img{background:#fff;border:1.5px solid var(--line);border-radius:14px}
+.ws-rail-sec{margin-top:34px;padding-top:22px;border-top:2px solid #e7dfcc}
+.ws-rail-sec:first-child{margin-top:0;padding-top:0;border-top:0}
 .ws-skills{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px;padding:0;margin:16px 0 0;list-style:none}
 .ws-skills li{background:var(--sage);border-radius:12px;padding:12px 16px;font-size:14px;color:var(--ink)}
 .ws-tips{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;margin-top:8px}
@@ -1617,20 +1612,7 @@ a.tc-day-class.is-rec{border:2px solid #71326d;background:#faf6ff}
 /* print: only the worksheet sheet, never the site chrome. The nuke-all
    approach is deliberate — hiding a list of selectors lets stray wrappers
    leak; hiding everything except the sheet cannot. */
-@media print{
- body:has(.ws-print-root) main > *{display:none!important}
- body:has(.ws-print-root) main > .ws-preview-sec{display:block!important}
- body:has(.ws-print-root) .ws-preview-sec > *{display:none!important}
- body:has(.ws-print-root) .ws-preview-sec > .ws-print-root{display:block!important}
- body:has(.ws-print-root) main{padding:0!important;margin:0!important}
- body:has(.ws-print-root){background:#fff!important;background-image:none!important}
- .ws-preview-sec{padding:0!important;margin:0!important}
- .ws-print-root{border:0!important;box-shadow:none!important;padding:0!important;margin:0!important;background:#fff}
- .ws-sheet{margin:0!important;padding:0!important}
- .ws-sheet svg{width:auto!important;max-width:100%!important;height:96vh!important;max-height:96vh!important;margin:0 auto!important;display:block}
-}
-@media (max-width:960px){.ws-hero{grid-template-columns:1fr;gap:24px}}
-@media (max-width:640px){.ws-grid{grid-template-columns:1fr}.ws-cats{grid-template-columns:1fr}.ws-actions .button{width:100%;justify-content:center}}
+@media (max-width:640px){.ws-grid{grid-template-columns:1fr}.ws-cats{grid-template-columns:1fr}}
 
 /* ---- Phonics Adventures (Class 28) ---- */
 .ph-board{background:var(--white)}
@@ -1740,3 +1722,22 @@ h1 em,h2 em{color:#7b4b99}
 /* age 4 hub class thumbs */
 .fc-stage>img.stage-thumb{width:64px;height:64px;object-fit:contain;margin-bottom:10px}
 @media(prefers-reduced-motion:no-preference){.brand-art img{transition:opacity .2s}}
+
+/* ---- whole-school search hero (/search/) ---- */
+.search-hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(180px,240px);gap:26px;align-items:center}
+.search-hero-form{display:flex;gap:12px;align-items:stretch}
+.search-hero-box{flex:1;display:flex;align-items:center;gap:12px;background:#fff;border:2px solid var(--ink);border-radius:16px;padding:14px 18px;box-shadow:4px 4px 0 rgba(52,59,48,.14)}
+.search-hero-box svg{flex-shrink:0}
+.search-hero-box input{border:0;outline:0;background:transparent;font:inherit;font-size:1.05rem;width:100%;min-width:0}
+.search-hero-form .button{border-radius:16px;box-shadow:4px 4px 0 rgba(52,59,48,.14)}
+.sr-label{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.search-hero-art img{width:100%;height:auto;display:block}
+.search-ideas{margin-top:20px}
+.search-idea-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
+.search-idea{border:1.5px solid var(--ink);background:#fff;border-radius:999px;padding:9px 16px;font:inherit;font-size:.92rem;font-weight:600;color:var(--ink);cursor:pointer;min-height:44px}
+.search-idea:hover,.search-idea:focus-visible{background:var(--lav,#eee6f2);box-shadow:3px 3px 0 rgba(52,59,48,.16)}
+.sr-empty{margin-top:18px}
+.sr-empty h2{margin:6px 0 8px}
+.sr-empty[hidden]{display:none}
+@media (max-width:680px){.search-hero-grid{grid-template-columns:1fr}.search-hero-art{max-width:190px;margin:0 auto}.search-hero-form{flex-direction:column}.search-hero-form .button{width:100%}}
+.brand-art-pair{display:grid;grid-template-columns:1fr 1fr;gap:12px}.brand-art-pair img{width:100%;height:auto}

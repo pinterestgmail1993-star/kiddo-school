@@ -144,9 +144,11 @@ test('the 24 phonics worksheets exist and twin back',()=>{
 });
 
 test('worksheet downloads never touch My Classroom progress',()=>{
- const wsjs=read('/assets/worksheets.js');
- assert.ok(!wsjs.includes('kiddo-adventures'),'worksheet JS has no progress code');
- assert.ok(!wsjs.includes('localStorage'),'worksheet JS stores nothing');
+ // the old worksheets.js is gone entirely; worksheet pages now ship only the
+ // community feedback layer, which stores reactions per page path
+ assert.ok(!existsSync('dist/assets/worksheets.js'),'no worksheet JS at all');
+ const cm=read('/assets/flashcards-community.js');
+ assert.ok(!cm.includes('kiddo-adventures'),'community script has no progress code');
  const engine=read('/assets/phonics-adventures.js');
  assert.ok(!engine.includes('download'),'engine does not track downloads');
 });

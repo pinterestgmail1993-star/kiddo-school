@@ -11,8 +11,19 @@ import {buildPhonicsWorksheets} from './ws-data-phonics.mjs';
 import {buildReadingWorksheets} from './ws-data-reading.mjs';
 import {buildLogicWorksheets} from './ws-data-logic.mjs';
 import {buildScienceWorksheets} from './ws-data-science.mjs';
+import {WS_ART_DIMS} from './ws-art-dims.mjs';
 
 const all=[...shapeWorksheets,...colorWorksheets,...writingWorksheets,...mathsWorksheets,...buildPhonicsWorksheets(),...buildReadingWorksheets(),...buildLogicWorksheets(),...buildScienceWorksheets()];
+/* Attach the real probed dimensions to every worksheet's art object. The
+   bucket holds three different ratios (1264×1264, 1024×768, 1920×1080 and
+   1748×1240 — probed live, see ws-art-dims.mjs), so the HTML always ships
+   the file's true pixels: nothing is assumed, stretched or cropped. */
+for(const w of all){
+ const file=w.art.img.split('/').pop();
+ const dims=WS_ART_DIMS[file];
+ if(!dims)throw Error('worksheet art missing probed dims: '+file);
+ w.art.w=dims[0];w.art.h=dims[1];
+}
 /* the layout builders render the header from the spec itself — give every
    worksheet its title, instruction line and sheet footer note */
 for(const w of all){
@@ -58,5 +69,9 @@ export const LAYOUT_BY_TYPE={
  mix:'mixSheet',symmetry:'symmetrySheet',buildWord:'buildWordSheet',letterPick:'letterPickSheet',story:'storySheet',
  writeMissing:'writeMissingSheet',counters:'countersSheet',oddOne:'oddOneSheet',pathFind:'pathFindSheet',
  wordSort:'wordSortSheet',soundSwap:'soundSwapSheet',decorate:'decorateSheet',maze:'mazeSheet',
- dotToDot:'dotToDotSheet',find:'findSheet',sequence:'sequenceSheet',position:'positionSheet'
+ dotToDot:'dotToDotSheet',find:'findSheet',sequence:'sequenceSheet',position:'positionSheet',
+ appleGame:'appleGameSheet',balloonNumbers:'balloonNumbersSheet',honeyFactory:'honeyFactorySheet',
+ butterflyMatch:'butterflyMatchSheet',caterpillarWrite:'caterpillarWriteSheet',cloudPath:'cloudPathSheet',
+ cupcakePlates:'cupcakePlatesSheet',eggRescue:'eggRescueSheet',lineup:'lineupSheet',stonePath:'stonePathSheet',
+ heightOrder:'heightOrderSheet',iceCream:'iceCreamSheet',builderBlocks:'builderBlocksSheet',pizza:'pizzaSheet'
 };

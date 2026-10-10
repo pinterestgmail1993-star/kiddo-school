@@ -6,6 +6,7 @@
 // artworks; the registry holds 30 slots and the remaining 28 become one-data-
 // entry additions the moment their artwork lands. Nothing is invented.
 import {SUBJECTS,R2} from './ws-common.mjs';
+import {mathsWorksheetsMore} from './ws-data-maths-more.mjs';
 
 const S=SUBJECTS.maths;
 const M2='school/maths/adventures/';
@@ -37,9 +38,11 @@ export const mathsWorksheets=[
   task:'Count each row, fill the baskets with the right number of apples, trace the numbers.',
   wsType:'apples',ws:{},answers:'Row counts: 3, 5, 2 and 4. Baskets: 3 apples, then 5 apples. Trace 3, 5 and 10.'
  }
-];
+,...mathsWorksheetsMore];
 
-/* The registry reserves 30 Class 24 slots: the two real worksheets above plus
-   28 pending the owner's artwork. See the final report — nothing here claims
-   artwork that does not exist. */
+/* The registry reserves 30 Class 24 slots: the seventeen real worksheets above
+   (each built from artwork the owner uploaded to school/maths/adventures/ and
+   audited tile by tile) plus the remaining adventures, which become
+   one-data-entry additions the moment their artwork lands. Nothing here
+   claims artwork that does not exist. */
 export const MATHS_TOTAL=30;

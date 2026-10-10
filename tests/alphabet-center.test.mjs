@@ -5,8 +5,6 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {LETTERS,LETTERS_BY_KEY} from '../src/alphabet-data.mjs';
-import {TRACINGS} from '../src/tracing-strokes.mjs';
-import {strokeLayout} from '../src/tracing-svg.mjs';
 
 const read=f=>readFileSync(f,'utf8');
 const page=p=>read('dist'+p+'index.html');
@@ -74,35 +72,20 @@ test('data: all 156 R2 files really exist (GET probe — R2 HEAD responses lie)'
  assert.equal(checked,156);
 });
 
-test('tracing: 52 verified letterforms, sequential numbered starts, sane strokes, single-storey a and g',()=>{
- const letters='abcdefghijklmnopqrstuvwxyz'.split('');
- for(const l of letters){
-  const t=TRACINGS[l];
-  assert.ok(t&&t.up&&t.lo,l+' tracing data');
-  for(const which of ['up','lo']){
-   const s=t[which].strokes;
-   assert.ok(s.length>=1&&s.length<=4,l+' '+which+' stroke count');
-   assert.ok(t[which].help.length>40,l+' '+which+' parent script');
-   const layout=strokeLayout(l,which);
-   layout.forEach((st,i)=>{
-    assert.match(st.d,/^M\s*[\d.]+\s+[\d.]+\s*[LC]\s*[\d.]+\s+[\d.]+/,l+' '+which+' stroke '+(i+1)+' parseable');
-    assert.ok(Number.isFinite(st.nx)&&Number.isFinite(st.ny),'number position finite');
-    assert.ok(st.ap.split(' ').length===3,'arrow triangle has three points');
-   });
-  }
- }
- // the numbered start circles never overlap: every pair of displayed
- // number positions keeps at least ~19 units of clearance
- for(const l of letters)for(const which of ['up','lo']){
-  const pos=strokeLayout(l,which).map(s=>[s.nx,s.ny]);
-  for(let i=0;i<pos.length;i++)for(let j=i+1;j<pos.length;j++){
-   const d=Math.hypot(pos[i][0]-pos[j][0],pos[i][1]-pos[j][1]);
-   assert.ok(d>=18.9,l+' '+which+' numbers '+(i+1)+','+(j+1)+' overlap ('+d.toFixed(1)+')');
-  }
- }
+test('tracing sections are removed from letter pages (owner decision): no guides, no player, no leftovers',()=>{
+ 'abcdefghijklmnopqrstuvwxyz'.split('').forEach(l=>{
+  const html=letterPage(l);
+  assert.doesNotMatch(html,/TRACE THE LETTER/,'no tracing heading on '+l);
+  assert.doesNotMatch(html,/data-at-block/,'no tracing mount on '+l);
+  assert.doesNotMatch(html,/at-svg|at-guide|at-live/,'no tracing svg on '+l);
+ });
+ assert.ok(!readIfExists('dist/assets/letter-tracing.js'),'letter-tracing.js is gone from dist');
+ assert.ok(!readIfExists('public/assets/letter-tracing.js'),'letter-tracing.js is gone from source');
 });
 
-test('letter pages: all 26 built with the eight sections, unique SEO and correct prev/next chain',()=>{
+function readIfExists(f){try{return readFileSync(f,'utf8');}catch(e){return null;}}
+
+test('letter pages: all 26 built with their sections, unique SEO and correct prev/next chain',()=>{
  const seen=new Set();
  'abcdefghijklmnopqrstuvwxyz'.split('').forEach((l,i)=>{
   const html=letterPage(l);
@@ -114,12 +97,9 @@ test('letter pages: all 26 built with the eight sections, unique SEO and correct
   assert.match(html,/THE PICTURE WORD/,'picture section');
   assert.match(html,/THE LETTER PAIR/,'pair section');
   assert.match(html,/THE LETTER SOUND/,'sound section');
-  assert.match(html,/TRACE THE LETTER/,'tracing section');
-  assert.match(html,/data-at-block/g,'two tracing mounts');
   assert.match(html,/TAKE IT OFF SCREEN/,'activity section');
   assert.match(html,/PLAY & PRACTICE|PLAY &amp; PRACTICE/,'games section');
-  // five of the six R2 assets ship on the page (tracing.png is deliberately
-  // replaced by the verified SVG guides)
+  // the four card images ship on the page
   for(const f of ['uppercase.png','lowercase.png','pair.png','sound.png'])assert.ok(html.includes(R2+l+'/'+f),l+' '+f);
   // the prev/next chain wraps z -> a
   assert.ok(html.includes('href="/flashcards/alphabet/letter-'+prev+'/"'),l+' prev link');
@@ -140,18 +120,6 @@ test('letter pages: x never pretends xylophone begins with the ks sound',()=>{
  const g=letterPage('g');
  assert.match(g,/j(?![a-z])/,'g names the j sound');
  assert.match(g,/goat/,'g names the hard g too');
-});
-
-test('letter pages: tracing guides ship as static SVG with numbered starts and arrows',()=>{
- const a=letterPage('a');
- assert.match(a,/data-at-svg/g,'two static guides');
- assert.match(a,/class="at-num"/,'numbered start circles');
- assert.match(a,/class="at-arrow"/,'direction arrows');
- assert.match(a,/data-at-data/,'stroke layout JSON for the player');
- const jsons=[...a.matchAll(/<script type="application\/json" data-at-data>(.*?)<\/script>/g)].map(m=>JSON.parse(m[1]));
- assert.equal(jsons.length,2);
- assert.ok(jsons[0].strokes.length>=1&&jsons[1].strokes.length>=1);
- assert.ok(jsons.every(j=>j.help.length>40));
 });
 
 test('hub: /flashcards/alphabet/ keeps its word cards and gains the five-mode center',()=>{

@@ -2,14 +2,11 @@
 // /flashcards/alphabet/ hub, the 26 letter pages (/flashcards/alphabet/letter-x/),
 // the three alphabet games under /activities/, the Activities cupboard shelf
 // and the A-B-C intro for the preschool letter class.
-// Everything renders from src/alphabet-data.mjs (real R2 assets, probed) and
-// src/tracing-strokes.mjs (verified letterforms). Without JavaScript every
-// page still teaches: the hub shows the A–Z grid, letter pages ship their
-// full content plus static tracing guides, and the two sound/picture games
+// Everything renders from src/alphabet-data.mjs (real R2 assets, probed).
+// Without JavaScript every page still teaches: the hub shows the A–Z grid,
+// letter pages ship their full content, and the two sound/picture games
 // use the site's existing data-tc-round engine with every round in the HTML.
 import {LETTERS,LETTERS_BY_KEY,letterAt,R2_ALPHA} from './alphabet-data.mjs';
-import {tracingLayout,tracingSvg} from './tracing-svg.mjs';
-import {TRACINGS} from './tracing-strokes.mjs';
 
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export const letterPath=l=>`/flashcards/alphabet/letter-${l.letter}/`;
@@ -66,7 +63,7 @@ export function alphabetCenterBody(){
    </div>
    <p class="fc-hint" data-al-hint hidden>Uppercase, lowercase, picture, pair and letter-&amp;-picture cards — one kind at a time, big and touch-friendly. Nothing here is scored or timed.</p>
   </div>
-  <noscript><p class="fc-hint">The card player needs JavaScript. The whole alphabet still works below — tap any letter to open its page, with all six kinds of cards and tracing on it.</p></noscript>
+  <noscript><p class="fc-hint">The card player needs JavaScript. The whole alphabet still works below — tap any letter to open its page with every card on it.</p></noscript>
   <script type="application/json" data-al-center-data>${alphabetCenterData()}</script>
   <div class="al-grid" data-al-grid>
    <h3 class="al-grid-title">The A–Z grid</h3>
@@ -77,21 +74,6 @@ export function alphabetCenterBody(){
 }
 
 /* ------------------------------------------------------------ letter pages */
-function tracingBlock(letter,which,upper){
- const layout=tracingLayout(letter,which);
- const caseLabel=which==='up'?'uppercase':'lowercase';
- return `<div class="at-block" data-at-block data-at-letter="${letter}" data-at-case="${which}">
-  <h4>Trace the ${caseLabel} ${which==='up'?upper:letter}</h4>
-  <p class="at-help">${esc(layout.help)}</p>
-  <div class="at-stage" data-at-stage>${tracingSvg(letter,which,upper)}</div>
-  <div class="at-actions">
-   <button type="button" class="button button-ghost at-clear" data-at-clear hidden>Clear and try again</button>
-   <span class="at-status" data-at-status aria-live="polite"></span>
-  </div>
-  <script type="application/json" data-at-data>${JSON.stringify(layout).replaceAll('<','\\u003c')}</script>
- </div>`;
-}
-
 export function letterPageBody(L,prev,next){
  const l=L.letter,up=L.upper;
  const pic=L.file(L.pictureFile);
@@ -112,7 +94,7 @@ export function letterPageBody(L,prev,next){
   <span class="eyebrow">ALPHABET CENTER · LETTER ${up}</span>
   <h1>Letter ${up} — ${esc(L.word)}<span class="title-dot">.</span></h1>
   <p class="mw-lede">${esc(L.intro)}</p>
-  <p class="fc-hint">Meet the letter, hear its sound, trace it together — then play. Everything on this page is free, gentle and paced for you.</p>
+  <p class="fc-hint">Meet the letter, hear its sound, then play. Everything on this page is free, gentle and paced for you.</p>
  </section>
 
  <section class="wrap section compact al-meet" aria-label="Meet the letter">
@@ -135,17 +117,6 @@ export function letterPageBody(L,prev,next){
     ${soundReveal}
    </div>
   </div>
- </section>
-
- <section class="wrap section compact al-tracing" aria-label="Trace the letter">
-  <span class="eyebrow">TRACE THE LETTER</span>
-  <h2>Trace ${up} ${l} together.</h2>
-  <p class="lesson-copy">Follow the numbers with a finger — on screen or on each other’s palms. The arrows show the way to go, the numbers show where to start, and a grown-up reads the little script below each card. Slow and wobbly is exactly right.</p>
-  <div class="at-row">
-   ${tracingBlock(l,'up',up)}
-   ${tracingBlock(l,'lo',up)}
-  </div>
-  <noscript><p class="fc-hint">The guides above are already the whole lesson without JavaScript: trace them on paper or on the screen with a finger, following the numbers and arrows. The buttons add the on-screen tracing game.</p></noscript>
  </section>
 
  <section class="wrap section compact al-activity" aria-label="Off-screen activity">
@@ -290,7 +261,7 @@ export function alphabetShelf(){
   ['/activities/beginning-sounds/','Beginning Sounds','A letter and three pictures: which one starts with the sound? Phonics that tells the truth.'],
   ['/activities/guess-the-picture/','Guess the Picture','Name the picture — colorful, outline or mystery — and meet its letter.']
  ];
- return `<div class="dt-shelf al-shelf" id="alphabet"><div class="dt-shelf-head"><h2>The Alphabet Center</h2><p>Twenty-six letters, five card kinds, three gentle games and tracing for every letter — built from the school’s own alphabet artwork. Free, no sign-up.</p></div><div class="al-shelf-grid">${cards.map(([href,title,copy])=>`<a class="dt-card" href="${href}"><span class="dt-card-copy"><strong>${esc(title)}</strong><span>${esc(copy)}</span><span class="fc-open">Open <span aria-hidden="true">↗</span></span></span></a>`).join('')}</div></div>`;
+ return `<div class="dt-shelf al-shelf" id="alphabet"><div class="dt-shelf-head"><h2>The Alphabet Center</h2><p>Twenty-six letters, five card kinds and three gentle games — built from the school’s own alphabet artwork. Free, no sign-up.</p></div><div class="al-shelf-grid">${cards.map(([href,title,copy])=>`<a class="dt-card" href="${href}"><span class="dt-card-copy"><strong>${esc(title)}</strong><span>${esc(copy)}</span><span class="fc-open">Open <span aria-hidden="true">↗</span></span></span></a>`).join('')}</div></div>`;
 }
 
 /* ------------------------------- the A-B-C intro for the preschool class */

@@ -62,8 +62,11 @@ test('the school’s real rooms are searchable, utility views are not',()=>{
 test('the search page ships the whole-school results mount and script',()=>{
  assert.match(searchPage,/src="\/assets\/search-page\.js"/,'the whole-school script is wired');
  assert.match(searchPage,/SEARCH THE WHOLE SCHOOL/,'the search page names its job');
- assert.match(searchPage,/Search every book, class, drawing lesson, flashcard set and activity/);
- assert.match(searchPage,/label for="query">Search the whole school</,'the field invites the whole school');
+ assert.match(searchPage,/Search every book, class, drawing lesson, flashcard set, worksheet and activity/);
+ assert.match(searchPage,/for="query">Search the whole school</,'the field invites the whole school');
+ assert.match(searchPage,/data-search-idea="caterpillar"/,'search ideas ship as one-tap chips');
+ assert.match(searchPage,/kiddo-no-search-results/,'the school no-results artwork anchors the hero');
+ assert.match(searchPage,/data-sr-empty/,'the empty state offers honest next steps');
  assert.match(searchPage,/data-site-search hidden/,'the results mount ships hidden until there is a query');
  assert.match(searchPage,/data-sr-count aria-live="polite"/,'result counts are announced');
  assert.match(searchPage,/data-sr-list/);

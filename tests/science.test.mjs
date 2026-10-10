@@ -164,7 +164,9 @@ test('30 science worksheets ship with PDFs, twins and honest copy',()=>{
   const p='/worksheets/science/'+w.slug+'/';
   const html=page(p);
   assert.ok(html.includes('Science, Nature &amp; Discovery'),p+' names the subject');
-  assert.ok(html.includes('href="/preschool/science/adventures/'+w.slug+'/"'),p+' links its game twin');
+  // owner decision: worksheet pages carry no coded activities or play links —
+  // the game twin is reachable from the subject category and the class instead
+  assert.ok(!html.includes('href="/preschool/science/adventures/'),p+' has no game links on the page');
   assert.ok(existsSync('dist/downloads/worksheets/science/'+w.slug+'.pdf'),p+' PDF exists');
   const pdf=readFileSync('dist/downloads/worksheets/science/'+w.slug+'.pdf');
   assert.ok(pdf.slice(0,5).toString()==='%PDF-','real PDF for '+w.slug);
@@ -205,7 +207,7 @@ test('Class 31 is wired into the whole school without breaking 23-30',()=>{
  assert.equal(count,31,'library + 30 games in sitemap');
  // search index
  const idx=JSON.parse(read('/assets/search-index.json'));
- assert.ok(idx.filter(e=>e.k==='Worksheet').length===190,'all worksheets searchable');
+ assert.ok(idx.filter(e=>e.k==='Worksheet').length===205,'all worksheets searchable');
 });
 
 test('science adventure pages never ship curriculum progress machinery',()=>{
