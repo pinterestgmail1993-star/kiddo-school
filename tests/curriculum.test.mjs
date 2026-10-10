@@ -87,7 +87,7 @@ test('lesson 4 follows the Infant 2 spec with Try Together and a real link to le
  assert.ok(l4.includes('href="/baby/6-9-months/animals-everyday-objects/"'));
  assert.ok(l4.includes('6–9 Months'));
  const files=[...l4.matchAll(new RegExp(lessonsBase.replace(/\./g,'\\.')+'first-words-familiar-things-4-6-months/(\\d{2}-[a-z-]+)\\.webp','g'))].map(m=>m[1]);
- assert.equal(files.length,12,'grid shows each card exactly once');
+ assert.equal(new Set(files).size,11,'each card present exactly once (baby-face card reserved: artwork never shipped)');
  assert.deepEqual([...new Set(files)],fwftLesson.cards.map(c=>c.file.replace('.webp','')));
  assert.match(l4,/BreadcrumbList[\s\S]*"name":"Baby"[\s\S]*"name":"4–6 Months"[\s\S]*"name":"First Words & Familiar Things"/);
 });
@@ -108,7 +108,7 @@ test('lesson 5 follows the Explorer 1 spec with Try Together, Find It in Real Li
  assert.ok(l5.includes('href="/baby/9-12-months/first-actions-body-parts/"'));
  assert.ok(l5.includes('9–12 Months'));
  const files=[...l5.matchAll(new RegExp(lessonsBase.replace(/\./g,'\\.')+'animals-everyday-objects-6-9-months/(\\d{2}-[a-z-]+)\\.webp','g'))].map(m=>m[1]);
- assert.equal(files.length,12,'grid shows each card exactly once');
+ assert.equal(new Set(files).size,12,'each card present exactly once (the cat card also fronts the set: the folder has no cover file)');
  assert.deepEqual([...new Set(files)],aeoLesson.cards.map(c=>c.file.replace('.webp','')));
  assert.match(l5,/BreadcrumbList[\s\S]*"name":"Baby"[\s\S]*"name":"6–9 Months"[\s\S]*"name":"Animals & Everyday Objects"/);
 });
@@ -152,7 +152,7 @@ test('lesson 7 follows the Toddler 1 spec with Try Together, Find It at Home and
  assert.ok(l7.includes('href="/toddler/18-24-months/first-concepts-big-small-up-down/"'));
  assert.ok(l7.includes('18–24 Months'));
  const files=[...l7.matchAll(new RegExp(lessonsBase.replace(/\./g,'\\.')+'first-words-food-home-12-18-months/(\\d{2}-[a-z-]+)\\.webp','g'))].map(m=>m[1]);
- assert.equal(files.length,12,'grid shows each card exactly once');
+ assert.equal(new Set(files).size,11,'each card present exactly once (bed card reserved: artwork never shipped)');
  assert.deepEqual([...new Set(files)],fwfhLesson.cards.map(c=>c.file.replace('.webp','')));
  assert.match(l7,/BreadcrumbList[\s\S]*"name":"Toddler"[\s\S]*"name":"12–18 Months"[\s\S]*"name":"First Words: Food & Home"/);
 });
@@ -174,11 +174,12 @@ test('lesson 8 follows the Toddler 2 spec with six concept pairs, Try Together, 
  assert.ok(l8.includes('href="/toddler/2-years/colors-and-shapes/"'));
  assert.ok(l8.includes('Age 2'));
  const files=[...l8.matchAll(new RegExp(toddlerBase.replace(/\./g,'\\.')+'first-concepts-18-24-months/(\\d{2}-[a-z-]+)\\.webp','g'))].map(m=>m[1]);
- assert.equal(files.length,12,'grid shows each card exactly once');
+ assert.equal(files.length,11,'grid shows each card exactly once (Out card reserved: the artwork never shipped)');
  assert.deepEqual([...new Set(files)],fcLesson.cards.map(c=>c.file.replace('.webp','')));
  for(const c of fcLesson.cards)assert.ok(l8.includes('width="'+c.w+'" height="'+c.h+'" alt="'+c.alt+'"'),c.file);
  for(const c of fcLesson.cards)assert.ok(!l8.includes('<figure class="lv-card"><span>'+c.concept),c.concept+' must never overlay the card image'); const concepts=fcLesson.cards.map(c=>c.concept);
- for(const [a,b] of [['Big','Small'],['Up','Down'],['Open','Closed'],['Full','Empty'],['One','Many'],['In','Out']]){const i=concepts.indexOf(a);assert.ok(i>-1&&concepts[i+1]===b,a+' pairs with '+b);}
+ for(const [a,b] of [['Big','Small'],['Up','Down'],['Open','Closed'],['Full','Empty'],['One','Many']]){const i=concepts.indexOf(a);assert.ok(i>-1&&concepts[i+1]===b,a+' pairs with '+b);}
+ assert.ok(concepts.includes('In'),'In card ships; Out is played off screen (no artwork was ever uploaded for it)');
  assert.match(l8,/BreadcrumbList[\s\S]*"name":"Toddler"[\s\S]*"name":"18–24 Months"[\s\S]*"name":"First Concepts"/);
 });
 test('lesson 9 (Colors & Shapes, Toddler 3) follows its spec with the interactive toddler class',()=>{

@@ -150,11 +150,11 @@ export const fwftLesson={
  eyebrow:'INFANT 2 · LESSON 4',
  crumbs:[['Baby','/baby/'],['4–6 Months','/baby/4-6-months/'],['First Words & Familiar Things','/baby/4-6-months/first-words-familiar-things/']],
  chips:[['Age','4–6 Months'],['Subject','Talk'],['Class','Infant 2'],['Duration','2–5 minutes']],
- ledes:['Around four to six months, babies babble back, laugh at familiar faces and start to connect the sounds you make with the things they see. This class uses twelve simple familiar-object flashcards — a ball, a cup, a spoon, a bottle, an apple, a banana, a cat, a dog, a bird, a car, a teddy bear and a friendly baby face — shown one at a time while you name what you see in your own words.',
+ ledes:['Around four to six months, babies babble back, laugh at familiar faces and start to connect the sounds you make with the things they see. This class uses eleven simple familiar-object flashcards — a ball, a cup, a spoon, a bottle, an apple, a banana, a cat, a dog, a bird, a car and a teddy bear — shown one at a time while you name what you see in your own words.',
   'There is no script and nothing to test. You talk, your baby listens, and the little everyday names — ball, cup, dog, hello — slowly grow into your baby’s first words. Short, calm sessions of two to five minutes are all it takes.'],
- startHint:'Twelve cards, one at a time. Name each picture in your own words — short and natural wins.',
- viewerLabel:'Today’s class: twelve familiar-object cards',
- viewerHeading:'Twelve cards, one at a time.',
+ startHint:'Eleven cards, one at a time. Name each picture in your own words — short and natural wins.',
+ viewerLabel:'Today’s class: eleven familiar-object cards',
+ viewerHeading:'Eleven cards, one at a time.',
  folder:'first-words-familiar-things-4-6-months/',
  eagerFirst:false,
  cover:{file:'cover.webp',w:1414,h:2000,alt:'Cover of the First Words and Familiar Things class for babies 4 to 6 months: a red ball, blue cup and yellow banana with the Infant 2 Talk label from Kiddo School'},
@@ -169,8 +169,7 @@ export const fwftLesson={
   {order:8,file:'08-dog.webp',w:1414,h:2000,alt:'Simple dog flashcard for babies'},
   {order:9,file:'09-bird.webp',w:1414,h:2000,alt:'Simple bird flashcard for babies'},
   {order:10,file:'10-car.webp',w:1414,h:2000,alt:'Simple car flashcard for babies'},
-  {order:11,file:'11-teddy-bear.webp',w:1414,h:2000,alt:'Simple teddy bear flashcard for babies'},
-  {order:12,file:'12-baby-face.webp',w:1414,h:2000,alt:'Simple baby face flashcard for babies'}
+  {order:11,file:'11-teddy-bear.webp',w:1414,h:2000,alt:'Simple teddy bear flashcard for babies'}
  ],
  howTo:{heading:'How to use this activity',paragraphs:[
   'Choose a time when your baby is awake, calm and comfortable. Show one picture at a time and name what you see using simple, natural language. For example, say ‘ball’ or ‘Here is the ball.’ Give your baby time to look and listen.',
@@ -190,8 +189,8 @@ export const aeoLesson={
  h1:'Animals & Everyday Objects for Babies 6–9 Months',
  description:'Explore animal and everyday-object flashcards for babies 6–9 months, with simple parent-led activities for looking, listening and early recognition.',
  ogAlt:'Cover of the Kiddo School Explorer 1 class Animals and Everyday Objects for babies 6 to 9 months, with a cat, a dog and a ball',
- ogImage:lessonsBase+'animals-everyday-objects-6-9-months/cover.webp',
- schemaImage:lessonsBase+'animals-everyday-objects-6-9-months/cover.webp',
+ ogImage:lessonsBase+'animals-everyday-objects-6-9-months/01-cat.webp',
+ schemaImage:lessonsBase+'animals-everyday-objects-6-9-months/01-cat.webp',
  eyebrow:'EXPLORER 1 · LESSON 5',
  crumbs:[['Baby','/baby/'],['6–9 Months','/baby/6-9-months/'],['Animals & Everyday Objects','/baby/6-9-months/animals-everyday-objects/']],
  chips:[['Age','6–9 Months'],['Subject','Talk &amp; Think'],['Class','Explorer 1'],['Duration','3–5 minutes']],
@@ -202,7 +201,7 @@ export const aeoLesson={
  viewerHeading:'Twelve cards, one at a time.',
  folder:'animals-everyday-objects-6-9-months/',
  eagerFirst:false,
- cover:{file:'cover.webp',w:1414,h:2000,alt:'Cover of the Animals and Everyday Objects class for babies 6 to 9 months: a cat, a dog and a ball with the Explorer 1 Talk & Think label from Kiddo School'},
+ cover:{file:'01-cat.webp',w:1414,h:2000,alt:'The cat card that fronts the Animals and Everyday Objects class for babies 6 to 9 months — a realistic cat portrait from Kiddo School'},
  cards:[
   {order:1,file:'01-cat.webp',w:1414,h:2000,alt:'Realistic cat flashcard for babies'},
   {order:2,file:'02-dog.webp',w:1414,h:2000,alt:'Realistic dog flashcard for babies'},
@@ -290,11 +289,11 @@ export const fwfhLesson={
  eyebrow:'TODDLER 1 · LESSON 7',
  crumbs:[['Toddler','/toddler/'],['12–18 Months','/toddler/12-18-months/'],['First Words: Food & Home','/toddler/12-18-months/first-words-food-home/']],
  chips:[['Age','12–18 Months'],['Subject','Talk &amp; Think'],['Class','Toddler 1'],['Duration','3–5 minutes']],
- ledes:['Between twelve and eighteen months, toddlers point at everything, understand far more than they can say and love hearing you name their world. This class pairs twelve everyday pictures — an apple, a banana, an orange, a cup of milk, bread, an egg, then a cup, a spoon, a shoe, a sock, a chair and a bed — shown one at a time while you say the word simply and clearly.',
-  'There is no script and nothing to test. You name it, your toddler looks, points or has a go in their own way, and every calm repetition — apple, cup, shoe, bed — feeds those growing first words. Short, playful sessions of three to five minutes are all it takes.'],
- startHint:'Twelve cards, one at a time. Name it, pause, and let your toddler answer in their own way.',
- viewerLabel:'Today’s class: twelve food and home cards',
- viewerHeading:'Twelve cards, one at a time.',
+ ledes:['Between twelve and eighteen months, toddlers point at everything, understand far more than they can say and love hearing you name their world. This class pairs eleven everyday pictures — an apple, a banana, an orange, a cup of milk, bread, an egg, then a cup, a spoon, a shoe, a sock and a chair — shown one at a time while you say the word simply and clearly.',
+  'There is no script and nothing to test. You name it, your toddler looks, points or has a go in their own way, and every calm repetition — apple, cup, shoe, chair — feeds those growing first words. Short, playful sessions of three to five minutes are all it takes.'],
+ startHint:'Eleven cards, one at a time. Name it, pause, and let your toddler answer in their own way.',
+ viewerLabel:'Today’s class: eleven food and home cards',
+ viewerHeading:'Eleven cards, one at a time.',
  folder:'first-words-food-home-12-18-months/',
  eagerFirst:false,
  cover:{file:'cover.webp',w:1414,h:2000,alt:'Cover of the First Words: Food and Home class for toddlers 12 to 18 months: an apple, a banana and a cup with the Toddler 1 Talk & Think label from Kiddo School'},
@@ -309,8 +308,7 @@ export const fwfhLesson={
   {order:8,file:'08-spoon.webp',w:1414,h:2000,alt:'Spoon flashcard for toddlers'},
   {order:9,file:'09-shoe.webp',w:1414,h:2000,alt:'Child shoe flashcard for toddlers'},
   {order:10,file:'10-sock.webp',w:1414,h:2000,alt:'Child sock flashcard for toddlers'},
-  {order:11,file:'11-chair.webp',w:1414,h:2000,alt:'Child chair flashcard for toddlers'},
-  {order:12,file:'12-bed.webp',w:1414,h:2000,alt:'Toddler bed flashcard for toddlers'}
+  {order:11,file:'11-chair.webp',w:1414,h:2000,alt:'Child chair flashcard for toddlers'}
  ],
  howTo:{heading:'How to use this activity',paragraphs:[
   'Show one picture at a time and clearly name what you see. Keep your words short and natural: ‘apple’, ‘banana’, ‘shoe’ or ‘This is your cup.’',
@@ -318,11 +316,11 @@ export const fwfhLesson={
   'When possible, connect the picture with the real object. If you show the spoon card, find a spoon at home and name it again.',
   'There is no need to test your toddler or require them to repeat every word.'
  ],note:'<strong>Every child develops differently.</strong> Kiddo School age ranges are guides, not tests or developmental deadlines.'},
- tryTogether:['Apple. This is an apple.','Banana. Yum!','Here is your cup.','Spoon.','Where is your shoe?','Bed. Time for sleep.'],
- realWorld:{heading:'Find It at Home',copy:'Turn the flashcards into a real-world activity. After looking at a card, find the same object around your home when appropriate.',examples:['Spoon → find a spoon.','Cup → find your toddler’s cup.','Shoe → find a shoe.','Sock → find a sock.','Chair → point to a chair.','Bed → point to the bed.']},
+ tryTogether:['Apple. This is an apple.','Banana. Yum!','Here is your cup.','Spoon.','Where is your shoe?','Sock. Peek-a-boo toes.'],
+ realWorld:{heading:'Find It at Home',copy:'Turn the flashcards into a real-world activity. After looking at a card, find the same object around your home when appropriate.',examples:['Spoon → find a spoon.','Cup → find your toddler’s cup.','Shoe → find a shoe.','Sock → find a sock.','Chair → point to a chair.','Orange → find an orange in the fruit bowl.']},
  pills:{heading:'Where to next?',items:[['Toddler classes','/toddler/'],['12–18 Months','/toddler/12-18-months/'],['Talk &amp; Think','/subjects/talk-and-think/']]},
  pathNav:{prev:{title:'First Actions & Body Parts',range:'9–12 Months',href:'/baby/9-12-months/first-actions-body-parts/'},next:{title:'First Concepts — Big, Small, Up & Down',range:'18–24 Months',href:'/toddler/18-24-months/first-concepts-big-small-up-down/'}},
- hubBlurb:'Everyday foods and home things — apple, cup, spoon, bed — name them, pause, and let the first words grow. Three to five playful minutes.',
+ hubBlurb:'Everyday foods and home things — apple, cup, spoon, chair — name them, pause, and let the first words grow. Three to five playful minutes.',
  schema:{level:'Toddler (12–18 months)',teaches:'First food and home words, pointing, naming and shared attention',audience:'Parents of toddlers',keywords:'toddler first words flashcards, food words for toddlers, home objects flashcards, 12-18 months toddler activities'}
 };
 export const fcLesson={
@@ -330,18 +328,18 @@ export const fcLesson={
  seoTitle:'First Concepts for Toddlers 18–24 Months | Big, Small, Up & Down',
  title:'First Concepts for Toddlers 18–24 Months',
  h1:'First Concepts for Toddlers: Big, Small, Up & Down',
- description:'Teach toddlers ages 18–24 months simple early concepts including big and small, up and down, open and closed, full and empty, one and many, and in and out.',
+ description:'Teach toddlers ages 18–24 months simple early concepts including big and small, up and down, open and closed, full and empty, one and many, and in.',
  ogAlt:'Cover of the Kiddo School Toddler 2 class First Concepts: Big, Small, Up and Down for toddlers 18 to 24 months, with a big red ball and a small red ball',
  ogImage:toddlerBase+'first-concepts-18-24-months/cover.webp',
  schemaImage:toddlerBase+'first-concepts-18-24-months/cover.webp',
  eyebrow:'TODDLER 2 · LESSON 8',
  crumbs:[['Toddler','/toddler/'],['18–24 Months','/toddler/18-24-months/'],['First Concepts','/toddler/18-24-months/first-concepts-big-small-up-down/']],
  chips:[['Age','18–24 Months'],['Subject','Think &amp; Talk'],['Class','Toddler 2'],['Duration','3–5 minutes']],
- ledes:['Around eighteen to twenty-four months, toddlers love spotting differences: the big ball and the little ball, the box that opens and shuts, the cup that is full and then empty. This class uses twelve realistic pictures arranged in six concept pairs — big and small, up and down, open and closed, full and empty, one and many, in and out — shown one at a time in exact pair order, so each opposite appears right after its partner and the comparison is easy to see.',
+ ledes:['Around eighteen to twenty-four months, toddlers love spotting differences: the big ball and the little ball, the box that opens and shuts, the cup that is full and then empty. This class uses eleven realistic pictures arranged in concept pairs — big and small, up and down, open and closed, full and empty, one and many, and in — shown one at a time in pair order, so each opposite appears right after its partner and the comparison is easy to see. Then the last game continues off screen: put a toy in a basket, take it out, and do it again.',
   'There is no script and nothing to test. Show a pair, say the concepts clearly — ‘Big. Small.’ — and give your toddler time to look at the difference. Short, playful sessions of three to five minutes are all it takes.'],
- startHint:'Twelve cards, one at a time, in six matching pairs. Say each concept clearly — short and playful wins.',
- viewerLabel:'Today’s class: twelve first-concept cards',
- viewerHeading:'Twelve cards, one at a time.',
+ startHint:'Eleven cards, one at a time, in matching pairs. Say each concept clearly — short and playful wins.',
+ viewerLabel:'Today’s class: eleven first-concept cards',
+ viewerHeading:'Eleven cards, one at a time.',
  folder:'first-concepts-18-24-months/',
  r2Base:toddlerBase,
  eagerFirst:false,
@@ -357,19 +355,18 @@ export const fcLesson={
   {order:8,concept:'Empty',file:'08-empty.webp',w:1414,h:2000,alt:'Empty container demonstrating the concept empty for toddlers'},
   {order:9,concept:'One',file:'09-one.webp',w:1414,h:2000,alt:'One object demonstrating the concept one for toddlers'},
   {order:10,concept:'Many',file:'10-many.webp',w:1414,h:2000,alt:'Multiple objects demonstrating the concept many for toddlers'},
-  {order:11,concept:'In',file:'11-in.webp',w:1414,h:2000,alt:'Object inside a container demonstrating the concept in for toddlers'},
-  {order:12,concept:'Out',file:'12-out.webp',w:1414,h:2000,alt:'Object outside a container demonstrating the concept out for toddlers'}
+  {order:11,concept:'In',file:'11-in.webp',w:1414,h:2000,alt:'Object inside a container demonstrating the concept in for toddlers'}
  ],
  howTo:{heading:'How to Teach First Concepts',paragraphs:[
   'Show the two cards in a pair one after the other and say the concept clearly. For example: ‘Big. Small.’ Give your toddler time to look at the difference.',
   'Repeat the concepts naturally using real objects and everyday moments. You can show a big ball and a small ball, open and close a box, or point out when a cup is full or empty.',
   'Keep the activity playful. Your toddler does not need to name every concept or answer questions correctly.'
  ],note:'<strong>Every child develops differently.</strong> Kiddo School age ranges are guides, not tests or developmental deadlines.'},
- tryTogether:['Big ball. Small ball.','Up! Now down.','Open the box. Close the box.','The cup is full. Now it’s empty.','One duck. Many ducks.','The ball is in. Now the ball is out.'],
+ tryTogether:['Big ball. Small ball.','Up! Now down.','Open the box. Close the box.','The cup is full. Now it’s empty.','One duck. Many ducks.','The ball is in the basket. Now take it out!'],
  realWorld:{heading:'Practice Around the House',copy:'Keep these activities parent-supervised and simple.',examples:['Big &amp; Small: Find one big object and one small object.','Up &amp; Down: Lift a toy up, then bring it down.','Open &amp; Closed: Open and close a safe box or container together.','Full &amp; Empty: Show a cup with water and an empty cup during an appropriate supervised activity.','One &amp; Many: Show one toy, then a small group of toys.','In &amp; Out: Put a toy in a basket, then take it out.']},
  pills:{heading:'Where to next?',items:[['Toddler classes','/toddler/'],['18–24 Months','/toddler/18-24-months/'],['Think &amp; Talk','/subjects/talk-and-think/']]},
  pathNav:{prev:{title:'First Words: Food & Home',range:'12–18 Months',href:'/toddler/12-18-months/first-words-food-home/'},next:{title:'Colors & Shapes',range:'Age 2',href:'/toddler/2-years/colors-and-shapes/'}},
- hubBlurb:'Big and small, up and down, full and empty — six concept pairs in realistic pictures, ready for a short game of say it and look. Three to five playful minutes.',
+ hubBlurb:'Big and small, up and down, full and empty — concept pairs in realistic pictures, ready for a short game of say it and look. Three to five playful minutes.',
  schema:{level:'Toddler (18–24 months)',teaches:'Early concepts and opposites through clear visual comparison',audience:'Parents of toddlers',keywords:'first concepts flashcards for toddlers, big and small, opposites for toddlers, toddler comparison activities, 18-24 months activities'}
 };
 export const csLesson={

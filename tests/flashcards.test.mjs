@@ -103,7 +103,7 @@ test('card pages: unique titles and descriptions, say/try/note, download, prev/n
   assert.ok(!html.includes('aggregateRating'),'no fabricated ratings schema');
   assert.ok(!html.includes('★★★★★</span>'),'no fabricated review text in HTML');
  }
- assert.equal(downloads,288);
+ assert.equal(downloads,287);
 });
 
 test('library: every set is listed, baby collection included, no orphan sets',()=>{

@@ -44,8 +44,10 @@ export function stage4HubBody(){
 }
 
 /* ---------- shared fragments ---------- */
-const adventuresGrid=(items,base,sectionAttr)=>`<div class="sa-grid">${items.map(g=>`<a class="sa-card sa-card-slim" href="${base}${g.slug}/" ${sectionAttr}="${g.slug}">
- <img src="${base}${g.img}" width="400" height="284" alt="${esc(g.alt)}" loading="lazy">
+/* href uses the site game-library path, src uses the R2 art base — the two
+   must never share one base or cards link into the bucket instead of games */
+const adventuresGrid=(items,libPath,artBase,sectionAttr)=>`<div class="sa-grid">${items.map(g=>`<a class="sa-card sa-card-slim" href="${libPath}${g.slug}/" ${sectionAttr}="${g.slug}">
+ <img src="${artBase}${g.img}" width="400" height="284" alt="${esc(g.alt)}" loading="lazy">
  <span class="sa-card-body"><strong>${esc(g.title)}</strong><span class="sa-card-skill">${esc(g.skill)}</span></span>
  <span class="sa-card-play">Play <span aria-hidden="true">→</span></span></a>`).join('')}</div>`;
 
@@ -104,7 +106,7 @@ export function class25Body(){
   <span class="eyebrow">PLAY · THE SHAPE ADVENTURES SHELF</span>
   <h2>Eighteen real shape games.</h2>
   <p class="lesson-copy">Every adventure below is a full game — pieces to place, patterns to finish, candies to sort, a monster to build, a mystery to solve. Start with any card; the library keeps them all in one place.</p>
-  ${adventuresGrid(featured,SHAPE_BASE,'data-c25-card')}
+  ${adventuresGrid(featured,SHAPE_LIB_PATH,SHAPE_BASE,'data-c25-card')}
   <div class="lesson-linkrow"><a class="lesson-pill-link" href="${SHAPE_LIB_PATH}">Open the whole Shape Adventures Library <span aria-hidden="true">↗</span></a></div>
  </section>
  <section class="wrap lesson-section" id="off-screen" aria-label="Take it off screen">
@@ -173,7 +175,7 @@ export function class26Body(){
   <span class="eyebrow">PLAY · TRY THREE STUDIOS</span>
   <h2>Eighteen studios, start anywhere.</h2>
   <p class="lesson-copy">Every card below is a real activity: tap-to-fill coloring with outlines that stay, movable decorations, true paint mixing, a rainbow built in order and a free splatter canvas. Finished artwork saves to the child’s own My Classroom desk.</p>
-  ${adventuresGrid(featured,COLOR_BASE,'data-c26-card')}
+  ${adventuresGrid(featured,COLOR_LIB_PATH,COLOR_BASE,'data-c26-card')}
   <div class="lesson-linkrow"><a class="lesson-pill-link" href="${COLOR_LIB_PATH}">Open the whole Colors &amp; Creativity Library <span aria-hidden="true">↗</span></a></div>
  </section>
  <section class="wrap lesson-section" id="off-screen" aria-label="Off-screen paint play">
