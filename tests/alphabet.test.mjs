@@ -43,7 +43,8 @@ test('alphabet set page: exact SEO copy, card wall, print and class links',()=>{
  assert.ok(html.includes('href="/preschool/3-years/alphabet-and-letter-sounds/print/"'),'set page links the printable view');
  assert.ok(html.includes('data-fc-root'),'community mount present');
  // every image keeps its true aspect ratio
- const imgs=[...html.matchAll(/<img[^>]+src="[^"]*alphabet[^"]*"[^>]*>/g)].map(m=>m[0]);
+ const imgs=[...html.matchAll(/<img[^>]+src="[^"]*preschool-learning-cards\/alphabet-and-letter-sounds-age-3\/[^"]*"[^>]*>/g)].map(m=>m[0]);
+ assert.ok(imgs.length>=26,'every card wall image is checked');
  for(const tag of imgs)assert.ok(/\swidth="1414"\s+height="2000"/.test(tag)||/\swidth="707"\s+height="1000"/.test(tag),`true ratio only: ${tag.slice(0,90)}`);
 });
 

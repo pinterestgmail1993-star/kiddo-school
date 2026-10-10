@@ -8,6 +8,7 @@
 // preschool-numbers.mjs and preschool-shapes.mjs; the hub bodies here list
 // the whole Age 3 stage.
 import {alphabetLesson,alphabetCardContent} from './flashcards/data-alphabet.mjs';
+import {abcClassIntro} from './alphabet-center.mjs';
 
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const base=alphabetLesson.r2Base+alphabetLesson.folder;
@@ -168,6 +169,7 @@ export function alphabetClassBody(L){
 
  return `${crumbNav([['Preschool','/preschool/'],['Age 3','/preschool/3-years/'],['Alphabet & Letter Sounds']])}
  <article class="wrap lesson-hero"><div class="lesson-hero-copy">${heroInner}</div></article>
+ ${abcClassIntro()}
  ${`<section class="wrap lesson-section" id="todays-class" aria-label="Today’s class">
   <span class="eyebrow">TODAY’S CLASS</span>
   <h2>How today’s class works.</h2>

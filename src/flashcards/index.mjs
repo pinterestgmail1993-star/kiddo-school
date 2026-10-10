@@ -15,6 +15,7 @@ import * as gfData from './data-garden-friends.mjs';
 import * as gflData from './data-garden-flowers.mjs';
 import * as gthData from './data-garden-things.mjs';
 import * as alData from './data-alphabet.mjs';
+import {alphabetCenterBody} from '../alphabet-center.mjs';
 import * as nmData from './data-numbers.mjs';
 import * as shData from './data-shapes.mjs';
 import * as clData from './data-colors.mjs';
@@ -202,6 +203,7 @@ export function fcSetPageBody(s){
  const printBtn=s.printPath?`<a class="button" href="${s.printPath}">Print the full set</a>`:'';
  return `${crumbNav([['Flashcards','/flashcards/'],[s.name]])}
  ${heading('FLASHCARD SET · AGES '+esc(s.ageLabel.toUpperCase()),s.h1,esc(s.lede))}
+ ${s.slug==='alphabet'?alphabetCenterBody():''}
  <section class="wrap fc-section"><span class="eyebrow">THE CARDS</span><h2>Every card in the set.</h2><p class="fc-hint">Each card has its own page with the picture, the words to say and one thing to try together. Tap any card to open it.</p>${grid}</section>
  <section class="wrap fc-section"><span class="eyebrow">HOW TO USE THESE CARDS</span><h2>Four ways that work.</h2><p class="fc-hint">You do not need a plan or a printer schedule. Pick one idea, try it for two minutes and see what happens.</p>${ideas}</section>
  <section class="wrap fc-section"><span class="eyebrow">PRINT &amp; DOWNLOAD</span><h2>Print the set, download a card.</h2><div class="fc2-actions"><a class="button" href="${s.lessonPath}">View the class these cards come from <span aria-hidden="true">↗</span></a>${printBtn}<a class="button" href="/flashcards/">All flashcard sets</a></div><p class="fc-hint">${s.downloadHint||'Every card page has its own download button with the full-size image.'}${s.printPath?' The full set has a print-ready page too.':' This set is printed straight from its class page.'}</p></section>
