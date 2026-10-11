@@ -43,6 +43,42 @@
     var img = mount.querySelector('img');
     if (!img) return;
 
+    /* ---- optional per-child save & restore (opt-in via data-wc-restore).
+       Coloring activity pages set it; every other mount on the school is
+       untouched. Strokes live in localStorage under 'kiddo-wc-art', one
+       slot per selected child, so each child gets their own picture back. ---- */
+    var restoreKey = mount.getAttribute('data-wc-restore') || null;
+    function loadRestored() {
+      if (!restoreKey) return null;
+      try {
+        var all = JSON.parse(localStorage.getItem('kiddo-wc-art')) || {};
+        var me = all[childKey()] || {};
+        var saved = me[restoreKey];
+        if (Array.isArray(saved) && saved.length) {
+          /* only strokes that look like strokes — never trust the store blindly */
+          return saved.filter(function (s) { return s && Array.isArray(s.pts) && s.pts.length; }).slice(-600);
+        }
+      } catch (e) { /* private mode or corrupt store: start clean */ }
+      return null;
+    }
+    function childKey() {
+      try { return JSON.parse(localStorage.getItem('kiddo-active')) || 'guest'; } catch (e) { return 'guest'; }
+    }
+    var persistTimer = null;
+    function persist() {
+      if (!restoreKey) return;
+      clearTimeout(persistTimer);
+      persistTimer = setTimeout(function () {
+        try {
+          var all = JSON.parse(localStorage.getItem('kiddo-wc-art')) || {};
+          var me = all[childKey()] = all[childKey()] || {};
+          if (strokes.length) me[restoreKey] = strokes.slice(-600);
+          else delete me[restoreKey];
+          localStorage.setItem('kiddo-wc-art', JSON.stringify(all));
+        } catch (e) { /* quota or private mode: drawing still works, just not restored */ }
+      }, 400);
+    }
+
     /* ---- stage: the image and, above it, the transparent canvas ---- */
     var stage = document.createElement('div');
     stage.className = 'wc-stage';
@@ -61,6 +97,8 @@
 
     /* ---- state: vector strokes, so undo is cheap and exact ---- */
     var strokes = [];   /* each: {color, size, erase, pts:[[x,y,p],...]} */
+    var restored = loadRestored();
+    if (restored) strokes = restored;   /* the child's picture comes back */
     var history = [];   /* snapshots of the strokes array (references only) */
     var live = null;    /* stroke in progress */
     var color = PURPLE;
@@ -77,6 +115,7 @@
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       for (var i = 0; i < strokes.length; i++) paintStroke(strokes[i]);
     }
+    redraw();   /* also paints a restored picture before the first stroke */
 
     function paintStroke(s) {
       var pts = s.pts;
@@ -147,6 +186,7 @@
       if (!live) return;
       live = null;
       redraw();
+      persist();
       if (e) e.preventDefault();
     }
 
@@ -221,6 +261,7 @@
       snapshot();
       strokes = [];
       redraw();
+      persist();
     });
 
     var status = document.createElement('p');
