@@ -1826,3 +1826,22 @@ h1 em,h2 em{color:#7b4b99}
 .fc-res{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:40px;align-items:center}
 .fc-res-art img{width:100%;max-width:340px;height:auto;display:block;margin:0 auto;border:1.5px solid var(--ink);box-shadow:6px 6px 0 var(--ink);background:#fff}
 @media(max-width:820px){.fc-res{grid-template-columns:1fr;gap:24px}.fc-res-art img{max-width:230px}}
+/* Learning Path flashcard lessons (Type 1): image left, teaching right. */
+.fcl{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:44px;align-items:start;padding-bottom:8px}
+.fcl-art{margin:0;position:sticky;top:24px}
+.fcl-art img{width:100%;max-width:400px;height:auto;display:block;margin:0 auto;border:1.5px solid var(--ink);box-shadow:6px 6px 0 var(--ink);background:#fff}
+.fcl-art figcaption{display:flex;flex-direction:column;gap:2px;margin-top:10px;text-align:center}
+.fcl-art figcaption strong{font-size:1.05rem}
+.fcl-art figcaption span{font-size:.8rem;color:var(--ink-60,#5b5348)}
+.fcl-copy{display:flex;flex-direction:column;gap:18px}
+.fcl-copy .fc2-do{margin:0}
+.fcl-steps ol{margin:10px 0 0;padding-left:22px;display:flex;flex-direction:column;gap:8px}
+.fcl-vocab{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 0}
+.fcl-chip{display:inline-block;padding:4px 12px;border:1.5px solid var(--ink);border-radius:999px;background:#fff;font-size:.85rem;font-weight:600}
+.fcl-say{border-left:4px solid var(--ink);padding-left:16px}
+.fcl-say p{font-size:1.05rem;font-weight:500}
+.fcl-safety{background:#fff6e8;border:1.5px dashed var(--ink);box-shadow:none}
+.fcl-pair{font-size:.92rem;color:var(--ink-60,#5b5348);border-top:1.5px solid var(--ink-20,#e7dfd2);padding-top:14px}
+.fc2-relrow .fcl-nav strong{display:block}
+.fc2-relrow .fcl-nav{min-width:min(320px,100%)}
+@media(max-width:820px){.fcl{grid-template-columns:1fr;gap:26px}.fcl-art{position:static}.fcl-art img{max-width:260px}}

@@ -1,9 +1,10 @@
-// Learning Path integrity (owner decisions, 2026-10-11):
+// Learning Path integrity (owner decisions, 2026-10-11 / 2026-10-12):
 //  - the displayed class sequence is unique, strictly increasing and exactly
-//    the approved set (1–22 + 25–32). Classes 23/24 are intentionally absent
-//    (23 never existed; 24 = printables-only by owner Option A) and Class 33
-//    is ON HOLD until the owner provides artwork — this lock means any future
-//    class addition is a deliberate, reviewed change.
+//    the approved set (1–22 + 25–33). Classes 23/24 are intentionally absent
+//    (23 never existed; 24 = printables-only by owner Option A). Class 33
+//    (Community Helpers & Our Neighborhood) joined on owner approval when its
+//    29 Canva flashcards landed on R2 — this lock means any future class
+//    addition is a deliberate, reviewed change.
 //  - every row link (class page, stage hub, flashcards, worksheets) resolves
 //    to a real built page.
 //  - the intro count word ("Thirty classes are ready now") must equal the
@@ -20,7 +21,7 @@ const lp=()=>read('learning-path/index.html');
 
 // The approved published sequence — Classes 1–22 then 25–32. Update ONLY
 // when the owner approves a new class (e.g. Class 33 after artwork lands).
-const APPROVED=[...Array(22).keys()].map(i=>i+1).concat([25,26,27,28,29,30,31,32]);
+const APPROVED=[...Array(22).keys()].map(i=>i+1).concat([25,26,27,28,29,30,31,32,33]);
 
 const WORDS={one:1,two:2,three:3,four:4,five:5,six:6,seven:7,eight:8,nine:9,ten:10,
  eleven:11,twelve:12,thirteen:13,fourteen:14,fifteen:15,sixteen:16,seventeen:17,

@@ -87,9 +87,21 @@ test('rule 2 · no class, stage hub or Learning Path page links an ACTIVITY to a
   const unexpected=offenders.filter(o=>{
     const [p,target]=o.split(' -> ');
     if(p.startsWith('preschool/3-years/alphabet-and-letter-sounds/letter-')&&target.startsWith('/flashcards/alphabet-'))return false;
+    if(/\/learn\/[a-z0-9-]+$/.test(p))return false; // /learn/ lessons policed below: exactly ONE card link each
     return true;
   });
   assert.deepEqual(unexpected,[],'activity links pointing at flashcards: '+unexpected.slice(0,8).join(' | '));
+  // Owner doctrine 2026-10-12: individual /learn/ teaching lessons may carry
+  // EXACTLY ONE "pairs with the flashcard" cross-link each (Part 6 internal
+  // linking between class, lessons and library). Anything more on a /learn/
+  // page is a grid and stays banned; class/hub pages themselves keep zero.
+  const learnCounts={};
+  for(const o of offenders){
+   const [p]=o.split(' -> ');
+   if(/\/learn\/[a-z0-9-]+$/.test(p))learnCounts[p]=(learnCounts[p]||0)+1;
+  }
+  const badLearn=Object.entries(learnCounts).filter(([,n])=>n!==1);
+  assert.deepEqual(badLearn,[],'each /learn/ lesson links exactly ONE library card: '+badLearn.map(([p,n])=>p+'='+n).join(', '));
   // and the allowance is not an escape hatch: the Class 32 page's ACTIVITY
   // grid (data-ls-card ribbons) must still open the /preschool/life-skills/
   // activity pages, never a flashcard URL — and Class 31's adventure shelves
