@@ -9,10 +9,10 @@
 //   3. picture-set cards (objects) use the object word the card really shows
 //   4. every card URL exists as a built page with a unique title + canonical
 //   5. set grids have no download buttons — the whole card is the link
-//   6. all 130 old wrong URLs are 301-redirected
+//   6. no redirects ship — the site is not indexed, only corrected URLs exist
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
-import {readFileSync} from 'node:fs';
+import {readFileSync, existsSync} from 'node:fs';
 import {join} from 'node:path';
 import {babySet} from '../src/flashcards-project.mjs';
 import {fcSets} from '../src/flashcards/index.mjs';
@@ -123,23 +123,23 @@ test('set grids are tap-through: whole card is the link, zero download buttons',
  }
 });
 
-test('all 130 old wrong card URLs are 301-redirected to the letter URLs',()=>{
+test('no redirects ship: only the corrected URLs exist (site not indexed)',()=>{
  const red=read('_redirects');
- let count=0;
+ assert.ok(!red.includes('/flashcards/'),'_redirects carries no flashcard rules');
+ // none of the 130 old wrong URLs ship as pages — the letter URLs replaced them
  for(const set of ['alphabet-uppercase','alphabet-lowercase','alphabet-letters','alphabet-sounds','alphabet-tracing']){
   for(let i=0;i<26;i++){
-   const from=`/flashcards/${set}/${OBJECT_SLUGS[i]}/`;
-   const to=`/flashcards/${set}/letter-${LETTERS[i]}/`;
-   assert.ok(red.includes(from+' '+to+' 301'),'redirect missing: '+from);
-   count++;
+   assert.ok(!existsSync(join(root,'flashcards',set,OBJECT_SLUGS[i])),
+    'old wrong URL must not ship: /flashcards/'+set+'/'+OBJECT_SLUGS[i]+'/');
   }
  }
- assert.equal(count,130,'130 redirects audited');
- // the objects set keeps its word URLs — they were always correct
- assert.ok(!red.includes('/flashcards/alphabet-objects/apple/'),'objects URLs are not redirected');
+ // internal links never point at an old wrong URL either
+ const hub=page('flashcards');
+ assert.ok(!/href="\/flashcards\/alphabet-(uppercase|lowercase|letters|sounds|tracing)\/(apple|ball|cat|dog|elephant|fish|grapes|house|ice-cream|juice|kite|lion|moon|nest|orange|pig|queen|rainbow|sun|turtle|umbrella|van|whale|xylophone|yo-yo|zebra)\/"/.test(hub),
+  'hub links only corrected URLs');
 });
 
-test('sitemap carries only the corrected URLs',()=>{
+test('sitemap carries only the corrected URLs (no old word URLs)',()=>{
  const xml=read('sitemap.xml');
  for(const bad of ['/flashcards/alphabet-uppercase/apple/','/flashcards/alphabet-lowercase/ball/','/flashcards/alphabet-tracing/zebra/'])
   assert.ok(!xml.includes(bad),'sitemap must not list old wrong URL '+bad);

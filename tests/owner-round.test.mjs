@@ -99,9 +99,9 @@ test('the same letter has a DIFFERENT page and file per letter set (the lowercas
   assert.equal(ob.slug, 'apple', 'objects set keeps the correct word slug');
 });
 
-test('the retired silhouette URL redirects to the objects set', () => {
+test('the retired silhouette URL is gone (no redirect, no page)', () => {
   const red = read('_redirects');
-  assert.match(red, /\/flashcards\/alphabet-silhouette\/\s+\/flashcards\/alphabet-objects\/\s+301/, '_redirects 301s the old URL');
+  assert.ok(!red.includes('/flashcards/alphabet-silhouette/'), 'no redirect rules ship — only corrected URLs exist');
   assert.ok(!existsSync(join(root, 'flashcards/alphabet-silhouette')), 'no stale silhouette page ships');
 });
 

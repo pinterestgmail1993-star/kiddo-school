@@ -273,9 +273,9 @@ for(const s of fcSets){
 }
 /* The six alphabet letter-set pages the owner asked for: uppercase,
    lowercase, big & little together, the objects (the owner's own flat-colour
-   picture uploads — the old coded silhouette set is retired and redirects
-   here), letter sounds and tracing. Each card also has its OWN page, so the
-   lowercase a no longer opens the same page as the uppercase a. */
+   picture uploads — the old coded silhouette set is retired, only corrected
+   URLs ship), letter sounds and tracing. Each card also has its OWN page, so
+   the lowercase a no longer opens the same page as the uppercase a. */
 for(const v of alphabetVariantSets){
  page(v.url,v.seoTitle,v.metaDescription,fcVariantSetPageBody(v,site+v.url),{schema:[ssBc(site,[['Flashcards','/flashcards/'],[v.name,v.url]])],ogImage:v.coverUrl,ogAlt:v.cover.alt});
  v.cards.forEach((c,i)=>{
