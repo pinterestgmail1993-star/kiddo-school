@@ -26,7 +26,7 @@ const page=p=>read(join(p,'index.html').replace(/\/\//g,'/'));
 const SLUGS=coloringPages.map(a=>a.slug);
 /* the exact bucket listing the owner posted — verified one image at a time */
 const R2_FILES=['apple-and-banana.webp','book-and-phone.webp','circle-and-beach-ball.webp','circle.webp','egg-shape.webp','heart.webp','oval.webp','pillow-and-square.webp','rectangle-and-bus.webp','rectangle.webp','square-and-gift-box.webp','square.webp','star.webp','tall-rectangle.webp','tall-triangle.webp','triangle-and-house.webp','triangle-sandwich-and-mountain.webp','triangle.webp','two-circles.webp','two-ovals.webp'];
-/* cover.webp also lives in the same R2 folder — it is the CATEGORY COVER,
+/* the category cover is drawn in code and ships from /assets/coloring/ —
    deliberately absent from R2_FILES and from the registry. */
 
 test('the registry is exactly the twenty owner-uploaded R2 files, each once',()=>{
@@ -34,7 +34,7 @@ test('the registry is exactly the twenty owner-uploaded R2 files, each once',()=
  assert.deepEqual([...coloringPages.map(a=>a.img)].sort(),[...R2_FILES].sort(),'every R2 file matched, none invented');
  assert.equal(new Set(SLUGS).size,20,'slugs unique');
  assert.equal(new Set(coloringPages.map(a=>a.img)).size,20,'images unique');
- assert.ok(!R2_FILES.includes(CP_COVER.file),'cover.webp stays out of the activity files');
+ assert.ok(!R2_FILES.includes(CP_COVER.file),'the coded cover stays out of the activity files');
  for(const a of coloringPages){
   assert.ok(a.img.endsWith('.webp')&&!a.img.includes('/'),'plain filename');
   assert.ok(a.alt&&a.alt.length>20,'honest alt text for '+a.slug);
@@ -110,31 +110,45 @@ test('Class 9 carries the Shape Coloring Fun section with 20 ribbon cards',()=>{
  assert.equal((ms.match(/data-coloring-card/g)||[]).length,0,'Class 10 untouched');
 });
 
-test('cover.webp is the category cover — never an activity',()=>{
- assert.equal(CP_COVER.file,'cover.webp');
- assert.ok(CP_COVER.url.endsWith('school/toddler/2-years/colors-and-shapes/cover.webp'));
+test('the coded cover is the category face — never an activity',()=>{
+ assert.equal(CP_COVER.file,'/assets/coloring/shapes-cover.webp');
+ assert.ok(existsSync(join('public',CP_COVER.file)),'the cover is drawn in code and ships from the repo');
+ const webp=readFileSync(join('public',CP_COVER.file));
+ assert.ok(webp.length>20000,'the cover is a real rendered image, not a stub');
+ assert.equal(webp.slice(0,4).toString('ascii'),'RIFF','RIFF container');
+ assert.equal(webp.slice(8,12).toString('ascii'),'WEBP','…in WebP format');
  // the hub card wears the cover
+ const site=JSON.parse(read('build-info.json')).siteUrl;
  const hub=page('coloring-pages');
  assert.ok(hub.includes(`src="${CP_COVER.url}"`),'hub card uses the cover');
+ assert.ok(hub.includes(`<meta property="og:image" content="${site}${CP_COVER.url}">`),'hub og:image is the absolute cover URL');
  // the category page wears the cover as its hero AND keeps exactly 20 grid cards
  const cat=page('coloring-pages/shapes');
  assert.ok(cat.includes(`class="lesson-cover"`),'category hero uses the cover figure');
  assert.ok(cat.includes(`src="${CP_COVER.url}"`),'category hero uses the cover');
+ assert.ok(cat.includes(`<meta property="og:image" content="${site}${CP_COVER.url}">`),'category og:image is the absolute cover URL');
  assert.equal((cat.match(/class="ws-card" href="/g)||[]).length,20,'grid still lists exactly the 20 activities');
  assert.ok(!/class="ws-card" href="[^"]*cover\//.test(cat),'no grid card points at a cover page');
  // no activity or printable page uses the cover as its sheet
  for(const a of coloringPages){
   const act=page('toddler/2-years/colors-and-shapes/coloring/'+a.slug);
   const prn=page('coloring-pages/shapes/'+a.slug);
-  assert.ok(!act.includes('cover.webp'),'activity '+a.slug+' never touches the cover');
-  assert.ok(!prn.includes('cover.webp'),'printable '+a.slug+' never touches the cover');
+  assert.ok(!act.includes('shapes-cover'),'activity '+a.slug+' never touches the cover');
+  assert.ok(!prn.includes('shapes-cover'),'printable '+a.slug+' never touches the cover');
  }
 });
 
-test('cover.webp is really on the bucket (pre-deploy gate — run with CP_COVER_LIVE=1)',{skip:process.env.CP_COVER_LIVE==='1'?false:'offline suite'},async ()=>{
- const r=await fetch(CP_COVER.url,{method:'HEAD'});
- assert.equal(r.status,200,'cover.webp must be publicly reachable before deploy: '+CP_COVER.url);
- assert.ok((r.headers.get('content-type')||'').includes('image'),'cover.webp must be served as an image');
+test('the coloring tools ship the full set: pencil, pen, fill, sizes, eraser',()=>{
+ const js=read('assets/write-color.js');
+ for(const t of ["'Pencil'","'Pen'","'Fill'","'Eraser'","'Undo'","'Redo'","'Clear'","'Save my work'"])assert.ok(js.includes(t),'tool button '+t+' exists');
+ assert.ok(js.includes('wc-fill'),'a dedicated fill layer sits under the strokes');
+ assert.ok(js.includes('wc-size')&&js.includes('Thin')&&js.includes('Medium')&&js.includes('Thick'),'three line sizes');
+ assert.ok(js.includes('getImageData')&&js.includes('putImageData'),'fill really reads and paints pixels');
+ const css=read('assets/style.css');
+ assert.match(css,/\.wc-fill\{[^}]*pointer-events:none/,'the fill layer never steals the pointer');
+ assert.match(css,/\.wc-size \.wc-dot\[data-size="3\.2"\]/,'the thick dot renders');
+ const act=page('toddler/2-years/colors-and-shapes/coloring/circle');
+ assert.match(act,/Pencil, pen, fill, three line sizes/,'the pencil-case copy names the full set');
 });
 
 test('the header link works everywhere and is current on category pages',()=>{

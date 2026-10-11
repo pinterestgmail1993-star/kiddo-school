@@ -30,13 +30,14 @@ export const CP_LIB=CP_HUB+'shapes/';
 
 export const W=1545,H=2000; /* every sheet, probed from the real files */
 
-/* The owner's category cover, uploaded alongside the twenty sheets.
-   It is the FACE of the Shapes category (hub card, category hero, og:image)
-   and NEVER an activity: it stays out of the registry, the grids, the
-   prev/next chains and every individual page. */
-export const CP_COVER={file:'cover.webp',w:1545,h:2000,
- alt:'The cover of the Shapes coloring pages collection — twenty free printable shape coloring pages for toddlers.',
- get url(){return CP_BASE+this.file;}};
+/* The category cover — drawn in code (PIL) in the school's own palette and
+   shipped from this repo (1545x2000, the folder's standard size). It is the
+   FACE of the Shapes category (hub card, category hero, og:image) and NEVER
+   an activity: it stays out of the registry, the grids, the prev/next
+   chains and every individual page. */
+export const CP_COVER={file:'/assets/coloring/shapes-cover.webp',w:1545,h:2000,
+ alt:'The Shapes coloring pages cover: five bold-outlined shapes — a circle, a window square, a triangle, a star and a heart — with crayon dots in the Kiddo colors.',
+ get url(){return this.file;}};
 
 const G=o=>o;
 export const coloringPages=[
@@ -354,7 +355,7 @@ export function coloringActivityBody(a,site){
   </div>
   <aside class="fc2-rail" aria-label="Instructions, drawing tools and saved progress">
    <section class="fc2-block fc2-first-block"><span class="eyebrow">HOW TO DO IT</span><h2>Three little steps.</h2><ol class="fc-steps">${stepsHtml}</ol><p class="fc-hint">Ask a grown-up to read the steps aloud the first time. After that, you know just what to do.</p></section>
-   <section class="fc2-block" id="cp-tools" aria-label="Drawing tools"><span class="eyebrow">YOUR PENCIL CASE</span><h2>Pick your tools.</h2><p class="fc-hint">Pencil, nine crayons, an eraser, undo, redo and clear — the tools appear right here and work on the picture. Save keeps your finished art and remembers it for next time.</p></section>
+   <section class="fc2-block" id="cp-tools" aria-label="Drawing tools"><span class="eyebrow">YOUR PENCIL CASE</span><h2>Pick your tools.</h2><p class="fc-hint">Pencil, pen, fill, three line sizes, nine crayons, an eraser, undo, redo and clear — the tools appear right here and work on the picture. Fill floods a region with your color and stops at the sheet's own bold lines. Save keeps your finished art and remembers it for next time.</p></section>
    <section class="fc2-block" data-cp-progress-block><span class="eyebrow">MY PROGRESS</span><h2>Save it to keep it.</h2><p class="ls-progress-line" data-cp-progress aria-live="polite">This page is cleared for you the moment you save your finished picture. Nothing counts until then — opening the page is just opening the door.</p><p class="ls-progress-done" data-cp-done hidden><strong>Cleared!</strong> Your colored picture is saved on this device for your child, and the ribbon is on in <a href="${CP_CLASS_PATH}">Class 9</a>. Come back any time — your colors will be waiting.</p></section>
    ${shareBlock('SHARE THIS ACTIVITY','Pass it on.',pageUrl,`${a.title} coloring page — free from Kiddo.school`,false)}
    <section class="fc2-block"><span class="eyebrow">PREFER PAPER?</span><h2>Print the twin.</h2><p class="fc-hint">The same picture lives in the Coloring Pages library with its download and print buttons: <a href="${CP_LIB}${a.slug}/">/coloring-pages/shapes/${a.slug}/</a>. Crayons beat styluses sometimes.</p></section>
