@@ -77,15 +77,27 @@ test('rule 2 · no class, stage hub or Learning Path page links an ACTIVITY to a
         offenders.push(p+' -> '+m[1]);
     }
   }
-  // The ONLY allowed cross-links are the letter activity pages' PAPER RESOURCES
-  // block (flashcards as optional paper, owner rule) — everything else fails.
-  const allowed=offenders.filter(([p])=>false);
+  // The ONLY allowed cross-links are:
+  //  a) the letter activity pages' PAPER RESOURCES block (flashcards as
+  //     optional paper, owner rule);
+  //  b) the Class 32 page's TEACH section linking its OWN set's card pages —
+  //     the owner's explicit instruction: the class page teaches parents with
+  //     the flashcards and links each individual card ("Open the flashcard").
+  //     Everything else still fails.
   const unexpected=offenders.filter(o=>{
     const [p,target]=o.split(' -> ');
-    return !(p.startsWith('preschool/3-years/alphabet-and-letter-sounds/letter-')&&target.startsWith('/flashcards/alphabet-'));
+    if(p.startsWith('preschool/3-years/alphabet-and-letter-sounds/letter-')&&target.startsWith('/flashcards/alphabet-'))return false;
+    if(p==='preschool/4-years/life-skills-and-good-habits'&&target.startsWith('/flashcards/life-skills-and-good-habits/'))return false;
+    return true;
   });
   assert.deepEqual(unexpected,[],'activity links pointing at flashcards: '+unexpected.slice(0,8).join(' | '));
-  assert.ok(allowed.length===0);
+  // and the allowance is not an escape hatch: the Class 32 page's ACTIVITY
+  // grid (data-ls-card ribbons) must still open the /preschool/life-skills/
+  // activity pages, never a flashcard URL.
+  const cls=read('preschool/4-years/life-skills-and-good-habits');
+  const activityHrefs=[...cls.matchAll(/<a class="sa-card" href="([^"]+)"/g)].map(m=>m[1]);
+  assert.ok(activityHrefs.length>0,'Class 32 activity grid present');
+  assert.ok(activityHrefs.every(h=>h.startsWith('/preschool/life-skills/')),'Class 32 activity cards open activities, not flashcards');
 });
 
 test('rule 2b · the alphabet class opens letter ACTIVITIES at their own Learning Path URLs',()=>{

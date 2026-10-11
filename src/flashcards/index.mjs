@@ -22,6 +22,7 @@ import * as opData from './data-opposites.mjs';
 import * as amData from './data-animals.mjs';
 import * as bpData from './data-body-parts.mjs';
 import * as fvData from './data-fruits-vegetables.mjs';
+import * as lsData from './data-life-skills-and-good-habits.mjs';
 import {fvMeta,fvCardContent,cfoMeta,cfoCardContent,fwftMeta,fwftCardContent} from './data-baby-stages.mjs';
 import {aeoMeta,aeoCardContent,fabMeta,fabCardContent,fwfhMeta,fwfhCardContent} from './data-explorer-toddler.mjs';
 import {lessonsBase,fvLesson,cfoLesson,fwftLesson,aeoLesson,fabLesson,fwfhLesson} from '../lessons.mjs';
@@ -98,7 +99,12 @@ const SOURCES=[
  // Age 3 Class 8: sixteen foods — eight fruits, eight vegetables. The folder
  // has no cover file, so the strawberry card fronts the set (colors-class
  // precedent). Each card has its own page.
- [{meta:fvData.fruitsMeta,cards:fvData.fruitsCardContent},fvData.fruitsLesson]
+ [{meta:fvData.fruitsMeta,cards:fvData.fruitsCardContent},fvData.fruitsLesson],
+ // Preschool Class 32: twenty-eight life-skills cards from the owner's Canva
+ // uploads in the class's own R2 folder (self-contained lesson object — the
+ // class page predates the lesson system). cover.webp fronts the set and is
+ // never counted as a card.
+ [lsData,lsData.lesson]
 ];
 
 function buildSet([data,lesson]){
@@ -138,6 +144,7 @@ function buildSet([data,lesson]){
   relatedSlugs:data.meta.relatedSets||[],
   lessonPath:lesson.path,
   lessonTitle:lesson.seoTitle||lesson.title,
+  lessonBlurb:data.meta.lessonBlurb||null,
   base,
   // Cover dims come from the lesson's own probe (vehicles 2000×1294 and
   // emotions 2000×1414 are LANDSCAPE — hardcoding 1414×2000 here is what
@@ -229,7 +236,7 @@ export function fcCardPageBody(set,card,ctx){
   ?`<a class="button" href="${card.img}" download="${dlName(card.file)}.webp">Download splash <span aria-hidden="true">↓</span></a><a class="button" href="${card.img2}" download="${dlName(card.img2.split('/').pop())}.webp">Download picture <span aria-hidden="true">↓</span></a>`
   :`<a class="button" href="${card.img}" download="${esc(card.word.toLowerCase().replace(/[^a-z0-9]+/g,'-'))}.webp">Download card <span aria-hidden="true">↓</span></a>`}<button type="button" class="button" data-tc-print-view>Print this card</button>${set.printPath?`<a class="button" href="${set.printPath}">Print full set</a>`:''}<a class="button" href="${set.url}">View full set</a></div>`;
  const share=`<div class="fc2-block fc2-share-block"><span class="eyebrow">SHARE THIS CARD</span><h2>Pass it on.</h2><div class="fc2-share"><a class="fc2-share-btn" href="https://twitter.com/intent/tweet?url=${enc(pageUrl)}&text=${enc(shareTitle)}" target="_blank" rel="noopener" aria-label="Share this card on X">X</a><a class="fc2-share-btn" href="https://www.facebook.com/sharer/sharer.php?u=${enc(pageUrl)}" target="_blank" rel="noopener" aria-label="Share this card on Facebook">Facebook</a><a class="fc2-share-btn" href="https://wa.me/?text=${enc(shareTitle+' '+pageUrl)}" target="_blank" rel="noopener" aria-label="Share this card on WhatsApp">WhatsApp</a><a class="fc2-share-btn" href="https://pinterest.com/pin/create/button/?url=${enc(pageUrl)}&media=${enc(card.img)}&description=${enc(shareTitle)}" target="_blank" rel="noopener" aria-label="Save this card on Pinterest">Pinterest</a><button type="button" class="fc2-share-btn" data-fc-copy>Copy link</button></div><p class="fc-hint">Share buttons open in a new tab. The copy button copies this page&rsquo;s address — nothing is tracked.</p></div>`;
- const lesson=set.lessonPath?`<p class="fc2-lesson">These cards come from the <a href="${set.lessonPath}">${esc(set.lessonTitle)}</a> — the full class with all its cards, sounds and printable sheets.</p>`:'';
+ const lesson=set.lessonPath?`<p class="fc2-lesson">These cards come from the <a href="${set.lessonPath}">${esc(set.lessonTitle)}</a>${set.lessonBlurb?` — ${esc(set.lessonBlurb)}`:' — the full class with all its cards, sounds and printable sheets.'}</p>`:'';
  const relGrid=related&&related.length?`<section class="wrap fc-section"><span class="eyebrow">RELATED CARDS</span><h2>More cards to try.</h2><p class="fc-hint">${esc(ctx.relatedHint||'Nearby cards from this set and its closest friends.')}</p><div class="fc2-cards">${related.map(r=>`<a class="fc-card fc2-cardlink" href="${r.card.url}"><span class="fc2-cardimg"><img src="${r.card.img}" width="${r.card.w}" height="${r.card.h}" alt="${esc(r.card.alt)}" loading="lazy"></span><span class="fc2-cardword"><strong>${esc(r.card.word)}</strong><span>From ${esc(r.setName)}</span></span></a>`).join('')}</div></section>`:'';
  return `${crumbNav([['Flashcards','/flashcards/'],[set.name,set.url],[card.word]])}
  <div class="page-heading wrap"><span class="eyebrow">FLASHCARD · ${esc(set.name.toUpperCase())} · AGES ${esc(set.ageLabel.toUpperCase())}</span><h1>${card.numeral?`Number ${esc(card.numeral)} Flashcard — ${esc(card.word)} for ${esc(noun)}`:card.letter?`${esc(card.word)} Flashcard — Letter ${esc(card.letter.toUpperCase())} for ${esc(noun)}`:`${esc(card.word)} Flashcard for ${esc(noun)}`}</h1><p>${esc(card.intro)}</p></div>

@@ -38,8 +38,8 @@ test('black and white baby cards page shows flashcards, stages grid, guide and s
  assert.ok(urls.length>=16,'set page should embed the fifteen flashcards plus the parents guide');
 });
 
-test('flashcard data: twenty-four flashcard sets (every learning-path class 1-22 covered), every card complete and linked to its real lesson',()=>{
- assert.equal(fcSets.length,24);
+test('flashcard data: twenty-five flashcard sets (every learning-path class 1-22 covered, plus Class 32 life skills), every card complete and linked to its real lesson',()=>{
+ assert.equal(fcSets.length,25);
  for(const s of fcSets){
   assert.ok(s.cards.length>=10,`${s.slug} has ${s.cards.length} cards`);
   assert.ok(existsSync(join(root,s.url.slice(1),'index.html')),`${s.url} missing`);
@@ -48,7 +48,9 @@ test('flashcard data: twenty-four flashcard sets (every learning-path class 1-22
    assert.ok(c.say.length>5,`${s.slug}/${c.slug} missing say line`);
    assert.ok(c.try.length>40,`${s.slug}/${c.slug} missing try activity`);
    assert.ok(c.note.length>40,`${s.slug}/${c.slug} missing parent note`);
-   assert.match(c.img,/https:\/\/pub-f2fcb7c9b45a496cbeefef18dbba0ec0\.r2\.dev\/flashcards\//);
+   // Card art lives in the set's own R2 folder: /flashcards/ for the lesson
+   // sets, /school/ for Class 32 (the owner's upload location — never moved).
+   assert.match(c.img,/https:\/\/pub-f2fcb7c9b45a496cbeefef18dbba0ec0\.r2\.dev\/(flashcards|school)\//);
   }
  }
 });
@@ -103,7 +105,7 @@ test('card pages: unique titles and descriptions, say/try/note, download, prev/n
   assert.ok(!html.includes('aggregateRating'),'no fabricated ratings schema');
   assert.ok(!html.includes('★★★★★</span>'),'no fabricated review text in HTML');
  }
- assert.equal(downloads,357);
+ assert.equal(downloads,385);
 });
 
 test('library: every set is listed, baby collection included, no orphan sets',()=>{

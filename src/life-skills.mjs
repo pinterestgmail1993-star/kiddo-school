@@ -20,6 +20,9 @@
 // the child's own marked-up sheet does.
 import {R2,crumbNav,esc} from './adventure-kit.mjs';
 import {fcCommunityMount} from './flashcards/index.mjs';
+import * as lsFlash from './flashcards/data-life-skills-and-good-habits.mjs';
+
+export const FC_SET_URL='/flashcards/life-skills-and-good-habits/';
 
 export const LS_BASE=R2+'school/life-skills/adventures/';
 export const LS_CLASS_PATH='/preschool/4-years/life-skills-and-good-habits/';
@@ -507,6 +510,16 @@ export function lifeSkillsClassBody(){
   <p class="lesson-lede">Every activity opens right here on the site: the sheet sits on the left and your child writes, circles, traces and draws straight on top of it. The instructions sit beside them in grown-up read-aloud words. Their finished work saves as a real picture they can keep.</p>
   <div class="lesson-start"><a class="button" href="${LS_ACT_PATH}wash-your-hands/">Start the first activity <span aria-hidden="true">→</span></a><span class="lesson-start-hint">One or two sheets per sitting is a full class.</span></div>
  </div></article>
+ <section class="wrap lesson-section" id="flashcards" aria-label="Teaching the 28 life skills with flashcards">
+  <span class="eyebrow">TEACH · THE 28 LIFE SKILLS</span>
+  <h2>Teach every skill with its flashcard.</h2>
+  <p class="lesson-copy">Twenty-eight everyday skills, twenty-eight cards — one skill per card, from hand-washing and teeth to manners, patience and the safety rules. The method is the same every time: show the card and name the skill, say the words together (every card page has a short parent script), then practise the real thing the same day — the sink, the shoe rack and the car seat are the show; the card is the rehearsal. Below is every skill with its how-to for grown-ups, or open the whole set in the <a href="${FC_SET_URL}">Life Skills &amp; Good Habits flashcard library</a>. One skill a week is plenty — twenty-eight cards is a school year of good habits.</p>
+  <div class="ws-grid">${lsFlash.lesson.cards.map((c,i)=>{const slug=c.file.replace(/\.webp$/,'');const d=lsFlash.cards[slug];return `<a class="ws-card" href="${FC_SET_URL}${slug}/">
+   <span class="ws-card-art"><img src="${esc(lsFlash.lesson.r2Base+c.file)}" width="707" height="1000" alt="Flashcard used to teach ${esc(d.word)} to a four-year-old: ${esc(d.teach)}" loading="lazy"></span>
+   <span class="ws-card-body"><strong>${esc(d.word)}</strong><span class="ws-card-meta"><span>Ages 4–5</span><span>Card ${i+1} of 28</span><span>Flashcard</span></span><span class="ws-card-desc">${esc(d.teach)}</span></span>
+   <span class="ws-card-open">Open the flashcard <span aria-hidden="true">→</span></span>
+  </a>`;}).join('')}</div>
+ </section>
  <section class="wrap lesson-section" id="activities" aria-label="The life skills activities">
   <span class="eyebrow">DO · THE LIFE SKILLS ACTIVITIES</span>
   <h2>Real sheets, done right here.</h2>
