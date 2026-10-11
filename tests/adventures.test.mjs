@@ -44,7 +44,7 @@ test('all 18 shape adventure pages exist, unique, each drawing on its own artwor
   assert.ok(html.includes(`<h1>${g.h1}</h1>`),'h1 '+g.slug);
   assert.ok(html.includes('rel="canonical" href="https://kiddo-school.pages.dev'+p+'"'),'canonical '+g.slug);
   // the owner's spec: original Canva image + transparent drawing layer
-  assert.ok(html.includes(`data-wc-src="${SHAPE_BASE+g.img}"`),'drawing mount over the artwork '+g.slug);
+  assert.ok(html.includes(`data-wc-src="${SHAPE_BASE+g.img}?draw=1"`),'drawing mount over the artwork '+g.slug);
   const art=artFor('shapes/'+g.slug,SHAPE_BASE+g.img);
   assert.ok(html.includes(`data-wc-w="${art.w}"`)&&html.includes(`data-wc-h="${art.h}"`),'true pixel dims '+g.slug);
   assert.ok(html.includes(`data-ia-band="shapes"`)&&html.includes(`data-ia-slug="${g.slug}"`),'progress band '+g.slug);
@@ -83,7 +83,7 @@ test('all 18 color activity pages exist, each drawing on its own artwork',()=>{
   const title=html.match(/<title>(.*?)<\/title>/)[1];
   assert.ok(!seen.has(title),'unique title '+a.slug);seen.add(title);
   assert.ok(html.includes(`<h1>${a.h1}</h1>`),'h1 '+a.slug);
-  assert.ok(html.includes(`data-wc-src="${COLOR_BASE+a.img}"`),'drawing mount '+a.slug);
+  assert.ok(html.includes(`data-wc-src="${COLOR_BASE+a.img}?draw=1"`),'drawing mount '+a.slug);
   const art=artFor('colors/'+a.slug,COLOR_BASE+a.img);
   assert.ok(html.includes(`data-wc-w="${art.w}"`)&&html.includes(`data-wc-h="${art.h}"`),'true pixel dims '+a.slug);
   assert.ok(html.includes('data-ia-band="colors"'),'progress band '+a.slug);
@@ -119,7 +119,7 @@ test('all 30 writing pages exist, each drawing on its own artwork, with honest c
   const title=html.match(/<title>(.*?)<\/title>/)[1];
   assert.ok(!seen.has(title),'unique title '+a.slug);seen.add(title);
   assert.ok(html.includes(`<h1>${a.h1}</h1>`),'h1 '+a.slug);
-  assert.ok(html.includes(`data-wc-src="${WRITING_BASE}${a.img}"`),'drawing mount '+a.slug);
+  assert.ok(html.includes(`data-wc-src="${WRITING_BASE}${a.img}?draw=1"`),'drawing mount '+a.slug);
   const art=artFor('writing/'+a.slug,WRITING_BASE+a.img);
   assert.ok(html.includes(`data-wc-w="${art.w}"`)&&html.includes(`data-wc-h="${art.h}"`),'true pixel dims '+a.slug);
   assert.ok(html.includes('data-ia-band="writing"'),'progress band '+a.slug);

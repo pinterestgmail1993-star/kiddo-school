@@ -19,7 +19,19 @@
 // This module only renders the markup it mounts on.
 import {esc} from './adventure-kit.mjs';
 
+/* The drawing sheet carries a dedicated cache key ('?draw=1'). The same
+   artwork URL is also shown without crossorigin elsewhere (page hero,
+   library thumbnails, related cards); a browser caches that no-CORS reply
+   — R2 only sends Access-Control-Allow-Origin when the request carries an
+   Origin — and then reuses it for the sheet's crossorigin request, which
+   fails the CORS check. write-color's fallback would strip crossorigin and
+   reload, tainting the canvas, and "Save my work" could only save the
+   strokes without the artwork underneath. A URL requested ONLY in CORS
+   mode can never hit such a poisoned cache entry. */
+const sheetUrl = a => a.imgUrl + '?draw=1';
+
 export function imageActivitySection(a){
+ const draw = sheetUrl(a);
  return `<section class="wrap lesson-section" id="play" aria-label="Draw on ${esc(a.title)}">
   <span class="eyebrow">PLAY · ${esc(a.skill).toUpperCase()}</span>
   <h2>${esc(a.title)}</h2>
@@ -27,8 +39,8 @@ export function imageActivitySection(a){
   <div class="fc2-dual ia-dual">
    <div class="fc2-main">
     <section class="wc-section" aria-label="The adventure picture — draw right on it">
-     <div class="wc-mount" data-ia-activity data-ia-band="${esc(a.band)}" data-ia-slug="${esc(a.slug)}" data-wc data-wc-src="${esc(a.imgUrl)}" data-wc-name="${esc(a.title)} adventure sheet" data-wc-w="${a.w}" data-wc-h="${a.h}" data-wc-toolbar="#ia-tools">
-      <figure class="fc2-hero ws-hero-art ia-sheet" style="--iar:${(a.w/a.h).toFixed(4)}"><img src="${esc(a.imgUrl)}" width="${a.w}" height="${a.h}" alt="${esc(a.alt)}" fetchpriority="high" crossorigin="anonymous"></figure>
+     <div class="wc-mount" data-ia-activity data-ia-band="${esc(a.band)}" data-ia-slug="${esc(a.slug)}" data-wc data-wc-src="${esc(draw)}" data-wc-name="${esc(a.title)} adventure sheet" data-wc-w="${a.w}" data-wc-h="${a.h}" data-wc-toolbar="#ia-tools">
+      <figure class="fc2-hero ws-hero-art ia-sheet" style="--iar:${(a.w/a.h).toFixed(4)}"><img src="${esc(draw)}" width="${a.w}" height="${a.h}" alt="${esc(a.alt)}" fetchpriority="high" crossorigin="anonymous"></figure>
      </div>
      <noscript><p class="sa-noscript">Drawing on the picture needs JavaScript. Everything else on this page works without it — and the <a href="${esc(a.wsPath)}">matching worksheet</a> brings this adventure to paper.</p></noscript>
     </section>

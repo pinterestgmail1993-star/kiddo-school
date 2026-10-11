@@ -126,7 +126,7 @@ test('30 activity routes ship with unique SEO, the drawing layer and the art con
   const p='/preschool/science/adventures/'+g.slug+'/';
   const html=page(p);
   assert.ok(html.length>3000,p+' has a page');
-  assert.ok(html.includes(`data-wc-src="${SCIENCE_BASE+g.img}"`),p+' draws right on its artwork');
+  assert.ok(html.includes(`data-wc-src="${SCIENCE_BASE+g.img}?draw=1"`),p+' draws right on its artwork');
   assert.ok(html.includes('data-ia-band="science"'),p+' carries the science progress band');
   assert.ok(html.includes('/assets/image-adventure.js'),p+' loads the progress engine');
   assert.ok(html.includes('id="ia-tools"'),p+' has the tools rail');
