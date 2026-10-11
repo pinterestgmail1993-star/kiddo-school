@@ -281,7 +281,7 @@ for(const v of alphabetVariantSets){
  v.cards.forEach((c,i)=>{
   const next=v.cards[(i+1)%v.cards.length];
   const prev=v.cards[(i-1+v.cards.length)%v.cards.length];
-  page(c.url,c.cardTitle,c.metaDescription,fcVariantCardPageBody(v,c,{prev,next,site}),{schema:[ssBc(site,[['Flashcards','/flashcards/'],[v.name,v.url],[c.word,c.url]])],ogImage:c.img,ogAlt:c.alt});
+  page(c.url,c.cardTitle,c.metaDescription,fcVariantCardPageBody(v,c,{prev,next,site}),{schema:[ssBc(site,[['Flashcards','/flashcards/'],[v.name,v.url],[c.label,c.url]])],ogImage:c.img,ogAlt:c.alt});
  });
 }
 /* ---- Preschool (Age 3): the next stage — hub, Age 3 stage, first class + printable cards. ---- */

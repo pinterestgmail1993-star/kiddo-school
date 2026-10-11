@@ -49,7 +49,7 @@ test('every flashcard card page mounts the drawing layer too', () => {
   }
 });
 
-test('the six alphabet letter sets exist with clean URLs, real R2 files and per-card downloads', () => {
+test('the six alphabet letter sets exist with clean URLs, real R2 files and tap-through grids', () => {
   assert.equal(alphabetVariantSets.length, 6, 'six letter sets: uppercase, lowercase, pair, objects, sounds, tracing');
   const slugs = alphabetVariantSets.map(v => v.slug);
   for (const s of ['alphabet-uppercase', 'alphabet-lowercase', 'alphabet-letters', 'alphabet-objects', 'alphabet-sounds', 'alphabet-tracing'])
@@ -57,8 +57,8 @@ test('the six alphabet letter sets exist with clean URLs, real R2 files and per-
   assert.ok(!slugs.includes('alphabet-silhouette'), 'the coded silhouette set is retired');
   for (const v of alphabetVariantSets) {
     const html = page(v.url.slice(1));
-    assert.equal((html.match(/class="fcv-card"/g) || []).length, 26, v.url + ' shows all 26 cards');
-    assert.equal((html.match(/download="kiddo-alphabet-/g) || []).length, 26, v.url + ' every card has its own download');
+    assert.equal((html.match(/class="fcv-card" href="/g) || []).length, 26, v.url + ' shows all 26 cards as whole-card links');
+    assert.equal((html.match(/data-fc-dl/g) || []).length, 0, v.url + ' grid has no download buttons (they live on the card pages)');
     assert.ok(html.includes('SHARE THIS SET'), v.url + ' has sharing buttons');
     assert.ok(!html.includes('/assets/fc-variants/'), v.url + ' uses no coded cut images');
     for (const c of v.cards) {
@@ -66,6 +66,7 @@ test('the six alphabet letter sets exist with clean URLs, real R2 files and per-
       const cardHtml = page(c.url.slice(1));
       assert.ok(cardHtml.includes('src="' + c.img + '"'), c.url + ' shows the same real file');
       assert.ok(cardHtml.includes('data-fc-dl'), c.url + ' download is wired for real saving');
+      assert.ok(cardHtml.includes('data-tc-print-view'), c.url + ' has a print button');
       assert.ok(cardHtml.includes('Draw on this card'), c.url + ' has the drawing layer');
     }
     const xml = read('sitemap.xml');
@@ -73,24 +74,29 @@ test('the six alphabet letter sets exist with clean URLs, real R2 files and per-
   }
 });
 
-test('the same word has a DIFFERENT page and file per letter set (the lowercase-a bug)', () => {
+test('the same letter has a DIFFERENT page and file per letter set (the lowercase-a bug)', () => {
   const bySlug = Object.fromEntries(alphabetVariantSets.map(v => [v.slug, v]));
   const urls = new Set(), imgs = new Set();
   for (const s of alphabetVariantSets) {
-    const c = s.cards[0]; // apple
+    const c = s.cards[0]; // letter a
     urls.add(c.url); imgs.add(c.img);
   }
-  assert.equal(urls.size, 6, 'six distinct card pages for the same word');
-  assert.equal(imgs.size, 6, 'six distinct images for the same word');
+  assert.equal(urls.size, 6, 'six distinct card pages for the same letter');
+  assert.equal(imgs.size, 6, 'six distinct images for the same letter');
   const lc = bySlug['alphabet-lowercase'].cards[0], up = bySlug['alphabet-uppercase'].cards[0];
-  assert.notEqual(lc.url, up.url, 'lowercase apple page ≠ uppercase apple page');
-  assert.notEqual(lc.img, up.img, 'lowercase apple image ≠ uppercase apple image');
+  assert.equal(lc.url, '/flashcards/alphabet-lowercase/letter-a/', 'lowercase a page uses the letter slug');
+  assert.equal(up.url, '/flashcards/alphabet-uppercase/letter-a/', 'uppercase A page uses the letter slug');
+  assert.notEqual(lc.url, up.url, 'lowercase a page ≠ uppercase A page');
+  assert.notEqual(lc.img, up.img, 'lowercase a image ≠ uppercase A image');
   assert.ok(lc.img.includes('/lowercase.png'), 'lowercase set serves lowercase.png');
   assert.ok(up.img.includes('/uppercase.png'), 'uppercase set serves uppercase.png');
+  assert.ok(!up.cardTitle.includes('Apple'), 'uppercase A page is not titled Apple');
+  assert.ok(up.cardTitle.includes('Uppercase Letter A'), 'uppercase A page is titled Uppercase Letter A');
   const tr = bySlug['alphabet-tracing'].cards[0];
   assert.ok(tr.img.includes('/tracing.png'), 'tracing set serves tracing.png');
   const ob = bySlug['alphabet-objects'].cards[0];
   assert.ok(/\/(object|picture)\.png$/.test(ob.img), 'objects set serves the owner object/picture file');
+  assert.equal(ob.slug, 'apple', 'objects set keeps the correct word slug');
 });
 
 test('the retired silhouette URL redirects to the objects set', () => {
