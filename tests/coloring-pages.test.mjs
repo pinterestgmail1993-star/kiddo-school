@@ -110,6 +110,13 @@ test('Class 9 carries the Shape Coloring Fun section with 20 ribbon cards',()=>{
  assert.equal((ms.match(/data-coloring-card/g)||[]).length,0,'Class 10 untouched');
 });
 
+test('the Learning Path links Coloring Pages from the Class 9 row only',()=>{
+ const lp=page('learning-path');
+ assert.ok(lp.includes(' · Coloring Pages: <a href="/coloring-pages/shapes/">Shapes</a></p>'),'Class 9 row carries the coloring link');
+ assert.equal((lp.match(/href="\/coloring-pages\/shapes\//g)||[]).length,1,'exactly one coloring link on the path');
+ assert.equal((lp.match(/Coloring Pages: <a/g)||[]).length,1,'no other row gained a coloring link');
+});
+
 test('the coded cover is the category face — never an activity',()=>{
  assert.equal(CP_COVER.file,'/assets/coloring/shapes-cover.webp');
  assert.ok(existsSync(join('public',CP_COVER.file)),'the cover is drawn in code and ships from the repo');
