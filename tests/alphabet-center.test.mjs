@@ -205,11 +205,15 @@ test('cupboard: the alphabet shelf leads /activities/ and /search/ with all four
  }
 });
 
-test('Class 15: the lesson opens with A, B, C and teaches solving the sheets',()=>{
+test('Class 15: the lesson opens with all 26 letters, each card linking its own activity page',()=>{
  const html=page('/preschool/3-years/alphabet-and-letter-sounds/');
- assert.match(html,/TODAY’S LETTERS/,'ABC intro section');
- assert.match(html,/Start with A, B and C\./,'intro heading');
- for(const l of ['a','b','c'])assert.ok(html.includes(R2+l+'/sound.png'),'ABC card for '+l.toUpperCase());
+ assert.match(html,/id="todays-letters"/,'ABC intro section');
+ assert.match(html,/All twenty-six letters, A to Z\./,'intro heading');
+ for(const l of LETTERS){
+  assert.ok(html.includes(R2+l.letter+'/sound.png'),'ABC card for '+l.upper);
+  assert.ok(html.includes('href="/preschool/3-years/alphabet-and-letter-sounds/letter-'+l.letter+'/"'),'activity link for '+l.upper);
+ }
+ assert.equal((html.match(/class="al-abc-card"/g)||[]).length,26,'exactly 26 ABC cards');
  assert.ok(html.includes('href="/flashcards/alphabet/"'),'Alphabet set link');
  // the honest lesson machinery is preserved, the coded games are gone
  assert.match(html,/data-lesson-viewer/,'26-card viewer remains');

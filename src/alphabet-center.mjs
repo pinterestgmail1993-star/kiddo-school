@@ -293,15 +293,14 @@ export function alphabetShelf(){
 
 /* ------------------------------- the A-B-C intro for the preschool class */
 export function abcClassIntro(){
- const pick=['a','b','c'].map(k=>LETTERS_BY_KEY[k]);
- return `<section class="wrap lesson-section al-abc" id="todays-letters" aria-label="Today’s letters: A, B, C">
-  <span class="eyebrow">TODAY’S LETTERS</span>
-  <h2>Start with A, B and C.</h2>
-  <p class="lesson-copy">Three letters is a whole lesson for a three-year-old. Each card opens its own class activity — trace the letters and circle the picture right on the screen, then keep the teaching parts below. The other twenty-three letters will be waiting on their own pages whenever your child asks for more.</p>
+ return `<section class="wrap lesson-section al-abc" id="todays-letters" aria-label="All the letters: A to Z">
+  <span class="eyebrow">THE WHOLE ALPHABET</span>
+  <h2>All twenty-six letters, A to Z.</h2>
+  <p class="lesson-copy">Every letter is on this page, and every card opens its own class activity — trace the letters and circle the picture right on the screen, then keep the teaching parts below. Start anywhere your child likes; A is a friendly first stop, and there is no wrong door.</p>
   <div class="al-abc-row">
-   ${pick.map(l=>`<a class="al-abc-card" href="${letterPath(l)}"><img src="${l.file('sound.png')}" width="${l.w}" height="${l.h}" alt="Letter and picture association card: ${l.upper} ${l.lower} with ${esc(l.pictureAlt.charAt(0).toLowerCase()+l.pictureAlt.slice(1))}" loading="lazy"><span class="al-abc-word"><strong>${l.upper} ${l.lower}</strong><span>${esc(l.word)}</span><span class="al-abc-say">${esc(l.soundSay)}</span><span class="fc-open">Open Letter ${l.upper}’s activity <span aria-hidden="true">↗</span></span></a>`).join('')}
+   ${LETTERS.map(l=>`<a class="al-abc-card" href="${letterPath(l)}"><img src="${l.file('sound.png')}" width="${l.w}" height="${l.h}" alt="Letter and picture association card: ${l.upper} ${l.lower} with ${esc(l.pictureAlt.charAt(0).toLowerCase()+l.pictureAlt.slice(1))}" loading="lazy"><span class="al-abc-word"><strong>${l.upper} ${l.lower}</strong><span>${esc(l.word)}</span><span class="al-abc-say">${esc(l.soundSay)}</span><span class="fc-open">Open Letter ${l.upper}’s activity <span aria-hidden="true">↗</span></span></a>`).join('')}
   </div>
   <div class="hero-actions al-abc-actions"><a class="button" href="/flashcards/alphabet/">Open the Alphabet Center <span aria-hidden="true">↗</span></a><a class="button button-ghost" href="#learn-the-letters">See all 26 letter cards <span aria-hidden="true">↓</span></a></div>
-  <p class="lesson-note">The full 26-card viewer below is optional practice — today’s class is really these three letters and the games. Stop whenever the fun stops.</p>
+  <p class="lesson-note">The full 26-card viewer below is optional practice — the class is really these letters, their activity pages and the games. Stop whenever the fun stops.</p>
  </section>`;
 }
