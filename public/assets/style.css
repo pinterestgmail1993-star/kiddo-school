@@ -1801,3 +1801,12 @@ h1 em,h2 em{color:#7b4b99}
  .ws-hero-art img{max-height:94vh;width:auto;max-width:100%;margin:0 auto}
  .wc-section{padding:0!important}
 }
+
+/* Drawing-layer alignment contract (write-color): the stage must
+   shrink-wrap the image's rendered content — letterboxing a portrait or
+   square sheet inside a wider box puts the canvas out of register with the
+   sheet, and saved work comes out horizontally squashed. With the stage
+   hugging the image, canvas backing pixels map 1:1 onto the sheet on every
+   screen size, desktop and mobile. */
+.wc-stage{width:fit-content;max-width:100%;margin-inline:auto}
+.wc-stage .wc-img{width:auto;max-width:100%;height:auto}
