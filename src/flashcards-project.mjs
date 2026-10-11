@@ -141,7 +141,7 @@ const imgUrl=(s,f)=>flashcardsBase+s.slug+'/'+f;
 export const babySet=(()=>{
  const s=flashcardSets[0];
  const base=flashcardsBase+s.slug+'/';
- return {slug:s.slug,url:setUrl(s),name:s.hubTitle,ageLabel:s.ageLabel,base,
+ return {slug:s.slug,url:setUrl(s),name:s.hubTitle,ageLabel:s.ageLabel,base,hubBlurb:s.blurb,
   printPath:null,lessonPath:null,lessonTitle:null,relatedSlugs:[],
   cover:{file:s.cover,w:1024,h:1536,alt:s.coverAlt},coverUrl:imgUrl(s,s.cover),
   cards:s.cards.map((c,i)=>({slug:c.slug,word:c.word,file:c.file,w:c.w,h:c.h,alt:c.alt,

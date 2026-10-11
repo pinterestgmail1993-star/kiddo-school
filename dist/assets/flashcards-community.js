@@ -250,3 +250,36 @@
     });
   }
 })();
+
+/* Real downloads for cross-origin card files. The HTML download attribute is
+   ignored for other origins, so the school intercepts the click, fetches the
+   card (the library bucket sends permissive CORS headers) and saves it as a
+   local file with an honest name. If the fetch fails for any reason the link
+   simply opens the image in a new tab, as before. */
+(function () {
+  document.addEventListener('click', function (event) {
+    var link = event.target && event.target.closest ? event.target.closest('a[download]') : null;
+    if (!link) return;
+    var href = link.getAttribute('href');
+    if (!href || href.charAt(0) === '#') return;
+    var url;
+    try { url = new URL(href, location.href); } catch (e) { return; }
+    if (url.origin === location.origin || !/^https?:$/.test(url.protocol)) return;
+    event.preventDefault();
+    fetch(url.href, { mode: 'cors', credentials: 'omit' }).then(function (r) {
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      return r.blob();
+    }).then(function (blob) {
+      var objectUrl = URL.createObjectURL(blob);
+      var a = document.createElement('a');
+      a.href = objectUrl;
+      a.download = link.getAttribute('download') || 'card';
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      setTimeout(function () { URL.revokeObjectURL(objectUrl); }, 4000);
+    }).catch(function () {
+      location.href = url.href;
+    });
+  });
+})();

@@ -11,7 +11,7 @@ import {leafPages,leafLinks,leafActivity,leafBase} from '../src/leaf-project.mjs
 import {shadowPages,shadowLinks,shadowActivity,shadowBase} from '../src/shadow-project.mjs';
 import {flashcardSets,fcSetCard,fcSetBody,fcSoon,babySet} from '../src/flashcards-project.mjs';
 import {fcSets,fcSetCard as fcToddlerSetCard,fcSetPageBody,fcCardPageBody,fcRelatedFor} from '../src/flashcards/index.mjs';
-import {alphabetVariantSets,fcVariantSetPageBody} from '../src/flashcards/data-alphabet-variants.mjs';
+import {alphabetVariantSets,fcVariantSetPageBody,fcVariantCardPageBody} from '../src/flashcards/data-alphabet-variants.mjs';
 import {alphabetClassBody,preschoolHubBody,preschoolStageBody} from '../src/preschool-alphabet.mjs';
 import {numbersClassBody} from '../src/preschool-numbers.mjs';
 import {shapesClassBody} from '../src/preschool-shapes.mjs';
@@ -242,11 +242,11 @@ const FC_SECTIONS=[
  ['Infants · 3 to 6 months','First bold colours and the everyday things babies already know — cups, balls, apples and a first teddy bear.',['colors-and-first-objects','first-words-familiar-things']],
  ['Explorers · 6 to 12 months','Animals with their sounds and objects to point at: the pointing, copy-me and name-it-together stage.',['animals-everyday-objects','first-actions-body-parts']],
  ['Toddlers · 12 to 24 months','Food and home words, first concepts, then the whole Age 2 shelf: colors and shapes, matching, animals, vehicles, feelings and garden friends.',['first-words-food-home','first-concepts','colors-and-shapes','matching-and-sorting','animals-and-sounds','vehicles-and-sounds','emotions-and-feelings','garden-bugs-and-friends','garden-friends','garden-flowers','garden-things']],
- ['Preschool · Age 3','The alphabet four ways — big letters, little letters, both together, shadow silhouettes — plus numbers, shapes, colors, opposites, animals, body parts and fruits & vegetables.',['alphabet','alphabet-uppercase','alphabet-lowercase','alphabet-letters','alphabet-silhouette','numbers-and-counting','shapes','colors','opposites','animal-sounds','body-parts-and-five-senses','fruits-and-vegetables']]
+ ['Preschool · Age 3','The alphabet six ways — big letters, little letters, both together, the objects, letter sounds and tracing — plus numbers, shapes, colors, opposites, animals, body parts and fruits & vegetables.',['alphabet','alphabet-uppercase','alphabet-lowercase','alphabet-letters','alphabet-objects','alphabet-sounds','alphabet-tracing','numbers-and-counting','shapes','colors','opposites','animal-sounds','body-parts-and-five-senses','fruits-and-vegetables']]
 ];
 const fcAllBySlug={...fcBySlug,...fcVariantBySlug,'black-and-white-baby-cards':babySet};
 const fcHubSections=FC_SECTIONS.map(([t,blurb,slugs])=>`<h2 class="fc2-h2">${t}</h2><p class="fc-hint">${blurb}</p><div class="fc-stagegrid">${slugs.map(k=>{const set=fcAllBySlug[k];if(!set)throw Error('flashcards hub: missing set '+k);return fcToddlerSetCard({...set,ageLabel:set.ageLabel,stageName:set.stageName||(k==='black-and-white-baby-cards'?'Newborn 1':null)});}).join('')}</div>`).join('');
-page('/flashcards/','Free printable flashcards for babies, toddlers and preschoolers — organised by stage','Free printable flashcard sets for every learning-path stage from birth to age 3: high-contrast baby cards, faces, first colours, animals, food and home, alphabet letters four ways, numbers, shapes and more. Every set has individual card pages and download buttons. No sign-up.',crumb([['Flashcards']])+heading('PRINT · SHOW · SMILE','Flashcards for every stage.','Every set below belongs to a class on the learning path — start with the stage your child is in today. Each set opens onto individual card pages with the words to say together, and every card has its own download button.')+`<section class="wrap section compact">${fcHubSections}</section><div class="wrap">${fcSoon()}</div>`);
+page('/flashcards/','Free printable flashcards for babies, toddlers and preschoolers — organised by stage','Free printable flashcard sets for every learning-path stage from birth to age 3: high-contrast baby cards, faces, first colours, animals, food and home, alphabet letters six ways, numbers, shapes and more. Every set has individual card pages and download buttons. No sign-up.',crumb([['Flashcards']])+heading('PRINT · SHOW · SMILE','Flashcards for every stage.','Every set below belongs to a class on the learning path — start with the stage your child is in today. Each set opens onto individual card pages with the words to say together, and every card has its own download button.')+`<section class="wrap section compact">${fcHubSections}</section><div class="wrap">${fcSoon()}</div>`);
 for(const s of flashcardSets)page('/flashcards/'+s.slug+'/',s.title,s.metaDescription,crumb([['Flashcards','/flashcards/'],[s.hubTitle]])+heading('FLASHCARD SET · '+s.setLabel.toUpperCase(),s.h1,s.subtitle)+fcSetBody(s),{schema:[ssBc(site,[['Flashcards','/flashcards/'],[s.hubTitle,'/flashcards/'+s.slug+'/']])]});
 babySet.cards.forEach((c,i)=>{
  const n=babySet.cards.length;
@@ -270,11 +270,18 @@ for(const s of fcSets){
   page(c.url,title,c.metaDescription||introLine+' Free to print at home from Kiddo School.',fcCardPageBody(s,c,{prev,next,related:fcRelatedFor(s,c),site,noun}),{schema:[ssBc(site,[['Flashcards','/flashcards/'],[s.name,s.url],[c.word,c.url]])],ogImage:c.img,ogAlt:c.alt});
  });
 }
-/* The four alphabet letter-set pages the owner asked for: uppercase,
-   lowercase, big & little together, and silhouettes. Individual set pages
-   with clean URLs; every card carries its own download button. */
+/* The six alphabet letter-set pages the owner asked for: uppercase,
+   lowercase, big & little together, the objects (the owner's own flat-colour
+   picture uploads — the old coded silhouette set is retired and redirects
+   here), letter sounds and tracing. Each card also has its OWN page, so the
+   lowercase a no longer opens the same page as the uppercase a. */
 for(const v of alphabetVariantSets){
  page(v.url,v.seoTitle,v.metaDescription,fcVariantSetPageBody(v,site+v.url),{schema:[ssBc(site,[['Flashcards','/flashcards/'],[v.name,v.url]])],ogImage:v.coverUrl,ogAlt:v.cover.alt});
+ v.cards.forEach((c,i)=>{
+  const next=v.cards[(i+1)%v.cards.length];
+  const prev=v.cards[(i-1+v.cards.length)%v.cards.length];
+  page(c.url,c.cardTitle,c.metaDescription,fcVariantCardPageBody(v,c,{prev,next,site}),{schema:[ssBc(site,[['Flashcards','/flashcards/'],[v.name,v.url],[c.word,c.url]])],ogImage:c.img,ogAlt:c.alt});
+ });
 }
 /* ---- Preschool (Age 3): the next stage — hub, Age 3 stage, first class + printable cards. ---- */
 page('/preschool/','Preschool at Kiddo School: the stage after toddler','Kiddo School preschool: parent-led classes for age 3 with letters, numbers, counting, shapes and patterns — the same calm school, one stage up. Start with Alphabet & Letter Sounds.',preschoolHubBody());

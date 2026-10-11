@@ -25,6 +25,7 @@ import * as fvData from './data-fruits-vegetables.mjs';
 import {fvMeta,fvCardContent,cfoMeta,cfoCardContent,fwftMeta,fwftCardContent} from './data-baby-stages.mjs';
 import {aeoMeta,aeoCardContent,fabMeta,fabCardContent,fwfhMeta,fwfhCardContent} from './data-explorer-toddler.mjs';
 import {lessonsBase,fvLesson,cfoLesson,fwftLesson,aeoLesson,fabLesson,fwfhLesson} from '../lessons.mjs';
+import {LETTER_SET_REFS} from './data-alphabet-variants.mjs';
 
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const cardSlug=file=>file.replace(/^\d+-/,'').replace(/\.webp$/,'');
@@ -237,12 +238,7 @@ export function fcSetPageBody(s){
  // longer embeds the Alphabet Centre — the owner asked flashcards to be
  // about individual pages and downloads, not a clone of another section.
  const stageLink=s.stageName&&s.stageHref?`<p class="fc-stage-link">These cards belong to <a href="${esc(s.stageHref)}">${esc(s.stageName)}</a> on the Kiddo School learning path.</p>`:'';
- const letterSets=s.slug==='alphabet'?[
-  ['/flashcards/alphabet-uppercase/','Uppercase cards','just the big letters'],
-  ['/flashcards/alphabet-lowercase/','Lowercase cards','just the little letters'],
-  ['/flashcards/alphabet-letters/','Big & little together','Aa–Zz on one card'],
-  ['/flashcards/alphabet-silhouette/','Silhouette cards','guess the shadow shape']
- ].map(([href,t,d])=>`<a class="fc2-relcard" href="${href}"><strong>${t}</strong><span>${d}</span><span class="fc-open">Open <span aria-hidden="true">↗</span></span></a>`).join(''):'';
+ const letterSets=s.slug==='alphabet'?LETTER_SET_REFS.map(([href,t,d])=>`<a class="fc2-relcard" href="${href}"><strong>${t}</strong><span>${d}</span><span class="fc-open">Open <span aria-hidden="true">↗</span></span></a>`).join(''):'';
  const grid=`<div class="fc2-cards">${s.cards.map(c=>`<a class="fc-card fc2-cardlink" href="${c.url}"><span class="fc2-cardimg"><img src="${c.img}" width="${c.w}" height="${c.h}" alt="${esc(c.alt)}" loading="lazy"></span><span class="fc2-cardword"><strong>${esc(c.word)}</strong><span>Card ${c.n} of ${s.cards.length}</span></span></a>`).join('')}</div>`;
  const ideas=`<ol class="fc-steps">${s.useIdeas.map(([t,d],i)=>`<li><span class="fc-stepnum">${String(i+1).padStart(2,'0')}</span><div><h3>${esc(t)}</h3><p>${esc(d)}</p></div></li>`).join('')}</ol>`;
  const related=s.relatedSlugs.map(k=>fcSetBySlug[k]).filter(Boolean);
@@ -252,7 +248,7 @@ export function fcSetPageBody(s){
  ${heading('FLASHCARD SET · AGES '+esc(s.ageLabel.toUpperCase()),s.h1,esc(s.lede))}
  ${stageLink}
  <section class="wrap fc-section"><span class="eyebrow">THE CARDS</span><h2>Every card in the set.</h2><p class="fc-hint">Each card has its own page with the picture, the words to say and one thing to try together. Tap any card to open it.</p>${grid}</section>
- ${letterSets?`<section class="wrap fc-section"><span class="eyebrow">ALPHABET LETTER SETS</span><h2>The same letters, four more ways.</h2><p class="fc-hint">Individual letter-card sets with their own clean pages — every card has its own download button.</p><div class="fc2-relrow">${letterSets}</div></section>`:''}
+ ${letterSets?`<section class="wrap fc-section"><span class="eyebrow">ALPHABET LETTER SETS</span><h2>The same letters, six more ways.</h2><p class="fc-hint">Individual letter-card sets with their own clean pages — every card has its own download button and its own card page.</p><div class="fc2-relrow">${letterSets}</div></section>`:''}
  <section class="wrap fc-section"><span class="eyebrow">HOW TO USE THESE CARDS</span><h2>Four ways that work.</h2><p class="fc-hint">You do not need a plan or a printer schedule. Pick one idea, try it for two minutes and see what happens.</p>${ideas}</section>
  <section class="wrap fc-section"><span class="eyebrow">PRINT &amp; DOWNLOAD</span><h2>Print the set, download a card.</h2><div class="fc2-actions"><a class="button" href="${s.lessonPath}">View the class these cards come from <span aria-hidden="true">↗</span></a>${printBtn}<a class="button" href="/flashcards/">All flashcard sets</a></div><p class="fc-hint">${s.downloadHint||'Every card page has its own download button with the full-size image.'}${s.printPath?' The full set has a print-ready page too.':' This set is printed straight from its class page.'}</p></section>
  ${relatedRow?`<section class="wrap fc-section"><span class="eyebrow">MORE CARDS LIKE THESE</span><h2>Families of cards that pair well.</h2>${relatedRow}</section>`:''}

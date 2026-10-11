@@ -134,7 +134,7 @@ test('hub: /flashcards/alphabet/ is cards and downloads, not an Alphabet Centre 
  assert.equal([...html.matchAll(/class="fc-card fc2-cardlink"/g)].length,26,'all 26 word cards remain on the wall');
  // the stage link back to the learning path, and the four letter-set pages
  assert.match(html,/fc-stage-link/,'stage link to the learning path');
- for(const u of ['/flashcards/alphabet-uppercase/','/flashcards/alphabet-lowercase/','/flashcards/alphabet-letters/','/flashcards/alphabet-silhouette/'])
+ for(const u of ['/flashcards/alphabet-uppercase/','/flashcards/alphabet-lowercase/','/flashcards/alphabet-letters/','/flashcards/alphabet-objects/','/flashcards/alphabet-sounds/','/flashcards/alphabet-tracing/'])
   assert.ok(html.includes('href="'+u+'"'),'letter-set link '+u);
 });
 

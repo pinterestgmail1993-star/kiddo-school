@@ -44,18 +44,54 @@ test('every flashcard card page mounts the drawing layer too', () => {
   }
 });
 
-test('the four alphabet letter sets exist with clean URLs and per-card downloads', () => {
+test('the six alphabet letter sets exist with clean URLs, real R2 files and per-card downloads', () => {
+  assert.equal(alphabetVariantSets.length, 6, 'six letter sets: uppercase, lowercase, pair, objects, sounds, tracing');
+  const slugs = alphabetVariantSets.map(v => v.slug);
+  for (const s of ['alphabet-uppercase', 'alphabet-lowercase', 'alphabet-letters', 'alphabet-objects', 'alphabet-sounds', 'alphabet-tracing'])
+    assert.ok(slugs.includes(s), 'set exists: ' + s);
+  assert.ok(!slugs.includes('alphabet-silhouette'), 'the coded silhouette set is retired');
   for (const v of alphabetVariantSets) {
     const html = page(v.url.slice(1));
     assert.equal((html.match(/class="fcv-card"/g) || []).length, 26, v.url + ' shows all 26 cards');
     assert.equal((html.match(/download="kiddo-alphabet-/g) || []).length, 26, v.url + ' every card has its own download');
     assert.ok(html.includes('SHARE THIS SET'), v.url + ' has sharing buttons');
+    assert.ok(!html.includes('/assets/fc-variants/'), v.url + ' uses no coded cut images');
     for (const c of v.cards) {
-      assert.ok(existsSync(join(root, 'assets/fc-variants', v.cards[0].img.split('/')[3], c.slug + '.webp')), v.url + ' card file ships: ' + c.slug);
+      assert.match(c.img, /^https:\/\/pub-f2fcb7c9b45a496cbeefef18dbba0ec0\.r2\.dev\/school\/alphabet\/[a-z]\/(uppercase|lowercase|pair|object|picture|sound|tracing)\.png$/, v.url + ' card points at the owner\'s R2 file: ' + c.slug);
+      const cardHtml = page(c.url.slice(1));
+      assert.ok(cardHtml.includes('src="' + c.img + '"'), c.url + ' shows the same real file');
+      assert.ok(cardHtml.includes('data-fc-dl'), c.url + ' download is wired for real saving');
+      assert.ok(cardHtml.includes('Draw on this card'), c.url + ' has the drawing layer');
     }
     const xml = read('sitemap.xml');
     assert.ok(xml.includes(`<loc>https://kiddo-school.pages.dev${v.url}</loc>`), v.url + ' is indexable');
   }
+});
+
+test('the same word has a DIFFERENT page and file per letter set (the lowercase-a bug)', () => {
+  const bySlug = Object.fromEntries(alphabetVariantSets.map(v => [v.slug, v]));
+  const urls = new Set(), imgs = new Set();
+  for (const s of alphabetVariantSets) {
+    const c = s.cards[0]; // apple
+    urls.add(c.url); imgs.add(c.img);
+  }
+  assert.equal(urls.size, 6, 'six distinct card pages for the same word');
+  assert.equal(imgs.size, 6, 'six distinct images for the same word');
+  const lc = bySlug['alphabet-lowercase'].cards[0], up = bySlug['alphabet-uppercase'].cards[0];
+  assert.notEqual(lc.url, up.url, 'lowercase apple page ≠ uppercase apple page');
+  assert.notEqual(lc.img, up.img, 'lowercase apple image ≠ uppercase apple image');
+  assert.ok(lc.img.includes('/lowercase.png'), 'lowercase set serves lowercase.png');
+  assert.ok(up.img.includes('/uppercase.png'), 'uppercase set serves uppercase.png');
+  const tr = bySlug['alphabet-tracing'].cards[0];
+  assert.ok(tr.img.includes('/tracing.png'), 'tracing set serves tracing.png');
+  const ob = bySlug['alphabet-objects'].cards[0];
+  assert.ok(/\/(object|picture)\.png$/.test(ob.img), 'objects set serves the owner object/picture file');
+});
+
+test('the retired silhouette URL redirects to the objects set', () => {
+  const red = read('_redirects');
+  assert.match(red, /\/flashcards\/alphabet-silhouette\/\s+\/flashcards\/alphabet-objects\/\s+301/, '_redirects 301s the old URL');
+  assert.ok(!existsSync(join(root, 'flashcards/alphabet-silhouette')), 'no stale silhouette page ships');
 });
 
 test('the learning path links every class 1-22 to its flashcard set', () => {
