@@ -21,8 +21,8 @@ export const CURRICULUM=[
  {n:2, stage:'Newborn 2',band:'newborn',bandLabel:'Newborn',      title:'First Faces & View',             path:fvLesson.path},
  {n:3, stage:'Infant 1', band:'baby',   bandLabel:'Baby',         title:cfoLesson.h1,                     path:cfoLesson.path},
  {n:4, stage:'Infant 2', band:'baby',   bandLabel:'Baby',         title:fwftLesson.h1,                    path:fwftLesson.path},
- {n:5, stage:'Explorer 1',band:'baby',  bandLabel:'Baby',         title:aeoLesson.h1,                     path:aeoLesson.path},
- {n:6, stage:'Explorer 2',band:'baby',  bandLabel:'Baby',         title:fabLesson.h1,                     path:fabLesson.path},
+ {n:5, stage:'Baby 1',band:'baby',  bandLabel:'Baby',         title:aeoLesson.h1,                     path:aeoLesson.path},
+ {n:6, stage:'Baby 2',band:'baby',  bandLabel:'Baby',         title:fabLesson.h1,                     path:fabLesson.path},
  {n:7, stage:'Toddler 1',band:'12-18',  bandLabel:'12–18 Months', title:fwfhLesson.h1,                    path:fwfhLesson.path},
  {n:8, stage:'Toddler 2',band:'18-24',  bandLabel:'18–24 Months', title:fcLesson.h1,                      path:fcLesson.path},
  {n:9, stage:'Toddler 3',band:'age2',   bandLabel:'Age 2',        title:csLesson.h1,                      path:csLesson.path},
@@ -45,7 +45,8 @@ export const CURRICULUM=[
  {n:28,stage:'Preschool',band:'age4',   bandLabel:'Age 4',        title:'Phonics & Beginning Sounds',    path:'/preschool/4-years/phonics-and-beginning-sounds/'},
  {n:29,stage:'Preschool',band:'age4',   bandLabel:'Age 4',        title:'Storytime & Pre-Reading Comprehension', path:'/preschool/4-years/storytime-and-pre-reading/'},
  {n:30,stage:'Preschool',band:'age4',   bandLabel:'Age 4',        title:'Logic, Thinking & Problem-Solving',     path:'/preschool/4-years/logic-thinking-and-problem-solving/'},
- {n:31,stage:'Preschool',band:'age4',   bandLabel:'Age 4',        title:'Science, Nature & Discovery',           path:'/preschool/4-years/science-nature-and-discovery/'}
+ {n:31,stage:'Preschool',band:'age4',   bandLabel:'Age 4',        title:'Science, Nature & Discovery',           path:'/preschool/4-years/science-nature-and-discovery/'},
+ {n:32,stage:'Preschool',band:'age4',   bandLabel:'Age 4',        title:'Life Skills & Good Habits',             path:'/preschool/4-years/life-skills-and-good-habits/'}
 ];
 
 export const BANDS=[

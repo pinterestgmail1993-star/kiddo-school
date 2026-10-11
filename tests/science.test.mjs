@@ -181,7 +181,7 @@ test('30 science worksheets ship with PDFs, twins and honest copy',()=>{
 
 test('Class 31 is wired into the whole school without breaking 23-30',()=>{
  const home=page('/');
- assert.ok(home.includes('Twenty-nine classes are ready now'),'honest class count on home');
+ assert.ok(home.includes('Thirty classes are ready now'),'honest class count on home');
  const lp=page('/learning-path/');
  assert.ok(lp.includes('Class 31: <a href="/preschool/4-years/science-nature-and-discovery/">'),'learning path row 31');
  assert.ok(lp.includes('Science, Nature &amp; Discovery'),'class 31 named on the path');
@@ -207,7 +207,7 @@ test('Class 31 is wired into the whole school without breaking 23-30',()=>{
  assert.equal(count,31,'library + 30 games in sitemap');
  // search index
  const idx=JSON.parse(read('/assets/search-index.json'));
- assert.ok(idx.filter(e=>e.k==='Worksheet').length===205,'all worksheets searchable');
+ assert.ok(idx.filter(e=>e.k==='Worksheet').length===212,'all worksheets searchable (incl. life-skills)');
 });
 
 test('science adventure pages never ship curriculum progress machinery',()=>{

@@ -69,9 +69,19 @@ export function worksheetsHubBody(){
    <span class="ws-cat-picks">${picks.map(p=>`<span>${esc(p.title)}</span>`).join('')}</span>
    <span class="fc-open">Browse ${esc(s.crumb)} worksheets <span aria-hidden="true">↗</span></span>
   </a>`;
- }).join('');
+ }).join('')+
+ /* Class 32 · Life Skills & Good Habits — its own category: the sheets are
+    the owner's uploaded artwork (no PDF pipeline), download means the
+    original WebP, and every sheet solves on screen in the class. */
+ `<a class="ws-cat" href="/worksheets/life-skills/">
+   <span class="ws-cat-head"><img src="${BRAND_R2}kiddo-subject-science.webp" width="1264" height="1264" alt="" aria-hidden="true" loading="lazy"><span class="ws-cat-pill" style="--tint:#fdeee4;--accent:#c96f2e">Class 32</span><strong>Life Skills &amp; Good Habits</strong></span>
+   <p>Everyday skills on real activity sheets \u2014 wash your hands, tidy up, be kind, move your body, the magic words and asking for help.</p>
+   <span class="ws-count-note">6 free worksheets of the planned 30 \u2014 more arrive with their artwork</span>
+   <span class="ws-cat-picks"><span>Wash Your Hands</span><span>Tidy Up</span><span>Be Kind</span></span>
+   <span class="fc-open">Browse Life Skills worksheets <span aria-hidden="true">↗</span></span>
+  </a>`;
  return `${crumbNav([['Worksheets']])}
- ${heading('THE WORKSHEET LIBRARY','Free printable worksheets for little hands.',`${libraryCount()} printable activities \u2014 the paper twins of our games: tracing guides with the same strokes, counting rows, coloring outlines, sound sorts with parent scripts, and science labs with a grown-up answer line. Download a real PDF, print straight from the page, or play the matching game online.`)}
+ ${heading('THE WORKSHEET LIBRARY','Free printable worksheets for little hands.',`${libraryCount()} printable activities \u2014 the paper twins of our games: tracing guides with the same strokes, counting rows, coloring outlines, sound sorts with parent scripts, and science labs with a grown-up answer line \u2014 plus the Life Skills &amp; Good Habits sheets your child can also solve on screen. Download a real PDF, print straight from the page, or play the matching activity online.`)}
  <section class="wrap section compact" aria-label="Worksheet categories"><div class="ws-cats">${cards}</div>
  <p class="lesson-note">Every worksheet is free, needs no sign-up, and prints on A4 or US Letter. Each sheet&rsquo;s page keeps everything in reach: the artwork, the download and print buttons, and a place for families to react and comment.</p></section>
  <section class="wrap lesson-section" aria-label="How to use the library"><span class="eyebrow">FOR GROWN-UPS</span><h2>How the library works.</h2>
@@ -145,12 +155,9 @@ export function worksheetPageBody(w,site){
  <div class="page-heading wrap"><span class="eyebrow">WORKSHEET \u00b7 CLASS ${s.classNum} \u00b7 AGES ${ageLabel(w).toUpperCase()}</span><h1>${esc(w.title)} Worksheet${w.subject==='phonics'?' for Ages 4\u20135':' for Age 4'}</h1><p>${esc(w.lede)}</p></div>
  <div class="fc2-dual wrap">
   <div class="fc2-main">
-   <section class="wc-section" aria-label="Write and color on this worksheet" id="write-and-color">
-    <div class="wc-head"><span class="eyebrow">WRITE &amp; COLOR — RIGHT HERE</span><h2>Solve it on screen.</h2><p class="lesson-copy">Write, trace, circle, connect and color with a finger, a stylus or the mouse — pick a pen below, draw on the sheet, then save your finished work as a picture. Nothing is uploaded anywhere.</p></div>
-    <div class="wc-mount" data-wc data-wc-src="${esc(w.art.img)}" data-wc-name="${esc(w.title)}" data-wc-w="${w.art.w}" data-wc-h="${w.art.h}">
-     <figure class="fc2-hero ws-hero-art"><img src="${esc(w.art.img)}" width="${w.art.w}" height="${w.art.h}" alt="${esc(w.art.alt)}" fetchpriority="high" crossorigin="anonymous"><figcaption><strong>${esc(w.title)}</strong><span>Class ${s.classNum} \u00b7 ${esc(s.label)}</span></figcaption></figure>
-    </div>
-    <noscript><p class="fc-hint">Drawing on screen needs JavaScript. The download and print buttons always work without it.</p></noscript>
+   <section class="wc-section" aria-label="This worksheet" id="the-worksheet">
+    <div class="wc-head"><span class="eyebrow">THE WORKSHEET</span><h2>The full sheet, exactly as it prints.</h2><p class="lesson-copy">This page is the worksheet&rsquo;s home: see the whole sheet, download it or print it, and pass it on. Solving on screen happens in the class&rsquo;s own activities on the Learning Path — this page is for the table, the kitchen and the fridge door.</p></div>
+    <figure class="fc2-hero ws-hero-art"><img src="${esc(w.art.img)}" width="${w.art.w}" height="${w.art.h}" alt="${esc(w.art.alt)}" fetchpriority="high"></figure>
    </section>
    ${pn}
    <section class="fc2-learn" aria-label="About this worksheet">${about}${connect}</section>

@@ -7,7 +7,7 @@
 // lesson layout conventions of the Age 3 classes, and they link into the
 // three adventure libraries built on the owner's R2 artwork.
 import {shapeAdventures,SHAPE_BASE,SHAPE_LIB_PATH} from './shape-adventures.mjs';
-import {colorCreativities,COLOR_BASE,COLOR_LIB_PATH} from './color-creativity.mjs';
+import {colorCreativities,COLOR_BASE,COLOR_LIB_PATH,COLOR_GROUPS} from './color-creativity.mjs';
 import {writingAdventures,WRITING_BASE,WRITING_LIB_PATH,GROUP_NAMES} from './writing-adventures.mjs';
 import {C28_PATH,PHONICS_LIB_PATH,WS28_PATH} from './phonics-adventures.mjs';
 import {C29_PATH,READING_LIB_PATH,WS29_PATH} from './story-kit.mjs';
@@ -29,7 +29,7 @@ const face=(s,correct,asChoice)=>asChoice
 /* ---------- the hub ---------- */
 export function stage4HubBody(){
  return `${crumbNav([['Preschool','/preschool/'],['Age 4']])}
- ${heading('PRESCHOOL · AGE 4','Age 4: stories, puzzles and getting ready to read.','Seven big classes for four-year-olds — Shapes, Patterns &amp; Sorting (Class 25), Colors, Mixing &amp; Creativity (Class 26), Early Writing &amp; Pencil Control (Class 27), Phonics &amp; Beginning Sounds (Class 28), Storytime &amp; Pre-Reading (Class 29), Logic, Thinking &amp; Problem-Solving (Class 30) and Science, Nature &amp; Discovery (Class 31) — each with its own shelf of real, playable adventures built on our own artwork.')}
+ ${heading('PRESCHOOL · AGE 4','Age 4: skills, stories, puzzles and getting ready to read.','Eight big classes for four-year-olds — Shapes, Patterns &amp; Sorting (Class 25), Colors, Mixing &amp; Creativity (Class 26), Early Writing &amp; Pencil Control (Class 27), Phonics &amp; Beginning Sounds (Class 28), Storytime &amp; Pre-Reading (Class 29), Logic, Thinking &amp; Problem-Solving (Class 30), Science, Nature &amp; Discovery (Class 31) and Life Skills &amp; Good Habits (Class 32) — each with its own shelf of real activities built on our own artwork.')}
  <section class="wrap section compact"><div class="fc-stages">
   <a class="fc-stage lesson-card-link" href="${C25_PATH}"><div class="fc-stage-pills"><span class="fc-age">Age 4</span><span class="fc-class">Class 25</span></div><h3>Shapes, Patterns &amp; Sorting</h3><p>Nine shapes, three pattern games and the whole <a href="${SHAPE_LIB_PATH}">Shape Adventures</a> shelf: a spaceship to build, a monster factory, candy sorting and a shape detective.</p><span class="fc-open">Open Class 25 <span aria-hidden="true">↗</span></span></a>
   <a class="fc-stage lesson-card-link" href="${C26_PATH}"><div class="fc-stage-pills"><span class="fc-age">Age 4</span><span class="fc-class">Class 26</span></div><h3>Colors, Mixing &amp; Creativity</h3><p>Real paint mixing, tap-to-fill coloring you can actually stay inside, movable decorations and a free splatter canvas in the <a href="${COLOR_LIB_PATH}">Colors &amp; Creativity</a> studio.</p><span class="fc-open">Open Class 26 <span aria-hidden="true">↗</span></span></a>
@@ -39,6 +39,7 @@ export function stage4HubBody(){
   <a class="fc-stage lesson-card-link" href="${C29_PATH}"><div class="fc-stage-pills"><span class="fc-age">Ages 4–5</span><span class="fc-class">Class 29</span></div><h3>Storytime &amp; Pre-Reading Comprehension</h3><p>Twenty-nine picture-story games with spoken instructions in the <a href="${READING_LIB_PATH}">Storytime Adventures</a> library — sequencing, clues, feelings and retelling, plus a printable worksheet for every story.</p><span class="fc-open">Open Class 29 <span aria-hidden="true">↗</span></span></a>
   <a class="fc-stage lesson-card-link" href="${C30_PATH}"><div class="fc-stage-pills"><span class="fc-age">Ages 4–5</span><span class="fc-class">Class 30</span></div><h3>Logic, Thinking &amp; Problem-Solving</h3><p>Thirty picture puzzles with spoken instructions in the <a href="${LOGIC_LIB_PATH}">Logic Adventures</a> library — patterns, odd ones out, secret codes and one traceable maze, plus a printable worksheet for every puzzle.</p><span class="fc-open">Open Class 30 <span aria-hidden="true">↗</span></span></a>
   <a class="fc-stage lesson-card-link" href="${C31_PATH}"><div class="fc-stage-pills"><span class="fc-age">Ages 4–5</span><span class="fc-class">Class 31</span></div><h3>Science, Nature &amp; Discovery</h3><p>Thirty discovery games with spoken instructions in the <a href="${SCIENCE_LIB_PATH}">Science Adventures</a> library — plant growth, weather, insects, magnets, habitats, life cycles and a graduation lab, plus a printable worksheet for every experiment.</p><span class="fc-open">Open Class 31 <span aria-hidden="true">↗</span></span></a>
+  <a class="fc-stage lesson-card-link" href="/preschool/4-years/life-skills-and-good-habits/"><div class="fc-stage-pills"><span class="fc-age">Ages 4–5</span><span class="fc-class">Class 32</span></div><h3>Life Skills &amp; Good Habits</h3><p>Real activity sheets done right on the screen — wash your hands, tidy up, kind words, movement and asking for help — each with a printable twin in the <a href="/worksheets/life-skills/">Life Skills worksheets</a>.</p><span class="fc-open">Open Class 32 <span aria-hidden="true">↗</span></span></a>
  </div>
  <p class="lesson-note"><strong>Age ranges are guides, not tests.</strong> Start where it is fun, stop while it is fun, and come back whenever you like. Progress saves on this device for the child chosen in <a href="/my-classroom/">My Classroom</a>.</p></section>`;
 }
@@ -104,7 +105,7 @@ export function class25Body(){
  </section>
  <section class="wrap lesson-section" id="adventures" aria-label="The Shape Adventures shelf">
   <span class="eyebrow">PLAY · THE SHAPE ADVENTURES SHELF</span>
-  <h2>Eighteen real shape games.</h2>
+  <h2>Eighteen real shape games — six to start.</h2>
   <p class="lesson-copy">Every adventure below is a full game — pieces to place, patterns to finish, candies to sort, a monster to build, a mystery to solve. Start with any card; the library keeps them all in one place.</p>
   ${adventuresGrid(featured,SHAPE_LIB_PATH,SHAPE_BASE,'data-c25-card')}
   <div class="lesson-linkrow"><a class="lesson-pill-link" href="${SHAPE_LIB_PATH}">Open the whole Shape Adventures Library <span aria-hidden="true">↗</span></a></div>
@@ -137,6 +138,8 @@ export function class26Body(){
   {say:'Blue paint + red paint makes…?',choices:[['Green',false],['Orange',false],['Purple',true]]}
  ];
  const featured=[colorCreativities[1],colorCreativities[0],colorCreativities[2],colorCreativities[14],colorCreativities[16],colorCreativities[17]];
+ const CC_GROUPS=[['Color discovery','Six gentle ways to meet colors — change a chameleon, mix real paint, paint wings, oceans and pottery.'],['Color experiments','Warm and cool, stripes and dots, lanterns that glow: six experiments with color and light.'],['Creative art studio','A free canvas and five design studios — flowers, jellyfish, kites, aquariums and a birthday cake.']];
+ const CC_GROUPS_BY_NUM=COLOR_GROUPS;
  return `${crumbNav([['Preschool','/preschool/'],['Age 4',HUB],['Colors, Mixing &amp; Creativity']])}
  <article class="wrap lesson-hero"><div class="lesson-hero-copy">
   <span class="eyebrow">CLASS 26 · PRESCHOOL AGE 4</span>
@@ -171,11 +174,11 @@ export function class26Body(){
   ${mixRounds.map(r=>`<div class="tc-round" data-tc-round data-tc-ask="${esc(r.say)}"><p class="tc-ask">${r.say}</p><div class="tc-choices" role="group" aria-label="${esc(r.say)}">${r.choices.map(([t,ok])=>`<button type="button" class="tc-choice"${ok?' data-tc-correct="true"':''}>${t}</button>`).join('')}</div><p class="tc-feedback" data-tc-feedback aria-live="polite" hidden></p></div>`).join('')}
   <div class="lesson-linkrow"><a class="lesson-pill-link" href="${COLOR_LIB_PATH}rainbow-paint-laboratory/">Prove it in the Rainbow Paint Laboratory <span aria-hidden="true">↗</span></a></div>
  </section>
- <section class="wrap lesson-section" id="studios" aria-label="Try three studios">
-  <span class="eyebrow">PLAY · TRY THREE STUDIOS</span>
+ <section class="wrap lesson-section" id="studios" aria-label="The eighteen studios">
+  <span class="eyebrow">PLAY · THE EIGHTEEN STUDIOS</span>
   <h2>Eighteen studios, start anywhere.</h2>
   <p class="lesson-copy">Every card below is a real activity: tap-to-fill coloring with outlines that stay, movable decorations, true paint mixing, a rainbow built in order and a free splatter canvas. Finished artwork saves to the child’s own My Classroom desk.</p>
-  ${adventuresGrid(featured,COLOR_LIB_PATH,COLOR_BASE,'data-c26-card')}
+  ${CC_GROUPS.map(([name,blurb],gi)=>`<div class="wa-shelf"><h3>${gi+1}. ${name}</h3><p class="lesson-copy">${blurb}</p><div class="sa-grid">${colorCreativities.filter(a=>CC_GROUPS_BY_NUM[a.num]===name).map(a=>`<a class="sa-card sa-card-slim" href="${COLOR_LIB_PATH}${a.slug}/" data-c26-card="${a.slug}"><img src="${COLOR_BASE}${a.img}" width="400" height="284" alt="${esc(a.alt)}" loading="lazy"><span class="sa-card-body"><strong>${a.num}. ${esc(a.title)}</strong><span class="sa-card-skill">${esc(a.skill)}</span></span><span class="sa-card-play">Play <span aria-hidden="true">→</span></span></a>`).join('')}</div></div>`).join('')}
   <div class="lesson-linkrow"><a class="lesson-pill-link" href="${COLOR_LIB_PATH}">Open the whole Colors &amp; Creativity Library <span aria-hidden="true">↗</span></a></div>
  </section>
  <section class="wrap lesson-section" id="off-screen" aria-label="Off-screen paint play">
@@ -246,7 +249,7 @@ export function class27Body(){
   <span class="eyebrow">PLAY · THE FIVE ADVENTURE SHELVES</span>
   <h2>Thirty adventures, five shelves.</h2>
   <p class="lesson-copy">The Writing Adventures library organizes the thirty games into five shelves, each one a stage of pencil control. Continue where you left off — opened and completed adventures are remembered for the selected child.</p>
-  ${groups.map((g,i)=>`<div class="wa-shelf"><h3>${i+1}. ${g.name}</h3><div class="lesson-linkrow wa-shelf-links">${g.items.map(a=>`<a class="lesson-pill-link" href="${WRITING_LIB_PATH}${a.slug}/">${a.num}. ${esc(a.title)}</a>`).join('')}</div></div>`).join('')}
+  ${groups.map((g,i)=>`<div class="wa-shelf"><h3>${i+1}. ${g.name}</h3><div class="sa-grid">${g.items.map(a=>`<a class="sa-card sa-card-slim" href="${WRITING_LIB_PATH}${a.slug}/"><img src="${WRITING_BASE}${a.img}" width="400" height="284" alt="${esc(a.alt)}" loading="lazy"><span class="sa-card-body"><strong>${a.num}. ${esc(a.title)}</strong><span class="sa-card-skill">${esc(a.skill)}</span></span><span class="sa-card-play">Play <span aria-hidden="true">→</span></span></a>`).join('')}</div></div>`).join('')}
   <div class="lesson-linkrow"><a class="lesson-pill-link" href="${WRITING_LIB_PATH}">Open the illustrated Writing Adventures Library <span aria-hidden="true">↗</span></a></div>
  </section>
  <section class="wrap lesson-section" id="off-screen" aria-label="Off-screen pencil play">

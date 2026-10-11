@@ -1,5 +1,5 @@
 // Kiddo School — baby stage flashcard sets, Classes 5–7.
-// Explorer 1 (Animals & Everyday Objects), Explorer 2 (First Actions & Body
+// Baby 1 (Animals & Everyday Objects), Baby 2 (First Actions & Body
 // Parts) and Toddler 1 (First Words: Food & Home). Every card points at the
 // real R2 file in its lesson folder with real dimensions; the parent-facing
 // words are written for each card. Nothing is invented.
@@ -9,13 +9,13 @@ const B = R2 + 'flashcards/black-and-white-baby-cards/';
 export const aeoMeta = {
   slug: 'animals-everyday-objects',
   group: 'baby',
-  stageName: 'Explorer 1',
+  stageName: 'Baby 1',
   stageHref: '/baby/6-9-months/',
   name: 'Animals & Everyday Objects',
   seoTitle: 'Animals & Everyday Objects Flashcards for Babies 6–9 Months',
   h1: 'Animals & Everyday Objects Flashcards',
   metaDescription: 'Free printable flashcards for babies 6–9 months: animals and everyday objects with sounds, pointing and naming games parents can lead in short happy sessions.',
-  lede: 'Twelve cards for the Explorer 1 stage: six animals ready for sounds and six everyday things ready for pointing — your baby’s widening world, one card at a time.',
+  lede: 'Twelve cards for the Baby 1 stage: six animals ready for sounds and six everyday things ready for pointing — your baby’s widening world, one card at a time.',
   hubBlurb: 'Animals with sounds and objects to point at, for 6–9 months.',
   ageLabel: '6–9 months',
   noun: 'Babies',
@@ -33,13 +33,13 @@ export const aeoMeta = {
 export const fabMeta = {
   slug: 'first-actions-body-parts',
   group: 'baby',
-  stageName: 'Explorer 2',
+  stageName: 'Baby 2',
   stageHref: '/baby/9-12-months/',
   name: 'First Actions & Body Parts',
   seoTitle: 'First Actions & Body Parts Flashcards for Babies 9–12 Months',
   h1: 'First Actions & Body Parts Flashcards',
   metaDescription: 'Free printable flashcards for babies 9–12 months: body parts and first actions — clapping, waving, eating, sleeping — with copy-me games parents can play right away.',
-  lede: 'Twelve cards for the Explorer 2 stage: five body parts your baby owns and seven actions your baby can copy — the copy-me stage, made into a class.',
+  lede: 'Twelve cards for the Baby 2 stage: five body parts your baby owns and seven actions your baby can copy — the copy-me stage, made into a class.',
   hubBlurb: 'Body parts and copy-me actions, for 9–12 months.',
   ageLabel: '9–12 months',
   noun: 'Babies',
@@ -78,7 +78,7 @@ export const fwfhMeta = {
   coverAlt: 'Cover of the First Words: Food & Home flashcards set for toddlers 12–18 months, with a red apple card'
 };
 
-// ---- Animals & Everyday Objects (Explorer 1) ---------------------------------
+// ---- Animals & Everyday Objects (Baby 1) ---------------------------------
 export const aeoCardContent = {
   cat: {
     word: 'Cat',
@@ -159,14 +159,14 @@ export const aeoCardContent = {
   },
   'teddy-bear': {
     word: 'Teddy bear',
-    intro: 'A soft teddy bear closing the set. For many babies this word names an actual best friend — the strongest possible ending for the Explorer 1 stage.',
+    intro: 'A soft teddy bear closing the set. For many babies this word names an actual best friend — the strongest possible ending for the Baby 1 stage.',
     say: 'Teddy bear! Hello, teddy.',
     try: 'Bring the real teddy to meet the card. From now on, teddy can be the one who “picks” which cards you do.',
     note: 'When a comfort object joins the routine, sessions often stretch happily longer. Follow that warmth.'
   }
 };
 
-// ---- First Actions & Body Parts (Explorer 2) ----------------------------------
+// ---- First Actions & Body Parts (Baby 2) ----------------------------------
 export const fabCardContent = {
   hand: {
     word: 'Hand',

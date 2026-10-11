@@ -69,6 +69,8 @@
     function snapshot() {
       history.push(strokes.slice());
       if (history.length > 60) history.shift();
+      future.length = 0;
+      if (typeof redoBtn !== 'undefined' && redoBtn) redoBtn.disabled = true;
     }
 
     function redraw() {
@@ -205,8 +207,14 @@
     });
 
     var undoBtn = btn('Undo', false, function () {
-      if (history.length) { strokes = history.pop(); redraw(); }
+      if (history.length) { future.push(strokes.slice()); redoBtn.disabled = false; strokes = history.pop(); redraw(); }
     });
+
+    var future = [];   /* undone strokes, for redo */
+    var redoBtn = btn('Redo', false, function () {
+      if (future.length) { strokes = future.pop(); redraw(); redoBtn.disabled = future.length === 0; }
+    });
+    redoBtn.disabled = true;
 
     var clearBtn = btn('Clear', false, function () {
       if (!strokes.length) return;
@@ -240,6 +248,12 @@
       }
     }, 'wc-btn wc-save');
 
+    /* the page can listen for real saved work: activity pages mark an
+       activity complete only when this fires — never on page open */
+    function announceSave(filename) {
+      try { document.dispatchEvent(new CustomEvent('kiddo-wc-save', { detail: { name: name, file: filename } })); } catch (e) { /* old browsers still save */ }
+    }
+
     function saveOverlayOnly() {
       canvas.toBlob(function (blob) {
         if (blob) {
@@ -258,12 +272,18 @@
       a.remove();
       setTimeout(function () { URL.revokeObjectURL(a.href); }, 4000);
       status.textContent = 'Saved as ' + filename + ' — look in your downloads.';
+      announceSave(filename);
     }
 
     bar.appendChild(saveBtn);
     bar.appendChild(status);
 
-    stage.parentNode.insertBefore(bar, stage.nextSibling);
+    /* the toolbar can live in a right-hand rail: the page points at it with
+       data-wc-toolbar on a container; otherwise it sits under the sheet */
+    var target = mount.getAttribute('data-wc-toolbar');
+    var host = target ? document.querySelector(target) : null;
+    if (host) host.appendChild(bar);
+    else stage.parentNode.insertBefore(bar, stage.nextSibling);
 
     /* A CORS rejection can fire before this deferred script even runs, so
        handle an already-errored image here, not just in the listener. */

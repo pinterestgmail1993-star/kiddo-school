@@ -461,7 +461,7 @@ export function readingClassBody(){
   <span class="eyebrow">PLAY · THE ${READING_READY} STORYTIME ADVENTURES</span>
   <h2>Twenty-nine story adventures.</h2>
   <p class="lesson-copy">Start anywhere your child\u2019s curiosity points. The shelves run in a gentle skill order \u2014 sequences before inferences \u2014 but every game stands alone. Each adventure twins with a printable worksheet at <a href="${WS29_PATH}">/worksheets/reading/</a>.</p>
-  ${shelves.map((sh,i)=>{const [t,d,a,b]=sh;const items=readingAdventures.filter(g=>g.num>=a&&g.num<=b);
+  ${shelves.map((sh,i)=>{const [,t,d,a,b]=sh;const items=readingAdventures.filter(g=>g.num>=a&&g.num<=b);
    return `<div class="wa-shelf"><h3>${i+1}. ${t}</h3><p class="lesson-copy">${d}</p><div class="sa-grid">${items.map(g=>`<a class="sa-card sa-card-slim" href="${READING_LIB}${g.slug}/"><img src="${READING_BASE}${g.img}" width="400" height="284" alt="${esc(g.alt)}" loading="lazy"><span class="sa-card-body"><strong>${g.num}. ${esc(g.title)}</strong><span class="sa-card-skill">${esc(g.skill)}</span></span><span class="sa-card-play">Play <span aria-hidden="true">→</span></span></a>`).join('')}</div></div>`;}).join('')}
   <p class="lesson-note">${READING_READY} of the planned ${READING_TOTAL} adventures are playable now. Reserved until its artwork arrives: <ul class="ws-skills">${pending}</ul> Nothing is published before it can be played and printed honestly \u2014 adventure 24 (Unicorn\u2019s Story Choice Garden) keeps its number and slug for when its artwork is uploaded.</p>
  </section>

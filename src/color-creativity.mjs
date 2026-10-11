@@ -675,11 +675,12 @@ export const COLOR_LIB_PATH=CLIB_PATH;
 export {COLOR_BASE};
 export const COLOR_CLASS_PATH=CCLASS_PATH;
 
-const GROUPS={
+export const GROUPS={
  1:'Color discovery',2:'Color discovery',3:'Color discovery',4:'Color discovery',5:'Color discovery',6:'Color discovery',
  7:'Color experiments',8:'Color experiments',9:'Color experiments',10:'Color experiments',11:'Color experiments',12:'Color experiments',
  13:'Creative art studio',14:'Creative art studio',15:'Creative art studio',16:'Creative art studio',17:'Creative art studio',18:'Creative art studio'
 };
+export const COLOR_GROUPS=GROUPS;
 
 export function colorLibraryBody(){
  const groups=[['Color discovery','Six gentle ways to meet colors — change a chameleon, mix real paint, paint wings, oceans and pottery.'],['Color experiments','Warm and cool, stripes and dots, lanterns that glow: six experiments with color and light.'],['Creative art studio','A free canvas and five design studios — flowers, jellyfish, kites, aquariums and a birthday cake.']];

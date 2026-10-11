@@ -574,7 +574,7 @@ export function logicClassBody(){
   <span class="eyebrow">PLAY · THE ${LOGIC_READY} LOGIC ADVENTURES</span>
   <h2>Thirty puzzle adventures.</h2>
   <p class="lesson-copy">Start anywhere. The shelves climb gently \u2014 finish-a-pattern before two-clue logic \u2014 but every game stands alone. Each adventure twins with a printable worksheet at <a href="${WS30_PATH}">/worksheets/logic/</a>.</p>
-  ${shelves.map((sh,i)=>{const [t,d,a,b]=sh;const items=logicAdventures.filter(g=>g.num>=a&&g.num<=b);
+  ${shelves.map((sh,i)=>{const [,t,d,a,b]=sh;const items=logicAdventures.filter(g=>g.num>=a&&g.num<=b);
    return `<div class="wa-shelf"><h3>${i+1}. ${t}</h3><p class="lesson-copy">${d}</p><div class="sa-grid">${items.map(g=>`<a class="sa-card sa-card-slim" href="${LOGIC_LIB}${g.slug}/"><img src="${LOGIC_BASE}${g.img}" width="400" height="284" alt="${esc(g.alt)}" loading="lazy"><span class="sa-card-body"><strong>${g.num}. ${esc(g.title)}</strong><span class="sa-card-skill">${esc(g.skill)}</span></span><span class="sa-card-play">Play <span aria-hidden="true">→</span></span></a>`).join('')}</div></div>`;}).join('')}
   <p class="lesson-note">All ${LOGIC_READY} planned adventures are playable and printed today — Class 30 is complete, and every game was audited against its own artwork before it shipped.</p>
  </section>

@@ -27,13 +27,18 @@ test('write-color.js ships and carries the whole tool set', () => {
   assert.ok(js.includes('never leaves the'), 'honest privacy comment');
 });
 
-test('every worksheet page mounts the drawing layer over the true-size artwork', () => {
+test('worksheet pages are download-first: the sheet shows whole, no drawing layer there', () => {
+  /* the owner set the rule: worksheet pages are for download and print;
+     solving on screen happens on the class activity pages (Class 32) */
   const html = page('worksheets/shapes/build-a-shape-spaceship');
-  assert.match(html, /data-wc data-wc-src="https:\/\/pub-f2fcb7[^"]+"/, 'mount points at the real sheet');
-  assert.match(html, /data-wc-w="1264" data-wc-h="1264"/, 'canvas is the artwork\u2019s own pixel size (this sheet is square)');
-  assert.match(html, /crossorigin="anonymous"/, 'image loads with CORS so save can combine it');
-  assert.match(html, /src="\/assets\/write-color\.js" defer/, 'engine script ships on the page');
-  assert.match(html, /noscript/, 'honest no-JS note');
+  assert.ok(!html.includes('data-wc '), 'no drawing mount on a worksheet page');
+  assert.match(html, /class="fc2-hero ws-hero-art"/, 'the sheet shows whole');
+  assert.match(html, /Download Free Worksheet/, 'PDF download stays');
+  assert.match(html, /Print Worksheet/, 'print button stays');
+  const ls = page('worksheets/life-skills/wash-your-hands');
+  assert.ok(!ls.includes('data-wc '), 'no drawing mount on a life-skills worksheet page');
+  assert.match(ls, /data-ls-download/, 'life-skills download serves the original WebP');
+  assert.match(ls, /data-ls-print/, 'life-skills print button present');
 });
 
 test('every flashcard card page mounts the drawing layer too', () => {
@@ -101,8 +106,8 @@ test('the learning path links every class 1-22 to its flashcard set', () => {
     ['Newborn 2', '/flashcards/faces-and-visual-tracking/'],
     ['Infant 1', '/flashcards/colors-and-first-objects/'],
     ['Infant 2', '/flashcards/first-words-familiar-things/'],
-    ['Explorer 1', '/flashcards/animals-everyday-objects/'],
-    ['Explorer 2', '/flashcards/first-actions-body-parts/'],
+    ['Baby 1', '/flashcards/animals-everyday-objects/'],
+    ['Baby 2', '/flashcards/first-actions-body-parts/'],
     ['Toddler 1', '/flashcards/first-words-food-home/'],
     ['Toddler 2', '/flashcards/first-concepts/'],
     ['Toddler 3', '/flashcards/colors-and-shapes/'],
@@ -125,7 +130,7 @@ test('the learning path links every class 1-22 to its flashcard set', () => {
 
 test('the flashcards hub is organised by learning-path stage', () => {
   const hub = page('flashcards');
-  for (const section of ['Newborn · Birth to 12 weeks', 'Infants · 3 to 6 months', 'Explorers · 6 to 12 months', 'Toddlers · 12 to 24 months', 'Preschool · Age 3'])
+  for (const section of ['Newborn · Birth to 12 weeks', 'Infants · 3 to 6 months', 'Babies · 6 to 12 months', 'Toddlers · 12 to 24 months', 'Preschool · Age 3'])
     assert.ok(hub.includes(section), 'hub stage section: ' + section);
   for (const s of ['faces-and-visual-tracking', 'colors-and-first-objects', 'first-words-familiar-things', 'animals-everyday-objects', 'first-actions-body-parts', 'first-words-food-home'])
     assert.ok(hub.includes(`/flashcards/${s}/`), 'hub lists the new baby set ' + s);

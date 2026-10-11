@@ -91,7 +91,7 @@ test('lesson 4 follows the Infant 2 spec with Try Together and a real link to le
  assert.deepEqual([...new Set(files)],fwftLesson.cards.map(c=>c.file.replace('.webp','')));
  assert.match(l4,/BreadcrumbList[\s\S]*"name":"Baby"[\s\S]*"name":"4–6 Months"[\s\S]*"name":"First Words & Familiar Things"/);
 });
-test('lesson 5 follows the Explorer 1 spec with Try Together, Find It in Real Life and a real link to lesson 6',()=>{
+test('lesson 5 follows the Baby 1 spec with Try Together, Find It in Real Life and a real link to lesson 6',()=>{
  checkLesson(l5,aeoLesson);
  assert.ok(l5.includes('EXPLORER 1 · LESSON 5'));
  assert.ok(l5.includes('TRY TOGETHER'));
@@ -112,7 +112,7 @@ test('lesson 5 follows the Explorer 1 spec with Try Together, Find It in Real Li
  assert.deepEqual([...new Set(files)],aeoLesson.cards.map(c=>c.file.replace('.webp','')));
  assert.match(l5,/BreadcrumbList[\s\S]*"name":"Baby"[\s\S]*"name":"6–9 Months"[\s\S]*"name":"Animals & Everyday Objects"/);
 });
-test('lesson 6 follows the Explorer 2 spec with Try Together, Practice in Real Life and a real link to lesson 7',()=>{
+test('lesson 6 follows the Baby 2 spec with Try Together, Practice in Real Life and a real link to lesson 7',()=>{
  checkLesson(l6,fabLesson);
  assert.ok(l6.includes('EXPLORER 2 · LESSON 6'));
  assert.ok(l6.includes('TRY TOGETHER'));
@@ -729,7 +729,7 @@ test('the learning path page lists the real curriculum from birth to age 2 and b
  const lp=read('dist/learning-path/index.html');
  assert.ok(lp.includes('rel="canonical" href="https://kiddo-school.pages.dev/learning-path/"'));
  assert.ok(lp.includes('Age ranges are a guide, not a test'));
- for(const s of [['Newborn 1','/newborn/0-6-weeks/high-contrast-cards/'],['Newborn 2','/newborn/6-12-weeks/faces-and-visual-tracking/'],['Infant 1','/baby/3-4-months/colors-and-first-objects/'],['Infant 2','/baby/4-6-months/first-words-familiar-things/'],['Explorer 1','/baby/6-9-months/animals-everyday-objects/'],['Explorer 2','/baby/9-12-months/first-actions-body-parts/'],['Toddler 1','/toddler/12-18-months/first-words-food-home/'],['Toddler 2','/toddler/18-24-months/first-concepts-big-small-up-down/'],['Toddler 3','/toddler/2-years/colors-and-shapes/'],['Toddler 4','/toddler/2-years/matching-and-sorting/'],['Toddler 5','/toddler/2-years/animals-and-sounds/'],['Toddler 6','/toddler/2-years/vehicles-and-sounds/'],['Toddler 7','/toddler/2-years/emotions-and-feelings/'],['Toddler 8','/toddler/2-years/garden-bugs-and-friends/']])assert.ok(lp.includes('>'+s[0])&&lp.includes('href="'+s[1]+'"'),s[0]);
+ for(const s of [['Newborn 1','/newborn/0-6-weeks/high-contrast-cards/'],['Newborn 2','/newborn/6-12-weeks/faces-and-visual-tracking/'],['Infant 1','/baby/3-4-months/colors-and-first-objects/'],['Infant 2','/baby/4-6-months/first-words-familiar-things/'],['Baby 1','/baby/6-9-months/animals-everyday-objects/'],['Baby 2','/baby/9-12-months/first-actions-body-parts/'],['Toddler 1','/toddler/12-18-months/first-words-food-home/'],['Toddler 2','/toddler/18-24-months/first-concepts-big-small-up-down/'],['Toddler 3','/toddler/2-years/colors-and-shapes/'],['Toddler 4','/toddler/2-years/matching-and-sorting/'],['Toddler 5','/toddler/2-years/animals-and-sounds/'],['Toddler 6','/toddler/2-years/vehicles-and-sounds/'],['Toddler 7','/toddler/2-years/emotions-and-feelings/'],['Toddler 8','/toddler/2-years/garden-bugs-and-friends/']])assert.ok(lp.includes('>'+s[0])&&lp.includes('href="'+s[1]+'"'),s[0]);
  for(const hub of ['/newborn/6-12-weeks/','/baby/3-4-months/','/baby/4-6-months/','/baby/6-9-months/','/baby/9-12-months/','/toddler/12-18-months/','/toddler/18-24-months/','/toddler/2-years/'])assert.ok(lp.includes('href="'+hub+'"'),hub);
  assert.ok(lp.includes('href="/art/"')&&lp.includes('href="/activities/"'));
  assert.ok(lp.includes('Start Today’s Class'));
@@ -748,7 +748,7 @@ test('the school homepage: Purple Academy hero, age chooser, real classes, how s
  assert.ok(home.includes('id="choose-age"'));
  assert.ok(home.includes('href="/newborn/"')&&home.includes('href="/baby/"')&&home.includes('href="/toddler/"')&&home.includes('href="/preschool/3-years/"'),'four real stage cards');
  assert.ok(home.includes('EXPLORE REAL CLASSES'),'real-classes section');
- assert.ok(home.includes('Twenty-nine classes are ready now, from birth to age five'),'honest class count');
+ assert.ok(home.includes('Thirty classes are ready now, from birth to age five'),'honest class count');
  assert.ok(home.includes('HOW OUR SCHOOL WORKS'));
  assert.ok(home.includes('id="how-school-works"'));
  for(const step of ['Learn','Play','Practice','Off-Screen'])assert.ok(new RegExp('<h3>'+step+'</h3>').test(home),'step '+step);
@@ -773,7 +773,7 @@ test('the school homepage: Purple Academy hero, age chooser, real classes, how s
  assert.ok(about.includes('id="principal"'));
  assert.ok(about.includes('From the Principal’s Office'));
  assert.ok(about.includes('href="/learning-path/"'));
- assert.ok(about.includes('Twenty-nine classes from birth to age five are ready today'),'about count updated');
+ assert.ok(about.includes('Thirty classes from birth to age five are ready today'),'about count updated');
 });
 test('the whole curriculum path is wired together and reusable markup is shared',()=>{
  const l1=read('dist/newborn/0-6-weeks/high-contrast-cards/index.html');
@@ -814,7 +814,7 @@ test("today's class: one curriculum source, smart buttons, real progress machine
  // the curriculum ships to the client straight from the single source
  assert.ok(curriculum.includes('window.KIDDO_CURRICULUM'));
  const list=JSON.parse(curriculum.slice(curriculum.indexOf('['),curriculum.lastIndexOf(']')+1));
- assert.equal(list.length,29,'exactly 29 classes in the shipped curriculum (23 and 24 stay reserved);');
+ assert.equal(list.length,30,'exactly 30 classes in the shipped curriculum (23 and 24 stay reserved);');
  assert.equal(list.filter(c=>c.band==='age3').length,8,'eight Age 3 classes');
  assert.equal(list[0].path,'/newborn/0-6-weeks/high-contrast-cards/','class 1 is the newborn class');
  // smart today's-class links on nav + homepage, with the Learning Path fallback
