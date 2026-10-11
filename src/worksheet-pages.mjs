@@ -79,9 +79,19 @@ export function worksheetsHubBody(){
    <span class="ws-count-note">29 free worksheets of the planned 30 \u2014 sheet 24 arrives with its artwork</span>
    <span class="ws-cat-picks"><span>Wash Your Hands</span><span>Tidy Up</span><span>Calm Down</span></span>
    <span class="fc-open">Browse Life Skills worksheets <span aria-hidden="true">↗</span></span>
+  </a>`+
+ /* Toddler 4 · Class 10 · Matching & Sorting — the owner's uploaded
+    toddler artwork (no PDF pipeline), download means the original WebP,
+    and every sheet solves on screen in the class. */
+ `<a class="ws-cat" href="/worksheets/toddler/matching-and-sorting/">
+   <span class="ws-cat-head"><img src="https://pub-f2fcb7c9b45a496cbeefef18dbba0ec0.r2.dev/school/toddler/2-years/matching-and-sorting/cover.webp" width="1264" height="1264" alt="" aria-hidden="true" loading="lazy"><span class="ws-cat-pill" style="--tint:#e8f2fd;--accent:#3d7fc4">Class 10</span><strong>Matching &amp; Sorting</strong></span>
+   <p>Thirty-one big, friendly sheets for two-year-olds — match the twins, draw the lines, circle the odd one and sort the groups, on paper or right on the screen.</p>
+   <span class="ws-count-note">31 free worksheets · Age 2 · Toddler 4</span>
+   <span class="ws-cat-picks"><span>Match Same Animals</span><span>Sort Red and Blue</span><span>Which One Is Different?</span></span>
+   <span class="fc-open">Browse Matching &amp; Sorting worksheets <span aria-hidden="true">↗</span></span>
   </a>`;
  return `${crumbNav([['Worksheets']])}
- ${heading('THE WORKSHEET LIBRARY','Free printable worksheets for little hands.',`${libraryCount()} printable activities \u2014 the paper twins of our games: tracing guides with the same strokes, counting rows, coloring outlines, sound sorts with parent scripts, and science labs with a grown-up answer line \u2014 plus the Life Skills &amp; Good Habits sheets your child can also solve on screen. Download a real PDF, print straight from the page, or play the matching activity online.`)}
+ ${heading('THE WORKSHEET LIBRARY','Free printable worksheets for little hands.',`${libraryCount()} printable activities \u2014 the paper twins of our games: tracing guides with the same strokes, counting rows, coloring outlines, sound sorts with parent scripts, and science labs with a grown-up answer line \u2014 plus the Life Skills &amp; Good Habits sheets and the toddler Matching &amp; Sorting collection your child can also solve on screen. Download a real PDF, print straight from the page, or play the matching activity online.`)}
  <section class="wrap section compact" aria-label="Worksheet categories"><div class="ws-cats">${cards}</div>
  <p class="lesson-note">Every worksheet is free, needs no sign-up, and prints on A4 or US Letter. Each sheet&rsquo;s page keeps everything in reach: the artwork, the download and print buttons, and a place for families to react and comment.</p></section>
  <section class="wrap lesson-section" aria-label="How to use the library"><span class="eyebrow">FOR GROWN-UPS</span><h2>How the library works.</h2>

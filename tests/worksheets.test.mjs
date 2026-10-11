@@ -198,5 +198,5 @@ test('sitemap carries the hub, seven categories and all 181 worksheets',()=>{
 test('the whole-school search index knows worksheets',()=>{
  const idx=JSON.parse(read('/assets/search-index.json'));
  const ws=idx.filter(e=>e.k==='Worksheet');
- assert.equal(ws.length,235,'196 worksheets + hub + 8 categories + life-skills hub + 29 sheets searchable');
+ assert.equal(ws.length,267,'196 worksheets + hub + 8 categories + life-skills hub + 29 sheets + matching-and-sorting category + 31 sheets searchable');
 });
