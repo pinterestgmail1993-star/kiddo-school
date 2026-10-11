@@ -13,6 +13,9 @@ import {crumbNav,esc} from './adventure-kit.mjs';
 import {SCIENCE_BASE,SCIENCE_LIB,C31_PATH,WS31_PATH} from './story-kit.mjs';
 import {imageActivitySection} from './image-activity.mjs';
 import {artFor} from './adventure-dims.mjs';
+import * as sciFlash from './flashcards/data-science-nature-and-discovery.mjs';
+
+export const SCI_FC_URL='/flashcards/science-nature-and-discovery/';
 export {SCIENCE_LIB_PATH,WS31_PATH,C31_PATH} from './story-kit.mjs';
 const SCIENCE_LIB_PATH=SCIENCE_LIB;
 
@@ -536,6 +539,16 @@ export function scienceClassBody(){
   <p class="lesson-lede">Predictions to make, insects to count, magnets to test, habitats to match and one graduation lab \u2014 every question is one big picture your child draws right on.</p>
   <div class="lesson-start"><a class="button" href="#adventures">Meet the adventures <span aria-hidden="true">↓</span></a><span class="lesson-start-hint">Science is best in short, curious sittings.</span></div>
  </div></article>
+ <section class="wrap lesson-section" id="flashcards" aria-label="The science flashcards — what each idea means">
+  <span class="eyebrow">WONDER · THE SCIENCE FLASHCARDS</span>
+  <h2>What every idea means, one card at a time.</h2>
+  <p class="lesson-copy">The adventures above teach HOW to explore — predict, test, draw and try again. These thirty-five flashcards teach WHAT each idea means: what an ant trail is, why rain falls, where a shadow comes from, how a magnet pulls without touching. Every card page carries a why-it-matters note for grown-ups and a two-minute experiment to try at home. Open a card before or after its matching adventure — the words make the play make sense. The whole set lives in the <a href="${SCI_FC_URL}">Science, Nature &amp; Discovery flashcard library</a>.</p>
+  <div class="ws-grid">${sciFlash.lesson.cards.map((c,i)=>{const slug=c.file.replace(/\.webp$/,'');const d=sciFlash.cards[slug];return `<a class="ws-card" href="${SCI_FC_URL}${slug}/">
+   <span class="ws-card-art"><img src="${esc(sciFlash.lesson.r2Base+c.file)}" width="707" height="1000" alt="Flashcard explaining ${esc(d.word)} to a four-year-old: ${esc(d.spot)}" loading="lazy"></span>
+   <span class="ws-card-body"><strong>${esc(d.word)}</strong><span class="ws-card-meta"><span>Ages 4–5</span><span>Card ${i+1} of 35</span><span>Flashcard</span></span><span class="ws-card-desc">${esc(d.spot)}</span></span>
+   <span class="ws-card-open">Open the flashcard <span aria-hidden="true">→</span></span>
+  </a>`;}).join('')}</div>
+ </section>
  <section class="wrap lesson-section" id="adventures" aria-label="The science adventures">
   <span class="eyebrow">PLAY · THE ${SCIENCE_READY} SCIENCE ADVENTURES</span>
   <h2>Thirty science adventures.</h2>

@@ -23,6 +23,7 @@ import * as amData from './data-animals.mjs';
 import * as bpData from './data-body-parts.mjs';
 import * as fvData from './data-fruits-vegetables.mjs';
 import * as lsData from './data-life-skills-and-good-habits.mjs';
+import * as sciData from './data-science-nature-and-discovery.mjs';
 import {fvMeta,fvCardContent,cfoMeta,cfoCardContent,fwftMeta,fwftCardContent} from './data-baby-stages.mjs';
 import {aeoMeta,aeoCardContent,fabMeta,fabCardContent,fwfhMeta,fwfhCardContent} from './data-explorer-toddler.mjs';
 import {lessonsBase,fvLesson,cfoLesson,fwftLesson,aeoLesson,fabLesson,fwfhLesson} from '../lessons.mjs';
@@ -104,7 +105,13 @@ const SOURCES=[
  // uploads in the class's own R2 folder (self-contained lesson object — the
  // class page predates the lesson system). cover.webp fronts the set and is
  // never counted as a card.
- [lsData,lsData.lesson]
+ [lsData,lsData.lesson],
+ // Preschool Class 31: thirty-five science flashcards from the owner's Canva
+ // uploads in the class's own R2 folder (self-contained lesson object; mixed
+ // portrait/landscape dims probed per file). cover.webp fronts the set and is
+ // never counted as a card. Purpose: WHAT each science idea means — the
+ // Learning Path adventures keep the HOW (drawing layer, tools, progress).
+ [sciData,sciData.lesson]
 ];
 
 function buildSet([data,lesson]){
@@ -121,7 +128,7 @@ function buildSet([data,lesson]){
   return {slug:s,word:d.word||titleWord(s),file:c.file,w:c.w,h:c.h,alt:c.alt,
    img2:c.picFile?base+c.picFile:null,alt2:c.picAlt||null,picWord:d.picWord||null,
    letter:c.letter||d.letter||null,numeral:c.numeral||d.numeral||null,sound:d.sound||null,audio:c.audio||null,metaDescription:d.metaDescription||null,cardTitle:d.cardTitle||null,
-   intro:d.intro,say:d.say,try:d.try,note:d.note,url:url+s+'/',img:base+c.file,n:i+1};
+   intro:d.intro,why:d.why||null,say:d.say,try:d.try,note:d.note,url:url+s+'/',img:base+c.file,n:i+1};
  });
  const coverFile=data.meta.coverFile||'cover.webp';
  const stage=STAGES[slug]||null;
@@ -228,6 +235,9 @@ export function fcCardPageBody(set,card,ctx){
  // Cards without a recording render nothing here; nothing is faked.
  const sayAudio=card.audio?`<button type="button" class="an-play an-play-card" data-an-sound="${esc(card.slug)}" data-an-src="/assets/sounds/animals/${esc(card.audio)}.mp3" aria-label="Play the ${esc(card.word.toLowerCase())} sound, then play it again"><span class="an-play-icon" aria-hidden="true">▶</span><span class="an-play-label">Hear the ${esc(card.word.toLowerCase())}</span><span class="an-replay">Play again</span></button>`:'';
  const say=`<div class="fc2-do"><h2>Say it together</h2><p class="fc2-say">&ldquo;${esc(card.say)}&rdquo;</p>${sayAudio}<p class="fc-hint">Say it naturally, then wait. Whatever comes back — the word, the sound, a point, a giggle — is the right answer.</p></div>`;
+ // Optional development block (Class 31 science cards carry one): why this
+ // knowledge helps at this age. Sets without card.why render nothing here.
+ const why=card.why?`<div class="fc2-do"><h2>Why it helps a preschooler</h2><p>${esc(card.why)}</p></div>`:'';
  const sound=card.sound?`<div class="fc2-do fc2-sound"><h2>Letter sound</h2><p>${esc(card.sound)}</p></div>`:'';
  const tryThis=`<div class="fc2-do"><h2>Try this</h2><p>${esc(card.try)}</p></div>`;
  const note=`<div class="fc2-do fc2-note"><h2>Quick parent note</h2><p>${esc(card.note)}</p></div>`;
@@ -241,7 +251,7 @@ export function fcCardPageBody(set,card,ctx){
  return `${crumbNav([['Flashcards','/flashcards/'],[set.name,set.url],[card.word]])}
  <div class="page-heading wrap"><span class="eyebrow">FLASHCARD · ${esc(set.name.toUpperCase())} · AGES ${esc(set.ageLabel.toUpperCase())}</span><h1>${card.numeral?`Number ${esc(card.numeral)} Flashcard — ${esc(card.word)} for ${esc(noun)}`:card.letter?`${esc(card.word)} Flashcard — Letter ${esc(card.letter.toUpperCase())} for ${esc(noun)}`:`${esc(card.word)} Flashcard for ${esc(noun)}`}</h1><p>${esc(card.intro)}</p></div>
  <div class="fc2-dual wrap">
-  <div class="fc2-main">${figure}${pn}<section class="fc2-learn" aria-label="How to use this card">${say}${sound}${tryThis}${note}</section>${lesson}</div>
+  <div class="fc2-main">${figure}${pn}<section class="fc2-learn" aria-label="How to use this card">${say}${why}${sound}${tryThis}${note}</section>${lesson}</div>
   <aside class="fc2-rail" aria-label="Download, share and family feedback"><section class="fc2-block fc2-first-block"><span class="eyebrow">TAKE IT WITH YOU</span><h2>Download, print, keep going.</h2>${actions}</section>${share}${fcCommunityMount(card.url)}</aside>
  </div>
  ${relGrid}`;

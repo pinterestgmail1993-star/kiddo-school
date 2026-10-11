@@ -88,16 +88,22 @@ test('rule 2 · no class, stage hub or Learning Path page links an ACTIVITY to a
     const [p,target]=o.split(' -> ');
     if(p.startsWith('preschool/3-years/alphabet-and-letter-sounds/letter-')&&target.startsWith('/flashcards/alphabet-'))return false;
     if(p==='preschool/4-years/life-skills-and-good-habits'&&target.startsWith('/flashcards/life-skills-and-good-habits/'))return false;
+    if(p==='preschool/4-years/science-nature-and-discovery'&&target.startsWith('/flashcards/science-nature-and-discovery/'))return false;
     return true;
   });
   assert.deepEqual(unexpected,[],'activity links pointing at flashcards: '+unexpected.slice(0,8).join(' | '));
   // and the allowance is not an escape hatch: the Class 32 page's ACTIVITY
   // grid (data-ls-card ribbons) must still open the /preschool/life-skills/
-  // activity pages, never a flashcard URL.
+  // activity pages, never a flashcard URL — and Class 31's adventure shelves
+  // must still open the /preschool/science/adventures/ activity pages.
   const cls=read('preschool/4-years/life-skills-and-good-habits');
   const activityHrefs=[...cls.matchAll(/<a class="sa-card" href="([^"]+)"/g)].map(m=>m[1]);
   assert.ok(activityHrefs.length>0,'Class 32 activity grid present');
   assert.ok(activityHrefs.every(h=>h.startsWith('/preschool/life-skills/')),'Class 32 activity cards open activities, not flashcards');
+  const sci=read('preschool/4-years/science-nature-and-discovery');
+  const sciHrefs=[...sci.matchAll(/<a class="sa-card sa-card-slim" href="([^"]+)"/g)].map(m=>m[1]);
+  assert.ok(sciHrefs.length===30,'Class 31 adventure shelf intact (30 cards)');
+  assert.ok(sciHrefs.every(h=>h.startsWith('/preschool/science/adventures/')),'Class 31 adventure cards open activities, not flashcards');
 });
 
 test('rule 2b · the alphabet class opens letter ACTIVITIES at their own Learning Path URLs',()=>{
