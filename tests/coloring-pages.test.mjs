@@ -18,7 +18,7 @@ import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync, existsSync} from 'node:fs';
 import {join} from 'node:path';
-import {coloringPages,CP_BASE,CP_ACT_PATH,CP_LIB,CP_HUB,CP_CLASS_PATH} from '../src/coloring-pages.mjs';
+import {coloringPages,CP_BASE,CP_COVER,CP_ACT_PATH,CP_LIB,CP_HUB,CP_CLASS_PATH} from '../src/coloring-pages.mjs';
 
 const root='dist';
 const read=p=>readFileSync(join(root,p),'utf8');
@@ -26,12 +26,15 @@ const page=p=>read(join(p,'index.html').replace(/\/\//g,'/'));
 const SLUGS=coloringPages.map(a=>a.slug);
 /* the exact bucket listing the owner posted — verified one image at a time */
 const R2_FILES=['apple-and-banana.webp','book-and-phone.webp','circle-and-beach-ball.webp','circle.webp','egg-shape.webp','heart.webp','oval.webp','pillow-and-square.webp','rectangle-and-bus.webp','rectangle.webp','square-and-gift-box.webp','square.webp','star.webp','tall-rectangle.webp','tall-triangle.webp','triangle-and-house.webp','triangle-sandwich-and-mountain.webp','triangle.webp','two-circles.webp','two-ovals.webp'];
+/* cover.webp also lives in the same R2 folder — it is the CATEGORY COVER,
+   deliberately absent from R2_FILES and from the registry. */
 
 test('the registry is exactly the twenty owner-uploaded R2 files, each once',()=>{
- assert.equal(coloringPages.length,20,'twenty coloring pages');
+ assert.equal(coloringPages.length,20,'twenty coloring pages — the cover is not one of them');
  assert.deepEqual([...coloringPages.map(a=>a.img)].sort(),[...R2_FILES].sort(),'every R2 file matched, none invented');
  assert.equal(new Set(SLUGS).size,20,'slugs unique');
  assert.equal(new Set(coloringPages.map(a=>a.img)).size,20,'images unique');
+ assert.ok(!R2_FILES.includes(CP_COVER.file),'cover.webp stays out of the activity files');
  for(const a of coloringPages){
   assert.ok(a.img.endsWith('.webp')&&!a.img.includes('/'),'plain filename');
   assert.ok(a.alt&&a.alt.length>20,'honest alt text for '+a.slug);
@@ -105,6 +108,33 @@ test('Class 9 carries the Shape Coloring Fun section with 20 ribbon cards',()=>{
  // the other classes stay untouched — no coloring cards anywhere else
  const ms=page('toddler/2-years/matching-and-sorting');
  assert.equal((ms.match(/data-coloring-card/g)||[]).length,0,'Class 10 untouched');
+});
+
+test('cover.webp is the category cover — never an activity',()=>{
+ assert.equal(CP_COVER.file,'cover.webp');
+ assert.ok(CP_COVER.url.endsWith('school/toddler/2-years/colors-and-shapes/cover.webp'));
+ // the hub card wears the cover
+ const hub=page('coloring-pages');
+ assert.ok(hub.includes(`src="${CP_COVER.url}"`),'hub card uses the cover');
+ // the category page wears the cover as its hero AND keeps exactly 20 grid cards
+ const cat=page('coloring-pages/shapes');
+ assert.ok(cat.includes(`class="lesson-cover"`),'category hero uses the cover figure');
+ assert.ok(cat.includes(`src="${CP_COVER.url}"`),'category hero uses the cover');
+ assert.equal((cat.match(/class="ws-card" href="/g)||[]).length,20,'grid still lists exactly the 20 activities');
+ assert.ok(!/class="ws-card" href="[^"]*cover\//.test(cat),'no grid card points at a cover page');
+ // no activity or printable page uses the cover as its sheet
+ for(const a of coloringPages){
+  const act=page('toddler/2-years/colors-and-shapes/coloring/'+a.slug);
+  const prn=page('coloring-pages/shapes/'+a.slug);
+  assert.ok(!act.includes('cover.webp'),'activity '+a.slug+' never touches the cover');
+  assert.ok(!prn.includes('cover.webp'),'printable '+a.slug+' never touches the cover');
+ }
+});
+
+test('cover.webp is really on the bucket (pre-deploy gate — run with CP_COVER_LIVE=1)',{skip:process.env.CP_COVER_LIVE==='1'?false:'offline suite'},async ()=>{
+ const r=await fetch(CP_COVER.url,{method:'HEAD'});
+ assert.equal(r.status,200,'cover.webp must be publicly reachable before deploy: '+CP_COVER.url);
+ assert.ok((r.headers.get('content-type')||'').includes('image'),'cover.webp must be served as an image');
 });
 
 test('the header link works everywhere and is current on category pages',()=>{

@@ -30,6 +30,14 @@ export const CP_LIB=CP_HUB+'shapes/';
 
 export const W=1545,H=2000; /* every sheet, probed from the real files */
 
+/* The owner's category cover, uploaded alongside the twenty sheets.
+   It is the FACE of the Shapes category (hub card, category hero, og:image)
+   and NEVER an activity: it stays out of the registry, the grids, the
+   prev/next chains and every individual page. */
+export const CP_COVER={file:'cover.webp',w:1545,h:2000,
+ alt:'The cover of the Shapes coloring pages collection — twenty free printable shape coloring pages for toddlers.',
+ get url(){return CP_BASE+this.file;}};
+
 const G=o=>o;
 export const coloringPages=[
 G({slug:'circle',img:'circle.webp',
@@ -366,7 +374,7 @@ export function coloringHubBody(){
  <section class="wrap section compact" aria-label="Coloring page categories">
   <div class="ws-grid">
    <a class="ws-card" href="${CP_LIB}">
-    <span class="ws-card-art"><img src="${esc(CP_BASE+'circle.webp')}" width="772" height="1000" alt="The Shapes coloring collection: bold outlines of circles, squares, triangles and everyday things to color." loading="lazy"></span>
+    <span class="ws-card-art"><img src="${esc(CP_COVER.url)}" width="${CP_COVER.w}" height="${CP_COVER.h}" alt="${esc(CP_COVER.alt)}" loading="lazy"></span>
     <span class="ws-card-body"><strong>Shapes Coloring Pages</strong><span class="ws-card-meta"><span>Ages 2–4</span><span>20 pages</span><span>Toddler 3 · Class 9</span></span><span class="ws-card-desc">Circles, squares, triangles, ovals, stars and hearts — plus the beach balls, buses, houses and snacks they grow into.</span></span>
     <span class="ws-card-open">Browse Shapes <span aria-hidden="true">→</span></span>
    </a>
@@ -387,7 +395,11 @@ export function coloringCategoryBody(){
   <span class="ws-card-open">View Coloring Page <span aria-hidden="true">→</span></span>
  </a>`).join('');
  return `${crumbNav([['Coloring Pages','/coloring-pages/'],['Shapes']])}
- <div class="page-heading wrap"><span class="eyebrow">SHAPES \u00b7 20 COLORING PAGES \u00b7 AGES 2\u20134</span><h1>Shapes coloring pages — circles, squares, triangles and friends.</h1><p>Twenty free coloring pages from the owner’s own bold, friendly artwork: one clear outline per page, with the real-world twin beside it — a circle and a beach ball, a rectangle and a bus, a triangle and a house. Tap any picture to open its page; download and print buttons live there.</p></div>
+ <article class="wrap lesson-hero lesson-hero-cover"><div class="lesson-hero-copy">
+  <span class="eyebrow">SHAPES \u00b7 20 COLORING PAGES \u00b7 AGES 2\u20134</span>
+  <h1>Shapes coloring pages — circles, squares, triangles and friends.</h1>
+  <p class="lesson-lede">Twenty free coloring pages from the owner’s own bold, friendly artwork: one clear outline per page, with the real-world twin beside it — a circle and a beach ball, a rectangle and a bus, a triangle and a house. Tap any picture to open its page; download and print buttons live there.</p>
+ </div><figure class="lesson-cover"><img src="${esc(CP_COVER.url)}" width="${CP_COVER.w}" height="${CP_COVER.h}" alt="${esc(CP_COVER.alt)}" fetchpriority="high"></figure></article>
  <section class="wrap section compact" aria-label="All shapes coloring pages">
   <div class="ws-grid">${cards}</div>
  </section>
