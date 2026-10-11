@@ -505,20 +505,18 @@ export function lifeSkillsClassBody(){
  <article class="wrap lesson-hero"><div class="lesson-hero-copy">
   <span class="eyebrow">CLASS 32 · PRESCHOOL AGES 4–5</span>
   <h1>Life Skills &amp; Good Habits</h1>
-  <div class="fc-chips lesson-chips"><span><strong>Age</strong> 4–5 Years</span><span><strong>Class</strong> 32 of 32</span><span><strong>Activities</strong> ${LS_READY} live of ${LS_PLANNED}</span><span><strong>Subjects</strong> Hygiene · manners · independence</span></div>
+  <div class="fc-chips lesson-chips"><span><strong>Age</strong> 4–5 Years</span><span><strong>Class</strong> 32</span><span><strong>Activities</strong> ${LS_READY} live of ${LS_PLANNED}</span><span><strong>Subjects</strong> Hygiene · manners · independence</span></div>
   <p class="lesson-lede">The everyday skills grown-ups use without thinking — washing hands, tidying up, kind words, asking for help — learned the way four-year-olds learn best: on real activity sheets, doing the circle, the match, the trace and the draw all by themselves.</p>
   <p class="lesson-lede">Every activity opens right here on the site: the sheet sits on the left and your child writes, circles, traces and draws straight on top of it. The instructions sit beside them in grown-up read-aloud words. Their finished work saves as a real picture they can keep.</p>
   <div class="lesson-start"><a class="button" href="${LS_ACT_PATH}wash-your-hands/">Start the first activity <span aria-hidden="true">→</span></a><span class="lesson-start-hint">One or two sheets per sitting is a full class.</span></div>
  </div></article>
- <section class="wrap lesson-section" id="flashcards" aria-label="Teaching the 28 life skills with flashcards">
-  <span class="eyebrow">TEACH · THE 28 LIFE SKILLS</span>
-  <h2>Teach every skill with its flashcard.</h2>
-  <p class="lesson-copy">Twenty-eight everyday skills, twenty-eight cards — one skill per card, from hand-washing and teeth to manners, patience and the safety rules. The method is the same every time: show the card and name the skill, say the words together (every card page has a short parent script), then practise the real thing the same day — the sink, the shoe rack and the car seat are the show; the card is the rehearsal. Below is every skill with its how-to for grown-ups, or open the whole set in the <a href="${FC_SET_URL}">Life Skills &amp; Good Habits flashcard library</a>. One skill a week is plenty — twenty-eight cards is a school year of good habits.</p>
-  <div class="ws-grid">${lsFlash.lesson.cards.map((c,i)=>{const slug=c.file.replace(/\.webp$/,'');const d=lsFlash.cards[slug];return `<a class="ws-card" href="${FC_SET_URL}${slug}/">
-   <span class="ws-card-art"><img src="${esc(lsFlash.lesson.r2Base+c.file)}" width="707" height="1000" alt="Flashcard used to teach ${esc(d.word)} to a four-year-old: ${esc(d.teach)}" loading="lazy"></span>
-   <span class="ws-card-body"><strong>${esc(d.word)}</strong><span class="ws-card-meta"><span>Ages 4–5</span><span>Card ${i+1} of 28</span><span>Flashcard</span></span><span class="ws-card-desc">${esc(d.teach)}</span></span>
-   <span class="ws-card-open">Open the flashcard <span aria-hidden="true">→</span></span>
-  </a>`;}).join('')}</div>
+ <section class="wrap lesson-section" id="teach" aria-label="How to teach the 28 life skills">
+  <span class="eyebrow">TEACH · HOW TO TEACH THE 28 LIFE SKILLS</span>
+  <h2>How to teach every skill, step by step.</h2>
+  <p class="lesson-copy">Twenty-eight everyday skills, twenty-eight short how-to guides — one per skill, from hand-washing and teeth to manners, patience and the safety rules. The method is the same every time: name the skill, say the words together, then practise the real thing the same day — the sink, the shoe rack and the car seat are the show. Below is every skill with its step-by-step guide for grown-ups. One skill a week is plenty — twenty-eight skills is a school year of good habits.</p>
+  <div class="ws-grid">${lsFlash.lesson.cards.map((c,i)=>{const slug=c.file.replace(/\.webp$/,'');const d=lsFlash.cards[slug];return `<div class="ws-card">
+   <span class="ws-card-body"><strong>${esc(d.word)}</strong><span class="ws-card-meta"><span>Ages 4–5</span><span>Skill ${i+1} of 28</span><span>How to teach</span></span><span class="ws-card-desc">${esc(d.teach)}</span></span>
+  </div>`;}).join('')}</div>
  </section>
  <section class="wrap lesson-section" id="activities" aria-label="The life skills activities">
   <span class="eyebrow">DO · THE LIFE SKILLS ACTIVITIES</span>
@@ -526,6 +524,18 @@ export function lifeSkillsClassBody(){
   <p class="lesson-copy">Every card below opens its own activity page: sheet on the left, instructions on the right, drawing tools under your child’s fingers. Nothing to print unless you want to — each sheet has a printable twin in the worksheet library.</p>
   <div class="sa-grid">${cards}</div>
   ${missing}
+ </section>
+ <section class="wrap lesson-section" id="flashcards" aria-label="Supporting resource — the life skills flashcards">
+  <span class="eyebrow">SUPPORTING RESOURCE · EXPLORE LIFE SKILLS FLASHCARDS</span>
+  <h2>Explore the Life Skills Flashcards.</h2>
+  <div class="fc-res">
+   <div class="fc-res-copy">
+    <p class="lesson-copy">The activities on this page teach HOW to do each skill, step by step, right on the screen. The Life Skills &amp; Good Habits flashcard collection is the take-home half of this class: every card shows what the skill is, why it helps your child’s development, a short parent script to say together and a way to practise it at home that same day.</p>
+    <p class="lesson-copy">Show a card at breakfast, practise at the sink, the shoe rack or the car seat — one skill a week turns twenty-eight cards into a whole school year of good habits.</p>
+    <div class="hero-actions"><a class="button" href="${FC_SET_URL}">Open the 28 Life Skills Flashcards <span aria-hidden="true">→</span></a></div>
+   </div>
+   <div class="fc-res-art"><img src="${lsFlash.lesson.r2Base}cover.webp" width="1414" height="2000" alt="The cover of the Life Skills &amp; Good Habits flashcard collection — twenty-eight printable skill cards for ages 4–5." loading="lazy"></div>
+  </div>
  </section>
  <section class="wrap lesson-section" id="how-it-works" aria-label="How an activity works">
   <span class="eyebrow">FOR GROWN-UPS</span>

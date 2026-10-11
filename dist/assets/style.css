@@ -1821,3 +1821,8 @@ h1 em,h2 em{color:#7b4b99}
 
 /* Image adventures: the play section heading is the page h1 (the duplicated hero was removed) — keep the former play-heading scale. */
 .ia-h1{font-size:clamp(30px,3.4vw,43px);letter-spacing:-1.2px}
+
+/* Small supporting flashcard-resource section on class pages (owner spec: short explanation + original collection cover + ONE collection link — never a card grid). */
+.fc-res{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:40px;align-items:center}
+.fc-res-art img{width:100%;max-width:340px;height:auto;display:block;margin:0 auto;border:1.5px solid var(--ink);box-shadow:6px 6px 0 var(--ink);background:#fff}
+@media(max-width:820px){.fc-res{grid-template-columns:1fr;gap:24px}.fc-res-art img{max-width:230px}}

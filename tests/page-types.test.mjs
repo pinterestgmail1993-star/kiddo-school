@@ -77,18 +77,16 @@ test('rule 2 · no class, stage hub or Learning Path page links an ACTIVITY to a
         offenders.push(p+' -> '+m[1]);
     }
   }
-  // The ONLY allowed cross-links are:
-  //  a) the letter activity pages' PAPER RESOURCES block (flashcards as
-  //     optional paper, owner rule);
-  //  b) the Class 32 page's TEACH section linking its OWN set's card pages —
-  //     the owner's explicit instruction: the class page teaches parents with
-  //     the flashcards and links each individual card ("Open the flashcard").
-  //     Everything else still fails.
+  // The ONLY allowed cross-links are the letter activity pages' PAPER
+  // RESOURCES block (flashcards as optional paper, owner rule).
+  // Owner decision 2026-10-11: NO Learning Path class page may embed a grid
+  // of individual flashcard links — the Class 31 (35-card WONDER grid) and
+  // Class 32 (28-card TEACH grid) allowances are REVOKED. Both class pages
+  // now carry ONE small supporting-resource section (short explanation +
+  // original collection cover + a single collection link).
   const unexpected=offenders.filter(o=>{
     const [p,target]=o.split(' -> ');
     if(p.startsWith('preschool/3-years/alphabet-and-letter-sounds/letter-')&&target.startsWith('/flashcards/alphabet-'))return false;
-    if(p==='preschool/4-years/life-skills-and-good-habits'&&target.startsWith('/flashcards/life-skills-and-good-habits/'))return false;
-    if(p==='preschool/4-years/science-nature-and-discovery'&&target.startsWith('/flashcards/science-nature-and-discovery/'))return false;
     return true;
   });
   assert.deepEqual(unexpected,[],'activity links pointing at flashcards: '+unexpected.slice(0,8).join(' | '));
@@ -104,6 +102,24 @@ test('rule 2 · no class, stage hub or Learning Path page links an ACTIVITY to a
   const sciHrefs=[...sci.matchAll(/<a class="sa-card sa-card-slim" href="([^"]+)"/g)].map(m=>m[1]);
   assert.ok(sciHrefs.length===30,'Class 31 adventure shelf intact (30 cards)');
   assert.ok(sciHrefs.every(h=>h.startsWith('/preschool/science/adventures/')),'Class 31 adventure cards open activities, not flashcards');
+});
+
+test('rule 2d · NO Learning Path class or hub page embeds a flashcard grid ("Open the flashcard" marker banned)',()=>{
+  // owner decision 2026-10-11: Learning Path = HOW (main activities),
+  // flashcards live in their own collection; class pages may link the
+  // COLLECTION (small resource section) but never render the card grid.
+  const scopes=['learning-path','newborn','baby','toddler','preschool'];
+  const bad=[];
+  for(const s of scopes){
+    if(!existsSync('dist/'+s))continue;
+    for(const p of walk(s)){
+      // exact grid marker: 'Open the flashcard <span…→' — must NOT match the
+      // Age-3 hub's compliant set-card row ('Open the flashcards …' plural,
+      // which links collection pages, not individual cards)
+      if(read(p).includes('Open the flashcard <span aria-hidden="true">→</span>'))bad.push(p);
+    }
+  }
+  assert.deepEqual(bad,[],'pages still carrying the flashcard-grid marker: '+bad.join(', '));
 });
 
 test('rule 2b · the alphabet class opens letter ACTIVITIES at their own Learning Path URLs',()=>{

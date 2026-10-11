@@ -122,18 +122,28 @@ test('the set page: 28 whole-card links with no download buttons in the grid, cl
  assert.ok(!html.includes('cover.webp" width'),'cover is not repeated as a card figure');
 });
 
-test('the Class 32 page teaches all 28 skills with links to every individual flashcard',()=>{
+test('the Class 32 page: per-skill teaching guidance stays (text, no links), activities are MAIN, ONE small resource section',()=>{
  const html=page(CLASS_PAGE);
- assert.ok(html.includes('Teach every skill with its flashcard.'),'teach section present');
+ // step-by-step teaching guidance preserved for every skill — as TEXT, with zero flashcard links
  for(const c of set.cards){
-  assert.ok(html.includes(`href="${SET_URL}${c.slug}/"`),'class page links '+c.slug);
-  assert.ok(html.includes(esc(lsCards[c.slug].teach)),'teach blurb for '+c.slug);
+  assert.ok(html.includes(esc(lsCards[c.slug].teach)),'teach guidance preserved for '+c.slug);
+  assert.ok(!html.includes(`href="${SET_URL}${c.slug}/"`),'no individual card link on the class page: '+c.slug);
  }
- assert.ok(html.includes(`href="${SET_URL}"`),'class page links the full set');
- // the activity grid is untouched: 29 activity cards opening activity pages
+ assert.ok(!html.includes('Open the flashcard'),'the flashcard grid marker is gone');
+ // main content: 29 activity cards opening activity pages
  const grid=[...html.matchAll(/<a class="sa-card" href="([^"]+)"/g)].map(m=>m[1]);
  assert.equal(grid.length,29,'the existing activity grid is intact');
  assert.ok(grid.every(h=>h.startsWith('/preschool/life-skills/')),'activity cards open activities');
+ // order: teach guidance → activities → small flashcard resource
+ const teachPos=html.indexOf('id="teach"'),actPos=html.indexOf('id="activities"'),fcPos=html.indexOf('id="flashcards"');
+ assert.ok(teachPos>-1&&teachPos<actPos,'teaching guidance sits before the activities');
+ assert.ok(actPos>-1&&fcPos>actPos,'activities come before the flashcard resource section');
+ // the small section: original collection cover + exactly one collection link
+ const secHtml=html.slice(fcPos).slice(0,html.slice(fcPos).indexOf('</section>'));
+ assert.ok(secHtml.includes('Explore the Life Skills Flashcards'),'resource section present');
+ assert.ok(secHtml.includes(lesson.r2Base+'cover.webp'),'the original collection cover is shown');
+ assert.equal([...secHtml.matchAll(new RegExp('href="'+SET_URL+'"','g'))].length,1,'exactly one collection link inside the resource section');
+ assert.ok(html.includes('Prefer printed cards?'),'the small bottom paper-cards note stays');
 });
 
 test('the flashcards wall and the Learning Path row carry the set',()=>{

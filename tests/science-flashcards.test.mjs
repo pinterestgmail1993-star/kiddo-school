@@ -126,18 +126,25 @@ test('the set page: 35 whole-card links, no download buttons in the grid, class 
  assert.ok(!html.includes('cover.webp" width'),'cover is not repeated as a card figure');
 });
 
-test('the Class 31 page links all 35 flashcards AND keeps its 30 adventures + worksheets',()=>{
+test('the Class 31 page: 30 adventures are the MAIN content, ONE small flashcard resource section',()=>{
  const html=page(CLASS_PAGE);
- assert.ok(html.includes('What every idea means, one card at a time.'),'flashcards section present');
- assert.ok(html.includes('teach HOW to explore'),'purpose separation stated: LP = HOW');
- for(const [slug] of CARDS){
-  assert.ok(html.includes(`href="${SET_URL}${slug}/"`),'class page links '+slug);
-  assert.ok(html.includes(esc(sciCards[slug].spot)),'spot blurb for '+slug);
- }
- assert.ok(html.includes(`href="${SET_URL}"`),'class page links the full set');
+ // the 35-card grid is gone — zero individual flashcard links, no grid marker
+ for(const [slug] of CARDS)assert.ok(!html.includes(`href="${SET_URL}${slug}/"`),'no individual card link on the class page: '+slug);
+ assert.ok(!html.includes('Open the flashcard'),'the flashcard grid marker is gone');
+ // main content: 30 adventures on their own activity URLs
  const shelf=[...html.matchAll(/<a class="sa-card sa-card-slim" href="([^"]+)"/g)].map(m=>m[1]);
  assert.equal(shelf.length,30,'all 30 adventures still shelved');
  assert.ok(shelf.every(h=>h.startsWith('/preschool/science/adventures/')),'adventures still open activity pages');
+ // order: the adventures section comes BEFORE the small flashcard resource
+ const advPos=html.indexOf('id="adventures"'),fcPos=html.indexOf('id="flashcards"');
+ assert.ok(advPos>-1&&fcPos>advPos,'adventures come before the flashcard resource section');
+ // the small section: purpose copy + original collection cover + exactly one collection link
+ const secHtml=html.slice(fcPos).slice(0,html.slice(fcPos).indexOf('</section>'));
+ assert.ok(secHtml.includes('Explore the Science Flashcards'),'resource section present');
+ assert.ok(secHtml.includes('HOW')&&secHtml.includes('WHAT'),'purpose separation stated: LP = HOW, flashcards = WHAT');
+ assert.ok(secHtml.includes(lesson.r2Base+'cover.webp'),'the original collection cover is shown');
+ assert.equal([...secHtml.matchAll(new RegExp('href="'+SET_URL+'"','g'))].length,1,'exactly one collection link inside the resource section');
+ assert.ok(html.includes('Prefer printed cards?'),'the small bottom paper-cards note stays');
  assert.ok(html.includes('href="/worksheets/science/"'),'worksheets library still linked');
  assert.ok(!/class="sa-card[^"]*"[^>]*href="\/flashcards\//.test(html),'no adventure card opens a flashcard');
 });

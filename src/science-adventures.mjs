@@ -534,21 +534,11 @@ export function scienceClassBody(){
  <article class="wrap lesson-hero"><div class="lesson-hero-copy">
   <span class="eyebrow">CLASS 31 · PRESCHOOL AGES 4–5</span>
   <h1>Science, Nature &amp; Discovery</h1>
-  <div class="fc-chips lesson-chips"><span><strong>Age</strong> 4–5 Years</span><span><strong>Class</strong> 31 of 31</span><span><strong>Adventures</strong> 30 science games</span><span><strong>Subjects</strong> Plants · animals · weather · light · sound</span></div>
+  <div class="fc-chips lesson-chips"><span><strong>Age</strong> 4–5 Years</span><span><strong>Class</strong> 31</span><span><strong>Adventures</strong> 30 science games</span><span><strong>Subjects</strong> Plants · animals · weather · light · sound</span></div>
   <p class="lesson-lede">Explore plants, animals, weather, habitats, light, sound, water, and everyday science through playful discovery activities. Thirty draw-on-the-picture adventures \u2014 every one played on its own science illustration, with plain written instructions and a printable worksheet twin in the <a href="${WS31_PATH}">Science worksheet library</a>.</p>
   <p class="lesson-lede">Predictions to make, insects to count, magnets to test, habitats to match and one graduation lab \u2014 every question is one big picture your child draws right on.</p>
   <div class="lesson-start"><a class="button" href="#adventures">Meet the adventures <span aria-hidden="true">↓</span></a><span class="lesson-start-hint">Science is best in short, curious sittings.</span></div>
  </div></article>
- <section class="wrap lesson-section" id="flashcards" aria-label="The science flashcards — what each idea means">
-  <span class="eyebrow">WONDER · THE SCIENCE FLASHCARDS</span>
-  <h2>What every idea means, one card at a time.</h2>
-  <p class="lesson-copy">The adventures above teach HOW to explore — predict, test, draw and try again. These thirty-five flashcards teach WHAT each idea means: what an ant trail is, why rain falls, where a shadow comes from, how a magnet pulls without touching. Every card page carries a why-it-matters note for grown-ups and a two-minute experiment to try at home. Open a card before or after its matching adventure — the words make the play make sense. The whole set lives in the <a href="${SCI_FC_URL}">Science, Nature &amp; Discovery flashcard library</a>.</p>
-  <div class="ws-grid">${sciFlash.lesson.cards.map((c,i)=>{const slug=c.file.replace(/\.webp$/,'');const d=sciFlash.cards[slug];return `<a class="ws-card" href="${SCI_FC_URL}${slug}/">
-   <span class="ws-card-art"><img src="${esc(sciFlash.lesson.r2Base+c.file)}" width="707" height="1000" alt="Flashcard explaining ${esc(d.word)} to a four-year-old: ${esc(d.spot)}" loading="lazy"></span>
-   <span class="ws-card-body"><strong>${esc(d.word)}</strong><span class="ws-card-meta"><span>Ages 4–5</span><span>Card ${i+1} of 35</span><span>Flashcard</span></span><span class="ws-card-desc">${esc(d.spot)}</span></span>
-   <span class="ws-card-open">Open the flashcard <span aria-hidden="true">→</span></span>
-  </a>`;}).join('')}</div>
- </section>
  <section class="wrap lesson-section" id="adventures" aria-label="The science adventures">
   <span class="eyebrow">PLAY · THE ${SCIENCE_READY} SCIENCE ADVENTURES</span>
   <h2>Thirty science adventures.</h2>
@@ -561,6 +551,18 @@ export function scienceClassBody(){
   <span class="eyebrow">TAKE IT OFF SCREEN</span>
   <h2>Science play at the kitchen table.</h2>
   <p class="lesson-copy">Drop a spoon and a cork in the bath (04). Melt an ice cube on the windowsill (15). Raid the recycling with a magnet (11, 21). Grow a bean in a jam jar (01, 18). Blow a dandelion and watch the seeds fly (22). Every game here has a real experiment hiding inside it \u2014 the picture is the invitation.</p>
+ </section>
+ <section class="wrap lesson-section" id="flashcards" aria-label="Supporting resource — the science flashcards">
+  <span class="eyebrow">SUPPORTING RESOURCE · EXPLORE SCIENCE FLASHCARDS</span>
+  <h2>Explore the Science Flashcards.</h2>
+  <div class="fc-res">
+   <div class="fc-res-copy">
+    <p class="lesson-copy">The thirty adventures above teach HOW to explore — predict, test, draw and try again. The flashcard collection teaches WHAT each idea means: what an ant trail is, why rain falls, where a shadow comes from, how a magnet pulls without touching.</p>
+    <p class="lesson-copy">Every card gives grown-ups a plain-words why-it-matters note and a two-minute experiment to try at home. Open one before or after its matching adventure — the words make the play make sense.</p>
+    <div class="hero-actions"><a class="button" href="${SCI_FC_URL}">Open the 35 Science Flashcards <span aria-hidden="true">→</span></a></div>
+   </div>
+   <div class="fc-res-art"><img src="${sciFlash.lesson.r2Base}cover.webp" width="1414" height="2000" alt="The cover of the Science, Nature &amp; Discovery flashcard collection — thirty-five printable science idea cards for ages 4–5." loading="lazy"></div>
+  </div>
  </section>
  <section class="wrap lesson-section tc-principal"><span class="eyebrow">A NOTE FROM THE PRINCIPAL</span><h2>For the grown-ups.</h2>
   <p class="lesson-copy">Early science is predicting, testing and talking \u2014 never a quiz. Every game here asks your child to commit to a guess first, and every miss brings a friendly explanation instead of a penalty. The say-lines are written so YOU can steal them for bath time and walks.</p>
