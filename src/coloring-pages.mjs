@@ -346,8 +346,8 @@ export function coloringActivityBody(a,site){
   <div class="fc2-main">
    <section class="wc-section" aria-label="The coloring page — color right on it" id="the-activity">
     <div class="wc-head"><span class="eyebrow">THE PICTURE — COLOR RIGHT ON IT</span><h2>Your picture is ready.</h2><p class="lesson-copy">Pick a crayon, then color straight on the picture with your finger, a stylus or the mouse. Press Save my work when you are proud — your colors stay here for next time, and the picture is yours to keep.</p></div>
-    <div class="wc-mount" data-coloring-activity="${a.slug}" data-wc data-wc-src="${esc(CP_BASE+a.img)}" data-wc-name="${esc(a.title)} coloring page" data-wc-w="${W}" data-wc-h="${H}" data-wc-toolbar="#cp-tools" data-wc-restore="coloring/${a.slug}">
-     <figure class="fc2-hero ws-hero-art"><img src="${esc(CP_BASE+a.img)}" width="${W}" height="${H}" alt="${esc(a.alt)}" fetchpriority="high" crossorigin="anonymous"></figure>
+    <div class="wc-mount" data-coloring-activity="${a.slug}" data-wc data-wc-src="${esc(CP_BASE+a.img)}?draw=1" data-wc-name="${esc(a.title)} coloring page" data-wc-w="${W}" data-wc-h="${H}" data-wc-toolbar="#cp-tools" data-wc-restore="coloring/${a.slug}">
+     <figure class="fc2-hero ws-hero-art"><img src="${esc(CP_BASE+a.img)}?draw=1" width="${W}" height="${H}" alt="${esc(a.alt)}" fetchpriority="high" crossorigin="anonymous"></figure>
     </div>
     <noscript><p class="fc-hint">Coloring on the screen needs JavaScript. The printable twin at <a href="${CP_LIB}${a.slug}/">/coloring-pages/shapes/${a.slug}/</a> always works — crayons included.</p></noscript>
    </section>

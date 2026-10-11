@@ -64,7 +64,8 @@ test('all 42 new pages exist with unique titles and self-matching canonicals',()
 test('activity pages: original image + drawing layer + restore key + twin link',()=>{
  for(const a of coloringPages){
   const html=page('toddler/2-years/colors-and-shapes/coloring/'+a.slug);
-  assert.ok(html.includes(`data-wc data-wc-src="${CP_BASE}${a.img}"`),'original R2 picture feeds the drawing layer: '+a.slug);
+  assert.ok(html.includes(`data-wc data-wc-src="${CP_BASE}${a.img}?draw=1"`),'original R2 picture feeds the drawing layer with its own CORS cache key: '+a.slug);
+  assert.ok(html.includes(`src="${CP_BASE}${a.img}?draw=1"`),'the sheet img shares the CORS-safe cache key (fill and save need a clean canvas): '+a.slug);
   assert.ok(html.includes('data-wc-w="1545" data-wc-h="2000"'),'natural proportions declared: '+a.slug);
   assert.ok(html.includes(`data-wc-restore="coloring/${a.slug}"`),'per-child save & restore key: '+a.slug);
   assert.ok(html.includes('data-wc-toolbar="#cp-tools"'),'tools live in the right rail: '+a.slug);

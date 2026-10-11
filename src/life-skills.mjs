@@ -547,8 +547,8 @@ export function lifeSkillsActivityBody(a,site){
   <div class="fc2-main">
    <section class="wc-section" aria-label="The activity sheet — draw right on it" id="the-activity">
     <div class="wc-head"><span class="eyebrow">THE ACTIVITY — WRITE AND DRAW RIGHT ON THE SHEET</span><h2>Your sheet is ready.</h2><p class="lesson-copy">Pick a color or the eraser, then circle, match, trace and draw straight on the sheet with your finger, a stylus or the mouse. Press Save my work when you are proud — that is what marks this activity cleared for your child.</p></div>
-    <div class="wc-mount" data-ls-activity="${a.slug}" data-wc data-wc-src="${esc(LS_BASE+a.img)}" data-wc-name="${esc(a.title)} life skills sheet" data-wc-w="${a.w}" data-wc-h="${a.h}" data-wc-toolbar="#ls-tools">
-     <figure class="fc2-hero ws-hero-art ls-sheet"><img src="${esc(LS_BASE+a.img)}" width="${a.w}" height="${a.h}" alt="The full ${esc(a.title)} activity sheet: ${esc(a.tag)}" fetchpriority="high" crossorigin="anonymous"></figure>
+    <div class="wc-mount" data-ls-activity="${a.slug}" data-wc data-wc-src="${esc(LS_BASE+a.img)}?draw=1" data-wc-name="${esc(a.title)} life skills sheet" data-wc-w="${a.w}" data-wc-h="${a.h}" data-wc-toolbar="#ls-tools">
+     <figure class="fc2-hero ws-hero-art ls-sheet"><img src="${esc(LS_BASE+a.img)}?draw=1" width="${a.w}" height="${a.h}" alt="The full ${esc(a.title)} activity sheet: ${esc(a.tag)}" fetchpriority="high" crossorigin="anonymous"></figure>
     </div>
     <noscript><p class="fc-hint">Drawing on the sheet needs JavaScript. The printable twin at <a href="${LS_WS_PATH}${a.slug}/">/worksheets/life-skills/${a.slug}/</a> always works.</p></noscript>
    </section>
