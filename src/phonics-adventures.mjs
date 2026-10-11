@@ -319,16 +319,6 @@ export function phonicAdventureBody(g){
   say:g.say,hint:g.hint,doneTitle:g.doneTitle,alt:g.alt,
   imgUrl:PHONICS_BASE+g.img,w:art.w,h:art.h,wsPath:ws});
  return `${crumbNav([['Preschool','/preschool/'],['Phonics Adventures',PHONICS_LIB_PATH],[g.num+'. '+g.title]])}
- <article class="wrap lesson-hero sa-hero">
-  <div class="sa-hero-art"><img src="${PHONICS_BASE}${g.img}" width="800" height="568" alt="${esc(g.alt)}" fetchpriority="high"></div>
-  <div class="lesson-hero-copy">
-   <span class="eyebrow">PHONICS ADVENTURE ${g.num} OF 24</span>
-   <h1>${esc(g.h1||g.title)}</h1>
-   <div class="fc-chips lesson-chips"><span><strong>Age</strong> 4–5 Years</span><span><strong>Class</strong> 28 · Phonics</span><span><strong>Skill</strong> ${esc(g.skill)}</span></div>
-   <p class="lesson-lede">${esc(g.tag)}</p>
-   <div class="lesson-start"><a class="button" href="#play">Start drawing <span aria-hidden="true">↓</span></a><a class="button button-ghost" href="${ws}">Print the worksheet <span aria-hidden="true">↓</span></a><span class="lesson-start-hint">Works with a finger, a stylus, or a mouse. Undo and Clear are always one tap away.</span></div>
-  </div>
- </article>
  ${board}
  <section class="wrap lesson-section"><span class="eyebrow">FOR GROWN-UPS</span><h2>Why this adventure helps.</h2>
   <p class="lesson-copy">${esc(g.parentNote||('This activity trains '+g.skill.toLowerCase()+' right on the adventure picture, with one short written instruction a grown-up can read aloud. Nothing is graded and nothing is scored \u2014 the win is a child who picked up a pencil, played with the sounds they hear in words, and saved work they are proud of. Saying the sounds cleanly (sss, not \u201csuh\u201d) as they draw is exactly how reading research says to teach them.'))}</p>

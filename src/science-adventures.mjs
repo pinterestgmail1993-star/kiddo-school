@@ -492,16 +492,6 @@ export function scienceAdventureBody(g){
  const ws=WS31_PATH+g.slug+'/';
  const art=artFor('science/'+g.slug,SCIENCE_BASE+g.img);
  return `${crumbNav([['Preschool','/preschool/'],['Science Adventures',SCIENCE_LIB],[g.num+'. '+esc(g.title)]])}
- <article class="wrap lesson-hero sa-hero">
-  <div class="sa-hero-art"><img src="${SCIENCE_BASE}${g.img}" width="800" height="568" alt="${esc(g.alt)}" fetchpriority="high"></div>
-  <div class="lesson-hero-copy">
-   <span class="eyebrow">SCIENCE ADVENTURE ${g.num} · CLASS 31</span>
-   <h1>${esc(g.title)}</h1>
-   <div class="fc-chips lesson-chips"><span><strong>Age</strong> 4–5 Years</span><span><strong>Class</strong> 31 · Science</span><span><strong>Skill</strong> ${esc(g.skill)}</span></div>
-   <p class="lesson-lede">${esc(g.tag)}</p>
-   <div class="lesson-start"><a class="button" href="#play">Start drawing <span aria-hidden="true">↓</span></a><a class="button button-ghost" href="${ws}">Print the worksheet <span aria-hidden="true">↓</span></a><span class="lesson-start-hint">Play with a finger, a stylus or a mouse. Undo and Clear are always one tap away.</span></div>
-  </div>
- </article>
  ${imageActivitySection({band:'science',slug:g.slug,title:g.title,skill:g.skill,
    say:g.say,hint:g.hint,doneTitle:g.doneTitle,alt:g.alt,
    imgUrl:SCIENCE_BASE+g.img,w:art.w,h:art.h,wsPath:WS31_PATH+g.slug+'/'})}

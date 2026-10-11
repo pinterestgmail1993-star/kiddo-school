@@ -41,7 +41,7 @@ test('all 18 shape adventure pages exist, unique, each drawing on its own artwor
   const html=page(p);
   const title=html.match(/<title>(.*?)<\/title>/)[1];
   assert.ok(!seen.has(title),'unique title '+g.slug);seen.add(title);
-  assert.ok(html.includes(`<h1>${g.h1}</h1>`),'h1 '+g.slug);
+  assert.ok(html.includes(`<h1 class="ia-h1">${g.title}</h1>`),'h1 '+g.slug);
   assert.ok(html.includes('rel="canonical" href="https://kiddo-school.pages.dev'+p+'"'),'canonical '+g.slug);
   // the owner's spec: original Canva image + transparent drawing layer
   assert.ok(html.includes(`data-wc-src="${SHAPE_BASE+g.img}?draw=1"`),'drawing mount over the artwork '+g.slug);
@@ -82,7 +82,7 @@ test('all 18 color activity pages exist, each drawing on its own artwork',()=>{
   const html=page(p);
   const title=html.match(/<title>(.*?)<\/title>/)[1];
   assert.ok(!seen.has(title),'unique title '+a.slug);seen.add(title);
-  assert.ok(html.includes(`<h1>${a.h1}</h1>`),'h1 '+a.slug);
+  assert.ok(html.includes(`<h1 class="ia-h1">${a.title}</h1>`),'h1 '+a.slug);
   assert.ok(html.includes(`data-wc-src="${COLOR_BASE+a.img}?draw=1"`),'drawing mount '+a.slug);
   const art=artFor('colors/'+a.slug,COLOR_BASE+a.img);
   assert.ok(html.includes(`data-wc-w="${art.w}"`)&&html.includes(`data-wc-h="${art.h}"`),'true pixel dims '+a.slug);
@@ -118,7 +118,7 @@ test('all 30 writing pages exist, each drawing on its own artwork, with honest c
   const html=page(p);
   const title=html.match(/<title>(.*?)<\/title>/)[1];
   assert.ok(!seen.has(title),'unique title '+a.slug);seen.add(title);
-  assert.ok(html.includes(`<h1>${a.h1}</h1>`),'h1 '+a.slug);
+  assert.ok(html.includes(`<h1 class="ia-h1">${a.title}</h1>`),'h1 '+a.slug);
   assert.ok(html.includes(`data-wc-src="${WRITING_BASE}${a.img}?draw=1"`),'drawing mount '+a.slug);
   const art=artFor('writing/'+a.slug,WRITING_BASE+a.img);
   assert.ok(html.includes(`data-wc-w="${art.w}"`)&&html.includes(`data-wc-h="${art.h}"`),'true pixel dims '+a.slug);

@@ -518,16 +518,6 @@ export function readingAdventureBody(g){
  const ws=WS29_PATH+g.slug+'/';
  const art=artFor('reading/'+g.slug,READING_BASE+g.img);
  return `${crumbNav([['Preschool','/preschool/'],['Storytime Adventures',READING_LIB],[g.num+'. '+esc(g.title)]])}
- <article class="wrap lesson-hero sa-hero">
-  <div class="sa-hero-art"><img src="${READING_BASE}${g.img}" width="800" height="568" alt="${esc(g.alt)}" fetchpriority="high"></div>
-  <div class="lesson-hero-copy">
-   <span class="eyebrow">STORYTIME ADVENTURE ${g.num} · CLASS 29</span>
-   <h1>${esc(g.title)}</h1>
-   <div class="fc-chips lesson-chips"><span><strong>Age</strong> 4–5 Years</span><span><strong>Class</strong> 29 · Storytime</span><span><strong>Skill</strong> ${esc(g.skill)}</span></div>
-   <p class="lesson-lede">${esc(g.tag)}</p>
-   <div class="lesson-start"><a class="button" href="#play">Start drawing <span aria-hidden="true">↓</span></a><a class="button button-ghost" href="${ws}">Print the worksheet <span aria-hidden="true">↓</span></a><span class="lesson-start-hint">Play with a finger, a stylus or a mouse. Undo and Clear are always one tap away.</span></div>
-  </div>
- </article>
  ${imageActivitySection({band:'reading',slug:g.slug,title:g.title,skill:g.skill,
    say:g.say,hint:g.hint,doneTitle:g.doneTitle,alt:g.alt,
    imgUrl:READING_BASE+g.img,w:art.w,h:art.h,wsPath:WS29_PATH+g.slug+'/'})}

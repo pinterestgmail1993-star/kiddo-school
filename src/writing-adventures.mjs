@@ -505,20 +505,10 @@ export function writingPageBody(a){
   imgUrl:WRITING_BASE+a.img,w:art.w,h:art.h,
   wsPath:'/worksheets/writing/'+a.slug+'/'});
  return `${crumbNav([['Preschool','/preschool/'],['Writing Adventures',WLIB_PATH],[`${a.num}. ${a.title}`]])}
- <article class="wrap lesson-hero sa-hero">
-  <div class="sa-hero-art"><img src="${WRITING_BASE}${a.img}" width="800" height="568" alt="${esc(a.alt)}" fetchpriority="high"></div>
-  <div class="lesson-hero-copy">
-   <span class="eyebrow">WRITING ADVENTURE ${a.num} OF 30 · ${GROUP_NAMES[a.group].toUpperCase()}</span>
-   <h1>${esc(a.h1)}</h1>
-   <div class="fc-chips lesson-chips"><span><strong>Age</strong> 4 Years</span><span><strong>Class</strong> 27 · Writing</span><span><strong>Skill</strong> ${esc(a.skill)}</span></div>
-   <p class="lesson-lede">${esc(a.tag)}</p>
-   <div class="lesson-start"><a class="button" href="#play">Start tracing <span aria-hidden="true">↓</span></a><a class="button button-ghost" href="/worksheets/writing/${a.slug}/">Print the worksheet <span aria-hidden="true">↓</span></a><span class="lesson-start-hint">Finger, stylus or mouse. Undo and Clear are always one tap away.</span></div>
-  </div>
- </article>
  ${board}
  <section class="wrap lesson-section"><span class="eyebrow">FOR GROWN-UPS</span><h2>Why this adventure helps.</h2>
   <p class="lesson-copy">${esc(a.parentNote||('This game builds '+a.skill.toLowerCase()+' — one of the foundation strokes behind handwriting. Tracing a clear path with a finger or a stylus teaches speed, rhythm and control long before pencils arrive on paper, and the generous engine means an honest attempt is always celebrated. Watch for the moment the whole arm starts doing the work instead of the wrist — that is the real milestone.'))}</p>
-  <p class="lesson-copy">The worksheet button prints the original artwork with its tracing guides, a title and the instruction — perfect for a kitchen-table session. The my-drawing button saves exactly what your child drew on screen. Short, happy sessions of two or three adventures beat one long push, every time.</p>
+  <p class="lesson-copy">Short, happy sessions of two or three adventures beat one long push, every time.</p>
  </section>
  <nav class="wrap lesson-section sa-prevnext" aria-label="More writing adventures">
   <a class="sa-navcard" href="${WLIB_PATH}${prev.slug}/"><span class="eyebrow">Previous</span><strong>${esc(prev.title)}</strong></a>

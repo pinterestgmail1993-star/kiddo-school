@@ -32,7 +32,7 @@ test('every phonics adventure page exists with unique SEO, H1, artwork and the d
  for(const g of phonicAdventures){
   const p=PHONICS_LIB_PATH+g.slug+'/';
   const html=page(p);
-  assert.ok(html.includes('<h1>'+g.title+'</h1>')||html.includes(`<h1>${g.title}</h1>`),'H1 on '+p);
+  assert.ok(html.includes(`<h1 class="ia-h1">${g.title}</h1>`),'H1 on '+p);
   assert.ok(html.includes(`data-wc-src="${PHONICS_BASE+g.img}?draw=1"`),'drawing mount over the artwork on '+p);
   assert.ok(html.includes('data-ia-band="phonics"'),'progress band on '+p);
   assert.ok(html.includes('/assets/image-adventure.js'),'progress engine on '+p);

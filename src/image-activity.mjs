@@ -34,7 +34,7 @@ export function imageActivitySection(a){
  const draw = sheetUrl(a);
  return `<section class="wrap lesson-section" id="play" aria-label="Draw on ${esc(a.title)}">
   <span class="eyebrow">PLAY · ${esc(a.skill).toUpperCase()}</span>
-  <h2>${esc(a.title)}</h2>
+  <h1 class="ia-h1">${esc(a.title)}</h1>
   <p class="lesson-copy">${esc(a.say)}</p>
   <div class="fc2-dual ia-dual">
    <div class="fc2-main">
@@ -49,7 +49,6 @@ export function imageActivitySection(a){
     <section class="fc2-block fc2-first-block"><span class="eyebrow">HOW TO DO IT</span><h2>Read, then draw.</h2><p class="lesson-copy ia-instruction">${esc(a.say)}</p>${a.hint?`<p class="fc-hint">${esc(a.hint)}</p>`:''}</section>
     <section class="fc2-block" id="ia-tools" aria-label="Drawing tools"><span class="eyebrow">YOUR PENCIL CASE</span><h2>Pick your tools.</h2><p class="fc-hint">Pencil, nine crayons, an eraser, undo, redo and clear appear right here and work straight on the picture. Save keeps your finished work as a picture.</p></section>
     <section class="fc2-block"><span class="eyebrow">MY PROGRESS</span><h2>Save it to keep it.</h2><p class="ls-progress-line" data-ia-progress aria-live="polite">This adventure is cleared for you the moment you save your finished picture. Nothing counts until then — opening the page is just opening the door.</p><p class="ls-progress-done" data-ia-done hidden><strong>Cleared!</strong> ${esc(a.doneTitle?a.doneTitle+' ':'')}Your saved work is in your downloads, and the ribbon is on in the library.</p></section>
-    <section class="fc2-block"><span class="eyebrow">PREFER PAPER?</span><h2>Print the twin.</h2><p class="fc-hint">The same picture lives in the worksheet library with its own print buttons: <a href="${esc(a.wsPath)}">${esc(a.wsPath)}</a>. Crayons beat styluses sometimes.</p></section>
    </aside>
   </div>
  </section>`;

@@ -315,16 +315,6 @@ export function colorActivityBody(a){
   imgUrl:COLOR_BASE+a.img,w:art.w,h:art.h,
   wsPath:'/worksheets/colors/'+a.slug+'/'});
  return `${crumbNav([['Preschool','/preschool/'],['Colors &amp; Creativity',CLIB_PATH],[`${a.num}. ${a.title}`]])}
- <article class="wrap lesson-hero sa-hero">
-  <div class="sa-hero-art"><img src="${COLOR_BASE}${a.img}" width="800" height="600" alt="${esc(a.alt)}" fetchpriority="high"></div>
-  <div class="lesson-hero-copy">
-   <span class="eyebrow">COLORS &amp; CREATIVITY · ${a.num} OF 18 · ${GROUPS[a.num].toUpperCase()}</span>
-   <h1>${esc(a.h1)}</h1>
-   <div class="fc-chips lesson-chips"><span><strong>Age</strong> 4 Years</span><span><strong>Class</strong> 26 · Colors</span><span><strong>Skill</strong> ${esc(a.skill)}</span></div>
-   <p class="lesson-lede">${esc(a.tag)}</p>
-   <div class="lesson-start"><a class="button" href="#play">Start creating <span aria-hidden="true">↓</span></a><a class="button button-ghost" href="/worksheets/colors/${a.slug}/">Print the worksheet <span aria-hidden="true">↓</span></a><span class="lesson-start-hint">Finger, stylus or mouse. Undo, redo and save are always one tap away.</span></div>
-  </div>
- </article>
  ${board}
  <section class="wrap lesson-section"><span class="eyebrow">FOR GROWN-UPS</span><h2>Why this activity helps.</h2>
   <p class="lesson-copy">${esc(a.parentNote||('This studio turns '+a.skill.toLowerCase()+' into open-ended making. Children choose, tap and see the picture answer at once — and because nothing is graded, the choices are truly theirs. Naming colors out loud as they work doubles the learning, and the undo button means a brave choice is never a risk.'))}</p>

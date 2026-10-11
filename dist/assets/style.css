@@ -1818,3 +1818,6 @@ h1 em,h2 em{color:#7b4b99}
    so the element box and the bitmap box are always the same rectangle. */
 .fc2-main .fc2-hero.ia-sheet{max-width:min(100%,calc(70vh * var(--iar,1.4143)));margin-inline:auto}
 .fc2-main .fc2-hero.ia-sheet img{max-height:none;object-fit:fill}
+
+/* Image adventures: the play section heading is the page h1 (the duplicated hero was removed) — keep the former play-heading scale. */
+.ia-h1{font-size:clamp(30px,3.4vw,43px);letter-spacing:-1.2px}

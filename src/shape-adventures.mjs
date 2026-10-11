@@ -492,16 +492,6 @@ export function shapeAdventureBody(g){
   imgUrl:SHAPE_BASE+g.img,w:art.w,h:art.h,
   wsPath:'/worksheets/shapes/'+g.slug+'/'});
  return `${crumbNav([['Preschool','/preschool/'],['Shape Adventures',LIB_PATH],[`${g.num}. ${g.title}`]])}
- <article class="wrap lesson-hero sa-hero">
-  <div class="sa-hero-art"><img src="${SHAPE_BASE}${g.img}" width="800" height="568" alt="${esc(g.alt)}" fetchpriority="high"></div>
-  <div class="lesson-hero-copy">
-   <span class="eyebrow">SHAPE ADVENTURE ${g.num} OF 18</span>
-   <h1>${esc(g.h1)}</h1>
-   <div class="fc-chips lesson-chips"><span><strong>Age</strong> 4 Years</span><span><strong>Class</strong> 25 · Shapes</span><span><strong>Skill</strong> ${esc(g.skill)}</span></div>
-   <p class="lesson-lede">${esc(g.tag)}</p>
-   <div class="lesson-start"><a class="button" href="#play">Play <span aria-hidden="true">↓</span></a><a class="button button-ghost" href="/worksheets/shapes/${g.slug}/">Print the worksheet <span aria-hidden="true">↓</span></a><span class="lesson-start-hint">Works with a finger, a stylus, or a mouse. Nothing to install.</span></div>
-  </div>
- </article>
  ${board}
  <section class="wrap lesson-section"><span class="eyebrow">FOR GROWN-UPS</span><h2>Why this adventure helps.</h2>
   <p class="lesson-copy">${esc(g.parentNote||('This game turns '+g.skill.toLowerCase()+' into a small story with a clear goal. Your child chooses a piece, predicts where it belongs, and sees the scene answer them at once — the exact noticing-and-trying loop that early maths is built on. The board forgives every miss with a hint, so trying again feels like part of the game rather than a mistake.'))}</p>
