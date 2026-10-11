@@ -21,6 +21,7 @@
 import {R2,crumbNav,esc} from './adventure-kit.mjs';
 import {fcCommunityMount} from './flashcards/index.mjs';
 import * as lsFlash from './flashcards/data-life-skills-and-good-habits.mjs';
+import {lpContent as lsLp} from './flashcards/lp-life-skills.mjs';
 
 export const FC_SET_URL='/flashcards/life-skills-and-good-habits/';
 
@@ -510,13 +511,11 @@ export function lifeSkillsClassBody(){
   <p class="lesson-lede">Every activity opens right here on the site: the sheet sits on the left and your child writes, circles, traces and draws straight on top of it. The instructions sit beside them in grown-up read-aloud words. Their finished work saves as a real picture they can keep.</p>
   <div class="lesson-start"><a class="button" href="${LS_ACT_PATH}wash-your-hands/">Start the first activity <span aria-hidden="true">→</span></a><span class="lesson-start-hint">One or two sheets per sitting is a full class.</span></div>
  </div></article>
- <section class="wrap lesson-section" id="teach" aria-label="How to teach the 28 life skills">
-  <span class="eyebrow">TEACH · HOW TO TEACH THE 28 LIFE SKILLS</span>
-  <h2>How to teach every skill, step by step.</h2>
-  <p class="lesson-copy">Twenty-eight everyday skills, twenty-eight short how-to guides — one per skill, from hand-washing and teeth to manners, patience and the safety rules. The method is the same every time: name the skill, say the words together, then practise the real thing the same day — the sink, the shoe rack and the car seat are the show. Below is every skill with its step-by-step guide for grown-ups. One skill a week is plenty — twenty-eight skills is a school year of good habits.</p>
-  <div class="ws-grid">${lsFlash.lesson.cards.map((c,i)=>{const slug=c.file.replace(/\.webp$/,'');const d=lsFlash.cards[slug];return `<div class="ws-card">
-   <span class="ws-card-body"><strong>${esc(d.word)}</strong><span class="ws-card-meta"><span>Ages 4–5</span><span>Skill ${i+1} of 28</span><span>How to teach</span></span><span class="ws-card-desc">${esc(d.teach)}</span></span>
-  </div>`;}).join('')}</div>
+ <section class="wrap fc-section" id="teach" aria-label="How to teach the 28 life skills">
+  <span class="eyebrow">LEARNING PATH LESSONS · HOW TO TEACH THE 28 LIFE SKILLS</span>
+  <h2>Teach every skill, step by step.</h2>
+  <p class="fc-hint">Twenty-eight individual flashcard teaching lessons — each opens on its own page with the original artwork on the left and the full step-by-step guidance on the right: what the skill is, why it matters, what it teaches your child, the words to say, the questions to ask, a practice game and the safety notes. One skill a week is plenty — twenty-eight skills is a school year of good habits.</p>
+  <div class="fc2-relrow">${lsFlash.lesson.cards.map((c)=>{const slug=c.file.replace(/\.webp$/,'');const l=lsLp[slug];if(!l)return '';return `<a class="fc2-relcard fcl-nav" href="${LS_CLASS_PATH}learn/${slug}/"><strong>${esc(l.title)}</strong><span>${esc(l.one)}</span><span class="fc-open">Start the lesson <span aria-hidden="true">↗</span></span></a>`;}).join('')}</div>
  </section>
  <section class="wrap lesson-section" id="activities" aria-label="The life skills activities">
   <span class="eyebrow">DO · THE LIFE SKILLS ACTIVITIES</span>

@@ -122,21 +122,25 @@ test('the set page: 28 whole-card links with no download buttons in the grid, cl
  assert.ok(!html.includes('cover.webp" width'),'cover is not repeated as a card figure');
 });
 
-test('the Class 32 page: per-skill teaching guidance stays (text, no links), activities are MAIN, ONE small resource section',()=>{
+test('the Class 32 page: 28 lessons moved to their own /learn/ pages (compact nav), activities are MAIN, ONE small resource section',()=>{
  const html=page(CLASS_PAGE);
- // step-by-step teaching guidance preserved for every skill — as TEXT, with zero flashcard links
+ // the 28 full teaching guides MOVED to individual /learn/ pages — the class page
+ // carries a compact lesson nav instead: 28 unique /learn/ links, zero guide text
  for(const c of set.cards){
-  assert.ok(html.includes(esc(lsCards[c.slug].teach)),'teach guidance preserved for '+c.slug);
+  assert.ok(html.includes(`href="/${CLASS_PAGE}/learn/${c.slug}/"`),'compact lesson nav link for '+c.slug);
+  assert.ok(!html.includes(esc(lsCards[c.slug].teach)),'full guide no longer inline on the class page: '+c.slug);
   assert.ok(!html.includes(`href="${SET_URL}${c.slug}/"`),'no individual card link on the class page: '+c.slug);
  }
+ const learnLinks=[...html.matchAll(new RegExp('href="/'+CLASS_PAGE.replace(/\//g,'\\/')+'/learn\\/([a-z-]+)\\/"','g'))].map(m=>m[1]);
+ assert.equal(new Set(learnLinks).size,28,'28 unique lesson links on the class page');
  assert.ok(!html.includes('Open the flashcard'),'the flashcard grid marker is gone');
  // main content: 29 activity cards opening activity pages
  const grid=[...html.matchAll(/<a class="sa-card" href="([^"]+)"/g)].map(m=>m[1]);
  assert.equal(grid.length,29,'the existing activity grid is intact');
  assert.ok(grid.every(h=>h.startsWith('/preschool/life-skills/')),'activity cards open activities');
- // order: teach guidance → activities → small flashcard resource
+ // order: lesson nav → activities → small flashcard resource
  const teachPos=html.indexOf('id="teach"'),actPos=html.indexOf('id="activities"'),fcPos=html.indexOf('id="flashcards"');
- assert.ok(teachPos>-1&&teachPos<actPos,'teaching guidance sits before the activities');
+ assert.ok(teachPos>-1&&teachPos<actPos,'lesson nav sits before the activities');
  assert.ok(actPos>-1&&fcPos>actPos,'activities come before the flashcard resource section');
  // the small section: original collection cover + exactly one collection link
  const secHtml=html.slice(fcPos).slice(0,html.slice(fcPos).indexOf('</section>'));

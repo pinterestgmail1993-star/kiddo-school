@@ -7,14 +7,27 @@
 // (wsContents !== null — until then it is simply absent).
 import {lesson as chLesson,meta as chMeta} from './flashcards/data-community-helpers.mjs';
 import {lpContent as chLp} from './flashcards/lp-community-helpers.mjs';
+import {communityWs,CH_WS_CLASS,CH_WS_LIB,CH_WS_BASE} from './community-ws.mjs';
+
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
 export const CH_CLASS_PATH='/preschool/4-years/community-helpers-and-our-neighborhood/';
 export const CH_READY=29;
 export const CH_TOTAL=29;
+export const CH_WS_READY=communityWs.length;
 
-// Set to a non-empty array of worksheet bodies when genuine Canva worksheet
-// artwork arrives — Section 3 and the worksheets resource link appear then.
-export const chWsContents=null;
+// Set to the real worksheet grid the day the genuine Canva worksheet artwork
+// is verified on R2 (35 sheets, all audited) — Section 3 and the worksheets
+// resource link render then. It is non-null now: the 35 genuine sheets are
+// verified live (HTTP 200 image/webp, 1545×2000, image-by-image audit).
+export const chWsContents=communityWs.length?`<div class="sa-grid">${communityWs.map((w,i)=>`<a class="sa-card" href="${CH_WS_CLASS}${w.slug}/" data-chws-card="${w.slug}">
+   <span class="sa-card-num" aria-hidden="true">${i+1}</span>
+   <span class="sa-card-done" data-chws-done hidden>Cleared!</span>
+   <img src="${CH_WS_BASE}${w.file}" width="707" height="1000" alt="Community Helpers worksheet ${i+1}: ${esc(w.title)} — ${esc(w.tag)}" loading="lazy">
+   <span class="sa-card-body"><strong>${esc(w.title)}</strong><span class="sa-card-tag">${esc(w.tag)}</span><span class="sa-card-skill">Do it on screen with your finger, a stylus or the mouse</span></span>
+   <span class="sa-card-play">Start the activity <span aria-hidden="true">→</span></span>
+  </a>`).join('')}</div>
+  <p class="lesson-note">All ${communityWs.length} genuine worksheets are ready now, each with its own on-screen activity above and its printable twin in the <a href="${CH_WS_LIB}">Community Helpers worksheet library</a>.</p>`:null;
 
 export function communityHelpersClassBody(){
  const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -24,7 +37,7 @@ export function communityHelpersClassBody(){
   const l=chLp[c.slug];
   return `<a class="fc2-relcard fcl-nav" href="${CH_CLASS_PATH}learn/${c.slug}/"><strong>${String(i+1).padStart(2,'0')} · ${esc(l.title)}</strong><span>${esc(l.one)}</span><span class="fc-open">Start the lesson <span aria-hidden="true">↗</span></span></a>`;
  }).join('');
- const wsSection=chWsContents?`<section class="wrap fc-section" id="worksheets"><span class="eyebrow">WORKSHEETS</span><h2>Let’s solve the Community Helpers worksheets.</h2><p class="fc-hint">Genuine printable worksheets with drawing-canvas activities on their own pages.</p>${chWsContents}</section>`:'';
+ const wsSection=chWsContents?`<section class="wrap lesson-section" id="worksheets"><span class="eyebrow">DO · THE COMMUNITY HELPERS WORKSHEETS</span><h2>Solve the Community Helpers worksheets.</h2><p class="lesson-copy">Thirty-five genuine activity sheets, one per helper — trace the helper’s name, match their tools, circle the right things, count, and draw. Every card below opens its own activity page: the sheet sits on the left and your child traces, circles and draws straight on top of it, with the instructions beside them and the tools under their fingers. Each sheet has a printable twin in the worksheet library.</p>${chWsContents}</section>`:'';
  const wsResource=chWsContents?`<a class="button" href="/worksheets/community-helpers-and-our-neighborhood/">Community Helpers worksheets <span aria-hidden="true">↗</span></a>`:'';
  return `<section class="wrap lesson-section"><div class="page-heading"><span class="eyebrow">CLASS 33 · AGES 4–5 · 29 HELPER LESSONS</span><h1>Community Helpers &amp; Our Neighborhood.</h1></div></section>
  <section class="wrap lesson-section"><span class="eyebrow">HOW THIS CLASS WORKS</span><h2>Meet the people who keep our neighborhood running.</h2><p class="lesson-copy">Every helper in this class has its own step-by-step lesson: look at the picture together, learn what the job really is, say the parent script, ask the questions, play the practice game and finish with a small understanding check. One helper a day is plenty — the whole class is a month of five-minute sessions, in whatever order your child’s curiosity points.</p><p class="lesson-copy">Start with the helpers your child already meets — doctor, bus driver, teacher — then follow the given order for the full journey: health helpers, safety helpers, learning helpers, food and growing helpers, and the people who build and fix everything else.</p></section>

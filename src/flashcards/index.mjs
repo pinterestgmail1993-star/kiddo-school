@@ -172,6 +172,11 @@ function buildSet([data,lesson]){
 
 export const fcSets=SOURCES.map(buildSet);
 export const fcSetBySlug=Object.fromEntries(fcSets.map(s=>[s.slug,s]));
+/* Learning Path lesson registry, injected by lp-lessons.mjs (one-way import —
+   keeps the module graph cycle-free). Each entry maps card slug → lesson data,
+   so a library card page can link its own step-by-step lesson. */
+export const lpTeachLinks={};
+export function registerLpTeachLinks(reg){Object.assign(lpTeachLinks,reg);}
 
 function crumbNav(parts){
  return `<nav class="breadcrumbs wrap" aria-label="Breadcrumb"><a href="/">Home</a>${parts.map(([label,href])=>`<span aria-hidden="true">/</span>${href?`<a href="${esc(href)}">${esc(label)}</a>`:`<span aria-current="page">${esc(label)}</span>`}`).join('')}</nav>`;
@@ -251,6 +256,7 @@ export function fcCardPageBody(set,card,ctx){
  const tryThis=`<div class="fc2-do"><h2>Try this</h2><p>${esc(card.try)}</p></div>`;
  const note=`<div class="fc2-do fc2-note"><h2>Quick parent note</h2><p>${esc(card.note)}</p></div>`;
  const safety=card.safety?`<div class="fc2-do fc2-note fcl-safety"><h2>Staying safe</h2><p>${esc(card.safety)}</p></div>`:'';
+ const teach=(lpTeachLinks[set.slug]||{})[card.slug]?`<div class="fc2-do"><h2>Teach it, step by step</h2><p>This card has its own Learning Path lesson — the original artwork beside a full walkthrough: what it means, why it matters, the words to say, the questions to ask and a way to practise it today. <a href="${set.lessonPath}learn/${card.slug}/">Open the ${esc(card.word)} lesson</a>.</p></div>`:'';
  const dlName=f=>f.replace(/^\d+-/,'').replace(/\.webp$/,'');
  const actions=`<div class="fc2-actions">${card.img2
   ?`<a class="button" href="${card.img}" download="${dlName(card.file)}.webp">Download splash <span aria-hidden="true">↓</span></a><a class="button" href="${card.img2}" download="${dlName(card.img2.split('/').pop())}.webp">Download picture <span aria-hidden="true">↓</span></a>`
@@ -261,7 +267,7 @@ export function fcCardPageBody(set,card,ctx){
  return `${crumbNav([['Flashcards','/flashcards/'],[set.name,set.url],[card.word]])}
  <div class="page-heading wrap"><span class="eyebrow">FLASHCARD · ${esc(set.name.toUpperCase())} · AGES ${esc(set.ageLabel.toUpperCase())}</span><h1>${card.numeral?`Number ${esc(card.numeral)} Flashcard — ${esc(card.word)} for ${esc(noun)}`:card.letter?`${esc(card.word)} Flashcard — Letter ${esc(card.letter.toUpperCase())} for ${esc(noun)}`:`${esc(card.word)} Flashcard for ${esc(noun)}`}</h1><p>${esc(card.intro)}</p></div>
  <div class="fc2-dual wrap">
-  <div class="fc2-main">${figure}${pn}<section class="fc2-learn" aria-label="How to use this card">${who}${job}${why}${sound}${say}${tryThis}${note}${safety}</section>${lesson}</div>
+  <div class="fc2-main">${figure}${pn}<section class="fc2-learn" aria-label="How to use this card">${who}${job}${why}${sound}${say}${tryThis}${note}${safety}${teach}</section>${lesson}</div>
   <aside class="fc2-rail" aria-label="Download, share and family feedback"><section class="fc2-block fc2-first-block"><span class="eyebrow">TAKE IT WITH YOU</span><h2>Download, print, keep going.</h2>${actions}</section>${share}${fcCommunityMount(card.url)}</aside>
  </div>
  ${relGrid}`;

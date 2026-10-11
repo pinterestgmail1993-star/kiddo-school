@@ -69,7 +69,7 @@ export const meta={
  relatedSets:['emotions-and-feelings','body-parts'],
  printPath:null,
  downloadHint:null,
- coverAlt:'Cover of the Life Skills & Good Habits flashcard set: the title over three children washing hands, drinking water and tidying toys.',
+ coverAlt:'Cover of the Life Skills & Good Habits flashcard set: the title over three children washing hands, drinking water and playing with building blocks.',
  lessonBlurb:'the Learning Path class where every skill is practised for real.'
 };
 

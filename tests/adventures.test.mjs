@@ -187,7 +187,7 @@ test('sitemap carries all 74 new Age 4 URLs',()=>{
  assert.ok(xml.includes('/preschool/writing/adventures/sunshine-stroke-challenge/'),'sitemap sunshine');
  const count=xml.split('/preschool/4-years/').length-1;
  // hub + nine class routes + 29 /learn/ lesson URLs (each contains the prefix)
- assert.equal(count,39,'hub + nine classes + 29 learn lessons in sitemap');
+ assert.equal(count,137,'hub + nine classes + 29 CH learn + 28 C32 learn + 35 C31 learn + 35 CH worksheet activities in sitemap');
 });
 test('My Classroom mounts the creations gallery and adventure progress',()=>{
  const mc=page('/my-classroom/');

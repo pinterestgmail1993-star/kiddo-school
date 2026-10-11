@@ -144,10 +144,12 @@ test('sitemap and search index carry every new URL with honest kinds',()=>{
   assert.ok(xml.includes(`<loc>https://kiddo-school.pages.dev${u}</loc>`),'sitemap: '+u);
  }
  const ws=search.filter(e=>e.u.startsWith(MS_WS_BASE));
- const acts=search.filter(e=>e.u.startsWith(MS_ACT_PATH)&&e.u!==MS_CLASS_PATH);
+ const acts=search.filter(e=>e.u.startsWith(MS_ACT_PATH)&&e.u!==MS_CLASS_PATH&&!e.u.includes('/learn/'));
+ const learns=search.filter(e=>e.u.startsWith(MS_ACT_PATH)&&e.u.includes('/learn/'));
  assert.equal(ws.length,32,'category + 31 printables in search');
  assert.equal(acts.length,31,'31 activities in search');
- assert.ok(ws.every(e=>e.k==='Worksheet')&&acts.every(e=>e.k==='Matching activity'),'honest kinds');
+ assert.equal(learns.length,15,'15 Learning Path lessons in search');
+ assert.ok(ws.every(e=>e.k==='Worksheet')&&acts.every(e=>e.k==='Matching activity')&&learns.every(e=>e.k==='Matching activity'||e.k==='Class'),'honest kinds');
 });
 
 test('restore stays opt-in per page family: flashcards none, activities their own key',()=>{

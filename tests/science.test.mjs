@@ -207,7 +207,7 @@ test('Class 31 is wired into the whole school without breaking 23-30',()=>{
  assert.equal(count,31,'library + 30 games in sitemap');
  // search index
  const idx=JSON.parse(read('/assets/search-index.json'));
- assert.ok(idx.filter(e=>e.k==='Worksheet').length===267,'all worksheets searchable (incl. life-skills + matching-and-sorting)');
+ assert.ok(idx.filter(e=>e.k==='Worksheet').length===303,'all worksheets searchable (incl. life-skills, matching-and-sorting, community helpers)');
 });
 
 test('science adventure pages never ship curriculum progress machinery',()=>{

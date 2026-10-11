@@ -146,7 +146,19 @@ test('Class 33 is wired into navigation: LP row, stage hub, flashcards hub',()=>
  assert.ok(fc.includes(LIB),'collection listed on the Flashcards hub');
 });
 
-test('no worksheets exist for Class 33 until genuine artwork arrives',()=>{
- assert.ok(!existsSync('dist/worksheets/community-helpers-and-our-neighborhood/'),'no worksheet category page (none invented)');
- assert.ok(!existsSync('dist'+CLASS+'worksheets/'),'no worksheets section on the class page');
+test('the 35 GENUINE worksheets ship: activity + printable + collection, verified artwork',()=>{
+ // the owner's real Canva worksheet upload is verified on R2 (36 objects incl.
+ // cover, all 1545×2000 image/webp) — the package ships now, with both page
+ // types per sheet and no fabricated flashcards for the extra professions
+ const ws=read('worksheets/community-helpers-and-our-neighborhood/index.html');
+ assert.ok(existsSync('dist/worksheets/community-helpers-and-our-neighborhood/'),'worksheet collection built');
+ const wsLinks=[...ws.matchAll(/href="\/worksheets\/community-helpers-and-our-neighborhood\/([a-z-]+)\/"/g)].map(m=>m[1]);
+ assert.equal(new Set(wsLinks).size,35,'35 printable worksheets on the collection');
+ assert.ok(ws.includes('cover.webp'),'the original worksheet cover is shown');
+ assert.ok(ws.includes('data-wc')===false,'no canvas on the collection page');
+ // hub: section 3 links all 35 activities, resource section links the collection
+ const hub=read(CLASS.slice(1)+'index.html');
+ const actLinks=[...hub.matchAll(/href="\/preschool\/4-years\/community-helpers-and-our-neighborhood\/worksheets\/([a-z-]+)\/"/g)].map(m=>m[1]);
+ assert.equal(new Set(actLinks).size,35,'35 activity links on the hub');
+ assert.ok(hub.includes('href="/worksheets/community-helpers-and-our-neighborhood/"'),'hub links the printable collection');
 });

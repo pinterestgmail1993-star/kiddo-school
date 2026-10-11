@@ -4,8 +4,34 @@
 // its own route under the class path: {lessonPath}learn/{slug}/. This module is
 // the registry + page body; the library card pages (flashcards/index.mjs) stay a
 // separate WHAT/WHY/PRACTISE experience — no text is shared between the two.
-import {fcSetBySlug} from './index.mjs';
+import {fcSetBySlug,registerLpTeachLinks} from './index.mjs';
 import {lpContent as ch33} from './lp-community-helpers.mjs';
+import {lpContent as ls32} from './lp-life-skills.mjs';
+import {lpContent as s31} from './lp-science-nature.mjs';
+import {lpContent as fvt} from './lp-faces-and-visual-tracking.mjs';
+import {lpContent as cfo} from './lp-colors-and-first-objects.mjs';
+import {lpContent as fwft} from './lp-first-words-familiar-things.mjs';
+import {lpContent as aeo} from './lp-animals-everyday-objects.mjs';
+import {lpContent as fab} from './lp-first-actions-body-parts.mjs';
+import {lpContent as fwfh} from './lp-first-words-food-home.mjs';
+import {lpContent as anso} from './lp-animals-and-sounds.mjs';
+import {lpContent as vhso} from './lp-vehicles-and-sounds.mjs';
+import {lpContent as csh} from './lp-colors-and-shapes.mjs';
+import {lpContent as mso} from './lp-matching-and-sorting.mjs';
+import {lpContent as emo} from './lp-emotions-and-feelings.mjs';
+import {lpContent as fcp} from './lp-first-concepts.mjs';
+import {lpContent as gbf} from './lp-garden-bugs-and-friends.mjs';
+import {lpContent as gfr} from './lp-garden-friends.mjs';
+import {lpContent as gfl} from './lp-garden-flowers.mjs';
+import {lpContent as gth} from './lp-garden-things.mjs';
+import {lpContent as abc} from './lp-alphabet.mjs';
+import {lpContent as num} from './lp-numbers-and-counting.mjs';
+import {lpContent as shp} from './lp-shapes.mjs';
+import {lpContent as col} from './lp-colors.mjs';
+import {lpContent as opp} from './lp-opposites.mjs';
+import {lpContent as asd} from './lp-animal-sounds.mjs';
+import {lpContent as bps} from './lp-body-parts-and-five-senses.mjs';
+import {lpContent as fav} from './lp-fruits-and-vegetables.mjs';
 
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
@@ -14,10 +40,91 @@ const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'
 export const LP_REGISTRY=[
  {slug:'community-helpers-and-our-neighborhood',content:ch33,
   navTitle:'Learn about our community helpers',
-  navIntro:'Twenty-nine helpers, one lesson each — five to ten minutes together at a time. Open a lesson, look at the picture, follow the steps, then play the practice game. The lessons follow a gentle order: health helpers first, then safety, learning, food and growing, and the builders and fixers.'}
+  navIntro:'Twenty-nine helpers, one lesson each — five to ten minutes together at a time. Open a lesson, look at the picture, follow the steps, then play the practice game. The lessons follow a gentle order: health helpers first, then safety, learning, food and growing, and the builders and fixers.'},
+ {slug:'life-skills-and-good-habits',content:ls32,
+  navTitle:'Teach the 28 life skills, step by step',
+  navIntro:'Twenty-eight everyday skills, one lesson each — the sink, the shoe rack and the car seat are the show. Every lesson opens the original flashcard, walks the teaching step by step, hands you the words to say, the questions to ask and a way to practise the real thing the same day. Follow the given order — hygiene first, then getting dressed, tidy-up jobs, manners, patience and the safety rules — or jump to the skill your family needs this week.'},
+ {slug:'faces-and-visual-tracking',content:fvt,
+  navTitle:'Watch, look and track — the newborn seeing lessons',
+  navIntro:'Twelve picture sessions for the youngest eyes — five minutes of showing, naming and watching what your baby\u2019s gaze does.'},
+ {slug:'colors-and-first-objects',content:cfo,
+  navTitle:'First colors and objects, one lesson each',
+  navIntro:'Twelve gentle lessons for three- to four-month eyes: show the card, name it warmly, watch the response, repeat across the week.'},
+ {slug:'first-words-familiar-things',content:fwft,
+  navTitle:'The first familiar things, taught one by one',
+  navIntro:'Eleven everyday things your baby is about to recognize — the teaching session behind every card, parent-led and unhurried.'},
+ {slug:'animals-everyday-objects',content:aeo,
+  navTitle:'Animals and everyday things, lesson by lesson',
+  navIntro:'Twelve lessons for the reaching-and-grabbing months: naming, watching, mouthing-safe play and the first game rules.'},
+ {slug:'first-actions-body-parts',content:fab,
+  navTitle:'First actions and body parts, taught gently',
+  navIntro:'Twelve lessons for the nine-to-twelve-month burst — waving, clapping, pointing — one skill per lesson, parent-led.'},
+ {slug:'first-words-food-home',content:fwfh,
+  navTitle:'First words for food and home',
+  navIntro:'Eleven lessons that turn mealtime and homecoming into naming practice — the words come when they come.'},
+ {slug:'animals-and-sounds',content:anso,
+  navTitle:'Learn the animals and their sounds',
+  navIntro:'Twenty animal lessons for two-year-olds: the sound, the walk, the hunt around the house — five minutes each, all roar.'},
+ {slug:'vehicles-and-sounds',content:vhso,
+  navTitle:'Learn the vehicles and their sounds',
+  navIntro:'Twenty vehicle lessons: vroom, choo and nee-nah — each card teaches its machine, its sound and where you both can spot one.'},
+ {slug:'colors-and-shapes',content:csh,
+  navTitle:'First colors and shapes, lesson by lesson',
+  navIntro:'Fifteen lessons that give two-year-olds the words for what they already see — one color or shape per session.'},
+ {slug:'matching-and-sorting',content:mso,
+  navTitle:'Learn to match and sort, one lesson at a time',
+  navIntro:'Fifteen lessons in the thinking skill of sameness — matching pairs, sorting piles, finding the different one.'},
+ {slug:'emotions-and-feelings',content:emo,
+  navTitle:'Learn the feelings, one face at a time',
+  navIntro:'Twenty feelings lessons for two-year-olds: name the face, make the face, and let every feeling be welcome.'},
+ {slug:'first-concepts',content:fcp,
+  navTitle:'Big and small, up and down — first concepts',
+  navIntro:'Eleven opposite-pair lessons for the eighteen-to-twenty-four-month mind: gesture them, hunt them, live them.'},
+ {slug:'garden-bugs-and-friends',content:gbf,
+  navTitle:'Meet the garden bugs and little friends',
+  navIntro:'Twenty garden-creature lessons: watch gently, name kindly, and never grab — the bug world at two-year-old height.'},
+ {slug:'garden-friends',content:gfr,
+  navTitle:'Meet the garden friends',
+  navIntro:'Eighteen lessons about who lives in a garden — pets, visitors and helpers — taught at two-year-old pace.'},
+ {slug:'garden-flowers',content:gfl,
+  navTitle:'Learn the garden flowers',
+  navIntro:'Twelve flower lessons: name the bloom, smell gently, water carefully — the garden\u2019s softest residents.'},
+ {slug:'garden-things',content:gth,
+  navTitle:'Learn the garden things',
+  navIntro:'Twelve lessons on the tools and things of a garden — spade, can, seed, boot — each with its own small job.'},
+ {slug:'alphabet',content:abc,
+  navTitle:'Learn the letters A to Z, sound by sound',
+  navIntro:'Twenty-six letter lessons — the name, the sound, the picture and a hunt for each letter in your own home.'},
+ {slug:'numbers-and-counting',content:num,
+  navTitle:'Learn the numbers 1 to 10, one lesson each',
+  navIntro:'Ten counting lessons: the numeral, the word, the touch-counted pile — one honest number per session.'},
+ {slug:'shapes',content:shp,
+  navTitle:'Learn the shapes, one lesson each',
+  navIntro:'Twelve shape lessons from circle to octagon — name it, trace it in the air, find it on your walk.'},
+ {slug:'colors',content:col,
+  navTitle:'Learn the colors, one lesson each',
+  navIntro:'Twelve color lessons: the name, the splash, the hunt around the room — plus the mixes that make new colors.'},
+ {slug:'opposites',content:opp,
+  navTitle:'Learn the opposites, one pair at a time',
+  navIntro:'Twelve opposite-pair lessons for three- and four-year-olds: big and small, up and down — jump them, sort them, live them.'},
+ {slug:'animal-sounds',content:asd,
+  navTitle:'Learn the animal sounds, one lesson each',
+  navIntro:'Twelve lessons on who says what — the honest version of moo, oink and quack, with the real animals behind them.'},
+ {slug:'body-parts-and-five-senses',content:bps,
+  navTitle:'Learn the body parts and the five senses',
+  navIntro:'Twenty-four lessons: the body\u2019s parts and the body\u2019s five ways to learn — named, pointed at and put to work.'},
+ {slug:'fruits-and-vegetables',content:fav,
+  navTitle:'Learn the fruits and vegetables',
+  navIntro:'Sixteen food lessons: where it grows, what is inside, and the brave first taste — with a grown-up washing and cutting.'},
+ {slug:'science-nature-and-discovery',content:s31,
+  navTitle:'Learn the science, nature and discovery cards',
+  navIntro:'Thirty-five science lessons: what each idea means, what to notice on the card, a safe way to try it at home and the questions that keep curiosity going.'},
 ].map(r=>({...r,set:fcSetBySlug[r.slug]})).filter(r=>r.set);
 
 export const lpSetBySlug=Object.fromEntries(LP_REGISTRY.map(r=>[r.slug,r]));
+/* Hand the registry to the library so every card page inside a lesson-bearing
+   set links its own step-by-step lesson. */
+registerLpTeachLinks(Object.fromEntries(LP_REGISTRY.map(r=>[r.slug,r.content])));
 
 // The teaching blocks, in the owner's fixed order. `teach` renders as a numbered
 // list; `vocab` as chips; everything else as prose. All fields are authored
