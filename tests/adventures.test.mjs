@@ -1,15 +1,16 @@
 // Tests for the three Age 4 adventure collections:
-//   /preschool/shapes/adventures/  (18 games, Class 25)
+//   /preschool/shapes/adventures/  (18 activities, Class 25)
 //   /preschool/colors/adventures/  (18 activities, Class 26)
-//   /preschool/writing/adventures/ (30 tracing games, Class 27)
+//   /preschool/writing/adventures/ (30 activities, Class 27)
 // Verifies: every page exists with unique metadata and one H1; the libraries
 // list every adventure with the right hrefs; the R2 artwork references match
-// the verified file list (with a live ranged-GET probe); the interactive
-// boards carry the right engine hooks; the color mixing lab teaches exactly
-// the three true mixtures; the writing geometry is complete (guides, walls,
-// dot order); Class 25/26/27 are wired into the curriculum, learning path,
-// preschool hub and My Classroom honestly; and no adventure page can mark a
-// curriculum class complete by itself.
+// the verified file list (with a live ranged-GET probe); every activity page
+// mounts the owner's original artwork with the transparent Write & Color
+// drawing layer over it (at the artwork's TRUE pixel size), text instructions
+// and tools on the right, and carries none of the retired coded-board hooks;
+// Class 25/26/27 are wired into the curriculum, learning path, preschool hub
+// and My Classroom honestly; and no adventure page can mark a curriculum
+// class complete by itself.
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {execSync} from 'node:child_process';
@@ -17,6 +18,7 @@ import {readFileSync,existsSync,writeFileSync,unlinkSync} from 'node:fs';
 import {shapeAdventures,SHAPE_BASE} from '../src/shape-adventures.mjs';
 import {colorCreativities,COLOR_BASE} from '../src/color-creativity.mjs';
 import {writingAdventures,WRITING_BASE} from '../src/writing-adventures.mjs';
+import {artFor} from '../src/adventure-dims.mjs';
 
 const read=f=>readFileSync('dist'+f,'utf8');
 const page=p=>read(p+'/index.html');
@@ -32,7 +34,7 @@ test('the shape library lists all 18 adventures with real artwork and links',()=
  }
  assert.ok(lib.includes('/preschool/4-years/shapes-patterns-and-sorting/'),'links to Class 25');
 });
-test('all 18 shape game pages exist, unique, with their engine boards',()=>{
+test('all 18 shape adventure pages exist, unique, each drawing on its own artwork',()=>{
  const seen=new Set();
  for(const g of shapeAdventures){
   const p=`/preschool/shapes/adventures/${g.slug}/`;
@@ -41,30 +43,19 @@ test('all 18 shape game pages exist, unique, with their engine boards',()=>{
   assert.ok(!seen.has(title),'unique title '+g.slug);seen.add(title);
   assert.ok(html.includes(`<h1>${g.h1}</h1>`),'h1 '+g.slug);
   assert.ok(html.includes('rel="canonical" href="https://kiddo-school.pages.dev'+p+'"'),'canonical '+g.slug);
-  assert.ok(html.includes(`data-sa-engine="${g.engine}"`),'engine hook '+g.slug);
-  assert.ok(html.includes('data-sa-cheer'),'celebration '+g.slug);
+  // the owner's spec: original Canva image + transparent drawing layer
+  assert.ok(html.includes(`data-wc-src="${SHAPE_BASE+g.img}"`),'drawing mount over the artwork '+g.slug);
+  const art=artFor('shapes/'+g.slug,SHAPE_BASE+g.img);
+  assert.ok(html.includes(`data-wc-w="${art.w}"`)&&html.includes(`data-wc-h="${art.h}"`),'true pixel dims '+g.slug);
+  assert.ok(html.includes(`data-ia-band="shapes"`)&&html.includes(`data-ia-slug="${g.slug}"`),'progress band '+g.slug);
+  assert.ok(html.includes('id="ia-tools"'),'tools rail '+g.slug);
+  assert.ok(html.includes('crossorigin="anonymous"'),'CORS save works '+g.slug);
+  assert.ok(html.includes('/assets/image-adventure.js'),'progress engine '+g.slug);
   assert.ok(html.includes(SHAPE_BASE+g.img),'hero artwork '+g.slug);
-  assert.ok(html.includes('data-tc-feedback')===false||true);
-  if(g.engine==='slotmatch'){
-   const slots=[...html.matchAll(/data-sa-slot="([a-z]+)"/g)].map(m=>m[1]);
-   const pieces=[...html.matchAll(/data-sa-piece="([a-z]+)"/g)].map(m=>m[1]);
-   assert.equal(slots.length,g.slots.length,'slot count '+g.slug);
-   assert.equal(pieces.length,g.pieces.length,'piece count '+g.slug);
-   for(const s of g.slots)assert.ok(slots.includes(s.shape),'slot shape '+s.shape+' in '+g.slug);
-  }
-  if(g.engine==='pattern'){
-   assert.equal([...html.matchAll(/data-sa-answer="true"/g)].length,g.rounds.length,'one answer per round '+g.slug);
-   assert.ok(html.includes('data-sa-gap'),'gap '+g.slug);
-  }
-  if(g.engine==='sort'){
-   const items=g.rounds?g.items.flat():g.items;
-   assert.equal([...html.matchAll(/data-sa-item="/g)].length,items.length,'item count '+g.slug);
-   assert.ok(html.includes('data-sa-bin'),'bins '+g.slug);
-   if(g.roundSays)assert.ok(html.includes('data-sa-roundsays'),'round says '+g.slug);
-  }
-  if(g.engine==='builder')assert.equal([...html.matchAll(/data-sa-part="/g)].length,g.parts.length,'part buttons '+g.slug);
-  if(g.engine==='symmetry')assert.equal([...html.matchAll(/data-sa-spot="/g)].length,g.spots.length,'mirror spots '+g.slug);
-  if(g.engine==='find')assert.equal([...html.matchAll(/data-sa-fround/g)].length,g.rounds.length,'find rounds '+g.slug);
+  assert.ok(html.includes(`href="/worksheets/shapes/${g.slug}/"`),'worksheet twin '+g.slug);
+  // no coded scenes may remain
+  for(const hook of ['data-sa-board','data-sa-engine','data-sa-slot','data-sa-piece','data-sa-bin','data-sa-item','data-sa-part','data-sa-spot','data-sa-fround'])
+   assert.ok(!html.includes(hook),hook+' retired on '+g.slug);
  }
 });
 test('shape artwork: every referenced R2 file exists (live ranged GET)',()=>{
@@ -84,7 +75,7 @@ test('the colors library groups all 18 activities with artwork and links',()=>{
  assert.ok(lib.includes('/preschool/4-years/colors-mixing-and-creativity/'),'links to Class 26');
  assert.ok(lib.includes('red + yellow = orange'),'honest mixing summary on the library');
 });
-test('all 18 color activity pages exist with real tool hooks',()=>{
+test('all 18 color activity pages exist, each drawing on its own artwork',()=>{
  const seen=new Set();
  for(const a of colorCreativities){
   const p=`/preschool/colors/adventures/${a.slug}/`;
@@ -92,55 +83,18 @@ test('all 18 color activity pages exist with real tool hooks',()=>{
   const title=html.match(/<title>(.*?)<\/title>/)[1];
   assert.ok(!seen.has(title),'unique title '+a.slug);seen.add(title);
   assert.ok(html.includes(`<h1>${a.h1}</h1>`),'h1 '+a.slug);
-  assert.ok(html.includes(`data-cc-game="${a.slug}"`),'board hook '+a.slug);
+  assert.ok(html.includes(`data-wc-src="${COLOR_BASE+a.img}"`),'drawing mount '+a.slug);
+  const art=artFor('colors/'+a.slug,COLOR_BASE+a.img);
+  assert.ok(html.includes(`data-wc-w="${art.w}"`)&&html.includes(`data-wc-h="${art.h}"`),'true pixel dims '+a.slug);
+  assert.ok(html.includes('data-ia-band="colors"'),'progress band '+a.slug);
+  assert.ok(html.includes('id="ia-tools"'),'tools rail '+a.slug);
+  assert.ok(html.includes('/assets/image-adventure.js'),'progress engine '+a.slug);
   assert.ok(html.includes(COLOR_BASE+a.img),'hero artwork '+a.slug);
-  assert.ok(['mix','sequence','sort'].includes(a.engine)||html.includes('data-cc-undo'),'undo offered on '+a.slug);
   assert.ok(html.includes('aria-label'),'aria labels '+a.slug);
-  if(a.engine==='fill'){
-   assert.ok(html.includes('data-cc-fill'),'regions '+a.slug);
-   const regions=[...html.matchAll(/data-cc-fill="/g)].length;
-   assert.ok(regions>=5,'enough paintable regions on '+a.slug+' ('+regions+')');
-   assert.ok(html.includes('data-cc-redo'),'redo on '+a.slug);
-  }
-  if(a.engine==='fill+decorate'){
-   assert.ok(html.includes('data-cc-tray'),'decoration tray on '+a.slug);
-   assert.ok(html.includes('data-cc-stage'),'placement stage on '+a.slug);
-  }
-  if(a.engine==='decorate'){
-   assert.ok(html.includes('data-cc-tray')&&html.includes('data-cc-stage'),'decorate tray+stage '+a.slug);
-   assert.ok(html.includes('data-cc-deco-remove'),'remove control '+a.slug);
-  }
-  if(a.engine==='mix'){
-   const combos=JSON.parse(html.match(/data-cc-combos='([^']+)'/)[1].replace(/&quot;/g,'"').replace(/&#39;/g,"'").replace(/&amp;/g,'&'));
-   assert.equal(combos.length,3,'exactly three true recipes');
-   const truth={ 'red-yellow':'orange','blue-yellow':'green','blue-red':'purple' }; // keys = sorted pair
-   for(const c of combos){
-    const key=[c.a,c.b].sort().join('-');
-    const truthKey=[...key.split('-')].sort().join('-');
-    assert.equal(c.name,truth[truthKey],'true mixing: '+key+' = '+truth[truthKey]);
-   }
-  }
-  if(a.engine==='sequence'){
-   const order=JSON.parse(html.match(/data-cc-order='([^']+)'/)[1].replace(/&quot;/g,'"'));
-   assert.equal(order.length,6,'six rainbow arcs');
-   assert.deepEqual(order.map(o=>o[1]),['red','orange','yellow','green','blue','purple'],'rainbow order enforced');
-  }
-  if(a.engine==='sort'){
-   assert.equal([...html.matchAll(/data-cc-item="/g)].length,a.items.length,'crystals '+a.slug);
-   assert.ok(html.includes('data-cc-bin="warm"')&&html.includes('data-cc-bin="cool"'),'two caves '+a.slug);
-  }
-  if(a.engine==='canvas'){
-   assert.ok(html.includes('data-cc-canvas'),'real canvas '+a.slug);
-   assert.ok(html.includes('data-cc-mode="splatter"'),'splatter mode '+a.slug);
-   assert.ok(html.includes('data-cc-eraser'),'eraser '+a.slug);
-   assert.ok(html.includes('data-cc-redo'),'redo '+a.slug);
-  }
+  // no coded paint engines may remain
+  for(const hook of ['data-cc-board','data-cc-game','data-cc-fill','data-cc-tray','data-cc-stage','data-cc-canvas','data-cc-mirror','data-cc-combos','data-cc-order','data-cc-item','data-cc-bin'])
+   assert.ok(!html.includes(hook),hook+' retired on '+a.slug);
  }
- const butterfly=page('/preschool/colors/adventures/butterfly-wing-painter/');
- assert.ok(butterfly.includes('data-cc-mirror-toggle'),'magic mirror toggle on the butterfly');
- assert.ok(butterfly.includes('data-cc-mirror="wr-big"'),'wing mirror pairs declared');
- const cake=page('/preschool/colors/adventures/birthday-cake-color-studio/');
- assert.ok(cake.includes('data-cc-stage')&&cake.includes('data-cc-fill'),'cake is one board with fill + decorations');
 });
 test('color artwork: every referenced R2 file exists (live ranged GET)',()=>{
  const urls=colorCreativities.map(a=>COLOR_BASE+a.img);
@@ -157,7 +111,7 @@ test('the writing library lists all 30 adventures in five groups',()=>{
   assert.ok(lib.includes(g),'group '+g);
  assert.ok(lib.includes('/preschool/4-years/early-writing-and-pencil-control/'),'links to Class 27');
 });
-test('all 30 writing pages exist with tracing geometry and worksheet tools',()=>{
+test('all 30 writing pages exist, each drawing on its own artwork, with honest completion',()=>{
  const seen=new Set();
  for(const a of writingAdventures){
   const p=`/preschool/writing/adventures/${a.slug}/`;
@@ -165,32 +119,19 @@ test('all 30 writing pages exist with tracing geometry and worksheet tools',()=>
   const title=html.match(/<title>(.*?)<\/title>/)[1];
   assert.ok(!seen.has(title),'unique title '+a.slug);seen.add(title);
   assert.ok(html.includes(`<h1>${a.h1}</h1>`),'h1 '+a.slug);
-  assert.ok(html.includes(`data-wa-engine="${a.engine}"`),'engine '+a.slug);
-  assert.ok(html.includes(`data-wa-art="${WRITING_BASE}${a.img}"`),'worksheet artwork url '+a.slug);
-  assert.ok(html.includes('data-wa-worksheet')&&html.includes('data-wa-mydrawing'),'downloads '+a.slug);
-  assert.ok(html.includes('data-wa-undo')&&html.includes('data-wa-eraser')&&html.includes('data-wa-clear'),'tools '+a.slug);
+  assert.ok(html.includes(`data-wc-src="${WRITING_BASE}${a.img}"`),'drawing mount '+a.slug);
+  const art=artFor('writing/'+a.slug,WRITING_BASE+a.img);
+  assert.ok(html.includes(`data-wc-w="${art.w}"`)&&html.includes(`data-wc-h="${art.h}"`),'true pixel dims '+a.slug);
+  assert.ok(html.includes('data-ia-band="writing"'),'progress band '+a.slug);
+  assert.ok(html.includes('id="ia-tools"'),'tools rail '+a.slug);
+  assert.ok(html.includes('/assets/image-adventure.js'),'progress engine '+a.slug);
   assert.ok(html.includes(WRITING_BASE+a.img),'hero artwork '+a.slug);
-  if(a.guides){
-   const data=JSON.parse(html.match(/data-wa-guides-data='([^']+)'/)[1].replace(/&quot;/g,'"').replace(/&#39;/g,"'").replace(/&amp;/g,'&'));
-   assert.equal(data.length,a.guides.length,'guide data '+a.slug);
-   for(const g of data){assert.ok(g.d.startsWith('M'),'guide starts with M '+a.slug);assert.ok(typeof g.sx==='number'&&typeof g.ex==='number','guide endpoints '+a.slug);}
-   if(a.slug==='little-railway-engineer')assert.equal(data.length,2,'two distinct parallel rails');
-   if(a.slug==='penguin-figure-eight-skating')assert.equal(data.length,1,'one continuous figure eight');
-   if(a.slug==='pencil-stroke-academy')assert.ok(data.length>=10,'four exercise boxes');
-   if(a.slug==='spider-web-builder')assert.equal(data.length,16,'web: 8 spokes + 8 rim segments');
-  }
-  if(a.walls){
-   const walls=JSON.parse(html.match(/data-wa-walls-data='([^']+)'/)[1].replace(/&quot;/g,'"').replace(/&#39;/g,"'").replace(/&amp;/g,'&'));
-   assert.equal(walls.length,a.walls.length,'maze walls '+a.slug);
-   assert.ok(html.includes('data-wa-wall'),'wall elements rendered');
-  }
-  if(a.dots){
-   const dots=JSON.parse(html.match(/data-wa-dots-data='([^']+)'/)[1].replace(/&quot;/g,'"').replace(/&amp;/g,'&'));
-   assert.equal(dots.length,a.dots.length,'dot count '+a.slug);
-   assert.equal([...html.matchAll(/data-wa-dot="/g)].length,dots.length,'dot elements '+a.slug);
-   if(a.slug==='ladybug-dot-to-dot')assert.equal(dots.length,10,'ladybug: ten dots');
-   if(a.slug==='teddy-bear-stitching-studio')assert.equal(dots.length,12,'teddy: twelve stitches');
-  }
+  assert.ok(html.includes(`href="/worksheets/writing/${a.slug}/"`),'worksheet twin '+a.slug);
+  // completion copy: only a real save clears the activity
+  assert.ok(html.includes('the moment you save your finished picture'),'save-to-complete copy '+a.slug);
+  // no coded tracing machinery may remain
+  for(const hook of ['data-wa-board','data-wa-engine','data-wa-guide','data-wa-start','data-wa-goal','data-wa-wall','data-wa-dot','data-wa-svg'])
+   assert.ok(!html.includes(hook),hook+' retired on '+a.slug);
  }
 });
 test('writing artwork: every referenced R2 file exists (live ranged GET)',()=>{
@@ -266,11 +207,15 @@ test('adventure pages never ship curriculum progress scripts',()=>{
   }
  }
 });
-test('engine scripts are present and syntactically valid',()=>{
- for(const f of ['shape-adventures.js','color-creativity.js','writing-adventures.js','my-creations.js']){
-  assert.ok(existsSync('dist/assets/'+f),f+' built');
-  execSync(`node --check dist/assets/${f}`);
- }
+test('the drawing engine ships, the coded engines are gone for good',()=>{
+ assert.ok(existsSync('dist/assets/image-adventure.js'),'image-adventure.js built');
+ execSync('node --check dist/assets/image-adventure.js');
+ assert.ok(existsSync('dist/assets/my-creations.js'),'my-creations.js built');
+ execSync('node --check dist/assets/my-creations.js');
+ for(const f of ['shape-adventures.js','color-creativity.js','writing-adventures.js','phonics-adventures.js','story-adventures.js'])
+  assert.ok(!existsSync('dist/assets/'+f),f+' retired from the build');
+ // the drawing layer itself is still the school's proven one
+ assert.ok(existsSync('dist/assets/write-color.js'),'write-color.js still ships');
 });
 
 /* ---------- helpers ---------- */

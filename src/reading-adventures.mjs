@@ -1,16 +1,18 @@
-// Kiddo School — Class 29 · Storytime & Pre-Reading Comprehension (ages 4–5).
-// Twenty-nine real, playable story games at
-// /preschool/reading/adventures/{slug}/, built on the owner's Canva
-// illustrations (29 of 30 verified on R2 under school/reading/adventures/ —
-// the fox artwork ships under 'foxes-…' filenames, audited and mapped. 24 is
-// Unicorn's Story Choice Garden per the owner's numbering; its artwork is not
-// uploaded yet, so the slot is honestly reserved, never faked).
-// Every game plays the REAL artwork: prompts are spoken, picture cards are
-// sprite-cropped straight out of the illustration, and answers were verified
-// against the actual art during the artwork audit. Progress saves per
-// selected child; opening a page never counts as completing anything.
-import {crumbNav,celebrate,esc} from './adventure-kit.mjs';
-import {READING_BASE,READING_LIB,C29_PATH,WS29_PATH,board} from './story-kit.mjs';
+// Kiddo School — Class 29 · the Storytime Adventures collection (ages 4–5).
+// Draw-on-the-picture adventures at /preschool/reading/adventures/{slug}/,
+// built on the owner's Canva illustrations (verified on R2 under
+// school/reading/adventures/). The owner's spec, followed exactly: the
+// original Canva artwork sits on the LEFT with the transparent Write &
+// Color drawing layer laid directly over it (aligned 1:1 at every screen
+// size), and plain TEXT instructions plus the drawing tools sit on the
+// RIGHT. No coded scenes, NO SOUND, no scoring, no fake games. Completion
+// counts only when the child's own work is really saved; the reading band
+// keeps its existing {opened,completed} localStorage shape, so nothing
+// already earned is lost.
+import {crumbNav,esc} from './adventure-kit.mjs';
+import {READING_BASE,READING_LIB,C29_PATH,WS29_PATH} from './story-kit.mjs';
+import {imageActivitySection} from './image-activity.mjs';
+import {artFor} from './adventure-dims.mjs';
 export {READING_LIB_PATH,WS29_PATH,C29_PATH} from './story-kit.mjs';
 const READING_LIB_PATH=READING_LIB;
 
@@ -25,8 +27,8 @@ export const READING_PENDING=[
 const G=o=>o;
 export const readingAdventures=[
 G({num:1,slug:'bunnys-growing-garden',img:'01-bunnys-growing-garden.webp',title:'Bunny\u2019s Growing Garden',skill:'Story sequencing',
- tag:'Plant the seed, water the sprout, watch the flower grow \u2014 tap Bunny\u2019s day in the right order.',
- say:'Bunny planted a seed, watered it, and a flower grew! Tap the pictures in story order: first, next, and last.',
+ tag: 'Plant the seed, water the sprout, watch the flower grow — write 1, 2, 3 for Bunny’s day.',
+ say: 'Bunny planted a seed, watered it, and a flower grew! Write 1, 2, and 3 in the boxes to put the pictures in story order.',
  hint:'Yes! That comes next in Bunny\u2019s story.',doneTitle:'The story is in order!',doneSub:'Seed, water, flower \u2014 you retold Bunny\u2019s whole day.',
  alt:'Three garden panels: Bunny watering a sprout, Bunny kneeling with a seed, and Bunny beside a grown pink flower, with number boxes below.',
  steps:[{type:'order',ask:'Tap the story in order \u2014 what happened first, next, and last?',
@@ -34,8 +36,8 @@ G({num:1,slug:'bunnys-growing-garden',img:'01-bunnys-growing-garden.webp',title:
          {label:'Bunny plants the seed in the soil',crop:[26.2,13.15,51.72,73.24],seq:0,say:'Planting the seed comes first!'},
          {label:'Bunny\u2019s flower has grown',crop:[50.73,13.15,76.25,73.24],seq:2,say:'And the flower grew \u2014 last of all!'}]}]}),
 G({num:2,slug:'teddys-missing-backpack',img:'02-teddys-missing-backpack.webp',title:'Teddy\u2019s Missing Backpack',skill:'Using picture clues',
- tag:'Look around Teddy\u2019s room, follow the clues, and find where the backpack waits.',
- say:'Teddy\u2019s backpack is missing! Look at the room, then tap the card that shows where Teddy should look.',
+ tag: 'Look around Teddy’s room, follow the clues, and circle where the backpack waits.',
+ say: 'Teddy’s backpack is missing! Look at the room, then circle the picture that shows where Teddy should look.',
  hint:'You found the clue!',doneTitle:'Backpack found!',doneSub:'The clues pointed right to the hook by the door.',
  alt:'Teddy in a playroom with the red backpack on a hook, and three cards: the hook with the backpack, a toy shelf, and a craft table.',
  steps:[{type:'ask',ask:'Where should Teddy look for the backpack? Tap the card with the clue.',ctx:[3,19,97,60],ctxLabel:'Teddy\u2019s playroom with the backpack on the hook',
@@ -43,8 +45,8 @@ G({num:2,slug:'teddys-missing-backpack',img:'02-teddys-missing-backpack.webp',ti
          {label:'The toy shelf',crop:[34.64,57.87,61.3,95.09],ok:false,say:'The shelf has toys, but not the backpack.'},
          {label:'The craft table',crop:[63.96,57.87,93.49,95.09],ok:false,say:'Crayons live there \u2014 keep looking!'}]}]}),
 G({num:3,slug:'little-lions-feelings',img:'03-little-lions-feelings.webp',title:'Little Lion\u2019s Feelings',skill:'Feelings in stories',
- tag:'A gift, a dropped ice cream, a popped balloon \u2014 match each story to the feeling it brings.',
- say:'Match each story to Little Lion\u2019s feeling. Tap the story first, then the face.',
+ tag: 'Match each story to Little Lion’s feeling — draw the line.',
+ say: 'Match each story to Little Lion’s feeling — draw a line from the story to the face.',
  hint:'That\u2019s how that story feels!',doneTitle:'Every feeling matched!',doneSub:'You read Little Lion\u2019s stories like a feelings detective.',
  alt:'Three story cards \u2014 a gift, a dropped ice cream, a popped balloon \u2014 beside three lion faces: surprised, happy and sad.',
  steps:[{type:'match',ask:'Tap a story, then tap the face that matches the feeling.',
@@ -55,8 +57,8 @@ G({num:3,slug:'little-lions-feelings',img:'03-little-lions-feelings.webp',title:
          {label:'Happy face',crop:[78.5,43.5,94.5,69],group:'b',pair:'happy'},
          {label:'Sad face',crop:[78.5,70.5,94.5,95],group:'b',pair:'sad'}]}]}),
 G({num:4,slug:'foxs-rainy-day-surprise',img:'04-foxes-rainy-day-surprise.webp',title:'Fox\u2019s Rainy Day Surprise',skill:'Predicting what happens next',
- tag:'The sun was out, then the rain came down \u2014 predict what Fox does next with the umbrella he found.',
- say:'First it was sunny. Then the rain came, and Fox found a blue umbrella by the bench. What will Fox do next? Tap the picture that fits the story.',
+ tag: 'Sunny, then rain, a blue umbrella — circle what Fox does next.',
+ say: 'First it was sunny. Then the rain came, and Fox found a blue umbrella by the bench. What will Fox do next? Circle the picture that fits the story.',
  hint:'That fits the story!',doneTitle:'You predicted it!',doneSub:'Rainy day, empty bench, blue umbrella \u2014 of course Fox opens it up.',
  alt:'Two story pictures show Fox in the sun and then Fox in the rain beside a bench with a blue umbrella; three answer cards show Fox under an umbrella, Fox sunbathing at the beach, and a child building a snowman.',
  artNote:'The artwork tells the story twice \u2014 sunny first, rainy second \u2014 and leaves the umbrella on the bench as the clue. Answer B (beach) and C (snowman) are wonderfully silly wrong turns.',
@@ -66,8 +68,8 @@ G({num:4,slug:'foxs-rainy-day-surprise',img:'04-foxes-rainy-day-surprise.webp',t
          {label:'Fox sunbathes at the beach',crop:[35.5,59.5,65.5,96],ok:false,say:'It is raining here \u2014 no beach today!'},
          {label:'A child builds a snowman',crop:[66,59.5,96,96],ok:false,say:'Snow is a different story \u2014 this one is rain!'}]}]}),
 G({num:5,slug:'owls-storybook-world',img:'05-owls-storybook-world.webp',title:'Owl\u2019s Storybook World',skill:'Characters and settings',
- tag:'A goldfish, a farmer, an astronaut \u2014 send every character to the place where their story happens.',
- say:'Match each character to where their story happens. Tap the character, then the place.',
+ tag: 'Draw a line from each character to where their story happens.',
+ say: 'Match each character to where their story happens — draw a line from the character to the place.',
  hint:'That\u2019s where that story lives!',doneTitle:'Every story found its place!',doneSub:'Fish to the sea, farmer to the farm, astronaut to space.',
  alt:'A goldfish, a farmer and an astronaut beside three places: night sky, a red barn farm, and an underwater scene.',
  steps:[{type:'match',ask:'Tap a character, then tap where their story happens.',
@@ -78,8 +80,8 @@ G({num:5,slug:'owls-storybook-world',img:'05-owls-storybook-world.webp',title:'O
          {label:'The red barn farm',crop:[64.74,40.09,91.88,64.26],group:'b',pair:'farm'},
          {label:'Under the sea',crop:[64.74,62.04,91.88,87.41],group:'b',pair:'sea'}]}]}),
 G({num:6,slug:'puppys-helping-hands',img:'06-puppys-helping-hands.webp',title:'Puppy\u2019s Helping Hands',skill:'Problem and solution',
- tag:'A stuck ball, scattered crayons, a thirsty friend \u2014 tap the best way for Puppy to help.',
- say:'Look at each problem, then tap the best way for Puppy to help.',
+ tag: 'A stuck ball, scattered crayons, a thirsty friend — circle the best way for Puppy to help.',
+ say: 'Look at each problem, then circle the best way for Puppy to help.',
  hint:'That\u2019s a kind way to help!',doneTitle:'Three kind helps!',doneSub:'Puppy fetched the ball, tidied the crayons and brought water. What a helper!',
  alt:'Three problems \u2014 a ball under a bench, crayons on the floor, a rabbit who needs water \u2014 each with two puppy choices.',
  parentNote:'Each round shows a small problem, then two things Puppy could do. One is helpful, one walks away \u2014 talking about WHY the kind choice helps is where the comprehension grows.',
@@ -94,8 +96,8 @@ G({num:6,slug:'puppys-helping-hands',img:'06-puppys-helping-hands.webp',title:'P
    cards:[{label:'Puppy brings Rabbit water',crop:[27.81,64.35,52.14,91.02],ok:true,say:'Water for a thirsty friend!'},
           {label:'Puppy drinks it all himself',crop:[51.3,64.35,75.68,91.02],ok:false,say:'Rabbit was the thirsty one!'}]}]}),
 G({num:7,slug:'squirrels-mixed-up-morning',img:'07-squirrels-mixed-up-morning.webp',title:'Squirrel\u2019s Mixed-Up Morning',skill:'Story sequencing',
- tag:'Wake up, brush teeth, eat breakfast, head to school \u2014 put Squirrel\u2019s morning back in order.',
- say:'Squirrel\u2019s morning is mixed up! Tap the pictures in story order: first, next, then, and last.',
+ tag: 'Squirrel’s morning is mixed up — write 1, 2, 3, 4 to fix it.',
+ say: 'Squirrel’s morning is mixed up! Write 1, 2, 3, and 4 in the boxes to put the pictures in story order.',
  hint:'That\u2019s the next thing Squirrel does!',doneTitle:'Morning fixed!',doneSub:'Wake up, brush, breakfast, off to school \u2014 a perfect morning order.',
  alt:'Four morning panels: eating cereal, walking to preschool, waking up in bed, and brushing teeth, with number boxes below.',
  steps:[{type:'order',ask:'Tap Squirrel\u2019s morning in order \u2014 first to last.',
@@ -123,8 +125,8 @@ G({num:8,slug:'giraffes-picture-detective',img:'08-giraffes-picture-detective.we
           {label:'The cat',crop:[43.96,81.11,59.01,94.81],ok:false,say:'No cat today \u2014 who has the long ears?'},
           {label:'The dog',crop:[58.39,81.11,74.06,94.81],ok:false,say:'Not the dog \u2014 look for the fluffy tail.'}]}]}),
 G({num:9,slug:'ducklings-cause-and-effect',img:'09-ducklings-cause-and-effect.webp',title:'Duckling\u2019s Cause & Effect',skill:'Cause and effect',
- tag:'A drooping flower, a muddy puddle, a sailing boat \u2014 match what happened to why it happened.',
- say:'Match what happened to why it happened. Tap the picture first, then the reason.',
+ tag: 'Draw a line from what happened to why it happened.',
+ say: 'Match what happened to why it happened — draw a line from the picture to the reason.',
  hint:'That\u2019s why it happened!',doneTitle:'Every why found!',doneSub:'Sun made the flower droop, rain made the puddle, wind pushed the boat.',
  alt:'What-happened cards \u2014 a drooping flower, a muddy puddle, a sailboat \u2014 beside why cards: wind, sun and rain.',
  steps:[{type:'match',ask:'Tap what happened, then tap why it happened.',
@@ -135,8 +137,8 @@ G({num:9,slug:'ducklings-cause-and-effect',img:'09-ducklings-cause-and-effect.we
          {label:'The sun shines',crop:[84.38,44.72,96.82,73.24],group:'b',pair:'sun'},
          {label:'The rain falls',crop:[84.38,69.63,96.82,95.83],group:'b',pair:'rain'}]}]}),
 G({num:10,slug:'hedgehogs-story-map',img:'10-hedgehogs-story-map.webp',title:'Hedgehog\u2019s Story Map',skill:'Who, where, what',
- tag:'Find WHO the story is about, WHERE it happens, and WHAT happened \u2014 a real story map.',
- say:'Every story has a who, a where, and a what. Look at Hedgehog\u2019s scene and tap the answer for each row.',
+ tag: 'Find WHO, WHERE, and WHAT in Hedgehog’s story — circle each answer.',
+ say: 'Every story has a who, a where, and a what. Look at Hedgehog’s scene and circle the answer for each row.',
  hint:'That\u2019s the story map answer!',doneTitle:'Story map complete!',doneSub:'Hedgehog, in the garden, found an apple.',
  alt:'Hedgehog by an apple tree, with three labelled rows: WHO?, WHERE? and WHAT HAPPENED?, each with three picture cards.',
  steps:[
@@ -153,8 +155,8 @@ G({num:10,slug:'hedgehogs-story-map',img:'10-hedgehogs-story-map.webp',title:'He
           {label:'Flew a kite',crop:[33.33,69.44,57.14,85],ok:false,say:'No kite in this story.'},
           {label:'Built a snowman',crop:[57.81,69.44,81.61,85],ok:false,say:'Too sunny for snow here!'}]}]}),
 G({num:11,slug:'mouses-story-retelling-train',img:'11-mouses-story-retelling-train.webp',title:'Mouse\u2019s Story Retelling Train',skill:'Beginning, middle, end',
- tag:'Mixing, baking, munching \u2014 load each picture onto the right train car: beginning, middle or end.',
- say:'Mouse baked cookies! Tap the pictures in story order to load the train: beginning, middle, and end.',
+ tag: 'Match each picture to BEGINNING, MIDDLE, or END and load Mouse’s cookie train.',
+ say: 'Mouse baked cookies! Write 1, 2, and 3 to load the train in story order: beginning, middle, and end.',
  hint:'Right car!',doneTitle:'The retelling train is loaded!',doneSub:'Mix the batter, bake the cookies, then munch \u2014 beginning, middle, end.',
  alt:'A train with BEGINNING, MIDDLE and END cars, and three mouse pictures: stirring batter, baking cookies, eating a cookie.',
  steps:[{type:'order',ask:'Tap the story in order \u2014 beginning, middle, end.',
@@ -162,8 +164,8 @@ G({num:11,slug:'mouses-story-retelling-train',img:'11-mouses-story-retelling-tra
          {label:'Mouse bakes the cookies',crop:[38.96,58.52,52.08,93.89],seq:1,say:'Middle: bake them in the oven!'},
          {label:'Mouse munches a cookie',crop:[66.67,58.52,85.78,93.89],seq:2,say:'End: munch, munch, munch!'}]}]}),
 G({num:12,slug:'little-bears-big-decision',img:'12-little-bears-big-decision.webp',title:'Little Bear\u2019s Big Decision',skill:'Best-choice thinking',
- tag:'A crying friend, a busy road, a spill \u2014 tap the best thing for Little Bear to do next.',
- say:'Look at what happened, then tap the best thing for Little Bear to do next.',
+ tag: 'A crying friend, a busy road, a spill — circle the best thing for Little Bear to do next.',
+ say: 'Look at what happened, then circle the best thing for Little Bear to do next.',
  hint:'That\u2019s the kind, safe choice!',doneTitle:'Three good decisions!',doneSub:'Comfort a friend, cross with a grown-up, clean up together.',
  alt:'Three problem scenes each with two choices: comforting a crying friend, crossing the road, and cleaning a spill.',
  parentNote:'Each round pairs a small problem with a safe or kind choice and a careless one. Ask your child to say the choice out loud before tapping \u2014 saying it is the comprehension.',
@@ -178,8 +180,8 @@ G({num:12,slug:'little-bears-big-decision',img:'12-little-bears-big-decision.web
    cards:[{label:'Help wipe it up',crop:[27.76,62.5,52.71,93.43],ok:true,say:'Cleaning up together \u2014 a great decision!'},
           {label:'Walk away and leave it',crop:[51.25,62.5,76.2,93.43],ok:false,say:'Someone might slip. Let\u2019s clean it!'}]}]}),
 G({num:13,slug:'beavers-story-bridge',img:'13-beavers-story-bridge.webp',title:'Beaver\u2019s Story Bridge',skill:'First and last',
- tag:'Gather logs, build the bridge, cross the river \u2014 tap what happened FIRST and what happened LAST.',
- say:'Beaver built a bridge! First gather the logs, then build, then cross. Tap what happened first, and what happened last.',
+ tag: 'Gather logs, build the bridge, cross the river — circle FIRST and LAST.',
+ say: 'Beaver built a bridge! First gather the logs, then build, then cross. Circle what happened first, and circle what happened last.',
  hint:'You remembered the story!',doneTitle:'FIRST and LAST found!',doneSub:'First the logs were gathered; last, Beaver crossed the finished bridge.',
  alt:'Three numbered beaver panels \u2014 gathering logs, building the bridge, crossing it \u2014 with FIRST and LAST question rows of small pictures.',
  steps:[
@@ -192,8 +194,8 @@ G({num:13,slug:'beavers-story-bridge',img:'13-beavers-story-bridge.webp',title:'
    {label:'Beaver gathers logs',crop:[62.92,63.8,78.02,98.15],ok:false,say:'Gathering was the first part.'},
    {label:'Beaver places logs in the water',crop:[76.93,63.8,92.03,98.15],ok:false,say:'That was the building part \u2014 not last.'}]}]}),
 G({num:14,slug:'rabbits-hidden-clues',img:'14-rabbits-hidden-clues.webp',title:'Rabbit\u2019s Hidden Clues',skill:'What do you need?',
- tag:'Snowy, rainy, hungry \u2014 read Rabbit\u2019s clues and tap the thing Rabbit needs.',
- say:'Look at each clue, then tap what Rabbit needs.',
+ tag: 'Snowy, rainy, hungry — read Rabbit’s clues and circle the thing Rabbit needs.',
+ say: 'Look at each clue, then circle what Rabbit needs.',
  hint:'That\u2019s just the thing!',doneTitle:'Three needs found!',doneSub:'A warm coat for snow, an umbrella for rain, a sandwich for hunger.',
  alt:'Three clue scenes \u2014 Rabbit cold in snow, Rabbit in the rain, Rabbit hungry at the table \u2014 with item cards: coat, sunglasses, ball, umbrella, ice cream, teddy, sandwich, soap, toothbrush.',
  steps:[
@@ -210,8 +212,8 @@ G({num:14,slug:'rabbits-hidden-clues',img:'14-rabbits-hidden-clues.webp',title:'
           {label:'Soap',crop:[47.86,66.67,64.11,95.74],ok:false,say:'Soap is for washing \u2014 not for eating!'},
           {label:'A toothbrush',crop:[63.33,66.67,79.64,95.74],ok:false,say:'That comes after eating!'}]}]}),
 G({num:15,slug:'penguins-silly-story-fix',img:'15-penguins-silly-story-fix.webp',title:'Penguin\u2019s Silly Story Fix',skill:'Does it make sense?',
- tag:'A toothbrush on a sneaker, a bicycle in a nest \u2014 tap the picture that makes the story make sense.',
- say:'One picture makes sense, one is silly. Tap the picture that makes the story right!',
+ tag: 'A toothbrush on a sneaker, a bicycle in a nest — circle the picture that makes sense.',
+ say: 'One picture makes sense, one is silly. Circle the picture that makes the story right!',
  hint:'Now the story makes sense!',doneTitle:'All fixed!',doneSub:'Teeth get brushed, nests get sticks, and thirsty puppies drink water.',
  alt:'Three story starts each with a sensible choice and a silly one: brushing teeth or a sneaker, nest sticks or a bicycle, a water bowl or a toy box.',
  parentNote:'This game is pure story logic: one choice keeps the story sensible, one is deliberately silly. The giggles are the point \u2014 silly stories are memorable stories.',
@@ -226,8 +228,8 @@ G({num:15,slug:'penguins-silly-story-fix',img:'15-penguins-silly-story-fix.webp'
    cards:[{label:'Drinking from the water bowl',crop:[29.27,67.22,53.65,95.19],ok:true,say:'A water bowl for a thirsty puppy!'},
           {label:'Diving into the toy box',crop:[51.25,67.22,76.2,95.19],ok:false,say:'Silly! Toy boxes are dry as dust.'}]}]}),
 G({num:16,slug:'butterflys-story-journey',img:'16-butterflys-story-journey.webp',title:'Butterfly\u2019s Story Journey',skill:'Story order on a journey',
- tag:'Garden to pond to forest to meadow \u2014 tap the stops on Butterfly\u2019s journey, in order, and skip the silly ones.',
- say:'Butterfly visits the pond, the forest, the flower field, and the sunny meadow. Tap the journey stops in order \u2014 and skip the places a butterfly would never go!',
+ tag: 'Garden to pond to forest to meadow — draw the line along Butterfly’s journey, in order.',
+ say: 'Butterfly visits the pond, the forest, the flower field, and the sunny meadow. Draw a line along the journey stops in order — and skip the places a butterfly would never go!',
  hint:'A lovely stop on the journey!',doneTitle:'What a journey!',doneSub:'Pond, forest, flower field, meadow \u2014 bedrooms and kitchens are for people!',
  alt:'Butterfly in a flower garden, with journey stops: pond, forest, flower field, sunny meadow, and silly places: bedroom, kitchen, snowy mountain.',
  parentNote:'Journey games train story ORDER plus common sense: butterflies visit ponds and meadows, never bedrooms. The three indoor stops answer with a giggle and never a penalty.',
@@ -240,8 +242,8 @@ G({num:16,slug:'butterflys-story-journey',img:'16-butterflys-story-journey.webp'
          {label:'The kitchen',crop:[30.94,58.24,45.99,95.56],bad:true,say:'Kitchens are for cooking, not fluttering!'},
          {label:'The snowy mountain',crop:[45.42,58.24,60.52,95.56],bad:true,say:'Brrr! Butterflies skip the snow.'}]}]}),
 G({num:17,slug:'raccoons-memory-challenge',img:'17-raccoons-memory-challenge.webp',title:'Raccoon\u2019s Memory Challenge',skill:'Story memory',
- tag:'A red blanket, two apples, a blue cup \u2014 look hard, then tap what you remember.',
- say:'Look at Raccoon\u2019s picnic and remember everything. Then answer the questions from memory!',
+ tag: 'A red blanket, two apples, a blue cup — look hard, then draw what you remember.',
+ say: 'A red blanket, two apples, a blue cup — look hard, then turn your eyes away and draw what you remember!',
  hint:'You remembered!',doneTitle:'Memory champion!',doneSub:'A red blanket, two apples, and a cup \u2014 you remembered it all.',
  alt:'Raccoon on a red picnic blanket with a banana, two apples and a blue cup under a tree, with three memory questions.',
  parentNote:'Memory games build the mental picture-making that reading comprehension runs on. Cover the picture between questions and let your child answer from memory.',
@@ -259,8 +261,8 @@ G({num:17,slug:'raccoons-memory-challenge',img:'17-raccoons-memory-challenge.web
           {label:'A bottle',crop:[56.61,81.57,69.38,95.83],ok:false,say:'No bottle at this picnic.'},
           {label:'A bowl',crop:[70.1,81.57,82.86,95.83],ok:false,say:'No bowl either \u2014 Raccoon holds a cup.'}]}]}),
 G({num:18,slug:'dragons-story-ending-studio',img:'18-dragons-story-ending-studio.webp',title:'Dragon\u2019s Story Ending Studio',skill:'Story endings',
- tag:'A planted seed, baking day, a bike ride \u2014 tap the ending that truly fits each story.',
- say:'Every story needs the right ending. Look at what Dragon did, then tap the ending that fits.',
+ tag: 'A planted seed, baking day, a bike ride — circle the ending that truly fits each story.',
+ say: 'Every story needs the right ending. Look at what Dragon did, then circle the ending that fits.',
  hint:'What a fitting ending!',doneTitle:'Studio complete!',doneSub:'Seeds grow into flowers, ovens bake pies, and bike rides zoom along.',
  alt:'Three story starts \u2014 planting and watering, mixing and baking, helmet and bike \u2014 each with two endings: a flower or a bicycle, a snowman or a pie in the oven, a ride or a fish.',
  steps:[
@@ -274,8 +276,8 @@ G({num:18,slug:'dragons-story-ending-studio',img:'18-dragons-story-ending-studio
    cards:[{label:'A ride down the park path',crop:[48.12,63.15,67.81,92.31],ok:true,say:'Helmets on \u2014 away we go!'},
           {label:'A splash in the pond',crop:[65.94,63.15,87.97,92.31],ok:false,say:'That fish swims; Dragon rides!'}]}]}),
 G({num:19,slug:'foxs-story-shadow-mystery',img:'19-foxes-story-shadow-mystery.webp',title:'Fox\u2019s Story Shadow Mystery',skill:'Reading picture clues',
- tag:'Muddy footprints, an empty cookie plate, a tipped flowerpot \u2014 three mysteries, solved with clues.',
- say:'Detective Fox has three mysteries! Look at each clue picture, then tap what really happened.',
+ tag: 'Three shadow mysteries — look at the clues and circle what happened.',
+ say: 'Detective Fox has three mysteries! Look at each clue picture, then circle what really happened.',
  hint:'That\u2019s what the clues say!',doneTitle:'Case closed!',doneSub:'The puppy tracked mud, the boy ate the cookies, and the kitten tipped the pot. Mystery solved!',
  alt:'Three numbered clue pictures \u2014 muddy footprints by an open door, a plate of cookie crumbs, and a tipped flowerpot with a kitten \u2014 each above two answer cards.',
  parentNote:'Each round shows one clue and two possible stories. The clue rules out one of them, and saying WHY out loud (\u201cthe footprints are muddy, so it was the puppy!\u201d) is the inference skill growing in real time.',
@@ -290,8 +292,8 @@ G({num:19,slug:'foxs-story-shadow-mystery',img:'19-foxes-story-shadow-mystery.we
    cards:[{label:'The kitten tipped the pot over',crop:[68.5,61,82.5,97.5],ok:true,say:'The kitten bumped the pot and scampered off!'},
           {label:'A balloon carried the pot away',crop:[83.5,61,98.5,97.5],ok:false,say:'Balloons float up \u2014 they do not tip pots!'}]}]}),
 G({num:20,slug:'turtles-story-timeline',img:'20-turtles-story-timeline.webp',title:'Turtle\u2019s Story Timeline',skill:'Before and after',
- tag:'Pack the basket, picnic, wash the dishes \u2014 tap what happened BEFORE the picnic and AFTER it.',
- say:'Turtle is having a picnic! Tap what happened before the picnic, and what happens after.',
+ tag: 'Pack the basket, picnic, wash the dishes — circle BEFORE the picnic and AFTER it.',
+ say: 'Turtle is having a picnic! Circle what happened before the picnic, and circle what happens after.',
  hint:'Right part of the story!',doneTitle:'Timeline complete!',doneSub:'Pack the basket before, wash the dishes after.',
  alt:'Turtle eating a sandwich at a picnic, with BEFORE and AFTER question rows of small turtle pictures.',
  artNote:'Printed art quirk we fixed in play: the best "after the picnic" answer (washing the dishes) sits in the Before row of the illustration. The game and worksheet use that picture for the after question so the story logic stays right.',
@@ -305,8 +307,8 @@ G({num:20,slug:'turtles-story-timeline',img:'20-turtles-story-timeline.webp',tit
    {label:'Turtle buys food at the market',crop:[63.49,57.96,77.45,95.65],ok:false,say:'Buying food happens before a picnic.'},
    {label:'Turtle packs the basket',crop:[3.02,57.96,23.91,95.09],ok:false,say:'Packing came first \u2014 remember?'}]}]}),
 G({num:21,slug:'koalas-character-detective',img:'21-koalas-character-detective.webp',title:'Koala\u2019s Character Detective',skill:'Characters and actions',
- tag:'A gardener, a baker, a mail carrier \u2014 match each character to the job they did in the story.',
- say:'Match each character to what they did. Tap the character, then the job.',
+ tag: 'Draw a line from each character to what they did.',
+ say: 'Match each character to what they did — draw a line from the character to the job.',
  hint:'That\u2019s their job!',doneTitle:'Case closed!',doneSub:'Rabbit gardens, Bear bakes, and Bird delivers the mail.',
  alt:'A gardening rabbit, a baking bear and a mail-bird beside three action cards: a bird at a mailbox, a rabbit watering flowers, a bear with a cake.',
  steps:[{type:'match',ask:'Tap a character, then tap what they did.',
@@ -335,8 +337,8 @@ G({num:22,slug:'elephants-story-surprise',img:'22-elephants-story-surprise.webp'
           {label:'Rabbit',crop:[74.06,81.02,87.4,95.93],ok:false,say:'No rabbit at this party.'},
           {label:'Fox',crop:[86.09,81.02,92.76,95.93],ok:false,say:'No fox either \u2014 who is holding the box?'}]}]}),
 G({num:23,slug:'pandas-picture-story-puzzle',img:'23-pandas-picture-story-puzzle.webp',title:'Panda\u2019s Picture Story Puzzle',skill:'Story sequencing',
- tag:'Find the box, build the kite, hold it high, fly it \u2014 put Panda\u2019s kite day in order.',
- say:'Panda built a kite! Tap the pictures in story order: first, next, then, and last.',
+ tag: 'Panda built a kite — write 1, 2, 3, 4 to tell the story.',
+ say: 'Panda built a kite! Write 1, 2, 3, and 4 in the boxes to put the pictures in story order.',
  hint:'The story grows!',doneTitle:'Puzzle solved!',doneSub:'Find the box, build the kite, hold it high, then fly it!',
  alt:'Four panda panels \u2014 flying a kite, opening a box of kite parts, holding the finished kite, gluing kite pieces \u2014 with number boxes below.',
  steps:[{type:'order',ask:'Tap Panda\u2019s kite story in order \u2014 first to last.',
@@ -345,8 +347,8 @@ G({num:23,slug:'pandas-picture-story-puzzle',img:'23-pandas-picture-story-puzzle
          {label:'Panda holds the finished kite',crop:[38.59,17.41,58.85,71.39],seq:2,say:'Hold it high \u2014 almost ready!'},
          {label:'Panda glues the kite together',crop:[57.55,17.31,77.86,71.39],seq:1,say:'Next: build the kite!'}]}]}),
 G({num:25,slug:'otters-story-treasure-hunt',img:'25-otters-story-treasure-hunt.webp',title:'Otter\u2019s Story Treasure Hunt',skill:'Story clues',
- tag:'A blue bucket, two ducks, a red boat \u2014 follow Otter\u2019s story clues to the treasure.',
- say:'Look at Otter\u2019s river story, then tap the right clue for each question.',
+ tag: 'Look at Otter’s river story and circle the right clue for each question.',
+ say: 'Look at Otter’s river story, then circle the right clue for each question.',
  hint:'Treasure clue found!',doneTitle:'Treasure found!',doneSub:'A blue bucket, two ducks, and a boat floating by.',
  alt:'Otter with a blue bucket on a riverbank with a red boat and two ducks, with three question rows.',
  steps:[
@@ -363,8 +365,8 @@ G({num:25,slug:'otters-story-treasure-hunt',img:'25-otters-story-treasure-hunt.w
           {label:'A ball',crop:[75.68,83.06,87.29,95.83],ok:false,say:'No ball on this river.'},
           {label:'A kite',crop:[86.61,81.57,96.93,95.83],ok:false,say:'Kites fly in the sky, not on rivers!'}]}]}),
 G({num:26,slug:'ladybugs-missing-story-scene',img:'26-ladybugs-missing-story-scene.webp',title:'Ladybug\u2019s Missing Story Scene',skill:'Missing story part',
- tag:'Seed, then a mystery middle, then a sunflower \u2014 tap the picture that completes the story.',
- say:'A piece of Ladybug\u2019s story is missing! What happens between the seed and the big sunflower?',
+ tag: 'Seed, then a mystery middle, then a sunflower — circle the missing scene.',
+ say: 'Seed, then a mystery middle, then a sunflower — circle the picture that completes the story.',
  hint:'That completes the story!',doneTitle:'Story complete!',doneSub:'Plant the seed, water the sprout, and a sunflower grows!',
  alt:'Ladybug planting a seed, a question mark, and Ladybug beside a tall sunflower \u2014 with three choices: watering a sprout, a toy airplane, a snowman.',
  steps:[{type:'ask',ask:'What belongs in the middle of the story?',ctx:[2,20,74.5,58],ctxLabel:'The seed, a question mark, and the sunflower',
@@ -372,8 +374,8 @@ G({num:26,slug:'ladybugs-missing-story-scene',img:'26-ladybugs-missing-story-sce
          {label:'Ladybug plays with a toy airplane',crop:[25.1,55.37,52.34,97.5],ok:false,say:'Fun, but it won\u2019t grow a sunflower!'},
          {label:'Ladybug builds a snowman',crop:[49.53,55.37,77.4,97.5],ok:false,say:'Silly \u2014 snowmen don\u2019t help flowers!'}]}]}),
 G({num:27,slug:'dolphins-story-questions',img:'27-dolphins-story-questions.webp',title:'Dolphin\u2019s Story Questions',skill:'Who, where, what',
- tag:'A big splash in the ocean \u2014 find WHO jumped, WHERE it happened, and WHAT Dolphin did.',
- say:'Look at Dolphin\u2019s ocean story. Tap who jumped, where it happened, and what Dolphin did!',
+ tag: 'Find WHO, WHERE, and WHAT in Dolphin’s ocean story — circle each answer.',
+ say: 'Look at Dolphin’s ocean story. Circle who jumped, where it happened, and what Dolphin did!',
  hint:'Story answer found!',doneTitle:'All three answered!',doneSub:'Dolphin jumped over a wave, in the ocean!',
  alt:'A dolphin leaping a wave beside a turtle, with three question boxes: WHO jumped?, WHERE did it happen?, WHAT did the dolphin do?',
  steps:[
@@ -390,8 +392,8 @@ G({num:27,slug:'dolphins-story-questions',img:'27-dolphins-story-questions.webp'
           {label:'Slept in a bed',crop:[76.72,65.19,87.71,91.85],ok:false,say:'Silly \u2014 dolphins sleep in the sea!'},
           {label:'Climbed a tree',crop:[86.72,65.19,97.71,93.7],ok:false,say:'Dolphins never climb trees!'}]}]}),
 G({num:28,slug:'squirrels-story-connections',img:'28-squirrels-story-connections.webp',title:'Squirrel\u2019s Story Connections',skill:'Problem and solution',
- tag:'A thirsty rabbit, a fallen nest, a wobbly wheel \u2014 connect every problem to its fix.',
- say:'Every problem has a solution! Tap a problem, then tap the picture that fixes it.',
+ tag: 'Draw a line from each problem to the picture that fixes it.',
+ say: 'Every problem has a solution! Draw a line from each problem to the picture that fixes it.',
  hint:'Problem solved!',doneTitle:'All connected!',doneSub:'Water for the rabbit, the nest back in the tree, the car fixed good as new.',
  alt:'Three problems \u2014 a rabbit with an empty glass, a bird by a fallen nest, a car with a wheel off \u2014 beside three solutions.',
  steps:[{type:'match',ask:'Tap a problem, then tap its solution.',
@@ -453,8 +455,8 @@ export function readingClassBody(){
   <span class="eyebrow">CLASS 29 · PRESCHOOL AGES 4–5</span>
   <h1>Storytime &amp; Pre-Reading Comprehension</h1>
   <div class="fc-chips lesson-chips"><span><strong>Age</strong> 4–5 Years</span><span><strong>Class</strong> 29 of 30</span><span><strong>Adventures</strong> 29 story games</span><span><strong>Subjects</strong> Sequencing · feelings · retelling</span></div>
-  <p class="lesson-lede">Build early reading comprehension through picture stories, sequencing, predictions, characters, emotions, memory, and problem-solving. Twenty-nine real games \u2014 every one played on its own storybook illustration, with spoken instructions and a printable worksheet twin in the <a href="${WS29_PATH}">Reading worksheet library</a>.</p>
-  <p class="lesson-lede">No reading needed: every prompt is spoken aloud and every answer is a picture. Grown-ups get the story behind each game on its page.</p>
+  <p class="lesson-lede">Build early reading comprehension through picture stories, sequencing, predictions, characters, emotions, memory, and problem-solving. Twenty-nine draw-on-the-picture adventures \u2014 every one played on its own storybook illustration, with plain written instructions and a printable worksheet twin in the <a href="${WS29_PATH}">Reading worksheet library</a>.</p>
+  <p class="lesson-lede">No reading needed: every adventure is one big picture to draw on, with plain instructions a grown-up can read aloud. Grown-ups get the story behind each activity on its page.</p>
   <div class="lesson-start"><a class="button" href="#adventures">Meet the adventures <span aria-hidden="true">↓</span></a><span class="lesson-start-hint">One or two stories per sitting is a full session.</span></div>
  </div></article>
  <section class="wrap lesson-section" id="adventures" aria-label="The storytime adventures">
@@ -487,9 +489,9 @@ export function readingClassBody(){
 
 export function readingLibraryBody(){
  return `${crumbNav([['Preschool','/preschool/'],['Storytime Adventures']])}
- ${heading29('STORYTIME ADVENTURES','Twenty-nine story games you play with pictures.','Sequencing, clues, feelings, retelling, memory and story paths \u2014 real comprehension games played on our own storybook artwork, with spoken instructions and no reading required.')}
+ ${heading29('STORYTIME ADVENTURES','Twenty-nine story games you play with pictures.','Sequencing, clues, feelings, retelling, memory and story paths \u2014 real comprehension adventures played right on our own storybook artwork, with plain text instructions a grown-up can read aloud.')}
  <div class="lesson-start"><a class="button" href="${C29_PATH}">This way to Class 29 <span aria-hidden="true">→</span></a><span class="lesson-start-hint">The class that goes with these adventures: Storytime &amp; Pre-Reading Comprehension.</span></div>
- <section class="wrap section compact" data-st-lib aria-label="All storytime adventures">
+ <section class="wrap section compact" data-st-lib data-st-band="reading" aria-label="All storytime adventures">
   <div class="sa-grid">
   ${readingAdventures.map(g=>`<a class="sa-card" href="${READING_LIB}${g.slug}/" data-st-libcard="${g.slug}">
     <span class="sa-card-num" aria-hidden="true">${g.num}</span>
@@ -514,6 +516,7 @@ export function readingAdventureBody(g){
  const prev=list[(i-1+list.length)%list.length];
  const next=list[(i+1)%list.length];
  const ws=WS29_PATH+g.slug+'/';
+ const art=artFor('reading/'+g.slug,READING_BASE+g.img);
  return `${crumbNav([['Preschool','/preschool/'],['Storytime Adventures',READING_LIB],[g.num+'. '+esc(g.title)]])}
  <article class="wrap lesson-hero sa-hero">
   <div class="sa-hero-art"><img src="${READING_BASE}${g.img}" width="800" height="568" alt="${esc(g.alt)}" fetchpriority="high"></div>
@@ -522,18 +525,14 @@ export function readingAdventureBody(g){
    <h1>${esc(g.title)}</h1>
    <div class="fc-chips lesson-chips"><span><strong>Age</strong> 4–5 Years</span><span><strong>Class</strong> 29 · Storytime</span><span><strong>Skill</strong> ${esc(g.skill)}</span></div>
    <p class="lesson-lede">${esc(g.tag)}</p>
-   <div class="lesson-start"><a class="button" href="#play">Play the story game <span aria-hidden="true">↓</span></a><a class="button button-ghost" href="${ws}">Print the worksheet <span aria-hidden="true">↓</span></a><span class="lesson-start-hint">Play with a finger, a stylus or a mouse. Instructions are spoken aloud.</span></div>
+   <div class="lesson-start"><a class="button" href="#play">Start drawing <span aria-hidden="true">↓</span></a><a class="button button-ghost" href="${ws}">Print the worksheet <span aria-hidden="true">↓</span></a><span class="lesson-start-hint">Play with a finger, a stylus or a mouse. Undo and Clear are always one tap away.</span></div>
   </div>
  </article>
- <section class="wrap lesson-section" id="play" aria-label="Play ${esc(g.title)}">
-  <span class="eyebrow">PLAY · ${esc(g.skill).toUpperCase()}</span>
-  <h2>${esc(g.title)}</h2>
-  <p class="lesson-copy">${esc(g.say)}</p>
-  ${board(READING_BASE,{...g,band:"reading"},W,H)}
-  <noscript><p class="sa-noscript">The tapping game needs JavaScript. Everything else on this page works without it \u2014 and the <a href="${ws}">matching worksheet</a> brings this adventure to paper.</p></noscript>
- </section>
+ ${imageActivitySection({band:'reading',slug:g.slug,title:g.title,skill:g.skill,
+   say:g.say,hint:g.hint,doneTitle:g.doneTitle,alt:g.alt,
+   imgUrl:READING_BASE+g.img,w:art.w,h:art.h,wsPath:WS29_PATH+g.slug+'/'})}
  <section class="wrap lesson-section"><span class="eyebrow">FOR GROWN-UPS</span><h2>Why this adventure helps.</h2>
-  <p class="lesson-copy">${esc(g.parentNote||'This game trains '+g.skill.toLowerCase()+' on the story picture itself: the questions are spoken aloud, the answers are pictures, and a miss brings a gentle hint instead of a penalty. Ask your child to say the answer out loud before tapping \u2014 the retelling is where comprehension really grows.')}</p>
+  <p class="lesson-copy">${esc(g.parentNote||'This activity trains '+g.skill.toLowerCase()+' right on the story picture: your child reads (or hears you read) one short instruction, then draws, circles and connects straight on the illustration. There is nothing to be right or wrong at \u2014 the retelling happens naturally while they draw, and saving the finished picture is the proud ending.')}</p>
   ${g.artNote?`<p class="lesson-copy"><strong>Illustration note:</strong> ${esc(g.artNote)}</p>`:''}
   <p class="lesson-copy">Prefer paper? The <a href="${ws}">${esc(g.title)} worksheet</a> prints the same story with room to retell and draw \u2014 and a grown-up answer line. Printing never marks anything complete.</p>
  </section>
@@ -546,7 +545,7 @@ export function readingAdventureBody(g){
   <div class="fc-stages">
    <a class="fc-stage lesson-card-link" href="${C29_PATH}"><div class="fc-stage-pills"><span class="fc-age">Age 4–5</span><span class="fc-class">Class 29</span></div><h3>Storytime &amp; Pre-Reading</h3><p>The class behind these adventures \u2014 all story games plus off-screen retelling ideas.</p><span class="fc-open">Open Class 29 <span aria-hidden="true">↗</span></span></a>
    <a class="fc-stage lesson-card-link" href="${ws}"><div class="fc-stage-pills"><span class="fc-age">Age 4–5</span><span class="fc-class">Worksheet</span></div><h3>${esc(g.title)} worksheet</h3><p>The printable twin of this game \u2014 free PDF, print button, parent guide.</p><span class="fc-open">Open the worksheet <span aria-hidden="true">↗</span></span></a>
-   <a class="fc-stage lesson-card-link" href="/preschool/phonics/adventures/"><div class="fc-stage-pills"><span class="fc-age">Age 4–5</span><span class="fc-class">Class 28</span></div><h3>Phonics Adventures</h3><p>Twenty-four listening games with real sound \u2014 the sounds side of getting ready to read.</p><span class="fc-open">Open the Phonics Library <span aria-hidden="true">↗</span></span></a>
+   <a class="fc-stage lesson-card-link" href="/preschool/phonics/adventures/"><div class="fc-stage-pills"><span class="fc-age">Age 4–5</span><span class="fc-class">Class 28</span></div><h3>Phonics Adventures</h3><p>Twenty-four draw-on-the-picture sound games \u2014 the sounds side of getting ready to read.</p><span class="fc-open">Open the Phonics Library <span aria-hidden="true">↗</span></span></a>
   </div>
  </section>`;
 }

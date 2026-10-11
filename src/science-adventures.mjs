@@ -1,22 +1,18 @@
-// Kiddo School — Class 31 · Science, Nature & Discovery (ages 4–5).
-// Thirty real, playable science games at /preschool/science/adventures/{slug}/.
-//
-// ARTWORK AUDIT (all 30 files viewed and mapped by CONTENT):
-// · Files 01–19 match their own titles.
-// · Files 20–30 are shifted one slot: each file carries the NEXT activity's
-//   artwork (e.g. 20-monkeys-sound-lab.webp actually shows Fox's Compass
-//   Adventure; 26-chameleons-camouflage-hunt.webp actually shows Monkey's
-//   Sound Lab). Every game here therefore loads the file whose BAKED-IN
-//   title matches its activity — verified tile by tile during the audit —
-//   so every page shows the right science on the right art.
-// · All artwork is 1748×1240. Baked-in titles/instructions agree with the
-//   activity titles below.
-// Mechanics: ask (picture questions), order (number the stages), match (two
-// columns), multi (tap everything that belongs), sort (tap a picture, then
-// its bin) and spot-the-difference is not needed here. Progress saves per
-// selected child; opening a page never counts as completing anything.
+// Kiddo School — Class 31 · the Science Adventures collection (ages 4–5).
+// Draw-on-the-picture adventures at /preschool/science/adventures/{slug}/,
+// built on the owner's Canva illustrations (verified on R2 under
+// school/science/adventures/). The owner's spec, followed exactly: the
+// original Canva artwork sits on the LEFT with the transparent Write &
+// Color drawing layer laid directly over it (aligned 1:1 at every screen
+// size), and plain TEXT instructions plus the drawing tools sit on the
+// RIGHT. No coded scenes, NO SOUND, no scoring, no fake games. Completion
+// counts only when the child's own work is really saved; the science band
+// keeps its existing {opened,completed} localStorage shape, so nothing
+// already earned is lost.
 import {crumbNav,esc} from './adventure-kit.mjs';
-import {SCIENCE_BASE,SCIENCE_LIB,C31_PATH,WS31_PATH,board} from './story-kit.mjs';
+import {SCIENCE_BASE,SCIENCE_LIB,C31_PATH,WS31_PATH} from './story-kit.mjs';
+import {imageActivitySection} from './image-activity.mjs';
+import {artFor} from './adventure-dims.mjs';
 export {SCIENCE_LIB_PATH,WS31_PATH,C31_PATH} from './story-kit.mjs';
 const SCIENCE_LIB_PATH=SCIENCE_LIB;
 
@@ -29,8 +25,8 @@ const G=o=>o;
 export const scienceAdventures=[
 /* ---------- 01–05: grow, weather, bugs, water, homes ---------- */
 G({num:1,slug:'bunnys-plant-growth-lab',img:'01-bunnys-plant-growth-lab.webp',title:'Bunny\u2019s Plant Growth Lab',skill:'How plants grow',
- tag:'Seed, sprout, stem, sunflower \u2014 number the four steps of Bunny\u2019s plant in growing order.',
- say:'Bunny planted a seed and watched it grow! Tap the pictures in growing order: first, next, then, and last.',
+ tag: 'Write 1, 2, 3, 4 to show how Bunny’s plant grows.',
+ say: 'Bunny planted a seed and watched it grow! Write 1, 2, 3, and 4 in the boxes to show how a plant grows.',
  hint:'That\u2019s how a plant grows!',doneTitle:'The plant is fully grown!',doneSub:'Seed, sprout, seedling, sunflower \u2014 you numbered the whole life of a plant.',
  alt:'Four boxes show a plant\u2019s growth \u2014 seeds in soil, a small sprout, a taller seedling, and a tall sunflower \u2014 each with an empty number square below.',
  artNote:'The artwork shows the four stages out of order on purpose, with empty number squares to fill: seeds in soil, sprout, seedling, sunflower.',
@@ -41,8 +37,8 @@ G({num:1,slug:'bunnys-plant-growth-lab',img:'01-bunnys-plant-growth-lab.webp',ti
          {label:'A taller seedling with leaves',crop:[49,11.5,68.5,26],seq:2,say:'Then: the seedling grows taller!'},
          {label:'A tall sunflower',crop:[71.5,11.5,91.5,26],seq:3,say:'Last: a great big sunflower!'}]}]}),
 G({num:2,slug:'penguins-weather-lab',img:'02-penguins-weather-lab.webp',title:'Penguin\u2019s Weather Lab',skill:'Weather and what we wear',
- tag:'Sunny, rainy, snowy \u2014 match each kind of weather to the clothes that fit it.',
- say:'Look at each weather picture, then tap the clothes that match it. What do we wear on a sunny day?',
+ tag: 'Draw a line from each weather picture to the right clothes.',
+ say: 'Look at each weather picture, then draw a line to the clothes that match it. What do we wear on a sunny day?',
  hint:'That\u2019s the right outfit!',doneTitle:'Weather-ready!',doneSub:'Sun hat for sunshine, raincoat for rain, warm coat for snow \u2014 Penguin is dressed for anything.',
  alt:'Three weather cards \u2014 sunny, rainy and snowy \u2014 beside three outfit cards: a warm winter coat with mittens and boots, a raincoat with an umbrella, and a sun hat with sunglasses.',
  parentNote:'Weather-to-clothes matching builds observation plus self-care talk: ask what YOUR child wears on a rainy day, and why umbrellas do not help much in snow.',
@@ -54,8 +50,8 @@ G({num:2,slug:'penguins-weather-lab',img:'02-penguins-weather-lab.webp',title:'P
          {label:'A raincoat and an umbrella',crop:[59.5,53,97,62],group:'b',pair:'rainy'},
          {label:'A sun hat and sunglasses',crop:[59.5,63,97,72.5],group:'b',pair:'sunny'}]}]}),
 G({num:3,slug:'foxes-bug-detective',img:'03-foxes-bug-detective.webp',title:'Fox\u2019s Bug Detective',skill:'What makes an insect',
- tag:'Six creepy-crawlies, one rule \u2014 count the legs and tap every true insect.',
- say:'Fox is counting legs! Insects have six legs. Tap all the insects \u2014 and leave the ones with too many or no legs at all.',
+ tag: 'Six creepy-crawlies, one rule — count the legs and circle every true insect.',
+ say: 'Fox is counting legs! Insects have six legs. Circle all the insects — and leave the ones with too many or no legs at all.',
  hint:'Count the legs!',doneTitle:'All insects found!',doneSub:'Butterfly, ladybug and ant have six legs each. Spider has eight, and snails and worms have none!',
  alt:'Six animal cards: butterfly, spider, ladybug, snail, ant and earthworm.',
  artNote:'A genuinely fair insect lesson: the butterfly, ladybug and ant each show six legs; the spider shows eight; the snail and earthworm show none.',
@@ -68,8 +64,8 @@ G({num:3,slug:'foxes-bug-detective',img:'03-foxes-bug-detective.webp',title:'Fox
          {label:'An ant',crop:[33,91.5,62.5,99],ok:true,say:'Six legs \u2014 the ant is an insect!'},
          {label:'An earthworm',crop:[64.5,91.5,94,99],ok:false,say:'Worms have no legs \u2014 not insects!'}]}]}),
 G({num:4,slug:'bears-sink-or-float-lab',img:'04-bears-sink-or-float-lab.webp',title:'Bear\u2019s Sink or Float Lab',skill:'Predict and test',
- tag:'Wood, metal, cork, stone \u2014 guess first, then sort all six objects into the right tubs.',
- say:'Bear is testing objects in water! Tap a picture, then tap the tub where you think it belongs. What sinks \u2014 and what floats?',
+ tag: 'Guess which objects will sink or float, then circle your guess.',
+ say: 'Bear is testing objects in water! Guess first, then circle what you think: will each object sink or float? What sinks — and what floats?',
  hint:'What do YOU predict?',doneTitle:'Lab results are in!',doneSub:'The cork, wooden block and boat float. The metal spoon, key and stone sink!',
  alt:'Six object cards \u2014 a wooden cube, a metal spoon, a cork, a stone, a toy boat and a metal key \u2014 above a water tub with a FLOAT bin and a SINK bin.',
  artNote:'This is a prediction game: the child sorts first, and the say-lines confirm the real result. The material is the clue \u2014 wood and cork float; metal and stone sink.',
@@ -83,8 +79,8 @@ G({num:4,slug:'bears-sink-or-float-lab',img:'04-bears-sink-or-float-lab.webp',ti
          {label:'A metal key',crop:[76.5,8,94,14.5],bin:'sink',say:'Keys sink \u2014 that\u2019s why they clink at the bottom!'}],
   bins:[{key:'float',label:'FLOAT',crop:[3,26.5,46,34]},{key:'sink',label:'SINK',crop:[49.5,26.5,94,34]}]}]}),
 G({num:5,slug:'turtles-animal-homes',img:'05-turtles-animal-homes.webp',title:'Turtle\u2019s Animal Homes',skill:'Animals and habitats',
- tag:'A bird, a bee, a rabbit \u2014 draw each animal to the home it builds or finds.',
- say:'Every animal has a home! Tap an animal, then tap the home where it lives.',
+ tag: 'Draw a line from each animal to its home.',
+ say: 'Every animal has a home! Draw a line from each animal to the home where it lives.',
  hint:'That\u2019s where it lives!',doneTitle:'Every animal is home!',doneSub:'The bird nests in a tree, the bee buzzes to the hive, and the rabbit hops underground.',
  alt:'Three animals \u2014 a bird, a bee and a rabbit \u2014 beside three homes: an underground rabbit burrow, a bird nest in a tree, and a beehive.',
  parentNote:'Habitat matching starts the biggest idea in ecology: animals live where their needs are met. Ask which home YOUR child would pick, and why burrows keep rabbits safe.',
@@ -97,8 +93,8 @@ G({num:5,slug:'turtles-animal-homes',img:'05-turtles-animal-homes.webp',title:'T
          {label:'A beehive',crop:[53,63,94,73.5],group:'b',pair:'hive'}]}]}),
 /* ---------- 06–10: day/night, light, leaves, ocean, senses ---------- */
 G({num:6,slug:'owls-day-and-night-discovery',img:'06-owls-day-and-night-discovery.webp',title:'Owl\u2019s Day and Night Discovery',skill:'Day and night',
- tag:'Football in the sun, a sleeping child, butterflies at noon, an owl at midnight \u2014 DAY or NIGHT?',
- say:'Look at each picture. Does it happen in the DAY or at NIGHT? Tap your answer!',
+ tag: 'Circle DAY or NIGHT for each picture.',
+ say: 'Look at each picture. Does it happen in the DAY or at NIGHT? Circle your answer!',
  hint:'Sun means day \u2014 moon means night!',doneTitle:'Day and night sorted!',doneSub:'The football game and butterflies happen by day; sleeping and the owl happen at night.',
  alt:'Four scenes: a boy playing football in the sun, a child sleeping under a moon, butterflies and flowers in daylight, and an owl on a branch at night.',
  parentNote:'Day/night sorting links science to a child\u2019s own routine. Ask when THEY do each thing \u2014 breakfast is a day thing, and so is the school run.',
@@ -116,8 +112,8 @@ G({num:6,slug:'owls-day-and-night-discovery',img:'06-owls-day-and-night-discover
    cards:[{label:'DAY',crop:[55,87.3,70,91.7],ok:false,say:'Owls sleep by day \u2014 this is their bedtime!'},
           {label:'NIGHT',crop:[73,87.3,91,91.7],ok:true,say:'The owl wakes when the moon is out!'}]}]}),
 G({num:7,slug:'foxes-rainbow-light-lab',img:'07-foxes-rainbow-light-lab.webp',title:'Fox\u2019s Rainbow Light Lab',skill:'What light does',
- tag:'A prism, a flashlight, a sunlit dinosaur \u2014 match each light clue to the picture it makes.',
- say:'Light makes amazing pictures! Tap a light clue, then tap the picture it makes.',
+ tag: 'Draw a line from each light clue to its picture.',
+ say: 'Light makes amazing pictures! Draw a line from each light clue to the picture it makes.',
  hint:'Follow the light!',doneTitle:'Light solved!',doneSub:'A prism bends light into a rainbow, a flashlight casts a bright circle, and sunlight paints a shadow.',
  alt:'Three light clues \u2014 a prism splitting light, a flashlight beam, and a sunlit dinosaur \u2014 beside three result pictures: a shadow, a rainbow, and a bright circle.',
  parentNote:'Three genuine light phenomena in one game. Try them at home: a CD or glass of water makes rainbows, a torch makes shadow puppets \u2014 the say-lines set up the experiments.',
@@ -129,8 +125,8 @@ G({num:7,slug:'foxes-rainbow-light-lab',img:'07-foxes-rainbow-light-lab.webp',ti
          {label:'A bright circle of light',crop:[63,25.5,97,33],group:'b',pair:'circle'},
          {label:'A dinosaur shadow',crop:[63,10.5,97,17.5],group:'b',pair:'shadow'}]}]}),
 G({num:8,slug:'squirrels-leaf-detective',img:'08-squirrels-leaf-detective.webp',title:'Squirrel\u2019s Leaf Detective',skill:'Leaves and trees',
- tag:'Oak, maple, pine \u2014 match each leaf to the tree it fell from.',
- say:'Squirrel found three leaves! Tap a leaf, then tap the tree it belongs to.',
+ tag: 'Draw a line from each leaf to its tree.',
+ say: 'Squirrel found three leaves! Draw a line from each leaf to the tree it belongs to.',
  hint:'Look at the leaf\u2019s shape!',doneTitle:'All leaves matched!',doneSub:'Pointy oak to oak tree, hand-shaped maple to maple tree, needles to the pine!',
  alt:'Three leaves \u2014 an oak leaf, a maple leaf and pine needles \u2014 beside three trees: pine, oak and maple.',
  parentNote:'Leaf matching is observation training with a real-world hook: collect leaves on a walk and find their trees. Say the leaf-shape clues out loud \u2014 rounded lobes, pointed fingers, needles.',
@@ -142,8 +138,8 @@ G({num:8,slug:'squirrels-leaf-detective',img:'08-squirrels-leaf-detective.webp',
          {label:'An oak tree',crop:[61,53,94,61],group:'b',pair:'oak'},
          {label:'A maple tree',crop:[61,61.5,94,69.5],group:'b',pair:'maple'}]}]}),
 G({num:9,slug:'dolphins-ocean-discovery',img:'09-dolphins-ocean-discovery.webp',title:'Dolphin\u2019s Ocean Discovery',skill:'Ocean habitats',
- tag:'Camel, lion, octopus \u2014 tap every animal that really lives in the ocean.',
- say:'Dolphin wants ocean friends! Tap all the animals that live in the sea. Not every animal here likes salty water!',
+ tag: 'Camel, lion, octopus — circle every animal that really lives in the ocean.',
+ say: 'Dolphin wants ocean friends! Circle all the animals that live in the sea. Not every animal here likes salty water!',
  hint:'Who swims in the sea?',doneTitle:'Ocean friends found!',doneSub:'Dolphin, sea turtle, octopus and clownfish live in the ocean. Camel and lion stay on dry land!',
  alt:'Six animal cards: dolphin, camel, sea turtle, lion, octopus and clownfish.',
  parentNote:'Habitat sorting with a giggle built in \u2014 a camel in the coral! Ask what each wrong animal needs instead: sand, grass, sunshine.',
@@ -155,8 +151,8 @@ G({num:9,slug:'dolphins-ocean-discovery',img:'09-dolphins-ocean-discovery.webp',
          {label:'An octopus',crop:[32.5,90,60,99],ok:true,say:'Eight arms for hiding in the rocks!'},
          {label:'A clownfish',crop:[62.5,90,94,99],ok:true,say:'Clownfish dart between the coral!'}]}]}),
 G({num:10,slug:'hedgehogs-five-senses-lab',img:'10-hedgehogs-five-senses-lab.webp',title:'Hedgehog\u2019s Five Senses Lab',skill:'The five senses',
- tag:'Eye, ear, nose, tongue, hand \u2014 match each sense to what it lets Hedgehog do.',
- say:'You have five senses! Tap a sense, then tap what it helps you do.',
+ tag: 'Draw a line from each sense to what it helps you do.',
+ say: 'You have five senses! Draw a line from each sense to what it helps you do.',
  hint:'Which body part does that?',doneTitle:'All five senses matched!',doneSub:'Eyes look, ears hear, noses smell, tongues taste, and hands touch!',
  alt:'Five sense organs \u2014 eye, ear, nose, tongue and hand \u2014 beside five hedgehog scenes: smelling a flower, touching a teddy bear, looking at a rainbow, hearing a bell, and tasting watermelon.',
  parentNote:'The five senses are a nursery classic because they are testable everywhere. After the game, play sense roulette: close your eyes and name what you hear, smell or touch.',
@@ -173,8 +169,8 @@ G({num:10,slug:'hedgehogs-five-senses-lab',img:'10-hedgehogs-five-senses-lab.web
          {label:'Hedgehog tasting a slice of watermelon',crop:[55,29.5,97,35],group:'b',pair:'taste'}]}]}),
 /* ---------- 11–15: magnets, seasons, life cycle, tracks, ice ---------- */
 G({num:11,slug:'bears-magnet-mystery',img:'11-bears-magnet-mystery.webp',title:'Bear\u2019s Magnet Mystery',skill:'Magnets attract metal',
- tag:'Paper clips, nails, wood, plastic \u2014 sort which objects the magnet will grab.',
- say:'Bear has a big magnet! Tap a picture, then tap the bin where it belongs. What will the magnet grab?',
+ tag: 'Guess which objects a magnet will attract, then circle them.',
+ say: 'Bear has a big magnet! Guess first, then circle every object you think the magnet will grab.',
  hint:'Magnets grab iron and steel!',doneTitle:'Magnet mystery solved!',doneSub:'The steel clip, iron nail and steel washer stick. The pencil, spoon and eraser are left behind!',
  alt:'Six object cards \u2014 a steel paper clip, an iron nail, a steel washer, a wooden pencil, a plastic spoon and a rubber eraser \u2014 with an ATTRACTS bin and a DOES NOT ATTRACT bin.',
  artNote:'Scientifically fair: everything on the ATTRACTS side is iron or steel; the pencil is wood, the spoon plastic, the eraser rubber.',
@@ -188,8 +184,8 @@ G({num:11,slug:'bears-magnet-mystery',img:'11-bears-magnet-mystery.webp',title:'
          {label:'A rubber eraser',crop:[67.5,60,94,67.5],bin:'no',say:'Rubber is not magnetic either!'}],
   bins:[{key:'attract',label:'ATTRACTS',crop:[3,68.5,45.5,76]},{key:'no',label:'DOES NOT ATTRACT',crop:[49.5,68.5,94,76]}]}]}),
 G({num:12,slug:'penguins-seasons-discovery',img:'12-penguins-seasons-discovery.webp',title:'Penguin\u2019s Seasons Discovery',skill:'The four seasons',
- tag:'Blossoms, sunshine, falling leaves, bare snow \u2014 match each season to its tree.',
- say:'The seasons change the trees! Tap a season, then tap the tree picture that matches it.',
+ tag: 'Draw a line from each season to its tree.',
+ say: 'The seasons change the trees! Draw a line from each season to the tree picture that matches it.',
  hint:'What does the tree look like?',doneTitle:'A year of trees!',doneSub:'Spring buds, summer green, autumn gold, winter bare \u2014 the whole year in four pictures.',
  alt:'Four season chips \u2014 spring, summer, autumn, winter \u2014 beside four tree pictures: falling colourful leaves, green leaves and sunshine, blossoms and buds, and a bare snowy tree.',
  parentNote:'Season matching turns a year into a story your child can retell. Ask which season comes AFTER each one, and what they wear in the snowy picture.',
@@ -203,8 +199,8 @@ G({num:12,slug:'penguins-seasons-discovery',img:'12-penguins-seasons-discovery.w
          {label:'Blossoms and buds',crop:[61,87.5,97,94.5],group:'b',pair:'spring'},
          {label:'A bare snowy tree',crop:[61,95,97,99.5],group:'b',pair:'winter'}]}]}),
 G({num:13,slug:'butterflys-life-cycle',img:'13-butterflys-life-cycle.webp',title:'Butterfly\u2019s Life Cycle',skill:'Life cycles',
- tag:'Egg, caterpillar, chrysalis, butterfly \u2014 number the four stages of a butterfly\u2019s life.',
- say:'A butterfly grows in four steps! Tap the pictures in life order: first, next, then, and last.',
+ tag: 'Write 1, 2, 3, 4 to show how a butterfly grows.',
+ say: 'A butterfly grows in four steps! Write 1, 2, 3, and 4 in the boxes to show how it grows.',
  hint:'Every butterfly starts as an egg!',doneTitle:'Metamorphosis complete!',doneSub:'Egg on a leaf, munching caterpillar, quiet chrysalis \u2014 then wings!',
  alt:'Four boxes show a butterfly\u2019s life cycle \u2014 an adult butterfly, eggs on a leaf, a caterpillar eating a leaf, and a green chrysalis \u2014 each with an empty number square below.',
  artNote:'The artwork deliberately shows the stages out of order: butterfly, eggs, caterpillar, chrysalis. The real order is eggs first, butterfly last.',
@@ -215,8 +211,8 @@ G({num:13,slug:'butterflys-life-cycle',img:'13-butterflys-life-cycle.webp',title
          {label:'A hungry caterpillar',crop:[50,10,71.5,24.5],seq:1,say:'Next: the caterpillar munches and grows!'},
          {label:'A green chrysalis',crop:[73.5,10,95.5,24.5],seq:2,say:'Then: a rest inside the chrysalis!'}]}]}),
 G({num:14,slug:'raccoons-footprint-hunt',img:'14-raccoons-footprint-hunt.webp',title:'Raccoon\u2019s Footprint Hunt',skill:'Animal tracking',
- tag:'Duck, cat, horse \u2014 match each animal to the print its feet leave behind.',
- say:'Whose footprint is that? Tap an animal, then tap the print its feet make!',
+ tag: 'Draw a line from each animal to its footprints.',
+ say: 'Whose footprint is that? Draw a line from each animal to the print its feet make!',
  hint:'Look at the feet first!',doneTitle:'Trail solved!',doneSub:'Webbed duck feet, round cat paws, and one big horseshoe hoofprint!',
  alt:'Three animals \u2014 a duck, a cat and a horse \u2014 beside three prints: a hoofprint, a pawprint and a webbed footprint.',
  parentNote:'Tracking is detective play with muddy real-world payoffs: after rain, hunt for prints and guess the maker. Webbed vs paw vs hoof is a shape story worth retelling.',
@@ -228,8 +224,8 @@ G({num:14,slug:'raccoons-footprint-hunt',img:'14-raccoons-footprint-hunt.webp',t
          {label:'A pawprint',crop:[60,53.5,97,63],group:'b',pair:'paw'},
          {label:'A webbed footprint',crop:[60,63,97,73],group:'b',pair:'webbed'}]}]}),
 G({num:15,slug:'polar-bears-ice-lab',img:'15-polar-bears-ice-lab.webp',title:'Polar Bear\u2019s Ice Lab',skill:'Melting and states',
- tag:'The sun is shining on an ice cube \u2014 predict what happens, then hear the science.',
- say:'The sun is warming a big ice cube! What happens when ice gets warm? Tap what you think \u2014 then hear the real answer!',
+ tag: 'Circle what happens when ice gets warm.',
+ say: 'The sun is warming a big ice cube! What happens when ice gets warm? Circle what you think — then check with a grown-up!',
  hint:'What does the sun do to ice?',doneTitle:'Great thinking, scientist!',doneSub:'Warm ice melts into liquid water \u2014 the same water, just melted. Try it with real ice cubes!',
  alt:'A polar bear in a lab coat beside a bowl with a large ice cube under a smiling sun; three answer cards: liquid water, a rock, and a larger ice cube.',
  artNote:'A prediction set-up: the child commits to an answer first, and the say-line gives the real result \u2014 warm ice melts into liquid water.',
@@ -240,8 +236,8 @@ G({num:15,slug:'polar-bears-ice-lab',img:'15-polar-bears-ice-lab.webp',title:'Po
          {label:'It grows into a larger ice cube',crop:[65,90.5,97,98.5],ok:false,say:'Ice shrinks as it melts \u2014 it cannot grow!'}]}]}),
 /* ---------- 16–20: living things, shadows, plant needs, food, sound ---------- */
 G({num:16,slug:'pandas-living-or-nonliving-discovery',img:'16-pandas-living-or-nonliving-discovery.webp',title:'Panda\u2019s Living or Nonliving Discovery',skill:'Living and nonliving',
- tag:'Tree, car, rock, rabbit \u2014 tap everything that is truly alive.',
- say:'Panda is sorting the world into LIVING and NONLIVING! Tap all the living things. Living things grow, eat and breathe.',
+ tag: 'Tree, car, rock, rabbit — circle everything that is truly alive.',
+ say: 'Panda is sorting the world into LIVING and NONLIVING! Circle all the living things. Living things grow, eat and breathe.',
  hint:'Does it grow and breathe?',doneTitle:'Living things found!',doneSub:'The tree, the butterfly and the baby rabbit are alive. Cars, rocks and chairs never grow!',
  alt:'Six picture cards: a tree, a toy car, a butterfly, a rock, a baby rabbit and a wooden chair.',
  parentNote:'Living/nonliving is the first brick of biology. The best test for a four-year-old: does it GROW, does it EAT, does it BREATHE? A car drinks petrol \u2014 but it never grows!',
@@ -253,8 +249,8 @@ G({num:16,slug:'pandas-living-or-nonliving-discovery',img:'16-pandas-living-or-n
          {label:'A baby rabbit',crop:[34,20.5,60,31.5],ok:true,say:'A baby rabbit is alive \u2014 it eats, hops and grows!'},
          {label:'A wooden chair',crop:[64,20.5,91.5,31.5],ok:false,say:'Wood was alive once \u2014 a chair is made, not born!'}]}]}),
 G({num:17,slug:'owls-shadow-science',img:'17-owls-shadow-science.webp',title:'Owl\u2019s Shadow Science',skill:'Light and shadows',
- tag:'A teddy, an airplane, a dinosaur \u2014 spot the true shadow each toy casts.',
- say:'A light shines on each toy and makes a shadow! Tap the shadow that really matches the toy.',
+ tag: 'Circle the shadow made by each toy.',
+ say: 'A light shines on each toy and makes a shadow! Circle the shadow that really matches the toy.',
  hint:'The shadow has the very same shape!',doneTitle:'Shadow detective!',doneSub:'Teddy\u2019s shadow has round ears, the airplane\u2019s has wings, and the dinosaur\u2019s has a big tail!',
  alt:'Three rows: a teddy bear, an airplane and a toy dinosaur, each with three shadow choices labelled A, B and C.',
  parentNote:'Shadow matching is silhouette geometry \u2014 the outline is the only clue. Torch-and-hand puppet shadows are the perfect next step.',
@@ -272,8 +268,8 @@ G({num:17,slug:'owls-shadow-science',img:'17-owls-shadow-science.webp',title:'Ow
           {label:'Shadow B \u2014 a cat shape',crop:[52,63.5,70,71.5],ok:false,say:'Whiskers and pointy ears \u2014 a cat!'},
           {label:'Shadow C \u2014 a dinosaur shape',crop:[72,63.5,91,71.5],ok:true,say:'Big head, thick tail \u2014 dinosaur!'}]}]}),
 G({num:18,slug:'elephants-plant-care-lab',img:'18-elephants-plant-care-lab.webp',title:'Elephant\u2019s Plant Care Lab',skill:'What plants need',
- tag:'Water, sunlight, air, candy? \u2014 tap the three things every plant needs to grow.',
- say:'Elephant is caring for a seedling! What does a plant need to grow? Tap all three things \u2014 and nothing else!',
+ tag: 'Water, sunlight, air, candy? — circle the three things every plant needs to grow.',
+ say: 'Elephant is caring for a seedling! What does a plant need to grow? Circle all three things — and nothing else!',
  hint:'Plants drink, soak up sun, and breathe air!',doneTitle:'A happy plant!',doneSub:'Water, sunlight and air \u2014 that\u2019s a plant\u2019s whole shopping list. Candy, cars and shoes stay in the cupboard!',
  alt:'An elephant watering a potted seedling, with six option cards: water, sunlight, air, candy, a toy car, and shoes.',
  parentNote:'Needs-of-a-plant is easy to test for real: one seedling on the windowsill and one in the cupboard. Ask what a child needs to grow \u2014 the list overlaps nicely.',
@@ -285,8 +281,8 @@ G({num:18,slug:'elephants-plant-care-lab',img:'18-elephants-plant-care-lab.webp'
          {label:'A toy car',crop:[72,83,95,91],ok:false,say:'A car cannot help a seedling grow!'},
          {label:'Shoes',crop:[72,91.5,95,99.5],ok:false,say:'Shoes fit children \u2014 not plants!'}]}]}),
 G({num:19,slug:'lions-animal-food-lab',img:'19-lions-animal-food-lab.webp',title:'Lion\u2019s Animal Food Lab',skill:'What animals eat',
- tag:'Rabbit, lion, panda \u2014 match each animal to the food it really eats.',
- say:'Time for animal lunch! Tap an animal, then tap the food it really eats.',
+ tag: 'Draw a line from each animal to the food it really eats.',
+ say: 'Time for animal lunch! Draw a line from each animal to the food it really eats.',
  hint:'Who eats meat? Who munches plants?',doneTitle:'Lunch is served!',doneSub:'The lion munches meat, the rabbit nibbles grass and leafy plants, and the panda crunches bamboo.',
  alt:'Three animals \u2014 a rabbit, a lion and a panda \u2014 beside three foods: bamboo leaves, meat, and grass and leafy plants.',
  parentNote:'Herbivore, carnivore, and the panda\u2019s famous bamboo habit \u2014 three diets, three teeth stories. Ask which one YOUR child eats: usually a bit of everything!',
@@ -298,8 +294,8 @@ G({num:19,slug:'lions-animal-food-lab',img:'19-lions-animal-food-lab.webp',title
          {label:'Meat',crop:[64,17.5,96,26],group:'b',pair:'meat'},
          {label:'Grass and leafy plants',crop:[64,26.5,96,35],group:'b',pair:'grass'}]}]}),
 G({num:20,slug:'monkeys-sound-lab',img:'26-chameleons-camouflage-hunt.webp',title:'Monkey\u2019s Sound Lab',skill:'How sounds are made',
- tag:'Drum, bell, guitar \u2014 match each instrument to the action that makes its sound.',
- say:'Music time! Tap an instrument, then tap the action that makes its sound.',
+ tag: 'Draw a line from each object to how it makes sound.',
+ say: 'Music time! Draw a line from each instrument to the action that makes its sound.',
  hint:'Hit, ring, or pluck?',doneTitle:'The band is playing!',doneSub:'Strike the drum, ring the bell, pluck the guitar \u2014 three ways to make sound!',
  alt:'Three instruments \u2014 a drum, a bell and a guitar \u2014 beside three actions: plucking guitar strings, striking a drum, and ringing a bell.',
  artNote:'Loaded by content: the file named chameleons-camouflage-hunt actually carries this Monkey\u2019s Sound Lab artwork (the R2 export shifted files 20\u201330 by one slot).',
@@ -313,8 +309,8 @@ G({num:20,slug:'monkeys-sound-lab',img:'26-chameleons-camouflage-hunt.webp',titl
          {label:'Ringing a bell',crop:[62,63,97,71.5],group:'b',pair:'ring'}]}]}),
 /* ---------- 21–25: recycling, seeds, water cycle, Earth, compass ---------- */
 G({num:21,slug:'turtles-recycling-mission',img:'27-elephants-air-power-lab.webp',title:'Turtle\u2019s Recycling Mission',skill:'Recycling sorting',
- tag:'Six clean items, three bins \u2014 paper, plastic or metal. Sort them all!',
- say:'Turtle needs a recycling helper! Tap a clean item, then tap its bin: PAPER, PLASTIC, or METAL.',
+ tag: 'Draw a line from each clean item to its recycling bin.',
+ say: 'Turtle needs a recycling helper! Draw a line from each clean item to its bin: PAPER, PLASTIC, or METAL.',
  hint:'What is it made of?',doneTitle:'Recycling hero!',doneSub:'Paper and cardboard to PAPER, bottles to PLASTIC, cans to METAL \u2014 the planet says thank you!',
  alt:'Six clean items \u2014 a newspaper, a cardboard box, a plastic water bottle, a plastic detergent bottle, an aluminium drink can and a clean steel food can \u2014 above three recycling bins: paper, plastic and metal.',
  artNote:'Loaded by content: the file named elephants-air-power-lab actually carries this Turtle\u2019s Recycling Mission artwork (the R2 export shifted files 20\u201330 by one slot).',
@@ -328,8 +324,8 @@ G({num:21,slug:'turtles-recycling-mission',img:'27-elephants-air-power-lab.webp'
          {label:'A clean steel food can',crop:[84.5,77.5,96.5,90],bin:'metal',say:'Steel is METAL \u2014 it recycles for ever!'}],
   bins:[{key:'paper',label:'PAPER',crop:[26,93.5,47.5,100]},{key:'plastic',label:'PLASTIC',crop:[50.5,93.5,72,100]},{key:'metal',label:'METAL',crop:[74.5,93.5,96,100]}]}]}),
 G({num:22,slug:'squirrels-seed-travel-discovery',img:'28-pandas-habitat-rescue.webp',title:'Squirrel\u2019s Seed Travel Discovery',skill:'How seeds travel',
- tag:'Parachutes, boats and hitch-hikers \u2014 match each seed to how it travels.',
- say:'Seeds go on amazing journeys! Tap a seed, then tap the way it travels.',
+ tag: 'Draw a line from each seed to the way it travels.',
+ say: 'Seeds go on amazing journeys! Draw a line from each seed to the way it travels.',
  hint:'Fly, float, or stick?',doneTitle:'Seed journeys complete!',doneSub:'Dandelion seeds sail on the wind, coconuts float on water, and burrs hitch-hike on fur!',
  alt:'Three seeds \u2014 dandelion seeds, a coconut and a burdock burr \u2014 beside three travel cards: animal fur, water, and wind.',
  artNote:'Loaded by content: the file named pandas-habitat-rescue actually carries this Squirrel\u2019s Seed Travel Discovery artwork (the R2 export shifted files 20\u201330 by one slot).',
@@ -342,8 +338,8 @@ G({num:22,slug:'squirrels-seed-travel-discovery',img:'28-pandas-habitat-rescue.w
          {label:'Floating on water',crop:[66.5,16.5,95.5,25],group:'b',pair:'water'},
          {label:'Flying on the wind',crop:[66.5,25.5,95.5,34],group:'b',pair:'wind'}]}]}),
 G({num:23,slug:'hippos-water-cycle-lab',img:'29-penguins-hot-and-cold-lab.webp',title:'Hippo\u2019s Water Cycle Lab',skill:'The water cycle',
- tag:'Evaporation, clouds, rain \u2014 number the three steps of water\u2019s endless journey.',
- say:'Water goes round and round! Tap the three steps in order: what happens FIRST, NEXT, and LAST?',
+ tag: 'Write 1, 2, 3 to show water’s journey.',
+ say: 'Water goes round and round! Write 1, 2, and 3 in the boxes: what happens FIRST, NEXT, and LAST?',
  hint:'The sun lifts water up, clouds form, rain falls!',doneTitle:'The water cycle!',doneSub:'Evaporation lifts the water, clouds form, and rain falls down \u2014 then it all starts again!',
  alt:'Three labelled panels \u2014 rain over a landscape, evaporation with the sun and rising vapour, and cloud formation \u2014 each with an empty number square below.',
  artNote:'Loaded by content: the file named penguins-hot-and-cold-lab actually carries this Hippo\u2019s Water Cycle Lab artwork (the R2 export shifted files 20\u201330 by one slot). The panels sit in the order rain / evaporation / cloud formation; the true cycle order is evaporation first.',
@@ -353,8 +349,8 @@ G({num:23,slug:'hippos-water-cycle-lab',img:'29-penguins-hot-and-cold-lab.webp',
          {label:'Evaporation \u2014 the sun lifts water up',crop:[32.5,45.5,61,64],seq:0,say:'First: the sun lifts water up as vapour!'},
          {label:'Cloud formation in the sky',crop:[64.5,45.5,93.5,64],seq:1,say:'Next: the vapour makes clouds!'}]}]}),
 G({num:24,slug:'owls-earth-and-sun-discovery',img:'30-owls-science-graduation.webp',title:'Owl\u2019s Earth and Sun Discovery',skill:'Day, night and Earth',
- tag:'The sun shines on one side of Earth \u2014 tap the side where it is DAY.',
- say:'The sun always shines on half of Earth! Look which side the sunlight reaches, then tap the side where it is DAY.',
+ tag: 'The sun shines on one side of Earth — circle the side where it is DAY.',
+ say: 'The sun always shines on half of Earth! Look which side the sunlight reaches, then circle the side where it is DAY.',
  hint:'Follow the yellow sunbeams!',doneTitle:'A day on Earth!',doneSub:'The sunlit side has day. The dark side has night \u2014 and Earth slowly spins so everyone takes turns!',
  alt:'An astronaut owl watches the sun shine on the left side of a globe; the right side is dark with stars. Two answer cards: the left side of Earth, or the right side.',
  artNote:'Loaded by content: the file named owls-science-graduation actually carries this Owl\u2019s Earth and Sun Discovery artwork (the R2 export shifted files 20\u201330 by one slot). The sun sits on the LEFT, so the left half is lit.',
@@ -363,8 +359,8 @@ G({num:24,slug:'owls-earth-and-sun-discovery',img:'30-owls-science-graduation.we
   cards:[{label:'The left side, facing the sun',crop:[4.5,96.5,46.5,99.5],ok:true,say:'The sunbeams land there \u2014 it\u2019s DAY on the sunlit side!'},
          {label:'The right side, in the dark',crop:[51.5,96.5,94.5,99.5],ok:false,say:'No sunlight there \u2014 that side is having night!'}]}]}),
 G({num:25,slug:'foxes-compass-adventure',img:'20-monkeys-sound-lab.webp',title:'Fox\u2019s Compass Adventure',skill:'Directions',
- tag:'North, east, south, west \u2014 learn which way each arrow points on Fox\u2019s compass.',
- say:'A compass always shows the way! The arrow pointing UP is NORTH, DOWN is SOUTH, RIGHT is EAST, and LEFT is WEST. Tap the direction I ask for!',
+ tag: 'Draw a line from each direction to its arrow.',
+ say: 'A compass always shows the way! The arrow pointing UP is NORTH, DOWN is SOUTH, RIGHT is EAST, and LEFT is WEST. Draw a line from each direction to its arrow!',
  hint:'Up is north \u2014 where does the sun rise? East!',doneTitle:'Navigator Fox!',doneSub:'North up, south down, east right, west left \u2014 you know your way around the world!',
  alt:'A fox beside a big compass with four arrows, and four direction words: east, north, west, south.',
  artNote:'Loaded by content: the file named monkeys-sound-lab actually carries this Fox\u2019s Compass Adventure artwork (the R2 export shifted files 20\u201330 by one slot).',
@@ -392,8 +388,8 @@ G({num:25,slug:'foxes-compass-adventure',img:'20-monkeys-sound-lab.webp',title:'
           {label:'SOUTH',crop:[70,61,89,66],ok:false,say:'South is down \u2014 look left!'}]}]}),
 /* ---------- 26–30: camouflage, air power, habitats, temperature, graduation ---------- */
 G({num:26,slug:'chameleons-camouflage-hunt',img:'21-turtles-recycling-mission.webp',title:'Chameleon\u2019s Camouflage Hunt',skill:'Camouflage',
- tag:'Leaves, bark, snow \u2014 in every habitat, tap the animal that blends right in.',
- say:'Some animals hide in plain sight \u2014 that\u2019s camouflage! Look at each habitat, then tap the animal that blends into it.',
+ tag: 'Leaves, bark, snow — in every habitat, circle the animal that blends right in.',
+ say: 'Some animals hide in plain sight — that’s camouflage! Look at each habitat, then circle the animal that blends into it.',
  hint:'Match the colours!',doneTitle:'Camouflage hunter!',doneSub:'The green grasshopper hides in leaves, the stick insect vanishes on bark, and the white rabbit melts into snow!',
  alt:'Three habitat photos \u2014 green leaves, tree bark and snow \u2014 above a row of small animal cards: grasshopper, butterflies, ladybugs, a stick insect, a bee, a white rabbit and a frog.',
  artNote:'Loaded by content: the file named turtles-recycling-mission actually carries this Chameleon\u2019s Camouflage Hunt artwork (the R2 export shifted files 20\u201330 by one slot). The snow photo already shows the white rabbit hiding \u2014 a lovely spoiler to point out.',
@@ -415,8 +411,8 @@ G({num:26,slug:'chameleons-camouflage-hunt',img:'21-turtles-recycling-mission.we
           {label:'A yellow bee',crop:[54.5,95.5,64.5,100],ok:false,say:'A bee in the snow would be very chilly \u2014 and visible!'},
           {label:'A red ladybug',crop:[86,95.5,96,100],ok:false,say:'Red dots on white snow \u2014 spotted instantly!'}]}]}),
 G({num:27,slug:'elephants-air-power-lab',img:'22-squirrels-seed-travel-discovery.webp',title:'Elephant\u2019s Air Power Lab',skill:'Wind and moving things',
- tag:'Pinwheels, kites, feathers \u2014 tap everything the wind can move.',
- say:'The wind is blowing! Tap all the things that can move when the wind blows. Heavy things stay put!',
+ tag: 'Pinwheels, kites, feathers — circle everything the wind can move.',
+ say: 'The wind is blowing! Circle all the things that can move when the wind blows. Heavy things stay put!',
  hint:'Light things fly \u2014 heavy things stay!',doneTitle:'Wind power found!',doneSub:'The pinwheel spins, the kite soars, and the feather floats away. The rock, brick and anvil stay right where they are!',
  alt:'An elephant scientist beside six items: a pinwheel, a rock, a kite, a brick, a feather and a heavy anvil.',
  artNote:'Loaded by content: the file named squirrels-seed-travel-discovery actually carries this Elephant\u2019s Air Power Lab artwork (the R2 export shifted files 20\u201330 by one slot).',
@@ -429,8 +425,8 @@ G({num:27,slug:'elephants-air-power-lab',img:'22-squirrels-seed-travel-discovery
          {label:'A feather',crop:[51.5,20,70.5,31],ok:true,say:'The feather floats away on the softest breeze!'},
          {label:'A heavy anvil',crop:[72.5,20,92.5,31],ok:false,say:'An anvil? Not even a hurricane!'}]}]}),
 G({num:28,slug:'pandas-habitat-rescue',img:'23-hippos-water-cycle-lab.webp',title:'Panda\u2019s Habitat Rescue',skill:'Matching habitats',
- tag:'Camel, polar bear, frog, monkey \u2014 rescue every animal by sending it home.',
- say:'The animals are lost! Tap an animal, then tap the place where it lives.',
+ tag: 'Draw a line from each animal to the place it lives.',
+ say: 'The animals are lost! Draw a line from each animal to the place where it lives.',
  hint:'Hot, cold, wet, or green?',doneTitle:'Every animal rescued!',doneSub:'Camel to the desert, polar bear to the ice, frog to the pond, monkey to the rainforest!',
  alt:'Four animals \u2014 a camel, a polar bear, a frog and a monkey \u2014 beside four places: a tropical rainforest, a freshwater pond, a sandy desert, and arctic sea ice and snow.',
  artNote:'Loaded by content: the file named hippos-water-cycle-lab actually carries this Panda\u2019s Habitat Rescue artwork (the R2 export shifted files 20\u201330 by one slot).',
@@ -445,8 +441,8 @@ G({num:28,slug:'pandas-habitat-rescue',img:'23-hippos-water-cycle-lab.webp',titl
          {label:'A sandy desert',crop:[57,59.5,96,67.5],group:'b',pair:'desert'},
          {label:'Arctic sea ice and snow',crop:[57,67.5,96,76],group:'b',pair:'arctic'}]}]}),
 G({num:29,slug:'penguins-hot-and-cold-lab',img:'24-owls-earth-and-sun-discovery.webp',title:'Penguin\u2019s Hot and Cold Lab',skill:'Hot and cold',
- tag:'Soup, ice, cocoa, popsicle \u2014 tap HOT or COLD for each one.',
- say:'Things can be hot or cold! Look at each picture, then tap HOT or COLD.',
+ tag: 'Soup, ice, cocoa, popsicle — circle HOT or COLD for each one.',
+ say: 'Things can be hot or cold! Look at each picture, then circle HOT or COLD.',
  hint:'Steam means hot \u2014 ice means cold!',doneTitle:'Temperature expert!',doneSub:'Soup and cocoa are HOT. The ice bowl and popsicle are COLD. Feel the steam \u2014 it always means hot!',
  alt:'Four picture cards \u2014 a steaming bowl of soup, a bowl of ice cubes, a mug of cocoa with marshmallows, and a blue popsicle \u2014 each with HOT and COLD circles.',
  artNote:'Loaded by content: the file named owls-earth-and-sun-discovery actually carries this Penguin\u2019s Hot and Cold Lab artwork (the R2 export shifted files 20\u201330 by one slot).',
@@ -494,6 +490,7 @@ export function scienceAdventureBody(g){
  const prev=list[(i-1+list.length)%list.length];
  const next=list[(i+1)%list.length];
  const ws=WS31_PATH+g.slug+'/';
+ const art=artFor('science/'+g.slug,SCIENCE_BASE+g.img);
  return `${crumbNav([['Preschool','/preschool/'],['Science Adventures',SCIENCE_LIB],[g.num+'. '+esc(g.title)]])}
  <article class="wrap lesson-hero sa-hero">
   <div class="sa-hero-art"><img src="${SCIENCE_BASE}${g.img}" width="800" height="568" alt="${esc(g.alt)}" fetchpriority="high"></div>
@@ -502,18 +499,14 @@ export function scienceAdventureBody(g){
    <h1>${esc(g.title)}</h1>
    <div class="fc-chips lesson-chips"><span><strong>Age</strong> 4–5 Years</span><span><strong>Class</strong> 31 · Science</span><span><strong>Skill</strong> ${esc(g.skill)}</span></div>
    <p class="lesson-lede">${esc(g.tag)}</p>
-   <div class="lesson-start"><a class="button" href="#play">Play the science game <span aria-hidden="true">↓</span></a><a class="button button-ghost" href="${ws}">Print the worksheet <span aria-hidden="true">↓</span></a><span class="lesson-start-hint">Play with a finger, a stylus or a mouse. Instructions are spoken aloud.</span></div>
+   <div class="lesson-start"><a class="button" href="#play">Start drawing <span aria-hidden="true">↓</span></a><a class="button button-ghost" href="${ws}">Print the worksheet <span aria-hidden="true">↓</span></a><span class="lesson-start-hint">Play with a finger, a stylus or a mouse. Undo and Clear are always one tap away.</span></div>
   </div>
  </article>
- <section class="wrap lesson-section" id="play" aria-label="Play ${esc(g.title)}">
-  <span class="eyebrow">PLAY · ${esc(g.skill).toUpperCase()}</span>
-  <h2>${esc(g.title)}</h2>
-  <p class="lesson-copy">${esc(g.say)}</p>
-  ${board(SCIENCE_BASE,{...g,band:"science"},W,H)}
-  <noscript><p class="sa-noscript">The tapping game needs JavaScript. Everything else on this page works without it \u2014 and the <a href="${ws}">matching worksheet</a> brings this experiment to paper.</p></noscript>
- </section>
+ ${imageActivitySection({band:'science',slug:g.slug,title:g.title,skill:g.skill,
+   say:g.say,hint:g.hint,doneTitle:g.doneTitle,alt:g.alt,
+   imgUrl:SCIENCE_BASE+g.img,w:art.w,h:art.h,wsPath:WS31_PATH+g.slug+'/'})}
  <section class="wrap lesson-section"><span class="eyebrow">FOR GROWN-UPS</span><h2>Why this adventure helps.</h2>
-  <p class="lesson-copy">${esc(g.parentNote||'This game trains '+g.skill.toLowerCase()+' on a real science picture: the questions are spoken aloud, the answers are pictures, and a miss brings a gentle hint instead of a penalty. Ask your child to predict out loud before tapping \u2014 the prediction is the science.')}</p>
+  <p class="lesson-copy">${esc(g.parentNote||'This activity trains '+g.skill.toLowerCase()+' on a real science picture: one short written instruction, then your child draws, circles and marks straight on the illustration. There is nothing to be right or wrong at. Ask your child to predict out loud before they draw \u2014 the prediction is the science.')}</p>
   ${g.artNote?`<p class="lesson-copy"><strong>Illustration note:</strong> ${esc(g.artNote)}</p>`:''}
   <p class="lesson-copy">Prefer paper? The <a href="${ws}">${esc(g.title)} worksheet</a> prints the same experiment with room to think and draw \u2014 and a grown-up answer line. Printing never marks anything complete.</p>
  </section>
@@ -549,8 +542,8 @@ export function scienceClassBody(){
   <span class="eyebrow">CLASS 31 · PRESCHOOL AGES 4–5</span>
   <h1>Science, Nature &amp; Discovery</h1>
   <div class="fc-chips lesson-chips"><span><strong>Age</strong> 4–5 Years</span><span><strong>Class</strong> 31 of 31</span><span><strong>Adventures</strong> 30 science games</span><span><strong>Subjects</strong> Plants · animals · weather · light · sound</span></div>
-  <p class="lesson-lede">Explore plants, animals, weather, habitats, light, sound, water, and everyday science through playful discovery activities. Thirty real games \u2014 every one played on its own science illustration, with spoken instructions and a printable worksheet twin in the <a href="${WS31_PATH}">Science worksheet library</a>.</p>
-  <p class="lesson-lede">Predictions to make, insects to count, magnets to test, habitats to match and one graduation lab \u2014 every question spoken aloud, every answer a picture.</p>
+  <p class="lesson-lede">Explore plants, animals, weather, habitats, light, sound, water, and everyday science through playful discovery activities. Thirty draw-on-the-picture adventures \u2014 every one played on its own science illustration, with plain written instructions and a printable worksheet twin in the <a href="${WS31_PATH}">Science worksheet library</a>.</p>
+  <p class="lesson-lede">Predictions to make, insects to count, magnets to test, habitats to match and one graduation lab \u2014 every question is one big picture your child draws right on.</p>
   <div class="lesson-start"><a class="button" href="#adventures">Meet the adventures <span aria-hidden="true">↓</span></a><span class="lesson-start-hint">Science is best in short, curious sittings.</span></div>
  </div></article>
  <section class="wrap lesson-section" id="adventures" aria-label="The science adventures">
@@ -590,9 +583,9 @@ export function scienceLibraryBody(){
   [7,'Journeys and directions','Seeds that travel, the water cycle, Earth\u2019s day side and a compass.',22,25],
   [8,'Camouflage, wind and the castle','Hidden animals, wind power, lost habitats \u2014 and the graduation lab.',26,30]];
  return `${crumbNav([['Preschool','/preschool/'],['Science Adventures']])}
- ${heading31('SCIENCE ADVENTURES','Thirty science games you really play.','Plants, weather, magnets, habitats, light and sound \u2014 real discovery games played on our own science artwork, with spoken instructions and no reading required.')}
+ ${heading31('SCIENCE ADVENTURES','Thirty science games you really play.','Plants, weather, magnets, habitats, light and sound \u2014 real discovery activities played right on our own science artwork, with plain text instructions a grown-up can read aloud.')}
  <div class="lesson-start"><a class="button" href="${C31_PATH}">This way to Class 31 <span aria-hidden="true">→</span></a><span class="lesson-start-hint">The class that goes with these adventures: Science, Nature &amp; Discovery.</span></div>
- <section class="wrap section compact" data-st-lib aria-label="All science adventures">
+ <section class="wrap section compact" data-st-lib data-st-band="science" aria-label="All science adventures">
   ${shelves.map((sh,i)=>{const [,t,d,a,b]=sh;const items=scienceAdventures.filter(g=>g.num>=a&&g.num<=b);
    return `<div class="wa-shelf"><h2>${i+1}. ${t}</h2><p class="lesson-copy">${d}</p><div class="sa-grid">${items.map(g=>`<a class="sa-card sa-card-slim" href="${SCIENCE_LIB}${g.slug}/"><img src="${SCIENCE_BASE}${g.img}" width="400" height="284" alt="${esc(g.alt)}" loading="lazy"><span class="sa-card-body"><strong>${g.num}. ${esc(g.title)}</strong><span class="sa-card-skill">${esc(g.skill)}</span></span><span class="sa-card-play">Play <span aria-hidden="true">→</span></span></a>`).join('')}</div></div>`;}).join('')}
   <p class="lesson-note">Every card is one real game. Progress saves on this device for the child chosen in <a href="/my-classroom/">My Classroom</a> \u2014 opening a page never counts as playing it.</p>
@@ -601,7 +594,7 @@ export function scienceLibraryBody(){
   <div class="fc-stages">
    <a class="fc-stage lesson-card-link" href="${C31_PATH}"><div class="fc-stage-pills"><span class="fc-age">Age 4–5</span><span class="fc-class">Class 31</span></div><h3>Science, Nature &amp; Discovery</h3><p>The class behind these adventures, with off-screen experiment ideas for every game.</p><span class="fc-open">Open Class 31 <span aria-hidden="true">↗</span></span></a>
    <a class="fc-stage lesson-card-link" href="${WS31_PATH}"><div class="fc-stage-pills"><span class="fc-age">Age 4–5</span><span class="fc-class">Worksheets</span></div><h3>Science worksheets</h3><p>All 30 printable twins with free PDFs, print buttons and grown-up answer lines.</p><span class="fc-open">Open the science worksheets <span aria-hidden="true">↗</span></span></a>
-   <a class="fc-stage lesson-card-link" href="/preschool/logic/adventures/"><div class="fc-stage-pills"><span class="fc-age">Age 4–5</span><span class="fc-class">Class 30</span></div><h3>Logic Adventures</h3><p>Thirty picture puzzles with spoken instructions \u2014 the thinking companion shelf.</p><span class="fc-open">Open the Logic Library <span aria-hidden="true">↗</span></span></a>
+   <a class="fc-stage lesson-card-link" href="/preschool/logic/adventures/"><div class="fc-stage-pills"><span class="fc-age">Age 4–5</span><span class="fc-class">Class 30</span></div><h3>Logic Adventures</h3><p>Thirty draw-on-the-picture logic puzzles \u2014 the thinking companion shelf.</p><span class="fc-open">Open the Logic Library <span aria-hidden="true">↗</span></span></a>
   </div>
  </section>`;
 }

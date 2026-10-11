@@ -1,7 +1,8 @@
 // Kiddo School — Class 28 Phonics test suite.
-// Proves the 24 games are real and audio-honest, the class page exists, the
-// My Classroom wiring carries the phonics band, and the artwork streams from
-// the owner's actual R2 uploads.
+// Proves the 24 adventures are draw-on-the-picture activities with plain
+// text instructions (no sound, no coded boards, no scores), the class page
+// exists, the My Classroom wiring carries the phonics band, and the artwork
+// streams from the owner's actual R2 uploads.
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync,existsSync,readdirSync,statSync} from 'node:fs';
@@ -26,15 +27,16 @@ test('all 24 phonics adventures: real configs, unique slugs and titles',()=>{
  }
 });
 
-test('every phonics game page exists with unique SEO, H1, artwork and engine',()=>{
+test('every phonics adventure page exists with unique SEO, H1, artwork and the drawing layer',()=>{
  const titles=new Set();
  for(const g of phonicAdventures){
   const p=PHONICS_LIB_PATH+g.slug+'/';
   const html=page(p);
   assert.ok(html.includes('<h1>'+g.title+'</h1>')||html.includes(`<h1>${g.title}</h1>`),'H1 on '+p);
-  assert.ok(html.includes('data-ph-board'),'board on '+p);
-  assert.ok(html.includes(`data-ph-engine="${g.engine}"`),'engine on '+p);
-  assert.ok(html.includes('/assets/phonics-adventures.js'),'engine script on '+p);
+  assert.ok(html.includes(`data-wc-src="${PHONICS_BASE+g.img}"`),'drawing mount over the artwork on '+p);
+  assert.ok(html.includes('data-ia-band="phonics"'),'progress band on '+p);
+  assert.ok(html.includes('/assets/image-adventure.js'),'progress engine on '+p);
+  assert.ok(html.includes('id="ia-tools"'),'tools rail on '+p);
   assert.ok(html.includes(PHONICS_BASE+g.img),'R2 artwork on '+p);
   assert.ok(html.includes(C28_PATH),'class link on '+p);
   assert.ok(html.includes('/worksheets/phonics/'+g.slug+'/'),'worksheet twin link on '+p);
@@ -53,28 +55,18 @@ test('all 24 phonics R2 artworks are live (GET probe — R2 HEAD lies)',()=>{
  }
 });
 
-test('phonics boards are server-rendered SVG with the right interaction data',()=>{
- // listen: rounds carry the audio key and ok-picks
- const sd=page(PHONICS_LIB_PATH+'sound-detective/');
- assert.ok(sd.includes('data-ph-round-play="s"'),'recorded phoneme button');
- assert.ok((sd.match(/data-ph-ok/g)||[]).length>=4,'two rounds x two correct pictures');
- // sort: items carry their bin
- const tc=page(PHONICS_LIB_PATH+'treasure-chest-sounds/');
- assert.ok(tc.includes('data-ph-bin="b"')&&tc.includes('data-ph-bin="m"'),'two chests, artwork\'s b/m sounds');
- assert.ok((tc.match(/class="ph-item"/g)||[]).length===6,'six sort cards');
- // blend: sequence + tiles
- const rb=page(PHONICS_LIB_PATH+'robot-sound-blender/');
- assert.ok(rb.includes('data-ph-seq="c a t"'),'blend sequence');
- assert.ok((rb.match(/data-ph-tile=/g)||[]).length>=9,'nine letter tiles');
- // counters: check button carries the expected count
- const pg=page(PHONICS_LIB_PATH+'penguin-syllable-drums/');
- assert.ok(pg.includes('data-ph-need="1"')&&pg.includes('data-ph-need="2"')&&pg.includes('data-ph-need="3"'),'1, 2 and 3 syllable answers');
- // swap: the correct swap letter is flagged
- const uni=page(PHONICS_LIB_PATH+'unicorn-sound-swap/');
- assert.ok(uni.includes('data-ph-ok="true"'),'swap answer flagged');
- // position: first/last boxes
- const sub=page(PHONICS_LIB_PATH+'submarine-sound-scanner/');
- assert.ok(sub.includes('data-ph-pick="first"')&&sub.includes('data-ph-pick="last"'),'position boxes');
+test('phonics pages are draw-on-the-picture: no coded boards, no sound instructions',()=>{
+ for(const g of phonicAdventures){
+  const html=page(PHONICS_LIB_PATH+g.slug+'/');
+  // the retired coded board must not exist anywhere
+  for(const hook of ['data-ph-board','data-ph-engine','data-ph-round','data-ph-ok','data-ph-bin','data-ph-seq','data-ph-tile','data-ph-need','data-ph-pick','ph-audio-bar'])
+   assert.ok(!html.includes(hook),hook+' retired on '+g.slug);
+  // the owner's rule: no sound instructions on the page
+  assert.ok(!html.includes('Sound: on')&&!html.includes('data-ph-mute'),'no audio bar on '+g.slug);
+  assert.ok(!html.includes('speechSynthesis'),'no screen voice on '+g.slug);
+  // the picture is the activity
+  assert.ok(html.includes('crossorigin="anonymous"'),'CORS save on '+g.slug);
+ }
 });
 
 test('the audio manifest matches the shipped recordings',()=>{
@@ -93,17 +85,13 @@ test('the audio manifest matches the shipped recordings',()=>{
  assert.equal(files.length,AUDIO_MANIFEST.length,'no orphan audio files');
 });
 
-test('the engine is audio-honest: mute, replay, pure-sound fallback, quiet-mode respect',()=>{
- const js=read('/assets/phonics-adventures.js');
- assert.ok(js.includes("textContent = muted ? 'Sound: off' : 'Sound: on'"),'mute toggle');
- assert.ok(js.includes('lwy-quiet'),'Learning Your Way quiet preference respected');
- assert.ok(js.includes("PURE = { s: 'sss', m: 'mmm'"),'pure-sound fallback spelling');
- assert.ok(js.includes("fetch(a.src, { method: 'HEAD' })"),'missing-file fallback check');
- assert.ok(js.includes("speechSynthesis"),'screen-voice fallback exists');
- assert.ok(!/setInterval\(|score|streak/i.test(js),'no timers or scores');
+test('the shipped engine is the honest progress keeper: no sound, no scores, no timers',()=>{
+ const js=read('/assets/image-adventure.js');
+ assert.ok(!/setInterval\(|score|streak|speechSynthesis/i.test(js),'no timers, scores or voices');
  assert.ok(js.includes("kiddo-adventures"),'site progress store');
- assert.ok(js.includes("completed[slug] = Date.now()"),'completion saved');
- assert.ok(js.includes("kiddo-ph-mute"),'mute preference remembered');
+ assert.ok(js.includes("'kiddo-wc-save'"),'completion comes only from a real save');
+ assert.ok(js.includes("kiddo-adventure-done"),'My Classroom hears about it');
+ assert.ok(js.includes("data-ia-band"),'band comes from the page, not a hardcoded map');
 });
 
 test('game completion never marks a curriculum class complete',()=>{
@@ -111,7 +99,7 @@ test('game completion never marks a curriculum class complete',()=>{
   const html=page(PHONICS_LIB_PATH+g.slug+'/');
   assert.ok(!html.includes('school-progress.js'),'no curriculum progress on '+g.slug);
  }
- const engine=read('/assets/phonics-adventures.js');
+ const engine=read('/assets/image-adventure.js');
  assert.ok(!engine.includes('class-complete'),'engine never touches class completion');
 });
 
@@ -149,7 +137,7 @@ test('worksheet downloads never touch My Classroom progress',()=>{
  assert.ok(!existsSync('dist/assets/worksheets.js'),'no worksheet JS at all');
  const cm=read('/assets/flashcards-community.js');
  assert.ok(!cm.includes('kiddo-adventures'),'community script has no progress code');
- const engine=read('/assets/phonics-adventures.js');
+ const engine=read('/assets/image-adventure.js');
  assert.ok(!engine.includes('download'),'engine does not track downloads');
 });
 

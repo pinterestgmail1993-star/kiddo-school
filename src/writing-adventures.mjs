@@ -1,19 +1,17 @@
 // Kiddo School — Early Writing & Pencil Control (Class 27).
-// Thirty real, on-screen tracing adventures at
+// Thirty draw-on-the-picture adventures at
 // /preschool/writing/adventures/{slug}/, built on the owner's thirty Canva
 // illustrations (all verified on R2 under school/writing/adventures/).
-// The artwork is each page's story card; the interactive board is its own
-// accurately aligned 1600×900 vector scene — guide paths that are clearly
-// visible (dashed, becoming the child's own stroke color when earned),
-// start and goal markers, and a real Pointer-Events drawing layer that
-// works with finger, stylus, mouse and trackpad. Drawing is evaluated with
-// generous four-year-old tolerance: coverage of the guide, never
-// pixel-perfection. Undo, redo, stroke eraser, clear, five pencil colors,
-// two sizes, a blank worksheet download and a "my drawing" download.
-// Progress (opened / completed / dates) saves per selected child in the
-// site's existing localStorage profile — the same store Classes 25 and 26
-// use — and never marks a curriculum class complete on its own.
+// The owner's spec, followed exactly: the original Canva artwork sits on
+// the LEFT with the transparent Write & Color drawing layer laid directly
+// over it (aligned 1:1 at every screen size), and plain TEXT instructions
+// plus the drawing tools sit on the RIGHT. No coded scenes, no sound, no
+// scoring, no fake games. Completion counts only when the child's own
+// work is really saved, and progress keeps the same localStorage bands
+// the site has always used, so nothing already earned is lost.
 import {R2,crumbNav,heading,esc} from './adventure-kit.mjs';
+import {imageActivitySection} from './image-activity.mjs';
+import {artFor} from './adventure-dims.mjs';
 import {SHAPE_LIB_PATH} from './shape-adventures.mjs';
 import {COLOR_LIB_PATH as CLIB_PATH} from './color-creativity.mjs';
 
@@ -152,7 +150,7 @@ export const writingAdventures=[
  title:'Ladybug Dot-to-Dot',h1:'Ladybug Dot-to-Dot',
  tag:'Connect the ten numbered dots in order — 1, 2, 3… all the way to 10.',
  skill:'Number order and connecting',group:1,engine:'dots',tol:50,
- say:'Tap dot 1, then dot 2, then dot 3… watch the line fly from dot to dot until you reach 10!',
+ say: 'Connect the dots from 1 to 10 — say each number out loud as you draw the line from dot to dot!',
  hint:'Which number comes next? You can do it!',
  doneTitle:'Dot to dot complete!',
  doneSub:'Ten dots, ten lines, one big circle around the ladybug.',
@@ -274,7 +272,7 @@ writingAdventures.push(
  title:'Teddy Bear Stitching Studio',h1:'Teddy Bear Stitching Studio',
  tag:'Connect the stitching dots to sew the patch onto the teddy’s tummy.',
  skill:'Connecting points in order',group:2,engine:'dots',tol:50,
- say:'Tap the numbered stitching dots in order to sew all around the patch. Twelve careful stitches!',
+ say: 'Stitch the teddy together from dot 1 to dot 12 — draw each line in order, twelve careful stitches!',
  hint:'Dot to dot, stitch by stitch.',
  doneTitle:'All sewn up!',
  doneSub:'Twelve even stitches. The teddy gives you a big soft hug.',
@@ -465,192 +463,6 @@ writingAdventures.push(
 export const writingBySlug=Object.fromEntries(writingAdventures.map(a=>[a.slug,a]));
 export const writingByNum=n=>writingAdventures.find(a=>a.num===n);
 
-/* ---------- scene painters (1600×900 viewBox) ---------- */
-const FIX=(fill,extra='')=>`fill="${fill}" stroke="#3a3350" stroke-width="6" stroke-linejoin="round" ${extra}`;
-const bg=(a,b)=>`<defs><linearGradient id="wbg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${a}"/><stop offset="1" stop-color="${b}"/></linearGradient></defs><rect width="1600" height="900" fill="url(#wbg)"/>`;
-const star=(x,y,s=1)=>`<path transform="translate(${x} ${y}) scale(${s})" d="M0,-30 L8,-9 L31,-8 L13,6 L19,28 L0,15 L-19,28 L-13,6 L-31,-8 L-8,-9 Z" fill="#f5c531" stroke="#3a3350" stroke-width="4" stroke-linejoin="round"/>`;
-const flower=(x,y,c)=>`<g transform="translate(${x} ${y})"><circle r="10" fill="#f5c531" stroke="#3a3350" stroke-width="3"/>${[0,60,120,180,240,300].map(a=>`<ellipse cx="${Math.round(Math.cos(a*Math.PI/180)*22)}" cy="${Math.round(Math.sin(a*Math.PI/180)*22)}" rx="13" ry="9" fill="${c}" stroke="#3a3350" stroke-width="3" transform="rotate(${a} ${Math.round(Math.cos(a*Math.PI/180)*22)} ${Math.round(Math.sin(a*Math.PI/180)*22)})"/>`).join('')}</g>`;
-const cloud=(x,y,s=1)=>`<g transform="translate(${x} ${y}) scale(${s})"><ellipse rx="70" ry="30" fill="#fff" stroke="#3a3350" stroke-width="5"/><ellipse cx="-34" cy="-14" rx="34" ry="22" fill="#fff" stroke="#3a3350" stroke-width="5"/><ellipse cx="30" cy="-12" rx="38" ry="24" fill="#fff" stroke="#3a3350" stroke-width="5"/><circle cx="-22" cy="0" r="4" fill="#3a3350"/><circle cx="18" cy="0" r="4" fill="#3a3350"/><path d="M-8,12 q8,8 16,0" stroke="#3a3350" stroke-width="4" fill="none" stroke-linecap="round"/></g>`;
-
-const SCENES={
- hedgehog:()=>bg('#eafaf0','#d2ecd8')
-  +`<ellipse cx="230" cy="500" rx="120" ry="95" ${FIX('#c98d5a')}/><path d="M150,430 L130,380 L180,410 Z M200,400 L200,350 L240,395 Z M270,415 L300,370 L305,425 Z M310,450 L350,420 L340,470 Z" ${FIX('#8a5a34','# stroke-width="4"')}/>
-  <circle cx="286" cy="478" r="26" ${FIX('#e8b88a')}/><circle cx="278" cy="472" r="5" fill="#3a3350"/><circle cx="298" cy="472" r="5" fill="#3a3350"/><circle cx="288" cy="486" r="4" fill="#3a3350"/>
-  <g transform="translate(1450,460)"><path d="M0,52 C-42,20 -56,-14 -40,-40 C-26,-62 -4,-58 0,-38 C4,-58 26,-62 40,-40 C56,-14 42,20 0,52 Z" ${FIX('#e04b3f')}/><path d="M-26,-34 q26,14 52,0 l-8,22 q-18,10 -36,0 Z" ${FIX('#4a9e4f','# stroke-width="4"')}/></g>`
-  +flower(120,760,'#f28ab5')+flower(560,800,'#8fbfe8')+flower(1000,790,'#f5c531')+flower(1430,760,'#f28ab5')+flower(760,180,'#8fbfe8'),
- bee:()=>bg('#fff9ec','#fdeecb')
-  +`<g transform="translate(190,460)"><ellipse rx="58" ry="44" ${FIX('#f5c531')}/><path d="M-18,-42 v84 M10,-44 v88 M38,-40 v80" stroke="#3a3350" stroke-width="8"/><circle cx="44" cy="-14" r="16" ${FIX('#3a3350','# stroke-width="4"')}/><ellipse cx="-6" cy="-46" rx="26" ry="16" fill="#bfe3f7" stroke="#3a3350" stroke-width="4"/></g>`
-  +flower(1400,300,'#f28ab5')+flower(1470,460,'#f5c531')+flower(1390,620,'#8fbfe8')
-  +flower(560,180,'#c98d5a')+flower(1010,760,'#c98d5a'),
- sailboat:()=>bg('#d8f0fb','#bfe6f7')
-  +`<path d="M120,560 h300 l-60,120 h-190 Z" ${FIX('#e04b3f')}/><rect x="262" y="300" width="10" height="256" ${FIX('#8a5a34')}/><path d="M272,310 C380,360 380,470 272,540 Z" ${FIX('#fff7ea')}/><path d="M258,320 C180,370 180,470 258,540 Z" ${FIX('#f28ab5')}/>
-  <g transform="translate(1440,430)"><rect x="-38" y="-140" width="76" height="300" ${FIX('#e04b3f')}/><rect x="-24" y="-120" width="48" height="40" fill="#fff"/><rect x="-24" y="-60" width="48" height="40" fill="#fff"/><rect x="-24" y="0" width="48" height="40" fill="#fff"/><circle cx="0" cy="120" r="18" ${FIX('#f5c531','# stroke-width="4"')}/></g>`
-  +`<path d="M60,760 q40,-26 80,0 q40,26 80,0" stroke="#3d9fd4" stroke-width="6" fill="none" stroke-linecap="round"/><path d="M1180,790 q40,-26 80,0 q40,26 80,0" stroke="#3d9fd4" stroke-width="6" fill="none" stroke-linecap="round"/>`,
- rocket:()=>bg('#4a4272','#2c2750')
-  +star(300,200,0.8)+star(1300,240,0.7)+star(500,760,0.6)+star(1100,140,0.8)+star(880,700,0.7)
-  +`<g transform="translate(150,780)"><path d="M0,30 C-30,-10 -30,-80 0,-110 C30,-80 30,-10 0,30 Z" ${FIX('#e04b3f')}/><circle cx="0" cy="-46" r="14" fill="#bfe3f7"/><path d="M-22,26 q-20,16 -26,44 M22,26 q20,16 26,44" stroke="#f5c531" stroke-width="6" fill="none" stroke-linecap="round"/></g>`
-  +`<circle cx="1460" cy="140" r="86" ${FIX('#8f4fc0')}/><ellipse cx="1460" cy="140" rx="120" ry="26" fill="none" stroke="#c8a06a" stroke-width="8"/>`,
- snail:()=>bg('#fdf3e0','#f3ddb7')
-  +`<g transform="translate(300,600)"><path d="M-160,90 C-120,20 -40,0 40,10 L60,90 Z" ${FIX('#c98d5a')}/><circle cx="-120" cy="60" r="34" ${FIX('#e8b88a')}/><circle cx="-128" cy="52" r="5" fill="#3a3350"/><path d="M-108,34 q4,-30 18,-40 M-92,30 q10,-24 24,-30" stroke="#3a3350" stroke-width="5" fill="none" stroke-linecap="round"/></g>`
-  +`<circle cx="230" cy="120" r="40" ${FIX('#f5c531','# opacity="0.6"')} opacity="0.0"/>`
-  +flower(1420,780,'#f28ab5')+flower(1460,240,'#f5c531'),
- rainbow:()=>bg('#e7f6ff','#d5efdb')
-  +cloud(190,690,1.1)+cloud(1410,690,1.1)
-  +star(300,180,0.7)+star(1350,220,0.6)+star(820,90,0.8)
-  +`<path d="M300,780 q40,-24 80,0" stroke="#7cc47f" stroke-width="8" fill="none" stroke-linecap="round"/>`,
- web:()=>bg('#f3ecff','#e2d4f7')
-  +`<g transform="translate(800,430)">${[0,45,90,135,180,225,270,315].map(a=>`<circle cx="${Math.round(Math.cos(a*Math.PI/180)*430)}" cy="${Math.round(Math.sin(a*Math.PI/180)*310)}" r="16" ${FIX(['#e04b3f','#f5c531','#4a9e4f','#5aa7d6','#8f4fc0','#f07f28','#3fb8af','#f28ab5'][a/45],'# stroke-width="4"')}/>`).join('')}</g>`
-  +`<g transform="translate(400,700)"><ellipse rx="40" ry="30" ${FIX('#3a3350','# stroke-width="4"')}/><circle cx="-12" cy="-8" r="5" fill="#fff"/><circle cx="10" cy="-8" r="5" fill="#fff"/><path d="M-40,10 q-30,20 -40,50 M40,10 q30,20 40,50 M-30,26 q-16,30 -10,54 M30,26 q16,30 10,54" stroke="#3a3350" stroke-width="5" fill="none" stroke-linecap="round"/></g>`,
- maze:()=>bg('#fdf9ef','#f7ecd4')
-  +`<g transform="translate(160,450)"><circle r="70" ${FIX('#e8b88a')}/><circle cx="-20" cy="-14" r="7" fill="#3a3350"/><circle cx="16" cy="-14" r="7" fill="#3a3350"/><ellipse cx="-2" cy="18" rx="12" ry="9" fill="#3a3350"/><path d="M-70,30 Q-96,60 -70,86 M70,30 Q96,60 70,86" ${FIX('#a9744f','# stroke-width="4"')}/><path d="M-40,-66 q10,-26 34,-30 M40,-66 q-10,-26 -34,-30" stroke="#a9744f" stroke-width="8" fill="none" stroke-linecap="round"/></g>`
-  +`<g transform="translate(1450,450) rotate(20)"><ellipse rx="64" ry="42" ${FIX('#f5c531')}/><ellipse rx="64" ry="42" fill="none" stroke="#d9a61e" stroke-width="6" stroke-dasharray="14 12"/></g>`
-  +`<circle cx="240" cy="150" r="10" fill="#c98d5a" opacity="0.5"/><circle cx="1390" cy="780" r="10" fill="#c98d5a" opacity="0.5"/>`,
- ladybug:()=>bg('#eafaf0','#d2ecd8')
-  +`<g transform="translate(800,430)"><circle r="90" ${FIX('#3a3350','# stroke-width="5"')}/><circle cx="-30" cy="-26" r="9" fill="#fff"/><circle cx="26" cy="-26" r="9" fill="#fff"/><path d="M-24,34 q24,18 48,0" stroke="#fff" stroke-width="6" fill="none" stroke-linecap="round"/><path d="M-90,-60 q-40,-30 -30,-70 M90,-60 q40,-30 30,-70" stroke="#3a3350" stroke-width="8" fill="none" stroke-linecap="round"/><circle cx="-122" cy="-134" r="8" fill="#3a3350"/><circle cx="122" cy="-134" r="8" fill="#3a3350"/></g>`
-  +flower(150,780,'#f28ab5')+flower(1460,770,'#f5c531')+flower(200,160,'#8fbfe8')+flower(1420,150,'#f28ab5'),
- safari:()=>bg('#fdf9ef','#f0e4c4')
-  +`<g transform="translate(150,240)"><path d="M0,320 C-10,220 10,140 40,90 L60,40 q20,-30 40,0 L120,90 C150,140 170,220 160,320 Z" ${FIX('#f5c531')}/><circle cx="75" cy="60" r="40" ${FIX('#f5c531')}/><path d="M45,20 q-30,-16 -20,-40 M105,20 q30,-16 20,-40" stroke="#a9744f" stroke-width="6" fill="none" stroke-linecap="round"/><circle cx="62" cy="52" r="5" fill="#3a3350"/><circle cx="88" cy="52" r="5" fill="#3a3350"/><path d="M62,76 q13,10 26,0" stroke="#3a3350" stroke-width="4" fill="none"/><path d="M40,140 h60 M50,180 h56 M40,220 h60 M50,260 h56" stroke="#a9744f" stroke-width="7"/></g>`
-  +`<g transform="translate(960,180)"><rect x="0" y="60" width="190" height="110" rx="30" ${FIX('#fff')}/><rect x="10" y="75" width="170" height="80" rx="22" fill="none" stroke="#3a3350" stroke-width="4" stroke-dasharray="16 12"/><rect x="60" y="-10" width="70" height="80" rx="20" ${FIX('#fff')}/><circle cx="86" cy="20" r="6" fill="#3a3350"/><circle cx="112" cy="20" r="6" fill="#3a3350"/><rect x="20" y="170" width="22" height="80" ${FIX('#fff')}/><rect x="150" y="170" width="22" height="80" ${FIX('#fff')}/><path d="M14,240 h34 M144,240 h34" stroke="#3a3350" stroke-width="6"/></g>`
-  +`<g transform="translate(1380,260)"><ellipse rx="80" ry="95" ${FIX('#8fbfe8')}/><circle cx="0" cy="-120" r="46" ${FIX('#8fbfe8')}/><path d="M-30,-140 q-20,-24 -8,-44 M30,-140 q20,-24 8,-44" stroke="#3a3350" stroke-width="6" fill="none" stroke-linecap="round"/><circle cx="-16" cy="-128" r="6" fill="#3a3350"/><circle cx="16" cy="-128" r="6" fill="#3a3350"/><path d="M-70,60 q-60,20 -70,70 M70,60 q60,20 70,70" ${FIX('#8fbfe8','# stroke-width="4"')}/></g>`,
- octopus:()=>bg('#e7f6ff','#cfe9f7')
-  +`<g transform="translate(800,330)"><ellipse rx="150" ry="120" ${FIX('#9b7fd4')}/><circle cx="-46" cy="-24" r="16" fill="#fff"/><circle cx="46" cy="-24" r="16" fill="#fff"/><circle cx="-42" cy="-20" r="7" fill="#3a3350"/><circle cx="50" cy="-20" r="7" fill="#3a3350"/><path d="M-30,20 q30,26 60,0" stroke="#3a3350" stroke-width="6" fill="none" stroke-linecap="round"/></g>`
-  +`<path d="M120,820 q-10,-50 24,-76 M180,826 q20,-44 -4,-70" ${FIX('#f28ab5','# stroke-width="4"')}/><path d="M1440,820 q-10,-50 24,-76 M1380,826 q20,-44 -4,-70" ${FIX('#3fb8af','# stroke-width="4"')}/>`
-  +`<circle cx="300" cy="800" r="14" fill="#5aa7d6" opacity="0.5"/><circle cx="1280" cy="790" r="12" fill="#5aa7d6" opacity="0.5"/>`,
- academy:()=>bg('#fff9ec','#fdeecb')
-  +`<g transform="translate(80,90)"><rect x="-20" y="-20" width="70" height="130" rx="14" ${FIX('#f5c531')}/><path d="M-20,90 L15,130 L50,90 Z" ${FIX('#f28ab5','# stroke-width="4"')}/><rect x="-8" y="6" width="46" height="70" rx="8" fill="#fff7ea"/></g>`
-  +star(1450,120,0.8)+star(1520,420,0.6)+star(90,780,0.7),
- bridge:()=>bg('#e7f6ff','#cfe9f7')
-  +`<rect x="180" y="180" width="120" height="480" ${FIX('#f2b8c6')}/><path d="M172,188 L240,120 L308,188 Z" ${FIX('#e88aa4')}/><rect x="1300" y="180" width="120" height="480" ${FIX('#f2b8c6')}/><path d="M1292,188 L1360,120 L1428,188 Z" ${FIX('#e88aa4')}/>`
-  +`<path d="M0,730 h1600" stroke="#3d9fd4" stroke-width="90" opacity="0.45"/><path d="M100,760 q30,-16 60,0 M480,780 q30,-16 60,0 M900,760 q30,-16 60,0 M1320,780 q30,-16 60,0" stroke="#fff" stroke-width="5" fill="none" opacity="0.7"/>`
-  +star(760,100,0.7),
- lion:()=>bg('#fff9ec','#fdeecb')
-  +`<g transform="translate(800,450)"><circle r="170" ${FIX('#f5c531')}/><circle cx="-52" cy="-24" r="12" fill="#3a3350"/><circle cx="52" cy="-24" r="12" fill="#3a3350"/><ellipse cx="0" cy="30" rx="34" ry="26" ${FIX('#fff7ea','# stroke-width="4"')}/><ellipse cx="0" cy="16" rx="12" ry="9" fill="#3a3350"/><path d="M-34,60 q34,26 68,0" stroke="#3a3350" stroke-width="6" fill="none" stroke-linecap="round"/><circle cx="-130" cy="-90" r="24" ${FIX('#a9744f','# stroke-width="4"')}/><circle cx="130" cy="-90" r="24" ${FIX('#a9744f','# stroke-width="4"')}/></g>`
-  +flower(160,780,'#f28ab5')+flower(1440,780,'#f5c531'),
- rain:()=>bg('#dfe9f2','#cfe0ec')
-  +cloud(300,240,1.2)+cloud(800,240,1.2)+cloud(1300,240,1.2)
-  +`<g transform="translate(1470,640)"><path d="M-70,10 a34,34 0 0 1 50,-30 a40,40 0 0 1 74,10 a30,30 0 0 1 12,58 l-120,0 q-26,-14 -16,-38 Z" ${FIX('#f07f28')}/><path d="M-40,-24 q0,-30 30,-36" stroke="#3a3350" stroke-width="6" fill="none"/><rect x="-64" y="44" width="128" height="10" ${FIX('#8a5a34','# stroke-width="4"')}/></g>`
-  +`<g transform="translate(1330,700)"><rect x="-30" y="-40" width="26" height="60" rx="10" ${FIX('#f28ab5')}/><rect x="4" y="-40" width="26" height="60" rx="10" ${FIX('#f28ab5')}/><path d="M-30,-10 h60 v20 h-60 Z" ${FIX('#f28ab5','# stroke-width="4"')}/></g>`
-  +`<g transform="translate(150,640)"><circle r="34" ${FIX('#4a9e4f')}/><circle cx="-12" cy="-8" r="5" fill="#3a3350"/><circle cx="12" cy="-8" r="5" fill="#3a3350"/><path d="M-12,12 q12,10 24,0" stroke="#3a3350" stroke-width="4" fill="none"/></g>`,
- dino:()=>bg('#f3ecdf','#e6d9c2')
-  +`<circle cx="1420" cy="200" r="60" ${FIX('#c8a06a','# stroke-dasharray="10 8"')}/><path d="M1462,164 a60,60 0 0 1 -42,102" fill="none" stroke="#3a3350" stroke-width="4"/>`
-  +`<ellipse cx="150" cy="760" rx="70" ry="40" ${FIX('#8fbfe8','# opacity="0.7"')}/><ellipse cx="320" cy="800" rx="56" ry="30" ${FIX('#4a9e4f','# opacity="0.7"')}/>`
-  +`<g transform="translate(80,120)"><circle r="40" ${FIX('#a9744f','# stroke-width="4"')}/><rect x="-6" y="-70" width="12" height="50" ${FIX('#8a5a34','# stroke-width="4"')}/></g>`,
- teddy:()=>bg('#fdf3e0','#f3ddb7')
-  +`<g transform="translate(800,450)">
-   <circle cx="-210" cy="-240" r="66" ${FIX('#b98a5a')}/><circle cx="210" cy="-240" r="66" ${FIX('#b98a5a')}/>
-   <circle cx="-330" cy="60" r="52" ${FIX('#b98a5a')}/><circle cx="330" cy="60" r="52" ${FIX('#b98a5a')}/>
-   <ellipse cx="-240" cy="330" rx="70" ry="56" ${FIX('#b98a5a')}/><ellipse cx="240" cy="330" rx="70" ry="56" ${FIX('#b98a5a')}/>
-   <ellipse rx="270" ry="250" ${FIX('#b98a5a')}/>
-   <circle cx="-90" cy="-260" r="92" ${FIX('#c99b6e')}/><circle cx="90" cy="-260" r="92" ${FIX('#c99b6e')}/>
-   <ellipse cx="0" cy="-180" rx="120" ry="100" ${FIX('#c99b6e')}/>
-   <ellipse cx="0" cy="-216" rx="34" ry="26" ${FIX('#3a3350','# stroke-width="4"')}/><path d="M0,-198 v14 M0,-184 q-14,14 -28,4 M0,-184 q14,14 28,4" stroke="#3a3350" stroke-width="5" fill="none" stroke-linecap="round"/>
-   <circle cx="-42" cy="-266" r="9" fill="#3a3350"/><circle cx="42" cy="-266" r="9" fill="#3a3350"/>
-   <path d="M-36,-296 q10,-12 22,-4 M36,-296 q-10,-12 -22,-4" stroke="#3a3350" stroke-width="5" fill="none"/>
-  </g>`
-  +`<g transform="translate(1390,180)"><ellipse cx="0" cy="60" rx="36" ry="60" ${FIX('#f5c531')}/><path d="M0,0 L0,-70 M-26,-52 L0,-64 L26,-52" stroke="#8a5a34" stroke-width="7" fill="none" stroke-linecap="round"/><ellipse cx="0" cy="-6" rx="14" ry="22" ${FIX('#e04b3f','# stroke-width="4"')}/></g>`
-  +`<ellipse cx="240" cy="200" rx="44" ry="56" ${FIX('#3fb8af','# stroke-width="4"')}/><path d="M226,156 h28" stroke="#e04b3f" stroke-width="8"/>`,
- penguin:()=>bg('#dff3ff','#bfe6f7')
-  +`<g transform="translate(800,760)"><ellipse rx="260" ry="34" fill="#a5d8f2" stroke="#7db8d9" stroke-width="4"/></g>`
-  +`<g transform="translate(800,450)"><ellipse rx="60" ry="74" ${FIX('#3f4a63')}/><ellipse cy="14" rx="40" ry="52" fill="#fff"/><circle cx="-18" cy="-18" r="6" fill="#2c2750"/><circle cx="18" cy="-18" r="6" fill="#2c2750"/><path d="M-8,-2 L8,-2 L0,10 Z" ${FIX('#f07f28','# stroke-width="3"')}/><path d="M-34,66 q-16,14 -20,32 M34,66 q16,14 20,32" stroke="#f07f28" stroke-width="8" stroke-linecap="round"/></g>`
-  +star(300,200,0.7)+star(1300,240,0.6)+star(500,150,0.5)+star(1150,130,0.5)
-  +`<path d="M180,680 q30,-40 60,0 q-30,40 -60,0" ${FIX('#8fbfe8','# stroke-width="4"')}/>`,
- railway:()=>bg('#e7f6ff','#d5efdb')
-  +`<g transform="translate(170,430)"><rect x="-90" y="-30" width="180" height="90" rx="24" ${FIX('#4a9e4f')}/><rect x="-64" y="-88" width="90" height="70" rx="18" ${FIX('#4a9e4f')}/><circle cx="-40" cy="-64" r="12" fill="#fff"/><rect x="-110" y="46" width="220" height="16" rx="8" ${FIX('#3a3350','# stroke-width="4"')}/><circle cx="-56" cy="74" r="24" ${FIX('#3a3350','# stroke-width="4"')}/><circle cx="56" cy="74" r="24" ${FIX('#3a3350','# stroke-width="4"')}/><path d="M60,-88 q10,-30 44,-30" stroke="#3a3350" stroke-width="6" fill="none"/><circle cx="112" cy="-122" r="10" ${FIX('#e04b3f','# stroke-width="3"')}/></g>`
-  +`<g transform="translate(1430,420)"><rect x="-90" y="-120" width="180" height="240" ${FIX('#f2b8c6')}/><path d="M-104,-120 L0,-210 L104,-120 Z" ${FIX('#e88aa4')}/><rect x="-32" y="-30" width="64" height="150" ${FIX('#8a5a34','# stroke-width="4"')}/><rect x="-62" y="-84" width="40" height="40" fill="#fff"/><rect x="24" y="-84" width="40" height="40" fill="#fff"/><circle cx="0" cy="-160" r="16" fill="#fff"/></g>`
-  +flower(500,800,'#f5c531')+flower(1100,810,'#f28ab5'),
- tent:()=>bg('#dff3e3','#c2e6c9')
-  +`<path d="M80,180 l16,-40 l14,40 Z" ${FIX('#3d7fc4','# stroke-width="4"')}/><path d="M1460,220 l14,-36 l12,36 Z" ${FIX('#3d7fc4','# stroke-width="4"')}/>`
-  +`<g transform="translate(1480,600)"><circle r="34" ${FIX('#f07f28')}/><circle cx="-10" cy="-6" r="5" fill="#3a3350"/><circle cx="12" cy="-6" r="5" fill="#3a3350"/><path d="M-10,12 q12,10 24,0" stroke="#3a3350" stroke-width="4" fill="none"/><path d="M-24,-28 q-16,-20 0,-38 M24,-28 q16,-20 0,-38" stroke="#a9744f" stroke-width="6" fill="none" stroke-linecap="round"/></g>`
-  +`<g transform="translate(120,660)"><path d="M-40,0 a40,40 0 0 1 80,0 Z" ${FIX('#e04b3f','# stroke-width="4"')}/><rect x="-8" y="-20" width="16" height="20" fill="#8a5a34"/></g>`,
- duckling:()=>bg('#e7f6ff','#cfe9f7')
-  +`<path d="M180,700 h320 M1100,700 h320" stroke="#8a5a34" stroke-width="12" stroke-linecap="round"/>`
-  +`<g transform="translate(120,560)"><ellipse rx="40" ry="30" ${FIX('#f5c531')}/><circle cx="30" cy="-22" r="22" ${FIX('#f5c531')}/><path d="M48,-22 l24,6 l-24,6 Z" ${FIX('#f07f28','# stroke-width="3"')}/><circle cx="34" cy="-28" r="4" fill="#3a3350"/></g>`
-  +`<g transform="translate(1480,540)"><ellipse rx="40" ry="30" ${FIX('#f5c531')}/><circle cx="-30" cy="-22" r="22" ${FIX('#f5c531')}/><path d="M-48,-22 l-24,6 l24,6 Z" ${FIX('#f07f28','# stroke-width="3"')}/><circle cx="-34" cy="-28" r="4" fill="#3a3350"/></g>`
-  +`<g transform="translate(700,150)"><ellipse rx="44" ry="32" ${FIX('#f5c531')}/><circle cx="34" cy="-24" r="24" ${FIX('#f5c531')}/><path d="M54,-24 l26,7 l-26,7 Z" ${FIX('#f07f28','# stroke-width="3"')}/><circle cx="38" cy="-30" r="4" fill="#3a3350"/></g>`,
- robot:()=>bg('#fff9ec','#fdeecb')
-  +`<g transform="translate(1420,450)"><rect x="-110" y="-90" width="220" height="180" rx="28" ${FIX('#5aa7d6')}/><rect x="-80" y="-58" width="160" height="90" rx="14" ${FIX('#bfe3f7','# stroke-width="4"')}/><circle cx="-40" cy="-16" r="12" fill="#3a3350"/><circle cx="40" cy="-16" r="12" fill="#3a3350"/><path d="M-20,10 h40" stroke="#3a3350" stroke-width="6" stroke-linecap="round"/><circle cx="0" cy="-120" r="16" ${FIX('#e04b3f','# stroke-width="4"')}/><path d="M0,-136 v-30" stroke="#3a3350" stroke-width="6"/><rect x="-140" y="-40" width="26" height="80" rx="12" ${FIX('#8fbfe8','# stroke-width="4"')}/><rect x="114" y="-40" width="26" height="80" rx="12" ${FIX('#8fbfe8','# stroke-width="4"')}/></g>`
-  +`<g transform="translate(300,240)"><rect x="-40" y="-60" width="80" height="120" rx="14" ${FIX('#f5c531')}/><rect x="-26" y="-44" width="52" height="34" rx="6" fill="#fff"/><path d="M0,60 v26 M-26,86 h52" stroke="#3a3350" stroke-width="6"/></g>`
-  +`<g transform="translate(300,620)"><rect x="-40" y="-60" width="80" height="120" rx="14" ${FIX('#4a9e4f')}/><rect x="-26" y="-44" width="52" height="34" rx="6" fill="#fff"/><path d="M0,60 v26 M-26,86 h52" stroke="#3a3350" stroke-width="6"/></g>`
-  +`<circle cx="140" cy="780" r="18" ${FIX('#f07f28','# stroke-width="4"')}/><circle cx="200" cy="800" r="14" ${FIX('#8f4fc0','# stroke-width="4"')}/>`,
- mirror:()=>bg('#eafaf0','#d2ecd8')
-  +`<g transform="translate(800,470)"><ellipse rx="34" ry="120" ${FIX('#f5c531')}/><circle cy="-150" r="44" ${FIX('#f5c531')}/><circle cx="-12" cy="-156" r="6" fill="#3a3350"/><circle cx="12" cy="-156" r="6" fill="#3a3350"/><path d="M-8,-136 q8,8 16,0" stroke="#3a3350" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M-14,-192 q-10,-22 -28,-26 M14,-192 q10,-22 28,-26" stroke="#3a3350" stroke-width="4" fill="none" stroke-linecap="round"/></g>`
-  +`<g transform="translate(560,380)">
-   <path d="M0,-60 C-100,-130 -240,-140 -280,-70 C-315,-5 -250,60 -175,60 C-215,95 -185,160 -110,152 C-40,145 10,70 0,10 Z" ${FIX('#f28ab5','# stroke-width="5"')}/>
-   <circle cx="-150" cy="-40" r="40" ${FIX('#f5c531','# stroke-width="4"')}/>
-   <path d="M-120,80 q40,20 76,4" stroke="#8f4fc0" stroke-width="10" fill="none" stroke-linecap="round"/>
-  </g>`
-  +flower(200,760,'#f5c531')+flower(1420,760,'#f28ab5')+flower(1480,240,'#8fbfe8'),
- sheep:()=>bg('#fdf9ef','#f0e4c4')
-  +`<g transform="translate(800,470)">
-   <ellipse cx="-180" cy="200" rx="40" ry="26" ${FIX('#3a3350','# stroke-width="4"')}/><ellipse cx="180" cy="200" rx="40" ry="26" ${FIX('#3a3350','# stroke-width="4"')}/>
-   <circle cx="-300" cy="-60" r="80" ${FIX('#3f4a63')}/>
-   <circle cx="-330" cy="-96" r="34" ${FIX('#3f4a63')}/><circle cx="-312" cy="-104" r="5" fill="#fff"/><circle cx="-336" cy="-110" r="5" fill="#fff"/>
-   <ellipse cx="-252" cy="-52" rx="24" ry="18" ${FIX('#3f4a63','# stroke-width="4"')}/><circle cx="-266" cy="-66" r="5" fill="#fff"/>
-  </g>`
-  +`<g transform="translate(240,140)"><rect x="-60" y="-40" width="120" height="90" ${FIX('#e04b3f')}/><path d="M-70,-40 L0,-100 L70,-40 Z" ${FIX('#b98a5a','# stroke-width="4"')}/><rect x="-14" y="0" width="28" height="50" fill="#fff7ea"/></g>`
-  +flower(1480,180,'#f28ab5')+flower(1460,780,'#f5c531'),
- giraffe:()=>bg('#fdf9ef','#f0e4c4')
-  +`<g transform="translate(800,240)">
-   <path d="M-60,120 C-80,20 -60,-60 -20,-110 L-40,-190 M-44,-196 l-8,-40 l30,26 Z M4,-198 l14,-38 l6,42 Z" ${FIX('#f5c531','# stroke-width="5"')}/>
-   <circle cx="-8" cy="-120" r="52" ${FIX('#f5c531')}/>
-   <circle cx="-26" cy="-132" r="7" fill="#3a3350"/><circle cx="12" cy="-132" r="7" fill="#3a3350"/>
-   <ellipse cx="-6" cy="-104" rx="18" ry="12" ${FIX('#a9744f','# stroke-width="3"')}/>
-   <circle cx="-30" cy="-160" r="9" ${FIX('#a9744f','# stroke-width="3"')}/><circle cx="16" cy="-164" r="9" ${FIX('#a9744f','# stroke-width="3"')}/>
-   <path d="M-60,120 h120 M-56,180 h112 M-48,240 h96" stroke="#a9744f" stroke-width="8"/>
-  </g>`
-  +flower(200,780,'#f28ab5')+flower(1420,780,'#8fbfe8')+star(260,180,0.6)+star(1380,160,0.6),
- bricks:()=>bg('#fdf3e0','#f3ddb7')
-  +`<rect x="240" y="180" width="1120" height="560" ${FIX('#f2b8c6')}/>
-   ${[0,1,2].map(r=>[0,1,2,3].map(c=>`<rect x="${280+c*280+(r%2?140:0)}" y="${220+r*180}" width="220" height="110" rx="10" fill="#e8a0b4" stroke="#3a3350" stroke-width="4"/>`).join('')).join('')}`
-  +`<g transform="translate(150,120)"><path d="M0,140 v-100 a40,40 0 0 1 40,-40 h30 a40,40 0 0 1 40,40 v100 Z" ${FIX('#f5c531')}/><circle cx="36" cy="-60" r="22" ${FIX('#e8b88a','# stroke-width="3"')}/><circle cx="30" cy="-64" r="3.4" fill="#3a3350"/><circle cx="44" cy="-64" r="3.4" fill="#3a3350"/></g>`
-  +`<g transform="translate(1450,120)"><rect x="-34" y="-40" width="68" height="140" rx="16" ${FIX('#8fbfe8')}/><circle cx="0" cy="-16" r="12" fill="#fff"/><rect x="-26" y="14" width="52" height="10" rx="5" fill="#fff"/></g>`,
- squirrel:()=>bg('#f3ecdf','#e6d9c2')
-  +`<g transform="translate(200,560)">
-   <ellipse rx="110" ry="90" ${FIX('#c98d5a')}/>
-   <circle cx="70" cy="-80" r="54" ${FIX('#c98d5a')}/>
-   <circle cx="88" cy="-92" r="7" fill="#3a3350"/><path d="M64,-104 q8,-10 18,-6" stroke="#3a3350" stroke-width="4" fill="none"/>
-   <path d="M110,-60 C180,-80 210,-20 180,40 C160,80 120,80 100,50" ${FIX('#c98d5a','# stroke-width="4"')}/>
-   <ellipse cx="-20" cy="30" rx="40" ry="52" ${FIX('#e8b88a','# stroke-width="4"')}/>
-  </g>`
-  +`<g transform="translate(100,180)"><path d="M0,80 C-80,40 -100,-60 -40,-110 C-10,-136 30,-130 50,-100 C90,-40 70,40 0,80 Z" ${FIX('#4a9e4f')}/><circle cx="-14" cy="-40" r="10" fill="#3a3350" opacity="0.3"/></g>`
-  +`<path d="M1480,140 l10,22 l24,2 l-18,16 l6,24 l-22,-12 l-22,12 l6,-24 l-18,-16 l24,-2 Z" ${FIX('#f07f28','# stroke-width="3"')}/>`,
- pinwheel:()=>bg('#e7f6ff','#cfe9f7')
-  +`<path d="M800,660 L800,860" stroke="#3a3350" stroke-width="10" stroke-linecap="round"/>`
-  +`<path d="M760,180 q30,-30 60,0 q30,30 0,50 q-30,-20 -60,-50" ${FIX('#4a9e4f','# stroke-width="4"')}/>`
-  +`<circle cx="300" cy="200" r="40" ${FIX('#f5c531','# opacity="0.5" opacity="0.5"')}/>`,
- crab:()=>bg('#dff3ff','#bfe6f7')
-  +`<g transform="translate(800,620)">
-   <ellipse rx="190" ry="120" ${FIX('#e04b3f')}/>
-   <path d="M-120,-90 q-40,-60 -90,-60 M120,-90 q40,-60 90,-60" ${FIX('#e04b3f','# stroke-width="4"')}/>
-   <circle cx="-50" cy="-30" r="14" fill="#fff"/><circle cx="50" cy="-30" r="14" fill="#fff"/>
-   <circle cx="-50" cy="-26" r="7" fill="#3a3350"/><circle cx="50" cy="-26" r="7" fill="#3a3350"/>
-   <path d="M-40,20 q40,30 80,0" stroke="#3a3350" stroke-width="6" fill="none" stroke-linecap="round"/>
-   ${[-140,-70,0,70,140].map(x=>`<path d="M${x},110 q${x>0?18:-18},40 ${x>0?40:-40},60" stroke="#e04b3f" stroke-width="12" fill="none" stroke-linecap="round"/>`).join('')}
-  </g>`
-  +`<path d="M240,180 a40,44 0 1 1 4,60" ${FIX('#f28ab5','# stroke-width="4"')}/><path d="M1330,760 a36,40 0 1 0 -4,-54" ${FIX('#f5c531','# stroke-width="4"')}/>`,
- sun:()=>bg('#e7f6ff','#cfe9f7')
-  +`<g transform="translate(800,430)"><circle r="160" ${FIX('#f5c531')}/><circle cx="-44" cy="-24" r="12" fill="#3a3350"/><circle cx="44" cy="-24" r="12" fill="#3a3350"/><path d="M-30,26 q30,24 60,0" stroke="#3a3350" stroke-width="6" fill="none" stroke-linecap="round"/><circle cx="-78" cy="14" r="14" ${FIX('#f28ab5','# stroke-width="3"')}/><circle cx="78" cy="14" r="14" ${FIX('#f28ab5','# stroke-width="3"')}/></g>`
-  +cloud(200,720,0.9)+cloud(1400,730,0.9)
-  +star(300,160,0.6)+star(1320,180,0.6)
-};
-
-/* ---------- board renderer ---------- */
-const WALL_STROKE='#5aa7d6';
-export function writingBoard(a){
- const scene=(SCENES[a.scene]||(()=>bg('#fff9ec','#fdeecb')))();
- const guides=(a.guides||[]).map((g,i)=>`<path class="wa-guide" data-wa-guide="${i}" d="${g.d}" fill="none" stroke="#9aa5b1" stroke-width="7" stroke-dasharray="16 14" stroke-linecap="round"/>
-  <circle class="wa-start" cx="${g.sx}" cy="${g.sy}" r="15" fill="#4a9e4f" stroke="#fff" stroke-width="4" data-wa-start="${i}"/>
-  <path class="wa-goal" d="M-4,-18 L16,0 L-4,18 L2,0 Z" transform="translate(${g.ex} ${g.ey})" fill="#f07f28" stroke="#fff" stroke-width="3" data-wa-goal="${i}" aria-hidden="true"></path>`).join('');
- const walls=(a.walls||[]).map(w=>`<line x1="${w[0]}" y1="${w[1]}" x2="${w[2]}" y2="${w[3]}" stroke="${WALL_STROKE}" stroke-width="20" stroke-linecap="round" data-wa-wall/>`).join('');
- const dots=(a.dots||[]).map((p,i)=>`<g class="wa-dot" data-wa-dot="${i}" transform="translate(${p.x} ${p.y})" role="button" tabindex="0" aria-label="Dot ${i+1}"><circle r="30" fill="${['#e04b3f','#f07f28','#f5c531','#4a9e4f','#3fb8af','#5aa7d6','#8f4fc0','#f28ab5','#e0568c','#3d7fc4'][i%10]}" stroke="#fff" stroke-width="5"/><text y="11" text-anchor="middle" font-size="30" font-weight="700" fill="#fff" font-family="inherit">${i+1}</text></g>`).join('');
- return `<svg class="wa-svg" viewBox="0 0 1600 900" data-wa-svg aria-label="Tracing board: ${esc(a.title)}">${scene}
-  <g data-wa-walls>${walls}</g>
-  <g data-wa-guides>${guides}</g>
-  <g data-wa-dots>${dots}</g>
-  <g data-wa-ink aria-hidden="true"></g>
- </svg>`;
-}
-
 /* ---------- library + game pages ---------- */
 const WLIB_PATH='/preschool/writing/adventures/';
 const WCLASS_PATH='/preschool/4-years/early-writing-and-pencil-control/';
@@ -678,8 +490,8 @@ export function writingLibraryBody(){
   <p class="lesson-note">Every card opens one real tracing game. Progress — opened, completed and when — is saved on this device for the child chosen in <a href="/my-classroom/">My Classroom</a>.</p>
  </section>
  <section class="wrap lesson-section"><span class="eyebrow">FOR GROWN-UPS</span><h2>How the drawing works.</h2>
-  <p class="lesson-copy">Each adventure shows its own aligned tracing board: a clearly visible dashed guide with a green start dot and an orange finish arrow, drawn in a fixed 1600×900 coordinate system so the child's stroke and the guide can never drift apart on any screen size or rotation. The engine asks for generous coverage of the guide — never pixel-perfection — and a completed guide turns into the child's own pencil color, stroke by stroke.</p>
-  <p class="lesson-copy">Alongside the tracing games there is a real maze with walls that stop sneaky shortcuts, two dot-to-dot puzzles that teach ordered connecting, and a mirror activity that asks the right wing to match the left. Every page has Undo, Redo, a stroke eraser, Clear and five pencil colors; every page downloads a blank worksheet for away-from-screen practice and a copy of the child's own drawing.</p>
+  <p class="lesson-copy">Each adventure shows the owner's original illustration with a transparent drawing layer laid right over it. The layer is aligned to the artwork's true pixel size, so a stroke lands exactly under the finger, the stylus or the mouse on every screen size and rotation — and because the picture itself is the activity, nothing on the page pretends to be a game.</p>
+  <p class="lesson-copy">Every page carries the same honest pencil case: nine crayons, an eraser, Undo, Redo and Clear, plus Save — and a child's adventure counts as cleared only when their finished picture is really saved. The worksheet twin still prints the same picture for away-from-screen practice.</p>
   <p class="lesson-copy">The collection belongs to <a href="${WCLASS_PATH}">Class 27 — Early Writing &amp; Pencil Control</a> on the Age 4 path, beside <a href="${SHAPE_LIB_PATH}">Shape Adventures</a> and <a href="${CLIB_PATH}">Colors &amp; Creativity</a>.</p>
  </section>`;
 }
@@ -687,48 +499,11 @@ export function writingLibraryBody(){
 export function writingPageBody(a){
  const prev=writingAdventures[(a.num-2+30)%30];
  const next=writingAdventures[a.num%30];
- const engineKind=a.engine;
- const tolAttr=` data-wa-tol="${a.tol||50}"`;
- const guidesAttr=a.guides?` data-wa-guides-data='${esc(JSON.stringify(a.guides.map(g=>({d:g.d,sx:g.sx,sy:g.sy,ex:g.ex,ey:g.ey}))))}'`:'';
- const wallsAttr=a.walls?` data-wa-walls-data='${esc(JSON.stringify(a.walls))}'`:'';
- const dotsAttr=a.dots?` data-wa-dots-data='${esc(JSON.stringify(a.dots))}'`:'';
- const board=`<section class="wrap lesson-section" id="play" aria-label="Play ${esc(a.title)}">
-  <span class="eyebrow">PLAY · ${esc(a.skill).toUpperCase()}</span>
-  <h2>${esc(a.title)}</h2>
-  <p class="lesson-copy">${esc(a.say)}</p>
-  <div class="wa-board" data-wa-board data-wa-game="${a.slug}" data-wa-engine="${engineKind}" data-wa-art="${WRITING_BASE}${a.img}"${tolAttr}${guidesAttr}${wallsAttr}${dotsAttr}>
-   <div class="sa-controls"><p class="sa-status" data-sa-status aria-live="polite"></p><div class="sa-controlbtns"><button type="button" class="button button-ghost" data-wa-again hidden>Try again</button></div></div>
-   ${writingBoard(a)}
-   <div class="wa-tools" data-wa-tools>
-    <div class="cc-palette" role="group" aria-label="Pencil colors">
-     <button type="button" class="cc-color" data-wa-color="#3a3350" aria-label="The graphite pencil" style="--pc:#3a3350" aria-pressed="true"></button>
-     <button type="button" class="cc-color" data-wa-color="#e04b3f" aria-label="The red pencil" style="--pc:#e04b3f"></button>
-     <button type="button" class="cc-color" data-wa-color="#5aa7d6" aria-label="The blue pencil" style="--pc:#5aa7d6"></button>
-     <button type="button" class="cc-color" data-wa-color="#4a9e4f" aria-label="The green pencil" style="--pc:#4a9e4f"></button>
-     <button type="button" class="cc-color" data-wa-color="#f07f28" aria-label="The orange pencil" style="--pc:#f07f28"></button>
-    </div>
-    <div class="cc-sizes" role="group" aria-label="Pencil size">
-     <button type="button" class="cc-size" data-wa-size="10" aria-pressed="true" aria-label="Thin pencil"><span></span></button>
-     <button type="button" class="cc-size" data-wa-size="18" aria-pressed="false" aria-label="Thick pencil"><span></span></button>
-    </div>
-    <div class="cc-toolbtns">
-     <button type="button" class="button button-ghost" data-wa-undo>Undo</button>
-     <button type="button" class="button button-ghost" data-wa-redo>Redo</button>
-     <button type="button" class="button button-ghost" data-wa-eraser aria-pressed="false">Eraser</button>
-     <button type="button" class="button button-ghost" data-wa-clear>Clear</button>
-     <button type="button" class="button button-ghost" data-wa-big aria-pressed="false">Bigger board</button>
-    </div>
-   </div>
-   <p class="cc-save-row">
-    <button type="button" class="button" data-wa-worksheet>Download worksheet</button>
-    <button type="button" class="button button-ghost" data-wa-mydrawing>Download my drawing</button>
-    <span class="cc-save-note" data-wa-note aria-live="polite"></span>
-   </p>
-   <div class="sa-cheer" data-wa-cheer hidden><p class="sa-cheer-title">${a.doneTitle}</p><p class="sa-cheer-sub">${a.doneSub}</p></div>
-  </div>
-  <p class="sa-progress-note" data-wa-progress aria-live="polite"></p>
-  <noscript><p class="sa-noscript">On-screen tracing needs JavaScript. The guides, start dots and finish arrows above are ready for paper practice — and the worksheet button downloads with JavaScript turned on.</p></noscript>
- </section>`;
+ const art=artFor('writing/'+a.slug,WRITING_BASE+a.img);
+ const board=imageActivitySection({band:'writing',slug:a.slug,title:a.title,skill:a.skill,
+  say:a.say,hint:a.hint,doneTitle:a.doneTitle,alt:a.alt,
+  imgUrl:WRITING_BASE+a.img,w:art.w,h:art.h,
+  wsPath:'/worksheets/writing/'+a.slug+'/'});
  return `${crumbNav([['Preschool','/preschool/'],['Writing Adventures',WLIB_PATH],[`${a.num}. ${a.title}`]])}
  <article class="wrap lesson-hero sa-hero">
   <div class="sa-hero-art"><img src="${WRITING_BASE}${a.img}" width="800" height="568" alt="${esc(a.alt)}" fetchpriority="high"></div>

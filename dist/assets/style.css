@@ -1810,3 +1810,11 @@ h1 em,h2 em{color:#7b4b99}
    screen size, desktop and mobile. */
 .wc-stage{width:fit-content;max-width:100%;margin-inline:auto}
 .wc-stage .wc-img{width:auto;max-width:100%;height:auto}
+
+/* Image adventures (Classes 25-31): the drawing canvas must stay aligned
+   1:1 with the artwork at every viewport. Instead of clamping the image
+   height (which letterboxes the bitmap inside the canvas box and shifts
+   strokes), the artwork is capped by WIDTH using its true aspect ratio,
+   so the element box and the bitmap box are always the same rectangle. */
+.fc2-main .fc2-hero.ia-sheet{max-width:min(100%,calc(70vh * var(--iar,1.4143)));margin-inline:auto}
+.fc2-main .fc2-hero.ia-sheet img{max-height:none;object-fit:fill}

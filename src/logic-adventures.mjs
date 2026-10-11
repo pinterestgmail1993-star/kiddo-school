@@ -1,14 +1,18 @@
-// Kiddo School — Class 30 · Logic, Thinking & Problem-Solving (ages 4–5).
-// Thirty real, playable logic games at
-// /preschool/logic/adventures/{slug}/, built on the owner's Canva
-// illustrations (all 30 verified on R2 under school/logic/adventures/ —
-// the fox artwork ships under 'foxes-…' filenames, audited and mapped).
-// Games play the REAL artwork: patterns, odd-one-outs, shadow matches, size
-// orders, clue hunts, secret codes, routes and one fully traceable maze.
-// Where the artwork repeats one answer position, the game reshuffles the
-// cards so the skill — not the position — is what gets practised.
+// Kiddo School — Class 30 · the Logic Adventures collection (ages 4–5).
+// Draw-on-the-picture adventures at /preschool/logic/adventures/{slug}/,
+// built on the owner's Canva illustrations (verified on R2 under
+// school/logic/adventures/). The owner's spec, followed exactly: the
+// original Canva artwork sits on the LEFT with the transparent Write &
+// Color drawing layer laid directly over it (aligned 1:1 at every screen
+// size), and plain TEXT instructions plus the drawing tools sit on the
+// RIGHT. No coded scenes, NO SOUND, no scoring, no fake games. Completion
+// counts only when the child's own work is really saved; the logic band
+// keeps its existing {opened,completed} localStorage shape, so nothing
+// already earned is lost.
 import {crumbNav,esc} from './adventure-kit.mjs';
-import {LOGIC_BASE,LOGIC_LIB,C30_PATH,WS30_PATH,board} from './story-kit.mjs';
+import {LOGIC_BASE,LOGIC_LIB,C30_PATH,WS30_PATH} from './story-kit.mjs';
+import {imageActivitySection} from './image-activity.mjs';
+import {artFor} from './adventure-dims.mjs';
 export {LOGIC_LIB_PATH,WS30_PATH,C30_PATH} from './story-kit.mjs';
 const LOGIC_LIB_PATH=LOGIC_LIB;
 
@@ -39,9 +43,9 @@ const MAZE={cols:7,rows:5,cell:120,start:[0,2],goal:[6,2],alt:'A seven-by-five i
 const G=o=>o;
 export const logicAdventures=[
 G({num:1,slug:'foxs-spot-the-difference',img:'01-foxes-spot-the-difference.webp',title:'Fox\u2019s Spot the Difference',skill:'Spot the difference',
- tag:'Two picnic pictures, five sneaky changes — tap every difference you can spot.',
- say:'Fox and Rabbit are having a picnic in both pictures, but five things are different! Look closely and tap each difference on Picture 2.',
- hint:'Look closely — tap what is different!',doneTitle:'All 5 differences found!',doneSub:'Hat, butterfly, snack, apple and mushroom — sharp eyes, detective!',
+ tag: 'Two picnic pictures, five sneaky changes — circle every difference you can spot.',
+ say: 'Fox and Rabbit are having a picnic in both pictures, but five things are different! Look closely and circle each difference on Picture 2.',
+ hint: 'Look closely — circle what is different!',doneTitle:'All 5 differences found!',doneSub:'Hat, butterfly, snack, apple and mushroom — sharp eyes, detective!',
  alt:'Two picnic scenes side by side: Fox in a cap with a magnifying glass and Rabbit on a blanket. Five differences hide between them: the cap colour, the butterfly colour, the carrot versus a flower, the apple colour and one mushroom spot.',
  artNote:'The printed art asks for 5 differences and truly contains exactly 5: the cap is blue then red, the butterfly yellow then pink, Rabbit holds a carrot then a flower, the apple is red then green, and one mushroom spot turns pink. The pink spot is the sneakiest — celebrate it loudest.',
  parentNote:'Spot-the-difference trains visual discrimination — the same eye-for-detail that later tells b from d on a page. Let your child point before tapping, and compare pictures aloud together: “In this one the hat is…?”',
@@ -55,8 +59,8 @@ G({num:1,slug:'foxs-spot-the-difference',img:'01-foxes-spot-the-difference.webp'
    {c:[1,52,24,82],say:'The sneakiest one — a mushroom spot turned pink!'}
   ]}]}),
 G({num:2,slug:'robots-rainbow-logic',img:'02-robots-rainbow-logic.webp',title:'Robot\u2019s Rainbow Logic',skill:'Pattern completion',
- tag:'Red, blue, red, blue\u2026 what comes next? Finish three of Robot\u2019s picture patterns.',
- say:'Look at each pattern and tap what comes next!',
+ tag: 'Look at each pattern and circle what comes next!',
+ say: 'Look at each pattern and circle what comes next!',
  hint:'The pattern continues!',doneTitle:'Pattern pro!',doneSub:'Three patterns finished \u2014 Robot is dazzled.',
  alt:'The robot beside three pattern rows: red and blue circles, yellow stars and green hearts, small and big robots, each with three choice cards.',
  parentNote:'Pattern rows teach the reading-readiness skill of predicting what comes next. Say the pattern aloud together \u2014 "red, blue, red, blue\u2026" \u2014 and let the rhythm point to the answer.',
@@ -74,8 +78,8 @@ G({num:2,slug:'robots-rainbow-logic',img:'02-robots-rainbow-logic.webp',title:'R
           {label:'A small robot',crop:[62.76,62.02,73.17,81.85],ok:true,say:'Small robot \u2014 the pattern keeps dancing!'},
           {label:'A red apple',crop:[72.77,62.02,83.18,81.85],ok:false,say:'An apple? The robot would like that, but no!'}]}]}),
 G({num:3,slug:'lions-shadow-safari',img:'03-lions-shadow-safari.webp',title:'Lion\u2019s Shadow Safari',skill:'Shadow matching',
- tag:'A giraffe, an elephant, a crocodile \u2014 match every animal to its shadow on the safari.',
- say:'Match each animal to its shadow. Tap the animal, then the shadow.',
+ tag: 'Draw a line from each animal to its shadow.',
+ say: 'Match each animal to its shadow — draw a line from the animal to the shadow it belongs to.',
  hint:'A perfect shadow match!',doneTitle:'Safari complete!',doneSub:'Giraffe, elephant and crocodile all found their shadows.',
  alt:'A giraffe, an elephant and a crocodile beside three shadows labelled A, B and C.',
  steps:[{type:'match',ask:'Tap an animal, then tap its shadow.',
@@ -93,8 +97,8 @@ G({num:4,slug:'squirrels-acorn-maze',img:'04-squirrels-acorn-maze.webp',title:'S
  parentNote:'Maze tracing builds planning and pencil control in one. Fingers work best to start; a stylus is a lovely bridge toward pencil-and-paper mazes. Hitting a wall just stops the line \u2014 no penalty, redraw any time.',
  maze:MAZE,steps:[]}),
 G({num:5,slug:'bears-big-to-small-parade',img:'05-bears-big-to-small-parade.webp',title:'Bear\u2019s Big-to-Small Parade',skill:'Size ordering',
- tag:'Four bears, one parade \u2014 tap them from biggest to smallest so the parade can march.',
- say:'The bears march biggest to smallest! Tap the biggest bear first, then the next, until the littlest.',
+ tag: 'Four bears, one parade — write 1 to 4 from biggest to smallest.',
+ say: 'The bears march biggest to smallest! Write 1, 2, 3, and 4 on the bears in parade order.',
  hint:'The parade is lining up!',doneTitle:'Parade ordered!',doneSub:'Biggest to smallest \u2014 what a tidy parade.',
  alt:'A parade leader bear and four teddy bears of different sizes, each with a number box below.',
  parentNote:'Comparing sizes across a whole set is harder than comparing two. Ask "which is the biggest one left?" each round \u2014 the words biggest and smallest do the teaching.',
@@ -104,8 +108,8 @@ G({num:5,slug:'bears-big-to-small-parade',img:'05-bears-big-to-small-parade.webp
          {label:'The tiny bear',crop:[43.25,46.13,53.72,80.81],seq:3,say:'Tiny bear finishes the line!'},
          {label:'The big bear',crop:[52.29,31.61,69.11,82.82],seq:1,say:'Big bear marches second!'}]}]}),
 G({num:6,slug:'owls-memory-magic',img:'06-owls-memory-magic.webp',title:'Owl\u2019s Memory Magic',skill:'Spotting what\u2019s missing',
- tag:'Apple, star, car, leaf, cupcake \u2014 one flew away. Look closely and tap what is missing.',
- say:'The right panel copied the left one, but one thing is missing! Tap what disappeared.',
+ tag: 'Apple, star, car, leaf, cupcake — one flew away. Look closely and circle what is missing.',
+ say: 'The right panel copied the left one, but one thing is missing! Look closely and circle what disappeared.',
  hint:'You caught the missing one!',doneTitle:'Magic eye!',doneSub:'The blue toy car vanished \u2014 you spotted it.',
  alt:'Two panels: the first with an apple, star, blue car, leaf and cupcake; the copy with the car missing, and three choice cards below.',
  steps:[{type:'ask',ask:'Something is missing from the second panel. What is it?',ctx:[2,29,73.5,78],ctxLabel:'Two panels: the full set and the copy with one item missing',
@@ -113,8 +117,8 @@ G({num:6,slug:'owls-memory-magic',img:'06-owls-memory-magic.webp',title:'Owl\u20
          {label:'The orange ball',crop:[31.5,79,44.5,97.5],ok:false,say:'The ball isn\u2019t in either panel \u2014 look for what vanished.'},
          {label:'The purple book',crop:[51.43,76.77,58.92,96.94],ok:false,say:'The book is new here too \u2014 compare the panels!'}]}]}),
 G({num:7,slug:'bunnys-puzzle-blocks',img:'07-bunnys-puzzle-blocks.webp',title:'Bunny\u2019s Puzzle Blocks',skill:'Completing puzzles',
- tag:'A color grid, a shape pattern, a growing tower \u2014 tap the block that completes each puzzle.',
- say:'Three block puzzles! Tap the block that completes each one.',
+ tag: 'A color grid, a shape pattern, a growing tower — circle the block that completes each puzzle.',
+ say: 'Three block puzzles! Circle the block that completes each one.',
  hint:'That completes it!',doneTitle:'All puzzles complete!',doneSub:'A green square, a yellow star, and the littlest blue block on top.',
  artNote:'The printed art gives each row its own rule (all-different colors; the star-heart pattern; a tower that shrinks). The game spells the rule out in every prompt so nothing stays a guess.',
  steps:[
@@ -131,8 +135,8 @@ G({num:7,slug:'bunnys-puzzle-blocks',img:'07-bunnys-puzzle-blocks.webp',title:'B
           {label:'The yellow cube',crop:[39.93,77.74,47.48,97.02],ok:false,say:'Yellow is already on the tower.'},
           {label:'The big pink cube',crop:[47.83,84.52,57.09,97.02],ok:false,say:'Too big! Towers shrink as they grow.'}]}]}),
 G({num:8,slug:'dinosaur-egg-detective',img:'08-dinosaur-egg-detective.webp',title:'Dinosaur Egg Detective',skill:'Odd one out',
- tag:'Five eggs match, one does not \u2014 tap the odd egg in every nest row.',
- say:'Five eggs match and one is different. Tap the egg that does not belong!',
+ tag: 'Five eggs match, one does not — circle the odd egg in every nest row.',
+ say: 'Five eggs match and one is different. Circle the egg that does not belong!',
  hint:'Odd egg found!',doneTitle:'Every odd egg found!',doneSub:'A red egg, a spotty green egg, and one very big egg.',
  alt:'Rows of blue spotted eggs with one red egg, green zigzag eggs with one dotted egg, and purple eggs with one giant egg.',
  parentNote:'The printed sheet always hides the odd egg last in its row, so the game deals the eggs out in mixed order \u2014 the detective work is comparing eggs, not remembering positions.',
@@ -156,8 +160,8 @@ G({num:8,slug:'dinosaur-egg-detective',img:'08-dinosaur-egg-detective.webp',titl
           {label:'A small purple spotted egg',crop:[45.82,76.29,55.09,92.02],ok:false,say:'Still a match!'},
           {label:'A giant purple spotted egg',crop:[55.09,75.65,74.83,92.42],ok:true,say:'That egg is HUGE \u2014 the odd one!'}]}]}),
 G({num:9,slug:'penguins-ice-path',img:'09-penguins-ice-path.webp',title:'Penguin\u2019s Ice Path',skill:'Following a key',
- tag:'Circle, triangle, square \u2014 hop the ice floes in the key\u2019s order and reach the fish.',
- say:'Follow the key: blue circle, yellow triangle, red square. Tap the ice floes in that order!',
+ tag: 'Follow the shape key and color the ice floes in that order.',
+ say: 'Follow the key: blue circle, yellow triangle, red square. Color the ice floes in that order to reach the fish!',
  hint:'Hopping the path!',doneTitle:'Fish reached!',doneSub:'Circle, triangle, square \u2014 Penguin hops to lunch.',
  alt:'A key showing blue circle, yellow triangle, red square, and six ice floes with shapes between Penguin at START and a fish at FINISH.',
  steps:[{type:'order',ask:'Tap the floes in the key\u2019s order: circle, triangle, square.',ctx:[17,23.5,56,41],ctxLabel:'The key: blue circle, then yellow triangle, then red square',
@@ -168,8 +172,8 @@ G({num:9,slug:'penguins-ice-path',img:'09-penguins-ice-path.webp',title:'Penguin
          {label:'The red square floe (bottom row)',crop:[31.58,60.97,44.34,86.45],bad:true,say:'A red square \u2014 but the key\u2019s square is in the top row!'},
          {label:'The blue circle floe (bottom row)',crop:[45.08,60.97,57.84,86.45],bad:true,say:'A circle, but not the key\u2019s blue circle at the start of the path.'}]}]}),
 G({num:10,slug:'monkeys-odd-one-out-market',img:'10-monkeys-odd-one-out-market.webp',title:'Monkey\u2019s Odd-One-Out Market',skill:'Odd one out',
- tag:'Three apples and a banana \u2014 at Monkey\u2019s market, tap the picture that is different.',
- say:'At Monkey\u2019s market, one thing in each box is different. Tap the odd one out!',
+ tag: 'Three apples and a banana — at Monkey’s market, circle the picture that is different.',
+ say: 'At Monkey’s market, one thing in each box is different. Circle the odd one out!',
  hint:'Spotted it!',doneTitle:'Market inspected!',doneSub:'A banana among apples, a cupcake among carrots, a car among teddies.',
  alt:'Monkey beside three rows: apples with a banana, carrots with a cupcake, teddy bears with a red car.',
  parentNote:'The printed sheet puts the odd item third in every row, so the game shuffles the stalls \u2014 your child compares the items themselves.',
@@ -190,8 +194,8 @@ G({num:10,slug:'monkeys-odd-one-out-market',img:'10-monkeys-odd-one-out-market.w
           {label:'A red toy car',crop:[50.11,71.29,62.3,92.42],ok:true,say:'The car is the odd one!'},
           {label:'A teddy bear',crop:[61.61,71.29,74.37,91.77],ok:false,say:'Teddy number three.'}]}]}),
 G({num:11,slug:'elephants-size-sorting-circus',img:'11-elephants-size-sorting-circus.webp',title:'Elephant\u2019s Size Sorting Circus',skill:'Size matching',
- tag:'A mouse, a dog, an elephant \u2014 match every circus friend to the right-sized tent.',
- say:'Match each animal to the right-sized tent. Tap the animal, then the tent.',
+ tag: 'Draw a line from each animal to the right-sized tent.',
+ say: 'Match each animal to the right-sized tent — draw a line from the animal to its tent.',
  hint:'A perfect fit!',doneTitle:'The circus is sorted!',doneSub:'Mouse in the small tent, dog in the medium, elephant in the large.',
  alt:'A small mouse, a medium dog and a large elephant beside three tents labelled large, small and medium.',
  steps:[{type:'match',ask:'Tap an animal, then tap the tent that fits.',
@@ -202,8 +206,8 @@ G({num:11,slug:'elephants-size-sorting-circus',img:'11-elephants-size-sorting-ci
          {label:'The small tent',crop:[60.5,54.5,76,71.5],group:'b',pair:'small'},
          {label:'The medium tent',crop:[64.19,68.87,76.37,96.77],group:'b',pair:'medium'}]}]}),
 G({num:12,slug:'owls-secret-code',img:'12-owls-secret-code.webp',title:'Owl\u2019s Secret Code',skill:'Simple codes',
- tag:'Red star = 1, blue heart = 2, yellow sun = 3 \u2014 crack the code and finish every row.',
- say:'Use the picture code! Star means one, heart means two, sun means three. Tap the number that finishes each row.',
+ tag: 'Use the picture code and write the number that finishes each row.',
+ say: 'Use the picture code! Star means one, heart means two, sun means three. Write the number that finishes each row.',
  hint:'Code cracked!',doneTitle:'Secret code cracked!',doneSub:'Star is 1, heart is 2, sun is 3 \u2014 you read the whole code.',
  alt:'Owl with a code key \u2014 red star equals one, blue heart equals two, yellow sun equals three \u2014 and three rows waiting for the right number.',
  parentNote:'Symbol-substitution is early abstract thinking: this picture stands for that number. Read the key aloud together, then let your child decode each row.',
@@ -221,8 +225,8 @@ G({num:12,slug:'owls-secret-code',img:'12-owls-secret-code.webp',title:'Owl\u201
           {label:'Number 1',crop:[40.73,76.05,51.2,97.5],ok:false,say:'1 is the star.'},
           {label:'Number 3',crop:[52.75,76.05,63.22,97.5],ok:true,say:'Yellow sun means 3!'}]}]}),
 G({num:13,slug:'pandas-missing-puzzle',img:'13-pandas-missing-puzzle.webp',title:'Panda\u2019s Missing Puzzle',skill:'Missing pieces',
- tag:'A wing, a roof, a wheel \u2014 find the piece that completes each of Panda\u2019s pictures.',
- say:'Each picture is missing a piece! Tap the piece that completes it.',
+ tag: 'Each picture is missing a piece — circle the piece that completes it.',
+ say: 'Each picture is missing a piece! Circle the piece that completes it.',
  hint:'It fits!',doneTitle:'All puzzles complete!',doneSub:'A wing for the butterfly, a roof for the house, a wheel for the train.',
  alt:'A butterfly missing its right wing, a house missing its roof and a train missing a wheel, each with three piece choices.',
  artNote:'The Canva title reads "Panda\u2019s Mising Puzzle" \u2014 a missing S. The site always shows the corrected spelling; the artwork itself is reported for regeneration.',
@@ -240,8 +244,8 @@ G({num:13,slug:'pandas-missing-puzzle',img:'13-pandas-missing-puzzle.webp',title
           {label:'A purple triangle',crop:[45.71,79.68,56.75,98.47],ok:false,say:'Triangles can\u2019t roll.'},
           {label:'The round wheel',crop:[55.72,77.58,66.7,98.47],ok:true,say:'A wheel! Chugga chugga!'}]}]}),
 G({num:14,slug:'raccoons-clue-hunt',img:'14-raccoons-clue-hunt.webp',title:'Raccoon\u2019s Clue Hunt',skill:'Clue reading',
- tag:'A wheel, handlebars, a bell \u2014 follow the clues and tap the object they describe.',
- say:'Read the clues, then tap the object they describe!',
+ tag: 'A wheel, handlebars, a bell — follow the clues and circle the object they describe.',
+ say: 'Read the clues, then circle the object they describe!',
  hint:'The clues fit!',doneTitle:'Clue hunt complete!',doneSub:'A bicycle, a giraffe, and a clock \u2014 the clues never lied.',
  alt:'Three clue boxes \u2014 bike parts, giraffe neck and legs, a face and hands and clock \u2014 with three object cards each.',
  parentNote:'Clue hunts ask the earliest inference: parts that add up to a whole. Name each clue, then wonder together \u2014 "what has all of those?"',
@@ -278,8 +282,8 @@ G({num:15,slug:'dragons-treasure-logic',img:'15-dragons-treasure-logic.webp',tit
           {label:'The red chest with a circle',crop:[71.34,67.18,80.61,97.02],ok:true,say:'Red AND a circle \u2014 both clues fit!'},
           {label:'The blue chest with a star',crop:[79.81,67.18,89.13,97.02],ok:false,say:'Blue and a star \u2014 not the clues.'}]}]}),
 G({num:16,slug:'turtles-bridge-builder',img:'16-turtles-bridge-builder.webp',title:'Turtle\u2019s Bridge Builder',skill:'Pattern completion',
- tag:'Square, circle, square\u2026 tap the shape that fills the gap in each bridge.',
- say:'Each bridge has a shape pattern with a gap! Tap the shape that fills the gap.',
+ tag: 'Square, circle, square… circle the shape that fills the gap in each bridge.',
+ say: 'Each bridge has a shape pattern with a gap! Circle the shape that fills the gap.',
  hint:'The bridge is whole!',doneTitle:'All bridges built!',doneSub:'Circle, circle, yellow \u2014 Turtle crossed them all.',
  alt:'Three bridges with shape patterns and gaps, each with three shape choices below.',
  steps:[
@@ -296,8 +300,8 @@ G({num:16,slug:'turtles-bridge-builder',img:'16-turtles-bridge-builder.webp',tit
           {label:'A yellow square',crop:[35,96.5,43.5,99.5],ok:true,say:'Yellow \u2014 the color pattern starts again!'},
           {label:'A red square',crop:[49.77,96.13,55.15,99.11],ok:false,say:'Red just went \u2014 the pattern wants yellow.'}]}]}),
 G({num:17,slug:'giraffes-tallest-tower',img:'17-giraffes-tallest-tower.webp',title:'Giraffe\u2019s Tallest Tower',skill:'Comparing heights',
- tag:'Three towers in every row \u2014 tap the tallest one so Giraffe can cheer.',
- say:'Look at each row and tap the tallest tower!',
+ tag: 'Three towers in every row — circle the tallest one so Giraffe can cheer.',
+ say: 'Look at each row and circle the tallest tower!',
  hint:'The tallest one!',doneTitle:'Three tallest found!',doneSub:'Middle, right, left \u2014 you compared them all.',
  alt:'Three rows of three block towers, each row with one clearly tallest tower.',
  parentNote:'Towers are counted and compared in one look. Ask "how do you know it\u2019s the tallest?" \u2014 counting the blocks aloud is the proof.',
@@ -315,8 +319,8 @@ G({num:17,slug:'giraffes-tallest-tower',img:'17-giraffes-tallest-tower.webp',tit
           {label:'Tower B',crop:[79.5,50,86,69.5],ok:false,say:'Tower B is the middle one.'},
           {label:'Tower C',crop:[53.89,85.08,62.01,97.02],ok:false,say:'Tower C is the shortest.'}]}]}),
 G({num:19,slug:'koalas-sorting-station',img:'19-koalas-sorting-station.webp',title:'Koala\u2019s Sorting Station',skill:'Sorting by shape',
- tag:'Six toys, three boxes \u2014 sort every toy by its shape, not its color!',
- say:'Sort the toys by shape! Tap a toy, then tap the box with the matching shape.',
+ tag: 'Draw a line from each toy to the box with the matching shape.',
+ say: 'Sort the toys by shape! Draw a line from each toy to the box with the matching shape.',
  hint:'Sorted by shape!',doneTitle:'The station is sorted!',doneSub:'Triangles to the triangle box, squares to the square box, circles to the circle box.',
  alt:'Three shape boxes \u2014 red circle, blue triangle, yellow square \u2014 and six toys: blue triangle, yellow square, red circle, red triangle, blue square, yellow circle.',
  parentNote:'The trick here is deliberate: colors clash on purpose (a red toy does NOT go in the red box). Say the shape aloud with each tap \u2014 "triangle goes to the triangle box!"',
@@ -331,8 +335,8 @@ G({num:19,slug:'koalas-sorting-station',img:'19-koalas-sorting-station.webp',tit
          {label:'The yellow square box',crop:[46.51,23.23,67.96,66.61],group:'b',pair:'sq'},
          {label:'The red circle box',crop:[7.84,23.23,27.92,66.61],group:'b',pair:'cir'}]}]}),
 G({num:18,slug:'foxs-logic-picnic',img:'18-foxes-logic-picnic.webp',title:'Fox\u2019s Logic Picnic',skill:'Two-clue logic',
- tag:'A puzzle piece and a food each name one basket — match both clues to find it.',
- say:'Fox packed three picnics! Each clue shows a puzzle piece and a food. The piece\u2019s colour matches the basket, and the food tells you what\u2019s inside. Tap the basket that fits both clues!',
+ tag: 'Follow both clues and circle the right picnic basket in every row.',
+ say: 'Fox packed three picnics! Each clue shows a puzzle piece and a food. The piece’s colour matches the basket, and the food tells you what’s inside. Circle the basket that fits both clues!',
  hint:'Match the colour AND the food!',doneTitle:'Three picnics matched!',doneSub:'Green apple basket, yellow cupcake basket, red cookie basket — both clues every time!',
  alt:'Three clue boxes each show a coloured puzzle piece plus a food — green with an apple, yellow with a cupcake, red with a cookie — above three lettered baskets to choose from.',
  artNote:'The real logic is two clues at once: the puzzle piece gives the basket colour and the food gives the contents. Each row always offers one right-colour-wrong-food and one right-food-wrong-colour basket, so both clues are needed.',
@@ -351,8 +355,8 @@ G({num:18,slug:'foxs-logic-picnic',img:'18-foxes-logic-picnic.webp',title:'Fox\u
           {label:'The red basket with a cookie',crop:[78.8,66.5,88,96],ok:true,say:'Red piece, cookie inside — both clues fit!'},
           {label:'The red basket with a carrot',crop:[89,66.5,97.5,96],ok:false,say:'Right colour — but no carrot in these clues!'}]}]}),
 G({num:20,slug:'octopuss-shell-mystery',img:'20-octopuss-shell-mystery.webp',title:'Octopus\u2019s Shell Mystery',skill:'Pattern completion',
- tag:'Pink, blue, pink, blue\u2026 tap the shell that comes next in every pattern.',
- say:'Look at each shell pattern and tap what comes next!',
+ tag: 'Pink, blue, pink, blue… circle the shell that comes next in every pattern.',
+ say: 'Look at each shell pattern and circle what comes next!',
  hint:'The pattern continues!',doneTitle:'Shell mysteries solved!',doneSub:'Pink, big purple, and the swirly shell \u2014 all patterns finished.',
  alt:'The octopus beside three shell pattern rows, each with an empty box and three choice shells.',
  steps:[
@@ -369,8 +373,8 @@ G({num:20,slug:'octopuss-shell-mystery',img:'20-octopuss-shell-mystery.webp',tit
           {label:'A swirly yellow shell',crop:[64.3,76.53,74.14,94.11],ok:true,say:'Swirly! After two cones comes the swirl.'},
           {label:'A green starfish',crop:[73.74,76.53,84.21,94.11],ok:false,say:'No starfish in this pattern.'}]}]}),
 G({num:21,slug:'unicorns-rainbow-route',img:'21-unicorns-rainbow-route.webp',title:'Unicorn\u2019s Rainbow Route',skill:'Following a color key',
- tag:'Red, blue, yellow \u2014 hop the rainbow colors in order and lead the unicorn to the castle.',
- say:'Follow the key: red, then blue, then yellow. Tap the colors in that order to reach the castle!',
+ tag: 'Color the rainbow path — red, then blue, then yellow — all the way to the castle.',
+ say: 'Follow the key: red, then blue, then yellow. Color the path colors in that order to reach the castle!',
  hint:'On the rainbow route!',doneTitle:'Castle reached!',doneSub:'Red, blue, yellow \u2014 the unicorn prances to the castle.',
  alt:'A unicorn at START, six colored circles in two rows, and a castle at FINISH, with the key red, blue, yellow.',
  steps:[{type:'order',ask:'Tap the route colors in the key\u2019s order: red, blue, yellow.',ctx:[16,24.5,62.5,38],ctxLabel:'The key: red, then blue, then yellow',
@@ -381,8 +385,8 @@ G({num:21,slug:'unicorns-rainbow-route',img:'21-unicorns-rainbow-route.webp',tit
          {label:'The purple circle',crop:[43.02,63.39,52.63,88.15],bad:true,say:'Purple is not in the key!'},
          {label:'The yellow circle',crop:[42.79,39.11,52.63,63.55],seq:2,say:'Yellow last \u2014 to the castle!'}]}]}),
 G({num:22,slug:'hedgehogs-odd-shape-garden',img:'22-hedgehogs-odd-shape-garden.webp',title:'Hedgehog\u2019s Odd Shape Garden',skill:'Odd one out',
- tag:'Four shapes match, one does not \u2014 tap the odd flower, pot and butterfly in Hedgehog\u2019s garden.',
- say:'In every row one shape does not belong. Tap the odd one out!',
+ tag: 'Four shapes match, one does not — circle the odd flower, pot and butterfly in Hedgehog’s garden.',
+ say: 'In every row one shape does not belong. Circle the odd one out!',
  hint:'Spotted the odd shape!',doneTitle:'Garden inspected!',doneSub:'A pointed flower, a round pot, and a mixed-up butterfly.',
  alt:'Rows of five: round-petal flowers with one pointed red flower, square pots with one round pot, and butterflies with one mixed-shape butterfly.',
  parentNote:'This garden moves beyond color: the odd ones differ by SHAPE. Ask "what is different about it?" \u2014 naming the difference is the skill.',
@@ -406,8 +410,8 @@ G({num:22,slug:'hedgehogs-odd-shape-garden',img:'22-hedgehogs-odd-shape-garden.w
           {label:'A two-tone butterfly with mixed shapes',crop:[39.65,78.06,51.83,94.6],ok:true,say:'A heart, a diamond, a triangle \u2014 no circles! The odd butterfly!'},
           {label:'A pink butterfly with circle spots',crop:[50.69,78.15,62.3,94.6],ok:false,say:'Circle spots \u2014 matches the row.'}]}]}),
 G({num:23,slug:'bears-picnic-order',img:'23-bears-picnic-order.webp',title:'Bear\u2019s Picnic Order',skill:'Story sequencing',
- tag:'Basket, play, eat, wash \u2014 put Bear\u2019s picnic day back in the right order.',
- say:'Bear\u2019s picnic is mixed up! Tap the pictures in story order: first, next, then, and last.',
+ tag: 'Bear’s picnic is mixed up — write 1, 2, 3, 4 to put it right.',
+ say: 'Bear’s picnic is mixed up! Write 1, 2, 3, and 4 in the boxes to show the right order.',
  hint:'The picnic plan grows!',doneTitle:'Picnic ordered!',doneSub:'Carry the basket, play on the blanket, eat a sandwich, wash the plate.',
  alt:'Four picnic panels \u2014 Bear eating a sandwich, Bear carrying the picnic basket, Bear crawling on the blanket, Bear washing the plate \u2014 with number boxes below.',
  steps:[{type:'order',ask:'Tap the picnic story in order \u2014 first to last.',
@@ -416,8 +420,8 @@ G({num:23,slug:'bears-picnic-order',img:'23-bears-picnic-order.webp',title:'Bear
          {label:'Bear crawls on the blanket',crop:[38.5,24.03,59.95,79.84],seq:1,say:'Next: play on the blanket!'},
          {label:'Bear washes the plate',crop:[57.49,24.03,78.95,79.84],seq:3,say:'Last: wash the dishes!'}]}]}),
 G({num:24,slug:'raccoons-secret-object',img:'24-raccoons-secret-object.webp',title:'Raccoon\u2019s Secret Object',skill:'Two-clue logic',
- tag:'Color plus shape \u2014 follow both clues and tap Raccoon\u2019s secret object in every row.',
- say:'Two clues name a secret object: a color AND a shape. Tap the object that matches both!',
+ tag: 'Color plus shape — follow both clues and circle Raccoon’s secret object in every row.',
+ say: 'Two clues name a secret object: a color AND a shape. Circle the object that matches both!',
  hint:'Both clues fit!',doneTitle:'Every secret found!',doneSub:'A blue ball, a big green star, and a red circle.',
  alt:'Three clue rows \u2014 color plus shape \u2014 each above four objects: red ball, blue ball, red car, blue car; small and big yellow and green stars; red and blue triangles and circles.',
  parentNote:'Two clues at once (color AND shape) is real deductive logic. Say both clues aloud, test each object together, and let your child reject the near-misses.',
@@ -438,8 +442,8 @@ G({num:24,slug:'raccoons-secret-object',img:'24-raccoons-secret-object.webp',tit
           {label:'A red circle',crop:[50.92,77.58,66.02,98.63],ok:true,say:'Red AND round \u2014 the secret object!'},
           {label:'A blue circle',crop:[9.5,82.5,21.5,97.5],ok:false,say:'Round \u2014 but the clues want red.'}]}]}),
 G({num:25,slug:'foxs-gear-workshop',img:'25-foxes-gear-workshop.webp',title:'Fox\u2019s Gear Workshop',skill:'Shape and size matching',
- tag:'Round spots, gear-shaped spots, a missing colour — fit the right gear into all three machines.',
- say:'Welcome to Fox\u2019s workshop! Look at each machine\u2019s empty spot, then tap the gear that fits.',
+ tag: 'Circle the gear that fits each machine.',
+ say: 'Welcome to Fox’s workshop! Look at each machine’s empty spot, then circle the gear that fits.',
  hint:'Which gear really fits?',doneTitle:'All machines running!',doneSub:'Round gear, big gear, blue gear — the workshop is whirring again!',
  alt:'Three machines with empty spots — a round hole, a large gear-shaped hole and a light-blue gear hole — each above three pieces to choose from.',
  artNote:'Machine 1\u2019s spot is round, so the round gear fits and the triangle and star cannot spin there. Machine 2\u2019s spot is gear-shaped and big — the big green gear fits, the tiny purple gear is too small and a square cannot spin. Machine 3 is missing one gear colour: its empty spot is blue, so the blue gear completes the pair.',
@@ -458,8 +462,8 @@ G({num:25,slug:'foxs-gear-workshop',img:'25-foxes-gear-workshop.webp',title:'Fox
           {label:'The green gear',crop:[78,73,85.5,91],ok:false,say:'Not green — match the empty spot\u2019s colour!'},
           {label:'The blue gear',crop:[88,73,96,91],ok:true,say:'The blue gear completes the pair — the machine runs!'}]}]}),
 G({num:26,slug:'pandas-balloon-logic',img:'26-pandas-balloon-logic.webp',title:'Panda\u2019s Balloon Logic',skill:'Two-clue logic',
- tag:'Blue + heart, small + green, red + triangle \u2014 follow both clues to Panda\u2019s balloon.',
- say:'Two clues point to one balloon! Tap the balloon that matches both clues.',
+ tag: 'Two clues, one balloon — circle the balloon that matches both.',
+ say: 'Two clues point to one balloon! Circle the balloon that matches both clues.',
  hint:'Both clues fit!',doneTitle:'All balloons found!',doneSub:'A blue heart balloon, a small green balloon, and a red triangle balloon.',
  alt:'Three clue cards above groups of four balloons: red and blue with stars and hearts; big and small yellow and green; red and blue with circles and triangles.',
  steps:[
@@ -479,8 +483,8 @@ G({num:26,slug:'pandas-balloon-logic',img:'26-pandas-balloon-logic.webp',title:'
           {label:'A blue balloon with a circle',crop:[51.66,74.92,63.79,94.6],ok:false,say:'A blue circle \u2014 neither clue fits.'},
           {label:'A blue balloon with a triangle',crop:[62.64,71.77,74.83,94.6],ok:false,say:'A triangle \u2014 but blue!'}]}]}),
 G({num:27,slug:'dragons-crystal-challenge',img:'27-dragons-crystal-challenge.webp',title:'Dragon\u2019s Crystal Challenge',skill:'Pattern completion',
- tag:'Red, blue, red, blue\u2026 find the missing crystal in every one of Dragon\u2019s patterns.',
- say:'A crystal is missing from each pattern! Tap the crystal that completes it.',
+ tag: 'A crystal is missing from each pattern — circle the one that completes it.',
+ say: 'A crystal is missing from each pattern! Circle the crystal that completes it.',
  hint:'The pattern shines!',doneTitle:'Crystals complete!',doneSub:'A red gem, a big purple crystal, and a pink circle gem.',
  alt:'Dragon beside three crystal pattern rows, each ending in a question mark, with choice crystals.',
  steps:[
@@ -497,8 +501,8 @@ G({num:27,slug:'dragons-crystal-challenge',img:'27-dragons-crystal-challenge.web
           {label:'A pink circle',crop:[60,77.5,67.5,89],ok:true,say:'Circle \u2014 after triangle and square comes the circle!'},
           {label:'A green triangle',crop:[67.5,77.5,74.5,89],ok:false,say:'Triangles just had their turn.'}]}]}),
 G({num:28,slug:'penguins-ice-block-builder',img:'28-penguins-ice-block-builder.webp',title:'Penguin\u2019s Ice Block Builder',skill:'Completing towers',
- tag:'Each tower misses its top block \u2014 tap the block that completes every ice tower.',
- say:'Each tower needs one more block! Tap the block that completes it.',
+ tag: 'Each tower misses its top block — circle the block that completes every ice tower.',
+ say: 'Each tower needs one more block! Circle the block that completes it.',
  hint:'The tower stands!',doneTitle:'All towers built!',doneSub:'A little blue block, a yellow block, and a pink circle block.',
  artNote:'The printed sheet shows one shared block pile for three towers with three different completion rules (blues shrink, red-yellow alternates, shapes alternate). The game presents each tower with its own three blocks and spells the rule in the prompt.',
  steps:[
@@ -515,8 +519,8 @@ G({num:28,slug:'penguins-ice-block-builder',img:'28-penguins-ice-block-builder.w
           {label:'A pink circle',crop:[60.5,85.5,68.5,99.5],ok:true,say:'A circle \u2014 the tower\u2019s shapes take turns!'},
           {label:'A yellow star',crop:[69.45,84.19,77.63,95.4],ok:false,say:'No stars on this tower.'}]}]}),
 G({num:29,slug:'bunnys-path-detective',img:'29-bunnys-path-detective.webp',title:'Bunny\u2019s Path Detective',skill:'Following a key',
- tag:'Red circle, yellow star, purple heart \u2014 hop the clues in order and find the carrot!',
- say:'Follow the key: red circle, yellow star, purple heart. Tap the path circles in that order!',
+ tag: 'Color the path circles in key order and lead Bunny to the carrot.',
+ say: 'Follow the key: red circle, yellow star, purple heart. Color the path circles in that order to find the carrot!',
  hint:'Following the clues!',doneTitle:'Carrot found!',doneSub:'Circle, star, heart \u2014 Bunny munched the carrot.',
  alt:'Bunny the detective beside the key \u2014 red circle, yellow star, purple heart \u2014 and six path circles with a carrot at the finish.',
  steps:[{type:'order',ask:'Tap the path in the key\u2019s order: red circle, yellow star, purple heart.',ctx:[27,23.5,75,40.5],ctxLabel:'The key: red circle, then yellow star, then purple heart',
@@ -566,8 +570,8 @@ export function logicClassBody(){
   <span class="eyebrow">CLASS 30 · PRESCHOOL AGES 4–5</span>
   <h1>Logic, Thinking &amp; Problem-Solving</h1>
   <div class="fc-chips lesson-chips"><span><strong>Age</strong> 4–5 Years</span><span><strong>Class</strong> 30 of 30</span><span><strong>Adventures</strong> 30 logic games</span><span><strong>Subjects</strong> Patterns · clues · sorting</span></div>
-  <p class="lesson-lede">Build early reasoning, observation, memory, matching, sequencing, sorting, and problem-solving skills through playful picture puzzles. Thirty real games \u2014 every one played on its own puzzle illustration, with spoken instructions and a printable worksheet twin in the <a href="${WS30_PATH}">Logic worksheet library</a>.</p>
-  <p class="lesson-lede">Patterns to finish, odd ones to catch, shadows to match, mazes to trace and codes to crack \u2014 every puzzle spoken aloud, every answer a picture.</p>
+  <p class="lesson-lede">Build early reasoning, observation, memory, matching, sequencing, sorting, and problem-solving skills through playful picture puzzles. Thirty draw-on-the-picture adventures \u2014 every one played on its own puzzle illustration, with plain written instructions and a printable worksheet twin in the <a href="${WS30_PATH}">Logic worksheet library</a>.</p>
+  <p class="lesson-lede">Patterns to finish, odd ones to catch, shadows to match, mazes to trace and codes to crack \u2014 every puzzle is one big picture your child draws right on.</p>
   <div class="lesson-start"><a class="button" href="#adventures">Meet the adventures <span aria-hidden="true">↓</span></a><span class="lesson-start-hint">Puzzles are best in short, happy sittings.</span></div>
  </div></article>
  <section class="wrap lesson-section" id="adventures" aria-label="The logic adventures">
@@ -600,9 +604,9 @@ export function logicClassBody(){
 
 export function logicLibraryBody(){
  return `${crumbNav([['Preschool','/preschool/'],['Logic Adventures']])}
- <div class="page-heading wrap"><span class="eyebrow">LOGIC ADVENTURES</span><h1>Thirty picture puzzles you really play.</h1><p>Patterns, odd-one-outs, shadow matches, size orders, mazes, secret codes and clue hunts \u2014 real logic games played on our own puzzle artwork, with spoken instructions and no reading required.</p></div>
+ <div class="page-heading wrap"><span class="eyebrow">LOGIC ADVENTURES</span><h1>Thirty picture puzzles you really play.</h1><p>Patterns, odd-one-outs, shadow matches, size orders, mazes, secret codes and clue hunts \u2014 real logic puzzles played right on our own puzzle artwork, with plain text instructions a grown-up can read aloud.</p></div>
  <div class="lesson-start"><a class="button" href="${C30_PATH}">This way to Class 30 <span aria-hidden="true">→</span></a><span class="lesson-start-hint">The class that goes with these adventures: Logic, Thinking &amp; Problem-Solving.</span></div>
- <section class="wrap section compact" data-st-lib aria-label="All logic adventures">
+ <section class="wrap section compact" data-st-lib data-st-band="logic" aria-label="All logic adventures">
   <div class="sa-grid">
   ${logicAdventures.map(g=>`<a class="sa-card" href="${LOGIC_LIB}${g.slug}/" data-st-libcard="${g.slug}">
     <span class="sa-card-num" aria-hidden="true">${g.num}</span>
@@ -626,6 +630,7 @@ export function logicAdventureBody(g){
  const prev=list[(i-1+list.length)%list.length];
  const next=list[(i+1)%list.length];
  const ws=WS30_PATH+g.slug+'/';
+ const art=artFor('logic/'+g.slug,LOGIC_BASE+g.img);
  return `${crumbNav([['Preschool','/preschool/'],['Logic Adventures',LOGIC_LIB],[g.num+'. '+esc(g.title)]])}
  <article class="wrap lesson-hero sa-hero">
   <div class="sa-hero-art"><img src="${LOGIC_BASE}${g.img}" width="800" height="568" alt="${esc(g.alt)}" fetchpriority="high"></div>
@@ -634,18 +639,14 @@ export function logicAdventureBody(g){
    <h1>${esc(g.title)}</h1>
    <div class="fc-chips lesson-chips"><span><strong>Age</strong> 4–5 Years</span><span><strong>Class</strong> 30 · Logic</span><span><strong>Skill</strong> ${esc(g.skill)}</span></div>
    <p class="lesson-lede">${esc(g.tag)}</p>
-   <div class="lesson-start"><a class="button" href="#play">Play the puzzle game <span aria-hidden="true">↓</span></a><a class="button button-ghost" href="${ws}">Print the worksheet <span aria-hidden="true">↓</span></a><span class="lesson-start-hint">Play with a finger, a stylus or a mouse. Instructions are spoken aloud.</span></div>
+   <div class="lesson-start"><a class="button" href="#play">Start drawing <span aria-hidden="true">↓</span></a><a class="button button-ghost" href="${ws}">Print the worksheet <span aria-hidden="true">↓</span></a><span class="lesson-start-hint">Play with a finger, a stylus or a mouse. Undo and Clear are always one tap away.</span></div>
   </div>
  </article>
- <section class="wrap lesson-section" id="play" aria-label="Play ${esc(g.title)}">
-  <span class="eyebrow">PLAY · ${esc(g.skill).toUpperCase()}</span>
-  <h2>${esc(g.title)}</h2>
-  <p class="lesson-copy">${esc(g.say)}</p>
-  ${board(LOGIC_BASE,{...g,band:"logic"},W,H)}
-  <noscript><p class="sa-noscript">The puzzle game needs JavaScript. Everything else on this page works without it \u2014 and the <a href="${ws}">matching worksheet</a> brings this adventure to paper.</p></noscript>
- </section>
+ ${imageActivitySection({band:'logic',slug:g.slug,title:g.title,skill:g.skill,
+   say:g.say,hint:g.hint,doneTitle:g.doneTitle,alt:g.alt,
+   imgUrl:LOGIC_BASE+g.img,w:art.w,h:art.h,wsPath:WS30_PATH+g.slug+'/'})}
  <section class="wrap lesson-section"><span class="eyebrow">FOR GROWN-UPS</span><h2>Why this adventure helps.</h2>
-  <p class="lesson-copy">${esc(g.parentNote||'This game trains '+g.skill.toLowerCase()+' on the puzzle picture itself: the question is spoken aloud, the answers are pictures, and a miss brings a gentle hint instead of a penalty. Ask your child to explain the rule out loud \u2014 saying the \u201cwhy\u201d is the whole skill.')}</p>
+  <p class="lesson-copy">${esc(g.parentNote||'This activity trains '+g.skill.toLowerCase()+' right on the puzzle picture: one short written instruction, then real pencil work \u2014 circling, crossing, tracing and connecting on the illustration itself. Nothing is graded. Ask your child to explain the rule out loud while they draw \u2014 saying the \u201cwhy\u201d is the whole skill.')}</p>
   ${g.artNote?`<p class="lesson-copy"><strong>Illustration note:</strong> ${esc(g.artNote)}</p>`:''}
   <p class="lesson-copy">Prefer paper? The <a href="${ws}">${esc(g.title)} worksheet</a> prints the same puzzle with room to draw, sort and circle \u2014 and a grown-up answer line. Printing never marks anything complete.</p>
  </section>
@@ -658,7 +659,7 @@ export function logicAdventureBody(g){
   <div class="fc-stages">
    <a class="fc-stage lesson-card-link" href="${C30_PATH}"><div class="fc-stage-pills"><span class="fc-age">Age 4–5</span><span class="fc-class">Class 30</span></div><h3>Logic, Thinking &amp; Problem-Solving</h3><p>The class behind these adventures \u2014 all puzzle games plus off-screen sorting ideas.</p><span class="fc-open">Open Class 30 <span aria-hidden="true">↗</span></span></a>
    <a class="fc-stage lesson-card-link" href="${ws}"><div class="fc-stage-pills"><span class="fc-age">Age 4–5</span><span class="fc-class">Worksheet</span></div><h3>${esc(g.title)} worksheet</h3><p>The printable twin of this game \u2014 free PDF, print button, parent guide.</p><span class="fc-open">Open the worksheet <span aria-hidden="true">↗</span></span></a>
-   <a class="fc-stage lesson-card-link" href="/preschool/reading/adventures/"><div class="fc-stage-pills"><span class="fc-age">Age 4–5</span><span class="fc-class">Class 29</span></div><h3>Storytime Adventures</h3><p>Twenty-nine story games with spoken instructions \u2014 the comprehension side of getting ready to read.</p><span class="fc-open">Open the Storytime Library <span aria-hidden="true">↗</span></span></a>
+   <a class="fc-stage lesson-card-link" href="/preschool/reading/adventures/"><div class="fc-stage-pills"><span class="fc-age">Age 4–5</span><span class="fc-class">Class 29</span></div><h3>Storytime Adventures</h3><p>Twenty-nine draw-on-the-picture story games \u2014 the comprehension side of getting ready to read.</p><span class="fc-open">Open the Storytime Library <span aria-hidden="true">↗</span></span></a>
   </div>
  </section>`;
 }

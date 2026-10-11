@@ -7,6 +7,7 @@ import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync, existsSync} from 'node:fs';
 import {scienceAdventures,SCIENCE_READY,SCIENCE_TOTAL} from '../src/science-adventures.mjs';
+import {SCIENCE_BASE} from '../src/story-kit.mjs';
 import {buildScienceWorksheets} from '../src/ws-data-science.mjs';
 import {worksheets} from '../src/worksheets.mjs';
 
@@ -119,15 +120,17 @@ test('the answer model matches the audited artwork',()=>{
  assert.deepEqual(grad,['A flowering plant','Arctic sea ice','It floats on the water']);
 });
 
-test('30 game routes ship with unique SEO, spoken-instruction engine and the art contract',()=>{
+test('30 activity routes ship with unique SEO, the drawing layer and the art contract',()=>{
  const titles=new Set();
  for(const g of scienceAdventures){
   const p='/preschool/science/adventures/'+g.slug+'/';
   const html=page(p);
   assert.ok(html.length>3000,p+' has a page');
-  assert.ok(html.includes('data-st-board'),p+' ships the game board');
-  assert.ok(html.includes('story-adventures.js'),p+' loads the engine');
-  assert.ok(html.includes(encodeURIComponent(g.img).replace(/%/g,'%')+'')||html.includes(g.img),p+' uses its own artwork');
+  assert.ok(html.includes(`data-wc-src="${SCIENCE_BASE+g.img}"`),p+' draws right on its artwork');
+  assert.ok(html.includes('data-ia-band="science"'),p+' carries the science progress band');
+  assert.ok(html.includes('/assets/image-adventure.js'),p+' loads the progress engine');
+  assert.ok(html.includes('id="ia-tools"'),p+' has the tools rail');
+  assert.ok(html.includes(g.img),p+' uses its own artwork');
   assert.ok(html.includes('href="/worksheets/science/'+g.slug+'/"'),p+' links its worksheet twin');
   assert.ok(html.includes('/my-classroom/'),p+' links My Classroom');
   const t=html.match(/<title>(.*?)<\/title>/)[1];
@@ -141,18 +144,15 @@ test('30 game routes ship with unique SEO, spoken-instruction engine and the art
  assert.ok(cls.includes('science-nature-and-discovery')===true);
 });
 
-test('engine really implements multi, sort and the shared mechanics',()=>{
- const js=read('/assets/story-adventures.js');
- for(const type of ['multi','sort','find','match','order']){
-  assert.ok(js.includes(`type === '${type}'`),'engine handles '+type);
- }
- assert.ok(js.includes('data-st-multicount'),'multi counter');
- assert.ok(js.includes('data-st-accept'),'sort bins');
- assert.ok(js.includes('saveComplete'),'progress only on real completion');
- assert.ok(js.includes("completed[slug] = Date.now()"),'completion timestamp');
+test('the shipped engine is the honest progress keeper',()=>{
+ const js=read('/assets/image-adventure.js');
+ assert.ok(!/setInterval\(|score|streak|speechSynthesis/i.test(js),'no timers, scores or voices');
+ assert.ok(js.includes("kiddo-adventures"),'site progress store');
+ assert.ok(js.includes("'kiddo-wc-save'"),'completion comes only from a real save');
+ assert.ok(js.includes("data-st-lib"),'library ribbons wired for the story family');
  const css=read('/assets/style.css');
- assert.ok(css.includes('.st-bin'),'bin styles');
- assert.ok(css.includes('.st-hot'),'hotspot styles');
+ assert.ok(css.includes('.wc-stage'),'drawing stage styles');
+ assert.ok(css.includes('.wc-canvas'),'canvas overlay styles');
 });
 
 test('30 science worksheets ship with PDFs, twins and honest copy',()=>{
