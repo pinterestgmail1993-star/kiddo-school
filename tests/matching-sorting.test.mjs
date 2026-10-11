@@ -161,3 +161,12 @@ test('the restore feature is opt-in: no existing mount gained it',()=>{
  const fc=page('flashcards/matching-and-sorting');
  assert.ok(existsSync(join(root,'flashcards/matching-and-sorting/index.html')),'the existing flashcards set is untouched');
 });
+
+test('the Learning Path Class 10 row links straight to the worksheet category',()=>{
+ const lp=page('learning-path');
+ const rows=lp.split('<p class="lp-hublink">').filter(r=>r.includes(MS_WS_BASE));
+ assert.equal(rows.length,1,'exactly one Learning Path row carries the worksheets link');
+ assert.ok(rows[0].includes('Stage hub: <a href="/toddler/2-years/">Toddler 4</a>'),'it is the Toddler 4 row');
+ assert.ok(rows[0].indexOf('/flashcards/matching-and-sorting/')<rows[0].indexOf(MS_WS_BASE),'flashcards link comes first, worksheets second');
+ assert.ok(rows[0].includes('>matching &amp; sorting printables</a>'),'label reads like the Age 4 rows');
+});
