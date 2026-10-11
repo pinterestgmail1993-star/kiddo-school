@@ -520,7 +520,7 @@ export function readingAdventureBody(g){
  return `${crumbNav([['Preschool','/preschool/'],['Storytime Adventures',READING_LIB],[g.num+'. '+esc(g.title)]])}
  ${imageActivitySection({band:'reading',slug:g.slug,title:g.title,skill:g.skill,
    say:g.say,hint:g.hint,doneTitle:g.doneTitle,alt:g.alt,
-   imgUrl:READING_BASE+g.img,w:art.w,h:art.h,wsPath:WS29_PATH+g.slug+'/'})}
+   imgUrl:READING_BASE+g.img,w:art.w,h:art.h,wsPath:WS29_PATH+g.slug+'/',pagePath:READING_LIB+g.slug+'/'})}
  <section class="wrap lesson-section"><span class="eyebrow">FOR GROWN-UPS</span><h2>Why this adventure helps.</h2>
   <p class="lesson-copy">${esc(g.parentNote||'This activity trains '+g.skill.toLowerCase()+' right on the story picture: your child reads (or hears you read) one short instruction, then draws, circles and connects straight on the illustration. There is nothing to be right or wrong at \u2014 the retelling happens naturally while they draw, and saving the finished picture is the proud ending.')}</p>
   ${g.artNote?`<p class="lesson-copy"><strong>Illustration note:</strong> ${esc(g.artNote)}</p>`:''}

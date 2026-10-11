@@ -494,7 +494,7 @@ export function scienceAdventureBody(g){
  return `${crumbNav([['Preschool','/preschool/'],['Science Adventures',SCIENCE_LIB],[g.num+'. '+esc(g.title)]])}
  ${imageActivitySection({band:'science',slug:g.slug,title:g.title,skill:g.skill,
    say:g.say,hint:g.hint,doneTitle:g.doneTitle,alt:g.alt,
-   imgUrl:SCIENCE_BASE+g.img,w:art.w,h:art.h,wsPath:WS31_PATH+g.slug+'/'})}
+   imgUrl:SCIENCE_BASE+g.img,w:art.w,h:art.h,pagePath:SCIENCE_LIB+g.slug+'/',wsPath:WS31_PATH+g.slug+'/'})}
  <section class="wrap lesson-section"><span class="eyebrow">FOR GROWN-UPS</span><h2>Why this adventure helps.</h2>
   <p class="lesson-copy">${esc(g.parentNote||'This activity trains '+g.skill.toLowerCase()+' on a real science picture: one short written instruction, then your child draws, circles and marks straight on the illustration. There is nothing to be right or wrong at. Ask your child to predict out loud before they draw \u2014 the prediction is the science.')}</p>
   ${g.artNote?`<p class="lesson-copy"><strong>Illustration note:</strong> ${esc(g.artNote)}</p>`:''}

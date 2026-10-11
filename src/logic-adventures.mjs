@@ -634,7 +634,7 @@ export function logicAdventureBody(g){
  return `${crumbNav([['Preschool','/preschool/'],['Logic Adventures',LOGIC_LIB],[g.num+'. '+esc(g.title)]])}
  ${imageActivitySection({band:'logic',slug:g.slug,title:g.title,skill:g.skill,
    say:g.say,hint:g.hint,doneTitle:g.doneTitle,alt:g.alt,
-   imgUrl:LOGIC_BASE+g.img,w:art.w,h:art.h,wsPath:WS30_PATH+g.slug+'/'})}
+   imgUrl:LOGIC_BASE+g.img,w:art.w,h:art.h,wsPath:WS30_PATH+g.slug+'/',pagePath:LOGIC_LIB+g.slug+'/'})}
  <section class="wrap lesson-section"><span class="eyebrow">FOR GROWN-UPS</span><h2>Why this adventure helps.</h2>
   <p class="lesson-copy">${esc(g.parentNote||'This activity trains '+g.skill.toLowerCase()+' right on the puzzle picture: one short written instruction, then real pencil work \u2014 circling, crossing, tracing and connecting on the illustration itself. Nothing is graded. Ask your child to explain the rule out loud while they draw \u2014 saying the \u201cwhy\u201d is the whole skill.')}</p>
   ${g.artNote?`<p class="lesson-copy"><strong>Illustration note:</strong> ${esc(g.artNote)}</p>`:''}

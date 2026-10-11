@@ -317,7 +317,7 @@ export function phonicAdventureBody(g){
  const art=artFor('phonics/'+g.slug,PHONICS_BASE+g.img);
  const board=imageActivitySection({band:'phonics',slug:g.slug,title:g.title,skill:g.skill,
   say:g.say,hint:g.hint,doneTitle:g.doneTitle,alt:g.alt,
-  imgUrl:PHONICS_BASE+g.img,w:art.w,h:art.h,wsPath:ws});
+  imgUrl:PHONICS_BASE+g.img,w:art.w,h:art.h,wsPath:ws,pagePath:PHONICS_LIB_PATH+g.slug+'/'});
  return `${crumbNav([['Preschool','/preschool/'],['Phonics Adventures',PHONICS_LIB_PATH],[g.num+'. '+g.title]])}
  ${board}
  <section class="wrap lesson-section"><span class="eyebrow">FOR GROWN-UPS</span><h2>Why this adventure helps.</h2>

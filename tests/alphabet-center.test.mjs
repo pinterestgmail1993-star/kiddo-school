@@ -15,7 +15,7 @@ const LETTERED_PICS=new Set(['e','f','g','s','x']);
 // Beginning-sound collisions the game must never create as distractors.
 const SOUND_TWIN={c:['k'],k:['c'],g:['j'],j:['g']};
 
-const letterPage=l=>page('/flashcards/alphabet/letter-'+l+'/');
+const letterPage=l=>page('/preschool/3-years/alphabet-and-letter-sounds/letter-'+l+'/');
 
 test('data: 26 letters, the owner associations, honest phonics kinds and probed asset facts',()=>{
  assert.equal(LETTERS.length,26);
@@ -102,8 +102,8 @@ test('letter pages: all 26 built with their sections, unique SEO and correct pre
   // the four card images ship on the page
   for(const f of ['uppercase.png','lowercase.png','pair.png','sound.png'])assert.ok(html.includes(R2+l+'/'+f),l+' '+f);
   // the prev/next chain wraps z -> a
-  assert.ok(html.includes('href="/flashcards/alphabet/letter-'+prev+'/"'),l+' prev link');
-  assert.ok(html.includes('href="/flashcards/alphabet/letter-'+next+'/"'),l+' next link');
+  assert.ok(html.includes('href="/preschool/3-years/alphabet-and-letter-sounds/letter-'+prev+'/"'),l+' prev link');
+  assert.ok(html.includes('href="/preschool/3-years/alphabet-and-letter-sounds/letter-'+next+'/"'),l+' next link');
   // games + center back-link
   assert.ok(html.includes('href="/activities/beginning-sounds/"'),l+' sounds link');
   assert.ok(html.includes('href="/flashcards/alphabet/">'),'center back-link');
@@ -222,11 +222,11 @@ test('Class 15: the lesson opens with A, B, C and teaches solving the sheets',()
 test('search and sitemap: the whole alphabet center is findable',()=>{
  const idx=JSON.parse(read('dist/assets/search-index.json'));
  const byPath=Object.fromEntries(idx.map(e=>[e.u,e]));
- assert.equal(byPath['/flashcards/alphabet/letter-a/'].k,'Flashcards');
+ assert.equal(byPath['/preschool/3-years/alphabet-and-letter-sounds/letter-a/'].k,'Class');
  assert.equal(byPath['/activities/beginning-sounds/'].k,'Activity');
  assert.equal(byPath['/activities/letter-matching/'].k,'Activity');
  assert.equal(byPath['/activities/guess-the-picture/'].k,'Activity');
  const xml=read('dist/sitemap.xml');
- assert.ok(xml.includes('/flashcards/alphabet/letter-z/'));
+ assert.ok(xml.includes('/preschool/3-years/alphabet-and-letter-sounds/letter-z/'));
  assert.ok(xml.includes('/activities/letter-matching/'));
 });

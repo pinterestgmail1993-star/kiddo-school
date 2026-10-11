@@ -1,15 +1,25 @@
-// Kiddo School — the Alphabet Learning Center: page bodies for the upgraded
-// /flashcards/alphabet/ hub, the 26 letter pages (/flashcards/alphabet/letter-x/),
-// the three alphabet games under /activities/, the Activities cupboard shelf
-// and the A-B-C intro for the preschool letter class.
+// Kiddo School — the Alphabet Learning Center: the 26 letter ACTIVITY pages
+// on the Learning Path (/preschool/3-years/alphabet-and-letter-sounds/letter-x/),
+// the /flashcards/alphabet/ hub body, the three alphabet games under
+// /activities/, the Activities cupboard shelf and the A-B-C intro for the
+// preschool letter class.
+// The letter pages belong to Class 15 on the Learning Path: each one draws
+// right on the owner's original Canva association card (canvas directly over
+// the image, tools on the right, per-child save/restore, honest progress).
+// The flashcards stay as optional paper resources — never replacements.
 // Everything renders from src/alphabet-data.mjs (real R2 assets, probed).
 // Without JavaScript every page still teaches: the hub shows the A–Z grid,
 // letter pages ship their full content, and the two sound/picture games
 // use the site's existing data-tc-round engine with every round in the HTML.
 import {LETTERS,LETTERS_BY_KEY,letterAt,R2_ALPHA} from './alphabet-data.mjs';
+import {fcCommunityMount} from './flashcards/community.mjs';
 
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-export const letterPath=l=>`/flashcards/alphabet/letter-${l.letter}/`;
+// The letter activities are Learning Path pages under their own class —
+// never /flashcards/ URLs. The flashcard sets are linked from them as
+// optional paper resources instead.
+const ALPHABET_CLASS='/preschool/3-years/alphabet-and-letter-sounds/';
+export const letterPath=l=>ALPHABET_CLASS+'letter-'+l.letter+'/';
 const crumbs=parts=>`<nav class="breadcrumbs wrap" aria-label="Breadcrumb"><a href="/">Home</a>${parts.map(([label,href])=>`<span aria-hidden="true">/</span>${href?`<a href="${esc(href)}">${esc(label)}</a>`:`<span aria-current="page">${esc(label)}</span>`}`).join('')}</nav>`;
 
 /* ------------------------------------------------------------ shared data */
@@ -77,6 +87,9 @@ export function alphabetCenterBody(){
 export function letterPageBody(L,prev,next){
  const l=L.letter,up=L.upper;
  const pic=L.file(L.pictureFile);
+ const enc=encodeURIComponent;
+ const pageUrl=letterPath(L);
+ const shareTitle=`Letter ${up} activity for kids — ${L.word} · Kiddo School`;
  const soundReveal=L.kind==='special'
   ?`<p class="lesson-note">X’s sound usually hides at the end of words — fox, box, six. Practice it there, where it really lives.</p>`
   :L.kind==='soft'
@@ -89,17 +102,34 @@ export function letterPageBody(L,prev,next){
   <a class="lesson-pill-link" href="/activities/letter-matching/">Play Letter Matching</a>
   <a class="lesson-pill-link" href="/activities/guess-the-picture/">Play Guess the Picture</a>
  </div>`;
- return `${crumbs([['Flashcards','/flashcards/'],['Alphabet A–Z','/flashcards/alphabet/'],[`Letter ${up}`]])}
- <section class="wrap section compact al-letter-hero">
-  <span class="eyebrow">ALPHABET CENTER · LETTER ${up}</span>
-  <h1>Letter ${up} — ${esc(L.word)}<span class="title-dot">.</span></h1>
-  <p class="mw-lede">${esc(L.intro)}</p>
-  <p class="fc-hint">Meet the letter, hear its sound, then play. Everything on this page is free, gentle and paced for you.</p>
- </section>
+ const pn=`<nav class="fc2-pn" aria-label="Previous and next letter activity"><a class="fc2-pn-btn" href="${letterPath(prev)}" rel="prev"><span aria-hidden="true">←</span> <strong>Letter ${prev.upper}</strong><span>Previous letter</span></a><a class="fc2-pn-btn fc2-pn-next" href="${letterPath(next)}" rel="next"><strong>Letter ${next.upper}</strong> <span aria-hidden="true">→</span><span>Next letter</span></a></nav>`;
+ const cardImg=L.file('sound.png');
+ const share=`<div class="fc2-block fc2-share-block"><span class="eyebrow">SHARE THIS ACTIVITY</span><h2>Pass it on.</h2><div class="fc2-share"><a class="fc2-share-btn" href="https://twitter.com/intent/tweet?url=${enc(pageUrl)}&text=${enc(shareTitle)}" target="_blank" rel="noopener" aria-label="Share this letter activity on X">X</a><a class="fc2-share-btn" href="https://www.facebook.com/sharer/sharer.php?u=${enc(pageUrl)}" target="_blank" rel="noopener" aria-label="Share this letter activity on Facebook">Facebook</a><a class="fc2-share-btn" href="https://wa.me/?text=${enc(shareTitle+' '+pageUrl)}" target="_blank" rel="noopener" aria-label="Share this letter activity on WhatsApp">WhatsApp</a><a class="fc2-share-btn" href="https://pinterest.com/pin/create/button/?url=${enc(pageUrl)}&media=${enc(cardImg)}&description=${enc(shareTitle)}" target="_blank" rel="noopener" aria-label="Save this letter activity on Pinterest">Pinterest</a><button type="button" class="fc2-share-btn" data-fc-copy>Copy link</button></div><p class="fc-hint">Share buttons open in a new tab. The copy button copies this page’s address — nothing is tracked.</p></div>`;
+ return `${crumbs([['Learning Path','/learning-path/'],['Preschool','/preschool/'],['Age 3','/preschool/3-years/'],['Alphabet & Letter Sounds',ALPHABET_CLASS],[`Letter ${up}`]])}
+ <div class="page-heading wrap"><span class="eyebrow">ALPHABET ACTIVITY · CLASS 15 · AGE 3</span><h1>Letter ${up} — ${esc(L.word)}<span class="title-dot">.</span></h1><p>${esc(L.intro)}</p></div>
+ <div class="fc2-dual wrap">
+  <div class="fc2-main">
+   <section class="wc-section" aria-label="The letter card — draw right on it" id="the-activity">
+    <div class="wc-head"><span class="eyebrow">THE CARD — DRAW RIGHT ON IT</span><h2>Trace ${up} ${l}, circle the ${esc(L.word.toLowerCase())}.</h2><p class="lesson-copy">This is ${up}’s own card from the class. Pick a crayon, then trace the big letter and the little letter right on the card with your finger, a stylus or the mouse — and circle ${esc(L.word.toLowerCase())}. Press Save my work when you are proud: your drawing stays here for next time.</p></div>
+    <div class="wc-mount" data-al-activity="${l}" data-wc data-wc-src="${esc(cardImg)}?draw=1" data-wc-name="Letter ${up} alphabet activity" data-wc-w="${L.w}" data-wc-h="${L.h}" data-wc-toolbar="#al-tools" data-wc-restore="alphabet/letter-${l}">
+     <figure class="fc2-hero ws-hero-art"><img src="${esc(cardImg)}?draw=1" width="${L.w}" height="${L.h}" alt="Letter and picture association card: ${up} ${l} with ${esc(L.pictureAlt.charAt(0).toLowerCase()+L.pictureAlt.slice(1))}" fetchpriority="high" crossorigin="anonymous"></figure>
+    </div>
+    <noscript><p class="fc-hint">Drawing on the card needs JavaScript. Everything else on this page teaches without it — and the printable cards in the <a href="/flashcards/alphabet-tracing/">tracing set</a> bring the same letter to paper.</p></noscript>
+   </section>
+   ${pn}
+  </div>
+  <aside class="fc2-rail" aria-label="Instructions, drawing tools and saved progress">
+   <section class="fc2-block fc2-first-block"><span class="eyebrow">HOW TO DO IT</span><h2>Three little steps.</h2><ol class="fc-steps"><li><span class="fc-stepnum">1</span><div><h3>Say the letter</h3><p>Find big ${up} and little ${l} on the card. Say both out loud — “${esc(L.soundSay)}”.</p></div></li><li><span class="fc-stepnum">2</span><div><h3>Trace it, then draw it</h3><p>Trace big ${up} with one finger first. Then pick a crayon and draw the letter your own way — wobbly is wonderful.</p></div></li><li><span class="fc-stepnum">3</span><div><h3>Circle the picture</h3><p>Circle ${esc(L.word.toLowerCase())} and say the word together. That is the whole activity — no score, no timer.</p></div></li></ol><p class="fc-hint">Ask a grown-up to read the steps aloud the first time. After that, you know just what to do.</p></section>
+   <section class="fc2-block" id="al-tools" aria-label="Drawing tools"><span class="eyebrow">YOUR PENCIL CASE</span><h2>Pick your tools.</h2><p class="fc-hint">Pencil, nine crayons, an eraser, undo, redo and clear — the tools appear right here and work on the card. Save keeps your finished drawing and remembers it for next time.</p></section>
+   <section class="fc2-block" data-al-progress-block><span class="eyebrow">MY PROGRESS</span><h2>Save it to keep it.</h2><p class="ls-progress-line" data-al-progress aria-live="polite">This letter is cleared for you the moment you save your finished drawing. Nothing counts until then — opening the page is just opening the door.</p><p class="ls-progress-done" data-al-done hidden><strong>Cleared!</strong> Your drawing is saved on this device for your child, and the ribbon is on in <a href="${ALPHABET_CLASS}">Class 15</a>. Come back any time — your drawing will be waiting.</p></section>
+   ${share}
+   <section class="fc2-block"><span class="eyebrow">PAPER RESOURCES</span><h2>The flashcards, if you want them.</h2><p class="fc-hint">These cards also live in the flashcards library as optional paper resources: the <a href="/flashcards/alphabet-tracing/letter-${l}/">${up} ${l} tracing card</a> for real crayon work, or <a href="/flashcards/alphabet/">the whole Alphabet A–Z set</a> to print and cut.</p></section>
+  </aside>
+ </div>
 
  <section class="wrap section compact al-meet" aria-label="Meet the letter">
   <div class="al-meet-grid">
-   <figure class="al-face"><img src="${L.file('uppercase.png')}" width="${L.w}" height="${L.h}" alt="Uppercase letter ${up} as large playful letter art" fetchpriority="high"><figcaption><span class="eyebrow">MEET THE UPPERCASE</span><strong>Big ${up}</strong><span>${esc(L.upperCopy)}</span></figcaption></figure>
+   <figure class="al-face"><img src="${L.file('uppercase.png')}" width="${L.w}" height="${L.h}" alt="Uppercase letter ${up} as large playful letter art" loading="lazy"><figcaption><span class="eyebrow">MEET THE UPPERCASE</span><strong>Big ${up}</strong><span>${esc(L.upperCopy)}</span></figcaption></figure>
    <figure class="al-face"><img src="${L.file('lowercase.png')}" width="${L.w}" height="${L.h}" alt="Lowercase letter ${l} as large playful letter art" loading="lazy"><figcaption><span class="eyebrow">MEET THE LOWERCASE</span><strong>Little ${l}</strong><span>${esc(L.lowerCopy)}</span></figcaption></figure>
    <figure class="al-face"><img src="${pic}" width="${L.w}" height="${L.h}" alt="${esc(L.pictureAlt)}" loading="lazy"><figcaption><span class="eyebrow">THE PICTURE WORD</span><strong>${esc(L.word)}</strong><span>${esc(L.word)} starts with ${l} — say it slowly together and listen for the first sound.</span></figcaption></figure>
    <figure class="al-face"><img src="${L.file('pair.png')}" width="${L.w}" height="${L.h}" alt="Letter pair card showing uppercase ${up} and lowercase ${l} together" loading="lazy"><figcaption><span class="eyebrow">THE LETTER PAIR</span><strong>${up} ${l}</strong><span>${esc(L.pairCopy)}</span></figcaption></figure>
@@ -133,17 +163,14 @@ export function letterPageBody(L,prev,next){
   <h2>Games that use this letter.</h2>
   <p class="lesson-copy">The games mix every letter — play them after meeting two or three letters, or any day your child asks. No scores, no timers, no wrong answers that count.</p>
   ${gameLinks}
-  <div class="al-prevnext">
-   <a class="al-pn" href="${letterPath(prev)}" rel="prev"><span aria-hidden="true">←</span> <strong>Letter ${prev.upper}</strong><span>${esc(prev.word)}</span></a>
-   <a class="al-pn al-pn-next" href="${letterPath(next)}" rel="next"><strong>Letter ${next.upper}</strong> <span aria-hidden="true">→</span><span>${esc(next.word)}</span></a>
-  </div>
-  <div class="al-backrow"><a class="button button-ghost" href="/flashcards/alphabet/">Back to the Alphabet Center</a></div>
- </section>`;
+  <div class="al-backrow"><a class="button button-ghost" href="${ALPHABET_CLASS}">Back to the class</a><a class="button button-ghost" href="/flashcards/alphabet/">Alphabet flashcards A–Z</a></div>
+ </section>
+ ${fcCommunityMount(letterPath(L))}`;
 }
 
 export function letterSchema(site,L,prev,next){
  return [{'@context':'https://schema.org','@type':'BreadcrumbList',itemListElement:[
-  ['Home','/'],['Flashcards','/flashcards/'],['Alphabet A–Z','/flashcards/alphabet/'],[`Letter ${L.upper}`,letterPath(L)]
+  ['Home','/'],['Learning Path','/learning-path/'],['Age 3','/preschool/3-years/'],['Alphabet & Letter Sounds','/preschool/3-years/alphabet-and-letter-sounds/'],[`Letter ${L.upper}`,letterPath(L)]
  ].map(([name,path],i)=>({'@type':'ListItem',position:i+1,name,item:site+path}))}];
 }
 
@@ -166,7 +193,7 @@ export function matchGameBody(){
    <p class="amg-banner" data-amg-banner aria-live="polite"></p>
    <div class="amg-actions"><button type="button" class="button" data-amg-next hidden>Next round <span aria-hidden="true">→</span></button><button type="button" class="button button-ghost" data-amg-restart>Restart</button></div>
   </div>
-  <noscript><p class="fc-hint">This game needs JavaScript. Letter practice still works everywhere else: the <a href="/flashcards/alphabet/">Alphabet Center</a> and every <a href="/flashcards/alphabet/letter-a/">letter page</a> play fine without it.</p></noscript>
+  <noscript><p class="fc-hint">This game needs JavaScript. Letter practice still works everywhere else: the <a href="/flashcards/alphabet/">Alphabet Center</a> and every <a href="${letterPath(LETTERS[0])}">letter activity page</a> play fine without it.</p></noscript>
   <section class="wrap lesson-section"><span class="eyebrow">HOW TO PLAY</span><h2>Two taps, one pair.</h2>
    <ol class="fc-steps"><li><span class="fc-stepnum">01</span><div><h3>Tap a big letter</h3><p>Any uppercase card turns on. Say its name and its sound out loud — the sounds do the teaching.</p></div></li>
    <li><span class="fc-stepnum">02</span><div><h3>Find its little partner</h3><p>Tap the lowercase card that belongs to it. A pair clicks together and names its picture word — A a, Apple!</p></div></li>
@@ -270,9 +297,9 @@ export function abcClassIntro(){
  return `<section class="wrap lesson-section al-abc" id="todays-letters" aria-label="Today’s letters: A, B, C">
   <span class="eyebrow">TODAY’S LETTERS</span>
   <h2>Start with A, B and C.</h2>
-  <p class="lesson-copy">Three letters is a whole lesson for a three-year-old. Meet them here with the school’s alphabet cards — big letter, little letter, picture word — and say each one slowly. The other twenty-three letters will be waiting on their own pages whenever your child asks for more.</p>
+  <p class="lesson-copy">Three letters is a whole lesson for a three-year-old. Each card opens its own class activity — trace the letters and circle the picture right on the screen, then keep the teaching parts below. The other twenty-three letters will be waiting on their own pages whenever your child asks for more.</p>
   <div class="al-abc-row">
-   ${pick.map(l=>`<a class="al-abc-card" href="${letterPath(l)}"><img src="${l.file('sound.png')}" width="${l.w}" height="${l.h}" alt="Letter and picture association card: ${l.upper} ${l.lower} with ${esc(l.pictureAlt.charAt(0).toLowerCase()+l.pictureAlt.slice(1))}" loading="lazy"><span class="al-abc-word"><strong>${l.upper} ${l.lower}</strong><span>${esc(l.word)}</span><span class="al-abc-say">${esc(l.soundSay)}</span><span class="fc-open">Open Letter ${l.upper} <span aria-hidden="true">↗</span></span></span></a>`).join('')}
+   ${pick.map(l=>`<a class="al-abc-card" href="${letterPath(l)}"><img src="${l.file('sound.png')}" width="${l.w}" height="${l.h}" alt="Letter and picture association card: ${l.upper} ${l.lower} with ${esc(l.pictureAlt.charAt(0).toLowerCase()+l.pictureAlt.slice(1))}" loading="lazy"><span class="al-abc-word"><strong>${l.upper} ${l.lower}</strong><span>${esc(l.word)}</span><span class="al-abc-say">${esc(l.soundSay)}</span><span class="fc-open">Open Letter ${l.upper}’s activity <span aria-hidden="true">↗</span></span></a>`).join('')}
   </div>
   <div class="hero-actions al-abc-actions"><a class="button" href="/flashcards/alphabet/">Open the Alphabet Center <span aria-hidden="true">↗</span></a><a class="button button-ghost" href="#learn-the-letters">See all 26 letter cards <span aria-hidden="true">↓</span></a></div>
   <p class="lesson-note">The full 26-card viewer below is optional practice — today’s class is really these three letters and the games. Stop whenever the fun stops.</p>

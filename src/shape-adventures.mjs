@@ -490,7 +490,7 @@ export function shapeAdventureBody(g){
  const board=imageActivitySection({band:'shapes',slug:g.slug,title:g.title,skill:g.skill,
   say:g.say,hint:g.hint,doneTitle:g.doneTitle,alt:g.alt,
   imgUrl:SHAPE_BASE+g.img,w:art.w,h:art.h,
-  wsPath:'/worksheets/shapes/'+g.slug+'/'});
+  wsPath:'/worksheets/shapes/'+g.slug+'/',pagePath:LIB_PATH+g.slug+'/'});
  return `${crumbNav([['Preschool','/preschool/'],['Shape Adventures',LIB_PATH],[`${g.num}. ${g.title}`]])}
  ${board}
  <section class="wrap lesson-section"><span class="eyebrow">FOR GROWN-UPS</span><h2>Why this adventure helps.</h2>

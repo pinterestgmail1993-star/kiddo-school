@@ -41,11 +41,12 @@ test('worksheet pages are download-first: the sheet shows whole, no drawing laye
   assert.match(ls, /data-ls-print/, 'life-skills print button present');
 });
 
-test('every flashcard card page mounts the drawing layer too', () => {
-  for (const u of ['flashcards/alphabet/apple', 'flashcards/colors/red', 'flashcards/animals-everyday-objects/cat', 'flashcards/numbers-and-counting/five']) {
+test('no flashcard card page mounts a drawing layer (owner rule: flashcards are paper)', () => {
+  for (const u of ['flashcards/alphabet/apple', 'flashcards/colors/red', 'flashcards/animals-everyday-objects/cat', 'flashcards/numbers-and-counting/five', 'flashcards/alphabet-uppercase/letter-a', 'flashcards/alphabet-tracing/letter-b']) {
     const html = page(u);
-    assert.match(html, /data-wc data-wc-src=/, u + ' has a drawing mount');
-    assert.match(html, /Draw on this card/, u + ' explains the layer honestly');
+    assert.ok(!html.includes('data-wc'), u + ' has no drawing mount');
+    assert.ok(!html.includes('Draw on this card'), u + ' has no drawing hint');
+    assert.match(html, /data-fc-root/, u + ' keeps the family feedback block');
   }
 });
 
@@ -67,7 +68,8 @@ test('the six alphabet letter sets exist with clean URLs, real R2 files and tap-
       assert.ok(cardHtml.includes('src="' + c.img + '"'), c.url + ' shows the same real file');
       assert.ok(cardHtml.includes('data-fc-dl'), c.url + ' download is wired for real saving');
       assert.ok(cardHtml.includes('data-tc-print-view'), c.url + ' has a print button');
-      assert.ok(cardHtml.includes('Draw on this card'), c.url + ' has the drawing layer');
+      assert.ok(!cardHtml.includes('data-wc'), c.url + ' has no drawing layer (flashcards are paper)');
+      assert.ok(cardHtml.includes('data-fc-root'), c.url + ' mounts the family feedback block');
     }
     const xml = read('sitemap.xml');
     assert.ok(xml.includes(`<loc>https://kiddo-school.pages.dev${v.url}</loc>`), v.url + ' is indexable');

@@ -365,7 +365,8 @@ export function coloringActivityBody(a,site){
   <p class="lesson-copy">${esc(a.grown)}</p>
   <ul class="ws-skills">${a.skills.map(s=>`<li>${esc(s)}</li>`).join('')}</ul>
   <p class="lesson-copy">This activity belongs to <a href="${CP_CLASS_PATH}">Class 9 — Colors and Shapes (Age 2)</a> on the Learning Path, and the printable twin lives in <a href="${CP_LIB}">Coloring Pages — Shapes</a>. Progress is saved on this device for the child chosen in <a href="/my-classroom/">My Classroom</a> — and only a real save of finished work marks it cleared, never just opening the page.</p>
- </section>`;
+ </section>
+ ${fcCommunityMount(CP_ACT_PATH+a.slug+'/')}`;
 }
 
 /* ---------- the Coloring Pages hub + the Shapes category ---------- */

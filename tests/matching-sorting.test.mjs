@@ -150,12 +150,19 @@ test('sitemap and search index carry every new URL with honest kinds',()=>{
  assert.ok(ws.every(e=>e.k==='Worksheet')&&acts.every(e=>e.k==='Matching activity'),'honest kinds');
 });
 
-test('the restore feature is opt-in: no existing mount gained it',()=>{
- for(const u of ['flashcards/alphabet-lowercase/letter-a','flashcards/matching-and-sorting/same-balls','worksheets/life-skills/wash-your-hands','preschool/life-skills/wash-your-hands','toddler/2-years/colors-and-shapes/coloring/circle']){
+test('restore stays opt-in per page family: flashcards none, activities their own key',()=>{
+ for(const u of ['flashcards/alphabet-lowercase/letter-a','flashcards/matching-and-sorting/same-balls','worksheets/life-skills/wash-your-hands']){
   const html=page(u);
-  if(html.includes('data-wc ')){
-   assert.ok(html.includes('data-wc-restore')===false||html.includes('data-wc-restore="coloring/'),'restore stays as its owner set it: '+u);
-  }
+  assert.ok(!html.includes('data-wc '),'printable/flashcard page carries no drawing mount at all: '+u);
+ }
+ // every Learning Path activity restores its own per-child slot
+ for(const [u,key] of [
+  ['toddler/2-years/matching-and-sorting/match-same-animals','data-wc-restore="matching-sorting/match-same-animals"'],
+  ['preschool/life-skills/wash-your-hands','data-wc-restore="life-skills/wash-your-hands"'],
+  ['toddler/2-years/colors-and-shapes/coloring/circle','data-wc-restore="coloring/circle"'],
+  ['preschool/3-years/alphabet-and-letter-sounds/letter-a','data-wc-restore="alphabet/letter-a"']]){
+  const html=page(u);
+  assert.ok(html.includes(key),'restore keeps its own family key: '+u+' -> '+key);
  }
  // the flashcards set for this very class stays exactly as it was
  const fc=page('flashcards/matching-and-sorting');

@@ -313,7 +313,7 @@ export function colorActivityBody(a){
  const board=imageActivitySection({band:'colors',slug:a.slug,title:a.title,skill:a.skill,
   say:a.say,hint:a.hint,doneTitle:a.doneTitle,alt:a.alt,
   imgUrl:COLOR_BASE+a.img,w:art.w,h:art.h,
-  wsPath:'/worksheets/colors/'+a.slug+'/'});
+  wsPath:'/worksheets/colors/'+a.slug+'/',pagePath:CLIB_PATH+a.slug+'/'});
  return `${crumbNav([['Preschool','/preschool/'],['Colors &amp; Creativity',CLIB_PATH],[`${a.num}. ${a.title}`]])}
  ${board}
  <section class="wrap lesson-section"><span class="eyebrow">FOR GROWN-UPS</span><h2>Why this activity helps.</h2>

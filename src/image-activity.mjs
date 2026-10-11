@@ -18,6 +18,7 @@
 // and "Save my work" into the #ia-tools rail and the canvas over the image.
 // This module only renders the markup it mounts on.
 import {esc} from './adventure-kit.mjs';
+import {fcCommunityMount} from './flashcards/community.mjs';
 
 /* The drawing sheet carries a dedicated cache key ('?draw=1'). The same
    artwork URL is also shown without crossorigin elsewhere (page hero,
@@ -39,7 +40,7 @@ export function imageActivitySection(a){
   <div class="fc2-dual ia-dual">
    <div class="fc2-main">
     <section class="wc-section" aria-label="The adventure picture — draw right on it">
-     <div class="wc-mount" data-ia-activity data-ia-band="${esc(a.band)}" data-ia-slug="${esc(a.slug)}" data-wc data-wc-src="${esc(draw)}" data-wc-name="${esc(a.title)} adventure sheet" data-wc-w="${a.w}" data-wc-h="${a.h}" data-wc-toolbar="#ia-tools">
+     <div class="wc-mount" data-ia-activity data-ia-band="${esc(a.band)}" data-ia-slug="${esc(a.slug)}" data-wc data-wc-src="${esc(draw)}" data-wc-name="${esc(a.title)} adventure sheet" data-wc-w="${a.w}" data-wc-h="${a.h}" data-wc-toolbar="#ia-tools" data-wc-restore="adventures/${esc(a.band)}/${esc(a.slug)}">
       <figure class="fc2-hero ws-hero-art ia-sheet" style="--iar:${(a.w/a.h).toFixed(4)}"><img src="${esc(draw)}" width="${a.w}" height="${a.h}" alt="${esc(a.alt)}" fetchpriority="high" crossorigin="anonymous"></figure>
      </div>
      <noscript><p class="sa-noscript">Drawing on the picture needs JavaScript. Everything else on this page works without it — and the <a href="${esc(a.wsPath)}">matching worksheet</a> brings this adventure to paper.</p></noscript>
@@ -51,5 +52,6 @@ export function imageActivitySection(a){
     <section class="fc2-block"><span class="eyebrow">MY PROGRESS</span><h2>Save it to keep it.</h2><p class="ls-progress-line" data-ia-progress aria-live="polite">This adventure is cleared for you the moment you save your finished picture. Nothing counts until then — opening the page is just opening the door.</p><p class="ls-progress-done" data-ia-done hidden><strong>Cleared!</strong> ${esc(a.doneTitle?a.doneTitle+' ':'')}Your saved work is in your downloads, and the ribbon is on in the library.</p></section>
    </aside>
   </div>
+  ${a.pagePath?fcCommunityMount(a.pagePath):''}
  </section>`;
 }

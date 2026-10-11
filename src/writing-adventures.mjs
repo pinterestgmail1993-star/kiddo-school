@@ -503,7 +503,7 @@ export function writingPageBody(a){
  const board=imageActivitySection({band:'writing',slug:a.slug,title:a.title,skill:a.skill,
   say:a.say,hint:a.hint,doneTitle:a.doneTitle,alt:a.alt,
   imgUrl:WRITING_BASE+a.img,w:art.w,h:art.h,
-  wsPath:'/worksheets/writing/'+a.slug+'/'});
+  wsPath:'/worksheets/writing/'+a.slug+'/',pagePath:WLIB_PATH+a.slug+'/'});
  return `${crumbNav([['Preschool','/preschool/'],['Writing Adventures',WLIB_PATH],[`${a.num}. ${a.title}`]])}
  ${board}
  <section class="wrap lesson-section"><span class="eyebrow">FOR GROWN-UPS</span><h2>Why this adventure helps.</h2>

@@ -105,7 +105,8 @@ export function matchingActivityBody(a,site){
   <p class="lesson-copy">${esc(a.grown)}</p>
   <ul class="ws-skills">${a.skills.map(s=>`<li>${esc(s)}</li>`).join('')}</ul>
   <p class="lesson-copy">This activity belongs to <a href="${MS_CLASS_PATH}">Class 10 — Matching and Sorting (Age 2)</a> on the Learning Path, and the paper version lives with all thirty-one others in <a href="${MS_WS_BASE}">Matching &amp; Sorting Worksheets</a>. Progress is saved on this device for the child chosen in <a href="/my-classroom/">My Classroom</a> — and only a real save of finished work marks it cleared, never just opening the page.</p>
- </section>`;
+ </section>
+ ${fcCommunityMount(MS_ACT_PATH+a.slug+'/')}`;
 }
 
 /* ---------- the worksheet category page ---------- */

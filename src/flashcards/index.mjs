@@ -158,69 +158,12 @@ function crumbNav(parts){
 const heading=(eyebrow,title,desc)=>`<div class="page-heading wrap"><span class="eyebrow">${eyebrow}</span><h1>${title}</h1><p>${desc}</p></div>`;
 
 // ---- Reactions + reviews + comments (three separate things, kept separate) --
-// Reactions: one tap, no text, counted live. Reviews: star rating + optional
-// text, moderated. Comments: text only, moderated. Each has its own storage
-// (page_reactions / page_reviews / page_comments) and its own block here.
-export function fcCommunityMount(path){
- return `<section class="wrap lesson-section cm" data-fc-root data-page-path="${esc(path)}" aria-label="Family feedback">
- <span class="eyebrow">REACTIONS</span>
- <h2>How did it go?</h2>
- <p class="lesson-copy">One tap, no writing, no name. Pick the face that matches how it went — reactions are counted instantly and stay anonymous.</p>
- <noscript><p class="fc-hint">Tapping a reaction needs JavaScript. Everything else on this page works without it — and you are always welcome to write to the <a href="/principals-office/">Principal&rsquo;s Office</a> instead.</p></noscript>
- <div class="fc2-reactions" data-fc-reactions hidden role="group" aria-label="How did your kiddo like this? Choose one.">
-  ${REACTIONS.map(([v,emoji,label])=>`<button type="button" class="cm-btn" data-fc-reaction="${v}" aria-pressed="false"><span class="cm-emoji" aria-hidden="true">${emoji}</span><span>${label}</span><span class="fc2-count" data-fc-count="${v}" hidden aria-hidden="true"></span></button>`).join('')}
- </div>
- <p class="fc2-inline" data-fc-reacted hidden role="status" aria-live="polite"></p>
-
- <div class="fc2-block">
-  <span class="eyebrow">PARENT REVIEWS</span>
-  <h2>Parent reviews.</h2>
-  <p class="lesson-copy">A different thing from the quick faces above: a star rating for the grown-ups, plus an optional line about how it went. Every review is read by the school office before it appears.</p>
-  <noscript><p class="fc-hint">Sending a review needs JavaScript. The cards themselves work fine without it.</p></noscript>
-  <div class="fc2-listwrap" data-fc-reviews-box hidden>
-   <ul class="cm-list" data-fc-reviews></ul>
-  </div>
-  <p class="cm-empty" data-fc-reviews-empty>No parent reviews yet — yours could be the first.</p>
-  <form class="cm-form" data-fc-review-form hidden novalidate>
-   <fieldset class="fc2-stars">
-    <legend>Your rating <span class="cm-optional">(required)</span></legend>
-    <div class="fc2-star-row" role="radiogroup" aria-label="Rating from 1 to 5 stars">
-     ${[1,2,3,4,5].map(n=>`<label class="fc2-star"><input type="radio" name="fc-rating" value="${n}" data-fc-star><span aria-hidden="true">★</span><span class="fc2-star-text">${n} star${n>1?'s':''}</span></label>`).join('')}
-    </div>
-   </fieldset>
-   <label for="fc-review-text">Anything to add? <span class="cm-optional">(optional)</span></label>
-   <textarea id="fc-review-text" name="comment" data-fc-review-comment rows="3" maxlength="300" placeholder="What worked, what did not — a sentence or two is plenty."></textarea>
-   <label for="fc-review-name">Your name <span class="cm-optional">(optional — a first name, nickname or initials)</span></label>
-   <input type="text" id="fc-review-name" name="displayName" data-fc-review-name maxlength="40" autocomplete="off">
-   <p class="fc-hint">Reviews are read by the school office before they appear. Don&rsquo;t include private information — no surnames, ages or addresses.</p>
-   <label class="cm-confirm"><input type="checkbox" data-fc-review-confirm> I&rsquo;m the grown-up, and I&rsquo;m okay with this review being read for the Kiddo School community.</label>
-   <p class="cm-status" data-fc-review-status role="status" aria-live="polite"></p>
-   <button type="submit" class="button" data-fc-review-send>Send review</button>
-  </form>
- </div>
-
- <div class="fc2-block">
-  <span class="eyebrow">PARENT COMMENTS</span>
-  <h2>Parent comments.</h2>
-  <p class="lesson-copy">How did you use this page Share the game, the moment or the trick that worked in your house. Comments are read by the school office before they appear, and they are about your ideas — never about your child.</p>
-  <noscript><p class="fc-hint">Sending a comment needs JavaScript. The cards themselves work fine without it.</p></noscript>
-  <div class="fc2-listwrap" data-fc-comments-box hidden>
-   <ul class="cm-list" data-fc-comments></ul>
-  </div>
-  <p class="cm-empty" data-fc-comments-empty>No parent comments yet — yours could be the first.</p>
-  <form class="cm-form" data-fc-comment-form hidden novalidate>
-   <label for="fc-comment-text">Your comment <span class="cm-optional">(required)</span></label>
-   <textarea id="fc-comment-text" name="comment" data-fc-comment-text rows="3" maxlength="300" placeholder="A sentence or two is plenty."></textarea>
-   <label for="fc-comment-name">Your name <span class="cm-optional">(optional — a first name, nickname or initials)</span></label>
-   <input type="text" id="fc-comment-name" name="displayName" data-fc-comment-name maxlength="40" autocomplete="off">
-   <p class="fc-hint">Please don&rsquo;t include private information — no surnames, ages, addresses or anything private about your child.</p>
-   <label class="cm-confirm"><input type="checkbox" data-fc-comment-confirm> I&rsquo;m the grown-up, and I&rsquo;m okay with this comment being read for the Kiddo School community.</label>
-   <p class="cm-status" data-fc-comment-status role="status" aria-live="polite"></p>
-   <button type="submit" class="button" data-fc-comment-send>Send comment</button>
-  </form>
- </div>
- </section>`;
-}
+// The mount lives in ./community.mjs so every page type (these card pages,
+// the alphabet letter sets, worksheets, coloring pages and the Learning Path
+// activity pages) shares ONE implementation, wired to the same
+// /api/community/* endpoints by /assets/flashcards-community.js.
+import {fcCommunityMount} from './community.mjs';
+export {fcCommunityMount};
 
 // ---- The library card for /flashcards/ --------------------------------------
 export function fcSetCard(s){
@@ -266,13 +209,12 @@ export function fcCardPageBody(set,card,ctx){
  const enc=encodeURIComponent;
  const pageUrl=site+card.url;
  const shareTitle=`${card.word} flashcard for ${noun.toLowerCase()} — ${set.name} · Kiddo School`;
- // A color card has TWO faces: the splash and the matching picture. They
- // render side by side at their true 1414×2000 ratio (stacking on mobile);
- // single-image cards keep the original hero figure untouched.
- const heroFig=(src,w,h,cap,alt,lazy,altName)=>`<div class="wc-mount" data-wc data-wc-src="${esc(src)}" data-wc-name="${esc(altName||cap)}" data-wc-w="${w}" data-wc-h="${h}"><figure class="fc2-hero fc2-hero-half"><img src="${esc(src)}" width="${w}" height="${h}" alt="${esc(alt)}"${lazy?' loading="lazy"':''} crossorigin="anonymous"><figcaption><strong>${esc(cap)}</strong><span>Card ${card.n} of ${set.cards.length} · ${esc(set.name)}</span></figcaption></figure></div>`;
+ // Flashcards are paper: the card image is shown plain — no drawing canvas,
+ // no toolbar. Drawing lives on the Learning Path activity pages only.
+ const heroFig=(src,w,h,cap,alt,lazy)=>`<figure class="fc2-hero fc2-hero-half"><img src="${esc(src)}" width="${w}" height="${h}" alt="${esc(alt)}"${lazy?' loading="lazy"':''}><figcaption><strong>${esc(cap)}</strong><span>Card ${card.n} of ${set.cards.length} · ${esc(set.name)}</span></figcaption></figure>`;
  const figure=card.img2
-  ?`<div class="fc2-pair">${heroFig(card.img,card.w,card.h,card.word+' splash',card.alt,false,card.word+' splash')}${heroFig(card.img2,card.w,card.h,card.picWord||(card.word+' in real life'),card.alt2,true,card.picWord||(card.word+' in real life'))}</div>`
-  :`<div class="wc-mount" data-wc data-wc-src="${esc(card.img)}" data-wc-name="${esc(card.word+' — '+set.name)}" data-wc-w="${card.w}" data-wc-h="${card.h}"><figure class="fc2-hero"><img src="${card.img}" width="${card.w}" height="${card.h}" alt="${esc(card.alt)}" crossorigin="anonymous"><figcaption><strong>${esc(card.word)}</strong><span>Card ${card.n} of ${set.cards.length} · ${esc(set.name)}</span></figcaption></figure></div>`;
+  ?`<div class="fc2-pair">${heroFig(card.img,card.w,card.h,card.word+' splash',card.alt,false)}${heroFig(card.img2,card.w,card.h,card.picWord||(card.word+' in real life'),card.alt2,true)}</div>`
+  :`<figure class="fc2-hero"><img src="${card.img}" width="${card.w}" height="${card.h}" alt="${esc(card.alt)}"><figcaption><strong>${esc(card.word)}</strong><span>Card ${card.n} of ${set.cards.length} · ${esc(set.name)}</span></figcaption></figure>`;
  const pn=`<nav class="fc2-pn" aria-label="Previous and next card"><a class="fc2-pn-btn" href="${prev.url}" rel="prev"><span aria-hidden="true">←</span> <strong>${esc(prev.word)}</strong><span>Previous card</span></a><a class="fc2-pn-btn fc2-pn-next" href="${next.url}" rel="next"><strong>${esc(next.word)}</strong> <span aria-hidden="true">→</span><span>Next card</span></a></nav>`;
  // Cards with a real recording (Age 3 Class 6) get a real play control in
  // the say block — wired to /assets/sounds/animals/ by animal-sounds-class.js.
@@ -283,7 +225,6 @@ export function fcCardPageBody(set,card,ctx){
  const tryThis=`<div class="fc2-do"><h2>Try this</h2><p>${esc(card.try)}</p></div>`;
  const note=`<div class="fc2-do fc2-note"><h2>Quick parent note</h2><p>${esc(card.note)}</p></div>`;
  const dlName=f=>f.replace(/^\d+-/,'').replace(/\.webp$/,'');
- const drawHint=`<p class="fc2-drawhint"><strong>Draw on this card:</strong> pick a crayon under the picture, write or color right on the card with a finger, a stylus or the mouse, then tap “Save my work” to keep a copy. Nothing is uploaded anywhere — the drawing stays on your device.</p>`;
  const actions=`<div class="fc2-actions">${card.img2
   ?`<a class="button" href="${card.img}" download="${dlName(card.file)}.webp">Download splash <span aria-hidden="true">↓</span></a><a class="button" href="${card.img2}" download="${dlName(card.img2.split('/').pop())}.webp">Download picture <span aria-hidden="true">↓</span></a>`
   :`<a class="button" href="${card.img}" download="${esc(card.word.toLowerCase().replace(/[^a-z0-9]+/g,'-'))}.webp">Download card <span aria-hidden="true">↓</span></a>`}<button type="button" class="button" data-tc-print-view>Print this card</button>${set.printPath?`<a class="button" href="${set.printPath}">Print full set</a>`:''}<a class="button" href="${set.url}">View full set</a></div>`;
@@ -293,7 +234,7 @@ export function fcCardPageBody(set,card,ctx){
  return `${crumbNav([['Flashcards','/flashcards/'],[set.name,set.url],[card.word]])}
  <div class="page-heading wrap"><span class="eyebrow">FLASHCARD · ${esc(set.name.toUpperCase())} · AGES ${esc(set.ageLabel.toUpperCase())}</span><h1>${card.numeral?`Number ${esc(card.numeral)} Flashcard — ${esc(card.word)} for ${esc(noun)}`:card.letter?`${esc(card.word)} Flashcard — Letter ${esc(card.letter.toUpperCase())} for ${esc(noun)}`:`${esc(card.word)} Flashcard for ${esc(noun)}`}</h1><p>${esc(card.intro)}</p></div>
  <div class="fc2-dual wrap">
-  <div class="fc2-main">${figure}${drawHint}${pn}<section class="fc2-learn" aria-label="How to use this card">${say}${sound}${tryThis}${note}</section>${lesson}</div>
+  <div class="fc2-main">${figure}${pn}<section class="fc2-learn" aria-label="How to use this card">${say}${sound}${tryThis}${note}</section>${lesson}</div>
   <aside class="fc2-rail" aria-label="Download, share and family feedback"><section class="fc2-block fc2-first-block"><span class="eyebrow">TAKE IT WITH YOU</span><h2>Download, print, keep going.</h2>${actions}</section>${share}${fcCommunityMount(card.url)}</aside>
  </div>
  ${relGrid}`;

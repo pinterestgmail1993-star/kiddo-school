@@ -183,9 +183,11 @@ test('sitemap and search index carry every new URL',()=>{
  assert.ok(kinds.every(e=>e.k==='Coloring page')&&acts.every(e=>e.k==='Coloring activity'),'honest kinds');
 });
 
-test('the restore feature is opt-in: no existing mount gained it',()=>{
- for(const u of ['flashcards/alphabet-lowercase/letter-a','flashcards/colors-and-shapes/circle','worksheets/life-skills/wash-your-hands','preschool/life-skills/wash-your-hands']){
+test('the restore feature is opt-in: flashcards and printables stay off, activities own their key',()=>{
+ for(const u of ['flashcards/alphabet-lowercase/letter-a','flashcards/colors-and-shapes/circle','worksheets/life-skills/wash-your-hands','coloring-pages/shapes/circle']){
   const html=page(u);
-  assert.ok(!html.includes('data-wc-restore'),'restore stays off: '+u);
+  assert.ok(!html.includes('data-wc-restore'),'restore stays off on paper pages: '+u);
  }
+ const act=page('toddler/2-years/colors-and-shapes/coloring/circle');
+ assert.ok(act.includes('data-wc-restore="coloring/circle"'),'the coloring twin keeps its per-child restore');
 });
