@@ -29,7 +29,7 @@ export const LS_WS_PATH='/worksheets/life-skills/';
 export const LS_PLANNED=30;
 /* the sheet numbers whose artwork is not uploaded yet — kept honestly
    reserved; each opens here the day its file lands on the bucket */
-export const LS_MISSING=[3,5,6,7,8,9,10,11,12,13,14,15,18,19,20,21,22,23,24,26,27,28,29,30];
+export const LS_MISSING=[24];
 export const LS_READY=LS_PLANNED-LS_MISSING.length;
 
 const G=o=>o;
@@ -123,6 +123,351 @@ G({
  ],
  skills:['Asking for help','Trusted adults','Clear requests','Word tracing','Writing in a speech bubble'],
  grown:'Practise the real words at home: “Can you help me, please?” Praise the asking, not just the solving — children who know how to ask are safer and braver.'
+}),
+G({
+ num:3,slug:'get-ready',img:'03-get-ready.webp',w:1414,h:2000,
+ title:'Get Ready',word:'GET READY',
+ tag:'Dressing all by yourself, clothes to the right body area and a morning in the right order.',
+ meta:'A free getting-dressed worksheet for age 4: circle the child dressing independently, sequence the getting-ready pictures, match clothes to body areas, trace GET READY and draw a star beside the helpful habit — on screen or on paper.',
+ steps:[
+  ['Circle','Find the child who is dressing all by himself — circle him.'],
+  ['Sequence','Think about your morning: put the getting-ready pictures in order, 1, 2, 3.'],
+  ['Match','Draw a line from each piece of clothing to the body part where it goes.'],
+  ['Trace','Trace the words GET READY with steady, careful lines.'],
+  ['Draw','Look at the three habits and draw a star beside the helpful one.']
+ ],
+ skills:['Dressing independently','Clothes to body areas','Morning sequencing','Word tracing','Spotting helpful habits'],
+ grown:'Lay out tomorrow’s clothes together at bedtime and let your child dress themselves in the morning — buttons and zips are exactly the fine-motor work this sheet practises.'
+}),
+G({
+ num:5,slug:'pack-up',img:'05-pack-up.webp',w:1414,h:2000,
+ title:'Pack Up',word:'PACK UP',
+ tag:'Books, pencils and water bottles to the right pocket — getting ready for school like a pro.',
+ meta:'A free pack-up worksheet for preschoolers: circle the child packing school items, match each item to the correct bag pocket, tick the prepared child, trace PACK UP and draw something that belongs in a school bag.',
+ steps:[
+  ['Circle','Find the child packing her school bag — circle her.'],
+  ['Match','Draw a line from each school thing to the pocket where it belongs.'],
+  ['Choose','One child is prepared and one is in a muddle — tick the prepared one.'],
+  ['Trace','Trace the words PACK UP, nice and slow.'],
+  ['Draw','Draw one more thing that belongs in a school bag.']
+ ],
+ skills:['Packing for school','Matching items to places','Being prepared','Word tracing','Drawing from life'],
+ grown:'Pack the real school bag together the night before, naming each item and its pocket — “the bottle lives in the side pocket.” The sheet is the rehearsal; the hallway is the show.'
+}),
+G({
+ num:6,slug:'eat-well',img:'06-eat-well.webp',w:1414,h:2000,
+ title:'Eat Well',word:'EAT WELL',
+ tag:'Every-day foods and sometimes foods, good table habits and one healthy plate to fill.',
+ meta:'A free healthy-eating worksheet for age 4: circle the child eating neatly, sort foods into every day and sometimes, choose the correct spoon and cup use, trace EAT WELL and draw a healthy meal on the plate.',
+ steps:[
+  ['Circle','Find the child eating neatly at the table — circle them.'],
+  ['Sort','Put each picture card in a box: foods we eat every day, and treats for sometimes.'],
+  ['Choose','Two children are eating — tick the one using the spoon and cup correctly.'],
+  ['Trace','Trace the words EAT WELL in your best pencil.'],
+  ['Draw','Draw a healthy food (or two!) on the big empty plate.']
+ ],
+ skills:['Healthy food choices','Every day vs sometimes foods','Table manners','Word tracing','Drawing healthy meals'],
+ grown:'At the next meal, play the same sort for real: “is this an every-day food or a sometimes food?” Naming the rule beats banning the treat.'
+}),
+G({
+ num:7,slug:'stop-look-go',img:'07-stop-look-go.webp',w:1414,h:2000,
+ title:'Stop, Look, Go',word:'STOP LOOK GO',
+ tag:'Traffic light meanings, waiting at the crossing and choosing the safe place to cross.',
+ meta:'A free road-safety worksheet for preschoolers: circle the child waiting at the crossing, match traffic lights to stop, wait and go, choose the safe crossing, trace STOP LOOK GO and draw the line to the safe place to cross.',
+ steps:[
+  ['Circle','Find the child standing and waiting at the crossing — circle them.'],
+  ['Match','Draw a line from each traffic light to its meaning: stop, wait, go.'],
+  ['Choose','Tick the picture that shows the safe place to cross the road.'],
+  ['Trace','Trace the words STOP LOOK GO — say them out loud as you trace!'],
+  ['Draw','Draw a line from the walking child to the safe crossing.']
+ ],
+ skills:['Traffic light meanings','Waiting to cross','Choosing safe crossings','Word tracing','Road awareness'],
+ grown:'Practise the real thing at every crossing this week: “stop, look, listen — now we go together, holding hands.” The words on the sheet become the words of the walk.'
+}),
+G({
+ num:8,slug:'bedtime-routine',img:'08-bedtime-routine.webp',w:1414,h:2000,
+ title:'Bedtime Routine',word:'BEDTIME ROUTINE',
+ tag:'Teeth, pajamas and a story in the right order — and ticking the calm way to end the day.',
+ meta:'A free bedtime worksheet for age 4: circle the child getting ready for bed, sequence the bedtime steps, match each bedtime item to its use, trace BEDTIME ROUTINE and tick the calm bedtime habit — on screen or on paper.',
+ steps:[
+  ['Circle','Find the child getting ready for bed — look for the pajamas! — and circle them.'],
+  ['Sequence','Put the bedtime pictures in order: what comes first, next, last?'],
+  ['Match','Draw a line from each bedtime thing to what we do with it.'],
+  ['Trace','Trace the words BEDTIME ROUTINE, nice and slowly.'],
+  ['Tick','Read the three choices and tick the calm way to end the day.']
+ ],
+ skills:['Bedtime sequencing','Self-care before sleep','Calm vs busy habits','Word tracing','Matching items to uses'],
+ grown:'Photograph your child’s real bedtime order and tape it by the bed — the sheet’s sequence becomes their own routine chart, and lights-out stops being a negotiation.'
+}),
+G({
+ num:9,slug:'stay-safe',img:'09-stay-safe.webp',w:1414,h:2000,
+ title:'Stay Safe',word:'STAY SAFE',
+ tag:'Safe choices at home — outlets, knives, stairs — and matching every object to its safe use.',
+ meta:'A free safety worksheet for age 4: circle the safe choice, match household objects to their safe actions, cross out the unsafe action, trace STAY SAFE and draw a happy face beside the safe habit — on screen or on paper.',
+ steps:[
+  ['Circle','Look at each pair of pictures and circle the safe choice.'],
+  ['Match','Draw a line from each household object to the safe way we handle it.'],
+  ['Cross out','Find the unsafe action in each row and cross it out with a big X.'],
+  ['Trace','Trace the words STAY SAFE with your steadiest pencil.'],
+  ['Draw','Read the four habits and draw a happy face beside each safe one.']
+ ],
+ skills:['Home safety choices','Safe use of objects','Spotting unsafe actions','Word tracing','Safety habits'],
+ grown:'Walk the house together and find two real “grown-ups only” things — naming what is off-limits (and why) works far better than a blanket “no”.'
+}),
+G({
+ num:10,slug:'help-at-home',img:'10-help-at-home.webp',w:1414,h:2000,
+ title:'Help at Home',word:'HELP AT HOME',
+ tag:'Chores matched to their tools, kind helping hands and one job you can really do.',
+ meta:'A free helping-at-home worksheet for preschoolers: circle the child doing a chore, match each chore to its tool, choose the helpful behaviour, trace HELP AT HOME and draw one job you can do — on screen or on paper.',
+ steps:[
+  ['Circle','Find the child busy helping at home — circle them.'],
+  ['Match','Draw a line from each chore to the tool it needs.'],
+  ['Choose','Two children want the same toy — tick the one showing helpful behaviour.'],
+  ['Trace','Trace the words HELP AT HOME, nice and big.'],
+  ['Draw','Draw one job you can really do at your house.']
+ ],
+ skills:['Helping with chores','Matching chores to tools','Kind behaviour','Word tracing','Job confidence'],
+ grown:'Give your child one real, daily job this week — feeding the pet, pairing the socks — and let the sheet’s drawing be the contract they signed.'
+}),
+G({
+ num:11,slug:'care-for-plants',img:'11-care-for-plants.webp',w:1414,h:2000,
+ title:'Care for Plants',word:'CARE FOR PLANTS',
+ tag:'Water and sunlight for growing things, gentle hands and one new leaf to draw.',
+ meta:'A free plant-care worksheet for age 4: circle the child caring for a plant, match water and sunlight to what plants need, choose the gentle care picture, trace CARE FOR PLANTS and draw a leaf on the plant — on screen or on paper.',
+ steps:[
+  ['Circle','Find the child giving the plant a drink — circle them.'],
+  ['Match','Draw a line from the watering can and the sun to what the plant needs.'],
+  ['Choose','Look at all three children and tick the one showing gentle care.'],
+  ['Trace','Trace the words CARE FOR PLANTS in your best pencil.'],
+  ['Draw','The little plant is bare — draw a brand-new leaf on its stem.']
+ ],
+ skills:['What plants need','Gentle handling','Care and responsibility','Word tracing','Drawing nature'],
+ grown:'Start one pot on the windowsill and make your child its official waterer — the first new leaf deserves a celebration.'
+}),
+G({
+ num:12,slug:'listen-well',img:'12-listen-well.webp',w:1414,h:2000,
+ title:'Listen Well',word:'LISTEN WELL',
+ tag:'Ears ready, follow the instruction the first time — clap, sit, raise your hand.',
+ meta:'A free listening worksheet for preschoolers: circle the child listening, match each instruction to the correct action, choose the careful listener, trace LISTEN WELL and draw a happy face beside the good habit — on screen or on paper.',
+ steps:[
+  ['Circle','Find the child using their listening ears — circle them.'],
+  ['Match','Draw a line from each instruction to the child doing it: clap, sit, raise your hand.'],
+  ['Choose','One child is listening carefully — tick that picture.'],
+  ['Trace','Trace the words LISTEN WELL, nice and carefully.'],
+  ['Draw','Draw a happy face beside “I listen and follow directions.”']
+ ],
+ skills:['Careful listening','Following instructions','Listening positions','Word tracing','Classroom readiness'],
+ grown:'Play “instruction of the day”: give two-step directions at home (“hang your coat, then wash your hands”) and celebrate when the first time is the right time.'
+}),
+G({
+ num:13,slug:'my-body-my-rules',img:'13-my-body-my-rules.webp',w:1414,h:2000,
+ title:'My Body, My Rules',word:'MY BODY, MY RULES',
+ tag:'Asking before touching, comfortable personal space and naming feelings — the foundations of body safety.',
+ meta:'A free body-safety worksheet for age 4: circle the child asking before touching, choose the comfortable personal space, match feeling faces to words, trace MY BODY, MY RULES and draw a stop hand beside the safe choice.',
+ steps:[
+  ['Circle','Find the child asking first — “Can I hug you?” — and circle them.'],
+  ['Choose','Tick the picture showing comfortable personal space between friends.'],
+  ['Match','Draw a line from each feeling face to its word: happy, worried, unsure.'],
+  ['Trace','Trace the words MY BODY, MY RULES — these are important words.'],
+  ['Draw','Find the safe choice and draw a big stop hand in the circle beside it.']
+ ],
+ skills:['Asking before touching','Personal space','Naming feelings','Saying no','Body autonomy'],
+ grown:'Teach the family rule that hugs are always askable — relatives included. A child who practises “no, thank you” on a worksheet will use it at a birthday party.'
+}),
+G({
+ num:14,slug:'be-gentle',img:'14-be-gentle.webp',w:1414,h:2000,
+ title:'Be Gentle',word:'BE GENTLE',
+ tag:'Soft hands for animals, each pet item to its job, and the right food and water to choose.',
+ meta:'A free gentle-hands worksheet for age 4: circle the child giving gentle care, match each pet item to its use, choose the correct pet food and water, trace BE GENTLE and draw one thing a pet needs — on screen or on paper.',
+ steps:[
+  ['Circle','Look how each child treats the animals — circle the one giving gentle care.'],
+  ['Match','Draw a line from each pet item to its job: brush, feed, walk.'],
+  ['Choose','Tick the food and water that truly belong to a pet.'],
+  ['Trace','Trace the words BE GENTLE with soft, careful lines.'],
+  ['Draw','Draw one more thing a pet needs to be happy and healthy.']
+ ],
+ skills:['Gentle hands with animals','Pet care items','Pet needs','Word tracing','Kindness to animals'],
+ grown:'Practise the two-finger touch on a real pet or a soft toy — “gently, gently” — and let your child serve the real water bowl, just like the sheet.'
+}),
+G({
+ num:15,slug:'care-for-clothes',img:'15-care-for-clothes.webp',w:1414,h:2000,
+ title:'Care for Clothes',word:'CARE FOR CLOTHES',
+ tag:'Clean or dirty, every item to its place, and a shirt to draw on the washing line.',
+ meta:'A free clothing-care worksheet for preschoolers: circle the clean clothes, match each clothing item to where it belongs, sort pictures into clean and dirty, trace CARE FOR CLOTHES and draw a shirt on the clothes line.',
+ steps:[
+  ['Circle','Look for the sparkles! Circle the clothes that are clean.'],
+  ['Match','Draw a line from each clothing item to its correct place.'],
+  ['Sort','Put each picture in a box: the clean basket or the dirty basket.'],
+  ['Trace','Trace the words CARE FOR CLOTHES, nice and steadily.'],
+  ['Draw','The washing line is half empty — draw a shirt hanging on it.']
+ ],
+ skills:['Clean vs dirty sorting','Tidying clothes away','Laundry basics','Word tracing','Drawing clothes'],
+ grown:'Let your child sort the real laundry into lights and darks, or hang their own shirt on a low hook — sorting games make tidy-up time independent.'
+}),
+G({
+ num:18,slug:'dress-for-weather',img:'18-dress-for-weather.webp',w:1414,h:2000,
+ title:'Dress for Weather',word:'DRESS FOR WEATHER',
+ tag:'Raincoats for rain, mittens for snow, shorts for sun — matching the day to the clothes.',
+ meta:'A free weather worksheet for age 4: circle the rainy-day clothes, match each weather to the right outfit, choose the safe way to stay warm or cool, trace DRESS FOR WEATHER and draw something for a sunny day.',
+ steps:[
+  ['Circle','Find the things you need on a rainy day — there is more than one! — and circle them.'],
+  ['Match','Draw a line from each weather to the clothes that belong with it.'],
+  ['Choose','Tick the child who is dressed the safe and comfortable way.'],
+  ['Trace','Trace the words DRESS FOR WEATHER in your best pencil.'],
+  ['Draw','Draw one more thing you would take on a sunny day.']
+ ],
+ skills:['Weather and clothing matching','Seasonal dressing','Comfort and safety choices','Word tracing','Drawing for weather'],
+ grown:'Make the morning weather check your child’s job: look out the window, name the weather, choose the clothes — the sheet becomes a daily habit.'
+}),
+G({
+ num:19,slug:'calm-down',img:'19-calm-down.webp',w:1414,h:2000,
+ title:'Calm Down',word:'CALM DOWN',
+ tag:'Naming big feelings, choosing a calm-down action and finding the helpful breath.',
+ meta:'A free calm-down worksheet for preschoolers: circle the child using a calm-down choice, match feeling faces to words, choose the helpful breathing action, trace CALM DOWN and draw a calm face beside the good choice.',
+ steps:[
+  ['Circle','Find the child using a calm-down choice — sitting and breathing — and circle them.'],
+  ['Match','Draw a line from each feeling face to its word: happy, angry, sad, calm.'],
+  ['Choose','Tick the picture that shows a helpful breathing action.'],
+  ['Trace','Trace the words CALM DOWN, slowly — tracing is calm too.'],
+  ['Draw','Draw a calm face in the circle beside the good choice.']
+ ],
+ skills:['Naming feelings','Calm-down choices','Slow breathing','Word tracing','Self-regulation'],
+ grown:'Practise the sheet’s breath when your child is ALREADY calm — smell the flower, blow the candle — so the skill is there when the big feelings arrive.'
+}),
+G({
+ num:20,slug:'keep-it-clean',img:'20-keep-it-clean.webp',w:1414,h:2000,
+ title:'Keep It Clean',word:'KEEP IT CLEAN',
+ tag:'Rubbish in the bin, paper-plastic-glass to the right recycling, and care for nature.',
+ meta:'A free tidying-and-recycling worksheet for age 4: circle the child using the bin, match paper, plastic and glass to the correct bins, choose the care-for-nature picture, trace KEEP IT CLEAN and draw something recyclable.',
+ steps:[
+  ['Circle','Find the child putting rubbish where it belongs — circle them.'],
+  ['Match','Draw a line from each material — paper, plastic, glass — to its correct bin.'],
+  ['Choose','Tick the picture showing care for nature.'],
+  ['Trace','Trace the words KEEP IT CLEAN, nice and bold.'],
+  ['Draw','Draw one more thing that can be recycled.']
+ ],
+ skills:['Using the bin','Sorting for recycling','Care for nature','Word tracing','Environmental habits'],
+ grown:'Start a family recycling race: who can put their rubbish in the right bin all week? The sheet’s three colours match many real bins.'
+}),
+G({
+ num:21,slug:'wait-your-turn',img:'21-wait-your-turn.webp',w:1414,h:2000,
+ title:'Wait Your Turn',word:'WAIT YOUR TURN',
+ tag:'Calm waiting, the turn-taking order on the slide and sharing without grabbing.',
+ meta:'A free turn-taking worksheet for preschoolers: circle the child waiting calmly, number the turn-taking pictures in order, choose the sharing picture, trace WAIT YOUR TURN and draw a smile beside the patient choice.',
+ steps:[
+  ['Circle','Find the child standing and waiting calmly — circle them.'],
+  ['Number','Write 1, 2, 3 beside the slide pictures in the right turn-taking order.'],
+  ['Choose','Two children and one toy — tick the picture showing sharing a turn.'],
+  ['Trace','Trace the words WAIT YOUR TURN, nice and patiently.'],
+  ['Draw','Draw a smile in the circle beside the patient choice.']
+ ],
+ skills:['Waiting calmly','Turn-taking order','Sharing and patience','Word tracing','Emotional control'],
+ grown:'Play turn-taking games at home with a visible timer or a song — when the waiting has a shape, patience stops being a battle.'
+}),
+G({
+ num:22,slug:'use-kind-words',img:'22-use-kind-words.webp',w:1414,h:2000,
+ title:'Use Kind Words',word:'USE KIND WORDS',
+ tag:'Solving small problems kindly — calm talking, helpful actions and one friendly speech bubble.',
+ meta:'A free kind-words worksheet for age 4: circle the child using kind problem-solving, match each problem to a helpful action, choose the calm talking picture, trace USE KIND WORDS and draw a friendly speech bubble.',
+ steps:[
+  ['Circle','Find the children solving the teddy problem together — circle the kind problem-solver.'],
+  ['Match','Draw a line from each little problem to the helpful action that fixes it.'],
+  ['Choose','Two ways to talk — tick the picture showing calm talking.'],
+  ['Trace','Trace the words USE KIND WORDS with your kindest pencil.'],
+  ['Draw','Two friends need an idea — draw a speech bubble with a friendly solution.']
+ ],
+ skills:['Kind problem-solving','Matching problems to solutions','Calm talking','Word tracing','Friendly words'],
+ grown:'Arm your child with two real sentences — “can I have a turn when you’re done?” and “let’s build it together” — and notice out loud every time they use one.'
+}),
+G({
+ num:23,slug:'helping-people',img:'23-helping-people.webp',w:1414,h:2000,
+ title:'Helping People',word:'HELPING PEOPLE',
+ tag:'Doctors, firefighters, teachers and mail carriers — the right helper for every situation.',
+ meta:'A free community-helpers worksheet for age 4: circle the right helper for each situation, match each helper to their tool, choose the respectful picture, trace HELPING PEOPLE and draw your own community helper.',
+ steps:[
+  ['Circle','For each situation, circle the helper who can help: a hurt knee, a fire, a letter to post.'],
+  ['Match','Draw a line from each helper to the tool of their job.'],
+  ['Choose','One child is respectful and one is rude — tick the respectful one.'],
+  ['Trace','Trace the words HELPING PEOPLE, nice and carefully.'],
+  ['Draw','Draw your own community helper in the big box — who would you be?']
+ ],
+ skills:['Community helpers','Helpers and their tools','Respect for helpers','Word tracing','Drawing people'],
+ grown:'On your next walk, spot the real helpers — crossings guards, nurses, postal workers — and wave. Respect practised in the street sticks for life.'
+}),
+G({
+ num:26,slug:'tell-the-truth',img:'26-tell-the-truth.webp',w:1414,h:2000,
+ title:'Tell the Truth',word:'TELL THE TRUTH',
+ tag:'Honest words in tricky moments — broken vase, stolen cookie, low grade — and owning your mistakes.',
+ meta:'A free honesty worksheet for age 4: circle the child telling the truth, match each situation to the honest choice, choose the responsible picture, trace TELL THE TRUTH and draw a happy face beside the honest action.',
+ steps:[
+  ['Circle','Two children say the same words — look at the homework! — and circle the one telling the truth.'],
+  ['Match','Draw a line from each tricky situation to the honest thing to say.'],
+  ['Choose','Tick the picture showing taking responsibility.'],
+  ['Trace','Trace the words TELL THE TRUTH, strong and clear.'],
+  ['Draw','Read the three actions and draw a happy face beside the honest one.']
+ ],
+ skills:['Honesty','Owning mistakes','Responsible choices','Word tracing','Courage to speak truth'],
+ grown:'Thank your child for telling the truth EVEN when the news is bad — if honesty is always rewarded, the next truth comes easier.'
+}),
+G({
+ num:27,slug:'take-care',img:'27-take-care.webp',w:1414,h:2000,
+ title:'Take Care',word:'TAKE CARE',
+ tag:'Gentle hands for books, every school supply to its place, and careful use we can tick.',
+ meta:'A free take-care worksheet for preschoolers: circle the child treating books gently, match each school supply to its proper place, choose the careful-use picture, trace TAKE CARE and draw a book on the shelf.',
+ steps:[
+  ['Circle','One child hugs a book and one tears it — circle the child treating books gently.'],
+  ['Match','Draw a line from each school supply to its proper place.'],
+  ['Choose','Look at all four pictures and tick the one showing careful use.'],
+  ['Trace','Trace the words TAKE CARE with steady, careful lines.'],
+  ['Draw','The shelf is empty — draw a book standing on it.']
+ ],
+ skills:['Caring for books','Tidying supplies','Careful vs careless use','Word tracing','Respect for property'],
+ grown:'Give your child one shelf or drawer that is completely theirs to look after — ownership teaches care better than reminders do.'
+}),
+G({
+ num:28,slug:'my-daily-routine',img:'28-my-daily-routine.webp',w:1414,h:2000,
+ title:'My Daily Routine',word:'MY DAILY ROUTINE',
+ tag:'Morning, afternoon and night in order — and a clock showing morning to draw.',
+ meta:'A free daily-routine worksheet for age 4: circle the morning activity, put the routine pictures in order, match morning, afternoon and night to their scenes, trace MY DAILY ROUTINE and draw a morning clock.',
+ steps:[
+  ['Circle','Find the child starting the day — circle the morning activity.'],
+  ['Order','Use the three small pictures to help: write 1, 2, 3 or draw the routine in order.'],
+  ['Match','Draw a line from morning, afternoon and night to the right scene.'],
+  ['Trace','Trace the words MY DAILY ROUTINE, nice and long.'],
+  ['Draw','Draw the clock hands showing a morning time you wake up.']
+ ],
+ skills:['Daily sequencing','Morning, afternoon, night','Time words','Word tracing','Clock awareness'],
+ grown:'Photograph five moments of your child’s real day and shuffle them like cards — your child puts the day back in order, exactly like the sheet.'
+}),
+G({
+ num:29,slug:'play-fair',img:'29-play-fair.webp',w:1414,h:2000,
+ title:'Play Fair',word:'PLAY FAIR',
+ tag:'Sharing the game, fair choices when things go wrong and shaking hands at the end.',
+ meta:'A free fair-play worksheet for preschoolers: circle the children playing fairly, match each game situation to the fair choice, choose the kind winning picture, trace PLAY FAIR and draw a smile beside good sportsmanship.',
+ steps:[
+  ['Circle','Two games are happening — circle the children playing fairly together.'],
+  ['Match','Draw a line from each game problem to the fair choice that fixes it.'],
+  ['Choose','Tick the picture showing kind winning or losing.'],
+  ['Trace','Trace the words PLAY FAIR in your best pencil.'],
+  ['Draw','Draw a smile beside the good sportsmanship choice.']
+ ],
+ skills:['Fair play','Winning and losing kindly','Resolving game problems','Word tracing','Good sportsmanship'],
+ grown:'Model the losing! Let your child see you lose a board game, breathe, and say “good game” — they copy what they watch far more than what they are told.'
+}),
+G({
+ num:30,slug:'save-resources',img:'30-save-resources.webp',w:1414,h:2000,
+ title:'Save Resources',word:'SAVE RESOURCES',
+ tag:'Taps off, lights off, short showers — matching each action to saving water or electricity.',
+ meta:'A free saving-resources worksheet for age 4: circle the child turning off the tap, match each action to saving water or electricity, choose the responsible-use picture, trace SAVE RESOURCES and draw water drops beside the good habits.',
+ steps:[
+  ['Circle','Find the child who turned the tap off — circle them.'],
+  ['Match','Draw a line from each action to what it saves: water or electricity.'],
+  ['Choose','Look at all four pictures and tick the responsible use.'],
+  ['Trace','Trace the words SAVE RESOURCES, letter by letter.'],
+  ['Draw','Read the four habits and draw a water drop beside each good one.']
+ ],
+ skills:['Saving water','Saving electricity','Responsible habits','Word tracing','Planet care'],
+ grown:'Make your child the house’s “lights ranger” for a week — empty room, lights off. Real jobs turn worksheet habits into family habits.'
 })
 ];
 
@@ -151,7 +496,8 @@ export function lifeSkillsClassBody(){
    <span class="sa-card-body"><strong>${esc(a.title)}</strong><span class="sa-card-tag">${esc(a.tag)}</span><span class="sa-card-skill">Do it on screen with your finger, a stylus or the mouse</span></span>
    <span class="sa-card-play">Start the activity <span aria-hidden="true">→</span></span>
   </a>`).join('');
- const missing=LS_MISSING.length?`<p class="lesson-note">${LS_READY} of the planned ${LS_PLANNED} activities are ready now. The other ${LS_MISSING.length} sheets (numbers ${LS_MISSING.join(', ')}) appear here with their own real pages the day their artwork is uploaded — nothing is published before its sheet really exists. Every ready activity has a printable twin in the <a href="${LS_WS_PATH}">Life Skills worksheet library</a>.</p>`:`<p class="lesson-note">All ${LS_PLANNED} planned activities are live, each with its printable twin in the <a href="${LS_WS_PATH}">Life Skills worksheet library</a>.</p>`;
+ const missingNote=LS_MISSING.length===1?`Sheet number ${LS_MISSING[0]} appears here with its own real page the day its artwork is uploaded — nothing is published before its sheet really exists. Every ready activity has a printable twin in the <a href="${LS_WS_PATH}">Life Skills worksheet library</a>.`:LS_MISSING.length>1?`The other ${LS_MISSING.length} sheets (numbers ${LS_MISSING.join(', ')}) appear here with their own real pages the day their artwork is uploaded — nothing is published before its sheet really exists. Every ready activity has a printable twin in the <a href="${LS_WS_PATH}">Life Skills worksheet library</a>.`:`Every planned activity is live, each with its printable twin in the <a href="${LS_WS_PATH}">Life Skills worksheet library</a>.`;
+ const missing=`<p class="lesson-note">${LS_READY} of the planned ${LS_PLANNED} activities are ready now. ${missingNote}</p>`;
  return `${crumbNav([['Preschool','/preschool/'],['Age 4','/preschool/4-years/'],['Life Skills &amp; Good Habits']])}
  <article class="wrap lesson-hero"><div class="lesson-hero-copy">
   <span class="eyebrow">CLASS 32 · PRESCHOOL AGES 4–5</span>
@@ -230,7 +576,7 @@ export function lifeSkillsWsCategoryBody(){
   <span class="ws-card-body"><strong>${esc(w.title)} Worksheet</strong><span class="ws-card-meta"><span>Ages 4–5</span><span>Class 32</span><span>Life Skills</span></span><span class="ws-card-desc">${esc(w.tag)}</span></span>
   <span class="ws-card-open">View Worksheet <span aria-hidden="true">→</span></span>
  </a>`).join('');
- const note=LS_MISSING.length?`<p class="lesson-note">${LS_READY} of the planned ${LS_PLANNED} sheets are ready now — the ones whose artwork has been uploaded. The remaining ${LS_MISSING.length} appear here the day their artwork lands; nothing is published before it can be printed honestly.</p>`:'';
+ const note=LS_MISSING.length===1?`<p class="lesson-note">${LS_READY} of the planned ${LS_PLANNED} sheets are ready now — the ones whose artwork has been uploaded. Sheet number ${LS_MISSING[0]} appears here the day its artwork lands; nothing is published before it can be printed honestly.</p>`:LS_MISSING.length>1?`<p class="lesson-note">${LS_READY} of the planned ${LS_PLANNED} sheets are ready now — the ones whose artwork has been uploaded. The remaining ${LS_MISSING.length} (numbers ${LS_MISSING.join(', ')}) appear here the day their artwork lands; nothing is published before it can be printed honestly.</p>`:'';
  return `${crumbNav([['Worksheets','/worksheets/'],['Life Skills &amp; Good Habits']])}
  <div class="page-heading wrap"><span class="eyebrow">LIFE SKILLS WORKSHEETS \u00b7 AGES 4\u20135</span><h1>Life Skills &amp; Good Habits worksheets — free printables for little hands.</h1><p>Everyday skills on real activity sheets: wash your hands, tidy up, be kind, move your body, the magic words and asking for help. Download the original sheet, print it, or do it on screen in <a href="${LS_CLASS_PATH}">Class 32</a> first.</p></div>
  <section class="wrap section compact" aria-label="All life skills worksheets">

@@ -76,8 +76,8 @@ export function worksheetsHubBody(){
  `<a class="ws-cat" href="/worksheets/life-skills/">
    <span class="ws-cat-head"><img src="${BRAND_R2}kiddo-subject-science.webp" width="1264" height="1264" alt="" aria-hidden="true" loading="lazy"><span class="ws-cat-pill" style="--tint:#fdeee4;--accent:#c96f2e">Class 32</span><strong>Life Skills &amp; Good Habits</strong></span>
    <p>Everyday skills on real activity sheets \u2014 wash your hands, tidy up, be kind, move your body, the magic words and asking for help.</p>
-   <span class="ws-count-note">6 free worksheets of the planned 30 \u2014 more arrive with their artwork</span>
-   <span class="ws-cat-picks"><span>Wash Your Hands</span><span>Tidy Up</span><span>Be Kind</span></span>
+   <span class="ws-count-note">29 free worksheets of the planned 30 \u2014 sheet 24 arrives with its artwork</span>
+   <span class="ws-cat-picks"><span>Wash Your Hands</span><span>Tidy Up</span><span>Calm Down</span></span>
    <span class="fc-open">Browse Life Skills worksheets <span aria-hidden="true">↗</span></span>
   </a>`;
  return `${crumbNav([['Worksheets']])}
