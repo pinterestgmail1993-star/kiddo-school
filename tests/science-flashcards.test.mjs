@@ -78,21 +78,18 @@ test('36 pages built: the set page + one page per card, unique titles, canonical
  assert.equal(titles.size,36);
 });
 
-test('card pages are PAPER and carry the five content blocks: what, why, say, try, note',()=>{
+test('card pages are PAPER and carry the printed-card trio: helps, roleplay, teach tip',()=>{
  for(const c of set.cards){
   const html=page('flashcards/science-nature-and-discovery/'+c.slug);
   for(const bad of ['data-wc','wc-mount','wc-canvas','class="wc-','#ls-tools','Save my work','pencil case','Your pencil'])
    assert.ok(!html.includes(bad),bad+' must not appear on science flashcard '+c.slug);
-  // the five content elements
+  // the printed-card trio (fresh copy, never shared with the lessons)
   assert.match(html,/alt="A science flashcard: /,'image alt on '+c.slug);
-  assert.ok(html.includes('Why it helps a preschooler'),'why block on '+c.slug);
-  assert.ok(html.includes(esc(sciCards[c.slug].why)),'why copy on '+c.slug);
-  assert.ok(html.includes('Say it together'),'say block on '+c.slug);
-  assert.ok(html.includes(esc(sciCards[c.slug].say)),'question copy on '+c.slug);
-  assert.ok(html.includes('Try this'),'try block on '+c.slug);
-  assert.ok(html.includes(esc(sciCards[c.slug].try)),'experiment copy on '+c.slug);
-  assert.ok(html.includes('Quick parent note'),'note block on '+c.slug);
-  assert.ok(html.includes(esc(sciCards[c.slug].note)),'fact copy on '+c.slug);
+  assert.ok(html.includes('How this card helps'),'helps block on '+c.slug);
+  assert.ok(html.includes('How to roleplay it'),'roleplay block on '+c.slug);
+  assert.ok(html.includes('How to teach with this card'),'teach-tip block on '+c.slug);
+  for(const gone of ['<h2>Say it together</h2>','<h2>Try this</h2>','<h2>Quick parent note</h2>','<h2>Why it helps a preschooler</h2>'])
+   assert.ok(!html.includes(gone),gone+' must not duplicate the lesson on '+c.slug);
   // download/print/share, prev/next in teaching order, community, schema
   assert.ok(html.includes(`href="${c.img}" download=`),'download button on '+c.slug);
   assert.ok(html.includes('data-tc-print-view'),'print button on '+c.slug);

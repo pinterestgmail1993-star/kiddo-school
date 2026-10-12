@@ -62,10 +62,11 @@ test('the 29 library card pages are PAPER: download, print, share, parent conten
   assert.ok(h.includes('data-tc-print'),'print button on '+slug);
   assert.ok(h.includes('fc2-share'),'share buttons on '+slug);
   assert.ok(h.includes(esc(c.intro)),'what-it-is copy on '+slug);
-  assert.ok(h.includes(esc(c.who)),'deeper copy on '+slug);
-  assert.ok(h.includes(esc(c.say)),'say-together line on '+slug);
-  assert.ok(h.includes(esc(c.try)),'try-at-home on '+slug);
-  assert.ok(h.includes('Quick parent note'),'parent note on '+slug);
+  assert.ok(h.includes('How this card helps'),'helps block on '+slug);
+  assert.ok(h.includes('How to roleplay it'),'roleplay block on '+slug);
+  assert.ok(h.includes('How to teach with this card'),'teach-tip block on '+slug);
+  for(const gone of ['<h2>Say it together</h2>','<h2>Try this</h2>','<h2>Quick parent note</h2>','<h2>What is fog'])
+   assert.ok(!h.includes(gone),gone+' must not duplicate the lesson on '+slug);
   assert.ok(h.includes(esc(c.metaDescription)),'unique description used on '+slug);
   assert.ok(!h.includes('aggregateRating'),'no fabricated ratings on '+slug);
   seenT.add(c.metaDescription);

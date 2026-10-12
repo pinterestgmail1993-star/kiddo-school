@@ -114,17 +114,15 @@ test('no inaccurate reassurances — the owner correction is enforced',()=>{
  }
 });
 
-test('the 29 library card pages carry helper content, downloads and NO canvas',()=>{
+test('the 29 library card pages carry the printed-card trio, downloads and NO canvas',()=>{
  const slugs=lesson.cards.map(c=>c.file.replace(/\.webp$/,''));
  for(const slug of slugs){
   const h=read(LIB.slice(1)+slug+'/index.html');
-  const c=cards[slug];
-  assert.ok(h.includes('What is this community helper?'),'who block on '+slug);
-  assert.ok(h.includes('What do they do?'),'job block on '+slug);
-  assert.ok(h.includes('Why it helps a preschooler'),'why block on '+slug);
-  assert.ok(h.includes('Say it together'),'say block on '+slug);
-  assert.ok(h.includes('Try this'),'try block on '+slug);
-  assert.ok(h.includes('Quick parent note'),'note block on '+slug);
+  assert.ok(h.includes('How this card helps'),'helps block on '+slug);
+  assert.ok(h.includes('How to roleplay it'),'roleplay block on '+slug);
+  assert.ok(h.includes('How to teach with this card'),'teach-tip block on '+slug);
+  for(const gone of ['<h2>What is this community helper?</h2>','<h2>What do they do?</h2>','<h2>Say it together</h2>','<h2>Try this</h2>','<h2>Quick parent note</h2>'])
+   assert.ok(!h.includes(gone),gone+' must not duplicate the lesson on '+slug);
   assert.ok(!h.includes('data-wc'),'no drawing canvas on library card '+slug);
   assert.ok(h.includes('Download card'),'download button on '+slug);
   assert.ok(h.includes('fcCommunityMount')||h.includes('data-fc-reactions')||h.includes('community'),'community mount on '+slug);
@@ -140,8 +138,8 @@ test('safety guidance ships where relevant, honestly phrased',()=>{
  for(const s of withSafety){
   assert.ok(cards[s].safety&&cards[s].safety.length>40,'safety guidance on '+s);
   assert.ok(lpContent[s].safety&&lpContent[s].safety.length>40,'safety guidance on LP lesson '+s);
-  const h=read(LIB.slice(1)+s+'/index.html');
-  assert.ok(h.includes('Staying safe'),'safety block rendered on '+s);
+  const h=read('preschool/4-years/community-helpers-and-our-neighborhood/learn/'+s+'/index.html');
+  assert.ok(h.includes('Staying safe'),'safety block rendered on the lesson page '+s);
  }
 });
 

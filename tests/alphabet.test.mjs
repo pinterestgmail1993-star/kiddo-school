@@ -57,7 +57,9 @@ test('26 card pages: unique letter H1s, honest titles, descriptions, sound block
   assert.ok(html.includes(`<h1>${c.word} Flashcard — Letter ${up} for Preschoolers</h1>`),`${c.slug} H1 follows the spec pattern`);
   assert.ok(html.includes(`content="${alphabetCardContent[c.slug].metaDescription}"`),`${c.slug} uses its unique meta description`);
   assert.ok(html.includes('Letter sound'),`${c.slug} has the letter-sound block`);
-  assert.ok(html.includes('Say it together')&&html.includes('Try this')&&html.includes('Quick parent note'),`${c.slug} carries say/try/note`);
+  assert.ok(html.includes('How this card helps')&&html.includes('How to roleplay it')&&html.includes('How to teach with this card'),`${c.slug} carries the printed-card trio`);
+  for(const gone of ['<h2>Say it together</h2>','<h2>Try this</h2>','<h2>Quick parent note</h2>'])
+   assert.ok(!html.includes(gone),`${c.slug} must not duplicate the lesson with ${gone}`);
   assert.ok(html.includes('Download card'),`${c.slug} has a download button`);
   assert.ok(html.includes(`href="${c.img}" download`),'download points at the real WebP');
   assert.ok(html.includes('View full set')&&html.includes(`href="${set.url}"`),`${c.slug} links the full set`);

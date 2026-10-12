@@ -81,9 +81,15 @@ test('card pages: unique titles and descriptions, say/try/note, download, prev/n
   assert.ok(!titles.has(title),`duplicate title: ${title}`);titles.add(title);
   const desc=html.match(/name="description" content="([^"]+)"/)[1];
   assert.ok(!descriptions.has(desc),`duplicate description on ${c.url}`);descriptions.add(desc);
-  assert.ok(html.includes('Say it together'),`${c.url} missing say-it-together`);
-  assert.ok(html.includes('Try this'),`${c.url} missing try-this`);
-  assert.ok(html.includes('Quick parent note'),`${c.url} missing parent note`);
+  const trio=['How this card helps','How to roleplay it','How to teach with this card'].every(x=>html.includes(x));
+  if(trio){
+   for(const gone of ['<h2>Say it together</h2>','<h2>Try this</h2>','<h2>Quick parent note</h2>'])
+    assert.ok(!html.includes(gone),`${c.url} still carries lesson-duplicated blocks`);
+  }else{
+   assert.ok(html.includes('Say it together'),`${c.url} missing say-it-together`);
+   assert.ok(html.includes('Try this'),`${c.url} missing try-this`);
+   assert.ok(html.includes('Quick parent note'),`${c.url} missing parent note`);
+  }
   assert.ok(html.includes(`href="${c.img}" download=`),'download button points at the real card image');
   downloads++;
   // prev/next: links resolve to real pages and cover the set cycle
