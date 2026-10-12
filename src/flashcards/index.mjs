@@ -132,8 +132,9 @@ const SOURCES=[
  // Preschool Class 35: twenty counting cards from the owner's Canva uploads
  // in the class's own R2 folder (self-contained lesson object, all 2000×1414
  // landscape probed per file). The 1–20 cover fronts the set and is never
- // counted as a card. No lesson pages exist for this class — the library
- // card pages ARE the practice shelf, so no lpTeachLinks are registered.
+ // counted as a card. The 20 /learn/ counting lessons live under the class
+ // path (lp-numbers-counting-early-math.mjs via LP_REGISTRY) and register
+ // their teach links through lp-lessons.mjs like every other lesson-bearing set.
  [nmgData,nmgData.lesson]
 ];
 

@@ -12,6 +12,7 @@ import {lpContent as ch33} from './lp-community-helpers.mjs';
 import {lpContent as ls32} from './lp-life-skills.mjs';
 import {lpContent as s31} from './lp-science-nature.mjs';
 import {lpContent as ws34} from './lp-weather-seasons.mjs';
+import {lpContent as nm35} from './lp-numbers-counting-early-math.mjs';
 import {lpContent as fvt} from './lp-faces-and-visual-tracking.mjs';
 import {lpContent as cfo} from './lp-colors-and-first-objects.mjs';
 import {lpContent as fwft} from './lp-first-words-familiar-things.mjs';
@@ -126,6 +127,9 @@ export const LP_REGISTRY=[
  {slug:'weather-seasons-and-what-we-wear',content:ws34,
   navTitle:'Learn the weather, the seasons and what we wear',
   navIntro:'Twenty-nine weather-and-clothes lessons: sun and clouds, rain and rainbows, storms and snow, the four seasons, and the umbrella, raincoat, sun hat and winter coat that match each kind of day. Every lesson reads the real artwork, walks the teaching step by step and ends with something to practise outside the window — whichever sky is out there today.'},
+ {slug:'numbers-counting-and-early-math',content:nm35,
+  navTitle:'Learn the counting cards, one number at a time',
+  navIntro:'Twenty counting lessons, one apple to twenty figs: count the smiling fruit, say the number, then find that many real things in your own kitchen. One card a sitting — the first decade lands by ten, the ten-and-some-more trick opens the teens, and twenty figs crown the summit.'},
 ].map(r=>({...r,set:fcSetBySlug[r.slug]})).filter(r=>r.set);
 
 export const lpSetBySlug=Object.fromEntries(LP_REGISTRY.map(r=>[r.slug,r]));

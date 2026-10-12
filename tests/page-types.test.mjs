@@ -88,12 +88,6 @@ test('rule 2 · no class, stage hub or Learning Path page links an ACTIVITY to a
     const [p,target]=o.split(' -> ');
     if(p.startsWith('preschool/3-years/alphabet-and-letter-sounds/letter-')&&target.startsWith('/flashcards/alphabet-'))return false;
     if(/\/learn\/[a-z0-9-]+$/.test(p))return false; // /learn/ lessons policed below: exactly ONE card link each
-    // Owner instruction 2026-10-12 ("why didn't you include images in the
-    // learning path — the process is the same"): the Class 35 counting hub
-    // shows the whole set as an image grid whose tiles open the 20 library
-    // card pages — Class 35 has no /learn/ lessons, so those pages ARE the
-    // practice shelf. Scope: this class hub only, its own set only.
-    if(p.startsWith('preschool/4-years/numbers-counting-and-early-math')&&target.startsWith('/flashcards/numbers-counting-and-early-math/'))return false;
     return true;
   });
   assert.deepEqual(unexpected,[],'activity links pointing at flashcards: '+unexpected.slice(0,8).join(' | '));
