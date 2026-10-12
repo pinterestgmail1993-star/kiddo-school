@@ -1,0 +1,321 @@
+{
+ "weather-worksheets": {
+  "animals-and-seasons-worksheet.webp": {
+   "status": 200,
+   "len": 199972,
+   "type": "image/webp",
+   "w": 1414,
+   "h": 2000
+  },
+  "autumn-and-winter-sorting-worksheet.webp": {
+   "status": 200,
+   "len": 160868,
+   "type": "image/webp",
+   "w": 1414,
+   "h": 2000
+  },
+  "autumn-weather-and-clothes-worksheet.webp": {
+   "status": 200,
+   "len": 170026,
+   "type": "image/webp",
+   "w": 1414,
+   "h": 2000
+  },
+  "cloud-types-worksheet.webp": {
+   "status": 200,
+   "len": 134020,
+   "type": "image/webp",
+   "w": 1414,
+   "h": 2000
+  },
+  "cloudy-weather-worksheet.webp": {
+   "status": 200,
+   "len": 176522,
+   "type": "image/webp",
+   "w": 1414,
+   "h": 2000
+  },
+  "cover.webp": {
+   "status": 200,
+   "len": 167432,
+   "type": "image/webp",
+   "w": 1414,
+   "h": 2000
+  },
+  "daylight-sunrise-sunset-worksheet.webp": {
+   "status": 200,
+   "len": 170158,
+   "type": "image/webp",
+   "w": 1414,
+   "h": 2000
+  },
+  "four-seasons-matching-worksheet.webp": {
+   "status": 200,
+   "len": 208548,
+   "type": "image/webp",
+   "w": 1414,
+   "h": 2000
+  },
+  "ice-frost-melting-worksheet.webp": {
+   "status": 200,
+   "len": 147258,
+   "type": "image/webp",
+   "w": 1414,
+   "h": 2000
+  },
+  "light-sources-worksheet.webp": {
+   "status": 200,
+   "len": 154382,
+   "type": "image/webp",
+   "w": 1414,
+   "h": 2000
+  },
+  "order-of-seasons-tree-changes-worksheet.webp": {
+   "status": 200,
+   "len": 214554,
+   "type": "image/webp",
+   "w": 1414,
+   "h": 2000
+  },
+  "precipitation-hail-sleet-snow-worksheet.webp": {
+   "status": 200,
+   "len": 201656,
+   "type": "image/webp",
+   "w": 1414,
+   "h": 2000
+  },
+  "rainbow-and-kite-weather-safety-worksheet.webp": {
+   "status": 200,
+   "len": 159858,
+   "type": "image/webp",
+   "w": 1414,
+   "h": 2000
+  },
+  "rainy-day-puddle-worksheet.webp": {
+   "status": 200,
+   "len": 152040,
+   "type": "image/webp",
+   "w": 1414,
+   "h": 2000
+  },
+  "rainy-day-weather-activities-worksheet.webp": {
+   "status": 200,
+   "len": 168688,
+   "type": "image/webp",
+   "w": 1414,
+   "h": 2000
+  },
+  "seasonal-activities-worksheet.webp": {
+   "status": 200,
+   "len": 222768,
+   "type": "image/webp",
+   "w": 1414,
+   "h": 2000
+  },
+  "seasonal-foods-harvest-worksheet.webp": {
+   "status": 200,
+   "len": 222488,
+   "type": "image/webp",
+   "w": 1414,
+   "h": 2000
+  },
+  "shadows-worksheet.webp": {
+   "status": 200,
+   "len": 179596,
+   "type": "image/webp",
+   "w": 1414,
+   "h": 2000
+  },
+  "snowy-weather-winter-clothes-worksheet.webp": {
+   "status": 200,
+   "len": 153470,
+   "type": "image/webp",
+   "w": 1414,
+   "h": 2000
+  },
+  "spring-and-seasons-chart-worksheet.webp": {
+   "status": 200,
+   "len": 180934,
+   "type": "image/webp",
+   "w": 1414,
+   "h": 2000
+  },
+  "summer-hot-and-cold-worksheet.webp": {
+   "status": 200,
+   "len": 205522,
+   "type": "image/webp",
+   "w": 1414,
+   "h": 2000
+  },
+  "sunny-summer-weather-worksheet.webp": {
+   "status": 200,
+   "len": 159112,
+   "type": "image/webp",
+   "w": 1414,
+   "h": 2000
+  },
+  "thermometer-temperature-worksheet.webp": {
+   "status": 200,
+   "len": 165080,
+   "type": "image/webp",
+   "w": 1414,
+   "h": 2000
+  },
+  "thunderstorm-safety-worksheet.webp": {
+   "status": 200,
+   "len": 164536,
+   "type": "image/webp",
+   "w": 1414,
+   "h": 2000
+  }
+ },
+ "counting-flashcards": {
+  "counting-flashcards-1-20-cover.webp": {
+   "status": 200,
+   "len": 27150,
+   "type": "text/html",
+   "w": null,
+   "h": null
+  },
+  "counting-flashcard-1-one-apple.webp": {
+   "status": 200,
+   "len": 42470,
+   "type": "image/webp",
+   "w": 2000,
+   "h": 1414
+  },
+  "counting-flashcard-2-two-bananas.webp": {
+   "status": 200,
+   "len": 48074,
+   "type": "image/webp",
+   "w": 2000,
+   "h": 1414
+  },
+  "counting-flashcard-3-three-oranges.webp": {
+   "status": 200,
+   "len": 94478,
+   "type": "image/webp",
+   "w": 2000,
+   "h": 1414
+  },
+  "counting-flashcard-4-four-strawberries.webp": {
+   "status": 200,
+   "len": 92142,
+   "type": "image/webp",
+   "w": 2000,
+   "h": 1414
+  },
+  "counting-flashcard-5-five-pears.webp": {
+   "status": 200,
+   "len": 27150,
+   "type": "text/html",
+   "w": null,
+   "h": null
+  },
+  "counting-flashcard-6-six-grapes.webp": {
+   "status": 200,
+   "len": 27150,
+   "type": "text/html",
+   "w": null,
+   "h": null
+  },
+  "counting-flashcard-7-seven-cherries.webp": {
+   "status": 200,
+   "len": 27150,
+   "type": "text/html",
+   "w": null,
+   "h": null
+  },
+  "counting-flashcard-8-eight-watermelons.webp": {
+   "status": 200,
+   "len": 27150,
+   "type": "text/html",
+   "w": null,
+   "h": null
+  },
+  "counting-flashcard-9-nine-peaches.webp": {
+   "status": 200,
+   "len": 27150,
+   "type": "text/html",
+   "w": null,
+   "h": null
+  },
+  "counting-flashcard-10-ten-blueberries.webp": {
+   "status": 200,
+   "len": 27150,
+   "type": "text/html",
+   "w": null,
+   "h": null
+  },
+  "counting-flashcard-11-eleven-kiwis.webp": {
+   "status": 200,
+   "len": 27150,
+   "type": "text/html",
+   "w": null,
+   "h": null
+  },
+  "counting-flashcard-12-twelve-lemons.webp": {
+   "status": 200,
+   "len": 27150,
+   "type": "text/html",
+   "w": null,
+   "h": null
+  },
+  "counting-flashcard-13-thirteen-pineapples.webp": {
+   "status": 200,
+   "len": 27150,
+   "type": "text/html",
+   "w": null,
+   "h": null
+  },
+  "counting-flashcard-14-fourteen-raspberries.webp": {
+   "status": 200,
+   "len": 27150,
+   "type": "text/html",
+   "w": null,
+   "h": null
+  },
+  "counting-flashcard-15-fifteen-mangoes.webp": {
+   "status": 200,
+   "len": 27150,
+   "type": "text/html",
+   "w": null,
+   "h": null
+  },
+  "counting-flashcard-16-sixteen-coconuts.webp": {
+   "status": 200,
+   "len": 27150,
+   "type": "text/html",
+   "w": null,
+   "h": null
+  },
+  "counting-flashcard-17-seventeen-apples.webp": {
+   "status": 200,
+   "len": 27150,
+   "type": "text/html",
+   "w": null,
+   "h": null
+  },
+  "counting-flashcard-18-eighteen-bananas.webp": {
+   "status": 200,
+   "len": 27150,
+   "type": "text/html",
+   "w": null,
+   "h": null
+  },
+  "counting-flashcard-19-nineteen-apricots.webp": {
+   "status": 200,
+   "len": 27150,
+   "type": "text/html",
+   "w": null,
+   "h": null
+  },
+  "counting-flashcard-20-twenty-figs.webp": {
+   "status": 200,
+   "len": 27150,
+   "type": "text/html",
+   "w": null,
+   "h": null
+  }
+ }
+}

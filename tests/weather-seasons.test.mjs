@@ -135,18 +135,28 @@ test('the Class 34 hub is a compact classroom: LEARN WITH FLASHCARDS nav + ONE c
  const wsTiles=[...hub.matchAll(/<a class="lp-tile" href="\/preschool\/4-years\/weather-seasons-and-what-we-wear\/learn\/([a-z-]+)\/"><img src="([^"]+)"/g)];
  assert.equal(wsTiles.length,29,'every lesson tile carries its original flashcard image');
  assert.ok(wsTiles.every(([,slug,src])=>src.includes('weather-seasons-and-what-we-wear/'+slug+'.webp')),'tile images are the original R2 artwork');
- assert.ok(!hub.includes('PRACTISE WITH WORKSHEETS'),'no worksheets section: genuine artwork has not been supplied');
- assert.ok(hub.includes('Worksheets are on the way, not yet here'),'honest note instead of invented worksheets');
+ assert.ok(hub.includes('PRACTISE WITH WORKSHEETS'),'the 23 genuine weather worksheets render their practice section');
+ assert.ok(!hub.includes('Worksheets are on the way'),'no stale waiting note: the artwork has arrived');
+ assert.ok(hub.includes('/worksheets/weather-seasons-and-what-we-wear/'),'library collection linked from the hub');
+ assert.equal([...hub.matchAll(/data-wxws-card="([a-z-]+)"/g)].length,23,'23 worksheet tiles on the hub');
  assert.ok(!hub.includes('data-wc'),'no canvas on the hub');
  assert.ok(hub.includes('cover.webp'),'the original collection cover appears as the resource art');
  assert.equal((hub.match(/<h1>/g)||[]).length,1,'exactly one h1');
 });
 
-test('no Class 34 worksheet pages exist anywhere (nothing invented)',()=>{
- assert.ok(!existsSync('dist'+CLASS+'worksheets'),'no worksheets folder under the class');
- assert.ok(!existsSync('dist/worksheets/weather-seasons-and-what-we-wear'),'no worksheet library for Class 34');
- const wsHub=read('/worksheets/index.html');
- assert.ok(!wsHub.includes('weather-seasons'),'the worksheet hub does not mention Class 34');
+test('all 23 Class 34 worksheet pages exist (genuine artwork, two pages per sheet)',()=>{
+ assert.ok(existsSync('dist'+CLASS+'worksheets'),'activity folder under the class');
+ assert.ok(existsSync('dist/worksheets/weather-seasons-and-what-we-wear'),'printable library for Class 34');
+ const lib=read('/worksheets/weather-seasons-and-what-we-wear/index.html');
+ assert.ok(lib.includes('Weather'),'collection page renders');
+ assert.equal([...lib.matchAll(/class="ws-card"/g)].length,23,'23 cards on the collection page');
+ for(const slug of ['cloud-types','shadows','thermometer-temperature','thunderstorm-safety']){
+  const act=read('/preschool/4-years/weather-seasons-and-what-we-wear/worksheets/'+slug+'/index.html');
+  assert.ok(act.includes('data-wc-src=')&&act.includes('weather-seasons-and-what-we-wear/worksheets/'+slug+'-worksheet.webp?draw=1'),'canvas on '+slug+' activity');
+  const pr=read('/worksheets/weather-seasons-and-what-we-wear/'+slug+'/index.html');
+  assert.ok(pr.includes('data-wxws-download=')&&pr.includes('data-wxws-print'),'download+print on '+slug+' printable');
+  assert.ok(!pr.includes('data-wc-src='),'no canvas on the '+slug+' printable');
+ }
 });
 
 test('whole-school wiring: LP row 34, stage card, flashcards hub, count words thirty-two',()=>{
