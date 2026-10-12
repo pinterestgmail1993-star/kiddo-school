@@ -497,7 +497,7 @@ export function lifeSkillsClassBody(){
  // PICTURE — each picture opens its own individual page (lesson page for
  // flashcards, activity page for worksheets). No per-image description text
  // lives here; the words live on the individual pages.
- const learnTiles=lsFlash.lesson.cards.map((c)=>{const slug=c.file.replace(/\.webp$/,'');const l=lsLp[slug];if(!l)return '';const img=lsFlash.lesson.r2Base+c.file;return `<a class="lp-tile" href="${LS_CLASS_PATH}learn/${slug}/"><img src="${img}" width="${c.w}" height="${c.h}" alt="${esc(c.alt)}" loading="lazy"><strong>${esc(l.title)}</strong></a>`;}).join('');
+ const learnTiles=lsFlash.lesson.cards.map((c)=>{const slug=c.file.replace(/\.webp$/,'');const l=lsLp[slug];if(!l)return '';const img=lsFlash.lesson.r2Base+c.file;return `<a class="lp-tile" href="${LS_CLASS_PATH}learn/${slug}/"><img src="${img}" style="--iar:${c.w}/${c.h}" width="${c.w}" height="${c.h}" alt="${esc(c.alt)}" loading="lazy"><strong>${esc(l.title)}</strong></a>`;}).join('');
  const cards=lifeSkills.map(a=>`<a class="sa-card sa-card-imgonly" href="${LS_ACT_PATH}${a.slug}/" data-ls-card="${a.slug}">
    <span class="sa-card-num" aria-hidden="true">${a.num}</span>
    <span class="sa-card-done" data-ls-done hidden>Cleared!</span>

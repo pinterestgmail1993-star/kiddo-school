@@ -37,7 +37,7 @@ export function communityHelpersClassBody(){
  // the words live on the individual lesson pages.
  const learnRows=cards.map((c)=>{
   const l=chLp[c.slug];
-  return `<a class="lp-tile" href="${CH_CLASS_PATH}learn/${c.slug}/"><img src="${c.img}" width="${c.w}" height="${c.h}" alt="${esc(c.alt)}" loading="lazy"><strong>${esc(l.title)}</strong></a>`;
+  return `<a class="lp-tile" href="${CH_CLASS_PATH}learn/${c.slug}/"><img src="${c.img}" style="--iar:${c.w}/${c.h}" width="${c.w}" height="${c.h}" alt="${esc(c.alt)}" loading="lazy"><strong>${esc(l.title)}</strong></a>`;
  }).join('');
  const wsSection=chWsContents?`<section class="wrap lesson-section" id="worksheets"><span class="eyebrow">PRACTISE WITH WORKSHEETS</span><h2>Solve the Community Helpers worksheets.</h2><p class="lesson-copy">Thirty-five genuine activity sheets, one per helper — trace the helper’s name, match their tools, circle the right things, count, and draw. Every card below opens its own activity page: the sheet sits on the left and your child traces, circles and draws straight on top of it, with the instructions beside them and the tools under their fingers. Each sheet has a printable twin in the worksheet library.</p>${chWsContents}</section>`:'';
  const wsResource=chWsContents?`<a class="button" href="/worksheets/community-helpers-and-our-neighborhood/">Community Helpers worksheets <span aria-hidden="true">↗</span></a>`:'';
