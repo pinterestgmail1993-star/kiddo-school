@@ -5,6 +5,7 @@ import {flashcardSets,babySet} from '../src/flashcards-project.mjs';
 import {join,resolve} from 'node:path';
 import {existsSync} from 'node:fs';
 import {fcSets} from '../src/flashcards/index.mjs';
+import LIBCOPY from '../src/flashcards/libcopy/index.mjs';
 const root=resolve('dist');
 const read=f=>readFileSync(f,'utf8');
 const page=f=>readFileSync(join(root,f,'index.html'),'utf8');
@@ -81,9 +82,14 @@ test('card pages: unique titles and descriptions, say/try/note, download, prev/n
   assert.ok(!titles.has(title),`duplicate title: ${title}`);titles.add(title);
   const desc=html.match(/name="description" content="([^"]+)"/)[1];
   assert.ok(!descriptions.has(desc),`duplicate description on ${c.url}`);descriptions.add(desc);
-  const trio=['How this card helps','How to roleplay it','How to teach with this card'].every(x=>html.includes(x));
-  if(trio){
-   for(const gone of ['<h2>Say it together</h2>','<h2>Try this</h2>','<h2>Quick parent note</h2>'])
+  /* Every set now carries its OWN printed-card blocks (per-set frame):
+     helps / how to use it / what kids learn / how to print it / tips.
+     No card page may still render the old lesson-duplicated blocks. */
+  const DF={t1:'How this card helps',t2:'How to use this card',t3:'What kids learn from it',t4:'Print it like this',t5:'How to teach with this card'};
+  const fr=(LIBCOPY[s.slug]||{}).frame||DF;
+  if(LIBCOPY[s.slug]){
+   assert.ok([fr.t1,fr.t2,fr.t3,fr.t4,fr.t5].every(t=>html.includes(`<h2>${t}</h2>`)),`${c.url} missing its set frame blocks`);
+   for(const gone of ['<h2>Say it together</h2>','<h2>Try this</h2>','<h2>Quick parent note</h2>','<h2>Why it helps a preschooler</h2>'])
     assert.ok(!html.includes(gone),`${c.url} still carries lesson-duplicated blocks`);
   }else{
    assert.ok(html.includes('Say it together'),`${c.url} missing say-it-together`);

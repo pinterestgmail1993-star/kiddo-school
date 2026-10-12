@@ -79,10 +79,10 @@ test('class 6 card pages: real download, wrap-around navigation, sounds where av
  assert.ok(c6dog.includes('href="/flashcards/animal-sounds/cat/" rel="next"'));
  assert.ok(c6dog.includes('data-fc-root data-page-path="/flashcards/animal-sounds/dog/"'));
  assert.ok(c6dog.includes('data-an-sound="dog"')&&c6dog.includes('/assets/sounds/animals/dog.mp3'),'dog has its real sound');
- assert.ok(c6dog.includes('Bigger')||c6dog.includes('puppy pats')||c6dog.includes('Puppy pats'),'per-card activity');
+ assert.ok(c6dog.includes('<h2>Move like it</h2>'),'per-card activity block');
  const duck=read('flashcards/animal-sounds/duck/index.html');
  assert.ok(!duck.includes('data-an-sound=')&&!duck.includes('an-play'),'duck shows no fake audio control');
- assert.ok(duck.includes('Waddle')||duck.includes('waddle'),'duck still has its own activity');
+ assert.ok(duck.includes('<h2>Move like it</h2>'),'duck still has its own activity block');
  for(const slug of ['cat','cow','sheep','duck','chicken','horse','pig','lion','elephant','frog','bird']){
   const p=read('flashcards/animal-sounds/'+slug+'/index.html');
   assert.ok(p.includes('rel="canonical" href="https://kiddo-school.pages.dev/flashcards/animal-sounds/'+slug+'/"'),slug+' canonical');

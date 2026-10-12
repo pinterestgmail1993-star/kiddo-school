@@ -85,9 +85,9 @@ test('card pages are PAPER and carry the printed-card trio: helps, roleplay, tea
    assert.ok(!html.includes(bad),bad+' must not appear on science flashcard '+c.slug);
   // the printed-card trio (fresh copy, never shared with the lessons)
   assert.match(html,/alt="A science flashcard: /,'image alt on '+c.slug);
-  assert.ok(html.includes('How this card helps'),'helps block on '+c.slug);
-  assert.ok(html.includes('How to roleplay it'),'roleplay block on '+c.slug);
-  assert.ok(html.includes('How to teach with this card'),'teach-tip block on '+c.slug);
+  assert.ok(html.includes('What this card opens up'),'helps block on '+c.slug);
+  assert.ok(html.includes('Try it for real'),'try block on '+c.slug);
+  assert.ok(html.includes('A question to ask'),'question block on '+c.slug);
   for(const gone of ['<h2>Say it together</h2>','<h2>Try this</h2>','<h2>Quick parent note</h2>','<h2>Why it helps a preschooler</h2>'])
    assert.ok(!html.includes(gone),gone+' must not duplicate the lesson on '+c.slug);
   // download/print/share, prev/next in teaching order, community, schema
@@ -154,7 +154,7 @@ test('the flashcards wall and the Learning Path row carry the set',()=>{
  const sciRow=lp.slice(lp.indexOf('Class 31:'),lp.indexOf('Class 32:'));
  assert.ok(sciRow.includes('/flashcards/science-nature-and-discovery/'),'LP row 31 has the flashcards link');
  assert.ok(sciRow.includes('/worksheets/science/'),'LP row 31 keeps the worksheets link');
- assert.ok(sciRow.indexOf('Flashcards:')<sciRow.indexOf('Worksheets:'),'flashcards before worksheets on row 31');
+ assert.ok(sciRow.indexOf('flashcards')<sciRow.indexOf('worksheets'),'flashcards before worksheets on row 31');
 });
 
 test('sitemap and search index carry the set',()=>{

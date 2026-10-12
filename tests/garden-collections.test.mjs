@@ -157,10 +157,10 @@ test('flashcard sets: garden-flowers and garden-things set pages + 24 card pages
  assert.ok(ts.includes('href="/flashcards/garden-things/watering-can/"'), 'things card links (multi-word slug)');
  // a flower card page and a thing card page, fully built
  const sun = read('dist/flashcards/garden-flowers/sunflower/index.html');
- assert.ok(sun.includes('Say it together'), 'card page say block');
+ assert.ok(sun.includes('<h2>Petal play</h2>'), 'card page activity block');
  assert.ok(sun.includes('1920'), 'true card dims on card page');
  const wc = read('dist/flashcards/garden-things/watering-can/index.html');
- assert.ok(wc.includes('Say it together'), 'thing card page say block');
+ assert.ok(wc.includes('<h2>Spot it outside</h2>'), 'thing card page activity block');
  // both linked from the /flashcards/ toddler wall
  const wall = read('dist/flashcards/index.html');
  assert.ok(wall.includes('href="/flashcards/garden-flowers/"'), 'wall links flowers');

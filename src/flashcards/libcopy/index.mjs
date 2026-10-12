@@ -1,6 +1,8 @@
 // Library copy manifest — every set's card-page copy in one map.
-// Each per-set module supplies {helps, roleplay, teachTip} per card:
-// the card page's OWN printed-card text, never shared with the lessons.
+// Each per-set module supplies {frame:{t1..t5}, cards:{slug:{helps,roleplay,learn,print,teachTip}}}:
+// the card page's OWN printed-card text (how it helps / how to use it /
+// what kids learn / how to print it / tips), never shared with the lessons.
+// Older three-field modules are normalised here so the build never breaks.
 import ch from './community-helpers-and-our-neighborhood.mjs';
 import ls from './life-skills-and-good-habits.mjs';
 import ws from './weather-seasons-and-what-we-wear.mjs';
@@ -31,34 +33,36 @@ import fab from './first-actions-body-parts.mjs';
 import fwfh from './first-words-food-home.mjs';
 import baby from './black-and-white-baby-cards.mjs';
 
-export default {
- 'community-helpers-and-our-neighborhood':ch,
- 'life-skills-and-good-habits':ls,
- 'weather-seasons-and-what-we-wear':ws,
- 'science-nature-and-discovery':sci,
- 'alphabet':abc,
- 'numbers-and-counting':num,
- 'shapes':shp,
- 'colors':col,
- 'opposites':opp,
- 'animals':ani,
- 'body-parts-and-five-senses':bps,
- 'fruits-and-vegetables':fav,
- 'animals-and-sounds':anso,
- 'vehicles-and-sounds':vhso,
- 'colors-and-shapes':csh,
- 'matching-and-sorting':mso,
- 'emotions-and-feelings':emo,
- 'first-concepts':fcp,
- 'garden-bugs-and-friends':gbf,
- 'garden-friends':gfr,
- 'garden-flowers':gfl,
- 'garden-things':gth,
- 'faces-and-visual-tracking':fvt,
- 'colors-and-first-objects':cfo,
- 'first-words-familiar-things':fwft,
- 'animals-everyday-objects':aeo,
- 'first-actions-body-parts':fab,
- 'first-words-food-home':fwfh,
- 'black-and-white-baby-cards':baby
+const norm=m=>m&&m.cards?m:{frame:null,cards:m};
+
+export default{
+ 'community-helpers-and-our-neighborhood':norm(ch),
+ 'life-skills-and-good-habits':norm(ls),
+ 'weather-seasons-and-what-we-wear':norm(ws),
+ 'science-nature-and-discovery':norm(sci),
+ 'alphabet':norm(abc),
+ 'numbers-and-counting':norm(num),
+ 'shapes':norm(shp),
+ 'colors':norm(col),
+ 'opposites':norm(opp),
+ 'animal-sounds':norm(ani),
+ 'body-parts-and-five-senses':norm(bps),
+ 'fruits-and-vegetables':norm(fav),
+ 'animals-and-sounds':norm(anso),
+ 'vehicles-and-sounds':norm(vhso),
+ 'colors-and-shapes':norm(csh),
+ 'matching-and-sorting':norm(mso),
+ 'emotions-and-feelings':norm(emo),
+ 'first-concepts':norm(fcp),
+ 'garden-bugs-and-friends':norm(gbf),
+ 'garden-friends':norm(gfr),
+ 'garden-flowers':norm(gfl),
+ 'garden-things':norm(gth),
+ 'faces-and-visual-tracking':norm(fvt),
+ 'colors-and-first-objects':norm(cfo),
+ 'first-words-familiar-things':norm(fwft),
+ 'animals-everyday-objects':norm(aeo),
+ 'first-actions-body-parts':norm(fab),
+ 'first-words-food-home':norm(fwfh),
+ 'black-and-white-baby-cards':norm(baby)
 };

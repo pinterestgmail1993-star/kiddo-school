@@ -134,6 +134,8 @@ function buildSet([data,lesson]){
  const base=(lesson.r2Base||lessonsBase)+lesson.folder;
  const slug=data.meta.slug;
  const url='/flashcards/'+slug+'/';
+ // One lookup per set, at function scope — the frame needs it after the map.
+ const libSet=LIBCOPY[slug];
  const cards=lesson.cards.map((c,i)=>{
   // Lesson cards may carry their own slug (the alphabet files are named
   // 01-a-apple.webp but live at /flashcards/alphabet/apple/ — the data module
@@ -145,14 +147,17 @@ function buildSet([data,lesson]){
      how to roleplay it, how to teach with it. Authored fresh per card and
      NEVER shared with the Learning Path lesson text (duplicate-content rule).
      Sets without library copy keep their classic card-page blocks. */
-  const lib=LIBCOPY[slug]&&LIBCOPY[slug][s];
+  const lib=libSet&&libSet.cards?libSet.cards[s]:null;
   return {slug:s,word:d.word||titleWord(s),file:c.file,w:c.w,h:c.h,alt:c.alt,
    img2:c.picFile?base+c.picFile:null,alt2:c.picAlt||null,picWord:d.picWord||null,
    letter:c.letter||d.letter||null,numeral:c.numeral||d.numeral||null,sound:d.sound||null,audio:c.audio||null,metaDescription:d.metaDescription||null,cardTitle:d.cardTitle||null,
    intro:d.intro,why:d.why||null,who:d.who||null,whoHeading:d.whoHeading||null,job:d.job||null,jobHeading:d.jobHeading||null,safety:d.safety||null,say:d.say,try:d.try,note:d.note,
-   helps:lib&&lib.helps||null,roleplay:lib&&lib.roleplay||null,teachTip:lib&&lib.teachTip||null,url:url+s+'/',img:base+c.file,n:i+1};
+   helps:lib&&lib.helps||null,roleplay:lib&&lib.roleplay||null,learn:lib&&lib.learn||null,print:lib&&lib.print||null,teachTip:lib&&lib.teachTip||null,url:url+s+'/',img:base+c.file,n:i+1};
  });
  const coverFile=data.meta.coverFile||'cover.webp';
+ // Per-set section frame: each set names its own three card-page blocks
+ // (roleplay exists ONLY in the community-helpers set, per owner doctrine).
+ const frame=libSet&&libSet.frame?libSet.frame:null;
  const stage=STAGES[slug]||null;
  return {
   slug,url,
@@ -174,7 +179,7 @@ function buildSet([data,lesson]){
   lessonPath:lesson.path,
   lessonTitle:lesson.seoTitle||lesson.title,
   lessonBlurb:data.meta.lessonBlurb||null,
-  base,
+  base,frame,
   // Cover dims come from the lesson's own probe (vehicles 2000×1294 and
   // emotions 2000×1414 are LANDSCAPE — hardcoding 1414×2000 here is what
   // squashed them on the library wall). Garden Friends has no lesson cover;
@@ -231,7 +236,7 @@ export function fcSetPageBody(s){
  return `${crumbNav([['Flashcards','/flashcards/'],[s.name]])}
  ${heading('FLASHCARD SET · AGES '+esc(s.ageLabel.toUpperCase()),s.h1,esc(s.lede))}
  ${stageLink}
- <section class="wrap fc-section"><span class="eyebrow">THE CARDS</span><h2>Every card in the set.</h2><p class="fc-hint">Each card has its own page: the picture, how the card helps, a roleplay to act out and a teaching tip. Tap any card to open it.</p>${grid}</section>
+ <section class="wrap fc-section"><span class="eyebrow">THE CARDS</span><h2>Every card in the set.</h2><p class="fc-hint">Each card has its own page: the picture and short, practical notes for grown-ups — what it is for, how to use it, how to print it. Tap any card to open it.</p>${grid}</section>
  ${letterSets?`<section class="wrap fc-section"><span class="eyebrow">ALPHABET LETTER SETS</span><h2>The same letters, six more ways.</h2><p class="fc-hint">Individual letter-card sets with their own clean pages — every card has its own download button and its own card page.</p><div class="fc2-relrow">${letterSets}</div></section>`:''}
  <section class="wrap fc-section"><span class="eyebrow">HOW TO USE THESE CARDS</span><h2>Four ways that work.</h2><p class="fc-hint">You do not need a plan or a printer schedule. Pick one idea, try it for two minutes and see what happens.</p>${ideas}</section>
  <section class="wrap fc-section"><span class="eyebrow">PRINT &amp; DOWNLOAD</span><h2>Print the set, download a card.</h2><div class="fc2-actions"><a class="button" href="${s.lessonPath}">View the class these cards come from <span aria-hidden="true">↗</span></a>${printBtn}<a class="button" href="/flashcards/">All flashcard sets</a></div><p class="fc-hint">${s.downloadHint||'Every card page has its own download button with the full-size image.'}${s.printPath?' The full set has a print-ready page too.':' This set is printed straight from its class page.'}</p></section>
@@ -262,15 +267,18 @@ export function fcCardPageBody(set,card,ctx){
  // Cards without a recording render nothing here; nothing is faked.
  const sayAudio=card.audio?`<button type="button" class="an-play an-play-card" data-an-sound="${esc(card.slug)}" data-an-src="/assets/sounds/animals/${esc(card.audio)}.mp3" aria-label="Play the ${esc(card.word.toLowerCase())} sound, then play it again"><span class="an-play-icon" aria-hidden="true">▶</span><span class="an-play-label">Hear the ${esc(card.word.toLowerCase())}</span><span class="an-replay">Play again</span></button>`:'';
  /* Card pages carry ONE of two block sets: sets with library copy render the
-    owner's printed-card trio (how this card helps / how to roleplay it / how
-    to teach with this card) — the Learning Path lesson keeps the teaching and
-    NO text is shared between the two pages. Sets without library copy keep
-    their classic blocks until their copy is written. */
+    set's OWN short printed-card blocks under the set's own headings — how it
+    helps / how to use it / what kids learn / how to print it / tips. This text
+    shares NOTHING with the Learning Path lesson page (duplicate-content rule).
+    Sets without library copy keep their classic blocks until copy is written. */
  const hasTrio=card.helps&&card.roleplay&&card.teachTip;
- const helps=hasTrio?`<div class="fc2-do"><h2>How this card helps</h2><p>${esc(card.helps)}</p></div>`:'';
+ const F=set.frame||{t1:'How this card helps',t2:'How to use this card',t3:'What kids learn from it',t4:'Print it like this',t5:'How to teach with this card'};
+ const helps=hasTrio?`<div class="fc2-do"><h2>${esc(F.t1)}</h2><p>${esc(card.helps)}</p></div>`:'';
  const sound=card.sound?`<div class="fc2-do fc2-sound"><h2>Letter sound</h2><p>${esc(card.sound)}</p></div>`:'';
- const roleplay=hasTrio?`<div class="fc2-do"><h2>How to roleplay it</h2>${sayAudio}<p>${esc(card.roleplay)}</p></div>`:'';
- const teachTip=hasTrio?`<div class="fc2-do fc2-note"><h2>How to teach with this card</h2><p>${esc(card.teachTip)}</p></div>`:'';
+ const roleplay=hasTrio?`<div class="fc2-do"><h2>${esc(F.t2)}</h2>${sayAudio}<p>${esc(card.roleplay)}</p></div>`:'';
+ const learnB=hasTrio&&card.learn?`<div class="fc2-do"><h2>${esc(F.t3)}</h2><p>${esc(card.learn)}</p></div>`:'';
+ const printB=hasTrio&&card.print?`<div class="fc2-do fc2-note"><h2>${esc(F.t4)}</h2><p>${esc(card.print)}</p></div>`:'';
+ const teachTip=hasTrio?`<div class="fc2-do fc2-note"><h2>${esc(F.t5)}</h2><p>${esc(card.teachTip)}</p></div>`:'';
  const say=!hasTrio?`<div class="fc2-do"><h2>Say it together</h2><p class="fc2-say">&ldquo;${esc(card.say)}&rdquo;</p>${sayAudio}<p class="fc-hint">Say it naturally, then wait. Whatever comes back — the word, the sound, a point, a giggle — is the right answer.</p></div>`:'';
  const why=!hasTrio&&card.why?`<div class="fc2-do"><h2>Why it helps a preschooler</h2><p>${esc(card.why)}</p></div>`:'';
  const who=!hasTrio&&card.who?`<div class="fc2-do"><h2>${esc(card.whoHeading||'What is this community helper?')}</h2><p>${esc(card.who)}</p></div>`:'';
@@ -278,14 +286,14 @@ export function fcCardPageBody(set,card,ctx){
  const tryThis=!hasTrio?`<div class="fc2-do"><h2>Try this</h2><p>${esc(card.try)}</p></div>`:'';
  const note=!hasTrio?`<div class="fc2-do fc2-note"><h2>Quick parent note</h2><p>${esc(card.note)}</p></div>`:'';
  const safety=!hasTrio&&card.safety?`<div class="fc2-do fc2-note fcl-safety"><h2>Staying safe</h2><p>${esc(card.safety)}</p></div>`:'';
- const learnBlocks=hasTrio?helps+roleplay+teachTip+sound:who+job+why+sound+say+tryThis+note+safety;
- const teach=(lpTeachLinks[set.slug]||{})[card.slug]?`<div class="fc2-do"><h2>Teach it, step by step</h2><p>This card has its own Learning Path lesson — the original artwork beside a full walkthrough: what it means, why it matters, the words to say, the questions to ask and a way to practise it today. <a href="${set.lessonPath}learn/${card.slug}/">Open the ${esc(card.word)} lesson</a>.</p></div>`:'';
+ const learnBlocks=hasTrio?helps+roleplay+learnB+printB+teachTip+sound:who+job+why+sound+say+tryThis+note+safety;
+ const teach=(lpTeachLinks[set.slug]||{})[card.slug]?`<div class="fc2-do"><h2>Teach it, step by step</h2><p>Want the full walkthrough? <a href="${set.lessonPath}learn/${card.slug}/">Open the ${esc(card.word)} lesson</a> on the Learning Path.</p></div>`:'';
  const dlName=f=>f.replace(/^\d+-/,'').replace(/\.webp$/,'');
  const actions=`<div class="fc2-actions">${card.img2
   ?`<a class="button" href="${card.img}" download="${dlName(card.file)}.webp">Download splash <span aria-hidden="true">↓</span></a><a class="button" href="${card.img2}" download="${dlName(card.img2.split('/').pop())}.webp">Download picture <span aria-hidden="true">↓</span></a>`
   :`<a class="button" href="${card.img}" download="${esc(card.word.toLowerCase().replace(/[^a-z0-9]+/g,'-'))}.webp">Download card <span aria-hidden="true">↓</span></a>`}<button type="button" class="button" data-tc-print-view>Print this card</button>${set.printPath?`<a class="button" href="${set.printPath}">Print full set</a>`:''}<a class="button" href="${set.url}">View full set</a></div>`;
  const share=`<div class="fc2-block fc2-share-block"><span class="eyebrow">SHARE THIS CARD</span><h2>Pass it on.</h2><div class="fc2-share"><a class="fc2-share-btn" href="https://twitter.com/intent/tweet?url=${enc(pageUrl)}&text=${enc(shareTitle)}" target="_blank" rel="noopener" aria-label="Share this card on X">X</a><a class="fc2-share-btn" href="https://www.facebook.com/sharer/sharer.php?u=${enc(pageUrl)}" target="_blank" rel="noopener" aria-label="Share this card on Facebook">Facebook</a><a class="fc2-share-btn" href="https://wa.me/?text=${enc(shareTitle+' '+pageUrl)}" target="_blank" rel="noopener" aria-label="Share this card on WhatsApp">WhatsApp</a><a class="fc2-share-btn" href="https://pinterest.com/pin/create/button/?url=${enc(pageUrl)}&media=${enc(card.img)}&description=${enc(shareTitle)}" target="_blank" rel="noopener" aria-label="Save this card on Pinterest">Pinterest</a><button type="button" class="fc2-share-btn" data-fc-copy>Copy link</button></div><p class="fc-hint">Share buttons open in a new tab. The copy button copies this page&rsquo;s address — nothing is tracked.</p></div>`;
- const lesson=set.lessonPath?`<p class="fc2-lesson">These cards come from the <a href="${set.lessonPath}">${esc(set.lessonTitle)}</a>${set.lessonBlurb?` — ${esc(set.lessonBlurb)}`:' — the full class with all its cards, sounds and printable sheets.'}</p>`:'';
+ const lesson=set.lessonPath?`<p class="fc2-lesson">From the <a href="${set.lessonPath}">${esc(set.lessonTitle)}</a> class on the Learning Path.</p>`:'';
  const relGrid=related&&related.length?`<section class="wrap fc-section"><span class="eyebrow">RELATED CARDS</span><h2>More cards to try.</h2><p class="fc-hint">${esc(ctx.relatedHint||'Nearby cards from this set and its closest friends.')}</p><div class="fc2-cards">${related.map(r=>`<a class="fc-card fc2-cardlink" href="${r.card.url}"><span class="fc2-cardimg"><img src="${r.card.img}" width="${r.card.w}" height="${r.card.h}" alt="${esc(r.card.alt)}" loading="lazy"></span><span class="fc2-cardword"><strong>${esc(r.card.word)}</strong><span>From ${esc(r.setName)}</span></span></a>`).join('')}</div></section>`:'';
  return `${crumbNav([['Flashcards','/flashcards/'],[set.name,set.url],[card.word]])}
  <div class="page-heading wrap"><span class="eyebrow">FLASHCARD · ${esc(set.name.toUpperCase())} · AGES ${esc(set.ageLabel.toUpperCase())}</span><h1>${card.numeral?`Number ${esc(card.numeral)} Flashcard — ${esc(card.word)} for ${esc(noun)}`:card.letter?`${esc(card.word)} Flashcard — Letter ${esc(card.letter.toUpperCase())} for ${esc(noun)}`:`${esc(card.word)} Flashcard for ${esc(noun)}`}</h1><p>${esc(card.intro)}</p></div>

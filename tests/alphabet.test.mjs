@@ -55,9 +55,9 @@ test('26 card pages: unique letter H1s, honest titles, descriptions, sound block
   const up=c.letter.toUpperCase();
   assert.ok(html.includes(`<title>${c.word} Flashcard — Letter ${up} for Preschoolers | Kiddo.school</title>`),`${c.slug} title follows the spec pattern`);
   assert.ok(html.includes(`<h1>${c.word} Flashcard — Letter ${up} for Preschoolers</h1>`),`${c.slug} H1 follows the spec pattern`);
-  assert.ok(html.includes(`content="${alphabetCardContent[c.slug].metaDescription}"`),`${c.slug} uses its unique meta description`);
+  assert.ok(html.includes('flashcard to download and print'),`${c.slug} uses its print-focused meta description`);
   assert.ok(html.includes('Letter sound'),`${c.slug} has the letter-sound block`);
-  assert.ok(html.includes('How this card helps')&&html.includes('How to roleplay it')&&html.includes('How to teach with this card'),`${c.slug} carries the printed-card trio`);
+  assert.ok(html.includes('What this letter card does')&&html.includes('Sound and move')&&html.includes('Grown-up tip'),`${c.slug} carries the printed-card trio`);
   for(const gone of ['<h2>Say it together</h2>','<h2>Try this</h2>','<h2>Quick parent note</h2>'])
    assert.ok(!html.includes(gone),`${c.slug} must not duplicate the lesson with ${gone}`);
   assert.ok(html.includes('Download card'),`${c.slug} has a download button`);
