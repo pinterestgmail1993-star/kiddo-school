@@ -19,7 +19,7 @@ export function numbersMathClassBody(){
  const cards=nmLesson.cards.map(c=>({...c,img:base+'flashcards/'+c.file}));
  const learnRows=cards.map(c=>{
   const l=nmLp[c.slug];
-  return `<a class="lp-tile" href="${NM_CLASS_PATH}learn/${c.slug}/"><img src="${c.img}" style="--iar:${c.w}/${c.h}" width="${c.w}" height="${c.h}" alt="${esc(c.alt)}" loading="lazy"><strong>${esc(l.title)}</strong></a>`;
+  return `<a class="lp-tile" href="${NM_CLASS_PATH}learn/${c.slug}/"><img src="${c.img}" width="${c.w}" height="${c.h}" alt="${esc(c.alt)}" loading="lazy"><strong>${esc(l.title)}</strong></a>`;
  }).join('');
  return `<section class="wrap lesson-section"><div class="page-heading"><span class="eyebrow">CLASS 35 · AGES 4–5 · 20 COUNTING LESSONS</span><h1>Numbers, Counting &amp; Early Math.</h1></div></section>
  <section class="wrap lesson-section"><span class="eyebrow">HOW THIS CLASS WORKS</span><h2>Twenty numbers, one smiling fruit at a time.</h2><p class="lesson-copy">Every number in this class has its own step-by-step lesson: open the counting card together, count the smiling fruit, say the number, follow the teaching steps, ask the questions and finish with something real to count in your own kitchen. The order is gentle: cards one to five fit on one hand, cards six to ten need both hands, and the teens repeat one quiet pattern — a full ten, plus some more.</p><p class="lesson-copy">One card a sitting is plenty; the whole class is a month of two-minute counting moments. The kitchen is the answer key, so practice arrives with every snack — and reaching twenty earns a celebration the whole family can hear.</p></section>

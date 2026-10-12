@@ -1858,7 +1858,7 @@ h1 em,h2 em{color:#7b4b99}
 .lp-tiles{margin-top:26px;display:grid;grid-template-columns:repeat(auto-fill,minmax(168px,1fr));gap:18px}
 .lp-tile{position:relative;display:block;background:var(--white);border:1.5px solid var(--ink);box-shadow:4px 4px 0 var(--ink);text-decoration:none;color:var(--ink);transition:transform .15s ease,box-shadow .15s ease}
 .lp-tile:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
-.lp-tile img{width:100%;aspect-ratio:var(--iar,1414/2000);object-fit:cover;background:#fff;border-bottom:1.5px solid var(--ink)}
+.lp-tile img{width:100%;height:auto;background:#fff;border-bottom:1.5px solid var(--ink)}
 .lp-tile strong{display:block;padding:10px 12px 12px;font-family:var(--serif);font-weight:400;font-size:17px;line-height:1.25;text-align:center;letter-spacing:-.2px}
 .lp-tile .sa-card-num{width:30px;height:30px;font-size:13px;top:10px;left:10px}
 .lp-tile .sa-card-done{font-size:10px;top:10px;right:10px;padding:4px 9px}
