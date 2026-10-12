@@ -50,7 +50,7 @@ test('art wall keeps accessibility: alt text everywhere, no keyboard interferenc
  assert.match(js,/\[data-aw-wall\]/);
  assert.ok(!/document\.addEventListener\('contextmenu'/.test(js));
  // The page loads its enhancement script and the images stay plain content (no tabindex)
- assert.match(html,/src="\/assets\/art-wall\.js"/);
+ assert.match(html,/src="\/assets\/art-wall\.js(\?v=[0-9]+)?"/);
  assert.doesNotMatch(html,/tabindex="0"[^>]*alt="Child-style/);
 });
 

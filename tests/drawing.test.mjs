@@ -118,7 +118,7 @@ for(const {t,steps,path} of TUTORIALS){
  });
 
  test(path+' viewer: controls, Step N of 6 counter, restart after the last step, Back to Activities',()=>{
-  assert.match(page,/src="\/assets\/drawing\.js"/,'the reusable viewer script is wired');
+  assert.match(page,/src="\/assets\/drawing\.js(\?v=[0-9]+)?"/,'the reusable viewer script is wired');
   assert.match(page,/data-drawing-tutorial/);
   assert.match(page,/data-dt-count aria-live="polite" hidden>Step 1 of 6</,'progress counter starts at Step 1 of 6');
   assert.equal([...page.matchAll(/data-dt-dot>/g)].length,6,'one progress dot per step');

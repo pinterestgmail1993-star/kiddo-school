@@ -18,7 +18,7 @@ test('every local link, image, stylesheet, script and fragment resolves',()=>{
   for(const match of html.matchAll(/(?:href|src)="([^"<>]+)"/g)){
    const value=match[1];if(!value.startsWith('/')&&!value.startsWith('#'))continue;
    const [path,fragment]=value.split('#');
-   let target=path?join(root,path):file;if(target.endsWith('/'))target+='index.html';
+   let target=path?join(root,path.split('?')[0]):file;if(target.endsWith('/'))target+='index.html';
    assert.ok(existsSync(target),`${file}: missing ${value}`);
    if(fragment)assert.ok(read(target).includes(`id="${fragment}"`),`${file}: missing anchor ${value}`);
    checked++;

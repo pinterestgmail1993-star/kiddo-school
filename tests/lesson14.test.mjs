@@ -99,8 +99,8 @@ test('lesson 14 carries the family feedback mount with the correct page path',()
  assert.ok(html.includes('data-cm-root'));
  assert.ok(html.includes('data-page-path="/toddler/2-years/garden-bugs-and-friends/"'));
  assert.ok(html.includes('How was this activity?'));
- assert.ok(html.includes('src="/assets/community.js"'));
- assert.ok(html.includes('src="/assets/community-api.js"'));
+ assert.ok(/src="\/assets\/community\.js(\?v=[0-9]+)?"/.test(html));
+ assert.ok(/src="\/assets\/community-api\.js(\?v=[0-9]+)?"/.test(html));
  assert.ok(html.includes('data-cm-reaction="love"')&&html.includes('data-cm-reaction="not_for_us"'));
  // accessible names are the text labels, emoji are aria-hidden
  assert.ok(html.includes('aria-hidden="true">😍</span><span>Loved it</span>'));

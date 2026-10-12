@@ -17,7 +17,7 @@ test('school calendar: exact SEO title, one H1, breadcrumbs and schema',()=>{
  assert.match(mc,/Open the calendar/);
  assert.match(map,/<loc>https:\/\/kiddo-school\.pages\.dev\/school-calendar\/<\/loc>/);
  // The page loads its local-time enhancement script
- assert.match(html,/src="\/assets\/calendar\.js"/);
+ assert.match(html,/src="\/assets\/calendar\.js(\?v=[0-9]+)?"/);
 });
 
 test('every day of the week points to a real page that exists in this build',()=>{

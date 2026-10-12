@@ -95,7 +95,7 @@ test('the review system is the real moderated backend, asked as a story',()=>{
 });
 
 test('reader component: mounted with the reusable script and cover-first HTML',()=>{
- assert.match(page,/src="\/assets\/book-reader\.js"/);
+ assert.match(page,/src="\/assets\/book-reader\.js(\?v=[0-9]+)?"/);
  const staticCover=page.match(/data-bk-static>\s*<div class="bk-covercard"><img src="([^"]+)"[^>]*>/);
  assert.equal(staticCover[1],bunnyBook.base+'cover.webp','cover ships in the initial HTML');
  assert.match(staticCover[0],/fetchpriority="high"/,'cover is the priority image');

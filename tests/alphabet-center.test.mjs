@@ -140,7 +140,7 @@ test('hub: /flashcards/alphabet/ is cards and downloads, not an Alphabet Centre 
 
 test('beginning sounds: 26 honest rounds, exactly one correct choice, reveals aligned to rounds',()=>{
  const html=page('/activities/beginning-sounds/');
- assert.match(html,/src="\/assets\/site.js"/,'uses the existing tc-round engine (no new engine)');
+ assert.match(html,/src="\/assets\/site\.js(\?v=[0-9]+)?"/,'uses the existing tc-round engine (no new engine)');
  const rounds=[...html.matchAll(/<div class="tc-round" data-tc-round[^>]*>/g)];
  assert.equal(rounds.length,26,'one round per letter');
  const section=html.match(/<section class="wrap lesson-section tc-game" data-tc-correct="([^"]*)"/);
@@ -184,7 +184,7 @@ test('letter matching: JSON registry with 26 letters and the four-round difficul
  const html=page('/activities/letter-matching/');
  assert.match(html,/data-amg-game hidden/,'game ships hidden until JS runs');
  assert.match(html,/data-amg-data/,'data mount');
- assert.match(html,/src="\/assets\/alphabet-match.js"/,'game script');
+ assert.match(html,/src="\/assets\/alphabet-match\.js(\?v=[0-9]+)?"/,'game script');
  const data=JSON.parse(html.match(/<script type="application\/json" data-amg-data>(.*?)<\/script>/)[1]);
  assert.equal(data.letters.length,26);
  for(const L of data.letters){

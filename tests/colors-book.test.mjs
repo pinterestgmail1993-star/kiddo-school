@@ -118,7 +118,7 @@ test('the review system is the real moderated backend, asked as a story',()=>{
 });
 
 test('reader component: mounted with the reusable script and cover-first HTML',()=>{
- assert.match(page,/src="\/assets\/book-reader\.js"/);
+ assert.match(page,/src="\/assets\/book-reader\.js(\?v=[0-9]+)?"/);
  const staticCover=page.match(/data-bk-static>\s*<div class="bk-covercard"><img src="([^"]+)"[^>]*>/);
  assert.equal(staticCover[1],BASE+COVER,'page 1 ships as the cover in the initial HTML');
  assert.match(staticCover[0],/width="2000" height="1545"/,'cover at its true dims');

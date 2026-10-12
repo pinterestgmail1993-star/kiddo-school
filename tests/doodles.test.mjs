@@ -88,7 +88,7 @@ test('calm mode and reduced motion really stop the movement',()=>{
 
 test('every page loads doodles.js and the calm toggle lands in the footer',()=>{
  for(const [name,html] of [['home',home],['class 8',c8],['about',about],['baby',baby]]){
-  assert.ok(html.includes('<script src="/assets/doodles.js" defer></script>'),name+' loads doodles.js');
+  assert.ok(/<script src="\/assets\/doodles\.js(\?v=[0-9]+)?" defer><\/script>/.test(html),name+' loads doodles.js');
  }
  assert.match(js,/\.wrap\.footer-bottom/,'calm button mounts in the footer bottom bar');
 });

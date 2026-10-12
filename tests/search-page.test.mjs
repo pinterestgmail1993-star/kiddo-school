@@ -60,7 +60,7 @@ test('the school’s real rooms are searchable, utility views are not',()=>{
 });
 
 test('the search page ships the whole-school results mount and script',()=>{
- assert.match(searchPage,/src="\/assets\/search-page\.js"/,'the whole-school script is wired');
+ assert.match(searchPage,/src="\/assets\/search-page\.js(\?v=[0-9]+)?"/,'the whole-school script is wired');
  assert.match(searchPage,/SEARCH THE WHOLE SCHOOL/,'the search page names its job');
  assert.match(searchPage,/Search every book, class, drawing lesson, flashcard set, worksheet and activity/);
  assert.match(searchPage,/for="query">Search the whole school</,'the field invites the whole school');

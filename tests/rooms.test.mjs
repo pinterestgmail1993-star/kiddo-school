@@ -271,7 +271,7 @@ test('sticky note wall shows classroom examples and an honest form',()=>{
  assert.ok(rooms.includes('We couldn’t send that. Please try again.'),'honest failure message');
  assert.ok(rooms.includes('Write a little note first.')&&rooms.includes('Please tick the parent box first.'));
  assert.ok(wall.includes('data-wall-family-wrap'),'approved family notes area exists');
- assert.match(wall,/src="\/assets\/community-api\.js"/);
+ assert.match(wall,/src="\/assets\/community-api\.js(\?v=[0-9]+)?"/);
  noBanned(wall,['testimonial','email address','phone number'],'sticky wall');
 });
 

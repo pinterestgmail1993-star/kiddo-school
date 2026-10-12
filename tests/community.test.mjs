@@ -177,7 +177,7 @@ test('review mounts land on activity pages only — never on home, privacy, PO, 
  for(const f of ['dist/index.html','dist/privacy/index.html','dist/principals-office/index.html','dist/my-school-bag/index.html','dist/sticky-note-wall/index.html','dist/art-wall/index.html','dist/learning-path/index.html','dist/learning-library/index.html']){
   assert.ok(!read(f).includes('data-cm-root'),'no review mount on '+f);
  }
- assert.ok(read('dist/school-community/index.html').includes('src="/assets/community.js"'),'community page loads the community script');
+ assert.ok(/src="\/assets\/community\.js(\?v=[0-9]+)?"/.test(read('dist/school-community/index.html')),'community page loads the community script');
 });
 
 test('community-api.js loads BEFORE every consumer script (defer execution order)',()=>{

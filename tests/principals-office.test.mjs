@@ -22,7 +22,7 @@ test('principal office: exact SEO title, one H1, discoverable from the classroom
  assert.match(about,/id="principal"/);
  assert.match(about,/href="\/principals-office\/"/);
  assert.match(map,/<loc>https:\/\/kiddo-school\.pages\.dev\/principals-office\/<\/loc>/);
- assert.match(html,/src="\/assets\/principal-office\.js"/);
+ assert.match(html,/src="\/assets\/principal-office\.js(\?v=[0-9]+)?"/);
 });
 
 test('the form offers exactly the six categories and requires only the two message fields',()=>{
