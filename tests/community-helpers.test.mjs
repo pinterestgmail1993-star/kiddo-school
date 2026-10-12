@@ -49,7 +49,7 @@ test('the Class 33 hub is a compact classroom: lesson nav + ONE collection link,
  assert.ok(hub.includes('Class 33'),'class chip present');
 });
 
-test('all 29 Learning Path lessons exist with image left, teaching right, NO canvas',()=>{
+test('all 29 Learning Path lessons exist with image + drawing canvas left, teaching right',()=>{
  const slugs=lesson.cards.map(c=>c.file.replace(/\.webp$/,''));
  const seenTitles=new Set();
  for(const slug of slugs){
@@ -58,9 +58,11 @@ test('all 29 Learning Path lessons exist with image left, teaching right, NO can
   const h=read(p.slice(1)+'index.html');
   const card=lesson.cards.find(c=>c.file===slug+'.webp');
   const l=lpContent[slug];
-  assert.ok(h.includes(`src="${lesson.r2Base}${slug}.webp"`),'original R2 flashcard displayed on '+slug);
-  assert.ok(h.includes(`width="1414" height="2000"`),'aspect ratio preserved on '+slug);
-  assert.ok(!h.includes('data-wc'),'no drawing canvas on '+slug);
+  assert.ok(h.includes(`src="${lesson.r2Base}${slug}.webp?draw=1"`),'original R2 flashcard displayed with the drawing cache key on '+slug);
+  assert.ok(h.includes(`data-wc data-wc-src="${lesson.r2Base}${slug}.webp?draw=1"`),'drawing canvas mounted over the flashcard on '+slug);
+  assert.ok(h.includes(`data-wc-restore="learn/community-helpers-and-our-neighborhood/${slug}"`),'per-child save & restore on '+slug);
+  assert.ok(h.includes('data-wc-name='),'drawing tools mount named for the child on '+slug);
+  assert.ok(h.includes('width="1414" height="2000"'),'aspect ratio preserved on '+slug);
   assert.ok(!h.includes('fc2-cardlink'),'no flashcard grid on '+slug);
   assert.ok(h.includes('LEARNING PATH LESSON'),'lesson eyebrow on '+slug);
   for(const f of ['What is this?','What does it mean?','Why this matters','Step by step','Say this to your child','Ask your child','Try it together','Understanding check'])

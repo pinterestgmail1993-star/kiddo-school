@@ -24,6 +24,7 @@ import * as bpData from './data-body-parts.mjs';
 import * as fvData from './data-fruits-vegetables.mjs';
 import * as lsData from './data-life-skills-and-good-habits.mjs';
 import * as chData from './data-community-helpers.mjs';
+import * as wsData from './data-weather-seasons.mjs';
 import * as sciData from './data-science-nature-and-discovery.mjs';
 import {fvMeta,fvCardContent,cfoMeta,cfoCardContent,fwftMeta,fwftCardContent} from './data-baby-stages.mjs';
 import {aeoMeta,aeoCardContent,fabMeta,fabCardContent,fwfhMeta,fwfhCardContent} from './data-explorer-toddler.mjs';
@@ -118,7 +119,14 @@ const SOURCES=[
  // all 1414×2000 portrait probed per file). cover.webp fronts the set and is
  // never counted as a card. Purpose: WHAT each helper does — the Learning
  // Path /learn/ lessons (lp-lessons.mjs) keep the HOW, on their own pages.
- [chData,chData.lesson]
+ // Preschool Class 34: twenty-nine weather/seasons/what-we-wear cards from the
+ // owner's Canva uploads in the class's own R2 folder (self-contained lesson
+ // object, all 1414×2000 portrait probed per file). cover.webp fronts the set
+ // and is never counted as a card — there are 29 cards, not 30. Purpose: WHAT
+ // each weather/clothing idea means — the Learning Path /learn/ lessons keep
+ // the HOW, on their own pages.
+ [chData,chData.lesson],
+ [wsData,wsData.lesson]
 ];
 
 function buildSet([data,lesson]){
@@ -135,7 +143,7 @@ function buildSet([data,lesson]){
   return {slug:s,word:d.word||titleWord(s),file:c.file,w:c.w,h:c.h,alt:c.alt,
    img2:c.picFile?base+c.picFile:null,alt2:c.picAlt||null,picWord:d.picWord||null,
    letter:c.letter||d.letter||null,numeral:c.numeral||d.numeral||null,sound:d.sound||null,audio:c.audio||null,metaDescription:d.metaDescription||null,cardTitle:d.cardTitle||null,
-   intro:d.intro,why:d.why||null,who:d.who||null,job:d.job||null,safety:d.safety||null,say:d.say,try:d.try,note:d.note,url:url+s+'/',img:base+c.file,n:i+1};
+   intro:d.intro,why:d.why||null,who:d.who||null,whoHeading:d.whoHeading||null,job:d.job||null,jobHeading:d.jobHeading||null,safety:d.safety||null,say:d.say,try:d.try,note:d.note,url:url+s+'/',img:base+c.file,n:i+1};
  });
  const coverFile=data.meta.coverFile||'cover.webp';
  const stage=STAGES[slug]||null;
@@ -250,8 +258,11 @@ export function fcCardPageBody(set,card,ctx){
  // Optional development block (Class 31 science cards carry one): why this
  // knowledge helps at this age. Sets without card.why render nothing here.
  const why=card.why?`<div class="fc2-do"><h2>Why it helps a preschooler</h2><p>${esc(card.why)}</p></div>`:'';
- const who=card.who?`<div class="fc2-do"><h2>What is this community helper?</h2><p>${esc(card.who)}</p></div>`:'';
- const job=card.job?`<div class="fc2-do"><h2>What do they do?</h2><p>${esc(card.job)}</p></div>`:'';
+ // who/job blocks with set-appropriate headings: community helpers ask "What
+ // is this community helper? / What do they do?", weather cards carry their
+ // own honest headings ("What is fog?" / "How do we wear a raincoat?").
+ const who=card.who?`<div class="fc2-do"><h2>${esc(card.whoHeading||'What is this community helper?')}</h2><p>${esc(card.who)}</p></div>`:'';
+ const job=card.job?`<div class="fc2-do"><h2>${esc(card.jobHeading||'What do they do?')}</h2><p>${esc(card.job)}</p></div>`:'';
  const sound=card.sound?`<div class="fc2-do fc2-sound"><h2>Letter sound</h2><p>${esc(card.sound)}</p></div>`:'';
  const tryThis=`<div class="fc2-do"><h2>Try this</h2><p>${esc(card.try)}</p></div>`;
  const note=`<div class="fc2-do fc2-note"><h2>Quick parent note</h2><p>${esc(card.note)}</p></div>`;

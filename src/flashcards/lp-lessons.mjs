@@ -1,13 +1,17 @@
-// Kiddo School — Learning Path flashcard lessons (owner doctrine, 2026-10-12):
-// TYPE 1 teaching lesson — the original Canva flashcard on the LEFT (no canvas,
-// no tools), unique step-by-step teaching content on the RIGHT. Each lesson has
-// its own route under the class path: {lessonPath}learn/{slug}/. This module is
-// the registry + page body; the library card pages (flashcards/index.mjs) stay a
-// separate WHAT/WHY/PRACTISE experience — no text is shared between the two.
+// Kiddo School — Learning Path flashcard lessons (owner doctrine, updated
+// 2026-10-12): TYPE 1 teaching lesson — the original Canva flashcard on the
+// LEFT with the drawing canvas over it and the drawing tools for the child
+// (the Learning Path is where children LEARN AND PRACTISE online), unique
+// step-by-step teaching content on the RIGHT. Each lesson has its own route
+// under the class path: {lessonPath}learn/{slug}/. This module is the registry
+// + page body; the library card pages (flashcards/index.mjs) stay a separate
+// WHAT/WHY/PRACTISE experience for parents — paper, download, print, NO canvas
+// — and no text is shared between the two.
 import {fcSetBySlug,registerLpTeachLinks} from './index.mjs';
 import {lpContent as ch33} from './lp-community-helpers.mjs';
 import {lpContent as ls32} from './lp-life-skills.mjs';
 import {lpContent as s31} from './lp-science-nature.mjs';
+import {lpContent as ws34} from './lp-weather-seasons.mjs';
 import {lpContent as fvt} from './lp-faces-and-visual-tracking.mjs';
 import {lpContent as cfo} from './lp-colors-and-first-objects.mjs';
 import {lpContent as fwft} from './lp-first-words-familiar-things.mjs';
@@ -119,6 +123,9 @@ export const LP_REGISTRY=[
  {slug:'science-nature-and-discovery',content:s31,
   navTitle:'Learn the science, nature and discovery cards',
   navIntro:'Thirty-five science lessons: what each idea means, what to notice on the card, a safe way to try it at home and the questions that keep curiosity going.'},
+ {slug:'weather-seasons-and-what-we-wear',content:ws34,
+  navTitle:'Learn the weather, the seasons and what we wear',
+  navIntro:'Twenty-nine weather-and-clothes lessons: sun and clouds, rain and rainbows, storms and snow, the four seasons, and the umbrella, raincoat, sun hat and winter coat that match each kind of day. Every lesson reads the real artwork, walks the teaching step by step and ends with something to practise outside the window — whichever sky is out there today.'},
 ].map(r=>({...r,set:fcSetBySlug[r.slug]})).filter(r=>r.set);
 
 export const lpSetBySlug=Object.fromEntries(LP_REGISTRY.map(r=>[r.slug,r]));
@@ -158,7 +165,9 @@ export function lpLessonBody(set,card,lesson,ctx){
  return `<nav class="breadcrumbs wrap" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><a href="/learning-path/">Learning Path</a><span aria-hidden="true">/</span><a href="${esc(set.stageHref||set.lessonPath)}">${esc(set.name)}</a><span aria-hidden="true">/</span><span aria-current="page">${esc(card.word)}</span></nav>
  <div class="page-heading wrap"><span class="eyebrow">LEARNING PATH LESSON · ${esc(set.name.toUpperCase())} · AGES ${esc(set.ageLabel.toUpperCase())}</span><h1>${esc(card.word)} — a step-by-step lesson for grown-up and child</h1><p>${esc(lesson.intro)}</p></div>
  <div class="fcl wrap">
-  <figure class="fcl-art"><img src="${esc(card.img)}" width="${card.w}" height="${card.h}" alt="${esc(card.alt)}"><figcaption><strong>${esc(card.word)}</strong><span>Original Canva flashcard · Card ${card.n} of ${set.cards.length}</span></figcaption></figure>
+  <div class="wc-mount fcl-left" data-wc data-wc-src="${esc(card.img)}?draw=1" data-wc-name="${esc(card.word)} flashcard" data-wc-w="${card.w}" data-wc-h="${card.h}" data-wc-restore="learn/${esc(set.slug)}/${esc(card.slug)}">
+   <figure class="fcl-art"><img src="${esc(card.img)}?draw=1" width="${card.w}" height="${card.h}" alt="${esc(card.alt)}" fetchpriority="high" crossorigin="anonymous"><figcaption><strong>${esc(card.word)}</strong><span>Original Canva flashcard · Card ${card.n} of ${set.cards.length}</span></figcaption></figure>
+  </div>
   <div class="fcl-copy">${blocks}${pair}</div>
  </div>
  <div class="wrap">${pn}</div>`;

@@ -181,7 +181,7 @@ test('30 science worksheets ship with PDFs, twins and honest copy',()=>{
 
 test('Class 31 is wired into the whole school without breaking 23-30',()=>{
  const home=page('/');
- assert.ok(home.includes('Thirty-one classes are ready now'),'honest class count on home');
+ assert.ok(home.includes('Thirty-two classes are ready now'),'honest class count on home');
  const lp=page('/learning-path/');
  assert.ok(lp.includes('Class 31: <a href="/preschool/4-years/science-nature-and-discovery/">'),'learning path row 31');
  assert.ok(lp.includes('Science, Nature &amp; Discovery'),'class 31 named on the path');

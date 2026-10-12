@@ -1844,4 +1844,9 @@ h1 em,h2 em{color:#7b4b99}
 .fcl-pair{font-size:.92rem;color:var(--ink-60,#5b5348);border-top:1.5px solid var(--ink-20,#e7dfd2);padding-top:14px}
 .fc2-relrow .fcl-nav strong{display:block}
 .fc2-relrow .fcl-nav{min-width:min(320px,100%)}
-@media(max-width:820px){.fcl{grid-template-columns:1fr;gap:26px}.fcl-art{position:static}.fcl-art img{max-width:260px}}
+/* Lessons carry the drawing canvas (owner law): the wc-mount replaces the
+   plain artwork column — same size caps as the plain artwork, the drawing
+   toolbar lands under the card, and the column stays sticky on desktop. */
+.wc-mount.fcl-left{position:sticky;top:24px;min-width:0}
+.fcl-left .wc-stage{max-width:400px}
+@media(max-width:820px){.fcl{grid-template-columns:1fr;gap:26px}.fcl-art{position:static}.fcl-art img{max-width:260px}.wc-mount.fcl-left{position:static}.fcl-left .wc-stage{max-width:260px}}

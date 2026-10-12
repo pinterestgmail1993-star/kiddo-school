@@ -20,7 +20,7 @@ test('the 28 lessons match the 28 uploaded flashcards exactly',()=>{
  assert.deepEqual(Object.keys(lpContent).sort(),slugs,'lesson slugs match the real filenames');
 });
 
-test('all 28 /learn/ lessons exist: original flashcard left, teaching right, NO canvas',()=>{
+test('all 28 /learn/ lessons exist: flashcard + drawing canvas left, teaching right',()=>{
  const seen=new Set();
  for(const card of lsLesson.cards){
   const slug=card.file.replace(/\.webp$/,'');
@@ -28,9 +28,11 @@ test('all 28 /learn/ lessons exist: original flashcard left, teaching right, NO 
   assert.ok(existsSync('dist'+p+'index.html'),'lesson built: '+p);
   const h=read(p.slice(1)+'index.html');
   const l=lpContent[slug];
-  assert.ok(h.includes(`src="${lsLesson.r2Base}${card.file}"`),'original R2 flashcard displayed on '+slug);
+  assert.ok(h.includes(`src="${lsLesson.r2Base}${card.file}?draw=1"`),'original R2 flashcard displayed with the drawing cache key on '+slug);
+  assert.ok(h.includes('data-wc data-wc-src='),'drawing canvas mounted over the flashcard on '+slug);
+  assert.ok(h.includes(`data-wc-restore="learn/life-skills-and-good-habits/${slug}"`),'per-child save & restore on '+slug);
+  assert.ok(h.includes('data-wc-name='),'drawing tools mount named for the child on '+slug);
   assert.ok(h.includes('width="1414" height="2000"'),'aspect ratio preserved on '+slug);
-  assert.ok(!h.includes('data-wc'),'no drawing canvas on '+slug);
   assert.ok(!h.includes('fc2-cardlink'),'no flashcard grid on '+slug);
   assert.ok(h.includes('LEARNING PATH LESSON'),'lesson eyebrow on '+slug);
   for(const f of ['What is this?','What does it mean?','Why this matters','Step by step','Say this to your child','Ask your child','Try it together','Understanding check','Look closer at the picture'])

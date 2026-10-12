@@ -1,0 +1,182 @@
+{
+ "autumn": {
+  "w": 1414,
+  "h": 2000,
+  "bytes": 220084,
+  "status": 200
+ },
+ "clouds": {
+  "w": 1414,
+  "h": 2000,
+  "bytes": 200310,
+  "status": 200
+ },
+ "cloudy-day": {
+  "w": 1414,
+  "h": 2000,
+  "bytes": 227274,
+  "status": 200
+ },
+ "cold-weather": {
+  "w": 1414,
+  "h": 2000,
+  "bytes": 208670,
+  "status": 200
+ },
+ "cool-weather": {
+  "w": 1414,
+  "h": 2000,
+  "bytes": 214360,
+  "status": 200
+ },
+ "cover": {
+  "w": 1414,
+  "h": 2000,
+  "bytes": 164026,
+  "status": 200
+ },
+ "foggy-day": {
+  "w": 1414,
+  "h": 2000,
+  "bytes": 169860,
+  "status": 200
+ },
+ "hot-weather": {
+  "w": 1414,
+  "h": 2000,
+  "bytes": 210200,
+  "status": 200
+ },
+ "rain-boots": {
+  "w": 1414,
+  "h": 2000,
+  "bytes": 221168,
+  "status": 200
+ },
+ "rain": {
+  "w": 1414,
+  "h": 2000,
+  "bytes": 195852,
+  "status": 200
+ },
+ "rainbow": {
+  "w": 1414,
+  "h": 2000,
+  "bytes": 211690,
+  "status": 200
+ },
+ "raincoat": {
+  "w": 1414,
+  "h": 2000,
+  "bytes": 176056,
+  "status": 200
+ },
+ "rainy-day": {
+  "w": 1414,
+  "h": 2000,
+  "bytes": 195236,
+  "status": 200
+ },
+ "scarf-and-gloves": {
+  "w": 1414,
+  "h": 2000,
+  "bytes": 211520,
+  "status": 200
+ },
+ "snow": {
+  "w": 1414,
+  "h": 2000,
+  "bytes": 222806,
+  "status": 200
+ },
+ "snowy-day": {
+  "w": 1414,
+  "h": 2000,
+  "bytes": 200962,
+  "status": 200
+ },
+ "spring": {
+  "w": 1414,
+  "h": 2000,
+  "bytes": 196522,
+  "status": 200
+ },
+ "stormy-day": {
+  "w": 1414,
+  "h": 2000,
+  "bytes": 162256,
+  "status": 200
+ },
+ "summer": {
+  "w": 1414,
+  "h": 2000,
+  "bytes": 205448,
+  "status": 200
+ },
+ "sun-hat": {
+  "w": 1414,
+  "h": 2000,
+  "bytes": 198022,
+  "status": 200
+ },
+ "sun": {
+  "w": 1414,
+  "h": 2000,
+  "bytes": 197016,
+  "status": 200
+ },
+ "sunglasses": {
+  "w": 1414,
+  "h": 2000,
+  "bytes": 197052,
+  "status": 200
+ },
+ "sunny-day": {
+  "w": 1414,
+  "h": 2000,
+  "bytes": 174184,
+  "status": 200
+ },
+ "umbrella": {
+  "w": 1414,
+  "h": 2000,
+  "bytes": 183732,
+  "status": 200
+ },
+ "warm-weather": {
+  "w": 1414,
+  "h": 2000,
+  "bytes": 216190,
+  "status": 200
+ },
+ "weather-forecast": {
+  "w": 1414,
+  "h": 2000,
+  "bytes": 200022,
+  "status": 200
+ },
+ "wind": {
+  "w": 1414,
+  "h": 2000,
+  "bytes": 169706,
+  "status": 200
+ },
+ "windy-day": {
+  "w": 1414,
+  "h": 2000,
+  "bytes": 149766,
+  "status": 200
+ },
+ "winter-coat": {
+  "w": 1414,
+  "h": 2000,
+  "bytes": 198308,
+  "status": 200
+ },
+ "winter": {
+  "w": 1414,
+  "h": 2000,
+  "bytes": 184378,
+  "status": 200
+ }
+}

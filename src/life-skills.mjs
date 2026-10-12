@@ -512,7 +512,7 @@ export function lifeSkillsClassBody(){
   <div class="lesson-start"><a class="button" href="${LS_ACT_PATH}wash-your-hands/">Start the first activity <span aria-hidden="true">→</span></a><span class="lesson-start-hint">One or two sheets per sitting is a full class.</span></div>
  </div></article>
  <section class="wrap fc-section" id="teach" aria-label="How to teach the 28 life skills">
-  <span class="eyebrow">LEARNING PATH LESSONS · HOW TO TEACH THE 28 LIFE SKILLS</span>
+  <span class="eyebrow">LEARN WITH FLASHCARDS · HOW TO TEACH THE 28 LIFE SKILLS</span>
   <h2>Teach every skill, step by step.</h2>
   <p class="fc-hint">Twenty-eight individual flashcard teaching lessons — each opens on its own page with the original artwork on the left and the full step-by-step guidance on the right: what the skill is, why it matters, what it teaches your child, the words to say, the questions to ask, a practice game and the safety notes. One skill a week is plenty — twenty-eight skills is a school year of good habits.</p>
   <div class="fc2-relrow">${lsFlash.lesson.cards.map((c)=>{const slug=c.file.replace(/\.webp$/,'');const l=lsLp[slug];if(!l)return '';return `<a class="fc2-relcard fcl-nav" href="${LS_CLASS_PATH}learn/${slug}/"><strong>${esc(l.title)}</strong><span>${esc(l.one)}</span><span class="fc-open">Start the lesson <span aria-hidden="true">↗</span></span></a>`;}).join('')}</div>
