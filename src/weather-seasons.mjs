@@ -17,7 +17,7 @@ export const WS34_READY=29;
 export const WS34_TOTAL=29;
 export const WS34_WS_READY=weatherWs.length;
 
-// The 23 genuine weather worksheets are verified live on R2 (HTTP 200
+// The 35 genuine weather worksheets are verified live on R2 (HTTP 200
 // image/webp, 1414×2000, sheet-by-sheet audit) — the practice section
 // renders, exactly like Class 33's.
 export const wxWsContents=weatherWs.length?`<div class="sa-grid">${weatherWs.map((w,i)=>`<a class="sa-card sa-card-imgonly" href="${WS34_WS_CLASS}${w.slug}/" data-wxws-card="${w.slug}">
@@ -35,7 +35,7 @@ export function weatherSeasonsClassBody(){
  // Owner doctrine: the class listing shows every flashcard as a PICTURE —
  // each picture opens its own /learn/ page. No per-image description here;
  // the words live on the individual lesson pages.
- const wsSection=wxWsContents?`<section class="wrap lesson-section" id="worksheets"><span class="eyebrow">PRACTISE WITH WORKSHEETS</span><h2>Solve the Weather &amp; Seasons worksheets.</h2><p class="lesson-copy">Twenty-three genuine activity sheets — match the seasons, circle the right clothes, count, trace and draw. Every card below opens its own activity page: the sheet sits on the left and your child traces, circles and draws straight on top of it, with the instructions beside them and the tools under their fingers. Each sheet has a printable twin in the worksheet library.</p>${wxWsContents}</section>`:'';
+ const wsSection=wxWsContents?`<section class="wrap lesson-section" id="worksheets"><span class="eyebrow">PRACTISE WITH WORKSHEETS</span><h2>Solve the Weather &amp; Seasons worksheets.</h2><p class="lesson-copy">Thirty-five genuine activity sheets — the seasons and their clothes, clouds and shadows, thermometers and maps, forecasts, the water cycle, wind, tools and storm safety. Every card below opens its own activity page: the sheet sits on the left and your child traces, circles and draws straight on top of it, with the instructions beside them and the tools under their fingers. Each sheet has a printable twin in the worksheet library.</p>${wxWsContents}</section>`:'';
  const wsResource=wxWsContents?`<a class="button" href="/worksheets/weather-seasons-and-what-we-wear/">Weather &amp; Seasons worksheets <span aria-hidden="true">↗</span></a>`:'';
  const learnRows=cards.map((c)=>{
   const l=wsLp[c.slug];

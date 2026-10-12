@@ -186,8 +186,8 @@ test('sitemap carries all 74 new Age 4 URLs',()=>{
  assert.ok(xml.includes('/preschool/shapes/adventures/build-a-shape-spaceship/'),'sitemap spaceship');
  assert.ok(xml.includes('/preschool/writing/adventures/sunshine-stroke-challenge/'),'sitemap sunshine');
  const count=xml.split('/preschool/4-years/').length-1;
- // hub + ten class routes + 29+28+35 /learn/ lessons + 35 CH + 23 C34 worksheet activities + 29 C34 learn
- assert.equal(count,190,'hub + ten classes + 29 CH learn + 28 C32 learn + 35 C31 learn + 35 CH + 23 C34 worksheet activities + 29 C34 learn in sitemap');
+ // hub + ten class routes + 29+28+35 /learn/ lessons + 35 CH + 35 C34 worksheet activities + 29 C34 learn
+ assert.equal(count,202,'hub + ten classes + 29 CH learn + 28 C32 learn + 35 C31 learn + 35 CH + 35 C34 worksheet activities + 29 C34 learn in sitemap');
 });
 test('My Classroom mounts the creations gallery and adventure progress',()=>{
  const mc=page('/my-classroom/');
