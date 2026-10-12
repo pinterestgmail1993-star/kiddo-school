@@ -9,6 +9,7 @@ import ws from './weather-seasons-and-what-we-wear.mjs';
 import sci from './science-nature-and-discovery.mjs';
 import abc from './alphabet.mjs';
 import num from './numbers-and-counting.mjs';
+import nmg from './numbers-counting-and-early-math.mjs';
 import shp from './shapes.mjs';
 import col from './colors.mjs';
 import opp from './opposites.mjs';
@@ -42,6 +43,7 @@ export default{
  'science-nature-and-discovery':norm(sci),
  'alphabet':norm(abc),
  'numbers-and-counting':norm(num),
+ 'numbers-counting-and-early-math':norm(nmg),
  'shapes':norm(shp),
  'colors':norm(col),
  'opposites':norm(opp),

@@ -10,7 +10,7 @@
 //  - the class hub is a compact classroom: LEARN WITH FLASHCARDS nav + ONE
 //    collection link, and an honest "worksheets not yet" note (no invented
 //    worksheets, no flashcard image reused as one);
-//  - whole-school wiring: class page, LP row 34, count words thirty-two,
+//  - whole-school wiring: class page, LP row 34, count words thirty-three,
 //    flashcards hub, sitemap and search.
 import {readFileSync,existsSync} from 'node:fs';
 import {test} from 'node:test';
@@ -159,13 +159,13 @@ test('all 35 Class 34 worksheet pages exist (genuine artwork, two pages per shee
  }
 });
 
-test('whole-school wiring: LP row 34, stage card, flashcards hub, count words thirty-two',()=>{
+test('whole-school wiring: LP row 34, stage card, flashcards hub, count words thirty-three',()=>{
  const lp=read('/learning-path/index.html');
  assert.ok(lp.includes('Class 34: <a href="/preschool/4-years/weather-seasons-and-what-we-wear/">'),'LP row 34 present');
- assert.ok(lp.includes('thirty-two age-guided classes'),'LP title count');
- assert.ok(lp.includes('Thirty-two classes are ready now'),'LP intro count');
- assert.ok(read('/index.html').includes('Thirty-two classes are ready now'),'homepage count');
- assert.ok(read('/about/index.html').includes('Thirty-two classes from birth to age five are ready today'),'About count');
+ assert.ok(lp.includes('thirty-three age-guided classes'),'LP title count');
+ assert.ok(lp.includes('Thirty-three classes are ready now'),'LP intro count');
+ assert.ok(read('/index.html').includes('Thirty-three classes are ready now'),'homepage count');
+ assert.ok(read('/about/index.html').includes('Thirty-three classes from birth to age five are ready today'),'About count');
  const hub4=read('/preschool/4-years/index.html');
  assert.ok(hub4.includes('/preschool/4-years/weather-seasons-and-what-we-wear/'),'Age 4 stage card links Class 34');
  assert.ok(hub4.includes('Class 34'),'Class 34 chip on the stage hub');

@@ -1,0 +1,21 @@
+// Kiddo School — Class 35 · Numbers, Counting & Early Math: the Learning Path
+// class page. A compact classroom HUB (owner law): intro, how-the-class-works,
+// what is on the cards — TEXT ONLY, no card links (owner rule 2: no card-link
+// grids on class pages; the words live in the library) — plus ONE
+// supporting-resource section with the collection cover and a single link to
+// the library set. NO lessons and NO worksheets are shown or promised: none
+// were uploaded, so nothing is invented.
+import {lesson as nmLesson} from './flashcards/data-numbers-counting-early-math.mjs';
+
+export const NM_CLASS_PATH='/preschool/4-years/numbers-counting-and-early-math/';
+
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+export function numbersMathClassBody(){
+ const base=nmLesson.r2Base;
+ const coverAlt='Cover of the Counting Flashcards 1–20 set: the title over five smiling fruits — an apple, a banana, grapes, an orange and a strawberry.';
+ return `<section class="wrap lesson-section"><div class="page-heading"><span class="eyebrow">CLASS 35 · AGES 4–5 · 20 COUNTING CARDS</span><h1>Numbers, Counting &amp; Early Math.</h1></div></section>
+ <section class="wrap lesson-section"><span class="eyebrow">HOW THIS CLASS WORKS</span><h2>Twenty numbers, one smiling fruit at a time.</h2><p class="lesson-copy">This class walks a child from the very first "one" to a triumphant twenty: twenty printable cards, each with a big numeral on top, rows of smiling fruit to count underneath, and the fruit word printed below. Count the card, then count the real thing — one apple from the bowl, three orange segments on the plate, ten blueberries if you are feeling brave. The kitchen is the answer key, so practice arrives with every snack.</p><p class="lesson-copy">The set has a built-in shape worth knowing as a grown-up: cards 1 to 5 fit one hand, cards 6 to 10 need both, and cards 11 to 20 repeat one quiet pattern — a full ten, plus some more. Say that pattern out loud when you reach eleven and the whole teen decade opens at once. One card a sitting is plenty; the whole class is a month of two-minute counting moments.</p></section>
+ <section class="wrap lesson-section"><span class="eyebrow">MEET THE SET</span><h2>One apple to twenty figs.</h2><p class="lesson-copy">The cards run in three gentle waves. Cards one to five fit on one hand — one apple, two bananas, three oranges, four strawberries, five pears. Cards six to ten need both hands: six grapes, seven cherries, eight watermelon slices, nine peaches and ten blueberries in two neat rows of five. Then the teens begin — eleven kiwis, twelve lemons, thirteen pineapples, fourteen raspberries, fifteen mangoes, sixteen coconuts, seventeen apples, eighteen bananas, nineteen apricots — and twenty figs close the set in four proud rows of five.</p><p class="lesson-copy">Every card repeats the same quiet move: count the smiling fruit, say the number, then find that many real things in your own kitchen. Nothing on the cards needs a pencil, a score or a timer — just a finger and a voice. One card a sitting is plenty, and reaching twenty earns a celebration the whole family can hear.</p></section>
+ <section class="wrap fc-section fc-res"><div class="fc-res-copy"><span class="eyebrow">SUPPORTING RESOURCE</span><h2>Open the counting cards.</h2><p class="fc-hint">All twenty cards live in the flashcard library — each with its own page, the original artwork, a download button, print size and short notes for grown-ups on counting it for real at home. When your child owns 1 to 20, the first counting set and the fruit cards make fine revisiting: <a href="/flashcards/numbers-and-counting/">Numbers 1–10</a> and <a href="/flashcards/fruits-and-vegetables/">Fruits &amp; Vegetables</a>.</p><div class="fc2-actions"><a class="button" href="/flashcards/numbers-counting-and-early-math/">Open the Counting 1–20 flashcards <span aria-hidden="true">↗</span></a></div></div><div class="fc-res-art"><img src="${base}counting-flashcards-1-20-cover.webp" width="2000" height="1414" alt="Cover of the Counting Flashcards 1–20 set: the title over five smiling fruits — an apple, a banana, grapes, an orange and a strawberry." loading="lazy"></div></section>`;
+}

@@ -25,6 +25,7 @@ import * as fvData from './data-fruits-vegetables.mjs';
 import * as lsData from './data-life-skills-and-good-habits.mjs';
 import * as chData from './data-community-helpers.mjs';
 import * as wsData from './data-weather-seasons.mjs';
+import * as nmgData from './data-numbers-counting-early-math.mjs';
 import * as sciData from './data-science-nature-and-discovery.mjs';
 import {fvMeta,fvCardContent,cfoMeta,cfoCardContent,fwftMeta,fwftCardContent} from './data-baby-stages.mjs';
 import {aeoMeta,aeoCardContent,fabMeta,fabCardContent,fwfhMeta,fwfhCardContent} from './data-explorer-toddler.mjs';
@@ -127,7 +128,13 @@ const SOURCES=[
  // each weather/clothing idea means — the Learning Path /learn/ lessons keep
  // the HOW, on their own pages.
  [chData,chData.lesson],
- [wsData,wsData.lesson]
+ [wsData,wsData.lesson],
+ // Preschool Class 35: twenty counting cards from the owner's Canva uploads
+ // in the class's own R2 folder (self-contained lesson object, all 2000×1414
+ // landscape probed per file). The 1–20 cover fronts the set and is never
+ // counted as a card. No lesson pages exist for this class — the library
+ // card pages ARE the practice shelf, so no lpTeachLinks are registered.
+ [nmgData,nmgData.lesson]
 ];
 
 function buildSet([data,lesson]){
