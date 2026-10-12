@@ -80,6 +80,26 @@ export function worksheetsHubBody(){
    <span class="ws-cat-picks"><span>Wash Your Hands</span><span>Tidy Up</span><span>Calm Down</span></span>
    <span class="fc-open">Browse Life Skills worksheets <span aria-hidden="true">↗</span></span>
   </a>`+
+ /* Class 33 · Community Helpers & Our Neighborhood — the owner's uploaded
+    artwork (no PDF pipeline): download means the original WebP, and every
+    sheet also solves on screen as a canvas activity in its class. */
+ `<a class="ws-cat" href="/worksheets/community-helpers-and-our-neighborhood/">
+   <span class="ws-cat-head"><img src="https://pub-f2fcb7c9b45a496cbeefef18dbba0ec0.r2.dev/school/preschool/4-years/community-helpers-and-our-neighborhood/worksheets/cover.webp" width="1545" height="2000" alt="" aria-hidden="true" loading="lazy"><span class="ws-cat-pill" style="--tint:#efe9fb;--accent:#6d5bb8">Class 33</span><strong>Community Helpers &amp; Our Neighborhood</strong></span>
+   <p>Print the whole neighborhood — the doctor&#39;s kit, the firefighter&#39;s ladder, the baker&#39;s tray, the mail carrier&#39;s route. Thirty-five helper sheets, each one twinned with a Class 33 lesson and ready for real ink.</p>
+   <span class="ws-count-note">35 free worksheets</span>
+   <span class="ws-cat-picks"><span>Doctor</span><span>Firefighter</span><span>Police Officer</span></span>
+   <span class="fc-open">Browse Community Helpers worksheets <span aria-hidden="true">↗</span></span>
+  </a>`+
+ /* Class 34 · Weather, Seasons & What We Wear — the owner's uploaded
+    artwork (no PDF pipeline): download means the original WebP, and every
+    sheet also solves on screen as a canvas activity in its class. */
+ `<a class="ws-cat" href="/worksheets/weather-seasons-and-what-we-wear/">
+   <span class="ws-cat-head"><img src="https://pub-f2fcb7c9b45a496cbeefef18dbba0ec0.r2.dev/school/preschool/4-years/weather-seasons-and-what-we-wear/worksheets/cover.webp" width="1414" height="2000" alt="" aria-hidden="true" loading="lazy"><span class="ws-cat-pill" style="--tint:#e4f2fb;--accent:#3a7fc2">Class 34</span><strong>Weather, Seasons &amp; What We Wear</strong></span>
+   <p>Clouds, thermometers, forecasts, the water cycle and what to wear on a windy day — thirty-five sheets about the sky, traceable on screen or printed for the kitchen table.</p>
+   <span class="ws-count-note">35 free worksheets</span>
+   <span class="ws-cat-picks"><span>The Water Cycle</span><span>Weather Forecast</span><span>Cloud Types</span></span>
+   <span class="fc-open">Browse Weather worksheets <span aria-hidden="true">↗</span></span>
+  </a>`+
  /* Toddler 4 · Class 10 · Matching & Sorting — the owner's uploaded
     toddler artwork (no PDF pipeline), download means the original WebP,
     and every sheet solves on screen in the class. */
@@ -91,7 +111,7 @@ export function worksheetsHubBody(){
    <span class="fc-open">Browse Matching &amp; Sorting worksheets <span aria-hidden="true">↗</span></span>
   </a>`;
  return `${crumbNav([['Worksheets']])}
- ${heading('THE WORKSHEET LIBRARY','Free printable worksheets for little hands.',`${libraryCount()} printable activities \u2014 the paper twins of our games: tracing guides with the same strokes, counting rows, coloring outlines, sound sorts with parent scripts, and science labs with a grown-up answer line \u2014 plus the Life Skills &amp; Good Habits sheets and the toddler Matching &amp; Sorting collection your child can also solve on screen. Download a real PDF, print straight from the page, or play the matching activity online.`)}
+ ${heading('THE WORKSHEET LIBRARY','Free printable worksheets for little hands.',`${libraryCount()} printable activities \u2014 the paper twins of our games: tracing guides with the same strokes, counting rows, coloring outlines, sound sorts with parent scripts, and science labs with a grown-up answer line \u2014 plus the Life Skills &amp; Good Habits sheets, the Community Helpers and Weather &amp; Seasons collections and the toddler Matching &amp; Sorting set your child can also solve on screen. Download a real PDF, print straight from the page, or play the matching activity online.`)}
  <section class="wrap section compact" aria-label="Worksheet categories"><div class="ws-cats">${cards}</div>
  <p class="lesson-note">Every worksheet is free, needs no sign-up, and prints on A4 or US Letter. Each sheet&rsquo;s page keeps everything in reach: the artwork, the download and print buttons, and a place for families to react and comment.</p></section>
  <section class="wrap lesson-section" aria-label="How to use the library"><span class="eyebrow">FOR GROWN-UPS</span><h2>How the library works.</h2>
