@@ -127,6 +127,13 @@ test('the Class 34 hub is a compact classroom: LEARN WITH FLASHCARDS nav + ONE c
  assert.equal(new Set(learnLinks).size,29,'29 unique lesson links on the hub');
  assert.ok(hub.includes('<a class="button" href="/flashcards/weather-seasons-and-what-we-wear/">'),'the resource section links the collection once');
  assert.ok(hub.includes('LEARN WITH FLASHCARDS'),'the learn section is labelled for children');
+ // Owner doctrine 2026-10-12: 29 PICTURE tiles, each opening its own lesson —
+ // no per-image description text on the listing.
+ assert.equal((hub.match(/class="lp-tile"/g)||[]).length,29,'29 image tiles in the LEARN grid');
+ assert.ok(!hub.includes('fc2-relcard fcl-nav'),'no text-description lesson cards on the hub');
+ const wsTiles=[...hub.matchAll(/<a class="lp-tile" href="\/preschool\/4-years\/weather-seasons-and-what-we-wear\/learn\/([a-z-]+)\/"><img src="([^"]+)"/g)];
+ assert.equal(wsTiles.length,29,'every lesson tile carries its original flashcard image');
+ assert.ok(wsTiles.every(([,slug,src])=>src.includes('weather-seasons-and-what-we-wear/'+slug+'.webp')),'tile images are the original R2 artwork');
  assert.ok(!hub.includes('PRACTISE WITH WORKSHEETS'),'no worksheets section: genuine artwork has not been supplied');
  assert.ok(hub.includes('Worksheets are on the way, not yet here'),'honest note instead of invented worksheets');
  assert.ok(!hub.includes('data-wc'),'no canvas on the hub');

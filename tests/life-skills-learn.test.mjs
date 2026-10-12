@@ -77,6 +77,14 @@ test('the Class 32 hub links all 28 lessons and keeps activities + library separ
  const learnLinks=[...hub.matchAll(new RegExp('href="\\/'+CLASS.slice(1).replace(/\//g,'\\/')+'learn\\/([a-z-]+)\\/"','g'))].map(m=>m[1]);
  assert.equal(new Set(learnLinks).size,28,'28 unique lesson links on the hub');
  assert.ok(!hub.includes('data-wc'),'no canvas on the hub');
- assert.equal([...hub.matchAll(/<a class="sa-card" href="([^"]+)"/g)].length,29,'29 activity cards intact on the hub');
+ assert.equal([...hub.matchAll(/<a class="sa-card[^"]*" href="([^"]+)"/g)].length,29,'29 activity cards intact on the hub');
+ // Owner doctrine 2026-10-12: 28 PICTURE tiles open their own lessons; no
+ // per-image description text anywhere on the listing.
+ assert.equal((hub.match(/class="lp-tile"/g)||[]).length,28,'28 image tiles in the LEARN grid');
+ assert.ok(!hub.includes('fc2-relcard fcl-nav'),'no text-description lesson cards on the hub');
+ assert.ok(!hub.includes('sa-card-skill')&&!hub.includes('sa-card-play'),'no description lines on the activity tiles');
+ const lsTiles=[...hub.matchAll(/<a class="lp-tile" href="\/preschool\/4-years\/life-skills-and-good-habits\/learn\/([a-z-]+)\/"><img src="([^"]+)"/g)];
+ assert.equal(lsTiles.length,28,'every lesson tile carries its original flashcard image');
+ assert.ok(lsTiles.every(([,slug,src])=>src.includes('life-skills-and-good-habits/'+slug+'.webp')),'tile images are the original R2 artwork');
  assert.ok(!hub.includes('What does it mean?'),'no full teaching-guide blocks on the hub');
 });

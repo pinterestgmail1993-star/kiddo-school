@@ -107,7 +107,7 @@ test('rule 2 · no class, stage hub or Learning Path page links an ACTIVITY to a
   // activity pages, never a flashcard URL — and Class 31's adventure shelves
   // must still open the /preschool/science/adventures/ activity pages.
   const cls=read('preschool/4-years/life-skills-and-good-habits');
-  const activityHrefs=[...cls.matchAll(/<a class="sa-card" href="([^"]+)"/g)].map(m=>m[1]);
+  const activityHrefs=[...cls.matchAll(/<a class="sa-card[^"]*" href="([^"]+)"/g)].map(m=>m[1]);
   assert.ok(activityHrefs.length>0,'Class 32 activity grid present');
   assert.ok(activityHrefs.every(h=>h.startsWith('/preschool/life-skills/')),'Class 32 activity cards open activities, not flashcards');
   const sci=read('preschool/4-years/science-nature-and-discovery');

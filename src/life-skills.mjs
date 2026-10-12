@@ -493,12 +493,16 @@ const stepCards=[
 
 /* ---------- the Class 32 page ---------- */
 export function lifeSkillsClassBody(){
- const cards=lifeSkills.map(a=>`<a class="sa-card" href="${LS_ACT_PATH}${a.slug}/" data-ls-card="${a.slug}">
+ // Owner doctrine: the class listing shows every flashcard and worksheet as a
+ // PICTURE — each picture opens its own individual page (lesson page for
+ // flashcards, activity page for worksheets). No per-image description text
+ // lives here; the words live on the individual pages.
+ const learnTiles=lsFlash.lesson.cards.map((c)=>{const slug=c.file.replace(/\.webp$/,'');const l=lsLp[slug];if(!l)return '';const img=lsFlash.lesson.r2Base+c.file;return `<a class="lp-tile" href="${LS_CLASS_PATH}learn/${slug}/"><img src="${img}" width="${c.w}" height="${c.h}" alt="${esc(c.alt)}" loading="lazy"><strong>${esc(l.title)}</strong></a>`;}).join('');
+ const cards=lifeSkills.map(a=>`<a class="sa-card sa-card-imgonly" href="${LS_ACT_PATH}${a.slug}/" data-ls-card="${a.slug}">
    <span class="sa-card-num" aria-hidden="true">${a.num}</span>
    <span class="sa-card-done" data-ls-done hidden>Cleared!</span>
    <img src="${LS_BASE}${a.img}" width="707" height="1000" alt="Life Skills &amp; Good Habits sheet ${a.num}: ${esc(a.title)} — ${esc(a.tag)}" loading="lazy">
-   <span class="sa-card-body"><strong>${esc(a.title)}</strong><span class="sa-card-tag">${esc(a.tag)}</span><span class="sa-card-skill">Do it on screen with your finger, a stylus or the mouse</span></span>
-   <span class="sa-card-play">Start the activity <span aria-hidden="true">→</span></span>
+   <span class="sa-card-body"><strong>${esc(a.title)}</strong></span>
   </a>`).join('');
  const missingNote=LS_MISSING.length===1?`Sheet number ${LS_MISSING[0]} appears here with its own real page the day its artwork is uploaded — nothing is published before its sheet really exists. Every ready activity has a printable twin in the <a href="${LS_WS_PATH}">Life Skills worksheet library</a>.`:LS_MISSING.length>1?`The other ${LS_MISSING.length} sheets (numbers ${LS_MISSING.join(', ')}) appear here with their own real pages the day their artwork is uploaded — nothing is published before its sheet really exists. Every ready activity has a printable twin in the <a href="${LS_WS_PATH}">Life Skills worksheet library</a>.`:`Every planned activity is live, each with its printable twin in the <a href="${LS_WS_PATH}">Life Skills worksheet library</a>.`;
  const missing=`<p class="lesson-note">${LS_READY} of the planned ${LS_PLANNED} activities are ready now. ${missingNote}</p>`;
@@ -514,13 +518,13 @@ export function lifeSkillsClassBody(){
  <section class="wrap fc-section" id="teach" aria-label="How to teach the 28 life skills">
   <span class="eyebrow">LEARN WITH FLASHCARDS · HOW TO TEACH THE 28 LIFE SKILLS</span>
   <h2>Teach every skill, step by step.</h2>
-  <p class="fc-hint">Twenty-eight individual flashcard teaching lessons — each opens on its own page with the original artwork on the left and the full step-by-step guidance on the right: what the skill is, why it matters, what it teaches your child, the words to say, the questions to ask, a practice game and the safety notes. One skill a week is plenty — twenty-eight skills is a school year of good habits.</p>
-  <div class="fc2-relrow">${lsFlash.lesson.cards.map((c)=>{const slug=c.file.replace(/\.webp$/,'');const l=lsLp[slug];if(!l)return '';return `<a class="fc2-relcard fcl-nav" href="${LS_CLASS_PATH}learn/${slug}/"><strong>${esc(l.title)}</strong><span>${esc(l.one)}</span><span class="fc-open">Start the lesson <span aria-hidden="true">↗</span></span></a>`;}).join('')}</div>
+  <p class="fc-hint">Twenty-eight skills, one picture each. Tap any picture and it opens its own lesson page — the original artwork with a drawing canvas on the left, and how to teach the skill, step by step, on the right: what it is, why it matters, the words to say and a way to practise the real thing the same day.</p>
+  <div class="lp-tiles">${learnTiles}</div>
  </section>
  <section class="wrap lesson-section" id="activities" aria-label="The life skills activities">
-  <span class="eyebrow">DO · THE LIFE SKILLS ACTIVITIES</span>
+  <span class="eyebrow">PRACTISE WITH WORKSHEETS · THE LIFE SKILLS ACTIVITIES</span>
   <h2>Real sheets, done right here.</h2>
-  <p class="lesson-copy">Every card below opens its own activity page: sheet on the left, instructions on the right, drawing tools under your child’s fingers. Nothing to print unless you want to — each sheet has a printable twin in the worksheet library.</p>
+  <p class="lesson-copy">Twenty-nine genuine activity sheets, one picture each — tap a sheet and it opens its own activity page: the sheet sits on the left and your child traces, circles, counts and draws straight on top of it, with how to solve it written beside them and the drawing tools under their fingers. Nothing to print unless you want to — each sheet has a printable twin in the worksheet library.</p>
   <div class="sa-grid">${cards}</div>
   ${missing}
  </section>

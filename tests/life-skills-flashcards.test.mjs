@@ -135,7 +135,7 @@ test('the Class 32 page: 28 lessons moved to their own /learn/ pages (compact na
  assert.equal(new Set(learnLinks).size,28,'28 unique lesson links on the class page');
  assert.ok(!html.includes('Open the flashcard'),'the flashcard grid marker is gone');
  // main content: 29 activity cards opening activity pages
- const grid=[...html.matchAll(/<a class="sa-card" href="([^"]+)"/g)].map(m=>m[1]);
+ const grid=[...html.matchAll(/<a class="sa-card[^"]*" href="([^"]+)"/g)].map(m=>m[1]);
  assert.equal(grid.length,29,'the existing activity grid is intact');
  assert.ok(grid.every(h=>h.startsWith('/preschool/life-skills/')),'activity cards open activities');
  // order: lesson nav → activities → small flashcard resource

@@ -44,6 +44,14 @@ test('the Class 33 hub is a compact classroom: lesson nav + ONE collection link,
  assert.equal((hub.match(/href="\/flashcards\/community-helpers-and-our-neighborhood\/"/g)||[]).length,2,'exactly the resource-section + injected-pill collection links');
  assert.ok(!hub.includes('data-wc'),'no drawing canvas on the hub');
  assert.ok(!hub.includes('fc2-cardlink'),'no flashcard gallery grid on the hub');
+ // Owner doctrine 2026-10-12: the listing shows every helper as a PICTURE tile
+ // that opens its own /learn/ page — no per-image description text on the hub.
+ assert.equal((hub.match(/class="lp-tile"/g)||[]).length,29,'29 image tiles in the LEARN grid');
+ assert.ok(!hub.includes('fc2-relcard fcl-nav'),'no text-description lesson cards on the hub');
+ const tileImgs=[...hub.matchAll(/<a class="lp-tile" href="\/preschool\/4-years\/community-helpers-and-our-neighborhood\/learn\/([a-z-]+)\/"><img src="([^"]+)"/g)];
+ assert.equal(tileImgs.length,29,'every lesson tile carries its original flashcard image');
+ assert.ok(tileImgs.every(([,slug,src])=>src.includes('community-helpers-and-our-neighborhood/'+slug+'.webp')),'tile images are the original R2 artwork');
+ assert.ok(!hub.includes('sa-card-tag')&&!hub.includes('sa-card-skill')&&!hub.includes('sa-card-play'),'no description lines on the worksheet tiles');
  assert.ok(!hub.includes('What is this?'),'no full teaching-guide blocks on the hub (lessons live on /learn/ pages)');
  assert.ok(hub.includes('cover.webp'),'the original collection cover appears once as the resource art');
  assert.ok(hub.includes('Class 33'),'class chip present');
