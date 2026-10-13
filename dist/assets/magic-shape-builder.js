@@ -1,4 +1,4 @@
-/* Kiddo School — Look & Draw — Magic Shapes (Age 3): a free drawing
+/* Kiddo School — Look & Draw — Magic Shapes (Age 3): a drawing
    activity on HTML Canvas + Pointer Events. Reference picture beside a big
    blank WHITE canvas (beside on desktop, above on mobile via CSS); six big
    color buttons, three brush sizes, Eraser (draws white), Undo (snapshot

@@ -4,9 +4,9 @@
 export const meta={
  slug:'garden-flowers',
  name:'Garden Flowers',
- seoTitle:'Garden Flower Flashcards for Toddlers — 12 Free Printable Cards',
+ seoTitle:'Garden Flower Flashcards for Toddlers — 12 Printable Cards',
  h1:'Garden Flowers flashcards.',
- metaDescription:'Twelve free garden flower flashcards for toddlers: sunflower, rose, tulip, daisy and more, with gentle look-and-smell games for every card. Print at home.',
+ metaDescription:'Twelve garden flower flashcards for toddlers: sunflower, rose, tulip, daisy and more, with gentle look-and-smell games for every card. Print at home.',
  lede:'Twelve cards about the flowers in the bed: the tall sunflower, the sniffy rose, the little bluebells. Big, bright blooms your toddler can name before you finish the deck.',
  hubBlurb:'Sunflowers, roses, tulips and friends. The flowers of the garden bed.',
  ageLabel:'2 years',

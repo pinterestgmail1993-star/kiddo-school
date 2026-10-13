@@ -2,9 +2,9 @@
 export const meta={
  slug:'colors-and-shapes',
  name:'Colors & Shapes',
- seoTitle:'Colour and Shape Flashcards for Toddlers — 15 Free Printable Cards',
+ seoTitle:'Colour and Shape Flashcards for Toddlers — 15 Printable Cards',
  h1:'Colors & Shapes flashcards.',
- metaDescription:'Fifteen free colour and shape flashcards for 2-year-olds: eight colours and seven shapes with games to play at home. Print at home, no sign-up.',
+ metaDescription:'Fifteen colour and shape flashcards for 2-year-olds: eight colours and seven shapes with games to play at home. Print at home.',
  lede:'Eight colors and seven shapes, one big card each. Point at the card, then hunt for the same color on the breakfast table, in the sock drawer, at the park. The world becomes the second half of the deck.',
  hubBlurb:'Eight colors, seven shapes. Find them on the card, then find them everywhere.',
  ageLabel:'2 years',

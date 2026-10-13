@@ -464,7 +464,7 @@ export const csLesson={
   meta:'Age 2 · Toddler 3 · Think &amp; Talk',
   audience:'Made for you to print and use with your child — eight pages, one activity per page.',
   folder:'colors-and-shapes-age-2/printables/',
-  note:'Printing tip: use your browser’s Print button and choose “Fit to page” on A4 or Letter paper. The pack prints one activity per page, in order — no account, and nothing to install.',
+  note:'Printing tip: use your browser’s Print button and choose “Fit to page” on A4 or Letter paper. The pack prints one activity per page, in order — nothing to install.',
   pages:[
    {file:'01-cover.webp',title:'Cover',alt:'Colors and Shapes printable activity pack for 2-year-olds'},
    {file:'02-color-cards.webp',title:'Color Cards',alt:'Printable color cards for toddlers with labeled colors'},
@@ -1451,7 +1451,7 @@ export const gthLesson={
 
 export function classLessonSchema(site,L){
  return [
-  {'@context':'https://schema.org','@type':'LearningResource',name:L.title,description:L.description,url:site+L.path,image:L.schemaImage,inLanguage:'en',learningResourceType:L.schema.resourceType||'Interactive baby class',educationalLevel:L.schema.level,isAccessibleForFree:true,educationalUse:'Home learning activity',teaches:L.schema.teaches,audience:{'@type':'Audience',audienceType:L.schema.audience},keywords:L.schema.keywords},
+  {'@context':'https://schema.org','@type':'LearningResource',name:L.title,description:L.description,url:site+L.path,image:L.schemaImage,inLanguage:'en',learningResourceType:L.schema.resourceType||'Interactive baby class',educationalLevel:L.schema.level,educationalUse:'Home learning activity',teaches:L.schema.teaches,audience:{'@type':'Audience',audienceType:L.schema.audience},keywords:L.schema.keywords},
   {'@context':'https://schema.org','@type':'BreadcrumbList',itemListElement:[['Home','/'],...L.crumbs].map(([name,path],i)=>({'@type':'ListItem',position:i+1,name,item:site+path}))}
  ];
 }

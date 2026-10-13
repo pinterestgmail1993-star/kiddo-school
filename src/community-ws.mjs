@@ -21,7 +21,7 @@ export const CH_WS_COVER={file:'cover.webp',w:1545,h:2000,
 export const communityWs=[
 {slug:'doctor',file:'doctor.webp',w:1545,h:2000,title:'Doctor',word:'DOCTOR',trace:'DOCTOR',
  tag:'Trace DOCTOR, match the doctor to the stethoscope, bandage and thermometer, circle the healthy habits, count the medicine bottles and draw one way you care for your body.',
- meta:'A free community-helpers worksheet for ages 4–5: trace the word DOCTOR, match the doctor to the stethoscope, bandage and thermometer, circle the healthy habits, count the medicine bottles and draw one way you take care of your body — on screen or on paper.',
+ meta:'A community-helpers worksheet for ages 4–5: trace the word DOCTOR, match the doctor to the stethoscope, bandage and thermometer, circle the healthy habits, count the medicine bottles and draw one way you take care of your body — on screen or on paper.',
  learn:'What a doctor\u2019s tools are for, which everyday habits keep bodies healthy, and how to read and write the word DOCTOR.',
  know:'Your child needs a little vocabulary first: a doctor helps sick and hurt people, a stethoscope listens to heartbeats, a bandage protects a healing cut, and a thermometer checks temperature. Say each tool\u2019s name before the pencil starts.',
  why:'Doctors become familiar instead of frightening when children meet their tools on paper first. The healthy-habit grid also turns the worksheet into a gentle health talk, and the tracing row builds the same pre-writing muscles the alphabet class uses.',
@@ -41,7 +41,7 @@ export const communityWs=[
  real:'Walk the healthy-habit grid at home today: the apple at snack time, the teeth brushing tonight, the running in the yard. Real repetition is what turns a circled picture into a habit.'},
 {slug:'firefighter',file:'firefighter.webp',w:1545,h:2000,title:'Firefighter',word:'FIREFIGHTER',trace:'FIRE FIGHTER',
  tag:'Trace FIRE FIGHTER, match the firefighter to the hose, helmet and fire truck, circle the tools a firefighter uses, count the fire helmets and draw stop-drop-and-roll.',
- meta:'A free firefighter worksheet for ages 4–5: trace the words FIRE FIGHTER, match the firefighter to the hose, helmet and fire truck, circle the real firefighting tools, count the helmets and draw a safe way to stop, drop and roll — on screen or on paper.',
+ meta:'A firefighter worksheet for ages 4–5: trace the words FIRE FIGHTER, match the firefighter to the hose, helmet and fire truck, circle the real firefighting tools, count the helmets and draw a safe way to stop, drop and roll — on screen or on paper.',
  learn:'What a firefighter wears and carries, which tools fight fires, and the emergency move every child should own: stop, drop and roll.',
  know:'Before starting, name the gear together: the helmet protects the head, the hose carries water, the truck rushes everything to the fire. Explain stop-drop-and-roll in one sentence — if clothes ever catch fire, we stop, drop to the ground, and roll until the fire is out.',
  why:'Fire safety is a skill with real stakes, and rehearsal is what makes it stick. The tool grid sharpens "who uses what" thinking, the helmet count is gentle number practice, and the draw box lets your child rehearse the emergency move with their own hands.',
@@ -61,7 +61,7 @@ export const communityWs=[
  real:'Visit the drawing at bedtime: ask your child to SHOW the whole family how to stop, drop, and roll. Where is your family\u2019s smoke alarm? Let your child find it — real maps of real safety.'},
 {slug:'police-officer',file:'police-officer.webp',w:1545,h:2000,title:'Police Officer',word:'POLICE OFFICER',trace:'POLICE OFFICER',
  tag:'Trace POLICE OFFICER, match the officer to the badge, radio and patrol car, circle the things that keep people safe, count the traffic cones and draw a safe place to cross.',
- meta:'A free police-officer worksheet for ages 4–5: trace the words POLICE OFFICER, match the officer to the badge, radio and patrol car, circle the safety things, count the traffic cones and draw a safe place to cross the street — on screen or on paper.',
+ meta:'A police-officer worksheet for ages 4–5: trace the words POLICE OFFICER, match the officer to the badge, radio and patrol car, circle the safety things, count the traffic cones and draw a safe place to cross the street — on screen or on paper.',
  learn:'What a police officer carries and drives, which objects help keep people safe, and what a safe street crossing looks like.',
  know:'Officers are neighborhood helpers we can trust: the badge shows who they are, the radio calls for help, the patrol car takes them quickly to where they are needed. In any real worry, the plan is the same — find a grown-up you know, and officers are helpers too.',
  why:'Safety tools become recognizable when children sort them on paper. The crossing draw-prompt opens the family conversation about how WE cross — a conversation worth having a hundred times before it is ever needed.',
@@ -81,7 +81,7 @@ export const communityWs=[
  real:'On the next walk, find one real safety thing from the grid — a cone, a helmet rider, a crossing — and name it on the spot. Real streets make the worksheet real.'},
 {slug:'nurse',file:'nurse.webp',w:1545,h:2000,title:'Nurse',word:'NURSE',trace:'NURSE',
  tag:'Trace NURSE, match the nurse to the clipboard, bandage and thermometer, circle the healthy habits, count the bandages and draw one way a nurse helps people.',
- meta:'A free nurse worksheet for ages 4–5: trace the word NURSE, match the nurse to the clipboard, bandage and thermometer, circle the healthy habits, count the bandages and draw a way nurses help — on screen or on paper.',
+ meta:'A nurse worksheet for ages 4–5: trace the word NURSE, match the nurse to the clipboard, bandage and thermometer, circle the healthy habits, count the bandages and draw a way nurses help — on screen or on paper.',
  learn:'Who nurses are and what they carry, which daily habits keep bodies healthy, and caring-in-action — the worksheet\u2019s last box asks your child to draw a nurse\u2019s kindness.',
  know:'Nurses take care of people beside doctors: the clipboard keeps notes, the bandage protects a scrape, the thermometer checks temperature. Nurses explain every step and have gentle hands — a friendly face at any check-up.',
  why:'Meeting the nurse on paper makes real check-ups calmer, and the healthy-habit grid doubles as the family\u2019s daily-health talk. The big bandage count is honest two-row counting practice with a purpose.',
@@ -101,7 +101,7 @@ export const communityWs=[
  real:'Play nurse with a teddy tonight: wrap a toilet-paper bandage, check temperature with a hand on the forehead, explain every step out loud — exactly the worksheet, warm and alive.'},
 {slug:'teacher',file:'teacher.webp',w:1545,h:2000,title:'Teacher',word:'TEACHER',trace:'TEACHER',
  tag:'Trace TEACHER, match the teacher to the book, pencil and board, circle the things we use for learning, count the pencils and draw your favorite thing to learn.',
- meta:'A free teacher worksheet for ages 4–5: trace the word TEACHER, match the teacher to the book, pencil and chalkboard, circle the learning tools, count the pencils and draw your favorite thing to learn — on screen or on paper.',
+ meta:'A teacher worksheet for ages 4–5: trace the word TEACHER, match the teacher to the book, pencil and chalkboard, circle the learning tools, count the pencils and draw your favorite thing to learn — on screen or on paper.',
  learn:'What a teacher\u2019s day is full of — books, pencils, a board and questions — plus which objects help learning happen and how to write the word TEACHER.',
  know:'Teachers help children learn letters, numbers, stories and how to be good friends. The board shows the lesson, the book holds the story, the pencil writes the practice. Your child already knows this world — the sheet names it.',
  why:'A child who can name the teacher\u2019s tools walks into any classroom feeling at home. The favorite-thing draw box turns the sheet into a small show-and-tell, and the pencil count is real counting with a real object.',
@@ -121,7 +121,7 @@ export const communityWs=[
  real:'Tonight, your child plays teacher with teddies as the class: board, book, pencil — the whole lesson. Ten minutes of teaching-back beats an hour of being taught.'},
 {slug:'librarian',file:'librarian.webp',w:1545,h:2000,title:'Librarian',word:'LIBRARIAN',trace:'LIBRARIAN',
  tag:'Trace LIBRARIAN, match the librarian to the books, the library card and the bookshelf, circle the things you can find in a library, count the books and draw your favorite book.',
- meta:'A free community-helpers worksheet for ages 4–5: trace the word LIBRARIAN, match the librarian to the books, library card and bookshelf, circle the things that live in a library, count the books and draw your favorite book — on screen or on paper.',
+ meta:'A community-helpers worksheet for ages 4–5: trace the word LIBRARIAN, match the librarian to the books, library card and bookshelf, circle the things that live in a library, count the books and draw your favorite book — on screen or on paper.',
  learn:'Who librarians are and what a library holds — books, cards, shelves and computers — plus which everyday objects really belong there and how to write the word LIBRARIAN.',
  know:'A librarian helps people find and borrow books: the library card takes books home for a while, the bookshelf keeps every story tidy, and each book comes back so a friend can enjoy it next. Libraries are quiet, friendly places full of stories.',
  why:'A child who knows how the library works owns it for life. Naming the librarian\u2019s tools turns a first visit from overwhelming to exciting, and the find-it-in-a-library grid builds the careful sorting that later sorts letters, numbers and bugs.',
@@ -141,7 +141,7 @@ export const communityWs=[
  real:'Visit the library and play find-it: the bookshelf, the computer, the desk — every circled picture spotted in real life. Then borrow one book and let your child check it out all by themselves.'},
 {slug:'farmer',file:'farmer.webp',w:1545,h:2000,title:'Farmer',word:'FARMER',trace:'FARMER',
  tag:'Trace FARMER, match the farmer to the tractor, the watering can and the vegetables, circle the things that grow on a farm, count the vegetables and draw something you might see on a farm.',
- meta:'A free community-helpers worksheet for ages 4–5: trace the word FARMER, match the farmer to the tractor, watering can and vegetables, circle the things that grow on a farm, count the carrots and beets and draw a farm scene — on screen or on paper.',
+ meta:'A community-helpers worksheet for ages 4–5: trace the word FARMER, match the farmer to the tractor, watering can and vegetables, circle the things that grow on a farm, count the carrots and beets and draw a farm scene — on screen or on paper.',
  learn:'What a farmer grows and raises, which foods start on a farm, and how to tell farm things from store things — plus how to write the word FARMER.',
  know:'Farmers grow food and care for animals: the tractor pulls and plows, the watering can gives thirsty plants a drink, and vegetables come out of the ground or off the plant. Apples grow on trees, cows give milk, and corn grows tall.',
  why:'Knowing where food comes from is a superpower for picky eaters — a child who has circled the carrot on a farm sheet meets it on the plate with new interest. The farm grid also plants early thinking about how the world makes things.',
@@ -161,7 +161,7 @@ export const communityWs=[
  real:'Try one farm food this week in its simplest form — corn on the cob, a raw carrot with its green top, an apple straight from the bag. Real food, real story, better eating.'},
 {slug:'chef',file:'chef.webp',w:1545,h:2000,title:'Chef',word:'CHEF',trace:'CHEF',
  tag:'Trace CHEF, match the chef to the spoon, the mixing bowl and the chef hat, circle the healthy foods, count the plates and draw a meal you would like to make.',
- meta:'A free community-helpers worksheet for ages 4–5: trace the word CHEF, match the chef to the spoon, mixing bowl and chef hat, circle the healthy foods, count the plates and draw a meal you would like to make — on screen or on paper.',
+ meta:'A community-helpers worksheet for ages 4–5: trace the word CHEF, match the chef to the spoon, mixing bowl and chef hat, circle the healthy foods, count the plates and draw a meal you would like to make — on screen or on paper.',
  learn:'What a chef does in a kitchen, which tools cook a meal, and which foods help bodies grow — plus how to write the short but mighty word CHEF.',
  know:'A chef cooks for other people: the spoon stirs, the mixing bowl holds everything together, and the tall hat is called a toque — real chefs really wear it! Kitchens are busy places where good food and clean hands matter most.',
  why:'Chefs make healthy food look exciting, and this sheet borrows that magic. The healthy-food grid turns into a plate conversation at exactly the age when food habits form, and the meal-drawing box lets your child design a menu of their own.',
@@ -181,7 +181,7 @@ export const communityWs=[
  real:'Cook one simple thing together this week — stirring the pancake batter counts. The spoon, the bowl, the tasting: the whole worksheet, warm and edible.'},
 {slug:'dentist',file:'dentist.webp',w:1545,h:2000,title:'Dentist',word:'DENTIST',trace:'DENTIST',
  tag:'Trace DENTIST, match the dentist to the toothbrush, the mirror and the tooth, circle the habits that keep teeth healthy, count the toothbrushes and draw yourself brushing your teeth.',
- meta:'A free community-helpers worksheet for ages 4–5: trace the word DENTIST, match the dentist to the toothbrush, mirror and tooth, circle the teeth-healthy habits, count the toothbrushes and draw yourself brushing — on screen or on paper.',
+ meta:'A community-helpers worksheet for ages 4–5: trace the word DENTIST, match the dentist to the toothbrush, mirror and tooth, circle the teeth-healthy habits, count the toothbrushes and draw yourself brushing — on screen or on paper.',
  learn:'Who the dentist is and what happens in the chair, which daily habits keep teeth strong, and how to write the word DENTIST — a gentle warm-up for real check-ups.',
  know:'The dentist looks after teeth: the toothbrush sweeps away sugar bugs, the little mirror shows the teeth hiding at the back, and every tooth gets a check. Teeth like brushing, water, good food and sleep — sugar makes the sugar bugs dance.',
  why:'Check-ups go better when the chair is familiar on paper first. The habits grid turns brushing from a nightly battle into a job your child owns, and drawing themselves brushing rehearses the very routine parents ask for twice a day.',
@@ -201,7 +201,7 @@ export const communityWs=[
  real:'Brush together tonight and let your child be the dentist for YOUR teeth for one minute — teaching back is the deepest practice there is. Then let them check their own smile in the mirror, just like the sheet.'},
 {slug:'veterinarian',file:'veterinarian.webp',w:1545,h:2000,title:'Veterinarian',word:'VETERINARIAN',trace:'VETERINARIAN',
  tag:'Trace VETERINARIAN, match the veterinarian to the cat, the stethoscope and the paw print, circle the things pets need to stay healthy, count the pet bowls and draw an animal you would like to care for.',
- meta:'A free community-helpers worksheet for ages 4–5: trace the word VETERINARIAN, match the vet to the cat, stethoscope and paw print, circle what pets need to stay healthy, count the pet bowls and draw an animal to care for — on screen or on paper.',
+ meta:'A community-helpers worksheet for ages 4–5: trace the word VETERINARIAN, match the vet to the cat, stethoscope and paw print, circle what pets need to stay healthy, count the pet bowls and draw an animal to care for — on screen or on paper.',
  learn:'What a veterinarian does for animals, which things keep pets fed, watered, groomed and checked, and how to write the very long word VETERINARIAN.',
  know:'A veterinarian is an animal doctor: the stethoscope listens to hearts and lungs, the food and water bowls keep pets strong, the brush keeps fur tidy, and the green check is the check-up — the vet\u2019s way of saying all is well. Pets need care every single day.',
  why:'Caring for a pet on paper is rehearsal for caring in real life. The needs grid builds empathy — a pet is not a toy but a small life with needs — and the long trace word is a proud badge for children ready to stretch their pencil muscles.',
@@ -221,7 +221,7 @@ export const communityWs=[
  real:'Care for a real or stuffed animal tonight: fill a water bowl, brush fur with a soft brush, and give a full check-up with a gentle voice — every step explained out loud, exactly like the sheet.'},
 {slug:'paramedic',file:'paramedic.webp',w:1545,h:2000,title:'Paramedic',word:'PARAMEDIC',trace:'PARAMEDIC',
  tag:'Trace PARAMEDIC, match the paramedic to the ambulance, the first-aid bag and the bandage, circle the things that help an injured person, count the bandages and draw an ambulance.',
- meta:'A free community-helpers worksheet for ages 4–5: trace the word PARAMEDIC, match the paramedic to the ambulance, first-aid bag and bandage, circle the helper tools, count the bandages and draw an ambulance — on screen or on paper.',
+ meta:'A community-helpers worksheet for ages 4–5: trace the word PARAMEDIC, match the paramedic to the ambulance, first-aid bag and bandage, circle the helper tools, count the bandages and draw an ambulance — on screen or on paper.',
  learn:'Who paramedics are and how they rush to help, which tools treat a hurt person, and the big idea that calling for help is brave and smart — plus how to write the word PARAMEDIC.',
  know:'A paramedic is a medical helper who comes fast when someone is hurt: the ambulance carries them and their equipment, the first-aid bag holds the tools, and a bandage protects a scrape while it heals. Paramedics check, calm, and take people to more help.',
  why:'Meeting the ambulance on paper turns the loudest siren into a friendly sound that means HELP IS COMING. The tools grid sorts real helper tools from household look-alikes, and the safety talk that comes with this sheet is one families never regret.',
@@ -241,7 +241,7 @@ export const communityWs=[
  real:'Pack a small family first-aid kit together and let your child place each thing in: bandages, wipes, a thermometer. Name every item like the sheet does — then rehearse the emergency plan once, calm and proud.'},
 {slug:'crossing-guard',file:'crossing-guard.webp',w:1545,h:2000,title:'Crossing Guard',word:'CROSSING GUARD',trace:'CROSSING GUARD',
  tag:'Trace CROSSING GUARD, match the crossing guard to the stop sign, the vest and the crosswalk, circle the safe street-crossing rules, count the stop signs and draw yourself crossing safely.',
- meta:'A free community-helpers worksheet for ages 4–5: trace the words CROSSING GUARD, match the guard to the stop sign, vest and crosswalk, circle the safe crossing rules, count the stop signs and draw yourself crossing safely — on screen or on paper.',
+ meta:'A community-helpers worksheet for ages 4–5: trace the words CROSSING GUARD, match the guard to the stop sign, vest and crosswalk, circle the safe crossing rules, count the stop signs and draw yourself crossing safely — on screen or on paper.',
  learn:'What a crossing guard does at the corner, the four rules of a safe street crossing, and which rules are safe and which are not — plus how to write the words CROSSING GUARD.',
  know:'A crossing guard stops traffic so children can cross: the stop sign tells cars to wait, the bright vest makes the guard easy to see, and the crosswalk is the one place feet belong on the road. The rules: look left, right, then left again; raise your hand and wait; use the crosswalk — never run across.',
  why:'Street crossing is the highest-stakes skill on the whole neighborhood walk, and rehearsal is what makes it stick. Sorting safe from unsafe rules lets your child explain the WHY back to you — a far stronger memory than a rule recited once.',
@@ -261,7 +261,7 @@ export const communityWs=[
  real:'On every walk this week, let your child be the crossing captain: stop at the curb, look left-right-left, hold hands, walk. Ten real crossings beat ten worksheets — and you will both know the rules by heart.'},
 {slug:'bus-driver',file:'bus-driver.webp',w:1545,h:2000,title:'Bus Driver',word:'BUS DRIVER',trace:'BUS DRIVER',
  tag:'Trace BUS DRIVER, match the bus driver to the school bus, the steering wheel and the stop sign, circle the safe bus-riding rules, count the bus windows and draw a safe school-bus stop.',
- meta:'A free community-helpers worksheet for ages 4–5: trace the words BUS DRIVER, match the driver to the school bus, steering wheel and stop sign, circle the safe bus rules, count the windows and draw a safe bus stop — on screen or on paper.',
+ meta:'A community-helpers worksheet for ages 4–5: trace the words BUS DRIVER, match the driver to the school bus, steering wheel and stop sign, circle the safe bus rules, count the windows and draw a safe bus stop — on screen or on paper.',
  learn:'What a bus driver does, the four rules of riding the school bus safely, and which rules are safe and which are not — plus how to write the words BUS DRIVER.',
  know:'The bus driver steers a big, heavy vehicle full of children and must watch the road, not the noise. The rules: stay seated while the bus moves, keep hands and feet to yourself, use a quiet voice — and never run in the aisle. The stop sign on the bus tells cars to wait for children.',
  why:'The school bus is often a child\u2019s first ride without a parent, and knowing the rules turns nerves into pride. Safe-versus-unsafe sorting lets your child rehearse the aisle, the seat and the stop before the first real ride — the best kind of readiness.',
@@ -281,7 +281,7 @@ export const communityWs=[
  real:'Next time you ride any bus or car, rehearse the rules in miniature: bottoms on seats, quiet voices, hands to yourself. The big yellow bus will feel like a friend when the day comes.'},
 {slug:'mail-carrier',file:'mail-carrier.webp',w:1545,h:2000,title:'Mail Carrier',word:'MAIL CARRIER',trace:'MAIL CARRIER',
  tag:'Trace MAIL CARRIER, match the mail carrier to the envelope, the stamp and the mailbox, circle the items that belong in the mail, count the letters and draw a letter you would like to send.',
- meta:'A free community-helpers worksheet for ages 4–5: trace the words MAIL CARRIER, match the carrier to the envelope, stamp and mailbox, circle what travels in the mail, count the letters and draw a letter to send — on screen or on paper.',
+ meta:'A community-helpers worksheet for ages 4–5: trace the words MAIL CARRIER, match the carrier to the envelope, stamp and mailbox, circle what travels in the mail, count the letters and draw a letter to send — on screen or on paper.',
  learn:'How a letter travels from a hand to a mailbox across town, what the mail carrier carries, and which things really travel through the mail — plus how to write the words MAIL CARRIER.',
  know:'A mail carrier brings letters and packages to every door: the envelope holds the words, the stamp is the ticket that pays for the trip, and the mailbox is where the journey starts and ends. Flat things ride in envelopes; bigger things ride in boxes.',
  why:'Sending real mail is a disappearing joy, and this sheet hands it back. Naming the mail\u2019s journey builds the idea that messages travel — the seed of understanding addresses, maps and how people stay in touch across any distance.',
@@ -301,7 +301,7 @@ export const communityWs=[
  real:'Write and post one real letter this week — a thank-you, a drawing, three words to grandma. Then walk past your own mailbox together and wait. Real mail beats any worksheet every single time.'},
 {slug:'baker',file:'baker.webp',w:1545,h:2000,title:'Baker',word:'BAKER',trace:'BAKER',
  tag:'Trace BAKER, match the baker to the bread, the mixing bowl and the oven mitt, circle the foods a baker can make, count the cupcakes and draw a treat you would like to bake.',
- meta:'A free community-helpers worksheet for ages 4–5: trace the word BAKER, match the baker to the bread, mixing bowl and oven mitt, circle the bakes, count the cupcakes and draw a treat you would like to bake — on screen or on paper.',
+ meta:'A community-helpers worksheet for ages 4–5: trace the word BAKER, match the baker to the bread, mixing bowl and oven mitt, circle the bakes, count the cupcakes and draw a treat you would like to bake — on screen or on paper.',
  learn:'What a baker makes before the town wakes up, which tools bake bread and cakes, and which foods come from an oven — plus how to write the word BAKER.',
  know:'A baker mixes, kneads and bakes: the mixing bowl holds the dough, the oven mitt protects hands from the hot oven, and bread, cookies, cakes and croissants all rise in the heat. Apples grow on trees — nobody bakes those!',
  why:'Bakers turn simple flour into celebration food, and children know it in their bones. The baked-versus-grown sorting builds category thinking, and the treat-draw box opens the lovely family talk about which treats are worth baking together.',
@@ -321,7 +321,7 @@ export const communityWs=[
  real:'Bake one simple treat together this week — even a ready-mix counts. Let your child wear the mitt for real (empty-handed first!) and pull the tray out with you. The worksheet, but edible.'},
 {slug:'barber',file:'barber.webp',w:1545,h:2000,title:'Barber',word:'BARBER',trace:'BARBER',
  tag:'Trace BARBER, match the barber to the scissors, the comb and the salon chair, circle the tools used for hair care, count the combs and draw a hairstyle you like.',
- meta:'A free community-helpers worksheet for ages 4–5: trace the word BARBER, match the barber to the scissors, comb and salon chair, circle the hair-care tools, count the combs and draw a hairstyle you like — on screen or on paper.',
+ meta:'A community-helpers worksheet for ages 4–5: trace the word BARBER, match the barber to the scissors, comb and salon chair, circle the hair-care tools, count the combs and draw a hairstyle you like — on screen or on paper.',
  learn:'What a barber does in the salon, which tools cut, dry and wash hair, and which tools belong to bathrooms and art boxes instead — plus how to write the word BARBER.',
  know:'A barber cuts and shapes hair: the scissors snip, the comb straightens, the hairdryer blows warm air, and the shampoo bottle washes it all first. Hair keeps growing and growing, so the barber\u2019s chair is a friend we visit again and again.',
  why:'Haircut days go better when the tools are old friends on paper first. The tool grid sharpens bathroom-versus-salon-versus-art-box sorting, and the hairstyle draw box gives your child a say in their own look — small ownership, big cooperation.',
@@ -341,7 +341,7 @@ export const communityWs=[
  real:'Play salon tonight: a doll, a soft brush, a gentle mist of water, and your child as the barber explaining every step — snip, comb, dry. At the next real haircut, ask them to name the tools as they appear.'},
 {slug:'construction-worker',file:'construction-worker.webp',w:1545,h:2000,title:'Construction Worker',word:'CONSTRUCTION WORKER',trace:'CONSTRUCTION WORKER',
  tag:'Trace CONSTRUCTION WORKER, match the builder to the hard hat, the hammer and the safety vest, circle the tools used on a building site, count the safety cones and draw a safe building.',
- meta:'A free community-helpers worksheet for ages 4–5: trace the words CONSTRUCTION WORKER, match the builder to the hard hat, hammer and safety vest, circle the building-site tools, count the safety cones and draw a safe building — on screen or on paper.',
+ meta:'A community-helpers worksheet for ages 4–5: trace the words CONSTRUCTION WORKER, match the builder to the hard hat, hammer and safety vest, circle the building-site tools, count the safety cones and draw a safe building — on screen or on paper.',
  learn:'What a construction worker builds and wears, which tools build walls and which build pictures, and why the hard hat and vest matter — plus how to write the words CONSTRUCTION WORKER.',
  know:'Construction workers build the town: the hard hat protects the head, the safety vest makes the builder easy to see, and hammers, wrenches, saws and shovels do the heavy work. Pencils make the plans and paintbrushes add the color — at a desk, before and after the building!',
  why:'Every crane and cone on the street becomes interesting once a child can name the world of work behind it. The tool grid sorts build-tools from desk-tools, and the hard hat opens the real site-safety talk: sites are for builders, and watchers stay outside the fence.',
@@ -361,7 +361,7 @@ export const communityWs=[
  real:'Walk past a real building site (from the safe side) and spot the grid together: hard hats, vests, cones, tools. Back home, build the drawn building from blocks — plans on paper first, exactly like real builders do.'},
 {slug:'electrician',file:'electrician.webp',w:1545,h:2000,title:'Electrician',word:'ELECTRICIAN',trace:'ELECTRICIAN',
  tag:'Trace ELECTRICIAN, match the electrician to the light bulb, the wire and the tool belt, circle the things that use electricity, count the light bulbs and draw a safe way to use electricity.',
- meta:'A free community-helpers worksheet for ages 4–5: trace the word ELECTRICIAN, match the electrician to the light bulb, wire and tool belt, circle what uses electricity, count the bulbs and draw a safe way to use it — on screen or on paper.',
+ meta:'A community-helpers worksheet for ages 4–5: trace the word ELECTRICIAN, match the electrician to the light bulb, wire and tool belt, circle what uses electricity, count the bulbs and draw a safe way to use it — on screen or on paper.',
  learn:'What an electrician fixes and installs, which everyday things run on electricity, and the one big rule about sockets and wires — plus how to write the word ELECTRICIAN.',
  know:'An electrician works with wires that carry electricity: the light bulb glows when the wires do their job, and the tool belt holds everything for safe repairs. Fans, washing machines, desk lamps and microwaves all drink electricity — bicycles and soccer balls run on legs instead!',
  why:'Electricity is invisible, so naming what it powers makes it thinkable — and the safety rule becomes real: never poke sockets, never touch wires, and keep water far from plugs. That rule, learned young, is a lifelong shield.',
@@ -381,7 +381,7 @@ export const communityWs=[
  real:'Do a socket safari at home today: find every outlet, every cord and every plug — count them, name what each powers, and practise the rule with your hands behind your back. Real house, real rule, real safety.'},
 {slug:'plumber',file:'plumber.webp',w:1545,h:2000,title:'Plumber',word:'PLUMBER',trace:'PLUMBER',
  tag:'Trace PLUMBER, match the plumber to the pipe wrench, the toolbox and the sink, circle the tools a plumber uses, count the pipes and draw a way to save water.',
- meta:'A free community-helpers worksheet for ages 4–5: trace the word PLUMBER, match the plumber to the pipe wrench, toolbox and sink, circle the plumber\u2019s tools, count the pipes and draw a way to save water — on screen or on paper.',
+ meta:'A community-helpers worksheet for ages 4–5: trace the word PLUMBER, match the plumber to the pipe wrench, toolbox and sink, circle the plumber\u2019s tools, count the pipes and draw a way to save water — on screen or on paper.',
  learn:'What a plumber fixes behind walls and under sinks, which tools steer the water, and why water is worth saving — plus how to write the word PLUMBER.',
  know:'A plumber takes care of the pipes that bring clean water in and carry used water out: the pipe wrench turns big pipe nuts, the plunger politely pushes a blockage away, and the toolbox holds it all. Water is precious — turning the tap off while brushing is a plumber\u2019s favorite trick.',
  why:'Plumbers are invisible helpers until a pipe bursts, and this sheet makes them visible and valued. The tool grid invites careful talk about each tool, and the save-water draw box plants an earth-caring habit that pays for itself on the next bill.',
@@ -401,7 +401,7 @@ export const communityWs=[
  real:'Tonight, brush teeth with the tap OFF and count the seconds together — then celebrate the saved water out loud. Small ritual, real habit, exactly what the draw box was for.'},
 {slug:'mechanic',file:'mechanic.webp',w:1545,h:2000,title:'Mechanic',word:'MECHANIC',trace:'MECHANIC',
  tag:'Trace MECHANIC, match the mechanic to the wrench, the toolbox and the car, circle the tools a mechanic uses, count the tires and draw a vehicle you would like to fix.',
- meta:'A free community-helpers worksheet for ages 4–5: trace the word MECHANIC, match the mechanic to the wrench, toolbox and car, circle the mechanic\u2019s tools, count the tires and draw a vehicle to fix — on screen or on paper.',
+ meta:'A community-helpers worksheet for ages 4–5: trace the word MECHANIC, match the mechanic to the wrench, toolbox and car, circle the mechanic\u2019s tools, count the tires and draw a vehicle to fix — on screen or on paper.',
  learn:'What a mechanic fixes under the hood, which tools mend engines, and how to tell a mechanic\u2019s tools from a doctor\u2019s — plus how to write the word MECHANIC.',
  know:'A mechanic keeps cars and trucks running: the wrench turns the bolts, the toolbox holds every size, and the car rolls up on its tires for a check. Here is a funny one — a stethoscope listens to hearts, not engines; that tool belongs to the doctor!',
  why:'The mechanic-versus-doctor mix-up is the funniest, most memorable sort on the whole set — and memorable is the point. Naming the garage world makes every oil stop interesting, and the vehicle draw box turns observers into little engineers.',
@@ -421,7 +421,7 @@ export const communityWs=[
  real:'Bicycle maintenance day: pump the tires, check the brakes, wipe the frame — with your child as head mechanic explaining each move. Two wheels are the perfect first garage.'},
 {slug:'pilot',file:'pilot.webp',w:1545,h:2000,title:'Pilot',word:'PILOT',trace:'PILOT',
  tag:'Trace PILOT, match the pilot to the airplane, the passport and the flight map, circle the things that belong on an airplane, count the airplanes and draw a safe airplane journey.',
- meta:'A free community-helpers worksheet for ages 4–5: trace the word PILOT, match the pilot to the airplane, passport and flight map, circle what belongs aboard, count the airplanes and draw a safe journey — on screen or on paper.',
+ meta:'A community-helpers worksheet for ages 4–5: trace the word PILOT, match the pilot to the airplane, passport and flight map, circle what belongs aboard, count the airplanes and draw a safe journey — on screen or on paper.',
  learn:'What a pilot does in the cockpit, which papers and maps fly along, and which things belong aboard an airplane — plus how to write the word PILOT.',
  know:'The pilot flies the airplane and keeps every passenger safe: the passport shows who you are in other countries, the flight map shows the way through the sky, and aboard the plane the seat belt clicks for takeoff and landing. Headphones, suitcases and life vests fly along too.',
  why:'First flights are big feelings in small bodies. Naming the pilot, the papers and the plane\u2019s things turns the airport from chaos into a checklist your child can own — and the seat-belt rule rehearsed here rides along on every trip.',
@@ -441,7 +441,7 @@ export const communityWs=[
  real:'Flying this year? Let your child carry their own small backpack and click their own seat belt — then point out the real flight map on the seat-back screen. The sheet, but at 30,000 feet.'},
 {slug:'flight-attendant',file:'flight-attendant.webp',w:1545,h:2000,title:'Flight Attendant',word:'FLIGHT ATTENDANT',trace:'FLIGHT ATTENDANT',
  tag:'Trace FLIGHT ATTENDANT, match the flight attendant to the tray, the seat belt and the airplane, circle the safe airplane rules, count the suitcases and draw a safe airplane seat.',
- meta:'A free community-helpers worksheet for ages 4–5: trace the words FLIGHT ATTENDANT, match the attendant to the tray, seat belt and airplane, circle the safe flying rules, count the suitcases and draw a safe seat — on screen or on paper.',
+ meta:'A community-helpers worksheet for ages 4–5: trace the words FLIGHT ATTENDANT, match the attendant to the tray, seat belt and airplane, circle the safe flying rules, count the suitcases and draw a safe seat — on screen or on paper.',
  learn:'What a flight attendant does for passengers, the four rules of flying safely, and which rules are safe and which are not — plus how to write the words FLIGHT ATTENDANT.',
  know:'The flight attendant takes care of everyone aboard: the tray carries meals and drinks down the aisle, the seat belt keeps every body snug for takeoff and landing, and the crew\u2019s gentle voice is the one to listen to. Aisles are for walking only — and never during takeoff!',
  why:'The cabin crew are the sky\u2019s crossing guards: their rules keep a whole plane of wiggly travelers safe. Sorting the safe rules from the silly one lets your child rehearse the real flight before it happens — and giving the rules a face makes them easy to follow.',
@@ -461,7 +461,7 @@ export const communityWs=[
  real:'Rehearse with a kitchen chair: sit tall, click an imaginary belt, fold the tray, ask to move — grown-up style. Then fly it to the living room. The whole sheet, landed softly on the carpet.'},
 {slug:'train-conductor',file:'train-conductor.webp',w:1545,h:2000,title:'Train Conductor',word:'TRAIN CONDUCTOR',trace:'TRAIN CONDUCTOR',
  tag:'Trace TRAIN CONDUCTOR, match the conductor to the train, the ticket and the whistle, circle the safe train-riding rules, count the train windows and draw a train going somewhere new.',
- meta:'A free community-helpers worksheet for ages 4–5: trace the words TRAIN CONDUCTOR, match the conductor to the train, ticket and whistle, circle the safe train rules, count the windows and draw a train to somewhere new — on screen or on paper.',
+ meta:'A community-helpers worksheet for ages 4–5: trace the words TRAIN CONDUCTOR, match the conductor to the train, ticket and whistle, circle the safe train rules, count the windows and draw a train to somewhere new — on screen or on paper.',
  learn:'What a train conductor does aboard the cars, the four rules of riding trains safely, and which rules are safe and which are not — plus how to write the words TRAIN CONDUCTOR.',
  know:'The conductor checks tickets, calls the stations and keeps every rider on course: the ticket is your pass to ride, the whistle wakes the train, and the yellow line on the platform is the place where waiting feet stop. Windows are for looking — never for leaning!',
  why:'Trains are magical AND heavy, which is exactly why the yellow line matters. Sorting safe from unsafe rules gives your child the platform talk before the platform does — and the somewhere-new draw box turns rail safety into adventure planning.',
@@ -481,7 +481,7 @@ export const communityWs=[
  real:'Ride a real train, a tram or the airport shuttle this month and rehearse the sheet: ticket checked, yellow line respected, window admired with eyes only. The somewhere-new box comes true the moment the wheels start.'},
 {slug:'cashier',file:'cashier.webp',w:1545,h:2000,title:'Cashier',word:'CASHIER',trace:'CASHIER',
  tag:'Trace CASHIER, match the cashier to the basket, the scanner and the receipt, circle the things you might buy at a store, count the apples and draw something you would like to buy.',
- meta:'A free community-helpers worksheet for ages 4–5: trace the word CASHIER, match the cashier to the basket, scanner and receipt, circle the store things, count the apples and draw something you would like to buy — on screen or on paper.',
+ meta:'A community-helpers worksheet for ages 4–5: trace the word CASHIER, match the cashier to the basket, scanner and receipt, circle the store things, count the apples and draw something you would like to buy — on screen or on paper.',
  learn:'What a cashier does at the checkout, what the scanner and receipt do, and which things travel home from a store — plus how to write the word CASHIER.',
  know:'The cashier rings up everything in the basket: the scanner beeps to read each price, the receipt is the shopping\u2019s story on paper, and the basket carries it all to the belt. Apples, milk, books, teddy bears, bananas and crayons — a store holds a whole world.',
  why:'The checkout is where numbers, money and patience meet, and this sheet lets your child own it from the safe side of the belt. This grid is the friendly kind — every picture belongs — which builds a child\u2019s sorting confidence before trickier grids arrive.',
@@ -501,7 +501,7 @@ export const communityWs=[
  real:'Play store tonight with the pantry and a shoebox till: your child is the cashier, you are the customer, and the receipt is scribbled on paper. Real script, real beeps, whole worksheet alive.'},
 {slug:'animal-shelter-worker',file:'animal-shelter-worker.webp',w:1545,h:2000,title:'Animal Shelter Worker',word:'ANIMAL SHELTER WORKER',trace:'ANIMAL SHELTER WORKER',
  tag:'Trace ANIMAL SHELTER WORKER, match the worker to the puppy, the food bowl and the kennel, circle the ways to care for an animal, count the pet bowls and draw an animal that needs a home.',
- meta:'A free community-helpers worksheet for ages 4–5: trace the words ANIMAL SHELTER WORKER, match the worker to the puppy, food bowl and kennel, circle the caring ways, count the pet bowls and draw an animal that needs a home — on screen or on paper.',
+ meta:'A community-helpers worksheet for ages 4–5: trace the words ANIMAL SHELTER WORKER, match the worker to the puppy, food bowl and kennel, circle the caring ways, count the pet bowls and draw an animal that needs a home — on screen or on paper.',
  learn:'What an animal shelter is and who works there, six everyday ways to care for an animal, and the big truth that every animal deserves a loving home — plus how to write a very long job title.',
  know:'An animal shelter is a safe waiting place for animals without homes: the kennel is each dog\u2019s own room, the food bowl fills every day, and the worker feeds, brushes, walks and loves every animal until a family comes. Every one of the six caring ways on the sheet is right.',
  why:'This is the empathy sheet of the set: every tile is a kind act, so the circle step becomes a chorus of yeses. Drawing an animal that needs a home gives big feelings a safe place to land — and plants the family conversation about how we help real animals.',
@@ -521,7 +521,7 @@ export const communityWs=[
  real:'Do one caring act from the grid for a real or stuffed animal tonight — brush, feed, pet, play, a warm bath or extra love. Then ask your child which way was easiest and which was hardest. Kindness grows by doing.'},
 {slug:'artist',file:'artist.webp',w:1545,h:2000,title:'Artist',word:'ARTIST',trace:'ARTIST',
  tag:'Trace ARTIST, match the artist to the paintbrush, the palette and the easel, circle the art supplies, count the paintbrushes and draw a picture that is all your own.',
- meta:'A free community-helpers worksheet for ages 4–5: trace the word ARTIST, match the artist to the paintbrush, palette and easel, circle the art supplies, count the paintbrushes and draw a picture all your own — on screen or on paper.',
+ meta:'A community-helpers worksheet for ages 4–5: trace the word ARTIST, match the artist to the paintbrush, palette and easel, circle the art supplies, count the paintbrushes and draw a picture all your own — on screen or on paper.',
  learn:'What an artist does all day, what the palette and easel are for, and which tools make pictures happen — plus how to write the word ARTIST.',
  know:'An artist makes pictures and sculptures from ideas: the paintbrush carries the color, the palette holds every color side by side, and the easel stands the canvas up tall. Pencils, markers, glue and scissors are artists\u2019 helpers too — the whole grid is on the artist\u2019s side!',
  why:'Every child is already an artist; this sheet simply names the tools and hands over the permission. The all-friendly grid builds sorting confidence, and the final draw box is deliberately empty — the sheet ends by asking your child to be the artist.',
@@ -541,7 +541,7 @@ export const communityWs=[
  real:'Set up a two-minute studio tonight: paper, two colors, one brush — and let your child be the artist while you are the assistant who rinses the brushes. Ask for the picture\u2019s story, not its accuracy.'},
 {slug:'delivery-driver',file:'delivery-driver.webp',w:1545,h:2000,title:'Delivery Driver',word:'DELIVERY DRIVER',trace:'DELIVERY DRIVER',
  tag:'Trace DELIVERY DRIVER, match the driver to the delivery van, the package and the address label, circle the things that can be delivered, count the packages and draw a package you would like to send.',
- meta:'A free community-helpers worksheet for ages 4–5: trace the words DELIVERY DRIVER, match the driver to the van, package and address label, circle what can be delivered, count the packages and draw a package to send — on screen or on paper.',
+ meta:'A community-helpers worksheet for ages 4–5: trace the words DELIVERY DRIVER, match the driver to the van, package and address label, circle what can be delivered, count the packages and draw a package to send — on screen or on paper.',
  learn:'How packages travel from a sender to a doorstep, what the address label does, and which things can ride in a delivery van — plus how to write the words DELIVERY DRIVER.',
  know:'A delivery driver carries things from place to place: the van holds everything, the package keeps it safe, and the address label tells the van exactly which door to stop at. Gifts, pizza boxes, shirts, balls, books and even apples can all ride along!',
  why:'Children watch delivery vans like theater — this sheet hands them the script. The all-correct grid builds confidence, the address label opens early talk about names, streets and maps, and the send-a-package box makes your child the sender for once.',
@@ -561,7 +561,7 @@ export const communityWs=[
  real:'Send one real package this month — cookies to a cousin, a drawing to a friend — and let your child help write the address label and drop it off. Watching it arrive is the best worksheet follow-up there is.'},
 {slug:'florist',file:'florist.webp',w:1545,h:2000,title:'Florist',word:'FLORIST',trace:'FLORIST',
  tag:'Trace FLORIST, match the florist to the flowers, the vase and the watering can, circle the things plants need to grow, count the flowers and draw a colorful bouquet.',
- meta:'A free community-helpers worksheet for ages 4–5: trace the word FLORIST, match the florist to the flowers, vase and watering can, circle what plants need to grow, count the flowers and draw a colorful bouquet — on screen or on paper.',
+ meta:'A community-helpers worksheet for ages 4–5: trace the word FLORIST, match the florist to the flowers, vase and watering can, circle what plants need to grow, count the flowers and draw a colorful bouquet — on screen or on paper.',
  learn:'What a florist arranges and sells, what every plant needs to grow — sun, water and care — and how to tell plant-helpers from party guests — plus how to write the word FLORIST.',
  know:'A florist works with flowers: the vase holds the bouquet, the watering can gives each stem a drink, and every flower in the shop was once a seed that needed sun, rain and soil. Chocolate cake is wonderful — but no plant ever grew from cake!',
  why:'This sheet hides a science lesson inside a flower shop: what a living thing truly needs. The plant-needs grid builds the earliest biology sorting there is, and the bouquet draw box ends the sheet with generosity — flowers are how people say kind things.',
@@ -581,7 +581,7 @@ export const communityWs=[
  real:'Buy or pick three stems this week and let your child arrange, water and display them — then deliver one flower to a neighbor. Flowers are kindness with stems; the sheet just says it in pencil.'},
 {slug:'lifeguard',file:'lifeguard.webp',w:1545,h:2000,title:'Lifeguard',word:'LIFEGUARD',trace:'LIFEGUARD',
  tag:'Trace LIFEGUARD, match the lifeguard to the whistle, the rescue float and the pool, circle the safe swimming rules, count the beach balls and draw yourself being safe near water.',
- meta:'A free community-helpers worksheet for ages 4–5: trace the word LIFEGUARD, match the lifeguard to the whistle, rescue float and pool, circle the safe swimming rules, count the beach balls and draw yourself being water-safe — on screen or on paper.',
+ meta:'A community-helpers worksheet for ages 4–5: trace the word LIFEGUARD, match the lifeguard to the whistle, rescue float and pool, circle the safe swimming rules, count the beach balls and draw yourself being water-safe — on screen or on paper.',
  learn:'What a lifeguard watches for at the pool, the safe swimming rules on the sheet — and the two unsafe ones to catch — plus how to write the word LIFEGUARD.',
  know:'A lifeguard sits high where the whole pool is in view, with a whistle for warnings and a rescue float for saving. The safe rules on this sheet: swim with a grown-up and walk on the pool deck. The tricky two? Running near the pool and diving in the shallow end — the red cross and green check marks have opinions about all four!',
  why:'Water is the most serious safety topic in this whole collection, and four-year-olds are exactly the right age to start the rules. The check-and-cross marks let your child judge each rule out loud — sorting safe from unsafe is the core skill of every pool summer to come.',
@@ -601,7 +601,7 @@ export const communityWs=[
  real:'At the next pool or bath, rehearse the sheet: grown-up first, walking feet, ask permission. Give your child the job of spotting the real lifeguard at every pool you visit — the watcher of the water, found in real life.'},
 {slug:'musician',file:'musician.webp',w:1545,h:2000,title:'Musician',word:'MUSICIAN',trace:'MUSICIAN',
  tag:'Trace MUSICIAN, match the musician to the guitar, the drum and the music stand, circle the musical instruments, count the instruments and draw an instrument you would like to play.',
- meta:'A free community-helpers worksheet for ages 4–5: trace the word MUSICIAN, match the musician to the guitar, drum and music stand, circle the instruments, count them and draw one you would like to play — on screen or on paper.',
+ meta:'A community-helpers worksheet for ages 4–5: trace the word MUSICIAN, match the musician to the guitar, drum and music stand, circle the instruments, count them and draw one you would like to play — on screen or on paper.',
  learn:'What a musician plays and practices, which objects make music and which just hold or help it, and how to write the word MUSICIAN.',
  know:'A musician makes music with instruments: the guitar has strings to strum, the drum has a skin to tap, and the music stand holds the notes. Trumpets toot, violins sing, xylophones clink and tambourines shake — but a book is quiet, and the microphone? It makes LOUD what was already music!',
  why:'Distinguishing instruments from look-alikes trains careful eyes and careful listening — the same discrimination that later sorts letters like b and d. The draw box asks your child to imagine themselves playing, which is exactly how instrument dreams begin.',
@@ -621,7 +621,7 @@ export const communityWs=[
  real:'Have a kitchen-band concert tonight: one pot drummer, one shaker in a bottle, one singer with a pretend microphone — the grid, brought to life at full volume. Curtain call at bedtime.'},
 {slug:'park-ranger',file:'park-ranger.webp',w:1545,h:2000,title:'Park Ranger',word:'PARK RANGER',trace:'PARK RANGER',
  tag:'Trace PARK RANGER, match the ranger to the backpack, the map and the trail sign, circle the ways to care for nature, count the trees and draw a safe nature trail.',
- meta:'A free community-helpers worksheet for ages 4–5: trace the words PARK RANGER, match the ranger to the backpack, map and trail sign, circle the caring ways, count the trees and draw a safe nature trail — on screen or on paper.',
+ meta:'A community-helpers worksheet for ages 4–5: trace the words PARK RANGER, match the ranger to the backpack, map and trail sign, circle the caring ways, count the trees and draw a safe nature trail — on screen or on paper.',
  learn:'What a park ranger does in the park, four real ways to care for nature, and why trails, water and wild plants deserve gentle hands — plus how to write the words PARK RANGER.',
  know:'A park ranger takes care of the park and everyone in it: the backpack holds the ranger\u2019s tools, the map shows every trail, and the trail sign tells walkers where to go. The caring ways on the sheet — litter up, water saved, plants left growing, feet on the trail — are ALL right, and every one is a job your child can do.',
  why:'Nature care is citizenship in small shoes: every rule on this grid is one a four-year-old can actually keep. The all-correct grid builds pride instead of worry — your child is the helper nature has been waiting for.',
@@ -641,7 +641,7 @@ export const communityWs=[
  real:'Walk a real trail this week as junior rangers: pack the backpack, read the trail sign, stay on the path and carry out one piece of litter each. The park gets cleaner; the habit gets permanent.'},
 {slug:'photographer',file:'photographer.webp',w:1545,h:2000,title:'Photographer',word:'PHOTOGRAPHER',trace:'PHOTOGRAPHER',
  tag:'Trace PHOTOGRAPHER, match the photographer to the camera, the lens and the photo, circle the things a photographer uses, count the cameras and draw a picture you would like to photograph.',
- meta:'A free community-helpers worksheet for ages 4–5: trace the word PHOTOGRAPHER, match the photographer to the camera, lens and photo, circle the photographer\u2019s tools, count the cameras and draw a picture to take — on screen or on paper.',
+ meta:'A community-helpers worksheet for ages 4–5: trace the word PHOTOGRAPHER, match the photographer to the camera, lens and photo, circle the photographer\u2019s tools, count the cameras and draw a picture to take — on screen or on paper.',
  learn:'What a photographer does behind the camera, which tools take, steady and store pictures, and which grid tiles sneak in from other jobs — plus how to write the word PHOTOGRAPHER.',
  know:'A photographer captures moments: the camera takes the picture, the lens decides how close it looks, and the photo is the memory you can keep. Tripods hold the camera still, bags carry the gear, and even a phone can be a camera. Two tiles in the grid belong to other jobs entirely — the artist\u2019s paintbrush and the ball game!',
  why:'Photographers freeze time, and children love that power. The nine-tile grid is the set\u2019s biggest sorting challenge — perfect for a child ready to think job by job — and the photograph-draw box turns the sheet into a shot list for a real walk with a real camera.',
@@ -661,7 +661,7 @@ export const communityWs=[
  real:'On your next walk, let your child be the family photographer with ten pictures of anything. Print or display one photo and let them caption it — a real photo, a real title, a real gallery debut.'},
 {slug:'sanitation-worker',file:'sanitation-worker.webp',w:1545,h:2000,title:'Sanitation Worker',word:'SANITATION WORKER',trace:'SANITATION WORKER',
  tag:'Trace SANITATION WORKER, match the worker to the garbage truck, the recycling bin and the safety gloves, circle the items that can be recycled, count the recycling bins and draw one way to keep your neighborhood clean.',
- meta:'A free community-helpers worksheet for ages 4–5: trace the words SANITATION WORKER, match the worker to the garbage truck, recycling bin and gloves, circle the recyclables, count the bins and draw a clean-neighborhood idea — on screen or on paper.',
+ meta:'A community-helpers worksheet for ages 4–5: trace the words SANITATION WORKER, match the worker to the garbage truck, recycling bin and gloves, circle the recyclables, count the bins and draw a clean-neighborhood idea — on screen or on paper.',
  learn:'What sanitation workers do for the whole town, which items go in the recycling bin, and where the rest belongs — compost, trash or the bin — plus how to write the words SANITATION WORKER.',
  know:'Sanitation workers keep the town clean and healthy: the garbage truck empties the trash, the recycling bin waits for bottles, cans, jars and cardboard, and the safety gloves protect strong hands. Here is the sorting secret — a banana peel is not trash to a garden: it composts into food for new plants!',
  why:'This sheet explains the people behind the early-morning rumble — helpers children hear every week but rarely meet. The recycle-or-not grid builds real sorting skills your own kitchen bin can use tonight, and the safety rule is worth its weight: never chase or hide near a working truck.',
@@ -681,7 +681,7 @@ export const communityWs=[
  real:'Start a small compost jar or corner this week for peels and apple cores — let your child feed it daily and watch it change. The grid\u2019s trickiest tile becomes a living science experiment on the windowsill.'},
 {slug:'school-counselor',file:'school-counselor.webp',w:1545,h:2000,title:'School Counselor',word:'COUNSELOR',trace:'COUNSELOR',
  tag:'Trace COUNSELOR, match the counselor to the school, the speech bubble and the helping hand, circle the kind ways to help a friend, count the conversation cards and draw someone you can talk to.',
- meta:'A free community-helpers worksheet for ages 4–5: trace the word COUNSELOR, match the counselor to the school, speech bubble and helping hand, circle the kind ways to help a friend, count the cards and draw a helper — on screen or on paper.',
+ meta:'A community-helpers worksheet for ages 4–5: trace the word COUNSELOR, match the counselor to the school, speech bubble and helping hand, circle the kind ways to help a friend, count the cards and draw a helper — on screen or on paper.',
  learn:'Who the school counselor is and how they help, four kind ways to help a friend — and the two unkind ones to catch — plus how to write the word COUNSELOR.',
  know:'A school counselor is a feelings helper: the speech bubble means listening and talking, the helping hand means steady support, and their door is open when a day feels too big. Kind friends listen, help, share and are kind — laughing AT someone and ignoring someone are the two tricks to catch.',
  why:'This is the heart sheet of the set: every tile is either a kindness or a trap, and four-year-olds are at exactly the age when friendship habits set. Sorting kind from unkind gives your child the words for the playground, and the draw box names a real person to talk to — a safety net drawn in crayon.',
@@ -701,7 +701,7 @@ export const communityWs=[
  real:'Practise one circled kindness today — listen to a sibling\u2019s whole story, share a snack, help set the table. Then ask your child to name their talk-to people while pointing at the drawing. Safety nets work best when they are spoken out loud.'},
 {slug:'scientist',file:'scientist.webp',w:1545,h:2000,title:'Scientist',word:'SCIENTIST',trace:'SCIENTIST',
  tag:'Trace SCIENTIST, match the scientist to the microscope, the beaker and the safety goggles, circle the things used in a science lab, count the test tubes and draw something you would like to discover.',
- meta:'A free community-helpers worksheet for ages 4–5: trace the word SCIENTIST, match the scientist to the microscope, beaker and safety goggles, circle the lab things, count the test tubes and draw something to discover — on screen or on paper.',
+ meta:'A community-helpers worksheet for ages 4–5: trace the word SCIENTIST, match the scientist to the microscope, beaker and safety goggles, circle the lab things, count the test tubes and draw something to discover — on screen or on paper.',
  learn:'What a scientist does in the lab, which tools hold, magnify and protect, and which grid tiles belong to the kitchen, the library and the craft box — plus how to write the word SCIENTIST.',
  know:'A scientist asks questions and tests them: the microscope makes tiny things huge, the beaker holds liquids for mixing, and the safety goggles protect curious eyes. Test tubes, flasks and magnifying glasses live in the lab — apples live in kitchens, books in libraries, scissors in craft boxes!',
  why:'The lab is where curiosity becomes a job, and this sheet hands your child the tools to imagine it. Tile-by-tile sorting builds the careful looking real science runs on, and the discover-draw box ends the whole collection with the biggest question of all: what will YOU find out?',
@@ -734,7 +734,7 @@ export function communityWsActivityBody(w,site){
  const {prev,next}=chWsNeighbours(w);
  const enc=encodeURIComponent;
  const pageUrl=site+CH_WS_CLASS+w.slug+'/';
- const shareTitle=`${w.title} — a free Community Helpers worksheet activity for ages 4–5 from Kiddo.school`;
+ const shareTitle=`${w.title} — a Community Helpers worksheet activity for ages 4–5 from Kiddo.school`;
  const stepsHtml=w.steps.map(([t,d],i)=>`<li><span class="fc-stepnum">${i+1}</span><div><h3>${esc(t)}</h3><p>${esc(d)}</p></div></li>`).join('');
  const pn=`<nav class="fc2-pn" aria-label="Previous and next worksheet activity"><a class="fc2-pn-btn" href="${CH_WS_CLASS}${prev.slug}/" rel="prev"><span aria-hidden="true">←</span> <strong>${esc(prev.title)}</strong><span>Previous activity</span></a><a class="fc2-pn-btn fc2-pn-next" href="${CH_WS_CLASS}${next.slug}/" rel="next"><strong>${esc(next.title)}</strong> <span aria-hidden="true">→</span><span>Next activity</span></a></nav>`;
  return `${crumbNav([['Learning Path','/learning-path/'],['Community Helpers & Our Neighborhood',CH_CLASS_PATH],[esc(w.title)+' worksheet']])}
@@ -781,7 +781,7 @@ export function communityWsPrintableBody(w,site){
  const enc=encodeURIComponent;
  const file=CH_WS_BASE+w.file;
  const pageUrl=site+CH_WS_LIB+w.slug+'/';
- const shareTitle=`${w.title} Worksheet for Ages 4–5 — free printable from Kiddo.school`;
+ const shareTitle=`${w.title} Worksheet for Ages 4–5 — printable from Kiddo.school`;
  const dlName=`community-helpers-${w.slug}.webp`;
  const stepsHtml=w.steps.map(([t,d],i)=>`<li><span class="fc-stepnum">${i+1}</span><div><h3>${esc(t)}</h3><p>${esc(d)}</p></div></li>`).join('');
  const pn=`<nav class="fc2-pn" aria-label="Previous and next worksheet"><a class="fc2-pn-btn" href="${CH_WS_LIB}${prev.slug}/" rel="prev"><span aria-hidden="true">←</span> <strong>${esc(prev.title)}</strong><span>Previous worksheet</span></a><a class="fc2-pn-btn fc2-pn-next" href="${CH_WS_LIB}${next.slug}/" rel="next"><strong>${esc(next.title)}</strong> <span aria-hidden="true">→</span><span>Next worksheet</span></a></nav>`;
@@ -804,7 +804,7 @@ export function communityWsPrintableBody(w,site){
   <aside class="fc2-rail" aria-label="Download, print, share and family feedback">
    <section class="fc2-block fc2-first-block"><span class="eyebrow">TAKE IT TO THE TABLE</span><h2>Download &amp; print.</h2>
     <div class="fc2-actions"><button type="button" class="button ws-dl" data-chws-download="${esc(file)}" data-chws-filename="${dlName}">Download original sheet <span aria-hidden="true">↓</span></button><button type="button" class="button button-ghost ws-print" data-chws-print>Print this sheet <span aria-hidden="true">⌘</span></button></div>
-    <p class="fc-hint">The download keeps the original WebP picture, full size (1545×2000, A4 portrait). Print opens your browser&rsquo;s print dialog with just the sheet — no sign-up, nothing stored.</p>
+    <p class="fc-hint">The download keeps the original WebP picture, full size (1545×2000, A4 portrait). Print opens your browser&rsquo;s print dialog with just the sheet — nothing stored.</p>
    </section>
    ${share}
    ${fcCommunityMount(CH_WS_LIB+w.slug+'/')}
@@ -825,7 +825,7 @@ export function communityWsCategoryBody(){
   <span class="ws-card-open">View Worksheet <span aria-hidden="true">→</span></span>
  </a>`).join('');
  return `${crumbNav([['Worksheets','/worksheets/'],['Community Helpers & Our Neighborhood']])}
- <div class="page-heading wrap"><span class="eyebrow">COMMUNITY HELPERS WORKSHEETS · AGES 4–5</span><h1>Community Helpers &amp; Our Neighborhood worksheets — free printables for little hands.</h1><p>Thirty-five genuine activity sheets about the people who help us: trace their names, match their tools, circle the right things, count, and draw. Download the original sheet, print it, or solve every sheet on screen in <a href="${CH_CLASS_PATH}">Class 33</a> first.</p></div>
+ <div class="page-heading wrap"><span class="eyebrow">COMMUNITY HELPERS WORKSHEETS · AGES 4–5</span><h1>Community Helpers &amp; Our Neighborhood worksheets — printables for little hands.</h1><p>Thirty-five genuine activity sheets about the people who help us: trace their names, match their tools, circle the right things, count, and draw. Download the original sheet, print it, or solve every sheet on screen in <a href="${CH_CLASS_PATH}">Class 33</a> first.</p></div>
  <section class="wrap section compact" aria-label="The Community Helpers worksheet collection">
   <figure class="fc2-hero ws-hero-art ws-cover-sm"><img src="${esc(CH_WS_BASE+CH_WS_COVER.file)}" width="${CH_WS_COVER.w}" height="${CH_WS_COVER.h}" alt="${esc(CH_WS_COVER.alt)}" fetchpriority="high"></figure>
   <div class="ws-grid">${cards}</div>
@@ -845,7 +845,7 @@ export function communityWsSchema(site,w){
   name:`${w.title} Worksheet for Ages 4–5`,
   description:w.meta,url:site+CH_WS_LIB+w.slug+'/',inLanguage:'en',
   learningResourceType:'Worksheet',educationalLevel:'Preschool',teaches:w.skills.join(', '),
-  isAccessibleForFree:true,ageRange:'4-5',encodingFormat:'image/webp',contentUrl:CH_WS_BASE+w.file,image:CH_WS_BASE+w.file,
+ ageRange:'4-5',encodingFormat:'image/webp',contentUrl:CH_WS_BASE+w.file,image:CH_WS_BASE+w.file,
   about:{'@type':'Thing',name:'Community Helpers & Our Neighborhood'},
   provider:{'@type':'Organization',name:'Kiddo.school',url:site+'/'},
   isPartOf:{'@type':'CreativeWorkSeries',name:'Community Helpers & Our Neighborhood (Class 33)',url:site+CH_CLASS_PATH}};

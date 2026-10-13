@@ -117,7 +117,7 @@ test('spot-check PDF renders: each sampled sheet carries its title and instructi
   const [subject,slug]=key.split('/');
   const f='dist'+pdfUrl(subject,slug);
   const out=execSync(`pdftotext "${f}" - 2>/dev/null || true`,{encoding:'utf8'});
-  assert.ok(out.includes('Free Worksheet'),'title header in '+key+' PDF');
+  assert.ok(out.includes('Worksheet'),'title header in '+key+' PDF');
   assert.ok(out.includes('Name'),'name line in '+key);
  }
 });
@@ -149,7 +149,6 @@ test('worksheet pages carry LearningResource + BreadcrumbList schema',()=>{
  const html=page('/worksheets/writing/hedgehogs-winding-path/');
  assert.ok(html.includes('"@type":"LearningResource"'),'LearningResource schema');
  assert.ok(html.includes('"learningResourceType":"Worksheet"'));
- assert.ok(html.includes('"isAccessibleForFree":true'));
  assert.ok(html.includes('application/pdf'));
  assert.ok(html.includes('"@type":"BreadcrumbList"'));
  assert.ok(html.includes('{"@type":"ListItem",position:4')||html.includes('"position":4'),'four-level breadcrumb');

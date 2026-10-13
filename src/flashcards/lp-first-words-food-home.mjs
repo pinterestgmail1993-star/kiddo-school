@@ -193,7 +193,7 @@ export const lpContent={
  notice:'The artwork is a shoe, plain and clear on the card — the going-out kind, small and familiar. Say that, then look down: the live shoes are being worn by the actual critic, and the fitting is the show.',
  ask:'Watch the doormat across the week: does the word, a point or a lifted foot arrive at the shoes? Wonder aloud: "I wonder if the shoes or the outing is the real attraction."',
  childSay:'"Shoe!" announced at the doormat, one foot offered grandly for fitting, the card carried to the shoe rack for matching, or both shoes carried around the house as luggage — the word travelling with the object is the milestone.',
- real:'Shoes run through every day: on to leave, off to arrive, the tiny pairs at the shop, the big pairs by your bed. Each changeover is a free showing of this card.',
+ real:'Shoes run through every day: on to leave, off to arrive, the tiny pairs at the shop, the big pairs by your bed. Each changeover is a showing of this card.',
  play:'Shoe parade: line up three pairs at the door, name each pair, and let your toddler choose the day’s pair by handing one over. Choosing by naming is decision-making with vocabulary attached.',
  check:'Parent self-check: did the word land at a real transition this week, and did you cheer any doormat attempt? Transitions are this word’s home ground; the cheering is the amplifier.',
  tips:'Dressing battles and vocabulary lessons are separate events — if the shoes are a fight today, name them and move on. The word does not need the cooperation of the foot it describes.',

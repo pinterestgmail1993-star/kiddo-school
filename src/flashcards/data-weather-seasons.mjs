@@ -60,9 +60,9 @@ export const lesson={
 export const meta={
  slug:'weather-seasons-and-what-we-wear',
  name:'Weather, Seasons & What We Wear',
- seoTitle:'Weather & Seasons Flashcards for Preschoolers — 29 Free Printable Cards',
+ seoTitle:'Weather & Seasons Flashcards for Preschoolers — 29 Printable Cards',
  h1:'Weather, Seasons & What We Wear flashcards.',
- metaDescription:'Twenty-nine free weather and seasons flashcards for ages 4–5: sun, rain, rainbows, storms, snow, the four seasons and the clothes we wear in each — each card has its own page with parent guidance and a download button.',
+ metaDescription:'Twenty-nine weather and seasons flashcards for ages 4–5: sun, rain, rainbows, storms, snow, the four seasons and the clothes we wear in each — each card has its own page with parent guidance and a download button.',
  lede:'Twenty-nine cards about the sky over our heads and the clothes on our bodies: the sun and clouds, rain and rainbows, storms and snow, the four seasons, and the umbrella, raincoat, sun hat and winter coat that match each kind of day. Look out the window, pick the matching card, and the weather itself becomes the lesson.',
  hubBlurb:'Twenty-nine sky-and-clothes cards — sun, rain, snow, storms, the four seasons, and what we wear in each kind of weather.',
  ageLabel:'4–5 years',
@@ -95,7 +95,7 @@ export const cards={
   try:'On a sunny morning, stand in the sun for a moment, then in the shade. Ask: which spot feels warmer? Draw a chalk line around a shadow in the morning and again after lunch — the shadow moved, just like the sun.',
   note:'The sun looks small and friendly in pictures but it is dazzlingly bright in real life. Squinting is your child’s eyes protecting themselves — a sun hat and shade are the answers, not staring practice.',
   safety:'Never look straight at the sun — its light can hurt our eyes, so we look at the bright sky around it or at the ground instead. On hot sunny days: a hat, a drink of water and shade breaks, with sunscreen put on by a grown-up.',
-  metaDescription:'A free Sun flashcard for ages 4–5: what the sun does, shadows and warmth to try outside, and the never-stare rule. Print it for sunny-day talks.'},
+  metaDescription:'A Sun flashcard for ages 4–5: what the sun does, shadows and warmth to try outside, and the never-stare rule. Print it for sunny-day talks.'},
  'clouds':{
   word:'Clouds',
   intro:'Clouds are fluffy heaps of tiny water drops floating high in the sky — and their colour and shape hint at what weather is coming.',
@@ -108,7 +108,7 @@ export const cards={
   try:'Lie on a blanket and find cloud animals — a bunny, a dragon, a whale. Then watch one cloud for a minute: is it moving? Is it changing shape? Blow a slow breath onto your palm — that wet-cool feeling is cloud stuff in miniature.',
   note:'Children often ask what clouds feel like. Be honest: a cloud is floating droplets — it would feel cool and misty, not like candyfloss, even though it looks soft. Honesty now builds trust for bigger science later.',
   safety:'Cloud-watching is a lie-down activity — pick a safe spot away from roads, and on very bright days choose shade or a hat first so nobody stares toward the sun while cloud-spotting.',
-  metaDescription:'A free Clouds flashcard for ages 4–5: what clouds are made of, light versus grey clouds and a cloud-shape watching game. Print it for sky-watching days.'},
+  metaDescription:'A Clouds flashcard for ages 4–5: what clouds are made of, light versus grey clouds and a cloud-shape watching game. Print it for sky-watching days.'},
  'rain':{
   word:'Rain',
   intro:'Rain is water falling from the clouds — the drink that fills our rivers, waters the garden and puddles up a Tuesday.',
@@ -121,7 +121,7 @@ export const cards={
   try:'Put an empty jar outside when rain is coming and mark how high the water gets. Catch drops on your tongue from a balcony or doorway. After the rain, hunt for the biggest puddle and the shiniest leaf.',
   note:'Rainy days shrink the world indoors — that is normal and temporary. A rain walk in proper boots and a coat can turn a grumpy afternoon into the day’s best memory. The gear makes the difference, not the weather.',
   safety:'Rain makes ground slippery and roads shiny — walk, do not run, and hold a grown-up’s hand near traffic because cars stop less well on wet roads. Never shelter under the tallest tree when thunder is near.',
-  metaDescription:'A free Rain flashcard for ages 4–5: the water loop, a rain-gauge jar to try and honest puddle-walking safety. Print it before the next shower.'},
+  metaDescription:'A Rain flashcard for ages 4–5: the water loop, a rain-gauge jar to try and honest puddle-walking safety. Print it before the next shower.'},
  'rainbow':{
   word:'Rainbow',
   intro:'A rainbow is the sky’s own arc of seven colours, painted by sunlight shining through raindrops — a two-in-one weather surprise.',
@@ -134,7 +134,7 @@ export const cards={
   try:'Stand with the sun behind you and spray a fine water mist into the air on a sunny day — hunt for a tiny rainbow in the spray. Then draw your own seven-band rainbow with crayons, saying each colour as you go.',
   note:'Children sometimes grieve when a rainbow fades. Name it warmly: rainbows are brief visitors — that is what makes spotting one feel like winning a prize. Draw it afterwards to keep the memory.',
   safety:'Looking for real rainbows means facing away from the sun — that is exactly right. Remind your child we admire the rainbow sky, never the sun itself, and on rainy grass we walk slowly because wet slopes are slippery.',
-  metaDescription:'A free Rainbow flashcard for ages 4–5: how sun plus rain paints seven colours, a mist-spray rainbow trick and colour-order practice. Print it for bright-shower days.'},
+  metaDescription:'A Rainbow flashcard for ages 4–5: how sun plus rain paints seven colours, a mist-spray rainbow trick and colour-order practice. Print it for bright-shower days.'},
  'wind':{
   word:'Wind',
   intro:'Wind is moving air you cannot see but can always feel — the invisible push that bends the trees and sails the kites.',
@@ -147,7 +147,7 @@ export const cards={
   try:'Make a paper windmill or streamers on a stick, then take it outside and watch which way it points. Feel the wind on your cheeks and decide together: gentle breeze or big gust? Fly a kite in the park on a steady day.',
   note:'Very young children sometimes think the trees moving makes the wind. Flip it gently: something invisible is pushing the leaves — we call that push the wind. Cause and effect takes a few seasons to settle, and that is fine.',
   safety:'On very windy days, watch out for flying things: keep away from old trees with loose branches and from building sites, hold hats and balloons tightly, and never fly kites near roads or power lines — open fields only, with a grown-up.',
-  metaDescription:'A free Wind flashcard for ages 4–5: moving air you can feel, a streamer craft and gust-versus-breeze talk. Print it for blustery walks.'},
+  metaDescription:'A Wind flashcard for ages 4–5: moving air you can feel, a streamer craft and gust-versus-breeze talk. Print it for blustery walks.'},
  'snow':{
   word:'Snow',
   intro:'Snow is frozen water falling in soft white flakes — each one a tiny ice crystal, and no two are ever exactly alike.',
@@ -160,7 +160,7 @@ export const cards={
   try:'Catch snowflakes on a dark coat sleeve and look at the shapes before they melt. Put a small cup outside and measure new snow with a ruler. Roll a snowball and talk about why packing snow sticks while dry powder will not.',
   note:'Flakes melt fast on warm skin and some children find that upsetting the first time. Frame it kindly: our hands are warm enough to turn snow into water — that is the snow saying hello. There are always more flakes.',
   safety:'Snow days need the full kit: warm coat, hat, gloves and waterproof boots, because wet and cold together make bodies chilly fast. Walk on snowy paths like penguins — small steps — and never eat snow; it is not clean enough.',
-  metaDescription:'A free Snow flashcard for ages 4–5: ice-crystal flakes to catch, a ruler measuring game and warm-clothing rules. Print it before the first snow.'},
+  metaDescription:'A Snow flashcard for ages 4–5: ice-crystal flakes to catch, a ruler measuring game and warm-clothing rules. Print it before the first snow.'},
  'weather-forecast':{
   word:'Weather Forecast',
   intro:'A weather forecast is the day’s sky story, told in advance — a weather reporter looks at maps and instruments to tell us what the sky plans to do next.',
@@ -173,7 +173,7 @@ export const cards={
   try:'Play weather reporter once a week: your child stands on a chair with a paper tube microphone and reports today’s sky. Check the forecast together each morning, then let your child judge at bedtime: did the reporter get it right?',
   note:'Forecasts are clever guesses, not promises — sometimes the sky changes its mind. When the predicted rain never arrives, celebrate it: even weather scientists keep learning, and the sky always gets the last word.',
   safety:'When the forecast warns of a big storm, the family plan is simple: stay indoors, away from windows, until it passes. Children can help prepare by fetching the torch — the forecast makes the family a team.',
-  metaDescription:'A free Weather Forecast flashcard for ages 4–5: how forecasts help us plan, a weather-reporter role play and storm-warning basics. Print it for planning day.'},
+  metaDescription:'A Weather Forecast flashcard for ages 4–5: how forecasts help us plan, a weather-reporter role play and storm-warning basics. Print it for planning day.'},
  'sunny-day':{
   word:'Sunny Day',
   intro:'A sunny day is a sky-wide open day — bright light, strong shadows and warm ground, with the sun high and the clouds hiding.',
@@ -186,7 +186,7 @@ export const cards={
   try:'Draw around each other’s shadows with chalk in the morning, at lunch and in the late afternoon — three different shadow shapes. Do a shade hunt: find three cool, shady resting spots in the park or garden.',
   note:'Midday summer sun is the strongest — the classic plan is play outside early or late and take the shade at midday. Children do not feel sunburn happening, so hats and sunscreen are non-negotiable grown-up decisions, not offers.',
   safety:'Sun safety on bright days: a wide hat, sunscreen applied by a grown-up, plenty of water and shade breaks. Never look up at the sun itself, and never leave a child or a pet inside a parked car — even for a minute.',
-  metaDescription:'A free Sunny Day flashcard for ages 4–5: shadow-tracking games, shade hunts and the hat-water-shade routine. Print it for bright mornings.'},
+  metaDescription:'A Sunny Day flashcard for ages 4–5: shadow-tracking games, shade hunts and the hat-water-shade routine. Print it for bright mornings.'},
  'cloudy-day':{
   word:'Cloudy Day',
   intro:'A cloudy day is a soft-grey, gently lit day — the sun hides behind cloud blankets and the world gets a quieter, cooler feel.',
@@ -199,7 +199,7 @@ export const cards={
   try:'Count the cloud cover together: can we still see blue sky, or is it all grey? Do a cloudy-day gardening job — water the plants, scatter seeds — and notice how soft the light feels without shadows.',
   note:'Children sometimes call grey days sad days. Offer the reframe gently: the garden loves a cloudy day, and so do gardeners. Some of the best puddle-free, sweat-free outdoor play happens under full cloud.',
   safety:'Clouds block the light, but not all of the sun’s power — on mild grey days sunburn can still sneak up. For long outings keep the hat habit, and check whether the forecast says the clouds will bring rain later; take the coat along.',
-  metaDescription:'A free Cloudy Day flashcard for ages 4–5: soft light, cloud-cover counting and why gardens love grey days. Print it for overcast adventures.'},
+  metaDescription:'A Cloudy Day flashcard for ages 4–5: soft light, cloud-cover counting and why gardens love grey days. Print it for overcast adventures.'},
  'rainy-day':{
   word:'Rainy Day',
   intro:'A rainy day is a drop-by-drop day — steady rain from grey skies, wet pavements, umbrellas up and boots on.',
@@ -212,7 +212,7 @@ export const cards={
   try:'Build a rainy-day kit together and keep it by the door: coat, boots, umbrella. Fold a paper boat and float it in a shallow puddle. Put a bowl outside and measure how much rain fell by bedtime.',
   note:'Some children fight the rain gear. Let them own it: their coat, their zip, their umbrella choice. A child who dressed for the rain themselves walks taller through it — the power struggle usually melts with the choice.',
   safety:'Wet days are slip days: walk on painted lines and leaves with care, hold hands near roads because wet roads make cars slower to stop, and never touch fallen electrical cables. Umbrella tips stay away from eyes.',
-  metaDescription:'A free Rainy Day flashcard for ages 4–5: the get-ready sequence, a paper-boat puddle game and wet-pavement safety. Print it for grey mornings.'},
+  metaDescription:'A Rainy Day flashcard for ages 4–5: the get-ready sequence, a paper-boat puddle game and wet-pavement safety. Print it for grey mornings.'},
  'stormy-day':{
   word:'Stormy Day',
   intro:'A stormy day is a wild-sky day — dark clouds, flashing lightning and rumbling thunder, best watched from a cosy spot inside.',
@@ -225,7 +225,7 @@ export const cards={
   try:'Play thunder-counting from a safe indoor spot: when you see the flash, count slowly until the thunder arrives — one-Mississippi, two-Mississippi. Build a storm-den with cushions and read storm books while the real storm does its thing.',
   note:'Storm fear is common and healthy — it is the body doing its job. Never force a child to watch; instead, explain, stay calm yourself, and let them choose how much to watch from the window. Calm grown-ups make calm children.',
   safety:'Storm rules for small people: stay inside with walls around you, away from windows; if outside when a storm starts, come in right away — never shelter under lone trees; keep away from plugs and metal things during the loudest part.',
-  metaDescription:'A free Stormy Day flashcard for ages 4–5: thunder-counting from indoors, a cosy storm den and honest storm-safety rules. Print it for wild weather weeks.'},
+  metaDescription:'A Stormy Day flashcard for ages 4–5: thunder-counting from indoors, a cosy storm den and honest storm-safety rules. Print it for wild weather weeks.'},
  'windy-day':{
   word:'Windy Day',
   intro:'A windy day is a sky-that-moves day — hats need holding, leaves go flying and kites climb high on the steady push of the breeze.',
@@ -238,7 +238,7 @@ export const cards={
   try:'Fly a kite in an open field with a grown-up. Before that, test the wind with streamers or a tissue thrown in the air — watch which way it flies. Walk home and count five things the wind is moving.',
   note:'Some children get jumpy when strong wind rattles windows and howls at doors. Name it: that is the wind pushing past our house, and the house is strong. A windy-day story before bed works wonders.',
   safety:'On gusty days watch for flying objects and wobbly branches — walk away from old trees and building sites. Secure hats with straps, keep balcony doors shut, and fly kites only in open spaces far from roads and power lines.',
-  metaDescription:'A free Windy Day flashcard for ages 4–5: tissue-tail wind tests, kite-field trips and flying-object safety. Print it for blustery days.'},
+  metaDescription:'A Windy Day flashcard for ages 4–5: tissue-tail wind tests, kite-field trips and flying-object safety. Print it for blustery days.'},
  'snowy-day':{
   word:'Snowy Day',
   intro:'A snowy day is a white-quiet day — flakes drifting down, rooftops in white caps and the whole neighbourhood muffled and slow.',
@@ -251,7 +251,7 @@ export const cards={
   try:'Make a snow angel with arms and legs sweeping out and in. Measure the snow with a ruler every couple of hours. Fill a tub with snow, bring it inside and watch it melt — guess first: how much water will be left?',
   note:'Snow excitement often beats cold-sense: children play until they are truly chilly without noticing. Set a warm-up rhythm — play, then hot cocoa break, then out again. Wet gloves are the signal to swap for dry ones.',
   safety:'Snow-day safety: full warm kit with waterproof boots, walk on icy paths with tiny penguin steps, never throw snowballs at faces or at roads, stay well away from snowploughs, and come inside when fingers go from cold to clumsy.',
-  metaDescription:'A free Snowy Day flashcard for ages 4–5: snow angels, melt-measuring experiments, penguin walking and warm-up rhythms. Print it before the flakes fly.'},
+  metaDescription:'A Snowy Day flashcard for ages 4–5: snow angels, melt-measuring experiments, penguin walking and warm-up rhythms. Print it before the flakes fly.'},
  'foggy-day':{
   word:'Foggy Day',
   intro:'A foggy day is a cloud-on-the-ground day — the air turns milky, far things vanish, and everyone slows down and stays close.',
@@ -264,7 +264,7 @@ export const cards={
   try:'Play the fog game in the garden or park: how far can you see before things go grey? Count steps to the nearest tree. Wear something bright and notice how it still glows in the mist — that is why high-visibility vests exist.',
   note:'Fog can feel spooky, especially at dusk. Keep explanations matter-of-fact and a bit magical — walking inside a cloud — and keep the routine identical: same paths, same holds, same rules. Familiarity beats fear every time.',
   safety:'Fog rules: stay together and stay visible — bright colours or reflective strips; never wander off a known path; at crossings, wait for the guard and look AND listen, because fog hides cars before it hides the kerb.',
-  metaDescription:'A free Foggy Day flashcard for ages 4–5: ground-level clouds, a how-far-can-you-see game and stay-visible rules. Print it for misty mornings.'},
+  metaDescription:'A Foggy Day flashcard for ages 4–5: ground-level clouds, a how-far-can-you-see game and stay-visible rules. Print it for misty mornings.'},
  'hot-weather':{
   word:'Hot Weather',
   intro:'Hot weather is sizzling-air weather — the sun blazes, pavements warm your feet through shoes and water becomes your best friend.',
@@ -277,7 +277,7 @@ export const cards={
   try:'Freeze water with berries inside for fancy ice cubes. Do a barefoot test on grass, then on sun-warmed pavement — which is hotter, and why? Keep a water bottle with a tick chart: every finished bottle gets a tick.',
   note:'Children often refuse to interrupt play to drink. Make drinking the game — silly straw races, bottle-tick charts, cheers at every refill — rather than the lecture. Thirst arrives late; by then the body is already running low.',
   safety:'Hot-weather rules: water often, shade at midday, hats always, sunscreen from a grown-up. Never stay in a parked car. Call a grown-up immediately if anyone feels dizzy or unwell in the heat — that is never tattling.',
-  metaDescription:'A free Hot Weather flashcard for ages 4–5: the drink-rest-shade routine, ice-cube science and heat-safety habits. Print it for heatwave weeks.'},
+  metaDescription:'A Hot Weather flashcard for ages 4–5: the drink-rest-shade routine, ice-cube science and heat-safety habits. Print it for heatwave weeks.'},
  'warm-weather':{
   word:'Warm Weather',
   intro:'Warm weather is golden-and-easy weather — pleasantly mild air, open windows, light clothes and long play outside.',
@@ -290,7 +290,7 @@ export const cards={
   try:'Do a warm-day compare: what in this room is different on a warm day? (Windows open, lighter blankets, summer clothes.) Water the garden in the evening together and talk about why plants get thirsty too.',
   note:'Warm days can trick families — mild air still carries strong sun between late morning and mid-afternoon. The hat habit does not take holidays: warm-and-bright days need the same sun rules as blazing ones.',
   safety:'In warm weather keep the water bottle handy during active play, and stay sun-smart at midday even when the air feels gentle. Open windows need a child-stopper or supervision so nobody leans out of the low ones.',
-  metaDescription:'A free Warm Weather flashcard for ages 4–5: open-window days, garden play routines and mild-sun habits. Print it for the first golden weeks.'},
+  metaDescription:'A Warm Weather flashcard for ages 4–5: open-window days, garden play routines and mild-sun habits. Print it for the first golden weeks.'},
  'cool-weather':{
   word:'Cool Weather',
   intro:'Cool weather is zip-your-jacket weather — crisp fresh air, warm drinks, cosy layers and walks that end with rosy cheeks.',
@@ -303,7 +303,7 @@ export const cards={
   try:'Make a warm walk ritual: thermos of warm drink, crunchy leaves to kick, cheeks to check in the mirror afterwards — rosy means the cool air was working. Practise zipping your own jacket: it is cool-weather’s big kid skill.',
   note:'Cool-weather resistance is common — some children dislike jackets. Let the choice live inside a frame: any jacket from the hook, child’s pick. The zip-up itself becomes the milestone to celebrate, not the battle to win.',
   safety:'Cool air is honest but wind chill is sneaky — a cool day with wind feels much colder, especially on bikes. Riders and walkers wear their layer, keep fingers warm, and head in when shivers start. Rosy is fine; shivery means inside.',
-  metaDescription:'A free Cool Weather flashcard for ages 4–5: one-layer dressing, zip practice and crisp-walk rituals. Print it for autumn’s first fresh days.'},
+  metaDescription:'A Cool Weather flashcard for ages 4–5: one-layer dressing, zip practice and crisp-walk rituals. Print it for autumn’s first fresh days.'},
  'cold-weather':{
   word:'Cold Weather',
   intro:'Cold weather is bundle-up weather — frosty air, visible breath and layers on layers, with warm-up breaks back inside.',
@@ -316,7 +316,7 @@ export const cards={
   try:'Watch your breath make mist in the cold air — that is the water in our breath showing itself. Do a gloves-on, gloves-off test in the garden: which hand stays comfortable? Check the thermometer together every morning of a cold snap.',
   note:'Children warm up quickly and shed gear — then cool down twice as fast. The rule that works: layers stay on until cheeks are properly rosy and the game is done; then the full blanket-and-warm-drink ritual makes inside feel like the reward.',
   safety:'Cold rules: cover fingers, ears and neck — they chill first. Come inside when shivering starts or fingers go numb and clumsy. Never touch icy puddles with tongues or bare hands, and keep away from frozen water — ice is for the rink.',
-  metaDescription:'A free Cold Weather flashcard for ages 4–5: layer-up routines, breath-mist science and honest come-inside-when-shivering rules. Print it for frosty snaps.'},
+  metaDescription:'A Cold Weather flashcard for ages 4–5: layer-up routines, breath-mist science and honest come-inside-when-shivering rules. Print it for frosty snaps.'},
  'spring':{
   word:'Spring',
   intro:'Spring is the waking-up season — buds burst, birds return, seeds go into the ground and the air swings between showers and sunshine.',
@@ -329,7 +329,7 @@ export const cards={
   try:'Adopt a tree: visit it weekly all spring and draw what changed — buds, leaves, blossom. Plant sunflower or bean seeds in a cup by the window and measure the shoot as it grows. Learn one bird’s song from the garden and greet it daily.',
   note:'Spring weather is moody — sunshine, shower, sunshine within one hour. That is not a plan failure; it is the season’s personality. Layers plus a light rain jacket handle almost every spring outing without a rethink.',
   safety:'Spring sunshine still burns — hats come back out with the blossoms. Watering cans and soil mean mucky hands: wash before snacks. Watch, but never touch, nests and baby birds you find — parents are usually close by working.',
-  metaDescription:'A free Spring flashcard for ages 4–5: adopt-a-tree tracking, cup-seed planting and shower-ready layering. Print it for the season of buds.'},
+  metaDescription:'A Spring flashcard for ages 4–5: adopt-a-tree tracking, cup-seed planting and shower-ready layering. Print it for the season of buds.'},
  'summer':{
   word:'Summer',
   intro:'Summer is the long-sun season — the hottest months of the year, when days stretch late, holidays happen and everything happens outdoors.',
@@ -342,7 +342,7 @@ export const cards={
   try:'Track the summer light: note what time the sun sets in June and watch it drift earlier as summer ends. Freeze fruit into ice lollies. Build a shade fort in the garden and do quiet puzzles inside it at midday.',
   note:'Summer bedtime battles are real — the light says play, the clock says sleep. Blackout curtains and a steady routine keep both truths. And remember: summer hunger and thirst shrink in the heat; small cool snacks all day beat big hot meals.',
   safety:'Summer’s big rules: never swim without a watching grown-up, and only where lifeguards or flags say it is safe; hats and sunscreen every single day; never sit in a parked car; come to a grown-up at once if you feel dizzy, headachy or sick in the heat.',
-  metaDescription:'A free Summer flashcard for ages 4–5: swim-with-a-grown-up rules, beach flags, shade forts and long-day tracking. Print it for holiday season.'},
+  metaDescription:'A Summer flashcard for ages 4–5: swim-with-a-grown-up rules, beach flags, shade forts and long-day tracking. Print it for holiday season.'},
  'autumn':{
   word:'Autumn',
   intro:'Autumn is the leaf-falling season — trees turn gold and orange, the air cools, and the wind plays football with the leaves.',
@@ -355,7 +355,7 @@ export const cards={
   try:'Collect ten leaves and sort them: by colour, by size, by shape — then make a leaf collage or a rubbing with crayons. Rake a leaf heap and (of course) jump in it. Check the forecast for the windiest day of the week.',
   note:'Leaf-raking is slow work and leaf-jumping is fast fun — plan for both. Keep a small press of the season’s best leaves under heavy books; by winter, the autumn collage becomes a warm memory on the wall.',
   safety:'Autumn mornings can be slippery with dew and fallen leaves — walk, do not run, on leafy slopes. Shorter days mean darker walks: something bright on the jacket helps drivers see you. Never kick leaf piles at the road edge.',
-  metaDescription:'A free Autumn flashcard for ages 4–5: leaf sorting and collage, raking games and shorter-day visibility tips. Print it for the golden season.'},
+  metaDescription:'A Autumn flashcard for ages 4–5: leaf sorting and collage, raking games and shorter-day visibility tips. Print it for the golden season.'},
  'winter':{
   word:'Winter',
   intro:'Winter is the coldest season — short days, long nights, bare trees and the coziest clothes of the whole year.',
@@ -368,7 +368,7 @@ export const cards={
   try:'Do the winter dressing race: coat, hat, scarf, gloves, boots — can your child beat yesterday’s time? Take a lantern walk at dusk and notice the early dark. Keep a winter soup taste-chart: rate each warm dinner with stars.',
   note:'Winter can feel long for families cooped up inside. Short outings count double in winter: twenty brisk minutes outside, then warmth. The dressing effort is real — celebrate the gear-up itself as part of the game.',
   safety:'Winter visibility matters: dark evenings and dull days make children hard to see, so add something bright or reflective. Watch for ice on paths, keep cheeks and fingers covered, and go inside when shivers start — cold is a signal, not a challenge.',
-  metaDescription:'A free Winter flashcard for ages 4–5: the full dressing sequence, lantern walks and winter visibility rules. Print it for the cold season.'},
+  metaDescription:'A Winter flashcard for ages 4–5: the full dressing sequence, lantern walks and winter visibility rules. Print it for the cold season.'},
  'umbrella':{
   word:'Umbrella',
   intro:'An umbrella is a foldable rain roof you carry — open it up high, and the rain slides off while you stay dry underneath.',
@@ -381,7 +381,7 @@ export const cards={
   try:'Open and close an umbrella together on the doorstep — count the spokes, name the parts. Play umbrella courtesy: walk a line of teddies with the umbrella held safely away from everyone. Choose a child-size umbrella with a blunt tip to own.',
   note:'Children adore umbrellas and will open them indoors given the chance. Make the rule early and kindly: umbrellas open outside only — and give them a legit opening spot, like the doorstep, so the rule has a satisfying place to happen.',
   safety:'Umbrella rules: open them only outdoors, away from eyes — ours and other people’s; keep space around the pointy tips in crowds; never poke or sword-fight with them; on very windy days leave the umbrella home and wear the raincoat instead.',
-  metaDescription:'A free Umbrella flashcard for ages 4–5: parts of an umbrella, safe opening and carrying practice, and crowd courtesy. Print it before the wet season.'},
+  metaDescription:'A Umbrella flashcard for ages 4–5: parts of an umbrella, safe opening and carrying practice, and crowd courtesy. Print it before the wet season.'},
  'raincoat':{
   word:'Raincoat',
   intro:'A raincoat is a coat made of waterproof magic — rain lands on it, shrugs off, and the clothes underneath stay perfectly dry.',
@@ -394,7 +394,7 @@ export const cards={
   try:'Practise the full sequence on a dry day — arms, zip, hood, sleeves — until it is automatic. Then let your child be the raincoat checker for the family: did everyone zip and hood before the door opened?',
   note:'The hood is the hardest win — many children hate things over their heads. Practise hood-up in a game, not a rush, and let them choose raincoats with hoods they like. A coat without a working hood is a wet-head waiting to happen.',
   safety:'Raincoats go on before the fun, not during the drizzle — dry children stay warm children. Check the zip does not catch the chin, and hang wet coats to dry properly: a damp coat next morning is a cold child by lunchtime.',
-  metaDescription:'A free Raincoat flashcard for ages 4–5: the zip-hood-sleeves sequence, hood practice games and drying routines. Print it for the wet months.'},
+  metaDescription:'A Raincoat flashcard for ages 4–5: the zip-hood-sleeves sequence, hood practice games and drying routines. Print it for the wet months.'},
  'rain-boots':{
   word:'Rain Boots',
   intro:'Rain boots are waterproof boots for wet ground — tall, shiny and puddle-proof, so feet stay dry from the first splash to the last.',
@@ -407,7 +407,7 @@ export const cards={
   try:'Practise the pull-on wiggle until it is solo. Make a puddle map of your street after rain: mark the splashers and the monsters (the really deep ones). Give boots a home on a tray by the door so wet footprints stop at the mat.',
   note:'Boots without socks cause rubs, and boots two sizes up cause trips — the wiggle test (heel all the way down, toes free) catches both. Let your child pick a loud, joyful colour; enthusiasm for the boots carries the whole rainy morning.',
   safety:'Boots grip better than trainers on wet ground, but puddles still hide holes and kerbs — no running at full speed through water. Check soles now and then for worn grips, and never wade into water deeper than the boot top.',
-  metaDescription:'A free Rain Boots flashcard for ages 4–5: the pull-on wiggle, puddle maps and boot-care routines. Print it for the splashing season.'},
+  metaDescription:'A Rain Boots flashcard for ages 4–5: the pull-on wiggle, puddle maps and boot-care routines. Print it for the splashing season.'},
  'sun-hat':{
   word:'Sun Hat',
   intro:'A sun hat is a hat with a wide brim that makes its own shade — a personal patch of cool that travels wherever your head goes.',
@@ -420,7 +420,7 @@ export const cards={
   try:'Do a hat experiment: stand in the sun with the hat off for a moment (eyes closed), then hat on — which feels better? Decorate the hat with your child’s name or patches. Keep it on the same hook as the shoes so grabbing it is automatic.',
   note:'Hat refusal is famous. Workarounds that respect the child: let them pick the hat (colour, style), let teddy wear a hat too, and keep the rule warm but firm — outside in the sun means hat on, in this family, every time.',
   safety:'A sun hat shades the head but not the eyes from glare — pair it with shady play at midday and sunglasses for the brightest hours if your child keeps them on. Check the strap cannot catch on playground equipment; snug, not loose.',
-  metaDescription:'A free Sun Hat flashcard for ages 4–5: brim-and-strap routines, a shade experiment and the hat-on habit. Print it before the bright season.'},
+  metaDescription:'A Sun Hat flashcard for ages 4–5: brim-and-strap routines, a shade experiment and the hat-on habit. Print it before the bright season.'},
  'sunglasses':{
   word:'Sunglasses',
   intro:'Sunglasses are dark glasses for bright days — they are sunglasses for your eyes, dimming the glare so looking stays comfortable.',
@@ -433,7 +433,7 @@ export const cards={
   try:'Practise the two-hands-on routine in front of a mirror. Compare: sunny room, then sunglasses — how does the light change? Let your child pick their own pair from two options; ownership is half the wearing.',
   note:'Some children love sunglasses; some pull them straight off. Both are fine — the hat and the shade do the heavy lifting, and glasses are a bonus layer. Never fight the glasses battle at the cost of the shade habit.',
   safety:'Real sunglasses dim the glare; toy dress-up glasses do not — but the golden rule stands either way: never look directly at the sun WITH or without glasses, because dark lenses make staring feel safe when it is not.',
-  metaDescription:'A free Sunglasses flashcard for ages 4–5: the two-hands routine, a light-compare game and honest glare talk. Print it for bright-water days.'},
+  metaDescription:'A Sunglasses flashcard for ages 4–5: the two-hands routine, a light-compare game and honest glare talk. Print it for bright-water days.'},
  'scarf-and-gloves':{
   word:'Scarf and Gloves',
   intro:'Scarf and gloves are the neck-and-fingers team of cold days — one wraps the neck cosy, the others keep hands warm and ready to play.',
@@ -446,7 +446,7 @@ export const cards={
   try:'Practise the scarf wrap on yourself, then on teddy — snug but not tight, ends tucked. Mitten race: hands in, thumbs out, first one up wins. Freeze-time experiment: one bare hand and one gloved hand in the cold air — which taps the maths longer?',
   note:'Lost gloves are a winter tax. The classic fix: a pair per pocket on a string or clip through the coat sleeves — mittens return to the sleeve, not the pavement. Let your child choose their own colours; ownership survives the wash.',
   safety:'Scarves wrap snug, never tight, and the ends tuck in — loose, long scarf ends can catch on playground slides and climbing frames, so the rule is: tucked or off for playing. Never attach scarves through coat hoods or car seats.',
-  metaDescription:'A free Scarf and Gloves flashcard for ages 4–5: the snug wrap, mitten races and tucked-in-for-play safety. Print it for the first cold snap.'},
+  metaDescription:'A Scarf and Gloves flashcard for ages 4–5: the snug wrap, mitten races and tucked-in-for-play safety. Print it for the first cold snap.'},
  'winter-coat':{
   word:'Winter Coat',
   intro:'The winter coat is the big warm boss of cold-weather clothes — thick padding that traps body heat and a hood that shrugs off snow.',
@@ -459,5 +459,5 @@ export const cards={
   try:'Learn the flip trick: coat on the floor, hood at the feet, arms in, flip overhead — popcorn! Practise zipping from the very bottom tooth up. Line up the winter kit in wearing order: coat, then scarf, then gloves — or your child’s own order.',
   note:'A coat that is easy to put on gets worn without fights — check the zip glides smoothly and the hood turns the head. If getting dressed stalls, do the last bit together: you start the zip, your child finishes it. Finishers come back tomorrow.',
   safety:'Car-seat rule first: bulky coats come OFF in the car seat — the padding makes straps sit too loose — with a blanket over the straps instead. At play, a fastened coat beats an open one, and hoods stay down indoors where they block the view.',
-  metaDescription:'A free Winter Coat flashcard for ages 4–5: the flip trick, bottom-up zipping and the car-seat coat rule. Print it before winter proper.'}
+  metaDescription:'A Winter Coat flashcard for ages 4–5: the flip trick, bottom-up zipping and the car-seat coat rule. Print it before winter proper.'}
 };

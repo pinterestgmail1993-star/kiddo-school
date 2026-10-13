@@ -4,9 +4,9 @@
 export const meta={
  slug:'garden-things',
  name:'Garden Things',
- seoTitle:'Garden Things Flashcards for Toddlers — 12 Free Printable Cards',
+ seoTitle:'Garden Things Flashcards for Toddlers — 12 Printable Cards',
  h1:'Garden Things flashcards.',
- metaDescription:'Twelve free garden things flashcards for toddlers: tree, grass, watering can, wheelbarrow, bench and more, with gentle naming games for every card. Print at home.',
+ metaDescription:'Twelve garden things flashcards for toddlers: tree, grass, watering can, wheelbarrow, bench and more, with gentle naming games for every card. Print at home.',
  lede:'Twelve cards about the things a garden holds: the tree at the gate, the watering can, the wheelbarrow with the big wheel. Everyday garden words, ready to name together.',
  hubBlurb:'Trees, watering cans, wheelbarrows and benches. The things every garden holds.',
  ageLabel:'2 years',

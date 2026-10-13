@@ -112,7 +112,7 @@ export const lpContent={
  notice:'Wiggle one arm like a wiggly snake and say garden hose. Ask your toddler to find the long tube on the card, then unroll an imaginary hose across the rug together — whoosh included.',
  ask:'"What does the hose say?" "What does the hose carry — water or milk?" "Who holds the spray end?" "What do we do with the puddles?" — answered with a whoosh, "water!", "grown-ups!" and a good solid stamp.',
  childSay:'"Whoosh!" Expect hoses narrated on every garden visit, cup-watering claimed as a right, and puddles found on rainy days with stamping joy. The snake story may reappear at bath time with the shampoo bottle. Let it.',
- real:'Hoses unroll in gardens, allotments and car-wash forecourts all summer; sprinklers count too. Every watering session reruns the split — grown-up spray, toddler cup — and every puddle is a free finale.',
+ real:'Hoses unroll in gardens, allotments and car-wash forecourts all summer; sprinklers count too. Every watering session reruns the split — grown-up spray, toddler cup — and every puddle is a finale.',
  play:'Cup-watering crew: give your toddler a plastic cup and one thirsty plant — pss-pss at the soil, a little count of drinks, and a proud report at the end. Real job, real water, real pride.',
  check:'At the next watering, listen for the split: "grown-up hose, my cup" means the rule is installed. A solid puddle-stamp with a whoosh attached completes the lesson entirely.',
  tips:'Keep a dedicated toddler cup by the back door so the watering job is always available. If the whoosh gets too loud indoors, whisper it — the wiggly whisper is somehow even funnier.',

@@ -288,7 +288,7 @@ export function alphabetShelf(){
   ['/activities/beginning-sounds/','Beginning Sounds','A letter and three pictures: which one starts with the sound? Phonics that tells the truth.'],
   ['/activities/guess-the-picture/','Guess the Picture','Name the picture — colorful, outline or mystery — and meet its letter.']
  ];
- return `<div class="dt-shelf al-shelf" id="alphabet"><div class="dt-shelf-head"><h2>The Alphabet Center</h2><p>Twenty-six letters, five card kinds and three gentle games — built from the school’s own alphabet artwork. Free, no sign-up.</p></div><div class="al-shelf-grid">${cards.map(([href,title,copy])=>`<a class="dt-card" href="${href}"><span class="dt-card-copy"><strong>${esc(title)}</strong><span>${esc(copy)}</span><span class="fc-open">Open <span aria-hidden="true">↗</span></span></span></a>`).join('')}</div></div>`;
+ return `<div class="dt-shelf al-shelf" id="alphabet"><div class="dt-shelf-head"><h2>The Alphabet Center</h2><p>Twenty-six letters, five card kinds and three gentle games — built from the school’s own alphabet artwork.</p></div><div class="al-shelf-grid">${cards.map(([href,title,copy])=>`<a class="dt-card" href="${href}"><span class="dt-card-copy"><strong>${esc(title)}</strong><span>${esc(copy)}</span><span class="fc-open">Open <span aria-hidden="true">↗</span></span></span></a>`).join('')}</div></div>`;
 }
 
 /* ------------------------------- the A-B-C intro for the preschool class */

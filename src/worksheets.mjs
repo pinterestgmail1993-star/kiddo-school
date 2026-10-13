@@ -27,7 +27,7 @@ for(const w of all){
 /* the layout builders render the header from the spec itself — give every
    worksheet its title, instruction line and sheet footer note */
 for(const w of all){
- if(!w.ws.title)w.ws.title=`${w.title} — Free Worksheet · Kiddo.school`;
+ if(!w.ws.title)w.ws.title=`${w.title} — Worksheet · Kiddo.school`;
  if(!w.ws.instr)w.ws.instr=w.task;
  if(w.ws.slugHash===undefined)w.ws.slugHash=[...w.slug].reduce((a,c)=>a*31+c.charCodeAt(0)%97,7)%997;
 }

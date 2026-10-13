@@ -11,11 +11,11 @@ export const flashcardSets=[
   stageName:'Newborn 1',
   stageHref:'/newborn/0-6-weeks/',
   setLabel:'First Discoveries 01',
-  title:'Black and White Baby Flashcards – Free Printable Cards',
+  title:'Black and White Baby Flashcards – Printable Cards',
   h1:'Black and white baby flashcards.',
-  subtitle:'Free printable high-contrast cards, made for newborn eyes.',
+  subtitle:'Printable high-contrast cards, made for newborn eyes.',
   hubTitle:'Black and White Baby Cards',
-  metaDescription:'Free printable black and white baby flashcards: fifteen high-contrast cards for newborns 0–6 months. Print at home, no sign-up.',
+  metaDescription:'Printable black and white baby flashcards: fifteen high-contrast cards for newborns 0–6 months. Print at home.',
   ageLabel:'0–6 months',
   cover:'first-discoveries-look-together-cutout-sheet.webp',
   coverAlt:'Cover of the Black and White Baby Cards set: the First Discoveries 01 look-together sheet showing four black and white baby cards — bear, bird, fish and butterfly',
@@ -156,10 +156,10 @@ export function fcSoon(){
  return `<div class="fc-soon"><h2>More sets are on the drawing table.</h2><p>Alphabet and number flashcards are on the drawing table, in the same print-at-home style. If there is a set you are waiting for, the kitchen table decides what gets made first: tell someone at Kiddo.school what your little one is learning right now.</p></div>`;
 }
 export function fcSetBody(set){
- return `<section class="wrap fc-intro"><div class="fc-chips"><span>Ages ${set.ageLabel}</span><span>${set.cards.length} cards</span><span>Free to print</span></div><p class="fc-lede">${set.intro}</p></section>
+ return `<section class="wrap fc-intro"><div class="fc-chips"><span>Ages ${set.ageLabel}</span><span>${set.cards.length} cards</span><span>Ready to print</span></div><p class="fc-lede">${set.intro}</p></section>
  <section class="wrap fc-section"><span class="eyebrow">AGES · CLASSES · SUBJECTS</span><h2>What the cards are for, stage by stage.</h2><p class="fc-hint">The exact age, class and subjects for each stage, so you always know what your little one is working on.</p><div class="fc-stages">${set.stages.map(st=>`<div class="fc-stage"><div class="fc-stage-pills"><span class="fc-age">${st.age}</span><span class="fc-class">${st.cls}</span></div><div class="fc-stage-subjects">${st.subjects.map(su=>`<span>${su}</span>`).join('')}</div><p>${st.desc}</p></div>`).join('')}</div></section>
  <section class="wrap fc-section"><span class="eyebrow">THE FIFTEEN CARDS</span><h2>Meet the whole set.</h2><p class="fc-hint">Every card has its own page with the words to say together, one thing to try and a full-size download. Tap any card to open it.</p><div class="fc-grid">${set.cards.map(c=>`<figure class="fc-card"><a href="${setUrl(set)}${c.slug}/" aria-label="Open the ${c.word} card page"><img src="${imgUrl(set,c.file)}" width="${c.w}" height="${c.h}" alt="${c.alt}" loading="lazy"></a><figcaption><strong>${c.word}</strong><span>Card ${c.n} · Open card <span aria-hidden="true">↗</span></span></figcaption></figure>`).join('')}</div></section>
- <section class="wrap fc-section"><span class="eyebrow">FOR THE GROWN-UPS</span><h2>The parents guide.</h2><p class="fc-hint">One printable page for you, not for the baby: how to print, how to hold the cards, and when to stop. Handy to keep on the fridge or hand to babysitters and grandparents.</p><figure class="fc-guide-figure"><a href="${imgUrl(set,set.guide)}" aria-label="Open full-size parents guide"><img src="${imgUrl(set,set.guide)}" width="1024" height="1536" alt="${set.guideAlt}" loading="lazy"></a><figcaption><strong>Parents guide</strong><span>One page, free to print, big text, zero jargon.</span></figcaption></figure></section>
+ <section class="wrap fc-section"><span class="eyebrow">FOR THE GROWN-UPS</span><h2>The parents guide.</h2><p class="fc-hint">One printable page for you, not for the baby: how to print, how to hold the cards, and when to stop. Handy to keep on the fridge or hand to babysitters and grandparents.</p><figure class="fc-guide-figure"><a href="${imgUrl(set,set.guide)}" aria-label="Open full-size parents guide"><img src="${imgUrl(set,set.guide)}" width="1024" height="1536" alt="${set.guideAlt}" loading="lazy"></a><figcaption><strong>Parents guide</strong><span>One page, ready to print, big text, zero jargon.</span></figcaption></figure></section>
  <section class="wrap fc-section"><span class="eyebrow">HOW TO LOOK TOGETHER</span><h2>One card, one quiet minute.</h2><ol class="fc-steps">${set.steps.map(([t,d],i)=>`<li><span class="fc-stepnum">${String(i+1).padStart(2,'0')}</span><div><h3>${t}</h3><p>${d}</p></div></li>`).join('')}</ol></section>
  <section class="wrap fc-section fc-why"><span class="eyebrow">THE LITTLE BIT OF LEARNING</span><h2>Why black and white?</h2><p>${set.why}</p></section>
  <section class="wrap fc-section"><h2>Make it work for you.</h2><div class="fc-adapt"><div><h3>Keep it simple</h3><p>${set.younger}</p></div><div><h3>Take it further</h3><p>${set.older}</p></div></div><p class="fc-safety"><strong>A note for grown-ups:</strong> ${set.safety}</p></section>

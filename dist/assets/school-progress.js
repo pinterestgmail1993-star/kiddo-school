@@ -209,7 +209,7 @@
        <div class="hero-actions">
         <button type="button" class="button" data-tc-desk-start>Choose an age &amp; start <span aria-hidden="true">↗</span></button>
        </div>
-       <p class="fc-hint">Progress is kept in this browser only — no account, no sign-up. Add a name if you like, or stay a guest.</p>`;
+       <p class="fc-hint">Progress is kept in this browser only. Add a name if you like, or stay a guest.</p>`;
       desk.querySelector('[data-tc-desk-start]').addEventListener('click', () => openPicker(desk));
       return;
     }
@@ -239,7 +239,7 @@
        ${last && last.n !== rec.n ? `<p class="fc-hint">Last opened here: Class ${last.n} — ${esc(last.title)}.</p>` : ''}
       </div>` : ''}
      <p class="tc-desk-progress">${done === 0 ? 'No classes marked complete yet — the first one is one playful session away.' : `<strong>${done}</strong> class${done === 1 ? '' : 'es'} marked complete on this device.`}</p>
-     <p class="fc-hint">Everything here lives only in this browser. No account, no sign-up, nothing uploaded.</p>`;
+     <p class="fc-hint">Everything here lives only in this browser. Nothing is uploaded.</p>`;
     const sel = desk.querySelector('[data-tc-kid-select]');
     if (sel) sel.addEventListener('change', () => setActive(sel.value));
     const add = desk.querySelector('[data-tc-desk-add]');

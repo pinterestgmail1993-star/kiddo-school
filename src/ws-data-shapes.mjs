@@ -203,8 +203,8 @@ export const shapeWorksheets=shapeAdventures.map(g=>{
   art:{img:SHAPE_BASE+g.img,alt:g.alt},
   game:{path:`${S.gameLib}${g.slug}/`,title:g.title},
   classNum:S.classNum,classPath:S.classPath,classTitle:S.classTitle,
-  seoTitle:`${g.title} Worksheet \u2014 Free Printable Shapes Activity for Age 4 (Class 25)`,
-  metaDescription:`Free printable ${g.title} worksheet for 4-year-olds. ${d.lede} Part of Class 25: Shapes, Patterns & Sorting at Kiddo.school \u2014 download the PDF or play the matching game online.`,
+  seoTitle:`${g.title} Worksheet \u2014 Printable Shapes Activity for Age 4 (Class 25)`,
+  metaDescription:`Printable ${g.title} worksheet for 4-year-olds. ${d.lede} Part of Class 25: Shapes, Patterns & Sorting at Kiddo.school \u2014 download the PDF or play the matching game online.`,
   lede:d.lede,learn:d.learn,skills:d.skills,task:d.task,
   wsType,ws,answers:d.answers
  };

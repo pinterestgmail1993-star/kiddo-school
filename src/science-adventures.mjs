@@ -511,7 +511,7 @@ export function scienceAdventureBody(g){
  <section class="wrap lesson-section"><span class="eyebrow">KEEP GOING</span><h2>Where next?</h2>
   <div class="fc-stages">
    <a class="fc-stage lesson-card-link" href="${C31_PATH}"><div class="fc-stage-pills"><span class="fc-age">Age 4–5</span><span class="fc-class">Class 31</span></div><h3>Science, Nature &amp; Discovery</h3><p>The class behind these adventures \u2014 all 30 science games plus off-screen experiment ideas.</p><span class="fc-open">Open Class 31 <span aria-hidden="true">↗</span></span></a>
-   <a class="fc-stage lesson-card-link" href="${ws}"><div class="fc-stage-pills"><span class="fc-age">Age 4–5</span><span class="fc-class">Worksheet</span></div><h3>${esc(g.title)} worksheet</h3><p>The printable twin of this game \u2014 free PDF, print button, parent guide.</p><span class="fc-open">Open the worksheet <span aria-hidden="true">↗</span></span></a>
+   <a class="fc-stage lesson-card-link" href="${ws}"><div class="fc-stage-pills"><span class="fc-age">Age 4–5</span><span class="fc-class">Worksheet</span></div><h3>${esc(g.title)} worksheet</h3><p>The printable twin of this game \u2014 PDF, print button, parent guide.</p><span class="fc-open">Open the worksheet <span aria-hidden="true">↗</span></span></a>
    <a class="fc-stage lesson-card-link" href="/preschool/logic/adventures/"><div class="fc-stage-pills"><span class="fc-age">Age 4–5</span><span class="fc-class">Class 30</span></div><h3>Logic Adventures</h3><p>Thirty picture puzzles \u2014 the thinking side of science.</p><span class="fc-open">Open the Logic Library <span aria-hidden="true">↗</span></span></a>
   </div>
  </section>`;
@@ -598,7 +598,7 @@ export function scienceLibraryBody(){
  <section class="wrap lesson-section"><span class="eyebrow">KEEP GOING</span><h2>More to explore.</h2>
   <div class="fc-stages">
    <a class="fc-stage lesson-card-link" href="${C31_PATH}"><div class="fc-stage-pills"><span class="fc-age">Age 4–5</span><span class="fc-class">Class 31</span></div><h3>Science, Nature &amp; Discovery</h3><p>The class behind these adventures, with off-screen experiment ideas for every game.</p><span class="fc-open">Open Class 31 <span aria-hidden="true">↗</span></span></a>
-   <a class="fc-stage lesson-card-link" href="${WS31_PATH}"><div class="fc-stage-pills"><span class="fc-age">Age 4–5</span><span class="fc-class">Worksheets</span></div><h3>Science worksheets</h3><p>All 30 printable twins with free PDFs, print buttons and grown-up answer lines.</p><span class="fc-open">Open the science worksheets <span aria-hidden="true">↗</span></span></a>
+   <a class="fc-stage lesson-card-link" href="${WS31_PATH}"><div class="fc-stage-pills"><span class="fc-age">Age 4–5</span><span class="fc-class">Worksheets</span></div><h3>Science worksheets</h3><p>All 30 printable twins with PDFs, print buttons and grown-up answer lines.</p><span class="fc-open">Open the science worksheets <span aria-hidden="true">↗</span></span></a>
    <a class="fc-stage lesson-card-link" href="/preschool/logic/adventures/"><div class="fc-stage-pills"><span class="fc-age">Age 4–5</span><span class="fc-class">Class 30</span></div><h3>Logic Adventures</h3><p>Thirty draw-on-the-picture logic puzzles \u2014 the thinking companion shelf.</p><span class="fc-open">Open the Logic Library <span aria-hidden="true">↗</span></span></a>
   </div>
  </section>`;

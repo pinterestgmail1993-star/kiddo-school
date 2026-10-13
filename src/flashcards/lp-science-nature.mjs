@@ -421,7 +421,7 @@ export const lpContent={
  title:'Rain Helps Plants',one:'The garden\u2019s free watering can — why rainy days are planting days and roots are the straws doing the drinking.',
  seoTitle:'Rain Helps Plants Lesson for Ages 4–5 — How to Teach Thirsty Gardens (Class 31)',
  metaDescription:'A Learning Path lesson for ages 4–5: how rainwater reaches plant roots, why rainy days are garden days, and an after-rain leaf-and-soil tour to take.',
- intro:'This lesson flips the rainy-day grump: while everyone runs inside, the whole garden sits down to drink. Your child learns that rain is a free watering can for every plant outside — and takes an after-rain tour to see exactly who has been drinking.',
+ intro:'This lesson flips the rainy-day grump: while everyone runs inside, the whole garden sits down to drink. Your child learns that rain is a watering can for every plant outside — and takes an after-rain tour to see exactly who has been drinking.',
  what:'Plants are always drinking — their roots sip water from the soil non-stop — and rain refills the soil faster than any hose. Drops land on leaves, trickle down stems, and sink into the dark earth where the roots are waiting to slurp it all up.',
  mean:'Rain is weather on the plant\u2019s side: a whole night of rain does more for the garden than an afternoon of watering, because it soaks deep where roots actually reach. The garden is not getting wet — it is getting fed, and the soil is the cup it drinks from.',
  know:'Roots do the drinking, not the leaves — raindrops on a leaf are just passing through on their way down. After rain the soil turns dark and damp, leaves wear beads of water, and worms come up for the wet. A dry week makes plants droop; rain perks them back up.',

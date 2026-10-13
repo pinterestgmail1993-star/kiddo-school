@@ -42,7 +42,7 @@ export const animalsLesson={
  seoTitle:'Animals & Their Sounds for 3 Year Olds',
  title:'Animals & Their Sounds for 3 Year Olds',
  h1:'Animals & Their Sounds',
- description:'Play with animals and your preschooler: twelve picture cards with real animal sounds to hear, printable animal sheets to solve at the table, off-screen barnyard play and a print view — no scores, no sign-up.',
+ description:'Play with animals and your preschooler: twelve picture cards with real animal sounds to hear, printable animal sheets to solve at the table, off-screen barnyard play and a print view — no scores.',
  eyebrow:'PRESCHOOL · AGE 3 · CLASS 6',
  crumbs:[['Preschool','/preschool/'],['Age 3','/preschool/3-years/'],['Animals & Their Sounds','/preschool/3-years/animals-and-their-sounds/']],
  schemaImage:R2+P+'cover.webp',
@@ -88,7 +88,7 @@ export const animalsCardContent={
   say:'Woof! Woof! The dog says woof — can you say woof?',
   try:'Puppy pats: tap your knees gently, twice — pat, pat — like a wagging tail.',
   note:'Dogs bark differently all over the world. In English we say woof — and that is the right answer here.',
-  metaDescription:'Meet the dog animal flashcard: a happy brown puppy with the word dog, with a puppy-pats game and the woof sound to hear. Free to download and print.'
+  metaDescription:'Meet the dog animal flashcard: a happy brown puppy with the word dog, with a puppy-pats game and the woof sound to hear. Download and print.'
  },
  'cat':{
   word:'Cat',
@@ -97,7 +97,7 @@ export const animalsCardContent={
   say:'Meow! A soft meow — stretch it out: meee-ow!',
   try:'Pretend to lap milk with your hand — cats are quiet drinkers and quiet walkers.',
   note:'If a real cat passes by, listen together. Some cats meow loudly; some barely squeak.',
-  metaDescription:'Meet the cat animal flashcard: an orange kitten with the word cat, a quiet-cat-feet game and the meow sound to hear. Free to download and print.'
+  metaDescription:'Meet the cat animal flashcard: an orange kitten with the word cat, a quiet-cat-feet game and the meow sound to hear. Download and print.'
  },
  'cow':{
   word:'Cow',
@@ -106,7 +106,7 @@ export const animalsCardContent={
   say:'Moo! Open wide and let it rumble: moooo!',
   try:'Moo high, moo low, moo slow — which moo is the most cow-ish one in the room?',
   note:'Cows moo to talk to their calves and to their farmer. Your child already speaks a little cow.',
-  metaDescription:'Meet the cow animal flashcard: a black and white spotted cow with the word cow, a moo-high-moo-low game and the moo sound to hear. Free to download and print.'
+  metaDescription:'Meet the cow animal flashcard: a black and white spotted cow with the word cow, a moo-high-moo-low game and the moo sound to hear. Download and print.'
  },
  'sheep':{
   word:'Sheep',
@@ -115,7 +115,7 @@ export const animalsCardContent={
   say:'Baa! A baa wobbles at the end — baa-aa-aa!',
   try:'Baa while hopping — sheep move in a little bounce, so the sound bounces too.',
   note:'Sheep stay with the flock. Saying baa together, in a group, is exactly how a flock sounds.',
-  metaDescription:'Meet the sheep animal flashcard: a fluffy white sheep with the word sheep, a bouncy baa game and the baa sound to hear. Free to download and print.'
+  metaDescription:'Meet the sheep animal flashcard: a fluffy white sheep with the word sheep, a bouncy baa game and the baa sound to hear. Download and print.'
  },
  'duck':{
   word:'Duck',
@@ -124,7 +124,7 @@ export const animalsCardContent={
   say:'Quack! A short, sharp quack — quack, quack!',
   try:'Waddle in a line with quacks between steps — three waddles, one quack.',
   note:'Real ducks are chatty: at the pond, count the quacks out loud together.',
-  metaDescription:'Meet the duck animal flashcard: a yellow duckling with the word duck and a waddle-and-quack game to try at home. Free to download and print.'
+  metaDescription:'Meet the duck animal flashcard: a yellow duckling with the word duck and a waddle-and-quack game to try at home. Download and print.'
  },
  'chicken':{
   word:'Chicken',
@@ -133,7 +133,7 @@ export const animalsCardContent={
   say:'Cluck, cluck! The hen clucks — bok, bok, bok!',
   try:'Peck like a hen: little fast nods of the head while you cluck.',
   note:'Hens cluck all day to stay in touch. A rooster crows cock-a-doodle-doo — a different job.',
-  metaDescription:'Meet the chicken animal flashcard: a white hen with a red comb, the word chicken, a pecking game and the cluck sound to hear. Free to download and print.'
+  metaDescription:'Meet the chicken animal flashcard: a white hen with a red comb, the word chicken, a pecking game and the cluck sound to hear. Download and print.'
  },
  'horse':{
   word:'Horse',
@@ -142,7 +142,7 @@ export const animalsCardContent={
   say:'Neigh! A big whinny — start high and slide down: nneigh!',
   try:'Clip-clop your tongue while tapping a steady beat — a trot around the room.',
   note:'Horses neigh to find their friends. A loud neigh from you gets a loud neigh back.',
-  metaDescription:'Meet the horse animal flashcard: a brown horse standing tall, the word horse, a clip-clop game and the neigh sound to hear. Free to download and print.'
+  metaDescription:'Meet the horse animal flashcard: a brown horse standing tall, the word horse, a clip-clop game and the neigh sound to hear. Download and print.'
  },
  'pig':{
   word:'Pig',
@@ -151,7 +151,7 @@ export const animalsCardContent={
   say:'Oink, oink! Snort it from the nose: oink-oink!',
   try:'Pig sniffing: wrinkle your nose and sniff-sniff-snort — pigs find food with their snout.',
   note:'Pigs are clean, clever and chatty — the mud is just sunscreen. Oink is the polite hello.',
-  metaDescription:'Meet the pig animal flashcard: a smiling pink pig with the word pig, a sniff-and-snort game and the oink sound to hear. Free to download and print.'
+  metaDescription:'Meet the pig animal flashcard: a smiling pink pig with the word pig, a sniff-and-snort game and the oink sound to hear. Download and print.'
  },
  'lion':{
   word:'Lion',
@@ -160,7 +160,7 @@ export const animalsCardContent={
   say:'Roooaaar! Start soft, end loud — a friendly roar!',
   try:'Paws up, big breath, roar together — then whisper-roar so a cub could sleep.',
   note:'A lion’s roar carries for kilometres — it means “here I am”. Whisper-roars carry across the rug.',
-  metaDescription:'Meet the lion animal flashcard: a friendly lion with a shaggy mane, the word lion, a whisper-roar game and the roar sound to hear. Free to download and print.'
+  metaDescription:'Meet the lion animal flashcard: a friendly lion with a shaggy mane, the word lion, a whisper-roar game and the roar sound to hear. Download and print.'
  },
  'elephant':{
   word:'Elephant',
@@ -169,7 +169,7 @@ export const animalsCardContent={
   say:'Pfffft! Elephants trumpet — blow a big airy Pbbbfft!',
   try:'Arm trunk: swing your arm in front of your nose and trumpet as you swing it up.',
   note:'Real elephants also rumble so low we can barely hear it — a secret elephant whisper.',
-  metaDescription:'Meet the elephant animal flashcard: a gray elephant with big ears, the word elephant and a swing-your-trunk trumpet game. Free to download and print.'
+  metaDescription:'Meet the elephant animal flashcard: a gray elephant with big ears, the word elephant and a swing-your-trunk trumpet game. Download and print.'
  },
  'frog':{
   word:'Frog',
@@ -178,7 +178,7 @@ export const animalsCardContent={
   say:'Ribbit, ribbit! A bouncy little ribbit!',
   try:'Crouch and hop — one hop, one ribbit. How far can the two of you hop?',
   note:'Frogs croak loudest in the evening. If you live near water, take the game outside at dusk.',
-  metaDescription:'Meet the frog animal flashcard: a green frog on its front legs, the word frog and a hop-and-ribbit game to try at home. Free to download and print.'
+  metaDescription:'Meet the frog animal flashcard: a green frog on its front legs, the word frog and a hop-and-ribbit game to try at home. Download and print.'
  },
  'bird':{
   word:'Bird',
@@ -187,6 +187,6 @@ export const animalsCardContent={
   say:'Tweet, tweet! A little high tweet-tweet-tweet!',
   try:'Bird listening: be silent for ten seconds and count the tweets you hear together.',
   note:'Birds sing most at sunrise. One quiet minute of listening is a whole bird class.',
-  metaDescription:'Meet the bird animal flashcard: a little bluebird with one wing up, the word bird, a listening game and the tweet sound to hear. Free to download and print.'
+  metaDescription:'Meet the bird animal flashcard: a little bluebird with one wing up, the word bird, a listening game and the tweet sound to hear. Download and print.'
  }
 };

@@ -81,7 +81,7 @@ export const shapesCardContent={
   say:'A circle is round like a ball — no corners at all!',
   try:'Go on a circle hunt: find three round things together — a plate, a clock, a wheel — and tap each one gently. “Round and round, it’s a circle!”',
   note:'If your child calls every shape “circle”, enjoy the enthusiasm and name the others casually in play. The differences sort themselves out with repetition, not correction.',
-  metaDescription:'Meet the circle shape flashcard: one big red circle, the word circle and a round-things hunt to try at home. Free to download and print.'
+  metaDescription:'Meet the circle shape flashcard: one big red circle, the word circle and a round-things hunt to try at home. Download and print.'
  },
  square:{
   word:'Square',
@@ -89,7 +89,7 @@ export const shapesCardContent={
   say:'A square has four sides — one, two, three, four!',
   try:'Count a square’s four sides with one finger, then hunt for four squares: a window, a cracker, a cushion, a book cover. Trace each one as you name it.',
   note:'Squares that are tilted still count. If a leaning square confuses your child, turn a cracker slowly in the air — “still a square!” — and watch the idea click.',
-  metaDescription:'Meet the square shape flashcard: one big yellow square, four sides to count together and a four-squares hunt for home. Free to download.'
+  metaDescription:'Meet the square shape flashcard: one big yellow square, four sides to count together and a four-squares hunt for home. Download.'
  },
  triangle:{
   word:'Triangle',
@@ -97,7 +97,7 @@ export const shapesCardContent={
   say:'A triangle has three sides — point, point, point. Triangle!',
   try:'Make a triangle with your fingers (two thumbs and a pointer), then find triangles at home: a slice of pizza, a roof in a picture book, a triangle of cheese cut from a square.',
   note:'Long, skinny triangles still count. The rule is “three straight sides”, and saying that rule out loud once is plenty at this age.',
-  metaDescription:'Meet the triangle shape flashcard: one big green triangle, three sides to count and a triangle hunt through books and lunch. Free to download.'
+  metaDescription:'Meet the triangle shape flashcard: one big green triangle, three sides to count and a triangle hunt through books and lunch. Download.'
  },
  rectangle:{
   word:'Rectangle',
@@ -105,7 +105,7 @@ export const shapesCardContent={
   say:'A rectangle is a square that got stretched! Long and wide.',
   try:'Lay your hand flat on a table, then on a book — which feels longer? Hunt for rectangles: a door, a book, a phone or tablet, a rug. Say “rectangle” for each one.',
   note:'“A stretched square” is honest shape-talk at three — a real rectangle is a square with unequal sides, but the friendly version builds the idea perfectly for now.',
-  metaDescription:'Meet the rectangle shape flashcard: one big stretched green rectangle, a stretched-square saying and a rectangle hunt around the house. Free to download.'
+  metaDescription:'Meet the rectangle shape flashcard: one big stretched green rectangle, a stretched-square saying and a rectangle hunt around the house. Download.'
  },
  oval:{
   word:'Oval',
@@ -113,7 +113,7 @@ export const shapesCardContent={
   say:'An oval is a squished circle — like an egg!',
   try:'Roll an egg or a ball of playdough on the table: round, round... stretch! Now it is an oval. Then hunt for ovals — an egg, a balloon, a teaspoon bowl.',
   note:'Circle or oval mix-ups are completely normal — they are near twins. Stretching playdough from circle to oval with your hands makes the difference something your child can feel.',
-  metaDescription:'Meet the oval shape flashcard: one big purple oval, the squished-circle saying and an egg-and-balloon oval hunt. Free to download and print.'
+  metaDescription:'Meet the oval shape flashcard: one big purple oval, the squished-circle saying and an egg-and-balloon oval hunt. Download and print.'
  },
  star:{
   word:'Star',
@@ -121,7 +121,7 @@ export const shapesCardContent={
   say:'A star has five points! Count them with me: one, two, three, four, five.',
   try:'Count the star’s five points slowly, then draw stars in the air together. Tonight, look for the first star that appears out of the window — real stars are the best reward.',
   note:'Counting points on a star is sneaky fine-motor practice: pointing at skinny tips takes concentration. Wobbles are fine — the pointing is the point.',
-  metaDescription:'Meet the star shape flashcard: one big five-pointed yellow star, points to count together and a first-star-of-the-night activity. Free to download.'
+  metaDescription:'Meet the star shape flashcard: one big five-pointed yellow star, points to count together and a first-star-of-the-night activity. Download.'
  },
  heart:{
   word:'Heart',
@@ -129,7 +129,7 @@ export const shapesCardContent={
   say:'A heart means I love you! Round on top, pointy at the bottom.',
   try:'Draw a heart on paper and let your child color it in for someone they love — a grandparent, a friend, the cat. Delivering it is part of the lesson.',
   note:'The heart is also a gentle feelings-word. If your child says “I love you” back mid-lesson, that IS the lesson working — drop the flashcards and enjoy it.',
-  metaDescription:'Meet the heart shape flashcard: one big red heart, the shape that means I love you, plus a draw-and-deliver heart card activity. Free to download.'
+  metaDescription:'Meet the heart shape flashcard: one big red heart, the shape that means I love you, plus a draw-and-deliver heart card activity. Download.'
  },
  diamond:{
   word:'Diamond',
@@ -137,7 +137,7 @@ export const shapesCardContent={
   say:'A diamond is a square standing on its point! Like a kite.',
   try:'Draw a simple kite on paper — the diamond shape with a little tail — and let your child color it. Then hunt for diamonds: kite pictures, gem drawings, patterns on clothes.',
   note:'This diamond is the kite shape (four equal sides), not a playing-card suit — though if your child spots diamonds on cards or socks, that counts too. Any real diamond found is a win.',
-  metaDescription:'Meet the diamond shape flashcard: one big purple diamond standing on its point, a kite-drawing activity and a diamond hunt. Free to download.'
+  metaDescription:'Meet the diamond shape flashcard: one big purple diamond standing on its point, a kite-drawing activity and a diamond hunt. Download.'
  },
  crescent:{
   word:'Crescent',
@@ -145,7 +145,7 @@ export const shapesCardContent={
   say:'A crescent is the moon’s shape — round with a bite out of it!',
   try:'At bathtime or dinner, curve a banana slice or a cucumber into view: “Crescent!” Then check tonight’s real moon — if it is crescent-shaped, you have found your shape in the sky.',
   note:'The moon is not always a crescent — it changes all month. Looking up together and asking “crescent tonight or circle tonight?” is the game, whatever the answer.',
-  metaDescription:'Meet the crescent shape flashcard: one big yellow crescent moon, the circle-with-a-bite saying and a look-at-the-real-moon activity. Free to download.'
+  metaDescription:'Meet the crescent shape flashcard: one big yellow crescent moon, the circle-with-a-bite saying and a look-at-the-real-moon activity. Download.'
  },
  pentagon:{
   word:'Pentagon',
@@ -153,7 +153,7 @@ export const shapesCardContent={
   say:'Pen-ta-gon! Five sides — count them: one, two, three, four, five.',
   try:'Count the pentagon’s five sides with one slow finger trip around the edge, then draw a five-sided house together — a pentagon house for a very lucky toy.',
   note:'Pentagons rarely appear in daily life, so this card is about the counting adventure, not spotting them at the shop. Five careful sides is the whole lesson.',
-  metaDescription:'Meet the pentagon shape flashcard: one big pink pentagon with five sides to count and a five-sided-house drawing activity. Free to download.'
+  metaDescription:'Meet the pentagon shape flashcard: one big pink pentagon with five sides to count and a five-sided-house drawing activity. Download.'
  },
  hexagon:{
   word:'Hexagon',
@@ -169,6 +169,6 @@ export const shapesCardContent={
   say:'An octagon has eight sides — like a STOP sign!',
   try:'Count all eight sides together, then play stop-sign spotter on your next walk or drive. Every red octagon your child shouts “octagon!” at is a shape lesson in the wild.',
   note:'Eight is a big count and may run out of steam around six — finish the count yourself with a cheerful “...seven, eight!” and let your child chime in on the last side.',
-  metaDescription:'Meet the octagon shape flashcard: one big orange octagon with eight sides, the stop-sign connection and a stop-sign spotting game. Free to download.'
+  metaDescription:'Meet the octagon shape flashcard: one big orange octagon with eight sides, the stop-sign connection and a stop-sign spotting game. Download.'
  }
 };

@@ -87,7 +87,7 @@ export const oppositesCardContent={
   try:'Bigger and smaller hands: lay your hand on the card, then your child’s, then a teddy’s paw. Three sizes, one word — and big wins every time.',
   note:'Big always means “bigger than something”. If your child calls every ball big, hold the small ball card next to it and let the two cards do the teaching.',
   spot:'Find something BIG in this room — something bigger than your shoe!',
-  metaDescription:'Meet the big ball opposite flashcard: one big ball filling the card, with a bigger-and-smaller hands game to try at home. Free to download and print.'
+  metaDescription:'Meet the big ball opposite flashcard: one big ball filling the card, with a bigger-and-smaller hands game to try at home. Download and print.'
  },
  'small-ball':{
   word:'Small ball',
@@ -97,7 +97,7 @@ export const oppositesCardContent={
   try:'Play find-something-small: “bring me a small thing!” A sock, a spoon, a bottle cap. Small things are hiding in every room, and your child knows exactly where.',
   note:'Children often decide the small card is “the baby one”. That is lovely comparing talk — run with it: the baby ball and the papa ball are both correct size science.',
   spot:'Find something SMALL — small enough to hide in your hand!',
-  metaDescription:'Meet the small ball opposite flashcard: one tiny ball and a find-something-small hunt to play at home. Free to download.'
+  metaDescription:'Meet the small ball opposite flashcard: one tiny ball and a find-something-small hunt to play at home. Download.'
  },
  'tall-tree':{
   word:'Tall tree',
@@ -107,7 +107,7 @@ export const oppositesCardContent={
   try:'Stand back to back and ask “who is taller?” Then let a teddy join the line-up. Being measured against the fridge with a book mark is the bonus round.',
   note:'Tall and long get mixed up at three, and that is fine — both mean “stretches out more than the other one”. The measuring games matter far more than the rule.',
   spot:'Reach UP high like the tall tree — can you touch the sky?',
-  metaDescription:'Meet the tall tree opposite flashcard: one tree reaching for the sky, with a back-to-back who-is-taller game for home. Free to download and print.'
+  metaDescription:'Meet the tall tree opposite flashcard: one tree reaching for the sky, with a back-to-back who-is-taller game for home. Download and print.'
  },
  'short-tree':{
   word:'Short tree',
@@ -117,7 +117,7 @@ export const oppositesCardContent={
   try:'Measure everyone against the wall with a book: mark each height and say “tall… taller… shortest!” The shortest family member gets to be the short tree.',
   note:'Short stays a comparing word about trees, pencils and cups in this house — never about people. Trees are the safest place to practise it, and your child will keep it that way.',
   spot:'Crouch down LOW like the short tree — how small can you be?',
-  metaDescription:'Meet the short tree opposite flashcard: one little tree and a measure-the-family game to play at home. Free to download.'
+  metaDescription:'Meet the short tree opposite flashcard: one little tree and a measure-the-family game to play at home. Download.'
  },
  'long-pencil':{
   word:'Long pencil',
@@ -127,7 +127,7 @@ export const oppositesCardContent={
   try:'Line up three things on the table — a crayon, a spoon, a sock — and order them from longest to shortest together. Rearranging the line is half the fun.',
   note:'Long is about the stretch, not the overall size: a snake is long, a train is long, a piece of spaghetti is very long. Anything that stretches out gives the word a home.',
   spot:'Find something LONG — something longer than your foot!',
-  metaDescription:'Meet the long pencil opposite flashcard: one pencil stretching across the card, with a line-them-up long-to-short game for home. Free to download and print.'
+  metaDescription:'Meet the long pencil opposite flashcard: one pencil stretching across the card, with a line-them-up long-to-short game for home. Download and print.'
  },
  'short-pencil':{
   word:'Short pencil',
@@ -137,7 +137,7 @@ export const oppositesCardContent={
   try:'Line up crayons from longest to shortest, then hold the two pencil cards side by side and say both words in one breath: “long pencil… short pencil!”',
   note:'If your child calls the short pencil “the little one”, that is real comparing talk too — big, little, long and short all live on the same street at three.',
   spot:'Find something SHORT — shorter than your hand!',
-  metaDescription:'Meet the short pencil opposite flashcard: one little pencil stub and a crayon line-up game to play at home. Free to download.'
+  metaDescription:'Meet the short pencil opposite flashcard: one little pencil stub and a crayon line-up game to play at home. Download.'
  },
  'full-glass':{
   word:'Full glass',
@@ -147,7 +147,7 @@ export const oppositesCardContent={
   try:'Fill a cup together at the sink and stop right at the top: “full!” Then pour it out slowly and watch it turn into the next card — empty.',
   note:'Water play is the whole lesson here, so put a towel down and let the spilling happen. Full and empty are sink words and bath words, not flashcard words.',
   spot:'Look for something FULL — a full cup, a full bowl, a full bathtub!',
-  metaDescription:'Meet the full glass opposite flashcard: one glass filled to the top, with a fill-and-pour sink game to try at home. Free to download.'
+  metaDescription:'Meet the full glass opposite flashcard: one glass filled to the top, with a fill-and-pour sink game to try at home. Download.'
  },
  'empty-glass':{
   word:'Empty glass',
@@ -157,7 +157,7 @@ export const oppositesCardContent={
   try:'Drink up together and announce the words as they happen: “full… sipping… empty!” Then fill the glass again and tell the whole story in reverse.',
   note:'All done, all gone and empty are the same discovery at three. Accept every version — your child is comparing quantities, and that is real maths.',
   spot:'Find something EMPTY — an empty cup, an empty box, your empty hands!',
-  metaDescription:'Meet the empty glass opposite flashcard: one glass with all-gone emptiness and a fill-it-again game for home. Free to download.'
+  metaDescription:'Meet the empty glass opposite flashcard: one glass with all-gone emptiness and a fill-it-again game for home. Download.'
  },
  'hot-soup':{
   word:'Hot soup',
@@ -167,7 +167,7 @@ export const oppositesCardContent={
   try:'Blow on pretend soup together: hands cupped around nothing, big gentle blows. Then at real mealtime your child gets to announce “hot!” — from a safe seat at the table.',
   note:'Hot is a safety word as well as a comparing word. Play the blowing game with imaginary soup, and keep every real hot thing well out of reach while the word settles in.',
   spot:'Rub your hands together to make them WARM — pretend hands are much safer than soup!',
-  metaDescription:'Meet the hot soup opposite flashcard: one steaming bowl and a blow-on-the-pretend-soup game to play safely at home. Free to download and print.'
+  metaDescription:'Meet the hot soup opposite flashcard: one steaming bowl and a blow-on-the-pretend-soup game to play safely at home. Download and print.'
  },
  'cold-ice-cream':{
   word:'Cold ice cream',
@@ -177,7 +177,7 @@ export const oppositesCardContent={
   try:'Hold a cold spoon from the freezer and say “cold!” Then wrap both hands around a warm mug and say “warm!” Your child just felt the whole opposite pair in ten seconds.',
   note:'Ice cream melts on flashcards and on tables alike — if the game runs long, a cold spoon or an ice cube in a bowl plays the part just as well.',
   spot:'Give your biggest shiver — BRRR! Cold like ice cream!',
-  metaDescription:'Meet the cold ice cream opposite flashcard: one frosty scoop and a cold-hands-warm-hands feeling game for home. Free to download.'
+  metaDescription:'Meet the cold ice cream opposite flashcard: one frosty scoop and a cold-hands-warm-hands feeling game for home. Download.'
  },
  'open-door':{
   word:'Open door',
@@ -187,7 +187,7 @@ export const oppositesCardContent={
   try:'Play open-and-shut with a book: “open the book… close the book” with big arm motions. Then a box lid, then — with you beside them — the real door.',
   note:'Doors and three-year-olds need a grown-up standing in the middle. Keep the real door game slow and supervised — the card can do the fast opening for them.',
   spot:'Open your hands wide like the open door… now shut them!',
-  metaDescription:'Meet the open door opposite flashcard: one door standing wide open, with an open-and-shut book game to play at home. Free to download.'
+  metaDescription:'Meet the open door opposite flashcard: one door standing wide open, with an open-and-shut book game to play at home. Download.'
  },
  'closed-door':{
   word:'Closed door',
@@ -197,6 +197,6 @@ export const oppositesCardContent={
   try:'Play open-and-shut with a cupboard or a book: shout “open!” and “closed!” together as it happens. The switching is the whole game, and your child gets every turn.',
   note:'Some children love choosing open or closed; others love knocking first and waiting. Follow whichever version your child invents — both of them are comparing.',
   spot:'Knock knock on the table — who is there? A closed door!',
-  metaDescription:'Meet the closed door opposite flashcard: one door shut tight and an open-shut knock-knock game for home. Free to download.'
+  metaDescription:'Meet the closed door opposite flashcard: one door shut tight and an open-shut knock-knock game for home. Download.'
  }
 };

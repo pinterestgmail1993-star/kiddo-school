@@ -4,9 +4,9 @@
 export const meta={
  slug:'animals-and-sounds',
  name:'Animals & Sounds',
- seoTitle:'Animal Flashcards for Toddlers — 20 Free Printable Cards',
+ seoTitle:'Animal Flashcards for Toddlers — 20 Printable Cards',
  h1:'Animals & Sounds flashcards.',
- metaDescription:'Twenty free animal flashcards for toddlers with pictures and sounds to try together. Print at home, no sign-up, made by Kiddo School.',
+ metaDescription:'Twenty animal flashcards for toddlers with pictures and sounds to try together. Print at home, made by Kiddo School.',
  lede:'Twenty big animal cards for toddlers who love to make some noise. Say the sound together, name the animal and then listen for it on your street, at the park or on a farm visit.',
  hubBlurb:'Twenty animals, twenty sounds. Say it, hear it, find it on your walk.',
  ageLabel:'2 years',

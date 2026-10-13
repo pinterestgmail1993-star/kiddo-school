@@ -157,7 +157,7 @@ export function oppositesClassBody(L){
  const printSection=`<section class="wrap lesson-section tc-printables" id="printables" aria-label="Print the cards">
   <span class="eyebrow">PRINT THE CARDS</span>
   <h2>Take the opposites to the kitchen table.</h2>
-  <p class="lesson-copy">All twelve cards print two to a page, in pair order, straight from your browser — no PDF, no sign-up, nothing to install. Cut them out and the whole set plays on the table.</p>
+  <p class="lesson-copy">All twelve cards print two to a page, in pair order, straight from your browser — no PDF, nothing to install. Cut them out and the whole set plays on the table.</p>
   <div class="hero-actions tc-print-actions"><a class="button" href="${CLASS_PATH}print/">View Printable Cards <span aria-hidden="true">↗</span></a><button type="button" class="button button-ghost" data-tc-print-open="${CLASS_PATH}print/?print=1">Print Cards</button></div>
   <p class="lesson-note">Printed cards love fridges, bedroom doors and kitchen tables. The same cards also live in the <a href="${SET_URL}">flashcards library</a>, each with its own page.</p>
  </section>`;

@@ -35,9 +35,9 @@ function cardWord(slug){
 const KINDS={
  uppercase:{
   slug:'alphabet-uppercase',kind:'uppercase',name:'Uppercase Alphabet',
-  seoTitle:'Uppercase Alphabet Flashcards A–Z: Free Big Letter Cards',
+  seoTitle:'Uppercase Alphabet Flashcards A–Z: Big Letter Cards',
   h1:'Uppercase Alphabet Flashcards A–Z',
-  metaDescription:'Free uppercase alphabet flashcards A–Z: 26 big letter cards in their own colours, each with its own page. Tap a card to open, download, print and share it.',
+  metaDescription:'Uppercase alphabet flashcards A–Z: 26 big letter cards in their own colours, each with its own page. Tap a card to open, download, print and share it.',
   lede:'Twenty-six big letters, one to a card — A to Z, each in its own bright colour, exactly as they look on our picture alphabet. One big shape per page, so nothing competes for attention.',
   hubBlurb:'Just the big letters A–Z, one per card.',
   downloadHint:'Open any card for its own page — the download, print and share buttons live there.',
@@ -46,16 +46,16 @@ const KINDS={
   cardSub:l=>'Big letter',
   cardH1:l=>`Uppercase Letter ${l.toUpperCase()} Flashcard`,
   cardIntro:l=>`The big letter ${l.toUpperCase()} on its own card — one bright capital shape on a clean page, so all your child’s eyes see is the letter itself.`,
-  cardMeta:l=>`Free uppercase letter ${l.toUpperCase()} flashcard: the big letter ${l.toUpperCase()} on its own card, with download, print and share, and a two-minute way to use it. Part of the A–Z big letter set.`,
+  cardMeta:l=>`Uppercase letter ${l.toUpperCase()} flashcard: the big letter ${l.toUpperCase()} on its own card, with download, print and share, and a two-minute way to use it. Part of the A–Z big letter set.`,
   cardSay:l=>`This is the big letter ${l.toUpperCase()}. Say its name — “${l.toUpperCase()}!”`,
   cardTry:l=>`After the card, hunt for the letter: “can you find a big ${l.toUpperCase()} on the cereal box?” Letters spotted on real things around the house stick better than any printable.`,
   alt:l=>`Uppercase letter card: the big letter ${l.toUpperCase()} in its own colour on a white card, from the Kiddo School alphabet`
  },
  lowercase:{
   slug:'alphabet-lowercase',kind:'lowercase',name:'Lowercase Alphabet',
-  seoTitle:'Lowercase Alphabet Flashcards a–z: Free Little Letter Cards',
+  seoTitle:'Lowercase Alphabet Flashcards a–z: Little Letter Cards',
   h1:'Lowercase Alphabet Flashcards a–z',
-  metaDescription:'Free lowercase alphabet flashcards a–z: 26 little letter cards, each with its own page. Tap a card to open, download, print and share it.',
+  metaDescription:'Lowercase alphabet flashcards a–z: 26 little letter cards, each with its own page. Tap a card to open, download, print and share it.',
   lede:'Twenty-six little letters, one to a card. These are the real lowercase cards a–z from our alphabet — the shapes your child will meet on almost every page of every book, now alone on their own cards.',
   hubBlurb:'Just the little letters a–z, one per card.',
   downloadHint:'Open any card for its own page — the download, print and share buttons live there.',
@@ -64,7 +64,7 @@ const KINDS={
   cardSub:l=>'Little letter',
   cardH1:l=>`Lowercase Letter ${l} Flashcard`,
   cardIntro:l=>`The little letter ${l} on its own card — the shape your child will meet on almost every page of every book, now all alone, nothing else to look at.`,
-  cardMeta:l=>`Free lowercase letter ${l} flashcard: the little letter ${l} on its own card, with download, print and share, and a two-minute way to use it. Part of the a–z little letter set.`,
+  cardMeta:l=>`Lowercase letter ${l} flashcard: the little letter ${l} on its own card, with download, print and share, and a two-minute way to use it. Part of the a–z little letter set.`,
   cardSay:l=>`This is the little letter ${l}. Big ${l.toUpperCase()}, little ${l} — the same letter, smaller.`,
   cardTry:l=>`Little letters are everywhere — most words in a book are little letters. After the card, open any picture book and let your child be the one who spots a little ${l}.`,
   alt:l=>`Lowercase letter card: the little letter ${l} in its own colour on a white card, from the Kiddo School alphabet`
@@ -73,7 +73,7 @@ const KINDS={
   slug:'alphabet-letters',kind:'pair',name:'Big & Little Letters',
   seoTitle:'Alphabet Flashcards: Big & Little Letters Together (Aa–Zz)',
   h1:'Big & Little Letters Together',
-  metaDescription:'Free alphabet flashcards showing uppercase and lowercase together: 26 Aa–Zz pair cards, each with its own page. Tap a card to open, download, print and share it.',
+  metaDescription:'Alphabet flashcards showing uppercase and lowercase together: 26 Aa–Zz pair cards, each with its own page. Tap a card to open, download, print and share it.',
   lede:'Twenty-six cards showing each big letter and its little letter side by side — Aa to Zz — the classic first matching pair for preschool hands and eyes.',
   hubBlurb:'Big and little letters together on one card, Aa–Zz.',
   downloadHint:'Open any card for its own page — the download, print and share buttons live there.',
@@ -82,16 +82,16 @@ const KINDS={
   cardSub:l=>'Big and little',
   cardH1:l=>`Letter ${l.toUpperCase()}${l} Flashcard — Big and Little ${l.toUpperCase()} Together`,
   cardIntro:l=>`Big ${l.toUpperCase()}, little ${l} — the two faces of the same letter, side by side on one card. Say the letter’s name, then spot the big one and the little one.`,
-  cardMeta:l=>`Free ${l.toUpperCase()}${l} letter pair flashcard: big ${l.toUpperCase()} and little ${l} together on one card, with download, print and share, and a matching game to try. Part of the Aa–Zz set.`,
+  cardMeta:l=>`${l.toUpperCase()}${l} letter pair flashcard: big ${l.toUpperCase()} and little ${l} together on one card, with download, print and share, and a matching game to try. Part of the Aa–Zz set.`,
   cardSay:l=>`Big ${l.toUpperCase()}, little ${l}. Say the letter’s name together — “${l.toUpperCase()}!”`,
   cardTry:l=>`Say the letter’s name, then ask “which one is the little ${l}?” Matching big to little is a real pre-reading skill — and a quiet two-minute game.`,
   alt:l=>`Big and little letter card: ${l.toUpperCase()} and ${l} together on a white card, from the Kiddo School alphabet`
  },
  objects:{
   slug:'alphabet-objects',kind:'object',name:'Alphabet Object Cards',
-  seoTitle:'Alphabet Object Cards A–Z: Free Picture Flashcards for Guessing Games',
+  seoTitle:'Alphabet Object Cards A–Z: Picture Flashcards for Guessing Games',
   h1:'Alphabet Object Cards A–Z',
-  metaDescription:'Free alphabet object cards A–Z: all 26 pictures — apple, dog, moon — as bold flat-colour cards for guessing games, each with its own page and download button.',
+  metaDescription:'Alphabet object cards A–Z: all 26 pictures — apple, dog, moon — as bold flat-colour cards for guessing games, each with its own page and download button.',
   lede:'Twenty-six objects, one to a card — the apple, the dog, the moon — as bold, flat-colour pictures with no letters beside them. Perfect for guessing games: hide the card, reveal it slowly, and let the guesses run before anyone names it.',
   hubBlurb:'All 26 alphabet pictures on their own cards — guess first, name after.',
   downloadHint:'Every card below has its own download button — the full-size object card, straight from this page.',
@@ -101,16 +101,16 @@ const KINDS={
   cardSub:l=>`${l.toUpperCase()} is for ${lcs(cardWord(objectSlugFor[l]))}`,
   cardH1:l=>{const w=cardWord(objectSlugFor[l]);return `${w} Object Card — the Letter ${l.toUpperCase()} Picture (${l.toUpperCase()} is for ${w})`;},
   cardIntro:l=>{const w=lcs(cardWord(objectSlugFor[l]));return `Just the ${w} — no letters next to it. Cover the card, reveal it slowly and play “what could this be?” — then say the real word together.`;},
-  cardMeta:l=>{const w=cardWord(objectSlugFor[l]);return `Free ${lcs(w)} picture flashcard: the ${lcs(w)} as a bold flat-colour object card for the letter ${l.toUpperCase()}, with a download button and a guessing game to try.`;},
+  cardMeta:l=>{const w=cardWord(objectSlugFor[l]);return `${lcs(w)} picture flashcard: the ${lcs(w)} as a bold flat-colour object card for the letter ${l.toUpperCase()}, with a download button and a guessing game to try.`;},
   cardSay:l=>{const d=alphabetCardContent[objectSlugFor[l]];return d&&d.say?d.say:`${l.toUpperCase()} is for ${lcs(cardWord(objectSlugFor[l]))}.`;},
   cardTry:l=>`Guessing first, naming after. Whatever the guess is, take it — “a moon!” “a banana!” — then say the real word together and move on while it is still a game.`,
   alt:l=>`Object card for the letter ${l.toUpperCase()}: the ${lcs(cardWord(objectSlugFor[l]))} as a bold flat-colour picture on a white card, from the Kiddo School alphabet`
  },
  sounds:{
   slug:'alphabet-sounds',kind:'sound',name:'Letter Sound Cards',
-  seoTitle:'Alphabet Letter Sound Cards A–Z: Free “A is for Apple” Cards',
+  seoTitle:'Alphabet Letter Sound Cards A–Z: “A is for Apple” Cards',
   h1:'Alphabet Letter Sound Cards A–Z',
-  metaDescription:'Free letter-sound flashcards A–Z: big letter, little letter and the picture together — Aa apple, Bb ball — each with its own page. Tap a card to open, download, print and share it.',
+  metaDescription:'Letter-sound flashcards A–Z: big letter, little letter and the picture together — Aa apple, Bb ball — each with its own page. Tap a card to open, download, print and share it.',
   lede:'Twenty-six cards that put the letter and its sound together: big A, little a and the apple. Say “aaa — apple” while your child points at the picture, and the picture does half the teaching.',
   hubBlurb:'Big letter, little letter and the sound picture together, Aa apple to Zz zebra.',
   downloadHint:'Open any card for its own page — the download, print and share buttons live there.',
@@ -119,16 +119,16 @@ const KINDS={
   cardSub:l=>`Letter ${l.toUpperCase()} sound`,
   cardH1:l=>`${l.toUpperCase()} is for ${cardWord(objectSlugFor[l])} — Letter ${l.toUpperCase()} Sound Card for Preschoolers`,
   cardIntro:l=>{const w=lcs(cardWord(objectSlugFor[l]));return `The letter and its sound on one card: big ${l.toUpperCase()}, little ${l}, and the ${w} that carries the sound. Say them together and let the picture do half the teaching.`;},
-  cardMeta:l=>{const w=lcs(cardWord(objectSlugFor[l]));return `Free ${l.toUpperCase()} is for ${w} sound card: the letter ${l.toUpperCase()}${l} with its ${w} picture, with download, print and share, and a sound game to try.`;},
+  cardMeta:l=>{const w=lcs(cardWord(objectSlugFor[l]));return `${l.toUpperCase()} is for ${w} sound card: the letter ${l.toUpperCase()}${l} with its ${w} picture, with download, print and share, and a sound game to try.`;},
   cardSay:l=>{const d=alphabetCardContent[objectSlugFor[l]];return d&&d.say?d.say:`${l.toUpperCase()} is for ${lcs(cardWord(objectSlugFor[l]))}.`;},
   cardTry:l=>{const w=lcs(cardWord(objectSlugFor[l]));return `Say “${l.toUpperCase()} is for ${w}” slowly, then just the first sound. Stop while it is still a game — one card is a lovely little class.`;},
   alt:l=>`Letter sound card for ${l.toUpperCase()}: big ${l.toUpperCase()}, little ${l} and the ${lcs(cardWord(objectSlugFor[l]))} together on a white card, from the Kiddo School alphabet`
  },
  tracing:{
   slug:'alphabet-tracing',kind:'tracing',name:'Alphabet Tracing Cards',
-  seoTitle:'Alphabet Tracing Cards A–Z: Free Dotted Letter Cards with Stroke Arrows',
+  seoTitle:'Alphabet Tracing Cards A–Z: Dotted Letter Cards with Stroke Arrows',
   h1:'Alphabet Tracing Cards A–Z',
-  metaDescription:'Free alphabet tracing cards A–Z: dotted big and little letters with numbered stroke arrows, each with its own page. Trace a finger first, then a crayon.',
+  metaDescription:'Alphabet tracing cards A–Z: dotted big and little letters with numbered stroke arrows, each with its own page. Trace a finger first, then a crayon.',
   lede:'Twenty-six dotted tracing cards, one for every letter. Numbered arrows show the strokes: start at 1, follow the arrow, lift at the dot. Trace with a finger first — then a crayon, right on the card.',
   hubBlurb:'Dotted Aa–Zz with numbered stroke arrows — trace a finger first, then a crayon.',
   downloadHint:'Open any card for its own page — the download, print and share buttons live there.',
@@ -137,7 +137,7 @@ const KINDS={
   cardSub:l=>'Dotted letters',
   cardH1:l=>`Letter ${l.toUpperCase()} Tracing Card — Trace ${l.toUpperCase()} and ${l}`,
   cardIntro:l=>`${l.toUpperCase()} and ${l} in dotted lines, with numbered arrows showing every stroke: start at 1, follow the arrow, lift at the dot. Trace with a finger first — then a crayon. You can draw right on this card.`,
-  cardMeta:l=>`Free letter ${l.toUpperCase()} tracing card: dotted ${l.toUpperCase()} and ${l} with numbered stroke arrows, with download, print and share, and a finger-tracing way in. Part of the A–Z tracing set.`,
+  cardMeta:l=>`Letter ${l.toUpperCase()} tracing card: dotted ${l.toUpperCase()} and ${l} with numbered stroke arrows, with download, print and share, and a finger-tracing way in. Part of the A–Z tracing set.`,
   cardSay:l=>`Trace the letter ${l.toUpperCase()}: start at the dot, follow the arrow, lift at the end.`,
   cardTry:l=>`Finger first, crayon second: trace the dotted ${l.toUpperCase()} while you say the stroke out loud, then let your child try. The crayons under the picture draw right on the card — save the work when you are done.`,
   alt:l=>`Letter tracing card for ${l.toUpperCase()}: dotted ${l.toUpperCase()} and ${l} with numbered stroke arrows, from the Kiddo School alphabet`
@@ -258,7 +258,7 @@ export function fcVariantCardPageBody(set,card,ctx){
 <div class="page-heading wrap"><span class="eyebrow">FLASHCARD · ${esc(set.name.toUpperCase())} · AGES ${esc(AGE.toUpperCase())}</span><h1>${esc(card.cardTitle)}</h1><p>${esc(card.intro)}</p></div>
 <div class="fc2-dual wrap">
  <div class="fc2-main">${figure}${pn}<section class="fc2-learn" aria-label="How to use this card">${say}${tryThis}</section></div>
- <aside class="fc2-rail" aria-label="Download, share and family feedback"><section class="fc2-block fc2-first-block"><span class="eyebrow">TAKE IT WITH YOU</span><h2>Download, print, keep going.</h2>${actions}<p class="fc-hint">The download saves the full-size card straight from our library — free, no sign-up.</p></section>${share}${fcCommunityMount(card.url)}</aside>
+ <aside class="fc2-rail" aria-label="Download, share and family feedback"><section class="fc2-block fc2-first-block"><span class="eyebrow">TAKE IT WITH YOU</span><h2>Download, print, keep going.</h2>${actions}<p class="fc-hint">The download saves the full-size card straight from our library.</p></section>${share}${fcCommunityMount(card.url)}</aside>
 </div>
 <section class="wrap fc-section"><span class="eyebrow">THE SAME CARD, OTHER WAYS</span><h2>${esc(twinWord)} in every set.</h2><p class="fc-hint">${esc(twinWord)} appears in five more letter sets — same card family, different job.</p><div class="fc2-relrow">${otherWays}</div></section>`;
 }

@@ -180,7 +180,7 @@ export const lpContent={
 'pack-your-bag':{
  title:'Pack Your Bag',one:'Book, bottle, hat — packed and checked the night before, by the person who owns the bag.',
  seoTitle:'Pack Your Bag Lesson for Ages 4–5 — How to Teach Night-Before Packing (Class 32)',
- metaDescription:'A step-by-step Learning Path lesson for ages 4–5: the picture checklist, the night-before pack, why checking is the real skill and why a forgotten book is a free lesson.',
+ metaDescription:'A step-by-step Learning Path lesson for ages 4–5: the picture checklist, the night-before pack, why checking is the real skill and why a forgotten book is a lesson.',
  intro:'This lesson hands the school bag to its true owner: your child learns to pack it the evening before, check it against a picture list, and treat a forgotten item as information — not a disaster.',
  what:'Packing your bag means putting tomorrow\u2019s things in tonight — book, bottle, hat, whatever the day needs — and checking the bag against a list before zipping it shut.',
  mean:'Packing ahead beats packing in the morning because mornings have no slack: one missing shoe and the whole system stalls. The evening has time, calm and the chance to discover the missing thing while it can still be found.',

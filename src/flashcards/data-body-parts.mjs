@@ -19,7 +19,7 @@ export const bodyPartsMeta={
  name:'Body Parts & Five Senses Flashcards',
  seoTitle:'Body Parts & Five Senses Flashcards for Preschoolers | 24 Cards',
  h1:'Body Parts & Five Senses Flashcards for Preschoolers',
- metaDescription:'Twenty-four body parts and five senses flashcards for preschoolers: head, eyes, ears, hands, fingers and more — each card has its own page with parent prompts and a free download.',
+ metaDescription:'Twenty-four body parts and five senses flashcards for preschoolers: head, eyes, ears, hands, fingers and more — each card has its own page with parent prompts and a download.',
  lede:'Twenty-four cards about the one thing your child knows best: their own body. Every card has its own page with the picture, the words to say together and one thing to try — from wiggling fingers to sniffing flowers.',
  hubBlurb:'Twenty-four cards about the one thing your child knows best — their own body, and the five senses that explore the world.',
  ageLabel:'3–4 years',
@@ -42,7 +42,7 @@ export const bodyPartsLesson={
  seoTitle:'Body Parts & My Five Senses for 3 Year Olds',
  title:'Body Parts & My Five Senses for 3 Year Olds',
  h1:'Body Parts & My Five Senses',
- description:'Learn body parts and the five senses with your preschooler: twenty-four picture cards, printable body sheets to solve at the table, sense play and off-screen activities — no scores, no sign-up.',
+ description:'Learn body parts and the five senses with your preschooler: twenty-four picture cards, printable body sheets to solve at the table, sense play and off-screen activities — no scores.',
  eyebrow:'PRESCHOOL · AGE 3 · CLASS 7',
  crumbs:[['Preschool','/preschool/'],['Age 3','/preschool/3-years/'],['Body Parts & My Five Senses','/preschool/3-years/body-parts-and-five-senses/']],
  schemaImage:R2+P+'cover.webp',
@@ -100,7 +100,7 @@ export const bodyPartsCardContent={
   say:'Head! Where is your head? Pat, pat — there it is!',
   try:'Nod your head yes, shake your head no, tilt it side to side like a curious bird. Ask your child to copy each one.',
   note:'Hats, hoods and hairbrushes all live on the head — naming the body part while you use them turns routines into practice.',
-  metaDescription:'Meet the head body parts flashcard: a smiling boy with the word head, a nod-and-shake game and parent prompts. Free to download and print.'
+  metaDescription:'Meet the head body parts flashcard: a smiling boy with the word head, a nod-and-shake game and parent prompts. Download and print.'
  },
  'eyes':{
   word:'Eyes',
@@ -109,7 +109,7 @@ export const bodyPartsCardContent={
   say:'Eyes! Blink, blink. Can you blink like that?',
   try:'Play the staring game: who can keep their eyes open longest? Then play the closing game — eyes hidden means peek-a-boo time.',
   note:'One wink is a mystery to most three-year-olds. If both eyes blink, that is exactly right.',
-  metaDescription:'Meet the eyes body parts flashcard: a close-up pair of brown eyes with the word eyes, a blinking game and parent prompts. Free to download and print.'
+  metaDescription:'Meet the eyes body parts flashcard: a close-up pair of brown eyes with the word eyes, a blinking game and parent prompts. Download and print.'
  },
  'ears':{
   word:'Ears',
@@ -118,7 +118,7 @@ export const bodyPartsCardContent={
   say:'Ears! Point to your ears. Can you wiggle them?',
   try:'Cover your ears with your hands and listen to how quiet the world gets — then let go and count what you hear.',
   note:'Glasses, hats and headphones all visit the ears. If your child wears any of them, that is the sentence to say together.',
-  metaDescription:'Meet the ears body parts flashcard: a pair of ears with the word ears, a cover-and-listen game and parent prompts. Free to download and print.'
+  metaDescription:'Meet the ears body parts flashcard: a pair of ears with the word ears, a cover-and-listen game and parent prompts. Download and print.'
  },
  'nose':{
   word:'Nose',
@@ -127,7 +127,7 @@ export const bodyPartsCardContent={
   say:'Nose! Sniff, sniff! Can you smell something from here?',
   try:'Sniff three things nearby: a snack, a sleeve, the air outside. Which one gets the biggest sniff?',
   note:'Noses know secrets grown-ups forget — rain coming, bread baking. Let your child report what their nose finds.',
-  metaDescription:'Meet the nose body parts flashcard: a little nose with the word nose, a sniff-three-things game and parent prompts. Free to download and print.'
+  metaDescription:'Meet the nose body parts flashcard: a little nose with the word nose, a sniff-three-things game and parent prompts. Download and print.'
  },
  'mouth':{
   word:'Mouth',
@@ -136,7 +136,7 @@ export const bodyPartsCardContent={
   say:'Mouth! Open wide — aaah! Now smile big!',
   try:'Make a small mouth, a big mouth, an O mouth and a wide smile. Which one looks like the card?',
   note:'The mouth is where the senses meet the words: it tastes the snack and then tells you about it.',
-  metaDescription:'Meet the mouth body parts flashcard: a smiling open mouth with the word mouth, a mouth-shapes game and parent prompts. Free to download and print.'
+  metaDescription:'Meet the mouth body parts flashcard: a smiling open mouth with the word mouth, a mouth-shapes game and parent prompts. Download and print.'
  },
  'hands':{
   word:'Hands',
@@ -145,7 +145,7 @@ export const bodyPartsCardContent={
   say:'Hands! Clap, clap, clap! Can you wave one hello?',
   try:'Clap fast, clap slow, clap high, clap low — then hide your hands behind your back for a round of where did they go?',
   note:'Hands learn by doing: spoons, zips and crayons all teach them. Naming the hands while they work doubles the lesson.',
-  metaDescription:'Meet the hands body parts flashcard: two open hands in striped sleeves with the word hands, a clap-fast-clap-slow game and parent prompts. Free to download and print.'
+  metaDescription:'Meet the hands body parts flashcard: two open hands in striped sleeves with the word hands, a clap-fast-clap-slow game and parent prompts. Download and print.'
  },
  'feet':{
   word:'Feet',
@@ -154,7 +154,7 @@ export const bodyPartsCardContent={
   say:'Feet! Stomp, stomp! Can you jump with both feet?',
   try:'Stomp like a giant, tiptoe like a mouse, then freeze with both feet still. Freezing is the hard part — and the funny one.',
   note:'Shoes on, shoes off and socks with stripes are all feet conversations waiting to happen.',
-  metaDescription:'Meet the feet body parts flashcard: two bare feet with the word feet, a stomp-and-freeze game and parent prompts. Free to download and print.'
+  metaDescription:'Meet the feet body parts flashcard: two bare feet with the word feet, a stomp-and-freeze game and parent prompts. Download and print.'
  },
  'arms':{
   word:'Arms',
@@ -163,7 +163,7 @@ export const bodyPartsCardContent={
   say:'Arms! Reach up high! Now wrap them around yourself for a hug.',
   try:'Arms up like a tree, arms out like an airplane, arms around for a self-hug. Three shapes, one word.',
   note:'Sleeves make arms extra interesting: arm in, arm out, arm through — dressing time is arms practice.',
-  metaDescription:'Meet the arms body parts flashcard: two arms reaching up from a purple shirt with the word arms, a tree-and-airplane game and parent prompts. Free to download and print.'
+  metaDescription:'Meet the arms body parts flashcard: two arms reaching up from a purple shirt with the word arms, a tree-and-airplane game and parent prompts. Download and print.'
  },
  'legs':{
   word:'Legs',
@@ -172,7 +172,7 @@ export const bodyPartsCardContent={
   say:'Legs! March, march! Can you hop on one leg?',
   try:'March around the room, then hop, then sit with your legs stretched out and touch your own knees and toes.',
   note:'Legs carry the whole class: walking to the park, kicking a ball, climbing the slide. Every step can carry the word too.',
-  metaDescription:'Meet the legs body parts flashcard: two legs in purple shorts with the word legs, a march-and-hop game and parent prompts. Free to download and print.'
+  metaDescription:'Meet the legs body parts flashcard: two legs in purple shorts with the word legs, a march-and-hop game and parent prompts. Download and print.'
  },
  'see':{
   word:'See',
@@ -181,7 +181,7 @@ export const bodyPartsCardContent={
   say:'See! Open your eyes wide. What do you see first?',
   try:'Play I spy with colors: “I see something red.” Little clues, big finds, and the word see gets said every round.',
   note:'Seeing is the sense that never switches off — which is why a quiet “what do you see?” works anywhere, from the car seat to the checkout line.',
-  metaDescription:'Meet the see five senses flashcard: eyes with a butterfly nearby and the word see, an I-spy game and parent prompts. Free to download and print.'
+  metaDescription:'Meet the see five senses flashcard: eyes with a butterfly nearby and the word see, an I-spy game and parent prompts. Download and print.'
  },
  'hear':{
   word:'Hear',
@@ -190,7 +190,7 @@ export const bodyPartsCardContent={
   say:'Hear! Ears open. What do you hear right now?',
   try:'Close your eyes for five quiet seconds and count the sounds: a car, a bird, the fridge humming. Every one gets the word hear.',
   note:'Hearing games shine in the in-between moments — waiting rooms, bath time, the walk to the park. Ears need no toys.',
-  metaDescription:'Meet the hear five senses flashcard: an ear with sound waves and the word hear, a listen-and-count game and parent prompts. Free to download and print.'
+  metaDescription:'Meet the hear five senses flashcard: an ear with sound waves and the word hear, a listen-and-count game and parent prompts. Download and print.'
  },
  'smell':{
   word:'Smell',
@@ -199,7 +199,7 @@ export const bodyPartsCardContent={
   say:'Smell! Sniff, sniff, ssss — can you smell the flower?',
   try:'Sniff a banana, a soap, a book page and the air outside. Rank them: which smell wins?',
   note:'Sniffing is a sense game that needs permission for nothing — every smell in the house is fair game.',
-  metaDescription:'Meet the smell five senses flashcard: a nose sniffing a flower with the word smell, a sniff-ranking game and parent prompts. Free to download and print.'
+  metaDescription:'Meet the smell five senses flashcard: a nose sniffing a flower with the word smell, a sniff-ranking game and parent prompts. Download and print.'
  },
  'fingers':{
   word:'Fingers',
@@ -208,7 +208,7 @@ export const bodyPartsCardContent={
   say:'Fingers! Wiggle, wiggle! Can you count them — one, two, three, four, five?',
   try:'Wiggle each finger in turn, then hide them in a fist and let one peek out — can your child guess which one?',
   note:'Fingers do the fine work: buttons, zips, page turns. Counting them is often a child’s very first counting.',
-  metaDescription:'Meet the fingers body parts flashcard: an open hand with five fingers and the word fingers, a wiggle-and-count game and parent prompts. Free to download and print.'
+  metaDescription:'Meet the fingers body parts flashcard: an open hand with five fingers and the word fingers, a wiggle-and-count game and parent prompts. Download and print.'
  },
  'toes':{
   word:'Toes',
@@ -217,7 +217,7 @@ export const bodyPartsCardContent={
   say:'Toes! Wiggle your toes. Can you count all ten?',
   try:'This little piggy went to market, one toe at a time — then a tickle race up from the toes to the tummy.',
   note:'Sock time, shoe time and bath time all pass through the toes. Ten toes are also the friendliest way into counting.',
-  metaDescription:'Meet the toes body parts flashcard: ten little toes with the word toes, a this-little-piggy game and parent prompts. Free to download and print.'
+  metaDescription:'Meet the toes body parts flashcard: ten little toes with the word toes, a this-little-piggy game and parent prompts. Download and print.'
  },
  'skin':{
   word:'Skin',
@@ -226,7 +226,7 @@ export const bodyPartsCardContent={
   say:'Skin! It covers you everywhere. Touch your own arm — soft!',
   try:'Press a hand to your cheek, then to the floor. Warm and soft, cool and hard — your skin told you which was which.',
   note:'Skin reports soft, bumpy, warm, cool and ouch. It is the sense that keeps children safe — and the reason a hug feels like a hug.',
-  metaDescription:'Meet the skin five senses flashcard: a close-up patch of skin with the word skin, a warm-and-cool touch game and parent prompts. Free to download and print.'
+  metaDescription:'Meet the skin five senses flashcard: a close-up patch of skin with the word skin, a warm-and-cool touch game and parent prompts. Download and print.'
  },
  'tongue':{
   word:'Tongue',
@@ -235,7 +235,7 @@ export const bodyPartsCardContent={
   say:'Tongue! Can you stick yours out? Now hide it back in!',
   try:'Tongue up, tongue out, tongue side to side — then lick your lips like you just ate something yummy.',
   note:'The tongue does two jobs at once: it tastes the food and it shapes the words. The same muscle says llama and lollipop.',
-  metaDescription:'Meet the tongue body parts flashcard: an open mouth with the tongue out and the word tongue, a tongue-up-tongue-out game and parent prompts. Free to download and print.'
+  metaDescription:'Meet the tongue body parts flashcard: an open mouth with the tongue out and the word tongue, a tongue-up-tongue-out game and parent prompts. Download and print.'
  },
  'touch':{
   word:'Touch',
@@ -244,7 +244,7 @@ export const bodyPartsCardContent={
   say:'Touch! Reach out slowly — soft or bumpy?',
   try:'Touch three things in the room: something soft, something smooth, something bumpy. Say the word touch for each one.',
   note:'Gentle hands are a skill, not a rule — practicing touch on a teddy or a blanket teaches soft better than any reminder.',
-  metaDescription:'Meet the touch five senses flashcard: a hand touching something soft with the word touch, a soft-smooth-bumpy game and parent prompts. Free to download and print.'
+  metaDescription:'Meet the touch five senses flashcard: a hand touching something soft with the word touch, a soft-smooth-bumpy game and parent prompts. Download and print.'
  },
  'taste':{
   word:'Taste',
@@ -253,7 +253,7 @@ export const bodyPartsCardContent={
   say:'Taste! Yum! Is it sweet, salty, sour or yummy-all-over?',
   try:'Taste a small bite of three things and give each one a word: sweet banana, salty cracker, sour apple.',
   note:'Tasting is the one sense with a rule: only food, and only when a grown-up says it is okay. The game stays safe because you hold the menu.',
-  metaDescription:'Meet the taste five senses flashcard: a mouth tasting a lollipop with the word taste, a sweet-salty-sour game and parent prompts. Free to download and print.'
+  metaDescription:'Meet the taste five senses flashcard: a mouth tasting a lollipop with the word taste, a sweet-salty-sour game and parent prompts. Download and print.'
  },
  'hair':{
   word:'Hair',
@@ -262,7 +262,7 @@ export const bodyPartsCardContent={
   say:'Hair! Pat, pat your hair. Is it soft?',
   try:'Brush a teddy’s hair, then your own. Pat it smooth, ruffle it wild — hair does both.',
   note:'Hair comes in every color and curl in your child’s classroom. Comparing hair — short, long, curly, straight — is a gentle first conversation about how everyone is different.',
-  metaDescription:'Meet the hair body parts flashcard: a boy with dark hair and the word hair, a brush-and-pat game and parent prompts. Free to download and print.'
+  metaDescription:'Meet the hair body parts flashcard: a boy with dark hair and the word hair, a brush-and-pat game and parent prompts. Download and print.'
  },
  'chin':{
   word:'Chin',
@@ -271,7 +271,7 @@ export const bodyPartsCardContent={
   say:'Chin! Tuck your finger under your chin — there it is!',
   try:'Find your chin with one finger, then hold it like a thinker: hmmmm. Big thoughts need a chin.',
   note:'The chin is a tricky one — many children point to the neck first. The arrow on this card settles it every time.',
-  metaDescription:'Meet the chin body parts flashcard: a boy\u2019s face with an arrow pointing to his chin and the word chin, a find-your-chin game and parent prompts. Free to download and print.'
+  metaDescription:'Meet the chin body parts flashcard: a boy\u2019s face with an arrow pointing to his chin and the word chin, a find-your-chin game and parent prompts. Download and print.'
  },
  'cheeks':{
   word:'Cheeks',
@@ -280,7 +280,7 @@ export const bodyPartsCardContent={
   say:'Cheeks! Pat, pat — can you pat your cheeks like this?',
   try:'Puff your cheeks up like a balloon, then let the air out — pbbbbfft! Puffy cheeks get giggles every time.',
   note:'Cheeks are where grandmas kiss and where cold weather shows up pink. A soft cheek pat is also the calmest way to reset a wobbly moment.',
-  metaDescription:'Meet the cheeks body parts flashcard: a smiling face with rosy cheeks and the word cheeks, a puff-up-balloon game and parent prompts. Free to download and print.'
+  metaDescription:'Meet the cheeks body parts flashcard: a smiling face with rosy cheeks and the word cheeks, a puff-up-balloon game and parent prompts. Download and print.'
  },
  'look':{
   word:'Look',
@@ -289,7 +289,7 @@ export const bodyPartsCardContent={
   say:'Look! Bend down slowly… what do you see?',
   try:'Play the looking game: look up, look down, look behind you, look very closely at one tiny thing. Freeze between each look.',
   note:'Looking closely is a real skill — scientists call it observing, three-year-olds call it staring at a ladybug for ten minutes. Both are correct.',
-  metaDescription:'Meet the look five senses flashcard: a boy looking closely at a red ball with the word look, a look-up-look-down game and parent prompts. Free to download and print.'
+  metaDescription:'Meet the look five senses flashcard: a boy looking closely at a red ball with the word look, a look-up-look-down game and parent prompts. Download and print.'
  },
  'listen':{
   word:'Listen',
@@ -298,7 +298,7 @@ export const bodyPartsCardContent={
   say:'Listen! Cup your ear like this… what do you hear?',
   try:'Whisper a secret word across the room. Then stomp once and freeze — listening bodies are still bodies.',
   note:'The cupped ear is a wonderful prop: it makes listening visible and turns waiting into a pose your child can hold.',
-  metaDescription:'Meet the listen five senses flashcard: a boy cupping his ear to listen with the word listen, a whisper-secrets game and parent prompts. Free to download and print.'
+  metaDescription:'Meet the listen five senses flashcard: a boy cupping his ear to listen with the word listen, a whisper-secrets game and parent prompts. Download and print.'
  },
  'feel':{
   word:'Feel',
@@ -307,6 +307,6 @@ export const bodyPartsCardContent={
   say:'Feel! Touch it gently… is it soft, smooth or bumpy?',
   try:'Fill a corner of the room with three textures — a blanket, a spoon, a sponge. Close one hand’s eyes and feel each one.',
   note:'Feelings live here too: “I feel happy” and “I feel the soft blanket” share one word. Your child will use both for the rest of their life.',
-  metaDescription:'Meet the feel five senses flashcard: a hand feeling something soft with the word feel, a texture-hunt game and parent prompts. Free to download and print.'
+  metaDescription:'Meet the feel five senses flashcard: a hand feeling something soft with the word feel, a texture-hunt game and parent prompts. Download and print.'
  }
 };

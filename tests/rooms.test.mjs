@@ -175,7 +175,7 @@ test('drawings stay private: no sitemap entry, no public ids',()=>{
 /* ------------------------------------------------------ LEARNING LIBRARY */
 test('the library is a books-only bookshelf: real books, honest empty shelves, premium PDFs coming soon',()=>{
  assert.ok(lib.includes(`rel="canonical" href="${site}/learning-library/"`));
- assert.ok(lib.includes('<title>Library — Free Picture Books to Read Online | Kiddo.school</title>'));
+ assert.ok(lib.includes('<title>Library — Picture Books to Read Online | Kiddo.school</title>'));
  // scope content checks to the page body: the footer and header are sitewide
  const body=lib.match(/<main id="main">[\s\S]*<\/main>/)[0];
  assert.ok(lib.includes('<h1>Library</h1>'));

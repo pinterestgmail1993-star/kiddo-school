@@ -80,15 +80,15 @@ test('reader data carries the whole book: cover first, then pages in order',()=>
  assert.equal(data.backLabel,'Back to the Library');
 });
 
-test('page SEO: title, meta, canonical, one H1, breadcrumbs, free reading',()=>{
- assert.equal(page.match(/<title>(.*?)<\/title>/)[1],'My First Colors | Free Colors Picture Book Online | Kiddo.school');
+test('page SEO: title, meta, canonical, one H1, breadcrumbs, online reading',()=>{
+ assert.equal(page.match(/<title>(.*?)<\/title>/)[1],'My First Colors | Colors Picture Book Online | Kiddo.school');
  assert.equal(page.match(/name="description" content="([^"]+)"/)[1],myFirstColors.description);
  assert.equal(page.match(/rel="canonical" href="([^"]+)"/)[1],site+PATH);
  assert.equal([...page.matchAll(/<h1[ >]/g)].length,1);
  assert.match(page,/<h1>My First Colors<\/h1>/);
  assert.match(page,/href="\/learning-library\/">Library<\/a>/);
  assert.match(page,/href="\/toddler\/2-years\/">Age 2<\/a>/);
- assert.match(page,/Reading online is free/);
+ assert.match(page,/Read online as often as you like/);
 });
 
 test('structured data: a factual Book and a 4-step BreadcrumbList, nothing invented',()=>{
@@ -98,7 +98,6 @@ test('structured data: a factual Book and a 4-step BreadcrumbList, nothing inven
  assert.equal(bk.name,'My First Colors');
  assert.equal(bk.url,site+PATH);
  assert.equal(bk.image,BASE+COVER);
- assert.equal(bk.isAccessibleForFree,true);
  assert.equal(bk.typicalAgeRange,'2-3');
  for(const s of schema){
   const json=JSON.stringify(s);
@@ -130,7 +129,6 @@ test('premium printable is coming-soon only: no checkout, no price, no fake butt
  assert.match(page,/Get Printable PDF — Premium · Coming Soon/);
  assert.match(page,/coming soon/i);
  assert.doesNotMatch(page,/\$\d|checkout link|Buy now|Add to cart/i);
- assert.match(page,/free and unlimited/);
 });
 
 test('gentle age language: guides, never requirements',()=>{
@@ -140,12 +138,12 @@ test('gentle age language: guides, never requirements',()=>{
  assert.match(page,/Read together at your child/);
 });
 
-test('library: My First Colors sits on the Educational Books shelf, labeled Read Free',()=>{
+test('library: My First Colors sits on the Educational Books shelf, labeled Read',()=>{
  const card=library.match(/<article class="bookcard"[\s\S]*?my-first-colors[\s\S]*?<\/article>/);
  assert.ok(card,'My First Colors card exists on the bookshelf');
  assert.match(card[0],/href="\/library\/books\/age-2\/my-first-colors\/"/);
  assert.match(card[0],/My First Colors/);
- assert.match(card[0],/Read Free/);
+ assert.match(card[0],/Read/);
  assert.match(card[0],/Colors Book/);
  assert.match(card[0],/Educational Books/);
  assert.match(card[0],/data-age="age-2"/);

@@ -60,9 +60,9 @@ export const lesson={
 export const meta={
  slug:'science-nature-and-discovery',
  name:'Science, Nature & Discovery',
- seoTitle:'Science, Nature & Discovery Flashcards for Preschoolers — 35 Free Printable Cards',
+ seoTitle:'Science, Nature & Discovery Flashcards for Preschoolers — 35 Printable Cards',
  h1:'Science, Nature &amp; Discovery flashcards.'.replace('&amp;','&'),
- metaDescription:'Thirty-five free science flashcards for ages 4–5: plants, animals, the body, weather, space, magnets, sound and light — what each idea means, why it helps, and a little experiment to try at home.',
+ metaDescription:'Thirty-five science flashcards for ages 4–5: plants, animals, the body, weather, space, magnets, sound and light — what each idea means, why it helps, and a little experiment to try at home.',
  lede:'Thirty-five big science ideas, one card each: ants, bees, magnets, rain, shadows, volcanoes. Show the card, wonder out loud together, then try the little experiment — science at four is talking, watching and testing, not memorising.',
  hubBlurb:'Thirty-five science ideas — animals, body, plants, weather, space and forces — one card each.',
  ageLabel:'4–5 years',
@@ -92,7 +92,7 @@ export const cards={
  try:'Find an ant trail on the pavement and drop a tiny breadcrumb a few steps away. Watch how long it takes for the first scout to find it — then the second, and the tenth. No touching, just watching.',
  note:'An ant can carry many times its own body weight — like you carrying a car! Ants leave an invisible scent trail so their friends can follow the same path home.',
  spot:'Ants work as a team and follow scent trails.',
- metaDescription:'A free Ant science flashcard for ages 4–5: how ants team up to find food, why watching them builds observation skills, and a safe ant-trail experiment to try on the pavement.'},
+ metaDescription:'A Ant science flashcard for ages 4–5: how ants team up to find food, why watching them builds observation skills, and a safe ant-trail experiment to try on the pavement.'},
 'bee':{
  word:'Bee',
  intro:'Bees visit flowers to drink sweet nectar — and carry pollen from flower to flower, which is how plants make seeds and fruit.',
@@ -101,7 +101,7 @@ export const cards={
  try:'Find two or three flowers with bees on them, stand back and count visits: which flower do the bees like best? Talk about colors and smells — from a distance, hands in pockets.',
  note:'Bees are busy, not scary — a calm bee has no reason to sting. One bee visits hundreds of flowers a day, and many of the fruits in your kitchen exist because a bee carried pollen.',
  spot:'Bees carry pollen between flowers so plants can make seeds.',
- metaDescription:'A free Bee science flashcard for ages 4–5: how bees pollinate flowers, why pollination matters, and a calm stand-back-and-count flower watch to try in the garden.'},
+ metaDescription:'A Bee science flashcard for ages 4–5: how bees pollinate flowers, why pollination matters, and a calm stand-back-and-count flower watch to try in the garden.'},
 'snail':{
  word:'Snail',
  intro:'A snail carries its home on its back: the shell protects its soft body, and slime helps it glide — and stick — wherever it goes.',
@@ -110,7 +110,7 @@ export const cards={
  try:'Morning snail hunt after rain: find one, watch which way it goes, and follow the shiny slime trail backwards. Is the trail always one line? What happens when the snail meets a wall?',
  note:'A snail\u2019s shell grows with it — the swirls are like tree rings. When danger comes, the whole snail pulls inside and closes the door with a hard little lid.',
  spot:'A snail\u2019s shell is its portable home and shield.',
- metaDescription:'A free Snail science flashcard for ages 4–5: why snails carry shells, how slime helps them move, and a gentle after-rain snail trail hunt for small naturalists.'},
+ metaDescription:'A Snail science flashcard for ages 4–5: why snails carry shells, how slime helps them move, and a gentle after-rain snail trail hunt for small naturalists.'},
 'spider':{
  word:'Spider',
  intro:'Spiders spin silk webs — sticky nets engineered to catch insects, which is the spider\u2019s dinner arriving by itself.',
@@ -119,7 +119,7 @@ export const cards={
  try:'Find a web after rain or early dew — it sparkles and shows its pattern. Watch from a distance: has anything been caught? Never touch the web; it took the spider hours to build.',
  note:'Spiders have eight legs, so they are arachnids, not insects. Spider silk is one of the strongest materials in nature — and some spiders rebuild their whole web every single day.',
  spot:'Spiders spin silk webs to catch their food.',
- metaDescription:'A free Spider science flashcard for ages 4–5: how webs catch food, why spiders have eight legs, and a dewy-morning web hunt your child will remember.'},
+ metaDescription:'A Spider science flashcard for ages 4–5: how webs catch food, why spiders have eight legs, and a dewy-morning web hunt your child will remember.'},
 'butterfly-caterpillar':{
  word:'Butterfly Begins as a Caterpillar',
  intro:'Every butterfly started life as a caterpillar: hatched from an egg on a leaf, it eats and eats and grows before it ever grows wings.',
@@ -128,7 +128,7 @@ export const cards={
  try:'Go on a caterpillar hunt: look under and along leaves in the garden or park. Found one? Look at it together, count its segments — and leave it exactly where it is. It has eating to do.',
  note:'A caterpillar\u2019s job is one thing only: eat and grow. Some caterpillars eat their own eggshell as a first meal, and a few can grow a hundred times heavier in weeks.',
  spot:'A butterfly\u2019s first stage is a caterpillar that eats and grows.',
- metaDescription:'A free Butterfly Begins as a Caterpillar flashcard for ages 4–5: what caterpillars are doing on leaves, the first step of the butterfly life cycle, and a kind caterpillar hunt.'},
+ metaDescription:'A Butterfly Begins as a Caterpillar flashcard for ages 4–5: what caterpillars are doing on leaves, the first step of the butterfly life cycle, and a kind caterpillar hunt.'},
 'butterfly-life-cycle':{
  word:'Butterfly Life Cycle',
  intro:'Four stages, one animal: egg, caterpillar, chrysalis, butterfly. The caterpillar melts down inside the chrysalis and rebuilds as a winged adult.',
@@ -137,7 +137,7 @@ export const cards={
  try:'Draw the four stages as four circles and let your child fill each one. Then hunt for a real chrysalis under leaves and fences — it looks like a tiny dried leaf, and that is exactly the point.',
  note:'Inside the chrysalis the caterpillar\u2019s body almost entirely rebuilds itself — most of it dissolves into a kind of soup before rearranging into a butterfly. Science word to try: metamorphosis.',
  spot:'Egg, caterpillar, chrysalis, butterfly — the four life-cycle stages.',
- metaDescription:'A free Butterfly Life Cycle flashcard for ages 4–5: the four stages of metamorphosis, why the chrysalis stage matters, and a draw-all-four-stages activity.'},
+ metaDescription:'A Butterfly Life Cycle flashcard for ages 4–5: the four stages of metamorphosis, why the chrysalis stage matters, and a draw-all-four-stages activity.'},
 'frog':{
  word:'Frog',
  intro:'Frogs begin life in water as tadpoles — swimming, breathing with gills — then grow legs and lungs and move onto land.',
@@ -146,7 +146,7 @@ export const cards={
  try:'Visit a pond in spring and look for jelly-like frogspawn or tiny tadpoles — watch, do not take. At home, jump like a frog from crouch to crouch: what do legs do that tails cannot?',
  note:'A young tadpole looks more like a fish than a frog. As it grows, the tail shrinks and is absorbed into the body — nothing is wasted. Frogs also breathe partly through their skin!',
  spot:'Frogs start as swimming tadpoles and grow legs for land.',
- metaDescription:'A free Frog science flashcard for ages 4–5: from tadpole to hopper, why frogs begin life in water, and a spring pond watch plus frog-jump game to try.'},
+ metaDescription:'A Frog science flashcard for ages 4–5: from tadpole to hopper, why frogs begin life in water, and a spring pond watch plus frog-jump game to try.'},
 'fish':{
  word:'Fish',
  intro:'Fish breathe underwater with gills: water flows in the mouth, over the gills, and the gills grab the oxygen — no coming up for air needed.',
@@ -155,7 +155,7 @@ export const cards={
  try:'Watch a goldfish or aquarium fish for a minute: the gill covers open and close like tiny doors. Count the opening beats in ten seconds — faster than you breathe? Slower?',
  note:'Fish gills work only in water — a fish out of water is like you underwater. Fins are for steering and braking; the tail is the engine.',
  spot:'Fish use gills to take oxygen out of water.',
- metaDescription:'A free Fish science flashcard for ages 4–5: how gills grab oxygen from water, how fins and tails work, and a count-the-gill-beats aquarium observation.'},
+ metaDescription:'A Fish science flashcard for ages 4–5: how gills grab oxygen from water, how fins and tails work, and a count-the-gill-beats aquarium observation.'},
 'bones':{
  word:'Bones',
  intro:'Bones are the frame inside your body: they hold you up, protect your organs and let you move — and they are busy making blood too.',
@@ -164,7 +164,7 @@ export const cards={
  try:'Skeleton feel-hunt: press gently and find five hard places — shin, ribs, elbow, knee, skull. Then bend: which parts bend (joints!) and which stay straight?',
  note:'Babies are born with about 300 bones; some fuse as you grow, so adults have 206. Bones are not just scaffold — inside the biggest ones is the factory that makes your blood.',
  spot:'Bones are the body\u2019s frame — they hold us up and make blood.',
- metaDescription:'A free Bones science flashcard for ages 4–5: what the skeleton does, why babies have more bones than adults, and a find-five-bones touch hunt to try today.'},
+ metaDescription:'A Bones science flashcard for ages 4–5: what the skeleton does, why babies have more bones than adults, and a find-five-bones touch hunt to try today.'},
 'eyes':{
  word:'Eyes',
  intro:'Eyes catch light bouncing off the world and turn it into pictures: blinking keeps them clean, and both eyes work as a team.',
@@ -173,7 +173,7 @@ export const cards={
  try:'Blink-count game: try not to blink for as long as you can (it is hard!), then blink fast ten times. Try a short "ears only" moment with eyes closed — what do you notice that you usually miss?',
  note:'You blink roughly fifteen times a minute — thousands of blinks a day — each one a tiny windscreen-wipe. Your eyes also make tears when you cry AND when a dust speck needs a wash.',
  spot:'Eyes catch light so we can see — and blinking keeps them clean.',
- metaDescription:'A free Eyes science flashcard for ages 4–5: how eyes turn light into pictures, why we blink, and a blink-count and ears-only game to sharpen the senses.'},
+ metaDescription:'A Eyes science flashcard for ages 4–5: how eyes turn light into pictures, why we blink, and a blink-count and ears-only game to sharpen the senses.'},
 'heart':{
  word:'Heart',
  intro:'Your heart is a muscle that squeezes all day and night, pushing blood — the delivery van for oxygen and food — to every part of your body.',
@@ -182,7 +182,7 @@ export const cards={
  try:'Jump ten times, then feel your heartbeat with a hand on the chest: fast! Rest until it slows down. Jump again and compare. A toy stethoscope — or a grown-up\u2019s ear — makes it even better.',
  note:'Your heart is about the size of your fist and never takes a day off. When you run, your muscles ask for more oxygen, so the heart pumps faster — that is the whole trick of exercise.',
  spot:'The heart is a pump that never stops delivering.',
- metaDescription:'A free Heart science flashcard for ages 4–5: what the heart pumps and why it beats faster when you run, plus a jump-and-feel experiment little scientists love.'},
+ metaDescription:'A Heart science flashcard for ages 4–5: what the heart pumps and why it beats faster when you run, plus a jump-and-feel experiment little scientists love.'},
 'teeth':{
  word:'Teeth',
  intro:'Teeth are tools built for food: front teeth slice, pointed teeth tear, and flat back teeth grind — then spit and brushing wash the works.',
@@ -191,7 +191,7 @@ export const cards={
  try:'Mirror dinner: bite an apple slice with the front teeth, then chew with the back teeth. Count how many teeth you can see in the mirror, and check the back ones got brushed too.',
  note:'You grow two sets of teeth in your whole life — baby teeth, then grown-up teeth waiting underground like sprouting seeds. The front teeth you can see are the slicers; the grinders hide at the back.',
  spot:'Different teeth do different jobs — slicing, tearing, grinding.',
- metaDescription:'A free Teeth science flashcard for ages 4–5: the three tooth jobs, why brushing matters, and a mirror dinner game that turns eating into anatomy.'},
+ metaDescription:'A Teeth science flashcard for ages 4–5: the three tooth jobs, why brushing matters, and a mirror dinner game that turns eating into anatomy.'},
 'plant':{
  word:'What Plants Need',
  intro:'Every plant runs on three things: water to drink through the roots, light to make food in the leaves, and soil to anchor and feed them.',
@@ -200,7 +200,7 @@ export const cards={
  try:'Grow two beans in jars on the windowsill and water both — then put ONE inside a dark cupboard for a few days. Water both, compare every day, and let your child announce the verdict.',
  note:'Roots drink, but leaves are the kitchen: they catch sunlight and cook it with air and water into plant food. A plant in the dark grows pale and stretchy, searching for light.',
  spot:'Plants need water, light and soil — take one away and see.',
- metaDescription:'A free What Plants Need flashcard for ages 4–5: water, light and soil, with a grow-two-beans dark-cupboard experiment that teaches fair testing.'},
+ metaDescription:'A What Plants Need flashcard for ages 4–5: water, light and soil, with a grow-two-beans dark-cupboard experiment that teaches fair testing.'},
 'seed':{
  word:'Seed',
  intro:'A seed is a packed lunch and a baby plant in one shell: inside waits a tiny embryo with its own food supply, ready to sprout when warmth and water say go.',
@@ -209,7 +209,7 @@ export const cards={
  try:'Soak a bean overnight (it swells!), then plant it against the inside wall of a clear jar with wet cotton so the roots are watchable. Mark the jar with the date and draw what appears.',
  note:'Some seeds wait years for their moment — and some travel first, riding the wind or hitching on animals before they land. Inside a seed is enough food for the journey\u2019s first days.',
  spot:'A seed packs a baby plant and its first meal in a shell.',
- metaDescription:'A free Seed science flashcard for ages 4–5: what waits inside a seed, why soaking wakes it up, and a watch-the-roots jar experiment from bean to sprout.'},
+ metaDescription:'A Seed science flashcard for ages 4–5: what waits inside a seed, why soaking wakes it up, and a watch-the-roots jar experiment from bean to sprout.'},
 'tree':{
  word:'Tree Parts',
  intro:'A tree is a three-part machine: roots drink and anchor, the trunk carries water upward, and the leaves catch sunlight to cook the tree\u2019s food.',
@@ -218,7 +218,7 @@ export const cards={
  try:'Tree-hug inspection: find a big tree, find its roots (they peek above soil!), rub bark with paper and a crayon, and collect three different fallen leaves. One tree, three discoveries.',
  note:'Trunks carry water up like a lift running all day — a big tree moves hundreds of litres on a hot one. If you see a stump, count the rings: every ring is one year of life.',
  spot:'Roots drink, trunks lift, leaves cook — three parts, one tree.',
- metaDescription:'A free Tree Parts flashcard for ages 4–5: roots, trunk and leaves and what each one does, with a bark-rubbing and leaf-hunt walk to try.'},
+ metaDescription:'A Tree Parts flashcard for ages 4–5: roots, trunk and leaves and what each one does, with a bark-rubbing and leaf-hunt walk to try.'},
 'cactus':{
  word:'Cactus',
  intro:'A cactus is a desert survivor: its thick stem stores water like a bottle, its spines are leaves shrunk to needles, and its waxy skin holds moisture in.',
@@ -227,7 +227,7 @@ export const cards={
  try:'Sponge comparison: soak one sponge, leave another dry, and squeeze both — that is what a full cactus stem feels like inside. Then look at a cactus picture: where ARE the leaves? (The spines!)',
  note:'A cactus can survive for months on the water in its stem — some larger cacti weigh tons, most of it stored water. The spines are leaves in armor: too small to lose water, sharp enough to stop thirsty animals.',
  spot:'A cactus stores water in its stem to survive the desert.',
- metaDescription:'A free Cactus science flashcard for ages 4–5: how a cactus stores water, why spines are really leaves, and a sponge-squeeze model of desert survival.'},
+ metaDescription:'A Cactus science flashcard for ages 4–5: how a cactus stores water, why spines are really leaves, and a sponge-squeeze model of desert survival.'},
 'mushroom':{
  word:'Mushroom',
  intro:'A mushroom is not a plant — it is the fruiting cap of a fungus, a whole hidden network living in damp soil and old wood.',
@@ -236,7 +236,7 @@ export const cards={
  try:'After rain, go on a mushroom spot-walk: check shady grass, damp soil, old logs. Golden rule: LOOK, never touch or taste — wild mushrooms are grown-up territory. Photograph or draw instead.',
  note:'The mushroom you see is like the apple of a tree whose real body is threads under the ground — the biggest living networks on Earth are fungi. And one safety fact to repeat: some wild mushrooms are poisonous, so only shops and grown-ups decide what gets eaten.',
  spot:'Mushrooms are fungi that pop up where it is damp.',
- metaDescription:'A free Mushroom science flashcard for ages 4–5: what fungi are, why mushrooms love damp places, and a spot-don\u2019t-touch mushroom walk with safety rules.'},
+ metaDescription:'A Mushroom science flashcard for ages 4–5: what fungi are, why mushrooms love damp places, and a spot-don\u2019t-touch mushroom walk with safety rules.'},
 'pond':{
  word:'Pond Habitat',
  intro:'A pond is a small, busy home: frogs, snails, insects, fish and water plants all live together, each one finding food and shelter in the same little pool.',
@@ -245,7 +245,7 @@ export const cards={
  try:'Pond-sit counting: at a safe distance from the edge, sit for five quiet minutes and tally everything alive — swimmers, floaters, jumpers, things on the surface. Stillness finds more than poking.',
  note:'Every pond resident has a job: plants give shade and oxygen, snails clean the walls, insects feed the frogs. A pond is never empty — even the water is full of tiny life.',
  spot:'A pond is one small home shared by many living things.',
- metaDescription:'A free Pond Habitat flashcard for ages 4–5: who lives in a pond and why, with a sit-still-and-count pond watch that teaches habitats at child scale.'},
+ metaDescription:'A Pond Habitat flashcard for ages 4–5: who lives in a pond and why, with a sit-still-and-count pond watch that teaches habitats at child scale.'},
 'cloud':{
  word:'Cloud',
  intro:'Clouds are made of tiny drops of water so small they float — air lifts them high, and when they crowd together and grow heavy, they turn grey and let the rain go.',
@@ -254,7 +254,7 @@ export const cards={
  try:'Cloud watch: lie back and find shapes — a bunny, a boat. Then breathe on a cold mirror or window and look at the mist: tiny water drops, just like a cloud, made by you.',
  note:'A small cloud can weigh more than a hundred elephants — the drops are just spread over a huge space. Grey clouds are grey because they are so packed with water that light cannot get through.',
  spot:'Clouds are floating crowds of tiny water drops.',
- metaDescription:'A free Cloud science flashcard for ages 4–5: what clouds are made of, why grey clouds rain, and a breath-on-the-window mini-cloud your child can make.'},
+ metaDescription:'A Cloud science flashcard for ages 4–5: what clouds are made of, why grey clouds rain, and a breath-on-the-window mini-cloud your child can make.'},
 'rain':{
  word:'Rain',
  intro:'Rain is how the sky gives water back: the sun lifts water up as invisible vapour, clouds gather it, and when the drops grow heavy, down it comes.',
@@ -263,7 +263,7 @@ export const cards={
  try:'Be a rain reporter from the window: how heavy is it — drips, drops or pouring? Then map the puddles after: which puddle is biggest, and how long until the sun drinks it back?',
  note:'That invisible lifted water is called vapour, and the trip it takes — up, into clouds, down as rain, along rivers, back up again — is the water cycle. The water coming down today once poured on dinosaurs.',
  spot:'Rain is the sky returning the water the sun lifted up.',
- metaDescription:'A free Rain science flashcard for ages 4–5: where rain comes from in the water cycle, why drops fall, and a safe window watch plus puddle map for rainy days.'},
+ metaDescription:'A Rain science flashcard for ages 4–5: where rain comes from in the water cycle, why drops fall, and a safe window watch plus puddle map for rainy days.'},
 'rain-helps-plants':{
  word:'Rain Helps Plants',
  intro:'Plants are thirsty all the time — roots drink constantly — and rain is the free watering can that keeps gardens, meadows and forests alive.',
@@ -272,7 +272,7 @@ export const cards={
  try:'After rain, take a leaf-and-garden tour: look at leaves wearing raindrops, and peek at the soil — dark, damp and drinking. Then check whether the puddles near your plants are still there tomorrow.',
  note:'Plants drink with their roots, not their leaves — the drops you see run down the stem into the soil. A rainy night does more for the garden than a whole afternoon of watering.',
  spot:'Rain is the garden\u2019s watering can — plants drink through their roots.',
- metaDescription:'A free Rain Helps Plants flashcard for ages 4–5: how rainwater reaches plant roots, why rainy days are garden days, and an after-rain leaf and soil tour.'},
+ metaDescription:'A Rain Helps Plants flashcard for ages 4–5: how rainwater reaches plant roots, why rainy days are garden days, and an after-rain leaf and soil tour.'},
 'rainbow':{
  word:'Rainbow',
  intro:'A rainbow is sunlight and raindrops working together: each drop splits white sunlight into its colors, and a whole arc of drops paints the sky.',
@@ -281,7 +281,7 @@ export const cards={
  try:'Make your own: stand with the sun BEHIND you and mist a hose or spray into the air — a small rainbow appears in the water. Try it from the same spot on a sunny morning or after rain.',
  note:'Every rainbow has seven colors if you look carefully — red, orange, yellow, green, blue, indigo, violet. The sun must be behind you and the drops in front, which is why rainbows visit while rain leaves.',
  spot:'Sunlight splits into colors inside raindrops — sky painting.',
- metaDescription:'A free Rainbow science flashcard for ages 4–5: how sunlight and raindrops paint the seven colors, and a make-your-own rainbow spray experiment.'},
+ metaDescription:'A Rainbow science flashcard for ages 4–5: how sunlight and raindrops paint the seven colors, and a make-your-own rainbow spray experiment.'},
 'wind':{
  word:'Wind',
  intro:'Wind is air on the move: you cannot see air itself, but you can see everything it pushes — kites, leaves, flags, washing, clouds.',
@@ -290,7 +290,7 @@ export const cards={
  try:'Become wind detectives: find five things the wind is moving — leaves, flags, hair, clouds, washing. Then make a paper streamer and hold it up: still air hangs it down, wind lifts it.',
  note:'Air is real even when it is still — you are breathing some right now. When air moves fast enough it can push boats, turn windmills and lift kites; a gentle breeze is just a small push.',
  spot:'Wind is moving air — you see its pushes, not the air.',
- metaDescription:'A free Wind science flashcard for ages 4–5: how we know wind is moving air, with a find-five-things wind detective game and a paper streamer test.'},
+ metaDescription:'A Wind science flashcard for ages 4–5: how we know wind is moving air, with a find-five-things wind detective game and a paper streamer test.'},
 'ice':{
  word:'Ice',
  intro:'Ice is water that got so cold it froze solid: same water, different shape — and when warmth returns, it melts right back into a puddle.',
@@ -299,7 +299,7 @@ export const cards={
  try:'Freeze water into cubes, then hold one in a warm hand and one on a cold plate — which melts first? Watch the puddle it leaves: the ice did not vanish, it turned back into water.',
  note:'Water is the only everyday thing you meet in all three forms: solid ice, liquid water, and vapour floating into the sky. Ice floats because frozen water puffs up slightly — that is why the cubes sit on top of your drink.',
  spot:'Ice is frozen water — cold freezes it, warmth melts it back.',
- metaDescription:'A free Ice science flashcard for ages 4–5: freezing and melting as water changing form, with a warm-hand-versus-cold-plate melt race to try.'},
+ metaDescription:'A Ice science flashcard for ages 4–5: freezing and melting as water changing form, with a warm-hand-versus-cold-plate melt race to try.'},
 'rock':{
  word:'Rock',
  intro:'Rocks are hard pieces of Earth itself — some from cooled hot rock, some pressed in layers over ages, and every pebble is a rock the sea and rain tumbled smooth.',
@@ -308,7 +308,7 @@ export const cards={
  try:'Rock collection: gather five rocks and pebbles (parks, paths, beaches), then sort them your own way — by color, by texture, by size. Which one is the smoothest? Which is the heaviest for its size?',
  note:'Pebbles started as sharp rocks and got sanded round by thousands of years of water rolling them. If you ever see specks sparkling inside a rock, those are minerals — rocks are mixtures.',
  spot:'Rocks are hard pieces of Earth — sorted by color, feel and weight.',
- metaDescription:'A free Rock science flashcard for ages 4–5: what rocks are, how pebbles get smooth, and a collect-and-sort rock classification hunt.'},
+ metaDescription:'A Rock science flashcard for ages 4–5: what rocks are, how pebbles get smooth, and a collect-and-sort rock classification hunt.'},
 'sun':{
  word:'Sun',
  intro:'The sun is our nearest star: a giant ball of light and warmth that makes daytime, grows our food, and gives every shadow its shape.',
@@ -317,7 +317,7 @@ export const cards={
  try:'Warm-wall test: put one hand on a sunny wall and one on a wall in the shade. Which hand is warmer? That warmth travelled 150 million kilometres — from a star — to reach your hand.',
  note:'The sun is a star — the closest one; every other star is a much farther sun. Golden rule for little astronomers: NEVER look straight at the sun, not even with sunglasses — it hurts eyes that are still growing.',
  spot:'The sun is a star giving us all its light and warmth.',
- metaDescription:'A free Sun science flashcard for ages 4–5: the sun as our nearest star, its light and warmth, the never-look-at-it safety rule, and a warm-wall test.'},
+ metaDescription:'A Sun science flashcard for ages 4–5: the sun as our nearest star, its light and warmth, the never-look-at-it safety rule, and a warm-wall test.'},
 'moon':{
  word:'Moon',
  intro:'The moon is Earth\u2019s rocky companion in space — it makes no light of its own, it shines because sunlight bounces off it, and it changes shape in the sky as the month goes round.',
@@ -326,7 +326,7 @@ export const cards={
  try:'Moon diary: look for the moon every evening and draw its shape — crescent, half, full. Some nights it hides! Check before bed AND in the morning: the moon sometimes works the day shift.',
  note:'The moon has no wind or rain, so the footprints astronauts left decades ago are still there, fresh as ever. Those "moon shapes" changing? Just the sun lighting different angles of the same sphere.',
  spot:'The moon shines with borrowed sunlight and changes shape monthly.',
- metaDescription:'A free Moon science flashcard for ages 4–5: why the moon shines, how its shape changes, and a draw-it-every-night moon diary to start tonight.'},
+ metaDescription:'A Moon science flashcard for ages 4–5: why the moon shines, how its shape changes, and a draw-it-every-night moon diary to start tonight.'},
 'day-and-night':{
  word:'Day and Night',
  intro:'Day and night are Earth\u2019s doing: our whole planet spins like a top, and wherever it faces the sun it is day — the other side sleeps in night.',
@@ -335,7 +335,7 @@ export const cards={
  try:'Flashlight Earth: shine a torch on a ball or apple — the lit side is day, the dark side is night. Slowly turn the ball: watch day move across it. Now spin yourself once — that took a day\u2019s worth.',
  note:'One full spin takes 24 hours — that is what a day IS. The sun never rises or sets at all; it just shines, while we ride the spin. When it is your bedtime, children on the other side of Earth are running out to play.',
  spot:'Earth spins — day is our side facing the sun, night is facing away.',
- metaDescription:'A free Day and Night flashcard for ages 4–5: why Earth\u2019s spin makes day and night, where the sun really goes, and a flashlight-on-a-ball model to try.'},
+ metaDescription:'A Day and Night flashcard for ages 4–5: why Earth\u2019s spin makes day and night, where the sun really goes, and a flashlight-on-a-ball model to try.'},
 'volcano':{
  word:'Volcano',
  intro:'A volcano is a mountain with a hot heart: deep underground rock melts, pressure builds, and sometimes it erupts — pouring red-hot lava down the sides.',
@@ -344,7 +344,7 @@ export const cards={
  try:'Kitchen eruption with a grown-up: build a mountain of dough around a cup, add a spoon of baking soda, pour in vinegar — and step back. Then compare: bubbly foam lava, real lava, both flow downhill.',
  note:'Lava is rock so hot — over a thousand degrees — that it flows like thick honey, and it hardens back into new rock as it cools. There are about 1,500 active volcanoes on Earth, and most just puff steam quietly.',
  spot:'Volcanoes erupt melted rock — lava flows, cools and hardens.',
- metaDescription:'A free Volcano science flashcard for ages 4–5: what lava is and why volcanoes erupt, with a grown-up-helped baking-soda kitchen eruption to run.'},
+ metaDescription:'A Volcano science flashcard for ages 4–5: what lava is and why volcanoes erupt, with a grown-up-helped baking-soda kitchen eruption to run.'},
 'dinosaur-fossil':{
  word:'Dinosaur Fossil',
  intro:'Fossils are the stone-hard remains of living things from long ago: buried fast, pressed by layers, and turned to rock over millions of years — that is how we know dinosaurs at all.',
@@ -353,7 +353,7 @@ export const cards={
  try:'Cookie excavation: give your child a toothpick and a chocolate-chip cookie — the chips are fossils, the cookie is rock. Dig out every chip without breaking it. Slow hands win; that is exactly what palaeontologists do.',
  note:'A fossil needs to be buried QUICKLY — by mud or sand — before it can rot away, then millions of years of pressure do the rest. Scientists who dig them are palaeontologists, and the digging is so careful it can take weeks for one bone.',
  spot:'Fossils are buried, stone-hard clues from long ago.',
- metaDescription:'A free Dinosaur Fossil flashcard for ages 4–5: how fossils form and teach us about dinosaurs, with a chocolate-chip cookie excavation for small palaeontologists.'},
+ metaDescription:'A Dinosaur Fossil flashcard for ages 4–5: how fossils form and teach us about dinosaurs, with a chocolate-chip cookie excavation for small palaeontologists.'},
 'magnet-attracts-metal':{
  word:'What Magnets Attract',
  intro:'Magnets pull — but only some things: iron and steel stick, wood, plastic, glass and paper do not. Testing what sticks is real experimenting.',
@@ -362,7 +362,7 @@ export const cards={
  try:'Magnet hunt: take a fridge magnet around the house and test ten things — spoons, coins, keys, toys, zips, the door handle. Sort them into two piles: STICKS and NO. What do the stickers have in common?',
  note:'Magnets pull only iron and steel — many "metal" things (aluminium foil, most coins, drink cans) are metals that do not stick. If the magnet does not lie, though — a magnet itself always sticks to a fridge door!',
  spot:'Magnets stick to iron and steel — test everything else to find out.',
- metaDescription:'A free What Magnets Attract flashcard for ages 4–5: which things stick and why, with a predict-then-test ten-object magnet hunt around the house.'},
+ metaDescription:'A What Magnets Attract flashcard for ages 4–5: which things stick and why, with a predict-then-test ten-object magnet hunt around the house.'},
 'magnet':{
  word:'Magnet Force',
  intro:'A magnet can move things without touching them: it pulls steel from a distance, pulls hardest at its ends — the poles — and pushes another magnet away when like poles meet.',
@@ -371,7 +371,7 @@ export const cards={
  try:'Two-magnet game: feel pull when opposite ends meet and push when the same ends meet. Then slide a piece of paper between a magnet and a paperclip — the magnet still works THROUGH it!',
  note:'Every magnet has two poles, north and south. Opposites pull together; matching poles push apart — same rule as magnets, always. Magnets also work through water, wood and your hand — but the pull gets weaker with distance.',
  spot:'Magnets pull and push at a distance — poles decide which.',
- metaDescription:'A free Magnet Force flashcard for ages 4–5: magnetic pull and push at a distance, poles that attract or repel, and a feel-the-force two-magnet game.'},
+ metaDescription:'A Magnet Force flashcard for ages 4–5: magnetic pull and push at a distance, poles that attract or repel, and a feel-the-force two-magnet game.'},
 'sound':{
  word:'Sound',
  intro:'Every sound is a shaking: the drum skin wobbles, the air carries the wobble to your ear, and your eardrum wobbles too — that is hearing.',
@@ -380,7 +380,7 @@ export const cards={
  try:'Rice drum: stretch a balloon skin or cling film over a bowl, sprinkle dry rice on top, and tap a pot loudly beside it — watch the rice jump with every boom. The jumping is the vibration, made visible.',
  note:'Bigger things wobble slower, and slow wobbles sound deep — that is why a big drum booms and a small one taps. Press your fingers gently in your ears and speak: sound travels through your bones too!',
  spot:'Sound is a vibration you can see, feel and hear.',
- metaDescription:'A free Sound science flashcard for ages 4–5: how vibrations become sound, why big drums boom, and a rice-on-a-drum experiment that shows sound jumping.'},
+ metaDescription:'A Sound science flashcard for ages 4–5: how vibrations become sound, why big drums boom, and a rice-on-a-drum experiment that shows sound jumping.'},
 'shadow':{
  word:'Shadow',
  intro:'A shadow is the dark shape where something blocks the light: your body stops the sunshine, and the dark patch on the ground is the shape of the stopping.',
@@ -389,7 +389,7 @@ export const cards={
  try:'Hand puppets: in a darkish room, shine a torch on the wall and make bird and dog shadows with your hands. Then stand outside at noon and in the evening — is your shadow the same length? Measure it against a chalk line.',
  note:'No light, no shadow — a cloudy night has none. Your shadow is longest in the early morning and late evening when the sun sits low, and shortest at noon when it stands overhead. Shadows always point AWAY from the light.',
  spot:'A shadow is the dark shape where a body blocks light.',
- metaDescription:'A free Shadow science flashcard for ages 4–5: how shadows form when light is blocked, why they change length, and hand-puppet shadow play to try.'},
+ metaDescription:'A Shadow science flashcard for ages 4–5: how shadows form when light is blocked, why they change length, and hand-puppet shadow play to try.'},
 'feather':{
  word:'Feather',
  intro:'Feathers are a bird\u2019s all-in-one gear: flight feathers catch the air for flying, and soft fluffy down holds warm air close like a duvet.',
@@ -398,5 +398,5 @@ export const cards={
  try:'The drop race: from the same height, drop a feather and a stone (or a coin) — the feather floats, dances and lands last, because the air catches every strand. Then find a real feather on a walk and look at the tiny hooks.',
  note:'A bird can have thousands of feathers, and it zips them neat with its beak — that is called preening. Winter coats and sleeping bags copy the fluffy down feather, because trapped warm air is the best blanket.',
  spot:'Feathers fly the bird and keep it warm — light and clever.',
- metaDescription:'A free Feather science flashcard for ages 4–5: how feathers fly birds and keep them warm, with a feather-versus-stone drop race and a feather hunt.'}
+ metaDescription:'A Feather science flashcard for ages 4–5: how feathers fly birds and keep them warm, with a feather-versus-stone drop race and a feather hunt.'}
 };

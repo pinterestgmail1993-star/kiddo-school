@@ -2,9 +2,9 @@
 export const meta={
  slug:'garden-friends',
  name:'Garden Friends',
- seoTitle:'Garden Animal Flashcards for Toddlers — 18 Free Printable Cards',
+ seoTitle:'Garden Animal Flashcards for Toddlers — 18 Printable Cards',
  h1:'Garden Friends flashcards.',
- metaDescription:'Eighteen free garden animal flashcards for toddlers: rabbits, hedgehogs, ducks, squirrels and more, with gentle outdoor games for every card. Print at home.',
+ metaDescription:'Eighteen garden animal flashcards for toddlers: rabbits, hedgehogs, ducks, squirrels and more, with gentle outdoor games for every card. Print at home.',
  lede:'Eighteen cards about the animals who live around your house: in the hedge, under the tree, by the pond. Rabbits, hedgehogs, ducks and friends — every one looked at from a kind distance, never grabbed.',
  hubBlurb:'Rabbits, hedgehogs, ducks and friends. The animals who live nearby.',
  ageLabel:'2 years',

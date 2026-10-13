@@ -19,7 +19,7 @@ export const fruitsMeta={
  name:'Fruits & Vegetables Flashcards',
  seoTitle:'Fruit & Vegetable Flashcards for Preschoolers | 16 Cards',
  h1:'Fruit & Vegetable Flashcards for Preschoolers',
- metaDescription:'Sixteen fruit and vegetable flashcards for preschoolers: apple, banana, carrot, broccoli and more — each card has its own page with parent prompts and a free download.',
+ metaDescription:'Sixteen fruit and vegetable flashcards for preschoolers: apple, banana, carrot, broccoli and more — each card has its own page with parent prompts and a download.',
  lede:'Sixteen cards about the foods children see every day: eight fruits, eight vegetables, every one with its own page, the words to say together and one thing to try at snack time.',
  hubBlurb:'Sixteen foods children already know — eight fruits, eight vegetables — with sorting games, color rows and snack-time activities.',
  ageLabel:'3–4 years',
@@ -42,7 +42,7 @@ export const fruitsLesson={
  seoTitle:'Fruits & Vegetables for 3 Year Olds',
  title:'Fruits & Vegetables for 3 Year Olds',
  h1:'Fruits & Vegetables',
- description:'Learn fruits and vegetables with your preschooler: sixteen picture cards, printable food sheets to sort and solve at the table, color rows, counting together and kitchen activities — no scores, no sign-up.',
+ description:'Learn fruits and vegetables with your preschooler: sixteen picture cards, printable food sheets to sort and solve at the table, color rows, counting together and kitchen activities — no scores.',
  eyebrow:'PRESCHOOL · AGE 3 · CLASS 8',
  crumbs:[['Preschool','/preschool/'],['Age 3','/preschool/3-years/'],['Fruits & Vegetables','/preschool/3-years/fruits-and-vegetables/']],
  schemaImage:R2+P+'04-strawberry.webp',
@@ -91,7 +91,7 @@ export const fruitsCardContent={
   say:'Apple! Crunch, crunch — can you say apple?',
   try:'Hold a real apple in both hands: it is heavy, smooth and cold. Then count the apples in your fruit bowl together.',
   note:'Apples come in red, green and yellow — if your apple looks different from the card, that is a wonderful conversation, not a mistake.',
-  metaDescription:'Meet the apple fruit flashcard: a shiny red apple with the word apple, a hold-and-count game and parent prompts. Free to download and print.'
+  metaDescription:'Meet the apple fruit flashcard: a shiny red apple with the word apple, a hold-and-count game and parent prompts. Download and print.'
  },
  'banana':{
   word:'Banana',
@@ -100,7 +100,7 @@ export const fruitsCardContent={
   say:'Banana! Ba-na-na — clap once for every part of the word!',
   try:'Peel a banana together, top by top like a monkey. Bananas are one of the first foods children can peel by themselves.',
   note:'A banana’s peel turns spotty as it ripens — sweeter inside. Spots are a sign, not a problem.',
-  metaDescription:'Meet the banana fruit flashcard: a yellow banana with the word banana, a peel-it-like-a-monkey game and parent prompts. Free to download and print.'
+  metaDescription:'Meet the banana fruit flashcard: a yellow banana with the word banana, a peel-it-like-a-monkey game and parent prompts. Download and print.'
  },
  'orange':{
   word:'Orange',
@@ -109,7 +109,7 @@ export const fruitsCardContent={
   say:'Orange! Sniff it first — oranges smell sunny. Now say orange!',
   try:'Roll an orange on the table, then smell your hands. The smell comes from the peel — the smelliest part of any fruit.',
   note:'One word, two meanings: the fruit and the color. When your child paints an orange orange, both meanings are working at once.',
-  metaDescription:'Meet the orange fruit flashcard: a round orange with the word orange, a roll-and-smell game and parent prompts. Free to download and print.'
+  metaDescription:'Meet the orange fruit flashcard: a round orange with the word orange, a roll-and-smell game and parent prompts. Download and print.'
  },
  'strawberry':{
   word:'Strawberry',
@@ -118,7 +118,7 @@ export const fruitsCardContent={
   say:'Strawberry! A long word for a little berry — straw-ber-ry!',
   try:'Look at a real strawberry with your eyes only: count the seeds if you can — there are too many! That is why strawberries are so bumpy.',
   note:'Strawberries are the card your child will recognize fastest in any supermarket — hand them the card and let them find the twin.',
-  metaDescription:'Meet the strawberry fruit flashcard: a bright red strawberry with the word strawberry, a seed-spotting game and parent prompts. Free to download and print.'
+  metaDescription:'Meet the strawberry fruit flashcard: a bright red strawberry with the word strawberry, a seed-spotting game and parent prompts. Download and print.'
  },
  'grapes':{
   word:'Grapes',
@@ -127,7 +127,7 @@ export const fruitsCardContent={
   say:'Grapes! A bunch of grapes — one, two, three… so many!',
   try:'Share a bunch: you take one, your child takes one. Count the first three together, then let the counting wander.',
   note:'Grapes are round, smooth and roll — a natural lesson in why we sit down to eat. Cut them small for little mouths.',
-  metaDescription:'Meet the grapes fruit flashcard: a purple bunch with the word grapes, a sharing-and-counting game and parent prompts. Free to download and print.'
+  metaDescription:'Meet the grapes fruit flashcard: a purple bunch with the word grapes, a sharing-and-counting game and parent prompts. Download and print.'
  },
  'watermelon':{
   word:'Watermelon',
@@ -136,7 +136,7 @@ export const fruitsCardContent={
   say:'Watermel-on! A big word for a big fruit — wa-ter-mel-on!',
   try:'Tap the seeds on the card: one, two, three… then tap the red part and say red, the green part and say green.',
   note:'The rind is green, the flesh is red and the seeds are black — one slice, three colors. Watermelon is a whole color lesson wearing a snack.',
-  metaDescription:'Meet the watermelon fruit flashcard: a red-and-green slice with the word watermelon, a three-color game and parent prompts. Free to download and print.'
+  metaDescription:'Meet the watermelon fruit flashcard: a red-and-green slice with the word watermelon, a three-color game and parent prompts. Download and print.'
  },
  'pineapple':{
   word:'Pineapple',
@@ -145,7 +145,7 @@ export const fruitsCardContent={
   say:'Pineapple! It wears a crown — pine-apple!',
   try:'Feel a real pineapple if you can find one: bumpy, hard and heavy. Then feel a banana next to it — smooth and soft. Two fruits, two feelings.',
   note:'Pineapples grow in the ground, not in trees — the crown just looks royal. Children love knowing a secret like that.',
-  metaDescription:'Meet the pineapple fruit flashcard: a golden pineapple with a green crown and the word pineapple, a bumpy-and-smooth game and parent prompts. Free to download and print.'
+  metaDescription:'Meet the pineapple fruit flashcard: a golden pineapple with a green crown and the word pineapple, a bumpy-and-smooth game and parent prompts. Download and print.'
  },
  'mango':{
   word:'Mango',
@@ -154,7 +154,7 @@ export const fruitsCardContent={
   say:'Mmm-mango! Say it slowly and happily — mango!',
   try:'Mangos feel soft when they are ready. Squeeze one very gently together — like a cheek. That softness means sweet inside.',
   note:'Mangos have a big flat seed inside — when your child finds it, that is the mango’s secret treasure.',
-  metaDescription:'Meet the mango fruit flashcard: a golden mango with the word mango, a gentle-squeeze game and parent prompts. Free to download and print.'
+  metaDescription:'Meet the mango fruit flashcard: a golden mango with the word mango, a gentle-squeeze game and parent prompts. Download and print.'
  },
  'carrot':{
   word:'Carrot',
@@ -163,7 +163,7 @@ export const fruitsCardContent={
   say:'Carrot! Crunch like a rabbit — crunch, crunch!',
   try:'Munch a carrot stick like a rabbit — carrots are the classic first crunchy vegetable. Where were the carrots growing? Down in the dark soil!',
   note:'Carrots are orange because of the sunshine-colored stuff inside them — the same thing that makes them good for your eyes.',
-  metaDescription:'Meet the carrot vegetable flashcard: an orange carrot with the word carrot, a crunch-like-a-rabbit game and parent prompts. Free to download and print.'
+  metaDescription:'Meet the carrot vegetable flashcard: an orange carrot with the word carrot, a crunch-like-a-rabbit game and parent prompts. Download and print.'
  },
  'potato':{
   word:'Potato',
@@ -172,7 +172,7 @@ export const fruitsCardContent={
   say:'Potato! Say it with a bounce: po-TAY-to!',
   try:'Hold a raw potato: it is heavy, dusty and hard. Then look at a cooked one — soft and steaming. Same potato, two completely different feelings.',
   note:'Potatoes grow eyes — little spots that could become new plants. It is the friendliest vegetable fact there is.',
-  metaDescription:'Meet the potato vegetable flashcard: a spotty brown potato with the word potato, a raw-versus-cooked game and parent prompts. Free to download and print.'
+  metaDescription:'Meet the potato vegetable flashcard: a spotty brown potato with the word potato, a raw-versus-cooked game and parent prompts. Download and print.'
  },
  'tomato':{
   word:'Tomato',
@@ -181,7 +181,7 @@ export const fruitsCardContent={
   say:'Tomato! Say it twice: tomato… tomahto! Both are right.',
   try:'Find the tomato’s little green crown — every tomato wears one. Then roll it very gently across the table: round things roll.',
   note:'Scientists call the tomato a fruit because it grows from a flower; cooks call it a vegetable because it belongs in dinner. This class follows the kitchen — and now your child knows the argument too.',
-  metaDescription:'Meet the tomato vegetable flashcard: a round red tomato with the word tomato, a roll-and-find-the-crown game and parent prompts. Free to download and print.'
+  metaDescription:'Meet the tomato vegetable flashcard: a round red tomato with the word tomato, a roll-and-find-the-crown game and parent prompts. Download and print.'
  },
  'cucumber':{
   word:'Cucumber',
@@ -190,7 +190,7 @@ export const fruitsCardContent={
   say:'Cucumber! A cool, crunchy cue-cum-ber!',
   try:'Cucumbers are mostly water — that is why they feel cool. Hold a slice on the back of your hand for a cool little surprise.',
   note:'Cucumber and watermelon are cousins: same bumpy green skin, same cool crunch inside. Families exist in the vegetable drawer too.',
-  metaDescription:'Meet the cucumber vegetable flashcard: a long green cucumber with the word cucumber, a cool-slice game and parent prompts. Free to download and print.'
+  metaDescription:'Meet the cucumber vegetable flashcard: a long green cucumber with the word cucumber, a cool-slice game and parent prompts. Download and print.'
  },
  'broccoli':{
   word:'Broccoli',
@@ -199,7 +199,7 @@ export const fruitsCardContent={
   say:'Broccoli! Eat a little tree — chomp, chomp!',
   try:'Hold broccoli upside down: it is a tree, and your fingers are the trunk. Take a bite off a branch — trees are for munching.',
   note:'Broccoli is a flower your child can eat — the little bumpy bits are hundreds of tiny buds. Trees, flowers and dinner all in one.',
-  metaDescription:'Meet the broccoli vegetable flashcard: a green little-tree with the word broccoli, an eat-a-tree game and parent prompts. Free to download and print.'
+  metaDescription:'Meet the broccoli vegetable flashcard: a green little-tree with the word broccoli, an eat-a-tree game and parent prompts. Download and print.'
  },
  'corn':{
   word:'Corn',
@@ -208,7 +208,7 @@ export const fruitsCardContent={
   say:'Corn! Count the kernels you can see — one, two, three… rows and rows!',
   try:'Look at the rows on the card: the kernels sit in straight lines. Then eat corn on the cob and munch across a row like a typewriter.',
   note:'Corn comes in its own wrapper — the husk. Peeling the green leaves back is half of the fun, like unwrapping a present.',
-  metaDescription:'Meet the corn vegetable flashcard: a yellow corn cob in its husk with the word corn, a munch-a-row game and parent prompts. Free to download and print.'
+  metaDescription:'Meet the corn vegetable flashcard: a yellow corn cob in its husk with the word corn, a munch-a-row game and parent prompts. Download and print.'
  },
  'onion':{
   word:'Onion',
@@ -217,7 +217,7 @@ export const fruitsCardContent={
   say:'Onion! Say it from your belly: UN-yun!',
   try:'Peel an onion together, skin by skin — layers and layers! Smell your hands after: onions have the strongest smell in the drawer.',
   note:'Onions can make your eyes water — a real chemical superpower. It is the plant protecting itself, and a fascinating thing to watch from a safe step away.',
-  metaDescription:'Meet the onion vegetable flashcard: a round brown onion with the word onion, a peel-the-layers game and parent prompts. Free to download and print.'
+  metaDescription:'Meet the onion vegetable flashcard: a round brown onion with the word onion, a peel-the-layers game and parent prompts. Download and print.'
  },
  'pumpkin':{
   word:'Pumpkin',
@@ -226,6 +226,6 @@ export const fruitsCardContent={
   say:'Pumpkin! A big round word for a big round vegetable — PUM-kin!',
   try:'Pat a pumpkin like a drum: hard and hollow. Then try to lift one — pumpkins are heavier than they look.',
   note:'Inside every pumpkin are hundreds of seeds — scoop them out, wash them and count them together. A pumpkin is a counting game wearing an orange coat.',
-  metaDescription:'Meet the pumpkin vegetable flashcard: a big orange pumpkin with the word pumpkin, a pat-and-lift game and parent prompts. Free to download and print.'
+  metaDescription:'Meet the pumpkin vegetable flashcard: a big orange pumpkin with the word pumpkin, a pat-and-lift game and parent prompts. Download and print.'
  }
 };

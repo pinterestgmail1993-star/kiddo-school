@@ -157,7 +157,7 @@ export function myClassroomBody(){
   <h2>Adventures on the path.</h2>
   <p>Real progress for the selected child across the seven Age 4 shelves — opening a page never counts; finishing a game, artwork or traced line does.</p>
   <div data-ap-rows></div>
-  <p class="fc-hint">Progress is kept in this browser only — no account, no sign-up, nothing uploaded.</p>
+  <p class="fc-hint">Progress is kept in this browser only — nothing is uploaded.</p>
  </div>
  <div class="mc-panel" id="circle-time">
   <span class="eyebrow">ON THE RUG · CIRCLE TIME · AGE 2</span>

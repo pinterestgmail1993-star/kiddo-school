@@ -98,7 +98,7 @@ export const alphabetCardContent={
   sound:'The letter is named A, but in apple you hear its sound: aaa, the very first sound out of your mouth. Vowels have more than one sound — this short a is the one to start with.',
   try:'At snack time, line up three things and ask which one starts with aaa — an apple, a banana, a cracker. Let your child take a big bite of the right answer.',
   note:'If your child says “A!” and stops there, that is a correct answer. Naming the letter is plenty for age three; the sound can sneak in later.',
-  metaDescription:'Meet the letter A with the apple flashcard: big A and little a, an easy apple picture, the short a sound and a snack-time activity. Free to download and print.'
+  metaDescription:'Meet the letter A with the apple flashcard: big A and little a, an easy apple picture, the short a sound and a snack-time activity. Download and print.'
  },
  ball:{
   word:'Ball',
@@ -107,7 +107,7 @@ export const alphabetCardContent={
   sound:'B makes a quick lip-pop sound: buh, like the start of ball and bubble. Press your lips together, pop them open and there it is.',
   try:'Bounce a ball back and forth and say buh with every bounce. The sound literally lands on the floor — that rhythm helps it stick.',
   note:'B and d look like mirror twins and mix-up is completely normal at this age. More bouncing, less correcting — the difference comes on its own.',
-  metaDescription:'Bounce into the letter B with the ball flashcard: big B and little b, a picture to name, the buh sound and a bouncing game to try. Free to download.'
+  metaDescription:'Bounce into the letter B with the ball flashcard: big B and little b, a picture to name, the buh sound and a bouncing game to try. Download.'
  },
  cat:{
   word:'Cat',
@@ -116,7 +116,7 @@ export const alphabetCardContent={
   sound:'Here the letter c says kuh, just like k does. C is a letter of many talents: it can also borrow the s sound in words like circle — but cat keeps it simple.',
   try:'Creep around the room like cats and say a soft kuh, kuh, cat! with each prowl. Whispering the sound makes the game twice as funny.',
   note:'If your child asks why C and K sound the same, a shrug and “letters like to share sounds” is a perfectly honest answer at three.',
-  metaDescription:'Say hello to the letter C with the cat flashcard: big C and little c, a friendly cat, the kuh sound and a prowl-around game. Free to download and print.'
+  metaDescription:'Say hello to the letter C with the cat flashcard: big C and little c, a friendly cat, the kuh sound and a prowl-around game. Download and print.'
  },
  dog:{
   word:'Dog',
@@ -125,7 +125,7 @@ export const alphabetCardContent={
   sound:'D makes a quick tapping sound: duh, like the start of dog and daddy. Your tongue taps behind your teeth once — duh — and the word is off.',
   try:'March around the room in a dog parade: duh, duh, dog — with a woof at every corner. Letters you can act out are letters that stay.',
   note:'Does the dog on the card look like a dog you know? Talking about a real dog your child loves wires this word in even deeper.',
-  metaDescription:'Woof! Meet the letter D with the dog flashcard: big D and little d, a happy dog, the duh sound and a dog-parade game. Free to download and print.'
+  metaDescription:'Woof! Meet the letter D with the dog flashcard: big D and little d, a happy dog, the duh sound and a dog-parade game. Download and print.'
  },
  elephant:{
   word:'Elephant',
@@ -134,7 +134,7 @@ export const alphabetCardContent={
   sound:'In elephant, e makes its short sound: eh, the sound in egg and elbow. Say eh-leh-fant slowly and you can hear it twice — the letter works overtime in this word.',
   try:'Swing your arm like a trunk and trumpet eh, eh, elephant! March slowly — elephants never hurry — and count your big heavy steps.',
   note:'E has a second common sound (its own name, like in the word me). At three, one sound per letter is the right portion — keep it light.',
-  metaDescription:'Stomp into the letter E with the elephant flashcard: big E and little e, a grand elephant, the short e sound and a trunk-swinging game. Free to download.'
+  metaDescription:'Stomp into the letter E with the elephant flashcard: big E and little e, a grand elephant, the short e sound and a trunk-swinging game. Download.'
  },
  fish:{
   word:'Fish',
@@ -143,7 +143,7 @@ export const alphabetCardContent={
   sound:'F is a windy sound: fff, like air escaping gently. Bite your lip lightly and blow — fff — exactly like the start of fish.',
   try:'Puff a feather across the table with fff breaths. Long wind, short wind, racing wind — every puff is another rehearsal of the f sound.',
   note:'The f breath is silent fun: no voice, just air. If your child says vvv instead, hold your throat and compare — the buzzing one is v, the quiet one is f.',
-  metaDescription:'Glide into the letter F with the fish flashcard: big F and little f, a quiet fish, the fff sound and a feather-blowing game. Free to download.'
+  metaDescription:'Glide into the letter F with the fish flashcard: big F and little f, a quiet fish, the fff sound and a feather-blowing game. Download.'
  },
  grapes:{
   word:'Grapes',
@@ -152,7 +152,7 @@ export const alphabetCardContent={
   sound:'In grapes, g makes its hard sound: guh, like the start of goose and giggle. Say guh-grapes and feel the back of your mouth do the work.',
   try:'Count grapes onto a small plate — one guh, two guh, three guh — then eat the counting. Snack math with a side of phonics.',
   note:'G has two sounds: guh as in grapes, and j as in giant. At three, just enjoy the grape version — the other can wait for giant vegetables.',
-  metaDescription:'Snack on the letter G with the grapes flashcard: big G and little g, a juicy bunch, the hard g sound and a counting game. Free to download and print.'
+  metaDescription:'Snack on the letter G with the grapes flashcard: big G and little g, a juicy bunch, the hard g sound and a counting game. Download and print.'
  },
  house:{
   word:'House',
@@ -161,7 +161,7 @@ export const alphabetCardContent={
   sound:'H is a breathy little sigh: hhh, like fogging a window. Breathe out warmly on your palm — hhh — and you have said the whole sound.',
   try:'Play the h breath game: hold a tissue in front of your mouth and say hhh to make it dance. Then hhh-house, hhh-hat, hhh-hand around the room.',
   note:'H is invisible in fast speech — children hear “ouse” more than they hear the h. Exaggerate the breath on this card and it snaps back into place.',
-  metaDescription:'Open the door to the letter H with the house flashcard: big H and little h, a cosy house, the breathy h sound and a tissue-dance game. Free to download.'
+  metaDescription:'Open the door to the letter H with the house flashcard: big H and little h, a cosy house, the breathy h sound and a tissue-dance game. Download.'
  },
  'ice-cream':{
   word:'Ice cream',
@@ -170,7 +170,7 @@ export const alphabetCardContent={
   sound:'Here the letter i says its own name — ii, as in ice and iron. I is a two-sound letter: sometimes short i as in insect, sometimes its name as in ice. On this card, it takes the treat.',
   try:'Play ice cream shop with cups and pom-poms or balls: take an order for the ii-ice cream, scoop it slowly and hand it over with a big ii! pretend lick.',
   note:'Vowels are the flexible letters of the alphabet — a, e, i, o and u each carry more than one sound. Meeting one of them honestly now is a friendly first hello.',
-  metaDescription:'Scoop up the letter I with the ice cream flashcard: big I and little i, a treat of a picture and the letter that says its own name. Free to download and print.'
+  metaDescription:'Scoop up the letter I with the ice cream flashcard: big I and little i, a treat of a picture and the letter that says its own name. Download and print.'
  },
  juice:{
   word:'Juice',
@@ -179,7 +179,7 @@ export const alphabetCardContent={
   sound:'J makes a quick jumping sound: juh, like the start of jump and jam. Say juh-juice and feel how your voice jumps right off the J.',
   try:'Pour two little cups and toast each other saying juh, juh, juice! Then take turns deciding whose turn it is — juice makes a patient host.',
   note:'J is a young letter — some alphabets did without it for centuries. All your child needs to know today: juice starts with J, and that is wonderful.',
-  metaDescription:'Toast the letter J with the juice flashcard: big J and little j, a bright juice box, the juh sound and a cheers-game for two cups. Free to download.'
+  metaDescription:'Toast the letter J with the juice flashcard: big J and little j, a bright juice box, the juh sound and a cheers-game for two cups. Download.'
  },
  kite:{
   word:'Kite',
@@ -188,7 +188,7 @@ export const alphabetCardContent={
   sound:'K makes the same quick kuh sound as c in cat. Two letters, one sound — English shares sounds around, and your child will simply accept that.',
   try:'Run across the garden or park with arms up like a kite string, shouting kuh, kuh, kite! No wind required — the running is the point.',
   note:'K on its own is a silent star in words like know and knife. Skip that entirely for now: today K is a kite, and the kite flies.',
-  metaDescription:'Fly high with the letter K on the kite flashcard: big K and little k, a dancing kite, the kuh sound and a run-like-a-kite game. Free to download.'
+  metaDescription:'Fly high with the letter K on the kite flashcard: big K and little k, a dancing kite, the kuh sound and a run-like-a-kite game. Download.'
  },
  lion:{
   word:'Lion',
@@ -197,7 +197,7 @@ export const alphabetCardContent={
   sound:'L is made with the tip of your tongue tapping behind your top teeth: lll. Say lll-lion slowly and let your child watch your tongue — it is a visible sound.',
   try:'Roar like lions, then whisper like lion cubs, then yawn like sleepy lions. Loud lll, soft lll, slow lll — the letter in three moods.',
   note:'Sit side by side in front of a mirror for this one. Watching a tongue lift for lll is worth a hundred explanations — and it always ends in giggles.',
-  metaDescription:'Roar for the letter L with the lion flashcard: big L and little l, a magnificent lion, the lll sound and a mirror-tongue game. Free to download and print.'
+  metaDescription:'Roar for the letter L with the lion flashcard: big L and little l, a magnificent lion, the lll sound and a mirror-tongue game. Download and print.'
  },
  moon:{
   word:'Moon',
@@ -206,7 +206,7 @@ export const alphabetCardContent={
   sound:'M is a humming sound: mmm, like tasting something delicious. Close your lips and hum — mmm — that is the entire sound, and it is free.',
   try:'On the next clear evening, find the moon together and say mmm-moon! If it is a crescent, draw it afterwards — a crescent m is hiding in the sky.',
   note:'M is one of the easiest sounds to feel: your child can hold their lips together and hum it for as long as their breath lasts. Try an mmm contest.',
-  metaDescription:'Say good night to the letter M with the moon flashcard: big M and little m, a glowing moon, the humming mmm sound and a sky-spotting game. Free to download.'
+  metaDescription:'Say good night to the letter M with the moon flashcard: big M and little m, a glowing moon, the humming mmm sound and a sky-spotting game. Download.'
  },
  nest:{
   word:'Nest',
@@ -215,7 +215,7 @@ export const alphabetCardContent={
   sound:'N is a nose sound: nnn, made with lips closed and a gentle buzz in your nose. Say nnn-nest and feel the tingle.',
   try:'Build a pretend nest from pillows, blankets or a laundry basket, climb in like a bird and whisper nnn, nnn, nest. Sitting in the letter beats staring at it.',
   note:'M and n both hum, so mix-ups are natural. Your lips close for mmm; only your tongue rises for nnn. Compare the two in a mirror — gently, and once is plenty.',
-  metaDescription:'Snuggle up to the letter N with the nest flashcard: big N and little n, a cosy nest, the humming nnn sound and a build-a-nest game. Free to download.'
+  metaDescription:'Snuggle up to the letter N with the nest flashcard: big N and little n, a cosy nest, the humming nnn sound and a build-a-nest game. Download.'
  },
  orange:{
   word:'Orange',
@@ -224,7 +224,7 @@ export const alphabetCardContent={
   sound:'In orange, o makes its short round sound: oh, like the start of on and octopus. Your mouth makes a little O shape to say it — the letter draws itself.',
   try:'Peel an orange together and break it into segments. Count them, share them and say ohh-orange with every piece you hand over.',
   note:'Round things are perfect for practising the letter shape: trace a big O in the air, on the fogged window, or around the orange itself before you peel it.',
-  metaDescription:'Peel into the letter O with the orange flashcard: big O and little o, a round orange, the short o sound and a snack-time counting game. Free to download.'
+  metaDescription:'Peel into the letter O with the orange flashcard: big O and little o, a round orange, the short o sound and a snack-time counting game. Download.'
  },
  pig:{
   word:'Pig',
@@ -233,7 +233,7 @@ export const alphabetCardContent={
   sound:'P is a puff sound: puh, made with a tiny puff of air from your lips. Hold a tissue in front of your mouth — puh — and watch it jump.',
   try:'Oink and puff: say puh-pig with a tissue dance each time, then trot around the room like pigs looking for lunch. oink optional, giggles guaranteed.',
   note:'P and b are twin puffs — b has voice buzzing, p is just air. If they get swapped, no worries at all; even grown-up tongues do it mid-sentence.',
-  metaDescription:'Oink! Meet the letter P with the pig flashcard: big P and little p, a cheerful pig, the puffing puh sound and a trotting game. Free to download and print.'
+  metaDescription:'Oink! Meet the letter P with the pig flashcard: big P and little p, a cheerful pig, the puffing puh sound and a trotting game. Download and print.'
  },
  queen:{
   word:'Queen',
@@ -242,7 +242,7 @@ export const alphabetCardContent={
   sound:'Q nearly always appears as qu, and together they say kwuh: the start of queen, quick and quack. Two letters, one sound — a team.',
   try:'Make paper crowns, pop them on and hold a royal parade around the kitchen: kwuh, kwuh, queen! wave at your loyal subjects (the chairs).',
   note:'Q without the u is rare and late-learning territory — forget it entirely today. On this card, q and u are best friends holding hands.',
-  metaDescription:'Bow to the letter Q with the queen flashcard: big Q and little q, a royal queen, the qu kwuh sound and a paper-crown parade. Free to download.'
+  metaDescription:'Bow to the letter Q with the queen flashcard: big Q and little q, a royal queen, the qu kwuh sound and a paper-crown parade. Download.'
  },
  rainbow:{
   word:'Rainbow',
@@ -251,7 +251,7 @@ export const alphabetCardContent={
   sound:'R makes a growly sound: rrr, like a friendly dog or a car engine. Say rrr-rainbow and let it rumble at the start.',
   try:'Draw a big rainbow together — rrr for every colour band you add. Seven colours is the official count, but three is a perfectly good rainbow at three.',
   note:'R is a growl you can hold: rrrrrr. Some children curl their tongue for it, others do not — both are correct, and nobody needs to be corrected at the fridge door.',
-  metaDescription:'Chase the letter R with the rainbow flashcard: big R and little r, a colourful rainbow, the growly rrr sound and a draw-your-own game. Free to download.'
+  metaDescription:'Chase the letter R with the rainbow flashcard: big R and little r, a colourful rainbow, the growly rrr sound and a draw-your-own game. Download.'
  },
  sun:{
   word:'Sun',
@@ -260,7 +260,7 @@ export const alphabetCardContent={
   sound:'S is a hissing sound: sss, like a snake or a tyre letting air out. Make a long ssss and point to your smiling teeth — they do the work.',
   try:'Be sunbeams: stretch your arms out long and turn around slowly while hissing sss-sun! Then freeze in a sunny shape when the music stops — or when you say so.',
   note:'S is wonderfully stretchy: sss can last as long as your breath. Try an sss contest and see who runs out of air first — the letter wins either way.',
-  metaDescription:'Shine with the letter S on the sun flashcard: big S and little s, a smiling sun, the hissing sss sound and a freeze-like-a-sunbeam game. Free to download.'
+  metaDescription:'Shine with the letter S on the sun flashcard: big S and little s, a smiling sun, the hissing sss sound and a freeze-like-a-sunbeam game. Download.'
  },
  turtle:{
   word:'Turtle',
@@ -269,7 +269,7 @@ export const alphabetCardContent={
   sound:'T makes a quick tap: tuh, your tongue tapping the ridge behind your teeth. Tap it twice — tuh-tuh — and you can feel the letter working.',
   try:'Walk like turtles around the room: tuh, tuh, turtle with each very slow step. Slow-motion racing is allowed; hurrying is not.',
   note:'T is everywhere in a toddler’s day — toes, teeth, tickle. Once your child owns this card, letters stop being page-things and start being everywhere-things.',
-  metaDescription:'Take it slow with the letter T on the turtle flashcard: big T and little t, a steady turtle, the tapping tuh sound and a slow-walking race. Free to download.'
+  metaDescription:'Take it slow with the letter T on the turtle flashcard: big T and little t, a steady turtle, the tapping tuh sound and a slow-walking race. Download.'
  },
  umbrella:{
   word:'Umbrella',
@@ -278,7 +278,7 @@ export const alphabetCardContent={
   sound:'In umbrella, u makes its short sound: uh, like the start of up and under. Say uh-umbrella and shrug your shoulders up on the uh.',
   try:'Play the up-under game: hop up on uh, duck down on under, and finish with a big umbrella stretch. Say the sounds; your body does the spelling.',
   note:'If your child says “you” (the letter’s name) instead of uh, that is fine — they know the name; the sound will come along with practice and puddles.',
-  metaDescription:'Pop up the letter U with the umbrella flashcard: big U and little u, a trusty umbrella, the short uh sound and an up-and-under game. Free to download.'
+  metaDescription:'Pop up the letter U with the umbrella flashcard: big U and little u, a trusty umbrella, the short uh sound and an up-and-under game. Download.'
  },
  van:{
   word:'Van',
@@ -287,7 +287,7 @@ export const alphabetCardContent={
   sound:'V is a buzzing sound: vvv, made by resting your top teeth on your lip and humming. Hold your throat — vvv — you can feel the engine running.',
   try:'Play van: load a laundry basket with parcels, drive it around the house saying vvv-vvv-van! and deliver each one with a cheerful beep beep.',
   note:'V and f are mouth-twins: same lips, but v buzzes and f only breathes. Compare them on your throats — one purrs, one whispers.',
-  metaDescription:'Deliver the letter V with the van flashcard: big V and little v, a busy van, the buzzing vvv sound and a parcel-delivery game. Free to download.'
+  metaDescription:'Deliver the letter V with the van flashcard: big V and little v, a busy van, the buzzing vvv sound and a parcel-delivery game. Download.'
  },
  whale:{
   word:'Whale',
@@ -296,7 +296,7 @@ export const alphabetCardContent={
   sound:'W is a round-lip sound: wuh, like blowing a gentle kiss and speaking at the same time. Round your lips — wuh — that circle is the whole trick.',
   try:'Whale spouts: crouch down small, rise up slowly saying whooo and throw your arms up like water from a spout. Repeat until everyone is delightfully dizzy.',
   note:'W looks like it should be called double-v (it is, in several languages). Your child can call it whatever helps — the round lips are what matter.',
-  metaDescription:'Splash into the letter W with the whale flashcard: big W and little w, a mighty whale, the round-lip wuh sound and a spout-jumping game. Free to download.'
+  metaDescription:'Splash into the letter W with the whale flashcard: big W and little w, a mighty whale, the round-lip wuh sound and a spout-jumping game. Download.'
  },
  xylophone:{
   word:'Xylophone',
@@ -305,7 +305,7 @@ export const alphabetCardContent={
   sound:'Here is the honest part: x is mostly an end-of-word sound — it finishes box and fox with a ksss. Xylophone actually starts with a z sound! Say the letter name — ex — and enjoy the word together.',
   try:'Tape an x of two crossed strips on the floor, then walk it like a tightrope while you hunt for things that end with x: a box, a fox toy, a shoebox. End-of-word hunting is real x practice.',
   note:'No need to explain the z-in-xylophone mystery today. The card teaches the letter’s name and shape, and that is exactly the right amount for three.',
-  metaDescription:'Meet the letter X with the xylophone flashcard: big X and little x, a rainbow xylophone and an honest, simple take on the trickiest letter. Free to download.'
+  metaDescription:'Meet the letter X with the xylophone flashcard: big X and little x, a rainbow xylophone and an honest, simple take on the trickiest letter. Download.'
  },
  'yo-yo':{
   word:'Yo-yo',
@@ -314,7 +314,7 @@ export const alphabetCardContent={
   sound:'In yo-yo, y makes its friendly starting sound: yuh, like the start of yes and yarn. Say yuh-yo-yo and bounce your hand on each yuh.',
   try:'Be the yo-yo: stand tall, sink down slowly to the floor and spring back up — yuh-yo-yo! Three slow repeats are a full game, and a full giggle.',
   note:'Y also sneaks into the middle of words like happy and funny, where it borrows the eee sound. That is a story for next year — today it is all about the toy.',
-  metaDescription:'Play with the letter Y on the yo-yo flashcard: big Y and little y, a fun yo-yo, the yuh sound and a be-the-yo-yo bouncing game. Free to download.'
+  metaDescription:'Play with the letter Y on the yo-yo flashcard: big Y and little y, a fun yo-yo, the yuh sound and a be-the-yo-yo bouncing game. Download.'
  },
  zebra:{
   word:'Zebra',
@@ -323,7 +323,7 @@ export const alphabetCardContent={
   sound:'Z is a buzzing bee sound: zzz, made exactly like s but with your voice switched on. Hold your throat — zzz — it purrs.',
   try:'Draw stripes on a paper zebra — or on your own arms with a washable marker — saying zzz with every stripe. Stripes are just the letter z lying sideways, after all.',
   note:'You made it to Z! There is nothing to celebrate with certificates here — the celebration is that your child now has a picture and a sound for every letter’s door.',
-  metaDescription:'Finish the alphabet with the letter Z on the zebra flashcard: big Z and little z, a stripy zebra, the buzzing zzz sound and a stripe-drawing game. Free to download.'
+  metaDescription:'Finish the alphabet with the letter Z on the zebra flashcard: big Z and little z, a stripy zebra, the buzzing zzz sound and a stripe-drawing game. Download.'
  }
 };
 

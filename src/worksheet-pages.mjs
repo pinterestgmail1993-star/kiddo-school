@@ -60,7 +60,7 @@ const BRAND_R2='https://pub-f2fcb7c9b45a496cbeefef18dbba0ec0.r2.dev/school/brand
 export function worksheetsHubBody(){
  const cards=SUBJECT_ORDER.map(k=>{
   const s=SUBJECTS[k],n=subjectCounts[k];
-  const planned=k==='maths'?`<span class="ws-count-note">${n} of ${MATHS_PLANNED} ready \u2014 more arrive with their artwork</span>`:`<span class="ws-count-note">${n} free worksheets</span>`;
+  const planned=k==='maths'?`<span class="ws-count-note">${n} of ${MATHS_PLANNED} ready \u2014 more arrive with their artwork</span>`:`<span class="ws-count-note">${n} worksheets</span>`;
   const picks=bySubject(k).slice(0,3);
   return `<a class="ws-cat" href="${WS_BASE}${k}/">
    <span class="ws-cat-head"><img src="${BRAND_R2}${SUBJECT_IMG[k]}" width="1264" height="1264" alt="" aria-hidden="true" loading="lazy"><span class="ws-cat-pill" style="--tint:${s.tint};--accent:${s.accent}">Class ${s.classNum}</span><strong>${esc(s.label)}</strong></span>
@@ -76,7 +76,7 @@ export function worksheetsHubBody(){
  `<a class="ws-cat" href="/worksheets/life-skills/">
    <span class="ws-cat-head"><img src="${BRAND_R2}kiddo-subject-science.webp" width="1264" height="1264" alt="" aria-hidden="true" loading="lazy"><span class="ws-cat-pill" style="--tint:#fdeee4;--accent:#c96f2e">Class 32</span><strong>Life Skills &amp; Good Habits</strong></span>
    <p>Everyday skills on real activity sheets \u2014 wash your hands, tidy up, be kind, move your body, the magic words and asking for help.</p>
-   <span class="ws-count-note">29 free worksheets of the planned 30 \u2014 sheet 24 arrives with its artwork</span>
+   <span class="ws-count-note">29 worksheets of the planned 30 \u2014 sheet 24 arrives with its artwork</span>
    <span class="ws-cat-picks"><span>Wash Your Hands</span><span>Tidy Up</span><span>Calm Down</span></span>
    <span class="fc-open">Browse Life Skills worksheets <span aria-hidden="true">↗</span></span>
   </a>`+
@@ -86,7 +86,7 @@ export function worksheetsHubBody(){
  `<a class="ws-cat" href="/worksheets/community-helpers-and-our-neighborhood/">
    <span class="ws-cat-head"><img src="https://pub-f2fcb7c9b45a496cbeefef18dbba0ec0.r2.dev/school/preschool/4-years/community-helpers-and-our-neighborhood/worksheets/cover.webp" width="1545" height="2000" alt="" aria-hidden="true" loading="lazy"><span class="ws-cat-pill" style="--tint:#efe9fb;--accent:#6d5bb8">Class 33</span><strong>Community Helpers &amp; Our Neighborhood</strong></span>
    <p>Print the whole neighborhood — the doctor&#39;s kit, the firefighter&#39;s ladder, the baker&#39;s tray, the mail carrier&#39;s route. Thirty-five helper sheets, each one twinned with a Class 33 lesson and ready for real ink.</p>
-   <span class="ws-count-note">35 free worksheets</span>
+   <span class="ws-count-note">35 worksheets</span>
    <span class="ws-cat-picks"><span>Doctor</span><span>Firefighter</span><span>Police Officer</span></span>
    <span class="fc-open">Browse Community Helpers worksheets <span aria-hidden="true">↗</span></span>
   </a>`+
@@ -96,7 +96,7 @@ export function worksheetsHubBody(){
  `<a class="ws-cat" href="/worksheets/weather-seasons-and-what-we-wear/">
    <span class="ws-cat-head"><img src="https://pub-f2fcb7c9b45a496cbeefef18dbba0ec0.r2.dev/school/preschool/4-years/weather-seasons-and-what-we-wear/worksheets/cover.webp" width="1414" height="2000" alt="" aria-hidden="true" loading="lazy"><span class="ws-cat-pill" style="--tint:#e4f2fb;--accent:#3a7fc2">Class 34</span><strong>Weather, Seasons &amp; What We Wear</strong></span>
    <p>Clouds, thermometers, forecasts, the water cycle and what to wear on a windy day — thirty-five sheets about the sky, traceable on screen or printed for the kitchen table.</p>
-   <span class="ws-count-note">35 free worksheets</span>
+   <span class="ws-count-note">35 worksheets</span>
    <span class="ws-cat-picks"><span>The Water Cycle</span><span>Weather Forecast</span><span>Cloud Types</span></span>
    <span class="fc-open">Browse Weather worksheets <span aria-hidden="true">↗</span></span>
   </a>`+
@@ -106,7 +106,7 @@ export function worksheetsHubBody(){
  `<a class="ws-cat" href="/worksheets/animals-and-their-habitats/">
    <span class="ws-cat-head"><img src="https://pub-f2fcb7c9b45a496cbeefef18dbba0ec0.r2.dev/school/preschool/4-years/animals-and-their-habitats/worksheets/cover.webp" width="1414" height="2000" alt="" aria-hidden="true" loading="lazy"><span class="ws-cat-pill" style="--tint:#e6f3e6;--accent:#3e8e4d">Class 36</span><strong>Animals &amp; Their Habitats</strong></span>
    <p>Six big homes, six sheets — circle who lives in the desert, farm, forest, ocean, ice and wetland, match every animal to its address and trace the habitat word.</p>
-   <span class="ws-count-note">6 free worksheets</span>
+   <span class="ws-count-note">6 worksheets</span>
    <span class="ws-cat-picks"><span>Desert Animals</span><span>Ocean Animals</span><span>Polar Animals</span></span>
    <span class="fc-open">Browse Habitat worksheets <span aria-hidden="true">↗</span></span>
   </a>`+
@@ -116,16 +116,16 @@ export function worksheetsHubBody(){
  `<a class="ws-cat" href="/worksheets/toddler/matching-and-sorting/">
    <span class="ws-cat-head"><img src="https://pub-f2fcb7c9b45a496cbeefef18dbba0ec0.r2.dev/school/toddler/2-years/matching-and-sorting/cover.webp" width="1264" height="1264" alt="" aria-hidden="true" loading="lazy"><span class="ws-cat-pill" style="--tint:#e8f2fd;--accent:#3d7fc4">Class 10</span><strong>Matching &amp; Sorting</strong></span>
    <p>Thirty-one big, friendly sheets for two-year-olds — match the twins, draw the lines, circle the odd one and sort the groups, on paper or right on the screen.</p>
-   <span class="ws-count-note">31 free worksheets · Age 2 · Toddler 4</span>
+   <span class="ws-count-note">31 worksheets · Age 2 · Toddler 4</span>
    <span class="ws-cat-picks"><span>Match Same Animals</span><span>Sort Red and Blue</span><span>Which One Is Different?</span></span>
    <span class="fc-open">Browse Matching &amp; Sorting worksheets <span aria-hidden="true">↗</span></span>
   </a>`;
  return `${crumbNav([['Worksheets']])}
- ${heading('THE WORKSHEET LIBRARY','Free printable worksheets for little hands.',`${libraryCount()} printable activities \u2014 the paper twins of our games: tracing guides with the same strokes, counting rows, coloring outlines, sound sorts with parent scripts, and science labs with a grown-up answer line \u2014 plus the Life Skills &amp; Good Habits sheets, the Community Helpers, Weather &amp; Seasons and Animals &amp; Their Habitats collections and the toddler Matching &amp; Sorting set your child can also solve on screen. Download a real PDF, print straight from the page, or play the matching activity online.`)}
+ ${heading('THE WORKSHEET LIBRARY','Printable worksheets for little hands.',`${libraryCount()} printable activities \u2014 the paper twins of our games: tracing guides with the same strokes, counting rows, coloring outlines, sound sorts with parent scripts, and science labs with a grown-up answer line \u2014 plus the Life Skills &amp; Good Habits sheets, the Community Helpers, Weather &amp; Seasons and Animals &amp; Their Habitats collections and the toddler Matching &amp; Sorting set your child can also solve on screen. Download a real PDF, print straight from the page, or play the matching activity online.`)}
  <section class="wrap section compact" aria-label="Worksheet categories"><div class="ws-cats">${cards}</div>
- <p class="lesson-note">Every worksheet is free, needs no sign-up, and prints on A4 or US Letter. Each sheet&rsquo;s page keeps everything in reach: the artwork, the download and print buttons, and a place for families to react and comment.</p></section>
+ <p class="lesson-note">Every worksheet prints on A4 or US Letter. Each sheet&rsquo;s page keeps everything in reach: the artwork, the download and print buttons, and a place for families to react and comment.</p></section>
  <section class="wrap lesson-section" aria-label="How to use the library"><span class="eyebrow">FOR GROWN-UPS</span><h2>How the library works.</h2>
- <p class="lesson-copy">Each worksheet belongs to a class on the Learning Path. The page for every worksheet shows its artwork, a <strong>Download Free Worksheet</strong> button (a real PDF file) and a <strong>Print Worksheet</strong> button that opens the same PDF ready to print \u2014 never the website around it.</p>
+ <p class="lesson-copy">Each worksheet belongs to a class on the Learning Path. The page for every worksheet shows its artwork, a <strong>Download Worksheet</strong> button (a real PDF file) and a <strong>Print Worksheet</strong> button that opens the same PDF ready to print \u2014 never the website around it.</p>
  <p class="lesson-copy">Downloading or printing never marks anything complete in <a href="/my-classroom/">My Classroom</a> \u2014 worksheets are for tables, kitchens and fridge doors. Only the games save progress, and only for the child chosen there.</p></section>`;
 }
 
@@ -135,7 +135,7 @@ export function worksheetCategoryBody(subjectKey){
  const list=bySubject(subjectKey);
  const note=subjectKey==='maths'?`<p class="lesson-note">Class 24 is growing: ${list.length} of the planned ${MATHS_PLANNED} maths worksheets are ready now \u2014 the ones whose artwork has been uploaded. The remaining adventures appear here with their own real pages the moment their artwork lands; nothing is published before it can be printed honestly.</p>`:'';
  return `${crumbNav([['Worksheets',WS_BASE],[s.label]])}
- ${heading((s.label+' WORKSHEETS').toUpperCase(),`${esc(s.label)} worksheets \u2014 free printables for age 4.`,catDesc[subjectKey]+' Every sheet twins with a real game in '+s.classTitle+' \u2014 download the PDF, print from the page, or play online.')}
+ ${heading((s.label+' WORKSHEETS').toUpperCase(),`${esc(s.label)} worksheets \u2014 printables for age 4.`,catDesc[subjectKey]+' Every sheet twins with a real game in '+s.classTitle+' \u2014 download the PDF, print from the page, or play online.')}
  <section class="wrap section compact" aria-label="All ${esc(s.crumb)} worksheets">
   <div class="ws-grid">${list.map(w=>wsCard(w)).join('')}</div>
   ${note}
@@ -182,14 +182,14 @@ export function worksheetPageBody(w,site){
  const dl=pdfUrl(w.subject,w.slug);
  const enc=encodeURIComponent;
  const pageUrl=(site||'').replace(/\/$/,'')+wsUrl(w.subject,w.slug);
- const shareTitle=`${w.title} Worksheet for Age 4 \u2014 free printable from Kiddo.school`;
+ const shareTitle=`${w.title} Worksheet for Age 4 \u2014 printable from Kiddo.school`;
  const about=`<section class="ws-rail-sec" aria-label="About this worksheet"><span class="eyebrow">ABOUT THIS WORKSHEET</span><h2>What your child practices.</h2><p class="lesson-copy">${esc(w.learn)}</p><ul class="ws-skills">${w.skills.map(k=>`<li>${esc(k)}</li>`).join('')}</ul><p class="lesson-lede"><strong>On the sheet:</strong> ${esc(w.task)}</p></section>`;
  const howto=`<section class="ws-rail-sec" aria-label="How to use"><span class="eyebrow">HOW TO USE IT</span><h2>Three easy steps.</h2><ol class="fc-steps">${guide.howto.map(([t,d])=>`<li><div><h3>${esc(t)}</h3><p>${esc(d)}</p></div></li>`).join('')}</ol></section>`;
  const tips=`<section class="ws-rail-sec" aria-label="Tips"><span class="eyebrow">TEACHING TIPS</span><h2>Little things that help.</h2><div class="ws-tips">${guide.tips.map(([t,d])=>`<div class="tc-hunt"><h3>${esc(t)}</h3><p>${esc(d)}</p></div>`).join('')}</div>${w.answers?`<div class="ws-answers"><h3>Answer guide</h3><p>${esc(w.answers)}</p></div>`:''}</section>`;
  const connect=`<section class="ws-rail-sec" aria-label="Where this fits"><span class="eyebrow">WHERE THIS FITS</span><h2>The class behind it.</h2><p class="lesson-copy">This worksheet belongs to <a href="${esc(s.classPath)}">${esc(s.classTitle)}</a> on the Age 4 learning path, and the whole ${esc(s.crumb.toLowerCase())} collection lives at <a href="${WS_BASE+s.key+'/'}">/worksheets/${s.key}/</a>. One finished sheet is a full session \u2014 download it, print it, and let the fridge door be the gallery.</p></section>`;
  const pn=`<nav class="fc2-pn" aria-label="Previous and next worksheet"><a class="fc2-pn-btn" href="${wsUrl(prev.subject,prev.slug)}" rel="prev"><span aria-hidden="true">\u2190</span> <strong>${esc(prev.title)}</strong><span>Previous worksheet</span></a><a class="fc2-pn-btn fc2-pn-next" href="${wsUrl(next.subject,next.slug)}" rel="next"><strong>${esc(next.title)}</strong> <span aria-hidden="true">\u2192</span><span>Next worksheet</span></a></nav>`;
- const actions=`<div class="fc2-actions"><a class="button ws-dl" href="${dl}" download="${w.subject}-${w.slug}.pdf">Download Free Worksheet <span aria-hidden="true">\u2193</span></a><a class="button button-ghost ws-print" href="${dl}" target="_blank" rel="noopener">Print Worksheet <span aria-hidden="true">\u2318</span></a></div>
-  <p class="fc-hint">The PDF is a real printable file (A4, prints fine on US Letter). The print button opens the same PDF ready to print \u2014 no sign-up, nothing stored.</p>`;
+ const actions=`<div class="fc2-actions"><a class="button ws-dl" href="${dl}" download="${w.subject}-${w.slug}.pdf">Download Worksheet <span aria-hidden="true">\u2193</span></a><a class="button button-ghost ws-print" href="${dl}" target="_blank" rel="noopener">Print Worksheet <span aria-hidden="true">\u2318</span></a></div>
+  <p class="fc-hint">The PDF is a real printable file (A4, prints fine on US Letter). The print button opens the same PDF ready to print \u2014 nothing stored.</p>`;
  const share=`<div class="fc2-block fc2-share-block"><span class="eyebrow">SHARE THIS WORKSHEET</span><h2>Pass it on.</h2><div class="fc2-share"><a class="fc2-share-btn" href="https://twitter.com/intent/tweet?url=${enc(pageUrl)}&text=${enc(shareTitle)}" target="_blank" rel="noopener" aria-label="Share this worksheet on X">X</a><a class="fc2-share-btn" href="https://www.facebook.com/sharer/sharer.php?u=${enc(pageUrl)}" target="_blank" rel="noopener" aria-label="Share this worksheet on Facebook">Facebook</a><a class="fc2-share-btn" href="https://wa.me/?text=${enc(shareTitle+' '+pageUrl)}" target="_blank" rel="noopener" aria-label="Share this worksheet on WhatsApp">WhatsApp</a><a class="fc2-share-btn" href="https://pinterest.com/pin/create/button/?url=${enc(pageUrl)}&media=${enc(w.art.img)}&description=${enc(shareTitle)}" target="_blank" rel="noopener" aria-label="Save this worksheet on Pinterest">Pinterest</a><button type="button" class="fc2-share-btn" data-fc-copy>Copy link</button></div><p class="fc-hint">Share buttons open in a new tab. The copy button copies this page&rsquo;s address \u2014 nothing is tracked.</p></div>`;
  return `${crumbNav([['Worksheets',WS_BASE],[s.label,WS_BASE+s.key+'/'],[w.title]])}
  <div class="page-heading wrap"><span class="eyebrow">WORKSHEET \u00b7 CLASS ${s.classNum} \u00b7 AGES ${ageLabel(w).toUpperCase()}</span><h1>${esc(w.title)} Worksheet${w.subject==='phonics'?' for Ages 4\u20135':' for Age 4'}</h1><p>${esc(w.lede)}</p></div>
@@ -227,7 +227,7 @@ export function worksheetSchema(site,w){
   learningResourceType:'Worksheet',
   educationalLevel:'Preschool',
   teaches:w.task,
-  isAccessibleForFree:true,
+ 
   ageRange:w.subject==='phonics'?'4-5':'4',
   encodingFormat:'application/pdf',
   contentUrl:site+pdfUrl(w.subject,w.slug),
@@ -249,5 +249,5 @@ export function hubBc(site){
 }
 export function CollectionSchema(site,subjectKey){
  const s=SUBJECTS[subjectKey];
- return {'@context':'https://schema.org','@type':'CollectionPage',name:`${s.label} Worksheets for Age 4`,description:catDesc[subjectKey],url:site+WS_BASE+subjectKey+'/',inLanguage:'en',isAccessibleForFree:true,hasPart:bySubject(subjectKey).map(w=>({'@type':'LearningResource',name:`${w.title} Worksheet`,url:site+wsUrl(w.subject,w.slug)}))};
+ return {'@context':'https://schema.org','@type':'CollectionPage',name:`${s.label} Worksheets for Age 4`,description:catDesc[subjectKey],url:site+WS_BASE+subjectKey+'/',inLanguage:'en',hasPart:bySubject(subjectKey).map(w=>({'@type':'LearningResource',name:`${w.title} Worksheet`,url:site+wsUrl(w.subject,w.slug)}))};
 }

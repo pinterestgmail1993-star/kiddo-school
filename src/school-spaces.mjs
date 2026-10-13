@@ -103,12 +103,12 @@ export function schoolBagBody(B){
 // only when the book's artwork and story are really uploaded.
 export const learningLibrary={
  path:libraryBase,
- seoTitle:'Library — Free Picture Books to Read Online',
- title:'Library — Free Picture Books to Read Online',
+ seoTitle:'Library — Picture Books to Read Online',
+ title:'Library — Picture Books to Read Online',
  h1:'Library',
- description:'The Kiddo School Library: real picture books for toddlers, free to read online as often as you like, organized by age and category. Printable book PDFs are premium products, coming soon.',
+ description:'The Kiddo School Library: real picture books for toddlers to read online, organized by age and category. Printable book PDFs are premium products, coming soon.',
  eyebrow:'THE BOOKSHELF',
- intro:'Every book in the school, on one shelf. Reading online is free and unlimited — no account, no payment, no limits.'
+ intro:'Every book in the school, on one shelf. Read every book online, as often as you like.'
 };
 export function learningLibraryBody(Lb){
  const catCount=id=>BOOKS.filter(b=>b.category===id).length;
@@ -130,7 +130,7 @@ export function learningLibraryBody(Lb){
   <span class="eyebrow">${Lb.eyebrow}</span>
   <h1>${esc(Lb.h1)}</h1>
   <p class="mw-lede">${Lb.intro}</p>
-  <p class="fc-hint">Printable book PDFs are premium products and are <strong>coming soon</strong> — reading every book right here on the site is free, with no account and no limits.</p>
+  <p class="fc-hint">Printable book PDFs are premium products and are <strong>coming soon</strong> — every book can be read right here on the site.</p>
   <div class="lib-ages" role="group" aria-label="Browse by category">
    <span class="lib-ages-label">Browse by category:</span>
    ${BOOK_CATEGORIES.map(c=>`<a class="lib-age" href="#cat-${c.id}" data-cat="${c.id}">${esc(c.name)} <span class="chip-count">${catCount(c.id)}</span></a>`).join('')}

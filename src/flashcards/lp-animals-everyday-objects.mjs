@@ -29,7 +29,7 @@ export const lpContent={
  play:'Sound tennis: meow to your baby, wait, answer whatever returns, wait again. Three or four exchanges is a full match. You are not teaching the sound — you are teaching the game where sounds go back and forth, which is the game talking is built on.',
  check:'Parent self-check: did you leave at least one honest five-second silence, and did your baby get to “say” anything back? The silence is the gift; without it, animal sounds become a lecture instead of a chat.',
  tips:'Keep sounds below their startling threshold — soft meows breed confidence, loud ones breed caution. If your baby points at the cat, answer the pointing with the word instantly; the gesture-and-name link you build now feeds every word after.',
- safety:'Real cats stay the authors of their own participation: supervised glimpses, never forced contact, claws and food bowls out of the story. Card sessions stay on your lap — at this age, silence plus paper plus a free hand equals chewing.'},
+ safety:'Real cats stay the authors of their own participation: supervised glimpses, never forced contact, claws and food bowls out of the story. Card sessions stay on your lap — at this age, silence plus paper plus a hand equals chewing.'},
 'dog':{
  title:'The Dog',one:'A happy, tongue-out dog — the animal that brings its own sound and its own action to every performance.',
  seoTitle:'Dog Lesson for 6–9 months — How to Teach Sound and Action (Class 5)',
@@ -172,7 +172,7 @@ export const lpContent={
  notice:'The card is a simple shoe, plain and easy to read. The part worth watching happens below the waist: say the word near your baby’s feet and see whether a kick or a wriggle answers. Feet respond early at this age, and the shoe-word is one of the few words aimed straight at them.',
  ask:'Watch the doorway: does your baby’s attention come to the shoe as it goes on, or to your face? Does the word alone start to mean “outside is happening”? Wonder aloud: “I wonder if you like the going-out shoe or the coming-home shoe better.”',
  childSay:'A foot-kick at the word, watching the shoe’s approach with total focus, grabbing for the strap mid-fitting, or a full-body wriggle of excitement at the door — shoe moments are high-information moments, and your baby is fluent in all of them.',
- real:'Shoe-moments run the week: the door mat, the car seat, the pushchair basket, the pile by grandma’s door. Every one is a free repetition of this card — and unlike most vocabulary, this word’s rehearsals are scheduled by life itself.',
+ real:'Shoe-moments run the week: the door mat, the car seat, the pushchair basket, the pile by grandma’s door. Every one is a repetition of this card — and unlike most vocabulary, this word’s rehearsals are scheduled by life itself.',
  play:'Feet hello: at nappy changes, touch each sock and say “sock”, then hold the shoe near and say “shoe”. Three seconds, twice a day. The feet become a named country, and your baby is its most attentive cartographer.',
  check:'Parent self-check: did a real shoe get its word at a real doorway today, and did the card-to-foot link happen at least once? The body connection is what separates this word from a picture — shoes live on feet, and feet live on your baby.',
  tips:'Say the word at the calmest shoe-moment of the day, not the rushed one — words said in hurry carry hurry. If your baby grabs for shoes constantly, that is stage-typical exploration: the named shoe is the chewed shoe; wash, repeat, continue.',

@@ -21,7 +21,7 @@ test('flashcards hub lists every set and links from home nav and footer',()=>{
 test('black and white baby cards page shows flashcards, stages grid, guide and safety',()=>{
  const s=flashcardSets[0];
  const html=readFileSync(`dist/flashcards/${s.slug}/index.html`,'utf8');
- assert.match(html,/Black and White Baby Flashcards – Free Printable Cards/);
+ assert.match(html,/Black and White Baby Flashcards – Printable Cards/);
  for(const c of s.cards){assert.match(html,new RegExp(c.file));assert.match(html,new RegExp(c.word));}
  assert.doesNotMatch(html,/cutout/i);
  assert.match(html,/Newborn 1/);

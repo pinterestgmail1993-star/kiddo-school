@@ -38,7 +38,7 @@ export const MS_WS_BASE='/worksheets/toddler/matching-and-sorting/';
    category hero, og:image) and NEVER an activity: it stays out of the
    registry, the grids, the prev/next chains and every individual page. */
 export const MS_COVER={file:'cover.webp',w:1264,h:1264,
- alt:'The cover of the Matching and Sorting worksheets for 2-year-olds — thirty-one free printable matching and sorting activities.',
+ alt:'The cover of the Matching and Sorting worksheets for 2-year-olds — thirty-one printable matching and sorting activities.',
  get url(){return MS_BASE+this.file;}};
 
 export const msBySlug=Object.fromEntries(msPages.map(a=>[a.slug,a]));
@@ -68,7 +68,7 @@ export function matchingSortSection(){
   <h2>Match, sort and draw — right on the sheet.</h2>
   <p class="lesson-copy">Thirty-one big, friendly activity sheets made for two-year-old hands: your child solves each one straight on the picture — drawing the matching lines, circling the twins and sorting the groups with a finger, a stylus or the mouse. Pencil, colors, eraser, undo and redo included, and every child&rsquo;s drawing is saved for them in <a href="/my-classroom/">My Classroom</a> so they can come back and carry on where they left off.</p>
   <div class="sa-grid">${cards}</div>
-  <p class="lesson-note">Prefer crayons on paper? Every sheet is also a printable worksheet in the <a href="${MS_WS_BASE}">Matching &amp; Sorting worksheet collection</a>, free to download and print.</p>
+  <p class="lesson-note">Prefer crayons on paper? Every sheet is also a printable worksheet in the <a href="${MS_WS_BASE}">Matching &amp; Sorting worksheet collection</a> — download and print.</p>
  </section>`;
 }
 
@@ -97,7 +97,7 @@ export function matchingActivityBody(a,site){
    <section class="fc2-block fc2-first-block"><span class="eyebrow">HOW TO DO IT</span><h2>Three little steps.</h2><ol class="fc-steps">${stepsHtml}</ol><p class="fc-hint">Ask a grown-up to read the steps aloud the first time. After that, you know just what to do.</p></section>
    <section class="fc2-block" id="ms-tools" aria-label="Drawing tools"><span class="eyebrow">YOUR PENCIL CASE</span><h2>Pick your tools.</h2><p class="fc-hint">Pencil, nine crayons, an eraser, undo, redo and clear — the tools appear right here and work on the picture. Save keeps your finished drawing and remembers it for next time.</p></section>
    <section class="fc2-block" data-ms-progress-block><span class="eyebrow">MY PROGRESS</span><h2>Save it to keep it.</h2><p class="ls-progress-line" data-ms-progress aria-live="polite">This page is cleared for you the moment you save your finished drawing. Nothing counts until then — opening the page is just opening the door.</p><p class="ls-progress-done" data-ms-done hidden><strong>Cleared!</strong> Your drawing is saved on this device for your child, and the ribbon is on in <a href="${MS_CLASS_PATH}">Class 10</a>. Come back any time — your drawing will be waiting.</p></section>
-   ${shareBlock('SHARE THIS ACTIVITY','Pass it on.',pageUrl,`${a.title} — free matching and sorting activity for 2-year-olds from Kiddo.school`,false)}
+   ${shareBlock('SHARE THIS ACTIVITY','Pass it on.',pageUrl,`${a.title} — matching and sorting activity for 2-year-olds from Kiddo.school`,false)}
    <section class="fc2-block"><span class="eyebrow">ON PAPER TOO</span><h2>Print the worksheet.</h2><p class="fc-hint">This sheet is also a printable worksheet with its own download and print buttons: <a href="${twinUrl}">${twinUrl}</a>.</p></section>
   </aside>
  </div>
@@ -119,8 +119,8 @@ export function msCategoryBody(){
  return `${crumbNav([['Worksheets','/worksheets/'],['Matching &amp; Sorting']])}
  <article class="wrap lesson-hero lesson-hero-cover"><div class="lesson-hero-copy">
   <span class="eyebrow">MATCHING &amp; SORTING \u00b7 31 WORKSHEETS \u00b7 AGE 2</span>
-  <h1>Matching and sorting worksheets for 2-year-olds — free printables.</h1>
-  <p class="lesson-lede">Thirty-one free matching and sorting worksheets from the owner’s own bold, friendly artwork: same-and-different pairs, animal twins and shadows, baby animals, big and small, color and shape sorts — every one a whole activity on a single page. Tap any picture to open it; download and print buttons live there.</p>
+  <h1>Matching and sorting worksheets for 2-year-olds — printables.</h1>
+  <p class="lesson-lede">Thirty-one matching and sorting worksheets from the owner’s own bold, friendly artwork: same-and-different pairs, animal twins and shadows, baby animals, big and small, color and shape sorts — every one a whole activity on a single page. Tap any picture to open it; download and print buttons live there.</p>
  </div><figure class="lesson-cover"><img src="${esc(MS_COVER.url)}" width="${MS_COVER.w}" height="${MS_COVER.h}" alt="${esc(MS_COVER.alt)}" fetchpriority="high"></figure></article>
  <section class="wrap section compact" aria-label="All matching and sorting worksheets">
   <div class="ws-grid">${cards}</div>
@@ -154,10 +154,10 @@ export function msWorksheetBody(w,site){
   <aside class="fc2-rail" aria-label="Download, print, share and family feedback">
    <section class="fc2-block fc2-first-block"><span class="eyebrow">TAKE IT TO THE TABLE</span><h2>Download &amp; print.</h2>
     <div class="fc2-actions"><button type="button" class="button ws-dl" data-ms-download="${esc(file)}" data-ms-filename="${dlName}">Download original image <span aria-hidden="true">\u2193</span></button><button type="button" class="button button-ghost ws-print" data-ms-print>Print this page <span aria-hidden="true">\u2318</span></button></div>
-    <p class="fc-hint">The download keeps the original WebP picture, full size (1414\u00d72000, A4 portrait). Print opens your browser&rsquo;s print dialog with just the picture &mdash; no header, no buttons, no sign-up, nothing stored.</p>
+    <p class="fc-hint">The download keeps the original WebP picture, full size (1414\u00d72000, A4 portrait). Print opens your browser&rsquo;s print dialog with just the picture &mdash; no header, no buttons, nothing stored.</p>
    </section>
    <div class="fc2-block"><span class="eyebrow">SOLVE IT ON SCREEN</span><h2>Solve it online.</h2><p class="fc-hint">The on-screen version of this sheet — drawing layer, three steps, save-your-work and all — lives at <a href="${actUrl}">${actUrl}</a>.</p><div class="fc2-actions"><a class="button" href="${actUrl}">Solve it online <span aria-hidden="true">↗</span></a></div></div>
-   ${shareBlock('SHARE THIS WORKSHEET','Pass it on.',pageUrl,`${w.title} Worksheet — free printable for 2-year-olds from Kiddo.school`,file)}
+   ${shareBlock('SHARE THIS WORKSHEET','Pass it on.',pageUrl,`${w.title} Worksheet — printable for 2-year-olds from Kiddo.school`,file)}
    ${fcCommunityMount(MS_WS_BASE+w.slug+'/')}
   </aside>
  </div>
@@ -173,7 +173,7 @@ export function msWorksheetSchema(site,w){
   name:`${w.title} Worksheet for 2-Year-Olds`,
   description:w.meta,url:site+MS_WS_BASE+w.slug+'/',inLanguage:'en',
   learningResourceType:'Worksheet',educationalLevel:'Toddler',teaches:w.skills.join(', '),
-  isAccessibleForFree:true,ageRange:'2',encodingFormat:'image/webp',contentUrl:MS_BASE+w.img,image:MS_BASE+w.img,
+ ageRange:'2',encodingFormat:'image/webp',contentUrl:MS_BASE+w.img,image:MS_BASE+w.img,
   about:{'@type':'Thing',name:'Matching and sorting'},
   provider:{'@type':'Organization',name:'Kiddo.school',url:site+'/'},
   isPartOf:{'@type':'CreativeWorkSeries',name:'Matching and Sorting (Toddler 4, Class 10)',url:site+MS_CLASS_PATH}};

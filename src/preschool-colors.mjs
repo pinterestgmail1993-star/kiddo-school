@@ -180,7 +180,7 @@ export function colorsClassBody(L){
  const printSection=`<section class="wrap lesson-section tc-printables" id="printables" aria-label="Print the cards">
   <span class="eyebrow">PRINT THE CARDS</span>
   <h2>Take the colors to the kitchen table.</h2>
-  <p class="lesson-copy">All twelve color pairs print one pair to a page — the splash beside its matching picture — straight from your browser. No PDF, no sign-up, nothing to install.</p>
+  <p class="lesson-copy">All twelve color pairs print one pair to a page — the splash beside its matching picture — straight from your browser. No PDF, nothing to install.</p>
   <div class="hero-actions tc-print-actions"><a class="button" href="${CLASS_PATH}print/">View Printable Cards <span aria-hidden="true">↗</span></a><button type="button" class="button button-ghost" data-tc-print-open="${CLASS_PATH}print/?print=1">Print Cards</button></div>
   <p class="lesson-note">Printed cards love fridges, bedroom doors and kitchen tables. The same cards also live in the <a href="${SET_URL}">flashcards library</a>, each with its own page.</p>
  </section>`;

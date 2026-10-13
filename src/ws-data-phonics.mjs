@@ -55,8 +55,8 @@ export const buildPhonicsWorksheets=()=>PHONICS_LIST.map((slug,i)=>{
   art:{img:R2+P2+g.img,alt:g.alt},
   game:{path:`${S.gameLib}${slug}/`,title:g.title},
   classNum:S.classNum,classPath:S.classPath,classTitle:S.classTitle,
-  seoTitle:`${g.title} Worksheet \u2014 Free Printable Phonics Activity for Ages 4\u20135 (Class 28)`,
-  metaDescription:`Free printable ${g.title} phonics worksheet for ages 4\u20135. ${d.lede} Part of Class 28: Phonics & Beginning Sounds at Kiddo.school \u2014 download the PDF or play the game with real audio online.`,
+  seoTitle:`${g.title} Worksheet \u2014 Printable Phonics Activity for Ages 4\u20135 (Class 28)`,
+  metaDescription:`Printable ${g.title} phonics worksheet for ages 4\u20135. ${d.lede} Part of Class 28: Phonics & Beginning Sounds at Kiddo.school \u2014 download the PDF or play the game with real audio online.`,
   lede:d.lede,learn:d.learn,skills:d.skills,task:d.task,
   wsType:d.wsType,ws:d.ws,answers:d.answers
  };

@@ -91,7 +91,7 @@ export const lpContent={
  notice:'Look at the card together: how many little cars, and what colour are they? Touch each car once as you count from one to four. Where is the big numeral 4, and where is the word four?',
  ask:'"How many cars are on the card?" "Can you touch each one once?" "How many wheels does your favourite car have?" "Is four more than three?" "Can you clap four times?" — answered with touches, claps and engine noises.',
  childSay:'Your child may count four soup ladles, four stair steps and four everything — with occasional five-and-six answers when enthusiasm outruns the fingers. The four-means-lots phase is genuine progress wearing a messy coat.',
- real:'Fours wait in every room: four table legs, four candles on a birthday cake, four socks pegged on the line, four seasons named at bedtime. Each one counted is a free repetition of the card.',
+ real:'Fours wait in every room: four table legs, four candles on a birthday cake, four socks pegged on the line, four seasons named at bedtime. Each one counted is a repetition of the card.',
  play:'Parking lot: chalk or tape a four-space square on the floor and let your child drive one car into each space, counting as they park. A full lot means four — and every empty space asks the question out loud.',
  check:'Ask for four of something tomorrow — four blocks into your hand: a counted, touched, correct four means the number has moved in. A miscount means the parking lot needs another week of business, which is fine.',
  tips:'Keep counting pace slower than your child’s enthusiasm — the finger must arrive with the word. Rows and tidy squares help small counters more than any explanation: park the objects neatly, and the numbers behave.',

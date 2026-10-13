@@ -22,7 +22,7 @@ export const lpContent={
  notice:'This card is the red card — one color, filling the whole picture, with the word red on it for toddlers. Ask your child to say the word while touching the color.',
  ask:'"What color is this card?" "Can you find something red in the room?" "Is this red or not?" "Where did you spot red today?"',
  childSay:'"Wed!" shouted at anything remotely reddish — that over-application is the milestone, not a mistake. Some toddlers will simply slap the card and grin; a hand on the color counts as an answer.',
- real:'Traffic lights, post boxes, fire engines and berries keep red in permanent rotation outdoors. Every sighting is a free repetition with the world as the second deck.',
+ real:'Traffic lights, post boxes, fire engines and berries keep red in permanent rotation outdoors. Every sighting is a repetition with the world as the second deck.',
  play:'Red treasure basket: drop five red objects and five others into a basket, and let your toddler fish out only the red ones. Wrong fish are fine — they get named and thrown back in.',
  check:'Hold the card up and ask what color it is. A red, a wed or a determined point passes. Then place two objects side by side — if the red one gets picked on request, the word is working.',
  tips:'One color at a time beats two for the first week; red is the starter because it is everywhere. Say the word before the object — red cup, not cup that is red — word order sticks early.',

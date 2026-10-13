@@ -25,7 +25,7 @@ export const AHWS_WS_COVER={file:'cover.webp',w:1414,h:2000,
 export const animalsWs=[
 {slug:'desert-animals-and-their-habitat',file:'desert-animals-and-their-habitat-worksheet.webp',w:1414,h:2000,title:'Desert Animals and Their Habitat',word:'DESERT',trace:'DESERT',
  tag:'Circle the desert survivors, match them to dunes, rocks and burrows, count the cacti and trace the word DESERT.',
- meta:'A free desert animals worksheet for ages 4–5: circle who really lives in the desert, match camel, fennec fox and lizard to their desert homes, count cacti and trace the word DESERT. Free printable, no sign-up.',
+ meta:'A desert animals worksheet for ages 4–5: circle who really lives in the desert, match camel, fennec fox and lizard to their desert homes, count cacti and trace the word DESERT. Printable.',
  learn:'The desert is hot and dry, and the animals that live there are built for it — padded feet, big ears, burrows under the sand.',
  know:'The word desert, and three desert residents your child can name on sight: camel, fennec fox and lizard.',
  why:'Saying who does NOT belong is the fast route to understanding who does — the penguin and the bear make the desert definition sharp.',
@@ -40,7 +40,7 @@ export const animalsWs=[
  real:'On a hot sunny walk, ask: who is the camel of our neighborhood today?'},
 {slug:'farm-animals-and-their-habitat',file:'farm-animals-and-their-habitat-worksheet.webp',w:1414,h:2000,title:'Farm Animals and Their Habitat',word:'FARM',trace:'FARM',
  tag:'Circle the farm team, match cow, pig, hen and sheep to their homes, count the hay bales and trace FARM.',
- meta:'A free farm animals worksheet for ages 4–5: circle the animals that live on a farm, match each one to its barn, stable, pen or sty, count the hay and trace the word FARM. Free printable.',
+ meta:'A farm animals worksheet for ages 4–5: circle the animals that live on a farm, match each one to its barn, stable, pen or sty, count the hay and trace the word FARM. Printable.',
  learn:'A farm is a habitat people built: every animal on it has a home with a name — barn, sty, coop, pen.',
  know:'The farm team — cow, horse, pig, hen and sheep — and the word farm for the place they all live.',
  why:'The farm is usually a child\'s first habitat with names for the homes themselves, which plants the idea that where you live has a word.',
@@ -55,7 +55,7 @@ export const animalsWs=[
  real:'Visit a farm or a petting zoo and find one home from the sheet in real life — barns count double.'},
 {slug:'forest-animals-and-their-habitat',file:'forest-animals-and-their-habitat-worksheet.webp',w:1414,h:2000,title:'Forest Animals and Their Habitat',word:'FOREST',trace:'FOREST',
  tag:'Circle the forest dwellers, match them to hollows, dens and thickets, count the trees and trace FOREST.',
- meta:'A free forest animals worksheet for ages 4–5: circle who lives in the forest, match squirrel, bear and deer to their forest homes, count the trees and trace the word FOREST. Free printable, no sign-up.',
+ meta:'A forest animals worksheet for ages 4–5: circle who lives in the forest, match squirrel, bear and deer to their forest homes, count the trees and trace the word FOREST. Printable.',
  learn:'The forest is a home you can walk under: tall trees give food, shade and hiding places, and every forest animal uses them its own way.',
  know:'The word forest, and three forest neighbors — squirrel, bear and deer — plus the fox who lives there too.',
  why:'Forests are the habitat children meet in storybooks first; naming its residents turns familiar pictures into real knowledge.',
@@ -70,7 +70,7 @@ export const animalsWs=[
  real:'Collect one fallen leaf on your next walk and call it forest mail — delivered to the fridge.'},
 {slug:'ocean-animals-and-their-habitat',file:'ocean-animals-and-their-habitat-worksheet.webp',w:1414,h:2000,title:'Ocean Animals and Their Habitat',word:'OCEAN',trace:'OCEAN',
  tag:'Circle who lives under the waves, match whale, clownfish and turtle to their ocean homes, count fish and trace OCEAN.',
- meta:'A free ocean animals worksheet for ages 4–5: circle the ocean animals, match the whale, clownfish and sea turtle to the reef, the open sea and the seabed, count the fish and trace the word OCEAN. Free printable.',
+ meta:'A ocean animals worksheet for ages 4–5: circle the ocean animals, match the whale, clownfish and sea turtle to the reef, the open sea and the seabed, count the fish and trace the word OCEAN. Printable.',
  learn:'The ocean is the biggest habitat on Earth — and even inside it, animals split it up: the reef, the open water, the sandy floor.',
  know:'The word ocean, and three ocean residents on the sheet: whale, clownfish and sea turtle.',
  why:'Splitting one huge habitat into addresses — reef, open sea, seabed — is the first step from "fish live in water" to real ecology.',
@@ -85,7 +85,7 @@ export const animalsWs=[
  real:'At bath time or a aquarium visit, use the three ocean words: reef, open sea, seabed.'},
 {slug:'polar-animals-and-their-habitat',file:'polar-animals-and-their-habitat-worksheet.webp',w:1414,h:2000,title:'Polar Animals and Their Habitat',word:'POLAR',trace:'POLAR',
  tag:'Circle who thrives in the ice, match polar bear, penguin and arctic fox to their icy homes, count ice blocks and trace POLAR.',
- meta:'A free polar animals worksheet for ages 4–5: circle the polar animals, match the polar bear, penguin and arctic fox to the ice floe, the icebergs and the snowy hills, count ice blocks and trace the word POLAR. Free printable.',
+ meta:'A polar animals worksheet for ages 4–5: circle the polar animals, match the polar bear, penguin and arctic fox to the ice floe, the icebergs and the snowy hills, count ice blocks and trace the word POLAR. Printable.',
  learn:'The polar regions are the coldest habitats on Earth, and their animals wear built-in coats — thick fur or a layer of fat.',
  know:'The word polar, and three ice-ready residents: polar bear, penguin and arctic fox.',
  why:'Extreme habitats make the matching rule obvious: nobody survives the ice without the right equipment, and the sheet shows exactly whose bodies have it.',
@@ -100,7 +100,7 @@ export const animalsWs=[
  real:'Next snowy or cold day, one minute of penguin walking — wings in, tiny steps, the word polar said twice.'},
 {slug:'wetland-animals-and-their-habitat',file:'wetland-animals-and-their-habitat-worksheet.webp',w:1414,h:2000,title:'Wetland Animals and Their Habitat',word:'WETLAND',trace:'WETLAND',
  tag:'Circle who lives in the wetland, match frog, egret and crocodile to their soggy homes, count lily pads and trace WETLAND.',
- meta:'A free wetland animals worksheet for ages 4–5: circle the wetland animals, match the frog, egret and crocodile to the pond, the reeds and the burrow, count lily pads and trace the word WETLAND. Free printable, no sign-up.',
+ meta:'A wetland animals worksheet for ages 4–5: circle the wetland animals, match the frog, egret and crocodile to the pond, the reeds and the burrow, count lily pads and trace the word WETLAND. Printable.',
  learn:'A wetland is land that is soaked — ponds, reeds and mud — and it is a dinner, a bath and a hiding place all at once.',
  know:'The word wetland, and three wetland regulars on the sheet: frog, egret and crocodile.',
  why:'The wetland is the habitat that is neither dry nor deep — naming it teaches children that habitats come in every in-between flavor, not just desert versus ocean.',
@@ -126,7 +126,7 @@ export function animalsWsActivityBody(w,site){
  const {prev,next}=animalsWsNeighbours(w);
  const enc=encodeURIComponent;
  const pageUrl=site+AHWS_WS_CLASS+w.slug+'/';
- const shareTitle=`${w.title} — a free Animals & Their Habitats worksheet activity for ages 4–5 from Kiddo.school`;
+ const shareTitle=`${w.title} — a Animals & Their Habitats worksheet activity for ages 4–5 from Kiddo.school`;
  const stepsHtml=w.steps.map(([t,d],i)=>`<li><span class="fc-stepnum">${i+1}</span><div><h3>${esc(t)}</h3><p>${esc(d)}</p></div></li>`).join('');
  const pn=`<nav class="fc2-pn" aria-label="Previous and next worksheet activity"><a class="fc2-pn-btn" href="${AHWS_WS_CLASS}${prev.slug}/" rel="prev"><span aria-hidden="true">←</span> <strong>${esc(prev.title)}</strong><span>Previous activity</span></a><a class="fc2-pn-btn fc2-pn-next" href="${AHWS_WS_CLASS}${next.slug}/" rel="next"><strong>${esc(next.title)}</strong> <span aria-hidden="true">→</span><span>Next activity</span></a></nav>`;
  return `${crumbNav([['Learning Path','/learning-path/'],['Animals &amp; Their Habitats',AHWS_CLASS_PATH],[esc(w.title)+' worksheet']])}
@@ -173,7 +173,7 @@ export function animalsWsPrintableBody(w,site){
  const enc=encodeURIComponent;
  const file=AHWS_WS_BASE+w.file;
  const pageUrl=site+AHWS_WS_LIB+w.slug+'/';
- const shareTitle=`${w.title} Worksheet for Ages 4–5 — free printable from Kiddo.school`;
+ const shareTitle=`${w.title} Worksheet for Ages 4–5 — printable from Kiddo.school`;
  const dlName=`animals-habitats-${w.slug}.webp`;
  const stepsHtml=w.steps.map(([t,d],i)=>`<li><span class="fc-stepnum">${i+1}</span><div><h3>${esc(t)}</h3><p>${esc(d)}</p></div></li>`).join('');
  const pn=`<nav class="fc2-pn" aria-label="Previous and next worksheet"><a class="fc2-pn-btn" href="${AHWS_WS_LIB}${prev.slug}/" rel="prev"><span aria-hidden="true">←</span> <strong>${esc(prev.title)}</strong><span>Previous worksheet</span></a><a class="fc2-pn-btn fc2-pn-next" href="${AHWS_WS_LIB}${next.slug}/" rel="next"><strong>${esc(next.title)}</strong> <span aria-hidden="true">→</span><span>Next worksheet</span></a></nav>`;
@@ -196,7 +196,7 @@ export function animalsWsPrintableBody(w,site){
   <aside class="fc2-rail" aria-label="Download, print, share and family feedback">
    <section class="fc2-block fc2-first-block"><span class="eyebrow">TAKE IT TO THE TABLE</span><h2>Download &amp; print.</h2>
     <div class="fc2-actions"><button type="button" class="button ws-dl" data-ahws-download="${esc(file)}" data-ahws-filename="${dlName}">Download original sheet <span aria-hidden="true">↓</span></button><button type="button" class="button button-ghost ws-print" data-ahws-print>Print this sheet <span aria-hidden="true">⌘</span></button></div>
-    <p class="fc-hint">The download keeps the original WebP picture, full size (1414×2000, A4 portrait). Print opens your browser&rsquo;s print dialog with just the sheet — no sign-up, nothing stored.</p>
+    <p class="fc-hint">The download keeps the original WebP picture, full size (1414×2000, A4 portrait). Print opens your browser&rsquo;s print dialog with just the sheet — nothing stored.</p>
    </section>
    ${share}
    ${fcCommunityMount(AHWS_WS_LIB+w.slug+'/')}
@@ -217,7 +217,7 @@ export function animalsWsCategoryBody(){
   <span class="ws-card-open">View Worksheet <span aria-hidden="true">→</span></span>
  </a>`).join('');
  return `${crumbNav([['Worksheets','/worksheets/'],['Animals &amp; Their Habitats']])}
- <div class="page-heading wrap"><span class="eyebrow">ANIMAL &amp; HABITAT WORKSHEETS · AGES 4–5</span><h1>Animals &amp; Their Habitats worksheets — free printables for little hands.</h1><p>Six genuine habitat sheets, one for each big home: the desert, the farm, the forest, the ocean, the polar regions and the wetland. On every sheet your child circles who lives there, matches each animal to its home, counts, chooses the right scene and traces the habitat word. Download the original sheet, print it, or solve every sheet on screen in <a href="${AHWS_CLASS_PATH}">Class 36</a> first.</p></div>
+ <div class="page-heading wrap"><span class="eyebrow">ANIMAL &amp; HABITAT WORKSHEETS · AGES 4–5</span><h1>Animals &amp; Their Habitats worksheets — printables for little hands.</h1><p>Six genuine habitat sheets, one for each big home: the desert, the farm, the forest, the ocean, the polar regions and the wetland. On every sheet your child circles who lives there, matches each animal to its home, counts, chooses the right scene and traces the habitat word. Download the original sheet, print it, or solve every sheet on screen in <a href="${AHWS_CLASS_PATH}">Class 36</a> first.</p></div>
  <section class="wrap section compact" aria-label="The habitat worksheet collection">
   <figure class="fc2-hero ws-hero-art ws-cover-sm"><img src="${esc(AHWS_WS_BASE+AHWS_WS_COVER.file)}" width="${AHWS_WS_COVER.w}" height="${AHWS_WS_COVER.h}" alt="${esc(AHWS_WS_COVER.alt)}" fetchpriority="high"></figure>
   <div class="ws-grid">${cards}</div>
@@ -237,7 +237,7 @@ export function animalsWsSchema(site,w){
   name:`${w.title} Worksheet for Ages 4–5`,
   description:w.meta,url:site+AHWS_WS_LIB+w.slug+'/',inLanguage:'en',
   learningResourceType:'Worksheet',educationalLevel:'Preschool',teaches:w.skills.join(', '),
-  isAccessibleForFree:true,ageRange:'4-5',encodingFormat:'image/webp',contentUrl:AHWS_WS_BASE+w.file,image:AHWS_WS_BASE+w.file,
+ ageRange:'4-5',encodingFormat:'image/webp',contentUrl:AHWS_WS_BASE+w.file,image:AHWS_WS_BASE+w.file,
   about:{'@type':'Thing',name:'Animals & Their Habitats'},
   provider:{'@type':'Organization',name:'Kiddo.school',url:site+'/'},
   isPartOf:{'@type':'CreativeWorkSeries',name:'Animals & Their Habitats (Class 36)',url:site+AHWS_CLASS_PATH}};

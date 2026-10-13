@@ -50,9 +50,9 @@ export const lesson={
 export const meta={
  slug:'life-skills-and-good-habits',
  name:'Life Skills & Good Habits',
- seoTitle:'Life Skills & Good Habits Flashcards for Preschoolers — 28 Free Printable Cards',
+ seoTitle:'Life Skills & Good Habits Flashcards for Preschoolers — 28 Printable Cards',
  h1:'Life Skills & Good Habits flashcards.',
- metaDescription:'Twenty-eight free life-skills flashcards for ages 4–5: hand-washing, teeth, the toilet routine, getting dressed, tidying, manners, sharing, patience and safety rules like seat belts. Each card has its own page with parent guidance and a download button.',
+ metaDescription:'Twenty-eight life-skills flashcards for ages 4–5: hand-washing, teeth, the toilet routine, getting dressed, tidying, manners, sharing, patience and safety rules like seat belts. Each card has its own page with parent guidance and a download button.',
  lede:'Twenty-eight everyday skills, one card each: wash your hands, use gentle hands, wait your turn, wear your seat belt. Show the card, say the words together, then practise the real thing — that is the whole method, and it works.',
  hubBlurb:'Twenty-eight everyday skills — hygiene, manners, independence and safety — one card each.',
  ageLabel:'4–5 years',
@@ -81,7 +81,7 @@ export const cards={
  try:'Sing a short song together while scrubbing — happy birthday twice is long enough to get between fingers, thumbs and wrists — then rinse and dry.',
  note:'Four-year-olds wash fast and miss the sneaky spots. Make it playful, not perfect — bubbles and a song do more than reminders ever will.',
  teach:'Name the four steps on the card — water, soap, scrub, rinse — then move to the real sink and let your child lead while you narrate.',
- metaDescription:'A free Wash Your Hands flashcard for ages 4–5: soap, scrub and rinse together. Print it, talk through it, then try it at the real sink.'},
+ metaDescription:'A Wash Your Hands flashcard for ages 4–5: soap, scrub and rinse together. Print it, talk through it, then try it at the real sink.'},
 'brush-your-teeth':{
  word:'Brush Your Teeth',
  intro:'A boy brushing at the sink with his toothpaste ready — every tooth, top to bottom, morning and night.',
@@ -89,7 +89,7 @@ export const cards={
  try:'Let your child brush first, then you finish the job — the parent pass at the end is what actually keeps four-year-old teeth clean.',
  note:'Spit, don\u2019t rinse — a tiny smear of fluoride toothpaste keeps working after brushing. A small mirror helps your child see every tooth.',
  teach:'Point to the brush on the card, then mime brushing every tooth together — front, back, the tops. Two minutes, twice a day.',
- metaDescription:'A free Brush Your Teeth flashcard for ages 4–5: two minutes, every tooth, spit don\u2019t rinse. Print it and hang it by the bathroom sink.'},
+ metaDescription:'A Brush Your Teeth flashcard for ages 4–5: two minutes, every tooth, spit don\u2019t rinse. Print it and hang it by the bathroom sink.'},
 'use-the-toilet':{
  word:'Use the Toilet',
  intro:'A boy sitting on the toilet, trousers down and a smile on — the body routine every child is proud to own.',
@@ -97,7 +97,7 @@ export const cards={
  try:'Walk the whole sequence once together on a calm day — trousers, sit, wipe front to back, flush, soap — so the real moments feel easy.',
  note:'Wiping is the last skill to click and the one that needs you: front to back, always, until your child\u2019s reach manages it alone. Accidents stay calm and quiet — every child has them.',
  teach:'Walk the card\u2019s routine in order with your child and agree on the word they\u2019ll use to say they need to go — then let them run the steps themselves.',
- metaDescription:'A free Use the Toilet flashcard for ages 4–5: the whole routine — go, wipe, flush, wash. Print it for the bathroom door and step through it together.'},
+ metaDescription:'A Use the Toilet flashcard for ages 4–5: the whole routine — go, wipe, flush, wash. Print it for the bathroom door and step through it together.'},
 'blow-your-nose':{
  word:'Blow Your Nose',
  intro:'A boy blowing his nose with a tissue — one nostril at a time is the four-year-old trick nobody teaches slowly enough.',
@@ -105,7 +105,7 @@ export const cards={
  try:'Play the steam game first: hold a tissue in front of your child\u2019s mouth and blow air OUT — feeling air move is what makes nose-blowing click.',
  note:'Press one nostril closed and blow the other, gently. Hard blowing pushes mucus into ears — soft and often wins. Keep tissues at child height so the habit is always reachable.',
  teach:'Demonstrate on yourself first — children copy what they see. Then hand over the tissue and cheer the attempt, not the result.',
- metaDescription:'A free Blow Your Nose flashcard for ages 4–5: one nostril, gentle blow, bin, wash. Print it and keep it beside the tissue box.'},
+ metaDescription:'A Blow Your Nose flashcard for ages 4–5: one nostril, gentle blow, bin, wash. Print it and keep it beside the tissue box.'},
 'clean-up-after-eating':{
  word:'Clean Up After Eating',
  intro:'A boy carrying his plate and cup to the shelf — the meal is over when the table is clear.',
@@ -113,7 +113,7 @@ export const cards={
  try:'Make "clear your spot" the end of every meal — plate to the counter, cup to the sink, crumbs to the bin. One spot, three moves, every day.',
  note:'Start small: carry the plate only, you handle scraping and washing. The habit matters more than the technique — technique comes with height and practice.',
  teach:'Show the card before dinner and agree where things go in YOUR kitchen — the card names the job, your kitchen names the places.',
- metaDescription:'A free Clean Up After Eating flashcard for ages 4–5: plate, cup, crumbs — done. Print it and make clearing the table your child\u2019s own job.'},
+ metaDescription:'A Clean Up After Eating flashcard for ages 4–5: plate, cup, crumbs — done. Print it and make clearing the table your child\u2019s own job.'},
 'eat-healthy-food':{
  word:'Eat Healthy Food',
  intro:'A boy enjoying a plate of vegetables and fruit — strong food for growing bodies, eaten happily.',
@@ -121,7 +121,7 @@ export const cards={
  try:'Let your child pick one new fruit or vegetable at the shop each week — children eat braver when they chose the food themselves.',
  note:'Serving the food is your job; eating it is theirs. Keep offering without pressure — a four-year-old may need to see a food ten times before trying it, and that is normal.',
  teach:'Name the healthy foods on the card, then find their cousins on tonight\u2019s plate — the card starts the talk, the meal finishes it.',
- metaDescription:'A free Eat Healthy Food flashcard for ages 4–5: rainbow plates and brave tasting. Print it and use it before meals or at the shop.'},
+ metaDescription:'A Eat Healthy Food flashcard for ages 4–5: rainbow plates and brave tasting. Print it and use it before meals or at the shop.'},
 'get-dressed':{
  word:'Get Dressed',
  intro:'A boy pulling his shirt over his head all by himself — the morning victory that starts the whole day right.',
@@ -129,7 +129,7 @@ export const cards={
  try:'Lay out tomorrow\u2019s clothes together at bedtime, in the order they go on. Mornings run themselves when the choices are already made.',
  note:'Choose clothes that forgive: elastic waists, loose necks, velcro shoes. Buttons and zips come — struggle is the practice, not a sign it\u2019s too hard.',
  teach:'Use the card to walk the order — underwear, shirt, trousers — then let your child dress while you narrate each step like a sports commentator.',
- metaDescription:'A free Get Dressed flashcard for ages 4–5: top to bottom, all by myself. Print it for the bedroom door and let mornings belong to your child.'},
+ metaDescription:'A Get Dressed flashcard for ages 4–5: top to bottom, all by myself. Print it for the bedroom door and let mornings belong to your child.'},
 'put-on-your-shoes':{
  word:'Put On Your Shoes',
  intro:'A boy working a sneaker onto his foot, tongue pulled open — shoes on means outside is possible.',
@@ -137,7 +137,7 @@ export const cards={
  try:'Use the sticker trick: cut one sticker in half and put half inside each shoe — when the halves make a picture, the shoes are on the right feet.',
  note:'Velcro first, laces much later. Resist doing it for them when you are late — build in five extra minutes so your child can finish at their own speed.',
  teach:'Play the card before you leave the house: right foot, left foot, which is which? Then hand over the shoes and guard the time, not the task.',
- metaDescription:'A free Put On Your Shoes flashcard for ages 4–5: toes in, heel down, right foot first. Print it and keep it by the shoe rack.'},
+ metaDescription:'A Put On Your Shoes flashcard for ages 4–5: toes in, heel down, right foot first. Print it and keep it by the shoe rack.'},
 'pack-your-bag':{
  word:'Pack Your Bag',
  intro:'A girl packing her backpack with a book — knowing what tomorrow needs is a skill, and she owns it.',
@@ -145,7 +145,7 @@ export const cards={
  try:'Keep a picture checklist by the bag — drawings, not words — and let your child tick each item as it goes in. Checking is the real skill.',
  note:'Forgetfulness is the teacher: the day the book is missing, talk about it kindly and repack together. Packing mistakes cost nothing at four — that is why it is the perfect age to start.',
  teach:'Use the card the evening before: name each item, your child fetches it and zips it in. The card is the checklist; your child is the packer.',
- metaDescription:'A free Pack Your Bag flashcard for ages 4–5: book, bottle, hat — packed by me. Print it and start the night-before routine.'},
+ metaDescription:'A Pack Your Bag flashcard for ages 4–5: book, bottle, hat — packed by me. Print it and start the night-before routine.'},
 'put-clothes-away':{
  word:'Put Clothes Away',
  intro:'A boy folding clothes into a box — clean clothes have a home, and putting them there is his job.',
@@ -153,7 +153,7 @@ export const cards={
  try:'One low drawer or basket is all your child needs — everything of theirs should be reachable without asking. Ownership needs the right height.',
  note:'Folding will be lumpy for a long time; putting away is the win. Don\u2019t redo it in front of them — smooth the shirt later if you must, quietly.',
  teach:'Show the card, then open the real drawer: shirt home, trousers home. Two kinds is enough at four — sort the rest yourself.',
- metaDescription:'A free Put Clothes Away flashcard for ages 4–5: every garment has a home. Print it and give your child one drawer that is completely theirs.'},
+ metaDescription:'A Put Clothes Away flashcard for ages 4–5: every garment has a home. Print it and give your child one drawer that is completely theirs.'},
 'sort-the-laundry':{
  word:'Sort the Laundry',
  intro:'A girl sorting clothes into baskets — darks and lights, a matching game hiding inside a chore.',
@@ -161,7 +161,7 @@ export const cards={
  try:'Make it a real sorting game: one basket for colors, one for everything else, socks into pairs. Matching practice disguised as help.',
  note:'Sorting by color is exactly the thinking skill your child practises in color games — it just happens to also be a job. Chores that feel like play stick for life.',
  teach:'Hold up each piece and ask "this basket or that one?" — the card teaches the categories, the laundry basket makes them real.',
- metaDescription:'A free Sort the Laundry flashcard for ages 4–5: darks and lights, socks in pairs. Print it and turn laundry day into sorting play.'},
+ metaDescription:'A Sort the Laundry flashcard for ages 4–5: darks and lights, socks in pairs. Print it and turn laundry day into sorting play.'},
 'tidy-up-toys':{
  word:'Tidy Up Toys',
  intro:'A boy returning a car and a teddy to the toy box — every toy has a home, and tidying is finding it.',
@@ -169,7 +169,7 @@ export const cards={
  try:'Tidy in rounds — "cars home, then animals home" — so cleanup becomes a game with rounds instead of a chore with a sigh.',
  note:'Four-year-olds tidy in circles, not lines. Do it WITH them at this age — your calm company matters more than a spotless floor. A tidy-up song gives the mess a finish line.',
  teach:'Use the card at cleanup time: pick one toy from the card, find its home in your room, then race the song to finish the rest.',
- metaDescription:'A free Tidy Up Toys flashcard for ages 4–5: every toy home before the song ends. Print it and make cleanup the best part of play.'},
+ metaDescription:'A Tidy Up Toys flashcard for ages 4–5: every toy home before the song ends. Print it and make cleanup the best part of play.'},
 'water-the-plants':{
  word:'Water the Plants',
  intro:'A boy pouring from a little watering can — caring for something that grows is the gentlest job there is.',
@@ -177,7 +177,7 @@ export const cards={
  try:'Give your child one plant that is completely theirs — same day each week, same small can. Watching leaves respond teaches patience like nothing else.',
  note:'Overwatering ends more kid-plants than neglect — show "damp, not swimming". A hardy plant forgives enthusiasm and keeps the job winnable.',
  teach:'The card shows the pour: slow, at the soil. Then hand over the can — one plant, one day a week, all theirs.',
- metaDescription:'A free Water the Plants flashcard for ages 4–5: one can, one plant, one careful pour. Print it and give your child something living to look after.'},
+ metaDescription:'A Water the Plants flashcard for ages 4–5: one can, one plant, one careful pour. Print it and give your child something living to look after.'},
 'use-an-inside-voice':{
  word:'Use an Inside Voice',
  intro:'A girl with a finger to her lips, whispering to a friend — quiet voices are for inside, loud ones are for the park.',
@@ -185,7 +185,7 @@ export const cards={
  try:'Play the voice dial: whisper, talk, big voice — your hand turns an imaginary knob and your child matches the level. Whisper mode for libraries and shops.',
  note:'Inside voice lands better as a game than as a shush. Name the levels: "shop voice", "baby-sleeping voice" — children love owning degrees of loud.',
  teach:'Model both voices with the card — big voice outside the room, whisper beside it — then let your child flick the switch between them.',
- metaDescription:'A free Use an Inside Voice flashcard for ages 4–5: whisper, talk, big voice — and when to use each. Print it and play the voice dial.'},
+ metaDescription:'A Use an Inside Voice flashcard for ages 4–5: whisper, talk, big voice — and when to use each. Print it and play the voice dial.'},
 'say-please-and-thank-you':{
  word:'Say Please and Thank You',
  intro:'A boy handing over a truck and hearing thank you — the two magic words that open every door.',
@@ -193,7 +193,7 @@ export const cards={
  try:'Catch them doing it for real: "you said thank you all by yourself!" Named moments teach faster than reminders ever will.',
  note:'At four, prompting is still normal — "what do we say?" — but fade it slowly. The goal is a habit that appears without you, and it will.',
  teach:'Act out the card with a real trade: your child asks with please, you hand it over, they answer with thank you. Repeat with toys until it flows.',
- metaDescription:'A free Say Please and Thank You flashcard for ages 4–5: the two magic words, practised for real. Print it and act it out together.'},
+ metaDescription:'A Say Please and Thank You flashcard for ages 4–5: the two magic words, practised for real. Print it and act it out together.'},
 'say-excuse-me':{
  word:'Say Excuse Me',
  intro:'Two children passing, one saying excuse me — the polite way through a doorway, a conversation or a cough.',
@@ -201,7 +201,7 @@ export const cards={
  try:'Practise the interruption rule: hand on my arm, wait for the pause, then speak. Replacing interruption with "excuse me" takes weeks of gentle drills.',
  note:'Excuse me covers three things at four: passing through, joining a conversation and after a burp. Name all three — children love collecting the uses.',
  teach:'Walk through a doorway together with the card in mind — who says excuse me? Then let your child try the arm-touch-and-wait rule on you.',
- metaDescription:'A free Say Excuse Me flashcard for ages 4–5: passing, joining and waiting — politely. Print it and practise the three uses.'},
+ metaDescription:'A Say Excuse Me flashcard for ages 4–5: passing, joining and waiting — politely. Print it and practise the three uses.'},
 'use-gentle-hands':{
  word:'Use Gentle Hands',
  intro:'Two children petting a teddy with soft touches — gentle hands are kind hands, with pets, friends and babies.',
@@ -209,7 +209,7 @@ export const cards={
  try:'Practise on the real thing: stroking a pet, touching a baby\u2019s hand, hugging a friend "with one arm of gentle". Praise the gentle touch you see.',
  note:'Gentle is a skill built on body control, and body control is still under construction at four. Offer the positive — "show me gentle" — instead of "stop hitting"; children move toward what you name.',
  teach:'The card shows the touch: slow and soft. Let your child practise it on teddy first, then on the real pet, with you narrating "gentle... gentle..."',
- metaDescription:'A free Use Gentle Hands flashcard for ages 4–5: soft, slow, kind — with pets and people. Print it and practise the gentlest touch.'},
+ metaDescription:'A Use Gentle Hands flashcard for ages 4–5: soft, slow, kind — with pets and people. Print it and practise the gentlest touch.'},
 'be-kind':{
  word:'Be Kind',
  intro:'Two friends shaking hands and smiling — kindness at four is small, visible and completely learnable.',
@@ -217,7 +217,7 @@ export const cards={
  try:'Hunt for kindness at the end of the day: "when were you kind today? When was someone kind to you?" Naming one moment makes the next one likelier.',
  note:'Kindness grows where it is noticed. Praise the specific — "you shared your crayons without being asked" — not the vague "good boy". Children repeat what gets named.',
  teach:'Read the card\u2019s scene together, then set one tiny kindness mission for the day — a compliment, a share, a help. Report back at bedtime.',
- metaDescription:'A free Be Kind flashcard for ages 4–5: kind hands, kind words, one small mission a day. Print it and start the kindness habit.'},
+ metaDescription:'A Be Kind flashcard for ages 4–5: kind hands, kind words, one small mission a day. Print it and start the kindness habit.'},
 'share-your-toys':{
  word:'Share Your Toys',
  intro:'A boy offering his toy truck to a friend — sharing is generosity in motion, and it starts with one offered toy.',
@@ -225,7 +225,7 @@ export const cards={
  try:'Trade turns with a timer for the toys that cause battles — "the truck for two minutes, then swap". Fair turns are sharing\u2019s training wheels.',
  note:'Force-sharing backfires; ownership matters. Keep a "special" basket of toys that are never shared when friends visit, and watch sharing bloom with everything else.',
  teach:'Use the card to show the offer — the boy holds the truck OUT. Practise the words of offering: "do you want a turn?"',
- metaDescription:'A free Share Your Toys flashcard for ages 4–5: offering, trading turns and the special-basket rule. Print it before the next playdate.'},
+ metaDescription:'A Share Your Toys flashcard for ages 4–5: offering, trading turns and the special-basket rule. Print it before the next playdate.'},
 'share-and-take-turns':{
  word:'Share and Take Turns',
  intro:'Two children playing with one truck together — turns make one toy into two children\u2019s fun.',
@@ -233,7 +233,7 @@ export const cards={
  try:'Games with built-in turns — rolling a ball back and forth, stacking blocks alternately — teach waiting better than any lecture. Turn-taking IS the fun.',
  note:'Waiting for a turn is genuinely hard at four — a visible timer or counting to ten makes the wait concrete. "After the sand timer, it\u2019s you" beats "soon" every time.',
  teach:'Play the card with one toy and two players: name the turns out loud, swap on a count of ten, and let your child announce the swaps.',
- metaDescription:'A free Share and Take Turns flashcard for ages 4–5: my turn, your turn, one toy, two happy players. Print it for the next playdate.'},
+ metaDescription:'A Share and Take Turns flashcard for ages 4–5: my turn, your turn, one toy, two happy players. Print it for the next playdate.'},
 'wait-your-turn':{
  word:'Wait Your Turn',
  intro:'A boy waiting at the bottom of the slide while a friend slides down — waiting is patience with a finish line you can see.',
@@ -241,7 +241,7 @@ export const cards={
  try:'Waiting practice needs visible ends: slides, swings, queues. Say what you see — "she\u2019s climbing down... now it\u2019s you!" — so the wait has a shape.',
  note:'Patience at four is measured in minutes, not virtues. Name the wait ("three more turns"), stay near, and celebrate the waiting itself — "you waited for the whole slide!"',
  teach:'At the playground the card comes alive: first turn, then watch-and-wait, then go. The slide is the best patience teacher there is.',
- metaDescription:'A free Wait Your Turn flashcard for ages 4–5: watch, wait, then go — patience with a visible finish line. Print it for the playground bag.'},
+ metaDescription:'A Wait Your Turn flashcard for ages 4–5: watch, wait, then go — patience with a visible finish line. Print it for the playground bag.'},
 'listen-carefully':{
  word:'Listen Carefully',
  intro:'A woman speaking and a boy listening with his whole face — ears on, eyes on, body still: the three parts of real listening.',
@@ -249,7 +249,7 @@ export const cards={
  try:'Play "what did I say": give one two-step instruction — "get your cup, then sit at the table" — and let your child repeat it back before doing it.',
  note:'Get down to their eye level and say their name first — a child listening across a room is half-listening. Two-step instructions are the four-year-old sweet spot; three is a stretch goal.',
  teach:'Use the card to name the three parts of listening, then run one two-step instruction a day — repeat-back first, action second.',
- metaDescription:'A free Listen Carefully flashcard for ages 4–5: ears open, eyes on, two steps at a time. Print it and play what-did-I-say.'},
+ metaDescription:'A Listen Carefully flashcard for ages 4–5: ears open, eyes on, two steps at a time. Print it and play what-did-I-say.'},
 'follow-directions':{
  word:'Follow Directions',
  intro:'A grown-up pointing the way and a boy following — instructions are how the grown-up world works, and he\u2019s got this.',
@@ -257,7 +257,7 @@ export const cards={
  try:'Turn instructions into a mini-mission: "your mission is — hang the towel, then find your water bottle." Missions get followed; orders get ignored.',
  note:'Children follow directions best when there are only one or two at a time, said at eye level, with a check for understanding: "what\u2019s the mission?" First/then language is your best tool.',
  teach:'Read the card, then give a first/then instruction about the actual next hour. Your child says it back, does it, and collects the mission-accomplished grin.',
- metaDescription:'A free Follow Directions flashcard for ages 4–5: first/then, one mission at a time. Print it and turn instructions into missions.'},
+ metaDescription:'A Follow Directions flashcard for ages 4–5: first/then, one mission at a time. Print it and turn instructions into missions.'},
 'ask-for-help':{
  word:'Ask for Help',
  intro:'A boy raising his hand to a grown-up — asking for help is not being small, it\u2019s being smart and safe.',
@@ -265,7 +265,7 @@ export const cards={
  try:'Practise the real sentence at calm times — "Can you help me, please?" — so it is ready when it matters. Praise the asking itself, not just the solved problem.',
  note:'Children who ask for help early are safer and braver. Make sure your child can name their trusted grown-ups — and that help asked for is never met with a sigh.',
  teach:'Use the card to name WHO your child\u2019s trusted grown-ups are — at home, at school, in the neighbourhood. The card starts the list; your family finishes it.',
- metaDescription:'A free Ask for Help flashcard for ages 4–5: the smartest words — "help, please" — and who to ask. Print it and name your trusted grown-ups.'},
+ metaDescription:'A Ask for Help flashcard for ages 4–5: the smartest words — "help, please" — and who to ask. Print it and name your trusted grown-ups.'},
 'take-deep-breaths':{
  word:'Take Deep Breaths',
  intro:'A boy with closed eyes and hands on his belly, breathing slow — big feelings shrink when breath gets big.',
@@ -273,7 +273,7 @@ export const cards={
  try:'Smell the flower, blow out the candle: in through the nose for three, out through the mouth for three. Practise when calm so it is there when it is not.',
  note:'Deep breaths work best when they have been rehearsed away from the storm. Do three together at bedtime — the calmest moment of the day builds the calmest habit.',
  teach:'Do the card\u2019s breath together, three rounds, hand on belly so your child can feel it fill. Then keep the card where big feelings happen.',
- metaDescription:'A free Take Deep Breaths flashcard for ages 4–5: smell the flower, blow out the candle. Print it and practise calm before you need it.'},
+ metaDescription:'A Take Deep Breaths flashcard for ages 4–5: smell the flower, blow out the candle. Print it and practise calm before you need it.'},
 'keep-your-room-safe':{
  word:'Keep Your Room Safe',
  intro:'A boy tidying toys from the floor — a clear floor is a safe floor, and he is the safety helper of his own room.',
@@ -281,7 +281,7 @@ export const cards={
  try:'Walk the room together as "safety inspectors": what could someone trip on? What must never be touched? Your child points, you decide the fix.',
  note:'Give your child the rule that matters: broken things, spills and sockets are grown-up jobs to touch but child jobs to REPORT. A four-year-old who reports is a four-year-old who stays safe.',
  teach:'Play safety inspector with the card: clear the trip hazards together, name the never-touch things — sockets, cords, hot drinks — and practise the report line: "Grown-up, come see!"',
- metaDescription:'A free Keep Your Room Safe flashcard for ages 4–5: clear floors, never-touch lists and the report line. Print it and inspect the room together.'},
+ metaDescription:'A Keep Your Room Safe flashcard for ages 4–5: clear floors, never-touch lists and the report line. Print it and inspect the room together.'},
 'stay-with-a-grown-up':{
  word:'Stay With a Grown-Up',
  intro:'A grown-up holding a child\u2019s hand on the walk — staying where the grown-up can see you is the rule that keeps every outing easy.',
@@ -289,7 +289,7 @@ export const cards={
  try:'Practise the hand-holding rules at the two riskiest places — crossings and car parks — and agree the deal before you leave home, every time.',
  note:'Children wander because something is interesting, not because rules failed — so keep the rule short and rehearsed: "where I can see you." If you are ever separated: stand still, shout your grown-up\u2019s name, and ask a mommy with children or a shop worker for help.',
  teach:'Use the card to agree the family deal before outings: eyes on, hand held, stay where the grown-up can see. The card makes the deal real; the outing rehearses it.',
- metaDescription:'A free Stay With a Grown-Up flashcard for ages 4–5: the see-you rule, held hands and what to do if separated. Print it and agree the deal before outings.'},
+ metaDescription:'A Stay With a Grown-Up flashcard for ages 4–5: the see-you rule, held hands and what to do if separated. Print it and agree the deal before outings.'},
 'wear-your-seat-belt':{
  word:'Wear Your Seat Belt',
  intro:'A boy buckled into his car seat with the belt clicked — every ride, every time, no exceptions.',
@@ -297,5 +297,5 @@ export const cards={
  try:'Make the click the finish line: your child climbs in and buckles the booster belt, you check the click and say "safe to go!" The check is the ritual.',
  note:'The rule is absolute: no click, no ride — even for the shortest trip, even when protesting. Children ride in boosters until the adult belt fits properly, which is later than it looks, and your final check happens every single time.',
  teach:'Use the card before every car ride: bum in seat, belt on, grown-up checks. Your child does the click, you do the check — both jobs matter.',
- metaDescription:'A free Wear Your Seat Belt flashcard for ages 4–5: bum in seat, belt click, grown-up check — every ride. Print it for the car door.'}
+ metaDescription:'A Wear Your Seat Belt flashcard for ages 4–5: bum in seat, belt click, grown-up check — every ride. Print it for the car door.'}
 };

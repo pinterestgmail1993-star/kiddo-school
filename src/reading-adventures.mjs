@@ -534,7 +534,7 @@ export function readingAdventureBody(g){
  <section class="wrap lesson-section"><span class="eyebrow">KEEP GOING</span><h2>Where next?</h2>
   <div class="fc-stages">
    <a class="fc-stage lesson-card-link" href="${C29_PATH}"><div class="fc-stage-pills"><span class="fc-age">Age 4–5</span><span class="fc-class">Class 29</span></div><h3>Storytime &amp; Pre-Reading</h3><p>The class behind these adventures \u2014 all story games plus off-screen retelling ideas.</p><span class="fc-open">Open Class 29 <span aria-hidden="true">↗</span></span></a>
-   <a class="fc-stage lesson-card-link" href="${ws}"><div class="fc-stage-pills"><span class="fc-age">Age 4–5</span><span class="fc-class">Worksheet</span></div><h3>${esc(g.title)} worksheet</h3><p>The printable twin of this game \u2014 free PDF, print button, parent guide.</p><span class="fc-open">Open the worksheet <span aria-hidden="true">↗</span></span></a>
+   <a class="fc-stage lesson-card-link" href="${ws}"><div class="fc-stage-pills"><span class="fc-age">Age 4–5</span><span class="fc-class">Worksheet</span></div><h3>${esc(g.title)} worksheet</h3><p>The printable twin of this game \u2014 PDF, print button, parent guide.</p><span class="fc-open">Open the worksheet <span aria-hidden="true">↗</span></span></a>
    <a class="fc-stage lesson-card-link" href="/preschool/phonics/adventures/"><div class="fc-stage-pills"><span class="fc-age">Age 4–5</span><span class="fc-class">Class 28</span></div><h3>Phonics Adventures</h3><p>Twenty-four draw-on-the-picture sound games \u2014 the sounds side of getting ready to read.</p><span class="fc-open">Open the Phonics Library <span aria-hidden="true">↗</span></span></a>
   </div>
  </section>`;

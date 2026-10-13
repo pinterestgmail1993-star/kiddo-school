@@ -89,10 +89,10 @@ export const bunnyBook={
 export const myFirstColors={
  slug:'my-first-colors',
  path:'/library/books/age-2/my-first-colors/',
- seoTitle:'My First Colors | Free Colors Picture Book Online',
+ seoTitle:'My First Colors | Colors Picture Book Online',
  h1:'My First Colors',
  title:'My First Colors',
- description:'Read My First Colors online for free: a smiling picture book of red, orange, purple, pink, brown, yellow, blue and green for two- and three-year-olds, with a find-the-colors game and a rainbow celebration inside.',
+ description:'Read My First Colors online: a smiling picture book of red, orange, purple, pink, brown, yellow, blue and green for two- and three-year-olds, with a find-the-colors game and a rainbow celebration inside.',
  eyebrow:'A KIDDO SCHOOL BOOK',
  lede:'A little book of colorful discoveries — eight happy colors, a find-the-colors game and a rainbow cheer.',
  age:'age-2',
@@ -100,7 +100,7 @@ export const myFirstColors={
  ageRange:'2-3',
  kind:'Colors Book',
  category:'educational',
- readLabel:'Read Free',
+ readLabel:'Read',
  backHref:'/learning-library/',
  backLabel:'Back to the Library',
  completionTitle:'You finished My First Colors!',
@@ -159,7 +159,7 @@ export function bookReaderBody(b){
   <span class="eyebrow">${esc(b.eyebrow)}</span>
   <h1>${esc(b.h1)}</h1>
   <p class="mw-lede">${esc(b.lede)}</p>
-  <p class="fc-hint">${esc(b.ageLabel)}. Read together at your child&rsquo;s pace &mdash; little hands can turn every page. Reading online is free, as often as you like.</p>
+  <p class="fc-hint">${esc(b.ageLabel)}. Read together at your child&rsquo;s pace &mdash; little hands can turn every page. Read online as often as you like.</p>
   <div class="bk-reader" data-book-reader>
    <script type="application/json" data-book-data>${readerData(b)}</script>
    <div class="bk-static" data-bk-static>
@@ -172,7 +172,7 @@ export function bookReaderBody(b){
   <span class="eyebrow">PREMIUM PRINTABLE</span>
   <h2>Get Printable PDF — Premium</h2>
   <p class="lesson-copy">A print-ready PDF of this book is planned as a premium product. It is <strong>coming soon</strong> &mdash; there is nothing to pay today, no checkout and no price to show, because the paid library is not built yet. When it arrives, printable PDFs will be protected and granted only after a real purchase.</p>
-  <p class="lesson-copy">Reading this book online stays free and unlimited, always. The pages above are the whole book &mdash; enjoy them as often as you like.</p>
+  <p class="lesson-copy">The pages above are the whole book &mdash; enjoy them as often as you like.</p>
   <p><span class="bk-premium-badge">Get Printable PDF — Premium · Coming Soon</span></p>
  </section>
  <section class="wrap section compact" aria-label="Reading tips for grown-ups">
@@ -190,7 +190,7 @@ export function bookReaderBody(b){
 // awards, ISBN or publisher claims — none of that exists here.
 export function bookSchema(site,b){
  return [
-  {'@context':'https://schema.org','@type':'Book',name:b.title,url:site+b.path,image:pageSrc(b,b.cover),description:b.description,inLanguage:'en',isAccessibleForFree:true,typicalAgeRange:b.ageRange||'2'},
+  {'@context':'https://schema.org','@type':'Book',name:b.title,url:site+b.path,image:pageSrc(b,b.cover),description:b.description,inLanguage:'en',typicalAgeRange:b.ageRange||'2'},
   {'@context':'https://schema.org','@type':'BreadcrumbList',itemListElement:[['Home','/'],['Library','/learning-library/'],['Age 2','/toddler/2-years/'],[b.title,b.path]].map(([name,path],i)=>({'@type':'ListItem',position:i+1,name,item:site+path}))}
  ];
 }

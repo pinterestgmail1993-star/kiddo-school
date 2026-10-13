@@ -2,9 +2,9 @@
 export const meta={
  slug:'first-concepts',
  name:'First Concepts',
- seoTitle:'Concept Flashcards for Toddlers — Big, Small, Up & Down (Free Printables)',
+ seoTitle:'Concept Flashcards for Toddlers — Big, Small, Up & Down (Printables)',
  h1:'First Concepts flashcards.',
- metaDescription:'Eleven free concept flashcards for toddlers: big and small, up and down, full and empty, one and many — opposites to act out with your whole body. Print at home.',
+ metaDescription:'Eleven concept flashcards for toddlers: big and small, up and down, full and empty, one and many — opposites to act out with your whole body. Print at home.',
  lede:'Eleven cards about how the world works: big and small, up and down, open and closed, full and empty, one and many — plus the posting game that puts a toy in, then takes it all out again. These are action words and size words — the cards work best when your toddler\'s whole body gets involved.',
  hubBlurb:'Big, small, up, down. Opposites your toddler can act out.',
  ageLabel:'18–24 months',

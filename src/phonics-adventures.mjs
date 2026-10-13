@@ -332,7 +332,7 @@ export function phonicAdventureBody(g){
  <section class="wrap lesson-section"><span class="eyebrow">KEEP GOING</span><h2>Where next?</h2>
   <div class="fc-stages">
    <a class="fc-stage lesson-card-link" href="${C28_PATH}"><div class="fc-stage-pills"><span class="fc-age">Age 4–5</span><span class="fc-class">Class 28</span></div><h3>Phonics &amp; Beginning Sounds</h3><p>The class behind these adventures — with all 24 listening games and the off-screen sound play ideas.</p><span class="fc-open">Open Class 28 <span aria-hidden="true">↗</span></span></a>
-   <a class="fc-stage lesson-card-link" href="${ws}"><div class="fc-stage-pills"><span class="fc-age">Age 4–5</span><span class="fc-class">Worksheet</span></div><h3>${esc(g.title)} worksheet</h3><p>The printable twin of this game — parent sound script, answer line, free PDF.</p><span class="fc-open">Open the worksheet <span aria-hidden="true">↗</span></span></a>
+   <a class="fc-stage lesson-card-link" href="${ws}"><div class="fc-stage-pills"><span class="fc-age">Age 4–5</span><span class="fc-class">Worksheet</span></div><h3>${esc(g.title)} worksheet</h3><p>The printable twin of this game — parent sound script, answer line, PDF.</p><span class="fc-open">Open the worksheet <span aria-hidden="true">↗</span></span></a>
    <a class="fc-stage lesson-card-link" href="/preschool/writing/adventures/"><div class="fc-stage-pills"><span class="fc-age">Age 4</span><span class="fc-class">Class 27</span></div><h3>Early Writing Adventures</h3><p>Trace winding paths, loops and zigzags with a finger or stylus — thirty pencil-control games.</p><span class="fc-open">Open the Writing Library <span aria-hidden="true">↗</span></span></a>
   </div>
  </section>`;

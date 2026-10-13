@@ -648,7 +648,7 @@ export function logicAdventureBody(g){
  <section class="wrap lesson-section"><span class="eyebrow">KEEP GOING</span><h2>Where next?</h2>
   <div class="fc-stages">
    <a class="fc-stage lesson-card-link" href="${C30_PATH}"><div class="fc-stage-pills"><span class="fc-age">Age 4–5</span><span class="fc-class">Class 30</span></div><h3>Logic, Thinking &amp; Problem-Solving</h3><p>The class behind these adventures \u2014 all puzzle games plus off-screen sorting ideas.</p><span class="fc-open">Open Class 30 <span aria-hidden="true">↗</span></span></a>
-   <a class="fc-stage lesson-card-link" href="${ws}"><div class="fc-stage-pills"><span class="fc-age">Age 4–5</span><span class="fc-class">Worksheet</span></div><h3>${esc(g.title)} worksheet</h3><p>The printable twin of this game \u2014 free PDF, print button, parent guide.</p><span class="fc-open">Open the worksheet <span aria-hidden="true">↗</span></span></a>
+   <a class="fc-stage lesson-card-link" href="${ws}"><div class="fc-stage-pills"><span class="fc-age">Age 4–5</span><span class="fc-class">Worksheet</span></div><h3>${esc(g.title)} worksheet</h3><p>The printable twin of this game \u2014 PDF, print button, parent guide.</p><span class="fc-open">Open the worksheet <span aria-hidden="true">↗</span></span></a>
    <a class="fc-stage lesson-card-link" href="/preschool/reading/adventures/"><div class="fc-stage-pills"><span class="fc-age">Age 4–5</span><span class="fc-class">Class 29</span></div><h3>Storytime Adventures</h3><p>Twenty-nine draw-on-the-picture story games \u2014 the comprehension side of getting ready to read.</p><span class="fc-open">Open the Storytime Library <span aria-hidden="true">↗</span></span></a>
   </div>
  </section>`;

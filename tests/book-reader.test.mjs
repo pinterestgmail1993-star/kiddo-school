@@ -76,7 +76,6 @@ test('structured data: a factual Book and a 4-step BreadcrumbList, nothing inven
  assert.equal(bk.name,'Bunny Finds a Friend');
  assert.equal(bk.url,site+PATH);
  assert.equal(bk.image,bunnyBook.base+'cover.webp');
- assert.equal(bk.isAccessibleForFree,true);
  for(const s of schema){
   const json=JSON.stringify(s);
   assert.ok(!/ISBN|isbn|AggregateRating|publisher|award|reviewCount/i.test(json),'no invented credentials in schema');

@@ -2,9 +2,9 @@
 export const meta={
  slug:'matching-and-sorting',
  name:'Matching & Sorting',
- seoTitle:'Matching and Sorting Flashcards for Toddlers — 15 Free Printable Cards',
+ seoTitle:'Matching and Sorting Flashcards for Toddlers — 15 Printable Cards',
  h1:'Matching & Sorting flashcards.',
- metaDescription:'Fifteen free matching and sorting flashcards for 2-year-olds: same and different, match-and-find games and sorting puzzles to talk through together. Print at home.',
+ metaDescription:'Fifteen matching and sorting flashcards for 2-year-olds: same and different, match-and-find games and sorting puzzles to talk through together. Print at home.',
  lede:'Fifteen picture puzzles about how things go together: same, different, match this, sort that. There is nothing to write and nothing to get right on paper — your toddler points, you talk, and the thinking does the rest.',
  hubBlurb:'Same, different, match it, sort it. Picture puzzles for two-year-old thinking.',
  ageLabel:'2 years',

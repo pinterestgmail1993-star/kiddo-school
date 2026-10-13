@@ -52,9 +52,9 @@ export const lesson={
 export const meta={
  slug:'community-helpers-and-our-neighborhood',
  name:'Community Helpers & Our Neighborhood',
- seoTitle:'Community Helpers Flashcards for Preschoolers — 29 Free Printable Cards',
+ seoTitle:'Community Helpers Flashcards for Preschoolers — 29 Printable Cards',
  h1:'Community Helpers & Our Neighborhood flashcards.',
- metaDescription:'Twenty-nine free community-helpers flashcards for ages 4–5: doctor, firefighter, police officer, teacher, farmer, chef, builder and more. Each card has its own page with parent guidance and a download button.',
+ metaDescription:'Twenty-nine community-helpers flashcards for ages 4–5: doctor, firefighter, police officer, teacher, farmer, chef, builder and more. Each card has its own page with parent guidance and a download button.',
  lede:'Twenty-nine helpers, one card each: the people who keep us healthy, keep us safe, feed us, build our homes and teach us something new every day. Show the card, name the helper, then talk about how your neighborhood works — that is the whole method, and it works.',
  hubBlurb:'Twenty-nine neighborhood helpers — health, safety, food, building, transport and learning — one card each.',
  ageLabel:'4–5 years',
@@ -85,7 +85,7 @@ export const cards={
   try:'Play doctor with a teddy: listen to its heart with a cardboard-tube stethoscope, wrap a paper-tissue bandage, and let your child be the gentle healer.',
   note:'Never use the doctor as a threat — "behave or you get a shot" makes check-ups scarier. Read a doctor-visit picture book before appointments and let your child bring a toy.',
   safety:'Medicine is only for grown-ups to give. Pills and syrup are not sweets — teach your child to never taste anything from the medicine shelf.',
-  metaDescription:'A free Doctor flashcard for ages 4–5: what doctors do, their tools and a brave check-up activity. Print it before the next appointment.'},
+  metaDescription:'A Doctor flashcard for ages 4–5: what doctors do, their tools and a brave check-up activity. Print it before the next appointment.'},
  'nurse':{
   word:'Nurse',
   intro:'A nurse takes care of sick and hurt people every day — checking, comforting and helping them heal.',
@@ -96,7 +96,7 @@ export const cards={
   try:'Set up a caring corner: doll, toy thermometer, bandages made from toilet paper. Your child is the nurse — checking, wrapping and saying "all better" in a calm voice.',
   note:'Children copy what nurses do: washing hands, speaking kindly, being gentle. Praise the caring behaviours, not just the costume.',
   safety:'Only grown-ups give medicine — even "just one more plaster" needs a grown-up’s eyes on a real wound first.',
-  metaDescription:'A free Nurse flashcard for ages 4–5: how nurses care for people, their tools and a gentle pretend-play idea. Print it for the dressing-up box.'},
+  metaDescription:'A Nurse flashcard for ages 4–5: how nurses care for people, their tools and a gentle pretend-play idea. Print it for the dressing-up box.'},
  'paramedic':{
   word:'Paramedic',
   intro:'A paramedic is an emergency health helper who rides an ambulance to reach people fast.',
@@ -107,7 +107,7 @@ export const cards={
   try:'Park a toy ambulance near the toy cars. Line up teddies and ask: "Who needs help first? How does the paramedic carry them?" Stretchers can be shoe boxes with ribbon handles.',
   note:'Loud sirens can overwhelm sensitive children. Name it before it happens: "Sirens are loud because cars must move out of the way — that is how help arrives quickly."',
   safety:'Teach your child your family’s emergency number and to always call with a grown-up or when a grown-up cannot. Paramedics are for real emergencies — never for play phone calls.',
-  metaDescription:'A free Paramedic flashcard for ages 4–5: what paramedics do, what is inside an ambulance and a calm rescue game. Print it for the toy box.'},
+  metaDescription:'A Paramedic flashcard for ages 4–5: what paramedics do, what is inside an ambulance and a calm rescue game. Print it for the toy box.'},
  'police-officer':{
   word:'Police Officer',
   intro:'A police officer keeps the neighborhood safe and helps people who are lost, scared or in trouble.',
@@ -118,7 +118,7 @@ export const cards={
   try:'Play "lost in the shop": one teddy is lost, a toy officer helps. Practise the real skill — saying your grown-up’s first name and that you are lost, out loud, twice.',
   note:'Keep it balanced: officers are helpers, but children should always aim for a known grown-up first. Avoid scare stories — trust grows from calm facts.',
   safety:'Practise your phone number together. Agree a family rule: if we get separated, we stay where we are and ask a grown-up with a badge or a parent with children for help.',
-  metaDescription:'A free Police Officer flashcard for ages 4–5: how officers help, what the badge means and a get-found practice game. Print it for the family wall.'},
+  metaDescription:'A Police Officer flashcard for ages 4–5: how officers help, what the badge means and a get-found practice game. Print it for the family wall.'},
  'firefighter':{
   word:'Firefighter',
   intro:'A firefighter puts out fires and rescues people — and spends just as much time preventing fires.',
@@ -129,7 +129,7 @@ export const cards={
   try:'Walk your home and find two ways out of each room. Crawl low "under the smoke" between sofa cushions, then meet at your family meeting spot. Do it as a game, twice a year.',
   note:'Children sometimes hide from firefighters in masks. Fire stations hold open days — seeing the gear up close, and hearing the voice behind the mask, changes everything.',
   safety:'Matches, lighters and candles are grown-up tools — always tell a grown-up if you find one, never touch. If there is smoke: get low, get out, stay out.',
-  metaDescription:'A free Firefighter flashcard for ages 4–5: what firefighters do, fire-say scripts and a family escape-plan game. Print it for fire-safety week.'},
+  metaDescription:'A Firefighter flashcard for ages 4–5: what firefighters do, fire-say scripts and a family escape-plan game. Print it for fire-safety week.'},
  'crossing-guard':{
   word:'Crossing Guard',
   intro:'A crossing guard helps children and families cross the street safely at the busiest times of day.',
@@ -140,7 +140,7 @@ export const cards={
   try:'Practise the routine on a quiet walk: stop at the kerb, look left-right-left, listen for engines, then cross together. Let your child be the "guard" for teddies at a pretend kerb of cushions.',
   note:'Guards are busiest at school rush hours — a wave and a "thank you" from your child brightens the shift and builds the helper bond.',
   safety:'Never run across the road, even at a crossing. Streets are for crossing with a grown-up — never for playing. Cars need a long time to stop.',
-  metaDescription:'A free Crossing Guard flashcard for ages 4–5: stop-look-listen practice, holding hands near roads and a teddy crossing game. Print it for the school run.'},
+  metaDescription:'A Crossing Guard flashcard for ages 4–5: stop-look-listen practice, holding hands near roads and a teddy crossing game. Print it for the school run.'},
  'lifeguard':{
   word:'Lifeguard',
   intro:'A lifeguard watches over swimmers from a tall chair and helps the moment someone needs it.',
@@ -151,7 +151,7 @@ export const cards={
   try:'Play lifeguard at bath time: one whistle (or "tweet!") means freeze and listen. Practise walking — never running — near the "pool", and asking before going into any water.',
   note:'If your child asks why the lifeguard sits so high: "to see everyone in the water at once". Watching IS helping.',
   safety:'Never swim without a grown-up in the water nearby. No swimming straight after big meals, no running on wet pool sides — and always check with the lifeguard or a grown-up first.',
-  metaDescription:'A free Lifeguard flashcard for ages 4–5: water rules, whistle games and safe pool habits. Print it before the next family swim.'},
+  metaDescription:'A Lifeguard flashcard for ages 4–5: water rules, whistle games and safe pool habits. Print it before the next family swim.'},
  'teacher':{
   word:'Teacher',
   intro:'A teacher helps children learn new things every day — letters, numbers, songs and how to be a good friend.',
@@ -161,7 +161,7 @@ export const cards={
   say:'Teachers help us learn. At school you can raise your hand and ask the teacher anything you wonder about.',
   try:'Play school: your child teaches teddies a song, a letter or a rule. Swap roles — you be the student who asks curious questions.',
   note:'Ask your child "what did your teacher show today?" — recalling the day in order builds memory and gives you a window into their classroom world.',
-  metaDescription:'A free Teacher flashcard for ages 4–5: what teachers do all day and a play-school activity that builds school confidence. Print it before the first day.'},
+  metaDescription:'A Teacher flashcard for ages 4–5: what teachers do all day and a play-school activity that builds school confidence. Print it before the first day.'},
  'librarian':{
   word:'Librarian',
   intro:'A librarian takes care of the library and helps every visitor find the right book.',
@@ -171,7 +171,7 @@ export const cards={
   say:'Librarians love questions. "Where are the books about trains?" is exactly what they are there for.',
   try:'Visit the library and let your child carry the card and hand the books over the counter. Borrowing, caring for the book and returning it on time is a whole responsibility lesson.',
   note:'Libraries usually have free story times and summer reading clubs — the librarian can tell you what is on this month.',
-  metaDescription:'A free Librarian flashcard for ages 4–5: what happens in a library and a borrow-and-return activity. Print it before your first library visit.'},
+  metaDescription:'A Librarian flashcard for ages 4–5: what happens in a library and a borrow-and-return activity. Print it before your first library visit.'},
  'mail-carrier':{
   word:'Mail Carrier',
   intro:'A mail carrier brings letters, cards and parcels to every home on the street, in rain or shine.',
@@ -182,7 +182,7 @@ export const cards={
   try:'Draw a picture for a relative, "write" your name, fold it into an envelope with a drawn stamp, and walk it to the post box together.',
   note:'Trace your mail route on the walk to school: where does the post enter our street? Who has the brightest letterbox? Maps start here.',
   safety:'Letterboxes and mail trucks are for the mail carrier only — never open other people’s post or play near a parked delivery van.',
-  metaDescription:'A free Mail Carrier flashcard for ages 4–5: the journey of a letter and a send-a-picture activity. Print it and post something kind today.'},
+  metaDescription:'A Mail Carrier flashcard for ages 4–5: the journey of a letter and a send-a-picture activity. Print it and post something kind today.'},
  'bus-driver':{
   word:'Bus Driver',
   intro:'A bus driver takes people where they need to go, stop by stop, all around the neighborhood.',
@@ -193,7 +193,7 @@ export const cards={
   try:'Ride one stop together. Let your child hand over the fare, find two seats, count three stops and press the bell. Afterwards, draw the bus and its route.',
   note:'Play "the wheels on the bus" with stop-by-stop storytelling: who gets on, who gets off, what do they carry? Narration builds sequence skills.',
   safety:'Stay seated and hold the rail while the bus moves. Wait for the bus to stop completely before standing — and never walk right behind a bus.',
-  metaDescription:'A free Bus Driver flashcard for ages 4–5: how bus rides work and a ride-one-stop activity. Print it before your next bus trip.'},
+  metaDescription:'A Bus Driver flashcard for ages 4–5: how bus rides work and a ride-one-stop activity. Print it before your next bus trip.'},
  'pilot':{
   word:'Pilot',
   intro:'A pilot flies an aeroplane, taking people and goods across the country and around the world.',
@@ -204,7 +204,7 @@ export const cards={
   try:'Build a plane from chairs. Pilot and co-pilot check the wings (arms out), the tower says "ready for take-off", everyone buckles teddies in, count down and fly over the "ocean" rug.',
   note:'Look up at contrails together — those white lines are planes far away. Wave hello; somewhere up there is a pilot.',
   safety:'Aeroplanes are flown by trained pilots only. At the airport: hold a grown-up’s hand, stay behind the lines, never touch controls or belt buckles that are not yours.',
-  metaDescription:'A free Pilot flashcard for ages 4–5: what happens in a cockpit and a chair-plane take-off game. Print it before your next flight.'},
+  metaDescription:'A Pilot flashcard for ages 4–5: what happens in a cockpit and a chair-plane take-off game. Print it before your next flight.'},
  'farmer':{
   word:'Farmer',
   intro:'A farmer grows the food we eat — vegetables, fruit, grains — and cares for farm animals.',
@@ -215,7 +215,7 @@ export const cards={
   try:'Grow something: beans in a jar with wet cotton, or herbs on the windowsill. Watering daily is your child’s farmer job — sprouts in about a week.',
   note:'Match three dinners to their farm: potatoes, apples, milk. Then find each one in the shop together — farm-to-shop treasure hunts beat any flashcard.',
   safety:'Farms are workplaces: real tractors, tools and animals are for farmers only. Never eat berries or plants from the garden unless a grown-up says they are safe.',
-  metaDescription:'A free Farmer flashcard for ages 4–5: where food comes from and a grow-a-bean activity. Print it and start your windowsill farm.'},
+  metaDescription:'A Farmer flashcard for ages 4–5: where food comes from and a grow-a-bean activity. Print it and start your windowsill farm.'},
  'chef':{
   word:'Chef',
   intro:'A chef cooks meals in a restaurant kitchen, mixing, tasting and plating food for many people.',
@@ -226,7 +226,7 @@ export const cards={
   try:'Be the sous-chef: wash vegetables, tear salad leaves, stir batter, sprinkle toppings. One real task at dinner beats any toy kitchen.',
   note:'Name the smells: garlic, cinnamon, onions. Describing smells and tastes builds vocabulary that shows up on every plate later.',
   safety:'Stoves, ovens and knives are grown-up tools. A child’s jobs are washing, stirring, tearing and sprinkling — with a grown-up always in the kitchen.',
-  metaDescription:'A free Chef flashcard for ages 4–5: kitchen jobs, menu games and safe sous-chef tasks. Print it before your next restaurant visit.'},
+  metaDescription:'A Chef flashcard for ages 4–5: kitchen jobs, menu games and safe sous-chef tasks. Print it before your next restaurant visit.'},
  'baker':{
   word:'Baker',
   intro:'A baker starts work very early, turning flour, water and yeast into fresh bread, buns and cakes.',
@@ -237,7 +237,7 @@ export const cards={
   try:'Bake bread rolls together: your child measures, pours, kneads and shapes. Watching dough rise, then eating warm rolls, is a full-circle wonder.',
   note:'Walk past the bakery early and sniff. Ask which smell is bread and which is cake — early-morning sensory talk nobody forgets.',
   safety:'Ovens and hot trays are grown-up territory. Bakers (and their helpers) wash hands first and wait for bread to cool before touching or tasting.',
-  metaDescription:'A free Baker flashcard for ages 4–5: how dough becomes bread and a bake-your-rolls activity. Print it for a weekend bake.'},
+  metaDescription:'A Baker flashcard for ages 4–5: how dough becomes bread and a bake-your-rolls activity. Print it for a weekend bake.'},
  'gardener':{
   word:'Gardener',
   intro:'A gardener takes care of plants — in parks, gardens and greenhouses — so flowers bloom and trees thrive.',
@@ -248,7 +248,7 @@ export const cards={
   try:'Adopt one plant: your child waters it, checks its leaves and measures its growth with a ribbon. Name it — named plants get cared for.',
   note:'Walk your park and play spot-the-gardener-work: fresh mulch, trimmed hedge, new tulips. Someone did that — and now your child knows who.',
   safety:'Some plants are not for touching or tasting — berries, mushrooms and sap can irritate or be poisonous. Wash hands after gardening and wear gloves with soil.',
-  metaDescription:'A free Gardener flashcard for ages 4–5: how plants grow and an adopt-a-plant activity. Print it and start your little garden.'},
+  metaDescription:'A Gardener flashcard for ages 4–5: how plants grow and an adopt-a-plant activity. Print it and start your little garden.'},
  'veterinarian':{
   word:'Veterinarian',
   intro:'A veterinarian is an animal doctor who helps pets and farm animals stay healthy and heal when hurt.',
@@ -259,7 +259,7 @@ export const cards={
   try:'Open a pet clinic: every stuffed animal gets a check-up — ears, paws, heart (a gentle tap on the tummy), a paper-collar bandage, and a kind "all better".',
   note:'Read animal-body-language together: a dog with a stiff body or tucked tail needs space. Vets teach us to watch, not just pet.',
   safety:'Always ask the owner before touching any animal — even friendly-looking dogs. Never disturb an animal while it eats or sleeps.',
-  metaDescription:'A free Veterinarian flashcard for ages 4–5: how animal doctors help and a teddy pet-clinic game. Print it for the animal lover in your house.'},
+  metaDescription:'A Veterinarian flashcard for ages 4–5: how animal doctors help and a teddy pet-clinic game. Print it for the animal lover in your house.'},
  'scientist':{
   word:'Scientist',
   intro:'A scientist asks questions about the world and finds answers with careful experiments and observations.',
@@ -270,7 +270,7 @@ export const cards={
   try:'Three-jar experiment: full of water, half, empty — which sound does each make when tapped? Guess first, then test. Guessing and checking IS science.',
   note:'Value the flop: experiments that "fail" are results. Scientists say "interesting!" and try again — borrow that word.',
   safety:'Real experiments need a grown-up: no tasting anything in a lab or kitchen experiment, and goggles for anything that splashes.',
-  metaDescription:'A free Scientist flashcard for ages 4–5: how scientists think and a guess-and-test sound experiment. Print it and ask "why?" together.'},
+  metaDescription:'A Scientist flashcard for ages 4–5: how scientists think and a guess-and-test sound experiment. Print it and ask "why?" together.'},
  'dentist':{
   word:'Dentist',
   intro:'A dentist keeps teeth healthy — checking, cleaning and teaching everyone how to brush.',
@@ -281,7 +281,7 @@ export const cards={
   try:'Count your child’s teeth in the mirror — how many can you find? Then brush the "sugar bugs" away: outside, inside, chewing tops, in slow circles.',
   note:'First visits are for looking, not fixing — say so. "The dentist will count your teeth and maybe take a picture" sets a calm, honest expectation.',
   safety:'Only a pea-sized dab of toothpaste, and teach spitting — toothpaste is for brushing, not swallowing.',
-  metaDescription:'A free Dentist flashcard for ages 4–5: what happens at a check-up and a count-and-brush activity. Print it for the bathroom mirror.'},
+  metaDescription:'A Dentist flashcard for ages 4–5: what happens at a check-up and a count-and-brush activity. Print it for the bathroom mirror.'},
  'optometrist':{
   word:'Optometrist',
   intro:'An optometrist checks how well eyes see and finds glasses that make everything sharp and clear.',
@@ -291,7 +291,7 @@ export const cards={
   say:'The optometrist checks your eyes so everything looks clear. If your eyes need tiny helpers, you get glasses — like super-vision goggles!',
   try:'Play eye-test: stick shapes on the wall, step back, name them. Cover one eye, then the other. Your child "tests" you too.',
   note:'Normalise glasses: point out shop assistants, grandparents and story characters in glasses. "Glasses help eyes see" should be as ordinary as socks.',
-  metaDescription:'A free Optometrist flashcard for ages 4–5: what eye tests are like and a cover-the-eye game. Print it before the first eye check.'},
+  metaDescription:'A Optometrist flashcard for ages 4–5: what eye tests are like and a cover-the-eye game. Print it before the first eye check.'},
  'sanitation-worker':{
   word:'Sanitation Worker',
   intro:'A sanitation worker collects our bins and waste so the neighborhood stays clean and healthy.',
@@ -302,7 +302,7 @@ export const cards={
   try:'Set up three bins: paper, plastic, "other". Race to sort clean waste. On collection day, watch the truck lift the bin — wave to the crew.',
   note:'Bin day is a calendar lesson: what day is it today? Put the bin out together the night before — a real job with a real deadline.',
   safety:'Collection trucks are big and cannot see small people — watch from the window or far back on the kerb. Never play behind or near a parked truck, and wash hands after touching bins.',
-  metaDescription:'A free Sanitation Worker flashcard for ages 4–5: where rubbish goes and a sorting-recycling game. Print it for bin day.'},
+  metaDescription:'A Sanitation Worker flashcard for ages 4–5: where rubbish goes and a sorting-recycling game. Print it for bin day.'},
  'hairdresser':{
   word:'Hairdresser',
   intro:'A hairdresser cuts, washes and styles hair so people leave the salon feeling great.',
@@ -313,7 +313,7 @@ export const cards={
   try:'Salon at home: teddy in the chair, your child asks "how would you like your hair?", "cuts" with safe play scissors on yarn or paper "hair".',
   note:'Narrate a real haircut beforehand: cape on, spray bottle mist, snip, buzz of clippers, mirror spin. Knowing the sounds makes them friendly.',
   safety:'Real scissors, clippers and hot dryers are for hairdressers only. Children sit very still in salon chairs — no reaching for tools.',
-  metaDescription:'A free Hairdresser flashcard for ages 4–5: what happens in a salon and a teddy-barber play idea. Print it before the next haircut.'},
+  metaDescription:'A Hairdresser flashcard for ages 4–5: what happens in a salon and a teddy-barber play idea. Print it before the next haircut.'},
  'carpenter':{
   word:'Carpenter',
   intro:'A carpenter builds with wood — furniture, doors, shelves and frames — measuring, cutting and joining.',
@@ -324,7 +324,7 @@ export const cards={
   try:'Build a hammer-and-peg bench or a box from a kit with real (child-safe) tools and your help. Sanding a smooth plank is deeply satisfying work.',
   note:'Collect wood offcuts in a "loose parts" box. With string and blocks, offcuts become bridges, robots and doll beds — engineering before breakfast.',
   safety:'Real saws, drills and nails are grown-up tools. Children sand, hold and measure — and always wear safety glasses around the workbench.',
-  metaDescription:'A free Carpenter flashcard for ages 4–5: measuring and building with wood and a safe first-build activity. Print it for the little maker.'},
+  metaDescription:'A Carpenter flashcard for ages 4–5: measuring and building with wood and a safe first-build activity. Print it for the little maker.'},
  'construction-worker':{
   word:'Construction Worker',
   intro:'A construction worker builds the big things around us — houses, roads, bridges and schools.',
@@ -335,7 +335,7 @@ export const cards={
   try:'Build a "site" at home: foundations (blocks on carpet), walls (bricks), roof (cardboard). Hard hat optional but highly recommended.',
   note:'Next walk, play site-surveyor: what is being built? What came first — the crane or the walls? Big machines have names; learn two.',
   safety:'Building sites are never playgrounds — keep out, even when it looks empty. Hard hats and hi-vis vests are real safety gear, not costumes.',
-  metaDescription:'A free Construction Worker flashcard for ages 4–5: how buildings go up and a build-a-house sequencing game. Print it for the digger fan.'},
+  metaDescription:'A Construction Worker flashcard for ages 4–5: how buildings go up and a build-a-house sequencing game. Print it for the digger fan.'},
  'architect':{
   word:'Architect',
   intro:'An architect designs buildings on paper — and with computers — before anyone builds them.',
@@ -345,7 +345,7 @@ export const cards={
   say:'The architect draws the house first, then the builders build it. Let’s draw our dream house — where will your room go?',
   try:'Draw a floor plan of your home: rooms as rectangles, doors as lines. Then build it in blocks. Draw first, build second — that is the architect’s way.',
   note:'Look up: which houses on your street are same and different? Windows, roofs, doors — every choice was drawn by someone first.',
-  metaDescription:'A free Architect flashcard for ages 4–5: drawing-before-building and a floor-plan activity. Print it for the young designer.'},
+  metaDescription:'A Architect flashcard for ages 4–5: drawing-before-building and a floor-plan activity. Print it for the young designer.'},
  'electrician':{
   word:'Electrician',
   intro:'An electrician works with wires and power — installing the electricity that lights our homes.',
@@ -356,7 +356,7 @@ export const cards={
   try:'Torch and battery hunt: find what works with batteries, what works with plugs. Sort the room’s electricity — wonderful "power detective" talk.',
   note:'Explain the mystery simply: electricity travels in wires like water in pipes, and electricians are the only ones who may open those pipes.',
   safety:'Electricity is never a toy: never poke sockets, chew cables or put anything in plugs. Water and electricity never mix — tell a grown-up about every spark or tingle.',
-  metaDescription:'A free Electrician flashcard for ages 4–5: what electricians do and socket-safety rules. Print it for your home-safety talk.'},
+  metaDescription:'A Electrician flashcard for ages 4–5: what electricians do and socket-safety rules. Print it for your home-safety talk.'},
  'plumber':{
   word:'Plumber',
   intro:'A plumber works with pipes and water — installing sinks, fixing leaks and keeping water flowing.',
@@ -367,7 +367,7 @@ export const cards={
   try:'Water-flow play in the bath: pipes from pool noodles, funnels, cups. Which route does the water take? You just built plumbing.',
   note:'Count the taps and pipes in your home together. Then find the stop tap with a grown-up — the plumber’s first question in a leak.',
   safety:'Wet floors are slippery — report every puddle. Do not poke things into drains or taps; that is a job for the plumber’s tools.',
-  metaDescription:'A free Plumber flashcard for ages 4–5: how water travels at home and a pool-noodle pipe activity. Print it for the leak reporter.'},
+  metaDescription:'A Plumber flashcard for ages 4–5: how water travels at home and a pool-noodle pipe activity. Print it for the leak reporter.'},
  'mechanic':{
   word:'Mechanic',
   intro:'A mechanic fixes cars in a garage — listening to engines, lifting cars and finding what went wrong.',
@@ -378,7 +378,7 @@ export const cards={
   try:'Tyre check on the family car (engine off, parked): is the tyre fat or flat? What is the tread like? Mechanics start by looking closely.',
   note:'Garage visits get interesting when your child can name three things a mechanic checks. Ask the mechanic to show the lift — most love to.',
   safety:'Garages are workshops: cars on lifts, tools and fluids are not for playing. Children stay in the waiting area — and never crawl under a car.',
-  metaDescription:'A free Mechanic flashcard for ages 4–5: how cars get fixed and a tyre-check activity. Print it for the little car expert.'},
+  metaDescription:'A Mechanic flashcard for ages 4–5: how cars get fixed and a tyre-check activity. Print it for the little car expert.'},
  'bus-mechanic':{
   word:'Bus Mechanic',
   intro:'A bus mechanic keeps big buses safe — checking engines, brakes and doors in the bus depot.',
@@ -389,5 +389,5 @@ export const cards={
   try:'Line up your toy buses for "depot inspection": brakes (blocks behind wheels), doors (open-close count), lights (draw them on). Stamp the paper "checked".',
   note:'A bus is many cars’ worth of machine — everything is bigger: tyres, wrenches, even the sounds. Compare the two while playing.',
   safety:'Depots are real workshops with pits and heavy buses — never climb on, under or behind a parked bus, even a sleeping one.',
-  metaDescription:'A free Bus Mechanic flashcard for ages 4–5: how whole fleets of buses stay safe and a depot-inspection game. Print it for the bus fan.'}
+  metaDescription:'A Bus Mechanic flashcard for ages 4–5: how whole fleets of buses stay safe and a depot-inspection game. Print it for the bus fan.'}
 };

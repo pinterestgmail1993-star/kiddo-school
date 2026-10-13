@@ -141,5 +141,5 @@ export function drawingCard(t){
  return `<a class="dt-card" href="${t.path}"><span class="dt-card-stage"><img src="${stepUrl(t,t.steps.length-1)}" alt="${esc(last.alt)}" width="${last.w}" height="${last.h}" loading="lazy" decoding="async"></span><span class="dt-card-copy"><strong>${esc(t.h1)}</strong><span>${esc(t.subtitle)}</span><span class="fc-open">Start drawing <span aria-hidden="true">↗</span></span></span></a>`;
 }
 export function drawingShelf(){
- return `<div class="dt-shelf" id="drawing"><div class="dt-shelf-head"><h2>How to draw — step by step</h2><p>Big, friendly drawing lessons for little artists: one step at a time, from a first circle to a finished picture. Ages 3–6, free, no sign-up.</p></div><div class="dt-shelf-grid">${drawingTutorials.map(drawingCard).join('')}</div></div>`;
+ return `<div class="dt-shelf" id="drawing"><div class="dt-shelf-head"><h2>How to draw — step by step</h2><p>Big, friendly drawing lessons for little artists: one step at a time, from a first circle to a finished picture. Ages 3–6.</p></div><div class="dt-shelf-grid">${drawingTutorials.map(drawingCard).join('')}</div></div>`;
 }

@@ -3,9 +3,9 @@
 export const meta={
  slug:'vehicles-and-sounds',
  name:'Vehicles & Sounds',
- seoTitle:'Vehicle Flashcards for Toddlers — 20 Free Printable Cards',
+ seoTitle:'Vehicle Flashcards for Toddlers — 20 Printable Cards',
  h1:'Vehicles & Sounds flashcards.',
- metaDescription:'Twenty free vehicle flashcards for toddlers: cars, trains, diggers and more with sounds to make together. Print at home, no sign-up.',
+ metaDescription:'Twenty vehicle flashcards for toddlers: cars, trains, diggers and more with sounds to make together. Print at home.',
  lede:'Twenty vehicle cards for toddlers who stop, point and shout "car!" at every window. Make the sounds together, then play spot-the-vehicle for real — wheels, wings and one very loud siren.',
  hubBlurb:'Cars, diggers and one loud siren. Vroom, beep, chugga-chugga.',
  ageLabel:'2 years',

@@ -4,7 +4,7 @@ export const meta={
  name:'Emotions & Feelings',
  seoTitle:'Emotion Flashcards for Toddlers — 20 Feelings Cards with Faces',
  h1:'Emotions & Feelings flashcards.',
- metaDescription:'Twenty free emotion flashcards for toddlers: happy, sad, angry, calm and more, with friendly faces and simple ways to talk about feelings together. Print at home.',
+ metaDescription:'Twenty emotion flashcards for toddlers: happy, sad, angry, calm and more, with friendly faces and simple ways to talk about feelings together. Print at home.',
  lede:'Twenty feeling faces for learning the words that go with the wobbles. There is no right way to feel and nothing to fix on these cards — you look together, you name the feeling, and your toddler learns that every feeling has a word and a grown-up who listens.',
  hubBlurb:'Happy, sad, calm, brave. Words for the wobbles, faces to match.',
  ageLabel:'2 years',

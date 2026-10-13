@@ -281,7 +281,7 @@ export const GROUPS={
 export const COLOR_GROUPS=GROUPS;
 
 export function colorLibraryBody(){
- const groups=[['Color discovery','Six gentle ways to meet colors — change a chameleon, mix real paint, paint wings, oceans and pottery.'],['Color experiments','Warm and cool, stripes and dots, lanterns that glow: six experiments with color and light.'],['Creative art studio','A free canvas and five design studios — flowers, jellyfish, kites, aquariums and a birthday cake.']];
+ const groups=[['Color discovery','Six gentle ways to meet colors — change a chameleon, mix real paint, paint wings, oceans and pottery.'],['Color experiments','Warm and cool, stripes and dots, lanterns that glow: six experiments with color and light.'],['Creative art studio','A canvas and five design studios — flowers, jellyfish, kites, aquariums and a birthday cake.']];
  return `${crumbNav([['Preschool','/preschool/'],['Colors &amp; Creativity Adventures']])}
  ${heading('COLORS &amp; CREATIVITY','Eighteen real painting and making activities.','Pick a color and tap to fill, mix true primary colors, place decorations you can move again, and paint freely on a real canvas. Built for fingers, styluses and mice — with undo, redo and a save button that keeps each creation on the child’s own My Classroom desk.')}
  <div class="lesson-start"><a class="button" href="${CCLASS_PATH}">This way to Class 26 <span aria-hidden="true">→</span></a><span class="lesson-start-hint">The class that goes with these activities: Colors, Mixing &amp; Creativity.</span></div>
@@ -300,7 +300,7 @@ export function colorLibraryBody(){
   <p class="lesson-note">Every card opens a real activity — painting, mixing or making, never a static picture. Finished artwork saves per child on this device.</p>
  </section>
  <section class="wrap lesson-section"><span class="eyebrow">FOR GROWN-UPS</span><h2>Real tools, honest color.</h2>
-  <p class="lesson-copy">The paint laboratory teaches exactly three true mixtures — red + yellow = orange, yellow + blue = green, blue + red = purple — and nothing fake. The fill activities are true region coloring: each tap fills one shape, and the black outlines stay crisp, just like a coloring book. The sundae, aquarium and cake let children place, move and remove decorations as many times as they like. The splatter playground is a free canvas with brush, splatter and eraser tools.</p>
+  <p class="lesson-copy">The paint laboratory teaches exactly three true mixtures — red + yellow = orange, yellow + blue = green, blue + red = purple — and nothing fake. The fill activities are true region coloring: each tap fills one shape, and the black outlines stay crisp, just like a coloring book. The sundae, aquarium and cake let children place, move and remove decorations as many times as they like. The splatter playground is a canvas with brush, splatter and eraser tools.</p>
   <p class="lesson-copy">There is no grading here on purpose: creative choices are never marked right or wrong. Activities complete when the artwork is genuinely finished or the experiment genuinely done — opening a page never counts.</p>
   <p class="lesson-copy">The studio belongs to <a href="${CCLASS_PATH}">Class 26 — Colors, Mixing &amp; Creativity</a> on the Age 4 path, beside <a href="${SHAPE_LIB_PATH}">Shape Adventures</a> and <a href="/preschool/writing/adventures/">Writing Adventures</a>.</p>
  </section>`;

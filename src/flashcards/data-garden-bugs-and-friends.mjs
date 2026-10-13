@@ -3,9 +3,9 @@
 export const meta={
  slug:'garden-bugs-and-friends',
  name:'Garden Bugs & Friends',
- seoTitle:'Bug Flashcards for Toddlers — 20 Garden Insect Cards (Free Printables)',
+ seoTitle:'Bug Flashcards for Toddlers — 20 Garden Insect Cards (Printables)',
  h1:'Garden Bugs & Friends flashcards.',
- metaDescription:'Twenty free bug and garden creature flashcards for toddlers: bees, butterflies, ladybugs, snails and more, with gentle look-don\'t-touch games. Print at home.',
+ metaDescription:'Twenty bug and garden creature flashcards for toddlers: bees, butterflies, ladybugs, snails and more, with gentle look-don\'t-touch games. Print at home.',
  lede:'Twenty garden cards for small people who crouch at every flowerpot. Bees, butterflies, worms and a roly-poly or two — with the golden rule baked into every idea: we look, we talk, and the bugs stay where they live.',
  hubBlurb:'Bees, snails, worms and roly-polies. Look closely, touch gently, never grab.',
  ageLabel:'2 years',

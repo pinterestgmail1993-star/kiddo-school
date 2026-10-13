@@ -831,7 +831,7 @@ test("today's class: one curriculum source, smart buttons, real progress machine
  }
  // privacy: nothing personal leaves the device; the engine never posts anywhere
  assert.ok(!engine.includes('fetch('),'progress engine never talks to the network');
- assert.ok(engine.includes('no account')||engine.includes('No account'),'honest privacy note in the engine copy');
+ assert.ok(engine.includes('Nothing is uploaded'),'honest privacy note in the engine copy');
  // the class pages carry the engine so visits + completion are recorded
  for(const p of ['/preschool/3-years/shapes-and-patterns/','/newborn/0-6-weeks/high-contrast-cards/']){
   const html=read('dist'+p+'index.html');
@@ -841,5 +841,5 @@ test("today's class: one curriculum source, smart buttons, real progress machine
  assert.ok(read('dist/preschool/3-years/shapes-and-patterns/index.html').includes('id="class-complete"'),'preschool classes have the completion anchor');
  assert.ok(engine.includes("querySelector('#class-complete')")&&engine.includes("getElementById('main')"),'completion bar lands on every class page shape');
  // guest age picker copy is honest about device-only storage
- assert.ok(engine.includes('no sign-up'));
+ assert.ok(engine.includes('only in this browser'));
 });

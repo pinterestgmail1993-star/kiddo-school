@@ -56,13 +56,13 @@ export const termsBody=()=>`<p>Last updated: ${LEGAL_UPDATED}.</p>
 <h2>Copyright</h2>
 <p>© 2026 Kiddo.school. All rights reserved. Unless stated otherwise, we and our licensors own the copyright and other intellectual property in all text, illustrations, worksheets, flashcards, code and design on this website. The Kiddo.school name and logo may not be used without our written permission.</p>
 <h2>Premium products and payments</h2>
-<p>Much of Kiddo.school is free to use. Any premium products we offer are sold through Paddle, our payment provider and merchant of record. Paddle handles checkout, payment, taxes and receipts, and its own terms apply to your purchase. The price, what is included and any refund terms are shown at checkout before you pay.</p>
+<p>Any premium products we offer are sold through Paddle, our payment provider and merchant of record. Paddle handles checkout, payment, taxes and receipts, and its own terms apply to your purchase. The price, what is included and any refund terms are shown at checkout before you pay.</p>
 <h2>Posts and messages from you</h2>
 <p>Some areas, such as the Sticky Note Wall and Art Wall, let you send in notes or artwork. You confirm that what you send is yours to share, is suitable for a family audience, and contains no personal details about a child. We review submissions before they appear, may edit or remove anything that breaks these terms, and you give us a non-exclusive licence to display what you send on Kiddo.school. Posts show the views of the person who wrote them, not ours.</p>
 <h2>Linking to us</h2>
 <p>You are welcome to link to our pages as long as the link is accurate, does not suggest that we endorse you, and fits the context of your site. Please do not place our pages inside frames, and do not use our logo for linking without permission. We may ask you to remove a link at any time.</p>
 <h2>Availability and liability</h2>
-<p>We work to keep the website accurate and available, but we do not promise that it will always be error-free or online. As the website is free to use, we are not liable for any loss or damage of any kind, to the fullest extent the law allows. Nothing in these terms excludes liability that cannot be excluded by law. Our <a href="/disclaimer/">disclaimer</a> and <a href="/privacy/">privacy policy</a> form part of these terms.</p>
+<p>We work to keep the website accurate and available, but we do not promise that it will always be error-free or online. To the fullest extent the law allows, we are not liable for any loss or damage of any kind arising from your use of the website. Nothing in these terms excludes liability that cannot be excluded by law. Our <a href="/disclaimer/">disclaimer</a> and <a href="/privacy/">privacy policy</a> form part of these terms.</p>
 <h2>Changes</h2>
 <p>We may update these terms from time to time. The current version is always on this page, and continued use means you accept it.</p>
 <h2>Questions</h2>

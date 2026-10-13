@@ -33,7 +33,7 @@ test('worksheet pages are download-first: the sheet shows whole, no drawing laye
   const html = page('worksheets/shapes/build-a-shape-spaceship');
   assert.ok(!html.includes('data-wc '), 'no drawing mount on a worksheet page');
   assert.match(html, /class="fc2-hero ws-hero-art"/, 'the sheet shows whole');
-  assert.match(html, /Download Free Worksheet/, 'PDF download stays');
+  assert.match(html, /Download Worksheet/, 'PDF download stays');
   assert.match(html, /Print Worksheet/, 'print button stays');
   const ls = page('worksheets/life-skills/wash-your-hands');
   assert.ok(!ls.includes('data-wc '), 'no drawing mount on a life-skills worksheet page');

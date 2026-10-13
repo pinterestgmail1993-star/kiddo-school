@@ -44,7 +44,7 @@ export const coloringPages=[
 G({slug:'circle',img:'circle.webp',
  title:'Circle',label:'Circle',
  tag:'One big circle, ready for its first crayon.',
- meta:'A free printable circle coloring page for 2-year-olds: one big bold circle to color, trace and talk about — on paper or on screen with finger, stylus or mouse.',
+ meta:'A printable circle coloring page for 2-year-olds: one big bold circle to color, trace and talk about — on paper or on screen with finger, stylus or mouse.',
  alt:'A big bold-outlined circle filling the middle of a white coloring page.',
  steps:[
   ['Color it','Color the big circle. Staying inside the line is a bonus, not a rule.'],
@@ -57,7 +57,7 @@ G({slug:'circle',img:'circle.webp',
 G({slug:'two-circles',img:'two-circles.webp',
  title:'Two Circles',label:'Two Circles',
  tag:'Two circles — one up high, one down low.',
- meta:'A free printable two-circles coloring page for toddlers: one circle up high and one down low to color, count and compare — on paper or on screen.',
+ meta:'A printable two-circles coloring page for toddlers: one circle up high and one down low to color, count and compare — on paper or on screen.',
  alt:'Two bold-outlined circles on a white coloring page, one near the top and one near the bottom.',
  steps:[
   ['Count them','Point and count: one circle… two circles!'],
@@ -70,7 +70,7 @@ G({slug:'two-circles',img:'two-circles.webp',
 G({slug:'circle-and-beach-ball',img:'circle-and-beach-ball.webp',
  title:'Circle and Beach Ball',label:'Circle & Beach Ball',
  tag:'A plain circle and a beach ball — the circle went to the seaside!',
- meta:'A free printable beach-ball coloring page for 2-year-olds: a plain circle beside a segmented beach ball to color, compare and name — on paper or on screen.',
+ meta:'A printable beach-ball coloring page for 2-year-olds: a plain circle beside a segmented beach ball to color, compare and name — on paper or on screen.',
  alt:'A plain bold-outlined circle above a beach ball drawn with curved panel lines and a little center circle.',
  steps:[
   ['Compare','One circle is plain and one is a beach ball — point to each one.'],
@@ -83,7 +83,7 @@ G({slug:'circle-and-beach-ball',img:'circle-and-beach-ball.webp',
 G({slug:'square',img:'square.webp',
  title:'Square',label:'Square',
  tag:'One big square with four straight sides.',
- meta:'A free printable square coloring page for 2-year-olds: one big bold square to color, trace and find at home — on paper or on screen.',
+ meta:'A printable square coloring page for 2-year-olds: one big bold square to color, trace and find at home — on paper or on screen.',
  alt:'A big bold-outlined square filling the middle of a white coloring page.',
  steps:[
   ['Color it','Color the whole square with your favorite crayon.'],
@@ -96,7 +96,7 @@ G({slug:'square',img:'square.webp',
 G({slug:'pillow-and-square',img:'pillow-and-square.webp',
  title:'Pillow and Square',label:'Pillow & Square',
  tag:'A comfy pillow and a plain square — squares are soft too!',
- meta:'A free printable pillow-and-square coloring page for toddlers: a soft pillow shape beside a plain square to color and compare — on paper or on screen.',
+ meta:'A printable pillow-and-square coloring page for toddlers: a soft pillow shape beside a plain square to color and compare — on paper or on screen.',
  alt:'A pillow shape with soft wavy corners above a plain rounded-corner square.',
  steps:[
   ['Compare','A pillow and a square — how are they the same? How are they different?'],
@@ -109,7 +109,7 @@ G({slug:'pillow-and-square',img:'pillow-and-square.webp',
 G({slug:'square-and-gift-box',img:'square-and-gift-box.webp',
  title:'Square and Gift Box',label:'Square & Gift Box',
  tag:'A plain square and a present with a bow — which one would you open?',
- meta:'A free printable gift-box coloring page for 2-year-olds: a plain square beside a gift box with a bow to color, compare and chatter about — on paper or on screen.',
+ meta:'A printable gift-box coloring page for 2-year-olds: a plain square beside a gift box with a bow to color, compare and chatter about — on paper or on screen.',
  alt:'A plain bold-outlined square above a gift box with a lid band and a two-loop bow.',
  steps:[
   ['Compare','Point to the plain square, then to the gift box.'],
@@ -122,7 +122,7 @@ G({slug:'square-and-gift-box',img:'square-and-gift-box.webp',
 G({slug:'triangle',img:'triangle.webp',
  title:'Triangle',label:'Triangle',
  tag:'One big triangle with three pointy corners.',
- meta:'A free printable triangle coloring page for 2-year-olds: one big bold triangle to color, trace and find — on paper or on screen.',
+ meta:'A printable triangle coloring page for 2-year-olds: one big bold triangle to color, trace and find — on paper or on screen.',
  alt:'A big bold-outlined triangle filling the middle of a white coloring page.',
  steps:[
   ['Color it','Color the whole triangle in one go — big arm moves!'],
@@ -135,7 +135,7 @@ G({slug:'triangle',img:'triangle.webp',
 G({slug:'tall-triangle',img:'tall-triangle.webp',
  title:'Tall Triangle',label:'Tall Triangle',
  tag:'A stretched-up triangle — taller than it is wide.',
- meta:'A free printable tall-triangle coloring page for toddlers: a long, stretched triangle to color and compare with a regular one — on paper or on screen.',
+ meta:'A printable tall-triangle coloring page for toddlers: a long, stretched triangle to color and compare with a regular one — on paper or on screen.',
  alt:'A tall, narrow bold-outlined triangle standing up on a white coloring page.',
  steps:[
   ['Reach up','This triangle is TALL — reach your hands up high like its point.'],
@@ -143,12 +143,12 @@ G({slug:'tall-triangle',img:'tall-triangle.webp',
   ['Compare','Remember the first triangle? This one is stretched tall!']
  ],
  skills:['Tall and short','Shape naming','Big arm movements','Comparing shapes'],
- grown:'Tall and short is a size word two-year-olds can act out — stretch up tall like this triangle, then squat small. The coloring comes with a free stretching game.'
+ grown:'Tall and short is a size word two-year-olds can act out — stretch up tall like this triangle, then squat small. The coloring comes with a stretching game.'
 }),
 G({slug:'triangle-and-house',img:'triangle-and-house.webp',
  title:'Triangle and House',label:'Triangle & House',
  tag:'A pointy-down triangle and a triangle roof — triangles build houses!',
- meta:'A free printable triangle coloring page for 2-year-olds: an upside-down triangle shape and a little house with a triangle roof to color and talk about.',
+ meta:'A printable triangle coloring page for 2-year-olds: an upside-down triangle shape and a little house with a triangle roof to color and talk about.',
  alt:'An upside-down triangle with a curved band along its top edge, above a little house with a triangle roof and a square body.',
  steps:[
   ['Spot them','One triangle points DOWN, and one sits on the house as a roof.'],
@@ -161,7 +161,7 @@ G({slug:'triangle-and-house',img:'triangle-and-house.webp',
 G({slug:'triangle-sandwich-and-mountain',img:'triangle-sandwich-and-mountain.webp',
  title:'Triangle Sandwich and Mountain',label:'Sandwich & Mountain',
  tag:'A sandwich wedge and a two-peak mountain — triangles you can eat and climb!',
- meta:'A free printable sandwich-and-mountain coloring page for toddlers: a sandwich wedge and a pointy mountain, both built from triangles — on paper or on screen.',
+ meta:'A printable sandwich-and-mountain coloring page for toddlers: a sandwich wedge and a pointy mountain, both built from triangles — on paper or on screen.',
  alt:'A sandwich wedge drawn in three layers above a mountain outline with two peaks.',
  steps:[
   ['Spot the triangles','A sandwich and a mountain — both are full of triangles!'],
@@ -174,7 +174,7 @@ G({slug:'triangle-sandwich-and-mountain',img:'triangle-sandwich-and-mountain.web
 G({slug:'rectangle',img:'rectangle.webp',
  title:'Rectangle',label:'Rectangle',
  tag:'One big rectangle — two long sides, two short sides.',
- meta:'A free printable rectangle coloring page for 2-year-olds: one big bold rectangle to color, trace and find at home — on paper or on screen.',
+ meta:'A printable rectangle coloring page for 2-year-olds: one big bold rectangle to color, trace and find at home — on paper or on screen.',
  alt:'A wide bold-outlined rectangle filling the middle of a white coloring page.',
  steps:[
   ['Color it','Color the big rectangle with long, swoopy strokes.'],
@@ -187,7 +187,7 @@ G({slug:'rectangle',img:'rectangle.webp',
 G({slug:'tall-rectangle',img:'tall-rectangle.webp',
  title:'Tall Rectangle',label:'Tall Rectangle',
  tag:'A stretched-up rectangle — like a tower!',
- meta:'A free printable tall-rectangle coloring page for toddlers: a long, standing rectangle to color and compare with a wide one — on paper or on screen.',
+ meta:'A printable tall-rectangle coloring page for toddlers: a long, standing rectangle to color and compare with a wide one — on paper or on screen.',
  alt:'A tall, narrow bold-outlined rectangle standing upright on a white coloring page.',
  steps:[
   ['Reach up','This rectangle stands tall like a tower — stretch up with it!'],
@@ -200,7 +200,7 @@ G({slug:'tall-rectangle',img:'tall-rectangle.webp',
 G({slug:'rectangle-and-bus',img:'rectangle-and-bus.webp',
  title:'Rectangle and Bus',label:'Rectangle & Bus',
  tag:'A plain rectangle and a bus — the rectangle grew wheels!',
- meta:'A free printable bus coloring page for 2-year-olds: a plain rectangle beside a bus body with two round wheels to color and compare — on paper or on screen.',
+ meta:'A printable bus coloring page for 2-year-olds: a plain rectangle beside a bus body with two round wheels to color and compare — on paper or on screen.',
  alt:'A tall plain rectangle above a long rounded bus body with two circle wheels underneath.',
  steps:[
   ['Compare','One shape is plain; one is a BUS. Wheels are circles!'],
@@ -213,7 +213,7 @@ G({slug:'rectangle-and-bus',img:'rectangle-and-bus.webp',
 G({slug:'oval',img:'oval.webp',
  title:'Oval',label:'Oval',
  tag:'A stretched-out circle — an oval!',
- meta:'A free printable oval coloring page for 2-year-olds: one big oval to color, trace and compare with a circle — on paper or on screen.',
+ meta:'A printable oval coloring page for 2-year-olds: one big oval to color, trace and compare with a circle — on paper or on screen.',
  alt:'A big bold-outlined oval standing upright on a white coloring page.',
  steps:[
   ['Color it','Color the oval with slow, gentle strokes — it is a squished circle.'],
@@ -226,7 +226,7 @@ G({slug:'oval',img:'oval.webp',
 G({slug:'two-ovals',img:'two-ovals.webp',
  title:'Two Ovals',label:'Two Ovals',
  tag:'Two oval rings — one standing tall, one lying flat.',
- meta:'A free printable two-ovals coloring page for toddlers: a standing oval ring and a lying-flat oval ring, each with a border to color carefully — on paper or on screen.',
+ meta:'A printable two-ovals coloring page for toddlers: a standing oval ring and a lying-flat oval ring, each with a border to color carefully — on paper or on screen.',
  alt:'Two double-outlined oval rings: a tall upright one near the top and a wide flat one near the bottom.',
  steps:[
   ['Compare','One oval stands UP and one lies DOWN — point to each.'],
@@ -239,7 +239,7 @@ G({slug:'two-ovals',img:'two-ovals.webp',
 G({slug:'egg-shape',img:'egg-shape.webp',
  title:'Egg Shape',label:'Egg Shape',
  tag:'One big egg — an oval with a secret: which end is up?',
- meta:'A free printable egg coloring page for 2-year-olds: one big egg outline to color, decorate and talk about — on paper or on screen.',
+ meta:'A printable egg coloring page for 2-year-olds: one big egg outline to color, decorate and talk about — on paper or on screen.',
  alt:'A big bold egg outline — an oval with a narrower top — on a white coloring page.',
  steps:[
   ['Spot it','It looks like an oval… but one end is smaller. It is an EGG!'],
@@ -252,7 +252,7 @@ G({slug:'egg-shape',img:'egg-shape.webp',
 G({slug:'star',img:'star.webp',
  title:'Star',label:'Star',
  tag:'One big five-point star, ready to shine.',
- meta:'A free printable star coloring page for 2-year-olds: one big star to color, count its points and stick on the fridge — on paper or on screen.',
+ meta:'A printable star coloring page for 2-year-olds: one big star to color, count its points and stick on the fridge — on paper or on screen.',
  alt:'A big bold-outlined five-point star with softly rounded tips on a white coloring page.',
  steps:[
   ['Count points','Touch each point and count: one, two, three, four, five!'],
@@ -265,7 +265,7 @@ G({slug:'star',img:'star.webp',
 G({slug:'heart',img:'heart.webp',
  title:'Heart',label:'Heart',
  tag:'One big heart — color it for someone you love.',
- meta:'A free printable heart coloring page for toddlers: one big heart to color and give away — on paper or on screen with finger, stylus or mouse.',
+ meta:'A printable heart coloring page for toddlers: one big heart to color and give away — on paper or on screen with finger, stylus or mouse.',
  alt:'A big bold-outlined heart on a white coloring page.',
  steps:[
   ['Color it','Color the heart — pink, red, or every color at once.'],
@@ -278,7 +278,7 @@ G({slug:'heart',img:'heart.webp',
 G({slug:'apple-and-banana',img:'apple-and-banana.webp',
  title:'Apple and Banana',label:'Apple & Banana',
  tag:'An apple with its leaf and a big curved banana — snack-time shapes.',
- meta:'A free printable apple-and-banana coloring page for 2-year-olds: an apple with a stem and leaf beside a curved banana to color and snack-talk about — on paper or on screen.',
+ meta:'A printable apple-and-banana coloring page for 2-year-olds: an apple with a stem and leaf beside a curved banana to color and snack-talk about — on paper or on screen.',
  alt:'An apple outline with a stem and one leaf beside a long curved banana.',
  steps:[
   ['Name them','An apple and a banana — which one do you like to munch?'],
@@ -291,7 +291,7 @@ G({slug:'apple-and-banana',img:'apple-and-banana.webp',
 G({slug:'book-and-phone',img:'book-and-phone.webp',
  title:'Book and Phone',label:'Book & Phone',
  tag:'A book and a phone — rectangles you already love.',
- meta:'A free printable book-and-phone coloring page for toddlers: a book beside a phone, both friendly rectangles to color and talk about — on paper or on screen.',
+ meta:'A printable book-and-phone coloring page for toddlers: a book beside a phone, both friendly rectangles to color and talk about — on paper or on screen.',
  alt:'A closed book drawn at a slight tilt with its pages showing, above a rounded rectangle phone with an inner screen outline.',
  steps:[
   ['Name them','A book and a phone — which one does story time live in?'],
@@ -330,7 +330,7 @@ export function coloringFunSection(){
   <h2>Color every shape — right on the screen.</h2>
   <p class="lesson-copy">Twenty big, friendly coloring pages made for two-year-old hands: your child colors straight on the picture with a finger, a stylus or the mouse — pencil, crayons, eraser, undo and redo included. The picture sits on the left, the instructions sit beside it in read-aloud words, and every stroke is saved for your child in <a href="/my-classroom/">My Classroom</a> so they can come back and keep coloring.</p>
   <div class="sa-grid">${cards}</div>
-  <p class="lesson-note">Prefer crayons on paper? Every picture also has a printable twin in the new <a href="${CP_LIB}">Coloring Pages — Shapes</a> library, free to download and print.</p>
+  <p class="lesson-note">Prefer crayons on paper? Every picture also has a printable twin in the new <a href="${CP_LIB}">Coloring Pages — Shapes</a> library — download and print.</p>
  </section>`;
 }
 
@@ -357,7 +357,7 @@ export function coloringActivityBody(a,site){
    <section class="fc2-block fc2-first-block"><span class="eyebrow">HOW TO DO IT</span><h2>Three little steps.</h2><ol class="fc-steps">${stepsHtml}</ol><p class="fc-hint">Ask a grown-up to read the steps aloud the first time. After that, you know just what to do.</p></section>
    <section class="fc2-block" id="cp-tools" aria-label="Drawing tools"><span class="eyebrow">YOUR PENCIL CASE</span><h2>Pick your tools.</h2><p class="fc-hint">Pencil, pen, fill, three line sizes, nine crayons, an eraser, undo, redo and clear — the tools appear right here and work on the picture. Fill floods a region with your color and stops at the sheet's own bold lines. Save keeps your finished art and remembers it for next time.</p></section>
    <section class="fc2-block" data-cp-progress-block><span class="eyebrow">MY PROGRESS</span><h2>Save it to keep it.</h2><p class="ls-progress-line" data-cp-progress aria-live="polite">This page is cleared for you the moment you save your finished picture. Nothing counts until then — opening the page is just opening the door.</p><p class="ls-progress-done" data-cp-done hidden><strong>Cleared!</strong> Your colored picture is saved on this device for your child, and the ribbon is on in <a href="${CP_CLASS_PATH}">Class 9</a>. Come back any time — your colors will be waiting.</p></section>
-   ${shareBlock('SHARE THIS ACTIVITY','Pass it on.',pageUrl,`${a.title} coloring page — free from Kiddo.school`,false)}
+   ${shareBlock('SHARE THIS ACTIVITY','Pass it on.',pageUrl,`${a.title} coloring page — from Kiddo.school`,false)}
    <section class="fc2-block"><span class="eyebrow">PREFER PAPER?</span><h2>Print the twin.</h2><p class="fc-hint">The same picture lives in the Coloring Pages library with its download and print buttons: <a href="${CP_LIB}${a.slug}/">/coloring-pages/shapes/${a.slug}/</a>. Crayons beat styluses sometimes.</p></section>
   </aside>
  </div>
@@ -372,7 +372,7 @@ export function coloringActivityBody(a,site){
 /* ---------- the Coloring Pages hub + the Shapes category ---------- */
 export function coloringHubBody(){
  return `${crumbNav([['Coloring Pages']])}
- <div class="page-heading wrap"><span class="eyebrow">COLORING PAGES \u00b7 FREE PRINTABLES</span><h1>Coloring Pages — big pictures for little crayons.</h1><p>Free printable coloring pages for toddlers and preschoolers, drawn for small hands and fat crayons. Download the original picture, print it clean, or color the same picture on screen first — every page does both.</p></div>
+ <div class="page-heading wrap"><span class="eyebrow">COLORING PAGES \u00b7 FREE PRINTABLES</span><h1>Coloring Pages — big pictures for little crayons.</h1><p>Printable coloring pages for toddlers and preschoolers, drawn for small hands and fat crayons. Download the original picture, print it clean, or color the same picture on screen first — every page does both.</p></div>
  <section class="wrap section compact" aria-label="Coloring page categories">
   <div class="ws-grid">
    <a class="ws-card" href="${CP_LIB}">
@@ -384,7 +384,7 @@ export function coloringHubBody(){
  </section>
  <section class="wrap lesson-section"><span class="eyebrow">TWO WAYS TO COLOR</span><h2>On paper, or right on the screen.</h2>
   <div class="fc-stages">
-   <a class="fc-stage lesson-card-link" href="${CP_LIB}"><div class="fc-stage-pills"><span class="fc-age">Ages 2–4</span><span class="fc-class">Print</span></div><h3>Shapes Coloring Pages</h3><p>Twenty pages, free to download and print — real crayons, real fridge door.</p><span class="fc-open">Open Shapes <span aria-hidden="true">↗</span></span></a>
+   <a class="fc-stage lesson-card-link" href="${CP_LIB}"><div class="fc-stage-pills"><span class="fc-age">Ages 2–4</span><span class="fc-class">Print</span></div><h3>Shapes Coloring Pages</h3><p>Twenty pages to download and print — real crayons, real fridge door.</p><span class="fc-open">Open Shapes <span aria-hidden="true">↗</span></span></a>
    <a class="fc-stage lesson-card-link" href="${CP_ACT_PATH}circle/"><div class="fc-stage-pills"><span class="fc-age">Age 2</span><span class="fc-class">On screen</span></div><h3>Shape Coloring Fun — Class 9</h3><p>Color the same twenty pictures on screen with the drawing layer, one shape class at a time.</p><span class="fc-open">Open the class <span aria-hidden="true">↗</span></span></a>
   </div>
  </section>`;
@@ -400,7 +400,7 @@ export function coloringCategoryBody(){
  <article class="wrap lesson-hero lesson-hero-cover"><div class="lesson-hero-copy">
   <span class="eyebrow">SHAPES \u00b7 20 COLORING PAGES \u00b7 AGES 2\u20134</span>
   <h1>Shapes coloring pages — circles, squares, triangles and friends.</h1>
-  <p class="lesson-lede">Twenty free coloring pages from the owner’s own bold, friendly artwork: one clear outline per page, with the real-world twin beside it — a circle and a beach ball, a rectangle and a bus, a triangle and a house. Tap any picture to open its page; download and print buttons live there.</p>
+  <p class="lesson-lede">Twenty coloring pages from the owner’s own bold, friendly artwork: one clear outline per page, with the real-world twin beside it — a circle and a beach ball, a rectangle and a bus, a triangle and a house. Tap any picture to open its page; download and print buttons live there.</p>
  </div><figure class="lesson-cover"><img src="${esc(CP_COVER.url)}" width="${CP_COVER.w}" height="${CP_COVER.h}" alt="${esc(CP_COVER.alt)}" fetchpriority="high"></figure></article>
  <section class="wrap section compact" aria-label="All shapes coloring pages">
   <div class="ws-grid">${cards}</div>
@@ -434,10 +434,10 @@ export function coloringPageBody(w,site){
   <aside class="fc2-rail" aria-label="Download, print, share and family feedback">
    <section class="fc2-block fc2-first-block"><span class="eyebrow">TAKE IT TO THE TABLE</span><h2>Download &amp; print.</h2>
     <div class="fc2-actions"><button type="button" class="button ws-dl" data-cp-download="${esc(file)}" data-cp-filename="${dlName}">Download original image <span aria-hidden="true">\u2193</span></button><button type="button" class="button button-ghost ws-print" data-cp-print>Print this page <span aria-hidden="true">\u2318</span></button></div>
-    <p class="fc-hint">The download keeps the original WebP picture, full size (1545\u00d72000, A4 portrait). Print opens your browser&rsquo;s print dialog with just the picture &mdash; no header, no buttons, no sign-up, nothing stored.</p>
+    <p class="fc-hint">The download keeps the original WebP picture, full size (1545\u00d72000, A4 portrait). Print opens your browser&rsquo;s print dialog with just the picture &mdash; no header, no buttons, nothing stored.</p>
    </section>
    <div class="fc2-block"><span class="eyebrow">COLOR IT ON SCREEN</span><h2>Start Coloring Online.</h2><p class="fc-hint">The on-screen version of this picture — drawing layer, three steps, save-your-work and all — lives at <a href="${actUrl}">${actUrl}</a>.</p><div class="fc2-actions"><a class="button" href="${actUrl}">Start Coloring Online <span aria-hidden="true">↗</span></a></div></div>
-   ${shareBlock('SHARE THIS PAGE','Pass it on.',pageUrl,`${w.label} Coloring Page — free printable from Kiddo.school`,file)}
+   ${shareBlock('SHARE THIS PAGE','Pass it on.',pageUrl,`${w.label} Coloring Page — printable from Kiddo.school`,file)}
    ${fcCommunityMount(CP_LIB+w.slug+'/')}
   </aside>
  </div>
@@ -453,7 +453,7 @@ export function coloringPageSchema(site,w){
   name:`${w.label} Coloring Page for Toddlers`,
   description:w.meta,url:site+CP_LIB+w.slug+'/',inLanguage:'en',
   learningResourceType:'Coloring page',educationalLevel:'Toddler',teaches:w.skills.join(', '),
-  isAccessibleForFree:true,ageRange:'2-4',encodingFormat:'image/webp',contentUrl:CP_BASE+w.img,image:CP_BASE+w.img,
+ ageRange:'2-4',encodingFormat:'image/webp',contentUrl:CP_BASE+w.img,image:CP_BASE+w.img,
   about:{'@type':'Thing',name:'Shapes'},
   provider:{'@type':'Organization',name:'Kiddo.school',url:site+'/'},
   isPartOf:{'@type':'CreativeWorkSeries',name:'Shape Coloring Fun (Toddler 3, Class 9)',url:site+CP_CLASS_PATH}};

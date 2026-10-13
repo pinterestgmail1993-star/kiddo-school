@@ -161,8 +161,8 @@ export const colorWorksheets=colorCreativities.map(a=>{
   art:{img:COLOR_BASE+a.img,alt:a.alt},
   game:{path:`${S.gameLib}${a.slug}/`,title:a.title},
   classNum:S.classNum,classPath:S.classPath,classTitle:S.classTitle,
-  seoTitle:`${a.title} Worksheet \u2014 Free Printable Coloring Activity for Age 4 (Class 26)`,
-  metaDescription:`Free printable ${a.title} worksheet for 4-year-olds. ${d.lede} Part of Class 26: Colors, Mixing & Creativity at Kiddo.school \u2014 download the PDF, print it, or play the online studio.`,
+  seoTitle:`${a.title} Worksheet \u2014 Printable Coloring Activity for Age 4 (Class 26)`,
+  metaDescription:`Printable ${a.title} worksheet for 4-year-olds. ${d.lede} Part of Class 26: Colors, Mixing & Creativity at Kiddo.school \u2014 download the PDF, print it, or play the online studio.`,
   lede:d.lede,learn:d.learn,skills:d.skills,task:d.task,
   wsType:d.wsType,ws:d.ws,answers:d.answers
  };

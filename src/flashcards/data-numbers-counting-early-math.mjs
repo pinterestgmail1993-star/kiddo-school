@@ -49,9 +49,9 @@ export const lesson={
 export const meta={
  slug:'numbers-counting-and-early-math',
  name:'Numbers, Counting & Early Math',
- seoTitle:'Counting Flashcards 1–20 for Preschoolers — 20 Free Printable Cards',
+ seoTitle:'Counting Flashcards 1–20 for Preschoolers — 20 Printable Cards',
  h1:'Numbers, Counting &amp; Early Math flashcards.',
- metaDescription:'Twenty free counting flashcards for ages 4–5: the numbers 1 to 20, each with rows of smiling fruit to count, tap and name — every card has its own page with a download button and short notes for grown-ups.',
+ metaDescription:'Twenty counting flashcards for ages 4–5: the numbers 1 to 20, each with rows of smiling fruit to count, tap and name — every card has its own page with a download button and short notes for grown-ups.',
  lede:'Twenty cards that walk a child from the very first "one" all the way to twenty: a big numeral on top, rows of smiling apples, bananas, cherries and figs to count underneath, and the fruit word to read below. Count what you see, then count what is in the fruit bowl — the numbers stop being a song and start being real.',
  hubBlurb:'Twenty counting cards — one apple to twenty figs, each number with its own smiling fruit to count.',
  ageLabel:'4–5 years',

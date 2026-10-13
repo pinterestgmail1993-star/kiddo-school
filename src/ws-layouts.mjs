@@ -27,7 +27,7 @@ export function header(els,title,instr,{tint='#f4efe3',accent='#a9694e'}={}){
  els.push(wline(PW-MX-40,40+h+42,PW-MX,40+h+42,RULE,1.5));
  return 40+h+56; // y where content starts
 }
-export function footer(els,note='kiddo.school \u00b7 free printable preschool worksheet \u00b7 print as many as you like'){
+export function footer(els,note='kiddo.school \u00b7 printable preschool worksheet \u00b7 print as many as you like'){
  els.push(wline(MX,PH-46,PW-MX,PH-46,RULE,1.5));
  els.push({t:'text',x:PW/2,y:PH-30,s:note,size:9,color:FAINT,align:'c'});
 }
@@ -876,7 +876,7 @@ export function storySheet(spec){
   const asz=Math.min(10,(CW-20)/(textWidth(spec.answers,10)/10));
   els.push({t:'text',x:MX,y:ay+15,s:spec.answers,size:asz,color:MUT});
  }
- footer(els,'kiddo.school · free printable story & logic worksheet · plays online with its matching game');
+ footer(els,'kiddo.school · printable story & logic worksheet · plays online with its matching game');
  return els;
 }
 function writePanel(els,y,h,hint){

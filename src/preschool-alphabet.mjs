@@ -157,7 +157,7 @@ export function alphabetClassBody(L){
  const printSection=`<section class="wrap lesson-section tc-printables" id="printables" aria-label="Print the cards">
   <span class="eyebrow">PRINT THE CARDS</span>
   <h2>Take the alphabet to the kitchen table.</h2>
-  <p class="lesson-copy">All twenty-six cards can be printed two to a page, in order, straight from your browser — no PDF, no sign-up, nothing to install.</p>
+  <p class="lesson-copy">All twenty-six cards can be printed two to a page, in order, straight from your browser — no PDF, nothing to install.</p>
   <div class="hero-actions tc-print-actions"><a class="button" href="${CLASS_PATH}print/">View Printable Cards <span aria-hidden="true">↗</span></a><button type="button" class="button button-ghost" data-tc-print-open="${CLASS_PATH}print/?print=1">Print Cards</button></div>
   <p class="lesson-note">Printed cards love fridges, bedroom doors and kitchen tables. The same cards also live in the <a href="${SET_URL}">flashcards library</a>, each with its own page.</p>
  </section>`;
@@ -257,5 +257,5 @@ export function preschoolStageBody(){
   {href:'/preschool/3-years/magic-animal-playground/',title:'Animal Sound Safari',copy:'Tap six animal friends to hear their real sounds, guess who made each sound and copy their gentle moves. Plays with Class 6: Animals &amp; Their Sounds.'}
  ].map(g=>`<a class="fc-stage lesson-card-link" href="${g.href}"><div class="fc-stage-pills"><span class="fc-age">Age 3</span><span class="fc-class">Magic game</span></div><h3>${g.title}</h3><p>${g.copy}</p><span class="fc-open">Play the game <span aria-hidden="true">↗</span></span></a>`).join('')}
  </div>
- <p class="lesson-note">Every magic game has no scores, no timers and no sign-up — just extra play with the things each class teaches. Looking for earlier stages? The <a href="/toddler/2-years/">Age 2 classes</a> and the full <a href="/learning-path/">Learning Path</a> are right where you left them.</p></section>`;
+ <p class="lesson-note">Every magic game has no scores and no timers — just extra play with the things each class teaches. Looking for earlier stages? The <a href="/toddler/2-years/">Age 2 classes</a> and the full <a href="/learning-path/">Learning Path</a> are right where you left them.</p></section>`;
 }

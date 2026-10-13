@@ -112,7 +112,7 @@ export function buildPDF({els,W,H,size='a4',title,subject,images}){
  objs.push('<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>');       // F1
  objs.push('<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>');  // F2
  // info
- const info=`<< /Title (${pdfEsc(title||'Kiddo School worksheet')}) /Author (Kiddo.school) /Subject (${pdfEsc(subject||'Free printable preschool worksheet')}) /Creator (Kiddo.school) >>`;
+ const info=`<< /Title (${pdfEsc(title||'Kiddo School worksheet')}) /Author (Kiddo.school) /Subject (${pdfEsc(subject||'Printable preschool worksheet')}) /Creator (Kiddo.school) >>`;
  objs.push(info); // 7
 
  /* assemble with real buffers so JPEG XObjects stay binary-exact */

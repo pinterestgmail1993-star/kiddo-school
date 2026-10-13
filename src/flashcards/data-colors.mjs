@@ -89,7 +89,7 @@ export const colorsCardContent={
   try:'Snack-time red hunt: an apple, a strawberry, a tomato. Line up the red things and say “red” each time — then eat the evidence.',
   note:'Red is a high-energy color, so red play often gets loud. That is fine — naming colors while wiggling is still naming colors.',
   sayPic:'A red apple! Red like the splash — can you say red?',
-  metaDescription:'Meet the red color flashcard: a big red splash and a shiny red apple, with a find-something-red snack hunt for home. Free to download and print.'
+  metaDescription:'Meet the red color flashcard: a big red splash and a shiny red apple, with a find-something-red snack hunt for home. Download and print.'
  },
  blue:{
   word:'Blue',
@@ -100,7 +100,7 @@ export const colorsCardContent={
   try:'On your next walk, count blue cars together. One blue car is a win; five is a parade.',
   note:'Sky blue and car blue are both “blue” at this age. The fine differences between shades can wait years — the big word comes first.',
   sayPic:'A blue car, beep beep! Blue like the splash.',
-  metaDescription:'Meet the blue color flashcard: a big blue splash and a little blue car, with a blue-car-spotting walk to try together. Free to download.'
+  metaDescription:'Meet the blue color flashcard: a big blue splash and a little blue car, with a blue-car-spotting walk to try together. Download.'
  },
  yellow:{
   word:'Yellow',
@@ -111,7 +111,7 @@ export const colorsCardContent={
   try:'Yellow snack hunt: a banana, sweetcorn, a yellow pepper. Name each one — “yellow banana!” — before it disappears.',
   note:'Yellow can look pale on white paper but leaps out in the real world — sun, egg yolks, dandelions. Real things teach this color best.',
   sayPic:'The yellow sun, high in the sky! Yellow like the splash.',
-  metaDescription:'Meet the yellow color flashcard: a big yellow splash and a smiling yellow sun, plus a yellow-snack hunt for home. Free to download and print.'
+  metaDescription:'Meet the yellow color flashcard: a big yellow splash and a smiling yellow sun, plus a yellow-snack hunt for home. Download and print.'
  },
  green:{
   word:'Green',
@@ -122,7 +122,7 @@ export const colorsCardContent={
   try:'Find five green things outside: a leaf, the grass, a bush, a green door, a beetle if you are lucky. One color, one walk, five finds.',
   note:'Dark green and light green are both green for now. If your child asks why, enjoy it — “greens like to hide inside each other” is a fine answer.',
   sayPic:'A green leaf! Green like the splash.',
-  metaDescription:'Meet the green color flashcard: a big green splash and a green leaf, with a five-green-things walk to try together. Free to download.'
+  metaDescription:'Meet the green color flashcard: a big green splash and a green leaf, with a five-green-things walk to try together. Download.'
  },
  orange:{
   word:'Orange',
@@ -133,7 +133,7 @@ export const colorsCardContent={
   try:'Peel an orange together and name the color at every step: the orange peel, the orange segments, the orange juice fingers afterwards.',
   note:'Orange is a mixing star — red paint and yellow paint make orange. Keep this card handy for the mixing game later in the class.',
   sayPic:'An orange! The fruit that gave orange its name.',
-  metaDescription:'Meet the orange color flashcard: a big orange splash and a real orange fruit, with a peel-and-name snack activity for home. Free to download.'
+  metaDescription:'Meet the orange color flashcard: a big orange splash and a real orange fruit, with a peel-and-name snack activity for home. Download.'
  },
  purple:{
   word:'Purple',
@@ -144,7 +144,7 @@ export const colorsCardContent={
   try:'Purple is rare, so hunt in pictures as well as rooms: find every purple thing in a favorite book. Grapes and flowers count double.',
   note:'Purple is the hardest mixing color to find in real life. One purple thing in a whole day is a genuine achievement — celebrate it.',
   sayPic:'A purple flower! Purple like the splash.',
-  metaDescription:'Meet the purple color flashcard: a big purple splash and a purple flower, with a purple treasure hunt for home. Free to download and print.'
+  metaDescription:'Meet the purple color flashcard: a big purple splash and a purple flower, with a purple treasure hunt for home. Download and print.'
  },
  pink:{
   word:'Pink',
@@ -155,7 +155,7 @@ export const colorsCardContent={
   try:'Play pink spy: “I spy something pink” with three pink things set out in the room — a toy, a sock, a book cover. Swap roles and let your child spy.',
   note:'Pink is another mixing star: red paint with a spoonful of white makes pink. Try it at the craft table after the screens go off.',
   sayPic:'A pink flower! Pink like the splash.',
-  metaDescription:'Meet the pink color flashcard: a big pink splash and a pink flower, with an I-spy-something-pink game for home. Free to download.'
+  metaDescription:'Meet the pink color flashcard: a big pink splash and a pink flower, with an I-spy-something-pink game for home. Download.'
  },
  brown:{
   word:'Brown',
@@ -166,7 +166,7 @@ export const colorsCardContent={
   try:'Go find your child’s brownest friend: a teddy, a dog, a wooden block. Say hello to it from the card — “brown bear, brown bear!”',
   note:'Mixing lots of paint colors together makes brown, not a mess — tell your child that the day all the paints swirl into one. It is chemistry, not an accident.',
   sayPic:'A brown teddy bear! The best color to hug.',
-  metaDescription:'Meet the brown color flashcard: a big brown splash and a brown teddy bear to hug, plus a find-your-brownest-friend activity. Free to download.'
+  metaDescription:'Meet the brown color flashcard: a big brown splash and a brown teddy bear to hug, plus a find-your-brownest-friend activity. Download.'
  },
  black:{
   word:'Black',
@@ -177,7 +177,7 @@ export const colorsCardContent={
   try:'At bathtime or dinner, hunt black things: shoes, a chair, the cat if it holds still. Black is easy to spot — three finds is a quick win.',
   note:'Here is a secret worth sharing: mixing many paints makes brown, not black — real black comes from a tube. Kids who test this never forget it.',
   sayPic:'A black cat! Black like the splash.',
-  metaDescription:'Meet the black color flashcard: a big black splash and a friendly black cat, with a quick black-things hunt for home. Free to download.'
+  metaDescription:'Meet the black color flashcard: a big black splash and a friendly black cat, with a quick black-things hunt for home. Download.'
  },
  white:{
   word:'White',
@@ -188,7 +188,7 @@ export const colorsCardContent={
   try:'Cloud spotting: lie back and find white clouds — a bunny cloud, a boat cloud, a fast cloud. Any shape is correct; the color is the lesson.',
   note:'White is the great lightener: add white to red and you get pink, add it to blue and you get sky. White is the magic ingredient for pale colors.',
   sayPic:'A white cloud, floating by! White like the splash.',
-  metaDescription:'Meet the white color flashcard: a big white splash and a puffy white cloud, with a cloud-spotting sky activity for home. Free to download.'
+  metaDescription:'Meet the white color flashcard: a big white splash and a puffy white cloud, with a cloud-spotting sky activity for home. Download.'
  },
  gray:{
   word:'Gray',
@@ -199,7 +199,7 @@ export const colorsCardContent={
   try:'Elephant march around the room: big slow gray steps, one big gray arm for a trunk. Then find gray things — the sofa, a pigeon, a rainy cloud.',
   note:'Gray is black and white’s baby: black paint plus white paint makes gray. It is the friendliest mixer of all — let your child mix it themselves.',
   sayPic:'A gray elephant! Stomp, stomp — gray like the splash.',
-  metaDescription:'Meet the gray color flashcard: a big gray splash and a gentle gray elephant, with an elephant-march activity for home. Free to download.'
+  metaDescription:'Meet the gray color flashcard: a big gray splash and a gentle gray elephant, with an elephant-march activity for home. Download.'
  },
  rainbow:{
   word:'Rainbow',
@@ -210,7 +210,7 @@ export const colorsCardContent={
   try:'Say the six rainbow colors in order while pointing, then draw a rainbow together — six crayons, six arcs, any size of paper.',
   note:'Real rainbows need sun plus rain, so rainbow spotting is a patience game. Any rainbow your child draws from memory counts as a find.',
   sayPic:'A real rainbow in the sky! Every color together.',
-  metaDescription:'Meet the rainbow color flashcard: a rainbow splash and a real rainbow in the sky, with all six colors to name in order. Free to download and print.'
+  metaDescription:'Meet the rainbow color flashcard: a rainbow splash and a real rainbow in the sky, with all six colors to name in order. Download and print.'
  }
 };
 

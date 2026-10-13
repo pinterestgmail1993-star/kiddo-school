@@ -25,7 +25,7 @@ export const magicColor={
  path:'/preschool/3-years/magic-color-mixing/',
  seoTitle:'Magic Color Lab — a Paint Mixing Game for 3 Year Olds',
  h1:'Magic Color Lab',
- description:'Mix colors like paint with your preschooler: tap two splashes — red, yellow or blue — watch them combine into orange, green or purple, then try real paint off screen. No scores, no sign-up.',
+ description:'Mix colors like paint with your preschooler: tap two splashes — red, yellow or blue — watch them combine into orange, green or purple, then try real paint off screen. No scores.',
  eyebrow:'PRESCHOOL · AGE 3 · CLASS 4 MAGIC GAME',
  crumbs:[['Preschool','/preschool/'],['Age 3','/preschool/3-years/'],['Colors & Color Mixing','/preschool/3-years/colors-and-color-mixing/'],['Magic Color Lab',null]],
  ogImage:null,

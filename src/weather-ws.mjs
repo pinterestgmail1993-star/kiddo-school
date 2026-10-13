@@ -24,7 +24,7 @@ export const WS34_WS_COVER={file:'cover.webp',w:1414,h:2000,
 export const weatherWs=[
 {slug:'animals-and-seasons',file:'animals-and-seasons-worksheet.webp',w:1414,h:2000,title:'Animals and Seasons',word:'ANIMAL',trace:'ANIMAL',
  tag:'Match animals to their seasons, spot the hibernator, sort the visitors and trace the word ANIMAL.',
- meta:'A free animals-and-seasons worksheet for ages 4–5: match each animal to its season, circle the hibernating bear, sort the animal cards and trace the word ANIMAL. Print it for a quiet table session.',
+ meta:'A animals-and-seasons worksheet for ages 4–5: match each animal to its season, circle the hibernating bear, sort the animal cards and trace the word ANIMAL. Print it for a quiet table session.',
  learn:'Seasons change what animals do — eating, sleeping, travelling and hiding all follow the weather.',
  know:'The four season names, and one familiar animal for each — a spring bird, a summer butterfly, an autumn squirrel, a winter bear.',
  why:'Linking animals to seasons builds the idea that living things respond to the world, not just to us — early science thinking on paper.',
@@ -39,7 +39,7 @@ export const weatherWs=[
  real:'On the next walk or park trip, spot one real animal and name its season together.'},
 {slug:'autumn-and-winter-sorting',file:'autumn-and-winter-sorting-worksheet.webp',w:1414,h:2000,title:'Autumn and Winter Sorting',word:'AUTUMN',trace:'AUTUMN',
  tag:'Match the seasons, circle the right clothes, sort autumn from winter and trace the word AUTUMN.',
- meta:'A free autumn-and-winter sorting worksheet for ages 4–5: match seasons to pictures, circle the cold-day clothes, sort the two seasons and trace AUTUMN. Free printable, no sign-up.',
+ meta:'A autumn-and-winter sorting worksheet for ages 4–5: match seasons to pictures, circle the cold-day clothes, sort the two seasons and trace AUTUMN. Printable.',
  learn:'The two cold seasons look and feel different — and they ask for different clothes.',
  know:'What autumn looks like (falling leaves, wind) versus winter (snow, bare trees), and which clothes belong to each.',
  why:'Sorting two similar-but-different groups sharpens comparison — the skill underneath all later classification.',
@@ -54,7 +54,7 @@ export const weatherWs=[
  real:'On a cool morning, decide together which season it feels like before you dress.'},
 {slug:'autumn-weather-and-clothes',file:'autumn-weather-and-clothes-worksheet.webp',w:1414,h:2000,title:'Autumn Weather and Clothes',word:'AUTUMN',trace:'AUTUMN',
  tag:'Match autumn weather to words, circle the cool-day clothes, sort autumn from winter and trace AUTUMN.',
- meta:'A free autumn weather and clothes worksheet for ages 4–5: match the windy-day words, circle cool-day clothes, sort autumn from winter and trace the word AUTUMN. Free printable.',
+ meta:'A autumn weather and clothes worksheet for ages 4–5: match the windy-day words, circle cool-day clothes, sort autumn from winter and trace the word AUTUMN. Printable.',
  learn:'Autumn has its own weather — wind, falling leaves, grey clouds — and its own clothes.',
  know:'The words wind, leaf, cloud and beanie, and the feeling of a cool day versus a cold one.',
  why:'Dressing for the weather is a daily decision; this sheet makes the autumn version of it explicit and practised.',
@@ -69,10 +69,10 @@ export const weatherWs=[
  real:'Build the actual autumn outfit together — each piece named as it goes on.'},
 {slug:'cloud-types',file:'cloud-types-worksheet.webp',w:1414,h:2000,title:'Cloud Types',word:'CLOUD',trace:'CLOUD',
  tag:'Match cumulus, stratus and cirrus to their names, circle the fluffy one, sort the clouds and trace CLOUD.',
- meta:'A free cloud types worksheet for ages 4–5: match cumulus, stratus and cirrus to their names, circle the fluffy cloud, sort fluffy from flat and trace the word CLOUD. Free printable.',
+ meta:'A cloud types worksheet for ages 4–5: match cumulus, stratus and cirrus to their names, circle the fluffy cloud, sort fluffy from flat and trace the word CLOUD. Printable.',
  learn:'Clouds come in kinds — fluffy piles, flat layers, wispy streaks — and each has a name.',
  know:'The three cloud names on the sheet (cumulus, stratus, cirrus) and the fluffy-versus-flat contrast.',
- why:'Naming kinds of one thing — clouds — is classification practice with a free daily show overhead.',
+ why:'Naming kinds of one thing — clouds — is classification practice with a daily show overhead.',
  skills:['Cloud names','Observation and comparison','Sorting into groups','Word tracing','Sky vocabulary'],
  steps:[['Match','Draw a line from each cloud picture to its name.'],['Circle','Circle the cloud that looks fluffy.'],['Sort','Cut and paste each cloud into fluffy or flat.'],['Trace','Trace the big dotted word CLOUD and write it too.'],['Look','Match the sheet to a real cloud out of the window.']],
  say:'Clouds are not all the same — some sit in piles, some lie flat. Let us learn their names.',
@@ -84,7 +84,7 @@ export const weatherWs=[
  real:'Watch the sky at breakfast tomorrow and name every cloud you both see.'},
 {slug:'cloudy-weather',file:'cloudy-weather-worksheet.webp',w:1414,h:2000,title:'Cloudy Weather',word:'CLOUDY',trace:'CLOUDY',
  tag:'Circle the cloudy pictures, match the weather, choose the clothes, finish the pattern and trace CLOUDY.',
- meta:'A free cloudy weather worksheet for ages 4–5: circle the cloudy skies, match weather to picture, pick the right clothes, complete the pattern and trace the word CLOUDY. Free printable.',
+ meta:'A cloudy weather worksheet for ages 4–5: circle the cloudy skies, match weather to picture, pick the right clothes, complete the pattern and trace the word CLOUDY. Printable.',
  learn:'A grey sky is weather too — cloudy has a name, a look and its own clothes.',
  know:'What a cloudy sky looks like next to sunny, rainy and snowy ones, and which clothes fit a grey day.',
  why:'Grey days confuse small children most; naming cloudy gives the day a handle and kills the gloom.',
@@ -99,7 +99,7 @@ export const weatherWs=[
  real:'Make tomorrow a forecast: tonight your child predicts sunny or cloudy, and morning checks it.'},
 {slug:'daylight-sunrise-sunset',file:'daylight-sunrise-sunset-worksheet.webp',w:1414,h:2000,title:'Daylight: Sunrise and Sunset',word:'DAYLIGHT',trace:'DAYLIGHT',
  tag:'Match the times of day, compare daylight, order the sun arc, trace DAYLIGHT and draw a sunset.',
- meta:'A free daylight worksheet for ages 4–5: match sunrise, noon, sunset and night, compare which day has more daylight and trace the word DAYLIGHT. Free printable, no sign-up.',
+ meta:'A daylight worksheet for ages 4–5: match sunrise, noon, sunset and night, compare which day has more daylight and trace the word DAYLIGHT. Printable.',
  learn:'The sun makes the day; where it sits in the sky tells you the time.',
  know:'Sunrise, noon, sunset and night as positions of the sun — and that summer days are longer.',
  why:'Ordering the day by the sun builds time sense before clocks — the oldest clock there is.',
@@ -114,7 +114,7 @@ export const weatherWs=[
  real:'Catch a real sunset once this week and name what you see with the sheet words.'},
 {slug:'four-seasons-matching',file:'four-seasons-matching-worksheet.webp',w:1414,h:2000,title:'Four Seasons Matching',word:'WINTER',trace:'WINTER',
  tag:'Match the four seasons to their pictures, circle the snowy one, sort the clothes and trace WINTER.',
- meta:'A free four seasons matching worksheet for ages 4–5: match spring, summer, autumn and winter to their pictures, circle the snowiest season, sort the clothes and trace the word WINTER. Free printable.',
+ meta:'A four seasons matching worksheet for ages 4–5: match spring, summer, autumn and winter to their pictures, circle the snowiest season, sort the clothes and trace the word WINTER. Printable.',
  learn:'The year comes in four seasons, each with its own look, weather and clothes.',
  know:'The four season names and one clear picture clue for each — blossom, beach, falling leaves, snow.',
  why:'The season cycle is the first big pattern a child meets that repeats every year — naming it orders the whole world.',
@@ -129,7 +129,7 @@ export const weatherWs=[
  real:'Start a season wall at home — one drawing per season, added when each arrives.'},
 {slug:'ice-frost-melting',file:'ice-frost-melting-worksheet.webp',w:1414,h:2000,title:'Ice, Frost and Melting',word:'ICE',trace:'ICE',
  tag:'Spot the frost, match frozen to melted, order the melt, circle the fast melter and trace the word ICE.',
- meta:'A free ice and melting worksheet for ages 4–5: circle the frost, match frozen to melted, order the melting steps, find what melts ice fastest and trace the word ICE. Free printable.',
+ meta:'A ice and melting worksheet for ages 4–5: circle the frost, match frozen to melted, order the melting steps, find what melts ice fastest and trace the word ICE. Printable.',
  learn:'Ice is water gone cold, and warmth turns it back — melting has an order and a cause.',
  know:'The words frost, melt and puddle, and the idea that warmth (sun, hands, warm air) does the melting.',
  why:'Reversible change — freeze it, melt it — is a first science law children can watch in a glass of water.',
@@ -144,7 +144,7 @@ export const weatherWs=[
  real:'Leave two ice cubes out — one sunny window, one dark shelf — and race them.'},
 {slug:'light-sources',file:'light-sources-worksheet.webp',w:1414,h:2000,title:'Light Sources',word:'LIGHT',trace:'LIGHT',
  tag:'Sort what gives light from what does not, circle the light makers, match them up and trace LIGHT.',
- meta:'A free light sources worksheet for ages 4–5: sort the light makers from the dark things, circle, match and trace the word LIGHT. Free printable for ages 4–5, no sign-up.',
+ meta:'A light sources worksheet for ages 4–5: sort the light makers from the dark things, circle, match and trace the word LIGHT. Printable for ages 4–5.',
  learn:'Some things make their own light and some only shine when light lands on them.',
  know:'Sun, bulb, candle, firefly, flashlight and lamp as light makers; everyday objects that stay dark.',
  why:'Telling a light source from a lit object is the seed of understanding how seeing works at all.',
@@ -159,7 +159,7 @@ export const weatherWs=[
  real:'Tonight, list every light you both see on the way to bed — real light-source spotting.'},
 {slug:'order-of-seasons-tree-changes',file:'order-of-seasons-tree-changes-worksheet.webp',w:1414,h:2000,title:'Order of Seasons: Tree Changes',word:'SEASON',trace:'SEASON',
  tag:'Put the four trees in season order, circle what changes, match leaf colours and trace the word SEASON.',
- meta:'A free seasons-and-trees worksheet for ages 4–5: order the same tree through spring, summer, autumn and winter, match leaf colours and trace the word SEASON. Free printable.',
+ meta:'A seasons-and-trees worksheet for ages 4–5: order the same tree through spring, summer, autumn and winter, match leaf colours and trace the word SEASON. Printable.',
  learn:'One tree, four looks — the seasons come in an order and the tree keeps the calendar.',
  know:'The season order (spring, summer, autumn, winter) and the leaf colour that names each.',
  why:'Watching one object change across the cycle makes the sequence real — the tree is the proof.',
@@ -174,7 +174,7 @@ export const weatherWs=[
  real:'Adopt the nearest tree: visit it once a month and name its season.'},
 {slug:'precipitation-hail-sleet-snow',file:'precipitation-hail-sleet-snow-worksheet.webp',w:1414,h:2000,title:'Precipitation: Hail, Sleet and Snow',word:'HAIL',trace:'HAIL',
  tag:'Name what falls from the sky, sort ice from water, count the snowflakes and trace the word HAIL.',
- meta:'A free precipitation worksheet for ages 4–5: name what falls from storm clouds, sort frozen from liquid, count snowflakes and trace the word HAIL. Free printable for ages 4–5.',
+ meta:'A precipitation worksheet for ages 4–5: name what falls from storm clouds, sort frozen from liquid, count snowflakes and trace the word HAIL. Printable for ages 4–5.',
  learn:'Everything that falls from clouds — rain, snow, sleet, hail — has its own name and shape.',
  know:'The four fallers on the sheet and the cold-or-less-cold difference that picks between them.',
  why:'One cloud, four products: this sheet turns a confusing sky into a small, learnable set.',
@@ -189,7 +189,7 @@ export const weatherWs=[
  real:'Next rainy day, catch drops on the windowsill and name what kind they are.'},
 {slug:'rainbow-and-kite-weather-safety',file:'rainbow-and-kite-weather-safety-worksheet.webp',w:1414,h:2000,title:'Rainbow and Kite Weather Safety',word:'RAINBOW',trace:'RAINBOW',
  tag:'Mark kite-flying weather safe or unsafe, circle the sun protection, match storm words and trace RAINBOW.',
- meta:'A free weather safety worksheet for ages 4–5: mark kite weather safe or unsafe, circle sun protection, match lightning, thunder and rainbow words and trace the word RAINBOW. Free printable.',
+ meta:'A weather safety worksheet for ages 4–5: mark kite weather safe or unsafe, circle sun protection, match lightning, thunder and rainbow words and trace the word RAINBOW. Printable.',
  learn:'Weather decides what is safe: kites want calm skies, storms want us inside, sun wants hats.',
  know:'The words safe and unsafe, lightning, thunder, rainbow — and hat-sunglasses shade as sun protection.',
  why:'Safety rules stick when a child sorts them on paper first — the sheet does the rehearsing before real wind does.',
@@ -204,7 +204,7 @@ export const weatherWs=[
  real:'Name the sun-protection trio — hat, glasses, shade — before the next sunny outing.'},
 {slug:'rainy-day-puddle',file:'rainy-day-puddle-worksheet.webp',w:1414,h:2000,title:'Rainy Day Puddle',word:'PUDDLE',trace:'PUDDLE',
  tag:'Match the rainy-day kit, count the raindrops, circle the dressed-for-it child and trace the word PUDDLE.',
- meta:'A free rainy day puddle worksheet for ages 4–5: match the rain gear, count raindrops, circle the child ready for puddles and trace the word PUDDLE. Free printable, no sign-up.',
+ meta:'A rainy day puddle worksheet for ages 4–5: match the rain gear, count raindrops, circle the child ready for puddles and trace the word PUDDLE. Printable.',
  learn:'Rain has a kit — boots, coat, umbrella — and the child who wears it gets the puddles.',
  know:'The rain-gear words and the dry-versus-wet contrast between the two children on the sheet.',
  why:'The best rainy-day argument is settled in advance: the sheet makes dressed-for-rain the hero.',
@@ -219,7 +219,7 @@ export const weatherWs=[
  real:'Jump one puddle in full kit this week — boots, coat and the word puddle, all used.'},
 {slug:'rainy-day-weather-activities',file:'rainy-day-weather-activities-worksheet.webp',w:1414,h:2000,title:'Rainy Day Weather Activities',word:'RAINY',trace:'RAINY',
  tag:'Circle the rainy pictures, finish the weather sentences, trace the weather words and draw the rain.',
- meta:'A free rainy-day activities worksheet for ages 4–5: circle the three rainy pictures, complete the weather sentences, trace the words and draw the cloud with raindrops. Free printable.',
+ meta:'A rainy-day activities worksheet for ages 4–5: circle the three rainy pictures, complete the weather sentences, trace the words and draw the cloud with raindrops. Printable.',
  learn:'Rain is one kind of sky among many — spotting it fast means knowing the others too.',
  know:'Rainy, sunny, snowy, windy and stormy as pictures before words.',
  why:'Sorting one kind out from four look-alikes builds real discrimination, not just recognition.',
@@ -234,7 +234,7 @@ export const weatherWs=[
  real:'Keep a five-day sky diary with the sheet words as labels.'},
 {slug:'seasonal-activities',file:'seasonal-activities-worksheet.webp',w:1414,h:2000,title:'Seasonal Activities',word:'ACTIVITY',trace:'ACTIVITY',
  tag:'Match each activity to its season, spot what needs snow and what needs warmth, and trace ACTIVITY.',
- meta:'A free seasonal activities worksheet for ages 4–5: match sledding, swimming, kite flying and raking to their seasons and trace the word ACTIVITY. Free printable for ages 4–5.',
+ meta:'A seasonal activities worksheet for ages 4–5: match sledding, swimming, kite flying and raking to their seasons and trace the word ACTIVITY. Printable for ages 4–5.',
  learn:'What we do follows the season — sleds wait for snow, pools wait for heat.',
  know:'Sledding, skiing, skating, swimming, biking, raking and kite flying, each tied to its weather.',
  why:'Activities are the child\'s own version of the seasons — this sheet maps their year onto the calendar.',
@@ -249,7 +249,7 @@ export const weatherWs=[
  real:'Do one sheet activity for real this week — the raking or the kite are the easiest.'},
 {slug:'seasonal-foods-harvest',file:'seasonal-foods-harvest-worksheet.webp',w:1414,h:2000,title:'Seasonal Foods and Harvest',word:'HARVEST',trace:'HARVEST',
  tag:'Match foods to their season, circle the warm-weather fruit, name the harvest scene and trace HARVEST.',
- meta:'A free seasonal foods and harvest worksheet for ages 4–5: match apple, strawberry, pumpkin and peas to their seasons, circle the warm-weather fruit and trace the word HARVEST. Free printable.',
+ meta:'A seasonal foods and harvest worksheet for ages 4–5: match apple, strawberry, pumpkin and peas to their seasons, circle the warm-weather fruit and trace the word HARVEST. Printable.',
  learn:'Food follows the seasons too — strawberries in summer, pumpkins in autumn, harvest at the end.',
  know:'Apple, strawberry, pumpkin and peas with their best seasons; the word harvest for the picking time.',
  why:'Knowing where food comes from and when starts at the table — this sheet connects plate to season.',
@@ -264,7 +264,7 @@ export const weatherWs=[
  real:'Buy one seasonal fruit this week and name its season at the table.'},
 {slug:'shadows',file:'shadows-worksheet.webp',w:1414,h:2000,title:'Shadows',word:'SHADOW',trace:'SHADOW',
  tag:'Compare shadow lengths, match shadows to the time of day, circle the shadow maker and trace SHADOW.',
- meta:'A free shadows worksheet for ages 4–5: circle the longer shadow, match shadows to morning, noon and evening, find the light maker and trace the word SHADOW. Free printable.',
+ meta:'A shadows worksheet for ages 4–5: circle the longer shadow, match shadows to morning, noon and evening, find the light maker and trace the word SHADOW. Printable.',
  learn:'A shadow is the dark copy light makes when something stands in the way — and it moves with the sun.',
  know:'Long and short, morning-noon-evening, and the rule that light makes shadows happen.',
  why:'Shadows are a child\'s first experiment they can run with their own body — the sheet formalises what the garden already shows.',
@@ -279,7 +279,7 @@ export const weatherWs=[
  real:'Trace each other\'s shadows with chalk at noon and again after tea.'},
 {slug:'snowy-weather-winter-clothes',file:'snowy-weather-winter-clothes-worksheet.webp',w:1414,h:2000,title:'Snowy Weather and Winter Clothes',word:'SNOWY',trace:'SNOWY',
  tag:'Circle the snowy skies, match winter words, pick the snow-day clothes, finish the pattern and trace SNOWY.',
- meta:'A free snowy weather and winter clothes worksheet for ages 4–5: circle the snow, match the words, choose the winter clothes and trace the word SNOWY. Free printable, no sign-up.',
+ meta:'A snowy weather and winter clothes worksheet for ages 4–5: circle the snow, match the words, choose the winter clothes and trace the word SNOWY. Printable.',
  learn:'Snow means a whole outfit: the sky decides, the wardrobe answers.',
  know:'Snowy as a sky word, and mittens, coat, hat and boots as the answer to it.',
  why:'Dressing for snow is the highest-stakes dressing decision of the year — practised here with no cold fingers.',
@@ -294,7 +294,7 @@ export const weatherWs=[
  real:'Full snow-dress rehearsal before the first real snow — timed, for fun.'},
 {slug:'spring-and-seasons-chart',file:'spring-and-seasons-chart-worksheet.webp',w:1414,h:2000,title:'Spring and Seasons Chart',word:'SPRING',trace:'SPRING',
  tag:'Answer the season questions, match the pictures, circle the spring things and trace the word SPRING.',
- meta:'A free spring and seasons chart worksheet for ages 4–5: read and answer, match the season pictures, circle what you see in spring and trace the word SPRING. Free printable.',
+ meta:'A spring and seasons chart worksheet for ages 4–5: read and answer, match the season pictures, circle what you see in spring and trace the word SPRING. Printable.',
  learn:'Spring has a signature — blossom, rain boots, new flowers — and it follows winter every year.',
  know:'The season order up to spring, and the objects that only appear in it.',
  why:'Spring is the season children can watch arrive day by day — the sheet hands them the checklist.',
@@ -309,7 +309,7 @@ export const weatherWs=[
  real:'Pick the first spring flower you see and name the season out loud on the spot.'},
 {slug:'summer-hot-and-cold',file:'summer-hot-and-cold-worksheet.webp',w:1414,h:2000,title:'Summer: Hot and Cold',word:'SUMMER',trace:'SUMMER',
  tag:'Circle the summer things, sort hot from cold, trace the word SUMMER and draw a sunny day.',
- meta:'A free summer hot-and-cold worksheet for ages 4–5: circle what belongs to summer, sort hot things from cold, trace the word SUMMER and draw a sunny day. Free printable.',
+ meta:'A summer hot-and-cold worksheet for ages 4–5: circle what belongs to summer, sort hot things from cold, trace the word SUMMER and draw a sunny day. Printable.',
  learn:'Summer is the hot season — and even summer has cold things, which is what makes sorting fun.',
  know:'Sun hat, sunglasses, ice pop and beach ball for summer; mittens and scarves for the other team.',
  why:'Hot-versus-cold sorting is a thinking skill wearing a swimsuit — the contrast does the teaching.',
@@ -324,7 +324,7 @@ export const weatherWs=[
  real:'Plan one sheet item into the week — the beach ball or the sun hat both work.'},
 {slug:'sunny-summer-weather',file:'sunny-summer-weather-worksheet.webp',w:1414,h:2000,title:'Sunny Summer Weather',word:'HOT',trace:'HOT',
  tag:'Circle the sunny skies, match summer objects, trace HOT and COLD, choose sun-safe clothes and draw summer.',
- meta:'A free sunny summer weather worksheet for ages 4–5: circle the sunny skies, match summer objects, trace the words HOT and COLD and pick the sun-safe outfit. Free printable.',
+ meta:'A sunny summer weather worksheet for ages 4–5: circle the sunny skies, match summer objects, trace the words HOT and COLD and pick the sun-safe outfit. Printable.',
  learn:'Sunny summer days call for their own kit — and the sky word for it is hot.',
  know:'Sunny versus cloudy recognition, and shorts, sun hat and sunglasses as the sunny-day answer.',
  why:'Sun-safe choices rehearsed on paper become the default at the real door.',
@@ -339,7 +339,7 @@ export const weatherWs=[
  real:'Hat-on-before-door becomes the rule the sheet just taught.'},
 {slug:'thermometer-temperature',file:'thermometer-temperature-worksheet.webp',w:1414,h:2000,title:'Thermometer and Temperature',word:'WARM',trace:'WARM',
  tag:'Label the thermometer, circle the hottest one, match hot, warm and cold, and trace the word WARM.',
- meta:'A free thermometer worksheet for ages 4–5: label the thermometer parts, circle the hottest reading, match hot, warm and cold to the scale and trace the word WARM. Free printable.',
+ meta:'A thermometer worksheet for ages 4–5: label the thermometer parts, circle the hottest reading, match hot, warm and cold to the scale and trace the word WARM. Printable.',
  learn:'Temperature has a measuring tool: the higher the red, the hotter the day.',
  know:'The parts of a thermometer and the three words hot, warm and cold as scale positions.',
  why:'Reading a thermometer turns feelings about weather into numbers and order — measurement starts here.',
@@ -354,7 +354,7 @@ export const weatherWs=[
  real:'Read the real temperature together every morning for a week.'},
 {slug:'thunderstorm-safety',file:'thunderstorm-safety-worksheet.webp',w:1414,h:2000,title:'Thunderstorm Safety',word:'THUNDER',trace:'THUNDER',
  tag:'Match the storm words, name what you hear, circle the safe indoor spots and trace the word THUNDER.',
- meta:'A free thunderstorm safety worksheet for ages 4–5: match the storm pictures, name the sound, circle the safe places indoors and trace the word THUNDER. Free printable, age-honest, no scare tactics.',
+ meta:'A thunderstorm safety worksheet for ages 4–5: match the storm pictures, name the sound, circle the safe places indoors and trace the word THUNDER. Printable, age-honest, no scare tactics.',
  learn:'Thunder is the sky\'s big noise, and storms have a safe routine: inside, away from windows, calm.',
  know:'Lightning, thunder and the storm cloud as pictures; indoors as the safe answer every time.',
  why:'Named things stop being monsters — the sheet turns the scariest weather into a known routine.',
@@ -369,7 +369,7 @@ export const weatherWs=[
  real:'Pick the family storm corner tonight and practise the walk to it once.'},
 {slug:'time-of-day-weather-record',file:'time-of-day-weather-record-worksheet.webp',w:1414,h:2000,title:'Time of Day Weather Record',word:'TODAY',trace:'TODAY',
  tag:'Read the weather at morning, afternoon and evening, circle the highest sun, match the times and trace the word TODAY.',
- meta:'A free time-of-day weather record worksheet for ages 4–5: read the day\'s weather, circle when the sun is highest, match morning, afternoon and night, and trace the word TODAY. Free printable, no sign-up.',
+ meta:'A time-of-day weather record worksheet for ages 4–5: read the day\'s weather, circle when the sun is highest, match morning, afternoon and night, and trace the word TODAY. Printable.',
  learn:'One day holds three different skies — morning, afternoon and evening each look and feel their own way.',
  know:'The words morning, afternoon, evening and night, and where the sun sits in each one.',
  why:'A day is the first clock a child lives inside; naming its parts turns vague time into ordered time.',
@@ -384,7 +384,7 @@ export const weatherWs=[
  real:'At bedtime tonight, ask your child which sky picture today was, and why.'},
 {slug:'trees-in-four-seasons',file:'trees-in-four-seasons-worksheet.webp',w:1414,h:2000,title:'Trees in Four Seasons',word:'LEAVES',trace:'LEAVES',
  tag:'Match four trees to their seasons, circle the bare one, count the leaves and trace the word LEAVES.',
- meta:'A free trees-in-four-seasons worksheet for ages 4–5: match trees to spring, summer, autumn and winter, circle the leafless tree, count the leaves and trace the word LEAVES. Free printable.',
+ meta:'A trees-in-four-seasons worksheet for ages 4–5: match trees to spring, summer, autumn and winter, circle the leafless tree, count the leaves and trace the word LEAVES. Printable.',
  learn:'One tree wears four different outfits a year — the leaves tell you which season it is.',
  know:'Blossom, full green, orange and bare as the four tree looks, and the season names they belong to.',
  why:'Watching one tree across a year is the clearest way to see time pass — the sheet compresses that year into one page.',
@@ -399,7 +399,7 @@ export const weatherWs=[
  real:'Collect one leaf outside and match it to the season you are in right now.'},
 {slug:'water-cycle',file:'water-cycle-worksheet.webp',w:1414,h:2000,title:'The Water Cycle',word:'WATER CYCLE',trace:'WATER CYCLE',
  tag:'Put the water cycle in order, match evaporation to collection, answer the sun question and trace WATER CYCLE.',
- meta:'A free water cycle worksheet for ages 4–5: order the four pictures, match the four big words, circle the right answer about the sun and trace the words WATER CYCLE. Free printable.',
+ meta:'A water cycle worksheet for ages 4–5: order the four pictures, match the four big words, circle the right answer about the sun and trace the words WATER CYCLE. Printable.',
  learn:'Rain is not new water — it is the same water going round: up as vapour, into clouds, down as rain, back to the rivers.',
  know:'Evaporation, condensation, precipitation and collection — big words, each with a picture.',
  why:'The water cycle is a loop, and loops are how young minds first meet ideas that never end.',
@@ -414,7 +414,7 @@ export const weatherWs=[
  real:'Next puddle you pass, ask where it will be in two days — then check back.'},
 {slug:'weather-chart-bar-graph',file:'weather-chart-bar-graph-worksheet.webp',w:1414,h:2000,title:'Weather Chart Bar Graph',word:'WEATHER CHART',trace:'WEATHER CHART',
  tag:'Read a week of weather, count the sunny days, compare rainy with cloudy, colour the bar graph and trace WEATHER CHART.',
- meta:'A free weather chart worksheet for ages 4–5: read the seven-day chart, count the sunny days, circle more and fewer, colour the bar graph and trace the words WEATHER CHART. Free printable.',
+ meta:'A weather chart worksheet for ages 4–5: read the seven-day chart, count the sunny days, circle more and fewer, colour the bar graph and trace the words WEATHER CHART. Printable.',
  learn:'A week of weather can be counted, compared and drawn as bars — data hiding in plain sky.',
  know:'How to read the chart one day at a time, and that a bar\'s height shows how many.',
  why:'This is a first graph built from real weather, which makes numbers about something a child can point at out of the window.',
@@ -429,7 +429,7 @@ export const weatherWs=[
  real:'Start a real week-chart on the fridge tonight: one sticker or scribble a day.'},
 {slug:'weather-chart-read-and-match',file:'weather-chart-read-and-match-worksheet.webp',w:1414,h:2000,title:'Weather and Seasons Chart',word:'TODAY\'S WEATHER',trace:'TODAY\'S WEATHER',
  tag:'Answer two chart questions, match the weather words, choose the season for two scenes and circle what belongs in spring.',
- meta:'A free weather and seasons worksheet for ages 4–5: answer the chart questions, match sunny, cloudy and rainy, pick the right seasons, circle the spring things and draw today\'s weather. Free printable.',
+ meta:'A weather and seasons worksheet for ages 4–5: answer the chart questions, match sunny, cloudy and rainy, pick the right seasons, circle the spring things and draw today\'s weather. Printable.',
  learn:'Weather words answer questions, and seasons pick their own pictures — reading the sky is a two-part skill.',
  know:'Sunny, cloudy and rainy as chart words, plus the season a snowy scene and a beach scene belong to.',
  why:'Answering a question from a chart is early reading and early science holding hands.',
@@ -444,7 +444,7 @@ export const weatherWs=[
  real:'On the next car ride, spot one thing from the spring row out of the window.'},
 {slug:'weather-forecast',file:'weather-forecast-worksheet.webp',w:1414,h:2000,title:'Weather Forecast',word:'FORECAST',trace:'FORECAST',
  tag:'Read three forecasts and circle the clear one, match clear, foggy and stormy, pack for fog and trace FORECAST.',
- meta:'A free weather forecast worksheet for ages 4–5: read three forecasts, circle the clear-sky one, match clear, foggy and stormy, choose what to take outside in fog and trace the word FORECAST. Free printable.',
+ meta:'A weather forecast worksheet for ages 4–5: read three forecasts, circle the clear-sky one, match clear, foggy and stormy, choose what to take outside in fog and trace the word FORECAST. Printable.',
  learn:'A forecast is tomorrow\'s weather told in advance — reading it means you get a say in what to wear.',
  know:'Clear, foggy and stormy as forecast words, and what each one looks like.',
  why:'Forecasts turn weather from a surprise into a plan — a small but real feeling of being in charge.',
@@ -459,7 +459,7 @@ export const weatherWs=[
  real:'Morning check: was your child\'s forecast symbol right? Let them announce it at breakfast.'},
 {slug:'weather-map',file:'weather-map-worksheet.webp',w:1414,h:2000,title:'Weather Map',word:'MAP',trace:'MAP',
  tag:'Read four towns on a weather map, match the symbols to the map, circle the coldest place and trace the word MAP.',
- meta:'A free weather map worksheet for ages 4–5: read the map of Northville, Rainville, Snowtown and Windyville, match the symbols, circle the coldest town and trace the word MAP. Free printable.',
+ meta:'A weather map worksheet for ages 4–5: read the map of Northville, Rainville, Snowtown and Windyville, match the symbols, circle the coldest town and trace the word MAP. Printable.',
  learn:'Different places can have different weather at the very same moment — a map shows it all at once.',
  know:'The four map symbols — sun, rain, snow and wind — and the four town names they match.',
  why:'Reading a map spreads thinking across space instead of one page — geography starts exactly here.',
@@ -474,7 +474,7 @@ export const weatherWs=[
  real:'Open a real weather map on a phone together and find your own town on it.'},
 {slug:'weather-safety',file:'weather-safety-worksheet.webp',w:1414,h:2000,title:'Weather Safety',word:'SAFETY',trace:'SAFETY',
  tag:'Mark four scenes safe or unsafe, pick the thunder shelter, match the safety rules and trace the word SAFETY.',
- meta:'A free weather safety worksheet for ages 4–5: decide safe or unsafe, circle where to go in a thunderstorm, match stay dry, stay warm and drink water, and trace the word SAFETY. Free printable, age-honest, no scare tactics.',
+ meta:'A weather safety worksheet for ages 4–5: decide safe or unsafe, circle where to go in a thunderstorm, match stay dry, stay warm and drink water, and trace the word SAFETY. Printable, age-honest, no scare tactics.',
  learn:'Weather has rules that keep us comfortable and safe — dry in rain, warm in cold, water in heat, indoors in a storm.',
  know:'The four scenes, the thunder shelter answer, and the three rules: stay dry, stay warm, drink water.',
  why:'Practising safety choices on paper makes the real ones come out automatically — rehearsal without risk.',
@@ -489,7 +489,7 @@ export const weatherWs=[
  real:'Pack a small weather bag together — hat for sun, umbrella for rain — and keep it by the door.'},
 {slug:'weather-tools',file:'weather-tools-worksheet.webp',w:1414,h:2000,title:'Weather Tools',word:'WEATHER TOOL',trace:'WEATHER TOOL',
  tag:'Match four tools to their jobs, circle the thermometer, count windsock stripes, sort rain tools from wind tools and trace WEATHER TOOL.',
- meta:'A free weather tools worksheet for ages 4–5: match each tool to its use, circle the temperature tool, count the windsock stripes, sort the tools and trace the words WEATHER TOOL. Free printable.',
+ meta:'A weather tools worksheet for ages 4–5: match each tool to its use, circle the temperature tool, count the windsock stripes, sort the tools and trace the words WEATHER TOOL. Printable.',
  learn:'Weather is measured with real tools — a thermometer for heat, a gauge for rain, a windsock and weathervane for wind.',
  know:'The four tools by name, and the one job that belongs to each.',
  why:'Tools turn watching weather into measuring it — the moment science stops being looking and starts being knowing.',
@@ -504,7 +504,7 @@ export const weatherWs=[
  real:'Build the box invention for real from a cup and a straw, if the design bug bites.'},
 {slug:'weather-words-matching',file:'weather-words-matching-worksheet.webp',w:1414,h:2000,title:'Weather Words Matching',word:'SUNNY',trace:'SUNNY',
  tag:'Match four weather words to their pictures, circle rainy-day clothes, sort hot from cold and trace the word SUNNY.',
- meta:'A free weather words worksheet for ages 4–5: match sunny, rainy, cloudy and windy, circle the rainy-day clothes, sort hot things from cold things and trace the word SUNNY. Free printable.',
+ meta:'A weather words worksheet for ages 4–5: match sunny, rainy, cloudy and windy, circle the rainy-day clothes, sort hot things from cold things and trace the word SUNNY. Printable.',
  learn:'Every kind of sky has a word, and every word asks for its own clothes and things.',
  know:'Sunny, rainy, cloudy and windy by picture, and which clothes answer a rainy day.',
  why:'Word-and-picture matching is the strongest vocabulary glue there is — weather words are just the friendly subject.',
@@ -519,7 +519,7 @@ export const weatherWs=[
  real:'Tonight at dinner, name today\'s weather word and one thing you wore because of it.'},
 {slug:'wind-direction-compass',file:'wind-direction-compass-worksheet.webp',w:1414,h:2000,title:'Wind Direction and Compass',word:'WIND',trace:'WIND',
  tag:'Follow the arrows to name wind directions, match north, south, east and west to the compass and catch the flag blowing left.',
- meta:'A free wind direction worksheet for ages 4–5: write left, right, up and down for the arrows, match the compass directions, circle the flag blowing left and trace the word WIND. Free printable.',
+ meta:'A wind direction worksheet for ages 4–5: write left, right, up and down for the arrows, match the compass directions, circle the flag blowing left and trace the word WIND. Printable.',
  learn:'Wind has a direction, and direction has words — left, right, up and down first, then north, south, east and west.',
  know:'The four arrow words and the four compass points on the rose.',
  why:'Direction words do double duty — they read the wind today and maps tomorrow.',
@@ -534,7 +534,7 @@ export const weatherWs=[
  real:'Watch a real flag or treetop on the walk home and call the direction together.'},
 {slug:'windy-weather',file:'windy-weather-worksheet.webp',w:1414,h:2000,title:'Windy Weather',word:'WINDY',trace:'WINDY',
  tag:'Match the four weather words, circle what a windy day calls for, finish the sky pattern and trace the word WINDY.',
- meta:'A free windy weather worksheet for ages 4–5: match sunny, cloudy, rainy and windy, circle the windy-day things, complete the weather pattern and trace the word WINDY. Free printable.',
+ meta:'A windy weather worksheet for ages 4–5: match sunny, cloudy, rainy and windy, circle the windy-day things, complete the weather pattern and trace the word WINDY. Printable.',
  learn:'Windy is the weather you can hear — and it brings its own things: kites up, hats held, umbrellas tucked.',
  know:'Windy next to its three cousins sunny, rainy and cloudy, and the kite as the windy-day star.',
  why:'A sky pattern that repeats teaches prediction: what comes next is thinking, not guessing.',
@@ -560,7 +560,7 @@ export function weatherWsActivityBody(w,site){
  const {prev,next}=weatherWsNeighbours(w);
  const enc=encodeURIComponent;
  const pageUrl=site+WS34_WS_CLASS+w.slug+'/';
- const shareTitle=`${w.title} — a free Weather & Seasons worksheet activity for ages 4–5 from Kiddo.school`;
+ const shareTitle=`${w.title} — a Weather & Seasons worksheet activity for ages 4–5 from Kiddo.school`;
  const stepsHtml=w.steps.map(([t,d],i)=>`<li><span class="fc-stepnum">${i+1}</span><div><h3>${esc(t)}</h3><p>${esc(d)}</p></div></li>`).join('');
  const pn=`<nav class="fc2-pn" aria-label="Previous and next worksheet activity"><a class="fc2-pn-btn" href="${WS34_WS_CLASS}${prev.slug}/" rel="prev"><span aria-hidden="true">←</span> <strong>${esc(prev.title)}</strong><span>Previous activity</span></a><a class="fc2-pn-btn fc2-pn-next" href="${WS34_WS_CLASS}${next.slug}/" rel="next"><strong>${esc(next.title)}</strong> <span aria-hidden="true">→</span><span>Next activity</span></a></nav>`;
  return `${crumbNav([['Learning Path','/learning-path/'],['Weather, Seasons &amp; What We Wear',WS34_CLASS_PATH],[esc(w.title)+' worksheet']])}
@@ -607,7 +607,7 @@ export function weatherWsPrintableBody(w,site){
  const enc=encodeURIComponent;
  const file=WS34_WS_BASE+w.file;
  const pageUrl=site+WS34_WS_LIB+w.slug+'/';
- const shareTitle=`${w.title} Worksheet for Ages 4–5 — free printable from Kiddo.school`;
+ const shareTitle=`${w.title} Worksheet for Ages 4–5 — printable from Kiddo.school`;
  const dlName=`weather-seasons-${w.slug}.webp`;
  const stepsHtml=w.steps.map(([t,d],i)=>`<li><span class="fc-stepnum">${i+1}</span><div><h3>${esc(t)}</h3><p>${esc(d)}</p></div></li>`).join('');
  const pn=`<nav class="fc2-pn" aria-label="Previous and next worksheet"><a class="fc2-pn-btn" href="${WS34_WS_LIB}${prev.slug}/" rel="prev"><span aria-hidden="true">←</span> <strong>${esc(prev.title)}</strong><span>Previous worksheet</span></a><a class="fc2-pn-btn fc2-pn-next" href="${WS34_WS_LIB}${next.slug}/" rel="next"><strong>${esc(next.title)}</strong> <span aria-hidden="true">→</span><span>Next worksheet</span></a></nav>`;
@@ -630,7 +630,7 @@ export function weatherWsPrintableBody(w,site){
   <aside class="fc2-rail" aria-label="Download, print, share and family feedback">
    <section class="fc2-block fc2-first-block"><span class="eyebrow">TAKE IT TO THE TABLE</span><h2>Download &amp; print.</h2>
     <div class="fc2-actions"><button type="button" class="button ws-dl" data-wxws-download="${esc(file)}" data-wxws-filename="${dlName}">Download original sheet <span aria-hidden="true">↓</span></button><button type="button" class="button button-ghost ws-print" data-wxws-print>Print this sheet <span aria-hidden="true">⌘</span></button></div>
-    <p class="fc-hint">The download keeps the original WebP picture, full size (1414×2000, A4 portrait). Print opens your browser&rsquo;s print dialog with just the sheet — no sign-up, nothing stored.</p>
+    <p class="fc-hint">The download keeps the original WebP picture, full size (1414×2000, A4 portrait). Print opens your browser&rsquo;s print dialog with just the sheet — nothing stored.</p>
    </section>
    ${share}
    ${fcCommunityMount(WS34_WS_LIB+w.slug+'/')}
@@ -651,7 +651,7 @@ export function weatherWsCategoryBody(){
   <span class="ws-card-open">View Worksheet <span aria-hidden="true">→</span></span>
  </a>`).join('');
  return `${crumbNav([['Worksheets','/worksheets/'],['Weather, Seasons &amp; What We Wear']])}
- <div class="page-heading wrap"><span class="eyebrow">WEATHER &amp; SEASONS WORKSHEETS · AGES 4–5</span><h1>Weather, Seasons &amp; What We Wear worksheets — free printables for little hands.</h1><p>Thirty-five genuine activity sheets about the sky, the seasons and the clothes they ask for: match, circle, count, order the water cycle, read a map, chart a week of weather and trace every big word. Download the original sheet, print it, or solve every sheet on screen in <a href="${WS34_CLASS_PATH}">Class 34</a> first.</p></div>
+ <div class="page-heading wrap"><span class="eyebrow">WEATHER &amp; SEASONS WORKSHEETS · AGES 4–5</span><h1>Weather, Seasons &amp; What We Wear worksheets — printables for little hands.</h1><p>Thirty-five genuine activity sheets about the sky, the seasons and the clothes they ask for: match, circle, count, order the water cycle, read a map, chart a week of weather and trace every big word. Download the original sheet, print it, or solve every sheet on screen in <a href="${WS34_CLASS_PATH}">Class 34</a> first.</p></div>
  <section class="wrap section compact" aria-label="The weather worksheet collection">
   <figure class="fc2-hero ws-hero-art ws-cover-sm"><img src="${esc(WS34_WS_BASE+WS34_WS_COVER.file)}" width="${WS34_WS_COVER.w}" height="${WS34_WS_COVER.h}" alt="${esc(WS34_WS_COVER.alt)}" fetchpriority="high"></figure>
   <div class="ws-grid">${cards}</div>
@@ -671,7 +671,7 @@ export function weatherWsSchema(site,w){
   name:`${w.title} Worksheet for Ages 4–5`,
   description:w.meta,url:site+WS34_WS_LIB+w.slug+'/',inLanguage:'en',
   learningResourceType:'Worksheet',educationalLevel:'Preschool',teaches:w.skills.join(', '),
-  isAccessibleForFree:true,ageRange:'4-5',encodingFormat:'image/webp',contentUrl:WS34_WS_BASE+w.file,image:WS34_WS_BASE+w.file,
+ ageRange:'4-5',encodingFormat:'image/webp',contentUrl:WS34_WS_BASE+w.file,image:WS34_WS_BASE+w.file,
   about:{'@type':'Thing',name:'Weather, Seasons & What We Wear'},
   provider:{'@type':'Organization',name:'Kiddo.school',url:site+'/'},
   isPartOf:{'@type':'CreativeWorkSeries',name:'Weather, Seasons & What We Wear (Class 34)',url:site+WS34_CLASS_PATH}};

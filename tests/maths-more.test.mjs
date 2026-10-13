@@ -50,7 +50,7 @@ test('spot-check the new PDFs carry their titles and instructions',()=>{
  const picks=['balloon-number-writing','farm-animal-lineup','little-pizza-chef'];
  for(const slug of picks){
   const out=execSync(`pdftotext dist${pdfUrl('maths',slug)} - 2>/dev/null || true`,{encoding:'utf8'});
-  assert.ok(out.includes('Free Worksheet'),'title header in '+slug);
+  assert.ok(out.includes('Worksheet'),'title header in '+slug);
   assert.ok(out.includes('Name'),'name line in '+slug);
  }
 });
