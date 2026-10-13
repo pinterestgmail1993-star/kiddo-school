@@ -1872,3 +1872,7 @@ h1 em,h2 em{color:#7b4b99}
 .contact-side{background:var(--kiddo-lavender);border-radius:20px;padding:24px}
 .contact-side h2{margin-top:0}
 @media(max-width:680px){.contact-layout{grid-template-columns:1fr}}
+.ws-hero-split{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:40px;align-items:center}
+.ws-hero-split .page-heading{padding-bottom:0}
+.ws-hero-split .ws-cover-sm{margin:0}
+@media(max-width:680px){.ws-hero-split{grid-template-columns:1fr;gap:20px}.ws-hero-split .ws-cover-sm{margin:0 auto}}

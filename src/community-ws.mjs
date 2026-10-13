@@ -825,9 +825,9 @@ export function communityWsCategoryBody(){
   <span class="ws-card-open">View Worksheet <span aria-hidden="true">→</span></span>
  </a>`).join('');
  return `${crumbNav([['Worksheets','/worksheets/'],['Community Helpers & Our Neighborhood']])}
- <div class="page-heading wrap"><span class="eyebrow">COMMUNITY HELPERS WORKSHEETS · AGES 4–5</span><h1>Community Helpers &amp; Our Neighborhood worksheets — printables for little hands.</h1><p>Thirty-five genuine activity sheets about the people who help us: trace their names, match their tools, circle the right things, count, and draw. Download the original sheet, print it, or solve every sheet on screen in <a href="${CH_CLASS_PATH}">Class 33</a> first.</p></div>
+ <div class="wrap ws-hero-split"><div class="page-heading ws-hero-text"><span class="eyebrow">COMMUNITY HELPERS WORKSHEETS · AGES 4–5</span><h1>Community Helpers &amp; Our Neighborhood worksheets — printables for little hands.</h1><p>Thirty-five genuine activity sheets about the people who help us: trace their names, match their tools, circle the right things, count, and draw. Download the original sheet, print it, or solve every sheet on screen in <a href="${CH_CLASS_PATH}">Class 33</a> first.</p></div>
+  <figure class="fc2-hero ws-hero-art ws-cover-sm"><img src="${esc(CH_WS_BASE+CH_WS_COVER.file)}" width="${CH_WS_COVER.w}" height="${CH_WS_COVER.h}" alt="${esc(CH_WS_COVER.alt)}" fetchpriority="high"></figure></div>
  <section class="wrap section compact" aria-label="The Community Helpers worksheet collection">
-  <figure class="fc2-hero ws-hero-art ws-cover-sm"><img src="${esc(CH_WS_BASE+CH_WS_COVER.file)}" width="${CH_WS_COVER.w}" height="${CH_WS_COVER.h}" alt="${esc(CH_WS_COVER.alt)}" fetchpriority="high"></figure>
   <div class="ws-grid">${cards}</div>
  </section>
  <section class="wrap lesson-section"><span class="eyebrow">KEEP EXPLORING</span><h2>Where these come from.</h2>
