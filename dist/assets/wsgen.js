@@ -41,7 +41,9 @@ function onInput(id,fn){var e=$(id);if(e)e.addEventListener('input',fn);}
 var state={
  seed:1,
  ws:null,   /* last built word search {grid,placements,words,size,diagonals,title} */
- math:null  /* last built math {problems,title,count} */
+ math:null, /* last built math {problems,title,count,level} */
+ wsSolve:false, wsSel:null, wsFound:{}, wsFoundCells:{},
+ mathSolve:false, mathDone:[], mathChoices:[]
 };
 
 /* ================= WORD SEARCH ================= */
@@ -88,26 +90,106 @@ function wsCellSet(){
 }
 
 function renderWordSearch(withKey){
- var s=state.ws,host=$('wsgen-ws-sheet');
+ var s=state.ws;if(!s)return;
+ var host=$('wsgen-ws-sheet');
  host.textContent='';
  var hits=withKey?wsCellSet():null;
+ var solve=state.wsSolve&&!withKey;
  var head=el('div','wsgen-sheet-head');
  var h=el('h3','wsgen-sheet-title',s.title);
  var sub=el('p','wsgen-sheet-sub','Name: ______________        Date: ____________');
  head.appendChild(h);head.appendChild(sub);
- var grid=el('div','wsgen-grid wsgen-grid-'+s.size);
+ var grid=el('div','wsgen-grid wsgen-grid-'+s.size+(solve?' wsgen-live':''));
  for(var r=0;r<s.size;r++)for(var c=0;c<s.size;c++){
-  var cell=el('span','wsgen-cell'+(hits&&hits[r+','+c]?' wsgen-hit':''),s.grid[r][c]);
+  var cls='wsgen-cell'+(hits&&hits[r+','+c]?' wsgen-hit':'')+(solve&&state.wsFoundCells[r+','+c]?' wsgen-found':'');
+  var cell=el('span',cls,s.grid[r][c]);
+  if(solve){
+   (function(rr,cc){cell.addEventListener('click',function(){wsTap(rr,cc);});})(r,c);
+  }
   grid.appendChild(cell);
  }
  var listWrap=el('div','wsgen-wordlist');
  var lh=el('p','wsgen-list-head','Find these '+s.words.length+' words:');
  listWrap.appendChild(lh);
  var chips=el('div','wsgen-chips');
- s.words.forEach(function(w){chips.appendChild(el('span','wsgen-chip',w));});
+ s.words.forEach(function(w){
+  var chip=el('span','wsgen-chip'+(solve&&state.wsFound[w]?' is-done':''),w);
+  if(solve)chip.setAttribute('data-word',w);
+  chips.appendChild(chip);
+ });
  listWrap.appendChild(chips);
  var foot=el('p','wsgen-sheet-foot','Made at kiddo.school');
  host.appendChild(head);host.appendChild(grid);host.appendChild(listWrap);host.appendChild(foot);
+ if(solve)wsStatus();
+}
+
+/* ---------- word search: solve on screen ---------- */
+function wsStatus(msg){
+ var s=state.ws;if(!s)return;
+ var n=Object.keys(state.wsFound).length;
+ $('wsgen-ws-status').textContent=msg||(n+' of '+s.words.length+' found — tap the first and last letter of a word.');
+}
+function wsCellEl(r,c){
+ var g=$('wsgen-ws-sheet').querySelector('.wsgen-grid');
+ return g.children[r*state.ws.size+c];
+}
+function wsNope(a,b){
+ [a,b].forEach(function(p){var e=wsCellEl(p[0],p[1]);if(e)e.classList.add('wsgen-nope');});
+ setTimeout(function(){
+  [a,b].forEach(function(p){var e=wsCellEl(p[0],p[1]);if(e)e.classList.remove('wsgen-nope');});
+ },450);
+ state.wsSel=null;
+}
+function wsTap(r,c){
+ var s=state.ws;if(!s)return;
+ var sel=state.wsSel;
+ if(!sel){
+  state.wsSel=[r,c];
+  wsCellEl(r,c).classList.add('wsgen-pick');
+  return;
+ }
+ if(sel[0]===r&&sel[1]===c){
+  wsCellEl(r,c).classList.remove('wsgen-pick');
+  state.wsSel=null;
+  return;
+ }
+ var r0=sel[0],c0=sel[1],r1=r,c1=c,dr=r1-r0,dc=c1-c0;
+ if(dr<0||(dr===0&&dc<0)){
+  var tr=r0,tc=c0;r0=r1;c0=c1;r1=tr;c1=tc;dr=-dr;dc=-dc;
+ }
+ var straight=(dr===0&&dc!==0)||(dc===0&&dr!==0)||(dr===dc&&dr!==0)||((dr===-dc)&&dr!==0);
+ if(!straight){wsNope(sel,[r,c]);return;}
+ var len=(dr===0?Math.abs(dc):Math.abs(dr))+1;
+ var ddr=Math.sign(dr),ddc=Math.sign(dc),str='';
+ for(var i=0;i<len;i++)str+=s.grid[r0+ddr*i][c0+ddc*i];
+ var hit=null;
+ for(var k=0;k<s.placements.length;k++){
+  var p=s.placements[k];
+  if(!state.wsFound[p.word]&&p.word===str&&p.row===r0&&p.col===c0&&p.dr===ddr&&p.dc===ddc){hit=p;break;}
+ }
+ if(hit){
+  state.wsFound[hit.word]=true;
+  W.wordCells(hit).forEach(function(cc){
+   state.wsFoundCells[cc[0]+','+cc[1]]=true;
+   var e2=wsCellEl(cc[0],cc[1]);
+   if(e2){e2.classList.remove('wsgen-pick');e2.classList.add('wsgen-found');}
+  });
+  var chip=$('wsgen-ws-sheet').querySelector('.wsgen-chip[data-word="'+hit.word+'"]');
+  if(chip)chip.classList.add('is-done');
+  state.wsSel=null;
+  var n=Object.keys(state.wsFound).length;
+  if(n===s.words.length)wsStatus('You found all '+s.words.length+' words — amazing!');
+  else wsStatus('You found '+hit.word+'! '+(n+' of '+s.words.length+'. Tick the next one off the list.'));
+ }else{
+  wsNope(sel,[r,c]);
+ }
+}
+function wsSolveToggle(){
+ state.wsSolve=!state.wsSolve;
+ state.wsSel=null;
+ var b=$('wsgen-ws-solve');
+ if(b){b.textContent=state.wsSolve?'Back to the paper sheet':'Solve on screen';b.setAttribute('aria-pressed',state.wsSolve?'true':'false');}
+ renderWordSearch(false);
 }
 
 /* ================= MATH ================= */
@@ -119,28 +201,73 @@ function buildMath(fresh){
  var title=$('wsgen-math-title').value.trim()||'Math Practice';
  var rng=W.mulberry32(state.seed);
  var problems=W.makeMath(op,level,count,rng);
- state.math={problems:problems,title:title};
+ var crng=W.mulberry32(state.seed^0x5bf03635);
+ state.math={problems:problems,title:title,level:level};
+ state.mathDone=problems.map(function(){return false;});
+ state.mathChoices=problems.map(function(p){return W.makeChoices(p.answer,level,crng);});
  renderMath(false);
  var status=$('wsgen-math-status');
  status.textContent='';
 }
 
 function renderMath(withKey){
- var m=state.math,host=$('wsgen-math-sheet');
+ var m=state.math;if(!m)return;
+ var host=$('wsgen-math-sheet');
  host.textContent='';
+ var solve=state.mathSolve&&!withKey;
  var head=el('div','wsgen-sheet-head');
  head.appendChild(el('h3','wsgen-sheet-title',m.title));
  head.appendChild(el('p','wsgen-sheet-sub','Name: ______________        Date: ____________'));
  var grid=el('div','wsgen-math');
- m.problems.forEach(function(p){
-  var line=el('span','wsgen-problem');
+ m.problems.forEach(function(p,i){
+  var line=el('span','wsgen-problem'+(solve?' wsgen-solve':'')+(solve&&state.mathDone[i]?' is-done':''));
   line.appendChild(document.createTextNode(p.a+' '+p.op+' '+p.b+' = '));
   if(withKey)line.appendChild(el('span','wsgen-answer',String(p.answer)));
+  else if(solve){
+   var bubbles=el('span','wsgen-bubbles');
+   state.mathChoices[i].forEach(function(v){
+    var b=el('button','wsgen-bubble'+(state.mathDone[i]&&v===p.answer?' is-right':''),String(v));
+    b.type='button';
+    if(state.mathDone[i])b.disabled=true;
+    else b.addEventListener('click',function(){mathTap(i,p,v,b);});
+    bubbles.appendChild(b);
+   });
+   line.appendChild(bubbles);
+  }
   else line.appendChild(el('span','wsgen-blank'));
   grid.appendChild(line);
  });
  var foot=el('p','wsgen-sheet-foot','Made at kiddo.school');
  host.appendChild(head);host.appendChild(grid);host.appendChild(foot);
+ if(solve)mathStatus();
+}
+
+/* ---------- math: solve on screen ---------- */
+function mathStatus(msg){
+ var m=state.math;if(!m)return;
+ var n=state.mathDone.filter(Boolean).length;
+ $('wsgen-math-status').textContent=msg||(n+' of '+m.problems.length+' done — tap the right answer.');
+}
+function mathTap(i,p,v,btn){
+ if(state.mathDone[i])return;
+ if(v===p.answer){
+  state.mathDone[i]=true;
+  btn.classList.add('is-right');
+  btn.parentElement.querySelectorAll('.wsgen-bubble').forEach(function(b){b.disabled=true;});
+  btn.parentElement.parentElement.classList.add('is-done');
+  var done=state.mathDone.filter(Boolean).length;
+  if(done===state.math.problems.length)mathStatus('All '+state.math.problems.length+' right — brilliant!');
+  else mathStatus(p.a+' '+p.op+' '+p.b+' = '+p.answer+' — right! '+(done+' of '+state.math.problems.length+'. '));
+ }else{
+  btn.classList.add('is-wrong');
+  setTimeout(function(){btn.classList.remove('is-wrong');},450);
+ }
+}
+function mathSolveToggle(){
+ state.mathSolve=!state.mathSolve;
+ var b=$('wsgen-math-solve');
+ if(b){b.textContent=state.mathSolve?'Back to the paper sheet':'Solve on screen';b.setAttribute('aria-pressed',state.mathSolve?'true':'false');}
+ renderMath(false);
 }
 
 /* ================= PNG export (A4 @150dpi) ================= */
@@ -350,43 +477,33 @@ function themeChanged(){
  buildWordSearch(false);
 }
 
-function initTabs(){
- listen('wsgen-tab-words',function(){
-  $('wsgen-tab-words').classList.add('is-active');$('wsgen-tab-words').setAttribute('aria-selected','true');
-  $('wsgen-tab-math').classList.remove('is-active');$('wsgen-tab-math').setAttribute('aria-selected','false');
-  $('wsgen-panel-words').classList.remove('is-hidden');
-  $('wsgen-panel-math').classList.add('is-hidden');
- });
- listen('wsgen-tab-math',function(){
-  $('wsgen-tab-math').classList.add('is-active');$('wsgen-tab-math').setAttribute('aria-selected','true');
-  $('wsgen-tab-words').classList.remove('is-active');$('wsgen-tab-words').setAttribute('aria-selected','false');
-  $('wsgen-panel-math').classList.remove('is-hidden');
-  $('wsgen-panel-words').classList.add('is-hidden');
- });
-}
-
 function init(){
- initTabs();
- onChange('wsgen-theme',themeChanged);
- onInput('wsgen-custom',function(){buildWordSearch(false);});
- onInput('wsgen-ws-title',function(){buildWordSearch(false);});
- listen('wsgen-ws-shuffle',function(){buildWordSearch(true);});
- listen('wsgen-ws-print',function(){doPrint('ws');});
- listen('wsgen-ws-png',function(){downloadCanvas('ws',false);});
- listen('wsgen-ws-png-key',function(){downloadCanvas('ws',true);});
- listen('wsgen-math-shuffle',function(){buildMath(true);});
- listen('wsgen-math-title',function(){buildMath(false);});
- listen('wsgen-math-print',function(){doPrint('math');});
- listen('wsgen-math-png',function(){downloadCanvas('math',false);});
- listen('wsgen-math-png-key',function(){downloadCanvas('math',true);});
- ['wsgen-size','wsgen-dirs'].forEach(function(n){
-  document.querySelectorAll('input[name="'+n+'"]').forEach(function(r){r.addEventListener('change',function(){buildWordSearch(false);});});
- });
- ['wsgen-op','wsgen-level','wsgen-count'].forEach(function(n){
-  document.querySelectorAll('input[name="'+n+'"]').forEach(function(r){r.addEventListener('change',function(){buildMath(false);});});
- });
- buildWordSearch(false);
- buildMath(false);
+ if($('wsgen-ws-sheet')){
+  onChange('wsgen-theme',themeChanged);
+  onInput('wsgen-custom',function(){buildWordSearch(false);});
+  onInput('wsgen-ws-title',function(){buildWordSearch(false);});
+  listen('wsgen-ws-shuffle',function(){buildWordSearch(true);});
+  listen('wsgen-ws-solve',wsSolveToggle);
+  listen('wsgen-ws-print',function(){doPrint('ws');});
+  listen('wsgen-ws-png',function(){downloadCanvas('ws',false);});
+  listen('wsgen-ws-png-key',function(){downloadCanvas('ws',true);});
+  ['wsgen-size','wsgen-dirs'].forEach(function(n){
+   document.querySelectorAll('input[name="'+n+'"]').forEach(function(r){r.addEventListener('change',function(){buildWordSearch(false);});});
+  });
+  buildWordSearch(false);
+ }
+ if($('wsgen-math-sheet')){
+  listen('wsgen-math-shuffle',function(){buildMath(true);});
+  onInput('wsgen-math-title',function(){buildMath(false);});
+  listen('wsgen-math-solve',mathSolveToggle);
+  listen('wsgen-math-print',function(){doPrint('math');});
+  listen('wsgen-math-png',function(){downloadCanvas('math',false);});
+  listen('wsgen-math-png-key',function(){downloadCanvas('math',true);});
+  ['wsgen-op','wsgen-level','wsgen-count'].forEach(function(n){
+   document.querySelectorAll('input[name="'+n+'"]').forEach(function(r){r.addEventListener('change',function(){buildMath(false);});});
+  });
+  buildMath(false);
+ }
 }
 
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);

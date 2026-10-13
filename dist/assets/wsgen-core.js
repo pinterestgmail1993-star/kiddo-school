@@ -90,9 +90,99 @@ function makeMath(op,level,count,rng){
  return out;
 }
 
+/* Fisher-Yates with our seeded rng — shared by pairs, choices, shelves */
+function shuffle(arr,rng){
+ const a=arr.slice();
+ for(let i=a.length-1;i>0;i--){
+  const j=Math.floor(rng()*(i+1));
+  const t=a[i];a[i]=a[j];a[j]=t;
+ }
+ return a;
+}
+
+/* ---------- machine 3: tracing ---------- */
+/* free text -> clean trace text: letters, digits and single spaces only */
+function parseTrace(raw,maxChars){
+ return String(raw).toUpperCase().replace(/[^A-Z0-9]+/g,' ').trim().slice(0,maxChars).trim();
+}
+/* free text -> up to maxWords clean words of 2..wordMaxLen letters, deduped */
+function traceWords(raw,maxWords,wordMaxLen){
+ const seen=new Set();const out=[];
+ for(const w of String(raw).toUpperCase().split(/[^A-Z]+/)){
+  if(w.length<2||w.length>wordMaxLen||seen.has(w))continue;
+  seen.add(w);out.push(w);
+  if(out.length>=maxWords)break;
+ }
+ return out;
+}
+/* word shelves for the tracing machine — tied to our classes */
+const TRACE_SHELVES={
+ habitats:['RABBIT','FOX','OWL','WHALE','PANDA','CAMEL'],
+ helpers:['DOCTOR','NURSE','BAKER','PILOT','FARMER','COACH'],
+ weather:['SUNNY','RAINY','WINDY','SNOWY','CLOUDY','FOGGY'],
+ colors:['RED','BLUE','GREEN','PINK','PURPLE','ORANGE'],
+ numbers:['ONE','TWO','THREE','FOUR','FIVE','SIX']
+};
+
+/* ---------- machine 4: matching pairs ---------- */
+const DOTS='\u25CF';
+/* word shelves tied to our classes; letters & numbers are generated */
+const PAIR_SHELVES={
+ helpers:[['Doctor','Stethoscope'],['Firefighter','Fire truck'],['Teacher','Books'],
+  ['Farmer','Tractor'],['Chef','Mixing bowl'],['Mail carrier','Letter bag'],
+  ['Pilot','Airplane'],['Baker','Bread'],['Police officer','Police car'],['Artist','Paintbrush']],
+ homes:[['Rabbit','Burrow'],['Bird','Nest'],['Bee','Hive'],['Dog','Kennel'],
+  ['Horse','Stable'],['Spider','Web'],['Bear','Cave'],['Ant','Anthill'],
+  ['Cow','Barn'],['Duck','Pond']],
+ weather:[['Snowy','Mittens'],['Sunny','Sun hat'],['Rainy','Rain boots'],
+  ['Windy','Scarf'],['Cold','Warm coat'],['Hot','Shorts'],['Stormy','Flashlight'],
+  ['Foggy','Warm jacket']]
+};
+/* pick `count` pairs from a shelf; returns {left[],right[] shuffled,
+   solution[i]=index in right[] that matches left[i]} */
+function makePairs(key,count,rng){
+ count=Math.max(3,Math.min(count,8));
+ let pairs;
+ if(key==='letters'){
+  const A='ABCDEFGHIJ';
+  const idx=shuffle([0,1,2,3,4,5,6,7,8,9],rng).slice(0,count).sort((a,b)=>a-b);
+  pairs=idx.map(i=>[A[i],A[i].toLowerCase()]);
+ }else if(key==='numbers'){
+  const nums=shuffle([1,2,3,4,5,6,7,8,9,10],rng).slice(0,count).sort((a,b)=>a-b);
+  pairs=nums.map(n=>[String(n),new Array(n+1).join(DOTS)]);
+ }else{
+  const shelf=PAIR_SHELVES[key]||PAIR_SHELVES.homes;
+  const idx=shuffle(shelf.map((_,i)=>i),rng).slice(0,count).sort((a,b)=>a-b);
+  pairs=idx.map(i=>shelf[i]);
+ }
+ const left=pairs.map(p=>p[0]);
+ const rightSorted=pairs.map(p=>p[1]);
+ const right=shuffle(rightSorted,rng);
+ const solution=rightSorted.map(r=>right.indexOf(r));
+ return {left:left,right:right,solution:solution};
+}
+
+/* ---------- on-screen math: three answer bubbles per sum ---------- */
+/* one right answer + two believable neighbours, all 0..hi, shuffled */
+function makeChoices(answer,hi,rng){
+ const opts=new Set([answer]);
+ let guard=0;
+ while(opts.size<3&&guard<200){
+  guard++;
+  const d=1+Math.floor(rng()*4);
+  const cand=rng()<0.5?answer-d:answer+d;
+  if(cand>=0&&cand<=hi&&cand!==answer)opts.add(cand);
+ }
+ for(let f=0;f<=hi&&opts.size<3;f++)if(!opts.has(f))opts.add(f);
+ return shuffle(Array.from(opts),rng);
+}
+
 const WSGEN={mulberry32:mulberry32,parseWords:parseWords,buildWordSearch:buildWordSearch,
  fillGrid:fillGrid,wordCells:wordCells,makeMath:makeMath,FILL:FILL,
- DIRS_EASY:DIRS_EASY,DIRS_HARD:DIRS_HARD};
+ DIRS_EASY:DIRS_EASY,DIRS_HARD:DIRS_HARD,
+ shuffle:shuffle,makePairs:makePairs,makeChoices:makeChoices,
+ parseTrace:parseTrace,traceWords:traceWords,
+ PAIR_SHELVES:PAIR_SHELVES,TRACE_SHELVES:TRACE_SHELVES,DOTS:DOTS};
 g.WSGEN=WSGEN;
 
 })(typeof window!=='undefined'?window:globalThis);

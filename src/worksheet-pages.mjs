@@ -58,13 +58,14 @@ const BRAND_R2='https://pub-f2fcb7c9b45a496cbeefef18dbba0ec0.r2.dev/school/brand
 
 /* ---------- the main library ---------- */
 export function worksheetsHubBody(){
- /* the worksheet generator — first card on the wall: two machines (word
-    search + math practice) that build a fresh sheet in the browser */
+ /* the worksheet generator — first card on the wall: four machines (word
+    search, math, tracing, matching pairs) that build a fresh sheet in the
+    browser — solve it on screen, print it, or save it as a picture */
  const genCard=`<a class="ws-cat ws-cat-gen" href="/worksheet-generator/">
    <span class="ws-cat-head"><img src="${BRAND_R2}kiddo-subject-maths.webp" width="1264" height="1264" alt="" aria-hidden="true" loading="lazy"><span class="ws-cat-pill ws-pill-gen">Make your own</span><strong>Worksheet Generator</strong></span>
-   <p>Build a fresh worksheet in one minute — a word search from the words your child is learning, or sums tuned to their level. Shuffle for a new sheet, print it, or save it as a picture.</p>
-   <span class="ws-count-note">Word Search · Math Practice — made right in your browser</span>
-   <span class="ws-cat-picks"><span>Word search maker</span><span>Math practice maker</span><span>Print &amp; picture download</span></span>
+   <p>Build a fresh worksheet in one minute — a word search, sums, a tracing sheet or matching pairs. Solve it on screen, print it, or save it as a picture.</p>
+   <span class="ws-count-note">Word Search · Math · Tracing · Matching — made right in your browser</span>
+   <span class="ws-cat-picks"><span>Word search maker</span><span>Math practice maker</span><span>Tracing sheet maker</span><span>Matching pairs maker</span></span>
    <span class="fc-open">Open the generator <span aria-hidden="true">↗</span></span>
   </a>`;
  const cards=genCard+SUBJECT_ORDER.map(k=>{
