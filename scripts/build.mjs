@@ -82,7 +82,7 @@ import {drawingTutorials,drawingTutorialBody,drawingSchema,drawingShelf,drawingB
 import {LETTERS,letterAt} from '../src/alphabet-data.mjs';
 import {letterPageBody,letterSchema,letterPath,matchGameBody,soundsGameBody,pictureGameBody,alphabetShelf} from '../src/alphabet-center.mjs';
 import {ourClassroom,ourClassroomBody,letsExplore,letsExploreBody,stickyWall,stickyWallBody,bcSchema as clBc} from '../src/classroom-life.mjs';
-import {readFileSync,writeFileSync,mkdirSync,rmSync,cpSync} from 'node:fs';
+import {readFileSync,writeFileSync,mkdirSync,rmSync,cpSync,readdirSync} from 'node:fs';
 import {illustrations} from './illustrations.mjs';
 const activities=JSON.parse(readFileSync('data/activities.json','utf8'));
 const writingSection=readFileSync('src/handwriting.html','utf8');
@@ -634,6 +634,24 @@ for(const w of coloringPages){
    always covers the complete school — books, classes, drawing lessons,
    flashcards, activities and the pages parents need. */
 writeFileSync('dist/assets/search-index.json',JSON.stringify(searchPages));
+/* Breadcrumb structured data for every page whose visible breadcrumb has no BreadcrumbList yet:
+   derived from the on-page <nav class="breadcrumbs">, so markup and schema can never disagree. */
+{
+ const walk=d=>readdirSync(d,{withFileTypes:true}).flatMap(e=>e.isDirectory()?walk(d+'/'+e.name):[d+'/'+e.name]);
+ const unesc=t=>t.replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&quot;/g,'"').replace(/&#39;/g,"'");
+ for(const f of walk('dist').filter(f=>f.endsWith('.html')&&f!=='dist/404.html')){
+  let h=readFileSync(f,'utf8');
+  if(h.includes('BreadcrumbList'))continue;
+  const nav=h.match(/<nav class="breadcrumbs[^"]*" aria-label="Breadcrumb">([\s\S]*?)<\/nav>/);
+  const can=h.match(/<link rel="canonical" href="([^"]+)"/);
+  if(!nav||!can)continue;
+  const items=[...nav[1].matchAll(/<a href="([^"]+)">([^<]+)<\/a>|<span aria-current="page">([^<]+)<\/span>/g)].map(m=>m[1]?{name:unesc(m[2]),item:site+m[1]}:{name:unesc(m[3]),item:can[1]});
+  if(items.length<2)continue;
+  const ld={'@context':'https://schema.org','@type':'BreadcrumbList',itemListElement:items.map((x,i)=>({'@type':'ListItem',position:i+1,name:x.name,item:x.item}))};
+  h=h.replace('</head>','<script type="application/ld+json">'+JSON.stringify([ld]).replace(/</g,'\\u003c')+'</script></head>');
+  writeFileSync(f,h);
+ }
+}
 writeFileSync('dist/sitemap.xml',`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${allRoutes.map(p=>`<url><loc>${site+p}</loc></url>`).join('')}</urlset>\n`);
 writeFileSync('dist/robots.txt',`User-agent: *\n${indexable?'Allow: /':'Disallow: /'}\nDisallow: /admin/\nDisallow: /api/\nSitemap: ${site}/sitemap.xml\n`);
 writeFileSync('dist/_headers',`/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: strict-origin-when-cross-origin\n  X-Frame-Options: DENY\n  Permissions-Policy: camera=(), microphone=(), geolocation=()\n  Content-Security-Policy: default-src 'self'; script-src 'self' https://static.cloudflareinsights.com https://*.adtrafficquality.google https://challenges.cloudflare.com https://pagead2.googlesyndication.com https://*.googlesyndication.com https://*.googletagservices.com https://*.g.doubleclick.net https://*.google.com https://*.gstatic.com https://adservice.google.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://*.adtrafficquality.google https://pub-f2fcb7c9b45a496cbeefef18dbba0ec0.r2.dev https://*.googlesyndication.com https://*.g.doubleclick.net https://*.google.com https://*.gstatic.com; font-src 'self'; connect-src 'self' https://cloudflareinsights.com https://*.adtrafficquality.google https://challenges.cloudflare.com https://*.google.com https://*.g.doubleclick.net https://*.googlesyndication.com https://adservice.google.com; object-src 'none'; base-uri 'none'; frame-ancestors 'none'; frame-src https://*.adtrafficquality.google https://challenges.cloudflare.com https://googleads.g.doubleclick.net https://*.googlesyndication.com https://tpc.googlesyndication.com https://www.google.com\n${indexable?'':'  X-Robots-Tag: noindex, follow\n'}`);
