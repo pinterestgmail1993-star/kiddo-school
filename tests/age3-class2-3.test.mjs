@@ -209,11 +209,11 @@ test('sitemap, indexing stance and lesson wiring',()=>{
  ['/preschool/3-years/numbers-and-counting/','/preschool/3-years/shapes-and-patterns/','/flashcards/numbers-and-counting/','/flashcards/shapes/','/flashcards/numbers-and-counting/five/','/flashcards/shapes/octagon/'].forEach(u=>assert.ok(map.includes(`<loc>https://kiddo-school.pages.dev${u}</loc>`),'sitemap '+u));
  assert.ok(!map.includes('numbers-and-counting/print/'),'print stays out of sitemap');
  assert.ok(!map.includes('shapes-and-patterns/print/'),'print stays out of sitemap');
- // The site stays OUT of search engines: noindex meta on new pages and robots disallow.
+ // The site is public and indexable: index meta on class pages and robots allows crawling.
  const html=page('/preschool/3-years/numbers-and-counting/');
- assert.ok(html.includes('content="noindex,follow"'),'class page noindex');
+ assert.ok(html.includes('content="index,follow"'),'class page indexable');
  const robots=read('robots.txt');
- assert.ok(robots.includes('Disallow: /'),'robots still disallows crawling');
+ assert.ok(robots.includes('Allow: /'),'robots allows crawling');
  // Both lesson pages carry the community mount and the flashcards link row.
  const nl=page('/preschool/3-years/numbers-and-counting/');
  assert.ok(nl.includes('Open the Numbers 1–10 flashcards'),'lesson links its set');
