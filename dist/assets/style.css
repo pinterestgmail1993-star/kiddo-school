@@ -1872,6 +1872,7 @@ h1 em,h2 em{color:#7b4b99}
 .contact-side{background:var(--kiddo-lavender);border-radius:20px;padding:24px}
 .contact-side h2{margin-top:0}
 @media(max-width:680px){.contact-layout{grid-template-columns:1fr}}
+<<<<<<< HEAD
 .ws-hero-split{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:40px;align-items:center}
 .ws-hero-split .page-heading{padding-bottom:0}
 .ws-hero-split .ws-cover-sm{margin:0}
@@ -1889,3 +1890,77 @@ h1 em,h2 em{color:#7b4b99}
 .consent-btn-quiet:hover{background:#EEE6F2}
 .consent-link{background:none;border:0;padding:0;font:inherit;color:inherit;text-decoration:underline;cursor:pointer}
 @media print{.consent-banner{display:none!important}}
+=======
+
+/* ---------- worksheet generator (/worksheet-generator/) ---------- */
+.is-hidden{display:none!important}
+.wsgen-tabs{display:flex;gap:10px;margin-top:26px;flex-wrap:wrap}
+.wsgen-tab{border:1.5px solid var(--ink);background:var(--white);padding:10px 22px;border-radius:999px;font-weight:800;font-size:15px;box-shadow:3px 3px 0 var(--ink)}
+.wsgen-tab.is-active{background:var(--ink);color:var(--white)}
+.wsgen-panel{display:grid;grid-template-columns:350px minmax(0,1fr);gap:26px;align-items:start}
+.wsgen-options{background:var(--white);border:1.5px solid var(--ink);box-shadow:5px 5px 0 var(--ink);border-radius:16px;padding:22px 20px;position:sticky;top:16px}
+.wsgen-card-title{font-size:23px;margin-bottom:6px}
+.wsgen-hint{font-size:14px;margin:0 0 14px}
+.wsgen-label{display:block;font-weight:800;font-size:13px;text-transform:uppercase;letter-spacing:.8px;margin:14px 0 6px}
+.wsgen-select,.wsgen-text{width:100%;border:1.5px solid var(--ink);border-radius:10px;padding:10px 12px;background:var(--white);font-size:15px}
+.wsgen-text{resize:vertical}
+.wsgen-fieldset{border:0;padding:0;margin:16px 0 0}
+.wsgen-legend{font-weight:800;font-size:13px;text-transform:uppercase;letter-spacing:.8px;padding:0;margin-bottom:8px}
+.wsgen-pills{display:flex;flex-wrap:wrap;gap:8px}
+.wsgen-pill{position:relative}
+.wsgen-pill input{position:absolute;opacity:0;pointer-events:none}
+.wsgen-pill span{display:inline-block;border:1.5px solid var(--ink);border-radius:999px;padding:7px 14px;font-size:14px;font-weight:700;background:var(--white);cursor:pointer}
+.wsgen-pill input:checked+span{background:var(--ink);color:var(--white)}
+.wsgen-pill input:focus-visible+span{outline:3px solid #81543e;outline-offset:3px}
+.wsgen-check{display:flex;gap:10px;align-items:center;margin:16px 0 0;font-weight:700;font-size:15px;cursor:pointer}
+.wsgen-check input{width:19px;height:19px;accent-color:var(--ink)}
+.wsgen-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.wsgen-out{min-width:0}
+.wsgen-sheet{background:#fff;border:1.5px solid var(--ink);box-shadow:6px 6px 0 rgba(52,35,62,.16);border-radius:14px;padding:34px 30px;max-width:640px;margin:0 auto}
+.wsgen-sheet-head{text-align:center;margin-bottom:20px}
+.wsgen-sheet-title{font-size:26px}
+.wsgen-sheet-sub{font-size:14px;margin-top:6px;color:var(--muted)}
+.wsgen-grid{display:grid;width:100%;max-width:560px;margin:0 auto;border:2px solid var(--ink);background:#fff}
+.wsgen-grid-8{grid-template-columns:repeat(8,1fr)}
+.wsgen-grid-10{grid-template-columns:repeat(10,1fr)}
+.wsgen-grid-12{grid-template-columns:repeat(12,1fr)}
+.wsgen-cell{display:flex;align-items:center;justify-content:center;aspect-ratio:1;border:1px solid var(--line);font-weight:700;color:var(--ink)}
+.wsgen-grid-8 .wsgen-cell{font-size:21px}
+.wsgen-grid-10 .wsgen-cell{font-size:17px}
+.wsgen-grid-12 .wsgen-cell{font-size:14px}
+.wsgen-hit{background:var(--yellow);border-color:var(--ink)}
+.wsgen-wordlist{margin-top:18px;text-align:center}
+.wsgen-list-head{font-weight:800;font-size:15px;color:var(--ink);margin-bottom:8px}
+.wsgen-chips{display:flex;flex-wrap:wrap;gap:7px;justify-content:center}
+.wsgen-chip{border:1.5px solid var(--ink);border-radius:999px;padding:3px 12px;font-size:13px;font-weight:700;background:var(--sage)}
+.wsgen-math{display:grid;grid-template-columns:repeat(3,1fr);gap:34px 22px;max-width:560px;margin:6px auto 0}
+.wsgen-problem{font-size:29px;font-weight:600;color:var(--ink);white-space:nowrap}
+.wsgen-blank{display:inline-block;width:2.1em;border-bottom:2.5px solid var(--ink)}
+.wsgen-answer{font-weight:800;color:var(--kiddo-purple)}
+.wsgen-sheet-foot{text-align:center;font-size:12.5px;color:#8a8172;margin-top:22px}
+.wsgen-status{min-height:1.5em;font-weight:700;color:#a15c3d;max-width:640px;margin:10px auto 0;text-align:center}
+@media(max-width:920px){.wsgen-panel{grid-template-columns:1fr}.wsgen-options{position:static}}
+@media(max-width:640px){.wsgen-math{grid-template-columns:repeat(2,1fr);gap:26px 14px}.wsgen-problem{font-size:24px}.wsgen-sheet{padding:24px 16px}}
+/* the print root is appended to <body> at print time; everything else hides */
+#wsgen-print{display:none}
+@media print{
+ @page{size:A4 portrait;margin:12mm}
+ body>*{display:none!important}
+ body>#wsgen-print{display:block!important}
+ .wsgen-print-sheet{font-family:Arial,Helvetica,sans-serif;color:#111}
+ .wsgen-print-sheet h1{text-align:center;font-size:26pt;margin:0 0 8mm;font-family:Georgia,serif;font-weight:700}
+ .wsgen-print-sub{text-align:center;font-size:12pt;margin:0 0 8mm}
+ .wsgen-print-table{border-collapse:collapse;margin:0 auto}
+ .wsgen-print-table td{border:1.2pt solid #2b2b2b;width:11.5mm;height:11.5mm;text-align:center;vertical-align:middle;font-size:13pt;font-weight:600;padding:0}
+ .wsgen-print-hit{background:#ffe9a8}
+ .wsgen-print-words{text-align:center;font-size:12.5pt;font-weight:700;margin:8mm 0 0;line-height:1.9}
+ .wsgen-print-math{border-collapse:collapse;margin:4mm auto 0;width:100%}
+ .wsgen-print-math td{font-size:15pt;font-weight:600;padding:9mm 6mm;width:33%;white-space:nowrap}
+ .wsgen-print-key{page-break-before:always;border-top:2pt dashed #666;padding-top:6mm;margin-top:10mm}
+ .wsgen-print-foot{text-align:center;font-size:10pt;color:#777;margin:10mm 0 0}
+}
+/* generator card on the worksheet library wall */
+.ws-cat-gen{border:2px solid var(--kiddo-purple)}
+.ws-pill-gen{background:var(--kiddo-lavender);color:var(--kiddo-purple)}
+.ws-cat-gen .fc-open{color:var(--kiddo-purple)}
+>>>>>>> e151015d1 (The WORKSHEET GENERATOR goes live — /worksheet-generator/ (owner benchmark: kiddoworksheets.com 'lets make a worksheet generator', built 100% client-side like his, zero backend): TWO machines. (1) Word Search — word shelves wired to our classes (Class 36 habitats, 33 helpers, 34 weather, colors/shapes, first words) or custom word list (letters-only parser, dedupe, 12-word cap), 8/10/12 grid sizes, across+down or diagonals, shuffle with seeded PRNG, answer-key highlighting, every word guaranteed placed (60-attempt planner, forward-reading directions only, weighted filler letters). (2) Math Practice — add/subtract/mixed within 10/20/100 (sums never exceed level, take-away never negative), 12/16/20 problems, answer page. Both: print via body-level print root (A4 @page, real table grid, key page-breaks to page 2) + PNG download (canvas A4 @150dpi, verified 117-192KB real PNGs). CSP-proof by construction: external scripts only, addEventListener only, no inline styles/handlers — headless-verified ZERO console violations with the real CSP. New files: src/worksheet-generator.mjs (server-rendered shell: options, tabs, class-linked copy, noscript), public/assets/wsgen-core.js (pure logic — unit-tested directly in node: every word lands and reads correctly across 25 seeds, bounds enforced across 15 seeds per level/op), public/assets/wsgen.js (page logic), tests/worksheet-generator.test.mjs (9 tests). Wired: build.mjs page()+script tags, /worksheets/ hub FIRST card (purple Make-your-own), footer Learn column, sitemap 2158→2159, html 2176→2177. 455/455 green, 2161 pages.)

@@ -58,7 +58,16 @@ const BRAND_R2='https://pub-f2fcb7c9b45a496cbeefef18dbba0ec0.r2.dev/school/brand
 
 /* ---------- the main library ---------- */
 export function worksheetsHubBody(){
- const cards=SUBJECT_ORDER.map(k=>{
+ /* the worksheet generator — first card on the wall: two machines (word
+    search + math practice) that build a fresh sheet in the browser */
+ const genCard=`<a class="ws-cat ws-cat-gen" href="/worksheet-generator/">
+   <span class="ws-cat-head"><img src="${BRAND_R2}kiddo-subject-maths.webp" width="1264" height="1264" alt="" aria-hidden="true" loading="lazy"><span class="ws-cat-pill ws-pill-gen">Make your own</span><strong>Worksheet Generator</strong></span>
+   <p>Build a fresh worksheet in one minute — a word search from the words your child is learning, or sums tuned to their level. Shuffle for a new sheet, print it, or save it as a picture.</p>
+   <span class="ws-count-note">Word Search · Math Practice — free, no sign-up, made right in your browser</span>
+   <span class="ws-cat-picks"><span>Word search maker</span><span>Math practice maker</span><span>Print &amp; picture download</span></span>
+   <span class="fc-open">Open the generator <span aria-hidden="true">↗</span></span>
+  </a>`;
+ const cards=genCard+SUBJECT_ORDER.map(k=>{
   const s=SUBJECTS[k],n=subjectCounts[k];
   const planned=k==='maths'?`<span class="ws-count-note">${n} of ${MATHS_PLANNED} ready \u2014 more arrive with their artwork</span>`:`<span class="ws-count-note">${n} worksheets</span>`;
   const picks=bySubject(k).slice(0,3);
