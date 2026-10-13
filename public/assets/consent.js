@@ -61,7 +61,7 @@
     var title = el('h2', 'consent-title', 'Cookies on Kiddo.school');
     var text = el('p', 'consent-text',
       'We use essential browser storage to remember your child\u2019s progress on this device. ' +
-      'Optional cookies, such as those used for advertising, stay off unless you say yes. ' +
+      'This site may show Google ads. They stay non-personalised unless you accept optional cookies. ' +
       'You can change your mind any time from \u201CCookie settings\u201D in the footer. ');
     var more = el('a', 'consent-more', 'Read our privacy page');
     more.href = '/privacy/';
