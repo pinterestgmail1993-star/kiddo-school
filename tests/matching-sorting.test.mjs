@@ -141,7 +141,7 @@ test('sitemap and search index carry every new URL with honest kinds',()=>{
  const urls=[MS_WS_BASE];
  for(const s of SLUGS){urls.push(MS_WS_BASE+s+'/',MS_ACT_PATH+s+'/');}
  for(const u of urls){
-  assert.ok(xml.includes(`<loc>https://kiddo-school.pages.dev${u}</loc>`),'sitemap: '+u);
+  assert.ok(xml.includes(`<loc>https://kiddo.school${u}</loc>`),'sitemap: '+u);
  }
  const ws=search.filter(e=>e.u.startsWith(MS_WS_BASE));
  const acts=search.filter(e=>e.u.startsWith(MS_ACT_PATH)&&e.u!==MS_CLASS_PATH&&!e.u.includes('/learn/'));

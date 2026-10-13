@@ -112,7 +112,7 @@ test('card pages: unique titles and descriptions, say/try/note, download, prev/n
   // breadcrumb: Home > Flashcards > Set > Card
   const bc=html.match(/"breadcrumbList","itemListElement":\[.*?\]/s)||html.match(/"BreadcrumbList"(.*?)<\/script>/s);
   assert.ok(html.includes('"BreadcrumbList"'),`${c.url} missing breadcrumb schema`);
-  assert.ok(html.includes('item":"https://kiddo-school.pages.dev'+c.url+'"'),'breadcrumb includes card item');
+  assert.ok(html.includes('item":"https://kiddo.school'+c.url+'"'),'breadcrumb includes card item');
   // honesty guards
   assert.ok(!html.includes('aggregateRating'),'no fabricated ratings schema');
   assert.ok(!html.includes('★★★★★</span>'),'no fabricated review text in HTML');
@@ -129,10 +129,10 @@ test('library: every set is listed, baby collection included, no orphan sets',()
 test('sitemap: all set and card URLs are indexable, print views excluded',()=>{
  const xml=read('dist/sitemap.xml');
  for(const s of fcSets){
-  assert.ok(xml.includes(`<loc>https://kiddo-school.pages.dev${s.url}</loc>`),`sitemap missing ${s.url}`);
-  for(const c of s.cards)assert.ok(xml.includes(`<loc>https://kiddo-school.pages.dev${c.url}</loc>`),`sitemap missing ${c.url}`);
+  assert.ok(xml.includes(`<loc>https://kiddo.school${s.url}</loc>`),`sitemap missing ${s.url}`);
+  for(const c of s.cards)assert.ok(xml.includes(`<loc>https://kiddo.school${c.url}</loc>`),`sitemap missing ${c.url}`);
  }
- for(const c of babySet.cards)assert.ok(xml.includes(`<loc>https://kiddo-school.pages.dev${c.url}</loc>`),`sitemap missing baby card ${c.url}`);
+ for(const c of babySet.cards)assert.ok(xml.includes(`<loc>https://kiddo.school${c.url}</loc>`),`sitemap missing baby card ${c.url}`);
  assert.ok(!xml.includes('/print/'),'print views stay unindexed');
 });
 

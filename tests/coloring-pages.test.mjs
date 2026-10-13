@@ -174,7 +174,7 @@ test('sitemap and search index carry every new URL',()=>{
  const urls=[CP_HUB,CP_LIB];
  for(const s of SLUGS){urls.push(CP_LIB+s+'/',CP_ACT_PATH+s+'/');}
  for(const u of urls){
-  assert.ok(xml.includes(`<loc>https://kiddo-school.pages.dev${u}</loc>`),'sitemap: '+u);
+  assert.ok(xml.includes(`<loc>https://kiddo.school${u}</loc>`),'sitemap: '+u);
  }
  const kinds=search.filter(e=>e.u.startsWith('/coloring-pages/'));
  const acts=search.filter(e=>e.u.startsWith(CP_ACT_PATH));

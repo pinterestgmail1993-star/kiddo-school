@@ -15,7 +15,7 @@ test('school calendar: exact SEO title, one H1, breadcrumbs and schema',()=>{
  // Discoverable from My Classroom (never in the main nav)
  assert.match(mc,/href="\/school-calendar\/"/);
  assert.match(mc,/Open the calendar/);
- assert.match(map,/<loc>https:\/\/kiddo-school\.pages\.dev\/school-calendar\/<\/loc>/);
+ assert.match(map,/<loc>https:\/\/kiddo\.school\/school-calendar\/<\/loc>/);
  // The page loads its local-time enhancement script
  assert.match(html,/src="\/assets\/calendar\.js(\?v=[0-9]+)?"/);
 });

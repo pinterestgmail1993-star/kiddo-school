@@ -11,7 +11,7 @@ import {hashPassword,verifyLoginPassword} from '../functions/lib/passwords.js';
 import {cleanText,cleanEmail,escapeHtml} from '../functions/lib/security.js';
 import {validateAndScrubImage,sniffImage} from '../functions/lib/images.js';
 
-const site='https://kiddo-school.pages.dev';
+const site='https://kiddo.school';
 const read=f=>readFileSync(f,'utf8');
 
 /* ------------------------------------------------- Mock D1 (real behavior) */
@@ -128,7 +128,7 @@ function ctx(url,{env,method='GET',body,headers={}}={}){
  return {request,env,params:{route:url.replace(/^\/api\/(community|admin)\/?/,'').split('?')[0].split('/').filter(Boolean)}};
 }
 
-const POST_HEADERS={'Content-Type':'application/json','X-Kiddo-Community':'1','Origin':'https://kiddo-school.pages.dev','CF-Connecting-IP':'1.2.3.4'};
+const POST_HEADERS={'Content-Type':'application/json','X-Kiddo-Community':'1','Origin':'https://kiddo.school','CF-Connecting-IP':'1.2.3.4'};
 
 /* --------------------------------------------------- School Community page */
 test('school community page: real title, H1, intro, three real destinations, honest empty state',()=>{
@@ -141,7 +141,7 @@ test('school community page: real title, H1, intro, three real destinations, hon
  assert.ok(!html.includes('href="/admin"'),'no admin links on the public site');
  assert.doesNotMatch(html,/testimonial|fake quote/i);
  assert.match(html,/"@type":"BreadcrumbList"/);
- assert.match(read('dist/sitemap.xml'),/<loc>https:\/\/kiddo-school\.pages\.dev\/school-community\/<\/loc>/);
+ assert.match(read('dist/sitemap.xml'),/<loc>https:\/\/kiddo\.school\/school-community\/<\/loc>/);
 });
 
 test('homepage gains one clean community section; primary nav stays six items; Parents dropdown and footer link School Community',()=>{
@@ -237,7 +237,7 @@ test('routers live where real Pages routing expects them: /api/community/* → b
 test('origin and CSRF guards reject cross-site or header-less POSTs',async()=>{
  const db=mockDb();
  const env={DB:db};
- const noHeader=await publicApi(ctx('/api/community/sticky',{env,method:'POST',body:'{}',headers:{'Content-Type':'application/json','Origin':'https://kiddo-school.pages.dev'}}));
+ const noHeader=await publicApi(ctx('/api/community/sticky',{env,method:'POST',body:'{}',headers:{'Content-Type':'application/json','Origin':'https://kiddo.school'}}));
  assert.equal(noHeader.status,403);
  const evilOrigin=await publicApi(ctx('/api/community/sticky',{env,method:'POST',body:'{}',headers:{'Content-Type':'application/json','X-Kiddo-Community':'1','Origin':'https://evil.example'}}));
  assert.equal(evilOrigin.status,403);
@@ -429,7 +429,7 @@ test('login flow through /admin/: CSRF, cookie flags, generic errors, logout',as
  const setCookie=get.headers.get('Set-Cookie')||'';
  assert.ok(setCookie.includes('kiddo_admin_csrf='+csrf),'CSRF cookie matches the hidden field');
  assert.ok(/HttpOnly/.test(setCookie)&&/Secure/.test(setCookie)&&/SameSite=Strict/.test(setCookie),'CSRF cookie is HttpOnly, Secure, SameSite=Strict');
- const post=(body,headers={})=>shell.onRequest({request:new Request('https://kiddo.school/admin/',{method:'POST',body,headers:{'Content-Type':'application/x-www-form-urlencoded','Origin':'https://kiddo-school.pages.dev','CF-Connecting-IP':'8.8.4.4',...headers}}),env,params:{route:[]}});
+ const post=(body,headers={})=>shell.onRequest({request:new Request('https://kiddo.school/admin/',{method:'POST',body,headers:{'Content-Type':'application/x-www-form-urlencoded','Origin':'https://kiddo.school','CF-Connecting-IP':'8.8.4.4',...headers}}),env,params:{route:[]}});
  // 2. missing CSRF → 403
  const noCsrf=await post('username=office%40kiddo.test&password=correct%20horse%20battery%20staple%2042');
  assert.equal(noCsrf.status,403,'login without the CSRF pair is rejected');
@@ -455,7 +455,7 @@ test('login flow through /admin/: CSRF, cookie flags, generic errors, logout',as
  assert.ok(dashHtml.includes('data-goto="principal"'),'dashboard renders the queue cards');
  assert.ok(!dashHtml.includes('name="password"'),'dashboard has no login form');
  // 6. logout clears the cookie
- const out=await shell.onRequest({request:new Request('https://kiddo.school/admin/logout',{method:'POST',headers:{'Cookie':'kiddo_admin_session='+token,'Origin':'https://kiddo-school.pages.dev'}}),env,params:{route:['logout']}});
+ const out=await shell.onRequest({request:new Request('https://kiddo.school/admin/logout',{method:'POST',headers:{'Cookie':'kiddo_admin_session='+token,'Origin':'https://kiddo.school'}}),env,params:{route:['logout']}});
  assert.equal(out.status,303);
  const cleared=(out.headers.getSetCookie? out.headers.getSetCookie():[out.headers.get('Set-Cookie')]).find(c=>c.startsWith('kiddo_admin_session='));
  assert.ok(/Max-Age=0/.test(cleared),'logout expires the session cookie');
@@ -489,7 +489,7 @@ function adminAuth(){
   const token=(await createSessionToken(base)).token;
   return {
    env:(db,extra={})=>({DB:db,...base,...extra}),
-   headers:()=>({'Cookie':'kiddo_admin_session='+token,'X-Kiddo-Community':'1','Origin':'https://kiddo-school.pages.dev'}),
+   headers:()=>({'Cookie':'kiddo_admin_session='+token,'X-Kiddo-Community':'1','Origin':'https://kiddo.school'}),
   };
  })();
  return adminAuthPromise;
@@ -526,7 +526,7 @@ test('art submission: invalid files rejected, valid files scrubbed and stored pe
  const form1=new FormData();
  form1.append('image',new File([new TextEncoder().encode('hello world, definitely not an image')],'art.webp',{type:'image/webp'}));
  form1.append('confirm','true');
- const bad=await publicApi(ctx('/api/community/art',{env,method:'POST',body:form1,headers:{'X-Kiddo-Community':'1','Origin':'https://kiddo-school.pages.dev','CF-Connecting-IP':'9.9.9.9'}}));
+ const bad=await publicApi(ctx('/api/community/art',{env,method:'POST',body:form1,headers:{'X-Kiddo-Community':'1','Origin':'https://kiddo.school','CF-Connecting-IP':'9.9.9.9'}}));
  assert.equal(bad.status,415,'magic-byte sniffing rejects non-images');
  // 2. a real WebP with an EXIF chunk gets its metadata stripped and lands pending
  const base=read('dist/assets/favicon.svg')?'':'';
@@ -536,7 +536,7 @@ test('art submission: invalid files rejected, valid files scrubbed and stored pe
  form2.append('display_name','Row');
  form2.append('title','My dino');
  form2.append('confirm','true');
- const good=await publicApi(ctx('/api/community/art',{env,method:'POST',body:form2,headers:{'X-Kiddo-Community':'1','Origin':'https://kiddo-school.pages.dev','CF-Connecting-IP':'9.9.9.9'}}));
+ const good=await publicApi(ctx('/api/community/art',{env,method:'POST',body:form2,headers:{'X-Kiddo-Community':'1','Origin':'https://kiddo.school','CF-Connecting-IP':'9.9.9.9'}}));
  assert.equal(good.status,200,await good.text());
  const row=db._tables.art_submissions[0];
  assert.equal(row.status,'pending');

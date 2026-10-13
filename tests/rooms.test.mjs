@@ -7,7 +7,7 @@ import {playHub,matchIt,sortIt,whatsDifferent} from '../src/play-practice.mjs';
 import {schoolBag,learningLibrary} from '../src/school-spaces.mjs';
 import {ourClassroom,letsExplore,stickyWall} from '../src/classroom-life.mjs';
 const read=f=>readFileSync(f,'utf8');
-const site='https://kiddo-school.pages.dev';
+const site='https://kiddo.school';
 const mw=read('dist/toddler/2-years/my-work/index.html');
 const draw=read('dist/toddler/2-years/my-work/draw-and-scribble/index.html');
 const trace=read('dist/toddler/2-years/my-work/trace-and-follow/index.html');

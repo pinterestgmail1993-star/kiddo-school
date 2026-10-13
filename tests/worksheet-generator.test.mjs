@@ -83,8 +83,8 @@ test('wsgen-core: math practice stays inside its level, subtraction never negati
 
 test('generator page: live at /worksheet-generator/, canonical, in sitemap, both machines server-rendered',()=>{
  const html=pageFile(GEN);
- assert.match(html,/rel="canonical" href="https:\/\/kiddo-school\.pages\.dev\/worksheet-generator\/"/);
- assert.ok(read('/sitemap.xml').includes('https://kiddo-school.pages.dev'+GEN),'generator in sitemap');
+ assert.match(html,/rel="canonical" href="https:\/\/kiddo\.school\/worksheet-generator\/"/);
+ assert.ok(read('/sitemap.xml').includes('https://kiddo.school'+GEN),'generator in sitemap');
  for(const bit of ['wsgen-panel-words','wsgen-panel-math','wsgen-theme','wsgen-custom',
   'wsgen-size','wsgen-dirs','wsgen-op','wsgen-level','wsgen-count',
   'wsgen-ws-key','wsgen-math-key','Shuffle a new puzzle','Word search','Math practice','noscript'])

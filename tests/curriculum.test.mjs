@@ -20,7 +20,7 @@ const ct1=read('dist/toddler/2-years/circle-time/hello-school/index.html');
 const cthub=read('dist/toddler/2-years/circle-time/index.html');
 const mc=read('dist/my-classroom/index.html');
 const checkLesson=(html,L)=>{
- assert.ok(html.includes('rel="canonical" href="https://kiddo-school.pages.dev'+L.path+'"'));
+ assert.ok(html.includes('rel="canonical" href="https://kiddo.school'+L.path+'"'));
  assert.ok(html.includes('<title>'+L.seoTitle.replace(/&/g,'&amp;')+' | Kiddo.school</title>'));
  assert.ok(html.includes('content="'+L.description+'"'));
  assert.ok(html.includes('<h1>'+L.h1.replace(/&/g,'&amp;')+'</h1>'));
@@ -183,7 +183,7 @@ test('lesson 8 follows the Toddler 2 spec with six concept pairs, Try Together, 
  assert.match(l8,/BreadcrumbList[\s\S]*"name":"Toddler"[\s\S]*"name":"18–24 Months"[\s\S]*"name":"First Concepts"/);
 });
 test('lesson 9 (Colors & Shapes, Toddler 3) follows its spec with the interactive toddler class',()=>{
- assert.ok(l9.includes('rel="canonical" href="https://kiddo-school.pages.dev/toddler/2-years/colors-and-shapes/"'));
+ assert.ok(l9.includes('rel="canonical" href="https://kiddo.school/toddler/2-years/colors-and-shapes/"'));
  assert.ok(l9.includes('<title>Colors and Shapes for 2-Year-Olds | Kiddo.school</title>'));
  assert.ok(l9.includes('content="'+csLesson.description+'"'));
  assert.ok(l9.includes('<h1>Colors and Shapes for 2-Year-Olds</h1>'));
@@ -259,7 +259,7 @@ test('lesson 9 (Colors & Shapes, Toddler 3) follows its spec with the interactiv
  assert.ok(l9.includes('name="twitter:card" content="summary_large_image"'));
 });
 test('lesson 10 (Matching & Sorting, Toddler 4) follows its spec with the interactive toddler class',()=>{
- assert.ok(l10.includes('rel="canonical" href="https://kiddo-school.pages.dev/toddler/2-years/matching-and-sorting/"'));
+ assert.ok(l10.includes('rel="canonical" href="https://kiddo.school/toddler/2-years/matching-and-sorting/"'));
  assert.ok(l10.includes('<title>Matching and Sorting for 2-Year-Olds | Kiddo.school</title>'));
  assert.ok(l10.includes('content="'+msLesson.description+'"'));
  assert.equal(msLesson.description,'Explore matching and sorting with your 2-year-old through simple visual activities for colors, shapes, everyday objects and things that belong together.');
@@ -321,7 +321,7 @@ test('lesson 10 (Matching & Sorting, Toddler 4) follows its spec with the intera
  assert.ok(l10.includes('"learningResourceType":"Interactive toddler class"'));
 });
 test('lesson 11 (Animals & Sounds, Toddler 5) follows its spec with the interactive toddler class',()=>{
- assert.ok(l11.includes('rel="canonical" href="https://kiddo-school.pages.dev/toddler/2-years/animals-and-sounds/"'));
+ assert.ok(l11.includes('rel="canonical" href="https://kiddo.school/toddler/2-years/animals-and-sounds/"'));
  assert.ok(l11.includes('<title>Animals and Sounds for 2-Year-Olds | Kiddo.school</title>'));
  assert.ok(l11.includes('content="'+anLesson.description+'"'));
  assert.equal(anLesson.description,'Meet twenty animals and make their sounds together. Farm friends, wild animals and two gentle tap games, made for two-year-olds and their grown-ups.');
@@ -391,7 +391,7 @@ test('lesson 11 (Animals & Sounds, Toddler 5) follows its spec with the interact
  assert.ok(l11.includes('"learningResourceType":"Interactive toddler class"'));
 });
 test('lesson 12 (Vehicles & Sounds, Toddler 6) follows its spec with the interactive toddler class',()=>{
- assert.ok(l12.includes('rel="canonical" href="https://kiddo-school.pages.dev/toddler/2-years/vehicles-and-sounds/"'));
+ assert.ok(l12.includes('rel="canonical" href="https://kiddo.school/toddler/2-years/vehicles-and-sounds/"'));
  assert.ok(l12.includes('<title>Vehicles and Sounds for 2-Year-Olds | Kiddo.school</title>'));
  assert.ok(l12.includes('content="'+vhLesson.description+'"'));
  assert.equal(vhLesson.description,'Explore cars, buses, trains and more with colorful vehicle cards, simple sound games and playful activities for 2-year-olds.');
@@ -481,7 +481,7 @@ test('lesson 12 (Vehicles & Sounds, Toddler 6) follows its spec with the interac
  assert.ok(!pv.includes('loading="lazy"'),'print images load eagerly for printing');
 });
 test('lesson 13 (Emotions & Feelings, Toddler 7) follows its spec with the interactive toddler class',()=>{
- assert.ok(l13.includes('rel="canonical" href="https://kiddo-school.pages.dev/toddler/2-years/emotions-and-feelings/"'));
+ assert.ok(l13.includes('rel="canonical" href="https://kiddo.school/toddler/2-years/emotions-and-feelings/"'));
  assert.ok(l13.includes('<title>Emotions &amp; Feelings for 2-Year-Olds | Kiddo.school</title>'));
  assert.ok(l13.includes('content="'+emLesson.description+'"'));
  assert.equal(emLesson.description,'Help your 2-year-old explore feelings with simple emotion cards, face-matching games and printable activities you can use together.');
@@ -583,7 +583,7 @@ test('lesson 13 (Emotions & Feelings, Toddler 7) follows its spec with the inter
  assert.ok(!l13pv.includes('loading="lazy"'),'print images load eagerly for printing');
 });
 test('circle time 1 (Hello School!) follows its spec with the one-moment session runner',()=>{
- assert.ok(ct1.includes('rel="canonical" href="https://kiddo-school.pages.dev/toddler/2-years/circle-time/hello-school/"'));
+ assert.ok(ct1.includes('rel="canonical" href="https://kiddo.school/toddler/2-years/circle-time/hello-school/"'));
  assert.ok(ct1.includes('<title>Circle Time for 2-Year-Olds: Hello School! | Kiddo.school</title>'));
  assert.ok(ct1.includes('content="Join a short Circle Time for 2-year-olds with movement, simple directions, a tiny story and an off-screen activity to do together."'),'exact spec meta description');
  assert.ok(ct1.includes('<h1>Hello School! Circle Time</h1>'),'spec H1');
@@ -629,7 +629,7 @@ test('circle time 1 (Hello School!) follows its spec with the one-moment session
  assert.ok(ct1.includes('"learningResourceType":"Interactive circle time"'));
 });
 test('the circle time index page lists circle time 1 and nothing invented',()=>{
- assert.ok(cthub.includes('rel="canonical" href="https://kiddo-school.pages.dev/toddler/2-years/circle-time/"'));
+ assert.ok(cthub.includes('rel="canonical" href="https://kiddo.school/toddler/2-years/circle-time/"'));
  assert.ok(cthub.includes('<h1>Circle Time</h1>'));
  assert.ok(cthub.includes('href="/toddler/2-years/circle-time/hello-school/"'));
  assert.ok(cthub.includes('href="/my-classroom/"'));
@@ -637,7 +637,7 @@ test('the circle time index page lists circle time 1 and nothing invented',()=>{
  assert.ok(!cthub.includes('Circle Time 2'),'no invented circle time 2');
 });
 test('my classroom connects the rug to circle time and every hotspot to a real page',()=>{
- assert.ok(mc.includes('rel="canonical" href="https://kiddo-school.pages.dev/my-classroom/"'));
+ assert.ok(mc.includes('rel="canonical" href="https://kiddo.school/my-classroom/"'));
  assert.ok(mc.includes('<h1>My Classroom</h1>'));
  assert.ok(mc.includes('src="https://pub-f2fcb7c9b45a496cbeefef18dbba0ec0.r2.dev/school/my-classroom/my-classroom-age-2.webp" width="1366" height="768"'));
  for(const [label,href] of [['Today’s class','/learning-path/'],['Our Classroom','/toddler/2-years/our-classroom/'],['Sticky Notes','/sticky-note-wall/'],['Library','/learning-library/'],['Principal','/principals-office/'],['Calendar','/school-calendar/'],['Play &amp; Practice','/toddler/2-years/play-and-practice/'],['Let’s explore','/toddler/2-years/lets-explore/'],['My Work','/toddler/2-years/my-work/'],['My School Bag','/my-school-bag/'],['Circle Time','#circle-time']])assert.ok(mc.includes('href="'+href+'"')&&mc.includes('>'+label+'</a>'),label);
@@ -662,46 +662,46 @@ test('lesson 9 links forward to lesson 10, lesson 10 to lesson 11, lesson 11 to 
 });
 test('stage pages exist, follow the school hierarchy and link their lessons',()=>{
  const w=read('dist/newborn/6-12-weeks/index.html');
- assert.ok(w.includes('rel="canonical" href="https://kiddo-school.pages.dev/newborn/6-12-weeks/"'));
+ assert.ok(w.includes('rel="canonical" href="https://kiddo.school/newborn/6-12-weeks/"'));
  assert.ok(w.includes('NEWBORN 2'));
  assert.ok(w.includes('href="/newborn/6-12-weeks/faces-and-visual-tracking/"'));
  assert.ok(w.includes('Visual tracking, faces, sound'));
  const m=read('dist/baby/3-4-months/index.html');
- assert.ok(m.includes('rel="canonical" href="https://kiddo-school.pages.dev/baby/3-4-months/"'));
+ assert.ok(m.includes('rel="canonical" href="https://kiddo.school/baby/3-4-months/"'));
  assert.ok(m.includes('INFANT 1'));
  assert.ok(m.includes('href="/baby/3-4-months/colors-and-first-objects/"'));
  assert.ok(m.includes('Vision, movement, communication'));
  const i2=read('dist/baby/4-6-months/index.html');
- assert.ok(i2.includes('rel="canonical" href="https://kiddo-school.pages.dev/baby/4-6-months/"'));
+ assert.ok(i2.includes('rel="canonical" href="https://kiddo.school/baby/4-6-months/"'));
  assert.ok(i2.includes('INFANT 2'));
  assert.ok(i2.includes('href="/baby/4-6-months/first-words-familiar-things/"'));
  assert.ok(i2.includes('Talk, first words, listening'));
  const e1=read('dist/baby/6-9-months/index.html');
- assert.ok(e1.includes('rel="canonical" href="https://kiddo-school.pages.dev/baby/6-9-months/"'));
+ assert.ok(e1.includes('rel="canonical" href="https://kiddo.school/baby/6-9-months/"'));
  assert.ok(e1.includes('EXPLORER 1'));
  assert.ok(e1.includes('href="/baby/6-9-months/animals-everyday-objects/"'));
  assert.ok(e1.includes('Talk, thinking, recognition'));
  const e2=read('dist/baby/9-12-months/index.html');
- assert.ok(e2.includes('rel="canonical" href="https://kiddo-school.pages.dev/baby/9-12-months/"'));
+ assert.ok(e2.includes('rel="canonical" href="https://kiddo.school/baby/9-12-months/"'));
  assert.ok(e2.includes('EXPLORER 2'));
  assert.ok(e2.includes('href="/baby/9-12-months/first-actions-body-parts/"'));
  assert.ok(e2.includes('Talk, thinking, movement'));
  const talk=read('dist/subjects/talk/index.html');
- assert.ok(talk.includes('rel="canonical" href="https://kiddo-school.pages.dev/subjects/talk/"'));
+ assert.ok(talk.includes('rel="canonical" href="https://kiddo.school/subjects/talk/"'));
  assert.ok(talk.includes('href="/baby/4-6-months/first-words-familiar-things/"'));
  const tt=read('dist/subjects/talk-and-think/index.html');
- assert.ok(tt.includes('rel="canonical" href="https://kiddo-school.pages.dev/subjects/talk-and-think/"'));
+ assert.ok(tt.includes('rel="canonical" href="https://kiddo.school/subjects/talk-and-think/"'));
  assert.ok(tt.includes('href="/baby/6-9-months/animals-everyday-objects/"'));
  const t1=read('dist/toddler/12-18-months/index.html');
- assert.ok(t1.includes('rel="canonical" href="https://kiddo-school.pages.dev/toddler/12-18-months/"'));
+ assert.ok(t1.includes('rel="canonical" href="https://kiddo.school/toddler/12-18-months/"'));
  assert.ok(t1.includes('TODDLER 1'));
  assert.ok(t1.includes('href="/toddler/12-18-months/first-words-food-home/"'));
  const t2=read('dist/toddler/18-24-months/index.html');
- assert.ok(t2.includes('rel="canonical" href="https://kiddo-school.pages.dev/toddler/18-24-months/"'));
+ assert.ok(t2.includes('rel="canonical" href="https://kiddo.school/toddler/18-24-months/"'));
  assert.ok(t2.includes('TODDLER 2'));
  assert.ok(t2.includes('href="/toddler/18-24-months/first-concepts-big-small-up-down/"'));
  const t3=read('dist/toddler/2-years/index.html');
- assert.ok(t3.includes('rel="canonical" href="https://kiddo-school.pages.dev/toddler/2-years/"'));
+ assert.ok(t3.includes('rel="canonical" href="https://kiddo.school/toddler/2-years/"'));
  assert.ok(t3.includes('TODDLER 3'));
  assert.ok(t3.includes('href="/toddler/2-years/colors-and-shapes/"'));
  assert.ok(t3.includes('href="/toddler/2-years/matching-and-sorting/"'));
@@ -714,7 +714,7 @@ test('stage pages exist, follow the school hierarchy and link their lessons',()=
  assert.ok(t3.includes('Toddler 3, 4, 5, 6, 7 &amp; 8'));
  assert.ok(t3.includes('href="/toddler/2-years/garden-bugs-and-friends/"'),'age-2 hub links lesson 14');
  const toddler=read('dist/toddler/index.html');
- assert.ok(toddler.includes('rel="canonical" href="https://kiddo-school.pages.dev/toddler/"'));
+ assert.ok(toddler.includes('rel="canonical" href="https://kiddo.school/toddler/"'));
  assert.ok(toddler.includes('href="/toddler/12-18-months/first-words-food-home/"'));
  assert.ok(toddler.includes('href="/toddler/18-24-months/first-concepts-big-small-up-down/"'));
  assert.ok(toddler.includes('href="/toddler/2-years/colors-and-shapes/"'));
@@ -727,7 +727,7 @@ test('stage pages exist, follow the school hierarchy and link their lessons',()=
 });
 test('the learning path page lists the real curriculum from birth to age 2 and beyond',()=>{
  const lp=read('dist/learning-path/index.html');
- assert.ok(lp.includes('rel="canonical" href="https://kiddo-school.pages.dev/learning-path/"'));
+ assert.ok(lp.includes('rel="canonical" href="https://kiddo.school/learning-path/"'));
  assert.ok(lp.includes('Age ranges are a guide, not a test'));
  for(const s of [['Newborn 1','/newborn/0-6-weeks/high-contrast-cards/'],['Newborn 2','/newborn/6-12-weeks/faces-and-visual-tracking/'],['Infant 1','/baby/3-4-months/colors-and-first-objects/'],['Infant 2','/baby/4-6-months/first-words-familiar-things/'],['Baby 1','/baby/6-9-months/animals-everyday-objects/'],['Baby 2','/baby/9-12-months/first-actions-body-parts/'],['Toddler 1','/toddler/12-18-months/first-words-food-home/'],['Toddler 2','/toddler/18-24-months/first-concepts-big-small-up-down/'],['Toddler 3','/toddler/2-years/colors-and-shapes/'],['Toddler 4','/toddler/2-years/matching-and-sorting/'],['Toddler 5','/toddler/2-years/animals-and-sounds/'],['Toddler 6','/toddler/2-years/vehicles-and-sounds/'],['Toddler 7','/toddler/2-years/emotions-and-feelings/'],['Toddler 8','/toddler/2-years/garden-bugs-and-friends/']])assert.ok(lp.includes('>'+s[0])&&lp.includes('href="'+s[1]+'"'),s[0]);
  for(const hub of ['/newborn/6-12-weeks/','/baby/3-4-months/','/baby/4-6-months/','/baby/6-9-months/','/baby/9-12-months/','/toddler/12-18-months/','/toddler/18-24-months/','/toddler/2-years/'])assert.ok(lp.includes('href="'+hub+'"'),hub);

@@ -72,7 +72,7 @@ test('the six alphabet letter sets exist with clean URLs, real R2 files and tap-
       assert.ok(cardHtml.includes('data-fc-root'), c.url + ' mounts the family feedback block');
     }
     const xml = read('sitemap.xml');
-    assert.ok(xml.includes(`<loc>https://kiddo-school.pages.dev${v.url}</loc>`), v.url + ' is indexable');
+    assert.ok(xml.includes(`<loc>https://kiddo.school${v.url}</loc>`), v.url + ' is indexable');
   }
 });
 

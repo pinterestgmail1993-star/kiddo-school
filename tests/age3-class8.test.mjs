@@ -32,7 +32,7 @@ const hub=read('preschool/index.html');
 const library=read('learning-library/index.html');
 
 test('class 8 (Fruits & Vegetables, Preschool 8) follows the preschool class spec',()=>{
- assert.ok(c8.includes('rel="canonical" href="https://kiddo-school.pages.dev/preschool/3-years/fruits-and-vegetables/"'));
+ assert.ok(c8.includes('rel="canonical" href="https://kiddo.school/preschool/3-years/fruits-and-vegetables/"'));
  assert.ok(c8.includes('<title>Fruits &amp; Vegetables for 3 Year Olds | Kiddo.school</title>'));
  assert.ok(c8.includes('<h1>Fruits &amp; Vegetables</h1>'));
  assert.ok(c8.includes('PRESCHOOL · AGE 3 · CLASS 8'));
@@ -92,7 +92,7 @@ test('class 8 print view prints the same sixteen R2 assets two to a page',()=>{
 });
 
 test('class 8 flashcard set page lists all sixteen cards with their own pages',()=>{
- assert.ok(c8set.includes('rel="canonical" href="https://kiddo-school.pages.dev/flashcards/fruits-and-vegetables/"'));
+ assert.ok(c8set.includes('rel="canonical" href="https://kiddo.school/flashcards/fruits-and-vegetables/"'));
  assert.ok(c8set.includes('<h1>Fruit & Vegetable Flashcards for Preschoolers</h1>'));
  assert.equal([...c8set.matchAll(/href="\/flashcards\/fruits-and-vegetables\/[a-z]+\/"/g)].length,16,'16 card links');
  for(const s of C8_SLUGS)assert.ok(c8set.includes('/flashcards/fruits-and-vegetables/'+s+'/'),'card link '+s);

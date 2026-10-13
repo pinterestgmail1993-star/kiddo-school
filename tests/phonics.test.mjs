@@ -12,7 +12,7 @@ import {bySubject} from '../src/worksheets.mjs';
 
 const read=f=>readFileSync('dist'+f,'utf8');
 const page=p=>read(p+'index.html');
-const TEST_ORIGIN='https://kiddo-school.pages.dev';
+const TEST_ORIGIN='https://kiddo.school';
 
 test('all 24 phonics adventures: real configs, unique slugs and titles',()=>{
  assert.equal(phonicAdventures.length,24);

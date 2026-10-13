@@ -11,7 +11,7 @@ import {phonicAdventures} from '../src/phonics-adventures.mjs';
 
 const read=f=>readFileSync('dist'+f,'utf8');
 const page=p=>read(p+'index.html');
-const TEST_ORIGIN='https://kiddo-school.pages.dev';
+const TEST_ORIGIN='https://kiddo.school';
 
 test('the worksheet registry: 196 worksheets across eight subjects',()=>{
  assert.equal(worksheets.length,196);

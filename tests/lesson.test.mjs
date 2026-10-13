@@ -6,7 +6,7 @@ const read=f=>readFileSync(f,'utf8');
 const lesson=read('dist/newborn/0-6-weeks/high-contrast-cards/index.html');
 
 test('first lesson page follows the Kiddo School class spec',()=>{
- assert.match(lesson,/rel="canonical" href="https:\/\/kiddo-school\.pages\.dev\/newborn\/0-6-weeks\/high-contrast-cards\/"/);
+ assert.match(lesson,/rel="canonical" href="https:\/\/kiddo\.school\/newborn\/0-6-weeks\/high-contrast-cards\/"/);
  assert.match(lesson,/<title>High Contrast Cards for Newborns \(0–6 Weeks\) \| Kiddo\.school<\/title>/);
  assert.match(lesson,/content="Explore black-and-white high-contrast cards for newborns from birth to 6 weeks, with simple activities for early looking, focusing and visual tracking\."/);
  assert.match(lesson,/<h1>High-Contrast Cards for Newborns<\/h1>/);
@@ -51,10 +51,10 @@ test('all twelve cards are real verified R2 images at their natural 4:5 size',()
 
 test('baby, newborn, 0-6 weeks and See hub pages exist and interlink',()=>{
  const hubs=[
-  ['dist/baby/index.html','https://kiddo-school.pages.dev/baby/'],
-  ['dist/newborn/index.html','https://kiddo-school.pages.dev/newborn/'],
-  ['dist/newborn/0-6-weeks/index.html','https://kiddo-school.pages.dev/newborn/0-6-weeks/'],
-  ['dist/subjects/see/index.html','https://kiddo-school.pages.dev/subjects/see/']
+  ['dist/baby/index.html','https://kiddo.school/baby/'],
+  ['dist/newborn/index.html','https://kiddo.school/newborn/'],
+  ['dist/newborn/0-6-weeks/index.html','https://kiddo.school/newborn/0-6-weeks/'],
+  ['dist/subjects/see/index.html','https://kiddo.school/subjects/see/']
  ];
  for(const [file,canonical] of hubs){
   assert.ok(existsSync(file),file);

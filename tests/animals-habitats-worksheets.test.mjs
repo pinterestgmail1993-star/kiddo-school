@@ -86,10 +86,10 @@ test('collection: 6 cards, genuine cover, cross-links, in sitemap',()=>{
  assert.ok(html.includes('href="'+CLASS+'"'),'links the class hub');
  assert.ok(html.includes('/flashcards/animals-and-their-habitats/'),'links the flashcards');
  const sitemap=read('/sitemap.xml');
- assert.ok(sitemap.includes('https://kiddo-school.pages.dev'+AHWS_WS_LIB),'collection in sitemap');
+ assert.ok(sitemap.includes('https://kiddo.school'+AHWS_WS_LIB),'collection in sitemap');
  for(const w of animalsWs){
-  assert.ok(sitemap.includes('https://kiddo-school.pages.dev'+AHWS_WS_LIB+w.slug+'/'),w.slug+' printable in sitemap');
-  assert.ok(sitemap.includes('https://kiddo-school.pages.dev'+AHWS_WS_CLASS+w.slug+'/'),w.slug+' activity in sitemap');
+  assert.ok(sitemap.includes('https://kiddo.school'+AHWS_WS_LIB+w.slug+'/'),w.slug+' printable in sitemap');
+  assert.ok(sitemap.includes('https://kiddo.school'+AHWS_WS_CLASS+w.slug+'/'),w.slug+' activity in sitemap');
  }
 });
 

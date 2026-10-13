@@ -56,7 +56,7 @@ test('art wall keeps accessibility: alt text everywhere, no keyboard interferenc
 
 test('art wall is wired in: sitemap, my classroom panel and honest grown-ups note',()=>{
  const map=readFileSync('dist/sitemap.xml','utf8');
- assert.match(map,/<loc>https:\/\/kiddo-school\.pages\.dev\/art-wall\/<\/loc>/);
+ assert.match(map,/<loc>https:\/\/kiddo\.school\/art-wall\/<\/loc>/);
  const mc=readFileSync('dist/my-classroom/index.html','utf8');
  assert.match(mc,/href="\/art-wall\/"/);
  assert.match(mc,/Visit the Art Wall/);

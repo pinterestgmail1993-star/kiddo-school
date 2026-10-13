@@ -8,7 +8,7 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { gflLesson, gthLesson, toddlerBase } from '../src/lessons.mjs';
 
-const site = 'https://kiddo-school.pages.dev';
+const site = 'https://kiddo.school';
 const read = f => readFileSync(f, 'utf8');
 const map = read('dist/sitemap.xml');
 const manifest = JSON.parse(read('data/asset-manifest.json', 'utf8'));

@@ -37,7 +37,7 @@ test('alphabet set page: exact SEO copy, card wall, print and class links',()=>{
  assert.ok(html.includes('content="Explore 26 alphabet flashcards with uppercase and lowercase letters, familiar pictures, simple letter-sound ideas and individual cards to download."'),'spec meta description');
  assert.ok((html.match(/<h1>/g)||[]).length===1,'exactly one H1');
  assert.ok(html.includes('<h1>Alphabet Flashcards A–Z</h1>'),'spec H1');
- assert.ok(html.includes('rel="canonical" href="https://kiddo-school.pages.dev/flashcards/alphabet/"'));
+ assert.ok(html.includes('rel="canonical" href="https://kiddo.school/flashcards/alphabet/"'));
  for(const c of set.cards)assert.ok(html.includes(`href="${c.url}"`),'card wall links every card');
  assert.ok(html.includes('href="/preschool/3-years/alphabet-and-letter-sounds/"'),'set page links to its class');
  assert.ok(html.includes('href="/preschool/3-years/alphabet-and-letter-sounds/print/"'),'set page links the printable view');
@@ -94,7 +94,7 @@ test('class page: exact SEO copy, spec H1, canonical and full section structure'
  assert.ok(html.includes('content="Explore A–Z letters with your preschooler using colorful alphabet cards, beginning sounds, printable letter sheets to solve and easy activities to try at home."'),'spec meta description');
  assert.ok(html.includes('<h1>Alphabet &amp; Letter Sounds</h1>'),'spec H1');
  assert.ok((html.match(/<h1>/g)||[]).length===1,'exactly one H1');
- assert.ok(html.includes('rel="canonical" href="https://kiddo-school.pages.dev/preschool/3-years/alphabet-and-letter-sounds/"'));
+ assert.ok(html.includes('rel="canonical" href="https://kiddo.school/preschool/3-years/alphabet-and-letter-sounds/"'));
  // the honest class: learn the letters, solve the sheets, off screen (owner
  // removed the coded games from the learning-path classes)
  for(const id of ['todays-class','learn-the-letters','solve-the-sheets','off-screen','class-complete'])
@@ -162,7 +162,7 @@ test('Age 3 is wired into the whole school, not a separate website',()=>{
  assert.ok(!library.includes('data-age-chip="age-3"'),'no Age 3 chip while no Age 3 book exists');
  const map=read('dist/sitemap.xml');
  for(const u of ['/preschool/','/preschool/3-years/','/preschool/3-years/alphabet-and-letter-sounds/','/flashcards/alphabet/','/flashcards/alphabet/apple/','/flashcards/alphabet/zebra/'])
-  assert.ok(map.includes(`<loc>https://kiddo-school.pages.dev${u}</loc>`),`sitemap includes ${u}`);
+  assert.ok(map.includes(`<loc>https://kiddo.school${u}</loc>`),`sitemap includes ${u}`);
  assert.ok(!map.includes('alphabet-and-letter-sounds/print/'),'print view stays out of the sitemap');
 });
 

@@ -42,7 +42,7 @@ test('all 18 shape adventure pages exist, unique, each drawing on its own artwor
   const title=html.match(/<title>(.*?)<\/title>/)[1];
   assert.ok(!seen.has(title),'unique title '+g.slug);seen.add(title);
   assert.ok(html.includes(`<h1 class="ia-h1">${g.title}</h1>`),'h1 '+g.slug);
-  assert.ok(html.includes('rel="canonical" href="https://kiddo-school.pages.dev'+p+'"'),'canonical '+g.slug);
+  assert.ok(html.includes('rel="canonical" href="https://kiddo.school'+p+'"'),'canonical '+g.slug);
   // the owner's spec: original Canva image + transparent drawing layer
   assert.ok(html.includes(`data-wc-src="${SHAPE_BASE+g.img}?draw=1"`),'drawing mount over the artwork '+g.slug);
   const art=artFor('shapes/'+g.slug,SHAPE_BASE+g.img);
@@ -182,7 +182,7 @@ test('the 4-years hub, preschool hub, homepage and learning path all know Age 4'
 test('sitemap carries all 74 new Age 4 URLs',()=>{
  const xml=read('/sitemap.xml');
  const expected=['/preschool/4-years/','/preschool/4-years/shapes-patterns-and-sorting/','/preschool/4-years/colors-mixing-and-creativity/','/preschool/4-years/early-writing-and-pencil-control/','/preschool/shapes/adventures/','/preschool/colors/adventures/','/preschool/writing/adventures/'];
- for(const e of expected)assert.ok(xml.includes(`<loc>https://kiddo.school.pages.dev${e}</loc>`)||xml.includes(`<loc>https://kiddo-school.pages.dev${e}</loc>`)||xml.includes(e),'sitemap '+e);
+ for(const e of expected)assert.ok(xml.includes(`<loc>https://kiddo.school${e}</loc>`)||xml.includes(`<loc>https://kiddo.school${e}</loc>`)||xml.includes(e),'sitemap '+e);
  assert.ok(xml.includes('/preschool/shapes/adventures/build-a-shape-spaceship/'),'sitemap spaceship');
  assert.ok(xml.includes('/preschool/writing/adventures/sunshine-stroke-challenge/'),'sitemap sunshine');
  const count=xml.split('/preschool/4-years/').length-1;

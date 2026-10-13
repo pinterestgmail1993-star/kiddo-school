@@ -21,7 +21,7 @@ test('principal office: exact SEO title, one H1, discoverable from the classroom
  // About page carries an additive link from the Principal's own section
  assert.match(about,/id="principal"/);
  assert.match(about,/href="\/principals-office\/"/);
- assert.match(map,/<loc>https:\/\/kiddo-school\.pages\.dev\/principals-office\/<\/loc>/);
+ assert.match(map,/<loc>https:\/\/kiddo\.school\/principals-office\/<\/loc>/);
  assert.match(html,/src="\/assets\/principal-office\.js(\?v=[0-9]+)?"/);
 });
 

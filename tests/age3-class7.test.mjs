@@ -30,7 +30,7 @@ const hub=read('preschool/index.html');
 const library=read('learning-library/index.html');
 
 test('class 7 (Body Parts & My Five Senses, Preschool 7) follows the preschool class spec',()=>{
- assert.ok(c7.includes('rel="canonical" href="https://kiddo-school.pages.dev/preschool/3-years/body-parts-and-five-senses/"'));
+ assert.ok(c7.includes('rel="canonical" href="https://kiddo.school/preschool/3-years/body-parts-and-five-senses/"'));
  assert.ok(c7.includes('<title>Body Parts &amp; My Five Senses for 3 Year Olds | Kiddo.school</title>'));
  assert.ok(c7.includes('<h1>Body Parts &amp; My Five Senses</h1>'));
  assert.ok(c7.includes('PRESCHOOL · AGE 3 · CLASS 7'));
@@ -90,7 +90,7 @@ test('class 7 print view prints the same twenty-four R2 assets two to a page',()
 });
 
 test('class 7 flashcard set page lists all twenty-four cards with their own pages',()=>{
- assert.ok(c7set.includes('rel="canonical" href="https://kiddo-school.pages.dev/flashcards/body-parts-and-five-senses/"'));
+ assert.ok(c7set.includes('rel="canonical" href="https://kiddo.school/flashcards/body-parts-and-five-senses/"'));
  assert.ok(c7set.includes('<h1>Body Parts & Five Senses Flashcards for Preschoolers</h1>'));
  assert.equal([...c7set.matchAll(/href="\/flashcards\/body-parts-and-five-senses\/[a-z]+\/"/g)].length,24,'24 card links');
  for(const s of C7_SLUGS)assert.ok(c7set.includes('/flashcards/body-parts-and-five-senses/'+s+'/'),'card link '+s);

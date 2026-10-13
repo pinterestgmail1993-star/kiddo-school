@@ -56,7 +56,7 @@ test('numbers set page: exact title, meta, canonical, H1 and all ten card links'
  const html=page('/flashcards/numbers-and-counting/');
  assert.ok(html.includes('<title>Number Flashcards 1–10 for Preschoolers | Kiddo.school</title>'));
  assert.ok(html.includes('content="Explore numbers 1 to 10 with colorful picture flashcards, counting prompts and simple activities. View, download and practice each number together."'));
- assert.ok(html.includes('rel="canonical" href="https://kiddo-school.pages.dev/flashcards/numbers-and-counting/"'));
+ assert.ok(html.includes('rel="canonical" href="https://kiddo.school/flashcards/numbers-and-counting/"'));
  assert.match(html,/<h1>Numbers 1–10 Flashcards<\/h1>/);
  const slugs=['one','two','three','four','five','six','seven','eight','nine','ten'];
  slugs.forEach(s=>assert.ok(html.includes(`href="/flashcards/numbers-and-counting/${s}/"`),'card link '+s));
@@ -82,7 +82,7 @@ test('numbers card pages: 10 unique spec-pattern titles, numeral H1s, downloads,
   const slug=['one','two','three','four','five','six','seven','eight','nine','ten'][i-1];
   const html=page(`/flashcards/numbers-and-counting/${slug}/`);
   const c=numbersLesson.cards[i-1];
-  assert.ok(html.includes(`rel="canonical" href="https://kiddo-school.pages.dev/flashcards/numbers-and-counting/${slug}/"`));
+  assert.ok(html.includes(`rel="canonical" href="https://kiddo.school/flashcards/numbers-and-counting/${slug}/"`));
   assert.ok(html.includes(`data-page-path="/flashcards/numbers-and-counting/${slug}/"`),'community mount on '+slug);
   assert.ok(html.includes(`<h1>Number ${i} Flashcard — `),'numeral H1 '+slug);
   assert.ok(html.includes('Download card'),'download button '+slug);
@@ -105,7 +105,7 @@ test('shapes card pages: 12 unique titles, one H1 each, downloads, cross-set twi
  const titles=new Set();
  for(const c of shapesLesson.cards){
   const html=page(`/flashcards/shapes/${c.slug}/`);
-  assert.ok(html.includes(`rel="canonical" href="https://kiddo-school.pages.dev/flashcards/shapes/${c.slug}/"`));
+  assert.ok(html.includes(`rel="canonical" href="https://kiddo.school/flashcards/shapes/${c.slug}/"`));
   assert.ok(html.includes('Download card'),'download '+c.slug);
   const m=html.match(/<title>(.*?)<\/title>/);
   titles.add(m[1]);
@@ -122,7 +122,7 @@ test('shapes card pages: 12 unique titles, one H1 each, downloads, cross-set twi
 test('numbers class: learn + solve-the-sheets structure, no coded games (owner instruction)',()=>{
  const html=page('/preschool/3-years/numbers-and-counting/');
  assert.ok(html.includes('<title>Numbers &amp; Counting 1–10 for 3 Year Olds | Kiddo.school</title>'));
- assert.ok(html.includes('rel="canonical" href="https://kiddo-school.pages.dev/preschool/3-years/numbers-and-counting/"'));
+ assert.ok(html.includes('rel="canonical" href="https://kiddo.school/preschool/3-years/numbers-and-counting/"'));
  assert.match(html,/<h1>Numbers &amp; Counting \(1–10\)<\/h1>/);
  assert.ok(html.includes('Today we’re counting'),'teacher welcome');
  assert.ok(html.includes('Start with the numbers your child enjoys'));
@@ -156,7 +156,7 @@ test('numbers class: learn + solve-the-sheets structure, no coded games (owner i
 test('shapes class: learn + solve-the-sheets structure, no coded games (owner instruction)',()=>{
  const html=page('/preschool/3-years/shapes-and-patterns/');
  assert.ok(html.includes('<title>Shapes &amp; Patterns for 3 Year Olds | Kiddo.school</title>'));
- assert.ok(html.includes('rel="canonical" href="https://kiddo-school.pages.dev/preschool/3-years/shapes-and-patterns/"'));
+ assert.ok(html.includes('rel="canonical" href="https://kiddo.school/preschool/3-years/shapes-and-patterns/"'));
  assert.match(html,/<h1>Shapes &amp; Patterns<\/h1>/);
  assert.ok(html.includes('id="learn-shapes"'),'learn section');
  assert.ok(html.includes('id="solve-the-sheets"'),'solve-the-sheets section');
@@ -206,7 +206,7 @@ test('the preschool hub lists all eight classes and eight sets; the library stay
 });
 test('sitemap, indexing stance and lesson wiring',()=>{
  const map=read('sitemap.xml');
- ['/preschool/3-years/numbers-and-counting/','/preschool/3-years/shapes-and-patterns/','/flashcards/numbers-and-counting/','/flashcards/shapes/','/flashcards/numbers-and-counting/five/','/flashcards/shapes/octagon/'].forEach(u=>assert.ok(map.includes(`<loc>https://kiddo-school.pages.dev${u}</loc>`),'sitemap '+u));
+ ['/preschool/3-years/numbers-and-counting/','/preschool/3-years/shapes-and-patterns/','/flashcards/numbers-and-counting/','/flashcards/shapes/','/flashcards/numbers-and-counting/five/','/flashcards/shapes/octagon/'].forEach(u=>assert.ok(map.includes(`<loc>https://kiddo.school${u}</loc>`),'sitemap '+u));
  assert.ok(!map.includes('numbers-and-counting/print/'),'print stays out of sitemap');
  assert.ok(!map.includes('shapes-and-patterns/print/'),'print stays out of sitemap');
  // The site is public and indexable: index meta on class pages and robots allows crawling.

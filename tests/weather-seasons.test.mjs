@@ -178,10 +178,10 @@ test('whole-school wiring: LP row 34, stage card, flashcards hub, count words th
 
 test('sitemap and search carry the new pages; the registry drives 60 new URLs',()=>{
  const xml=read('/sitemap.xml');
- assert.ok(xml.includes(`<loc>https://kiddo-school.pages.dev${CLASS}</loc>`),'class page in sitemap');
- assert.ok(xml.includes(`<loc>https://kiddo-school.pages.dev${CLASS}learn/sun/</loc>`),'sun lesson in sitemap');
- assert.ok(xml.includes(`<loc>https://kiddo-school.pages.dev${SET_URL}umbrella/</loc>`),'umbrella card in sitemap');
- assert.ok(xml.includes(`<loc>https://kiddo-school.pages.dev${SET_URL}</loc>`),'collection in sitemap');
+ assert.ok(xml.includes(`<loc>https://kiddo.school${CLASS}</loc>`),'class page in sitemap');
+ assert.ok(xml.includes(`<loc>https://kiddo.school${CLASS}learn/sun/</loc>`),'sun lesson in sitemap');
+ assert.ok(xml.includes(`<loc>https://kiddo.school${SET_URL}umbrella/</loc>`),'umbrella card in sitemap');
+ assert.ok(xml.includes(`<loc>https://kiddo.school${SET_URL}</loc>`),'collection in sitemap');
  let n=0; for(const slug of Object.keys(lpContent))if(xml.includes(CLASS+'learn/'+slug+'/'))n++;
  assert.equal(n,29,'all 29 lessons in the sitemap');
  n=0; for(const slug of Object.keys(cards))if(xml.includes(SET_URL+slug+'/'))n++;

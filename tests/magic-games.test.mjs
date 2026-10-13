@@ -48,7 +48,7 @@ const clean=h=>h
  .replace(/there is never a score at the end/g,'');
 
 test('magic color mixing: pure CSS/SVG, three true paint recipes, nothing faked',()=>{
- assert.ok(color.includes('rel="canonical" href="https://kiddo-school.pages.dev/preschool/3-years/magic-color-mixing/"'));
+ assert.ok(color.includes('rel="canonical" href="https://kiddo.school/preschool/3-years/magic-color-mixing/"'));
  assert.ok(color.includes('<h1>Magic Color Lab</h1>'));
  assert.ok(color.includes('PRESCHOOL · AGE 3 · CLASS 4 MAGIC GAME'));
  // the GAME itself stays CSS/SVG-only; the site chrome (header/footer brand
@@ -74,7 +74,7 @@ test('magic color mixing: pure CSS/SVG, three true paint recipes, nothing faked'
 });
 
 test('magic animal playground: real recordings only where they exist, honest words elsewhere',()=>{
- assert.ok(animal.includes('rel="canonical" href="https://kiddo-school.pages.dev/preschool/3-years/magic-animal-playground/"'));
+ assert.ok(animal.includes('rel="canonical" href="https://kiddo.school/preschool/3-years/magic-animal-playground/"'));
  assert.ok(animal.includes('<h1>Animal Sound Safari</h1>'));
  for(const f of AP)assert.ok(animal.includes(R2+'/magic-animal-playground-age-3/'+f),f);
  assert.ok(animal.includes('width="1080" height="1080"'),'true probed dims');
@@ -121,7 +121,7 @@ test('magic animal playground: real recordings only where they exist, honest wor
 });
 
 test('look & draw: a 25-picture gallery on four shelves, gathered from the retired games',()=>{
- assert.ok(shape.includes('rel="canonical" href="https://kiddo-school.pages.dev/preschool/3-years/magic-shape-builder/"'));
+ assert.ok(shape.includes('rel="canonical" href="https://kiddo.school/preschool/3-years/magic-shape-builder/"'));
  assert.ok(shape.includes('<h1>Look & Draw — Magic Shapes</h1>'));
  assert.ok(shape.includes('data-mg-game="look-draw"'));
  // every reference artwork really ships, from its true owner folder
@@ -207,10 +207,10 @@ test('magic games are wired into the whole school — two games on the shelf',()
   assert.ok(stage.includes('href="/preschool/3-years/'+g+'/"'),'stage shelf: '+g);
   assert.ok(lp.includes('href="/preschool/3-years/'+g+'/"'),'learning path: '+g);
   assert.ok(classroom.includes('href="/preschool/3-years/'+g+'/"'),'my classroom: '+g);
-  assert.ok(sitemap.includes('<loc>https://kiddo-school.pages.dev/preschool/3-years/'+g+'/</loc>'),'sitemap: '+g);
+  assert.ok(sitemap.includes('<loc>https://kiddo.school/preschool/3-years/'+g+'/</loc>'),'sitemap: '+g);
  }
  // Color Lab stays live and wired to Class 4, but is absent from every magic-games shelf
- assert.ok(sitemap.includes('<loc>https://kiddo-school.pages.dev/preschool/3-years/magic-color-mixing/</loc>'),'sitemap: magic-color-mixing');
+ assert.ok(sitemap.includes('<loc>https://kiddo.school/preschool/3-years/magic-color-mixing/</loc>'),'sitemap: magic-color-mixing');
  for(const [label,doc] of [['stage shelf',stage],['learning path',lp],['my classroom',classroom]]){
   assert.ok(!doc.includes('href="/preschool/3-years/magic-color-mixing/"'),'Color Lab removed from '+label);
  }

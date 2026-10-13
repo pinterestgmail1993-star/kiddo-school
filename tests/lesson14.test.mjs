@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {gbLesson,lessons,toddlerBase} from '../src/lessons.mjs';
 
-const site='https://kiddo-school.pages.dev';
+const site='https://kiddo.school';
 const read=f=>readFileSync(f,'utf8');
 const html=readFileSync('dist/toddler/2-years/garden-bugs-and-friends/index.html','utf8');
 const pv=readFileSync('dist/toddler/2-years/garden-bugs-and-friends/print/index.html','utf8');
@@ -76,7 +76,7 @@ test('lesson 14 is discoverable: hubs, learning path, sitemap, print view privat
  assert.ok(home.includes('Thirty-four classes are ready now'),'homepage counts the classes honestly');
  const about=read('dist/about/index.html');
  assert.ok(about.includes('Thirty-four classes from birth to age five are ready today'));
- assert.match(map,/<loc>https:\/\/kiddo-school\.pages\.dev\/toddler\/2-years\/garden-bugs-and-friends\/<\/loc>/);
+ assert.match(map,/<loc>https:\/\/kiddo\.school\/toddler\/2-years\/garden-bugs-and-friends\/<\/loc>/);
  assert.ok(!map.includes('garden-bugs-and-friends/print/'),'print view stays out of the sitemap');
  assert.ok(pv.includes('content="noindex,follow"'),'print view noindex');
  assert.ok(pv.includes('PRINTABLE GARDEN BUG CARDS'));

@@ -7,7 +7,7 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { gfLesson, toddlerBase } from '../src/lessons.mjs';
 
-const site = 'https://kiddo-school.pages.dev';
+const site = 'https://kiddo.school';
 const read = f => readFileSync(f, 'utf8');
 const html = read('dist/toddler/2-years/school-garden/garden-friends/index.html');
 const pv = read('dist/toddler/2-years/school-garden/garden-friends/print/index.html');

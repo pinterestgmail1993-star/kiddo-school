@@ -11,7 +11,7 @@ import {wsUrl,pdfUrl} from '../src/ws-common.mjs';
 
 const read=f=>readFileSync(f,'utf8');
 const page=p=>read('dist'+p+'index.html');
-const TEST_ORIGIN='https://kiddo-school.pages.dev';
+const TEST_ORIGIN='https://kiddo.school';
 const BRAND='https://pub-f2fcb7c9b45a496cbeefef18dbba0ec0.r2.dev/school/branding/';
 const M2='https://pub-f2fcb7c9b45a496cbeefef18dbba0ec0.r2.dev/school/maths/adventures/';
 
