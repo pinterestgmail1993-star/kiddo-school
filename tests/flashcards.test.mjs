@@ -23,7 +23,10 @@ test('black and white baby cards page shows flashcards, stages grid, guide and s
  const html=readFileSync(`dist/flashcards/${s.slug}/index.html`,'utf8');
  assert.match(html,/Black and White Baby Flashcards – Printable Cards/);
  for(const c of s.cards){assert.match(html,new RegExp(c.file));assert.match(html,new RegExp(c.word));}
- assert.doesNotMatch(html,/cutout/i);
+ /* 'cutout' must never appear in the BODY — the look-together sheet is the
+    set's og:image cover, but it must not be rendered as one of the cards. */
+ const bodyHtml=html.slice(html.indexOf('<body'));
+ assert.doesNotMatch(bodyHtml,/cutout/i);
  assert.match(html,/Newborn 1/);
  assert.match(html,/Newborn 2/);
  assert.match(html,/Infant 1/);
