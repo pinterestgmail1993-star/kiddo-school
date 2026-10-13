@@ -70,7 +70,7 @@ function mathPanel(){
 
 export function worksheetGeneratorBody(){
  return `${crumbNav([['Worksheets','/worksheets/'],['Worksheet Generator']])}
- ${heading('THE WORKSHEET GENERATOR','Make your own worksheet in one minute.','Pick words or sums, shuffle until it feels right, then print it or save it as a picture. Built right here in your browser — free, no sign-up, nothing uploaded, and it even works offline once the page has loaded.')}
+ ${heading('THE WORKSHEET GENERATOR','Make your own worksheet in one minute.','Pick words or sums, shuffle until it feels right, then print it or save it as a picture. Built right here in your browser — nothing is uploaded, and it even works offline once the page has loaded.')}
  <div class="wsgen-tabs wrap" role="tablist" aria-label="Choose a worksheet machine">
   <button type="button" class="wsgen-tab is-active" id="wsgen-tab-words" role="tab" aria-selected="true" aria-controls="wsgen-panel-words">Word search</button>
   <button type="button" class="wsgen-tab" id="wsgen-tab-math" role="tab" aria-selected="false" aria-controls="wsgen-panel-math">Math practice</button>

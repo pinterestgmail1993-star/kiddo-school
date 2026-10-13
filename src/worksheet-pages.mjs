@@ -63,7 +63,7 @@ export function worksheetsHubBody(){
  const genCard=`<a class="ws-cat ws-cat-gen" href="/worksheet-generator/">
    <span class="ws-cat-head"><img src="${BRAND_R2}kiddo-subject-maths.webp" width="1264" height="1264" alt="" aria-hidden="true" loading="lazy"><span class="ws-cat-pill ws-pill-gen">Make your own</span><strong>Worksheet Generator</strong></span>
    <p>Build a fresh worksheet in one minute — a word search from the words your child is learning, or sums tuned to their level. Shuffle for a new sheet, print it, or save it as a picture.</p>
-   <span class="ws-count-note">Word Search · Math Practice — free, no sign-up, made right in your browser</span>
+   <span class="ws-count-note">Word Search · Math Practice — made right in your browser</span>
    <span class="ws-cat-picks"><span>Word search maker</span><span>Math practice maker</span><span>Print &amp; picture download</span></span>
    <span class="fc-open">Open the generator <span aria-hidden="true">↗</span></span>
   </a>`;

@@ -106,7 +106,7 @@ function renderWordSearch(withKey){
  var chips=el('div','wsgen-chips');
  s.words.forEach(function(w){chips.appendChild(el('span','wsgen-chip',w));});
  listWrap.appendChild(chips);
- var foot=el('p','wsgen-sheet-foot','Made free at kiddo.school');
+ var foot=el('p','wsgen-sheet-foot','Made at kiddo.school');
  host.appendChild(head);host.appendChild(grid);host.appendChild(listWrap);host.appendChild(foot);
 }
 
@@ -139,7 +139,7 @@ function renderMath(withKey){
   else line.appendChild(el('span','wsgen-blank'));
   grid.appendChild(line);
  });
- var foot=el('p','wsgen-sheet-foot','Made free at kiddo.school');
+ var foot=el('p','wsgen-sheet-foot','Made at kiddo.school');
  host.appendChild(head);host.appendChild(grid);host.appendChild(foot);
 }
 
@@ -177,7 +177,7 @@ function canvasSheet(kind,withKey){
   drawMath(x,m,withKey);
  }
  x.fillStyle='#8a8172';x.font='400 26px system-ui, sans-serif';x.textAlign='center';
- x.fillText('Made free at kiddo.school',PAGE_W/2,PAGE_H-60);
+ x.fillText('Made at kiddo.school',PAGE_W/2,PAGE_H-60);
  return c;
 }
 
@@ -311,7 +311,7 @@ function doPrint(kind){
   sheet.appendChild(mt);
  }
  var f=document.createElement('p');f.className='wsgen-print-foot';
- f.textContent='Made free at kiddo.school';
+ f.textContent='Made at kiddo.school';
  sheet.appendChild(f);
  root.appendChild(sheet);
  if(key){

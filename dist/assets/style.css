@@ -1872,7 +1872,6 @@ h1 em,h2 em{color:#7b4b99}
 .contact-side{background:var(--kiddo-lavender);border-radius:20px;padding:24px}
 .contact-side h2{margin-top:0}
 @media(max-width:680px){.contact-layout{grid-template-columns:1fr}}
-<<<<<<< HEAD
 .ws-hero-split{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:40px;align-items:center}
 .ws-hero-split .page-heading{padding-bottom:0}
 .ws-hero-split .ws-cover-sm{margin:0}
@@ -1890,7 +1889,6 @@ h1 em,h2 em{color:#7b4b99}
 .consent-btn-quiet:hover{background:#EEE6F2}
 .consent-link{background:none;border:0;padding:0;font:inherit;color:inherit;text-decoration:underline;cursor:pointer}
 @media print{.consent-banner{display:none!important}}
-=======
 
 /* ---------- worksheet generator (/worksheet-generator/) ---------- */
 .is-hidden{display:none!important}
@@ -1963,4 +1961,3 @@ h1 em,h2 em{color:#7b4b99}
 .ws-cat-gen{border:2px solid var(--kiddo-purple)}
 .ws-pill-gen{background:var(--kiddo-lavender);color:var(--kiddo-purple)}
 .ws-cat-gen .fc-open{color:var(--kiddo-purple)}
->>>>>>> e151015d1 (The WORKSHEET GENERATOR goes live — /worksheet-generator/ (owner benchmark: kiddoworksheets.com 'lets make a worksheet generator', built 100% client-side like his, zero backend): TWO machines. (1) Word Search — word shelves wired to our classes (Class 36 habitats, 33 helpers, 34 weather, colors/shapes, first words) or custom word list (letters-only parser, dedupe, 12-word cap), 8/10/12 grid sizes, across+down or diagonals, shuffle with seeded PRNG, answer-key highlighting, every word guaranteed placed (60-attempt planner, forward-reading directions only, weighted filler letters). (2) Math Practice — add/subtract/mixed within 10/20/100 (sums never exceed level, take-away never negative), 12/16/20 problems, answer page. Both: print via body-level print root (A4 @page, real table grid, key page-breaks to page 2) + PNG download (canvas A4 @150dpi, verified 117-192KB real PNGs). CSP-proof by construction: external scripts only, addEventListener only, no inline styles/handlers — headless-verified ZERO console violations with the real CSP. New files: src/worksheet-generator.mjs (server-rendered shell: options, tabs, class-linked copy, noscript), public/assets/wsgen-core.js (pure logic — unit-tested directly in node: every word lands and reads correctly across 25 seeds, bounds enforced across 15 seeds per level/op), public/assets/wsgen.js (page logic), tests/worksheet-generator.test.mjs (9 tests). Wired: build.mjs page()+script tags, /worksheets/ hub FIRST card (purple Make-your-own), footer Learn column, sitemap 2158→2159, html 2176→2177. 455/455 green, 2161 pages.)
