@@ -38,7 +38,7 @@ const TUTORIALS=[{t:howToDrawCat,steps:CAT_STEPS,path:'/how-to-draw-a-cat/'},{t:
 
 test('the data is the owner’s exact twelve files in uploaded order, nothing invented',()=>{
  assert.equal(drawingTutorials.length,2,'two tutorials today: cat and dog');
- assert.equal(R2_DRAWING,'https://pub-f2fcb7c9b45a496cbeefef18dbba0ec0.r2.dev/school/drawing/','the site’s real R2 asset base, no invented domain');
+ assert.equal(R2_DRAWING,'https://assets.kiddo.school/school/drawing/','the site’s real R2 asset base, no invented domain');
  for(const {t,steps} of TUTORIALS){
   assert.equal(t.steps.length,6);
   t.steps.forEach((s,i)=>{

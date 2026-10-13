@@ -10,7 +10,7 @@ import {resolve} from 'node:path';
 
 const root=resolve('dist');
 const read=p=>readFileSync(resolve(root,p),'utf8');
-const D='https://pub-f2fcb7c9b45a496cbeefef18dbba0ec0.r2.dev/school/animated-doodles/';
+const D='https://assets.kiddo.school/school/animated-doodles/';
 
 const home=read('index.html');
 const c7=read('preschool/3-years/body-parts-and-five-senses/index.html');

@@ -20,7 +20,7 @@ const read=p=>readFileSync(resolve(root,p),'utf8');
 const color=read('preschool/3-years/magic-color-mixing/index.html');
 const animal=read('preschool/3-years/magic-animal-playground/index.html');
 const shape=read('preschool/3-years/magic-shape-builder/index.html');
-const R2='https://pub-f2fcb7c9b45a496cbeefef18dbba0ec0.r2.dev/school/interactive-activities';
+const R2='https://assets.kiddo.school/school/interactive-activities';
 const AP=['01-dog.webp','02-cat.webp','03-cow.webp','04-duck.webp','05-sheep.webp','06-frog.webp','07-animal-playground-cover.webp'];
 const SB=['01-shape-house.webp','02-shape-rocket.webp','03-shape-tree.webp','04-shape-robot.webp','05-shape-butterfly.webp','06-magic-shape-builder-cover.webp'];
 const NG=['01-pink-flower.webp','02-blue-butterfly.webp','03-yellow-bee.webp','04-red-ladybug.webp','05-green-watering-can.webp'];

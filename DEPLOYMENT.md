@@ -14,7 +14,7 @@ The site is deployed at https://kiddo-school.pages.dev from the `main` branch of
 
 ## Images and R2
 
-Website imagery is served from the public R2 development URL `https://pub-f2fcb7c9b45a496cbeefef18dbba0ec0.r2.dev/` (bucket `kiddo-school-assets`; the bucket name is not part of the public URL). Each activity folder lives under `activities/<subject>/<activity>/` and holds 1024×1536 WebP worksheets; the maths set is at `activities/maths/repeating-pattern/`. The Content-Security-Policy in `scripts/build.mjs` allow-lists this origin. If assets move to a custom domain later, update each `src/*-project.mjs` base and the CSP together, and verify every replacement URL.
+Website imagery is served from the custom domain `https://assets.kiddo.school/` (bucket `kiddo-school-assets`; the bucket name is not part of the public URL). Each activity folder lives under `activities/<subject>/<activity>/` and holds 1024×1536 WebP worksheets; the maths set is at `activities/maths/repeating-pattern/`. The Content-Security-Policy in `scripts/build.mjs` allow-lists this origin. If assets move to a custom domain later, update each `src/*-project.mjs` base and the CSP together, and verify every replacement URL.
 
 ## Option A: Git integration (current setup)
 

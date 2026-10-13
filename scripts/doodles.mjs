@@ -14,7 +14,7 @@ import {animalsLesson} from '../src/flashcards/data-animals.mjs';
 import {bodyPartsLesson} from '../src/flashcards/data-body-parts.mjs';
 import {fruitsLesson} from '../src/flashcards/data-fruits-vegetables.mjs';
 import {helloSchool} from '../src/circle-time.mjs';
-const D='https://pub-f2fcb7c9b45a496cbeefef18dbba0ec0.r2.dev/school/animated-doodles/';
+const D='https://assets.kiddo.school/school/animated-doodles/';
 const doodle=(file,kind)=>`<img class="doodle doodle-${kind}" src="${D}${file}" width="1080" height="1080" alt="" aria-hidden="true" loading="lazy" data-doodle="${kind}">`;
 const DOODLES={
  pencil:doodle('01-happy-pencil.png','pencil','Happy Pencil'),

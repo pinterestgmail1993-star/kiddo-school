@@ -11,7 +11,7 @@ test('art wall shows exactly the eleven starter drawings with exact srcs, alts a
  assert.equal(starterArt.length,11); // never a 12th drawing
  imgs.forEach((m,i)=>{
   const a=starterArt[i];
-  assert.equal(m[1],`https://pub-f2fcb7c9b45a496cbeefef18dbba0ec0.r2.dev/school/art-wall/starter-art/${a.file}`);
+  assert.equal(m[1],`https://assets.kiddo.school/school/art-wall/starter-art/${a.file}`);
   assert.equal(m[2],'1587');assert.equal(m[3],'2245');
   assert.equal(m[4],a.alt);
  });

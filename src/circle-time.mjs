@@ -2,8 +2,8 @@
 // flashcard lesson. Circle Time 1 (Hello School!) lives here with its own
 // body builders; the flashcard lesson engine in lessons.mjs stays untouched.
 import {lessonStageCard} from './lessons.mjs';
-export const circleBase='https://pub-f2fcb7c9b45a496cbeefef18dbba0ec0.r2.dev/circle-time/age-2/hello-school/';
-const classroomBase='https://pub-f2fcb7c9b45a496cbeefef18dbba0ec0.r2.dev/school/my-classroom/my-classroom-age-2.webp';
+export const circleBase='https://assets.kiddo.school/circle-time/age-2/hello-school/';
+const classroomBase='https://assets.kiddo.school/school/my-classroom/my-classroom-age-2.webp';
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 export const helloSchool={
  path:'/toddler/2-years/circle-time/hello-school/',
@@ -187,5 +187,5 @@ export function myClassroomBody(){
   </div>
  </div>
  </section>
- <div class="wrap section compact"><div class="brand-duo"><div class="brand-copy"><span class="eyebrow">CELEBRATE THE REAL THING</span><h3>Little milestones, honestly counted.</h3><p class="lesson-copy">Everything on this shelf comes from something your child really did — a class finished, a game played, a picture saved. Nothing here is a score, and nothing is shared anywhere: it is your room, on your device.</p></div><div class="brand-art"><img src="https://pub-f2fcb7c9b45a496cbeefef18dbba0ec0.r2.dev/school/branding/kiddo-class-completion.webp" width="1264" height="1264" alt="A smiling grown-up hands a big certificate to a proud child in a purple school uniform, from the Kiddo.school celebration illustration." loading="lazy"></div></div></div>`;
+ <div class="wrap section compact"><div class="brand-duo"><div class="brand-copy"><span class="eyebrow">CELEBRATE THE REAL THING</span><h3>Little milestones, honestly counted.</h3><p class="lesson-copy">Everything on this shelf comes from something your child really did — a class finished, a game played, a picture saved. Nothing here is a score, and nothing is shared anywhere: it is your room, on your device.</p></div><div class="brand-art"><img src="https://assets.kiddo.school/school/branding/kiddo-class-completion.webp" width="1264" height="1264" alt="A smiling grown-up hands a big certificate to a proud child in a purple school uniform, from the Kiddo.school celebration illustration." loading="lazy"></div></div></div>`;
 }

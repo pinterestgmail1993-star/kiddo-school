@@ -14,7 +14,7 @@ import {oppositesLesson,oppositesCardContent} from '../src/flashcards/data-oppos
 const root=resolve('dist');
 const page=p=>readFileSync(join(root,p,'index.html'),'utf8');
 const css=()=>readFileSync(join(root,'assets','style.css'),'utf8');
-const R2='https://pub-f2fcb7c9b45a496cbeefef18dbba0ec0.r2.dev/flashcards/preschool-learning-cards/opposites-and-comparing-age-3/';
+const R2='https://assets.kiddo.school/flashcards/preschool-learning-cards/opposites-and-comparing-age-3/';
 const SLUGS=['big-ball','small-ball','tall-tree','short-tree','long-pencil','short-pencil','full-glass','empty-glass','hot-soup','cold-ice-cream','open-door','closed-door'];
 const PAIRS={1:['big-ball','small-ball'],2:['tall-tree','short-tree'],3:['long-pencil','short-pencil'],4:['full-glass','empty-glass'],5:['hot-soup','cold-ice-cream'],6:['open-door','closed-door']};
 

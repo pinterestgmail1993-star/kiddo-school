@@ -4,7 +4,7 @@
 // is written per worksheet and never repeated across subjects).
 
 export const WS_BASE='/worksheets/';
-export const R2='https://pub-f2fcb7c9b45a496cbeefef18dbba0ec0.r2.dev/';
+export const R2='https://assets.kiddo.school/';
 
 export const SUBJECTS={
  shapes:{key:'shapes',label:'Shapes, Patterns & Sorting',crumb:'Shapes',classNum:25,classPath:'/preschool/4-years/shapes-patterns-and-sorting/',classTitle:'Shapes, Patterns & Sorting (Class 25)',gameLib:'/preschool/shapes/adventures/',gameLibTitle:'Shape Adventures',tint:'#eef4e6',accent:'#4a9e4f'},

@@ -592,7 +592,7 @@ test('circle time 1 (Hello School!) follows its spec with the one-moment session
  assert.ok(ct1.includes('Start Circle Time'));
  assert.ok(ct1.includes('Read the prompts aloud and do them together.'),'the one parent note');
  assert.equal((ct1.match(/Read the prompts aloud and do them together\./g)||[]).length,1,'parent note appears exactly once');
- assert.ok(ct1.includes('property="og:image" content="https://pub-f2fcb7c9b45a496cbeefef18dbba0ec0.r2.dev/circle-time/age-2/hello-school/cover.webp"'),'cover.webp is the social image');
+ assert.ok(ct1.includes('property="og:image" content="https://assets.kiddo.school/circle-time/age-2/hello-school/cover.webp"'),'cover.webp is the social image');
  assert.ok(ct1.includes('name="twitter:card" content="summary_large_image"'));
  for(const [f,alt] of [
   ['cover.webp','Kiddo School teacher welcoming children to Circle Time'],
@@ -603,7 +603,7 @@ test('circle time 1 (Hello School!) follows its spec with the one-moment session
  const files=[...ct1.matchAll(/circle-time\/age-2\/hello-school\/([\w-]+)\.webp/g)].map(m=>m[1]);
  assert.equal([...new Set(files)].length,5,'exactly the five spec scene images');
  assert.deepEqual([...new Set(files)].sort(),['01-hello-and-move','02-listen-and-do','03-story-time','04-goodbye','cover']);
- assert.ok(!ct1.includes('learning-cards/')&&!ct1.includes('printables/')&&!ct1.includes('.r2.dev/flashcards/'),'NO flashcard, learning-card or printable assets (footer nav link aside)');
+ assert.ok(!ct1.includes('learning-cards/')&&!ct1.includes('printables/')&&!ct1.includes('assets.kiddo.school/flashcards/'),'NO flashcard, learning-card or printable assets (footer nav link aside)');
  assert.equal((ct1.match(/data-ct-step="/g)||[]).length,8,'eight moments in the session');
  for(const id of ['hello','rhythm','copy','listen','faces','story','rug','goodbye'])assert.ok(ct1.includes('data-ct-step="'+id+'"'),id);
  assert.equal((ct1.match(/data-ct-dot/g)||[]).length,9,'eight dots plus their container');
@@ -639,7 +639,7 @@ test('the circle time index page lists circle time 1 and nothing invented',()=>{
 test('my classroom connects the rug to circle time and every hotspot to a real page',()=>{
  assert.ok(mc.includes('rel="canonical" href="https://kiddo.school/my-classroom/"'));
  assert.ok(mc.includes('<h1>My Classroom</h1>'));
- assert.ok(mc.includes('src="https://pub-f2fcb7c9b45a496cbeefef18dbba0ec0.r2.dev/school/my-classroom/my-classroom-age-2.webp" width="1366" height="768"'));
+ assert.ok(mc.includes('src="https://assets.kiddo.school/school/my-classroom/my-classroom-age-2.webp" width="1366" height="768"'));
  for(const [label,href] of [['Today’s class','/learning-path/'],['Our Classroom','/toddler/2-years/our-classroom/'],['Sticky Notes','/sticky-note-wall/'],['Library','/learning-library/'],['Principal','/principals-office/'],['Calendar','/school-calendar/'],['Play &amp; Practice','/toddler/2-years/play-and-practice/'],['Let’s explore','/toddler/2-years/lets-explore/'],['My Work','/toddler/2-years/my-work/'],['My School Bag','/my-school-bag/'],['Circle Time','#circle-time']])assert.ok(mc.includes('href="'+href+'"')&&mc.includes('>'+label+'</a>'),label);
  assert.ok(mc.includes('mc-hot-desk')&&mc.includes('mc-hot-shelf')&&mc.includes('mc-hot-bag')&&mc.includes('mc-hot-rules')&&mc.includes('mc-hot-wall')&&mc.includes('mc-hot-calendar'),'desk, shelf, bag, rules poster, wall and calendar hotspots exist');
  assert.ok(mc.includes('id="circle-time"'),'the rug panel exists');

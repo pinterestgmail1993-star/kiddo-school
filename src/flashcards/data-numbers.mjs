@@ -13,7 +13,7 @@
 // correct, so the class is built around the ACTUAL files.
 // Every card shows numeral + number word + matching quantity (verified).
 
-const R2='https://pub-f2fcb7c9b45a496cbeefef18dbba0ec0.r2.dev/';
+const R2='https://assets.kiddo.school/';
 const P='flashcards/preschool-learning-cards/numbers-and-counting-age-3/';
 
 export const numbersMeta={

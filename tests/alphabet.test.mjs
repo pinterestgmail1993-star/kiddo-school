@@ -14,7 +14,7 @@ const root=resolve('dist');
 const read=f=>readFileSync(f,'utf8');
 const page=f=>readFileSync(join(root,f,'index.html'),'utf8');
 const set=fcSets.find(s=>s.slug==='alphabet');
-const R2='https://pub-f2fcb7c9b45a496cbeefef18dbba0ec0.r2.dev/';
+const R2='https://assets.kiddo.school/';
 const PREFIX='flashcards/preschool-learning-cards/alphabet-and-letter-sounds-age-3/';
 
 test('alphabet set: 26 real cards, probed dimensions, clean slugs and URLs',()=>{

@@ -33,7 +33,7 @@ test('data: exactly 29 weather cards from the owner’s verified R2 upload, cove
  assert.deepEqual(slugs,FILES,'the 29 cards are EXACTLY the owner’s upload — nothing invented, nothing missing');
  assert.equal(lesson.cards.length,29,'29 cards, not 30 — the owner confirmed the count');
  assert.ok(!slugs.includes('cover'),'cover.webp is never counted as a card');
- assert.equal(lesson.r2Base,'https://pub-f2fcb7c9b45a496cbeefef18dbba0ec0.r2.dev/school/preschool/4-years/weather-seasons-and-what-we-wear/','R2 base is the owner’s class folder');
+ assert.equal(lesson.r2Base,'https://assets.kiddo.school/school/preschool/4-years/weather-seasons-and-what-we-wear/','R2 base is the owner’s class folder');
  assert.equal(lesson.cover.w,1414,'cover width (probed on R2)');
  assert.equal(lesson.cover.h,2000,'cover height (probed on R2)');
  for(const c of lesson.cards){

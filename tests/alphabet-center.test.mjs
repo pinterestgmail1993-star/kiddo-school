@@ -8,7 +8,7 @@ import {LETTERS,LETTERS_BY_KEY} from '../src/alphabet-data.mjs';
 
 const read=f=>readFileSync(f,'utf8');
 const page=p=>read('dist'+p+'index.html');
-const R2='https://pub-f2fcb7c9b45a496cbeefef18dbba0ec0.r2.dev/school/alphabet/';
+const R2='https://assets.kiddo.school/school/alphabet/';
 const ASSOCIATIONS={a:'Apple',b:'Ball',c:'Cat',d:'Dog',e:'Elephant',f:'Fish',g:'Giraffe',h:'House',i:'Ice Cream',j:'Jellyfish',k:'Kite',l:'Leaf',m:'Moon',n:'Nest',o:'Orange',p:'Penguin',q:'Quilt',r:'Rabbit',s:'Snake',t:'Turtle',u:'Umbrella',v:'Violin',w:'Watermelon',x:'Xylophone',y:'Yo-yo',z:'Zebra'};
 // Letters whose picture cards have letters baked into the artwork (inspected).
 const LETTERED_PICS=new Set(['e','f','g','s','x']);

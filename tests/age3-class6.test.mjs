@@ -17,7 +17,7 @@ const c6p=read('preschool/3-years/animals-and-their-sounds/print/index.html');
 const c6set=read('flashcards/animal-sounds/index.html');
 const c6dog=read('flashcards/animal-sounds/dog/index.html');
 const C6_CARDS=['01-dog.webp','02-cat.webp','03-cow.webp','04-sheep.webp','05-duck.webp','06-chicken.webp','07-horse.webp','08-pig.webp','09-lion.webp','10-elephant.webp','11-frog.webp','12-bird.webp'];
-const C6_R2='https://pub-f2fcb7c9b45a496cbeefef18dbba0ec0.r2.dev/flashcards/preschool-learning-cards/animals-and-their-sounds-age-3';
+const C6_R2='https://assets.kiddo.school/flashcards/preschool-learning-cards/animals-and-their-sounds-age-3';
 
 test('class 6 (Animals & Their Sounds, Preschool 6) follows the preschool class spec',()=>{
  assert.ok(c6.includes('rel="canonical" href="https://kiddo.school/preschool/3-years/animals-and-their-sounds/"'));

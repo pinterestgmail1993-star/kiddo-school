@@ -1,8 +1,8 @@
 // Kiddo School curriculum engine: one reusable, data-driven lesson system.
 // Every lesson (and future ones) is pure data: slug/path, age, class, subject,
 // cover, R2 folder, cards, parent instructions, previous/next lesson, SEO.
-export const lessonsBase='https://pub-f2fcb7c9b45a496cbeefef18dbba0ec0.r2.dev/flashcards/black-and-white-baby-cards/';
-export const toddlerBase='https://pub-f2fcb7c9b45a496cbeefef18dbba0ec0.r2.dev/flashcards/toddler-learning-cards/';
+export const lessonsBase='https://assets.kiddo.school/flashcards/black-and-white-baby-cards/';
+export const toddlerBase='https://assets.kiddo.school/flashcards/toddler-learning-cards/';
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const img=(prefix,file,w,h,alt,eager)=>`<img src="${prefix}${file}" width="${w}" height="${h}" alt="${alt}"${eager?' fetchpriority="high"':' loading="lazy"'}>`;
 export const hcLesson={
@@ -12,8 +12,8 @@ export const hcLesson={
  h1:'High-Contrast Cards for Newborns',
  description:'Explore black-and-white high-contrast cards for newborns from birth to 6 weeks, with simple activities for early looking, focusing and visual tracking.',
  ogAlt:'Black and white high-contrast smiling face card for newborns from the Kiddo.school Newborn 1 class',
- ogImage:'https://pub-f2fcb7c9b45a496cbeefef18dbba0ec0.r2.dev/flashcards/black-and-white-baby-cards/newborn-high-contrast-face.webp',
- schemaImage:'https://pub-f2fcb7c9b45a496cbeefef18dbba0ec0.r2.dev/flashcards/black-and-white-baby-cards/newborn-high-contrast-face.webp',
+ ogImage:'https://assets.kiddo.school/flashcards/black-and-white-baby-cards/newborn-high-contrast-face.webp',
+ schemaImage:'https://assets.kiddo.school/flashcards/black-and-white-baby-cards/newborn-high-contrast-face.webp',
  eyebrow:'NEWBORN 1 · LESSON 1',
  crumbs:[['Baby','/baby/'],['Newborn','/newborn/'],['0–6 Weeks','/newborn/0-6-weeks/'],['High-Contrast Cards','/newborn/0-6-weeks/high-contrast-cards/']],
  chips:[['Age','Birth–6 Weeks'],['Subject','See'],['Class','Newborn 1'],['Time','2–5 minutes']],

@@ -7,7 +7,7 @@
 // see scripts/alphabet-r2-dims.txt): letter a is square 1080×1080, every
 // other letter is 1080×1350. Nothing here is invented — if a file is not on
 // R2 it must not appear on the site.
-export const ALPHA_R2_BASE='https://pub-f2fcb7c9b45a496cbeefef18dbba0ec0.r2.dev/school/alphabet/';
+export const ALPHA_R2_BASE='https://assets.kiddo.school/school/alphabet/';
 
 const SQUARE=[1080,1080];
 const TALL=[1080,1350];

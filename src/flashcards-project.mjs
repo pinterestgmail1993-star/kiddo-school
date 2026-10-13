@@ -4,7 +4,7 @@
 // parent-facing words for the card's individual page.
 import {fcCommunityMount} from './flashcards/index.mjs';
 
-export const flashcardsBase='https://pub-f2fcb7c9b45a496cbeefef18dbba0ec0.r2.dev/flashcards/';
+export const flashcardsBase='https://assets.kiddo.school/flashcards/';
 export const flashcardSets=[
  {
   slug:'black-and-white-baby-cards',

@@ -11,7 +11,7 @@
 // Nothing here is invented: each card points at its real file with its
 // real pixels and its own parent-facing words.
 
-const R2='https://pub-f2fcb7c9b45a496cbeefef18dbba0ec0.r2.dev/';
+const R2='https://assets.kiddo.school/';
 const P='flashcards/preschool-learning-cards/colors-and-color-mixing-age-3/';
 
 export const colorsMeta={

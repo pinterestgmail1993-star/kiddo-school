@@ -20,7 +20,7 @@
 // downloads ONLY the child's own canvas, never the reference image. No
 // grading, no scores, no timers, no shape detection. Without JavaScript the
 // references and written steps still show — draw on real paper instead.
-const R2='https://pub-f2fcb7c9b45a496cbeefef18dbba0ec0.r2.dev/';
+const R2='https://assets.kiddo.school/';
 const P_SHAPES='school/interactive-activities/magic-shape-builder-age-3/';
 const P_GARDEN='school/interactive-activities/magic-number-garden-age-3/';
 const P_OPP='school/interactive-activities/magic-opposites-adventure-age-3/';

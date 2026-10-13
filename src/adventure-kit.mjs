@@ -5,7 +5,7 @@
 // original artwork plus a transparent Write & Color drawing layer, with
 // plain text instructions. Pure string generation, no engines.
 
-export const R2='https://pub-f2fcb7c9b45a496cbeefef18dbba0ec0.r2.dev/';
+export const R2='https://assets.kiddo.school/';
 export const SHAPE_BASE=R2+'school/maths/adventures/';
 export const COLOR_BASE=R2+'school/colors/adventures/';
 

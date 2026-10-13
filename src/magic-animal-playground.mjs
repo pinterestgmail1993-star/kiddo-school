@@ -17,7 +17,7 @@
 // Find rounds run on the shared find-it engine; screens, playback and
 // movement live in magic-animal-playground.js as progressive enhancement.
 // No scores, no timers, no streaks, no download buttons for the game assets.
-const R2='https://pub-f2fcb7c9b45a496cbeefef18dbba0ec0.r2.dev/';
+const R2='https://assets.kiddo.school/';
 const P='school/interactive-activities/magic-animal-playground-age-3/';
 const W=1080,H=1080;
 const SND='/assets/sounds/animals/';

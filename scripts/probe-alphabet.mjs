@@ -5,7 +5,7 @@
 // picture/object image to /home/z/my-project/alpha-inspect/pictures/ for
 // visual verification, and prints a JSON report with true PNG dimensions.
 import {mkdirSync, writeFileSync} from 'node:fs';
-const BASE = 'https://pub-f2fcb7c9b45a496cbeefef18dbba0ec0.r2.dev/school/alphabet/';
+const BASE = 'https://assets.kiddo.school/school/alphabet/';
 const OUT = '/home/z/my-project/alpha-inspect/pictures';
 mkdirSync(OUT, {recursive: true});
 const LETTERS = 'abcdefghijklmnopqrstuvwxyz'.split('');

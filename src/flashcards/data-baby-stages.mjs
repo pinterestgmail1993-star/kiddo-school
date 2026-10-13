@@ -3,7 +3,7 @@
 // dimensions; the parent-facing words are written for each card. These sets
 // exist so every learning-path class (1–31) has its own flashcard set with
 // individual card pages, downloads and sharing — the owner's instruction.
-const R2 = 'https://pub-f2fcb7c9b45a496cbeefef18dbba0ec0.r2.dev/';
+const R2 = 'https://assets.kiddo.school/';
 const B = R2 + 'flashcards/black-and-white-baby-cards/';
 
 export const fvMeta = {

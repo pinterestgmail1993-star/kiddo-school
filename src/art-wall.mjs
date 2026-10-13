@@ -4,7 +4,7 @@
 // Starter art lives in its own permanent R2 folder, separate from family
 // submissions (which go into a PRIVATE submissions bucket and only appear
 // after an approve in the protected admin — pending work is never public).
-const artWallBase='https://pub-f2fcb7c9b45a496cbeefef18dbba0ec0.r2.dev/school/art-wall/starter-art/';
+const artWallBase='https://assets.kiddo.school/school/art-wall/starter-art/';
 // Every asset below was HEAD-verified (HTTP 200) and downloaded to confirm its
 // exact byte size and 1587x2245 dimensions before being listed here.
 export const starterArt=[

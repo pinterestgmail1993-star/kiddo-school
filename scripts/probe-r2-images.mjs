@@ -5,7 +5,7 @@
 import {execFileSync} from 'node:child_process';
 import {readFileSync, mkdirSync, rmSync} from 'node:fs';
 
-const BASE='https://pub-f2fcb7c9b45a496cbeefef18dbba0ec0.r2.dev/';
+const BASE='https://assets.kiddo.school/';
 const prefix=process.argv[2];
 const files=process.argv.slice(3);
 if(!prefix||!files.length){console.error('usage: node probe-r2-images.mjs <prefix> <files...>');process.exit(1);}

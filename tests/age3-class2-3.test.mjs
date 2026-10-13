@@ -86,7 +86,7 @@ test('numbers card pages: 10 unique spec-pattern titles, numeral H1s, downloads,
   assert.ok(html.includes(`data-page-path="/flashcards/numbers-and-counting/${slug}/"`),'community mount on '+slug);
   assert.ok(html.includes(`<h1>Number ${i} Flashcard — `),'numeral H1 '+slug);
   assert.ok(html.includes('Download card'),'download button '+slug);
-  assert.ok(html.includes('href="https://pub-f2fcb7c9b45a496cbeefef18dbba0ec0.r2.dev/flashcards/preschool-learning-cards/numbers-and-counting-age-3/'+c.file+'" download='),'real R2 download '+slug);
+  assert.ok(html.includes('href="https://assets.kiddo.school/flashcards/preschool-learning-cards/numbers-and-counting-age-3/'+c.file+'" download='),'real R2 download '+slug);
   assert.ok(html.includes('Previous card')&&html.includes('Next card'),'prev/next '+slug);
   assert.ok(html.includes('Related')||html.includes('RELATED CARDS'),'related cards '+slug);
   assert.ok(html.includes('VIEW FULL SET')||html.includes('View full set'),'view full set '+slug);

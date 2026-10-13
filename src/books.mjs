@@ -7,10 +7,10 @@
 // Book artwork lives in the public R2 bucket (kiddo-school-assets) under
 // books/<age>/<slug>/. If the asset domain ever moves, update R2_BOOKS and
 // the CSP img-src allow-list in scripts/build.mjs together.
-export const R2_BOOKS='https://pub-f2fcb7c9b45a496cbeefef18dbba0ec0.r2.dev/books/';
+export const R2_BOOKS='https://assets.kiddo.school/books/';
 // Owner-uploaded books that live under the bucket's school/ folder keep their
 // exact uploaded location — never invent a path that differs from R2.
-export const R2_SCHOOL='https://pub-f2fcb7c9b45a496cbeefef18dbba0ec0.r2.dev/school/';
+export const R2_SCHOOL='https://assets.kiddo.school/school/';
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const crumbs=parts=>`<nav class="breadcrumbs wrap" aria-label="Breadcrumb"><a href="/">Home</a>${parts.map(([label,href])=>`<span aria-hidden="true">/</span>${href?`<a href="${href}">${esc(label)}</a>`:`<span aria-current="page">${esc(label)}</span>`}`).join('')}</nav>`;
 

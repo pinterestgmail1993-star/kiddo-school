@@ -54,7 +54,7 @@ const SUBJECT_IMG={
  writing:'kiddo-subject-writing-phonics.webp',phonics:'kiddo-subject-writing-phonics.webp',
  reading:'kiddo-subject-alphabet-reading.webp',logic:'kiddo-subject-logic.webp',science:'kiddo-subject-science.webp'
 };
-const BRAND_R2='https://pub-f2fcb7c9b45a496cbeefef18dbba0ec0.r2.dev/school/branding/';
+const BRAND_R2='https://assets.kiddo.school/school/branding/';
 
 /* ---------- the main library ---------- */
 export function worksheetsHubBody(){
@@ -94,7 +94,7 @@ export function worksheetsHubBody(){
     artwork (no PDF pipeline): download means the original WebP, and every
     sheet also solves on screen as a canvas activity in its class. */
  `<a class="ws-cat" href="/worksheets/community-helpers-and-our-neighborhood/">
-   <span class="ws-cat-head"><img src="https://pub-f2fcb7c9b45a496cbeefef18dbba0ec0.r2.dev/school/preschool/4-years/community-helpers-and-our-neighborhood/worksheets/cover.webp" width="1545" height="2000" alt="" aria-hidden="true" loading="lazy"><span class="ws-cat-pill" style="--tint:#efe9fb;--accent:#6d5bb8">Class 33</span><strong>Community Helpers &amp; Our Neighborhood</strong></span>
+   <span class="ws-cat-head"><img src="https://assets.kiddo.school/school/preschool/4-years/community-helpers-and-our-neighborhood/worksheets/cover.webp" width="1545" height="2000" alt="" aria-hidden="true" loading="lazy"><span class="ws-cat-pill" style="--tint:#efe9fb;--accent:#6d5bb8">Class 33</span><strong>Community Helpers &amp; Our Neighborhood</strong></span>
    <p>Print the whole neighborhood — the doctor&#39;s kit, the firefighter&#39;s ladder, the baker&#39;s tray, the mail carrier&#39;s route. Thirty-five helper sheets, each one twinned with a Class 33 lesson and ready for real ink.</p>
    <span class="ws-count-note">35 worksheets</span>
    <span class="ws-cat-picks"><span>Doctor</span><span>Firefighter</span><span>Police Officer</span></span>
@@ -104,7 +104,7 @@ export function worksheetsHubBody(){
     artwork (no PDF pipeline): download means the original WebP, and every
     sheet also solves on screen as a canvas activity in its class. */
  `<a class="ws-cat" href="/worksheets/weather-seasons-and-what-we-wear/">
-   <span class="ws-cat-head"><img src="https://pub-f2fcb7c9b45a496cbeefef18dbba0ec0.r2.dev/school/preschool/4-years/weather-seasons-and-what-we-wear/worksheets/cover.webp" width="1414" height="2000" alt="" aria-hidden="true" loading="lazy"><span class="ws-cat-pill" style="--tint:#e4f2fb;--accent:#3a7fc2">Class 34</span><strong>Weather, Seasons &amp; What We Wear</strong></span>
+   <span class="ws-cat-head"><img src="https://assets.kiddo.school/school/preschool/4-years/weather-seasons-and-what-we-wear/worksheets/cover.webp" width="1414" height="2000" alt="" aria-hidden="true" loading="lazy"><span class="ws-cat-pill" style="--tint:#e4f2fb;--accent:#3a7fc2">Class 34</span><strong>Weather, Seasons &amp; What We Wear</strong></span>
    <p>Clouds, thermometers, forecasts, the water cycle and what to wear on a windy day — thirty-five sheets about the sky, traceable on screen or printed for the kitchen table.</p>
    <span class="ws-count-note">35 worksheets</span>
    <span class="ws-cat-picks"><span>The Water Cycle</span><span>Weather Forecast</span><span>Cloud Types</span></span>
@@ -114,7 +114,7 @@ export function worksheetsHubBody(){
     worksheets (no PDF pipeline): download means the original WebP, and every
     sheet also solves on screen as a canvas activity in its class. */
  `<a class="ws-cat" href="/worksheets/animals-and-their-habitats/">
-   <span class="ws-cat-head"><img src="https://pub-f2fcb7c9b45a496cbeefef18dbba0ec0.r2.dev/school/preschool/4-years/animals-and-their-habitats/worksheets/cover.webp" width="1414" height="2000" alt="" aria-hidden="true" loading="lazy"><span class="ws-cat-pill" style="--tint:#e6f3e6;--accent:#3e8e4d">Class 36</span><strong>Animals &amp; Their Habitats</strong></span>
+   <span class="ws-cat-head"><img src="https://assets.kiddo.school/school/preschool/4-years/animals-and-their-habitats/worksheets/cover.webp" width="1414" height="2000" alt="" aria-hidden="true" loading="lazy"><span class="ws-cat-pill" style="--tint:#e6f3e6;--accent:#3e8e4d">Class 36</span><strong>Animals &amp; Their Habitats</strong></span>
    <p>Six big homes, six sheets — circle who lives in the desert, farm, forest, ocean, ice and wetland, match every animal to its address and trace the habitat word.</p>
    <span class="ws-count-note">6 worksheets</span>
    <span class="ws-cat-picks"><span>Desert Animals</span><span>Ocean Animals</span><span>Polar Animals</span></span>
@@ -124,7 +124,7 @@ export function worksheetsHubBody(){
     toddler artwork (no PDF pipeline), download means the original WebP,
     and every sheet solves on screen in the class. */
  `<a class="ws-cat" href="/worksheets/toddler/matching-and-sorting/">
-   <span class="ws-cat-head"><img src="https://pub-f2fcb7c9b45a496cbeefef18dbba0ec0.r2.dev/school/toddler/2-years/matching-and-sorting/cover.webp" width="1264" height="1264" alt="" aria-hidden="true" loading="lazy"><span class="ws-cat-pill" style="--tint:#e8f2fd;--accent:#3d7fc4">Class 10</span><strong>Matching &amp; Sorting</strong></span>
+   <span class="ws-cat-head"><img src="https://assets.kiddo.school/school/toddler/2-years/matching-and-sorting/cover.webp" width="1264" height="1264" alt="" aria-hidden="true" loading="lazy"><span class="ws-cat-pill" style="--tint:#e8f2fd;--accent:#3d7fc4">Class 10</span><strong>Matching &amp; Sorting</strong></span>
    <p>Thirty-one big, friendly sheets for two-year-olds — match the twins, draw the lines, circle the odd one and sort the groups, on paper or right on the screen.</p>
    <span class="ws-count-note">31 worksheets · Age 2 · Toddler 4</span>
    <span class="ws-cat-picks"><span>Match Same Animals</span><span>Sort Red and Blue</span><span>Which One Is Different?</span></span>

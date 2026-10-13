@@ -1,6 +1,6 @@
 // Class 34 R2 asset verification — owner requirement: verify all 30 WebP files
 // exist in R2 and record their exact filenames before any page is built.
-// Public base: pub-f2fcb7c9b45a496cbeefef18dbba0ec0.r2.dev
+// Public base: assets.kiddo.school
 // Writes: scripts/c34-r2-verify.txt (log) + scripts/c34-dims.json (manifest).
 import {R2} from '../src/adventure-kit.mjs';
 import {writeFileSync} from 'node:fs';

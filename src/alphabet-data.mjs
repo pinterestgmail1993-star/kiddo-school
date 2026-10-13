@@ -12,7 +12,7 @@
 //  - the uploaded tracing.png sheets are deliberately NOT used: the brief
 //    flags their numbering as incorrect, so the tracing sections use the
 //    site's own verified SVG letterforms instead (src/tracing-strokes.mjs).
-export const R2_ALPHA='https://pub-f2fcb7c9b45a496cbeefef18dbba0ec0.r2.dev/school/alphabet/';
+export const R2_ALPHA='https://assets.kiddo.school/school/alphabet/';
 
 /* phonics.kind values (used by the beginning-sounds game and the tests):
    'plain'  — the pictured word really begins with the letter's most common sound

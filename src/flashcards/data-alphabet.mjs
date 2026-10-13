@@ -9,7 +9,7 @@
 // sound; Q: q brings u along; X: x is mostly an end-of-word sound and the
 // xylophone's first sound is actually z).
 
-const R2='https://pub-f2fcb7c9b45a496cbeefef18dbba0ec0.r2.dev/';
+const R2='https://assets.kiddo.school/';
 
 export const alphabetMeta={
  slug:'alphabet',

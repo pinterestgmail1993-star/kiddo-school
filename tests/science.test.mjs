@@ -53,7 +53,7 @@ test('content mapping: every shifted file points at the artwork that really carr
 });
 
 test('all 30 R2 science images are live (ranged GET, WEBP magic bytes)',async()=>{
- const base='https://pub-f2fcb7c9b45a496cbeefef18dbba0ec0.r2.dev/school/science/adventures/';
+ const base='https://assets.kiddo.school/school/science/adventures/';
  for(const g of scienceAdventures){
   const res=await fetch(base+g.img,{headers:{Range:'bytes=0-31','User-Agent':'Mozilla/5.0'}});
   const buf=Buffer.from(await res.arrayBuffer());

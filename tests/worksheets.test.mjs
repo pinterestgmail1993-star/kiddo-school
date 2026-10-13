@@ -180,7 +180,7 @@ test('every worksheet page ships R2 art with alt text and the community mount',(
 
 test('the two real maths worksheets are built from the uploaded artwork',()=>{
  for(const w of bySubject('maths')){
-  assert.ok(w.art.img.startsWith('https://pub-f2fcb7c9b45a496cbeefef18dbba0ec0.r2.dev/school/maths/adventures/'));
+  assert.ok(w.art.img.startsWith('https://assets.kiddo.school/school/maths/adventures/'));
   const art=execSync(`curl -s -o /dev/null -w "%{http_code}" --max-time 20 -A "Mozilla/5.0" "${w.art.img}"`,{encoding:'utf8'}).trim();
   assert.equal(art,'200','maths artwork live on R2: '+w.slug);
  }

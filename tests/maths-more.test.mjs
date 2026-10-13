@@ -12,8 +12,8 @@ import {wsUrl,pdfUrl} from '../src/ws-common.mjs';
 const read=f=>readFileSync(f,'utf8');
 const page=p=>read('dist'+p+'index.html');
 const TEST_ORIGIN='https://kiddo.school';
-const BRAND='https://pub-f2fcb7c9b45a496cbeefef18dbba0ec0.r2.dev/school/branding/';
-const M2='https://pub-f2fcb7c9b45a496cbeefef18dbba0ec0.r2.dev/school/maths/adventures/';
+const BRAND='https://assets.kiddo.school/school/branding/';
+const M2='https://assets.kiddo.school/school/maths/adventures/';
 
 const NEW_SLUGS=['apple-counting-game','balloon-number-writing','busy-bee-honey-factory','butterfly-pattern-magic','caterpillar-number-writing','cloud-castle-number-adventure','counting-balloons','cupcake-bakery','dinosaur-egg-rescue','farm-animal-lineup','garden-number-path','giraffe-height-challenge','ice-cream-number-shop','little-builder-challenge','little-pizza-chef'];
 

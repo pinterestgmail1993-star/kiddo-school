@@ -13,7 +13,7 @@ import {colorsLesson,colorsPrintLesson,colorsCardContent} from '../src/flashcard
 const root=resolve('dist');
 const page=p=>readFileSync(join(root,p,'index.html'),'utf8');
 const css=()=>readFileSync(join(root,'assets','style.css'),'utf8');
-const R2='https://pub-f2fcb7c9b45a496cbeefef18dbba0ec0.r2.dev/flashcards/preschool-learning-cards/colors-and-color-mixing-age-3/';
+const R2='https://assets.kiddo.school/flashcards/preschool-learning-cards/colors-and-color-mixing-age-3/';
 const COLORS=['red','blue','yellow','green','orange','purple','pink','brown','black','white','gray','rainbow'];
 
 test('colors data: twelve color pairs, all 24 real R2 files present with true 1414×2000 dims',()=>{

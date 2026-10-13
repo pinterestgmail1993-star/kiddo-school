@@ -8,7 +8,7 @@
 // dot progress, a restart after the final step and keyboard arrows.
 // Transparent PNGs sit on the school's warm ivory paper, never on a color
 // the artwork was not made for. No scores, timers, ads or storage.
-export const R2_DRAWING='https://pub-f2fcb7c9b45a496cbeefef18dbba0ec0.r2.dev/school/drawing/';
+export const R2_DRAWING='https://assets.kiddo.school/school/drawing/';
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
 /* ------------------------------------------------------------- the data */
