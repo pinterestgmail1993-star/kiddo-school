@@ -27,6 +27,7 @@ import * as chData from './data-community-helpers.mjs';
 import * as wsData from './data-weather-seasons.mjs';
 import * as nmgData from './data-numbers-counting-early-math.mjs';
 import * as sciData from './data-science-nature-and-discovery.mjs';
+import * as ahData from './data-animals-habitats.mjs';
 import {fvMeta,fvCardContent,cfoMeta,cfoCardContent,fwftMeta,fwftCardContent} from './data-baby-stages.mjs';
 import {aeoMeta,aeoCardContent,fabMeta,fabCardContent,fwfhMeta,fwfhCardContent} from './data-explorer-toddler.mjs';
 import {lessonsBase,fvLesson,cfoLesson,fwftLesson,aeoLesson,fabLesson,fwfhLesson} from '../lessons.mjs';
@@ -135,7 +136,15 @@ const SOURCES=[
  // counted as a card. The 20 /learn/ counting lessons live under the class
  // path (lp-numbers-counting-early-math.mjs via LP_REGISTRY) and register
  // their teach links through lp-lessons.mjs like every other lesson-bearing set.
- [nmgData,nmgData.lesson]
+ [nmgData,nmgData.lesson],
+ // Preschool Class 36: twenty-two animal-habitat cards from the owner's Canva
+ // uploads in the class's own R2 folder (self-contained lesson object, MIXED
+ // portrait dims probed per file — sixteen at 1587×2245, six at 1414×2000).
+ // The cover fronts the set and is never counted as a card. Purpose: WHAT
+ // each habitat is and why the animal fits it — the Learning Path /learn/
+ // lessons (lp-animals-habitats.mjs via LP_REGISTRY) keep the HOW, on their
+ // own pages.
+ [ahData,ahData.lesson]
 ];
 
 function buildSet([data,lesson]){

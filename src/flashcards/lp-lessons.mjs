@@ -13,6 +13,7 @@ import {lpContent as ls32} from './lp-life-skills.mjs';
 import {lpContent as s31} from './lp-science-nature.mjs';
 import {lpContent as ws34} from './lp-weather-seasons.mjs';
 import {lpContent as nm35} from './lp-numbers-counting-early-math.mjs';
+import {lpContent as ah36} from './lp-animals-habitats.mjs';
 import {lpContent as fvt} from './lp-faces-and-visual-tracking.mjs';
 import {lpContent as cfo} from './lp-colors-and-first-objects.mjs';
 import {lpContent as fwft} from './lp-first-words-familiar-things.mjs';
@@ -130,6 +131,9 @@ export const LP_REGISTRY=[
  {slug:'numbers-counting-and-early-math',content:nm35,
   navTitle:'Learn the counting cards, one number at a time',
   navIntro:'Twenty counting lessons, one apple to twenty figs: count the smiling fruit, say the number, then find that many real things in your own kitchen. One card a sitting — the first decade lands by ten, the ten-and-some-more trick opens the teens, and twenty figs crown the summit.'},
+ {slug:'animals-and-their-habitats',content:ah36,
+  navTitle:'Learn the animals and the homes that fit them',
+  navIntro:'Twenty-two habitat lessons, meadow to cave: find the animal on its card, learn what its home is and why it fits, then play the game that puts your child inside it — hopping the grassland, digging the water hole, huddling like penguins, hanging like a bat. Meadow and pond first, then forests, warm grasslands, desert, river and ocean, the icy poles, and the dark cave at the end.'},
 ].map(r=>({...r,set:fcSetBySlug[r.slug]})).filter(r=>r.set);
 
 export const lpSetBySlug=Object.fromEntries(LP_REGISTRY.map(r=>[r.slug,r]));
