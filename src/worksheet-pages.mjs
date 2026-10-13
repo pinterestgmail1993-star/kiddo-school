@@ -100,6 +100,16 @@ export function worksheetsHubBody(){
    <span class="ws-cat-picks"><span>The Water Cycle</span><span>Weather Forecast</span><span>Cloud Types</span></span>
    <span class="fc-open">Browse Weather worksheets <span aria-hidden="true">↗</span></span>
   </a>`+
+ /* Class 36 · Animals & Their Habitats — the owner's uploaded habitat
+    worksheets (no PDF pipeline): download means the original WebP, and every
+    sheet also solves on screen as a canvas activity in its class. */
+ `<a class="ws-cat" href="/worksheets/animals-and-their-habitats/">
+   <span class="ws-cat-head"><img src="https://pub-f2fcb7c9b45a496cbeefef18dbba0ec0.r2.dev/school/preschool/4-years/animals-and-their-habitats/worksheets/cover.webp" width="1414" height="2000" alt="" aria-hidden="true" loading="lazy"><span class="ws-cat-pill" style="--tint:#e6f3e6;--accent:#3e8e4d">Class 36</span><strong>Animals &amp; Their Habitats</strong></span>
+   <p>Six big homes, six sheets — circle who lives in the desert, farm, forest, ocean, ice and wetland, match every animal to its address and trace the habitat word.</p>
+   <span class="ws-count-note">6 free worksheets</span>
+   <span class="ws-cat-picks"><span>Desert Animals</span><span>Ocean Animals</span><span>Polar Animals</span></span>
+   <span class="fc-open">Browse Habitat worksheets <span aria-hidden="true">↗</span></span>
+  </a>`+
  /* Toddler 4 · Class 10 · Matching & Sorting — the owner's uploaded
     toddler artwork (no PDF pipeline), download means the original WebP,
     and every sheet solves on screen in the class. */
@@ -111,7 +121,7 @@ export function worksheetsHubBody(){
    <span class="fc-open">Browse Matching &amp; Sorting worksheets <span aria-hidden="true">↗</span></span>
   </a>`;
  return `${crumbNav([['Worksheets']])}
- ${heading('THE WORKSHEET LIBRARY','Free printable worksheets for little hands.',`${libraryCount()} printable activities \u2014 the paper twins of our games: tracing guides with the same strokes, counting rows, coloring outlines, sound sorts with parent scripts, and science labs with a grown-up answer line \u2014 plus the Life Skills &amp; Good Habits sheets, the Community Helpers and Weather &amp; Seasons collections and the toddler Matching &amp; Sorting set your child can also solve on screen. Download a real PDF, print straight from the page, or play the matching activity online.`)}
+ ${heading('THE WORKSHEET LIBRARY','Free printable worksheets for little hands.',`${libraryCount()} printable activities \u2014 the paper twins of our games: tracing guides with the same strokes, counting rows, coloring outlines, sound sorts with parent scripts, and science labs with a grown-up answer line \u2014 plus the Life Skills &amp; Good Habits sheets, the Community Helpers, Weather &amp; Seasons and Animals &amp; Their Habitats collections and the toddler Matching &amp; Sorting set your child can also solve on screen. Download a real PDF, print straight from the page, or play the matching activity online.`)}
  <section class="wrap section compact" aria-label="Worksheet categories"><div class="ws-cats">${cards}</div>
  <p class="lesson-note">Every worksheet is free, needs no sign-up, and prints on A4 or US Letter. Each sheet&rsquo;s page keeps everything in reach: the artwork, the download and print buttons, and a place for families to react and comment.</p></section>
  <section class="wrap lesson-section" aria-label="How to use the library"><span class="eyebrow">FOR GROWN-UPS</span><h2>How the library works.</h2>

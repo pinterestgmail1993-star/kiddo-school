@@ -66,6 +66,10 @@ export const meta={
   ['Race to twenty','Shuffle the cards, flip one at a time and clap that many times. Get to twenty and the clapper picks tomorrow\'s snack. Loud, silly and full of counting.']
  ],
  downloadHint:'Every card page has its own download button with the full-size image.',
+ // The real cover file on R2 is named counting-flashcards-1-20-cover.webp —
+ // the default cover.webp fallback 404s and left the set coverless on the
+ // /flashcards/ wall until the owner spotted it (2026-10-13).
+ coverFile:'counting-flashcards-1-20-cover.webp',
  coverAlt:'Cover of the Counting Flashcards 1–20 set from Kiddo School: the title over five smiling fruits — an apple, a banana, grapes, an orange and a strawberry.',
  lessonBlurb:'the class page with all twenty counting cards, one apple to twenty figs',
  relatedSets:['numbers-and-counting','fruits-and-vegetables']
