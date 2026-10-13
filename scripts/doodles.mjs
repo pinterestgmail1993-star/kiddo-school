@@ -1,4 +1,7 @@
-// Animated doodle characters (user-uploaded R2 PNGs) — build-time injection.
+// Animated doodle characters — build-time injection. The 1080×1080 R2 PNGs
+// (≈1 MB each) are downscaled at build to 192×192 WebP in /assets/ (they render
+// at max 96px, so 192px covers 2× screens) — same artwork, ~1% of the bytes,
+// same-origin and immutable-cached.
 // Each doodle is a small in-flow image (never absolutely positioned, so it
 // can never cover text, buttons or activities), aria-hidden, lazy-loaded.
 // CSS animations in style.css run only when doodles.js adds .doodle-live on
@@ -14,15 +17,14 @@ import {animalsLesson} from '../src/flashcards/data-animals.mjs';
 import {bodyPartsLesson} from '../src/flashcards/data-body-parts.mjs';
 import {fruitsLesson} from '../src/flashcards/data-fruits-vegetables.mjs';
 import {helloSchool} from '../src/circle-time.mjs';
-const D='https://assets.kiddo.school/school/animated-doodles/';
-const doodle=(file,kind)=>`<img class="doodle doodle-${kind}" src="${D}${file}" width="1080" height="1080" alt="" aria-hidden="true" loading="lazy" data-doodle="${kind}">`;
+const doodle=(file,kind)=>`<img class="doodle doodle-${kind}" src="/assets/doodle-${kind}-192.webp" width="192" height="192" alt="" aria-hidden="true" loading="lazy" data-doodle="${kind}">`;
 const DOODLES={
- pencil:doodle('01-happy-pencil.png','pencil','Happy Pencil'),
- star:doodle('02-smiling-star.png','star','Smiling Star'),
- book:doodle('03-friendly-book.png','book','Friendly Book'),
- butterfly:doodle('04-playful-butterfly.png','butterfly','Playful Butterfly'),
- rainbow:doodle('05-little-rainbow.png','rainbow','Little Rainbow'),
- moon:doodle('06-sleepy-moon.png','moon','Sleepy Moon')
+ pencil:doodle('doodle-pencil-192.webp','pencil'),
+ star:doodle('doodle-star-192.webp','star'),
+ book:doodle('doodle-book-192.webp','book'),
+ butterfly:doodle('doodle-butterfly-192.webp','butterfly'),
+ rainbow:doodle('doodle-rainbow-192.webp','rainbow'),
+ moon:doodle('doodle-moon-192.webp','moon')
 };
 const pencilSet=new Set([
  ...lessons.map(L=>L.path),
