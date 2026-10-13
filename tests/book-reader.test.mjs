@@ -109,11 +109,12 @@ test('gentle age language: guides, never requirements',()=>{
  assert.match(page,/Read together at your child/);
 });
 
-test('library: a books-only bookshelf with the Read Book card and honest empty shelves',()=>{
+test('library: a books-only bookshelf with the Read Book card; shelves with no books are hidden',()=>{
  assert.match(library,/data-library/);
  assert.match(library,/<h1>Library<\/h1>/);
- // four real category shelves, nothing else listed
- for(const c of ['storybooks','educational','activity','life-skills'])assert.match(library,new RegExp('data-cat="'+c+'"'),'shelf '+c);
+ // only shelves that really hold books are shown
+ for(const c of ['storybooks','educational'])assert.match(library,new RegExp('data-cat="'+c+'"'),'shelf '+c);
+ for(const c of ['activity','life-skills'])assert.doesNotMatch(library,new RegExp('data-cat="'+c+'"'),'empty shelf '+c+' hidden');
  assert.doesNotMatch(library,/href="\/preschool\/3-years\//,'no class listings on the library');
  assert.doesNotMatch(library,/href="\/flashcards\/[a-z-]+\//,'no flashcard set listings on the library (the hub pointer is fine)');
  assert.doesNotMatch(library,/href="\/preschool\/3-years\/magic-/,'no magic game listings on the library');
@@ -127,11 +128,9 @@ test('library: a books-only bookshelf with the Read Book card and honest empty s
  // age filter only offers ages that really have books
  assert.match(library,/data-age-chip="age-2"/);
  assert.doesNotMatch(library,/data-age-chip="newborn"/);
- // three shelves hold no books yet and say so honestly
- const empties=[...library.matchAll(/class="lib-empty"[^>]*>([\s\S]*?)<\/div>/g)].map(m=>m[1]);
- assert.ok(empties.length>=3,'empty states rendered for the empty shelves');
- // premium PDF is announced, coming soon, with no checkout and no price
- assert.match(library,/coming soon/i);
+ // no empty-shelf or coming-soon placeholders, no checkout, no price
+ assert.doesNotMatch(library,/No books on this shelf yet/);
+ assert.doesNotMatch(library,/coming soon/i);
  assert.doesNotMatch(library,/\$\d|checkout|Buy now/i);
 });
 

@@ -125,9 +125,9 @@ test('reader component: mounted with the reusable script and cover-first HTML',(
  assert.ok(page.includes('Cover')&&page.includes('Page 1:'),'the noscript story names the cover and pages');
 });
 
-test('premium printable is coming-soon only: no checkout, no price, no fake button',()=>{
- assert.match(page,/Get Printable PDF — Premium · Coming Soon/);
- assert.match(page,/coming soon/i);
+test('no premium placeholder on the book page: no checkout, no price, no fake button',()=>{
+ assert.doesNotMatch(page,/Get Printable PDF/);
+ assert.doesNotMatch(page,/coming soon/i);
  assert.doesNotMatch(page,/\$\d|checkout link|Buy now|Add to cart/i);
 });
 

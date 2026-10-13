@@ -90,11 +90,11 @@ function harness(){
  return {root,sections,catChips,ageChips};
 }
 
-test('filter chips select the four anchors only — never the shelf sections',()=>{
+test('filter chips select the category anchors only — never the shelf sections',()=>{
  const {sections,catChips,ageChips}=harness();
- assert.equal(sections.length,4,'four shelf sections');
- assert.equal(catChips.length,4,'four category chip anchors, sections excluded');
- assert.deepEqual(catChips.map(c=>c.getAttribute('data-cat')),['storybooks','educational','activity','life-skills']);
+ assert.equal(sections.length,2,'two shelf sections (empty shelves are hidden)');
+ assert.equal(catChips.length,2,'two category chip anchors, sections excluded');
+ assert.deepEqual(catChips.map(c=>c.getAttribute('data-cat')),['storybooks','educational']);
  assert.equal(ageChips.length,1,'one age chip anchor');
 });
 
@@ -105,7 +105,7 @@ test('clicking a category chip filters the shelves; clicking again clears it',()
  assert.ok(ev.prevented,'chip click prevents the #anchor jump');
  const by=id=>sections.find(s=>s.getAttribute('data-cat')===id);
  assert.ok(!by('educational').hidden,'chosen shelf stays visible');
- for(const id of ['storybooks','activity','life-skills'])assert.ok(by(id).hidden,id+' shelf hides');
+ assert.ok(by('storybooks').hidden,'storybooks shelf hides');
  assert.ok(edu.classList.contains('is-on'),'chip gains is-on');
  assert.equal(edu.getAttribute('aria-pressed'),'true');
  click(edu);

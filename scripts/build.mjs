@@ -87,7 +87,9 @@ import {illustrations} from './illustrations.mjs';
 const activities=JSON.parse(readFileSync('data/activities.json','utf8'));
 const writingSection=readFileSync('src/handwriting.html','utf8');
 const config=JSON.parse(readFileSync('site.config.json','utf8'));
-const configured=process.env.SITE_URL||config.siteUrl;
+const envSite=process.env.SITE_URL;
+// A *.pages.dev SITE_URL left in the hosting dashboard must never override the real domain in site.config.json.
+const configured=(envSite&&!/\.pages\.dev\/?$/i.test(envSite))?envSite:config.siteUrl;
 const origin=new URL(configured||'http://localhost:4173');
 if(!['https:','http:'].includes(origin.protocol)||origin.pathname!=='/'||origin.search||origin.hash||origin.username||origin.password)throw Error('SITE_URL must be a bare http(s) origin without path, query or credentials');
 if(configured&&origin.protocol!=='https:'&&origin.hostname!=='localhost')throw Error('Public SITE_URL must use HTTPS');

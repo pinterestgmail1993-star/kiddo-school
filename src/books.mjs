@@ -168,13 +168,6 @@ export function bookReaderBody(b){
   </div>
   <noscript>${story}</noscript>
  </section>
- <section class="wrap section compact" aria-label="Printable version">
-  <span class="eyebrow">PREMIUM PRINTABLE</span>
-  <h2>Get Printable PDF — Premium</h2>
-  <p class="lesson-copy">A print-ready PDF of this book is planned as a premium product. It is <strong>coming soon</strong> &mdash; there is nothing to pay today, no checkout and no price to show, because the paid library is not built yet. When it arrives, printable PDFs will be protected and granted only after a real purchase.</p>
-  <p class="lesson-copy">The pages above are the whole book &mdash; enjoy them as often as you like.</p>
-  <p><span class="bk-premium-badge">Get Printable PDF — Premium · Coming Soon</span></p>
- </section>
  <section class="wrap section compact" aria-label="Reading tips for grown-ups">
   <span class="eyebrow">FOR GROWN-UPS</span>
   <h2>${esc(b.grownups.title)}</h2>

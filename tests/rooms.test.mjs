@@ -173,7 +173,7 @@ test('drawings stay private: no sitemap entry, no public ids',()=>{
 });
 
 /* ------------------------------------------------------ LEARNING LIBRARY */
-test('the library is a books-only bookshelf: real books, honest empty shelves, premium PDFs coming soon',()=>{
+test('the library is a books-only bookshelf: real books only, empty shelves hidden, no coming-soon placeholders',()=>{
  assert.ok(lib.includes(`rel="canonical" href="${site}/learning-library/"`));
  assert.ok(lib.includes('<title>Library — Picture Books to Read Online | Kiddo.school</title>'));
  // scope content checks to the page body: the footer and header are sitewide
@@ -186,12 +186,13 @@ test('the library is a books-only bookshelf: real books, honest empty shelves, p
  assert.ok(!body.includes('href="/toddler/2-years/play-and-practice/'),'no game listings');
  assert.ok(!body.includes('href="/toddler/2-years/my-work/'),'no activity listings');
  assert.ok(!body.includes('href="/toddler/2-years/circle-time/'),'no circle time listings');
- // every category shelf renders, each book card points at a real readable book
- for(const c of ['storybooks','educational','activity','life-skills'])assert.ok(lib.includes(`data-cat="${c}"`),'shelf '+c);
+ // only shelves with books render; each book card points at a real readable book
+ for(const c of ['storybooks','educational'])assert.ok(lib.includes(`data-cat="${c}"`),'shelf '+c);
+ for(const c of ['activity','life-skills'])assert.ok(!lib.includes(`data-cat="${c}"`),'empty shelf hidden '+c);
  assert.ok(lib.includes('href="/library/books/age-2/bunny-finds-a-friend/"'),'the real book is listed');
  assert.ok(read('dist/library/books/age-2/bunny-finds-a-friend/index.html'),'book page exists');
  assert.ok(lib.includes('Read Book'),'free reading CTA');
- assert.ok(lib.includes('coming soon'),'premium PDF labelled coming soon');
+ assert.ok(!/coming soon/i.test(lib),'no coming-soon placeholder');
  assert.ok(!/\$\d|Buy now|checkout/i.test(lib),'no fake checkout or invented prices');
  assert.ok(lib.includes('href="/my-classroom/"')&&lib.includes('Back to My Classroom'));
  assert.ok(lib.includes('BreadcrumbList')&&lib.includes('"name":"Library"'));
