@@ -827,7 +827,7 @@ export function communityWsCategoryBody(){
  return `${crumbNav([['Worksheets','/worksheets/'],['Community Helpers & Our Neighborhood']])}
  <div class="page-heading wrap"><span class="eyebrow">COMMUNITY HELPERS WORKSHEETS · AGES 4–5</span><h1>Community Helpers &amp; Our Neighborhood worksheets — free printables for little hands.</h1><p>Thirty-five genuine activity sheets about the people who help us: trace their names, match their tools, circle the right things, count, and draw. Download the original sheet, print it, or solve every sheet on screen in <a href="${CH_CLASS_PATH}">Class 33</a> first.</p></div>
  <section class="wrap section compact" aria-label="The Community Helpers worksheet collection">
-  <figure class="fc2-hero ws-hero-art" style="max-width:640px;margin:0 auto 1.5rem"><img src="${esc(CH_WS_BASE+CH_WS_COVER.file)}" width="${CH_WS_COVER.w}" height="${CH_WS_COVER.h}" alt="${esc(CH_WS_COVER.alt)}" fetchpriority="high"></figure>
+  <figure class="fc2-hero ws-hero-art ws-cover-sm"><img src="${esc(CH_WS_BASE+CH_WS_COVER.file)}" width="${CH_WS_COVER.w}" height="${CH_WS_COVER.h}" alt="${esc(CH_WS_COVER.alt)}" fetchpriority="high"></figure>
   <div class="ws-grid">${cards}</div>
  </section>
  <section class="wrap lesson-section"><span class="eyebrow">KEEP EXPLORING</span><h2>Where these come from.</h2>

@@ -1601,6 +1601,9 @@ a.tc-day-class.is-rec{border:2px solid #71326d;background:#faf6ff}
 .ws-card:hover .ws-card-open{text-decoration:underline;text-decoration-thickness:3px;text-decoration-color:var(--yellow)}
 .ws-hero-art{max-width:none}
 .ws-hero-art img{background:#fff;border:1.5px solid var(--line);border-radius:14px}
+/* small collection-cover preview (CSP-safe — never size layout with inline style) */
+.ws-cover-sm{max-width:300px;margin:0 auto 1.5rem}
+.ws-cover-sm img{box-shadow:0 8px 22px rgba(63,52,32,.12)}
 .ws-rail-sec{margin-top:34px;padding-top:22px;border-top:2px solid #e7dfcc}
 .ws-rail-sec:first-child{margin-top:0;padding-top:0;border-top:0}
 .ws-skills{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px;padding:0;margin:16px 0 0;list-style:none}

@@ -653,7 +653,7 @@ export function weatherWsCategoryBody(){
  return `${crumbNav([['Worksheets','/worksheets/'],['Weather, Seasons &amp; What We Wear']])}
  <div class="page-heading wrap"><span class="eyebrow">WEATHER &amp; SEASONS WORKSHEETS · AGES 4–5</span><h1>Weather, Seasons &amp; What We Wear worksheets — free printables for little hands.</h1><p>Thirty-five genuine activity sheets about the sky, the seasons and the clothes they ask for: match, circle, count, order the water cycle, read a map, chart a week of weather and trace every big word. Download the original sheet, print it, or solve every sheet on screen in <a href="${WS34_CLASS_PATH}">Class 34</a> first.</p></div>
  <section class="wrap section compact" aria-label="The weather worksheet collection">
-  <figure class="fc2-hero ws-hero-art" style="max-width:640px;margin:0 auto 1.5rem"><img src="${esc(WS34_WS_BASE+WS34_WS_COVER.file)}" width="${WS34_WS_COVER.w}" height="${WS34_WS_COVER.h}" alt="${esc(WS34_WS_COVER.alt)}" fetchpriority="high"></figure>
+  <figure class="fc2-hero ws-hero-art ws-cover-sm"><img src="${esc(WS34_WS_BASE+WS34_WS_COVER.file)}" width="${WS34_WS_COVER.w}" height="${WS34_WS_COVER.h}" alt="${esc(WS34_WS_COVER.alt)}" fetchpriority="high"></figure>
   <div class="ws-grid">${cards}</div>
  </section>
  <section class="wrap lesson-section"><span class="eyebrow">KEEP EXPLORING</span><h2>Where these come from.</h2>

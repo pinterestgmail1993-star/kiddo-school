@@ -219,7 +219,7 @@ export function animalsWsCategoryBody(){
  return `${crumbNav([['Worksheets','/worksheets/'],['Animals &amp; Their Habitats']])}
  <div class="page-heading wrap"><span class="eyebrow">ANIMAL &amp; HABITAT WORKSHEETS · AGES 4–5</span><h1>Animals &amp; Their Habitats worksheets — free printables for little hands.</h1><p>Six genuine habitat sheets, one for each big home: the desert, the farm, the forest, the ocean, the polar regions and the wetland. On every sheet your child circles who lives there, matches each animal to its home, counts, chooses the right scene and traces the habitat word. Download the original sheet, print it, or solve every sheet on screen in <a href="${AHWS_CLASS_PATH}">Class 36</a> first.</p></div>
  <section class="wrap section compact" aria-label="The habitat worksheet collection">
-  <figure class="fc2-hero ws-hero-art"><img src="${esc(AHWS_WS_BASE+AHWS_WS_COVER.file)}" width="${AHWS_WS_COVER.w}" height="${AHWS_WS_COVER.h}" alt="${esc(AHWS_WS_COVER.alt)}" fetchpriority="high"></figure>
+  <figure class="fc2-hero ws-hero-art ws-cover-sm"><img src="${esc(AHWS_WS_BASE+AHWS_WS_COVER.file)}" width="${AHWS_WS_COVER.w}" height="${AHWS_WS_COVER.h}" alt="${esc(AHWS_WS_COVER.alt)}" fetchpriority="high"></figure>
   <div class="ws-grid">${cards}</div>
  </section>
  <section class="wrap lesson-section"><span class="eyebrow">KEEP EXPLORING</span><h2>Where these come from.</h2>

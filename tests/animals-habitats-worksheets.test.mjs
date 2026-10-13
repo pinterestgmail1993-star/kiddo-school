@@ -80,6 +80,8 @@ test('printable twins: 6 built, download+print, NO canvas, activity linked back'
 test('collection: 6 cards, genuine cover, cross-links, in sitemap',()=>{
  const html=pageFile(AHWS_WS_LIB);
  assert.ok(html.includes(AHWS_WS_BASE+AHWS_WS_COVER.file),'/worksheets/animals-and-their-habitats/: genuine cover');
+ assert.ok(html.includes('class="fc2-hero ws-hero-art ws-cover-sm"'),'collection cover is a SMALL preview (ws-cover-sm), never full-width');
+ assert.ok(!/class="fc2-hero ws-hero-art"/.test(html),'no unbounded cover hero left on the collection');
  assert.equal((html.match(/class="ws-card"/g)||[]).length,6,'6 cards on the collection');
  assert.ok(html.includes('href="'+CLASS+'"'),'links the class hub');
  assert.ok(html.includes('/flashcards/animals-and-their-habitats/'),'links the flashcards');
@@ -88,6 +90,21 @@ test('collection: 6 cards, genuine cover, cross-links, in sitemap',()=>{
  for(const w of animalsWs){
   assert.ok(sitemap.includes('https://kiddo-school.pages.dev'+AHWS_WS_LIB+w.slug+'/'),w.slug+' printable in sitemap');
   assert.ok(sitemap.includes('https://kiddo-school.pages.dev'+AHWS_WS_CLASS+w.slug+'/'),w.slug+' activity in sitemap');
+ }
+});
+
+test('learning path: Class 36 row links BOTH the flashcards and the worksheets',()=>{
+ const lp=read('/learning-path/index.html');
+ assert.ok(lp.includes('href="/flashcards/animals-and-their-habitats/"'),'LP row 36 links the flashcards');
+ assert.ok(lp.includes('href="/worksheets/animals-and-their-habitats/"'),'LP row 36 links the worksheets');
+ assert.ok(lp.includes('6 habitat worksheets'),'LP row 36 names the worksheets');
+});
+
+test('collection covers are small previews on all three worksheet collections (CSP-safe class, no inline style)',()=>{
+ for(const p of ['/worksheets/animals-and-their-habitats/','/worksheets/weather-seasons-and-what-we-wear/','/worksheets/community-helpers-and-our-neighborhood/']){
+  const h=pageFile(p);
+  assert.ok(h.includes('ws-cover-sm'),p+': cover uses ws-cover-sm');
+  assert.ok(!/ws-hero-art"\s*style=/.test(h),p+': no dead inline style on the cover (CSP blocks it)');
  }
 });
 
