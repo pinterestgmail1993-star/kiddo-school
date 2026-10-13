@@ -63,7 +63,7 @@ test('the six alphabet letter sets exist with clean URLs, real R2 files and tap-
     assert.ok(html.includes('SHARE THIS SET'), v.url + ' has sharing buttons');
     assert.ok(!html.includes('/assets/fc-variants/'), v.url + ' uses no coded cut images');
     for (const c of v.cards) {
-      assert.match(c.img, /^https:\/\/pub-f2fcb7c9b45a496cbeefef18dbba0ec0\.r2\.dev\/school\/alphabet\/[a-z]\/(uppercase|lowercase|pair|object|picture|sound|tracing)\.png$/, v.url + ' card points at the owner\'s R2 file: ' + c.slug);
+      assert.match(c.img, /^https:\/\/assets\.kiddo\.school\/school\/alphabet\/[a-z]\/(uppercase|lowercase|pair|object|picture|sound|tracing)\.png$/, v.url + ' card points at the owner\'s R2 file: ' + c.slug);
       const cardHtml = page(c.url.slice(1));
       assert.ok(cardHtml.includes('src="' + c.img + '"'), c.url + ' shows the same real file');
       assert.ok(cardHtml.includes('data-fc-dl'), c.url + ' download is wired for real saving');

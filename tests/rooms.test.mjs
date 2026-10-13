@@ -125,7 +125,7 @@ test('every game image is an existing Kiddo.school card at its true aspect ratio
  }
  let checked=0;
  for(const [html,label] of [[match,'match'],[sort,'sort'],[diff,'diff'],[bag,'bag']]){
-  for(const m of html.matchAll(/<img src="https:\/\/pub-f2fcb7c9b45a496cbeefef18dbba0ec0\.r2\.dev\/flashcards\/toddler-learning-cards\/([^"]+)" width="(\d+)" height="(\d+)"[^>]*>/g)){
+  for(const m of html.matchAll(/<img src="https:\/\/assets\.kiddo\.school\/flashcards\/toddler-learning-cards\/([^"]+)" width="(\d+)" height="(\d+)"[^>]*>/g)){
    const key=m[1],[w,h]=dims.get(key)||[null,null];
    assert.ok(w,`${label}: unknown card ${key}`);
    assert.equal(+m[2],w,`${label}: ${key} width must be ${w}`);
@@ -139,7 +139,7 @@ test('game pages never invent assets or folders',()=>{
  for(const [html,label] of [[match,'match'],[sort,'sort'],[diff,'diff']]){
   assert.doesNotMatch(html,/my-work-drawings|play-practice-assets|new-r2-folder/);
   assert.ok(html.includes('toddler-learning-cards/'),label+' reuses toddler cards');
-  const folders=[...html.matchAll(/r2\.dev\/(flashcards\/[a-z-]+)\//g)].map(m=>m[1]);
+  const folders=[...html.matchAll(/assets\.kiddo\.school\/(flashcards\/[a-z-]+)\//g)].map(m=>m[1]);
   for(const f of folders)assert.equal(f,'flashcards/toddler-learning-cards',label+' uses only the existing card base');
  }
 });

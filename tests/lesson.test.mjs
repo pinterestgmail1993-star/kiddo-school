@@ -32,14 +32,14 @@ test('first lesson page follows the Kiddo School class spec',()=>{
  assert.match(lesson,/Next Class →/);
  assert.doesNotMatch(lesson,/href="[^"]*eye[^"]*"/i);
  assert.match(lesson,/BreadcrumbList/);
- assert.match(lesson,/<meta property="og:image" content="https:\/\/pub-f2fcb7[^"]*newborn-high-contrast-face\.webp">/);
+ assert.match(lesson,/<meta property="og:image" content="https:\/\/assets\.kiddo\.school[^"]*newborn-high-contrast-face\.webp">/);
  assert.match(lesson,/name="twitter:card" content="summary_large_image"/);
  const lazy=[...lesson.matchAll(/loading="lazy"/g)].length;
  assert.ok(lazy>=11,'below-fold images must lazy-load, got '+lazy);
 });
 
 test('all twelve cards are real verified R2 images at their natural 4:5 size',()=>{
- const urls=[...lesson.matchAll(/src="(https:\/\/pub-f2fcb7[^"]+\.webp)"/g)].map(m=>m[1]).filter(u=>!u.includes('/school/branding/'));
+ const urls=[...lesson.matchAll(/src="(https:\/\/assets\.kiddo\.school[^"]+\.webp)"/g)].map(m=>m[1]).filter(u=>!u.includes('/school/branding/'));
  assert.equal(new Set(urls).size,12,'the twelve class cards, brand chrome excluded');
  for(const c of hcLesson.cards){
   const tag=lesson.match(new RegExp('<img src="[^"]*'+c.file.replace(/\./g,'\\.')+'" width="(\\d+)" height="(\\d+)"'));

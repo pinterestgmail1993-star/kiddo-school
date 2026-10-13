@@ -35,7 +35,7 @@ test('black and white baby cards page shows flashcards, stages grid, guide and s
  assert.match(html,/shared looking, not a test\./i);
  assert.match(html,/25 to 40 centimetres/);
  assert.match(html,/out of sleep spaces/i);
- const urls=[...html.matchAll(/<img[^>]+src="(https:\/\/pub-f2fcb7[^"]+)"/g)].map(m=>m[1]);
+ const urls=[...html.matchAll(/<img[^>]+src="(https:\/\/assets\.kiddo\.school[^"]+)"/g)].map(m=>m[1]);
  assert.ok(urls.length>=16,'set page should embed the fifteen flashcards plus the parents guide');
 });
 
@@ -51,7 +51,7 @@ test('flashcard data: thirty flashcard sets (every learning-path class 1-22 cove
    assert.ok(c.note.length>40,`${s.slug}/${c.slug} missing parent note`);
    // Card art lives in the set's own R2 folder: /flashcards/ for the lesson
    // sets, /school/ for Class 32 (the owner's upload location — never moved).
-   assert.match(c.img,/https:\/\/pub-f2fcb7c9b45a496cbeefef18dbba0ec0\.r2\.dev\/(flashcards|school)\//);
+   assert.match(c.img,/https:\/\/assets\.kiddo\.school\/(flashcards|school)\//);
   }
  }
 });
@@ -140,7 +140,7 @@ test('black and white baby cards: every card opens its own page, not the raw ima
  const s=flashcardSets[0];
  const html=page(`flashcards/${s.slug}`);
  for(const c of s.cards)assert.ok(html.includes(`href="${babySet.url}${c.slug}/"`),`card page link for ${c.slug} missing`);
- const rawAnchors=[...html.matchAll(/<a [^>]*href="(https:\/\/pub-f2fcb7[^"]+)"/g)].map(m=>m[1]);
+ const rawAnchors=[...html.matchAll(/<a [^>]*href="(https:\/\/assets\.kiddo\.school[^"]+)"/g)].map(m=>m[1]);
  assert.equal(rawAnchors.length,1,`only the parents guide may link straight to R2, found: ${rawAnchors.join(', ')}`);
  assert.ok(rawAnchors[0].includes(s.guide),'the one raw R2 link is the parents guide');
  assert.ok(html.includes(`data-page-path="${babySet.url}"`),'baby set page has its own community mount');
