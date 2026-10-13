@@ -372,7 +372,7 @@ export function coloringActivityBody(a,site){
 /* ---------- the Coloring Pages hub + the Shapes category ---------- */
 export function coloringHubBody(){
  return `${crumbNav([['Coloring Pages']])}
- <div class="page-heading wrap"><span class="eyebrow">COLORING PAGES \u00b7 FREE PRINTABLES</span><h1>Coloring Pages — big pictures for little crayons.</h1><p>Printable coloring pages for toddlers and preschoolers, drawn for small hands and fat crayons. Download the original picture, print it clean, or color the same picture on screen first — every page does both.</p></div>
+ <div class="page-heading wrap"><span class="eyebrow">COLORING PAGES \u00b7 PRINTABLES</span><h1>Coloring Pages — big pictures for little crayons.</h1><p>Printable coloring pages for toddlers and preschoolers, drawn for small hands and fat crayons. Download the original picture, print it clean, or color the same picture on screen first — every page does both.</p></div>
  <section class="wrap section compact" aria-label="Coloring page categories">
   <div class="ws-grid">
    <a class="ws-card" href="${CP_LIB}">
