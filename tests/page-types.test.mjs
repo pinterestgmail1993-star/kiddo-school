@@ -84,10 +84,14 @@ test('rule 2 · no class, stage hub or Learning Path page links an ACTIVITY to a
   // Class 32 (28-card TEACH grid) allowances are REVOKED. Both class pages
   // now carry ONE small supporting-resource section (short explanation +
   // original collection cover + a single collection link).
+  // The sight word lessons (Class 29) live at
+  // /preschool/4-years/sight-words/{word}/ — same teaching-lesson doctrine
+  // as /learn/ pages: each pairs with EXACTLY ONE library card.
+  const isLessonPage=p=>/\/learn\/[a-z0-9-]+$/.test(p)||/^preschool\/4-years\/sight-words\/[a-z0-9-]+$/.test(p);
   const unexpected=offenders.filter(o=>{
     const [p,target]=o.split(' -> ');
     if(p.startsWith('preschool/3-years/alphabet-and-letter-sounds/letter-')&&target.startsWith('/flashcards/alphabet-'))return false;
-    if(/\/learn\/[a-z0-9-]+$/.test(p))return false; // /learn/ lessons policed below: exactly ONE card link each
+    if(isLessonPage(p))return false; // teaching lessons policed below: exactly ONE card link each
     return true;
   });
   assert.deepEqual(unexpected,[],'activity links pointing at flashcards: '+unexpected.slice(0,8).join(' | '));
@@ -98,10 +102,10 @@ test('rule 2 · no class, stage hub or Learning Path page links an ACTIVITY to a
   const learnCounts={};
   for(const o of offenders){
    const [p]=o.split(' -> ');
-   if(/\/learn\/[a-z0-9-]+$/.test(p))learnCounts[p]=(learnCounts[p]||0)+1;
+   if(isLessonPage(p))learnCounts[p]=(learnCounts[p]||0)+1;
   }
   const badLearn=Object.entries(learnCounts).filter(([,n])=>n!==1);
-  assert.deepEqual(badLearn,[],'each /learn/ lesson links exactly ONE library card: '+badLearn.map(([p,n])=>p+'='+n).join(', '));
+  assert.deepEqual(badLearn,[],'each teaching lesson links exactly ONE library card: '+badLearn.map(([p,n])=>p+'='+n).join(', '));
   // and the allowance is not an escape hatch: the Class 32 page's ACTIVITY
   // grid (data-ls-card ribbons) must still open the /preschool/life-skills/
   // activity pages, never a flashcard URL — and Class 31's adventure shelves

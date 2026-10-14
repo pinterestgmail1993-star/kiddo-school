@@ -1,2 +1,3 @@
-# No redirects ship: the site is not indexed yet, so only the corrected URLs exist.
-# Old flashcard word URLs are simply gone (they return 404).
+# 301: the 52 Class 29 sight word lessons moved to their own hub
+# (old /learn/{word}/ pages → /preschool/4-years/sight-words/{word}/)
+/preschool/4-years/storytime-and-pre-reading/learn/* /preschool/4-years/sight-words/:splat 301

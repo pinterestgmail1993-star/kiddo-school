@@ -5,12 +5,13 @@
 // each Dolch word: pre-primer, primer and a few grade-1 words.
 // These are FLASHCARDS: paper, talk and spot-it-in-a-book practice. The library
 // pages say what the word is and how to print and play with the card; the
-// Learning Path /learn/ lessons (lp-sight-words.mjs via LP_REGISTRY) keep the
-// step-by-step teaching on their own pages.
+// lessons (lp-sight-words.mjs via LP_REGISTRY) keep the step-by-step teaching
+// on their own pages under /preschool/4-years/sight-words/.
 export const lesson={
  r2Base:'/assets/',
  folder:'sight-words/',
- path:'/preschool/4-years/storytime-and-pre-reading/',
+ path:'/preschool/4-years/sight-words/',
+ lessonUrlBase:'/preschool/4-years/sight-words/',
  seoTitle:'Sight Words (Class 29)',
  cover:{w:600,h:800},
  cards:[
@@ -393,6 +394,7 @@ export const meta={
  group:'preschool',
  stageName:'Class 29 · Storytime & Pre-Reading Comprehension',
  stageHref:'/preschool/4-years/storytime-and-pre-reading/',
+ classUrl:'/preschool/4-years/storytime-and-pre-reading/',
  useIdeas:[
   ['Three new cards a day','Pick three words, read each aloud together and let your child say it back. Add a new card only when the old ones feel easy, and stop while it is still fun.'],
   ['Hide and find','Tape a few cards around a room and call out one word at a time. Your child hunts it down, reads it and carries it back.'],
