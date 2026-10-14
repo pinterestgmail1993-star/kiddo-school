@@ -8,6 +8,7 @@
 // WHAT/WHY/PRACTISE experience for parents — paper, download, print, NO canvas
 // — and no text is shared between the two.
 import {fcSetBySlug,registerLpTeachLinks} from './index.mjs';
+import {LESSON_FRIEND_LINKS} from './friend-links.mjs';
 import {lpContent as ch33} from './lp-community-helpers.mjs';
 import {lpContent as ls32} from './lp-life-skills.mjs';
 import {lpContent as s31} from './lp-science-nature.mjs';
@@ -17,6 +18,9 @@ import {lpContent as ah36} from './lp-animals-habitats.mjs';
 import {lpContent as mr23} from './lp-music-room.mjs';
 import {lpContent as pgr} from './lp-playground.mjs';
 import {lpContent as sp37} from './lp-sports.mjs';
+import {lpContent as trExtra} from './lp-toddler-room.mjs';
+import {lpContent as ktExtra} from './lp-kitchen.mjs';
+import {lpContent as tv24} from './lp-transportation.mjs';
 import {lpContent as ph28} from './lp-phonics.mjs';
 import {lpContent as fvt} from './lp-faces-and-visual-tracking.mjs';
 import {lpContent as cfo} from './lp-colors-and-first-objects.mjs';
@@ -149,6 +153,15 @@ export const LP_REGISTRY=[
  {slug:'sports',content:sp37,
   navTitle:'Learn the sports and movement cards, one game at a time',
   navIntro:'Forty sports lessons for ages 4–5: the ball games first, then run-jump-throw athletics, the water sports, wheels and boards and ice, climbing and riding, aim and precision, the martial arts and the mighty lift — every lesson teaching one big move step by step, with a living-room game that builds gross motor skills, physical literacy and the fundamental movement skills of running, jumping, throwing, catching, kicking and balance.'},
+ {slug:'transportation-and-vehicles',content:tv24,
+  navTitle:'Learn the vehicles, one spotter card at a time',
+  navIntro:'Thirty-two transportation lessons for ages 4–5: the everyday rides first — car, bus, train, school bus — then the helpers, the rails, the long giants, the water, the sky and eleven construction spotter sheets from road roller to tower crane. Each card names four vehicles, and every lesson teaches all four with one big spotting idea.'},
+ {slug:'toddler-room',content:trExtra,
+  navTitle:'Learn the toddler room, word by word',
+  navIntro:'Thirty-five Toddler Room lessons for ages 1–3: the toys on the mat, the mealtimes, the sleep corner, the care routines, getting dressed and the furniture that holds the room together — every word taught step by step with the routine it lives in. A bonus class beside the core path: dip in any order, skip without falling behind.'},
+ {slug:'kitchen',content:ktExtra,
+  navTitle:'Learn the kitchen, safely, one tool at a time',
+  navIntro:'Thirty-five Kitchen lessons for ages 3–6: the everyday things, the helper tools, the grown-up tools to name and the one big rule — knives are for grown-ups. Every lesson teaches the tool, the job it does and, where it matters, the hot-don’t-touch and sharp-things rules said out loud. A bonus class beside the core path: cook alongside it, any order.'},
 
  {slug:'phonics-and-beginning-sounds',content:ph28,
   navTitle:'Learn the letter sounds, one letter at a time',
@@ -177,6 +190,12 @@ const BLOCKS=[
 
 export function lpLessonBody(set,card,lesson,ctx){
  const {prev,next}=ctx;
+ /* Same word, two homes (src/flashcards/friend-links.mjs): apple is a phonics
+    letter-sound card AND a fruits vocabulary card. The owner-pinned pair
+    links the two experiences in one sentence per direction — each page keeps
+    its own job and its own copy; only the pointer is shared. */
+ const friend=LESSON_FRIEND_LINKS[set.slug+'/'+card.slug]
+  ?`<p class="fcl-pair">${LESSON_FRIEND_LINKS[set.slug+'/'+card.slug]}</p>`:'';
  const blocks=BLOCKS.filter(([k])=>lesson[k]).map(([k,defLabel])=>{
   const label=(lesson.labels&&lesson.labels[k])||defLabel;
   if(k==='teach'){
@@ -206,7 +225,7 @@ export function lpLessonBody(set,card,lesson,ctx){
   <div class="wc-mount fcl-left" data-wc data-wc-src="${esc(card.img)}?draw=1" data-wc-name="${esc(card.word)} flashcard" data-wc-w="${card.w}" data-wc-h="${card.h}" data-wc-restore="learn/${esc(set.slug)}/${esc(card.slug)}">
    <figure class="fcl-art"><img src="${esc(card.img)}?draw=1" width="${card.w}" height="${card.h}" alt="${esc(card.alt)}" fetchpriority="high" crossorigin="anonymous"><figcaption><strong>${esc(card.word)}</strong><span>${set.slug==='sight-words'?'Sight word flashcard':'Original Canva flashcard'} · Card ${card.n} of ${set.cards.length}</span></figcaption></figure>
   </div>
-  <div class="fcl-copy">${blocks}${pair}</div>
+  <div class="fcl-copy">${blocks}${pair}${friend}</div>
  </div>
  <div class="wrap">${pn}</div>`;
 }

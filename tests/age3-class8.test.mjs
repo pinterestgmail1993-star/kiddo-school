@@ -127,9 +127,9 @@ test('all sixteen card pages exist with unique metadata, downloads and navigatio
 
 test('class 8 is wired into the whole school honestly',()=>{
  assert.ok(lp.includes('Class 22: <a href="/preschool/3-years/fruits-and-vegetables/">Fruits &amp; Vegetables</a>'));
- assert.ok(lp.includes('thirty-six age-guided classes'));
- assert.ok(lp.includes('Thirty-six classes are ready now, from birth to age five, in one calm sequence.'));
- assert.ok(home.includes('Thirty-six classes are ready now, from birth to age five'));
+ assert.ok(lp.includes('thirty-seven age-guided classes'));
+ assert.ok(lp.includes('Thirty-seven classes are ready now, from birth to age five, in one calm sequence.'));
+ assert.ok(home.includes('Thirty-seven classes are ready now, from birth to age five'));
  assert.ok(home.includes('Letters, numbers, shapes, colors, opposites, animals, your body with all five senses — and the foods you eat.'));
  assert.ok(about.includes('Thirty-six classes from birth to age five are ready today'));
  assert.ok(hub.includes('Eight classes ready now'));

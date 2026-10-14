@@ -124,8 +124,13 @@ test('every game image is an existing Kiddo.school card at its true aspect ratio
   dims.set(L.folder+L.cover.file,[L.cover.w,L.cover.h,L.cover.alt]);
  }
  let checked=0;
+ // Two real R2 card bases serve these games: the legacy toddler-learning-cards
+ // folder (animals, colors & shapes, vehicles) and the black-and-white-baby-cards
+ // folder (first-words-food-home — its lesson has no r2Base, so play-practice
+ // falls back to lessonsBase; this fixed the undefined…webp src bug found in
+ // the first audit, where match/sort/different shipped broken fwfh images).
  for(const [html,label] of [[match,'match'],[sort,'sort'],[diff,'diff'],[bag,'bag']]){
-  for(const m of html.matchAll(/<img src="https:\/\/assets\.kiddo\.school\/flashcards\/toddler-learning-cards\/([^"]+)" width="(\d+)" height="(\d+)"[^>]*>/g)){
+  for(const m of html.matchAll(/<img src="https:\/\/assets\.kiddo\.school\/flashcards\/(?:toddler-learning-cards|black-and-white-baby-cards)\/([^"]+)" width="(\d+)" height="(\d+)"[^>]*>/g)){
    const key=m[1],[w,h]=dims.get(key)||[null,null];
    assert.ok(w,`${label}: unknown card ${key}`);
    assert.equal(+m[2],w,`${label}: ${key} width must be ${w}`);
@@ -136,11 +141,13 @@ test('every game image is an existing Kiddo.school card at its true aspect ratio
  assert.ok(checked>=30,'checked '+checked+' card images');
 });
 test('game pages never invent assets or folders',()=>{
+ // The two allowed R2 card bases (see the aspect-ratio test above).
+ const allowed=new Set(['flashcards/toddler-learning-cards','flashcards/black-and-white-baby-cards']);
  for(const [html,label] of [[match,'match'],[sort,'sort'],[diff,'diff']]){
   assert.doesNotMatch(html,/my-work-drawings|play-practice-assets|new-r2-folder/);
   assert.ok(html.includes('toddler-learning-cards/'),label+' reuses toddler cards');
   const folders=[...html.matchAll(/assets\.kiddo\.school\/(flashcards\/[a-z-]+)\//g)].map(m=>m[1]);
-  for(const f of folders)assert.equal(f,'flashcards/toddler-learning-cards',label+' uses only the existing card base');
+  for(const f of folders)assert.ok(allowed.has(f),label+' uses only the existing card bases, saw '+f);
  }
 });
 

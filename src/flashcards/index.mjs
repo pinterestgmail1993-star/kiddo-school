@@ -4,6 +4,7 @@
 // the parent-facing words. Nothing is invented: a card exists here only if its
 // image exists on R2 and its lesson exists on the site.
 import {anLesson,vhLesson,csLesson,msLesson,emLesson,fcLesson,gbLesson,gfLesson,gflLesson,gthLesson} from '../lessons.mjs';
+import {CARD_FRIEND_LINKS} from './friend-links.mjs';
 import * as anData from './data-animals-and-sounds.mjs';
 import * as vhData from './data-vehicles-and-sounds.mjs';
 import * as csData from './data-colors-and-shapes.mjs';
@@ -33,6 +34,9 @@ import * as swData from './data-sight-words.mjs';
 import * as mrData from './data-music-room.mjs';
 import * as pgData from './data-playground.mjs';
 import * as spData from './data-sports.mjs';
+import * as trData from './data-toddler-room.mjs';
+import * as ktData from './data-kitchen.mjs';
+import * as tvData from './data-transportation.mjs';
 import {fvMeta,fvCardContent,cfoMeta,cfoCardContent,fwftMeta,fwftCardContent} from './data-baby-stages.mjs';
 import {aeoMeta,aeoCardContent,fabMeta,fabCardContent,fwfhMeta,fwfhCardContent} from './data-explorer-toddler.mjs';
 import {lessonsBase,fvLesson,cfoLesson,fwftLesson,aeoLesson,fabLesson,fwfhLesson} from '../lessons.mjs';
@@ -186,7 +190,34 @@ const SOURCES=[
  // counted as a card. Purpose: WHAT each sport is and HOW to try its big move
  // at home — the Learning Path /learn/ lessons (lp-sports.mjs via LP_REGISTRY)
  // keep the step-by-step teaching on their own pages.
- [spData,spData.lesson]
+ [spData,spData.lesson],
+ // EXTRA CLASS · The Toddler Room: thirty-five cards from the owner's uploads
+ // in school/extra-classes/toddler-room/ (self-contained lesson object, ALL 36
+ // files probed at 1414×2000 portrait). cover.webp fronts the set and is never
+ // counted as a card. A BONUS class beside the core path (owner decision
+ // 2026-10-15): every card carries an age pill and a room-area pill; the
+ // /toddler-room/learn/ lessons (lp-toddler-room.mjs via LP_REGISTRY) keep
+ // the step-by-step teaching on their own pages, crumbed through the
+ // /extra-classes/ hub — never through the Learning Path.
+ [trData,trData.lesson],
+ // EXTRA CLASS · Kitchen Things: thirty-five kitchen cards from the owner's
+ // uploads in school/extra-classes/kitchen/ (self-contained lesson object,
+ // ALL 36 files probed at 800×1132 portrait). cover.webp fronts the set and
+ // is never counted as a card. The owner's AGE PILLS are the set's spine:
+ // Ages 3+ everyday things, Ages 4–5 helper tools, Ages 6+ grown-up tools,
+ // Grown-ups only (the chef's knife — the kitchen's biggest rule card).
+ // Safety lives in the class text and the lessons: knives are for grown-ups,
+ // and the hot family is the "hot, don't touch" crew.
+ [ktData,ktData.lesson],
+ // Class 24 · Transportation & Vehicles: thirty-two spotter cards from the
+ // owner's uploads in the class's own R2 folder (self-contained lesson object,
+ // ALL 33 files probed at 900×1273 portrait). Each card is a SPOTTER SHEET —
+ // a group heading over four labeled vehicles. cover.webp fronts the set and
+ // is never counted as a card. Class 24 was reserved since the school opened;
+ // the owner assigned it to Transportation & Vehicles (2026-10-15), so the
+ // Learning Path runs 1–24 + 25–37 with no gap. The /learn/ lessons
+ // (lp-transportation.mjs via LP_REGISTRY) keep the step-by-step teaching.
+ [tvData,tvData.lesson]
 ];
 
 function buildSet([data,lesson]){
@@ -207,7 +238,10 @@ function buildSet([data,lesson]){
      NEVER shared with the Learning Path lesson text (duplicate-content rule).
      Sets without library copy keep their classic card-page blocks. */
   const lib=libSet&&libSet.cards?libSet.cards[s]:null;
+  // Age + subject/safety pills (owner request): the data files set them per
+  // card; sets without pills simply render nothing extra.
   return {slug:s,word:d.word||titleWord(s),file:c.file,w:c.w,h:c.h,alt:c.alt,
+   ages:d.ages||null,pill:d.pill||null,
    img2:c.picFile?base+c.picFile:null,alt2:c.picAlt||null,picWord:d.picWord||null,
    letter:c.letter||d.letter||null,numeral:c.numeral||d.numeral||null,sound:d.sound||null,audio:c.audio||null,metaDescription:d.metaDescription||null,cardTitle:d.cardTitle||null,
    intro:d.intro,why:d.why||null,who:d.who||null,whoHeading:d.whoHeading||null,job:d.job||null,jobHeading:d.jobHeading||null,safety:d.safety||null,say:d.say,try:d.try,note:d.note,
@@ -240,6 +274,7 @@ function buildSet([data,lesson]){
   downloadHint:data.meta.downloadHint||null,
   printPath:data.meta.printPath||null,
   relatedSlugs:data.meta.relatedSets||[],
+  pillGroups:data.meta.pillGroups||null,
   lessonPath:lesson.path,
   lessonUrlBase:lesson.lessonUrlBase||null,
   classUrl:data.meta.classUrl||null,
@@ -293,8 +328,17 @@ export function fcSetPageBody(s){
  // longer embeds the Alphabet Centre — the owner asked flashcards to be
  // about individual pages and downloads, not a clone of another section.
  const stageLink=s.stageName&&s.stageHref?`<p class="fc-stage-link">These cards belong to <a href="${esc(s.stageHref)}">${esc(s.stageName)}</a> on the Kiddo School learning path.</p>`:'';
+ // Age/subject pills on a tile (owner request: "add pills of ages so parents
+ // know") — the age pill first, then the subject or safety pill.
+ const pillRow=c=>(c.ages||c.pill)?`<span class="fc-pillrow">${c.ages?`<span class="fc-pill fc-pill-age">${esc(c.ages)}</span>`:''}${c.pill?`<span class="fc-pill fc-pill-subject">${esc(c.pill)}</span>`:''}</span>`:'';
+ const tile=c=>`<a class="fc-card fc2-cardlink" href="${c.url}"><span class="fc2-cardimg"><img src="${c.img}" width="${c.w}" height="${c.h}" alt="${esc(c.alt)}" loading="lazy"></span><span class="fc2-cardword"><strong>${esc(c.word)}</strong><span>Card ${c.n} of ${s.cards.length}</span>${pillRow(c)}</span></a>`;
+ // Sets with pillGroups (the owner's age/subject grouping) render one pill-
+ // headed section per group; every other set keeps the single wall.
+ const bySlug=Object.fromEntries(s.cards.map(c=>[c.slug,c]));
  const letterSets=s.slug==='alphabet'?LETTER_SET_REFS.map(([href,t,d])=>`<a class="fc2-relcard" href="${href}"><strong>${t}</strong><span>${d}</span><span class="fc-open">Open <span aria-hidden="true">↗</span></span></a>`).join(''):'';
- const grid=`<div class="fc2-cards">${s.cards.map(c=>`<a class="fc-card fc2-cardlink" href="${c.url}"><span class="fc2-cardimg"><img src="${c.img}" width="${c.w}" height="${c.h}" alt="${esc(c.alt)}" loading="lazy"></span><span class="fc2-cardword"><strong>${esc(c.word)}</strong><span>Card ${c.n} of ${s.cards.length}</span></span></a>`).join('')}</div>`;
+ const grid=s.pillGroups
+  ?s.pillGroups.map(([label,blurb,slugs])=>`<div class="fc-pillgroup"><div class="fc-pillgroup-head"><span class="fc-pill fc-pill-age fc-pill-big">${esc(label)}</span>${blurb?`<p class="fc-hint">${esc(blurb)}</p>`:''}</div><div class="fc2-cards">${slugs.map(k=>{const c=bySlug[k];if(!c)throw Error('pillGroups: missing card '+s.slug+'/'+k);return tile(c);}).join('')}</div></div>`).join('')
+  :`<div class="fc2-cards">${s.cards.map(tile).join('')}</div>`;
  const ideas=`<ol class="fc-steps">${s.useIdeas.map(([t,d],i)=>`<li><span class="fc-stepnum">${String(i+1).padStart(2,'0')}</span><div><h3>${esc(t)}</h3><p>${esc(d)}</p></div></li>`).join('')}</ol>`;
  const related=s.relatedSlugs.map(k=>fcSetBySlug[k]).filter(Boolean);
  const relatedRow=related.length?`<div class="fc2-relrow">${related.map(r=>`<a class="fc2-relcard" href="${r.url}"><strong>${esc(r.name)}</strong><span>${r.cards.length} cards</span><span class="fc-open">Open <span aria-hidden="true">↗</span></span></a>`).join('')}</div>`:'';
@@ -302,7 +346,7 @@ export function fcSetPageBody(s){
  return `${crumbNav([['Flashcards','/flashcards/'],[s.name]])}
  ${heading('FLASHCARD SET · AGES '+esc(s.ageLabel.toUpperCase()),s.h1,esc(s.lede))}
  ${stageLink}
- <section class="wrap fc-section"><span class="eyebrow">THE CARDS</span><h2>Every card in the set.</h2><p class="fc-hint">Each card has its own page: the picture and short, practical notes for grown-ups — what it is for, how to use it, how to print it. Tap any card to open it.</p>${grid}</section>
+ <section class="wrap fc-section"><span class="eyebrow">THE CARDS</span><h2>Every card in the set.</h2><p class="fc-hint">${s.pillGroups?'Each card has its own page, and every card shows its age pill — start with the group that fits your child today.':'Each card has its own page: the picture and short, practical notes for grown-ups — what it is for, how to use it, how to print it. Tap any card to open it.'}</p>${grid}</section>
  ${letterSets?`<section class="wrap fc-section"><span class="eyebrow">ALPHABET LETTER SETS</span><h2>The same letters, six more ways.</h2><p class="fc-hint">Individual letter-card sets with their own clean pages — every card has its own download button and its own card page.</p><div class="fc2-relrow">${letterSets}</div></section>`:''}
  <section class="wrap fc-section"><span class="eyebrow">HOW TO USE THESE CARDS</span><h2>Four ways that work.</h2><p class="fc-hint">You do not need a plan or a printer schedule. Pick one idea, try it for two minutes and see what happens.</p>${ideas}</section>
  <section class="wrap fc-section"><span class="eyebrow">PRINT &amp; DOWNLOAD</span><h2>Print the set, download a card.</h2><div class="fc2-actions"><a class="button" href="${s.classUrl||s.lessonPath}">${s.classUrl&&!s.stageName?'Step into the room these cards come from':'View the class these cards come from'} <span aria-hidden="true">↗</span></a>${s.lessonUrlBase?`<a class="button" href="${s.lessonUrlBase}">Open the lessons</a>`:''}${printBtn}<a class="button" href="/flashcards/">All flashcard sets</a></div><p class="fc-hint">${s.downloadHint||'Every card page has its own download button with the full-size image.'}${s.printPath?' The full set has a print-ready page too.':' This set is printed straight from its class page.'}</p></section>
@@ -353,6 +397,9 @@ export function fcCardPageBody(set,card,ctx){
  const note=!hasTrio?`<div class="fc2-do fc2-note"><h2>Quick parent note</h2><p>${esc(card.note)}</p></div>`:'';
  const safety=!hasTrio&&card.safety?`<div class="fc2-do fc2-note fcl-safety"><h2>Staying safe</h2><p>${esc(card.safety)}</p></div>`:'';
  const learnBlocks=hasTrio?helps+roleplay+learnB+printB+teachTip+sound:who+job+why+sound+say+tryThis+note+safety;
+ /* Same word, two homes (friend-links.mjs): the card side of an owner-pinned
+    pair — one fresh sentence pointing at the other set's lesson. */
+ const friend=CARD_FRIEND_LINKS[set.slug+'/'+card.slug]?`<div class="fc2-do fc2-note"><h2>One word, two lessons</h2><p>${CARD_FRIEND_LINKS[set.slug+'/'+card.slug]}</p></div>`:'';
  const teach=(lpTeachLinks[set.slug]||{})[card.slug]?`<div class="fc2-do"><h2>Teach it, step by step</h2><p>Want the full walkthrough? <a href="${set.lessonUrlBase?set.lessonUrlBase+card.slug+'/':set.lessonPath+'learn/'+card.slug+'/'}">Open ${set.slug==='sight-words'?'the lesson for “'+esc(card.word)+'”':'the '+esc(card.word)+' lesson'}</a> on the Learning Path.</p></div>`:'';
  const dlName=f=>f.replace(/^\d+-/,'').replace(/\.webp$/,'');
  const actions=`<div class="fc2-actions">${card.img2
@@ -364,9 +411,9 @@ export function fcCardPageBody(set,card,ctx){
  const lesson=set.lessonPath?`<p class="fc2-lesson">From the <a href="${set.lessonPath}">${esc(set.lessonTitle)}</a>${set.classUrl&&!set.stageName?' room — with every lesson one tap away.':' class on the Learning Path.'}</p>`:'';
  const relGrid=related&&related.length?`<section class="wrap fc-section"><span class="eyebrow">RELATED CARDS</span><h2>More cards to try.</h2><p class="fc-hint">${esc(ctx.relatedHint||'Nearby cards from this set and its closest friends.')}</p><div class="fc2-cards">${related.map(r=>`<a class="fc-card fc2-cardlink" href="${r.card.url}"><span class="fc2-cardimg"><img src="${r.card.img}" width="${r.card.w}" height="${r.card.h}" alt="${esc(r.card.alt)}" loading="lazy"></span><span class="fc2-cardword"><strong>${esc(r.card.word)}</strong><span>From ${esc(r.setName)}</span></span></a>`).join('')}</div></section>`:'';
  return `${crumbNav([['Flashcards','/flashcards/'],[set.name,set.url],[card.word]])}
- <div class="page-heading wrap"><span class="eyebrow">FLASHCARD · ${esc(set.name.toUpperCase())} · AGES ${esc(set.ageLabel.toUpperCase())}</span><h1>${card.numeral?`Number ${esc(card.numeral)} Flashcard — ${esc(card.word)} for ${esc(noun)}`:card.letter?`${esc(card.word)} Flashcard — Letter ${esc(card.letter.toUpperCase())} for ${esc(noun)}`:`${esc(card.word)} Flashcard for ${esc(noun)}`}</h1><p>${esc(card.intro)}</p></div>
+ <div class="page-heading wrap"><span class="eyebrow">FLASHCARD · ${esc(set.name.toUpperCase())} · AGES ${esc(set.ageLabel.toUpperCase())}</span><h1>${card.numeral?`Number ${esc(card.numeral)} Flashcard — ${esc(card.word)} for ${esc(noun)}`:card.letter?`${esc(card.word)} Flashcard — Letter ${esc(card.letter.toUpperCase())} for ${esc(noun)}`:`${esc(card.word)} Flashcard for ${esc(noun)}`}</h1>${(card.ages||card.pill)?`<p class="fc-cardpills">${card.ages?`<span class="fc-pill fc-pill-age">${esc(card.ages)}</span>`:''}${card.pill?`<span class="fc-pill fc-pill-subject">${esc(card.pill)}</span>`:''}</p>`:''}<p>${esc(card.intro)}</p></div>
  <div class="fc2-dual wrap">
-  <div class="fc2-main">${figure}${pn}<section class="fc2-learn" aria-label="How to use this card">${learnBlocks}${teach}</section>${lesson}</div>
+  <div class="fc2-main">${figure}${pn}<section class="fc2-learn" aria-label="How to use this card">${learnBlocks}${teach}${friend}</section>${lesson}</div>
   <aside class="fc2-rail" aria-label="Download, share and family feedback"><section class="fc2-block fc2-first-block"><span class="eyebrow">TAKE IT WITH YOU</span><h2>Download, print, keep going.</h2>${actions}</section>${share}${fcCommunityMount(card.url)}</aside>
  </div>
  ${relGrid}`;

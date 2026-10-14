@@ -748,7 +748,7 @@ test('the school homepage: Purple Academy hero, age chooser, real classes, how s
  assert.ok(home.includes('id="choose-age"'));
  assert.ok(home.includes('href="/newborn/"')&&home.includes('href="/baby/"')&&home.includes('href="/toddler/"')&&home.includes('href="/preschool/3-years/"'),'four real stage cards');
  assert.ok(home.includes('EXPLORE REAL CLASSES'),'real-classes section');
- assert.ok(home.includes('Thirty-six classes are ready now, from birth to age five'),'honest class count');
+ assert.ok(home.includes('Thirty-seven classes are ready now, from birth to age five'),'honest class count');
  assert.ok(home.includes('HOW OUR SCHOOL WORKS'));
  assert.ok(home.includes('id="how-school-works"'));
  for(const step of ['Learn','Play','Practice','Off-Screen'])assert.ok(new RegExp('<h3>'+step+'</h3>').test(home),'step '+step);

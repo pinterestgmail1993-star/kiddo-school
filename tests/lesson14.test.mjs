@@ -73,7 +73,7 @@ test('lesson 14 is discoverable: hubs, learning path, sitemap, print view privat
  const lp=read('dist/learning-path/index.html');
  assert.ok(lp.includes('Toddler 8')&&lp.includes('href="/toddler/2-years/garden-bugs-and-friends/"'));
  const home=read('dist/index.html');
- assert.ok(home.includes('Thirty-six classes are ready now'),'homepage counts the classes honestly');
+ assert.ok(home.includes('Thirty-seven classes are ready now'),'homepage counts the classes honestly');
  const about=read('dist/about/index.html');
  assert.ok(about.includes('Thirty-six classes from birth to age five are ready today'));
  assert.match(map,/<loc>https:\/\/kiddo\.school\/toddler\/2-years\/garden-bugs-and-friends\/<\/loc>/);

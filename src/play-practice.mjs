@@ -1,7 +1,7 @@
 // Kiddo School — Play & Practice: three real toddler games built only from
 // existing Kiddo.school learning cards. Every image keeps its true pixel
 // dimensions from the lesson data, so nothing is ever cropped or stretched.
-import {csLesson,anLesson,vhLesson,fwfhLesson} from './lessons.mjs';
+import {csLesson,anLesson,vhLesson,fwfhLesson,lessonsBase} from './lessons.mjs';
 export const playBase='/toddler/2-years/play-and-practice/';
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const crumbs=(parts)=>`<nav class="breadcrumbs wrap" aria-label="Breadcrumb"><a href="/">Home</a>${parts.map(([label,href])=>`<span aria-hidden="true">/</span>${href?`<a href="${href}">${esc(label)}</a>`:`<span aria-current="page">${esc(label)}</span>`}`).join('')}</nav>`;
@@ -15,7 +15,7 @@ const SETS={
 };
 export const cardOf=(set,order)=>{
  const S=SETS[set];const c=S.lesson.cards[order-1];
- return {file:c.file,w:c.w,h:c.h,alt:c.alt,name:S.names?S.names[order-1]:c.name,src:S.lesson.r2Base+S.lesson.folder+c.file};
+ return {file:c.file,w:c.w,h:c.h,alt:c.alt,name:S.names?S.names[order-1]:c.name,src:(S.lesson.r2Base||lessonsBase)+S.lesson.folder+c.file};
 };
 const imgOf=c=>`<img src="${c.src}" width="${c.w}" height="${c.h}" alt="${esc(c.alt)}" loading="lazy">`;
 

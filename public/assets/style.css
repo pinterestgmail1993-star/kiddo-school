@@ -2039,3 +2039,20 @@ h1 em,h2 em{color:#7b4b99}
 .room-body p{margin:0;font-size:15px;line-height:1.55;color:var(--ink,#34233E);opacity:.92}
 .room-body .text-link{margin-top:auto}
 @media(max-width:640px){.room-grid{gap:16px}.room-body{padding:14px 15px 16px}.room-body h3,.room-body h2{font-size:19px}}
+
+/* ---- Age + subject/safety pills (owner request 2026-10-15: "add pills of
+   ages so parents know") — on set-page tiles, set-page group headers and
+   card pages. Age pill = ink-on-white; subject/safety pill = paper chip;
+   the big variant heads each pill group on the set page. ---- */
+.fc-pillrow{display:flex;gap:6px;flex-wrap:wrap;margin-top:4px}
+.fc-pill{display:inline-block;padding:3px 10px;border-radius:999px;font-size:11.5px;font-weight:700;line-height:1.3}
+.fc-pill-age{background:var(--ink,#34233E);color:var(--white,#fff)}
+.fc-pill-subject{border:1.5px solid var(--line,#E7DCCB);background:var(--paper,#FFF8EC);color:var(--muted,#6E5A80)}
+.fc-pill-big{padding:7px 16px;font-size:13.5px}
+.fc-cardpills{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 4px}
+.fc-cardpills .fc-pill{padding:5px 13px;font-size:12.5px}
+.fc-pillgroup{margin:26px 0 8px}
+.fc-pillgroup:first-of-type{margin-top:0}
+.fc-pillgroup-head{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}
+.fc-pillgroup-head .fc-hint{margin:0}
+.fc2-cardword .fc-pillrow{margin-top:6px}

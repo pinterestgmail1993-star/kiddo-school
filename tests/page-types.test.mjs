@@ -11,6 +11,18 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readdirSync,statSync,readFileSync,existsSync} from 'node:fs';
 import {join} from 'node:path';
+import {LESSON_FRIEND_LINKS} from '../src/flashcards/friend-links.mjs';
+import {fcSetBySlug} from '../src/flashcards/index.mjs';
+
+/* Same word, two homes (owner-pinned, audit 2026-10-15): a /learn/ lesson may
+   link its own library card PLUS the pinned friend card(s) — one sentence per
+   direction, zero shared copy. Derived from the live map, so adding a pair in
+   src/flashcards/friend-links.mjs extends this allowance without a test edit. */
+const FRIEND_LESSON_PAGES=new Set(Object.keys(LESSON_FRIEND_LINKS).map(k=>{
+ const i=k.indexOf('/');const setSlug=k.slice(0,i),cardSlug=k.slice(i+1);
+ const set=fcSetBySlug[setSlug];
+ return set.lessonPath.replace(/^\//,'')+'learn/'+cardSlug;
+}));
 
 const read=p=>readFileSync(join('dist',p,'index.html'),'utf8');
 const exists=p=>existsSync(join('dist',p,'index.html'));
@@ -99,13 +111,15 @@ test('rule 2 · no class, stage hub or Learning Path page links an ACTIVITY to a
   // EXACTLY ONE "pairs with the flashcard" cross-link each (Part 6 internal
   // linking between class, lessons and library). Anything more on a /learn/
   // page is a grid and stays banned; class/hub pages themselves keep zero.
+  // Owner-pinned exception (audit 2026-10-15): a lesson whose word also lives
+  // in another set may carry ONE friend link to that card (FRIEND_LESSON_PAGES).
   const learnCounts={};
   for(const o of offenders){
    const [p]=o.split(' -> ');
    if(isLessonPage(p))learnCounts[p]=(learnCounts[p]||0)+1;
   }
-  const badLearn=Object.entries(learnCounts).filter(([,n])=>n!==1);
-  assert.deepEqual(badLearn,[],'each teaching lesson links exactly ONE library card: '+badLearn.map(([p,n])=>p+'='+n).join(', '));
+  const badLearn=Object.entries(learnCounts).filter(([p,n])=>n!==(FRIEND_LESSON_PAGES.has(p)?2:1));
+  assert.deepEqual(badLearn,[],'each teaching lesson links exactly ONE library card (pinned pairs may link two): '+badLearn.map(([p,n])=>p+'='+n).join(', '));
   // and the allowance is not an escape hatch: the Class 32 page's ACTIVITY
   // grid (data-ls-card ribbons) must still open the /preschool/life-skills/
   // activity pages, never a flashcard URL — and Class 31's adventure shelves

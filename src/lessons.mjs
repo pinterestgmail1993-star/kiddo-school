@@ -1109,7 +1109,7 @@ export const gfLesson={
  ogImage:toddlerBase+'garden-friends-age-2/01-bird.webp',
  schemaImage:toddlerBase+'garden-friends-age-2/01-bird.webp',
  eyebrow:'SCHOOL GARDEN · GARDEN FRIENDS',
- crumbs:[['Toddler','/toddler/'],['Age 2','/toddler/2-years/'],['School Garden','/toddler/2-years/school-garden/'],['Garden Animals & Friends']],
+ crumbs:[['Toddler','/toddler/'],['Age 2','/toddler/2-years/'],['School Garden','/toddler/2-years/school-garden/'],['Garden Animals & Friends','/toddler/2-years/school-garden/garden-friends/']],
  chips:[['Age','2 Years'],['Subject','Nature &amp; Talk'],['Class','School Garden'],['Duration','3–5 minutes']],
  subject:'Nature &amp; Talk',
  ledes:['A bird in the hedge, a worm after the rain, an owl you might only hear — meet the animals that live around gardens and the great outdoors, one big picture at a time.',
@@ -1236,7 +1236,7 @@ export const gflLesson={
  ogImage:toddlerBase+'garden-flowers-age-2/cover.webp',
  schemaImage:toddlerBase+'garden-flowers-age-2/cover.webp',
  eyebrow:'SCHOOL GARDEN · GARDEN FLOWERS',
- crumbs:[['Toddler','/toddler/'],['Age 2','/toddler/2-years/'],['School Garden','/toddler/2-years/school-garden/'],['Garden Flowers']],
+ crumbs:[['Toddler','/toddler/'],['Age 2','/toddler/2-years/'],['School Garden','/toddler/2-years/school-garden/'],['Garden Flowers','/toddler/2-years/school-garden/garden-flowers/']],
  chips:[['Age','2 Years'],['Subject','Nature &amp; Talk'],['Class','School Garden'],['Duration','3–5 minutes']],
  subject:'Nature &amp; Talk',
  ledes:['Big yellow sunflowers, roses, tulips and bluebells — the flower bed is full of names waiting to be learned. Twelve bright blooms, one big picture at a time.',
@@ -1348,7 +1348,7 @@ export const gthLesson={
  ogImage:toddlerBase+'garden-things-age-2/01-flower.webp',
  schemaImage:toddlerBase+'garden-things-age-2/01-flower.webp',
  eyebrow:'SCHOOL GARDEN · GARDEN THINGS',
- crumbs:[['Toddler','/toddler/'],['Age 2','/toddler/2-years/'],['School Garden','/toddler/2-years/school-garden/'],['Garden Things']],
+ crumbs:[['Toddler','/toddler/'],['Age 2','/toddler/2-years/'],['School Garden','/toddler/2-years/school-garden/'],['Garden Things','/toddler/2-years/school-garden/garden-things/']],
  chips:[['Age','2 Years'],['Subject','Nature &amp; Talk'],['Class','School Garden'],['Duration','3–5 minutes']],
  subject:'Nature &amp; Talk',
  ledes:['A garden is full of things with names: the tree at the gate, the watering can, the wheelbarrow, the bench where you sit. Twelve garden things, one big picture at a time.',
@@ -1455,7 +1455,7 @@ export function classLessonSchema(site,L){
   {'@context':'https://schema.org','@type':'BreadcrumbList',itemListElement:[['Home','/'],...L.crumbs].map(([name,path],i)=>({'@type':'ListItem',position:i+1,name,item:site+path}))}
  ];
 }
-const crumbNav=crumbs=>`<nav class="breadcrumbs wrap" aria-label="Breadcrumb"><a href="/">Home</a>${crumbs.map(([label,href],i)=>`<span aria-hidden="true">/</span>${i===crumbs.length-1?`<span aria-current="page">${esc(label)}</span>`:`<a href="${href}">${esc(label)}</a>`}`).join('')}</nav>`;
+const crumbNav=crumbs=>`<nav class="breadcrumbs wrap" aria-label="Breadcrumb"><a href="/">Home</a>${crumbs.map(([label,href],i)=>`<span aria-hidden="true">/</span>${i===crumbs.length-1||!href?`<span aria-current="page">${esc(label)}</span>`:`<a href="${href}">${esc(label)}</a>`}`).join('')}</nav>`;
 export function classLessonBody(L){
  const heroInner=`<span class="eyebrow">${L.eyebrow}</span>
   <h1>${esc(L.h1)}</h1>
