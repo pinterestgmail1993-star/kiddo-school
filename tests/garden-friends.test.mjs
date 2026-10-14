@@ -153,13 +153,16 @@ test('School Garden hub links the real collections; Learning Library links the g
  assert.ok(!hub.includes('Garden Vocabulary'), 'the unfinished Garden Vocabulary collection is NOT faked');
  assert.ok(!hub.includes('coming soon') || !/coming soon/i.test(hub.replace(/keeps growing[^<]*/, '')), 'no unfinished-section teasers');
  // The library is books-only now: the School Garden is reached from the
- // homepage Explore Our School section and the footer instead.
+ // homepage School Rooms section (with covers), the /rooms/ hub and the footer.
  const home = read('dist/index.html');
- assert.ok(home.includes('id="explore-our-school"'), 'homepage has Explore Our School');
- const explore = home.slice(home.indexOf('id="explore-our-school"'));
- assert.ok(explore.includes('href="/toddler/2-years/school-garden/"'), 'Explore links the School Garden');
+ assert.ok(home.includes('id="school-rooms"'), 'homepage has the School Rooms section');
+ const explore = home.slice(home.indexOf('id="school-rooms"'));
+ assert.ok(explore.includes('href="/toddler/2-years/school-garden/"'), 'School Rooms links the School Garden');
  assert.ok(explore.includes('School Garden') && explore.includes('School Library'), 'both locations named');
- assert.ok(explore.includes('href="/learning-library/"'), 'Explore links the School Library');
+ assert.ok(explore.includes('href="/learning-library/"'), 'School Rooms links the School Library');
+ assert.ok(explore.includes('href="/rooms/"') && explore.includes('Explore the School'), 'School Rooms section opens the /rooms/ hub');
+ assert.ok(explore.includes('href="/playground/"') && explore.includes('href="/music-room/"'), 'Playground and Music Room share the section');
+ assert.ok(explore.includes('room-cover'), 'the four rooms show their covers');
  assert.ok(!explore.includes('Art Studio') && !explore.includes('Playroom'), 'no unbuilt locations promised');
  // main navigation is untouched — no garden links in the site header
  const nav = html.slice(html.indexOf('<nav aria-label="Main navigation"'), html.indexOf('</nav>'));

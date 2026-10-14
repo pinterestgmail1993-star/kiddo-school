@@ -164,7 +164,7 @@ export function learningLibraryBody(Lb){
    </div>`;
   }).join('\n')}
   ${musicShelf}
-  <p class="fc-hint">Looking for classes, games or flashcards? They keep their own rooms: the <a href="/learning-path/">Learning Path</a>, <a href="/my-classroom/">My Classroom</a> and the <a href="/flashcards/">Flashcards</a> library. The <a href="/toddler/2-years/school-garden/">School Garden</a> lives in Explore Our School on the <a href="/">School Home</a> page.</p>
+  <p class="fc-hint">Looking for classes, games or flashcards? They keep their own rooms: the <a href="/learning-path/">Learning Path</a>, <a href="/my-classroom/">My Classroom</a> and the <a href="/flashcards/">Flashcards</a> library. The school\u2019s places — the <a href="/toddler/2-years/school-garden/">School Garden</a>, the <a href="/playground/">Playground</a> and the <a href="/music-room/">Music Room</a> — live in <a href="/rooms/">School Rooms</a> on the <a href="/">School Home</a> page.</p>
   <div class="hero-actions"><a class="button button-ghost" href="/my-classroom/">Back to My Classroom</a></div>
  </section>`;
 }

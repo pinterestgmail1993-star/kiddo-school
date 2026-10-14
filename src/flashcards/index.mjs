@@ -31,6 +31,7 @@ import * as ahData from './data-animals-habitats.mjs';
 import * as phData from './data-phonics.mjs';
 import * as swData from './data-sight-words.mjs';
 import * as mrData from './data-music-room.mjs';
+import * as pgData from './data-playground.mjs';
 import {fvMeta,fvCardContent,cfoMeta,cfoCardContent,fwftMeta,fwftCardContent} from './data-baby-stages.mjs';
 import {aeoMeta,aeoCardContent,fabMeta,fabCardContent,fwfhMeta,fwfhCardContent} from './data-explorer-toddler.mjs';
 import {lessonsBase,fvLesson,cfoLesson,fwftLesson,aeoLesson,fabLesson,fwfhLesson} from '../lessons.mjs';
@@ -166,7 +167,18 @@ const SOURCES=[
  // the set and is never counted as a card. Purpose: WHAT each instrument is
  // and sounds like, WHAT each music word means, WHO makes the music — the
  // Music Room class page (/music-room/) keeps the room itself on its own page.
- [mrData,mrData.lesson]
+ [mrData,mrData.lesson],
+ // The Playground · a School Room (NOT a class): thirty-two cards from the
+ // owner's uploads in school/playground/flashcards/ (self-contained lesson
+ // object, ALL 32 files probed at 1728×2304 portrait). cover.webp fronts the
+ // set and is never counted as a card. Purpose: WHAT our bodies do at the
+ // playground (15 action words), WHAT stands on the ground (12 pieces of
+ // equipment) and HOW we play kindly together (5 manners). Slugs KEEP the
+ // group prefix because slide/swing/climb repeat across groups — the prefix
+ // keeps every URL unique. The room itself lives at /playground/ (the set's
+ // classUrl) beside the Library, Garden and Music Room; the Learning Path is
+ // deliberately untouched (owner request).
+ [pgData,pgData.lesson]
 ];
 
 function buildSet([data,lesson]){
@@ -280,7 +292,7 @@ export function fcSetPageBody(s){
  <section class="wrap fc-section"><span class="eyebrow">THE CARDS</span><h2>Every card in the set.</h2><p class="fc-hint">Each card has its own page: the picture and short, practical notes for grown-ups — what it is for, how to use it, how to print it. Tap any card to open it.</p>${grid}</section>
  ${letterSets?`<section class="wrap fc-section"><span class="eyebrow">ALPHABET LETTER SETS</span><h2>The same letters, six more ways.</h2><p class="fc-hint">Individual letter-card sets with their own clean pages — every card has its own download button and its own card page.</p><div class="fc2-relrow">${letterSets}</div></section>`:''}
  <section class="wrap fc-section"><span class="eyebrow">HOW TO USE THESE CARDS</span><h2>Four ways that work.</h2><p class="fc-hint">You do not need a plan or a printer schedule. Pick one idea, try it for two minutes and see what happens.</p>${ideas}</section>
- <section class="wrap fc-section"><span class="eyebrow">PRINT &amp; DOWNLOAD</span><h2>Print the set, download a card.</h2><div class="fc2-actions"><a class="button" href="${s.classUrl||s.lessonPath}">View the class these cards come from <span aria-hidden="true">↗</span></a>${s.lessonUrlBase?`<a class="button" href="${s.lessonUrlBase}">Open the lessons</a>`:''}${printBtn}<a class="button" href="/flashcards/">All flashcard sets</a></div><p class="fc-hint">${s.downloadHint||'Every card page has its own download button with the full-size image.'}${s.printPath?' The full set has a print-ready page too.':' This set is printed straight from its class page.'}</p></section>
+ <section class="wrap fc-section"><span class="eyebrow">PRINT &amp; DOWNLOAD</span><h2>Print the set, download a card.</h2><div class="fc2-actions"><a class="button" href="${s.classUrl||s.lessonPath}">${s.classUrl&&!s.lessonPath?'Step into the room these cards come from':'View the class these cards come from'} <span aria-hidden="true">↗</span></a>${s.lessonUrlBase?`<a class="button" href="${s.lessonUrlBase}">Open the lessons</a>`:''}${printBtn}<a class="button" href="/flashcards/">All flashcard sets</a></div><p class="fc-hint">${s.downloadHint||'Every card page has its own download button with the full-size image.'}${s.printPath?' The full set has a print-ready page too.':' This set is printed straight from its class page.'}</p></section>
  ${relatedRow?`<section class="wrap fc-section"><span class="eyebrow">MORE CARDS LIKE THESE</span><h2>Families of cards that pair well.</h2>${relatedRow}</section>`:''}
  ${fcCommunityMount(s.url)}`;
 }
