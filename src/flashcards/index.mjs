@@ -28,6 +28,7 @@ import * as wsData from './data-weather-seasons.mjs';
 import * as nmgData from './data-numbers-counting-early-math.mjs';
 import * as sciData from './data-science-nature-and-discovery.mjs';
 import * as ahData from './data-animals-habitats.mjs';
+import * as swData from './data-sight-words.mjs';
 import {fvMeta,fvCardContent,cfoMeta,cfoCardContent,fwftMeta,fwftCardContent} from './data-baby-stages.mjs';
 import {aeoMeta,aeoCardContent,fabMeta,fabCardContent,fwfhMeta,fwfhCardContent} from './data-explorer-toddler.mjs';
 import {lessonsBase,fvLesson,cfoLesson,fwftLesson,aeoLesson,fabLesson,fwfhLesson} from '../lessons.mjs';
@@ -144,7 +145,13 @@ const SOURCES=[
  // each habitat is and why the animal fits it — the Learning Path /learn/
  // lessons (lp-animals-habitats.mjs via LP_REGISTRY) keep the HOW, on their
  // own pages.
- [ahData,ahData.lesson]
+ [ahData,ahData.lesson],
+ // Preschool Class 29: fifty-two Dolch sight word cards, served from the
+ // site itself (public/assets/sight-words/, every file 600×800). Each card has
+ // its own library page and its own /learn/ lesson under the Class 29 path
+ // (lp-sight-words.mjs via LP_REGISTRY); the cover fronts the set and is never
+ // counted as a card.
+ [swData,swData.lesson]
 ];
 
 function buildSet([data,lesson]){

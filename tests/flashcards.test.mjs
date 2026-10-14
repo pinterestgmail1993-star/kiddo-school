@@ -42,8 +42,8 @@ test('black and white baby cards page shows flashcards, stages grid, guide and s
  assert.ok(urls.length>=16,'set page should embed the fifteen flashcards plus the parents guide');
 });
 
-test('flashcard data: thirty flashcard sets (every learning-path class 1-22 covered, plus Classes 31-36), every card complete and linked to its real lesson',()=>{
- assert.equal(fcSets.length,30);
+test('flashcard data: thirty-one flashcard sets (every learning-path class 1-22 covered, plus Classes 31-36), every card complete and linked to its real lesson',()=>{
+ assert.equal(fcSets.length,31);
  for(const s of fcSets){
   assert.ok(s.cards.length>=10,`${s.slug} has ${s.cards.length} cards`);
   assert.ok(existsSync(join(root,s.url.slice(1),'index.html')),`${s.url} missing`);
@@ -54,7 +54,8 @@ test('flashcard data: thirty flashcard sets (every learning-path class 1-22 cove
    assert.ok(c.note.length>40,`${s.slug}/${c.slug} missing parent note`);
    // Card art lives in the set's own R2 folder: /flashcards/ for the lesson
    // sets, /school/ for Class 32 (the owner's upload location — never moved).
-   assert.match(c.img,/https:\/\/assets\.kiddo\.school\/(flashcards|school)\//);
+   // Sight Words are self-hosted (public/assets/sight-words/, 600×800 webp).
+   assert.match(c.img,/^(https:\/\/assets\.kiddo\.school\/(flashcards|school)\/|\/assets\/sight-words\/)/);
   }
  }
 });
@@ -120,7 +121,7 @@ test('card pages: unique titles and descriptions, say/try/note, download, prev/n
   assert.ok(!html.includes('aggregateRating'),'no fabricated ratings schema');
   assert.ok(!html.includes('★★★★★</span>'),'no fabricated review text in HTML');
  }
- assert.equal(downloads,520);
+ assert.equal(downloads,572);
 });
 
 test('library: every set is listed, baby collection included, no orphan sets',()=>{

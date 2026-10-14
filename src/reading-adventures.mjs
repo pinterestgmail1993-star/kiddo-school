@@ -11,6 +11,8 @@
 // already earned is lost.
 import {crumbNav,esc} from './adventure-kit.mjs';
 import {READING_BASE,READING_LIB,C29_PATH,WS29_PATH} from './story-kit.mjs';
+import {lesson as swLesson} from './flashcards/data-sight-words.mjs';
+import {lpContent as swLp} from './flashcards/lp-sight-words.mjs';
 import {imageActivitySection} from './image-activity.mjs';
 import {artFor} from './adventure-dims.mjs';
 export {READING_LIB_PATH,WS29_PATH,C29_PATH} from './story-kit.mjs';
@@ -457,7 +459,7 @@ export function readingClassBody(){
   <div class="fc-chips lesson-chips"><span><strong>Age</strong> 4–5 Years</span><span><strong>Class</strong> 29 of 30</span><span><strong>Adventures</strong> 29 story games</span><span><strong>Subjects</strong> Sequencing · feelings · retelling</span></div>
   <p class="lesson-lede">Build early reading comprehension through picture stories, sequencing, predictions, characters, emotions, memory, and problem-solving. Twenty-nine draw-on-the-picture adventures \u2014 every one played on its own storybook illustration, with plain written instructions and a printable worksheet twin in the <a href="${WS29_PATH}">Reading worksheet library</a>.</p>
   <p class="lesson-lede">No reading needed: every adventure is one big picture to draw on, with plain instructions a grown-up can read aloud. Grown-ups get the story behind each activity on its page.</p>
-  <div class="lesson-start"><a class="button" href="#adventures">Meet the adventures <span aria-hidden="true">↓</span></a><span class="lesson-start-hint">One or two stories per sitting is a full session.</span></div>
+  <div class="lesson-start"><a class="button" href="#adventures">Meet the adventures <span aria-hidden="true">↓</span></a> <a class="button" href="#sight-words">Learn the sight words <span aria-hidden="true">↓</span></a><span class="lesson-start-hint">One or two stories per sitting is a full session.</span></div>
  </div></article>
  <section class="wrap lesson-section" id="adventures" aria-label="The storytime adventures">
   <span class="eyebrow">PLAY · THE ${READING_READY} STORYTIME ADVENTURES</span>
@@ -466,6 +468,13 @@ export function readingClassBody(){
   ${shelves.map((sh,i)=>{const [,t,d,a,b]=sh;const items=readingAdventures.filter(g=>g.num>=a&&g.num<=b);
    return `<div class="wa-shelf"><h3>${i+1}. ${t}</h3><p class="lesson-copy">${d}</p><div class="sa-grid">${items.map(g=>`<a class="sa-card sa-card-slim" href="${READING_LIB}${g.slug}/"><img src="${READING_BASE}${g.img}" width="400" height="284" alt="${esc(g.alt)}" loading="lazy"><span class="sa-card-body"><strong>${g.num}. ${esc(g.title)}</strong><span class="sa-card-skill">${esc(g.skill)}</span></span><span class="sa-card-play">Play <span aria-hidden="true">→</span></span></a>`).join('')}</div></div>`;}).join('')}
   <p class="lesson-note">${READING_READY} of the planned ${READING_TOTAL} adventures are playable now. Reserved until its artwork arrives: <ul class="ws-skills">${pending}</ul> Nothing is published before it can be played and printed honestly \u2014 adventure 24 (Unicorn\u2019s Story Choice Garden) keeps its number and slug for when its artwork is uploaded.</p>
+ </section>
+ <section class="wrap fc-section" id="sight-words" aria-label="Sight word lessons">
+  <span class="eyebrow">LEARN · 52 SIGHT WORD LESSONS</span>
+  <h2>Learn the sight words, one card at a time.</h2>
+  <p class="fc-hint">The small words on every page of a first book: a, the, I, can, see, blue and more. Tap any card to open its lesson: the original flashcard with a drawing layer, and five minutes of steps for the grown-up. Start at the top and work down, three new words a day at most.</p>
+  <div class="lp-tiles">${swLesson.cards.map(c=>`<a class="lp-tile" href="${C29_PATH}learn/${c.slug}/"><img src="${swLesson.r2Base+swLesson.folder+c.file}" width="${c.w}" height="${c.h}" alt="${esc(c.alt)}" loading="lazy"><strong>${esc(swLp[c.slug].title)}</strong></a>`).join('')}</div>
+  <p class="lesson-note">Every lesson pairs with a printable card in the <a href="/flashcards/sight-words/">Sight Words flashcard set</a>, with its own download button and notes for grown-ups.</p>
  </section>
  <section class="wrap lesson-section" id="off-screen" aria-label="Off-screen story play">
   <span class="eyebrow">TAKE IT OFF SCREEN</span>

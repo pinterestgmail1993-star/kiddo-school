@@ -38,6 +38,7 @@ import {lpContent as opp} from './lp-opposites.mjs';
 import {lpContent as asd} from './lp-animal-sounds.mjs';
 import {lpContent as bps} from './lp-body-parts-and-five-senses.mjs';
 import {lpContent as fav} from './lp-fruits-and-vegetables.mjs';
+import {lpContent as sw29} from './lp-sight-words.mjs';
 
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
@@ -134,6 +135,10 @@ export const LP_REGISTRY=[
  {slug:'animals-and-their-habitats',content:ah36,
   navTitle:'Learn the animals and the homes that fit them',
   navIntro:'Twenty-two habitat lessons, meadow to cave: find the animal on its card, learn what its home is and why it fits, then play the game that puts your child inside it — hopping the grassland, digging the water hole, huddling like penguins, hanging like a bat. Meadow and pond first, then forests, warm grasslands, desert, river and ocean, the icy poles, and the dark cave at the end.'},
+
+ {slug:'sight-words',content:sw29,
+  navTitle:'Learn the sight words, one card at a time',
+  navIntro:'Fifty-two sight word lessons, five minutes each: look at the card, say the word, play one tiny game and spot it in a real book. Start with a, the, I and you, then the action words, the colours and the little words that join sentences together.'},
 ].map(r=>({...r,set:fcSetBySlug[r.slug]})).filter(r=>r.set);
 
 export const lpSetBySlug=Object.fromEntries(LP_REGISTRY.map(r=>[r.slug,r]));
