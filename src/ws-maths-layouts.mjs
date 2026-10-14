@@ -10,7 +10,7 @@ import {place,ICONS,cir,ell,path,rrect,line as wline,writeBox,startDot} from './
 import {header,footer,sectionLabel,PW,MX,CW} from './ws-layouts.mjs';
 
 const INK='#343b30',MUT='#626456',FAINT='#a9a08a',RULE='#ccc5b5';
-const acc=i=>['#a9694e','#4a9e4f','#5aa7d6','#8f4fc0','#e0568c'][i%5];
+const acc=i=>['#7c4a2d','#256a29','#226aa8','#6d3aa8','#c2185b'][i%5];
 
 /* a countable row of one icon with a write box at the right */
 function countRow(els,y,iconName,n,scale,label){
@@ -123,7 +123,7 @@ export function honeyFactorySheet(spec){
 /* =========== 4. butterfly-pattern-magic: color the right wing to match ==== */
 export function butterflyMatchSheet(spec){
  const els=[];
- const y0=header(els,spec.title,spec.instr,{tint:'#fdeef5',accent:'#e0568c'});
+ const y0=header(els,spec.title,spec.instr,{tint:'#fdeef5',accent:'#c2185b'});
  let y=y0+2;
  y=sectionLabel(els,MX,y,'Look at the left wing. Color the right wing to match it exactly.');
  // butterfly: body + two wings, cx=center
@@ -253,7 +253,7 @@ function cupcakeIcon(els,x,y,s=1){
 }
 export function cupcakePlatesSheet(spec){
  const els=[];
- const y0=header(els,spec.title,spec.instr,{tint:'#fdf0f4',accent:'#e0568c'});
+ const y0=header(els,spec.title,spec.instr,{tint:'#fdf0f4',accent:'#c2185b'});
  let y=y0+4;
  y=sectionLabel(els,MX,y,'1. Count the cupcakes in each row and write the number.');
  for(const [n,label] of [[5,'Row 1:'],[5,'Row 2:']]){
@@ -381,7 +381,7 @@ function giraffe(els,x,groundY,h){
 }
 export function heightOrderSheet(spec){
  const els=[];
- const y0=header(els,spec.title,spec.instr,{tint:'#fdf3e7',accent:'#e07f3e'});
+ const y0=header(els,spec.title,spec.instr,{tint:'#fdf3e7',accent:'#9c4a05'});
  let y=y0+2;
  y=sectionLabel(els,MX,y,'Number the giraffes: 1 = the shortest, 4 = the tallest.');
  const ground=y+172;
@@ -482,7 +482,7 @@ export function builderBlocksSheet(spec){
 /* =========== 13. little-pizza-chef: decorate with 5 of each =============== */
 export function pizzaSheet(spec){
  const els=[];
- const y0=header(els,spec.title,spec.instr,{tint:'#fdf3e7',accent:'#e07f3e'});
+ const y0=header(els,spec.title,spec.instr,{tint:'#fdf3e7',accent:'#9c4a05'});
  let y=y0+2;
  y=sectionLabel(els,MX,y,'Decorate the pizza: draw 5 tomato slices, 5 mushrooms and 5 olives on it.');
  const cx=PW/2,cy=y+128;

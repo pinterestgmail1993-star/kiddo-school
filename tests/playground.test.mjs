@@ -128,13 +128,21 @@ test('homepage School Rooms section: four covers + Explore the School button',()
 });
 
 /* ------------------------------------------------ FOOTER */
-test('footer lists the school rooms',()=>{
+test('footer keeps the School Rooms hub, drops the individual room links (owner directive)',()=>{
  const footer=home.slice(home.indexOf('<footer>'));
- assert.ok(footer.includes('href="/rooms/"'),'footer School Rooms');
- assert.ok(footer.includes('href="/playground/"'),'footer Playground');
- assert.ok(footer.includes('href="/music-room/"'),'footer Music Room');
- assert.ok(footer.includes('href="/toddler/2-years/school-garden/"'),'footer School Garden kept');
- assert.ok(footer.includes('href="/learning-library/"'),'footer Library kept');
+ assert.ok(footer.includes('href="/rooms/"'),'footer School Rooms hub kept');
+ // owner directive: the six per-room footer links are gone from every page's footer
+ for(const gone of ['href="/learning-library/"','href="/toddler/2-years/school-garden/"','href="/playground/"','href="/music-room/"','href="/toddler-room/"','href="/kitchen/"'])
+  assert.ok(!footer.includes(gone),`footer must NOT list ${gone}`);
+ // the hub link only — every other room link in the footer School column must be gone
+ const schoolCol=footer.slice(footer.indexOf('<h2>School</h2>'),footer.indexOf('<h2>Learn</h2>'));
+ assert.ok(schoolCol.includes('href="/rooms/"'),'School column keeps the rooms hub');
+ for(const gone of ['/toddler/2-years/school-garden/','/playground/','/music-room/','/toddler-room/','/kitchen/','/learning-library/'])
+  assert.ok(!schoolCol.includes(gone),`School column must NOT link ${gone}`);
+ // rooms stay discoverable: the /rooms/ hub still links all four core rooms
+ const roomsHub=readPage('/rooms/');
+ for(const room of ['href="/toddler/2-years/school-garden/"','href="/playground/"','href="/music-room/"','href="/learning-library/"'])
+  assert.ok(roomsHub.includes(room),`/rooms/ hub links ${room}`);
 });
 
 /* ------------------------------------------------ LEARNING PATH UNTOUCHED */

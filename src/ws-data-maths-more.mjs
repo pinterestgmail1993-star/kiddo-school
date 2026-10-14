@@ -90,7 +90,7 @@ export const mathsWorksheetsMore=[
   learn:'A numbered path makes order physical: each stone is one hop, and the numbers grow exactly as the bird gets closer to the castle. Writing on a curved, zigzagging path also builds the flexibility that straight-line worksheets cannot \u2014 numbers must land neatly inside clouds that tilt and wander.',
   skills:['Writing numerals 1 to 10 in order','Following a winding path left to right','One number per stone','Counting forward and backwards'],
   task:'Write 1 to 10 on the cloud stones along the path.',
-  wsType:'cloudPath',ws:{tint:'#f3ecfa',accent:'#8f4fc0',band:'#eaf4fb',bandEdge:'#9cc8e8',rowLabel:'Write the numbers in order, from the little bird to the castle.'},
+  wsType:'cloudPath',ws:{tint:'#f3ecfa',accent:'#6d3aa8',band:'#eaf4fb',bandEdge:'#9cc8e8',rowLabel:'Write the numbers in order, from the little bird to the castle.'},
   answers:'The stones carry 1 to 10 in order; stone 10 sits just below the castle door.'
  },
 {
@@ -160,7 +160,7 @@ export const mathsWorksheetsMore=[
   learn:'Walking a path with numbers is the oldest counting game there is. Each stone takes exactly one numeral, the curve keeps attention moving forward, and the finish gives a natural stop-and-check: count the stones backwards to see the numbers shrink. Backwards counting sneaks in subtraction rhythm without a single minus sign.',
   skills:['Writing numerals 1 to 10 in order','Following a curved path','Counting forward and backwards','One number per stone'],
   task:'Write 1 to 10 on the stepping stones along the garden path.',
-  wsType:'stonePath',ws:{tint:'#eef4e6',accent:'#4a9e4f',band:'#f0e3c0',bandEdge:'#d9b778',rowLabel:'Write the numbers in order, from the tulips to the bushes.'},
+  wsType:'stonePath',ws:{tint:'#eef4e6',accent:'#256a29',band:'#f0e3c0',bandEdge:'#d9b778',rowLabel:'Write the numbers in order, from the tulips to the bushes.'},
   answers:'The stones carry 1 to 10 in order, starting beside the tulips.'
  },
 {

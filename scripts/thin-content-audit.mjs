@@ -22,16 +22,16 @@ const pages=[];
 function classify(rel){
   if(rel==='index.html')return 'home';
   if(/\/learn\//.test(rel))return 'lesson';
-  if(rel.startsWith('preschool/4-years/sight-words/'))return 'lesson-sw';
-  if(rel.startsWith('flashcards/')&&/\/[a-z0-9-]+\/index\.html$/.test(rel)&&rel!=='flashcards/index.html')return 'card';
-  if(rel.startsWith('flashcards/'))return 'fc-set';
+  if(rel.startsWith('preschool/4-years/sight-words/')&&rel!=='preschool/4-years/sight-words/index.html')return 'lesson-sw';
+  if(rel.startsWith('flashcards/')&&/\/[a-z0-9-]+\/[a-z0-9-]+\/index\.html$/.test(rel))return 'card';
+  if(rel.startsWith('flashcards/')&&/\/[a-z0-9-]+\/index\.html$/.test(rel))return 'fc-set';
   if(rel.startsWith('worksheets/')&&/\/index\.html$/.test(rel)&&!rel.endsWith('worksheets/index.html'))return rel.includes('-ws/')||/worksheets\/[a-z0-9-]+\/$/.test(rel)&&rel.split('/').length===3?'ws-cat':'worksheet';
   if(rel.startsWith('activities/'))return 'activity';
   if(/^(about|grown-ups|privacy|terms|disclaimer|contact)\//.test(rel))return 'legal-info';
   return 'other';
 }
 
-const FLOORS={home:250,lesson:450,'lesson-sw':400,card:180,'fc-set':220,'ws-cat':150,worksheet:120,activity:200,'legal-info':200,other:60};
+const FLOORS={home:250,lesson:450,'lesson-sw':250,card:180,'fc-set':220,'ws-cat':150,worksheet:120,activity:200,'legal-info':200,other:60};
 
 const thin=[],anat=[],words=[];
 for(const p of pages){
