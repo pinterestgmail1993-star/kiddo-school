@@ -129,13 +129,13 @@ test('all twenty-four card pages exist with unique metadata, downloads and navig
 test('class 7 is wired into the whole school honestly',()=>{
  // learning path: Class 21 row, count text updated
  assert.ok(lp.includes('Class 21: <a href="/preschool/3-years/body-parts-and-five-senses/">Body Parts &amp; My Five Senses</a>'));
- assert.ok(lp.includes('thirty-four age-guided classes'));
- assert.ok(lp.includes('Thirty-four classes are ready now, from birth to age five, in one calm sequence.'));
+ assert.ok(lp.includes('thirty-five age-guided classes'));
+ assert.ok(lp.includes('Thirty-five classes are ready now, from birth to age five, in one calm sequence.'));
  // homepage: count + preschool age card
- assert.ok(home.includes('Thirty-four classes are ready now, from birth to age five'));
+ assert.ok(home.includes('Thirty-five classes are ready now, from birth to age five'));
  assert.ok(home.includes('Letters, numbers, shapes, colors, opposites, animals, your body with all five senses — and the foods you eat.'));
  // about page count
- assert.ok(about.includes('Thirty-four classes from birth to age five are ready today'));
+ assert.ok(about.includes('Thirty-five classes from birth to age five are ready today'));
  // preschool hub + stage
  assert.ok(hub.includes('Eight classes ready now'));
  assert.ok(stage.includes('<strong>Status</strong> Eight classes ready now'));

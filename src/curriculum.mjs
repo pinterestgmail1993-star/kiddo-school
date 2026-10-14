@@ -3,8 +3,11 @@
 // classes, recommends "Today's Class" or renders the Learning Path rows
 // reads from here, so no page can drift out of sync with another.
 // Bands: newborn (classes 1–2), baby (3–6), 12-18 (7), 18-24 (8),
-// age2 (9–14), age3 (15–22), age4 (25–28, the owner's own class numbers —
-// 23 and 24 stay reserved: 24 opens when its maths artwork is uploaded).
+// age2 (9–14), age3 (15–22), age4 (25–32, the owner's own class numbers).
+// Class 23 = the Music Room (owner-approved 2026-10-14): it lives outside the
+// age bands at /music-room/ and renders its own hand-built Learning Path row.
+// Class 24 stays reserved (printables-only: opens when its maths artwork is
+// uploaded — the numbering jumps 23 → 25 on purpose).
 import {hcLesson,fvLesson,cfoLesson,fwftLesson,aeoLesson,fabLesson,fwfhLesson,fcLesson,csLesson,msLesson,anLesson,vhLesson,emLesson,gbLesson} from './lessons.mjs';
 
 const P15='/preschool/3-years/alphabet-and-letter-sounds/';

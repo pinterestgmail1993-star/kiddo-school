@@ -116,7 +116,7 @@ test('library: a books-only bookshelf with the Read Book card; shelves with no b
  for(const c of ['storybooks','educational'])assert.match(library,new RegExp('data-cat="'+c+'"'),'shelf '+c);
  for(const c of ['activity','life-skills'])assert.doesNotMatch(library,new RegExp('data-cat="'+c+'"'),'empty shelf '+c+' hidden');
  assert.doesNotMatch(library,/href="\/preschool\/3-years\//,'no class listings on the library');
- assert.doesNotMatch(library,/href="\/flashcards\/[a-z-]+\//,'no flashcard set listings on the library (the hub pointer is fine)');
+ assert.doesNotMatch(library,/href="\/flashcards\/(?!music-room\/)[a-z-]+\//,'no flashcard set listings on the library (the Music Room instrument shelf, owner-approved 2026-10-14, is the only allowance)');
  assert.doesNotMatch(library,/href="\/preschool\/3-years\/magic-/,'no magic game listings on the library');
  const card=library.match(/<article class="bookcard"[\s\S]*?<\/article>/);
  assert.ok(card,'book card exists on the bookshelf');

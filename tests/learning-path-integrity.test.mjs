@@ -1,17 +1,19 @@
-// Learning Path integrity (owner decisions, 2026-10-11 / 2026-10-12):
+// Learning Path integrity (owner decisions, 2026-10-11 / 2026-10-12 / 2026-10-14):
 //  - the displayed class sequence is unique, strictly increasing and exactly
-//    the approved set (1–22 + 25–33). Classes 23/24 are intentionally absent
-//    (23 never existed; 24 = printables-only by owner Option A). Class 33
-//    (Community Helpers & Our Neighborhood) joined on owner approval when its
-//    29 Canva flashcards landed on R2 — this lock means any future class
-//    addition is a deliberate, reviewed change.
+//    the approved set (1–23 + 25–36). Class 24 is intentionally absent
+//    (24 = printables-only by owner Option A). Class 23 = the Music Room,
+//    owner-approved 2026-10-14 ("class 23 ... we dont have class 24 so
+//    numbering them correct") — it lives outside the age bands at /music-room/.
+//    Class 33 (Community Helpers & Our Neighborhood) joined on owner approval
+//    when its 29 Canva flashcards landed on R2 — this lock means any future
+//    class addition is a deliberate, reviewed change.
 //  - every row link (class page, stage hub, flashcards, worksheets) resolves
 //    to a real built page.
 //  - the intro count word ("Thirty classes are ready now") must equal the
 //    REAL number of published classes — the copy can never silently drift
 //    from the sequence again.
 //  - Class 24 stays Option A: printables live at /worksheets/maths/, no LP
-//    entry, and no Class 23 is invented.
+//    entry. Class 23 is no longer invented — it is the Music Room, owner-built.
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync,existsSync} from 'node:fs';
@@ -19,9 +21,10 @@ import {readFileSync,existsSync} from 'node:fs';
 const read=p=>readFileSync('dist/'+p,'utf8');
 const lp=()=>read('learning-path/index.html');
 
-// The approved published sequence — Classes 1–22 then 25–36. Update ONLY
-// when the owner approves a new class (33, 34, 35, 36 approved & built).
-const APPROVED=[...Array(22).keys()].map(i=>i+1).concat([25,26,27,28,29,30,31,32,33,34,35,36]);
+// The approved published sequence — Classes 1–23 then 25–36. Update ONLY
+// when the owner approves a new class (23 = Music Room, owner-approved
+// 2026-10-14; 33, 34, 35, 36 approved & built).
+const APPROVED=[...Array(23).keys()].map(i=>i+1).concat([25,26,27,28,29,30,31,32,33,34,35,36]);
 
 const WORDS={one:1,two:2,three:3,four:4,five:5,six:6,seven:7,eight:8,nine:9,ten:10,
  eleven:11,twelve:12,thirteen:13,fourteen:14,fifteen:15,sixteen:16,seventeen:17,
@@ -32,11 +35,11 @@ const WORDS={one:1,two:2,three:3,four:4,five:5,six:6,seven:7,eight:8,nine:9,ten:
  'thirty-nine':39,forty:40,'forty-one':41,'forty-two':42,'forty-three':43,'forty-four':44,
  'forty-five':45,'forty-six':46,'forty-seven':47,'forty-eight':48,'forty-nine':49,fifty:50};
 
-test('the Learning Path shows exactly the approved classes — unique, strictly increasing, no gaps but 23/24',()=>{
+test('the Learning Path shows exactly the approved classes — unique, strictly increasing, no gap but 24',()=>{
  const html=lp();
  const nums=[...html.matchAll(/lp-class">Class (\d+):/g)].map(m=>+m[1]);
  assert.equal(nums.length,APPROVED.length,'row count matches the approved registry ('+nums.length+' rows)');
- assert.deepEqual(nums,APPROVED,'sequence is exactly Classes 1–22 + 25–36 (23/24 absent by owner decision)');
+ assert.deepEqual(nums,APPROVED,'sequence is exactly Classes 1–23 + 25–36 (24 absent by owner decision)');
  assert.equal(new Set(nums).size,nums.length,'no duplicate class numbers');
  for(let i=1;i<nums.length;i++)assert.ok(nums[i]>nums[i-1],'strictly increasing at position '+i);
 });
@@ -72,9 +75,9 @@ test('the intro count word equals the real number of published classes (LP page 
  assert.ok(home.includes(m[1]+' classes are ready now'),'the homepage section carries the same verified count');
 });
 
-test('Class 24 stays Option A: printables only at /worksheets/maths/, no LP entry, no invented Class 23',()=>{
+test('Class 24 stays Option A: printables only at /worksheets/maths/, no LP entry; Class 23 is the Music Room',()=>{
  const html=lp();
- assert.ok(!html.includes('Class 23:'),'no invented Class 23 row');
+ assert.ok(html.includes('Class 23: <a href="/music-room/">'),'Class 23 row = the Music Room (owner-approved 2026-10-14)');
  assert.ok(!html.includes('Class 24:'),'no Class 24 row until a complete class is planned');
  assert.ok(existsSync('dist/worksheets/maths/index.html'),'the Class 24 maths printables stay live at /worksheets/maths/');
 });

@@ -6,6 +6,7 @@ import {csLesson,vhLesson,emLesson,anLesson,msLesson,fwfhLesson,fcLesson,gbLesso
 import {helloSchool as helloSchoolCt,circleBase} from './circle-time.mjs';
 import {BOOKS,BOOK_CATEGORIES,BOOK_AGES} from './books.mjs';
 import {alphabetLesson} from './flashcards/data-alphabet.mjs';
+import {fcSets} from './flashcards/index.mjs';
 import {numbersLesson} from './flashcards/data-numbers.mjs';
 import {shapesLesson} from './flashcards/data-shapes.mjs';
 import {colorsLesson} from './flashcards/data-colors.mjs';
@@ -115,6 +116,17 @@ export function learningLibraryBody(Lb){
  const catName=id=>(BOOK_CATEGORIES.find(c=>c.id===id)||{}).name||id;
  const agesWithBooks=BOOK_AGES.filter(a=>BOOKS.some(b=>b.age===a.id));
  const ageHome=id=>{const b=BOOKS.find(x=>x.age===id);return b?'#cat-'+b.category:'#top';};
+ /* From the Music Room: the instruments of Class 23 browse from the Library
+    too (owner request) — built from the live flashcard set so links, art and
+    counts can never drift from the library they come from. */
+ const musicSet=fcSets.find(s=>s.slug==='music-room');
+ const musicInstruments=musicSet?musicSet.cards.filter(c=>c.file.startsWith('instrument-')):[];
+ const musicShelf=musicInstruments.length?`<div class="lib-section" id="music-room">
+   <h2>From the Music Room <span class="chip-count">${musicInstruments.length} instruments</span></h2>
+   <p class="lib-blurb">The Music Room\u2019s instrument shelf, browsable from the Library: every instrument card opens its own page in the flashcards library, with a download button and one game to play tonight.</p>
+   <div class="lib-grid bookshelf">${musicInstruments.map(c=>`<a class="bookcard" href="${c.url}"><span class="bookcard-cover"><img src="${c.img}" width="${c.w}" height="${c.h}" alt="${esc(c.alt)}" loading="lazy"></span><div class="bookcard-body"><span class="lib-kind">Music Room card</span><h3>${esc(c.word)}</h3><p>Instrument card ${c.n} of ${musicSet.cards.length} from the Music Room — what it is, what it sounds like and how to play a home version.</p><div class="bookcard-pills"><span class="pill">Ages 3–5</span><span class="pill">Instrument</span></div><span class="button bookcard-read">Open the card <span aria-hidden="true">↗</span></span></div></a>`).join('\n  ')}</div>
+   <p class="fc-hint">The music words and the people who make music live in the <a href="/flashcards/music-room/">full Music Room set</a>, and the room itself is <a href="/music-room/">Class 23 on the Learning Path</a>.</p>
+  </div>`:'';
  const card=b=>`<article class="bookcard" data-lib-card data-age="${b.age}">
   <a class="bookcard-cover" href="${b.path}"><img src="${b.base}${b.cover.file}" width="${b.cover.w||b.w}" height="${b.cover.h||b.h}" alt="${esc(b.cover.alt)}" loading="lazy"></a>
   <div class="bookcard-body">
@@ -151,6 +163,7 @@ export function learningLibraryBody(Lb){
     ${shelf}
    </div>`;
   }).join('\n')}
+  ${musicShelf}
   <p class="fc-hint">Looking for classes, games or flashcards? They keep their own rooms: the <a href="/learning-path/">Learning Path</a>, <a href="/my-classroom/">My Classroom</a> and the <a href="/flashcards/">Flashcards</a> library. The <a href="/toddler/2-years/school-garden/">School Garden</a> lives in Explore Our School on the <a href="/">School Home</a> page.</p>
   <div class="hero-actions"><a class="button button-ghost" href="/my-classroom/">Back to My Classroom</a></div>
  </section>`;

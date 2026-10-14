@@ -30,6 +30,7 @@ import * as sciData from './data-science-nature-and-discovery.mjs';
 import * as ahData from './data-animals-habitats.mjs';
 import * as phData from './data-phonics.mjs';
 import * as swData from './data-sight-words.mjs';
+import * as mrData from './data-music-room.mjs';
 import {fvMeta,fvCardContent,cfoMeta,cfoCardContent,fwftMeta,fwftCardContent} from './data-baby-stages.mjs';
 import {aeoMeta,aeoCardContent,fabMeta,fabCardContent,fwfhMeta,fwfhCardContent} from './data-explorer-toddler.mjs';
 import {lessonsBase,fvLesson,cfoLesson,fwftLesson,aeoLesson,fabLesson,fwfhLesson} from '../lessons.mjs';
@@ -158,7 +159,14 @@ const SOURCES=[
  // all 2000×1414 landscape probed per file). cover.webp fronts the set and is
  // never counted as a card. Purpose: WHICH sound each letter makes — the
  // class's 24 Phonics Adventures keep the listening games on their own pages.
- [phData,phData.lesson]
+ [phData,phData.lesson],
+ // Class 23 · The Music Room: fifty-three cards from the owner's uploads in
+ // school/music-room/flashcards/ (self-contained lesson object, MIXED portrait
+ // dims probed per file — 37 at 1728×2304, 16 at 1414×2000). cover.webp fronts
+ // the set and is never counted as a card. Purpose: WHAT each instrument is
+ // and sounds like, WHAT each music word means, WHO makes the music — the
+ // Music Room class page (/music-room/) keeps the room itself on its own page.
+ [mrData,mrData.lesson]
 ];
 
 function buildSet([data,lesson]){

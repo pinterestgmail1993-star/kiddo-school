@@ -182,7 +182,7 @@ test('the library is a books-only bookshelf: real books only, empty shelves hidd
  assert.ok(lib.includes('data-library'),'filter root present');
  // books only: no classes, games, flashcards, circle time or activities listed
  assert.ok(!body.includes('href="/preschool/3-years/'),'no class listings');
- assert.ok(!/href="\/flashcards\/[a-z-]+\//.test(body),'no flashcard set listings (hub pointer allowed)');
+ assert.ok(!/href="\/flashcards\/(?!music-room\/)[a-z-]+\//.test(body),'no flashcard set listings (the Music Room instrument shelf, owner-approved 2026-10-14, is the only set allowed)');
  assert.ok(!body.includes('href="/toddler/2-years/play-and-practice/'),'no game listings');
  assert.ok(!body.includes('href="/toddler/2-years/my-work/'),'no activity listings');
  assert.ok(!body.includes('href="/toddler/2-years/circle-time/'),'no circle time listings');
