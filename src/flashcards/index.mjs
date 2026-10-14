@@ -311,7 +311,7 @@ export function fcCardPageBody(set,card,ctx){
  const note=!hasTrio?`<div class="fc2-do fc2-note"><h2>Quick parent note</h2><p>${esc(card.note)}</p></div>`:'';
  const safety=!hasTrio&&card.safety?`<div class="fc2-do fc2-note fcl-safety"><h2>Staying safe</h2><p>${esc(card.safety)}</p></div>`:'';
  const learnBlocks=hasTrio?helps+roleplay+learnB+printB+teachTip+sound:who+job+why+sound+say+tryThis+note+safety;
- const teach=(lpTeachLinks[set.slug]||{})[card.slug]?`<div class="fc2-do"><h2>Teach it, step by step</h2><p>Want the full walkthrough? <a href="${set.lessonPath}learn/${card.slug}/">Open the ${esc(card.word)} lesson</a> on the Learning Path.</p></div>`:'';
+ const teach=(lpTeachLinks[set.slug]||{})[card.slug]?`<div class="fc2-do"><h2>Teach it, step by step</h2><p>Want the full walkthrough? <a href="${set.lessonPath}learn/${card.slug}/">Open ${set.slug==='sight-words'?'the lesson for “'+esc(card.word)+'”':'the '+esc(card.word)+' lesson'}</a> on the Learning Path.</p></div>`:'';
  const dlName=f=>f.replace(/^\d+-/,'').replace(/\.webp$/,'');
  const actions=`<div class="fc2-actions">${card.img2
   ?`<a class="button" href="${card.img}" download="${dlName(card.file)}.webp">Download splash <span aria-hidden="true">↓</span></a><a class="button" href="${card.img2}" download="${dlName(card.img2.split('/').pop())}.webp">Download picture <span aria-hidden="true">↓</span></a>`

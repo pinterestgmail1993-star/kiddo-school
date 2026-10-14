@@ -408,470 +408,470 @@ export const meta={
 export const cards={
  "a": {
   "word": "A",
-  "intro": "The shortest word in the set is also one of the busiest. On the card, a smiling girl with a pink bow holds up one finger above a big letter.",
-  "say": "Point to the word and read it slowly, then say a little sentence together, such as ‘I have a dog.’",
-  "try": "Look for “a” here: the first word of countless picture-book lines, like “A cat sat on a mat”. Let your child say the word whenever you both spot it.",
-  "note": "Memory hook: it is also the very first letter of the alphabet, and a whole word all by itself.",
+  "intro": "The shortest word in the set is also one of the busiest, and it is the first card in the pile.",
+  "say": "Read “a” aloud, then find it again in a favorite book.",
+  "try": "Spread five cards face up and ask your child to hand you the one that says a. Swap roles.",
+  "note": "Use the soft uh sound when reading a sentence, and the letter name only when singing the alphabet.",
   "cardTitle": "“A” Sight Word Flashcard — Printable Card for Ages 4–5",
-  "metaDescription": "Print the sight word flashcard for “A”, a tiny helper word: a friendly picture, a quick game and tips for parents of 4–5 year olds. Download the card free."
+  "metaDescription": "Print the sight word flashcard for “A”, a tiny helper word. Your child learns to spot the shortest word on the page and the thing-words it keeps company with. Download the card free for ages 4–5."
  },
  "the": {
   "word": "The",
-  "intro": "This is the most common word in English, and the card shows it on a book. On the card, a boy points at a thick red book that has THE written on its cover.",
-  "say": "Point to the word and read it slowly, then say a little sentence together, such as ‘The cat sat.’",
-  "try": "Look for “the” here: the most-used word in English, found on every page. Let your child say the word whenever you both spot it.",
-  "note": "Memory hook: the th makes a soft sound with the tongue between the teeth.",
+  "intro": "The most-used word in English gets a card of its own, so it is worth meeting early.",
+  "say": "Read “the” aloud, then find it again in a favorite book.",
+  "try": "Read a short rhyme aloud and tap the card each time you say the. Count the taps at the end.",
+  "note": "Play hunt the the: read a line aloud and let your child stop you whenever they catch it.",
   "cardTitle": "“The” Sight Word Flashcard — Printable Card for Ages 4–5",
-  "metaDescription": "Print the sight word flashcard for “The”, a tiny helper word: a friendly picture, a quick game and tips for parents of 4–5 year olds. Download the card free."
+  "metaDescription": "Print the sight word flashcard for “The”, a tiny helper word. Your child learns to hear a tiny word that hides in front of nearly every thing-word. Download the card free for ages 4–5."
  },
  "i": {
   "word": "I",
-  "intro": "One letter that always stands tall. On the card, a boy points to himself with both hands.",
-  "say": "Point to the word and read it slowly, then say a little sentence together, such as ‘I like cake.’",
-  "try": "Look for “I” here: every story told in the first person. Let your child say the word whenever you both spot it.",
-  "note": "Memory hook: a tall stick of a letter that is always written as a capital when it means you.",
+  "intro": "One letter, always capital, always standing tall: the word every child says about themselves.",
+  "say": "Read “I” aloud, then find it again in a favorite book.",
+  "try": "Take turns tapping your chest and finishing a sentence that begins with I.",
+  "note": "Always read it inside a sentence at least once, so your child learns what the word does.",
   "cardTitle": "“I” Sight Word Flashcard — Printable Card for Ages 4–5",
-  "metaDescription": "Print the sight word flashcard for “I”, a person word: a friendly picture, a quick game and tips for parents of 4–5 year olds. Download the card free."
+  "metaDescription": "Print the sight word flashcard for “I”, a person word. Your child learns who a sentence is about when someone talks about themselves. Download the card free for ages 4–5."
  },
  "you": {
   "word": "You",
-  "intro": "The pointing finger on the card is aimed right at you. On the card, a boy points straight out at whoever is looking.",
-  "say": "Point to the word and read it slowly, then say a little sentence together, such as ‘I see you.’",
-  "try": "Look for “you” here: “thank you”, “I love you” and “you first”. Let your child say the word whenever you both spot it.",
-  "note": "Memory hook: y-o-u, and the sound is just like the word who.",
+  "intro": "The word that points at the listener: a small card with a big job in conversation.",
+  "say": "Read “you” aloud, then find it again in a favorite book.",
+  "try": "Hold the card up to a teddy, to your child and to a family member, and say a sentence for each.",
+  "note": "Pair it with the I card and read both: I see you.",
   "cardTitle": "“You” Sight Word Flashcard — Printable Card for Ages 4–5",
-  "metaDescription": "Print the sight word flashcard for “You”, a person word: a friendly picture, a quick game and tips for parents of 4–5 year olds. Download the card free."
+  "metaDescription": "Print the sight word flashcard for “You”, a person word. Your child learns to tell the speaker from the listener. Download the card free for ages 4–5."
  },
  "me": {
   "word": "Me",
-  "intro": "Arms to the chest: that is what me looks like. On the card, a boy crosses both hands to his chest.",
-  "say": "Point to the word and read it slowly, then say a little sentence together, such as ‘Look at me.’",
-  "try": "Look for “me” here: “give it to me”, “help me”, “me too”. Let your child say the word whenever you both spot it.",
-  "note": "Memory hook: m-e, with a long e like be and we.",
+  "intro": "The word for the person on the receiving end, found in the sentences children say all day.",
+  "say": "Read “me” aloud, then find it again in a favorite book.",
+  "try": "Hide the card, then peek it out from behind a book and say Look at me! Let your child do the same.",
+  "note": "Tap the card and ask your child to say a me sentence from their own day.",
   "cardTitle": "“Me” Sight Word Flashcard — Printable Card for Ages 4–5",
-  "metaDescription": "Print the sight word flashcard for “Me”, a person word: a friendly picture, a quick game and tips for parents of 4–5 year olds. Download the card free."
+  "metaDescription": "Print the sight word flashcard for “Me”, a person word. Your child learns that a person can be the one things happen to, not only the one doing them. Download the card free for ages 4–5."
  },
  "my": {
   "word": "My",
-  "intro": "Ownership is the most popular topic in early childhood. On the card, a boy taps his chest proudly with both hands.",
-  "say": "Point to the word and read it slowly, then say a little sentence together, such as ‘This is my bag.’",
-  "try": "Look for “my” here: coat pegs, names on lunchboxes and “my turn”. Let your child say the word whenever you both spot it.",
-  "note": "Memory hook: the y says its own name, as in by and fly.",
+  "intro": "The word that says something belongs to you, and children use it with pride. Print it, tuck it in a bag and watch the pride show.",
+  "say": "Read “my” aloud, then find it again in a favorite book.",
+  "try": "Gather a few belongings on a rug and let your child claim each one aloud with my.",
+  "note": "Ask your child to point out a thing that is mine in the room, and then a thing that is yours.",
   "cardTitle": "“My” Sight Word Flashcard — Printable Card for Ages 4–5",
-  "metaDescription": "Print the sight word flashcard for “My”, a person word: a friendly picture, a quick game and tips for parents of 4–5 year olds. Download the card free."
+  "metaDescription": "Print the sight word flashcard for “My”, a person word. Your child learns that a small word can show who something belongs to. Download the card free for ages 4–5."
  },
  "we": {
   "word": "We",
-  "intro": "Three friends side by side make “we”. On the card, three children stand arm in arm.",
-  "say": "Point to the word and read it slowly, then say a little sentence together, such as ‘We can play.’",
-  "try": "Look for “we” here: sports teams, families and “we did it”. Let your child say the word whenever you both spot it.",
-  "note": "Memory hook: w-e with a long e, like me and be.",
+  "intro": "The little word for everybody together: friends, family and class. It is quick to learn and handy to point at around the house.",
+  "say": "Read “we” aloud, then find it again in a favorite book.",
+  "try": "Line up two or three stuffed animals with the card and say a we sentence about the whole group.",
+  "note": "Notice how often a group of people says we in a story and tally them with your child.",
   "cardTitle": "“We” Sight Word Flashcard — Printable Card for Ages 4–5",
-  "metaDescription": "Print the sight word flashcard for “We”, a person word: a friendly picture, a quick game and tips for parents of 4–5 year olds. Download the card free."
+  "metaDescription": "Print the sight word flashcard for “We”, a person word. Your child learns to picture a group and use a word that includes everyone in it. Download the card free for ages 4–5."
  },
  "it": {
   "word": "It",
-  "intro": "The ball in his hand is the “it” on the card. On the card, a boy points at a red spotted ball in his other hand.",
-  "say": "Point to the word and read it slowly, then say a little sentence together, such as ‘I like it.’",
-  "try": "Look for “it” here: shopping trips, “is it?”, “what is it?”. Let your child say the word whenever you both spot it.",
-  "note": "Memory hook: two letters that also hide inside sit and hit.",
+  "intro": "The word that stands in for any thing you already named. Small as it is, it turns up in almost every book your child will meet.",
+  "say": "Read “it” aloud, then find it again in a favorite book.",
+  "try": "Put a small toy under a cloth, lift it and say Here it is together.",
+  "note": "Swap names for it in a story you know, and see if your child notices what changed.",
   "cardTitle": "“It” Sight Word Flashcard — Printable Card for Ages 4–5",
-  "metaDescription": "Print the sight word flashcard for “It”, a person word: a friendly picture, a quick game and tips for parents of 4–5 year olds. Download the card free."
+  "metaDescription": "Print the sight word flashcard for “It”, a tiny helper word. Your child learns to use one short word instead of repeating a long name. Download the card free for ages 4–5."
  },
  "is": {
   "word": "Is",
-  "intro": "The s says z, which makes it a very sneaky word. On the card, a smiling boy points toward himself with both hands, ready to share a fact.",
-  "say": "Point to the word and read it slowly, then say a little sentence together, such as ‘The sun is hot.’",
-  "try": "Look for “is” here: questions and facts, like “What is it?” and “It is a cat”. Let your child say the word whenever you both spot it.",
-  "note": "Memory hook: the s at the end sounds like a z.",
+  "intro": "The word that joins a thing to what we say about it, found in nearly every sentence.",
+  "say": "Read “is” aloud, then find it again in a favorite book.",
+  "try": "Take turns saying a true fact about the room that starts with the, such as The rug is soft.",
+  "note": "Read a line from a book and ask your child to tap the card whenever they hear is.",
   "cardTitle": "“Is” Sight Word Flashcard — Printable Card for Ages 4–5",
-  "metaDescription": "Print the sight word flashcard for “Is”, a small helping word: a friendly picture, a quick game and tips for parents of 4–5 year olds. Download the card free."
+  "metaDescription": "Print the sight word flashcard for “Is”, a tiny helper word. Your child learns how a short word links a thing to what we say about it. Download the card free for ages 4–5."
  },
  "am": {
   "word": "Am",
-  "intro": "The sun is up, the boy is up and the word is up too. On the card, a boy sits up in bed, stretching his arms beside a sunny window.",
-  "say": "Point to the word and read it slowly, then say a little sentence together, such as ‘I am awake.’",
-  "try": "Look for “am” here: morning routines: “I am hungry”, “I am ready”, “I am here”. Let your child say the word whenever you both spot it.",
-  "note": "Memory hook: it only ever walks beside the word I, like a pair of shoes.",
+  "intro": "The word that only goes with I, a tiny part of every I am sentence. Learn it on paper next to I and the pair will read itself.",
+  "say": "Read “am” aloud, then find it again in a favorite book.",
+  "try": "Whisper I am happy, then I am sleepy, then I am silly, and act out each one.",
+  "note": "Place the I card and the am card side by side and read them together as one phrase.",
   "cardTitle": "“Am” Sight Word Flashcard — Printable Card for Ages 4–5",
-  "metaDescription": "Print the sight word flashcard for “Am”, a small helping word: a friendly picture, a quick game and tips for parents of 4–5 year olds. Download the card free."
+  "metaDescription": "Print the sight word flashcard for “Am”, a tiny helper word. Your child learns that some words only go with certain speakers, here with I. Download the card free for ages 4–5."
  },
  "are": {
   "word": "Are",
-  "intro": "Say it aloud and you are spelling the letter R. On the card, a boy and a girl stand together, each pointing to themselves and each other.",
-  "say": "Point to the word and read it slowly, then say a little sentence together, such as ‘We are friends.’",
-  "try": "Look for “are” here: greetings like “How are you?” and “Where are you?”. Let your child say the word whenever you both spot it.",
-  "note": "Memory hook: the silent e at the end makes it sound just like the letter R.",
+  "intro": "The word that goes with more than one person or thing. Once your child knows it, plural sentences in books start to make sense.",
+  "say": "Read “are” aloud, then find it again in a favorite book.",
+  "try": "Point at two toys and say Those are cars. Point at one and say That is a car.",
+  "note": "Sing a line from a favorite song and listen for are together.",
   "cardTitle": "“Are” Sight Word Flashcard — Printable Card for Ages 4–5",
-  "metaDescription": "Print the sight word flashcard for “Are”, a small helping word: a friendly picture, a quick game and tips for parents of 4–5 year olds. Download the card free."
+  "metaDescription": "Print the sight word flashcard for “Are”, a tiny helper word. Your child learns the difference between a word for one thing and a word for many. Download the card free for ages 4–5."
  },
  "be": {
   "word": "Be",
-  "intro": "The card shows a child simply being himself. On the card, a boy stands tall with one hand on his chest.",
-  "say": "Point to the word and read it slowly, then say a little sentence together, such as ‘Please be kind.’",
-  "try": "Look for “be” here: “be careful”, “be quiet”, “be kind” and “be there soon”. Let your child say the word whenever you both spot it.",
-  "note": "Memory hook: just two letters, and together they say the name of the letter B.",
+  "intro": "The word that says to exist, show up and take a role. A good word to learn on paper, since it hides inside I will be and you can be.",
+  "say": "Read “be” aloud, then find it again in a favorite book.",
+  "try": "Draw a quick job on paper, hold up the card and say I want to be... Switch with your child.",
+  "note": "Pair it with the kind card and read be kind as your tiny motto.",
   "cardTitle": "“Be” Sight Word Flashcard — Printable Card for Ages 4–5",
-  "metaDescription": "Print the sight word flashcard for “Be”, a small helping word: a friendly picture, a quick game and tips for parents of 4–5 year olds. Download the card free."
+  "metaDescription": "Print the sight word flashcard for “Be”, a tiny helper word. Your child learns to link a word with a wish or a role they might take on. Download the card free for ages 4–5."
  },
  "can": {
   "word": "Can",
-  "intro": "The strong arm on the card says “I can do it”. On the card, a boy flexes his arm to show how strong he is.",
-  "say": "Point to the word and read it slowly, then say a little sentence together, such as ‘I can jump.’",
-  "try": "Look for “can” here: proud moments: “I can do it”, “I can tie my shoe”. Let your child say the word whenever you both spot it.",
-  "note": "Memory hook: it rhymes with man, fan, pan and van.",
+  "intro": "The word that says what a person is able to do. A confident little word that children love to read out loud.",
+  "say": "Read “can” aloud, then find it again in a favorite book.",
+  "try": "Have a challenge round: say I can and let your child prove it with a movement.",
+  "note": "Add a stick-on star each time your child reads or says can in the week.",
   "cardTitle": "“Can” Sight Word Flashcard — Printable Card for Ages 4–5",
-  "metaDescription": "Print the sight word flashcard for “Can”, a small helping word: a friendly picture, a quick game and tips for parents of 4–5 year olds. Download the card free."
+  "metaDescription": "Print the sight word flashcard for “Can”, a tiny helper word. Your child learns to connect a word with ability, and to say it with confidence. Download the card free for ages 4–5."
  },
  "and": {
   "word": "And",
-  "intro": "The card even shows the & symbol that means the same thing. On the card, a boy and a girl stand side by side with a small & sign between them.",
-  "say": "Point to the word and read it slowly, then say a little sentence together, such as ‘Mum and Dad’",
-  "try": "Look for “and” here: pairs everywhere: salt and pepper, knife and fork, you and me. Let your child say the word whenever you both spot it.",
-  "note": "Memory hook: the middle letter n works like a bridge joining the two sides.",
+  "intro": "The word that links one thing to another, so sentences can grow longer. A short word, but without it every sentence would be a very short one.",
+  "say": "Read “and” aloud, then find it again in a favorite book.",
+  "try": "Line up two pictures and say a short sentence joining them with and.",
+  "note": "Listen for and in a favorite story and hold up two fingers every time it shows up.",
   "cardTitle": "“And” Sight Word Flashcard — Printable Card for Ages 4–5",
-  "metaDescription": "Print the sight word flashcard for “And”, a joining word: a friendly picture, a quick game and tips for parents of 4–5 year olds. Download the card free."
+  "metaDescription": "Print the sight word flashcard for “And”, a tiny helper word. Your child learns that words can join ideas together to make longer sentences. Download the card free for ages 4–5."
  },
  "in": {
   "word": "In",
-  "intro": "The box makes in easy to see. On the card, a boy peeks out from inside a cardboard box.",
-  "say": "Point to the word and read it slowly, then say a little sentence together, such as ‘The toy is in the box.’",
-  "try": "Look for “in” here: “in the bag”, “in the car”, “in the garden”. Let your child say the word whenever you both spot it.",
-  "note": "Memory hook: it is i-n, the same two letters that start the word inside.",
+  "intro": "The word that tells us where something is inside something else. A short, easy word to learn, and one your child will use all day.",
+  "say": "Read “in” aloud, then find it again in a favorite book.",
+  "try": "Hide a small toy in different containers and ask your child to say where it is: in the cup.",
+  "note": "Take turns hiding and finding, saying in each time.",
   "cardTitle": "“In” Sight Word Flashcard — Printable Card for Ages 4–5",
-  "metaDescription": "Print the sight word flashcard for “In”, a place word: a friendly picture, a quick game and tips for parents of 4–5 year olds. Download the card free."
+  "metaDescription": "Print the sight word flashcard for “In”, a tiny helper word. Your child learns to use a small word to say where something is. Download the card free for ages 4–5."
  },
  "to": {
   "word": "To",
-  "intro": "The present travels from one hand to another, just like to. On the card, a boy gives a wrapped present to a smiling girl.",
-  "say": "Point to the word and read it slowly, then say a little sentence together, such as ‘I give it to you.’",
-  "try": "Look for “to” here: “go to bed”, “to the park”, “to you”. Let your child say the word whenever you both spot it.",
-  "note": "Memory hook: it sounds like the number two and the word too, but is spelled t-o.",
+  "intro": "The word that tells where something is going or who is getting it. A word your child already hears many times a day, now printed in big, clear letters.",
+  "say": "Read “to” aloud, then find it again in a favorite book.",
+  "try": "Pass the card around a circle, saying I give it to...",
+  "note": "Use the same card for to and too: say they sound the same but mean different things.",
   "cardTitle": "“To” Sight Word Flashcard — Printable Card for Ages 4–5",
-  "metaDescription": "Print the sight word flashcard for “To”, a place word: a friendly picture, a quick game and tips for parents of 4–5 year olds. Download the card free."
+  "metaDescription": "Print the sight word flashcard for “To”, a tiny helper word. Your child learns the word that connects an action to its target or its receiver. Download the card free for ages 4–5."
  },
  "up": {
   "word": "Up",
-  "intro": "The green arrow points the way. On the card, a boy leaps with his arms raised above a big green arrow pointing up.",
-  "say": "Point to the word and read it slowly, then say a little sentence together, such as ‘Stand up.’",
-  "try": "Look for “up” here: stairs, lifts, balloons and “wake up”. Let your child say the word whenever you both spot it.",
-  "note": "Memory hook: u-p, two letters that rhyme with cup and pup.",
+  "intro": "The word that points toward the sky and the top of things. An easy first word for little readers, with a gesture to match.",
+  "say": "Read “up” aloud, then find it again in a favorite book.",
+  "try": "Put a toy on a shelf and say Up, up, up! then take it down and say Down.",
+  "note": "Draw an arrow beside the word and say it as you point up.",
   "cardTitle": "“Up” Sight Word Flashcard — Printable Card for Ages 4–5",
-  "metaDescription": "Print the sight word flashcard for “Up”, a place word: a friendly picture, a quick game and tips for parents of 4–5 year olds. Download the card free."
+  "metaDescription": "Print the sight word flashcard for “Up”, a tiny helper word. Your child learns to link a word with a direction, and later with its opposite. Download the card free for ages 4–5."
  },
  "down": {
   "word": "Down",
-  "intro": "The arrow on the card points the way the word goes. On the card, a boy steps down some blue stairs beside an orange arrow pointing down.",
-  "say": "Point to the word and read it slowly, then say a little sentence together, such as ‘Sit down.’",
-  "try": "Look for “down” here: stairs, slides, lifts and the sun at the end of the day. Let your child say the word whenever you both spot it.",
-  "note": "Memory hook: it holds the word own with a d out front.",
+  "intro": "The word that is the opposite of up, found on stairs and slides. A word every child already knows from slides and stairs, now in print.",
+  "say": "Read “down” aloud, then find it again in a favorite book.",
+  "try": "Play up and down with a ball: say up as it goes up, down as it falls.",
+  "note": "Pair it with the up card and read them as opposites.",
   "cardTitle": "“Down” Sight Word Flashcard — Printable Card for Ages 4–5",
-  "metaDescription": "Print the sight word flashcard for “Down”, a place word: a friendly picture, a quick game and tips for parents of 4–5 year olds. Download the card free."
+  "metaDescription": "Print the sight word flashcard for “Down”, a tiny helper word. Your child learns opposites by acting them out with their whole body. Download the card free for ages 4–5."
  },
  "go": {
   "word": "Go",
-  "intro": "Green means go, and the card already knows. On the card, a boy runs beside a big green arrow pointing right.",
-  "say": "Point to the word and read it slowly, then say a little sentence together, such as ‘Let’s go!’",
-  "try": "Look for “go” here: traffic lights, races and “ready, steady, go”. Let your child say the word whenever you both spot it.",
-  "note": "Memory hook: the o says its own name, just like in no and so.",
+  "intro": "The word that starts everything moving, from races to green lights. One of the first words many children read on their own, usually with a shout.",
+  "say": "Read “go” aloud, then find it again in a favorite book.",
+  "try": "Hold up the card for green and tell your child to move, then hide it to stop.",
+  "note": "Make a go and stop pair of cards and play a freeze game.",
   "cardTitle": "“Go” Sight Word Flashcard — Printable Card for Ages 4–5",
-  "metaDescription": "Print the sight word flashcard for “Go”, an action word: a friendly picture, a quick game and tips for parents of 4–5 year olds. Download the card free."
+  "metaDescription": "Print the sight word flashcard for “Go”, a action word. Your child learns to link a word with starting to move. Download the card free for ages 4–5."
  },
  "come": {
   "word": "Come",
-  "intro": "Spelling trap: the word is not said the way it looks. On the card, a girl with a pink bow waves with one open hand to invite you closer.",
-  "say": "Point to the word and read it slowly, then say a little sentence together, such as ‘Come and see.’",
-  "try": "Look for “come” here: invitations like “come here”, “come in” and “come on”. Let your child say the word whenever you both spot it.",
-  "note": "Memory hook: the o sounds like u, and the e stays silent.",
+  "intro": "The word we use to invite someone nearer. Children hear this one a hundred times a day, so the card feels familiar at once.",
+  "say": "Read “come” aloud, then find it again in a favorite book.",
+  "try": "Use the card as a signal: hold it up and your child says Come! to someone.",
+  "note": "Sing a come song, like come and play with me, and clap on each come.",
   "cardTitle": "“Come” Sight Word Flashcard — Printable Card for Ages 4–5",
-  "metaDescription": "Print the sight word flashcard for “Come”, an action word: a friendly picture, a quick game and tips for parents of 4–5 year olds. Download the card free."
+  "metaDescription": "Print the sight word flashcard for “Come”, a action word. Your child learns a word that asks someone to move closer. Download the card free for ages 4–5."
  },
  "came": {
   "word": "Came",
-  "intro": "Come turns into came when yesterday arrives. On the card, a boy steps through an open wooden door into the house.",
-  "say": "Point to the word and read it slowly, then say a little sentence together, such as ‘Dad came home.’",
-  "try": "Look for “came” here: stories about visitors and homecomings. Let your child say the word whenever you both spot it.",
-  "note": "Memory hook: it rhymes with name, game and same.",
+  "intro": "The past version of come, used in stories about what already happened. Easy to mix up with come, so it is best learned after its partner card.",
+  "say": "Read “came” aloud, then find it again in a favorite book.",
+  "try": "Ask What came in the mail? and let your child name something they saw come.",
+  "note": "Place come and came side by side and talk about now and before.",
   "cardTitle": "“Came” Sight Word Flashcard — Printable Card for Ages 4–5",
-  "metaDescription": "Print the sight word flashcard for “Came”, an action word: a friendly picture, a quick game and tips for parents of 4–5 year olds. Download the card free."
+  "metaDescription": "Print the sight word flashcard for “Came”, a action word. Your child learns to tell something that happened before from something happening now. Download the card free for ages 4–5."
  },
  "run": {
   "word": "Run",
-  "intro": "His whole body is the word running. On the card, a boy runs in a full, energetic stride.",
-  "say": "Point to the word and read it slowly, then say a little sentence together, such as ‘I can run fast.’",
-  "try": "Look for “run” here: races, park paths and chasing games. Let your child say the word whenever you both spot it.",
-  "note": "Memory hook: three letters that rhyme with sun, fun and bun.",
+  "intro": "The word for fast feet and a favorite of every active child. A lively word that keeps small readers moving between rounds of practice.",
+  "say": "Read “run” aloud, then find it again in a favorite book.",
+  "try": "Play run and freeze: run when you show the card, stop when you hide it.",
+  "note": "Say run and walk, and ask your child to show the difference.",
   "cardTitle": "“Run” Sight Word Flashcard — Printable Card for Ages 4–5",
-  "metaDescription": "Print the sight word flashcard for “Run”, an action word: a friendly picture, a quick game and tips for parents of 4–5 year olds. Download the card free."
+  "metaDescription": "Print the sight word flashcard for “Run”, a action word. Your child learns to connect reading with movement and energy. Download the card free for ages 4–5."
  },
  "jump": {
   "word": "Jump",
-  "intro": "Mid-air on the card is mid-jump in the word. On the card, a boy leaps through the air with his arms and legs flung wide.",
-  "say": "Point to the word and read it slowly, then say a little sentence together, such as ‘I can jump high.’",
-  "try": "Look for “jump” here: playgrounds, puddles, trampolines and rope games. Let your child say the word whenever you both spot it.",
-  "note": "Memory hook: it ends in mp, like lamp and bump.",
+  "intro": "The word for jumping up and landing, with a fun mouth-shape to match. A bouncy word that children are keen to act out the moment they read it.",
+  "say": "Read “jump” aloud, then find it again in a favorite book.",
+  "try": "Make a pretend river with a rope and jump across it each time you say jump.",
+  "note": "Add a jump rope and read jump each time your child jumps.",
   "cardTitle": "“Jump” Sight Word Flashcard — Printable Card for Ages 4–5",
-  "metaDescription": "Print the sight word flashcard for “Jump”, an action word: a friendly picture, a quick game and tips for parents of 4–5 year olds. Download the card free."
+  "metaDescription": "Print the sight word flashcard for “Jump”, a action word. Your child learns to pair a word with a big movement they can feel. Download the card free for ages 4–5."
  },
  "play": {
   "word": "Play",
-  "intro": "A toy car and some blocks make play easy to picture. On the card, a boy plays on the floor with a toy car and wooden blocks.",
-  "say": "Point to the word and read it slowly, then say a little sentence together, such as ‘Let us play.’",
-  "try": "Look for “play” here: the park, the playground and break time. Let your child say the word whenever you both spot it.",
-  "note": "Memory hook: ay says A, as in day and say.",
+  "intro": "The word that makes everything a game, with a long a sound to say. The most inviting word in the set, and the one every child wants to read first.",
+  "say": "Read “play” aloud, then find it again in a favorite book.",
+  "try": "Pick a toy, say I play with the toy, then take turns saying your own play sentence.",
+  "note": "Keep the card out when you play, and point to it whenever someone says the word.",
   "cardTitle": "“Play” Sight Word Flashcard — Printable Card for Ages 4–5",
-  "metaDescription": "Print the sight word flashcard for “Play”, an action word: a friendly picture, a quick game and tips for parents of 4–5 year olds. Download the card free."
+  "metaDescription": "Print the sight word flashcard for “Play”, a action word. Your child learns that reading words can describe real fun. Download the card free for ages 4–5."
  },
  "see": {
   "word": "See",
-  "intro": "The binocular hands are the whole game. On the card, a close-up boy cups both hands around his eyes like binoculars.",
-  "say": "Point to the word and read it slowly, then say a little sentence together, such as ‘I see a bird.’",
-  "try": "Look for “see” here: I spy, bird-watching and window gazing. Let your child say the word whenever you both spot it.",
-  "note": "Memory hook: two e letters make two eyes, so see sees.",
+  "intro": "The word for looking with your eyes, and a great one for noticing things. A word that invites a child to look at the card closely and say what they notice.",
+  "say": "Read “see” aloud, then find it again in a favorite book.",
+  "try": "Make binocular hands and say I see... for each thing you find in the room.",
+  "note": "Hunt for the word on cereal boxes and signs, and tell each other what you see.",
   "cardTitle": "“See” Sight Word Flashcard — Printable Card for Ages 4–5",
-  "metaDescription": "Print the sight word flashcard for “See”, an action word: a friendly picture, a quick game and tips for parents of 4–5 year olds. Download the card free."
+  "metaDescription": "Print the sight word flashcard for “See”, a action word. Your child learns to match a word to a sense. Download the card free for ages 4–5."
  },
  "look": {
   "word": "Look",
-  "intro": "Two eyes in the middle of the word, looking at you. On the card, a boy winks through a magnifying glass.",
-  "say": "Point to the word and read it slowly, then say a little sentence together, such as ‘Look at me!’",
-  "try": "Look for “look” here: “look both ways”, “look at me” and “look up”. Let your child say the word whenever you both spot it.",
-  "note": "Memory hook: the two o letters are like two eyes looking.",
+  "intro": "The word that asks someone to turn their eyes to something. A word that gets a child pointing, which is half of reading already.",
+  "say": "Read “look” aloud, then find it again in a favorite book.",
+  "try": "Use a real magnifying glass to look at a leaf, a coin or the card itself.",
+  "note": "Take a short look walk and name three things you look at.",
   "cardTitle": "“Look” Sight Word Flashcard — Printable Card for Ages 4–5",
-  "metaDescription": "Print the sight word flashcard for “Look”, an action word: a friendly picture, a quick game and tips for parents of 4–5 year olds. Download the card free."
+  "metaDescription": "Print the sight word flashcard for “Look”, a action word. Your child learns the difference between looking, an action, and seeing, what we notice. Download the card free for ages 4–5."
  },
  "find": {
   "word": "Find",
-  "intro": "The little red car under the sofa is waiting to be found. On the card, a boy kneels beside a green sofa to find a toy car underneath.",
-  "say": "Point to the word and read it slowly, then say a little sentence together, such as ‘I can find my shoe.’",
-  "try": "Look for “find” here: lost socks, missing toys and every game of hide-and-seek. Let your child say the word whenever you both spot it.",
-  "note": "Memory hook: the i is long, as in kind and mind.",
+  "intro": "The word that comes with every game of hide and seek. A word with its own built-in game, so it hardly needs any extra motivation.",
+  "say": "Read “find” aloud, then find it again in a favorite book.",
+  "try": "Hide the card itself somewhere, say Find the card!, and let your child shout I find it.",
+  "note": "Ask What did you find today? at dinner and use the word in the answer.",
   "cardTitle": "“Find” Sight Word Flashcard — Printable Card for Ages 4–5",
-  "metaDescription": "Print the sight word flashcard for “Find”, an action word: a friendly picture, a quick game and tips for parents of 4–5 year olds. Download the card free."
+  "metaDescription": "Print the sight word flashcard for “Find”, a action word. Your child learns to think about hidden things and the joy of finding them. Download the card free for ages 4–5."
  },
  "help": {
   "word": "Help",
-  "intro": "Waving for help is the picture for the word. On the card, a worried boy waves one hand with the other on his chest.",
-  "say": "Point to the word and read it slowly, then say a little sentence together, such as ‘Please help me.’",
-  "try": "Look for “help” here: helping hands: carrying shopping, setting the table. Let your child say the word whenever you both spot it.",
-  "note": "Memory hook: a tall h and a tall l both stand up, and a p dips down at the end.",
+  "intro": "The word for asking for a hand and offering one. A word children say a lot, so seeing it in print feels like a small victory.",
+  "say": "Read “help” aloud, then find it again in a favorite book.",
+  "try": "Role-play a pretend problem, such as a stuck jar, and practice asking for help.",
+  "note": "Make a list of ways your child can help at home and read the word for each.",
   "cardTitle": "“Help” Sight Word Flashcard — Printable Card for Ages 4–5",
-  "metaDescription": "Print the sight word flashcard for “Help”, an action word: a friendly picture, a quick game and tips for parents of 4–5 year olds. Download the card free."
+  "metaDescription": "Print the sight word flashcard for “Help”, a action word. Your child learns to link a word with kindness and with asking politely. Download the card free for ages 4–5."
  },
  "make": {
   "word": "Make",
-  "intro": "The craft table on the card is the picture of making. On the card, a boy cuts and glues paper at a craft table next to a coloured house.",
-  "say": "Point to the word and read it slowly, then say a little sentence together, such as ‘I can make a card.’",
-  "try": "Look for “make” here: crafts, cakes, “make a wish” and “make a face”. Let your child say the word whenever you both spot it.",
-  "note": "Memory hook: the silent e makes the a say its own name.",
+  "intro": "The word for creating something with hands and ideas. A hands-on word that links the card to anything your child builds or draws.",
+  "say": "Read “make” aloud, then find it again in a favorite book.",
+  "try": "Pick a tiny craft, such as a paper hat, and say each step with make.",
+  "note": "Say Let us make... before each craft and point to the word.",
   "cardTitle": "“Make” Sight Word Flashcard — Printable Card for Ages 4–5",
-  "metaDescription": "Print the sight word flashcard for “Make”, an action word: a friendly picture, a quick game and tips for parents of 4–5 year olds. Download the card free."
+  "metaDescription": "Print the sight word flashcard for “Make”, a action word. Your child learns to link reading with creating. Download the card free for ages 4–5."
  },
  "big": {
   "word": "Big",
-  "intro": "A boy next to an elephant explains the word in a glance. On the card, a small boy stands beside an enormous blue elephant.",
-  "say": "Point to the word and read it slowly, then say a little sentence together, such as ‘The elephant is big.’",
-  "try": "Look for “big” here: big trucks, big trees, big dogs and big hugs. Let your child say the word whenever you both spot it.",
-  "note": "Memory hook: a tall b and a dipping g stand at each end like a big hug.",
+  "intro": "The word for large things, from elephants to cars. An easy word for a child to say, and a handy partner for the little card.",
+  "say": "Read “big” aloud, then find it again in a favorite book.",
+  "try": "Use two toys of different sizes and say one is big and one is little.",
+  "note": "Hunt for the biggest thing in the room and tell your child what makes it big.",
   "cardTitle": "“Big” Sight Word Flashcard — Printable Card for Ages 4–5",
-  "metaDescription": "Print the sight word flashcard for “Big”, a describing word: a friendly picture, a quick game and tips for parents of 4–5 year olds. Download the card free."
+  "metaDescription": "Print the sight word flashcard for “Big”, a describing word. Your child learns to compare sizes. Download the card free for ages 4–5."
  },
  "little": {
   "word": "Little",
-  "intro": "The empty space around the boy makes him look little. On the card, a very small boy stands alone surrounded by white space.",
-  "say": "Point to the word and read it slowly, then say a little sentence together, such as ‘A little mouse.’",
-  "try": "Look for “little” here: little ducklings, little shoes and little fingers. Let your child say the word whenever you both spot it.",
-  "note": "Memory hook: two t letters sit in the middle, then le finishes the job.",
+  "intro": "The word for small things, a quiet partner to big. A quiet word with a small, careful sound, and the natural partner of the big card.",
+  "say": "Read “little” aloud, then find it again in a favorite book.",
+  "try": "Pick two toys, say big and little, and swap them around.",
+  "note": "Read little in a tiny voice and big in a booming voice.",
   "cardTitle": "“Little” Sight Word Flashcard — Printable Card for Ages 4–5",
-  "metaDescription": "Print the sight word flashcard for “Little”, a describing word: a friendly picture, a quick game and tips for parents of 4–5 year olds. Download the card free."
+  "metaDescription": "Print the sight word flashcard for “Little”, a describing word. Your child learns to compare sizes and to use a describing word. Download the card free for ages 4–5."
  },
  "funny": {
   "word": "Funny",
-  "intro": "The silly face on the card is a perfect funny. On the card, a boy sticks out his tongue and wiggles his fingers beside his ears.",
-  "say": "Point to the word and read it slowly, then say a little sentence together, such as ‘That joke was funny.’",
-  "try": "Look for “funny” here: jokes, silly voices, clowns and comic strips. Let your child say the word whenever you both spot it.",
-  "note": "Memory hook: the word fun sits inside, with ny stuck on the end.",
+  "intro": "The word for silly faces, jokes and a good laugh. A word that nearly always earns a laugh, which makes it stick.",
+  "say": "Read “funny” aloud, then find it again in a favorite book.",
+  "try": "Take turns making funny faces and saying what is funny.",
+  "note": "Ask your child to tell you something funny and write the word on the page.",
   "cardTitle": "“Funny” Sight Word Flashcard — Printable Card for Ages 4–5",
-  "metaDescription": "Print the sight word flashcard for “Funny”, a describing word: a friendly picture, a quick game and tips for parents of 4–5 year olds. Download the card free."
+  "metaDescription": "Print the sight word flashcard for “Funny”, a describing word. Your child learns to link a word with feelings and humor. Download the card free for ages 4–5."
  },
  "one": {
   "word": "One",
-  "intro": "The numeral says one before the word does. On the card, a big orange numeral 1 on a small patch of ground.",
-  "say": "Point to the word and read it slowly, then say a little sentence together, such as ‘I have one nose.’",
-  "try": "Look for “one” here: birthday candles, noses and number lines. Let your child say the word whenever you both spot it.",
-  "note": "Memory hook: the o sounds like w, so it sounds like won.",
+  "intro": "The word for a single thing, and the first number card. Easy to recognise on paper, since the card shows the numeral beside the word.",
+  "say": "Read “one” aloud, then find it again in a favorite book.",
+  "try": "Hand your child one item at a time and say one each time.",
+  "note": "Say one when you hold one finger and see if your child can show you.",
   "cardTitle": "“One” Sight Word Flashcard — Printable Card for Ages 4–5",
-  "metaDescription": "Print the sight word flashcard for “One”, a number word: a friendly picture, a quick game and tips for parents of 4–5 year olds. Download the card free."
+  "metaDescription": "Print the sight word flashcard for “One”, a number word. Your child learns to read the number word for a single thing. Download the card free for ages 4–5."
  },
  "two": {
   "word": "Two",
-  "intro": "Two friends, two peace signs, two for the price of one. On the card, a boy and a girl stand together, each holding up two fingers.",
-  "say": "Point to the word and read it slowly, then say a little sentence together, such as ‘I have two shoes.’",
-  "try": "Look for “two” here: two hands, two eyes, two ears and two feet. Let your child say the word whenever you both spot it.",
-  "note": "Memory hook: it starts with tw like twin and twice, and the w is silent.",
+  "intro": "The word for a pair, and the card that shows two fingers. Learn it beside the one card and the counting pair is ready.",
+  "say": "Read “two” aloud, then find it again in a favorite book.",
+  "try": "Collect pairs of things and say two as you count them.",
+  "note": "Hunt for pairs in the house and say two as you find each pair.",
   "cardTitle": "“Two” Sight Word Flashcard — Printable Card for Ages 4–5",
-  "metaDescription": "Print the sight word flashcard for “Two”, a number word: a friendly picture, a quick game and tips for parents of 4–5 year olds. Download the card free."
+  "metaDescription": "Print the sight word flashcard for “Two”, a number word. Your child learns to match a number word to a quantity of two. Download the card free for ages 4–5."
  },
  "three": {
   "word": "Three",
-  "intro": "Three apples and one 3 say the word twice. On the card, a big green numeral 3 sits on top of three red apples.",
-  "say": "Point to the word and read it slowly, then say a little sentence together, such as ‘I have three apples.’",
-  "try": "Look for “three” here: three bears, three apples and three little pigs. Let your child say the word whenever you both spot it.",
-  "note": "Memory hook: it starts with th like the, and ends with a double e.",
+  "intro": "The word for a small group, found in storybooks and songs. A satisfying word to read aloud, with an unusual start that is fun to practice.",
+  "say": "Read “three” aloud, then find it again in a favorite book.",
+  "try": "Put three apples or blocks on the table and say three together.",
+  "note": "Sing a three-part song and clap three times.",
   "cardTitle": "“Three” Sight Word Flashcard — Printable Card for Ages 4–5",
-  "metaDescription": "Print the sight word flashcard for “Three”, a number word: a friendly picture, a quick game and tips for parents of 4–5 year olds. Download the card free."
+  "metaDescription": "Print the sight word flashcard for “Three”, a number word. Your child learns to match a number word to a quantity of three. Download the card free for ages 4–5."
  },
  "blue": {
   "word": "Blue",
-  "intro": "Black and blue both begin with bl, which helps tell them apart. On the card, a bright blue butterfly with its wings spread wide.",
-  "say": "Point to the word and read it slowly, then say a little sentence together, such as ‘The sky is blue.’",
-  "try": "Look for “blue” here: the sky, jeans, toothbrushes and the sea. Let your child say the word whenever you both spot it.",
-  "note": "Memory hook: it starts with bl like black, and ends with ue.",
+  "intro": "The word for the color of the sky and the sea. A friendly color word, and an easy first read for most children.",
+  "say": "Read “blue” aloud, then find it again in a favorite book.",
+  "try": "Grab a blue crayon and draw a blue picture while saying blue.",
+  "note": "Go on a blue hunt and name everything blue you find.",
   "cardTitle": "“Blue” Sight Word Flashcard — Printable Card for Ages 4–5",
-  "metaDescription": "Print the sight word flashcard for “Blue”, a colour word: a friendly picture, a quick game and tips for parents of 4–5 year olds. Download the card free."
+  "metaDescription": "Print the sight word flashcard for “Blue”, a color word. Your child learns to link a color word to something real, such as the sky. Download the card free for ages 4–5."
  },
  "yellow": {
   "word": "Yellow",
-  "intro": "The sunshine on the card is the colour itself. On the card, a smiling yellow sun with rays all around it.",
-  "say": "Point to the word and read it slowly, then say a little sentence together, such as ‘The sun is yellow.’",
-  "try": "Look for “yellow” here: bananas, lemons, sunflowers and the sun. Let your child say the word whenever you both spot it.",
-  "note": "Memory hook: it starts with y, and the double l sits in the middle.",
+  "intro": "The word for the color of the sun and a banana. A cheerful color word with two matching parts, and an easy one to learn on the page.",
+  "say": "Read “yellow” aloud, then find it again in a favorite book.",
+  "try": "Draw a yellow sun and say yellow as you color it.",
+  "note": "Pair this card with the blue one and talk about what colors the sun and the sky are.",
   "cardTitle": "“Yellow” Sight Word Flashcard — Printable Card for Ages 4–5",
-  "metaDescription": "Print the sight word flashcard for “Yellow”, a colour word: a friendly picture, a quick game and tips for parents of 4–5 year olds. Download the card free."
+  "metaDescription": "Print the sight word flashcard for “Yellow”, a color word. Your child learns to link a color word to something real, such as the sun. Download the card free for ages 4–5."
  },
  "black": {
   "word": "Black",
-  "intro": "The crayon is the whole picture: black needs no costume. On the card, a single black wax crayon standing upright.",
-  "say": "Point to the word and read it slowly, then say a little sentence together, such as ‘The cat is black.’",
-  "try": "Look for “black” here: night skies, tyres, pencils and coal. Let your child say the word whenever you both spot it.",
-  "note": "Memory hook: it starts with bl just like blue, and finishes with ck.",
+  "intro": "The word for the darkest crayon in the box. A simple color word, and a nice excuse to get the crayons out.",
+  "say": "Read “black” aloud, then find it again in a favorite book.",
+  "try": "Draw a black night sky and say black as you color it.",
+  "note": "Draw a night sky with a black crayon on pale paper and talk about what shows up against it.",
   "cardTitle": "“Black” Sight Word Flashcard — Printable Card for Ages 4–5",
-  "metaDescription": "Print the sight word flashcard for “Black”, a colour word: a friendly picture, a quick game and tips for parents of 4–5 year olds. Download the card free."
+  "metaDescription": "Print the sight word flashcard for “Black”, a color word. Your child learns to link a color word to something real, such as a crayon. Download the card free for ages 4–5."
  },
  "brown": {
   "word": "Brown",
-  "intro": "Hidden in brown is the word own. On the card, a single brown wax crayon standing upright.",
-  "say": "Point to the word and read it slowly, then say a little sentence together, such as ‘My dog is brown.’",
-  "try": "Look for “brown” here: chocolate, teddy bears, tree trunks and toast. Let your child say the word whenever you both spot it.",
-  "note": "Memory hook: it starts like bread and brush, then ends with the word own.",
+  "intro": "The word for the color of earth and chocolate. A warm color word that children enjoy matching to the things around them.",
+  "say": "Read “brown” aloud, then find it again in a favorite book.",
+  "try": "Draw a brown tree trunk and say brown as you color it.",
+  "note": "Draw a tree together and decide which parts should be brown.",
   "cardTitle": "“Brown” Sight Word Flashcard — Printable Card for Ages 4–5",
-  "metaDescription": "Print the sight word flashcard for “Brown”, a colour word: a friendly picture, a quick game and tips for parents of 4–5 year olds. Download the card free."
+  "metaDescription": "Print the sight word flashcard for “Brown”, a color word. Your child learns to link a color word to something real, such as soil and wood. Download the card free for ages 4–5."
  },
  "here": {
   "word": "Here",
-  "intro": "The pointing finger says exactly where here is. On the card, a boy points firmly down at the spot where he stands.",
-  "say": "Point to the word and read it slowly, then say a little sentence together, such as ‘I am here.’",
-  "try": "Look for “here” here: roll call, hide-and-seek and “come over here”. Let your child say the word whenever you both spot it.",
-  "note": "Memory hook: the word her hides inside here, with an e on the end.",
+  "intro": "The word that points to the spot where you are. An easy word that children get to use all day long, and show with a point.",
+  "say": "Read “here” aloud, then find it again in a favorite book.",
+  "try": "Play hide and seek and shout here when found.",
+  "note": "Take turns saying here when your name is called, as in a class roll call.",
   "cardTitle": "“Here” Sight Word Flashcard — Printable Card for Ages 4–5",
-  "metaDescription": "Print the sight word flashcard for “Here”, a place word: a friendly picture, a quick game and tips for parents of 4–5 year olds. Download the card free."
+  "metaDescription": "Print the sight word flashcard for “Here”, a place word. Your child learns to use a word that points to where they are right now. Download the card free for ages 4–5."
  },
  "where": {
   "word": "Where",
-  "intro": "The question mark floats above her head, asking. On the card, a girl with a question mark above her head looks around with her hands on her hips.",
-  "say": "Point to the word and read it slowly, then say a little sentence together, such as ‘Where is my shoe?’",
-  "try": "Look for “where” here: lost things, hide-and-seek and “where are we going?”. Let your child say the word whenever you both spot it.",
-  "note": "Memory hook: it starts with wh like what and why, and the word here hides inside.",
+  "intro": "The word that starts questions about places. A question word that opens up conversation as well as reading.",
+  "say": "Read “where” aloud, then find it again in a favorite book.",
+  "try": "Hide the card somewhere in the room, ask Where is it? and let your child answer by finding it.",
+  "note": "Ask where questions all day: Where is your hat? Where is the cat?",
   "cardTitle": "“Where” Sight Word Flashcard — Printable Card for Ages 4–5",
-  "metaDescription": "Print the sight word flashcard for “Where”, a question word: a friendly picture, a quick game and tips for parents of 4–5 year olds. Download the card free."
+  "metaDescription": "Print the sight word flashcard for “Where”, a place word. Your child learns the word that opens questions about places. Download the card free for ages 4–5."
  },
  "away": {
   "word": "Away",
-  "intro": "The path on the card shows away getting smaller. On the card, a boy walks away along a winding path toward a small red house.",
-  "say": "Point to the word and read it slowly, then say a little sentence together, such as ‘The ball rolled away.’",
-  "try": "Look for “away” here: stories where something runs, rolls or flies away. Let your child say the word whenever you both spot it.",
-  "note": "Memory hook: a and way sit side by side, like someone setting off down a way.",
+  "intro": "The word that moves things off into the distance. A story word that shows up again and again at the end of a chapter.",
+  "say": "Read “away” aloud, then find it again in a favorite book.",
+  "try": "Put a toy away and say Put it away. Then bring it back out.",
+  "note": "Pair it with the here card: here, and away.",
   "cardTitle": "“Away” Sight Word Flashcard — Printable Card for Ages 4–5",
-  "metaDescription": "Print the sight word flashcard for “Away”, a place word: a friendly picture, a quick game and tips for parents of 4–5 year olds. Download the card free."
+  "metaDescription": "Print the sight word flashcard for “Away”, a place word. Your child learns to understand distance and direction away from a place. Download the card free for ages 4–5."
  },
  "at": {
   "word": "At",
-  "intro": "Two letters and one job: pointing to a place. On the card, a boy sits at a round table, drawing with a crayon.",
-  "say": "Point to the word and read it slowly, then say a little sentence together, such as ‘I am at school.’",
-  "try": "Look for “at” here: “at home”, “at the park”, “at lunch”, “at the shops”. Let your child say the word whenever you both spot it.",
-  "note": "Memory hook: it hides inside cat, hat, mat and bat.",
+  "intro": "The tiny word for a place or a time. A very small word, so give it a big print and a big voice.",
+  "say": "Read “at” aloud, then find it again in a favorite book.",
+  "try": "Point at a place in the room and say I am at the window.",
+  "note": "Look for at in a story and clap each time.",
   "cardTitle": "“At” Sight Word Flashcard — Printable Card for Ages 4–5",
-  "metaDescription": "Print the sight word flashcard for “At”, a place word: a friendly picture, a quick game and tips for parents of 4–5 year olds. Download the card free."
+  "metaDescription": "Print the sight word flashcard for “At”, a tiny helper word. Your child learns to use a small word for a place. Download the card free for ages 4–5."
  },
  "by": {
   "word": "By",
-  "intro": "Tree trunk, boy, and a word that means right next to. On the card, a boy leans against the trunk of a big leafy tree.",
-  "say": "Point to the word and read it slowly, then say a little sentence together, such as ‘The cat sat by the door.’",
-  "try": "Look for “by” here: “by the sea”, “by the window”, “by my side”. Let your child say the word whenever you both spot it.",
-  "note": "Memory hook: the y does the same job as in my, saying its name.",
+  "intro": "The word for next to or near. A short word that sounds just like goodbye, which is half the fun.",
+  "say": "Read “by” aloud, then find it again in a favorite book.",
+  "try": "Put a toy by the chair, then by the door, and say by each time.",
+  "note": "Use by to tell where the shoes are and let your child fetch them.",
   "cardTitle": "“By” Sight Word Flashcard — Printable Card for Ages 4–5",
-  "metaDescription": "Print the sight word flashcard for “By”, a place word: a friendly picture, a quick game and tips for parents of 4–5 year olds. Download the card free."
+  "metaDescription": "Print the sight word flashcard for “By”, a tiny helper word. Your child learns to use words for where things are in relation to others. Download the card free for ages 4–5."
  },
  "for": {
   "word": "For",
-  "intro": "The present on the card makes the word easy to remember. On the card, a boy hands a wrapped present to a smiling girl.",
-  "say": "Point to the word and read it slowly, then say a little sentence together, such as ‘This is for you.’",
-  "try": "Look for “for” here: birthdays, thank-you notes and “what is it for?”. Let your child say the word whenever you both spot it.",
-  "note": "Memory hook: it sounds like the number four.",
+  "intro": "The word for a gift or a purpose. A short word that carries a gift, so it feels generous.",
+  "say": "Read “for” aloud, then find it again in a favorite book.",
+  "try": "Wrap a toy in paper and say This is for you.",
+  "note": "Make a card and write the word for on it.",
   "cardTitle": "“For” Sight Word Flashcard — Printable Card for Ages 4–5",
-  "metaDescription": "Print the sight word flashcard for “For”, a place word: a friendly picture, a quick game and tips for parents of 4–5 year olds. Download the card free."
+  "metaDescription": "Print the sight word flashcard for “For”, a tiny helper word. Your child learns to link a word with giving and purpose. Download the card free for ages 4–5."
  },
  "not": {
   "word": "Not",
-  "intro": "The red no-sign circles the word’s whole meaning. On the card, a boy with crossed arms stands inside a red circle with a line through it.",
-  "say": "Point to the word and read it slowly, then say a little sentence together, such as ‘I do not like it.’",
-  "try": "Look for “not” here: “do not touch”, “not today” and “it is not”. Let your child say the word whenever you both spot it.",
-  "note": "Memory hook: n-o-t rhymes with hot, pot and dot.",
+  "intro": "The word that says no, or the opposite. A tiny word with a big effect, since it flips the meaning of the sentence.",
+  "say": "Read “not” aloud, then find it again in a favorite book.",
+  "try": "Say yes and not sentences about objects and let your child say the other.",
+  "note": "Play a game of not: say something wrong and let your child say it is not so.",
   "cardTitle": "“Not” Sight Word Flashcard — Printable Card for Ages 4–5",
-  "metaDescription": "Print the sight word flashcard for “Not”, a joining word: a friendly picture, a quick game and tips for parents of 4–5 year olds. Download the card free."
+  "metaDescription": "Print the sight word flashcard for “Not”, a tiny helper word. Your child learns to understand negatives and the opposite meaning. Download the card free for ages 4–5."
  },
  "but": {
   "word": "But",
-  "intro": "The tick and the cross show two ideas pulling against each other. On the card, a puzzled boy holds out both hands, a tick on one side and a cross on the other.",
-  "say": "Point to the word and read it slowly, then say a little sentence together, such as ‘I want to, but I can’t.’",
-  "try": "Look for “but” here: rainy days: “I want to go, but it is raining”. Let your child say the word whenever you both spot it.",
-  "note": "Memory hook: three letters that rhyme with cut, hut and nut.",
+  "intro": "The word that joins two ideas that do not agree. A short word that makes stories more exciting by adding a twist.",
+  "say": "Read “but” aloud, then find it again in a favorite book.",
+  "try": "Say a sentence with but and let your child finish it.",
+  "note": "Listen for but in a story and hold up two hands.",
   "cardTitle": "“But” Sight Word Flashcard — Printable Card for Ages 4–5",
-  "metaDescription": "Print the sight word flashcard for “But”, a joining word: a friendly picture, a quick game and tips for parents of 4–5 year olds. Download the card free."
+  "metaDescription": "Print the sight word flashcard for “But”, a tiny helper word. Your child learns that two ideas can pull in different directions. Download the card free for ages 4–5."
  },
  "all": {
   "word": "All",
-  "intro": "It means every single one, and the picture proves it. On the card, five cheering children crowd together with their arms in the air.",
-  "say": "Point to the word and read it slowly, then say a little sentence together, such as ‘We are all here.’",
-  "try": "Look for “all” here: family dinners, the classroom carpet and any crowd you can count. Let your child say the word whenever you both spot it.",
-  "note": "Memory hook: two tall l letters stand at the end like goalposts.",
+  "intro": "The word for everything and everyone together. A big idea in a small word, handy for talking about everyone at once.",
+  "say": "Read “all” aloud, then find it again in a favorite book.",
+  "try": "Count everyone in the family and say all of us.",
+  "note": "Say all done when finished with a task and point to the card.",
   "cardTitle": "“All” Sight Word Flashcard — Printable Card for Ages 4–5",
-  "metaDescription": "Print the sight word flashcard for “All”, a describing word: a friendly picture, a quick game and tips for parents of 4–5 year olds. Download the card free."
+  "metaDescription": "Print the sight word flashcard for “All”, a tiny helper word. Your child learns to think of everyone or everything in a group. Download the card free for ages 4–5."
  },
  "said": {
   "word": "Said",
-  "intro": "Said looks nothing like it sounds, which makes it a great word to learn by sight. On the card, a boy points to his mouth, ready to talk.",
-  "say": "Point to the word and read it slowly, then say a little sentence together, such as ‘Mum said yes.’",
-  "try": "Look for “said” here: speech in stories: “Hello,” said the fox. Let your child say the word whenever you both spot it.",
-  "note": "Memory hook: it sounds like “sed”, not “say-d”.",
+  "intro": "The word that follows a quote in stories. A word with a surprise in its spelling, so it earns an extra look.",
+  "say": "Read “said” aloud, then find it again in a favorite book.",
+  "try": "Retell a short conversation from your day using said, and let your child do the same for you.",
+  "note": "Look for said in a book and read the line before it.",
   "cardTitle": "“Said” Sight Word Flashcard — Printable Card for Ages 4–5",
-  "metaDescription": "Print the sight word flashcard for “Said”, an action word: a friendly picture, a quick game and tips for parents of 4–5 year olds. Download the card free."
+  "metaDescription": "Print the sight word flashcard for “Said”, a tiny helper word. Your child learns to tell who is speaking in a story. Download the card free for ages 4–5."
  },
  "ate": {
   "word": "Ate",
-  "intro": "Eat turns into ate, with no -ed needed. On the card, a boy eats a plate of broccoli and rice with a spoon.",
-  "say": "Point to the word and read it slowly, then say a little sentence together, such as ‘I ate my lunch.’",
-  "try": "Look for “ate” here: stories about meals, like the bear who ate the porridge. Let your child say the word whenever you both spot it.",
-  "note": "Memory hook: it sounds exactly like the number eight.",
+  "intro": "The past tense of eat. A short word that matches a mealtime, so your child already knows what it means.",
+  "say": "Read “ate” aloud, then find it again in a favorite book.",
+  "try": "Draw what you ate and write ate next to it.",
+  "note": "Pair eat and ate and talk about now and before.",
   "cardTitle": "“Ate” Sight Word Flashcard — Printable Card for Ages 4–5",
-  "metaDescription": "Print the sight word flashcard for “Ate”, an action word: a friendly picture, a quick game and tips for parents of 4–5 year olds. Download the card free."
+  "metaDescription": "Print the sight word flashcard for “Ate”, a action word. Your child learns to tell a meal that already happened from one happening now. Download the card free for ages 4–5."
  },
  "did": {
   "word": "Did",
-  "intro": "The thumb is up and the job is done. On the card, a smiling boy holds up one thumb.",
-  "say": "Point to the word and read it slowly, then say a little sentence together, such as ‘I did it!’",
-  "try": "Look for “did” here: finished puzzles, tidy rooms, and any proud ending. Let your child say the word whenever you both spot it.",
-  "note": "Memory hook: a d stands guard on each side with a little i in the middle.",
+  "intro": "The past tense of do. A tiny word with a happy ending, easy to learn and easy to say proudly.",
+  "say": "Read “did” aloud, then find it again in a favorite book.",
+  "try": "Pick a small job, such as tidying a toy, do it together and let your child say I did it!",
+  "note": "Give a thumbs up each time your child says did.",
   "cardTitle": "“Did” Sight Word Flashcard — Printable Card for Ages 4–5",
-  "metaDescription": "Print the sight word flashcard for “Did”, a small helping word: a friendly picture, a quick game and tips for parents of 4–5 year olds. Download the card free."
+  "metaDescription": "Print the sight word flashcard for “Did”, a action word. Your child learns the past tense of do and the pride of a finished job. Download the card free for ages 4–5."
  },
  "could": {
   "word": "Could",
-  "intro": "The thinking pose on the card is the whole meaning. On the card, a boy rests his chin on his hand, thinking.",
-  "say": "Point to the word and read it slowly, then say a little sentence together, such as ‘I could help.’",
-  "try": "Look for “could” here: wondering aloud: “I wonder what we could build”. Let your child say the word whenever you both spot it.",
-  "note": "Memory hook: Oh U Lucky Duck is the old trick for spelling o-u-l-d.",
+  "intro": "The word for what might be possible. A word with silent letters and a good memory trick, so it makes a fun challenge.",
+  "say": "Read “could” aloud, then find it again in a favorite book.",
+  "try": "Brainstorm three ideas with could at the start.",
+  "note": "Teach the spelling with the rhyme Oh U Lucky Duck, one letter for each word: o, u, l, d.",
   "cardTitle": "“Could” Sight Word Flashcard — Printable Card for Ages 4–5",
-  "metaDescription": "Print the sight word flashcard for “Could”, a small helping word: a friendly picture, a quick game and tips for parents of 4–5 year olds. Download the card free."
+  "metaDescription": "Print the sight word flashcard for “Could”, a tiny helper word. Your child learns to think about what might be possible. Download the card free for ages 4–5."
  }
 };

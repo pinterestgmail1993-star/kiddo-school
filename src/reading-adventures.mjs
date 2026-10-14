@@ -456,7 +456,7 @@ export function readingClassBody(){
  <article class="wrap lesson-hero"><div class="lesson-hero-copy">
   <span class="eyebrow">CLASS 29 · PRESCHOOL AGES 4–5</span>
   <h1>Storytime &amp; Pre-Reading Comprehension</h1>
-  <div class="fc-chips lesson-chips"><span><strong>Age</strong> 4–5 Years</span><span><strong>Class</strong> 29 of 30</span><span><strong>Adventures</strong> 29 story games</span><span><strong>Subjects</strong> Sequencing · feelings · retelling</span></div>
+  <div class="fc-chips lesson-chips"><span><strong>Age</strong> 4–5 Years</span><span><strong>Class</strong> 29 of 30</span><span><strong>Adventures</strong> 29 story games</span><span><strong>Sight words</strong> 52 lessons</span><span><strong>Subjects</strong> Sequencing · feelings · retelling</span></div>
   <p class="lesson-lede">Build early reading comprehension through picture stories, sequencing, predictions, characters, emotions, memory, and problem-solving. Twenty-nine draw-on-the-picture adventures \u2014 every one played on its own storybook illustration, with plain written instructions and a printable worksheet twin in the <a href="${WS29_PATH}">Reading worksheet library</a>.</p>
   <p class="lesson-lede">No reading needed: every adventure is one big picture to draw on, with plain instructions a grown-up can read aloud. Grown-ups get the story behind each activity on its page.</p>
   <div class="lesson-start"><a class="button" href="#adventures">Meet the adventures <span aria-hidden="true">↓</span></a> <a class="button" href="#sight-words">Learn the sight words <span aria-hidden="true">↓</span></a><span class="lesson-start-hint">One or two stories per sitting is a full session.</span></div>
@@ -472,7 +472,7 @@ export function readingClassBody(){
  <section class="wrap fc-section" id="sight-words" aria-label="Sight word lessons">
   <span class="eyebrow">LEARN · 52 SIGHT WORD LESSONS</span>
   <h2>Learn the sight words, one card at a time.</h2>
-  <p class="fc-hint">The small words on every page of a first book: a, the, I, can, see, blue and more. Tap any card to open its lesson: the original flashcard with a drawing layer, and five minutes of steps for the grown-up. Start at the top and work down, three new words a day at most.</p>
+  <p class="fc-hint">The small words on every page of a first book: a, the, I, can, see, blue and more. Tap any card to open its lesson: the flashcard with a drawing canvas on the left, and on the right how to teach the word, how to say it and where to use it. Start at the top and work down, three new words a day at most.</p>
   <div class="lp-tiles">${swLesson.cards.map(c=>`<a class="lp-tile" href="${C29_PATH}learn/${c.slug}/"><img src="${swLesson.r2Base+swLesson.folder+c.file}" width="${c.w}" height="${c.h}" alt="${esc(c.alt)}" loading="lazy"><strong>${esc(swLp[c.slug].title)}</strong></a>`).join('')}</div>
   <p class="lesson-note">Every lesson pairs with a printable card in the <a href="/flashcards/sight-words/">Sight Words flashcard set</a>, with its own download button and notes for grown-ups.</p>
  </section>

@@ -152,14 +152,15 @@ registerLpTeachLinks(Object.fromEntries(LP_REGISTRY.map(r=>[r.slug,r.content])))
 const BLOCKS=[
  ['what','What is this?'],['mean','What does it mean?'],['know','What does the child need to know?'],
  ['why','Why this matters'],['dev','What it teaches'],['vocab','Words to learn'],
- ['say','Say this to your child'],['teach','Step by step'],['notice','Look closer at the picture'],
+ ['say','Say this to your child'],['teach','Step by step'],['sayhow','How to say it'],['use','Where to use it'],['notice','Look closer at the picture'],
  ['ask','Ask your child'],['childSay','What your child can say or do'],['real','Out in the real world'],
  ['play','Try it together'],['check','Understanding check'],['tips','Parent tips'],['safety','Staying safe']
 ];
 
 export function lpLessonBody(set,card,lesson,ctx){
  const {prev,next}=ctx;
- const blocks=BLOCKS.filter(([k])=>lesson[k]).map(([k,label])=>{
+ const blocks=BLOCKS.filter(([k])=>lesson[k]).map(([k,defLabel])=>{
+  const label=(lesson.labels&&lesson.labels[k])||defLabel;
   if(k==='teach'){
    const steps=lesson[k].split('\n').map(s=>`<li>${esc(s.replace(/^\d+\)\s*/,''))}</li>`).join('');
    return `<div class="fc2-do fcl-steps"><h2>${esc(label)}</h2><ol>${steps}</ol></div>`;
@@ -179,7 +180,7 @@ export function lpLessonBody(set,card,lesson,ctx){
  <div class="page-heading wrap"><span class="eyebrow">LEARNING PATH LESSON · ${esc(set.name.toUpperCase())} · AGES ${esc(set.ageLabel.toUpperCase())}</span><h1>${esc(card.word)} — a step-by-step lesson for grown-up and child</h1><p>${esc(lesson.intro)}</p></div>
  <div class="fcl wrap">
   <div class="wc-mount fcl-left" data-wc data-wc-src="${esc(card.img)}?draw=1" data-wc-name="${esc(card.word)} flashcard" data-wc-w="${card.w}" data-wc-h="${card.h}" data-wc-restore="learn/${esc(set.slug)}/${esc(card.slug)}">
-   <figure class="fcl-art"><img src="${esc(card.img)}?draw=1" width="${card.w}" height="${card.h}" alt="${esc(card.alt)}" fetchpriority="high" crossorigin="anonymous"><figcaption><strong>${esc(card.word)}</strong><span>Original Canva flashcard · Card ${card.n} of ${set.cards.length}</span></figcaption></figure>
+   <figure class="fcl-art"><img src="${esc(card.img)}?draw=1" width="${card.w}" height="${card.h}" alt="${esc(card.alt)}" fetchpriority="high" crossorigin="anonymous"><figcaption><strong>${esc(card.word)}</strong><span>${set.slug==='sight-words'?'Sight word flashcard':'Original Canva flashcard'} · Card ${card.n} of ${set.cards.length}</span></figcaption></figure>
   </div>
   <div class="fcl-copy">${blocks}${pair}</div>
  </div>

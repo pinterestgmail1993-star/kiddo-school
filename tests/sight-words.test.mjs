@@ -38,11 +38,19 @@ test('Sight Words: lesson page, library card and set data never share descriptiv
   const l=lpContent[c.slug],b=lib[c.slug];
   assert.ok(l&&b,c.slug);
   for(const k of ['helps','roleplay','learn','teachTip']){
-   for(const lk of ['what','mean','know','why','dev','say','notice','ask','childSay','real','play','check','tips']){
+   for(const lk of Object.keys(l).filter(x=>typeof l[x]==='string')){
     assert.notEqual(b[k],l[lk],`${c.slug}: library ${k} equals lesson ${lk}`);
    }
   }
-  assert.notEqual(c.intro,l.what);assert.notEqual(c.intro,l.intro);
+  assert.notEqual(c.intro,l.intro);
+  // the picture is described once (alt text); neither page repeats it in prose
+  const lessonText=JSON.stringify(l),libText=JSON.stringify(b)+c.intro;
+  const pic=c.alt.split(': ')[1].split(', with the word')[0];
+  assert.ok(!lessonText.includes(pic)&&!libText.includes(pic),'picture sentence repeated in prose '+c.slug);
+  // no sentence of 40+ characters appears on both pages
+  const sents=s=>s.split(/(?<=[.!?])\s+/).map(x=>x.trim()).filter(x=>x.length>=40);
+  const lessonSents=new Set(Object.values(l).filter(v=>typeof v==='string').flatMap(sents));
+  for(const v of [...Object.values(b),c.intro])for(const x of sents(v))assert.ok(!lessonSents.has(x),`shared sentence on ${c.slug}: ${x}`);
  }
  const titles=new Set(Object.values(lpContent).map(l=>l.seoTitle));
  assert.equal(titles.size,52,'unique lesson titles');
@@ -57,4 +65,20 @@ test('Flashcards hub shows the Sight Words set with its cover',()=>{
  const html=read('/flashcards/');
  assert.ok(html.includes('/flashcards/sight-words/'));
  assert.ok(html.includes('/assets/sight-words/cover.webp'));
+});
+
+test('Sight Words: the Learning Path hub and the Age 4 hub link the lessons and the cards',()=>{
+ const lp=read('/learning-path/');
+ assert.ok(lp.includes(`${C29}learn/a/`),'learning path links the first lesson');
+ assert.ok(lp.includes('href="/flashcards/sight-words/"'),'learning path links the card set');
+ assert.ok(read('/preschool/4-years/').includes('fifty-two sight word lessons'));
+});
+test('Sight Words: lesson pages have the right sections and no template slips',()=>{
+ for(const c of set.cards){
+  const lp=read(`${C29}learn/${c.slug}/`);
+  for(const h of ['How to teach it','How to say it','Where to use it'])assert.ok(lp.includes(`<h2>${h}</h2>`),`${h} on ${c.slug}`);
+  assert.ok(!lp.includes('Original Canva flashcard'),'caption '+c.slug);
+  const lib=read(`/flashcards/sight-words/${c.slug}/`);
+  assert.ok(!/Open the (The|A|I) lesson/.test(lib),'link wording '+c.slug);
+ }
 });
