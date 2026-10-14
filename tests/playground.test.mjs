@@ -19,9 +19,10 @@ test('playground set: 32 cards in three groups, room link, honest grid',()=>{
  // All 32 art files probed at 1728×2304 — nothing assumed
  for(const c of set.cards){assert.equal(c.w,1728);assert.equal(c.h,2304);assert.match(c.img,/^(https:\/\/assets\.kiddo\.school\/school\/playground\/)/);}
  assert.equal(cover.w,1728);assert.equal(cover.h,2304);
- // The set links its ROOM (/playground/), never a class or the Learning Path
+ // The set links its ROOM (/playground/), never a class or the Learning Path;
+ // the room hosts the /learn/ lessons, so the set's lessonPath IS the room.
  assert.equal(set.classUrl,'/playground/');
- assert.equal(set.lessonPath,null);
+ assert.equal(set.lessonPath,'/playground/');
  assert.ok(!set.stageName&&!set.stageHref,'playground set has no class stage');
  assert.ok(setHtml.includes('href="/playground/"'),'set page links the Playground room');
  assert.ok(setHtml.includes('Step into the room these cards come from'),'room-labelled button');
@@ -60,17 +61,44 @@ test('playground card pages: classic blocks, download, honest room framing',()=>
 
 /* ------------------------------------------------ THE PLAYGROUND ROOM */
 const roomHtml=readPage('/playground/');
-test('playground room page: built from the set, three shelves, off the learning path',()=>{
+test('playground room page: built from the set, three shelves of LESSONS, off the learning path',()=>{
  assert.ok(roomHtml.includes('rel="canonical" href="'+site+'/playground/"'),'canonical');
  assert.ok(roomHtml.includes('THE PLAYGROUND'),'room heading');
- assert.ok(roomHtml.includes('href="/flashcards/playground/action-balance/"'),'action tile');
- assert.ok(roomHtml.includes('href="/flashcards/playground/equipment-tunnel/"'),'equipment tile');
- assert.ok(roomHtml.includes('href="/flashcards/playground/manner-wait/"'),'manner tile');
+ // owner doctrine: room tiles open LESSON pages (/playground/learn/...), never the flashcard pages
+ assert.ok(roomHtml.includes('href="/playground/learn/action-balance/"'),'action tile → lesson');
+ assert.ok(roomHtml.includes('href="/playground/learn/equipment-tunnel/"'),'equipment tile → lesson');
+ assert.ok(roomHtml.includes('href="/playground/learn/manner-wait/"'),'manner tile → lesson');
+ assert.ok(!roomHtml.includes('href="/flashcards/playground/action-balance/"'),'no tile points at a flashcard page');
  assert.ok(roomHtml.includes('href="/flashcards/playground/"'),'set link');
  assert.ok(roomHtml.includes('href="/rooms/"'),'rooms hub link');
  assert.ok(roomHtml.includes('href="/music-room/"')&&roomHtml.includes('href="/toddler/2-years/school-garden/"')&&roomHtml.includes('href="/learning-library/"'),'sibling rooms');
  assert.ok(!roomHtml.includes('Class 2')||!roomHtml.includes('Class 23'),'no class number claimed');
  assert.ok(!roomHtml.includes('learning path'),'no learning-path claim');
+});
+
+/* ------------------------------------------------ PLAYGROUND LESSONS */
+test('playground lessons: 32 /learn/ pages, room breadcrumbs, distinct from the flashcard pages',()=>{
+ assert.ok(existsSync('dist/playground/learn/action-balance/index.html'),'first lesson page');
+ assert.ok(existsSync('dist/playground/learn/equipment-tunnel/index.html'),'equipment lesson');
+ assert.ok(existsSync('dist/playground/learn/manner-wait/index.html'),'manner lesson');
+ assert.ok(existsSync('dist/playground/learn/action-slide/index.html'),'duplicate-word slug kept');
+ const lessonHtml=readPage('/playground/learn/action-balance/');
+ const lesson=lessonHtml.slice(lessonHtml.indexOf('<main id="main">'),lessonHtml.indexOf('<footer>'));
+ // room framing: School Rooms breadcrumb, PLAYGROUND LESSON eyebrow, NO learning-path claim
+ assert.ok(lesson.includes('href="/rooms/"'),'lesson breadcrumbs through School Rooms');
+ assert.ok(!lesson.includes('href="/learning-path/"'),'no learning-path crumb in the content');
+ assert.ok(lesson.includes('PLAYGROUND LESSON'),'room lesson eyebrow');
+ // lessons are DISTINCT from the flashcard card pages (no shared text)
+ const card=readPage('/flashcards/playground/action-balance/');
+ const lessonText=lesson.replace(/<script[\s\S]*?<\/script>/g,'').replace(/<[^>]+>/g,' ');
+ const cardText=card.replace(/<script[\s\S]*?<\/script>/g,'').replace(/<[^>]+>/g,' ');
+ const cardSentences=cardText.split(/[.!?]\s/).map(s=>s.trim()).filter(s=>s.length>60);
+ for(const s of cardSentences)assert.ok(!lessonText.includes(s),'lesson shares a library sentence: '+s.slice(0,60));
+ // card pages link their lesson (Teach it, step by step)
+ assert.ok(card.includes('href="/playground/learn/action-balance/"'),'card page → lesson link');
+ // sitemap: all 32 lessons indexed, under the room path
+ const xml=read('dist/sitemap.xml');
+ assert.equal((xml.match(/playground\/learn\//g)||[]).length,32,'32 lesson URLs in the sitemap');
 });
 
 /* ------------------------------------------------ SCHOOL ROOMS HUB */

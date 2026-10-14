@@ -42,8 +42,8 @@ test('black and white baby cards page shows flashcards, stages grid, guide and s
  assert.ok(urls.length>=16,'set page should embed the fifteen flashcards plus the parents guide');
 });
 
-test('flashcard data: thirty-four flashcard sets (every learning-path class 1-22 covered, plus Class 23 the Music Room, the Playground school room, Classes 28 and 31-36), every card complete and linked to its real lesson',()=>{
- assert.equal(fcSets.length,34);
+test('flashcard data: thirty-five flashcard sets (every learning-path class 1-22 covered, plus Class 23 the Music Room, the Playground school room, Classes 28, 31-36 and Class 37 Sports), every card complete and linked to its real lesson',()=>{
+ assert.equal(fcSets.length,35);
  for(const s of fcSets){
   assert.ok(s.cards.length>=10,`${s.slug} has ${s.cards.length} cards`);
   assert.ok(existsSync(join(root,s.url.slice(1),'index.html')),`${s.url} missing`);
@@ -123,8 +123,9 @@ test('card pages: unique titles and descriptions, say/try/note, download, prev/n
  }
  // One download button per card page: 598 before the Music Room, +53 for
  // Class 23's fifty-three instrument/word/people cards = 651, +32 for the
- // Playground's action/equipment/manner cards = 683.
- assert.equal(downloads,683);
+ // Playground's action/equipment/manner cards = 683, +40 for the Class 37
+ // sports cards = 723.
+ assert.equal(downloads,723);
 });
 
 test('library: every set is listed, baby collection included, no orphan sets',()=>{

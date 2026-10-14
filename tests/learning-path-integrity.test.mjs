@@ -24,7 +24,7 @@ const lp=()=>read('learning-path/index.html');
 // The approved published sequence — Classes 1–23 then 25–36. Update ONLY
 // when the owner approves a new class (23 = Music Room, owner-approved
 // 2026-10-14; 33, 34, 35, 36 approved & built).
-const APPROVED=[...Array(23).keys()].map(i=>i+1).concat([25,26,27,28,29,30,31,32,33,34,35,36]);
+const APPROVED=[...Array(23).keys()].map(i=>i+1).concat([25,26,27,28,29,30,31,32,33,34,35,36,37]);
 
 const WORDS={one:1,two:2,three:3,four:4,five:5,six:6,seven:7,eight:8,nine:9,ten:10,
  eleven:11,twelve:12,thirteen:13,fourteen:14,fifteen:15,sixteen:16,seventeen:17,
@@ -39,7 +39,7 @@ test('the Learning Path shows exactly the approved classes — unique, strictly 
  const html=lp();
  const nums=[...html.matchAll(/lp-class">Class (\d+):/g)].map(m=>+m[1]);
  assert.equal(nums.length,APPROVED.length,'row count matches the approved registry ('+nums.length+' rows)');
- assert.deepEqual(nums,APPROVED,'sequence is exactly Classes 1–23 + 25–36 (24 absent by owner decision)');
+ assert.deepEqual(nums,APPROVED,'sequence is exactly Classes 1–23 + 25–37 (24 absent by owner decision)');
  assert.equal(new Set(nums).size,nums.length,'no duplicate class numbers');
  for(let i=1;i<nums.length;i++)assert.ok(nums[i]>nums[i-1],'strictly increasing at position '+i);
 });

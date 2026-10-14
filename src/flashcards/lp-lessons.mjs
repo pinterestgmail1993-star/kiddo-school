@@ -14,6 +14,9 @@ import {lpContent as s31} from './lp-science-nature.mjs';
 import {lpContent as ws34} from './lp-weather-seasons.mjs';
 import {lpContent as nm35} from './lp-numbers-counting-early-math.mjs';
 import {lpContent as ah36} from './lp-animals-habitats.mjs';
+import {lpContent as mr23} from './lp-music-room.mjs';
+import {lpContent as pgr} from './lp-playground.mjs';
+import {lpContent as sp37} from './lp-sports.mjs';
 import {lpContent as ph28} from './lp-phonics.mjs';
 import {lpContent as fvt} from './lp-faces-and-visual-tracking.mjs';
 import {lpContent as cfo} from './lp-colors-and-first-objects.mjs';
@@ -137,6 +140,16 @@ export const LP_REGISTRY=[
   navTitle:'Learn the animals and the homes that fit them',
   navIntro:'Twenty-two habitat lessons, meadow to cave: find the animal on its card, learn what its home is and why it fits, then play the game that puts your child inside it — hopping the grassland, digging the water hole, huddling like penguins, hanging like a bat. Meadow and pond first, then forests, warm grasslands, desert, river and ocean, the icy poles, and the dark cave at the end.'},
 
+ {slug:'music-room',content:mr23,
+  navTitle:'Learn the Music Room, one card at a time',
+  navIntro:'Fifty-three Music Room lessons: thirty-three instruments from accordion to xylophone — how each one makes its sound and the home version you can build tonight — thirteen music words from beat to volume, and the seven people who make music together, from a solo to a full orchestra. One card a sitting, and the whole room starts to sing.'},
+ {slug:'playground',content:pgr,
+  navTitle:'Learn the playground, word by word',
+  navIntro:'Thirty-two Playground lessons: the fifteen action words our bodies do there — balance to walk, each taught step by step with its own game — the twelve pieces of equipment from ball to tunnel, and the five manners that make play kind. Body, ground and kindness: the whole playground, taught.'},
+ {slug:'sports',content:sp37,
+  navTitle:'Learn the sports and movement cards, one game at a time',
+  navIntro:'Forty sports lessons for ages 4–5: the ball games first, then run-jump-throw athletics, the water sports, wheels and boards and ice, climbing and riding, aim and precision, the martial arts and the mighty lift — every lesson teaching one big move step by step, with a living-room game that builds gross motor skills, physical literacy and the fundamental movement skills of running, jumping, throwing, catching, kicking and balance.'},
+
  {slug:'phonics-and-beginning-sounds',content:ph28,
   navTitle:'Learn the letter sounds, one letter at a time',
   navIntro:'Twenty-six letter-sound lessons, Aa apple to Zz zebra: trace the big letters on the card, learn how each sound is really made, say the parent script and play the one game that drills the sound — five minutes a letter, and the alphabet starts speaking.'},
@@ -181,8 +194,14 @@ export function lpLessonBody(set,card,lesson,ctx){
  const pn=`<nav class="fc2-pn" aria-label="Previous and next lesson"><a class="fc2-pn-btn" href="${prev.url}" rel="prev"><span aria-hidden="true">←</span> <strong>${esc(prev.title)}</strong><span>Previous lesson</span></a><a class="fc2-pn-btn fc2-pn-next" href="${next.url}" rel="next"><strong>${esc(next.title)}</strong> <span aria-hidden="true">→</span><span>Next lesson</span></a></nav>`;
  const cls=(set.stageName||'').split(' · ')[0];
  const pair=`<p class="fcl-pair">This lesson pairs with the <a href="${esc(card.url)}">${esc(card.word)} flashcard</a> in the library — print it, show it, keep it on the fridge. Back to <a href="${esc(set.lessonPath)}">${esc(set.name)}${cls?` (${esc(cls)})`:''}</a>.</p>`;
- return `<nav class="breadcrumbs wrap" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><a href="/learning-path/">Learning Path</a><span aria-hidden="true">/</span><a href="${esc(set.stageHref||set.lessonPath)}">${esc(set.name)}</a><span aria-hidden="true">/</span><span aria-current="page">${esc(card.word)}</span></nav>
- <div class="page-heading wrap"><span class="eyebrow">LEARNING PATH LESSON · ${esc(set.name.toUpperCase())} · AGES ${esc(set.ageLabel.toUpperCase())}</span><h1>${esc(card.word)} — a step-by-step lesson for grown-up and child</h1><p>${esc(lesson.intro)}</p></div>
+ // Rooms that host lessons but sit OFF the Learning Path (the Playground)
+ // swap the breadcrumb base and the eyebrow via set.lessonCrumb/lessonEyebrow.
+ const crumbTrail=set.lessonCrumb
+  ?set.lessonCrumb.map(([label,href])=>`<a href="${esc(href)}">${esc(label)}</a><span aria-hidden="true">/</span>`).join('')
+  :`<a href="/learning-path/">Learning Path</a><span aria-hidden="true">/</span>`;
+ const eyebrow=set.lessonEyebrow||'LEARNING PATH LESSON';
+ return `<nav class="breadcrumbs wrap" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span>${crumbTrail}<a href="${esc(set.stageHref||set.lessonPath)}">${esc(set.name)}</a><span aria-hidden="true">/</span><span aria-current="page">${esc(card.word)}</span></nav>
+ <div class="page-heading wrap"><span class="eyebrow">${esc(eyebrow)} · ${esc(set.name.toUpperCase())} · AGES ${esc(set.ageLabel.toUpperCase())}</span><h1>${esc(card.word)} — a step-by-step lesson for grown-up and child</h1><p>${esc(lesson.intro)}</p></div>
  <div class="fcl wrap">
   <div class="wc-mount fcl-left" data-wc data-wc-src="${esc(card.img)}?draw=1" data-wc-name="${esc(card.word)} flashcard" data-wc-w="${card.w}" data-wc-h="${card.h}" data-wc-restore="learn/${esc(set.slug)}/${esc(card.slug)}">
    <figure class="fcl-art"><img src="${esc(card.img)}?draw=1" width="${card.w}" height="${card.h}" alt="${esc(card.alt)}" fetchpriority="high" crossorigin="anonymous"><figcaption><strong>${esc(card.word)}</strong><span>${set.slug==='sight-words'?'Sight word flashcard':'Original Canva flashcard'} · Card ${card.n} of ${set.cards.length}</span></figcaption></figure>

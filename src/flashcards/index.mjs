@@ -32,6 +32,7 @@ import * as phData from './data-phonics.mjs';
 import * as swData from './data-sight-words.mjs';
 import * as mrData from './data-music-room.mjs';
 import * as pgData from './data-playground.mjs';
+import * as spData from './data-sports.mjs';
 import {fvMeta,fvCardContent,cfoMeta,cfoCardContent,fwftMeta,fwftCardContent} from './data-baby-stages.mjs';
 import {aeoMeta,aeoCardContent,fabMeta,fabCardContent,fwfhMeta,fwfhCardContent} from './data-explorer-toddler.mjs';
 import {lessonsBase,fvLesson,cfoLesson,fwftLesson,aeoLesson,fabLesson,fwfhLesson} from '../lessons.mjs';
@@ -178,7 +179,14 @@ const SOURCES=[
  // keeps every URL unique. The room itself lives at /playground/ (the set's
  // classUrl) beside the Library, Garden and Music Room; the Learning Path is
  // deliberately untouched (owner request).
- [pgData,pgData.lesson]
+ [pgData,pgData.lesson],
+ // Preschool Class 37: forty sports & movement cards from the owner's Canva
+ // uploads in the class's own R2 folder (self-contained lesson object, ALL 41
+ // files probed at 1728×2304 portrait). The cover fronts the set and is never
+ // counted as a card. Purpose: WHAT each sport is and HOW to try its big move
+ // at home — the Learning Path /learn/ lessons (lp-sports.mjs via LP_REGISTRY)
+ // keep the step-by-step teaching on their own pages.
+ [spData,spData.lesson]
 ];
 
 function buildSet([data,lesson]){
@@ -214,6 +222,11 @@ function buildSet([data,lesson]){
   slug,url,
   stageName:data.meta.stageName||(stage?stage[0]:null),
   stageHref:data.meta.stageHref||(stage?stage[1]:null),
+  // Lesson-page framing overrides: rooms that host lessons but sit OFF the
+  // Learning Path (the Playground) swap the breadcrumb base and the eyebrow
+  // so /playground/learn/ pages never claim a class they are not.
+  lessonCrumb:data.meta.lessonCrumb||null,
+  lessonEyebrow:data.meta.lessonEyebrow||null,
   name:data.meta.name,
   seoTitle:data.meta.seoTitle,
   h1:data.meta.h1,
@@ -292,7 +305,7 @@ export function fcSetPageBody(s){
  <section class="wrap fc-section"><span class="eyebrow">THE CARDS</span><h2>Every card in the set.</h2><p class="fc-hint">Each card has its own page: the picture and short, practical notes for grown-ups — what it is for, how to use it, how to print it. Tap any card to open it.</p>${grid}</section>
  ${letterSets?`<section class="wrap fc-section"><span class="eyebrow">ALPHABET LETTER SETS</span><h2>The same letters, six more ways.</h2><p class="fc-hint">Individual letter-card sets with their own clean pages — every card has its own download button and its own card page.</p><div class="fc2-relrow">${letterSets}</div></section>`:''}
  <section class="wrap fc-section"><span class="eyebrow">HOW TO USE THESE CARDS</span><h2>Four ways that work.</h2><p class="fc-hint">You do not need a plan or a printer schedule. Pick one idea, try it for two minutes and see what happens.</p>${ideas}</section>
- <section class="wrap fc-section"><span class="eyebrow">PRINT &amp; DOWNLOAD</span><h2>Print the set, download a card.</h2><div class="fc2-actions"><a class="button" href="${s.classUrl||s.lessonPath}">${s.classUrl&&!s.lessonPath?'Step into the room these cards come from':'View the class these cards come from'} <span aria-hidden="true">↗</span></a>${s.lessonUrlBase?`<a class="button" href="${s.lessonUrlBase}">Open the lessons</a>`:''}${printBtn}<a class="button" href="/flashcards/">All flashcard sets</a></div><p class="fc-hint">${s.downloadHint||'Every card page has its own download button with the full-size image.'}${s.printPath?' The full set has a print-ready page too.':' This set is printed straight from its class page.'}</p></section>
+ <section class="wrap fc-section"><span class="eyebrow">PRINT &amp; DOWNLOAD</span><h2>Print the set, download a card.</h2><div class="fc2-actions"><a class="button" href="${s.classUrl||s.lessonPath}">${s.classUrl&&!s.stageName?'Step into the room these cards come from':'View the class these cards come from'} <span aria-hidden="true">↗</span></a>${s.lessonUrlBase?`<a class="button" href="${s.lessonUrlBase}">Open the lessons</a>`:''}${printBtn}<a class="button" href="/flashcards/">All flashcard sets</a></div><p class="fc-hint">${s.downloadHint||'Every card page has its own download button with the full-size image.'}${s.printPath?' The full set has a print-ready page too.':' This set is printed straight from its class page.'}</p></section>
  ${relatedRow?`<section class="wrap fc-section"><span class="eyebrow">MORE CARDS LIKE THESE</span><h2>Families of cards that pair well.</h2>${relatedRow}</section>`:''}
  ${fcCommunityMount(s.url)}`;
 }
@@ -346,7 +359,9 @@ export function fcCardPageBody(set,card,ctx){
   ?`<a class="button" href="${card.img}" download="${dlName(card.file)}.webp">Download splash <span aria-hidden="true">↓</span></a><a class="button" href="${card.img2}" download="${dlName(card.img2.split('/').pop())}.webp">Download picture <span aria-hidden="true">↓</span></a>`
   :`<a class="button" href="${card.img}" download="${esc(card.word.toLowerCase().replace(/[^a-z0-9]+/g,'-'))}.webp">Download card <span aria-hidden="true">↓</span></a>`}<button type="button" class="button" data-tc-print-view>Print this card</button>${set.printPath?`<a class="button" href="${set.printPath}">Print full set</a>`:''}<a class="button" href="${set.url}">View full set</a></div>`;
  const share=`<div class="fc2-block fc2-share-block"><span class="eyebrow">SHARE THIS CARD</span><h2>Pass it on.</h2><div class="fc2-share"><a class="fc2-share-btn" href="https://twitter.com/intent/tweet?url=${enc(pageUrl)}&text=${enc(shareTitle)}" target="_blank" rel="noopener" aria-label="Share this card on X">X</a><a class="fc2-share-btn" href="https://www.facebook.com/sharer/sharer.php?u=${enc(pageUrl)}" target="_blank" rel="noopener" aria-label="Share this card on Facebook">Facebook</a><a class="fc2-share-btn" href="https://wa.me/?text=${enc(shareTitle+' '+pageUrl)}" target="_blank" rel="noopener" aria-label="Share this card on WhatsApp">WhatsApp</a><a class="fc2-share-btn" href="https://pinterest.com/pin/create/button/?url=${enc(pageUrl)}&media=${enc(card.img)}&description=${enc(shareTitle)}" target="_blank" rel="noopener" aria-label="Save this card on Pinterest">Pinterest</a><button type="button" class="fc2-share-btn" data-fc-copy>Copy link</button></div><p class="fc-hint">Share buttons open in a new tab. The copy button copies this page&rsquo;s address — nothing is tracked.</p></div>`;
- const lesson=set.lessonPath?`<p class="fc2-lesson">From the <a href="${set.lessonPath}">${esc(set.lessonTitle)}</a> class on the Learning Path.</p>`:'';
+ // Room sets (classUrl without a stage, e.g. the Playground) frame the link
+ // as a room, never as a class on the Learning Path.
+ const lesson=set.lessonPath?`<p class="fc2-lesson">From the <a href="${set.lessonPath}">${esc(set.lessonTitle)}</a>${set.classUrl&&!set.stageName?' room — with every lesson one tap away.':' class on the Learning Path.'}</p>`:'';
  const relGrid=related&&related.length?`<section class="wrap fc-section"><span class="eyebrow">RELATED CARDS</span><h2>More cards to try.</h2><p class="fc-hint">${esc(ctx.relatedHint||'Nearby cards from this set and its closest friends.')}</p><div class="fc2-cards">${related.map(r=>`<a class="fc-card fc2-cardlink" href="${r.card.url}"><span class="fc2-cardimg"><img src="${r.card.img}" width="${r.card.w}" height="${r.card.h}" alt="${esc(r.card.alt)}" loading="lazy"></span><span class="fc2-cardword"><strong>${esc(r.card.word)}</strong><span>From ${esc(r.setName)}</span></span></a>`).join('')}</div></section>`:'';
  return `${crumbNav([['Flashcards','/flashcards/'],[set.name,set.url],[card.word]])}
  <div class="page-heading wrap"><span class="eyebrow">FLASHCARD · ${esc(set.name.toUpperCase())} · AGES ${esc(set.ageLabel.toUpperCase())}</span><h1>${card.numeral?`Number ${esc(card.numeral)} Flashcard — ${esc(card.word)} for ${esc(noun)}`:card.letter?`${esc(card.word)} Flashcard — Letter ${esc(card.letter.toUpperCase())} for ${esc(noun)}`:`${esc(card.word)} Flashcard for ${esc(noun)}`}</h1><p>${esc(card.intro)}</p></div>

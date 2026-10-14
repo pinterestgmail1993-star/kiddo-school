@@ -19,7 +19,9 @@ import {R2} from '../adventure-kit.mjs';
 export const lesson={
  r2Base:R2+'school/playground/',
  folder:'flashcards/',
- path:null,
+ // The room itself hosts the lessons: /playground/ is the lesson container,
+ // so the /learn/ shelf lives at /playground/learn/{slug}/.
+ path:'/playground/',
  seoTitle:'The Playground',
  cover:{w:1728,h:2304},
  // Order the way the playground is built: first the bodies moving, then the
@@ -72,6 +74,10 @@ export const meta={
  noun:'Preschoolers',
  group:'preschool',
  classUrl:'/playground/',
+ // Lesson-page framing: the Playground hosts lessons but sits OFF the
+ // Learning Path, so its /learn/ pages breadcrumb through School Rooms.
+ lessonCrumb:[['School Rooms','/rooms/']],
+ lessonEyebrow:'PLAYGROUND LESSON',
  useIdeas:[
   ['Playground word hunt','Take three cards to the real playground and hunt the words live — run on the path, the real slide, the real bench. Saying the word while the body does it sticks twice as deep.'],
   ['Do the word','Pick a card and do it in the living room: jump, balance on a tape line, push a box. The picture word becomes the instruction — and your child becomes the game show host.'],

@@ -168,9 +168,9 @@ test('the 4-years hub, preschool hub, homepage and learning path all know Age 4'
  assert.ok(preschool.includes('href="/preschool/4-years/"'),'preschool hub links Age 4');
  const home=page('/');
  assert.ok(home.includes('href="/preschool/4-years/"'),'homepage links Age 4');
- assert.ok(home.includes('Thirty-five classes are ready now, from birth to age five'),'honest class count');
+ assert.ok(home.includes('Thirty-six classes are ready now, from birth to age five'),'honest class count');
  const lp=page('/learning-path/');
- assert.ok(lp.includes('thirty-five age-guided classes'),'learning path title updated');
+ assert.ok(lp.includes('thirty-six age-guided classes'),'learning path title updated');
  assert.ok(lp.includes('Class 25: <a href="/preschool/4-years/shapes-patterns-and-sorting/">'),'learning path row 25');
  assert.ok(lp.includes('Class 26: <a href="/preschool/4-years/colors-mixing-and-creativity/">'),'learning path row 26');
  assert.ok(lp.includes('Class 27: <a href="/preschool/4-years/early-writing-and-pencil-control/">'),'learning path row 27');
@@ -186,8 +186,8 @@ test('sitemap carries all 74 new Age 4 URLs',()=>{
  assert.ok(xml.includes('/preschool/shapes/adventures/build-a-shape-spaceship/'),'sitemap spaceship');
  assert.ok(xml.includes('/preschool/writing/adventures/sunshine-stroke-challenge/'),'sitemap sunshine');
  const count=xml.split('/preschool/4-years/').length-1;
- // hub + ten class routes + 29+28+35 /learn/ lessons + 35 CH + 35 C34 worksheet activities + 29 C34 learn + 26 Class 28 phonics /learn/ letter-sound lessons
- assert.equal(count,331,'+ Sight Words hub + 52 Class 29 sight word lessons at /preschool/4-years/sight-words/{word}/; hub + ten classes + 29 CH learn + 28 C32 learn + 35 C31 learn + 35 CH + 35 C34 worksheet activities + 29 C34 learn + 20 C35 learn + C36 (class page + 22 learn + 6 worksheet activities) + 26 Class 28 /learn/ lessons in sitemap');
+ // hub + ten class routes + 29+28+35 /learn/ lessons + 35 CH + 35 C34 worksheet activities + 29 C34 learn + 26 Class 28 phonics /learn/ letter-sound lessons; +41 for Class 37 (class page + 40 sports /learn/ lessons)
+ assert.equal(count,372,'+ Sight Words hub + 52 Class 29 sight word lessons at /preschool/4-years/sight-words/{word}/; hub + ten classes + 29 CH learn + 28 C32 learn + 35 C31 learn + 35 CH + 35 C34 worksheet activities + 29 C34 learn + 20 C35 learn + C36 (class page + 22 learn + 6 worksheet activities) + 26 Class 28 /learn/ lessons + C37 (class page + 40 sports /learn/ lessons) in sitemap');
 });
 test('My Classroom mounts the creations gallery and adventure progress',()=>{
  const mc=page('/my-classroom/');
