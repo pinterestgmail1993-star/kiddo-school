@@ -2017,3 +2017,10 @@ h1 em,h2 em{color:#7b4b99}
 .wsgen-print-item{border:1.2pt solid #2b2b2b;border-radius:3mm;padding:4mm 5mm;font-size:14pt;font-weight:700;min-width:56mm;text-align:center;font-family:Arial,Helvetica,sans-serif}
 .wsgen-print-keylist{margin:6mm 12mm 0}
 .wsgen-print-keypair{font-size:14pt;font-weight:700;margin:0 0 4mm;font-family:Arial,Helvetica,sans-serif}
+.sw-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px;margin:14px 0}
+.sw-card{margin:0;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;text-align:center}
+.sw-card img{display:block;width:100%;height:auto}
+.sw-card figcaption{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.sw-count{font-size:.7em;font-weight:400;color:var(--muted)}
+.sw-cover{max-width:220px;margin:0 0 18px;border-radius:14px;overflow:hidden;border:1px solid var(--line)}
+.sw-cover img{display:block;width:100%;height:auto}
