@@ -14,6 +14,7 @@ import {lpContent as s31} from './lp-science-nature.mjs';
 import {lpContent as ws34} from './lp-weather-seasons.mjs';
 import {lpContent as nm35} from './lp-numbers-counting-early-math.mjs';
 import {lpContent as ah36} from './lp-animals-habitats.mjs';
+import {lpContent as ph28} from './lp-phonics.mjs';
 import {lpContent as fvt} from './lp-faces-and-visual-tracking.mjs';
 import {lpContent as cfo} from './lp-colors-and-first-objects.mjs';
 import {lpContent as fwft} from './lp-first-words-familiar-things.mjs';
@@ -135,6 +136,10 @@ export const LP_REGISTRY=[
  {slug:'animals-and-their-habitats',content:ah36,
   navTitle:'Learn the animals and the homes that fit them',
   navIntro:'Twenty-two habitat lessons, meadow to cave: find the animal on its card, learn what its home is and why it fits, then play the game that puts your child inside it — hopping the grassland, digging the water hole, huddling like penguins, hanging like a bat. Meadow and pond first, then forests, warm grasslands, desert, river and ocean, the icy poles, and the dark cave at the end.'},
+
+ {slug:'phonics-and-beginning-sounds',content:ph28,
+  navTitle:'Learn the letter sounds, one letter at a time',
+  navIntro:'Twenty-six letter-sound lessons, Aa apple to Zz zebra: trace the big letters on the card, learn how each sound is really made, say the parent script and play the one game that drills the sound — five minutes a letter, and the alphabet starts speaking.'},
 
  {slug:'sight-words',content:sw29,
   navTitle:'Learn the sight words, one card at a time',

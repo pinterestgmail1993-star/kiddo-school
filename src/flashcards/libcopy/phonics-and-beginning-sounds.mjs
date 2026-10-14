@@ -158,7 +158,7 @@ export default{
    teachTip:'Say \u201cee\u201d then open fast — ee-yes becomes yes. The glide from ee is exactly what y does; children discover they already own the sound.'},
   'z-zebra':{
    helps:'Zz beside the zebra finishes the alphabet with the buzzing sound — and the stripes give the last card the loudest look in the set.',
-   roleplay:'Zip-up ceremony: zip a real or imaginary jacket slowly while buzzing z-z-z-zip, then say zebra and zoo before the zipper closes.',
+   roleplay:'Zip-up parade: zip a real or imaginary jacket slowly while buzzing z-z-z-zip, then say zebra and zoo before the zipper closes.',
    learn:'That Zz is the buzzing end of the alphabet — the voiced twin of s, and the sound of zebra, zoo and zip.',
    print:'Print landscape on A4 or Letter at 100%; the Zz card keeps its full 2000×1414 frame, and the stripes print boldly even in grayscale.',
    teachTip:'End the alphabet properly: say the whole A–Z sound wall once a week. The zebra always gets the biggest cheer — save it for last.'}

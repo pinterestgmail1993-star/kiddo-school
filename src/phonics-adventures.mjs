@@ -20,6 +20,13 @@ export const FC28_PATH='/flashcards/phonics-and-beginning-sounds/';
 
 import {imageActivitySection} from './image-activity.mjs';
 import {artFor} from './adventure-dims.mjs';
+import {fcSetBySlug} from './flashcards/index.mjs';
+import {lpContent as phLp} from './flashcards/lp-phonics.mjs';
+
+/* Class 28's own letter-sound lessons (lp-phonics.mjs via LP_REGISTRY): the
+   26 cards as PICTURE tiles — each tile opens its own /learn/ teaching page. */
+const PH_SET=fcSetBySlug['phonics-and-beginning-sounds'];
+const PH_LEARN_ROWS=PH_SET.cards.map(c=>`<a class="lp-tile" href="${C28_PATH}learn/${c.slug}/"><img src="${c.img}" width="${c.w}" height="${c.h}" alt="${esc(c.alt)}" loading="lazy"><strong>${esc(phLp[c.slug].title)}</strong></a>`).join('');
 
 /* ---------- the 24 adventures ---------- */
 const G=(o)=>o;
@@ -265,6 +272,13 @@ export function class28Body(){
     const items=phonicAdventures.filter(g=>g.num>=a&&g.num<=b);
     return `<div class="wa-shelf"><h3>${i+1}. ${sh[0]}</h3><p class="lesson-copy">${sh[1]}</p><div class="sa-grid">${items.map(g=>`<a class="sa-card sa-card-slim" href="${PHONICS_LIB_PATH}${g.slug}/" data-ph-card="${g.slug}"><img src="${PHONICS_BASE}${g.img}" width="400" height="284" alt="${esc(g.alt)}" loading="lazy"><span class="sa-card-body"><strong>${esc(g.num)}. ${esc(g.title)}</strong><span class="sa-card-skill">${esc(g.skill)}</span></span><span class="sa-card-play">Play <span aria-hidden="true">→</span></span></a>`).join('')}</div></div>`;
   }).join('')}
+ </section>
+ <section class="wrap fc-section" id="learn" aria-label="Learn with flashcards">
+  <span class="eyebrow">LEARN WITH FLASHCARDS</span>
+  <h2>Teach the letter sounds, one lesson at a time.</h2>
+  <p class="fc-hint">Twenty-six letter-sound lessons, Aa apple to Zz zebra. Tap any letter and it opens its own lesson page — the original flashcard with a drawing canvas on the left, and the step-by-step teaching on the right: how the sound is really made, the words to say, and one game that drills it. Five minutes a letter, in any order your child points at.</p>
+  <div class="lp-tiles">${PH_LEARN_ROWS}</div>
+  <p class="lesson-note">Every lesson pairs with a printable card in the <a href="${FC28_PATH}">A–Z letter-sound flashcard set</a>, and the sounds keep drilling in the adventures above.</p>
  </section>
  <section class="wrap lesson-section" id="off-screen" aria-label="Off-screen sound play">
   <span class="eyebrow">TAKE IT OFF SCREEN</span>
