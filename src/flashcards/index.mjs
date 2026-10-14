@@ -28,6 +28,7 @@ import * as wsData from './data-weather-seasons.mjs';
 import * as nmgData from './data-numbers-counting-early-math.mjs';
 import * as sciData from './data-science-nature-and-discovery.mjs';
 import * as ahData from './data-animals-habitats.mjs';
+import * as phData from './data-phonics.mjs';
 import * as swData from './data-sight-words.mjs';
 import {fvMeta,fvCardContent,cfoMeta,cfoCardContent,fwftMeta,fwftCardContent} from './data-baby-stages.mjs';
 import {aeoMeta,aeoCardContent,fabMeta,fabCardContent,fwfhMeta,fwfhCardContent} from './data-explorer-toddler.mjs';
@@ -151,7 +152,13 @@ const SOURCES=[
  // its own library page and its own /learn/ lesson under the Class 29 path
  // (lp-sight-words.mjs via LP_REGISTRY); the cover fronts the set and is never
  // counted as a card.
- [swData,swData.lesson]
+ [swData,swData.lesson],
+ // Preschool Class 28: twenty-six A–Z letter-sound cards from the owner's
+ // Canva uploads in the class's own R2 folder (self-contained lesson object,
+ // all 2000×1414 landscape probed per file). cover.webp fronts the set and is
+ // never counted as a card. Purpose: WHICH sound each letter makes — the
+ // class's 24 Phonics Adventures keep the listening games on their own pages.
+ [phData,phData.lesson]
 ];
 
 function buildSet([data,lesson]){

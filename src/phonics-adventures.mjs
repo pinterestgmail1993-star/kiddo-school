@@ -16,6 +16,7 @@ export const PHONICS_BASE=R2+'school/phonics/adventures/';
 export const PHONICS_LIB_PATH='/preschool/phonics/adventures/';
 export const C28_PATH='/preschool/4-years/phonics-and-beginning-sounds/';
 export const WS28_PATH='/worksheets/phonics/';
+export const FC28_PATH='/flashcards/phonics-and-beginning-sounds/';
 
 import {imageActivitySection} from './image-activity.mjs';
 import {artFor} from './adventure-dims.mjs';
@@ -258,7 +259,7 @@ export function class28Body(){
  <section class="wrap lesson-section" id="adventures" aria-label="The phonics adventures">
   <span class="eyebrow">PLAY · THE 24 PHONICS ADVENTURES</span>
   <h2>Twenty-four listening adventures.</h2>
-  <p class="lesson-copy">Start anywhere your child’s ears are curious. The shelves below run in a gentle skill order — first sounds before blends, blends before swaps — but every game stands on its own. Each adventure has a printable worksheet twin at <a href="${WS28_PATH}">/worksheets/phonics/</a>.</p>
+  <p class="lesson-copy">Start anywhere your child’s ears are curious. The shelves below run in a gentle skill order — first sounds before blends, blends before swaps — but every game stands on its own. Each adventure has a printable worksheet twin at <a href="${WS28_PATH}">/worksheets/phonics/</a>, and the whole alphabet prints from the <a href="${FC28_PATH}">A–Z letter-sound flashcards</a> — every letter with its own page, its picture word and its sound script.</p>
   ${shelves.map((sh,i)=>{
     const [a,b]=byGroup[i];
     const items=phonicAdventures.filter(g=>g.num>=a&&g.num<=b);

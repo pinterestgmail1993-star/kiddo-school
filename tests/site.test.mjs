@@ -9,7 +9,7 @@ const activities=JSON.parse(readFileSync('data/activities.json','utf8'));
 const info=JSON.parse(readFileSync('dist/build-info.json','utf8'));
 const read=f=>readFileSync(f,'utf8');
 test('all HTML pages, eleven permanent activity routes and activity sheets',()=>{
- assert.equal(htmlFiles.length,2287);assert.equal(activities.length,11);
+ assert.equal(htmlFiles.length,2314);assert.equal(activities.length,11);
  for(const a of activities){assert.ok(existsSync(`dist/${a.subject}/${a.slug}/index.html`));assert.ok(existsSync(`dist/downloads/${a.slug}.svg`));assert.ok(a.steps.length>=5);assert.ok(a.safety.length>50);}
 });
 test('every local link, image, stylesheet, script and fragment resolves',()=>{
@@ -41,8 +41,8 @@ test('unique descriptive metadata, one heading, valid structured data, and absol
 test('sitemap includes all indexable pages and excludes search and errors',()=>{
  const xml=read('dist/sitemap.xml');const links=[...xml.matchAll(/<loc>(.*?)<\/loc>/g)].map(m=>m[1]);
  // Exact-count lock: update when the owner approves new classes/pages
- // (+104 for Class 29 Sight Words: 52 lessons + 52 card pages (the set page replaces the old flat page); +1 for the Sight Word Flashcards page; 1,372 at 8aee5894; +60 for Class 33; +20 for the Class 35 /learn/ counting lessons; +46 for Class 36: hub, class page, 22 /learn/ lessons, set page, 22 card pages; +13 for the 6 Class 36 habitat worksheets: 6 activities + 6 printables + collection; +5 for the generator: hub + word-search + math-practice + tracing + matching-pairs pages; +1 for the Sight Words lesson hub — the 52 lessons moved URLs, count unchanged).
- assert.equal(links.length,2269);assert.equal(new Set(links).size,2269);
+ // (+104 for Class 29 Sight Words: 52 lessons + 52 card pages (the set page replaces the old flat page); +1 for the Sight Word Flashcards page; 1,372 at 8aee5894; +60 for Class 33; +20 for the Class 35 /learn/ counting lessons; +46 for Class 36: hub, class page, 22 /learn/ lessons, set page, 22 card pages; +13 for the 6 Class 36 habitat worksheets: 6 activities + 6 printables + collection; +5 for the generator: hub + word-search + math-practice + tracing + matching-pairs pages; +1 for the Sight Words lesson hub — the 52 lessons moved URLs, count unchanged; +27 for Class 28 Phonics: set page + 26 A–Z letter-sound card pages).
+ assert.equal(links.length,2296);assert.equal(new Set(links).size,2296);
  for(const link of links){const u=new URL(link);assert.equal(u.origin,info.siteUrl);assert.ok(existsSync(join(root,u.pathname,'index.html')));assert.ok(!u.pathname.includes('/search'),'no /search/ pages in the sitemap (word-search pages are fine)');}
  assert.ok(!links.some(l=>l.includes('/admin')||l.includes('/api/')),'no admin or API routes in sitemap');
  assert.ok(links.includes(info.siteUrl+'/school-community/'),'school community is indexable');

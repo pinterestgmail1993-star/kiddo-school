@@ -35,6 +35,7 @@ import fab from './first-actions-body-parts.mjs';
 import fwfh from './first-words-food-home.mjs';
 import baby from './black-and-white-baby-cards.mjs';
 import sw from './sight-words.mjs';
+import ph from './phonics-and-beginning-sounds.mjs';
 
 const norm=m=>m&&m.cards?m:{frame:null,cards:m};
 
@@ -48,6 +49,7 @@ export default{
  'numbers-counting-and-early-math':norm(nmg),
  'animals-and-their-habitats':norm(ah),
  'sight-words':norm(sw),
+ 'phonics-and-beginning-sounds':norm(ph),
  'shapes':norm(shp),
  'colors':norm(col),
  'opposites':norm(opp),
