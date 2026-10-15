@@ -24,6 +24,7 @@ import * as amData from './data-animals.mjs';
 import * as bpData from './data-body-parts.mjs';
 import * as mcData from './data-classroom.mjs';
 import * as dvData from './data-doctor-visit.mjs';
+import * as wwData from './data-who-works.mjs';
 import * as fvData from './data-fruits-vegetables.mjs';
 import * as lsData from './data-life-skills-and-good-habits.mjs';
 import * as chData from './data-community-helpers.mjs';
@@ -235,7 +236,13 @@ const SOURCES=[
     medicine, stethoscope, thermometer) ride beside 16 portrait ones at their
     true probed dims. The class page /extra-classes/doctor-visit/ hosts the
     /learn/ lessons; the library holds the printable twins. */
- [dvData,dvData.lesson]
+ [dvData,dvData.lesson],
+ /* SCHOOL PEOPLE · Who Works at My School (owner 2026-10-15): the 16 person
+    cards from the people page, probed again at 1000×707 landscape. The
+    people page /who-works-at-my-school/ names the people and opens the two
+    doors (principal → office, nurse → doctor visit); the library set holds
+    the printable twins — every card page carries its own download button. */
+ [wwData,wwData.lesson]
 ];
 
 function buildSet([data,lesson]){
@@ -297,6 +304,7 @@ function buildSet([data,lesson]){
   lessonUrlBase:lesson.lessonUrlBase||null,
   classUrl:data.meta.classUrl||null,
   classBtn:data.meta.classBtn||null,
+  lessonLine:data.meta.lessonLine||null,
   lessonTitle:lesson.seoTitle||lesson.title,
   lessonBlurb:data.meta.lessonBlurb||null,
   base,frame,
@@ -427,7 +435,7 @@ export function fcCardPageBody(set,card,ctx){
  const share=`<div class="fc2-block fc2-share-block"><span class="eyebrow">SHARE THIS CARD</span><h2>Pass it on.</h2><div class="fc2-share"><a class="fc2-share-btn" href="https://twitter.com/intent/tweet?url=${enc(pageUrl)}&text=${enc(shareTitle)}" target="_blank" rel="noopener" aria-label="Share this card on X">X</a><a class="fc2-share-btn" href="https://www.facebook.com/sharer/sharer.php?u=${enc(pageUrl)}" target="_blank" rel="noopener" aria-label="Share this card on Facebook">Facebook</a><a class="fc2-share-btn" href="https://wa.me/?text=${enc(shareTitle+' '+pageUrl)}" target="_blank" rel="noopener" aria-label="Share this card on WhatsApp">WhatsApp</a><a class="fc2-share-btn" href="https://pinterest.com/pin/create/button/?url=${enc(pageUrl)}&media=${enc(card.img)}&description=${enc(shareTitle)}" target="_blank" rel="noopener" aria-label="Save this card on Pinterest">Pinterest</a><button type="button" class="fc2-share-btn" data-fc-copy>Copy link</button></div><p class="fc-hint">Share buttons open in a new tab. The copy button copies this page&rsquo;s address — nothing is tracked.</p></div>`;
  // Room sets (classUrl without a stage, e.g. the Playground) frame the link
  // as a room, never as a class on the Learning Path.
- const lesson=set.lessonPath?`<p class="fc2-lesson">From the <a href="${set.lessonPath}">${esc(set.lessonTitle)}</a>${set.classUrl&&!set.stageName?' room — with every lesson one tap away.':' class on the Learning Path.'}</p>`:'';
+ const lesson=set.lessonPath?`<p class="fc2-lesson">From the <a href="${set.lessonPath}">${esc(set.lessonTitle)}</a>${set.classUrl&&!set.stageName?(set.lessonLine||' room — with every lesson one tap away.'):' class on the Learning Path.'}</p>`:'';
  const relGrid=related&&related.length?`<section class="wrap fc-section"><span class="eyebrow">RELATED CARDS</span><h2>More cards to try.</h2><p class="fc-hint">${esc(ctx.relatedHint||'Nearby cards from this set and its closest friends.')}</p><div class="fc2-cards">${related.map(r=>`<a class="fc-card fc2-cardlink" href="${r.card.url}"><span class="fc2-cardimg"><img src="${r.card.img}" width="${r.card.w}" height="${r.card.h}" alt="${esc(r.card.alt)}" loading="lazy"></span><span class="fc2-cardword"><strong>${esc(r.card.word)}</strong><span>From ${esc(r.setName)}</span></span></a>`).join('')}</div></section>`:'';
  return `${crumbNav([['Flashcards','/flashcards/'],[set.name,set.url],[card.word]])}
  <div class="page-heading wrap"><span class="eyebrow">FLASHCARD · ${esc(set.name.toUpperCase())} · AGES ${esc(set.ageLabel.toUpperCase())}</span><h1>${card.numeral?`Number ${esc(card.numeral)} Flashcard — ${esc(card.word)} for ${esc(noun)}`:card.letter?`${esc(card.word)} Flashcard — Letter ${esc(card.letter.toUpperCase())} for ${esc(noun)}`:`${esc(card.word)} Flashcard for ${esc(noun)}`}</h1>${(card.ages||card.pill)?`<p class="fc-cardpills">${card.ages?`<span class="fc-pill fc-pill-age">${esc(card.ages)}</span>`:''}${card.pill?`<span class="fc-pill fc-pill-subject">${esc(card.pill)}</span>`:''}</p>`:''}<p>${esc(card.intro)}</p></div>

@@ -7,10 +7,15 @@
 // uploaded — nothing renamed, nothing invented. Three groups, the owner's
 // own split: PEOPLE WHO TEACH (six, ending with the student — the learner
 // the whole school is here for), PEOPLE WHO HELP (five) and PEOPLE WHO KEEP
-// US SAFE (five). The principal card links straight to the Principal's
-// Office; every other card is a name-and-a-line, because this page names
-// people, it does not teach lessons. Every alt is written from the actual
-// artwork (contact-sheet checked).
+// US SAFE (five). Fourteen person tiles open their new library card
+// pages at /flashcards/who-works-at-my-school/{person}/, each with its own
+// download button — so every person card can be downloaded from where it is
+// shown. The two door tiles stay doors: the principal leads to the
+// Principal's Office and the school nurse leads to the Doctor Visit class,
+// both owner-ordered. Every alt is written from the actual artwork
+// (contact-sheet checked).
+import {meta as wwSetMeta} from './flashcards/data-who-works.mjs';
+const WW_SET='/flashcards/'+wwSetMeta.slug+'/';
 export const WW_PATH='/who-works-at-my-school/';
 export const WW_BASE='https://assets.kiddo.school/school/school-community/who-works-at-my-school/';
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
@@ -53,7 +58,7 @@ const tile=(p)=>{
  const img=`<span class="fc2-cardimg"><img src="${WW_BASE}${p.file}" width="${p.w}" height="${p.h}" alt="${esc(p.alt)}" loading="lazy"></span>`;
  const door=DOORS[p.slug];
  if(door)return `<a class="fc-card fc2-cardlink ww-tile" href="${door.href}">${img}${word}<span class="fc-open">${esc(door.label)} <span aria-hidden="true">↗</span></span></a>`;
- return `<figure class="fc-card ww-tile">${img}${word}</figure>`;
+ return `<a class="fc-card fc2-cardlink ww-tile" href="${WW_SET}${p.slug}/" aria-label="${esc(p.word)} — open the card page to download it">${img}${word}</a>`;
 };
 const group=(title,blurb,list)=>`<div class="fc-pillgroup"><div class="fc-pillgroup-head"><span class="fc-pill fc-pill-age fc-pill-big">${esc(title)}</span><p class="fc-hint">${esc(blurb)}</p></div><div class="fc2-cards">${list.map(p=>tile(p)).join('')}</div></div>`;
 
@@ -63,6 +68,7 @@ export function whoWorksBody(){
   ${group('People who teach','The faces at the front of the room — and one very important student.',TEACH)}
   ${group('People who help','The helpers your child meets between the bells — at the lunch counter, the library, the office and out in the garden.',HELP)}
   ${group('People who keep us safe','The watchers at the doors, the road and the playground — the reason the day feels safe enough to learn in.',SAFE)}
+  <p class="fc-hint">Want to print a person? Every card above opens its own page with a download button — <a href="${WW_SET}">open the whole School People set</a>.</p>
  </section>
  <section class="wrap lesson-section"><span class="eyebrow">TRY IT TODAY</span><h2>Which person helps you when you feel sick?</h2>
   <p class="lesson-copy">Point at the school nurse card together, then name two more helpers your child has really met — and what they said or did. Naming the people of the school is how a building starts to feel like <em>my</em> school.</p>

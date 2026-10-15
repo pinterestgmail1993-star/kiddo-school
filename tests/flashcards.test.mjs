@@ -43,7 +43,7 @@ test('black and white baby cards page shows flashcards, stages grid, guide and s
 });
 
 test('flashcard data: forty flashcard sets (every learning-path class 1-22 covered, plus Class 23 the Music Room, the Playground and My Classroom school rooms, Classes 24, 28, 31-36 and Class 37 Sports, plus the Toddler Room, Kitchen and Doctor Visit extra classes), every card complete and linked to its real lesson',()=>{
- assert.equal(fcSets.length,40);
+ assert.equal(fcSets.length,41);
  for(const s of fcSets){
   assert.ok(s.cards.length>=10,`${s.slug} has ${s.cards.length} cards`);
   assert.ok(existsSync(join(root,s.url.slice(1),'index.html')),`${s.url} missing`);
@@ -126,8 +126,9 @@ test('card pages: unique titles and descriptions, say/try/note, download, prev/n
  // Playground's action/equipment/manner cards = 683, +40 for the Class 37
  // sports cards = 723, +32 Class 24 Transportation & Vehicles + 35 Toddler
  // Room + 35 Kitchen = 825, +30 for the Classroom's object/good-habit
- // cards = 855, +22 for the Doctor Visit cards in visit order = 877.
- assert.equal(downloads,877);
+ // cards = 855, +22 for the Doctor Visit cards in visit order = 877, +16
+ // for the School People (Who Works at My School) person cards = 893.
+ assert.equal(downloads,893);
 });
 
 test('library: every set is listed, baby collection included, no orphan sets',()=>{
