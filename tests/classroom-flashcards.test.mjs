@@ -68,6 +68,12 @@ test('my-classroom page carries the categorized flashcards panel',()=>{
  let links=0;
  for(const c of set.cards){assert.ok(mc.includes(`href="${c.url}"`),'room page links '+c.url);links++;}
  assert.equal(links,30,'all 30 card pages linked from My Classroom');
+ // The shelf shows the cards THEMSELVES — 30 image tiles in the set page's
+ // fc2 pattern, each with its true probed 800×1132 dimensions in the attrs.
+ assert.equal([...mc.matchAll(/class="fc-card fc2-cardlink" href="\/flashcards\/classroom\//g)].length,30,'30 image tiles on the room shelf');
+ for(const c of set.cards){
+  assert.ok(mc.includes(`<img src="https://assets.kiddo.school/school/my-classroom/flashcards/${c.file}" width="800" height="1132"`),'room shelf shows '+c.file);
+ }
 });
 
 test('flashcards hub lists the classroom set under its own school-rooms shelf',()=>{

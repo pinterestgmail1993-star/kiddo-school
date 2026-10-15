@@ -125,6 +125,14 @@ export function circleTimeHubBody(C){
 }
 export function myClassroomBody(){
  const hot=(cls,label,href)=>`<a class="mc-hot ${cls}" href="${href}">${label}</a>`;
+ // The shelf shows the cards THEMSELVES, not a list of links: the set page's
+ // own fc2 tile pattern (fixed 200px box, width auto + contain keeps the true
+ // 800×1132 portrait — nothing squashed, nothing cropped). Grouped the owner's
+ // way: 18 objects, 12 good habits. alt is escaped because card alts contain
+ // double quotes; every image lazy-loads below the fold.
+ const fcBase=classroomFcLesson.r2Base+classroomFcLesson.folder;
+ const fcTile=c=>`<a class="fc-card fc2-cardlink" href="/flashcards/classroom/${c.slug}/"><span class="fc2-cardimg"><img src="${fcBase}${c.file}" width="${c.w}" height="${c.h}" alt="${esc(c.alt)}" loading="lazy"></span><span class="fc2-cardword"><strong>${classroomFcCards[c.slug].word}</strong></span></a>`;
+ const fcGroup=(title,blurb,pre)=>`<div class="fc-pillgroup"><div class="fc-pillgroup-head"><span class="fc-pill fc-pill-age fc-pill-big">${title}</span><p class="fc-hint">${blurb}</p></div><div class="fc2-cards">${classroomFcLesson.cards.filter(c=>c.slug.startsWith(pre)).map(fcTile).join('')}</div></div>`;
  return `<section class="wrap section compact">
  <div class="mc-stage">
   <img src="${classroomBase}" width="1366" height="768" alt="Illustrated classroom with a teacher by the blackboard, a class rules poster, a library shelf, a toy shelf, a big circle rug, a child’s desk with a backpack, a sticky note wall and a green door" fetchpriority="high">
@@ -182,10 +190,8 @@ export function myClassroomBody(){
   <span class="eyebrow">ON THE SHELF · CLASSROOM FLASHCARDS</span>
   <h2>Classroom flashcards</h2>
   <p>Thirty printable cards that name this room and its good habits — every card has its own page with a download button and a two-minute game. <a href="/flashcards/classroom/">Open the whole set <span aria-hidden="true">↗</span></a></p>
-  <h3>Classroom objects</h3>
-  <div class="lesson-linkrow">${classroomFcLesson.cards.filter(c=>c.slug.startsWith('object-')).map(c=>`<a class="lesson-pill-link" href="/flashcards/classroom/${c.slug}/">${classroomFcCards[c.slug].word} <span aria-hidden="true">↗</span></a>`).join('')}</div>
-  <h3>Good habits</h3>
-  <div class="lesson-linkrow">${classroomFcLesson.cards.filter(c=>c.slug.startsWith('rule-')).map(c=>`<a class="lesson-pill-link" href="/flashcards/classroom/${c.slug}/">${classroomFcCards[c.slug].word} <span aria-hidden="true">↗</span></a>`).join('')}</div>
+  ${fcGroup('Classroom objects','The things a school morning uses — say the word on the card, then hunt for the real one in your room.','object-')}
+  ${fcGroup('Good habits','The rules, phrased as things to do — pick one card, act it out today, and catch your child doing it for real.','rule-')}
  </div>
  <div class="mc-panel">
   <span class="eyebrow">ON THE SHELF · MAGIC GAMES</span>
