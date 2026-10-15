@@ -22,6 +22,7 @@ import * as clData from './data-colors.mjs';
 import * as opData from './data-opposites.mjs';
 import * as amData from './data-animals.mjs';
 import * as bpData from './data-body-parts.mjs';
+import * as mcData from './data-classroom.mjs';
 import * as fvData from './data-fruits-vegetables.mjs';
 import * as lsData from './data-life-skills-and-good-habits.mjs';
 import * as chData from './data-community-helpers.mjs';
@@ -217,7 +218,16 @@ const SOURCES=[
  // the owner assigned it to Transportation & Vehicles (2026-10-15), so the
  // Learning Path runs 1–24 + 25–37 with no gap. The /learn/ lessons
  // (lp-transportation.mjs via LP_REGISTRY) keep the step-by-step teaching.
- [tvData,tvData.lesson]
+ [tvData,tvData.lesson],
+ // School Rooms · My Classroom: thirty cards from the owner's uploads in
+ // school/my-classroom/flashcards/ (self-contained lesson object, ALL 31 files
+ // probed at 800×1132 portrait). cover.webp fronts the set and is never
+ // counted as a card. The owner's own split is the set's spine: 18 classroom
+ // objects (backpack to wastebasket) and 12 good habits (listen to keep it
+ // tidy) — every card slug keeps its file prefix (object-, rule-) so the
+ // URLs stay unique. No lessons: the set belongs to the My Classroom room
+ // (/my-classroom/), the same room the cards describe, never to a class.
+ [mcData,mcData.lesson]
 ];
 
 function buildSet([data,lesson]){

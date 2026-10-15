@@ -2,6 +2,7 @@
 // flashcard lesson. Circle Time 1 (Hello School!) lives here with its own
 // body builders; the flashcard lesson engine in lessons.mjs stays untouched.
 import {lessonStageCard} from './lessons.mjs';
+import {lesson as classroomFcLesson, cards as classroomFcCards} from './flashcards/data-classroom.mjs';
 export const circleBase='https://assets.kiddo.school/circle-time/age-2/hello-school/';
 const classroomBase='https://assets.kiddo.school/school/my-classroom/my-classroom-age-2.webp';
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
@@ -176,6 +177,15 @@ export function myClassroomBody(){
   <h2>School Calendar</h2>
   <p>A gentle rhythm for the week — one small, real idea for each day, from Monday’s class to Sunday’s slow together day. Miss a day? Pick up whenever you’re ready.</p>
   <div class="hero-actions"><a class="button button-ghost" href="/school-calendar/">Open the calendar <span aria-hidden="true">↗</span></a></div>
+ </div>
+ <div class="mc-panel">
+  <span class="eyebrow">ON THE SHELF · CLASSROOM FLASHCARDS</span>
+  <h2>Classroom flashcards</h2>
+  <p>Thirty printable cards that name this room and its good habits — every card has its own page with a download button and a two-minute game. <a href="/flashcards/classroom/">Open the whole set <span aria-hidden="true">↗</span></a></p>
+  <h3>Classroom objects</h3>
+  <div class="lesson-linkrow">${classroomFcLesson.cards.filter(c=>c.slug.startsWith('object-')).map(c=>`<a class="lesson-pill-link" href="/flashcards/classroom/${c.slug}/">${classroomFcCards[c.slug].word} <span aria-hidden="true">↗</span></a>`).join('')}</div>
+  <h3>Good habits</h3>
+  <div class="lesson-linkrow">${classroomFcLesson.cards.filter(c=>c.slug.startsWith('rule-')).map(c=>`<a class="lesson-pill-link" href="/flashcards/classroom/${c.slug}/">${classroomFcCards[c.slug].word} <span aria-hidden="true">↗</span></a>`).join('')}</div>
  </div>
  <div class="mc-panel">
   <span class="eyebrow">ON THE SHELF · MAGIC GAMES</span>
