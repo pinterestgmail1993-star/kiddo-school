@@ -25,6 +25,7 @@ export const lpContent={
   real:'Point out doctor things in daily life: the clinic you pass, the nurse at preschool, the first-aid box at the pool, medicine with a "grown-ups only" label at the pharmacy.',
   play:'Teddy clinic: your child is the doctor. Listen to Ted’s heart with a cardboard-tube stethoscope, look in his ears with a torch (off), wrap a tissue bandage, and say kindly: "Tell me where it hurts." Swap roles so your child is the patient too — that is the bravery rehearsal.',
   tips:'Never use the doctor as a threat or a punishment — it turns a helper into a bogeyman. Read a doctor-visit book the day before appointments, let your child pack a toy, and afterwards name the brave moments out loud.',
+  seeAlso:'What happens at the doctor? Take a gentle visit: the <a href="/extra-classes/doctor-visit/">Doctor Visit class</a> walks a whole check-up in order — appointment to goodbye — with a teddy bear on every step.',
   check:'Ask: "Who do you tell when something hurts? What does the doctor listen with? What could you say to the doctor at your check-up?" Three answers = lesson landed.',
   safety:'Medicine is only given by grown-ups — never take pills or syrup like sweets, even when it smells nice. Sharp things at the clinic are the doctor’s tools only.'},
  'nurse':{

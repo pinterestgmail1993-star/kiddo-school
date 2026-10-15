@@ -20,6 +20,7 @@ import {lpContent as pgr} from './lp-playground.mjs';
 import {lpContent as sp37} from './lp-sports.mjs';
 import {lpContent as trExtra} from './lp-toddler-room.mjs';
 import {lpContent as ktExtra} from './lp-kitchen.mjs';
+import {lpContent as dvExtra} from './lp-doctor-visit.mjs';
 import {lpContent as tv24} from './lp-transportation.mjs';
 import {lpContent as ph28} from './lp-phonics.mjs';
 import {lpContent as fvt} from './lp-faces-and-visual-tracking.mjs';
@@ -162,6 +163,9 @@ export const LP_REGISTRY=[
  {slug:'kitchen',content:ktExtra,
   navTitle:'Learn the kitchen, safely, one tool at a time',
   navIntro:'Thirty-five Kitchen lessons for ages 3–6: the everyday things, the helper tools, the grown-up tools to name and the one big rule — knives are for grown-ups. Every lesson teaches the tool, the job it does and, where it matters, the hot-don’t-touch and sharp-things rules said out loud. A bonus class beside the core path: cook alongside it, any order.'},
+ {slug:'doctor-visit',content:dvExtra,
+  navTitle:'Walk the doctor visit, one calm step at a time',
+  navIntro:'Twenty-two Doctor Visit lessons for ages 3–5, in visit order: getting ready, meeting the helpers, the check-up itself and the proud walk home — with a teddy bear on every step and the one rule said kindly: medicine is only taken from a grown-up. A bonus class beside the core path: dip in any order, follow the visit order before a real appointment.'},
 
  {slug:'phonics-and-beginning-sounds',content:ph28,
   navTitle:'Learn the letter sounds, one letter at a time',
@@ -196,6 +200,11 @@ export function lpLessonBody(set,card,lesson,ctx){
     its own job and its own copy; only the pointer is shared. */
  const friend=LESSON_FRIEND_LINKS[set.slug+'/'+card.slug]
   ?`<p class="fcl-pair">${LESSON_FRIEND_LINKS[set.slug+'/'+card.slug]}</p>`:'';
+ /* One-off owner-pinned pointer (seeAlso): a lesson may carry ONE extra
+    sentence with a raw link — used where the friend-links doctrine does not
+    fit, e.g. pointing a lesson at a whole extra CLASS instead of a single
+    card. Renders nothing on every lesson that does not set it. */
+ const seeAlso=lesson.seeAlso?`<p class="fcl-pair">${lesson.seeAlso}</p>`:'';
  const blocks=BLOCKS.filter(([k])=>lesson[k]).map(([k,defLabel])=>{
   const label=(lesson.labels&&lesson.labels[k])||defLabel;
   if(k==='teach'){
@@ -225,7 +234,7 @@ export function lpLessonBody(set,card,lesson,ctx){
   <div class="wc-mount fcl-left" data-wc data-wc-src="${esc(card.img)}?draw=1" data-wc-name="${esc(card.word)} flashcard" data-wc-w="${card.w}" data-wc-h="${card.h}" data-wc-restore="learn/${esc(set.slug)}/${esc(card.slug)}">
    <figure class="fcl-art"><img src="${esc(card.img)}?draw=1" width="${card.w}" height="${card.h}" alt="${esc(card.alt)}" fetchpriority="high" crossorigin="anonymous"><figcaption><strong>${esc(card.word)}</strong><span>${set.slug==='sight-words'?'Sight word flashcard':'Original Canva flashcard'} · Card ${card.n} of ${set.cards.length}</span></figcaption></figure>
   </div>
-  <div class="fcl-copy">${blocks}${pair}${friend}</div>
+  <div class="fcl-copy">${blocks}${pair}${friend}${seeAlso}</div>
  </div>
  <div class="wrap">${pn}</div>`;
 }

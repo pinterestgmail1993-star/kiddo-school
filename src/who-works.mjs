@@ -40,13 +40,22 @@ export const SAFE=[
  P('playground-supervisor','Playground Supervisor','Watches the playground so the games stay fun and fair for everyone.','A Who Works at My School card titled Playground Supervisor: a supervisor with a whistle watches three children play with a red ball.')
 ];
 
-const tile=(p,isLink)=>{
+/* Two person cards open a door: the principal leads to the Principal's
+   Office, and the school-nurse card leads to the Doctor Visit class, where
+   the same gentle walk-through shows what happens at the clinic. */
+const DOORS={
+ 'principal':{href:'/principals-office/',label:'Visit the Principal’s Office'},
+ 'school-nurse':{href:'/extra-classes/doctor-visit/',label:'Meet the nurse at the doctor'}
+};
+
+const tile=(p)=>{
  const word=`<span class="fc2-cardword"><strong>${esc(p.word)}</strong><span>${esc(p.line)}</span></span>`;
  const img=`<span class="fc2-cardimg"><img src="${WW_BASE}${p.file}" width="${p.w}" height="${p.h}" alt="${esc(p.alt)}" loading="lazy"></span>`;
- if(isLink)return `<a class="fc-card fc2-cardlink ww-tile" href="/principals-office/">${img}${word}<span class="fc-open">Visit the Principal’s Office <span aria-hidden="true">↗</span></span></a>`;
+ const door=DOORS[p.slug];
+ if(door)return `<a class="fc-card fc2-cardlink ww-tile" href="${door.href}">${img}${word}<span class="fc-open">${esc(door.label)} <span aria-hidden="true">↗</span></span></a>`;
  return `<figure class="fc-card ww-tile">${img}${word}</figure>`;
 };
-const group=(title,blurb,list)=>`<div class="fc-pillgroup"><div class="fc-pillgroup-head"><span class="fc-pill fc-pill-age fc-pill-big">${esc(title)}</span><p class="fc-hint">${esc(blurb)}</p></div><div class="fc2-cards">${list.map(p=>tile(p,p.slug==='principal')).join('')}</div></div>`;
+const group=(title,blurb,list)=>`<div class="fc-pillgroup"><div class="fc-pillgroup-head"><span class="fc-pill fc-pill-age fc-pill-big">${esc(title)}</span><p class="fc-hint">${esc(blurb)}</p></div><div class="fc2-cards">${list.map(p=>tile(p)).join('')}</div></div>`;
 
 export function whoWorksBody(){
  return `<section class="wrap section compact">

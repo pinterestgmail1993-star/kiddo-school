@@ -591,6 +591,7 @@ export function lifeSkillsActivityBody(a,site){
  <section class="wrap lesson-section"><span class="eyebrow">FOR GROWN-UPS</span><h2>What this sheet practises.</h2>
   <p class="lesson-copy">${esc(a.grown)}</p>
   <ul class="ws-skills">${a.skills.map(s=>`<li>${esc(s)}</li>`).join('')}</ul>
+  ${a.slug==='wash-your-hands'?'<p class="lesson-copy">See how hand washing fits into a doctor visit: the <a href="/extra-classes/doctor-visit/">Doctor Visit class</a> walks the whole check-up card by card — and its hand-washing card ends the visit the way this sheet starts the day. Clean hands, both times.</p>':''}
   <p class="lesson-copy">This activity belongs to <a href="${LS_CLASS_PATH}">Class 32 — Life Skills &amp; Good Habits</a> on the Learning Path. Progress is saved on this device for the child chosen in <a href="/my-classroom/">My Classroom</a> — and only a real save of finished work marks it cleared, never just opening the page.</p>
  </section>
  ${fcCommunityMount(LS_ACT_PATH+a.slug+'/')}`;
