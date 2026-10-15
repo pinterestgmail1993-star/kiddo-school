@@ -194,6 +194,12 @@ export function myClassroomBody(){
   ${fcGroup('Good habits','The rules, phrased as things to do — pick one card, act it out today, and catch your child doing it for real.','rule-')}
  </div>
  <div class="mc-panel">
+  <span class="eyebrow">AT THE DOOR · SCHOOL PEOPLE</span>
+  <h2>Meet the people at school</h2>
+  <p>Many people help the school run every day — the teacher, the librarian, the school nurse, the crossing guard and the principal among them. Name all sixteen together, then find them in the real hallway.</p>
+  <div class="hero-actions"><a class="button button-ghost" href="/who-works-at-my-school/">Who works at my school? <span aria-hidden="true">↗</span></a></div>
+ </div>
+ <div class="mc-panel">
   <span class="eyebrow">ON THE SHELF · MAGIC GAMES</span>
   <h2>Magic games for Age 3</h2>
   <p>Two gentle games for preschoolers, each wired to its class: look and draw magic shapes, and play at the animal playground. No scores, no timers, nothing to install.</p>

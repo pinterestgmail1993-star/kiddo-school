@@ -39,13 +39,14 @@ export function communityMount(path,heading){
 }
 export function schoolCommunityBody(){
  const cards=`<div class="fc-stages">
+  <a class="fc-stage lesson-card-link" href="/who-works-at-my-school/"><div class="fc-stage-pills"><span class="fc-age">The people</span><span class="fc-class">Who’s who</span></div><h3>Who Works at My School?</h3><p>Sixteen friendly cards of the people who make the school day run — the teacher, the librarian, the school nurse, the crossing guard and the principal, whose door opens straight into the Principal’s Office.</p><span class="fc-open">Meet the school people <span aria-hidden="true">↗</span></span></a>
   <a class="fc-stage lesson-card-link" href="/art-wall/"><div class="fc-stage-pills"><span class="fc-age">On the wall</span><span class="fc-class">Artwork</span></div><h3>Our Art Wall</h3><p>Classroom drawings on display — and, after a quick review, artwork sent in by families.</p><span class="fc-open">Visit the Art Wall <span aria-hidden="true">↗</span></span></a>
   <a class="fc-stage lesson-card-link" href="/sticky-note-wall/"><div class="fc-stage-pills"><span class="fc-age">On the wall</span><span class="fc-class">Little notes</span></div><h3>Sticky Note Wall</h3><p>Short, friendly notes from families. Every note is read by the school office before it goes up.</p><span class="fc-open">Visit the Sticky Note Wall <span aria-hidden="true">↗</span></span></a>
   <a class="fc-stage lesson-card-link" href="#family-reviews"><div class="fc-stage-pills"><span class="fc-age">From families</span><span class="fc-class">Reviews</span></div><h3>Family Reviews</h3><p>What families say after trying a class or activity together — shown only after a review by the school office.</p><span class="fc-open">Read family reviews <span aria-hidden="true">↓</span></span></a>
  </div>`;
  return `${crumbNav([['School Community']])}
  <section class="wrap section compact">
-  <p class="lesson-copy">Kiddo School stays small and safe on purpose. There is no following and no private messaging. Your child&rsquo;s classroom details (an age band, an optional first name and progress marks) live only on your own device and never reach the school&rsquo;s servers. And just three simple places let families take part, with the school office reading everything before it appears. Grown-ups send things in; little learners stay out of it.</p>
+  <p class="lesson-copy">Kiddo School stays small and safe on purpose. There is no following and no private messaging. Your child&rsquo;s classroom details (an age band, an optional first name and progress marks) live only on your own device and never reach the school&rsquo;s servers. Four walls make up the community: one page about the people who work at the school, and three places where families take part — with the school office reading everything before it appears. Grown-ups send things in; little learners stay out of it.</p>
   ${cards}
  </section>
  <section class="wrap section compact" id="family-reviews" aria-label="Family reviews">
