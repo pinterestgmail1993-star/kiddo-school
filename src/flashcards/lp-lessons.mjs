@@ -21,6 +21,7 @@ import {lpContent as sp37} from './lp-sports.mjs';
 import {lpContent as trExtra} from './lp-toddler-room.mjs';
 import {lpContent as ktExtra} from './lp-kitchen.mjs';
 import {lpContent as dvExtra} from './lp-doctor-visit.mjs';
+import {lpContent as hdExtra} from './lp-home-daily-life.mjs';
 import {lpContent as tv24} from './lp-transportation.mjs';
 import {lpContent as ph28} from './lp-phonics.mjs';
 import {lpContent as fvt} from './lp-faces-and-visual-tracking.mjs';
@@ -166,6 +167,9 @@ export const LP_REGISTRY=[
  {slug:'doctor-visit',content:dvExtra,
   navTitle:'Walk the doctor visit, one calm step at a time',
   navIntro:'Twenty-two Doctor Visit lessons for ages 3–5, in visit order: getting ready, meeting the helpers, the check-up itself and the proud walk home — with a teddy bear on every step and the one rule said kindly: medicine is only taken from a grown-up. A bonus class beside the core path: dip in any order, follow the visit order before a real appointment.'},
+ {slug:'home-and-daily-life',content:hdExtra,
+  navTitle:'Learn the words of home, one card at a time',
+  navIntro:'Forty-one Home and Daily Life lessons for ages 3–5, in tour order: the rooms and their parts, the wash-and-get-ready routines, the kitchen and its actions, chores and tools, the door and the mail, the sounds of a busy house, and the safety-and-green habits that keep it running. Tap and faucet, torch and flashlight, trolley and cart — the US and UK words ride together on every card. A bonus class beside the core path: walk your actual home in any order — every word is standing somewhere within reach.'},
 
  {slug:'phonics-and-beginning-sounds',content:ph28,
   navTitle:'Learn the letter sounds, one letter at a time',

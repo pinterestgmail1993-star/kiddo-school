@@ -25,6 +25,7 @@ import * as bpData from './data-body-parts.mjs';
 import * as mcData from './data-classroom.mjs';
 import * as dvData from './data-doctor-visit.mjs';
 import * as wwData from './data-who-works.mjs';
+import * as hdData from './data-home-daily-life.mjs';
 import * as fvData from './data-fruits-vegetables.mjs';
 import * as lsData from './data-life-skills-and-good-habits.mjs';
 import * as chData from './data-community-helpers.mjs';
@@ -242,7 +243,13 @@ const SOURCES=[
     people page /who-works-at-my-school/ names the people and opens the two
     doors (principal → office, nurse → doctor visit); the library set holds
     the printable twins — every card page carries its own download button. */
- [wwData,wwData.lesson]
+ [wwData,wwData.lesson],
+ /* EXTRA CLASS · Home and Daily Life (owner 2026-10-17): 41 house-word cards
+    in the owner's uploads, probed again — every file 1100×778 landscape. The
+    class page /extra-classes/home-and-daily-life/ hosts the /learn/ lessons;
+    the library holds the printable twins. US/UK/CA word pairs ride in the
+    copy: tap/faucet, torch/flashlight, wardrobe/closet, trolley/cart. */
+ [hdData,hdData.lesson]
 ];
 
 function buildSet([data,lesson]){
