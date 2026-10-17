@@ -347,10 +347,12 @@ import {fcCommunityMount} from './community.mjs';
 export {fcCommunityMount};
 
 // ---- The library card for /flashcards/ --------------------------------------
-export function fcSetCard(s){
+// tags: the hub-filter token list from src/hub-filters.mjs — every card on
+// the wall carries its data-filters so the chip bar can filter it in place.
+export function fcSetCard(s,tags){
  // True cover dimensions in the HTML attrs — landscape covers (vehicles,
  // emotions, garden bugs) keep their real ratio on the library wall.
- return `<a class="fc-setcard" href="${s.url}"><div class="fc-setcard-visual"><img src="${s.coverUrl}" width="${s.cover.w}" height="${s.cover.h}" alt="${esc(s.cover.alt)}" loading="lazy"></div><div class="fc-setcard-copy"><span class="eyebrow">AGES ${esc(s.ageLabel.toUpperCase())}</span><h2>${esc(s.name)}</h2><p>${esc(s.hubBlurb)}</p><span class="fc-open">Open this set · ${s.cards.length} cards <span aria-hidden="true">↗</span></span></div></a>`;
+ return `<a class="fc-setcard" href="${s.url}"${tags?` data-filters="${tags}"`:''}><div class="fc-setcard-visual"><img src="${s.coverUrl}" width="${s.cover.w}" height="${s.cover.h}" alt="${esc(s.cover.alt)}" loading="lazy"></div><div class="fc-setcard-copy"><span class="eyebrow">AGES ${esc(s.ageLabel.toUpperCase())}</span><h2>${esc(s.name)}</h2><p>${esc(s.hubBlurb)}</p><span class="fc-open">Open this set · ${s.cards.length} cards <span aria-hidden="true">↗</span></span></div></a>`;
 }
 
 // ---- Set page ----------------------------------------------------------------

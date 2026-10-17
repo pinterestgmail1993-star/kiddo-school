@@ -9,6 +9,7 @@ import * as L from './ws-layouts.mjs';
 import * as ML from './ws-maths-layouts.mjs';
 import {esc} from './adventure-kit.mjs';
 import {fcCommunityMount} from './flashcards/index.mjs';
+import {WS_FILTERS,WS_TAGS,filterBarHTML,tagsAttr} from './hub-filters.mjs';
 
 const crumbNav=parts=>`<nav class="breadcrumbs wrap" aria-label="Breadcrumb"><a href="/">Home</a>${parts.map(([label,href])=>`<span aria-hidden="true">/</span>${href?`<a href="${esc(href)}">${esc(label)}</a>`:`<span aria-current="page">${esc(label)}</span>`}`).join('')}</nav>`;
 const heading=(eyebrow,title,desc)=>`<div class="page-heading wrap"><span class="eyebrow">${eyebrow}</span><h1>${title}</h1><p>${desc}</p></div>`;
@@ -57,11 +58,16 @@ const SUBJECT_IMG={
 const BRAND_R2='https://assets.kiddo.school/school/branding/';
 
 /* ---------- the main library ---------- */
+/* The owner's four filter axes (age, level, subject, skill) over the category
+   wall: every category card carries its data-filters tokens from
+   hub-filters.mjs, and the chip bar above the wall filters it in place. A
+   card href without tags fails the build — nothing ships unfiltered. */
+const wsTag=href=>{const t=WS_TAGS[href];if(!t)throw Error('worksheets hub: missing filter tags for '+href);return tagsAttr(t);};
 export function worksheetsHubBody(){
  /* the worksheet generator — first card on the wall: four machines (word
     search, math, tracing, matching pairs) that build a fresh sheet in the
     browser — solve it on screen, print it, or save it as a picture */
- const genCard=`<a class="ws-cat ws-cat-gen" href="/worksheet-generator/">
+ const genCard=`<a class="ws-cat ws-cat-gen" href="/worksheet-generator/" data-filters="${wsTag('/worksheet-generator/')}">
    <span class="ws-cat-head"><img src="${BRAND_R2}kiddo-subject-maths.webp" width="1264" height="1264" alt="" aria-hidden="true" loading="lazy"><span class="ws-cat-pill ws-pill-gen">Make your own</span><strong>Worksheet Generator</strong></span>
    <p>Build a fresh worksheet in one minute — a word search, sums, a tracing sheet or matching pairs. Solve it on screen, print it, or save it as a picture.</p>
    <span class="ws-count-note">Word Search · Math · Tracing · Matching — made right in your browser</span>
@@ -72,7 +78,7 @@ export function worksheetsHubBody(){
   const s=SUBJECTS[k],n=subjectCounts[k];
   const planned=k==='maths'?`<span class="ws-count-note">${n} of ${MATHS_PLANNED} ready \u2014 more arrive with their artwork</span>`:`<span class="ws-count-note">${n} worksheets</span>`;
   const picks=bySubject(k).slice(0,3);
-  return `<a class="ws-cat" href="${WS_BASE}${k}/">
+  return `<a class="ws-cat" href="${WS_BASE}${k}/" data-filters="${wsTag(WS_BASE+k+'/')}">
    <span class="ws-cat-head"><img src="${BRAND_R2}${SUBJECT_IMG[k]}" width="1264" height="1264" alt="" aria-hidden="true" loading="lazy"><span class="ws-cat-pill" style="--tint:${s.tint};--accent:${s.accent}">Class ${s.classNum}</span><strong>${esc(s.label)}</strong></span>
    <p>${catDesc[k]}</p>
    ${planned}
@@ -83,7 +89,7 @@ export function worksheetsHubBody(){
  /* Class 32 · Life Skills & Good Habits — its own category: the sheets are
     the owner's uploaded artwork (no PDF pipeline), download means the
     original WebP, and every sheet solves on screen in the class. */
- `<a class="ws-cat" href="/worksheets/life-skills/">
+ `<a class="ws-cat" href="/worksheets/life-skills/" data-filters="${wsTag('/worksheets/life-skills/')}">
    <span class="ws-cat-head"><img src="${BRAND_R2}kiddo-subject-science.webp" width="1264" height="1264" alt="" aria-hidden="true" loading="lazy"><span class="ws-cat-pill" style="--tint:#fdeee4;--accent:#9a4e10">Class 32</span><strong>Life Skills &amp; Good Habits</strong></span>
    <p>Everyday skills on real activity sheets \u2014 wash your hands, tidy up, be kind, move your body, the magic words and asking for help.</p>
    <span class="ws-count-note">29 worksheets of the planned 30 \u2014 sheet 24 arrives with its artwork</span>
@@ -93,7 +99,7 @@ export function worksheetsHubBody(){
  /* Class 33 · Community Helpers & Our Neighborhood — the owner's uploaded
     artwork (no PDF pipeline): download means the original WebP, and every
     sheet also solves on screen as a canvas activity in its class. */
- `<a class="ws-cat" href="/worksheets/community-helpers-and-our-neighborhood/">
+ `<a class="ws-cat" href="/worksheets/community-helpers-and-our-neighborhood/" data-filters="${wsTag('/worksheets/community-helpers-and-our-neighborhood/')}">
    <span class="ws-cat-head"><img src="https://assets.kiddo.school/school/preschool/4-years/community-helpers-and-our-neighborhood/worksheets/cover.webp" width="1545" height="2000" alt="" aria-hidden="true" loading="lazy"><span class="ws-cat-pill" style="--tint:#efe9fb;--accent:#5b4aa8">Class 33</span><strong>Community Helpers &amp; Our Neighborhood</strong></span>
    <p>Print the whole neighborhood — the doctor&#39;s kit, the firefighter&#39;s ladder, the baker&#39;s tray, the mail carrier&#39;s route. Thirty-five helper sheets, each one twinned with a Class 33 lesson and ready for real ink.</p>
    <span class="ws-count-note">35 worksheets</span>
@@ -103,7 +109,7 @@ export function worksheetsHubBody(){
  /* Class 34 · Weather, Seasons & What We Wear — the owner's uploaded
     artwork (no PDF pipeline): download means the original WebP, and every
     sheet also solves on screen as a canvas activity in its class. */
- `<a class="ws-cat" href="/worksheets/weather-seasons-and-what-we-wear/">
+ `<a class="ws-cat" href="/worksheets/weather-seasons-and-what-we-wear/" data-filters="${wsTag('/worksheets/weather-seasons-and-what-we-wear/')}">
    <span class="ws-cat-head"><img src="https://assets.kiddo.school/school/preschool/4-years/weather-seasons-and-what-we-wear/worksheets/cover.webp" width="1414" height="2000" alt="" aria-hidden="true" loading="lazy"><span class="ws-cat-pill" style="--tint:#e4f2fb;--accent:#22649e">Class 34</span><strong>Weather, Seasons &amp; What We Wear</strong></span>
    <p>Clouds, thermometers, forecasts, the water cycle and what to wear on a windy day — thirty-five sheets about the sky, traceable on screen or printed for the kitchen table.</p>
    <span class="ws-count-note">35 worksheets</span>
@@ -113,7 +119,7 @@ export function worksheetsHubBody(){
  /* Class 36 · Animals & Their Habitats — the owner's uploaded habitat
     worksheets (no PDF pipeline): download means the original WebP, and every
     sheet also solves on screen as a canvas activity in its class. */
- `<a class="ws-cat" href="/worksheets/animals-and-their-habitats/">
+ `<a class="ws-cat" href="/worksheets/animals-and-their-habitats/" data-filters="${wsTag('/worksheets/animals-and-their-habitats/')}">
    <span class="ws-cat-head"><img src="https://assets.kiddo.school/school/preschool/4-years/animals-and-their-habitats/worksheets/cover.webp" width="1414" height="2000" alt="" aria-hidden="true" loading="lazy"><span class="ws-cat-pill" style="--tint:#e6f3e6;--accent:#28732d">Class 36</span><strong>Animals &amp; Their Habitats</strong></span>
    <p>Six big homes, six sheets — circle who lives in the desert, farm, forest, ocean, ice and wetland, match every animal to its address and trace the habitat word.</p>
    <span class="ws-count-note">6 worksheets</span>
@@ -123,16 +129,19 @@ export function worksheetsHubBody(){
  /* Toddler 4 · Class 10 · Matching & Sorting — the owner's uploaded
     toddler artwork (no PDF pipeline), download means the original WebP,
     and every sheet solves on screen in the class. */
- `<a class="ws-cat" href="/worksheets/toddler/matching-and-sorting/">
+ `<a class="ws-cat" href="/worksheets/toddler/matching-and-sorting/" data-filters="${wsTag('/worksheets/toddler/matching-and-sorting/')}">
    <span class="ws-cat-head"><img src="https://assets.kiddo.school/school/toddler/2-years/matching-and-sorting/cover.webp" width="1264" height="1264" alt="" aria-hidden="true" loading="lazy"><span class="ws-cat-pill" style="--tint:#e8f2fd;--accent:#22649e">Class 10</span><strong>Matching &amp; Sorting</strong></span>
    <p>Thirty-one big, friendly sheets for two-year-olds — match the twins, draw the lines, circle the odd one and sort the groups, on paper or right on the screen.</p>
    <span class="ws-count-note">31 worksheets · Age 2 · Toddler 4</span>
    <span class="ws-cat-picks"><span>Match Same Animals</span><span>Sort Red and Blue</span><span>Which One Is Different?</span></span>
    <span class="fc-open">Browse Matching &amp; Sorting worksheets <span aria-hidden="true">↗</span></span>
   </a>`;
+ const wsFilterBar=filterBarHTML({filters:WS_FILTERS,unit:'categories',label:'Filter the worksheet categories',count:14,intro:'Tap a chip to filter the wall — tap it again to let it go. Chips from different rows team up: “Ages 4–5” plus “Science & discovery” leaves only the categories that are both. Without JavaScript the subject chips open their category pages directly.',emptyTitle:'No categories match that mix.',emptyBody:'Try letting one chip go — or tap Clear all filters to see every category again.',cross:{href:'/flashcards/',text:'Looking for flashcards? The flashcard wall has its own filters'}});
  return `${crumbNav([['Worksheets']])}
  ${heading('THE WORKSHEET LIBRARY','Printable worksheets for little hands.',`${libraryCount()} printable activities \u2014 the paper twins of our games: tracing guides with the same strokes, counting rows, coloring outlines, sound sorts with parent scripts, and science labs with a grown-up answer line \u2014 plus the Life Skills &amp; Good Habits sheets, the Community Helpers, Weather &amp; Seasons and Animals &amp; Their Habitats collections and the toddler Matching &amp; Sorting set your child can also solve on screen. Download a real PDF, print straight from the page, or play the matching activity online.`)}
- <section class="wrap section compact" aria-label="Worksheet categories"><div class="ws-cats">${cards}</div>
+ ${wsFilterBar}
+ <section class="wrap section compact" id="worksheet-cats" aria-label="Worksheet categories"><div class="ws-cats">${cards}</div>
+ <div class="hub-empty" data-filters-empty hidden><strong>No categories match that mix.</strong><p>Try letting one chip go — or tap Clear all filters to see every category again.</p></div>
  <p class="lesson-note">Every worksheet prints on A4 or US Letter. Each sheet&rsquo;s page keeps everything in reach: the artwork, the download and print buttons, and a place for families to react and comment.</p></section>
  <section class="wrap lesson-section" aria-label="How to use the library"><span class="eyebrow">FOR GROWN-UPS</span><h2>How the library works.</h2>
  <p class="lesson-copy">Each worksheet belongs to a class on the Learning Path. The page for every worksheet shows its artwork, a <strong>Download Worksheet</strong> button (a real PDF file) and a <strong>Print Worksheet</strong> button that opens the same PDF ready to print \u2014 never the website around it.</p>
