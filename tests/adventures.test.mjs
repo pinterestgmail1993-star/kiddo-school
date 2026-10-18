@@ -185,7 +185,10 @@ test('sitemap carries all 107 new Age 4 URLs',()=>{
  for(const e of expected)assert.ok(xml.includes(`<loc>https://kiddo.school${e}</loc>`)||xml.includes(`<loc>https://kiddo.school${e}</loc>`)||xml.includes(e),'sitemap '+e);
  assert.ok(xml.includes('/preschool/shapes/adventures/build-a-shape-spaceship/'),'sitemap spaceship');
  assert.ok(xml.includes('/preschool/writing/adventures/sunshine-stroke-challenge/'),'sitemap sunshine');
- const count=xml.split('/preschool/4-years/').length-1;
+ // count REAL <loc> entries only — since 2026-10-18 the sitemap also carries
+ // <image:loc> asset URLs that mirror the site path (assets.kiddo.school/
+ // school/preschool/4-years/…), and a raw substring split would double-count them
+ const count=(xml.match(/<loc>https:\/\/kiddo\.school\/preschool\/4-years\//g)||[]).length;
  // hub + ten class routes + 29+28+35 /learn/ lessons + 35 CH + 35 C34 worksheet activities + 29 C34 learn + 26 Class 28 phonics /learn/ letter-sound lessons; +41 for Class 37 (class page + 40 sports /learn/ lessons); +33 for Class 24 (class page + 32 spotter /learn/ lessons)
  assert.equal(count,405,'+ Sight Words hub + 52 Class 29 sight word lessons at /preschool/4-years/sight-words/{word}/; hub + ten classes + 29 CH learn + 28 C32 learn + 35 C31 learn + 35 CH + 35 C34 worksheet activities + 29 C34 learn + 20 C35 learn + C36 (class page + 22 learn + 6 worksheet activities) + 26 Class 28 /learn/ lessons + C37 (class page + 40 sports /learn/ lessons) + C24 Transportation & Vehicles (class page + 32 /learn/ lessons) in sitemap');
 });
