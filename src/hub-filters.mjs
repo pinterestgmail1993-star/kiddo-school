@@ -112,6 +112,10 @@ export const FC_TAGS={
  'doctor-visit':['age-3','age-4-5','lvl-preschool','lvl-prek','subj-people','skill-talking','skill-routines'],
  'who-works-at-my-school':['age-3','age-4-5','lvl-preschool','lvl-prek','subj-people','skill-vocab','skill-talking'],
  'home-and-daily-life':['age-3','age-4-5','lvl-preschool','lvl-prek','subj-first-words','skill-vocab','skill-routines'],
+ // EXTRA CLASS · Kids Games: classic games for preschoolers — throwing and
+ // freezing games sit with sports & movement, the sit-down grid games with
+ // thinking; playing IS the movement skill.
+ 'kids-games':['age-3','age-4-5','lvl-preschool','lvl-prek','subj-sports','subj-thinking','skill-movement','skill-thinking','skill-matching'],
  // School Rooms
  'music-room':['age-3','age-4-5','lvl-rooms','subj-music','skill-sounds'],
  'playground':['age-1-2','age-3','age-4-5','lvl-rooms','subj-sports','skill-movement','skill-talking'],

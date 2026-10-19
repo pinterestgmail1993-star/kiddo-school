@@ -22,6 +22,7 @@ import {lpContent as trExtra} from './lp-toddler-room.mjs';
 import {lpContent as ktExtra} from './lp-kitchen.mjs';
 import {lpContent as dvExtra} from './lp-doctor-visit.mjs';
 import {lpContent as hdExtra} from './lp-home-daily-life.mjs';
+import {lpContent as kgExtra} from './lp-kids-games.mjs';
 import {lpContent as tv24} from './lp-transportation.mjs';
 import {lpContent as ph28} from './lp-phonics.mjs';
 import {lpContent as fvt} from './lp-faces-and-visual-tracking.mjs';
@@ -170,6 +171,9 @@ export const LP_REGISTRY=[
  {slug:'home-and-daily-life',content:hdExtra,
   navTitle:'Learn the words of home, one card at a time',
   navIntro:'Forty-one Home and Daily Life lessons for ages 3–5, in tour order: the rooms and their parts, the wash-and-get-ready routines, the kitchen and its actions, chores and tools, the door and the mail, the sounds of a busy house, and the safety-and-green habits that keep it running. Tap and faucet, torch and flashlight, trolley and cart — the US and UK words ride together on every card. A bonus class beside the core path: walk your actual home in any order — every word is standing somewhere within reach.'},
+ {slug:'kids-games',content:kgExtra,
+  navTitle:'Learn the games, one how-to at a time',
+  navIntro:'Twenty-six Kids Games lessons for ages 3–5, a simple how-to-play guide a kid can follow: what the game is, what you need, the steps, and one way to make it fresh tomorrow — balloon keep-up, hide and seek, tic-tac-toe, treasure hunt and the whole classic shelf. Tic-tac-toe and noughts and crosses, jump rope and skipping rope — the US and UK names ride together on every card. A bonus class beside the core path: play in any order, and let the stack decide on Game Day.'},
 
  {slug:'phonics-and-beginning-sounds',content:ph28,
   navTitle:'Learn the letter sounds, one letter at a time',
