@@ -35,6 +35,9 @@ test('the whole-school index exists and every entry is honest and buildable',()=
 test('the index matches the sitemap exactly — nothing hidden, nothing invented',()=>{
  const sitemapPaths=new Set([...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map(m=>m[0].slice(site.length+5,-6)));
  const indexPaths=new Set(index.map(p=>p.u));
+ // /all-pages/ (owner 2026-10-21: "all links in one place") is indexable but
+ // built FROM this very index after it is written, so it never indexes itself
+ sitemapPaths.delete('/all-pages/');
  assert.deepEqual(indexPaths,sitemapPaths,'searchable = sitemap: books, classes and activities are all searchable');
 });
 
