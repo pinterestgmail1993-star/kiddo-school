@@ -385,16 +385,20 @@ export function fcSetPageBody(s){
  // about individual pages and downloads, not a clone of another section.
  const stageLink=s.stageName&&s.stageHref?`<p class="fc-stage-link">These cards belong to <a href="${esc(s.stageHref)}">${esc(s.stageName)}</a> on the Kiddo School learning path.</p>`:'';
  // Age/subject pills on a tile (owner request: "add pills of ages so parents
- // know") — the age pill first, then the subject or safety pill.
- const pillRow=c=>(c.ages||c.pill)?`<span class="fc-pillrow">${c.ages?`<span class="fc-pill fc-pill-age">${esc(c.ages)}</span>`:''}${c.pill?`<span class="fc-pill fc-pill-subject">${esc(c.pill)}</span>`:''}</span>`:'';
- const tile=c=>`<a class="fc-card fc2-cardlink" href="${c.url}"><span class="fc2-cardimg"><img src="${c.img}" width="${c.w}" height="${c.h}" alt="${esc(c.alt)}" loading="lazy"></span><span class="fc2-cardword"><strong>${esc(c.word)}</strong><span>Card ${c.n} of ${s.cards.length}</span>${pillRow(c)}</span></a>`;
+ // know") — the age pill first, then the subject or safety pill. noSub drops
+ // the subject pill (owner 2026-10-21: "the title you already repeat in
+ // sections headings dont repeat again in pills" — on grouped set pages the
+ // tile's subject pill IS the group head above it, so grouped tiles keep
+ // only the age pill; card pages and ungrouped sets keep both).
+ const pillRow=(c,noSub)=>{const age=c.ages?`<span class="fc-pill fc-pill-age">${esc(c.ages)}</span>`:'';const sub=noSub?'':(c.pill?`<span class="fc-pill fc-pill-subject">${esc(c.pill)}</span>`:'');return age||sub?`<span class="fc-pillrow">${age}${sub}</span>`:''};
+ const tile=(c,noSub)=>`<a class="fc-card fc2-cardlink" href="${c.url}"><span class="fc2-cardimg"><img src="${c.img}" width="${c.w}" height="${c.h}" alt="${esc(c.alt)}" loading="lazy"></span><span class="fc2-cardword"><strong>${esc(c.word)}</strong><span>Card ${c.n} of ${s.cards.length}</span>${pillRow(c,noSub)}</span></a>`;
  // Sets with pillGroups (the owner's age/subject grouping) render one pill-
  // headed section per group; every other set keeps the single wall.
  const bySlug=Object.fromEntries(s.cards.map(c=>[c.slug,c]));
  const letterSets=s.slug==='alphabet'?LETTER_SET_REFS.map(([href,t,d])=>`<a class="fc2-relcard" href="${href}"><strong>${t}</strong><span>${d}</span><span class="fc-open">Open <span aria-hidden="true">↗</span></span></a>`).join(''):'';
  const grid=s.pillGroups
-  ?s.pillGroups.map(([label,blurb,slugs])=>`<div class="fc-pillgroup"><div class="fc-pillgroup-head"><span class="fc-pill fc-pill-age fc-pill-big">${esc(label)}</span>${blurb?`<p class="fc-hint">${esc(blurb)}</p>`:''}</div><div class="fc2-cards">${slugs.map(k=>{const c=bySlug[k];if(!c)throw Error('pillGroups: missing card '+s.slug+'/'+k);return tile(c);}).join('')}</div></div>`).join('')
-  :`<div class="fc2-cards">${s.cards.map(tile).join('')}</div>`;
+  ?s.pillGroups.map(([label,blurb,slugs])=>`<div class="fc-pillgroup"><div class="fc-pillgroup-head"><span class="fc-pill fc-pill-age fc-pill-big">${esc(label)}</span>${blurb?`<p class="fc-hint">${esc(blurb)}</p>`:''}</div><div class="fc2-cards">${slugs.map(k=>{const c=bySlug[k];if(!c)throw Error('pillGroups: missing card '+s.slug+'/'+k);return tile(c,true);}).join('')}</div></div>`).join('')
+  :`<div class="fc2-cards">${s.cards.map(c=>tile(c)).join('')}</div>`;
  const ideas=`<ol class="fc-steps">${s.useIdeas.map(([t,d],i)=>`<li><span class="fc-stepnum">${String(i+1).padStart(2,'0')}</span><div><h3>${esc(t)}</h3><p>${esc(d)}</p></div></li>`).join('')}</ol>`;
  const related=s.relatedSlugs.map(k=>fcSetBySlug[k]).filter(Boolean);
  const relatedRow=related.length?`<div class="fc2-relrow">${related.map(r=>`<a class="fc2-relcard" href="${r.url}"><strong>${esc(r.name)}</strong><span>${r.cards.length} cards</span><span class="fc-open">Open <span aria-hidden="true">↗</span></span></a>`).join('')}</div>`:'';
