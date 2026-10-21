@@ -65,7 +65,7 @@ h1,h2,h3,.brand,.bean-links strong{font-family:var(--kid-font);letter-spacing:0}
 @media(max-width:600px){.card-image .image-title{font-size:15px}.bean-links .bean-thumb,.weather-links .bean-thumb{height:auto}.bean-links strong{font-size:17px}}
 .fc-intro{margin-top:36px}.fc-chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:18px}.fc-chips span{border:1.5px solid var(--ink);background:var(--white);padding:7px 14px;border-radius:999px;font-size:12.5px;font-weight:700;letter-spacing:.4px}.fc-lede{max-width:780px;font-size:17.5px;color:var(--ink)}
 .fc-section{margin-top:56px}.fc-hint{margin-top:10px;font-size:14px}
-.fc-stages{margin-top:22px;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}.fc-stage{border:1.5px solid var(--line);background:var(--white);padding:18px 20px;display:flex;flex-direction:column;gap:10px}.fc-stage-pills{display:flex;gap:8px;flex-wrap:wrap}.fc-stage-pills .fc-age{background:var(--yellow);color:var(--ink);border:1.5px solid var(--ink);padding:6px 12px;border-radius:999px;font-size:12.5px;font-weight:700}.fc-stage-pills .fc-class{border:1.5px solid var(--ink);background:var(--sage);padding:6px 12px;border-radius:999px;font-size:12.5px;font-weight:700}.fc-stage-subjects{display:flex;gap:6px;flex-wrap:wrap}.fc-stage-subjects span{border:1.5px solid var(--ink);background:var(--kiddo-peach);padding:4px 10px;border-radius:999px;font-size:11.5px;font-weight:600;color:var(--ink)}.fc-stage p{font-size:13.5px;line-height:1.6}
+.fc-stages{margin-top:22px;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}.fc-stage{border:1.5px solid var(--line);background:var(--white);padding:18px 20px;display:flex;flex-direction:column;gap:10px}.fc-stage-pills{display:flex;gap:8px;flex-wrap:wrap}.fc-stage-pills .fc-age{background:var(--white);color:var(--ink);border:1.5px solid var(--ink);padding:6px 12px;border-radius:999px;font-size:12.5px;font-weight:700}.fc-stage-pills .fc-class{border:1.5px solid var(--ink);background:var(--yellow);padding:6px 12px;border-radius:999px;font-size:12.5px;font-weight:700}.fc-stage-subjects{display:flex;gap:6px;flex-wrap:wrap}.fc-stage-subjects span{border:1.5px solid var(--ink);background:var(--white);padding:4px 10px;border-radius:999px;font-size:11.5px;font-weight:600;color:var(--ink)}.fc-stage p{font-size:13.5px;line-height:1.6}
 .fc-grid{margin-top:22px;display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:22px}.fc-grid-2{grid-template-columns:repeat(auto-fill,minmax(280px,1fr))}
 .fc-card{margin:0;border:1.5px solid var(--ink);background:var(--white);box-shadow:5px 5px 0 rgba(52,59,48,.14);display:flex;flex-direction:column}.fc-card a{display:block}.fc-card img{width:100%;height:auto;display:block;background:#fff}
 .fc-card figcaption{padding:13px 15px 15px;border-top:1.5px solid var(--line)}.fc-card figcaption strong{display:block;font-family:var(--serif);font-size:19px;color:var(--ink)}.fc-card figcaption span{display:block;margin-top:3px;font-size:13px;color:var(--muted)}
@@ -2051,16 +2051,16 @@ h1 em,h2 em{color:#7b4b99}
 
 /* ---- Age + subject/safety pills (owner request 2026-10-15: "add pills of
    ages so parents know") — on set-page tiles, set-page group headers and
-   card pages. Owner 2026-10-21 round 2: 'still bad have white color background
-   with black fonts' — the subject chips were near-white paper; now EVERY pill
-   is solid color + ink text + ink border: age = amber yellow, subject = peach;
-   set-page group heads stay amber; grouped tiles drop the repeated subject
-   pill (owner: 'the title you already repeat in sections headings dont repeat
-   again in pills'). ---- */
+   card pages. Owner 2026-10-21, final word: "i told you make white pills
+   background of ages with black fonts" — every pill = WHITE background,
+   black ink text, 1.5px ink border (the border keeps a white pill visible on
+   the white cards); grouped tiles drop the repeated subject pill (owner:
+   'the title you already repeat in sections headings dont repeat again in
+   pills'). ---- */
 .fc-pillrow{display:flex;gap:6px;flex-wrap:wrap;margin-top:4px}
 .fc-pill{display:inline-block;padding:3px 10px;border-radius:999px;font-size:11.5px;font-weight:700;line-height:1.3}
-.fc-pill-age{background:var(--yellow,#efb51d);color:var(--ink,#34233E);border:1.5px solid var(--ink,#34233E)}
-.fc-pill-subject{border:1.5px solid var(--ink,#34233E);background:var(--kiddo-peach,#F7C9B4);color:var(--ink,#34233E)}
+.fc-pill-age{background:var(--white,#fff);color:var(--ink,#34233E);border:1.5px solid var(--ink,#34233E)}
+.fc-pill-subject{border:1.5px solid var(--ink,#34233E);background:var(--white,#fff);color:var(--ink,#34233E)}
 .fc-pill-big{padding:7px 16px;font-size:13.5px}
 .fc-cardpills{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 4px}
 .fc-cardpills .fc-pill{padding:5px 13px;font-size:12.5px}
