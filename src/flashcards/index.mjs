@@ -28,6 +28,8 @@ import * as wwData from './data-who-works.mjs';
 import * as hdData from './data-home-daily-life.mjs';
 import * as kgData from './data-kids-games.mjs';
 import * as pcData from './data-places-in-community.mjs';
+import * as acData from './data-animal-categories.mjs';
+import * as ncData from './data-nature-club-animals.mjs';
 import * as fvData from './data-fruits-vegetables.mjs';
 import * as lsData from './data-life-skills-and-good-habits.mjs';
 import * as chData from './data-community-helpers.mjs';
@@ -269,7 +271,31 @@ const SOURCES=[
     twins. US/UK/CA name pairs ride in the copy: cinema/movie theater,
     pharmacy/drugstore/chemist's, gas/petrol station, dentist's
     office/surgery, sports center/leisure centre, cart/trolley. */
- [pcData,pcData.lesson]
+ [pcData,pcData.lesson],
+ /* EXTRA CLASS · Animal Categories (owner 2026-10-21): 24 animal-family
+    spotter sheets in the owner's uploads, probed per file — 23 cards at
+    800×1132 portrait, whales-and-dolphins 1100×778 landscape, cover 800×1277.
+    Every card is a 2×2 sheet of four labeled animals (96 labeled animals in
+    one deck). The class page /extra-classes/animal-categories/ hosts the
+    /learn/ lessons (a simple guide a KID can follow: what the family is, who
+    belongs, how to spot it); the library holds the printable twins. Age
+    pills per card, owner: 'take care of ages cuz this is important' — the
+    familiar families ride Ages 3+, the habitat and concept families Ages
+    4–5. US/UK/CA pairs ride in the copy: ladybug/ladybird,
+    cougar/mountain lion/puma, bunny/rabbit. */
+ [acData,acData.lesson],
+ /* NATURE CLUB · Animals (owner 2026-10-21): 22 deeper spotter sheets in the
+    owner's uploads at school/nature-club/animals/flashcards/ (the club sits
+    beside Extra Classes, mirroring the owner's own R2 layout), probed per
+    file — 19 cards at 800×1132 portrait, three at 1100×778 landscape. The
+    set has no cover of its own, so it fronts the Animal Categories cover
+    (owner: 'include the cover in both'). Club hub /nature-club/, class page
+    /nature-club/animals/ hosts the /learn/ spotter lessons; the library
+    holds the printable twins at /flashcards/nature-club-animals/. Age pills
+    per card: the deeper deck leans Ages 4–5, the friendliest five groups
+    ride Ages 3+. US/UK/CA pairs: reindeer/caribou, moose/elk, shrimp/prawn,
+    buzzard/vulture. */
+ [ncData,ncData.lesson]
 ];
 
 function buildSet([data,lesson]){
@@ -340,7 +366,10 @@ function buildSet([data,lesson]){
   // squashed them on the library wall). Garden Friends has no lesson cover;
   // its cover file is the 1414×2000 bird card, so the portrait fallback holds.
   cover:{file:coverFile,w:lesson.cover?lesson.cover.w:1414,h:lesson.cover?lesson.cover.h:2000,alt:data.meta.coverAlt||('Cover of the '+data.meta.name+' flashcards set from Kiddo School')},
-  coverUrl:base+coverFile,
+  // meta.coverUrl wins when a set borrows its cover from another folder
+  // (Nature Club Animals fronts the Animal Categories cover — owner:
+  // "include the cover in both" — and its own folder has no cover.webp).
+  coverUrl:data.meta.coverUrl||base+coverFile,
   cards
  };
 }

@@ -24,6 +24,8 @@ import {lpContent as dvExtra} from './lp-doctor-visit.mjs';
 import {lpContent as hdExtra} from './lp-home-daily-life.mjs';
 import {lpContent as kgExtra} from './lp-kids-games.mjs';
 import {lpContent as pcExtra} from './lp-places-in-community.mjs';
+import {lpContent as acExtra} from './lp-animal-categories.mjs';
+import {lpContent as ncExtra} from './lp-nature-club-animals.mjs';
 import {lpContent as tv24} from './lp-transportation.mjs';
 import {lpContent as ph28} from './lp-phonics.mjs';
 import {lpContent as fvt} from './lp-faces-and-visual-tracking.mjs';
@@ -178,6 +180,12 @@ export const LP_REGISTRY=[
  {slug:'places-in-the-community',content:pcExtra,
   navTitle:'Learn the town, one place at a time',
   navIntro:'Twenty-eight Places in the Community lessons for ages 3–5, a simple guide a kid can follow: what the place is, who works there, what we do there, the steps of a visit, and one way to play it at home — school, library, hospital, fire station, bakery, bus stop, park, zoo and the whole town between. Movie theater and cinema, drugstore and chemist&rsquo;s, gas and petrol station — the US and UK names ride together on every card. A bonus class beside the core path: walk the town in any order, and build the whole street on the floor with the Town Walk.'},
+ {slug:'animal-categories',content:acExtra,
+  navTitle:'Sort the animal kingdom, one family at a time',
+  navIntro:'Twenty-four Animal Categories lessons for ages 3–5, a simple guide a kid can follow: what the family is, who belongs to it, how to spot it, and one way to play it at home — pets and farm friends first, then the crawly crews, the feathers-fins-and-scales teams, the big wild ones, four habitats, and the giants and old wonders. Ladybug and ladybird, cougar and mountain lion, bunny and rabbit — the US and UK names ride together on every card. A bonus class beside the core path: sort in any order, and let the Big Sort reshuffle the whole zoo.'},
+ {slug:'nature-club-animals',content:ncExtra,
+  navTitle:'Spot the wild, one walk at a time',
+  navIntro:'Twenty-two Nature Club Animals lessons for ages 3–6, a simple spotter guide a kid can follow: what the group is, who belongs, how to tell the look-alikes apart, and one way to meet a real one on a walk — birds of the world first, then the water from shore to deep, the little crawlies, the fur families and six wild homes. Reindeer and caribou, moose and elk, shrimp and prawn — the US and UK names ride together on every card. The Nature Club&rsquo;s first class: take one card, take the walk, and meet one wild animal.'},
 
  {slug:'phonics-and-beginning-sounds',content:ph28,
   navTitle:'Learn the letter sounds, one letter at a time',

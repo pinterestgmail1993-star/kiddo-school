@@ -120,6 +120,14 @@ export const FC_TAGS={
  // carry people (subj-people), and every card teaches the words of going
  // somewhere: naming, talking and the routines of real visits.
  'places-in-the-community':['age-3','age-4-5','lvl-preschool','lvl-prek','subj-people','skill-vocab','skill-talking','skill-routines'],
+ // EXTRA CLASS · Animal Categories: the sorting class — ninety-six labeled
+ // animals in twenty-four families; sorting IS the game, so matching rides
+ // with the animal science.
+ 'animal-categories':['age-3','age-4-5','lvl-preschool','lvl-prek','subj-animals','subj-science','skill-vocab','skill-thinking','skill-matching'],
+ // NATURE CLUB · Animals: the deeper spotter deck — specialist groups and
+ // six wild homes; observation and naming are the skills, and the deck
+ // leans Ages 4–5 with five friendly groups riding Ages 3+.
+ 'nature-club-animals':['age-3','age-4-5','lvl-preschool','lvl-prek','subj-animals','subj-science','skill-vocab','skill-thinking'],
  // School Rooms
  'music-room':['age-3','age-4-5','lvl-rooms','subj-music','skill-sounds'],
  'playground':['age-1-2','age-3','age-4-5','lvl-rooms','subj-sports','skill-movement','skill-talking'],
