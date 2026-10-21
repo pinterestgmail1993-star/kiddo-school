@@ -60,6 +60,14 @@ test('sitemap includes all indexable pages and excludes search and errors',()=>{
  assert.ok(links.includes(info.siteUrl+'/how-to-draw-a-dog/'),'the dog drawing tutorial is indexable');
  assert.ok(!links.some(l=>l.includes('/print/')),'print views stay out of the sitemap');
 });
+test('search-engine site verification tags ship on every page',()=>{
+ const bing=/<meta name="msvalidate\.01" content="5DE868038A534F9B50CB7A36D36CE85D">/;
+ const pinterest=/<meta name="p:domain_verify" content="4b42f69f64ac6d4601f67e5bacd845c1">/;
+ for(const file of htmlFiles){const html=read(file);
+  assert.match(html,bing,'Bing Webmaster verification missing on '+file);
+  assert.match(html,pinterest,'Pinterest verification missing on '+file);
+ }
+});
 test('preview safeguards, no missing content, and static-only runtime',()=>{
  if(!info.indexable){assert.match(read('dist/robots.txt'),/Disallow: \//);assert.match(read('dist/_headers'),/X-Robots-Tag: noindex/);for(const file of htmlFiles)assert.match(read(file),/content="noindex,follow"/);}
  else{assert.match(read('dist/robots.txt'),/Allow: \//);assert.match(read('dist/index.html'),/content="index,follow"/);}
