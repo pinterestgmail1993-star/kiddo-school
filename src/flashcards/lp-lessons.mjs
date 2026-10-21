@@ -23,6 +23,7 @@ import {lpContent as ktExtra} from './lp-kitchen.mjs';
 import {lpContent as dvExtra} from './lp-doctor-visit.mjs';
 import {lpContent as hdExtra} from './lp-home-daily-life.mjs';
 import {lpContent as kgExtra} from './lp-kids-games.mjs';
+import {lpContent as pcExtra} from './lp-places-in-community.mjs';
 import {lpContent as tv24} from './lp-transportation.mjs';
 import {lpContent as ph28} from './lp-phonics.mjs';
 import {lpContent as fvt} from './lp-faces-and-visual-tracking.mjs';
@@ -174,6 +175,9 @@ export const LP_REGISTRY=[
  {slug:'kids-games',content:kgExtra,
   navTitle:'Learn the games, one how-to at a time',
   navIntro:'Twenty-six Kids Games lessons for ages 3–5, a simple how-to-play guide a kid can follow: what the game is, what you need, the steps, and one way to make it fresh tomorrow — balloon keep-up, hide and seek, tic-tac-toe, treasure hunt and the whole classic shelf. Tic-tac-toe and noughts and crosses, jump rope and skipping rope — the US and UK names ride together on every card. A bonus class beside the core path: play in any order, and let the stack decide on Game Day.'},
+ {slug:'places-in-the-community',content:pcExtra,
+  navTitle:'Learn the town, one place at a time',
+  navIntro:'Twenty-eight Places in the Community lessons for ages 3–5, a simple guide a kid can follow: what the place is, who works there, what we do there, the steps of a visit, and one way to play it at home — school, library, hospital, fire station, bakery, bus stop, park, zoo and the whole town between. Movie theater and cinema, drugstore and chemist&rsquo;s, gas and petrol station — the US and UK names ride together on every card. A bonus class beside the core path: walk the town in any order, and build the whole street on the floor with the Town Walk.'},
 
  {slug:'phonics-and-beginning-sounds',content:ph28,
   navTitle:'Learn the letter sounds, one letter at a time',

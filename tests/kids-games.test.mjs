@@ -116,9 +116,9 @@ test('kids-games rides the extra-classes shelf (five classes) with honest cover 
  const kg=EXTRA_CLASSES.find(c=>c.name==='Kids Games');
  assert.ok(kg,'on the EXTRA_CLASSES shelf');
  assert.equal(kg.href,'/extra-classes/kids-games/');
- assert.equal(EXTRA_CLASSES.length,5,'five extra classes now');
+ assert.equal(EXTRA_CLASSES.length,6,'six extra classes now');
  const hub=readPage('/extra-classes/');
- assert.ok(hub.includes('Five bonus classes'),'hub copy counts five');
+ assert.ok(hub.includes('Six bonus classes'),'hub copy counts six');
  assert.ok(hub.includes('/extra-classes/kids-games/'),'hub links the class');
  const lpRow=readPage('/learning-path/');
  assert.ok(lpRow.includes('/extra-classes/kids-games/'),'Learning Path bonus row links the class');

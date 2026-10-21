@@ -10,6 +10,7 @@ import {lesson as ktLesson} from './flashcards/data-kitchen.mjs';
 import {lesson as dvLesson} from './flashcards/data-doctor-visit.mjs';
 import {lesson as hdLesson} from './flashcards/data-home-daily-life.mjs';
 import {lesson as kgLesson} from './flashcards/data-kids-games.mjs';
+import {lesson as pcLesson} from './flashcards/data-places-in-community.mjs';
 
 export const EXTRA_CLASSES=[
  {name:'The Toddler Room',href:'/toddler-room/',cover:trLesson.r2Base+'cover.webp',w:1414,h:2000,
@@ -31,17 +32,21 @@ export const EXTRA_CLASSES=[
  {name:'Kids Games',href:'/extra-classes/kids-games/',cover:kgLesson.r2Base+'cover.webp',w:800,h:1132,
   alt:'Cover of the Kids Games flashcards set: the words "Kids Games Flashcards" over a board game with a pawn, a big die and a dotted arrow.',
   blurb:'Twenty-six classic games with a simple how-to-play guide a kid can follow — balloons and beanbags, hiding and hopping, boards, mazes and treasure maps — with US/UK names taught side by side.',
-  link:'Open the games'}
+  link:'Open the games'},
+ {name:'Places in the Community',href:'/extra-classes/places-in-the-community/',cover:pcLesson.r2Base+'cover.webp',w:800,h:1132,
+  alt:'Cover of the Places in the Community flashcards set: the words "Places in the Community" over a little house with a tree.',
+  blurb:'Twenty-eight places a town is made of, each with a simple lesson a kid can follow — the library, the fire station, the bakery, the bus stop, the park and the zoo — with US/UK names taught side by side.',
+  link:'Walk the town'}
 ];
 
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 
 /* The /extra-classes/ hub: the bonus classes of the school, on one shelf. */
 export function extraClassesHubBody(){
- return `<section class="wrap section compact"><p class="mw-lede">Five bonus classes sit beside the core learning path — never inside it. The regular classes stay the main sequence; the extras are a bonus shelf for families who want more. Skip them freely: no one falls behind.</p><div class="room-grid room-grid-hub">${EXTRA_CLASSES.map(r=>`<a class="room-card" href="${r.href}"><span class="room-cover"><img src="${r.cover}" width="${r.w}" height="${r.h}" alt="${esc(r.alt)}" loading="lazy"></span><span class="room-body"><span class="explore-eyebrow">EXTRA CLASS</span><h2>${esc(r.name)}</h2><p>${esc(r.blurb)}</p><span class="text-link">${esc(r.link)} <span aria-hidden="true">↗</span></span></span></a>`).join('')}</div><p class="fc-hint">Every extra class keeps its own card set in the <a href="/flashcards/">flashcards library</a> — the Toddler Room cards on the toddler shelf, and the Kitchen, Doctor Visit, Home and Daily Life and Kids Games cards on the Ages 4–5 shelf — and every card opens its own lesson inside the class. The core <a href="/learning-path/">Learning Path</a> runs its own sequence, untouched.</p></section>`;
+ return `<section class="wrap section compact"><p class="mw-lede">Six bonus classes sit beside the core learning path — never inside it. The regular classes stay the main sequence; the extras are a bonus shelf for families who want more. Skip them freely: no one falls behind.</p><div class="room-grid room-grid-hub">${EXTRA_CLASSES.map(r=>`<a class="room-card" href="${r.href}"><span class="room-cover"><img src="${r.cover}" width="${r.w}" height="${r.h}" alt="${esc(r.alt)}" loading="lazy"></span><span class="room-body"><span class="explore-eyebrow">EXTRA CLASS</span><h2>${esc(r.name)}</h2><p>${esc(r.blurb)}</p><span class="text-link">${esc(r.link)} <span aria-hidden="true">↗</span></span></span></a>`).join('')}</div><p class="fc-hint">Every extra class keeps its own card set in the <a href="/flashcards/">flashcards library</a> — the Toddler Room cards on the toddler shelf, and the Kitchen, Doctor Visit, Home and Daily Life, Kids Games and Places in the Community cards on the Ages 4–5 shelf — and every card opens its own lesson inside the class. The core <a href="/learning-path/">Learning Path</a> runs its own sequence, untouched.</p></section>`;
 }
 
 /* The Learning Path bonus row: one row, pointing at the hub. */
 export function extraClassesLpRow(){
- return `<div class="lp-row lp-magic"><div class="lp-marker" aria-hidden="true"><span>+</span></div><div class="lp-stage-card"><div class="fc-stage-pills"><span class="fc-age">Bonus</span><span class="fc-class">Extra classes</span></div><h2>Extra Classes — a bonus shelf beside the path</h2><p class="lp-class">Play: <a href="/toddler-room/">The Toddler Room</a> (ages 1–3) · <a href="/kitchen/">Kitchen Helper</a> (ages 3–6) · <a href="/extra-classes/doctor-visit/">Doctor Visit</a> (ages 3–5) · <a href="/extra-classes/home-and-daily-life/">Home and Daily Life</a> (ages 3–5) · <a href="/extra-classes/kids-games/">Kids Games</a> (ages 3–5)</p><p class="lp-hublink">Five bonus classes with their own lessons and flashcards — kept separate from the main sequence on purpose: the regular classes stay the core path, and skipping the extras never leaves a child behind. All extras live at <a href="/extra-classes/">Extra Classes</a>.</p></div></div>`;
+ return `<div class="lp-row lp-magic"><div class="lp-marker" aria-hidden="true"><span>+</span></div><div class="lp-stage-card"><div class="fc-stage-pills"><span class="fc-age">Bonus</span><span class="fc-class">Extra classes</span></div><h2>Extra Classes — a bonus shelf beside the path</h2><p class="lp-class">Play: <a href="/toddler-room/">The Toddler Room</a> (ages 1–3) · <a href="/kitchen/">Kitchen Helper</a> (ages 3–6) · <a href="/extra-classes/doctor-visit/">Doctor Visit</a> (ages 3–5) · <a href="/extra-classes/home-and-daily-life/">Home and Daily Life</a> (ages 3–5) · <a href="/extra-classes/kids-games/">Kids Games</a> (ages 3–5) · <a href="/extra-classes/places-in-the-community/">Places in the Community</a> (ages 3–5)</p><p class="lp-hublink">Six bonus classes with their own lessons and flashcards — kept separate from the main sequence on purpose: the regular classes stay the core path, and skipping the extras never leaves a child behind. All extras live at <a href="/extra-classes/">Extra Classes</a>.</p></div></div>`;
 }

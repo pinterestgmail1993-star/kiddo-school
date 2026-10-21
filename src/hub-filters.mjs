@@ -116,6 +116,10 @@ export const FC_TAGS={
  // freezing games sit with sports & movement, the sit-down grid games with
  // thinking; playing IS the movement skill.
  'kids-games':['age-3','age-4-5','lvl-preschool','lvl-prek','subj-sports','subj-thinking','skill-movement','skill-thinking','skill-matching'],
+ // EXTRA CLASS · Places in the Community: the buildings of a town — places
+ // carry people (subj-people), and every card teaches the words of going
+ // somewhere: naming, talking and the routines of real visits.
+ 'places-in-the-community':['age-3','age-4-5','lvl-preschool','lvl-prek','subj-people','skill-vocab','skill-talking','skill-routines'],
  // School Rooms
  'music-room':['age-3','age-4-5','lvl-rooms','subj-music','skill-sounds'],
  'playground':['age-1-2','age-3','age-4-5','lvl-rooms','subj-sports','skill-movement','skill-talking'],

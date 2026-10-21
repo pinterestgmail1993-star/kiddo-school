@@ -27,6 +27,7 @@ import * as dvData from './data-doctor-visit.mjs';
 import * as wwData from './data-who-works.mjs';
 import * as hdData from './data-home-daily-life.mjs';
 import * as kgData from './data-kids-games.mjs';
+import * as pcData from './data-places-in-community.mjs';
 import * as fvData from './data-fruits-vegetables.mjs';
 import * as lsData from './data-life-skills-and-good-habits.mjs';
 import * as chData from './data-community-helpers.mjs';
@@ -259,7 +260,16 @@ const SOURCES=[
     class page /extra-classes/home-and-daily-life/ hosts the /learn/ lessons;
     the library holds the printable twins. US/UK/CA word pairs ride in the
     copy: tap/faucet, torch/flashlight, wardrobe/closet, trolley/cart. */
- [hdData,hdData.lesson]
+ [hdData,hdData.lesson],
+ /* EXTRA CLASS · Places in the Community (owner 2026-10-21): 28 town-place
+    cards in the owner's uploads, probed again — every file 800×1132
+    portrait. The class page /extra-classes/places-in-the-community/ hosts
+    the /learn/ lessons (a simple guide a KID can follow: what the place is,
+    who works there, what we do there); the library holds the printable
+    twins. US/UK/CA name pairs ride in the copy: cinema/movie theater,
+    pharmacy/drugstore/chemist's, gas/petrol station, dentist's
+    office/surgery, sports center/leisure centre, cart/trolley. */
+ [pcData,pcData.lesson]
 ];
 
 function buildSet([data,lesson]){
