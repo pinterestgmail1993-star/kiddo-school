@@ -47,7 +47,7 @@ export function imageActivitySection(a){
     </section>
    </div>
    <aside class="fc2-rail" aria-label="Instructions, drawing tools and saved progress">
-    <section class="fc2-block fc2-first-block"><span class="eyebrow">HOW TO DO IT</span><h2>Read, then draw.</h2><p class="lesson-copy ia-instruction">${esc(a.say)}</p>${a.hint?`<p class="fc-hint">${esc(a.hint)}</p>`:''}</section>
+    <section class="fc2-block fc2-first-block"><span class="eyebrow">GOOD TO KNOW</span><h2>While you draw.</h2>${a.hint?`<p class="lesson-copy ia-instruction">${esc(a.hint)}</p>`:''}</section>
     <section class="fc2-block" id="ia-tools" aria-label="Drawing tools"><span class="eyebrow">YOUR PENCIL CASE</span><h2>Pick your tools.</h2><p class="fc-hint">Pencil, nine crayons, an eraser, undo, redo and clear appear right here and work straight on the picture. Save keeps your finished work as a picture.</p></section>
     <section class="fc2-block"><span class="eyebrow">MY PROGRESS</span><h2>Save it to keep it.</h2><p class="ls-progress-line" data-ia-progress aria-live="polite">This adventure is cleared for you the moment you save your finished picture. Nothing counts until then — opening the page is just opening the door.</p><p class="ls-progress-done" data-ia-done hidden><strong>Cleared!</strong> ${esc(a.doneTitle?a.doneTitle+' ':'')}Your saved work is in your downloads, and the ribbon is on in the library.</p></section>
    </aside>

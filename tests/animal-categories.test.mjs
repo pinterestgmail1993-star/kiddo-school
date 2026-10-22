@@ -118,7 +118,7 @@ test('animal-categories rides the extra-classes shelf (seven classes) with hones
  assert.equal(ac.w,800);assert.equal(ac.h,1277,'the taller cover dims ride honestly');
  assert.equal(EXTRA_CLASSES.length,8,'eight extra classes — Colors joined (owner 2026-10-22)');
  const hub=readPage('/extra-classes/');
- assert.ok(hub.includes('Eight bonus classes'),'hub copy counts eight');
+ assert.ok(hub.includes('Eight extra classes'),'hub copy counts eight');
  assert.ok(hub.includes('/extra-classes/animal-categories/'),'hub links the class');
  const lpRow=readPage('/learning-path/');
  assert.ok(lpRow.includes('/extra-classes/animal-categories/'),'Learning Path bonus row links the class');

@@ -120,7 +120,7 @@ test('places-in-the-community rides the extra-classes shelf (six classes) with h
  assert.equal(pc.href,'/extra-classes/places-in-the-community/');
  assert.equal(EXTRA_CLASSES.length,8,'eight extra classes — Colors joined (owner 2026-10-22)');
  const hub=readPage('/extra-classes/');
- assert.ok(hub.includes('Eight bonus classes'),'hub copy counts eight');
+ assert.ok(hub.includes('Eight extra classes'),'hub copy counts eight');
  assert.ok(hub.includes('/extra-classes/places-in-the-community/'),'hub links the class');
  const lpRow=readPage('/learning-path/');
  assert.ok(lpRow.includes('/extra-classes/places-in-the-community/'),'Learning Path bonus row links the class');

@@ -43,9 +43,9 @@ test('the form offers exactly the six categories and requires only the two messa
 });
 
 test('the form is honest about the real backend: success only after the server confirms',()=>{
- // The static page describes the real destination — the Principal's private records
+ // The static page describes the real destination — the Principal's Office, nobody else
  assert.match(html,/goes straight to the Principal/);
- assert.match(html,/never published on the site/);
+ assert.match(html,/not to teachers, not to other parents/);
  // The client POSTs to the real API and claims success ONLY on a server ok
  assert.match(js,/preventDefault/);
  assert.match(js,/\/api\/community\/principal/);
@@ -58,8 +58,8 @@ test('the form is honest about the real backend: success only after the server c
 });
 
 test('child privacy: the form is for grown-ups and says so, twice, in the right places',()=>{
- assert.equal((html.match(/Please don&rsquo;t include private information about your child\./g)||[]).length,1);
- assert.match(html,/doesn&rsquo;t ask for a child&rsquo;s name, age or anything else about a child/);
+ assert.equal((html.match(/Please keep private details out of your message\./g)||[]).length,1);
+ assert.match(html,/never asks for anything about a child/);
  // Complaints never become public content
  assert.match(html,/never published, never quoted/);
  assert.match(html,/only the Principal reads them|Only the Principal reads it/);

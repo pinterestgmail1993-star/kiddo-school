@@ -1,9 +1,7 @@
 # 301: the 52 Class 29 sight word lessons moved to their own hub
 # (old /learn/{word}/ pages → /preschool/4-years/sight-words/{word}/)
 /preschool/4-years/storytime-and-pre-reading/learn/* /preschool/4-years/sight-words/:splat 301
-# 301: www serves byte-identical files as the apex host (both are custom domains
-# of this Pages project), so Google crawled the whole site twice and parked the
-# www copies in "Crawled - currently not indexed". One canonical host:
-# every www request redirects to the apex the sitemap/canonicals already use.
-https://www.kiddo.school/* https://kiddo.school/:splat 301
-
+# NOTE: the old "redirect www via _redirects" attempt never worked — Pages
+# _redirects matches by PATH only and silently ignores absolute-URL sources.
+# The www → kiddo.school 301 lives in functions/_middleware.js instead
+# (commit 877d5b2bf4), which IS live and verified.

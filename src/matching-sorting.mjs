@@ -60,7 +60,7 @@ export function matchingSortSection(){
    <span class="sa-card-num" aria-hidden="true">${i+1}</span>
    <span class="sa-card-done" data-ms-done hidden>Cleared!</span>
    <img src="${MS_BASE}${a.img}" width="707" height="1000" alt="Matching and sorting sheet ${i+1}: ${esc(a.tag)}" loading="lazy">
-   <span class="sa-card-body"><strong>${a.label}</strong><span class="sa-card-tag">${esc(a.tag)}</span><span class="sa-card-skill">Solve it on screen with your finger, a stylus or the mouse</span></span>
+   <span class="sa-card-body"><strong>${a.label}</strong><span class="sa-card-tag">${esc(a.tag)}</span></span>
    <span class="sa-card-play">Start matching <span aria-hidden="true">→</span></span>
   </a>`).join('');
  return `<section class="wrap lesson-section" id="matching-sorting-fun" aria-label="Matching and sorting activities">

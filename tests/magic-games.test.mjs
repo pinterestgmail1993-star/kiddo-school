@@ -151,7 +151,7 @@ test('look & draw: a 25-picture gallery on four shelves, gathered from the retir
   for(const c of ['#e04b3f','#f5c531','#5aa7d6','#4a9e4f','#f07f28','#8f4fc0'])assert.ok(round.includes('data-ld-color="'+c+'"'),d+': color '+c);
   assert.equal([...round.matchAll(/data-ld-size="/g)].length,3,d+': three brush sizes');
   for(const t of ['data-ld-eraser','data-ld-undo','data-ld-clear','data-ld-save','data-ld-how'])assert.ok(round.includes(t),d+': '+t);
-  assert.ok(round.includes('Can you find the shapes in your drawing?'),d+': parent prompt present');
+  assert.ok(round.includes('For grown-ups: ask your artist —'),d+': parent prompt present');
   assert.ok(round.includes('Look at this — then draw your own.'),d+': reference travels with the canvas');
   assert.ok(round.includes('data-ld-steps'),d+': written how-to steps');
   // next picture keeps the session flowing (basket wraps to the house)

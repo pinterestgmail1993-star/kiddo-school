@@ -29,7 +29,7 @@ export function fcCommunityMount(path){
  <div class="fc2-block">
   <span class="eyebrow">PARENT REVIEWS</span>
   <h2>Parent reviews.</h2>
-  <p class="lesson-copy">A different thing from the quick faces above: a star rating for the grown-ups, plus an optional line about how it went. Every review is read by the school office before it appears.</p>
+  <p class="lesson-copy">A different thing from the quick faces above: a star rating for the grown-ups, plus an optional line about how it went.</p>
   <noscript><p class="fc-hint">Sending a review needs JavaScript. The cards themselves work fine without it.</p></noscript>
   <div class="fc2-listwrap" data-fc-reviews-box hidden>
    <ul class="cm-list" data-fc-reviews></ul>
@@ -56,7 +56,7 @@ export function fcCommunityMount(path){
  <div class="fc2-block">
   <span class="eyebrow">PARENT COMMENTS</span>
   <h2>Parent comments.</h2>
-  <p class="lesson-copy">How did you use this page Share the game, the moment or the trick that worked in your house. Comments are read by the school office before they appear, and they are about your ideas — never about your child.</p>
+  <p class="lesson-copy">How did you use this page? Share the game, the moment or the trick that worked in your house — your ideas, never details about your child.</p>
   <noscript><p class="fc-hint">Sending a comment needs JavaScript. The cards themselves work fine without it.</p></noscript>
   <div class="fc2-listwrap" data-fc-comments-box hidden>
    <ul class="cm-list" data-fc-comments></ul>

@@ -15,8 +15,9 @@
 // draw freely with finger, mouse or stylus (HTML Canvas + Pointer Events),
 // with six big color buttons, three brush sizes, Eraser, Undo, Clear and Save
 // Drawing. Drawings stay per picture while the page is open. "Show me how"
-// gives simple spoken/written steps — never overlays, never auto-correct. A
-// parent prompt asks "Can you find the shapes in your drawing?" Save
+// gives simple spoken/written steps — never overlays, never auto-correct. The
+// grown-up prompt names the picture being drawn, so every screen asks its own
+// question and no line repeats on the page. Save
 // downloads ONLY the child's own canvas, never the reference image. No
 // grading, no scores, no timers, no shape detection. Without JavaScript the
 // references and written steps still show — draw on real paper instead.
@@ -280,7 +281,7 @@ export function magicShapeBody(G){
      </div>
      ${toolBar()}
      <p class="ld-status" data-ld-status aria-live="polite">Pick a color, then draw with your finger, mouse or stylus.</p>
-     <p class="ld-parent">For grown-ups: ask your artist — “Can you find the shapes in your drawing?”</p>
+     <p class="ld-parent">For grown-ups: ask your artist — “Which shapes did you use for the ${d.name.toLowerCase()}?”</p>
      <div class="mg-actions">
       <button type="button" class="button button-ghost" data-mg-go="choose">Choose another picture <span aria-hidden="true">↺</span></button>
       <button type="button" class="button" data-mg-go="draw-${d.next}">Next picture: the ${DESIGNS.find(x=>x.slug===d.next).name.toLowerCase()} <span aria-hidden="true">→</span></button>

@@ -118,7 +118,7 @@ test('kids-games rides the extra-classes shelf (five classes) with honest cover 
  assert.equal(kg.href,'/extra-classes/kids-games/');
  assert.equal(EXTRA_CLASSES.length,8,'eight extra classes — Colors joined (owner 2026-10-22)');
  const hub=readPage('/extra-classes/');
- assert.ok(hub.includes('Eight bonus classes'),'hub copy counts eight');
+ assert.ok(hub.includes('Eight extra classes'),'hub copy counts eight');
  assert.ok(hub.includes('/extra-classes/kids-games/'),'hub links the class');
  const lpRow=readPage('/learning-path/');
  assert.ok(lpRow.includes('/extra-classes/kids-games/'),'Learning Path bonus row links the class');
