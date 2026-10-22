@@ -26,6 +26,7 @@ import {lpContent as kgExtra} from './lp-kids-games.mjs';
 import {lpContent as pcExtra} from './lp-places-in-community.mjs';
 import {lpContent as acExtra} from './lp-animal-categories.mjs';
 import {lpContent as ncExtra} from './lp-nature-club-animals.mjs';
+import {lpContent as colExtra} from './lp-colors-and-shades.mjs';
 import {lpContent as tv24} from './lp-transportation.mjs';
 import {lpContent as ph28} from './lp-phonics.mjs';
 import {lpContent as fvt} from './lp-faces-and-visual-tracking.mjs';
@@ -183,6 +184,9 @@ export const LP_REGISTRY=[
  {slug:'animal-categories',content:acExtra,
   navTitle:'Sort the animal kingdom, one family at a time',
   navIntro:'Twenty-four Animal Categories lessons for ages 3–5, a simple guide a kid can follow: what the family is, who belongs to it, how to spot it, and one way to play it at home — pets and farm friends first, then the crawly crews, the feathers-fins-and-scales teams, the big wild ones, four habitats, and the giants and old wonders. Ladybug and ladybird, cougar and mountain lion, bunny and rabbit — the US and UK names ride together on every card. A bonus class beside the core path: sort in any order, and let the Big Sort reshuffle the whole zoo.'},
+ {slug:'colors-and-shades',content:colExtra,
+  navTitle:'Name the colors, then mix the shades',
+  navIntro:'Fifteen Colors lessons for ages 2–5, a simple guide a kid can follow: the eleven first colors in file order — red to gold, each with where it hides and how to hunt it — then the four shades of the More colors section, each with its mixing recipe: light blue is blue plus white, navy is blue gone dark, peach is orange gone soft, lavender is purple gone pale. Gray and grey, eggplant and aubergine — the US and UK names ride together on every card. A bonus class beside the core path: hunt one color a day, and let the house be the deck.'},
  {slug:'nature-club-animals',content:ncExtra,
   navTitle:'Spot the wild, one walk at a time',
   navIntro:'Twenty-two Nature Club Animals lessons for ages 3–6, a simple spotter guide a kid can follow: what the group is, who belongs, how to tell the look-alikes apart, and one way to meet a real one on a walk — birds of the world first, then the water from shore to deep, the little crawlies, the fur families and six wild homes. Reindeer and caribou, moose and elk, shrimp and prawn — the US and UK names ride together on every card. The Nature Club&rsquo;s first class: take one card, take the walk, and meet one wild animal.'},

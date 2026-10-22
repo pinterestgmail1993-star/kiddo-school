@@ -30,6 +30,7 @@ import * as kgData from './data-kids-games.mjs';
 import * as pcData from './data-places-in-community.mjs';
 import * as acData from './data-animal-categories.mjs';
 import * as ncData from './data-nature-club-animals.mjs';
+import * as colData from './data-colors-and-shades.mjs';
 import * as fvData from './data-fruits-vegetables.mjs';
 import * as lsData from './data-life-skills-and-good-habits.mjs';
 import * as chData from './data-community-helpers.mjs';
@@ -295,7 +296,20 @@ const SOURCES=[
     per card: the deeper deck leans Ages 4–5, the friendliest five groups
     ride Ages 3+. US/UK/CA pairs: reindeer/caribou, moose/elk, shrimp/prawn,
     buzzard/vulture. */
- [ncData,ncData.lesson]
+ [ncData,ncData.lesson],
+ /* EXTRA CLASS · Colors (owner 2026-10-22): 11 color cards + 4 shade cards
+    in the owner's uploads at school/extra-classes/colors/ (flashcards/ and
+    shades/ subfolders), probed per file — every file 600×849 portrait,
+    cover included. Every card is a 2×2 sheet of four labeled things in one
+    color (60 labeled things in one deck). The class page
+    /extra-classes/colors/ hosts the /learn/ lessons (what the color is,
+    where it hides, the mixing recipe); the library holds the printable
+    twins. The 11 colors ride Ages 2+ in file order 01–11; the 4 shades are
+    the 'More colors (ages 4-5)' section — each a MIXING recipe. Slug is
+    colors-and-shades because /flashcards/colors/ is the owner's earlier
+    paint-splash set (kept untouched). US/UK: gray/grey,
+    eggplant/aubergine. */
+ [colData,colData.lesson]
 ];
 
 function buildSet([data,lesson]){

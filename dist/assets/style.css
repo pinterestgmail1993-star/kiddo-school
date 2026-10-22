@@ -2160,6 +2160,20 @@ h1 em,h2 em{color:#7b4b99}
 .fg-grid{margin-top:14px}
 .fg-card figcaption{display:flex;flex-direction:column;gap:7px}
 .fg-skills{font-size:11.5px;color:var(--muted)}
+/* Owner cross-link (2026-10-22): 'More colors in the Colors class' under the
+   colors-1 and colors-2 sheets on /first-glance/. House look: small ink link
+   with the yellow accent underline. */
+.fg-more{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:700;color:var(--ink);text-decoration:none;border-bottom:1.5px solid var(--yellow);padding-bottom:2px;width:fit-content}
+.fg-more:hover{text-decoration:underline}
+/* EXTRA CLASS · Colors (owner brief: 'use object-fit: contain'): the Colors
+   class page tiles and lesson art render their 600×849 cards with
+   object-fit: contain so nothing ever crops. The rule is safe site-wide —
+   every other deck's images already match their box ratios, so contain is a
+   no-op there — but it guarantees the owner's requirement on the Colors
+   class, its /learn/ lessons and the library card pages. */
+.lp-tile img{object-fit:contain}
+.fcl-art img{object-fit:contain}
+.fc-card>figure img,.fc-card>a>img{object-fit:contain}
 .fg-why{margin-top:48px;display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:center;background:var(--white);border:1.5px solid var(--ink);box-shadow:6px 6px 0 rgba(52,59,48,.14);padding:44px}
 .fg-why-copy h2{font-size:clamp(26px,2.8vw,36px);margin-bottom:14px}
 .fg-why-copy p{font-size:14.5px;line-height:1.8;margin-bottom:13px}

@@ -103,7 +103,7 @@ test('doctor-visit class page: groups, game, medicine rule, back-links',()=>{
 test('doctor-visit is on the extra-classes shelf, never the numbered path',()=>{
  const hub=readPage('/extra-classes/');
  assert.ok(hub.includes('href="/extra-classes/doctor-visit/"'),'hub lists the class');
- assert.equal(EXTRA_CLASSES.length,7,'seven extra classes — Animal Categories joined (owner 2026-10-21)');
+ assert.equal(EXTRA_CLASSES.length,8,'eight extra classes — Colors joined (owner 2026-10-22)');
  assert.ok(EXTRA_CLASSES.find(c=>c.name==='Doctor Visit'),'named Doctor Visit');
  // the learning path page mentions it only in the bonus row
  const lp=readPage('/learning-path/');

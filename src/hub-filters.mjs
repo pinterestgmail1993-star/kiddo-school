@@ -128,6 +128,10 @@ export const FC_TAGS={
  // six wild homes; observation and naming are the skills, and the deck
  // leans Ages 4–5 with five friendly groups riding Ages 3+.
  'nature-club-animals':['age-3','age-4-5','lvl-preschool','lvl-prek','subj-animals','subj-science','skill-vocab','skill-thinking'],
+ // EXTRA CLASS · Colors: eleven first colors ride Ages 2+ (pointing and
+ // naming), the four shades are the Ages 4–5 mixing recipes — so every age
+ // chip honestly matches part of the deck.
+ 'colors-and-shades':['age-1-2','age-3','age-4-5','lvl-toddler','lvl-preschool','lvl-prek','subj-colors-shapes','skill-vocab','skill-thinking'],
  // School Rooms
  'music-room':['age-3','age-4-5','lvl-rooms','subj-music','skill-sounds'],
  'playground':['age-1-2','age-3','age-4-5','lvl-rooms','subj-sports','skill-movement','skill-talking'],

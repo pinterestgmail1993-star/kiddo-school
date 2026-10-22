@@ -11,7 +11,11 @@ const card=(c,folder,bandLabel)=>{
  const lw=c.lw,w=lw?FG_LW:FG_W,h=lw?FG_LH:FG_H;
  const file=`${c.n}-${c.slug}.webp`;
  const alt=`First Glance “${c.t}” sheet: ${c.w.join(', ')} — labelled picture cards.`;
- return `<figure class="fc-card fg-card"><a href="${FG_BASE}${folder}/${file}" target="_blank" rel="noopener" aria-label="Open the ${e(c.t)} sheet full size in a new tab"><img src="${FG_BASE}${folder}/${file}" width="${w}" height="${h}" alt="${e(alt)}" loading="lazy"></a><figcaption><strong>${e(c.t)}</strong><span>${e(c.d)}</span><span class="fc-pillrow"><span class="fc-pill fc-pill-age">${e(bandLabel)}</span><span class="fc-pill fc-pill-subject">${e(c.sub)}</span></span><span class="fg-skills">Skills: ${e(c.sk)}</span></figcaption></figure>`;
+ /* Owner cross-link (2026-10-22): the two Colors sheets carry a pointer to
+    the Colors extra class — 'those four colors have a whole class of their
+    own'. Renders on colors-1 and colors-2 only. */
+ const more=c.slug==='colors-1'||c.slug==='colors-2'?`<a class="fg-more" href="/extra-classes/colors/">More colors in the Colors class <span aria-hidden="true">↗</span></a>`:'';
+ return `<figure class="fc-card fg-card"><a href="${FG_BASE}${folder}/${file}" target="_blank" rel="noopener" aria-label="Open the ${e(c.t)} sheet full size in a new tab"><img src="${FG_BASE}${folder}/${file}" width="${w}" height="${h}" alt="${e(alt)}" loading="lazy"></a><figcaption><strong>${e(c.t)}</strong><span>${e(c.d)}</span><span class="fc-pillrow"><span class="fc-pill fc-pill-age">${e(bandLabel)}</span><span class="fc-pill fc-pill-subject">${e(c.sub)}</span></span><span class="fg-skills">Skills: ${e(c.sk)}</span>${more}</figcaption></figure>`;
 };
 
 const band=(b,id,dotN)=>{

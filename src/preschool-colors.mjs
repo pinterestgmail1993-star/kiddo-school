@@ -209,7 +209,7 @@ export function colorsClassBody(L){
   <span class="eyebrow">CLASSROOM ACTIVITIES</span>
   <h2>Mix paint colors — without the mess.</h2>
   <p class="lesson-copy">The class mix pot now has a game of its own. Magic Color Lab lets your child tap two paint splashes — red, yellow or blue — and watch them combine into orange, green or purple, with a friendly explanation for every recipe.</p>
-  <div class="lesson-linkrow"><a class="lesson-pill-link" href="/preschool/3-years/magic-color-mixing/">Play the Magic Color Lab game <span aria-hidden="true">↗</span></a></div>
+  <div class="lesson-linkrow"><a class="lesson-pill-link" href="/preschool/3-years/magic-color-mixing/">Play the Magic Color Lab game <span aria-hidden="true">↗</span></a><a class="lesson-pill-link" href="/extra-classes/colors/">More colors to explore <span aria-hidden="true">↗</span></a></div>
  </section>`;
 
  return `${crumbNav([['Preschool','/preschool/'],['Age 3','/preschool/3-years/'],['Colors & Color Mixing']])}
