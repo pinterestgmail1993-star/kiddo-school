@@ -63,6 +63,7 @@ test('parents can always find it: footer link on every page + sitemap entry',()=
 test('spot checks: known pages live in the right sections',()=>{
  const sec=id=>main.split(`id="ap-${id}"`)[1].split('</section>')[0];
  assert.ok(sec('start').includes('href="/"'));
+ assert.ok(sec('start').includes('href="/first-glance/"'),'first-glance under Start here');
  assert.ok(sec('preschool').includes('href="/preschool/4-years/sight-words/"'),'sight-words under preschool');
  assert.ok(sec('extra').includes('href="/nature-club/animals/"'),'nature club under extra');
  assert.ok(sec('flashcards').includes('href="/flashcards/animal-categories/amphibians/"'),'amphibians card under flashcards');
