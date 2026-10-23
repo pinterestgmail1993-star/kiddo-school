@@ -106,6 +106,10 @@ export const FC_TAGS={
  'sight-words':['age-4-5','lvl-prek','subj-reading','skill-vocab','skill-thinking'],
  'phonics-and-beginning-sounds':['age-4-5','lvl-prek','subj-reading','subj-alphabet','skill-sounds'],
  'sports':['age-4-5','lvl-prek','subj-sports','skill-movement'],
+ // CLASS 38 · Feelings & Kindness: the feelings shelf proper — emotion
+ // vocabulary rides skill-vocab AND skill-talking, the calm-down skills are
+ // real routines, and the kindness habits are the talking practice itself.
+ 'feelings-and-kindness':['age-4-5','lvl-prek','subj-feelings','skill-vocab','skill-talking','skill-routines'],
  'transportation-and-vehicles':['age-4-5','lvl-prek','subj-vehicles','skill-vocab'],
  // Extra classes and rooms (their real age spans ride along)
  'kitchen':['age-3','age-4-5','lvl-preschool','lvl-prek','subj-first-words','skill-vocab','skill-routines'],

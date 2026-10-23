@@ -556,6 +556,11 @@ export function lifeSkillsClassBody(){
   <h2>Capable hands, kind habits!</h2>
   <p class="lesson-copy">One sheet or six, every circle and every traced word is a real skill settling in. The shelf remembers exactly where your child left off.</p>
   <div class="hero-actions"><a class="button" href="${LS_WS_PATH}">Browse the printable sheets <span aria-hidden="true">↗</span></a><a class="button button-ghost" href="/learning-path/">Learning Path <span aria-hidden="true">↗</span></a></div>
+ </section>
+ <section class="wrap lesson-section" aria-label="Next on the path">
+  <span class="eyebrow">NEXT ON THE PATH</span>
+  <h2>Next: <a href="/preschool/4-years/feelings-and-kindness/">Feelings &amp; Kindness (Class 38)</a>.</h2>
+  <p class="lesson-copy">The habits this class practises — gentle hands, kind words, taking turns, deep breaths — meet their feelings words next door: Class 38 teaches the same skills with a vocabulary, thirty-five cards from happy, sad, angry and calm to the kindness graduation. It sits at the end of the path by design — the habits shelf grew a feelings shelf, and Class 32 points to it as the natural next step.</p>
  </section>`;
 }
 

@@ -18,6 +18,7 @@ import {lpContent as ah36} from './lp-animals-habitats.mjs';
 import {lpContent as mr23} from './lp-music-room.mjs';
 import {lpContent as pgr} from './lp-playground.mjs';
 import {lpContent as sp37} from './lp-sports.mjs';
+import {lpContent as fk38} from './lp-feelings-kindness.mjs';
 import {lpContent as trExtra} from './lp-toddler-room.mjs';
 import {lpContent as ktExtra} from './lp-kitchen.mjs';
 import {lpContent as dvExtra} from './lp-doctor-visit.mjs';
@@ -160,6 +161,9 @@ export const LP_REGISTRY=[
  {slug:'sports',content:sp37,
   navTitle:'Learn the sports and movement cards, one game at a time',
   navIntro:'Forty sports lessons for ages 4–5: the ball games first, then run-jump-throw athletics, the water sports, wheels and boards and ice, climbing and riding, aim and precision, the martial arts and the mighty lift — every lesson teaching one big move step by step, with a living-room game that builds gross motor skills, physical literacy and the fundamental movement skills of running, jumping, throwing, catching, kicking and balance.'},
+ {slug:'feelings-and-kindness',content:fk38,
+  navTitle:'Learn the feelings and kindness cards, four words at a time',
+  navIntro:'Thirty-five feelings-and-kindness lessons for ages 4–5: the feeling faces first — happy, sad, angry, calm — then the kind habits, the honest tricky words, the calm-down skills and the belonging words, ending at the kindness graduation where kindness becomes a choice your child owns. Every lesson reads the real card, walks the teaching step by step, hands you the script to say, the questions to ask and one game that practises the words on a real moment today. Class 38 continues the path after Class 32 (Life Skills & Good Habits) — the habits shelf grew a feelings shelf.'},
  {slug:'transportation-and-vehicles',content:tv24,
   navTitle:'Learn the vehicles, one spotter card at a time',
   navIntro:'Thirty-two transportation lessons for ages 4–5: the everyday rides first — car, bus, train, school bus — then the helpers, the rails, the long giants, the water, the sky and eleven construction spotter sheets from road roller to tower crane. Each card names four vehicles, and every lesson teaches all four with one big spotting idea.'},

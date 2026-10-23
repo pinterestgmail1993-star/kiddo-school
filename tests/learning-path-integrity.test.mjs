@@ -27,11 +27,13 @@ import {readFileSync,existsSync} from 'node:fs';
 const read=p=>readFileSync('dist/'+p,'utf8');
 const lp=()=>read('learning-path/index.html');
 
-// The approved published sequence — Classes 1–37, no gap. Update ONLY
+// The approved published sequence — Classes 1–38, no gap. Update ONLY
 // when the owner approves a new class (23 = Music Room, owner-approved
 // 2026-10-14; 24 = Transportation & Vehicles, the complete class that filled
-// the reserved slot; 33, 34, 35, 36, 37 approved & built).
-const APPROVED=[...Array(37).keys()].map(i=>i+1);
+// the reserved slot; 33, 34, 35, 36, 37 approved & built; 38 = Feelings &
+// Kindness, owner-directed 2026-10-23 to the END of the path so Classes
+// 33–37 keep their numbers and links).
+const APPROVED=[...Array(38).keys()].map(i=>i+1);
 
 const WORDS={one:1,two:2,three:3,four:4,five:5,six:6,seven:7,eight:8,nine:9,ten:10,
  eleven:11,twelve:12,thirteen:13,fourteen:14,fifteen:15,sixteen:16,seventeen:17,
@@ -42,11 +44,11 @@ const WORDS={one:1,two:2,three:3,four:4,five:5,six:6,seven:7,eight:8,nine:9,ten:
  'thirty-nine':39,forty:40,'forty-one':41,'forty-two':42,'forty-three':43,'forty-four':44,
  'forty-five':45,'forty-six':46,'forty-seven':47,'forty-eight':48,'forty-nine':49,fifty:50};
 
-test('the Learning Path shows exactly the approved classes — unique, strictly increasing, no gap (1–37)',()=>{
+test('the Learning Path shows exactly the approved classes — unique, strictly increasing, no gap (1–38)',()=>{
  const html=lp();
  const nums=[...html.matchAll(/lp-class">Class (\d+):/g)].map(m=>+m[1]);
  assert.equal(nums.length,APPROVED.length,'row count matches the approved registry ('+nums.length+' rows)');
- assert.deepEqual(nums,APPROVED,'sequence is exactly Classes 1–37, no gap');
+ assert.deepEqual(nums,APPROVED,'sequence is exactly Classes 1–38, no gap');
  assert.equal(new Set(nums).size,nums.length,'no duplicate class numbers');
  for(let i=1;i<nums.length;i++)assert.ok(nums[i]>nums[i-1],'strictly increasing at position '+i);
 });

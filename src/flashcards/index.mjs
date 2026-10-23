@@ -31,6 +31,7 @@ import * as pcData from './data-places-in-community.mjs';
 import * as acData from './data-animal-categories.mjs';
 import * as ncData from './data-nature-club-animals.mjs';
 import * as colData from './data-colors-and-shades.mjs';
+import * as fkData from './data-feelings-kindness.mjs';
 import * as fvData from './data-fruits-vegetables.mjs';
 import * as lsData from './data-life-skills-and-good-habits.mjs';
 import * as chData from './data-community-helpers.mjs';
@@ -309,7 +310,17 @@ const SOURCES=[
     colors-and-shades because /flashcards/colors/ is the owner's earlier
     paint-splash set (kept untouched). US/UK: gray/grey,
     eggplant/aubergine. */
- [colData,colData.lesson]
+ [colData,colData.lesson],
+ // Preschool Class 38: thirty-five feelings-and-kindness cards from the
+ // owner's uploads in the class's own R2 folder (self-contained lesson
+ // object, ALL 36 files probed at 800×1131 portrait). The cover fronts the
+ // set and is never counted as a card. Purpose: WHAT each feelings-and-
+ // kindness word means and HOW to use the card at home — the Learning Path
+ // /learn/ lessons (lp-feelings-kindness.mjs via LP_REGISTRY) keep the
+ // step-by-step teaching on their own pages. Class 38 sits at the END of
+ // the path by owner decision (2026-10-23) — beside Class 32 was the
+ // logical home, but inserting it there would renumber Classes 33–37.
+ [fkData,fkData.lesson]
 ];
 
 function buildSet([data,lesson]){

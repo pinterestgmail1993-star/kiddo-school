@@ -112,7 +112,7 @@ test('home-and-daily-life is on the extra-classes shelf, never the numbered path
  // the learning path page mentions it only in the bonus row
  const lp=readPage('/learning-path/');
  assert.ok(lp.includes('/extra-classes/home-and-daily-life/'),'bonus row points at it');
- assert.ok(!lp.includes('Class 38'),'no invented class number');
+ assert.ok(lp.includes('Class 38: <a href="/preschool/4-years/feelings-and-kindness/">Feelings &amp; Kindness</a>'),'Class 38 approved & built at the end of the path (owner 2026-10-23)');
 });
 
 test('home-and-daily-life rides the Ages 4–5 flashcards shelf and the sitemap',()=>{

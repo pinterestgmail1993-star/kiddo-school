@@ -948,7 +948,7 @@ export const emLesson={
   'Go face first. Pull the expression yourself and your toddler will copy it — copying comes long before naming.',
   'Name your own feelings too. “I’m happy you’re here” or “I’m tired tonight” — your face is the best flashcard in the house.'
  ],note:'<strong>Age ranges are a guide.</strong> Go at your child’s pace.'},
- pills:{heading:'Where to next?',items:[['Toddler classes','/toddler/'],['Age 2','/toddler/2-years/'],['Learning Path','/learning-path/']]},
+ pills:{heading:'Where to next?',items:[['Toddler classes','/toddler/'],['Age 2','/toddler/2-years/'],['Learning Path','/learning-path/'],['More feelings for ages 4–5','/preschool/4-years/feelings-and-kindness/']]},
  pathNav:{prev:{title:'Vehicles & Sounds',range:'Age 2',href:'/toddler/2-years/vehicles-and-sounds/'},next:{title:'Garden Bugs & Friends',range:'Age 2',href:'/toddler/2-years/garden-bugs-and-friends/'}},
  hubBlurb:'Twenty feelings with friendly faces and two quick games — name them together, make the faces, then spot those feelings in your own day. Made for two-year-olds.',
  schema:{resourceType:'Interactive toddler class',level:'Toddler (age 2)',teaches:'Feeling words — happy, sad, angry, scared and more — through looking, face-making and naming together',audience:'Parents of toddlers',keywords:'emotions for 2 year olds, feelings for toddlers, emotion cards for toddlers, feelings activities for toddlers, printable emotion cards, teaching feelings to toddlers, emotion faces for toddlers, social emotional activities for 2 year olds'}
