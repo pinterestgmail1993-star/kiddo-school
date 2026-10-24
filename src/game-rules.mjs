@@ -54,4 +54,9 @@ export const grCardAlt=g=>g.alt;
 
 /* ---- Cross-link appended to Class 37 (owner 2026-10-24: "Link from
    Class 37 to /games/ and back") ------------------------------------------ */
+/* STANDING INSTRUCTION (owner 2026-10-24: "include these game links in
+   future and playground too"): every NEW class or room we build from now on
+   should carry its relevant /games/<slug>/ links the way the Playground
+   room does (GR_ROOM picks in src/playground.mjs) or via this GR_CLASS_LINK
+   appended at its page() call in scripts/build.mjs. */
 export const GR_CLASS_LINK=`<section class="wrap lesson-section"><span class="eyebrow">AFTER THE LESSON</span><h2>Then play the playground classics.</h2><p class="lesson-copy">Class 37 teaches forty named sports skills; the school\u2019s <a href="/games/">game rules shelf</a> holds the games children play between them \u2014 Duck Duck Goose, Hopscotch, Simon Says, Tag, Red Light Green Light and thirty more, each with the three rules printed on its card, what you need, and one fresh twist. When today\u2019s sport lesson ends, let the rules shelf pick the game that runs off the last of the wiggles.</p></section>`;

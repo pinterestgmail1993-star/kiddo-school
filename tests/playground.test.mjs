@@ -61,7 +61,7 @@ test('playground card pages: classic blocks, download, honest room framing',()=>
 
 /* ------------------------------------------------ THE PLAYGROUND ROOM */
 const roomHtml=readPage('/playground/');
-test('playground room page: built from the set, three shelves of LESSONS, off the learning path',()=>{
+test('playground room page: built from the set, three shelves of LESSON words + the games shelf (owner 2026-10-24), off the learning path',()=>{
  assert.ok(roomHtml.includes('rel="canonical" href="'+site+'/playground/"'),'canonical');
  assert.ok(roomHtml.includes('THE PLAYGROUND'),'room heading');
  // owner doctrine: room tiles open LESSON pages (/playground/learn/...), never the flashcard pages

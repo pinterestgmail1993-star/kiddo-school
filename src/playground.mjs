@@ -8,9 +8,23 @@
 // URLs and artwork can never drift from the library they come from.
 // The Playground is a SCHOOL ROOM, not a class: it stays off the Learning Path
 // (owner request) and lives here at /playground/ with the other rooms.
+// Owner 2026-10-24 ("include these game links in future and playground too"):
+// the room also carries a GAMES WE PLAY HERE shelf — twelve playground-native
+// rule cards from the /games/ deck (Duck Duck Goose, Tag, Hopscotch…), each
+// opening its rules page, with the full 35-game deck one tap away on /games/.
+import {GR_BASE,GR_GAMES,GR_PATH} from './game-rules.mjs';
+
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 
 const tiles=cards=>cards.map(c=>`<a class="lp-tile" href="/playground/learn/${c.slug}/"><img src="${c.img}" width="${c.w}" height="${c.h}" alt="${esc(c.alt)}" loading="lazy"><strong>${esc(c.word)}</strong></a>`).join('');
+
+/* The twelve games that need nothing but what a playground already has. */
+const GR_ROOM=['duck-duck-goose','tag','red-light-green-light','hopscotch','four-square','follow-the-leader','obstacle-course','tunnel-crawl','sack-race','three-legged-race','relay-race','bubble-chase'];
+const gameTiles=()=>{
+ const bySlug=Object.fromEntries(GR_GAMES.map(g=>[g.slug,g]));
+ return GR_ROOM.map(s=>{const g=bySlug[s];if(!g)throw Error('playground: no game '+s);
+  return `<a class="lp-tile" href="${GR_PATH}${g.slug}/"><img src="${GR_BASE}${g.file}" width="900" height="1200" alt="${esc(g.alt)}" loading="lazy"><strong>${esc(g.name)}</strong></a>`;}).join('');
+};
 
 export function playgroundBody(set){
  const actions=set.cards.filter(c=>c.file.startsWith('action-'));
@@ -20,5 +34,6 @@ export function playgroundBody(set){
  <section class="wrap fc-section"><span class="eyebrow">THE ACTION WORDS</span><h2>Fifteen words our bodies do at the playground.</h2><p class="fc-hint">Balance on the bench edge, catch the big ball, dig to the middle of the earth, run everywhere: every action word gets its own card, and every card is a game the body already wants to play. Tap any word to open its own step-by-step lesson — what it means, how the body does it and how to practise tonight.</p><div class="lp-tiles">${tiles(actions)}</div></section>
  <section class="wrap fc-section"><span class="eyebrow">ON THE GROUND</span><h2>Twelve things you meet at the playground.</h2><p class="fc-hint">The ball that never says no, the slide that waits at the top, the sandbox with a square of beach inside it: the playground\u2019s own furniture, one card and one lesson each. Name the place before you go and the trip gets a whole vocabulary louder.</p><div class="lp-tiles">${tiles(equipment)}</div></section>
  <section class="wrap fc-section"><span class="eyebrow">HOW WE PLAY TOGETHER</span><h2>Five manners that make the playground kind.</h2><p class="fc-hint">Help, share, stop, take turns, wait — the five words that turn a playground full of wanters into a playground full of friends. Each card has its own lesson: the word, the words to say and one way to practise it before you even get there.</p><div class="lp-tiles">${tiles(manners)}</div></section>
+ <section class="wrap fc-section"><span class="eyebrow">GAMES WE PLAY HERE</span><h2>Twelve games this playground was built for.</h2><p class="fc-hint">The circle forms for Duck Duck Goose, the chalk slab becomes a hopscotch court, and the open grass is a Red Light Green Light lane the moment somebody shouts green. Each card opens its rules page on the school\u2019s games shelf — the steps in order, the things to gather and a brand-new way to run the game tomorrow. The other twenty-three games, from Balloon Keep-Up to Treasure Hunt, wait on the <a href="${GR_PATH}">games shelf</a> too.</p><div class="lp-tiles">${gameTiles()}</div></section>
  <section class="wrap fc-section"><span class="eyebrow">PRINT &amp; PLAY</span><h2>Take the whole playground home.</h2><p class="fc-hint">All thirty-two cards live in the <a href="${set.url}">Playground flashcard set</a> — every card page has a download button with the full-size image. The Playground sits in <a href="/rooms/">School Rooms</a> beside the <a href="/learning-library/">Library</a>, the <a href="/toddler/2-years/school-garden/">School Garden</a> and the <a href="/music-room/">Music Room</a>.</p></section>`;
 }
