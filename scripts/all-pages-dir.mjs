@@ -105,6 +105,9 @@ const SECTIONS=[
    /* Look & Learn (owner 2026-10-24): the extra class + its 43 flat word
       pages live in one group, fronted by /look-and-learn/. */
    if(p==='/look-and-learn/'||LL_WORD_PATHS.has(p))return{key:'ll',name:null,hub:'/look-and-learn/'};
+   /* Kids Games rules (owner 2026-10-24): the /games/ shelf + 35 game pages
+      live in one group beside the Kids Games class. */
+   if(p==='/games/'||p.startsWith('/games/'))return{key:'gr',name:null,hub:'/games/'};
    const room=p.split('/')[1];
    if(['/music-room/','/kitchen/','/playground/','/toddler-room/','/who-works-at-my-school/'].includes('/'+room+'/'))
     return{key:'rm-'+room,name:null,hub:'/'+room+'/'};

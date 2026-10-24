@@ -13,6 +13,7 @@ import {lesson as kgLesson} from './flashcards/data-kids-games.mjs';
 import {lesson as acLesson} from './flashcards/data-animal-categories.mjs';
 import {lesson as colLesson} from './flashcards/data-colors-and-shades.mjs';
 import {lesson as pcLesson} from './flashcards/data-places-in-community.mjs';
+import {LL_BASE,LL_COVER} from './look-and-learn.mjs';
 
 export const EXTRA_CLASSES=[
  {name:'The Toddler Room',href:'/toddler-room/',cover:trLesson.r2Base+'cover.webp',w:1414,h:2000,
@@ -46,7 +47,11 @@ export const EXTRA_CLASSES=[
  {name:'Colors',href:'/extra-classes/colors/',cover:colLesson.r2Base+'flashcards/cover.webp',w:600,h:849,
   alt:'Cover of the Colors flashcards set: the words "Color Flashcards" over five round color dots.',
   blurb:'Fifteen color spotter sheets for ages 2–5 — the eleven first colors, red to gold, each a two-by-two sheet of four labeled things, then four make-it-yourself shades for ages 4–5 with their mixing recipes. Sixty labeled pictures, every card with its own lesson.',
-  link:'Hunt the colors'}
+  link:'Hunt the colors'},
+ {name:'Look & Learn',href:'/look-and-learn/',cover:LL_BASE+'flashcards/'+LL_COVER.file,w:LL_COVER.w,h:LL_COVER.h,
+  alt:LL_COVER.alt,
+  blurb:'Fifteen picture cards, four words each, and one tiny move on every picture — point at the moon, waddle like a duck, balance like a flamingo. The school\u2019s lightest class: look, say, move — nothing to print first, ages 2–5.',
+  link:'Open Look & Learn'}
 ];
 
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
@@ -58,5 +63,5 @@ export function extraClassesHubBody(){
 
 /* The Learning Path bonus row: one row, pointing at the hub. */
 export function extraClassesLpRow(){
- return `<div class="lp-row lp-magic"><div class="lp-marker" aria-hidden="true"><span>+</span></div><div class="lp-stage-card"><div class="fc-stage-pills"><span class="fc-age">Bonus</span><span class="fc-class">Extra classes</span></div><h2>Extra Classes — a bonus shelf beside the path</h2><p class="lp-class">Play: <a href="/toddler-room/">The Toddler Room</a> (ages 1–3) · <a href="/kitchen/">Kitchen Helper</a> (ages 3–6) · <a href="/extra-classes/doctor-visit/">Doctor Visit</a> (ages 3–5) · <a href="/extra-classes/home-and-daily-life/">Home and Daily Life</a> (ages 3–5) · <a href="/extra-classes/kids-games/">Kids Games</a> (ages 3–5) · <a href="/extra-classes/places-in-the-community/">Places in the Community</a> (ages 3–5) · <a href="/extra-classes/animal-categories/">Animal Categories</a> (ages 3–5) · <a href="/extra-classes/colors/">Colors</a> (ages 2–5) · <a href="/nature-club/">Nature Club</a> (ages 3–6)</p><p class="lp-hublink">Every one of them carries its own flashcards and its own lessons, and every one of them is optional — the core path never depends on them. Browse the whole shelf at <a href="/extra-classes/">Extra Classes</a>, or step next door to the <a href="/nature-club/">Nature Club</a>.</p></div></div>`;
+ return `<div class="lp-row lp-magic"><div class="lp-marker" aria-hidden="true"><span>+</span></div><div class="lp-stage-card"><div class="fc-stage-pills"><span class="fc-age">Bonus</span><span class="fc-class">Extra classes</span></div><h2>Extra Classes — a bonus shelf beside the path</h2><p class="lp-class">Play: <a href="/toddler-room/">The Toddler Room</a> (ages 1–3) · <a href="/kitchen/">Kitchen Helper</a> (ages 3–6) · <a href="/extra-classes/doctor-visit/">Doctor Visit</a> (ages 3–5) · <a href="/extra-classes/home-and-daily-life/">Home and Daily Life</a> (ages 3–5) · <a href="/extra-classes/kids-games/">Kids Games</a> (ages 3–5) · <a href="/extra-classes/places-in-the-community/">Places in the Community</a> (ages 3–5) · <a href="/extra-classes/animal-categories/">Animal Categories</a> (ages 3–5) · <a href="/extra-classes/colors/">Colors</a> (ages 2–5) · <a href="/look-and-learn/">Look &amp; Learn</a> (ages 2–5) · <a href="/nature-club/">Nature Club</a> (ages 3–6)</p><p class="lp-hublink">Every one of them carries its own flashcards and its own lessons, and every one of them is optional — the core path never depends on them. Browse the whole shelf at <a href="/extra-classes/">Extra Classes</a>, or step next door to the <a href="/nature-club/">Nature Club</a>.</p></div></div>`;
 }
