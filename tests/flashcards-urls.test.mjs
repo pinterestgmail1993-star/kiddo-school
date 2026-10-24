@@ -123,9 +123,17 @@ test('set grids are tap-through: whole card is the link, zero download buttons',
  }
 });
 
-test('no redirects ship: only the corrected URLs exist (site not indexed)',()=>{
+test('alphabet URL fix still ships redirect-free; Class 38 clean-slug 301s are the only flashcard rules',()=>{
+ // Owner 2026-10-24 ("keep the urls clean, short and clean seo"): the Class 38
+ // file-derived URLs were renamed to per-card keyword slugs ~1 day after
+ // going live, and the old URLs 301 to the new ones (site now indexed —
+ // GSC shows impressions). The alphabet fix (earlier, pre-index) still ships
+ // with zero redirect rules of its own.
  const red=read('_redirects');
- assert.ok(!red.includes('/flashcards/'),'_redirects carries no flashcard rules');
+ assert.ok(!/flashcards\/alphabet[^ ]* 301|flashcards\/alphabet[^ ]*\* /.test(red),'alphabet fix carries no redirect rules');
+ assert.ok(red.includes('/flashcards/feelings-and-kindness/happy-sad-angry-calm* /flashcards/feelings-and-kindness/happy:splat 301'),'Class 38 301s present (owner 2026-10-24)');
+ assert.ok(red.includes('/preschool/4-years/feelings-and-kindness/learn/wait-ask-listen-carefully-say-sorry* /preschool/4-years/feelings-and-kindness/learn/sorry:splat 301'),'Class 38 lesson 301s present');
+ assert.ok(!/flashcards\/(?!feelings-and-kindness)[a-z-]+\/[a-z0-9-]+\* /.test(red),'no redirect rules outside Class 38');
  // none of the 130 old wrong URLs ship as pages — the letter URLs replaced them
  for(const set of ['alphabet-uppercase','alphabet-lowercase','alphabet-letters','alphabet-sounds','alphabet-tracing']){
   for(let i=0;i<26;i++){

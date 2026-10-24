@@ -3,8 +3,10 @@
 // school/preschool/4-years/feelings-and-kindness/flashcards/ (36/36 objects
 // HTTP 200 image/webp — 35 flashcards + 1 cover — every file probed at
 // 800×1131 portrait). Filenames are used exactly as uploaded — nothing
-// renamed, nothing invented; slugs derive from the filenames like the
-// Life Skills set. The cover (800×1131) fronts the set and is never counted
+// renamed, nothing invented. PAGE SLUGS are each card’s own keyword
+// (owner 2026-10-24: “keep the urls clean, short and clean seo” — page
+// URLs do not follow the R2 folder/file names); the R2 filenames stay
+// untouched and the old file-derived URLs 301 to the new slugs. The cover (800×1131) fronts the set and is never counted
 // as a card. These are FLASHCARDS: paper, talk and try-it-today practice.
 // Library card pages answer WHAT the words mean and HOW to use the card at
 // home; the Learning Path /learn/ lessons (lp-feelings-kindness.mjs via
@@ -30,41 +32,41 @@ export const lesson={
  // follow, then sharing and honest feelings, the calm-down and talking
  // skills, and belonging, encouragement and the kindness graduation at the end.
  cards:[
-  {file:'01-happy-sad-angry-calm.webp',w:800,h:1131,alt:'A feelings-and-kindness flashcard with four labeled panels: Happy (a boy with a big open smile), Sad (a boy with a downturned mouth), Angry (a boy with furrowed brows) and Calm (a boy with closed eyes and a soft smile).'},
-  {file:'02-kind-share-help-thank-you.webp',w:800,h:1131,alt:'A feelings-and-kindness flashcard with four labeled panels: Kind (a boy with both hands folded on his chest), Share (a girl handing a book to a friend), Help (a child helping a smaller boy up) and Thank You (a girl with hands clasped in thanks).'},
-  {file:'03-excited-worried-surprised-proud.webp',w:800,h:1131,alt:'A feelings-and-kindness flashcard with four labeled panels: Excited (a boy with a huge open-mouthed grin), Worried (a girl with anxious eyebrows), Surprised (a boy with a round open mouth) and Proud (a girl with crossed arms and a tall smile).'},
-  {file:'04-listen-gentle-take-turns-kind-words.webp',w:800,h:1131,alt:'A feelings-and-kindness flashcard with four labeled panels: Listen (a boy cupping a hand to his ear), Be Gentle (a girl wrapping her arms around herself), Take turns (a boy raising a finger while a girl waits) and Use kind words (a girl speaking with a warm smile).'},
-  {file:'05-breathe-brave-try-again-i-can-do-it.webp',w:800,h:1131,alt:'A feelings-and-kindness flashcard with four labeled panels: Breathe (a boy with hands folded at his chest mid-breath), Be Brave (a girl in a little cape with a fist raised), Try Again (a determined boy with a raised fist) and I Can Do It (a confident girl with a small fist up).'},
-  {file:'06-smile-care-forgive-friend.webp',w:800,h:1131,alt:'A feelings-and-kindness flashcard with four labeled panels: Smile (a boy beaming), Care (a girl hugging a big pink heart), Forgive (a boy with peaceful closed eyes and clasped hands) and Friend (a girl waving hello).'},
-  {file:'07-lonely-loved-frustrated-relaxed.webp',w:800,h:1131,alt:'A feelings-and-kindness flashcard with four labeled panels: Lonely (a drooping sad boy), Loved (a girl hugging a pink heart to her chest), Frustrated (a boy with clenched fists) and Relaxed (a girl with closed eyes, serene).'},
-  {file:'08-patient-honest-polite-fair.webp',w:800,h:1131,alt:'A feelings-and-kindness flashcard with four labeled panels: Patient (a boy with closed eyes, waiting calmly), Honest (a girl with a hand on her heart), Polite (a boy with hands folded politely) and Fair (a girl pondering with a finger to her chin).'},
-  {file:'09-notice-understand-comfort-encourage.webp',w:800,h:1131,alt:'A feelings-and-kindness flashcard with four labeled panels: Notice (an attentive boy with his hand raised), Understand (a girl nodding with a finger to her chin), Comfort (a boy hugging a pink heart) and Encourage (a girl cheering with a fist up).'},
-  {file:'10-wait-ask-listen-carefully-say-sorry.webp',w:800,h:1131,alt:'A feelings-and-kindness flashcard with four labeled panels: Wait (a boy standing calmly with hands still), Ask (a girl raising her hand), Listen Carefully (a boy listening with a hand to his ear) and Say Sorry (a girl with clasped hands and a shy smile).'},
-  {file:'11-welcome-include-cooperate-teamwork.webp',w:800,h:1131,alt:'A feelings-and-kindness flashcard with four labeled panels: Welcome (a waving boy), Include (a girl with her arms open wide), Cooperate (a smiling boy ready to pitch in) and Teamwork (two children with their arms around each other).'},
-  {file:'12-hopeful-safe-problem-solver-kind-heart.webp',w:800,h:1131,alt:'A feelings-and-kindness flashcard with four labeled panels: Hopeful (a boy looking up with a bright cheer), Safe (a girl with closed eyes and a content smile), Problem Solver (a boy thinking over an open notebook with a pencil) and Kind Heart (a girl hugging a big pink heart).'},
-  {file:'13-joyful-tired-confused-curious.webp',w:800,h:1131,alt:'A feelings-and-kindness flashcard with four labeled panels: Joyful (a boy laughing with his arms thrown up), Tired (a yawning girl with a floating Zz), Confused (a boy scratching his head) and Curious (a girl with a finger to her chin).'},
-  {file:'14-scared-brave-shy-confident.webp',w:800,h:1131,alt:'A feelings-and-kindness flashcard with four labeled panels: Scared (a boy with worried hands near his face), Brave (a boy standing tall with fists ready), Shy (a girl peeking out from behind her hair) and Confident (a girl with crossed arms and a proud smile).'},
-  {file:'15-share-give-care-thank.webp',w:800,h:1131,alt:'A feelings-and-kindness flashcard with four labeled panels: Share (a boy and a girl sharing a teddy bear), Give (a boy handing a wrapped gift to a friend), Care (a grown-up hugging a small child close) and Thank (a boy with both hands on his heart).'},
-  {file:'16-be-kind-helpful-patient-honest.webp',w:800,h:1131,alt:'A feelings-and-kindness flashcard with four labeled panels: Be Kind (a boy shaping a heart with his hands), Be Helpful (a girl tucking a teddy bear into a box), Be Patient (a boy with folded hands and closed eyes) and Be Honest (a girl with a hand on her chest).'},
-  {file:'17-forgive-accept-respect-include.webp',w:800,h:1131,alt:'A feelings-and-kindness flashcard with four labeled panels: Forgive (a boy with clasped hands and calm eyes), Accept (a girl with her arms open wide), Respect (a thoughtful boy with a hand to his chin) and Include (a girl welcoming with open arms).'},
-  {file:'18-pause-breathe-deeply-think-choose-kindness.webp',w:800,h:1131,alt:'A feelings-and-kindness flashcard with four labeled panels: Pause (a still boy with closed eyes), Breathe Deeply (a girl with a hand on her chest mid-breath), Think (a boy with a finger to his temple) and Choose Kindness (a girl hugging a pink heart).'},
-  {file:'19-proud-disappointed-grateful-peaceful.webp',w:800,h:1131,alt:'A feelings-and-kindness flashcard with four labeled panels: Proud (a boy with crossed arms and a tall smile), Disappointed (a drooping girl with a hand to her cheek), Grateful (a boy with hands clasped at his chest) and Peaceful (a girl with arms open and a soft smile).'},
-  {file:'20-worried-relieved-jealous-embarrassed.webp',w:800,h:1131,alt:'A feelings-and-kindness flashcard with four labeled panels: Worried (a boy with a finger to his mouth), Relieved (a girl with closed eyes and hands clasped in relief), Jealous (a sulking boy with crossed arms) and Embarrassed (a blushing girl hunched with clasped hands).'},
-  {file:'21-notice-name-share-feelings-ask-for-help.webp',w:800,h:1131,alt:'A feelings-and-kindness flashcard with four labeled panels: Notice Feelings (a boy with his hand raised mid-notice), Name It (a girl with a finger to her chin), Share Feelings (a boy telling with an open hand) and Ask for Help (a girl with hands clasped, ready to ask).'},
-  {file:'22-say-hello-make-space-be-curious-ask-nicely.webp',w:800,h:1131,alt:'A feelings-and-kindness flashcard with four labeled panels: Say Hello (a waving boy), Make Space (a girl with a hand on her chest stepping aside), Be Curious (a boy wondering with a finger to his chin) and Ask Nicely (a girl asking with hands folded together).'},
-  {file:'23-share-space-work-together-take-turns-cheer-others.webp',w:800,h:1131,alt:'A feelings-and-kindness flashcard with four labeled panels: Share the Space (a boy and a girl reading one book together), Work Together (two children high-fiving), Take Turns (a patient boy waiting with a hand on his cheek) and Cheer Others (a girl with both thumbs up).'},
-  {file:'24-kind-choice-good-friend-try-your-best-grow-together.webp',w:800,h:1131,alt:'A feelings-and-kindness flashcard with four labeled panels: Kind Choice (a girl hugging a heart with closed eyes), Good Friend (a boy with his arms open wide), Try Your Best (a determined boy with a fist up) and Grow Together (a girl cupping a tiny green sprout in her hands).'},
-  {file:'25-calm-down-count-to-ten-use-your-words-take-a-break.webp',w:800,h:1131,alt:'A feelings-and-kindness flashcard with four labeled panels: Calm Down (a serene girl with folded hands and closed eyes), Count to Ten (a boy counting on a raised finger), Use Your Words (a boy speaking with an open hand) and Take a Break (a child resting curled on a beanbag).'},
-  {file:'26-i-feel-i-need-i-want-i-choose.webp',w:800,h:1131,alt:'A feelings-and-kindness flashcard with four labeled panels: I Feel (a thoughtful girl with a hand to her chin), I Need (a boy explaining with open arms), I Want (a boy saying it plainly with crossed arms) and I Choose (a confident girl with a hand on her chest).'},
-  {file:'27-listen-first-think-first-speak-kindly-solve-together.webp',w:800,h:1131,alt:'A feelings-and-kindness flashcard with four labeled panels: Listen First (a girl listening with a hand to her ear), Think First (a boy pondering with a finger to his chin), Speak Kindly (a boy talking with an open friendly hand) and Solve Together (two children talking face to face).'},
-  {file:'28-welcome-all-be-inclusive-share-joy-make-a-friend.webp',w:800,h:1131,alt:'A feelings-and-kindness flashcard with four labeled panels: Welcome All (a girl with her arms open wide), Be Inclusive (a boy hugging a pink heart), Share Joy (a boy cheering with a fist up) and Make a Friend (a girl waving hello).'},
-  {file:'29-you-matter-i-am-here-you-are-safe-we-care.webp',w:800,h:1131,alt:'A feelings-and-kindness flashcard with four labeled panels: You Matter (a girl with warm clasped hands), I Am Here (a boy reaching out a steadying arm), You Are Safe (a boy with closed eyes, calm) and We Care (a girl shaping a heart with her hands).'},
-  {file:'30-keep-trying-learn-celebrate-be-yourself.webp',w:800,h:1131,alt:'A feelings-and-kindness flashcard with four labeled panels: Keep Trying (a girl with a determined fist up), Learn (a wondering boy with a question mark over his head), Celebrate (a boy cheering under little sparkles) and Be Yourself (a winking girl with her thumb up).'},
-  {file:'31-welcome-belong-trust-connect.webp',w:800,h:1131,alt:'A feelings-and-kindness flashcard with four labeled panels: Welcome (a waving girl), Belong (a content boy with hands clasped), Trust (a girl with a hand on her heart) and Connect (a boy reaching out with open arms).'},
-  {file:'32-notice-pause-breathe-reset.webp',w:800,h:1131,alt:'A feelings-and-kindness flashcard with four labeled panels: Notice (an attentive girl with her hand raised), Pause (a still boy with closed eyes), Breathe (a boy with folded hands mid-breath) and Reset (a refreshed girl with a small fist up).'},
-  {file:'33-care-support-encourage-comfort.webp',w:800,h:1131,alt:'A feelings-and-kindness flashcard with four labeled panels: Care (a girl hugging a pink heart), Support (a boy with a hand on his chest, ready to help), Encourage (a boy cheering with a fist up) and Comfort (a girl hugging her teddy bear).'},
-  {file:'34-listen-understand-respond-forgive.webp',w:800,h:1131,alt:'A feelings-and-kindness flashcard with four labeled panels: Listen (a girl listening with a hand to her ear), Understand (a boy nodding with a finger to his chin), Respond (a boy answering with an open gesture) and Forgive (a girl with clasped hands and a peaceful smile).'},
-  {file:'35-kind-words-kind-actions-kind-heart-choose-kindness.webp',w:800,h:1131,alt:'A feelings-and-kindness flashcard with four labeled panels: Kind Words (a girl speaking with a hand on her chest), Kind Actions (a boy offering his hand), Kind Heart (a boy holding a pink heart) and Choose Kindness (two children hugging).'}
+  {slug:'happy',file:'01-happy-sad-angry-calm.webp',w:800,h:1131,alt:'A feelings-and-kindness flashcard with four labeled panels: Happy (a boy with a big open smile), Sad (a boy with a downturned mouth), Angry (a boy with furrowed brows) and Calm (a boy with closed eyes and a soft smile).'},
+  {slug:'share',file:'02-kind-share-help-thank-you.webp',w:800,h:1131,alt:'A feelings-and-kindness flashcard with four labeled panels: Kind (a boy with both hands folded on his chest), Share (a girl handing a book to a friend), Help (a child helping a smaller boy up) and Thank You (a girl with hands clasped in thanks).'},
+  {slug:'excited',file:'03-excited-worried-surprised-proud.webp',w:800,h:1131,alt:'A feelings-and-kindness flashcard with four labeled panels: Excited (a boy with a huge open-mouthed grin), Worried (a girl with anxious eyebrows), Surprised (a boy with a round open mouth) and Proud (a girl with crossed arms and a tall smile).'},
+  {slug:'gentle',file:'04-listen-gentle-take-turns-kind-words.webp',w:800,h:1131,alt:'A feelings-and-kindness flashcard with four labeled panels: Listen (a boy cupping a hand to his ear), Be Gentle (a girl wrapping her arms around herself), Take turns (a boy raising a finger while a girl waits) and Use kind words (a girl speaking with a warm smile).'},
+  {slug:'try-again',file:'05-breathe-brave-try-again-i-can-do-it.webp',w:800,h:1131,alt:'A feelings-and-kindness flashcard with four labeled panels: Breathe (a boy with hands folded at his chest mid-breath), Be Brave (a girl in a little cape with a fist raised), Try Again (a determined boy with a raised fist) and I Can Do It (a confident girl with a small fist up).'},
+  {slug:'friend',file:'06-smile-care-forgive-friend.webp',w:800,h:1131,alt:'A feelings-and-kindness flashcard with four labeled panels: Smile (a boy beaming), Care (a girl hugging a big pink heart), Forgive (a boy with peaceful closed eyes and clasped hands) and Friend (a girl waving hello).'},
+  {slug:'lonely',file:'07-lonely-loved-frustrated-relaxed.webp',w:800,h:1131,alt:'A feelings-and-kindness flashcard with four labeled panels: Lonely (a drooping sad boy), Loved (a girl hugging a pink heart to her chest), Frustrated (a boy with clenched fists) and Relaxed (a girl with closed eyes, serene).'},
+  {slug:'patient',file:'08-patient-honest-polite-fair.webp',w:800,h:1131,alt:'A feelings-and-kindness flashcard with four labeled panels: Patient (a boy with closed eyes, waiting calmly), Honest (a girl with a hand on her heart), Polite (a boy with hands folded politely) and Fair (a girl pondering with a finger to her chin).'},
+  {slug:'comfort',file:'09-notice-understand-comfort-encourage.webp',w:800,h:1131,alt:'A feelings-and-kindness flashcard with four labeled panels: Notice (an attentive boy with his hand raised), Understand (a girl nodding with a finger to her chin), Comfort (a boy hugging a pink heart) and Encourage (a girl cheering with a fist up).'},
+  {slug:'sorry',file:'10-wait-ask-listen-carefully-say-sorry.webp',w:800,h:1131,alt:'A feelings-and-kindness flashcard with four labeled panels: Wait (a boy standing calmly with hands still), Ask (a girl raising her hand), Listen Carefully (a boy listening with a hand to his ear) and Say Sorry (a girl with clasped hands and a shy smile).'},
+  {slug:'include',file:'11-welcome-include-cooperate-teamwork.webp',w:800,h:1131,alt:'A feelings-and-kindness flashcard with four labeled panels: Welcome (a waving boy), Include (a girl with her arms open wide), Cooperate (a smiling boy ready to pitch in) and Teamwork (two children with their arms around each other).'},
+  {slug:'hopeful',file:'12-hopeful-safe-problem-solver-kind-heart.webp',w:800,h:1131,alt:'A feelings-and-kindness flashcard with four labeled panels: Hopeful (a boy looking up with a bright cheer), Safe (a girl with closed eyes and a content smile), Problem Solver (a boy thinking over an open notebook with a pencil) and Kind Heart (a girl hugging a big pink heart).'},
+  {slug:'curious',file:'13-joyful-tired-confused-curious.webp',w:800,h:1131,alt:'A feelings-and-kindness flashcard with four labeled panels: Joyful (a boy laughing with his arms thrown up), Tired (a yawning girl with a floating Zz), Confused (a boy scratching his head) and Curious (a girl with a finger to her chin).'},
+  {slug:'brave',file:'14-scared-brave-shy-confident.webp',w:800,h:1131,alt:'A feelings-and-kindness flashcard with four labeled panels: Scared (a boy with worried hands near his face), Brave (a boy standing tall with fists ready), Shy (a girl peeking out from behind her hair) and Confident (a girl with crossed arms and a proud smile).'},
+  {slug:'give',file:'15-share-give-care-thank.webp',w:800,h:1131,alt:'A feelings-and-kindness flashcard with four labeled panels: Share (a boy and a girl sharing a teddy bear), Give (a boy handing a wrapped gift to a friend), Care (a grown-up hugging a small child close) and Thank (a boy with both hands on his heart).'},
+  {slug:'kind',file:'16-be-kind-helpful-patient-honest.webp',w:800,h:1131,alt:'A feelings-and-kindness flashcard with four labeled panels: Be Kind (a boy shaping a heart with his hands), Be Helpful (a girl tucking a teddy bear into a box), Be Patient (a boy with folded hands and closed eyes) and Be Honest (a girl with a hand on her chest).'},
+  {slug:'respect',file:'17-forgive-accept-respect-include.webp',w:800,h:1131,alt:'A feelings-and-kindness flashcard with four labeled panels: Forgive (a boy with clasped hands and calm eyes), Accept (a girl with her arms open wide), Respect (a thoughtful boy with a hand to his chin) and Include (a girl welcoming with open arms).'},
+  {slug:'pause',file:'18-pause-breathe-deeply-think-choose-kindness.webp',w:800,h:1131,alt:'A feelings-and-kindness flashcard with four labeled panels: Pause (a still boy with closed eyes), Breathe Deeply (a girl with a hand on her chest mid-breath), Think (a boy with a finger to his temple) and Choose Kindness (a girl hugging a pink heart).'},
+  {slug:'grateful',file:'19-proud-disappointed-grateful-peaceful.webp',w:800,h:1131,alt:'A feelings-and-kindness flashcard with four labeled panels: Proud (a boy with crossed arms and a tall smile), Disappointed (a drooping girl with a hand to her cheek), Grateful (a boy with hands clasped at his chest) and Peaceful (a girl with arms open and a soft smile).'},
+  {slug:'jealous',file:'20-worried-relieved-jealous-embarrassed.webp',w:800,h:1131,alt:'A feelings-and-kindness flashcard with four labeled panels: Worried (a boy with a finger to his mouth), Relieved (a girl with closed eyes and hands clasped in relief), Jealous (a sulking boy with crossed arms) and Embarrassed (a blushing girl hunched with clasped hands).'},
+  {slug:'ask-for-help',file:'21-notice-name-share-feelings-ask-for-help.webp',w:800,h:1131,alt:'A feelings-and-kindness flashcard with four labeled panels: Notice Feelings (a boy with his hand raised mid-notice), Name It (a girl with a finger to her chin), Share Feelings (a boy telling with an open hand) and Ask for Help (a girl with hands clasped, ready to ask).'},
+  {slug:'say-hello',file:'22-say-hello-make-space-be-curious-ask-nicely.webp',w:800,h:1131,alt:'A feelings-and-kindness flashcard with four labeled panels: Say Hello (a waving boy), Make Space (a girl with a hand on her chest stepping aside), Be Curious (a boy wondering with a finger to his chin) and Ask Nicely (a girl asking with hands folded together).'},
+  {slug:'take-turns',file:'23-share-space-work-together-take-turns-cheer-others.webp',w:800,h:1131,alt:'A feelings-and-kindness flashcard with four labeled panels: Share the Space (a boy and a girl reading one book together), Work Together (two children high-fiving), Take Turns (a patient boy waiting with a hand on his cheek) and Cheer Others (a girl with both thumbs up).'},
+  {slug:'kind-choice',file:'24-kind-choice-good-friend-try-your-best-grow-together.webp',w:800,h:1131,alt:'A feelings-and-kindness flashcard with four labeled panels: Kind Choice (a girl hugging a heart with closed eyes), Good Friend (a boy with his arms open wide), Try Your Best (a determined boy with a fist up) and Grow Together (a girl cupping a tiny green sprout in her hands).'},
+  {slug:'calm-down',file:'25-calm-down-count-to-ten-use-your-words-take-a-break.webp',w:800,h:1131,alt:'A feelings-and-kindness flashcard with four labeled panels: Calm Down (a serene girl with folded hands and closed eyes), Count to Ten (a boy counting on a raised finger), Use Your Words (a boy speaking with an open hand) and Take a Break (a child resting curled on a beanbag).'},
+  {slug:'i-feel',file:'26-i-feel-i-need-i-want-i-choose.webp',w:800,h:1131,alt:'A feelings-and-kindness flashcard with four labeled panels: I Feel (a thoughtful girl with a hand to her chin), I Need (a boy explaining with open arms), I Want (a boy saying it plainly with crossed arms) and I Choose (a confident girl with a hand on her chest).'},
+  {slug:'speak-kindly',file:'27-listen-first-think-first-speak-kindly-solve-together.webp',w:800,h:1131,alt:'A feelings-and-kindness flashcard with four labeled panels: Listen First (a girl listening with a hand to her ear), Think First (a boy pondering with a finger to his chin), Speak Kindly (a boy talking with an open friendly hand) and Solve Together (two children talking face to face).'},
+  {slug:'welcome',file:'28-welcome-all-be-inclusive-share-joy-make-a-friend.webp',w:800,h:1131,alt:'A feelings-and-kindness flashcard with four labeled panels: Welcome All (a girl with her arms open wide), Be Inclusive (a boy hugging a pink heart), Share Joy (a boy cheering with a fist up) and Make a Friend (a girl waving hello).'},
+  {slug:'you-matter',file:'29-you-matter-i-am-here-you-are-safe-we-care.webp',w:800,h:1131,alt:'A feelings-and-kindness flashcard with four labeled panels: You Matter (a girl with warm clasped hands), I Am Here (a boy reaching out a steadying arm), You Are Safe (a boy with closed eyes, calm) and We Care (a girl shaping a heart with her hands).'},
+  {slug:'be-yourself',file:'30-keep-trying-learn-celebrate-be-yourself.webp',w:800,h:1131,alt:'A feelings-and-kindness flashcard with four labeled panels: Keep Trying (a girl with a determined fist up), Learn (a wondering boy with a question mark over his head), Celebrate (a boy cheering under little sparkles) and Be Yourself (a winking girl with her thumb up).'},
+  {slug:'belong',file:'31-welcome-belong-trust-connect.webp',w:800,h:1131,alt:'A feelings-and-kindness flashcard with four labeled panels: Welcome (a waving girl), Belong (a content boy with hands clasped), Trust (a girl with a hand on her heart) and Connect (a boy reaching out with open arms).'},
+  {slug:'breathe',file:'32-notice-pause-breathe-reset.webp',w:800,h:1131,alt:'A feelings-and-kindness flashcard with four labeled panels: Notice (an attentive girl with her hand raised), Pause (a still boy with closed eyes), Breathe (a boy with folded hands mid-breath) and Reset (a refreshed girl with a small fist up).'},
+  {slug:'care',file:'33-care-support-encourage-comfort.webp',w:800,h:1131,alt:'A feelings-and-kindness flashcard with four labeled panels: Care (a girl hugging a pink heart), Support (a boy with a hand on his chest, ready to help), Encourage (a boy cheering with a fist up) and Comfort (a girl hugging her teddy bear).'},
+  {slug:'forgive',file:'34-listen-understand-respond-forgive.webp',w:800,h:1131,alt:'A feelings-and-kindness flashcard with four labeled panels: Listen (a girl listening with a hand to her ear), Understand (a boy nodding with a finger to his chin), Respond (a boy answering with an open gesture) and Forgive (a girl with clasped hands and a peaceful smile).'},
+  {slug:'kind-words',file:'35-kind-words-kind-actions-kind-heart-choose-kindness.webp',w:800,h:1131,alt:'A feelings-and-kindness flashcard with four labeled panels: Kind Words (a girl speaking with a hand on her chest), Kind Actions (a boy offering his hand), Kind Heart (a boy holding a pink heart) and Choose Kindness (two children hugging).'}
  ]
 };
 
@@ -95,7 +97,7 @@ export const meta={
 };
 
 export const cards={
-'happy-sad-angry-calm':{
+'happy':{
  word:'Happy, Sad, Angry & Calm',
  cardTitle:'Happy, Sad, Angry &amp; Calm Flashcard for Preschoolers — the Four First Feelings',
  metaDescription:'A printable feelings flashcard for ages 4–5: happy, sad, angry and calm on one card — name the four first feelings with faces your child already knows.',
@@ -103,7 +105,7 @@ export const cards={
  say:'Happy looks like this! Sad looks like this. Angry looks like this — eyebrows down! And calm… slow breath, soft face. Can you make all four faces with me?',
  try:'Play the four-faces game: you name a feeling, your child makes the face. Then swap — they name, you make the face (an exaggerated grown-up angry face gets the biggest laughs). End by finding the feeling right now: "Which one are you today?"',
  note:'Naming a feeling is the first step to taming it — a child who can say "I am angry" already has one foot back in calm. Four words, one card, the start of the whole class.'},
-'kind-share-help-thank-you':{
+'share':{
  word:'Kind, Share, Help & Thank You',
  cardTitle:'Kind, Share, Help &amp; Thank You Flashcard for Preschoolers — the First Kind Words',
  metaDescription:'A printable kindness flashcard for ages 4–5: kind, share, help and thank you — the four first kind words, each shown by a child doing it.',
@@ -111,7 +113,7 @@ export const cards={
  say:'Heart friendly, book handed over, small friend helped up and a big warm thank you — four kind words your child can say AND do before lunch.',
  try:'Catch the words in the wild today: "You SHARED your crackers — that was kind!" "Thank you for HELPING me." Naming the act the moment it happens teaches the word faster than any drill.',
  note:'Kindness words arrive in pairs with the acts themselves — say the word while the doing is still happening and the two stick together for good.'},
-'excited-worried-surprised-proud':{
+'excited':{
  word:'Excited, Worried, Surprised & Proud',
  cardTitle:'Excited, Worried, Surprised &amp; Proud Flashcard for Preschoolers — Four Big Feelings',
  metaDescription:'A printable feelings flashcard for ages 4–5: excited, worried, surprised and proud — four bigger feeling words with faces and bodies to match.',
@@ -119,7 +121,7 @@ export const cards={
  say:'Excited is when your body goes wiggle-wiggle! Worried is when your tummy feels tight. Surprised is when your mouth goes OH. And proud is when you stand tall like this.',
  try:'Act all four with the whole body: wiggle for excited, hug your own arms for worried, jump-back-OH for surprised, tall-stack for proud. Then hunt them in a book: "Find the surprised face!"',
  note:'Bodies feel feelings before words do — acting them out gives your child a way to notice what is happening inside and hang the right word on it.'},
-'listen-gentle-take-turns-kind-words':{
+'gentle':{
  word:'Listen, Gentle, Take Turns & Kind Words',
  cardTitle:'Listen, Gentle, Take Turns &amp; Kind Words Flashcard for Preschoolers',
  metaDescription:'A printable kindness flashcard for ages 4–5: listen, be gentle, take turns and use kind words — the four habits that make play gentler for everyone.',
@@ -127,7 +129,7 @@ export const cards={
  say:'Listen means ears open, mouth waiting. Gentle means soft hands with people and pets. Take turns means my go, then your go. Kind words are words that make friends feel good.',
  try:'Practise each one in a minute: listen to one whole song, stroke the pet (or a soft toy) gently, take three turns rolling a ball, and say one kind word each at dinner.',
  note:'These four are playground currency — children who can listen, be gentle, take turns and speak kindly get included again and again, and inclusion is where more kindness grows.'},
-'breathe-brave-try-again-i-can-do-it':{
+'try-again':{
  word:'Breathe, Brave, Try Again & I Can Do It',
  cardTitle:'Breathe, Brave, Try Again &amp; I Can Do It Flashcard for Preschoolers',
  metaDescription:'A printable courage flashcard for ages 4–5: breathe, be brave, try again and I can do it — the four brave-breath words for wobbly moments.',
@@ -135,7 +137,7 @@ export const cards={
  say:'First we breathe — in like a flower, out like a candle. Then we think brave. Then we try again. And we say it together: I can do it.',
  try:'Pick one wobbly thing today — a big slide, a new food, a tricky puzzle — and walk the ladder out loud: breathe, brave, try again, I can do it. Cheering allowed and encouraged.',
  note:'Courage is a sequence, not a personality trait — breathe first, brave second, try third. Children who learn the steps stop waiting to feel brave and start doing brave instead.'},
-'smile-care-forgive-friend':{
+'friend':{
  word:'Smile, Care, Forgive & Friend',
  cardTitle:'Smile, Care, Forgive &amp; Friend Flashcard for Preschoolers',
  metaDescription:'A printable kindness flashcard for ages 4–5: smile, care, forgive and friend — the four friendship words, from a first smile to a mended friendship.',
@@ -143,7 +145,7 @@ export const cards={
  say:'A smile says hello, I am friendly. Care means I notice when you are sad. Forgive means we start again after a fight. And a friend is someone we smile at, care for and forgive.',
  try:'Play the mend-it game with toys: two puppets squabble, one says sorry, the other says "I forgive you" — then they play again. Children rehearse mending long before they need it for real.',
  note:'Friendship is not the absence of fights — it is the presence of repair. Forgive is the word that turns a broken moment back into a friendship, and it is learnable at four.'},
-'lonely-loved-frustrated-relaxed':{
+'lonely':{
  word:'Lonely, Loved, Frustrated & Relaxed',
  cardTitle:'Lonely, Loved, Frustrated &amp; Relaxed Flashcard for Preschoolers',
  metaDescription:'A printable feelings flashcard for ages 4–5: lonely, loved, frustrated and relaxed — four deeper feeling words, from missing someone to feeling calm again.',
@@ -151,7 +153,7 @@ export const cards={
  say:'Lonely is when you want someone and they are not there. Loved is when someone holds you close. Frustrated is when it will not work and you want to yell. Relaxed is when your whole body goes soft.',
  try:'Sort today into the four boxes at bedtime: "When did you feel lonely? When did you feel loved? What frustrated you? What made you relaxed?" No fixing, just naming — the naming is the lesson.',
  note:'Lonely and frustrated are the two feelings that most often come out as behaviour — a child with the words for them needs far fewer meltdowns to say the same thing.'},
-'patient-honest-polite-fair':{
+'patient':{
  word:'Patient, Honest, Polite & Fair',
  cardTitle:'Patient, Honest, Polite &amp; Fair Flashcard for Preschoolers',
  metaDescription:'A printable character flashcard for ages 4–5: patient, honest, polite and fair — the four character words that make a good friend and a fair game.',
@@ -159,7 +161,7 @@ export const cards={
  say:'Patient means I can wait. Honest means I tell the truth, even about the broken cup. Polite means please, thank you, excuse me. Fair means everybody gets a turn — including the little ones.',
  try:'Play a waiting game (patience), ask a question with an honest answer built in ("did you like the broccoli?"), practise one polite phrase, then deal cards one-each (fair) — four minutes, four words.',
  note:'Fair is the word four-year-olds police hardest — "that is not FAIR" is the first moral protest. Give them the word and the rule together and the protests become negotiations.'},
-'notice-understand-comfort-encourage':{
+'comfort':{
  word:'Notice, Understand, Comfort & Encourage',
  cardTitle:'Notice, Understand, Comfort &amp; Encourage Flashcard for Preschoolers',
  metaDescription:'A printable empathy flashcard for ages 4–5: notice, understand, comfort and encourage — the four empathy steps, from spotting a feeling to cheering someone on.',
@@ -167,7 +169,7 @@ export const cards={
  say:'First we notice — "your face looks sad." Then we understand — "are you sad because the tower fell?" Then we comfort — a hug, a hand, a sit-together. Then we encourage — "try again, I will help."',
  try:'Walk the four steps on a real moment: a dropped ice cream, a lost toy, a friend who fell over. Your child plays all four parts — spotter, understander, comforter, cheerleader.',
  note:'Empathy is a skill with steps, not a mood children either have or lack. Name the steps and any four-year-old can run them — most just need someone to show the order.'},
-'wait-ask-listen-carefully-say-sorry':{
+'sorry':{
  word:'Wait, Ask, Listen Carefully & Say Sorry',
  cardTitle:'Wait, Ask, Listen Carefully &amp; Say Sorry Flashcard for Preschoolers',
  metaDescription:'A printable manners flashcard for ages 4–5: wait, ask, listen carefully and say sorry — the four repair-and-respect words for playdates and preschool.',
@@ -175,7 +177,7 @@ export const cards={
  say:'Wait — I do not grab. Ask — "may I have a turn?" Listen carefully — ears on, eyes on. And when I get it wrong, I say sorry and mean it.',
  try:'Rehearse the ask: hide a favourite toy, then have the grown-up want it back — your child practises wait, ask, and hand it over with a smile. Swap roles and let them be the asker.',
  note:'Sorry lands better when it is modelled, not forced — say sorry to your child when you snap or forget, and the word becomes a real repair tool instead of a punishment password.'},
-'welcome-include-cooperate-teamwork':{
+'include':{
  word:'Welcome, Include, Cooperate & Teamwork',
  cardTitle:'Welcome, Include, Cooperate &amp; Teamwork Flashcard for Preschoolers',
  metaDescription:'A printable teamwork flashcard for ages 4–5: welcome, include, cooperate and teamwork — the four group words for joining, inviting and building together.',
@@ -183,7 +185,7 @@ export const cards={
  say:'Welcome means "hi, come in!" Include means "you can play too." Cooperate means we each do a part. Teamwork is what it feels like when we do it together.',
  try:'Build something that needs four hands — a sofa-cushion fort, a puzzle, a snack plate arranged together. Say the words while it happens: "I welcome you… I include you… we cooperate… TEAMWORK!"',
  note:'The child who says "you can play too" is doing the single most pro-social thing an early-years classroom can teach — inclusion is kindness with its sleeves rolled up.'},
-'hopeful-safe-problem-solver-kind-heart':{
+'hopeful':{
  word:'Hopeful, Safe, Problem Solver & Kind Heart',
  cardTitle:'Hopeful, Safe, Problem Solver &amp; Kind Heart Flashcard for Preschoolers',
  metaDescription:'A printable resilience flashcard for ages 4–5: hopeful, safe, problem solver and kind heart — four inner-strength words for the days that need them.',
@@ -191,7 +193,7 @@ export const cards={
  say:'Hopeful means I believe good things are coming. Safe means nothing here can hurt me. Problem solver means when something goes wrong, I look for a fix. Kind heart means all of it runs on kindness.',
  try:'Do the problem-solver pose: hands on hips, "something went wrong — what could we TRY?" List two silly fixes and one real one. Then name the kind heart that did it: "you just solved that with kindness."',
  note:'Hope and safety are the soil every other skill grows in — a child who feels safe tries more, and a child who tries more has more chances to watch their own kind heart work.'},
-'joyful-tired-confused-curious':{
+'curious':{
  word:'Joyful, Tired, Confused & Curious',
  cardTitle:'Joyful, Tired, Confused &amp; Curious Flashcard for Preschoolers',
  metaDescription:'A printable feelings flashcard for ages 4–5: joyful, tired, confused and curious — the four end-of-day feelings, from arm-throwing joy to a yawn and a question.',
@@ -199,7 +201,7 @@ export const cards={
  say:'Joyful is happy with your WHOLE body. Tired is when a yawn sneaks out. Confused is when you do not get it yet. Curious is when you want to know more.',
  try:'Do the day-in-four at dinner: act joyful, droop tired, shrug confused, lean-in curious — matching each to a real moment from the day. The acting is the vocabulary lesson.',
  note:'Confused and curious are the same face one second apart — teaching both words together shows your child that not-knowing is just curiosity that has not started yet.'},
-'scared-brave-shy-confident':{
+'brave':{
  word:'Scared, Brave, Shy & Confident',
  cardTitle:'Scared, Brave, Shy &amp; Confident Flashcard for Preschoolers',
  metaDescription:'A printable feelings flashcard for ages 4–5: scared, brave, shy and confident — the four courage feelings, from hiding behind hair to standing tall.',
@@ -207,7 +209,7 @@ export const cards={
  say:'Scared is when you want to hide. Brave is when you do it anyway. Shy is when new people make you quiet. Confident is when you stand tall and try.',
  try:'Draw the feeling map: which things are scary, which are shy-things, which feel confident? Grown-up fills one in too ("phone calls make me shy!") — honesty about fear is the lesson.',
  note:'Brave is not the opposite of scared — it is scared that went ahead anyway. And shy is not a flaw to fix, just a warming-up speed to respect. Say both out loud.'},
-'share-give-care-thank':{
+'give':{
  word:'Share, Give, Care & Thank',
  cardTitle:'Share, Give, Care &amp; Thank Flashcard for Preschoolers',
  metaDescription:'A printable kindness flashcard for ages 4–5: share, give, care and thank — the four giving words, from splitting a snack to a hug that helps.',
@@ -215,7 +217,7 @@ export const cards={
  say:'Share means we both use it. Give means here, it is yours now. Care means I keep you warm and safe. Thank means I saw what you did — and it mattered.',
  try:'Run one tiny giving circle today: share a snack between plates, give one toy to the donation bag, care for a tired teddy, thank whoever helped. Four words, four real acts, five minutes.',
  note:'Giving has more than one shape — a child who hates sharing a favourite toy may love giving a drawing or caring for a baby sibling. All four count; the card says so.'},
-'be-kind-helpful-patient-honest':{
+'kind':{
  word:'Be Kind, Helpful, Patient & Honest',
  cardTitle:'Be Kind, Helpful, Patient &amp; Honest Flashcard for Preschoolers',
  metaDescription:'A printable character flashcard for ages 4–5: be kind, be helpful, be patient and be honest — the four be-words that turn values into things a child can do.',
@@ -223,7 +225,7 @@ export const cards={
  say:'Be kind — soft hands, warm words. Be helpful — see a job, do a job. Be patient — wait without wailing. Be honest — tell it true, even the wobbly parts.',
  try:'Give the be-words jobs: one kindness mission, one helper job (match the socks), one waiting moment (timer for the oven), one honest report ("who spilled it?" — telling true earns a cheer, not a trouble).',
  note:'"Be" words work because they name the child, not just the act — "you WERE patient" becomes who they are. Four little identity seeds, planted five minutes at a time.'},
-'forgive-accept-respect-include':{
+'respect':{
  word:'Forgive, Accept, Respect & Include',
  cardTitle:'Forgive, Accept, Respect &amp; Include Flashcard for Preschoolers',
  metaDescription:'A printable friendship flashcard for ages 4–5: forgive, accept, respect and include — the four deeper friendship words for mending and welcoming.',
@@ -231,7 +233,7 @@ export const cards={
  say:'Forgive means we start fresh. Accept means you can be you and I can be me. Respect means I treat you like you matter. Include means I make room for you — always.',
  try:'Play the open-circle game: a toy crowd plays "everyone can join" — the circle literally opens wider each time someone is included. Then practise the words: "I forgive you. I accept you. I respect you. Come in!"',
  note:'These are the words that make groups kind — a classroom of four-year-olds who can forgive, accept, respect and include runs itself almost. Start with one word a week.'},
-'pause-breathe-deeply-think-choose-kindness':{
+'pause':{
  word:'Pause, Breathe Deeply, Think & Choose Kindness',
  cardTitle:'Pause, Breathe Deeply, Think &amp; Choose Kindness Flashcard for Preschoolers',
  metaDescription:'A printable calm-down flashcard for ages 4–5: pause, breathe deeply, think and choose kindness — the four-step pause that turns big feelings into kind choices.',
@@ -239,7 +241,7 @@ export const cards={
  say:'Pause — freeze like a statue. Breathe deeply — in through the nose, out slow. Think — what is happening? Then the big one: choose kindness.',
  try:'Freeze-dance with a twist: when the music stops, everyone pauses, takes one deep breath, thinks "how do I feel?" and picks one kind thing to do next round. The pause becomes a habit their body knows.',
  note:'The pause is the whole trick of self-regulation in four words — between the spark and the flame there is a gap, and a four-year-old who can pause there owns the moment instead of it owning them.'},
-'proud-disappointed-grateful-peaceful':{
+'grateful':{
  word:'Proud, Disappointed, Grateful & Peaceful',
  cardTitle:'Proud, Disappointed, Grateful &amp; Peaceful Flashcard for Preschoolers',
  metaDescription:'A printable feelings flashcard for ages 4–5: proud, disappointed, grateful and peaceful — the four wins-and-setbacks feelings, from tall smiles to slow calm.',
@@ -247,7 +249,7 @@ export const cards={
  say:'Show me your proudest tower-walk! Now your droopiest disappointed face… and your softest peaceful one. Grateful hands go on your heart — there it is.',
  try:'Share one proud and one disappointing moment each at dinner — grown-ups go first, honestly. End with one grateful thing and one peaceful minute of quiet breathing together.',
  note:'Practised on rained-off park trips and sold-out cookies, the disappointed word grows the muscle your child will need for much bigger days later on.'},
-'worried-relieved-jealous-embarrassed':{
+'jealous':{
  word:'Worried, Relieved, Jealous & Embarrassed',
  cardTitle:'Worried, Relieved, Jealous &amp; Embarrassed Flashcard for Preschoolers',
  metaDescription:'A printable feelings flashcard for ages 4–5: worried, relieved, jealous and embarrassed — the four tricky feelings everyone has and nobody talks about.',
@@ -255,7 +257,7 @@ export const cards={
  say:'Let us play the four faces: worried mouth… relieved phew! Jealous fists… embarrassed blush. Which one visited you today — and which one can you make RIGHT NOW?',
  try:'Tell one grown-up story for each: a worry that turned out fine (relieved!), a jealous moment, an embarrassing one — told lightly, laughed with, not at. Your honesty gives them permission.',
  note:'Jealous and embarrassed are the loneliest feelings in preschool — simply hearing "everyone feels that, even grown-ups" takes half the weight off a small chest.'},
-'notice-name-share-feelings-ask-for-help':{
+'ask-for-help':{
  word:'Notice, Name, Share Feelings & Ask for Help',
  cardTitle:'Notice, Name, Share Feelings &amp; Ask for Help Flashcard for Preschoolers',
  metaDescription:'A printable feelings-skills flashcard for ages 4–5: notice, name it, share feelings and ask for help — the four-step check-in that makes feelings speakable.',
@@ -263,7 +265,7 @@ export const cards={
  say:'First notice: "something is happening in my chest." Then name it: "I think it is worried." Then share it: "I feel worried." And if it is too big: "Can you help me?"',
  try:'Build the check-in into the day — at breakfast and bedtime, everyone (grown-ups too) runs the four steps in one sentence: "I notice… I feel… I share… I need…"',
  note:'The whole class funnelled into one habit: a feeling that gets noticed, named and shared almost never has to come out as a tantrum. Ask-for-help is the safety net under all of it.'},
-'say-hello-make-space-be-curious-ask-nicely':{
+'say-hello':{
  word:'Say Hello, Make Space, Be Curious & Ask Nicely',
  cardTitle:'Say Hello, Make Space, Be Curious &amp; Ask Nicely Flashcard for Preschoolers',
  metaDescription:'A printable social-skills flashcard for ages 4–5: say hello, make space, be curious and ask nicely — the four joining-in words for new friends and new places.',
@@ -271,7 +273,7 @@ export const cards={
  say:'Say hello — big or small, it counts. Make space — scoot over, there is room. Be curious — "what do you like?" Ask nicely — "may I?" works better than grabbing, every time.',
  try:'Practise on toys first: two stuffed animals meet, one says hello, the other makes space on the bench, they get curious about each other and ask nicely for the crayons. Then try it for real at the park.',
  note:'Most preschool friendships start with someone making space — literally. A child who can scoot over and say hello owns the single most useful social skill there is.'},
-'share-space-work-together-take-turns-cheer-others':{
+'take-turns':{
  word:'Share the Space, Work Together, Take Turns & Cheer Others',
  cardTitle:'Share the Space, Work Together, Take Turns &amp; Cheer Others Flashcard',
  metaDescription:'A printable cooperation flashcard for ages 4–5: share the space, work together, take turns and cheer others — the four playdate words that make group play work.',
@@ -279,7 +281,7 @@ export const cards={
  say:'Scoot in — there is room! Hold it, I will stack it. My go… your go… and when she lands the big one: YAY, you did it!',
  try:'Build a block tower with a rule: only one block each, then pass — sharing space, working together, taking turns in one game. Every wobble gets a cheer from the whole family.',
  note:'The thumbs-up for somebody else\u2019s win is the hardest and best habit on the card — it is jealousy\u2019s opposite, learned at carpet-time scale.'},
-'kind-choice-good-friend-try-your-best-grow-together':{
+'kind-choice':{
  word:'Kind Choice, Good Friend, Try Your Best & Grow Together',
  cardTitle:'Kind Choice, Good Friend, Try Your Best &amp; Grow Together Flashcard',
  metaDescription:'A printable encouragement flashcard for ages 4–5: kind choice, good friend, try your best and grow together — the four growing words for getting bigger on the inside.',
@@ -287,7 +289,7 @@ export const cards={
  say:'Kind choice — I picked kind, even when it was hard. Good friend — I showed up for someone. Try your best — not perfect, just my all. Grow together — we get bigger side by side.',
  try:'Name the moments backwards at bedtime: "what was today\u2019s kind choice? who was a good friend? what did you try your best at?" Then one grow-together plan for tomorrow.',
  note:'Growth language ("try your best", "grow together") beats cleverness language ("so smart") in every study that compares them — this card hands your family the words.'},
-'calm-down-count-to-ten-use-your-words-take-a-break':{
+'calm-down':{
  word:'Calm Down, Count to Ten, Use Your Words & Take a Break',
  cardTitle:'Calm Down, Count to Ten, Use Your Words &amp; Take a Break Flashcard',
  metaDescription:'A printable calm-down flashcard for ages 4–5: calm down, count to ten, use your words and take a break — the four real calm-down moves for the stormy moments.',
@@ -295,7 +297,7 @@ export const cards={
  say:'Slow body… count the fingers, one to ten… now the words: I am angry because… Still stormy? Break time — the cushion is always there.',
  try:'Make the calm-down corner real before it is needed: a cushion, one book, one soft toy. Practise visiting it on a HAPPY day so the place feels friendly, not like exile.',
  note:'Calm-down skills are the emergency services of the feelings world — drilled on quiet days so they work on loud ones. Every step on this card can be rehearsed when nothing is wrong.'},
-'i-feel-i-need-i-want-i-choose':{
+'i-feel':{
  word:'I Feel, I Need, I Want & I Choose',
  cardTitle:'I Feel, I Need, I Want &amp; I Choose Flashcard for Preschoolers',
  metaDescription:'A printable speaking-up flashcard for ages 4–5: I feel, I need, I want and I choose — the four I-statements that give a small person a big voice.',
@@ -303,7 +305,7 @@ export const cards={
  say:'I feel… sad. I need… a hug. I want… the blue cup. I choose… the puzzle. Four sentences that start with I — because your feelings and your wishes are yours to say.',
  try:'Play the I-statement dinner game: everyone says one sentence starting with each word — I feel, I need, I want, I choose. Grown-ups include one real one ("I need five quiet minutes!").',
  note:'The same wish that used to come out as grabbing or whining now arrives as a sentence — four calm starters, said with I, heard the first time.'},
-'listen-first-think-first-speak-kindly-solve-together':{
+'speak-kindly':{
  word:'Listen First, Think First, Speak Kindly & Solve Together',
  cardTitle:'Listen First, Think First, Speak Kindly &amp; Solve Together Flashcard',
  metaDescription:'A printable problem-solving flashcard for ages 4–5: listen first, think first, speak kindly and solve together — the four steps for settling squabbles peacefully.',
@@ -311,7 +313,7 @@ export const cards={
  say:'Listen first — both sides, no interrupting. Think first — before the words come out. Speak kindly — even if you are right. Solve together — the fix both people can live with.',
  try:'Mediate the next toy dispute with the four steps spoken out loud — you narrate, they do: "listen… now think… say it kindly… what is the together-fix?" Step back a little more each time.',
  note:'Conflict is not the enemy of friendship — unhandled conflict is. These four steps turn squabbles into practice, and a child who can solve together at four negotiates for life.'},
-'welcome-all-be-inclusive-share-joy-make-a-friend':{
+'welcome':{
  word:'Welcome All, Be Inclusive, Share Joy & Make a Friend',
  cardTitle:'Welcome All, Be Inclusive, Share Joy &amp; Make a Friend Flashcard',
  metaDescription:'A printable inclusion flashcard for ages 4–5: welcome all, be inclusive, share joy and make a friend — the four open-door words for building friendships.',
@@ -319,7 +321,7 @@ export const cards={
  say:'Welcome all — everyone gets a hello. Be inclusive — nobody plays alone unless they want to. Share joy — happiness grows when it is given away. Make a friend — today is a good day for it.',
  try:'Pick one inclusion mission: at the park or preschool today, be the one who says hello to someone new or invites the standing-alone child in. Debrief at dinner — how did it feel?',
  note:'The child who walks toward the standing-alone one is doing the hardest, bravest kind of kindness — and it gets easier every single time it is tried.'},
-'you-matter-i-am-here-you-are-safe-we-care':{
+'you-matter':{
  word:'You Matter, I Am Here, You Are Safe & We Care',
  cardTitle:'You Matter, I Am Here, You Are Safe &amp; We Care Flashcard',
  metaDescription:'A printable reassurance flashcard for ages 4–5: you matter, I am here, you are safe and we care — the four sentences every child needs to hear, and to say.',
@@ -327,7 +329,7 @@ export const cards={
  say:'You matter — exactly as you are. I am here — right beside you. You are safe — this minute is okay. We care — the whole family, all together.',
  try:'Say all four on a hard day — a fall, a nightmare, a goodbye at the door. Then teach them as comfort-words your child can offer: to a friend who skinned a knee, to a baby who cried, to you.',
  note:'Reassurance works best when it is rhythmical and repeated — the same four sentences on the hard days become the voice a child eventually carries inside their own head.'},
-'keep-trying-learn-celebrate-be-yourself':{
+'be-yourself':{
  word:'Keep Trying, Learn, Celebrate & Be Yourself',
  cardTitle:'Keep Trying, Learn, Celebrate &amp; Be Yourself Flashcard for Preschoolers',
  metaDescription:'A printable confidence flashcard for ages 4–5: keep trying, learn, celebrate and be yourself — the four confidence words for finishers and beginners alike.',
@@ -335,7 +337,7 @@ export const cards={
  say:'Keep trying — wobbles are part of it. Learn — every try teaches something. Celebrate — the small wins too! Be yourself — there is only one you, and that is the good news.',
  try:'Hold a family celebration for one thing that was HARD today — confetti optional, cheering mandatory. Name the keep-trying part out loud so the effort is the hero, not just the result.',
  note:'The wins that get noticed are the wins that get repeated — five seconds of cheering buys another week of trying.'},
-'welcome-belong-trust-connect':{
+'belong':{
  word:'Welcome, Belong, Trust & Connect',
  cardTitle:'Welcome, Belong, Trust &amp; Connect Flashcard for Preschoolers',
  metaDescription:'A printable belonging flashcard for ages 4–5: welcome, belong, trust and connect — the four family words, from an open door to a bond that holds.',
@@ -343,7 +345,7 @@ export const cards={
  say:'Welcome — you are wanted here. Belong — this is your spot, your cup, your people. Trust — I keep my word to you. Connect — we check in, we laugh, we are us.',
  try:'Find the belonging evidence together: your coat hook, your cup, your seat in the car, your bedtime song. Belonging is built out of small fixed things — point to each one and name it theirs.',
  note:'Belonging is not a feeling that appears — it is built from hooks with names on them, kept promises and bedtime rituals. This card names the four beams so your child can see the house.'},
-'notice-pause-breathe-reset':{
+'breathe':{
  word:'Notice, Pause, Breathe & Reset',
  cardTitle:'Notice, Pause, Breathe &amp; Reset Flashcard for Preschoolers',
  metaDescription:'A printable reset flashcard for ages 4–5: notice, pause, breathe and reset — the four-step reset button for the moments that are going sideways.',
@@ -351,7 +353,7 @@ export const cards={
  say:'Notice — "uh oh, a big feeling is coming." Pause — everything stops. Breathe — one slow breath in, one slow breath out. Reset — "okay, let us start this bit again."',
  try:'Play reset-tag: when someone (grown-up included) notices the play tipping over, they shout RESET — everyone freezes, one breath together, then the game restarts fresh. Grown-ups calling RESET on themselves is the best demo there is.',
  note:'Reset gives families a word that stops a spiral without blame — nobody is in trouble, the moment just starts again. That single move saves afternoons.'},
-'care-support-encourage-comfort':{
+'care':{
  word:'Care, Support, Encourage & Comfort',
  cardTitle:'Care, Support, Encourage &amp; Comfort Flashcard for Preschoolers',
  metaDescription:'A printable caring flashcard for ages 4–5: care, support, encourage and comfort — the four helping words for when someone in the family needs you.',
@@ -359,7 +361,7 @@ export const cards={
  say:'Care — I see you are having a hard time. Support — I will hold part of it. Encourage — "you have got this." Comfort — a hug, a blanket, me, right here.',
  try:'Care for the caregiver: when a grown-up has a hard day, let your child run all four — notice it, help carry something, cheer you up, deliver the hug. Children give care brilliantly when invited.',
  note:'Children who are trusted with real caring jobs — comforting, encouraging, supporting — build empathy faster than any lecture could teach it. The card is the invitation.'},
-'listen-understand-respond-forgive':{
+'forgive':{
  word:'Listen, Understand, Respond & Forgive',
  cardTitle:'Listen, Understand, Respond &amp; Forgive Flashcard for Preschoolers',
  metaDescription:'A printable listening flashcard for ages 4–5: listen, understand, respond and forgive — the four conversation words that repair and grow friendships.',
@@ -367,7 +369,7 @@ export const cards={
  say:'Listen — all the way to the end. Understand — "so you felt left out?" Respond — "here is what I think." Forgive — "we are okay, let us play."',
  try:'Hold a two-minute listening date: one person talks about their day, the other may not interrupt, then must say back one thing they heard. Swap. Even three-year-olds can do the "one thing I heard" part.',
  note:'Most preschool conflicts are two people talking and nobody listening — this card teaches the order that fixes it: ears first, heart second, mouth third, forgiveness always.'},
-'kind-words-kind-actions-kind-heart-choose-kindness':{
+'kind-words':{
  word:'Kind Words, Kind Actions, Kind Heart & Choose Kindness',
  cardTitle:'Kind Words, Kind Actions, Kind Heart &amp; Choose Kindness Flashcard',
  metaDescription:'A printable kindness flashcard for ages 4–5: kind words, kind actions, kind heart and choose kindness — the graduation card of the whole class.',

@@ -15,8 +15,8 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync,existsSync} from 'node:fs';
 const read=f=>readFileSync(f,'utf8');
-const CARDS=['happy-sad-angry-calm','kind-share-help-thank-you','excited-worried-surprised-proud','listen-gentle-take-turns-kind-words','breathe-brave-try-again-i-can-do-it','smile-care-forgive-friend','lonely-loved-frustrated-relaxed','patient-honest-polite-fair','notice-understand-comfort-encourage','wait-ask-listen-carefully-say-sorry','welcome-include-cooperate-teamwork','hopeful-safe-problem-solver-kind-heart','joyful-tired-confused-curious','scared-brave-shy-confident','share-give-care-thank','be-kind-helpful-patient-honest','forgive-accept-respect-include','pause-breathe-deeply-think-choose-kindness','proud-disappointed-grateful-peaceful','worried-relieved-jealous-embarrassed','notice-name-share-feelings-ask-for-help','say-hello-make-space-be-curious-ask-nicely','share-space-work-together-take-turns-cheer-others','kind-choice-good-friend-try-your-best-grow-together','calm-down-count-to-ten-use-your-words-take-a-break','i-feel-i-need-i-want-i-choose','listen-first-think-first-speak-kindly-solve-together','welcome-all-be-inclusive-share-joy-make-a-friend','you-matter-i-am-here-you-are-safe-we-care','keep-trying-learn-celebrate-be-yourself','welcome-belong-trust-connect','notice-pause-breathe-reset','care-support-encourage-comfort','listen-understand-respond-forgive','kind-words-kind-actions-kind-heart-choose-kindness'];
-const FILES=CARDS.map((s,i)=>String(i+1).padStart(2,'0')+'-'+s+'.webp');
+const CARDS=['happy','share','excited','gentle','try-again','friend','lonely','patient','comfort','sorry','include','hopeful','curious','brave','give','kind','respect','pause','grateful','jealous','ask-for-help','say-hello','take-turns','kind-choice','calm-down','i-feel','speak-kindly','welcome','you-matter','be-yourself','belong','breathe','care','forgive','kind-words'];
+const FILES=['01-happy-sad-angry-calm.webp','02-kind-share-help-thank-you.webp','03-excited-worried-surprised-proud.webp','04-listen-gentle-take-turns-kind-words.webp','05-breathe-brave-try-again-i-can-do-it.webp','06-smile-care-forgive-friend.webp','07-lonely-loved-frustrated-relaxed.webp','08-patient-honest-polite-fair.webp','09-notice-understand-comfort-encourage.webp','10-wait-ask-listen-carefully-say-sorry.webp','11-welcome-include-cooperate-teamwork.webp','12-hopeful-safe-problem-solver-kind-heart.webp','13-joyful-tired-confused-curious.webp','14-scared-brave-shy-confident.webp','15-share-give-care-thank.webp','16-be-kind-helpful-patient-honest.webp','17-forgive-accept-respect-include.webp','18-pause-breathe-deeply-think-choose-kindness.webp','19-proud-disappointed-grateful-peaceful.webp','20-worried-relieved-jealous-embarrassed.webp','21-notice-name-share-feelings-ask-for-help.webp','22-say-hello-make-space-be-curious-ask-nicely.webp','23-share-space-work-together-take-turns-cheer-others.webp','24-kind-choice-good-friend-try-your-best-grow-together.webp','25-calm-down-count-to-ten-use-your-words-take-a-break.webp','26-i-feel-i-need-i-want-i-choose.webp','27-listen-first-think-first-speak-kindly-solve-together.webp','28-welcome-all-be-inclusive-share-joy-make-a-friend.webp','29-you-matter-i-am-here-you-are-safe-we-care.webp','30-keep-trying-learn-celebrate-be-yourself.webp','31-welcome-belong-trust-connect.webp','32-notice-pause-breathe-reset.webp','33-care-support-encourage-comfort.webp','34-listen-understand-respond-forgive.webp','35-kind-words-kind-actions-kind-heart-choose-kindness.webp'];
 const CLASS_PATH='/preschool/4-years/feelings-and-kindness/';
 const R2='https://assets.kiddo.school/school/preschool/4-years/feelings-and-kindness/';
 const cls=read('dist'+CLASS_PATH+'index.html');
@@ -35,7 +35,7 @@ test('class page contract: title, canonical, indexed, cover as og:image at true 
 test('the 35 cards ride in file order 01–35, one tile per card, each opening its own lesson',()=>{
  const hrefs=[...main.matchAll(new RegExp('href="'+CLASS_PATH+'learn\\/([a-z-]+)\\/"','g'))].map(m=>m[1]);
  assert.equal(hrefs.length,35,'35 lesson tiles on the class page');
- assert.deepEqual(hrefs,CARDS,'file-name order: 01 happy-sad-angry-calm to 35 choose-kindness');
+ assert.deepEqual(hrefs,CARDS,'file order 01–35: slugs are each card’s own keyword (owner 2026-10-24), images stay in file order');
  const imgs=[...main.matchAll(/src="https:\/\/assets\.kiddo\.school\/school\/preschool\/4-years\/feelings-and-kindness\/flashcards\/([0-9a-z-]+\.webp)"/g)].map(m=>m[1]);
  assert.equal(imgs[0],'01-happy-sad-angry-calm.webp');assert.equal(imgs[34],'35-kind-words-kind-actions-kind-heart-choose-kindness.webp');
  assert.equal(imgs.length,36,'35 card images on the tiles + the cover in the supporting-resource art');
@@ -69,9 +69,9 @@ test('library: set page + 35 card pages with copy, downloads and the class link 
 test('no text is shared between the /learn/ lessons and the library card pages',()=>{
  // duplicate-content rule: the lesson body and the card body share no long
  // sentence. Sample one distinctive sentence from each side per card pair.
- const samples={ 'happy-sad-angry-calm':['Naming them is the first act of social-emotional learning','the four-faces game: you name a feeling, your child makes the face'],
-  'calm-down-count-to-ten-use-your-words-take-a-break':['A corner rehearsed in sunshine works in rain','so the place feels friendly, not like exile'],
-  'kind-words-kind-actions-kind-heart-choose-kindness':['kindness behaves like a muscle','spot one kind word, one kind action and one kind heart in your day']};
+ const samples={ 'happy':['Naming them is the first act of social-emotional learning','the four-faces game: you name a feeling, your child makes the face'],
+  'calm-down':['A corner rehearsed in sunshine works in rain','so the place feels friendly, not like exile'],
+  'kind-words':['kindness behaves like a muscle','spot one kind word, one kind action and one kind heart in your day']};
  for(const [slug,[lessonOnly,libOnly]] of Object.entries(samples)){
   const lesson=read(`dist${CLASS_PATH}learn/${slug}/index.html`);
   const card=read(`dist/flashcards/feelings-and-kindness/${slug}/index.html`);
@@ -86,7 +86,7 @@ test('learning path: row 38 follows row 37, count words say thirty-eight',()=>{
  assert.deepEqual(rows,[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38],'sequence is exactly Classes 1–38, no gap');
  assert.ok(lp.includes('thirty-eight age-guided classes'),'LP title count');
  assert.ok(lp.includes('Thirty-eight classes are ready now'),'LP intro count');
- assert.ok(lp.includes(`${CLASS_PATH}learn/happy-sad-angry-calm/`),'LP row 38 links the first lesson');
+ assert.ok(lp.includes(`${CLASS_PATH}learn/happy/`),'LP row 38 links the first lesson');
 });
 
 test('age 4 hub lists Class 38 as the fifteenth class',()=>{
@@ -107,6 +107,11 @@ test('owner cross-links: Class 32 says "Next: Feelings & Kindness (Class 38)" an
 test('Class 38 wired across the school: flashcards wall, filter tags, Ages 4–5 shelf, homepage',()=>{
  const wall=read('dist/flashcards/index.html');
  assert.ok(wall.includes('href="/flashcards/feelings-and-kindness/"'),'library wall lists the set');
+ const reds=read('dist/_redirects');
+ for(const [o,n] of [['happy-sad-angry-calm','happy'],['wait-ask-listen-carefully-say-sorry','sorry'],['kind-words-kind-actions-kind-heart-choose-kindness','kind-words']]){
+  assert.ok(reds.includes('/flashcards/feelings-and-kindness/'+o+'* /flashcards/feelings-and-kindness/'+n+':splat 301'),'card 301: '+o);
+  assert.ok(reds.includes('/preschool/4-years/feelings-and-kindness/learn/'+o+'* /preschool/4-years/feelings-and-kindness/learn/'+n+':splat 301'),'lesson 301: '+o);
+ }
  assert.ok(wall.includes('Showing all 55 sets'),'wall count is 55');
  const tag=read('dist/flashcards/index.html').match(new RegExp('href="/flashcards/feelings-and-kindness/"[\\s\\S]{0,400}?data-filters="([^"]+)"'));
  assert.ok(tag&&tag[1].includes('age-4-5')&&tag[1].includes('subj-feelings'),'filter tags ride on the set card');

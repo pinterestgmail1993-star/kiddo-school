@@ -12,7 +12,7 @@
 // template facts: the four labeled panels and the figures in them —
 // nothing invented about the artwork.
 export const lpContent={
-'happy-sad-angry-calm':{
+'happy':{
  title:'The Happy, Sad, Angry & Calm Lesson',one:'The four feelings a day is made of — how to name them, make their faces and find your way back to calm.',
  seoTitle:'Feelings Lesson for Ages 4–5 — Naming Happy, Sad, Angry and Calm (Class 38)',
  metaDescription:'A step-by-step Learning Path lesson for ages 4–5: teach the four first feelings — happy, sad, angry and calm — with a face game, a body scan and a calm-down breath, the first lesson of social-emotional learning.',
@@ -32,7 +32,7 @@ export const lpContent={
  play:'Four-Corners Feelings: label the room\u2019s corners happy, sad, angry, calm. You call a tiny story — "we got ice cream!" "the tower fell!" — and your child runs to the matching corner, making the face on arrival. Five stories, four corners, one giggling vocabulary lesson.',
  tips:'If angry becomes the only interesting face, lean into calm instead — make it the mysterious, cozy one: "calm is the feeling cats know best." And never rush the body check: children who know WHERE a feeling lives can spot it arriving earlier next time.',
  check:'Ask: "Which feeling has angry eyebrows? Which one closes its eyes? Are all four feelings allowed?" Angry, calm, yes — three answers and the first lesson of the class is won.'},
-'kind-share-help-thank-you':{
+'share':{
  title:'The Kind, Share, Help & Thank You Lesson',one:'The four first kind words — and how a heart, a book, a helping hand and a thank you grow a kinder day.',
  seoTitle:'Kindness Lesson for Ages 4–5 — Teaching Kind, Share, Help and Thank You (Class 38)',
  metaDescription:'A step-by-step Learning Path lesson for ages 4–5: teach the four first kindness words — kind, share, help and thank you — with a catching game, a helping-mission and a gratitude habit that sticks.',
@@ -52,7 +52,7 @@ export const lpContent={
  play:'The Kindness Museum: at dinner, everyone places an invisible exhibit — "this is the time I shared my crayons" — and the family claps. exhibits can be from ANYONE\u2019S day, including sightings of other people\u2019s kindness. The museum never closes; it reopens every dinner.',
  tips:'Never force the sharing of a truly precious thing — children learn generosity from what they CHOOSE, and guarding one special toy is allowed even in kind families. And catch yourself being kind out loud: "I am going to help Dad carry these" is a lesson in a sentence.',
  check:'Ask: "Which word means lending a hand? Which word do we say when someone gives? Is kind a heart-word or a hand-word?" Help, thank you, both — three answers and the kind words are theirs.'},
-'excited-worried-surprised-proud':{
+'excited':{
  title:'The Excited, Worried, Surprised & Proud Lesson',one:'Four bigger feelings with four different bodies — the wiggles, the tight tummy, the popped OH and the tall smile.',
  seoTitle:'Feelings Lesson for Ages 4–5 — Excited, Worried, Surprised and Proud (Class 38)',
  metaDescription:'A step-by-step Learning Path lesson for ages 4–5: teach four bigger feeling words — excited, worried, surprised and proud — with a body-acting game and a feelings hunt, growing emotion vocabulary.',
@@ -72,7 +72,7 @@ export const lpContent={
  play:'Feelings Freeze: music plays, everyone dances; when it stops you call a feeling and everyone freezes AS that feeling — a proud freeze, a worried freeze, a surprised freeze. Last one standing is the Feelings Professor and calls the next round.',
  tips:'Worried deserves extra gentleness — never laugh a worry away; write it down, say it back, and answer one what-if with one real plan. And when your child acts proud, resist the urge to temper it: tall smiles at four are exactly the right size.',
  check:'Ask: "Which feeling is the fast OH one? Which one lives in the tummy? Which one straightens your back?" Surprised, worried, proud — three answers and the bigger words are landing.'},
-'listen-gentle-take-turns-kind-words':{
+'gentle':{
  title:'The Listen, Gentle, Take Turns & Kind Words Lesson',one:'The four habits that make play gentle — ears, hands, turns and words that friends feel good about.',
  seoTitle:'Social Skills Lesson for Ages 4–5 — Listen, Gentle, Turns and Kind Words (Class 38)',
  metaDescription:'A step-by-step Learning Path lesson for ages 4–5: teach four gentle habits — listening, gentle hands, taking turns and kind words — with a turn-taking game and a kind-words jar, the daily skills of friendship.',
@@ -92,7 +92,7 @@ export const lpContent={
  play:'Pass-the-Talk: a spoon gets passed around the table, and only the holder speaks — everyone else practises listening ears. The holder says one kind word about the person on their left, then passes. Two rounds and the kind words start generating themselves.',
  tips:'Gentle hands work better as a reminder BEFORE the wobble than a correction after — whisper "gentle hands" as the pet approaches. And let your child catch YOU taking turns: "you waited for me — thank you!" reverses the teaching and doubles it.',
  check:'Ask: "Which habit is ears-first? What do gentle hands do? Does your turn come back?" Listening, soft, yes — three answers and the habits are in play.'},
-'breathe-brave-try-again-i-can-do-it':{
+'try-again':{
  title:'The Breathe, Brave, Try Again & I Can Do It Lesson',one:'The four-step courage ladder — one breath, one brave thought, one more try, one small voice saying I can.',
  seoTitle:'Courage Lesson for Ages 4–5 — Breathe, Be Brave, Try Again, I Can Do It (Class 38)',
  metaDescription:'A step-by-step Learning Path lesson for ages 4–5: teach the four-step courage ladder — breathe, be brave, try again, I can do it — turning wobbly moments into climbable ones, building resilience.',
@@ -112,7 +112,7 @@ export const lpContent={
  play:'Ladder Tag for Toys: line up three stuffed animals at the "too big slide" (a chair with a cushion). Each animal climbs the ladder out loud — breathe, brave, try again, I can do it — and takes the slide. Your child voices all three: shy voice, shaky voice, then the triumphant one. The third animal always makes it look easy.',
  tips:'Say the ladder with your child, never AT them — "let us climb it together" beats "just be brave" every single time. And celebrate the climb, not the landing: a child who breathed, thought brave and tried again SUCCEEDED, whatever the slide did.',
  check:'Ask: "What is step one of the ladder? What do we say at the top? Does the ladder run out?" Breathe, I can do it, never — three answers and the ladder is theirs to climb.'},
-'smile-care-forgive-friend':{
+'friend':{
  title:'The Smile, Care, Forgive & Friend Lesson',one:'The friendship ladder — a smile to start it, care to warm it, forgive to mend it and friend at the top.',
  seoTitle:'Friendship Lesson for Ages 4–5 — Smile, Care, Forgive and Friend (Class 38)',
  metaDescription:'A step-by-step Learning Path lesson for ages 4–5: teach the friendship ladder — smile, care, forgive, friend — with a mending game that shows how friendships repair, the foundation of healthy friendships.',
@@ -132,7 +132,7 @@ export const lpContent={
  play:'Puppet Mend-It: two puppets want the same car. Fight! Then your child runs the repair: one puppet apologises, one says "I forgive you," and they invent a two-puppet game with the car. Swap roles and run it again — by round three the script is theirs and the fighting is just weather.',
  tips:'Do not rush the forgive — it only works when the sorry is real. If your child is not ready, the pause is allowed: "we will find the forgiving word when we are ready." And model it yourself: children who hear grown-ups say "I am sorry I snapped — do you forgive me?" learn that mending runs uphill and downhill both.',
  check:'Ask: "Which rung mends a fight? Which rung starts a friendship? Can friends fight and stay friends?" Forgive, smile, yes — three answers and the ladder is standing.'},
-'lonely-loved-frustrated-relaxed':{
+'lonely':{
  title:'The Lonely, Loved, Frustrated & Relaxed Lesson',one:'Four deeper feelings — the ache, the warmth, the hot push and the slow settle — named so they never have to shout.',
  seoTitle:'Feelings Lesson for Ages 4–5 — Lonely, Loved, Frustrated, Relaxed (Class 38)',
  metaDescription:'A step-by-step Learning Path lesson for ages 4–5: teach four deeper feelings — lonely, loved, frustrated and relaxed — with a bedtime sorting game, giving children the words that prevent meltdowns.',
@@ -152,7 +152,7 @@ export const lpContent={
  play:'Bedtime Sort: four invisible boxes on the blanket — lonely, loved, frustrated, relaxed. Walk through the day out loud and drop each moment in its box: "the morning hug? LOVED box. The broken crayon? FRUSTRATED box." Then let your child sort YOUR day. No fixing, no lessons — the sorting is the whole game.',
  tips:'When the real frustrated arrives, lend the word, not the lecture: "this feels frustrating — the lid will not turn." The word in a warm voice works better mid-storm than any fix. And when your child says lonely, treat it as information, not criticism — company is the answer, right now, even just two minutes.',
  check:'Ask: "Which feeling is the hot fists one? Which one melts the shoulders? What is the warm hug feeling?" Frustrated, relaxed, loved — three answers and the deep words are awake.'},
-'patient-honest-polite-fair':{
+'patient':{
  title:'The Patient, Honest, Polite & Fair Lesson',one:'The four character words — the waiting body, the true mouth, the nice words and the same-for-everyone rule.',
  seoTitle:'Character Lesson for Ages 4–5 — Patient, Honest, Polite and Fair (Class 38)',
  metaDescription:'A step-by-step Learning Path lesson for ages 4–5: teach four character words — patient, honest, polite and fair — with a waiting game and a fair-shares deal, the everyday character education of preschool.',
@@ -172,7 +172,7 @@ export const lpContent={
  play:'Fair Shares Café: one bowl of snacks, and your child is the server who must make it fair for everyone at the table — counting out equal shares, adjusting for the baby\u2019s small plate ("fair does not always mean identical"). Pay the server in thank-yous — polite word practise built into the payout.',
  tips:'Catch the truth gently: when your child confesses, thank the honesty FIRST, address the spill SECOND — children who are punished for confessing learn to hide, and the honest mouth closes. And let waiting practice be tiny and frequent: one minute a day beats one heroic hour at the supermarket.',
  check:'Ask: "Which word is the true mouth? What are the polite words? Does fair always mean identical?" Honest, please-thank-you-excuse-me, no — three answers and the character words are on duty.'},
-'notice-understand-comfort-encourage':{
+'comfort':{
  title:'The Notice, Understand, Comfort & Encourage Lesson',one:'The four empathy steps — spot the feeling, get it, soften it, cheer the next try.',
  seoTitle:'Empathy Lesson for Ages 4–5 — Notice, Understand, Comfort, Encourage (Class 38)',
  metaDescription:'A step-by-step Learning Path lesson for ages 4–5: teach the four empathy steps — notice, understand, comfort, encourage — with a rescue-mission game that grows kind, emotionally intelligent kids.',
@@ -192,7 +192,7 @@ export const lpContent={
  play:'Feelings Rescue Patrol: one stuffed animal per round "needs help" (a broken wheel, a lost spot, a scary noise). Your child is the rescue patrol and must run all four steps before the rescue is complete — the animal\u2019s face must go from sad to cheered. Four rescues, four full sequences, one empathic pro.',
  tips:'Resist fixing fast — the understand step needs the question, not the solution, and children skip it because grown-ups model skipping it. Slow down deliberately: "I notice your face looks disappointed… was it because…?" And praise the noticing loudest of all: eyes that catch feelings are the rarest part.',
  check:'Ask: "What comes after noticing? Can comfort be quiet? What does encourage do?" Understanding, yes, cheers — three answers and the empathy steps are in service.'},
-'wait-ask-listen-carefully-say-sorry':{
+'sorry':{
  title:'The Wait, Ask, Listen Carefully & Say Sorry Lesson',one:'The four smooth-words of playdates — wait before grabbing, ask before taking, listen before answering, say sorry when it wobbles.',
  seoTitle:'Manners Lesson for Ages 4–5 — Wait, Ask, Listen Carefully, Say Sorry (Class 38)',
  metaDescription:'A step-by-step Learning Path lesson for ages 4–5: teach the four smooth words — wait, ask, listen carefully, say sorry — with a role-play that rehearses the asking and the mending before the real playdate.',
@@ -212,7 +212,7 @@ export const lpContent={
  play:'Grabbing Never Wins: roll a ball back and forth with one rule — the roller must ASK before rolling ("may I roll it to you?") and the catcher must WAIT with still hands until the ask is finished. Every grab (yours too, playfully) restarts the round. The asking habit forms in about four rounds and generalises overnight.',
  tips:'The forced sorry teaches nothing but the flinch — instead, move close, speak low, and offer the words to borrow: "would you like to say sorry? here, I will help you start." And when YOUR hand grabs (the phone snatched from small hands, for instance), say the sorry yourself: the asymmetry is the lesson.',
  check:'Ask: "What do we do instead of grabbing? What do our ears do? What word repairs a mistake?" Ask, listen carefully, sorry — three answers and the playdates run smoother by the weekend.'},
-'welcome-include-cooperate-teamwork':{
+'include':{
  title:'The Welcome, Include, Cooperate & Teamwork Lesson',one:'The four group words — hello at the door, room in the circle, a part for everyone and the feeling when it works.',
  seoTitle:'Teamwork Lesson for Ages 4–5 — Welcome, Include, Cooperate, Teamwork (Class 38)',
  metaDescription:'A step-by-step Learning Path lesson for ages 4–5: teach the four group words — welcome, include, cooperate and teamwork — with a fort-building mission that needs every hand in the family.',
@@ -232,7 +232,7 @@ export const lpContent={
  play:'The Four-Hands Fort: a mission only possible as a team — a sofa-cushion fort that needs one holder, one builder, one fetcher and one inspector (rotate roles every five minutes). Halfway through, a stuffed animal arrives "new" and must be WELCOMED and INCLUDED with a job. Finish with the team cheer and the debrief: which word did the work?',
  tips:'Assign inclusion as a job, not a virtue: "you are our Welcomer today — watch for anyone who needs a hello." Jobs feel doable where values feel vague. And when the squabbles come mid-build (they will), that is cooperate practice, not failure — teams negotiate.',
  check:'Ask: "Which word opens the circle? Which word gives everyone a part? What do we shout when it works?" Include, cooperate, teamwork — three answers and the team words are live.'},
-'hopeful-safe-problem-solver-kind-heart':{
+'hopeful':{
  title:'The Hopeful, Safe, Problem Solver & Kind Heart Lesson',one:'Four inner-strength words — the look-forward feeling, the settled feeling, the fixing feeling and the engine underneath.',
  seoTitle:'Resilience Lesson for Ages 4–5 — Hopeful, Safe, Problem Solver, Kind Heart (Class 38)',
  metaDescription:'A step-by-step Learning Path lesson for ages 4–5: teach four inner-strength words — hopeful, safe, problem solver, kind heart — with a silly-fixes brainstorm that builds resilience and flexible thinking.',
@@ -252,7 +252,7 @@ export const lpContent={
  play:'Silly Fixes First: pose a small real problem (the tower keeps falling, the cup is too full) and race to list fixes — but the first TWO must be ridiculous (bananas! a robot! a big pillow!). Silly opens the thinking door; the third fix is usually the real one, thought of by a child who is now laughing instead of stuck.',
  tips:'Safety is built by predictability more than words — the same bedtime steps, the same goodbye ritual; the felt sense of safe comes from days that rhyme. And when the real fix fails, normalise it: "that fix did not work — good thinking though. What else could we try?" Problem solvers keep their tries.',
  check:'Ask: "What does the problem solver ask? Which feeling means this minute is okay? What runs underneath it all?" What could we try, safe, kind heart — three answers and the inner furniture is in place.'},
-'joyful-tired-confused-curious':{
+'curious':{
  title:'The Joyful, Tired, Confused & Curious Lesson',one:'The four feelings of a full day — from arm-throwing joy to a yawn, a shrug and a leaning-in question.',
  seoTitle:'Feelings Lesson for Ages 4–5 — Joyful, Tired, Confused, Curious (Class 38)',
  metaDescription:'A step-by-step Learning Path lesson for ages 4–5: teach the four day-feelings — joyful, tired, confused and curious — with a day-in-four acting game, growing emotion vocabulary from breakfast to bedtime.',
@@ -272,7 +272,7 @@ export const lpContent={
  play:'Day-in-Four Theatre: at dinner, everyone acts one moment of their day as one of the four feelings — no words allowed, faces and bodies only — and the rest of the family guesses. Grown-ups go first, honestly including a tired. Round two: which feeling do you want MORE of tomorrow, and how could we get it?',
  tips:'Honour the tired instead of fighting it — a child who can say "I am too tired to behave well" gets a cuddle; a child who melts gets a consequence, and both were the same feeling. And feed the curious deliberately: answer the but-why with "great question — how could we find out?" and confused never gets to feel like failure.',
  check:'Ask: "Which feeling throws its arms up? What does confused become when you lean in? Is tired allowed?" Joyful, curious, yes — three answers and the day\u2019s parade is named.'},
-'scared-brave-shy-confident':{
+'brave':{
  title:'The Scared, Brave, Shy & Confident Lesson',one:'The four courage feelings — the held breath, the fists anyway, the hiding hair and the crossed-arms smile.',
  seoTitle:'Feelings Lesson for Ages 4–5 — Scared, Brave, Shy and Confident (Class 38)',
  metaDescription:'A step-by-step Learning Path lesson for ages 4–5: teach the four courage feelings — scared, brave, shy and confident — with a feeling-map that makes fear speakable and shyness respectable.',
@@ -292,7 +292,7 @@ export const lpContent={
  play:'The Feeling Map: a big sheet of paper, four zones drawn — scared-things, brave-things, shy-things, confident-things. The family fills it with real items: thunder (scared), the tall slide (brave), parties at first (shy), dancing in the kitchen (confident). The grown-up\u2019s honest entries — "the phone makes me shy!" — are the most valuable ones on the page. Hang it; add to it; watch zones move over the year.',
  tips:'Never call a shy child shy in front of them as an apology — "she is shy" becomes a costume they wear for you. Instead narrate the speed: "she warms up first, then the fun starts." And when scared arrives, do not argue the fear away — get curious about it: "what is the alarm saying? Is it a tiger-sized problem or a mouse-sized one?"',
  check:'Ask: "What is brave really? Is shy a problem or a speed? Name one brave thing from this week." Scared-and-going-anyway, a speed, (their story) — three answers and the courage feelings are out of the whisper-zone.'},
-'share-give-care-thank':{
+'give':{
  title:'The Share, Give, Care & Thank Lesson',one:'The four giving words — splitting it, handing it over, holding someone close and closing the circle.',
  seoTitle:'Giving Lesson for Ages 4–5 — Share, Give, Care and Thank (Class 38)',
  metaDescription:'A step-by-step Learning Path lesson for ages 4–5: teach the four giving words — share, give, care and thank — with a giving-circle game that practises every kind of generosity in one sitting.',
@@ -312,7 +312,7 @@ export const lpContent={
  play:'The Giving Circle: five minutes, four shapes. Share one snack between plates. Give one thing to the donation bag (chosen by the child — the choosing is the lesson). Care for one patient: teddy gets the blanket and the check-up. Thank one person out loud, specifically — "thank you for drawing with me." Ring an imaginary bell between shapes; the ceremony is what makes it stick.',
  tips:'Never steal a give — when your child hands over their biscuit, accept it with the full ceremony or they learn giving lands flat. And protect the treasured-thing rule: sharing is practised on the ordinary toys; the one beloved bear is allowed to stay off-rotation while generosity grows on everything else.',
  check:'Ask: "Which giving word means it comes back? Which one means for keeps? Which one uses hugs and blankets?" Share, give, care — three answers and every shape of their generosity has a name.'},
-'be-kind-helpful-patient-honest':{
+'kind':{
  title:'The Be Kind, Helpful, Patient & Honest Lesson',one:'The four be-words — values shrunk to things a four-year-old can actually do before dinner.',
  seoTitle:'Character Lesson for Ages 4–5 — Be Kind, Helpful, Patient, Honest (Class 38)',
  metaDescription:'A step-by-step Learning Path lesson for ages 4–5: teach the four be-words — be kind, be helpful, be patient, be honest — with missions that turn values into doable jobs, building character through action.',
@@ -332,7 +332,7 @@ export const lpContent={
  play:'Mission Control: each morning, pick ONE be-word as the day\u2019s secret mission and write it where the child can see. At dinner, the family reports mission evidence — and everyone hunts for the mission in EACH OTHER. A week later, the child picks the missions for the grown-ups. Watching a four-year-old assign "be patient" to a parent is character education at its finest.',
  tips:'Praise in the past tense of identity — "you were so patient waiting for the glue" — not "good boy": the first builds a self-image, the second builds a compliance habit. And when the honest report is hard to hear, thank the honesty before addressing the mess; the order of those two sentences decides whether honesty survives to age five.',
  check:'Ask: "Which be-word spots jobs nobody asked for? Which one tells it true? What do be-words become after enough practice?" Helpful, honest, you — three answers and the be-words are on the job.'},
-'forgive-accept-respect-include':{
+'respect':{
  title:'The Forgive, Accept, Respect & Include Lesson',one:'The four deeper friendship words — start fresh, let be, treat as valuable, open the circle.',
  seoTitle:'Friendship Lesson for Ages 4–5 — Forgive, Accept, Respect, Include (Class 38)',
  metaDescription:'A step-by-step Learning Path lesson for ages 4–5: teach the four deeper friendship words — forgive, accept, respect and include — with an open-circle game that makes group kindness practisable.',
@@ -352,7 +352,7 @@ export const lpContent={
  play:'The Open-Circle Game: four or more toys (or people) form a tight circle playing a simple ball-pass. A fifth toy approaches — shy, outside. The circle\u2019s job: make the circle BIGGER, not tighter — include the newcomer, teach the game, pass to them second. Play three rounds; by the last one, your child is running the welcoming without a script.',
  tips:'Respect is best taught by what it refuses to do — "in this family we do not mock, even when it is funny" — and what it always does: listen to the other side first. And separate forgive from consequences: "I forgive you, AND the rule still stands" is a sentence children need to hear; forgiveness is not amnesia.',
  check:'Ask: "Which word starts things fresh? Which word makes room for different? Which one opens the circle?" Forgive, accept, include — three answers and the deeper friendship words are at work.'},
-'pause-breathe-deeply-think-choose-kindness':{
+'pause':{
  title:'The Pause, Breathe Deeply, Think & Choose Kindness Lesson',one:'The four-step pause — the gap between the spark and the flame, where a child gets to choose.',
  seoTitle:'Calm-Down Lesson for Ages 4–5 — Pause, Breathe, Think, Choose Kindness (Class 38)',
  metaDescription:'A step-by-step Learning Path lesson for ages 4–5: teach the four-step pause — pause, breathe deeply, think, choose kindness — the self-regulation sequence that turns big feelings into kind choices.',
@@ -372,7 +372,7 @@ export const lpContent={
  play:'Freeze-Dance with a Choice: music dances, then stops — PAUSE! Everyone freezes; one deep breath together; the leader asks "how do we choose to play the next round?" and offers two kind options (gentle hands? new game? swap partners?). The children pick — the choosing is the lesson, dressed as a dance game. Rotate the leader every round.',
  tips:'Practise the pause on calm days, never in the storm — the drill must live somewhere safe before it can work somewhere hard. And use the silent signal (hand on your own chest) instead of shouting PAUSE at a boiling child: the gesture says we do this together, which is the only version that teaches.',
  check:'Ask: "What stops first? What does the slow breath do? Who makes the last choice?" Pause, settles the body, me — three answers and the pause belongs to your child.'},
-'proud-disappointed-grateful-peaceful':{
+'grateful':{
  title:'The Proud, Disappointed, Grateful & Peaceful Lesson',one:'The wins-and-setbacks feelings — the tall smile, the drooped hope, the warm thanks and the quiet settle.',
  seoTitle:'Feelings Lesson for Ages 4–5 — Proud, Disappointed, Grateful, Peaceful (Class 38)',
  metaDescription:'A step-by-step Learning Path lesson for ages 4–5: teach the wins-and-setbacks feelings — proud, disappointed, grateful and peaceful — with a dinner ritual that builds resilience and gratitude together.',
@@ -392,7 +392,7 @@ export const lpContent={
  play:'Proud-and-Grateful at Dinner: three questions, every night, everyone answers (grown-ups first, honestly): one proud thing, one disappointed thing, one grateful thing. Then thirty seconds of peaceful together — lights low, one slow breath. Two minutes total; the ritual does more for resilience and gratitude than any poster ever printed.',
  tips:'Do not fix the disappointed — rush in with a replacement treat and the feeling never gets its reps. Sit in it briefly, name it, trust it to shrink. And keep pride about the DOING ("you practised until it worked") rather than the being ("you are so clever") — process-pride survives setbacks, person-pride does not.',
  check:'Ask: "Which feeling straightens the back? Which one is allowed to droop a while? What closes the day?" Proud, disappointed, peaceful — three answers and the after-feelings are on the table.'},
-'worried-relieved-jealous-embarrassed':{
+'jealous':{
  title:'The Worried, Relieved, Jealous & Embarrassed Lesson',one:'The four tricky feelings — the what-if, the phew, the wish-it-were-mine and the wish-they-would-stop-looking.',
  seoTitle:'Feelings Lesson for Ages 4–5 — Worried, Relieved, Jealous, Embarrassed (Class 38)',
  metaDescription:'A step-by-step Learning Path lesson for ages 4–5: teach the four tricky feelings — worried, relieved, jealous and embarrassed — with grown-up stories that make the hardest feelings speakable.',
@@ -412,7 +412,7 @@ export const lpContent={
  play:'Grown-Up Story Swap: one feeling a night, four nights. The grown-up tells one true, small story — a worry that turned out fine, a jealous moment, an embarrassing tumble — told lightly, laughed WITH not at. Then the child may swap one of their own or just listen. No lessons attached; the stories do the teaching, and the safety does the rest.',
  tips:'Never say "you have nothing to be embarrassed about" — to a blushing child that is one more person looking. Instead, stay normal: sit beside, carry on gently, let the moment pass in good company. And treat jealousy as a wants-report, not a character flaw: "you noticed you wanted that. Wants can be spoken. Want to tell me about it?"',
  check:'Ask: "Which feeling says what-if? Which one says phew? Are the tricky feelings normal?" Worried, relieved, yes — three answers and the shyest feelings are out of hiding.'},
-'notice-name-share-feelings-ask-for-help':{
+'ask-for-help':{
  title:'The Notice, Name, Share Feelings & Ask for Help Lesson',one:'The four-step check-in — notice the weather inside, name it, share it, and call for help when it is too big.',
  seoTitle:'Feelings Check-In Lesson for Ages 4–5 — Notice, Name, Share, Ask for Help (Class 38)',
  metaDescription:'A step-by-step Learning Path lesson for ages 4–5: teach the four-step feelings check-in — notice, name it, share feelings, ask for help — the daily habit that turns tantrums into sentences.',
@@ -432,7 +432,7 @@ export const lpContent={
  play:'The Feelings Weather Report: a pretend microphone, and everyone takes turns broadcasting their inside weather — "this morning in my chest: cloudy with a chance of grumpy, clearing after breakfast." Grown-ups go first with a real one. The child\u2019s forecast may be silly; the noticing underneath it is not. Two minutes, twice a day, habit installed.',
  tips:'Accept fuzzy names happily — "a big something" is a valid step two; precision arrives with practice. And make the help-people explicit: name three (and include one outside the house — a teacher, a grandparent), because a child who knows exactly WHO to ask asks sooner. Ask-for-help praised loudly is a meltdowns-later investment.',
  check:'Ask: "Where does the check-in start — the body or the mouth? What if the name will not come? What is step four?" Body, start fuzzy, ask for help — three answers and the check-in is running.'},
-'say-hello-make-space-be-curious-ask-nicely':{
+'say-hello':{
  title:'The Say Hello, Make Space, Be Curious & Ask Nicely Lesson',one:'The four joining-in words — the hello, the scoot-over, the question about you and the may-I.',
  seoTitle:'Social Skills Lesson for Ages 4–5 — Say Hello, Make Space, Be Curious, Ask Nicely (Class 38)',
  metaDescription:'A step-by-step Learning Path lesson for ages 4–5: teach the four joining-in words — say hello, make space, be curious, ask nicely — rehearsed on toys first, so the real playground feels already played.',
@@ -452,7 +452,7 @@ export const lpContent={
  play:'The Toy Playdate: two stuffed animals meet at a tiny bench. Your child runs both roles (or you take one): hello (different voices are encouraged), make space on the bench, be curious — "what do YOU like?" — and ask nicely for the shared crayon. Swap roles, run it again, then retire the toys and deploy the same four moves at the real playground this week.',
  tips:'Resist scripting the friendship — hand over the four moves and let your child\u2019s version be weird if it wants; a robot-dance hello that lands is worth more than a polished one that never leaves the house. And when the ask-nicely fails (it will sometimes), debrief the Ask, not the rejection: "good asking. Sometimes the answer is not yet — want to try again after her turn?"',
  check:'Ask: "What opens the door? What does make space say without words? What works better than grabbing?" Hello, you belong here, asking nicely — three answers and the joining-in kit is packed.'},
-'share-space-work-together-take-turns-cheer-others':{
+'take-turns':{
  title:'The Share the Space, Work Together, Take Turns & Cheer Others Lesson',one:'The four playdate words — room for two, many hands, my-go-your-go and the cheer that is not for me.',
  seoTitle:'Cooperation Lesson for Ages 4–5 — Share Space, Work Together, Take Turns, Cheer Others (Class 38)',
  metaDescription:'A step-by-step Learning Path lesson for ages 4–5: teach the four playdate words — share the space, work together, take turns, cheer others — with a one-block-each build that runs all four in one game.',
@@ -472,7 +472,7 @@ export const lpContent={
  play:'One-Block-Each Tower: build a block tower where the ONLY rule is one block each, then pass — no exceptions, grown-ups included. Every placement earns a specific cheer from the previous builder ("tall one! perfect corner!"). The tower falls eventually (they always do) — rebuild rule stands, and so does the cheering. Five minutes, all four words, one laughing family.',
  tips:'Cheering needs models more than instructions — a household that says "your brother zipped it himself — tell him what you noticed!" raises children who look for material to cheer. And keep turns SHORT at four: the wait is the exercise, so make the reps frequent and tiny; long turns teach only endurance.',
  check:'Ask: "What do we share besides toys? What do we say while waiting? Who is the cheer for?" The space, my-go-your-go, someone else — three answers and the playdate runs itself.'},
-'kind-choice-good-friend-try-your-best-grow-together':{
+'kind-choice':{
  title:'The Kind Choice, Good Friend, Try Your Best & Grow Together Lesson',one:'The four growing words — the choice, the showing-up, the honest effort and the getting-bigger side by side.',
  seoTitle:'Growth Lesson for Ages 4–5 — Kind Choice, Good Friend, Try Your Best, Grow Together (Class 38)',
  metaDescription:'A step-by-step Learning Path lesson for ages 4–5: teach the four growing words — kind choice, good friend, try your best, grow together — with a bedtime rewind that turns every day into growth evidence.',
@@ -492,7 +492,7 @@ export const lpContent={
  play:'The Bedtime Rewind: three questions in the dark, every night: what was today\u2019s kind choice? who was a good friend today (anyone, including you, including a story character)? what did you try your best at? Then one grow-together plan for tomorrow — one seed, chosen together. Ninety seconds, no stickers, no charts — the remembering IS the growing.',
  tips:'Guard the word best — best is not perfection, and a tired child\u2019s best is still best; say so out loud or the word starts lying. And when the rewind finds nothing one night (some days are like that), the grown-up donates one: "I saw you pick up the baby\u2019s cup — that was a kind choice." The ruler always finds something when someone else holds it kindly.',
  check:'Ask: "What makes a kind choice strong? What is try-your-best about — the result or the trying? Who grows alone?" That it is chosen, the trying, nobody — three answers and the family has its ruler.'},
-'calm-down-count-to-ten-use-your-words-take-a-break':{
+'calm-down':{
  title:'The Calm Down, Count to Ten, Use Your Words & Take a Break Lesson',one:'The four emergency moves — slow the body, count the breath, say the words and, when the storm is too big, step out and come back.',
  seoTitle:'Calm-Down Lesson for Ages 4–5 — Count to Ten, Use Words, Take a Break (Class 38)',
  metaDescription:'A step-by-step Learning Path lesson for ages 4–5: teach the four real calm-down moves — calm down, count to ten, use your words, take a break — drilled on quiet days so they work on stormy ones.',
@@ -512,7 +512,7 @@ export const lpContent={
  play:'Calm-Corner Dress Rehearsal: on a sunny afternoon, let your child choose the spot, name it (the Harbour? the Cozy Corner?) and stock the basket — one book, one bear. Then run the fire drill nobody needs: visit together for one slow breath while everything is completely fine, and leave while it is still nice. A corner rehearsed in sunshine works in rain; a corner met for the first time mid-storm just feels like timeout.',
  tips:'The grown-up\u2019s calm is the curriculum: your slowed voice, lowered body and one audible breath of your own teach more than any script — co-regulation first, self-regulation later, that is the developmental order. And honour the break without ceremony: no sighing, no lesson on the way out; the break that works is the one that is just allowed.',
  check:'Ask: "What calms first? What is the counting FOR? Is take-a-break allowed?" The body, a job for the busy brain, always — three answers and the storm moves are drilled.'},
-'i-feel-i-need-i-want-i-choose':{
+'i-feel':{
  title:'The I Feel, I Need, I Want & I Choose Lesson',one:'The four I-statements — the weather inside, the helping request, the honest wish and the owned decision.',
  seoTitle:'Speaking-Up Lesson for Ages 4–5 — I Feel, I Need, I Want, I Choose (Class 38)',
  metaDescription:'A step-by-step Learning Path lesson for ages 4–5: teach the four I-statements — I feel, I need, I want, I choose — giving a small person a big, peaceful voice at home and preschool.',
@@ -532,7 +532,7 @@ export const lpContent={
  play:'The I-Game at Dinner: four rounds, one per starter. Round one: everyone says an I-feel (real or silly). Round two: an I-need. Round three: an I-want — no judgement, wishes are wishes. Round four: an I-choose (about something small and real: tomorrow\u2019s breakfast, the walk route). Grown-ups go first each round — especially with one real "I need five quiet minutes", which lands funnier than any lecture.',
  tips:'Coach the difference without the lecture: needs and wants both get said, but needs get met faster — "you NEED a band-aid, you WANT more pudding; the band-aid is coming, the pudding is a maybe." And when the I-feel names YOU as the villain ("I feel angry AT YOU"), accept the feeling, reroute the sentence: "I hear angry. And I feel — what else? …worried? tired? Let us start there." The I stays; the blame goes.',
  check:'Ask: "What starts every sentence today? Which one is the proud owner one? Are wants allowed?" I, I choose, yes — three answers and the small person has a big voice.'},
-'listen-first-think-first-speak-kindly-solve-together':{
+'speak-kindly':{
  title:'The Listen First, Think First, Speak Kindly & Solve Together Lesson',one:'The four peace-process steps — ears before mouth, think before speak, kind before right, together before me.',
  seoTitle:'Problem-Solving Lesson for Ages 4–5 — Listen, Think, Speak Kindly, Solve Together (Class 38)',
  metaDescription:'A step-by-step Learning Path lesson for ages 4–5: teach the four peace steps — listen first, think first, speak kindly, solve together — the order that turns squabbles into negotiations.',
@@ -552,7 +552,7 @@ export const lpContent={
  play:'The Bear Court: a squabble is brought before the family\u2019s wisest bear (a teddy on a cushion). The bear (voiced by your child, ideally) enforces the order: each side speaks, the OTHER side must say back what it heard, one think-breath, kind words only, then the together-fix proposed by the cubs themselves. Bear adjourns with a gavel paw. Silly, sacred, and it teaches the sequence better than any diagram.',
  tips:'Narrate the steps, not the verdict: "that was listen-first… now the think-breath…" — children doing the steps need the step-names, not a judge. And when the together-fix is lopsided (always give the little one the honey), let it stand: fairness calibrates over months of practice, and a fix both AGREED to is the lesson, whatever the honey math.',
  check:'Ask: "What runs first? What sits between hearing and answering? Whose fix wins?" Ears, one breath, both of us — three answers and the peace process is in service.'},
-'welcome-all-be-inclusive-share-joy-make-a-friend':{
+'welcome':{
  title:'The Welcome All, Be Inclusive, Share Joy & Make a Friend Lesson',one:'The four open-door words — everyone gets a hello, nobody plays alone, happiness given away and the friend at the end of it.',
  seoTitle:'Inclusion Lesson for Ages 4–5 — Welcome All, Be Inclusive, Share Joy, Make a Friend (Class 38)',
  metaDescription:'A step-by-step Learning Path lesson for ages 4–5: teach the four open-door words — welcome all, be inclusive, share joy, make a friend — with an inclusion mission that grows real social courage.',
@@ -572,7 +572,7 @@ export const lpContent={
  play:'The Inclusion Mission: once a week, one official mission — at the park, the class, the gathering, be the one who says hello to someone new or brings the standing-alone child into the game. Choose the mission together, keep it small (one hello counts), and debrief at dinner: how did it feel to open the door? The answer — usually proud, sometimes shy — is the growth, spoken aloud.',
  tips:'Let the mission be optional — inclusion chosen freely sticks; inclusion assigned sours. And when your child reports a failed hello (the other child walked off), treat it as weather, not verdict: "sometimes doors take three tries. The opening still counts." Door-openers need their courage protected more than their success rates.',
  check:'Ask: "Does welcome all have tryouts? What are your eyes doing when they are being inclusive? What happens to shared joy?" No, scanning, it doubles — three answers and the door is theirs to open.'},
-'you-matter-i-am-here-you-are-safe-we-care':{
+'you-matter':{
  title:'The You Matter, I Am Here, You Are Safe & We Care Lesson',one:'The four reassurance sentences — the words every child needs to hear, and to learn to say.',
  seoTitle:'Reassurance Lesson for Ages 4–5 — You Matter, I Am Here, You Are Safe, We Care (Class 38)',
  metaDescription:'A step-by-step Learning Path lesson for ages 4–5: teach the four reassurance sentences — you matter, I am here, you are safe, we care — for hard days, goodbyes and the voice a child carries inside.',
@@ -592,7 +592,7 @@ export const lpContent={
  play:'Pass the Sentences: a soft ball passed around the circle (toys included) — the holder receives all four sentences from the group, then passes. Round two: the holder SAYS the four to the next holder. By round three, your child is comforting a stuffed rabbit with the full sequence, and the sentences are officially theirs — to hear, and to give.',
  tips:'Keep the sentences UNCONDITIONAL — you matter after the tantrum counts double, because that is when a child most needs to know worth is not on trial. And when you must leave, never swap I am here for silence: the goodbye ritual (I come back, I always do, watch the clock with me) is the same anchor in its travel shape.',
  check:'Ask: "Name the four sentences. What does the promise become when you leave? Who can give these words?" You-matter-I-am-here-you-are-safe-we-care, I come back, anyone — three answers and the anchor holds.'},
-'keep-trying-learn-celebrate-be-yourself':{
+'be-yourself':{
  title:'The Keep Trying, Learn, Celebrate & Be Yourself Lesson',one:'The four confidence words — through the wobbles, from every go, for every win, in your own way.',
  seoTitle:'Confidence Lesson for Ages 4–5 — Keep Trying, Learn, Celebrate, Be Yourself (Class 38)',
  metaDescription:'A step-by-step Learning Path lesson for ages 4–5: teach the four confidence words — keep trying, learn, celebrate, be yourself — with a family celebration ritual that cheers effort first.',
@@ -612,7 +612,7 @@ export const lpContent={
  play:'The Hard-Thing Celebration: once a week, the family celebrates one HARD thing — confetti optional, cheering mandatory. The rule: the thing must have involved wobbles. Each person tells theirs (grown-ups first: the jammed printer counts), the effort is named as the hero ("you tried four ways!"), and the celebration is real: a dance, a dessert, a lap of the table. Effort that gets celebrated comes back for more.',
  tips:'Celebrate the specific, not the superlative — "you tried the zipper upside down AND the right way" beats "amazing!" every time; specificity proves you actually watched. And guard be-yourself from becoming a costume: the winking, thumbs-up child on the card is not a requirement — your quiet child\u2019s be-yourself might look like standing at the edge of the party, watching, until ready. That counts. That is the word working.',
  check:'Ask: "What are wobbles — part of it or a stop sign? Which wins get celebrated? What is the rule underneath all four?" Part of it, all of them (small ones loudest), be yourself — three answers and the confidence shelf is loaded.'},
-'welcome-belong-trust-connect':{
+'belong':{
  title:'The Welcome, Belong, Trust & Connect Lesson',one:'The four family words — the open door, the seat that is yours, the kept promise and the thread underneath.',
  seoTitle:'Belonging Lesson for Ages 4–5 — Welcome, Belong, Trust, Connect (Class 38)',
  metaDescription:'A step-by-step Learning Path lesson for ages 4–5: teach the four belonging words — welcome, belong, trust and connect — with a belonging hunt that finds the child\u2019s name all over the house.',
@@ -632,7 +632,7 @@ export const lpContent={
  play:'The Belonging Hunt: walk the house with a detective\u2019s eye and find ten pieces of belonging evidence — the hook, the cup, the shoe spot, the bedtime song, the drawing on the wall, the family photo, the garden patch, the car seat, the snack shelf, the always-yours chair. Photograph or draw the best ones into a little book titled WHERE I BELONG. Belonging, once you hunt it, turns out to have been everywhere.',
  tips:'Build trust at the smallest scale — children audit promises at four with forensic seriousness, so promise LESS and keep MORE; a kept sticker-promise outweighs a hundred lectures on reliability. And when the family welcomes a guest, hand your child the door: the welcomed child who becomes the welcomer has completed the entire lesson without noticing it was a lesson.',
  check:'Ask: "Which word means the seat is yours? What is trust made of? Who holds the door now?" Belong, kept promises, you do — three answers and the house stands.'},
-'notice-pause-breathe-reset':{
+'breathe':{
  title:'The Notice, Pause, Breathe & Reset Lesson',one:'The four-step reset button — spot it coming, stop everything, one slow breath and start the moment fresh.',
  seoTitle:'Reset Lesson for Ages 4–5 — Notice, Pause, Breathe, Reset (Class 38)',
  metaDescription:'A step-by-step Learning Path lesson for ages 4–5: teach the four-step reset — notice, pause, breathe, reset — the family word that stops a spiral without blame and restarts the moment fresh.',
@@ -652,7 +652,7 @@ export const lpContent={
  play:'Reset Tag: play any fast game — catch, tickle-monster, dance — with the family rule that anyone may shout RESET. When it is called: freeze, one breath together, then the game restarts from the top. The giggles come from the pausing mid-pounce (especially the grown-up caught mid-tickle). After a week of play-resets, the word starts working on real storms — same freeze, same breath, same fresh start, now with a purpose.',
  tips:'Honour every reset instantly — a reset that gets argued with ("we are NOT resetting, we are LEAVING") teaches the word is decoration. And keep the no-blame rule sacred: the moment anyone adds "this is your fault" to a reset, the magic dies. The fresh start IS the discipline; it needs nothing else attached.',
  check:'Ask: "Who can call reset? What happens to the last thirty seconds? Is anyone in trouble?" Anyone, left behind, nobody — three answers and the family has its button.'},
-'care-support-encourage-comfort':{
+'care':{
  title:'The Care, Support, Encourage & Comfort Lesson',one:'The four helping words — noticing, carrying a corner, cheering the next try and sitting close.',
  seoTitle:'Caring Lesson for Ages 4–5 — Care, Support, Encourage, Comfort (Class 38)',
  metaDescription:'A step-by-step Learning Path lesson for ages 4–5: teach the four helping words — care, support, encourage and comfort — with a care-for-the-caregiver game that lets children practise real comfort.',
@@ -672,7 +672,7 @@ export const lpContent={
  play:'Care for the Caregiver: announce (honestly but lightly) that you are having a Hard Five Minutes — and your child is on care duty. Their job: run all four words. They will notice (you look tired), support (fetch the cushion), encourage (you can do the dishes — I mean, you have got this!) and comfort (the blanket, the pat, the sit-together). Accept every offering with full ceremony. Then swap: what helped MOST? The answer teaches you both.',
  tips:'Accept the child\u2019s comfort without trimming it — the offered half-flat cushion and the pat-pat-pat are exactly as healing as they feel to give; resist redirecting toward "proper" help. And keep the theatrical hard-day SMALL and safe: children comfort best when the storm is clearly survivable — the goal is their competence, not their worry.',
  check:'Ask: "Which word starts with noticing? What does support carry? What does comfort do instead of fixing?" Care, a corner, sits with you — three answers and the helping words are on duty.'},
-'listen-understand-respond-forgive':{
+'forgive':{
  title:'The Listen, Understand, Respond & Forgive Lesson',one:'The four conversation words — ears all the way to the end, the say-back, the careful answer and the always-ready mend.',
  seoTitle:'Listening Lesson for Ages 4–5 — Listen, Understand, Respond, Forgive (Class 38)',
  metaDescription:'A step-by-step Learning Path lesson for ages 4–5: teach the four conversation words — listen, understand, respond and forgive — with a two-minute listening date that upgrades every family conversation.',
@@ -692,7 +692,7 @@ export const lpContent={
  play:'The Two-Minute Listening Date: once a day, two minutes, one speaker, one listener. The speaker talks about anything (the dream, the dinosaur, the outrage at lunch). The listener may not interrupt — then must say back ONE thing they heard before commenting. Swap. Grown-ups play too, and get their listening graded (kindly) by the four-year-old. Three dates a week and the say-back starts appearing in wild conversations, unsupervised.',
  tips:'Grade the say-back, not the sympathy: "good ears — you caught the dinosaur part" teaches the mechanic; "poor you" teaches nothing repeatable. And model the forgive-mid-stream: "wait — I think I answered too fast and hurt your feelings. I am sorry — say it again, my ears are working now." A child who sees mending happen DURING conversations learns that repair is normal maintenance, not an emergency procedure.',
  check:'Ask: "How far does listening go? What proves understanding? Where does forgive stay?" To the end, the say-back, warm on the shelf — three answers and the conversation system runs.'},
-'kind-words-kind-actions-kind-heart-choose-kindness':{
+'kind-words':{
  title:'The Kind Words, Kind Actions, Kind Heart & Choose Kindness Lesson',one:'The graduation card — kind on the tongue, kind in the hands, kind underneath, and the choice, freely made, every time.',
  seoTitle:'Kindness Graduation Lesson for Ages 4–5 — Kind Words, Actions, Heart, Choose Kindness (Class 38)',
  metaDescription:'A step-by-step Learning Path lesson for ages 4–5: the kindness graduation — kind words, kind actions, kind heart and choose kindness — the last lesson of Class 38, where kindness becomes a choice your child owns.',
