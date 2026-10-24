@@ -2241,3 +2241,9 @@ h1 em,h2 em{color:#7b4b99}
  .search-link span{display:none}
  .search-link{padding:8px 10px}
 }
+/* Look & Learn (2026-10-24): card cells keep the tile and its four word
+   links together inside the .lp-tiles grid; the word row reuses .fc-hint. */
+.ll-cell{display:flex;flex-direction:column;gap:8px}
+.ll-cell .lp-tile strong{display:block;padding:10px 12px;font-size:15px}
+.ll-words{margin:0;font-size:14px;line-height:1.9}
+.ll-words a{font-weight:600;white-space:nowrap}

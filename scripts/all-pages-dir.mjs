@@ -3,6 +3,9 @@
    whole-school search registry (searchPages) so titles can never drift from
    the pages themselves. Section/group classification is exhaustive: an
    unclassified path throws, so structural changes fail the build loudly. */
+import {LL_WORDS} from '../src/look-and-learn.mjs';
+/* The Look & Learn word pages (owner 2026-10-24) — flat /flashcards/<word>/. */
+const LL_WORD_PATHS=new Set(LL_WORDS.filter(x=>!x.existing).map(x=>x.url));
 
 const e=s=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
 
@@ -41,6 +44,7 @@ const LABELS=new Map([
 /* Group-name overrides for age-stage hubs whose own titles say "Baby classes"
    while the directory section is the room they live in (Newborn/Baby/Toddler). */
 const GROUP_LABELS=new Map([
+  ['/look-and-learn/','Look & Learn'],
   ['/newborn/0-6-weeks/','Newborn · 0–6 weeks'],
   ['/newborn/6-12-weeks/','Newborn · 6–12 weeks'],
   ['/baby/3-4-months/','Baby · 3–4 months'],
@@ -98,6 +102,9 @@ const SECTIONS=[
    if(p.startsWith('/extra-classes/'))return{key:'ec-'+p.split('/')[2],name:null,hub:'/extra-classes/'+p.split('/')[2]+'/'};
    if(p==='/nature-club/')return{key:'nc-hub',name:'Nature Club (all)'};
    if(p.startsWith('/nature-club/'))return{key:'nc-'+p.split('/')[2],name:null,hub:'/nature-club/'+p.split('/')[2]+'/'};
+   /* Look & Learn (owner 2026-10-24): the extra class + its 43 flat word
+      pages live in one group, fronted by /look-and-learn/. */
+   if(p==='/look-and-learn/'||LL_WORD_PATHS.has(p))return{key:'ll',name:null,hub:'/look-and-learn/'};
    const room=p.split('/')[1];
    if(['/music-room/','/kitchen/','/playground/','/toddler-room/','/who-works-at-my-school/'].includes('/'+room+'/'))
     return{key:'rm-'+room,name:null,hub:'/'+room+'/'};

@@ -62,6 +62,7 @@ import {AH_CLASS_PATH,animalsHabitatsClassBody} from '../src/animals-habitats.mj
 import {SP_CLASS_PATH,sportsClassBody} from '../src/sports.mjs';
 import {lesson as spLesson} from '../src/flashcards/data-sports.mjs';
 import {FK_CLASS_PATH,feelingsKindnessClassBody} from '../src/feelings-kindness.mjs';
+import {LL_PATH,LL_NEW,LL_COVER,LL_BASE,lookAndLearnBody,llWordBody,llWordTitle,llWordDesc,llCardImg,llCardAlt,LL_CLASS_LINKS} from '../src/look-and-learn.mjs';
 import {lesson as fkLesson} from '../src/flashcards/data-feelings-kindness.mjs';
 import {TV_CLASS_PATH,transportationClassBody} from '../src/transportation.mjs';
 import {lesson as tvLesson} from '../src/flashcards/data-transportation.mjs';
@@ -487,7 +488,7 @@ page(animalsLesson.path,animalsLesson.seoTitle,animalsLesson.description,animals
 page(animalsLesson.path+'print/','Animal Flashcards: print all twelve animal cards','Print the animal flashcards for preschoolers: twelve cards, two to a page — dog, cat, cow, sheep, duck, chicken, horse, pig, lion, elephant, frog and bird — straight from your browser.',printCardsBody(animalsLesson),{noindex:true,ogAlt:animalsLesson.ogAlt});
 page(bodyPartsLesson.path,bodyPartsLesson.seoTitle,bodyPartsLesson.description,bodyPartsClassBody(bodyPartsLesson),{schema:classLessonSchema(site,bodyPartsLesson),ogImage:bodyPartsLesson.ogImage,ogAlt:bodyPartsLesson.ogAlt});
 page(bodyPartsLesson.path+'print/','Body Parts & Five Senses Flashcards: print all twenty-four cards','Print the body parts and five senses flashcards for preschoolers: twenty-four cards, two to a page — head, eyes, ears, hands, fingers, see, hear, smell, taste, touch and more — straight from your browser.',printCardsBody(bodyPartsLesson),{noindex:true,ogAlt:bodyPartsLesson.ogAlt});
-page(fruitsLesson.path,fruitsLesson.seoTitle,fruitsLesson.description,fruitsClassBody(fruitsLesson),{schema:classLessonSchema(site,fruitsLesson),ogImage:fruitsLesson.ogImage,ogAlt:fruitsLesson.ogAlt});
+page(fruitsLesson.path,fruitsLesson.seoTitle,fruitsLesson.description,fruitsClassBody(fruitsLesson)+LL_CLASS_LINKS[fruitsLesson.path],{schema:classLessonSchema(site,fruitsLesson),ogImage:fruitsLesson.ogImage,ogAlt:fruitsLesson.ogAlt});
 page(fruitsLesson.path+'print/','Fruits & Vegetables Flashcards: print all sixteen cards','Print the fruit and vegetable flashcards for preschoolers: sixteen cards, two to a page — apple, banana, carrot, broccoli and more — straight from your browser.',printCardsBody(fruitsLesson),{noindex:true,ogAlt:fruitsLesson.ogAlt});
 
 /* ---- Magic games (Age 3): real interactive games wired to their classes. ---- */
@@ -532,7 +533,7 @@ for(const w of msPages){
  const p=MS_WS_BASE+w.slug+'/';
  page(p,`${w.title} Worksheet — Printable for 2-Year-Olds (Matching & Sorting)`,w.meta,msWorksheetBody(w,site),{schema:[ssBc(site,[['Worksheets',WS_BASE],['Matching & Sorting',MS_WS_BASE],[w.title,p]]),msWorksheetSchema(site,w)],ogImage:MS_BASE+w.img,ogAlt:w.alt});
 }
-page(anLesson.path,anLesson.seoTitle,anLesson.description,toddlerClassBody(anLesson),{schema:classLessonSchema(site,anLesson),ogImage:anLesson.ogImage,ogAlt:anLesson.ogAlt});
+page(anLesson.path,anLesson.seoTitle,anLesson.description,toddlerClassBody(anLesson)+LL_CLASS_LINKS[anLesson.path],{schema:classLessonSchema(site,anLesson),ogImage:anLesson.ogImage,ogAlt:anLesson.ogAlt});
 page(vhLesson.path,vhLesson.seoTitle,vhLesson.description,toddlerClassBody(vhLesson),{schema:classLessonSchema(site,vhLesson),ogImage:vhLesson.ogImage,ogAlt:vhLesson.ogAlt});
 page(vhLesson.path+'print/','Vehicle Learning Cards: print the twenty vehicle cards','Print the Kiddo School vehicle learning cards for 2-year-olds: twenty colorful vehicle cards with their sounds, two to a page — cars, trucks, trains, boats, planes and more.',printCardsBody(vhLesson),{noindex:true,ogAlt:'Preview of the printable vehicle learning cards for 2-year-olds from Kiddo School'});
 page(emLesson.path,emLesson.seoTitle,emLesson.description,toddlerClassBody(emLesson),{schema:classLessonSchema(site,emLesson),ogImage:emLesson.ogImage,ogAlt:emLesson.ogAlt});
@@ -672,6 +673,17 @@ page(SP_CLASS_PATH,'Class 37 · Sports, Movement & Play (Ages 4–5)','The Class
    inserting it there would renumber Classes 33–37 and break their published
    links — so it continues after Class 37, and Class 32 points forward to it. */
 page(FK_CLASS_PATH,'Class 38 · Feelings & Kindness (Ages 4–5)','The Class 38 feelings stage: 35 individual step-by-step feelings-and-kindness lessons for ages 4–5 — the feeling faces, kind words, calm-down skills and belonging habits, four words a card — each on its own page with the original card artwork, a parent script, the questions to ask and one game that practises the words on a real moment today, growing the emotion vocabulary, self-regulation and kindness habits that US, Canadian, Australian and NZ early-years teachers call the heart of social-emotional learning.',feelingsKindnessClassBody(),{schema:[age4Bc(FK_CLASS_PATH,[['Preschool','/preschool/'],['Age 4',HUB4],['Feelings & Kindness',FK_CLASS_PATH]])],ogImage:fkLesson.r2Base+'flashcards/cover.webp',ogAlt:'Cover of the Feelings & Kindness flashcards set from Kiddo School: the title over a big pink heart with two children hugging beneath it.',ogW:800,ogH:1131});
+/* ---- Look & Learn: the owner's extra class at /look-and-learn/ (2026-10-24
+   "Add an extra class Look & Learn at /look-and-learn/"). Cover first, cards
+   01–15 in file order, one short page per NEW word at /flashcards/<word>/ —
+   duck, banana, carrot, grapes and strawberry keep their existing pages and
+   are LINKED only (owner: "keep its URL and add the link only"). Cross-links:
+   Classes 31, 22 and 11 (appended above at their page() calls) and back.
+   Registered BEFORE the search-index write so /search/ and /all-pages/ carry it. ---- */
+page(LL_PATH,'Look & Learn — 15 Picture Cards, 48 First Words (Ages 2–5)','Look & Learn is the free extra class of fifteen printable picture cards — four words a card, every word with its own short page and a look-and-say move: point at the moon, waddle like a duck, balance like a flamingo. Moon, tree, star, duck, tiger, balloon and forty-three more first words for ages 2–5.',lookAndLearnBody(),{ogImage:LL_BASE+'flashcards/'+LL_COVER.file,ogAlt:LL_COVER.alt,ogW:LL_COVER.w,ogH:LL_COVER.h});
+for(const llw of LL_NEW){
+ page('/flashcards/'+llw.w+'/',llWordTitle(llw.w),llWordDesc(llw.w)+' Every Look & Learn word has its own short page — say the word, try the move, then open the whole fifteen-card class.',llWordBody(llw.w),{ogImage:llCardImg(llw.n),ogAlt:llCardAlt(llw.n),ogW:800,ogH:1131});
+}
 page(TV_CLASS_PATH,'Class 24 · Transportation & Vehicles (Ages 4–5)','The Class 24 transportation stage: 32 individual step-by-step spotter lessons for ages 4–5 — car, bus, train, school bus, fire engine, tractor, boats, airplanes and eleven construction spotter sheets — each on its own page with the original flashcard artwork, a parent script and one spotting game, in the words families search for in the US, Canada, Australia and New Zealand: things that go, community vehicles and the preschool transport theme.',transportationClassBody(),{schema:[age4Bc(TV_CLASS_PATH,[['Preschool','/preschool/'],['Age 4',HUB4],['Transportation & Vehicles',TV_CLASS_PATH]])],ogImage:tvLesson.r2Base+'flashcards/cover.webp',ogAlt:'Cover of the Transportation & Vehicles flashcards set from Kiddo School: an airplane, a truck, a ship and a bus under the words Vehicles & Transportation.',ogW:900,ogH:1273});
 /* ---- Class 33 worksheets: 35 GENUINE activity sheets (owner upload, verified
    on R2, audited sheet by sheet), each with TWO pages — the Learning Path
@@ -712,7 +724,7 @@ for(const w of animalsWs){
  const p=AHWS_WS_LIB+w.slug+'/';
  page(p,`${w.title} Worksheet — Printable for Ages 4–5 (Class 36)`,w.meta,animalsWsPrintableBody(w,site),{schema:[ssBc(site,[['Worksheets','/worksheets/'],['Animals & Their Habitats',AHWS_WS_LIB],[w.title,p]]),animalsWsSchema(site,w)],ogImage:AHWS_WS_BASE+w.file,ogAlt:w.meta});
 }
-page(C31_PATH,'Class 31 · Science, Nature & Discovery (Ages 4–5)','The Class 31 science stage: 30 draw-on-the-picture science adventures with plain text instructions — plant growth, weather, insects, sink or float, habitats, light, senses, magnets, seasons, life cycles, recycling, the water cycle and one graduation lab — plus a printable worksheet for every adventure.',scienceClassBody(),{schema:[age4Bc(C31_PATH,[['Preschool','/preschool/'],['Age 4',HUB4],['Science, Nature & Discovery',C31_PATH]])],...advOg('science',SCIENCE_BASE,scienceAdventures[0])});
+page(C31_PATH,'Class 31 · Science, Nature & Discovery (Ages 4–5)','The Class 31 science stage: 30 draw-on-the-picture science adventures with plain text instructions — plant growth, weather, insects, sink or float, habitats, light, senses, magnets, seasons, life cycles, recycling, the water cycle and one graduation lab — plus a printable worksheet for every adventure.',scienceClassBody()+LL_CLASS_LINKS[C31_PATH],{schema:[age4Bc(C31_PATH,[['Preschool','/preschool/'],['Age 4',HUB4],['Science, Nature & Discovery',C31_PATH]])],...advOg('science',SCIENCE_BASE,scienceAdventures[0])});
 page(SCIENCE_LIB_PATH,'Science Adventures — 30 draw-on-the-picture discoveries (ages 4–5)','Thirty draw-on-the-picture science adventures built on our own science artwork: predict experiments, count insect legs, sort living things, match habitats and senses, number life cycles, sort recycling and earn a science graduation — every instruction in plain text a grown-up can read aloud, no reading needed.',scienceLibraryBody(),{schema:[age4Bc(SCIENCE_LIB_PATH,[['Preschool','/preschool/'],['Science Adventures',SCIENCE_LIB_PATH]])],...advOg('science',SCIENCE_BASE,scienceAdventures[0])});
 for(const g of scienceAdventures){
  const p=SCIENCE_LIB_PATH+g.slug+'/';
