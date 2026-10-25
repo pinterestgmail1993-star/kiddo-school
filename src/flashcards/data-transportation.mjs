@@ -74,7 +74,7 @@ export const meta={
  ageLabel:'4–5 years',
  noun:'Preschoolers',
  group:'preschool',
- stageName:'Class 24 · Transportation &amp; Vehicles',
+ stageName:'Class 24 · Transportation & Vehicles',
  stageHref:'/preschool/4-years/transportation-and-vehicles/',
  useIdeas:[
   ['Run the vehicle hunt','Pull a card, name one of its four vehicles, then hunt: spot a real bus, a delivery van, a bicycle from the window or on a walk. Spotting is the transport theme\u2019s heart — every real sighting "checks off" a card.'],

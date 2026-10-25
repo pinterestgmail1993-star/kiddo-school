@@ -915,7 +915,7 @@ export const emLesson={
     {ask:'Find surprised.',say:'Find surprised!',choices:[{file:'05-surprised.webp',name:'The surprised face',correct:true},{file:'10-silly.webp',name:'The silly face'}]},
     {ask:'Where’s calm?',say:'Where is calm?',choices:[{file:'07-tired.webp',name:'The tired face'},{file:'08-calm.webp',name:'The calm face',correct:true},{file:'01-happy.webp',name:'The happy face'}]}
    ]},
-   {type:'learn',id:'faces-and-feelings',eyebrow:'PLAY · FACES &amp; FEELINGS',heading:'Faces &amp; feelings.',copy:'Now your turn — no tapping needed. Make the face together and see who looks silliest.',label:'the faces',items:[
+   {type:'learn',id:'faces-and-feelings',eyebrow:'PLAY · FACES &amp; FEELINGS',heading:'Faces & feelings.',copy:'Now your turn — no tapping needed. Make the face together and see who looks silliest.',label:'the faces',items:[
     {file:'01-happy.webp',say:'Can you make a happy face?',find:'Wide awake and smiling!'},
     {file:'05-surprised.webp',say:'Show me surprised!',find:'Hands on cheeks — gasp!'},
     {file:'06-excited.webp',say:'Show me your excited face!',find:'Jumpy, bouncy, loud.'},
@@ -968,7 +968,7 @@ export const gbLesson={
  ogImage:toddlerBase+'garden-bugs-and-friends-age-2/cover.webp',
  schemaImage:toddlerBase+'garden-bugs-and-friends-age-2/cover.webp',
  eyebrow:'TODDLER 8 · LESSON 14',
- crumbs:[['Toddler','/toddler/'],['Age 2','/toddler/2-years/'],['Garden Bugs &amp; Friends','/toddler/2-years/garden-bugs-and-friends/']],
+ crumbs:[['Toddler','/toddler/'],['Age 2','/toddler/2-years/'],['Garden Bugs & Friends','/toddler/2-years/garden-bugs-and-friends/']],
  chips:[['Age','2 Years'],['Subject','Nature &amp; Talk'],['Class','Toddler 8'],['Duration','3–5 minutes']],
  subject:'Nature &amp; Talk',
  ledes:['There is a whole little world wobbling around the garden. Meet it together, one friendly face at a time — a busy bee, a slow snail, a roly-poly that rolls right up.',
@@ -1054,7 +1054,7 @@ export const gbLesson={
     {ask:'Find the frog.',say:'Find the frog!',choices:[{file:'19-frog.webp',name:'The frog',correct:true},{file:'18-bird.webp',name:'The bird'}]},
     {ask:'Where is the firefly?',say:'Where is the firefly?',choices:[{file:'14-firefly.webp',name:'The firefly',correct:true},{file:'12-cricket.webp',name:'The cricket'},{file:'07-dragonfly.webp',name:'The dragonfly'}]}
    ]},
-   {type:'learn',id:'wiggle-and-move',eyebrow:'PLAY · WIGGLE &amp; MOVE',heading:'Wiggle &amp; move.',copy:'No tapping needed now — this is the get-up-and-move part. Copy the friend together and see who wobbles most.',label:'the moves',items:[
+   {type:'learn',id:'wiggle-and-move',eyebrow:'PLAY · WIGGLE &amp; MOVE',heading:'Wiggle & move.',copy:'No tapping needed now — this is the get-up-and-move part. Copy the friend together and see who wobbles most.',label:'the moves',items:[
     {file:'02-butterfly.webp',say:'Flutter around the room!',find:'Big, slow arm wings.'},
     {file:'08-grasshopper.webp',say:'Jump, jump, jump!',find:'Crouch low — and boing!'},
     {file:'04-snail.webp',say:'Now sloooow motion.',find:'Slow as honey.'},
@@ -1656,7 +1656,7 @@ export function toddlerClassBody(L){
   const grid=items.map(it=>`<figure class="lv-card">${tcImg(base,it.file,it.w,it.h,it.alt,` loading="lazy" data-lv-say="${esc(it.say)}" data-lv-find="${esc(it.find)}"`)}</figure>`).join('');
   return `<section class="wrap lesson-section" id="${id}" aria-label="${esc(heading)}">
   <span class="eyebrow">${eyebrow}</span>
-  <h2>${heading}</h2>
+  <h2>${esc(heading)}</h2>
   <p class="lesson-copy">${copy}</p>
   <div class="lv-frame" data-lesson-viewer>
    <div class="lv-stage" data-lv-stage></div>

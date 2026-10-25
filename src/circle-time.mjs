@@ -53,7 +53,7 @@ export function circleTimeBody(C){
    `<div class="ct-actions"><button type="button" class="button" data-ct-next hidden>I’m Ready</button></div>
   </section>`,
   // 2 · Hello Rhythm
-  stepOpen('rhythm','Hello &amp; Move','HELLO RHYTHM','Hello &amp; Move')+
+  stepOpen('rhythm','Hello & Move','HELLO RHYTHM','Hello &amp; Move')+
    `<figure class="ct-scene">${scene('01-hello-and-move.webp','Teacher and young children moving together during Circle Time')}</figure>
    <div class="ct-rhythm" data-ct-rhythm aria-hidden="true"><span>👏</span><span>👏</span><span>👋</span></div>
    <p class="ct-big">${C.rhythm}</p>
@@ -66,7 +66,7 @@ export function circleTimeBody(C){
    prompts(C.copyPrompts)+`
   </section>`,
   // 4 · Listen & Do
-  stepOpen('listen','Listen &amp; Do',null,'Listen &amp; Do')+
+  stepOpen('listen','Listen & Do',null,'Listen &amp; Do')+
    say(C.listenLead)+
    `<figure class="ct-scene">${scene('02-listen-and-do.webp','Teacher and children doing a simple listening and movement activity')}</figure>`+
    prompts(C.listenPrompts)+`

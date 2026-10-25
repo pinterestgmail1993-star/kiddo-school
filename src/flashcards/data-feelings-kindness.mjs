@@ -99,7 +99,7 @@ export const meta={
 export const cards={
 'happy':{
  word:'Happy, Sad, Angry & Calm',
- cardTitle:'Happy, Sad, Angry &amp; Calm Flashcard for Preschoolers — the Four First Feelings',
+ cardTitle:'Happy, Sad, Angry & Calm Flashcard for Preschoolers — the Four First Feelings',
  metaDescription:'A printable feelings flashcard for ages 4–5: happy, sad, angry and calm on one card — name the four first feelings with faces your child already knows.',
  intro:'The four feelings a four-year-old meets every single day, on one card: happy, sad, angry and calm — each one a face they will recognise from the mirror.',
  say:'Happy looks like this! Sad looks like this. Angry looks like this — eyebrows down! And calm… slow breath, soft face. Can you make all four faces with me?',
@@ -107,7 +107,7 @@ export const cards={
  note:'Naming a feeling is the first step to taming it — a child who can say "I am angry" already has one foot back in calm. Four words, one card, the start of the whole class.'},
 'share':{
  word:'Kind, Share, Help & Thank You',
- cardTitle:'Kind, Share, Help &amp; Thank You Flashcard for Preschoolers — the First Kind Words',
+ cardTitle:'Kind, Share, Help & Thank You Flashcard for Preschoolers — the First Kind Words',
  metaDescription:'A printable kindness flashcard for ages 4–5: kind, share, help and thank you — the four first kind words, each shown by a child doing it.',
  intro:'The first four kind words, each shown by a child actually doing it: a kind heart, a shared book, a helping hand and a thank you said with clasped hands.',
  say:'Heart friendly, book handed over, small friend helped up and a big warm thank you — four kind words your child can say AND do before lunch.',
@@ -115,7 +115,7 @@ export const cards={
  note:'Kindness words arrive in pairs with the acts themselves — say the word while the doing is still happening and the two stick together for good.'},
 'excited':{
  word:'Excited, Worried, Surprised & Proud',
- cardTitle:'Excited, Worried, Surprised &amp; Proud Flashcard for Preschoolers — Four Big Feelings',
+ cardTitle:'Excited, Worried, Surprised & Proud Flashcard for Preschoolers — Four Big Feelings',
  metaDescription:'A printable feelings flashcard for ages 4–5: excited, worried, surprised and proud — four bigger feeling words with faces and bodies to match.',
  intro:'A huge grin, some anxious eyebrows, a round surprised O and a tall crossed-arms smile — four bigger feelings, four very different faces.',
  say:'Excited is when your body goes wiggle-wiggle! Worried is when your tummy feels tight. Surprised is when your mouth goes OH. And proud is when you stand tall like this.',
@@ -123,7 +123,7 @@ export const cards={
  note:'Bodies feel feelings before words do — acting them out gives your child a way to notice what is happening inside and hang the right word on it.'},
 'gentle':{
  word:'Listen, Gentle, Take Turns & Kind Words',
- cardTitle:'Listen, Gentle, Take Turns &amp; Kind Words Flashcard for Preschoolers',
+ cardTitle:'Listen, Gentle, Take Turns & Kind Words Flashcard for Preschoolers',
  metaDescription:'A printable kindness flashcard for ages 4–5: listen, be gentle, take turns and use kind words — the four habits that make play gentler for everyone.',
  intro:'A hand cupped to an ear, arms wrapped tenderly, a patient raised finger and a warm talking smile — the four playtime habits, drawn gently.',
  say:'Listen means ears open, mouth waiting. Gentle means soft hands with people and pets. Take turns means my go, then your go. Kind words are words that make friends feel good.',
@@ -131,7 +131,7 @@ export const cards={
  note:'These four are playground currency — children who can listen, be gentle, take turns and speak kindly get included again and again, and inclusion is where more kindness grows.'},
 'try-again':{
  word:'Breathe, Brave, Try Again & I Can Do It',
- cardTitle:'Breathe, Brave, Try Again &amp; I Can Do It Flashcard for Preschoolers',
+ cardTitle:'Breathe, Brave, Try Again & I Can Do It Flashcard for Preschoolers',
  metaDescription:'A printable courage flashcard for ages 4–5: breathe, be brave, try again and I can do it — the four brave-breath words for wobbly moments.',
  intro:'Hands folded mid-breath, a little cape with a fist in the air, a determined second fist and a small confident nod — the courage ladder at child size.',
  say:'First we breathe — in like a flower, out like a candle. Then we think brave. Then we try again. And we say it together: I can do it.',
@@ -139,7 +139,7 @@ export const cards={
  note:'Courage is a sequence, not a personality trait — breathe first, brave second, try third. Children who learn the steps stop waiting to feel brave and start doing brave instead.'},
 'friend':{
  word:'Smile, Care, Forgive & Friend',
- cardTitle:'Smile, Care, Forgive &amp; Friend Flashcard for Preschoolers',
+ cardTitle:'Smile, Care, Forgive & Friend Flashcard for Preschoolers',
  metaDescription:'A printable kindness flashcard for ages 4–5: smile, care, forgive and friend — the four friendship words, from a first smile to a mended friendship.',
  intro:'A boy beams, a girl hugs a pink heart, another boy folds his hands peacefully and a fourth waves hello — the friendship ladder, panel by panel.',
  say:'A smile says hello, I am friendly. Care means I notice when you are sad. Forgive means we start again after a fight. And a friend is someone we smile at, care for and forgive.',
@@ -147,7 +147,7 @@ export const cards={
  note:'Friendship is not the absence of fights — it is the presence of repair. Forgive is the word that turns a broken moment back into a friendship, and it is learnable at four.'},
 'lonely':{
  word:'Lonely, Loved, Frustrated & Relaxed',
- cardTitle:'Lonely, Loved, Frustrated &amp; Relaxed Flashcard for Preschoolers',
+ cardTitle:'Lonely, Loved, Frustrated & Relaxed Flashcard for Preschoolers',
  metaDescription:'A printable feelings flashcard for ages 4–5: lonely, loved, frustrated and relaxed — four deeper feeling words, from missing someone to feeling calm again.',
  intro:'Four deeper feelings every preschooler knows but cannot always name: the ache of lonely, the warmth of loved, the hot push of frustrated and the slow ease of relaxed.',
  say:'Lonely is when you want someone and they are not there. Loved is when someone holds you close. Frustrated is when it will not work and you want to yell. Relaxed is when your whole body goes soft.',
@@ -155,7 +155,7 @@ export const cards={
  note:'Lonely and frustrated are the two feelings that most often come out as behaviour — a child with the words for them needs far fewer meltdowns to say the same thing.'},
 'patient':{
  word:'Patient, Honest, Polite & Fair',
- cardTitle:'Patient, Honest, Polite &amp; Fair Flashcard for Preschoolers',
+ cardTitle:'Patient, Honest, Polite & Fair Flashcard for Preschoolers',
  metaDescription:'A printable character flashcard for ages 4–5: patient, honest, polite and fair — the four character words that make a good friend and a fair game.',
  intro:'Closed eyes waiting calmly, a hand on a heart, folded polite hands and a thinking-about-fairness frown — four character words at four-year-old size.',
  say:'Patient means I can wait. Honest means I tell the truth, even about the broken cup. Polite means please, thank you, excuse me. Fair means everybody gets a turn — including the little ones.',
@@ -163,7 +163,7 @@ export const cards={
  note:'Fair is the word four-year-olds police hardest — "that is not FAIR" is the first moral protest. Give them the word and the rule together and the protests become negotiations.'},
 'comfort':{
  word:'Notice, Understand, Comfort & Encourage',
- cardTitle:'Notice, Understand, Comfort &amp; Encourage Flashcard for Preschoolers',
+ cardTitle:'Notice, Understand, Comfort & Encourage Flashcard for Preschoolers',
  metaDescription:'A printable empathy flashcard for ages 4–5: notice, understand, comfort and encourage — the four empathy steps, from spotting a feeling to cheering someone on.',
  intro:'The four empathy steps in child-size order: notice the feeling, understand it, comfort the friend and encourage the next try.',
  say:'First we notice — "your face looks sad." Then we understand — "are you sad because the tower fell?" Then we comfort — a hug, a hand, a sit-together. Then we encourage — "try again, I will help."',
@@ -171,7 +171,7 @@ export const cards={
  note:'Empathy is a skill with steps, not a mood children either have or lack. Name the steps and any four-year-old can run them — most just need someone to show the order.'},
 'sorry':{
  word:'Wait, Ask, Listen Carefully & Say Sorry',
- cardTitle:'Wait, Ask, Listen Carefully &amp; Say Sorry Flashcard for Preschoolers',
+ cardTitle:'Wait, Ask, Listen Carefully & Say Sorry Flashcard for Preschoolers',
  metaDescription:'A printable manners flashcard for ages 4–5: wait, ask, listen carefully and say sorry — the four repair-and-respect words for playdates and preschool.',
  intro:'Still hands, a raised hand, an ear cupped close and an apology ready — the four moves that keep a playdate kind from start to finish.',
  say:'Wait — I do not grab. Ask — "may I have a turn?" Listen carefully — ears on, eyes on. And when I get it wrong, I say sorry and mean it.',
@@ -179,7 +179,7 @@ export const cards={
  note:'Sorry lands better when it is modelled, not forced — say sorry to your child when you snap or forget, and the word becomes a real repair tool instead of a punishment password.'},
 'include':{
  word:'Welcome, Include, Cooperate & Teamwork',
- cardTitle:'Welcome, Include, Cooperate &amp; Teamwork Flashcard for Preschoolers',
+ cardTitle:'Welcome, Include, Cooperate & Teamwork Flashcard for Preschoolers',
  metaDescription:'A printable teamwork flashcard for ages 4–5: welcome, include, cooperate and teamwork — the four group words for joining, inviting and building together.',
  intro:'The four group words every classroom runs on: welcome the newcomer, include the left-out one, cooperate on the task and feel the teamwork when it works.',
  say:'Welcome means "hi, come in!" Include means "you can play too." Cooperate means we each do a part. Teamwork is what it feels like when we do it together.',
@@ -187,7 +187,7 @@ export const cards={
  note:'The child who says "you can play too" is doing the single most pro-social thing an early-years classroom can teach — inclusion is kindness with its sleeves rolled up.'},
 'hopeful':{
  word:'Hopeful, Safe, Problem Solver & Kind Heart',
- cardTitle:'Hopeful, Safe, Problem Solver &amp; Kind Heart Flashcard for Preschoolers',
+ cardTitle:'Hopeful, Safe, Problem Solver & Kind Heart Flashcard for Preschoolers',
  metaDescription:'A printable resilience flashcard for ages 4–5: hopeful, safe, problem solver and kind heart — four inner-strength words for the days that need them.',
  intro:'A bright upward cheer, a content closed-eyes smile, a boy planning over his notebook and a girl hugging a big heart — strong days, drawn from the inside.',
  say:'Hopeful means I believe good things are coming. Safe means nothing here can hurt me. Problem solver means when something goes wrong, I look for a fix. Kind heart means all of it runs on kindness.',
@@ -195,7 +195,7 @@ export const cards={
  note:'Hope and safety are the soil every other skill grows in — a child who feels safe tries more, and a child who tries more has more chances to watch their own kind heart work.'},
 'curious':{
  word:'Joyful, Tired, Confused & Curious',
- cardTitle:'Joyful, Tired, Confused &amp; Curious Flashcard for Preschoolers',
+ cardTitle:'Joyful, Tired, Confused & Curious Flashcard for Preschoolers',
  metaDescription:'A printable feelings flashcard for ages 4–5: joyful, tired, confused and curious — the four end-of-day feelings, from arm-throwing joy to a yawn and a question.',
  intro:'The four feelings of a full day: the arm-throwing joy, the yawning tired, the scratching-head confused and the finger-to-chin curious.',
  say:'Joyful is happy with your WHOLE body. Tired is when a yawn sneaks out. Confused is when you do not get it yet. Curious is when you want to know more.',
@@ -203,7 +203,7 @@ export const cards={
  note:'Confused and curious are the same face one second apart — teaching both words together shows your child that not-knowing is just curiosity that has not started yet.'},
 'brave':{
  word:'Scared, Brave, Shy & Confident',
- cardTitle:'Scared, Brave, Shy &amp; Confident Flashcard for Preschoolers',
+ cardTitle:'Scared, Brave, Shy & Confident Flashcard for Preschoolers',
  metaDescription:'A printable feelings flashcard for ages 4–5: scared, brave, shy and confident — the four courage feelings, from hiding behind hair to standing tall.',
  intro:'Worried hands near a face, fists ready for anything, a girl peeking from behind her hair and a proud crossed-arms smile — courage drawn honestly, all four speeds.',
  say:'Scared is when you want to hide. Brave is when you do it anyway. Shy is when new people make you quiet. Confident is when you stand tall and try.',
@@ -211,7 +211,7 @@ export const cards={
  note:'Brave is not the opposite of scared — it is scared that went ahead anyway. And shy is not a flaw to fix, just a warming-up speed to respect. Say both out loud.'},
 'give':{
  word:'Share, Give, Care & Thank',
- cardTitle:'Share, Give, Care &amp; Thank Flashcard for Preschoolers',
+ cardTitle:'Share, Give, Care & Thank Flashcard for Preschoolers',
  metaDescription:'A printable kindness flashcard for ages 4–5: share, give, care and thank — the four giving words, from splitting a snack to a hug that helps.',
  intro:'Two children and one teddy, a gift changing hands, a grown-up hugging a small child close and a boy with both hands on his heart — giving in all its shapes.',
  say:'Share means we both use it. Give means here, it is yours now. Care means I keep you warm and safe. Thank means I saw what you did — and it mattered.',
@@ -219,7 +219,7 @@ export const cards={
  note:'Giving has more than one shape — a child who hates sharing a favourite toy may love giving a drawing or caring for a baby sibling. All four count; the card says so.'},
 'kind':{
  word:'Be Kind, Helpful, Patient & Honest',
- cardTitle:'Be Kind, Helpful, Patient &amp; Honest Flashcard for Preschoolers',
+ cardTitle:'Be Kind, Helpful, Patient & Honest Flashcard for Preschoolers',
  metaDescription:'A printable character flashcard for ages 4–5: be kind, be helpful, be patient and be honest — the four be-words that turn values into things a child can do.',
  intro:'The four be-words — values turned into things a four-year-old can actually do: be kind, be helpful, be patient and be honest.',
  say:'Be kind — soft hands, warm words. Be helpful — see a job, do a job. Be patient — wait without wailing. Be honest — tell it true, even the wobbly parts.',
@@ -227,7 +227,7 @@ export const cards={
  note:'"Be" words work because they name the child, not just the act — "you WERE patient" becomes who they are. Four little identity seeds, planted five minutes at a time.'},
 'respect':{
  word:'Forgive, Accept, Respect & Include',
- cardTitle:'Forgive, Accept, Respect &amp; Include Flashcard for Preschoolers',
+ cardTitle:'Forgive, Accept, Respect & Include Flashcard for Preschoolers',
  metaDescription:'A printable friendship flashcard for ages 4–5: forgive, accept, respect and include — the four deeper friendship words for mending and welcoming.',
  intro:'The four deeper friendship words: forgive repairs the past, accept lets people be different, respect treats every one as valuable and include opens the circle.',
  say:'Forgive means we start fresh. Accept means you can be you and I can be me. Respect means I treat you like you matter. Include means I make room for you — always.',
@@ -235,7 +235,7 @@ export const cards={
  note:'These are the words that make groups kind — a classroom of four-year-olds who can forgive, accept, respect and include runs itself almost. Start with one word a week.'},
 'pause':{
  word:'Pause, Breathe Deeply, Think & Choose Kindness',
- cardTitle:'Pause, Breathe Deeply, Think &amp; Choose Kindness Flashcard for Preschoolers',
+ cardTitle:'Pause, Breathe Deeply, Think & Choose Kindness Flashcard for Preschoolers',
  metaDescription:'A printable calm-down flashcard for ages 4–5: pause, breathe deeply, think and choose kindness — the four-step pause that turns big feelings into kind choices.',
  intro:'The four-step pause that fits between a feeling and a reaction: pause, breathe deeply, think and then — the child gets to choose kindness.',
  say:'Pause — freeze like a statue. Breathe deeply — in through the nose, out slow. Think — what is happening? Then the big one: choose kindness.',
@@ -243,7 +243,7 @@ export const cards={
  note:'The pause is the whole trick of self-regulation in four words — between the spark and the flame there is a gap, and a four-year-old who can pause there owns the moment instead of it owning them.'},
 'grateful':{
  word:'Proud, Disappointed, Grateful & Peaceful',
- cardTitle:'Proud, Disappointed, Grateful &amp; Peaceful Flashcard for Preschoolers',
+ cardTitle:'Proud, Disappointed, Grateful & Peaceful Flashcard for Preschoolers',
  metaDescription:'A printable feelings flashcard for ages 4–5: proud, disappointed, grateful and peaceful — the four wins-and-setbacks feelings, from tall smiles to slow calm.',
  intro:'The wins-and-setbacks feelings: the tall smile of proud, the drooped shoulders of disappointed, the warm thanks of grateful and the settled slow of peaceful.',
  say:'Show me your proudest tower-walk! Now your droopiest disappointed face… and your softest peaceful one. Grateful hands go on your heart — there it is.',
@@ -251,7 +251,7 @@ export const cards={
  note:'Practised on rained-off park trips and sold-out cookies, the disappointed word grows the muscle your child will need for much bigger days later on.'},
 'jealous':{
  word:'Worried, Relieved, Jealous & Embarrassed',
- cardTitle:'Worried, Relieved, Jealous &amp; Embarrassed Flashcard for Preschoolers',
+ cardTitle:'Worried, Relieved, Jealous & Embarrassed Flashcard for Preschoolers',
  metaDescription:'A printable feelings flashcard for ages 4–5: worried, relieved, jealous and embarrassed — the four tricky feelings everyone has and nobody talks about.',
  intro:'The four tricky feelings everyone has and nobody puts on the wall: worried, relieved, jealous and embarrassed — named here so no child carries them unnamed.',
  say:'Let us play the four faces: worried mouth… relieved phew! Jealous fists… embarrassed blush. Which one visited you today — and which one can you make RIGHT NOW?',
@@ -259,7 +259,7 @@ export const cards={
  note:'Jealous and embarrassed are the loneliest feelings in preschool — simply hearing "everyone feels that, even grown-ups" takes half the weight off a small chest.'},
 'ask-for-help':{
  word:'Notice, Name, Share Feelings & Ask for Help',
- cardTitle:'Notice, Name, Share Feelings &amp; Ask for Help Flashcard for Preschoolers',
+ cardTitle:'Notice, Name, Share Feelings & Ask for Help Flashcard for Preschoolers',
  metaDescription:'A printable feelings-skills flashcard for ages 4–5: notice, name it, share feelings and ask for help — the four-step check-in that makes feelings speakable.',
  intro:'A boy raises his hand mid-notice, a girl names it with a finger to her chin, a boy shares with an open palm and a girl gets ready to ask — the whole check-in on one card.',
  say:'First notice: "something is happening in my chest." Then name it: "I think it is worried." Then share it: "I feel worried." And if it is too big: "Can you help me?"',
@@ -267,7 +267,7 @@ export const cards={
  note:'The whole class funnelled into one habit: a feeling that gets noticed, named and shared almost never has to come out as a tantrum. Ask-for-help is the safety net under all of it.'},
 'say-hello':{
  word:'Say Hello, Make Space, Be Curious & Ask Nicely',
- cardTitle:'Say Hello, Make Space, Be Curious &amp; Ask Nicely Flashcard for Preschoolers',
+ cardTitle:'Say Hello, Make Space, Be Curious & Ask Nicely Flashcard for Preschoolers',
  metaDescription:'A printable social-skills flashcard for ages 4–5: say hello, make space, be curious and ask nicely — the four joining-in words for new friends and new places.',
  intro:'The four joining-in words: hello to open the door, make-space to save a seat, be-curious to find out about someone and ask-nicely to get things gently.',
  say:'Say hello — big or small, it counts. Make space — scoot over, there is room. Be curious — "what do you like?" Ask nicely — "may I?" works better than grabbing, every time.',
@@ -275,7 +275,7 @@ export const cards={
  note:'Most preschool friendships start with someone making space — literally. A child who can scoot over and say hello owns the single most useful social skill there is.'},
 'take-turns':{
  word:'Share the Space, Work Together, Take Turns & Cheer Others',
- cardTitle:'Share the Space, Work Together, Take Turns &amp; Cheer Others Flashcard',
+ cardTitle:'Share the Space, Work Together, Take Turns & Cheer Others Flashcard',
  metaDescription:'A printable cooperation flashcard for ages 4–5: share the space, work together, take turns and cheer others — the four playdate words that make group play work.',
  intro:'The four playdate words: share the space when it gets crowded, work together on the big build, take turns with the good parts and cheer others when they shine.',
  say:'Scoot in — there is room! Hold it, I will stack it. My go… your go… and when she lands the big one: YAY, you did it!',
@@ -283,7 +283,7 @@ export const cards={
  note:'The thumbs-up for somebody else\u2019s win is the hardest and best habit on the card — it is jealousy\u2019s opposite, learned at carpet-time scale.'},
 'kind-choice':{
  word:'Kind Choice, Good Friend, Try Your Best & Grow Together',
- cardTitle:'Kind Choice, Good Friend, Try Your Best &amp; Grow Together Flashcard',
+ cardTitle:'Kind Choice, Good Friend, Try Your Best & Grow Together Flashcard',
  metaDescription:'A printable encouragement flashcard for ages 4–5: kind choice, good friend, try your best and grow together — the four growing words for getting bigger on the inside.',
  intro:'The four growing words: every kind choice plants something, a good friend waters it, try-your-best gives it sun and grow-together is the harvest.',
  say:'Kind choice — I picked kind, even when it was hard. Good friend — I showed up for someone. Try your best — not perfect, just my all. Grow together — we get bigger side by side.',
@@ -291,7 +291,7 @@ export const cards={
  note:'Growth language ("try your best", "grow together") beats cleverness language ("so smart") in every study that compares them — this card hands your family the words.'},
 'calm-down':{
  word:'Calm Down, Count to Ten, Use Your Words & Take a Break',
- cardTitle:'Calm Down, Count to Ten, Use Your Words &amp; Take a Break Flashcard',
+ cardTitle:'Calm Down, Count to Ten, Use Your Words & Take a Break Flashcard',
  metaDescription:'A printable calm-down flashcard for ages 4–5: calm down, count to ten, use your words and take a break — the four real calm-down moves for the stormy moments.',
  intro:'The four real calm-down moves, for the stormy moments: calm the body, count the breath, say the words and — when all else fails — take a break.',
  say:'Slow body… count the fingers, one to ten… now the words: I am angry because… Still stormy? Break time — the cushion is always there.',
@@ -299,7 +299,7 @@ export const cards={
  note:'Calm-down skills are the emergency services of the feelings world — drilled on quiet days so they work on loud ones. Every step on this card can be rehearsed when nothing is wrong.'},
 'i-feel':{
  word:'I Feel, I Need, I Want & I Choose',
- cardTitle:'I Feel, I Need, I Want &amp; I Choose Flashcard for Preschoolers',
+ cardTitle:'I Feel, I Need, I Want & I Choose Flashcard for Preschoolers',
  metaDescription:'A printable speaking-up flashcard for ages 4–5: I feel, I need, I want and I choose — the four I-statements that give a small person a big voice.',
  intro:'Four children, four sentences that start with I: one thinking her feeling, one explaining his need, one saying his want plainly, one owning her choice.',
  say:'I feel… sad. I need… a hug. I want… the blue cup. I choose… the puzzle. Four sentences that start with I — because your feelings and your wishes are yours to say.',
@@ -307,7 +307,7 @@ export const cards={
  note:'The same wish that used to come out as grabbing or whining now arrives as a sentence — four calm starters, said with I, heard the first time.'},
 'speak-kindly':{
  word:'Listen First, Think First, Speak Kindly & Solve Together',
- cardTitle:'Listen First, Think First, Speak Kindly &amp; Solve Together Flashcard',
+ cardTitle:'Listen First, Think First, Speak Kindly & Solve Together Flashcard',
  metaDescription:'A printable problem-solving flashcard for ages 4–5: listen first, think first, speak kindly and solve together — the four steps for settling squabbles peacefully.',
  intro:'The four steps for settling any squabble: listen first, think first, speak kindly and solve it together — the order matters, and the card keeps it.',
  say:'Listen first — both sides, no interrupting. Think first — before the words come out. Speak kindly — even if you are right. Solve together — the fix both people can live with.',
@@ -315,7 +315,7 @@ export const cards={
  note:'Conflict is not the enemy of friendship — unhandled conflict is. These four steps turn squabbles into practice, and a child who can solve together at four negotiates for life.'},
 'welcome':{
  word:'Welcome All, Be Inclusive, Share Joy & Make a Friend',
- cardTitle:'Welcome All, Be Inclusive, Share Joy &amp; Make a Friend Flashcard',
+ cardTitle:'Welcome All, Be Inclusive, Share Joy & Make a Friend Flashcard',
  metaDescription:'A printable inclusion flashcard for ages 4–5: welcome all, be inclusive, share joy and make a friend — the four open-door words for building friendships.',
  intro:'The four open-door words: welcome all comers, be inclusive on purpose, share the joy out loud and make a friend — maybe the day\u2019s best achievement.',
  say:'Welcome all — everyone gets a hello. Be inclusive — nobody plays alone unless they want to. Share joy — happiness grows when it is given away. Make a friend — today is a good day for it.',
@@ -323,7 +323,7 @@ export const cards={
  note:'The child who walks toward the standing-alone one is doing the hardest, bravest kind of kindness — and it gets easier every single time it is tried.'},
 'you-matter':{
  word:'You Matter, I Am Here, You Are Safe & We Care',
- cardTitle:'You Matter, I Am Here, You Are Safe &amp; We Care Flashcard',
+ cardTitle:'You Matter, I Am Here, You Are Safe & We Care Flashcard',
  metaDescription:'A printable reassurance flashcard for ages 4–5: you matter, I am here, you are safe and we care — the four sentences every child needs to hear, and to say.',
  intro:'The four sentences every child needs to hear — and, in time, to say back: you matter, I am here, you are safe and we care.',
  say:'You matter — exactly as you are. I am here — right beside you. You are safe — this minute is okay. We care — the whole family, all together.',
@@ -331,7 +331,7 @@ export const cards={
  note:'Reassurance works best when it is rhythmical and repeated — the same four sentences on the hard days become the voice a child eventually carries inside their own head.'},
 'be-yourself':{
  word:'Keep Trying, Learn, Celebrate & Be Yourself',
- cardTitle:'Keep Trying, Learn, Celebrate &amp; Be Yourself Flashcard for Preschoolers',
+ cardTitle:'Keep Trying, Learn, Celebrate & Be Yourself Flashcard for Preschoolers',
  metaDescription:'A printable confidence flashcard for ages 4–5: keep trying, learn, celebrate and be yourself — the four confidence words for finishers and beginners alike.',
  intro:'The four confidence words for beginners and finishers alike: keep trying through the wobbles, learn from every go, celebrate every win and be yourself the whole time.',
  say:'Keep trying — wobbles are part of it. Learn — every try teaches something. Celebrate — the small wins too! Be yourself — there is only one you, and that is the good news.',
@@ -339,7 +339,7 @@ export const cards={
  note:'The wins that get noticed are the wins that get repeated — five seconds of cheering buys another week of trying.'},
 'belong':{
  word:'Welcome, Belong, Trust & Connect',
- cardTitle:'Welcome, Belong, Trust &amp; Connect Flashcard for Preschoolers',
+ cardTitle:'Welcome, Belong, Trust & Connect Flashcard for Preschoolers',
  metaDescription:'A printable belonging flashcard for ages 4–5: welcome, belong, trust and connect — the four family words, from an open door to a bond that holds.',
  intro:'A wave at the door, hands folded contentedly, a palm resting on a heart and arms reaching out — the four beams a family house stands on.',
  say:'Welcome — you are wanted here. Belong — this is your spot, your cup, your people. Trust — I keep my word to you. Connect — we check in, we laugh, we are us.',
@@ -347,7 +347,7 @@ export const cards={
  note:'Belonging is not a feeling that appears — it is built from hooks with names on them, kept promises and bedtime rituals. This card names the four beams so your child can see the house.'},
 'breathe':{
  word:'Notice, Pause, Breathe & Reset',
- cardTitle:'Notice, Pause, Breathe &amp; Reset Flashcard for Preschoolers',
+ cardTitle:'Notice, Pause, Breathe & Reset Flashcard for Preschoolers',
  metaDescription:'A printable reset flashcard for ages 4–5: notice, pause, breathe and reset — the four-step reset button for the moments that are going sideways.',
  intro:'The four-step reset button for a moment going sideways: notice it is happening, pause the action, breathe the storm smaller and reset the moment.',
  say:'Notice — "uh oh, a big feeling is coming." Pause — everything stops. Breathe — one slow breath in, one slow breath out. Reset — "okay, let us start this bit again."',
@@ -355,7 +355,7 @@ export const cards={
  note:'Reset gives families a word that stops a spiral without blame — nobody is in trouble, the moment just starts again. That single move saves afternoons.'},
 'care':{
  word:'Care, Support, Encourage & Comfort',
- cardTitle:'Care, Support, Encourage &amp; Comfort Flashcard for Preschoolers',
+ cardTitle:'Care, Support, Encourage & Comfort Flashcard for Preschoolers',
  metaDescription:'A printable caring flashcard for ages 4–5: care, support, encourage and comfort — the four helping words for when someone in the family needs you.',
  intro:'The four helping words for when someone needs you: care that notices, support that carries a corner, encourage that cheers the next try and comfort that sits close.',
  say:'Care — I see you are having a hard time. Support — I will hold part of it. Encourage — "you have got this." Comfort — a hug, a blanket, me, right here.',
@@ -363,7 +363,7 @@ export const cards={
  note:'Children who are trusted with real caring jobs — comforting, encouraging, supporting — build empathy faster than any lecture could teach it. The card is the invitation.'},
 'forgive':{
  word:'Listen, Understand, Respond & Forgive',
- cardTitle:'Listen, Understand, Respond &amp; Forgive Flashcard for Preschoolers',
+ cardTitle:'Listen, Understand, Respond & Forgive Flashcard for Preschoolers',
  metaDescription:'A printable listening flashcard for ages 4–5: listen, understand, respond and forgive — the four conversation words that repair and grow friendships.',
  intro:'The four conversation words that mend and grow friendships: listen all the way, understand before answering, respond with care and forgive when it wobbles.',
  say:'Listen — all the way to the end. Understand — "so you felt left out?" Respond — "here is what I think." Forgive — "we are okay, let us play."',
@@ -371,7 +371,7 @@ export const cards={
  note:'Most preschool conflicts are two people talking and nobody listening — this card teaches the order that fixes it: ears first, heart second, mouth third, forgiveness always.'},
 'kind-words':{
  word:'Kind Words, Kind Actions, Kind Heart & Choose Kindness',
- cardTitle:'Kind Words, Kind Actions, Kind Heart &amp; Choose Kindness Flashcard',
+ cardTitle:'Kind Words, Kind Actions, Kind Heart & Choose Kindness Flashcard',
  metaDescription:'A printable kindness flashcard for ages 4–5: kind words, kind actions, kind heart and choose kindness — the graduation card of the whole class.',
  intro:'A girl speaks her kindness, a boy offers his hand, another boy holds a heart and two children hug — the four layers of kindness, drawn in one frame.',
  say:'Kind words — we say nice things. Kind actions — we do helpful things. Kind heart — we feel for people. Choose kindness — nobody makes us; we pick it. Every time, we get to pick it.',
