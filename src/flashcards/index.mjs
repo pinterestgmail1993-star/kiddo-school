@@ -33,6 +33,7 @@ import * as ncData from './data-nature-club-animals.mjs';
 import * as colData from './data-colors-and-shades.mjs';
 import * as fkData from './data-feelings-kindness.mjs';
 import * as dinoData from './data-dinosaurs.mjs';
+import * as artData from './data-art-room.mjs';
 import * as fvData from './data-fruits-vegetables.mjs';
 import * as lsData from './data-life-skills-and-good-habits.mjs';
 import * as chData from './data-community-helpers.mjs';
@@ -335,7 +336,21 @@ const SOURCES=[
     name) and the /learn/ lessons (lp-dinosaurs.mjs via LP_REGISTRY); the
     library holds the printable twins. The old Animal Categories
     "Dinosaurs" overview card retired into this class — its two URLs 301. */
- [dinoData,dinoData.lesson]
+ [dinoData,dinoData.lesson],
+ /* SCHOOL ROOM · The Art Room (owner 2026-10-25): 27 art-activity cards from
+    the owner's uploads at school/art-room/ (28/28 probed HTTP 200 image/webp
+    — 27 cards + cover, every file 800×1131 portrait; the owner uploaded the
+    deck into art-room/ directly rather than the brief's
+    school/rooms/art-room/flashcards/, so r2Base points at the real
+    location). Cover fronts the set and is never counted as a card. Display
+    order: cover first, then file order (chalk to watercolors). Every card
+    prints one ACTIVITY line, transcribed verbatim. The room page /art-room/
+    hosts the short pages (/art-room/<slug>/, slug = file name) and the
+    /art-room/learn/ lessons (lp-art-room.mjs via LP_REGISTRY); the library
+    holds the printable twins. Owner cross-links: Explore the School
+    (/rooms/), the Coloring Pages hub and the Colors extra class point here,
+    and the room links back to all three. */
+ [artData,artData.lesson]
 ];
 
 function buildSet([data,lesson]){

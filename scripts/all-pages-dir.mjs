@@ -45,6 +45,7 @@ const LABELS=new Map([
    while the directory section is the room they live in (Newborn/Baby/Toddler). */
 const GROUP_LABELS=new Map([
   ['/look-and-learn/','Look & Learn'],
+  ['/art-room/','Art Room'],
   ['/newborn/0-6-weeks/','Newborn · 0–6 weeks'],
   ['/newborn/6-12-weeks/','Newborn · 6–12 weeks'],
   ['/baby/3-4-months/','Baby · 3–4 months'],
@@ -113,7 +114,7 @@ const SECTIONS=[
       (only the /flashcards/dinosaurs/ twins classify under the library). */
    if(p==='/dinosaurs/'||p.startsWith('/dinosaurs/'))return{key:'dinosaurs',name:null,hub:'/dinosaurs/'};
    const room=p.split('/')[1];
-   if(['/music-room/','/kitchen/','/playground/','/toddler-room/','/who-works-at-my-school/'].includes('/'+room+'/'))
+   if(['/music-room/','/kitchen/','/playground/','/art-room/','/toddler-room/','/who-works-at-my-school/'].includes('/'+room+'/'))
     return{key:'rm-'+room,name:null,hub:'/'+room+'/'};
    return null;
   }},

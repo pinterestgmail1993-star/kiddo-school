@@ -25,6 +25,7 @@ import {lpContent as dvExtra} from './lp-doctor-visit.mjs';
 import {lpContent as hdExtra} from './lp-home-daily-life.mjs';
 import {lpContent as kgExtra} from './lp-kids-games.mjs';
 import {lpContent as dinoExtra} from './lp-dinosaurs.mjs';
+import {lpContent as artExtra} from './lp-art-room.mjs';
 import {lpContent as pcExtra} from './lp-places-in-community.mjs';
 import {lpContent as acExtra} from './lp-animal-categories.mjs';
 import {lpContent as ncExtra} from './lp-nature-club-animals.mjs';
@@ -207,6 +208,9 @@ export const LP_REGISTRY=[
  {slug:'dinosaurs',content:dinoExtra,
   navTitle:'Meet the dinosaurs, one move at a time',
   navIntro:'Thirty-three dinosaur lessons for ages 3–5: the name, the facts a grown-up tells, the card\u2019s own action as the practice game, and the understanding check. The six favorites lead — Tyrannosaurus Rex, Triceratops, Stegosaurus, Brachiosaurus, Pterodactyl, Velociraptor — then the armored, the crested, the sail-backed, the gliding and the sea king.'},
+ {slug:'art-room',content:artExtra,
+  navTitle:'Make things, one supply at a time',
+  navIntro:'Twenty-seven Art Room lessons for ages 2–5: what the supply is, what its make-it activity secretly trains, the parent script, and the understanding check. The drawing tools first — chalk to paper — then the paint-and-print crew, the cut-and-stick builders and the studio shelf.'},
 ].map(r=>({...r,set:fcSetBySlug[r.slug]})).filter(r=>r.set);
 
 export const lpSetBySlug=Object.fromEntries(LP_REGISTRY.map(r=>[r.slug,r]));

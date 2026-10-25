@@ -131,6 +131,7 @@ export const FC_TAGS={
  // EXTRA CLASS · Dinosaurs: the owner's 33 move-and-play cards (owner
  // 2026-10-25, ages 3–5) — vocabulary and big-body movement ride together.
  'dinosaurs':['age-3','age-4-5','lvl-preschool','lvl-prek','subj-animals','subj-science','skill-vocab','skill-movement'],
+ 'art-room':['age-1-2','age-3','age-4-5','lvl-rooms','subj-colors-shapes','subj-first-words','skill-vocab','skill-movement','skill-talking'],
  // NATURE CLUB · Animals: the deeper spotter deck — specialist groups and
  // six wild homes; observation and naming are the skills, and the deck
  // leans Ages 4–5 with five friendly groups riding Ages 3+.
