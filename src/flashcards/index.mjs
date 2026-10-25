@@ -34,6 +34,7 @@ import * as colData from './data-colors-and-shades.mjs';
 import * as fkData from './data-feelings-kindness.mjs';
 import * as dinoData from './data-dinosaurs.mjs';
 import * as artData from './data-art-room.mjs';
+import * as clubsData from './data-clubs.mjs';
 import * as fvData from './data-fruits-vegetables.mjs';
 import * as lsData from './data-life-skills-and-good-habits.mjs';
 import * as chData from './data-community-helpers.mjs';
@@ -350,7 +351,24 @@ const SOURCES=[
     holds the printable twins. Owner cross-links: Explore the School
     (/rooms/), the Coloring Pages hub and the Colors extra class point here,
     and the room links back to all three. */
- [artData,artData.lesson]
+ [artData,artData.lesson],
+ /* SCHOOL ROOM · The Clubs (owner 2026-10-25): 45 extra-curricular activity
+    cards from the owner's uploads at school/club/ (46/46 probed HTTP 200
+    image/webp — 45 cards + cover, every file 800×1131 portrait; the owner
+    uploaded the deck into club/ directly rather than the brief's
+    school/rooms/clubs/flashcards/, so r2Base points at the real location —
+    the same quirk as the dinosaurs and art-room decks). Cover fronts the set
+    and is never counted as a card. AGES (owner rule "take care of ages
+    carefully"): 15 clubs tagged Ages 3+ (art, music, dance, sports, drama,
+    gardening, cooking, ballet, yoga, swimming, reading, crafts, drawing,
+    baking, singing — in the owner's own order), the 30 others tagged Ages 6+
+    in file order; fencing and archery carry the trained-coach safety line.
+    The room page /clubs/ hosts the short pages (/clubs/<slug>/, slug = file
+    name) and the /clubs/learn/ lessons (lp-clubs.mjs via LP_REGISTRY); the
+    library holds the printable twins. Owner cross-links: Explore the School
+    (/rooms/) and the Learning Path's Growing-up classrooms row point here,
+    and the room links back to both. */
+ [clubsData,clubsData.lesson]
 ];
 
 function buildSet([data,lesson]){

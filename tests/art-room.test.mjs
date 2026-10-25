@@ -133,10 +133,10 @@ test('American spelling in every page title (owner rule), card words clean',()=>
 });
 
 test('owner cross-links both ways: Explore the School, Coloring Pages, Colors class',()=>{
- // Explore the School: /rooms/ lists five rooms and the homepage section carries the Art Room card
+ // Explore the School: /rooms/ lists six rooms and the homepage section carries the Art Room card
  const rooms=readPage('/rooms/');
  assert.ok(rooms.includes('href="/art-room/"'),'/rooms/ links the Art Room');
- assert.ok(rooms.includes('Five rooms'),'/rooms/ copy says five rooms');
+ assert.ok(rooms.includes('Six rooms'),'/rooms/ copy says six rooms');
  const home=read('dist/index.html');
  const sec=home.slice(home.indexOf('id="school-rooms"'),home.indexOf('id="school-rooms"')+12000);
  assert.ok(sec.includes('href="/art-room/"'),'homepage School Rooms section links the Art Room');
