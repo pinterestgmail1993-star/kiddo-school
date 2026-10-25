@@ -123,17 +123,21 @@ test('set grids are tap-through: whole card is the link, zero download buttons',
  }
 });
 
-test('alphabet URL fix still ships redirect-free; Class 38 clean-slug 301s are the only flashcard rules',()=>{
+test('alphabet URL fix still ships redirect-free; the Class 38 + Clubs-set 301s are the only flashcard rules',()=>{
  // Owner 2026-10-24 ("keep the urls clean, short and clean seo"): the Class 38
  // file-derived URLs were renamed to per-card keyword slugs ~1 day after
  // going live, and the old URLs 301 to the new ones (site now indexed —
- // GSC shows impressions). The alphabet fix (earlier, pre-index) still ships
- // with zero redirect rules of its own.
+ // GSC shows impressions). Owner 2026-10-26 ("who will search for club?"):
+ // the Clubs room's library set moved from /flashcards/clubs/ to the deck's
+ // own printed name /flashcards/extra-curricular-activities/ one day after
+ // going live — same 301 play. The alphabet fix (earlier, pre-index) still
+ // ships with zero redirect rules of its own.
  const red=read('_redirects');
  assert.ok(!/flashcards\/alphabet[^ ]* 301|flashcards\/alphabet[^ ]*\* /.test(red),'alphabet fix carries no redirect rules');
  assert.ok(red.includes('/flashcards/feelings-and-kindness/happy-sad-angry-calm* /flashcards/feelings-and-kindness/happy:splat 301'),'Class 38 301s present (owner 2026-10-24)');
  assert.ok(red.includes('/preschool/4-years/feelings-and-kindness/learn/wait-ask-listen-carefully-say-sorry* /preschool/4-years/feelings-and-kindness/learn/sorry:splat 301'),'Class 38 lesson 301s present');
- assert.ok(!/flashcards\/(?!feelings-and-kindness)[a-z-]+\/[a-z0-9-]+\* /.test(red),'no redirect rules outside Class 38');
+ assert.ok(red.includes('/flashcards/clubs/* /flashcards/extra-curricular-activities/:splat 301'),'Clubs set rename 301s present (owner 2026-10-26)');
+ assert.ok(!/flashcards\/(?!feelings-and-kindness|clubs)[a-z-]+\/[a-z0-9-]+\* /.test(red),'no redirect rules outside Class 38 + the Clubs set rename');
  // none of the 130 old wrong URLs ship as pages — the letter URLs replaced them
  for(const set of ['alphabet-uppercase','alphabet-lowercase','alphabet-letters','alphabet-sounds','alphabet-tracing']){
   for(let i=0;i<26;i++){

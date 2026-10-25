@@ -212,7 +212,7 @@ export const LP_REGISTRY=[
  {slug:'art-room',content:artExtra,
   navTitle:'Make things, one supply at a time',
   navIntro:'Twenty-seven Art Room lessons for ages 2–5: what the supply is, what its make-it activity secretly trains, the parent script, and the understanding check. The drawing tools first — chalk to paper — then the paint-and-print crew, the cut-and-stick builders and the studio shelf.'},
- {slug:'clubs',content:clubsExtra,
+ {slug:'extra-curricular-activities',content:clubsExtra,
   navTitle:'Try a club, one card at a time',
   navIntro:'Forty-five club lessons for ages 3–12: what the club is, what its two printed skills secretly train, the parent script, and the understanding check. The fifteen Ages 3+ clubs lead — art to singing — then the thirty Ages 6+ clubs, from archery to volunteering; fencing and archery always ride with a trained coach.'},
 ].map(r=>({...r,set:fcSetBySlug[r.slug]})).filter(r=>r.set);

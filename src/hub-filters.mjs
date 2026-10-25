@@ -135,7 +135,7 @@ export const FC_TAGS={
  // SCHOOL ROOM · The Clubs: the owner's 45 extra-curricular cards (owner
  // 2026-10-25, ages 3–12) — the young shelf rides age-3/age-4-5, the move
  // and think skills span the whole deck; the level is a School Room.
- 'clubs':['age-3','age-4-5','lvl-rooms','subj-sports','subj-music','subj-thinking','subj-science','subj-people','skill-movement','skill-talking','skill-thinking'],
+ 'extra-curricular-activities':['age-3','age-4-5','lvl-rooms','subj-sports','subj-music','subj-thinking','subj-science','subj-people','skill-movement','skill-talking','skill-thinking'],
  // NATURE CLUB · Animals: the deeper spotter deck — specialist groups and
  // six wild homes; observation and naming are the skills, and the deck
  // leans Ages 4–5 with five friendly groups riding Ages 3+.

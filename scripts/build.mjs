@@ -371,7 +371,7 @@ const FC_SECTIONS=[
  ['The Playground · School Rooms','The school\u2019s fourth room: fifteen action words from balance to walk, twelve pieces of playground equipment from ball to tunnel and the five manners that make play kind — help, share, stop, take turns and wait. Every card carries what the word means, how the body or the ground does it and one game to play tonight.',['playground']],
  ['My Classroom · School Rooms','The room where school happens: eighteen object cards from backpack to wastebasket that name the things a school day uses — desk, clock, globe, crayons — and twelve good-habit cards from listening and raising a hand to sharing, please, thank you and clean-up. Every card carries what it is or how the habit looks, plus one two-minute game to play today.',['classroom']],
  ['The Art Room · School Rooms','The school\u2019s fifth room: twenty-seven art-activity cards from chalk to watercolors — the drawing tools, the paint-and-print crew, the cut-and-stick builders and the studio furniture — every card printing its own make-it activity, with a lesson and a printable twin for each supply.',['art-room']],
- ['The Clubs · School Rooms','The school\u2019s sixth room and its Growing-up shelf: forty-five extra-curricular activity cards — fifteen Ages 3+ clubs (art to singing) then thirty Ages 6+ clubs (archery to volunteering) — every card printing the two skills its club trains, with a lesson and a printable twin for each. Fencing and archery always ride with a trained coach.',['clubs']]
+ ['The Clubs · School Rooms','The school\u2019s sixth room and its Growing-up shelf: forty-five extra-curricular activity cards — fifteen Ages 3+ clubs (art to singing) then thirty Ages 6+ clubs (archery to volunteering) — every card printing the two skills its club trains, with a lesson and a printable twin for each. Fencing and archery always ride with a trained coach.',['extra-curricular-activities']]
 ];
 const fcAllBySlug={...fcBySlug,...fcVariantBySlug,'black-and-white-baby-cards':babySet};
 /* Each stage shelf is its own section with an id: the filter chips jump to it
@@ -749,10 +749,13 @@ for(const s of ART_ORDER){
    Do not change any existing URLs"). The deck serves from the owner's
    upload location school/club/ (the brief's school/rooms/clubs/flashcards/
    is empty on R2). Both pages doctrine: individual /clubs/learn/ lessons
-   (LP_REGISTRY) + individual library cards at /flashcards/clubs/. ---- */
-const clubsSetPages=fcBySlug['clubs'];
+   (LP_REGISTRY) + individual library cards at /flashcards/extra-curricular-activities/
+   (owner 2026-10-26: "who will search for club?" — the library set uses the
+   deck's own printed name, Extra-Curricular Activities; this room keeps
+   /clubs/). ---- */
+const clubsSetPages=fcBySlug['extra-curricular-activities'];
 if(!clubsSetPages)throw Error('clubs set missing');
-page(CLUBS_PATH,'The Clubs — 45 Extra-Curricular Activity Flashcards with Skills (Ages 3–12)','Step into the Clubs: forty-five printable activity cards for ages 3–12 — art, music, dance, sports, drama and ten more for the youngest members, then chess, coding, fencing, baking and the rest for ages 6 and up — each printing the two skills its club trains, from Aim & Focus to Calm & Wellbeing. Every club has a short page, a full lesson and a printable card, and the room links back to Explore the School and the Growing-up classrooms.',crumb([['School Rooms','/rooms/'],['The Clubs']])+clubsRoomBody(),{schema:[ssBc(site,[['School Rooms','/rooms/'],['The Clubs',CLUBS_PATH]])],ogImage:CLUBS_BASE+CLUBS_COVER.file,ogAlt:CLUBS_COVER.alt,ogW:CLUBS_COVER.w,ogH:CLUBS_COVER.h});
+page(CLUBS_PATH,'Extra-Curricular Activities for Kids — the Clubs Room, 45 Cards with Skills (Ages 3–12)','Step into the Clubs: forty-five printable extra-curricular activities for ages 3–12 — art, music, dance, sports, drama and ten more for the youngest members, then chess, coding, fencing, baking and the rest for ages 6 and up — each printing the two skills its club trains, from Aim & Focus to Calm & Wellbeing. Every club has a short page, a full lesson and a printable card, and the room links back to Explore the School and the Growing-up classrooms.',crumb([['School Rooms','/rooms/'],['The Clubs']])+clubsRoomBody(),{schema:[ssBc(site,[['School Rooms','/rooms/'],['The Clubs',CLUBS_PATH]])],ogImage:CLUBS_BASE+CLUBS_COVER.file,ogAlt:CLUBS_COVER.alt,ogW:CLUBS_COVER.w,ogH:CLUBS_COVER.h});
 for(const s of CLUBS_ORDER){
  const c=clubsSetPages.cards.find(x=>x.slug===s);
  const age=clubsSetPages.cards.find(x=>x.slug===s).ages;

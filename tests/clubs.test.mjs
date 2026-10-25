@@ -5,7 +5,9 @@
 // order, one short page per activity at /clubs/<slug>/ (slug = file name)
 // showing the card, the card's SKILL pill verbatim and a link back to
 // /clubs/, individual /learn/ lessons via LP_REGISTRY, individual library
-// cards at /flashcards/clubs/ with honest per-card age pills (Ages 3+ /
+// cards at /flashcards/extra-curricular-activities/ — the deck's printed
+// name (owner 2026-10-26 renamed the set URL: "who will search for club?") —
+// with honest per-card age pills (Ages 3+ /
 // Ages 6+), the trained-coach line on fencing and archery (owner safety
 // rule), Explore the School (/rooms/) and the Learning Path's Growing-up
 // classrooms row linked both ways, games-shelf links per the owner's
@@ -19,7 +21,7 @@ import {fcSetBySlug} from '../src/flashcards/index.mjs';
 import {ROOMS} from '../src/school-rooms.mjs';
 const read=f=>readFileSync(f,'utf8');
 const readPage=p=>readFileSync('dist'+p+'index.html','utf8');
-const set=fcSetBySlug['clubs'];
+const set=fcSetBySlug['extra-curricular-activities'];
 const R2BASE='https://assets.kiddo.school/school/club/';
 
 const YOUNG=['art','music','dance','sports','drama','gardening','cooking','ballet','yoga','swimming','reading','crafts','drawing','baking','singing'];
@@ -78,7 +80,7 @@ test('/clubs/ hub: cover FIRST, young shelf then older shelf, cross-links + game
  assert.ok(html.toUpperCase().includes('AGES 3–12'),'age pill on the room');
  assert.ok(html.includes('href="/rooms/"'),'links Explore the School');
  assert.ok(html.includes('href="/learning-path/"'),'links the Learning Path (Growing-up classrooms)');
- assert.ok(html.includes('href="/flashcards/clubs/"'),'links the printable set');
+ assert.ok(html.includes('href="/flashcards/extra-curricular-activities/"'),'links the printable set');
  for(const g of ['/games/animal-walks/','/games/musical-statues/','/games/relay-race/','/games/obstacle-course/','/games/simon-says/'])
   assert.ok(html.includes('href="'+g+'"'),'games-shelf link (owner standing rule) '+g);
 });
@@ -94,7 +96,7 @@ test('/clubs/<slug>/: all 45 short pages show card + skill + back link + both de
   assert.ok(html.toUpperCase().includes(age.toUpperCase()),s+' eyebrow carries its age tag ('+age+')');
   assert.ok(html.includes('href="/clubs/"'),s+' links back to /clubs/');
   assert.ok(html.includes('href="/clubs/learn/'+s+'/"'),s+' links its lesson');
-  assert.ok(html.includes('href="/flashcards/clubs/'+s+'/"'),s+' links its printable twin');
+  assert.ok(html.includes('href="/flashcards/extra-curricular-activities/'+s+'/"'),s+' links its printable twin');
  }
 });
 
@@ -102,7 +104,7 @@ test('fencing and archery carry "Ask a grown-up and a trained coach" (owner safe
  for(const s of CLUBS_COACH){
   const short=readPage('/clubs/'+s+'/');
   assert.ok(short.includes('Ask a grown-up and a trained coach'),s+' short page carries the coach line');
-  const card=readPage('/flashcards/clubs/'+s+'/');
+  const card=readPage('/flashcards/extra-curricular-activities/'+s+'/');
   assert.ok(card.includes('Ask a grown-up and a trained coach'),s+' card page carries the coach line');
   assert.ok(clubsLp[s].know.includes('trained coach'),s+' lesson knows the trained-coach rule');
   assert.ok(clubsLp[s].safety&&clubsLp[s].safety.includes('coach'),s+' lesson has a Staying-safe block');
@@ -117,7 +119,7 @@ test('/clubs/learn/<slug>/: all 45 lessons build with the full teaching contract
   const l=clubsLp[s];
   assert.ok(html.includes(l.title),s+' lesson title renders');
   assert.ok(html.includes(R2BASE+s+'.webp'),s+' lesson shows the card');
-  assert.ok(html.includes('href="/flashcards/clubs/'+s+'/"'),s+' lesson pairs its library card');
+  assert.ok(html.includes('href="/flashcards/extra-curricular-activities/'+s+'/"'),s+' lesson pairs its library card');
   for(const f of ['what','mean','know','why','dev','say','notice','real','play','check'])
    assert.ok(l[f]&&l[f].length>30,s+' lesson field '+f);
   assert.ok(l.teach.includes('\n2)'),s+' teach is a numbered walkthrough');
@@ -126,21 +128,21 @@ test('/clubs/learn/<slug>/: all 45 lessons build with the full teaching contract
  assert.ok(readPage('/clubs/learn/swimming/').includes('grown-up'),'swimming lesson keeps the water rules');
 });
 
-test('/flashcards/clubs/: set page + 45 card pages with honest age pills and group pills',()=>{
- const setHtml=readPage('/flashcards/clubs/');
+test('/flashcards/extra-curricular-activities/: set page + 45 card pages with honest age pills and group pills',()=>{
+ const setHtml=readPage('/flashcards/extra-curricular-activities/');
  assert.ok(setHtml.includes('<h1>Extra-curricular activity flashcards.</h1>'),'set H1');
  assert.ok(setHtml.includes('href="/clubs/"'),'set links its room');
  assert.ok(setHtml.toUpperCase().includes('AGES 3–12 YEARS'),'set age label');
  for(const s of CLUBS_ORDER){
-  const html=readPage('/flashcards/clubs/'+s+'/');
+  const html=readPage('/flashcards/extra-curricular-activities/'+s+'/');
   const age=set.cards.find(c=>c.slug===s).ages;
   assert.ok(html.includes(age),s+' card page age pill ('+age+')');
   assert.ok(html.includes('/clubs/learn/'+s+'/'),s+' card page links its lesson');
   assert.ok(html.includes(R2BASE+s+'.webp'),s+' card page shows the art');
  }
- const ch=readPage('/flashcards/clubs/chess/');
+ const ch=readPage('/flashcards/extra-curricular-activities/chess/');
  assert.ok(ch.includes('Think &amp; solve')||ch.includes('Think & solve'),'group pill renders');
- const yg=readPage('/flashcards/clubs/baking/');
+ const yg=readPage('/flashcards/extra-curricular-activities/baking/');
  assert.ok(yg.includes('Cook, grow &amp; help')||yg.includes('Cook, grow & help'),'young card carries its group pill');
 });
 
@@ -163,16 +165,16 @@ test('owner cross-links both ways: Explore the School + the Growing-up classroom
 
 test('wiring: rooms hub card, filter tags, search index, /all-pages/, sitemap, honest counts',()=>{
  const fcHub=readPage('/flashcards/');
- assert.ok(fcHub.includes('href="/flashcards/clubs/"'),'flashcards wall carries the set');
+ assert.ok(fcHub.includes('href="/flashcards/extra-curricular-activities/"'),'flashcards wall carries the set');
  assert.ok(fcHub.includes('data-filters="age-3 age-4-5 lvl-rooms subj-sports subj-music subj-thinking subj-science subj-people skill-movement skill-talking skill-thinking"'),'set ships with filter tokens');
  assert.ok(fcHub.includes('The Clubs · School Rooms'),'the Clubs shelf is on the hub');
  const idx=read('dist/assets/search-index.json');
- for(const p of ['/clubs/','/clubs/chess/','/clubs/learn/baking/','/flashcards/clubs/yoga/'])
+ for(const p of ['/clubs/','/clubs/chess/','/clubs/learn/baking/','/flashcards/extra-curricular-activities/yoga/'])
   assert.ok(idx.includes('"u":"'+p+'"'),'search index carries '+p);
  const all=readPage('/all-pages/');
  assert.ok(all.includes('href="/clubs/"'),'directory lists the room');
  assert.ok(all.includes('href="/clubs/fencing/"'),'directory lists short pages');
  const xml=read('dist/sitemap.xml');
- for(const p of ['/clubs/','/clubs/volunteering/','/clubs/learn/pottery/','/flashcards/clubs/reading/'])
+ for(const p of ['/clubs/','/clubs/volunteering/','/clubs/learn/pottery/','/flashcards/extra-curricular-activities/reading/'])
   assert.ok(xml.includes('<loc>https://kiddo.school'+p+'</loc>'),'sitemap: '+p);
 });

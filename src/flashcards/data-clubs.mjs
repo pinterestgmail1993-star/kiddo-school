@@ -28,7 +28,10 @@
 // Three shelves, one deck: the room page /clubs/ hosts the short pages at
 // /clubs/<slug>/ (card + the card's skill + back link), the /clubs/learn/
 // lessons (this module's path) carry the step-by-step teaching, and the
-// library holds the printable twins at /flashcards/clubs/. No text is shared
+// library holds the printable twins at /flashcards/extra-curricular-activities/
+// — the deck's own printed name (owner 2026-10-26: "who will search for
+// club?" — nobody does, so the library set carries the search phrase while
+// the room keeps the school's name at /clubs/). No text is shared
 // between the three shelves. Owner cross-links (2026-10-25): Explore the
 // School (/rooms/) and the Learning Path's Growing-up classrooms row point
 // here, and this room links back to both.
@@ -186,9 +189,9 @@ export const lesson={
 };
 
 export const meta={
- slug:'clubs',
- name:'Clubs',
- seoTitle:'Clubs for Kids — 45 Extra-Curricular Activity Flashcards with Skills (Ages 3–12)',
+ slug:'extra-curricular-activities',
+ name:'Extra-Curricular Activities',
+ seoTitle:'Extra-Curricular Activities for Kids — 45 Printable Flashcards with Skills (Ages 3–12)',
  h1:'Extra-curricular activity flashcards.',
  metaDescription:'Forty-five printable extra-curricular activity flashcards for ages 3–12: art, music, dance, chess, coding, fencing and thirty-eight more — every card carries its own skill pill, an age tag, a short page and a download button. Find a hobby, name its skill, and start this week.',
  lede:'Forty-five clubs, forty-five first steps. Each card names one activity — chess, baking, pottery, robotics — and prints the two skills the club trains under its name, from Aim & Focus to Calm & Wellbeing. The fifteen youngest-friendly clubs are tagged Ages 3+; the rest are Ages 6+. Every club has a short page, a full lesson and a printable twin in the library — pick the club, learn the skill, and let the hobby grow.',
