@@ -1532,7 +1532,7 @@ const SOLVE_SHEETS={
   printHref:'/toddler/2-years/colors-and-shapes/print/',fcHref:'/flashcards/colors-and-shapes/'},
  '/toddler/2-years/matching-and-sorting/':{
   heading:'Solve the matching cards together.',
-  copy:'This class&rsquo;s cards live in the flashcards library — every card has its own page, and every card page can be printed, downloaded or drawn on right on the screen.',
+  copy:'This class’s cards live in the flashcards library — every card has its own page, and every card page can be printed, downloaded or drawn on right on the screen.',
   steps:[
    ['Print the cards','Print the matching and sorting cards from the flashcards library, two to a page, and cut them out together.'],
    ['Make the pairs','Lay the cards out and find the pairs that are the same. Say “same!” every time a pair lands — the word and the match grow up together.'],
@@ -1567,14 +1567,14 @@ const SOLVE_SHEETS={
    ['Print the cards','Open the printable cards and print all twenty, two to a page. Cut them out together, naming each feeling as it is cut.'],
    ['Make the face','Pick a card and make that face in a mirror together — happy, sad, silly, brave. The face teaches the word.'],
    ['Guess my feeling','Make a feeling face and let your toddler find the matching card. Then swap: your child makes the face, you guess.'],
-   ['Find today&rsquo;s feeling','Ask “how do you feel right now?” and lay that card on the table. One honest card, chosen freely, is the whole exercise.']
+   ['Find today’s feeling','Ask “how do you feel right now?” and lay that card on the table. One honest card, chosen freely, is the whole exercise.']
   ],
   printHref:'/toddler/2-years/emotions-and-feelings/print/',fcHref:'/flashcards/emotions-and-feelings/'},
  '/toddler/2-years/garden-bugs-and-friends/':{
   heading:'Solve the garden cards together.',
-  copy:'The twenty garden cards print two to a page. Printed, cut and named, they turn the next walk outside into the class&rsquo;s final page.',
+  copy:'The twenty garden cards print two to a page. Printed, cut and named, they turn the next walk outside into the class’s final page.',
   steps:[
-   ['Print the cards','Open the printable cards and print all twenty, two to a page. Cut them out together, saying each garden friend&rsquo;s name.'],
+   ['Print the cards','Open the printable cards and print all twenty, two to a page. Cut them out together, saying each garden friend’s name.'],
    ['Name and greet','Hold up a card and greet the friend — “hello, bee!”. Naming warmly is how words stick at two.'],
    ['Move like them','Wiggle like a worm, flutter like a butterfly, roll like a roly-poly. Bodies remember what ears forget.'],
    ['Take it outside','Carry two or three cards on the next walk and find their real twins. We look, we talk, and the bugs stay where they live.']

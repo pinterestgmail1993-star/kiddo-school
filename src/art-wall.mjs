@@ -36,16 +36,16 @@ export function artWallBody(){
  <section class="wrap section compact" data-aw-family-wrap hidden aria-label="Artwork from our families">
   <span class="eyebrow">FROM OUR FAMILIES</span>
   <h2>Artwork from our families.</h2>
-  <p class="aw-intro">Reviewed pieces sent in by Kiddo School families, each with a grown-up&rsquo;s permission.</p>
+  <p class="aw-intro">Reviewed pieces sent in by Kiddo School families, each with a grown-up’s permission.</p>
   <ul class="aw-wall" data-aw-family></ul>
  </section>
  <section class="wrap section compact" id="add-artwork">
   <span class="eyebrow">SEND SOMETHING IN</span>
   <h2>Add your artwork.</h2>
-  <p class="aw-intro">Made something at home that belongs on a wall? A grown-up can send it in here. Every piece is reviewed by the school office before it goes up &mdash; nothing appears straight away.</p>
+  <p class="aw-intro">Made something at home that belongs on a wall? A grown-up can send it in here. Every piece is reviewed by the school office before it goes up — nothing appears straight away.</p>
   <noscript><p class="fc-hint">Sending artwork needs JavaScript. Everything else on this page works as it is.</p></noscript>
   <form class="aw-form" data-aw-form hidden novalidate>
-   <p class="fc-hint"><strong>Artwork only, please</strong> &mdash; pictures of drawings, paintings or crafts. Please don&rsquo;t upload photos of children.</p>
+   <p class="fc-hint"><strong>Artwork only, please</strong> — pictures of drawings, paintings or crafts. Please don’t upload photos of children.</p>
    <label class="aw-field" for="aw-image">Choose a picture of the artwork <span class="po-req">Required</span>
     <input type="file" id="aw-image" name="image" accept="image/jpeg,image/png,image/webp,.jpg,.jpeg,.png,.webp" required>
     <span class="fc-hint">JPEG, PNG or WebP, up to 8 MB.</span>
@@ -56,8 +56,8 @@ export function artWallBody(){
    <label class="aw-field" for="aw-name">Display name <span class="po-opt">Optional</span>
     <input type="text" id="aw-name" name="display_name" maxlength="24" autocomplete="off" placeholder="A first name, nickname or initials">
    </label>
-   <p class="fc-hint">Don&rsquo;t include private information &mdash; no surnames, ages, birthdays, locations or school names.</p>
-   <label class="aw-confirm"><input type="checkbox" name="confirm" required> I&rsquo;m the parent or guardian and I&rsquo;m okay with this artwork being reviewed for the public Kiddo School Art Wall.</label>
+   <p class="fc-hint">Don’t include private information — no surnames, ages, birthdays, locations or school names.</p>
+   <label class="aw-confirm"><input type="checkbox" name="confirm" required> I’m the parent or guardian and I’m okay with this artwork being reviewed for the public Kiddo School Art Wall.</label>
    <p class="aw-hp" aria-hidden="true"><label for="aw-company">Company</label><input id="aw-company" name="company" type="text" tabindex="-1" autocomplete="off"></p>
    <p class="aw-status" data-aw-status role="status" aria-live="polite"></p>
    <button type="submit" class="button">Send artwork for review</button>

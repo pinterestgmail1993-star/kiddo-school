@@ -33,11 +33,11 @@ test('every day of the week points to a real page that exists in this build',()=
   assert.ok(!href.includes('http'),href);
  }
  // The themes follow the school's real weekly rhythm
- for(const theme of ['Learn','Play &amp; practice','Circle Time','My work','Let&rsquo;s explore','Library','Together day']){
+ for(const theme of ['Learn','Play &amp; practice','Circle Time','My work','Let’s explore','Library','Together day']){
   assert.ok(html.includes(`>${theme}</span>`),theme);
  }
  // "Start Today's Class" leads to the real Today's Class destination used site-wide
- assert.match(html,/href="\/newborn\/0-6-weeks\/high-contrast-cards\/">Start Today&rsquo;s Class/);
+ assert.match(html,/href="\/newborn\/0-6-weeks\/high-contrast-cards\/">Start Today’s Class/);
 });
 
 test('no dates are fabricated in the static HTML — all dates are local-time JS',()=>{
@@ -65,5 +65,5 @@ test('no dates are fabricated in the static HTML — all dates are local-time JS
 
 test('the one-time reassurance note exists, exactly once',()=>{
  assert.equal((html.match(/Missed a day\?/g)||[]).length,1);
- assert.match(html,/That&rsquo;s okay\. Pick up whenever you&rsquo;re ready\./);
+ assert.match(html,/That’s okay\. Pick up whenever you’re ready\./);
 });

@@ -16,18 +16,18 @@ export function communityMount(path,heading){
  <span class="eyebrow">FAMILY FEEDBACK</span>
  <h2>${h}</h2>
  <p class="lesson-copy">Your feedback helps us make Kiddo School better. This is feedback about the activity, for the grown-ups who make it — it is never about a child.</p>
- <noscript><p class="fc-hint">Sending feedback needs JavaScript. You can still enjoy the class together — and you are always welcome to write to the <a href="/principals-office/">Principal&rsquo;s Office</a> instead.</p></noscript>
+ <noscript><p class="fc-hint">Sending feedback needs JavaScript. You can still enjoy the class together — and you are always welcome to write to the <a href="/principals-office/">Principal’s Office</a> instead.</p></noscript>
  <div class="cm-reactions" data-cm-reactions hidden role="group" aria-label="${h} Choose one.">
   ${REACTIONS.map(([v,emoji,label])=>`<button type="button" class="cm-btn" data-cm-reaction="${v}" aria-pressed="false"><span class="cm-emoji" aria-hidden="true">${emoji}</span><span>${label}</span></button>`).join('')}
  </div>
  <form class="cm-form" data-cm-form hidden novalidate>
   <p class="cm-chosen" data-cm-chosen aria-live="polite"></p>
-  <label for="cm-comment">Anything you&rsquo;d like to tell us? <span class="cm-optional">(optional)</span></label>
+  <label for="cm-comment">Anything you’d like to tell us? <span class="cm-optional">(optional)</span></label>
   <textarea id="cm-comment" name="comment" data-cm-comment rows="3" maxlength="300" placeholder="A sentence or two is plenty."></textarea>
   <label for="cm-name">Your name <span class="cm-optional">(optional — a first name, nickname or initials)</span></label>
   <input type="text" id="cm-name" name="displayName" data-cm-name maxlength="40" autocomplete="off">
-  <p class="fc-hint">Comments stay short and are read by the school office before they appear. Don&rsquo;t include private information — no surnames, ages or addresses.</p>
-  <label class="cm-confirm"><input type="checkbox" data-cm-confirm> I&rsquo;m okay with this comment being reviewed for the Kiddo School community.</label>
+  <p class="fc-hint">Comments stay short and are read by the school office before they appear. Don’t include private information — no surnames, ages or addresses.</p>
+  <label class="cm-confirm"><input type="checkbox" data-cm-confirm> I’m okay with this comment being reviewed for the Kiddo School community.</label>
   <p class="cm-status" data-cm-status role="status" aria-live="polite"></p>
   <button type="submit" class="button" data-cm-send>Send feedback</button>
  </form>
@@ -46,7 +46,7 @@ export function schoolCommunityBody(){
  </div>`;
  return `${crumbNav([['School Community']])}
  <section class="wrap section compact">
-  <p class="lesson-copy">Kiddo School stays small and safe on purpose. There is no following and no private messaging. Your child&rsquo;s classroom details (an age band, an optional first name and progress marks) live only on your own device and never reach the school&rsquo;s servers. Four walls make up the community: one page about the people who work at the school, and three places where families take part — with the school office reading everything before it appears. Grown-ups send things in; little learners stay out of it.</p>
+  <p class="lesson-copy">Kiddo School stays small and safe on purpose. There is no following and no private messaging. Your child’s classroom details (an age band, an optional first name and progress marks) live only on your own device and never reach the school’s servers. Four walls make up the community: one page about the people who work at the school, and three places where families take part — with the school office reading everything before it appears. Grown-ups send things in; little learners stay out of it.</p>
   ${cards}
  </section>
  <section class="wrap section compact" id="family-reviews" aria-label="Family reviews">
@@ -63,12 +63,12 @@ export function schoolCommunityBody(){
   <span class="eyebrow">THE HOUSE RULES</span>
   <h2>How this space stays kind and safe.</h2>
   <ul class="po-rules">
-   <li><strong>Grown-ups only submit.</strong> Reviews, comments, notes and artwork are sent in by a parent or guardian — the school doesn&rsquo;t ask children for anything.</li>
+   <li><strong>Grown-ups only submit.</strong> Reviews, comments, notes and artwork are sent in by a parent or guardian — the school doesn’t ask children for anything.</li>
    <li><strong>Everything is reviewed first.</strong> Nothing appears on the site until the school office has read it and approved it.</li>
-   <li><strong>Keep it private.</strong> A first name, nickname or initials is plenty. Don&rsquo;t include surnames, ages, addresses, or anything else private about a child.</li>
-   <li><strong>No letters to the Principal here.</strong> Private notes live in the <a href="/principals-office/">Principal&rsquo;s Office</a> and are never shown publicly — not here, not anywhere.</li>
+   <li><strong>Keep it private.</strong> A first name, nickname or initials is plenty. Don’t include surnames, ages, addresses, or anything else private about a child.</li>
+   <li><strong>No letters to the Principal here.</strong> Private notes live in the <a href="/principals-office/">Principal’s Office</a> and are never shown publicly — not here, not anywhere.</li>
   </ul>
  </section>
- <section class="wrap lesson-section"><span class="eyebrow">KEEP EXPLORING</span><h2>Where next?</h2><div class="lesson-linkrow"><a class="lesson-pill-link" href="/my-classroom/">My Classroom</a><a class="lesson-pill-link" href="/learning-path/">Learning Path</a><a class="lesson-pill-link" href="/principals-office/">Principal&rsquo;s Office</a></div></section>
+ <section class="wrap lesson-section"><span class="eyebrow">KEEP EXPLORING</span><h2>Where next?</h2><div class="lesson-linkrow"><a class="lesson-pill-link" href="/my-classroom/">My Classroom</a><a class="lesson-pill-link" href="/learning-path/">Learning Path</a><a class="lesson-pill-link" href="/principals-office/">Principal’s Office</a></div></section>
  <div class="wrap section compact"><div class="brand-duo"><div class="brand-copy"><span class="eyebrow">TOGETHER AT THE TABLE</span><h2>Learning is a family thing.</h2><p class="lesson-copy">Every review, reaction and note on these walls comes from a family trying something together. Join in whenever you like — or just borrow an idea and make it your own.</p></div><div class="brand-art"><img src="https://assets.kiddo.school/school/branding/kiddo-classroom-group-extra.webp" width="1080" height="1350" alt="A teacher and three children in purple uniforms gather around a round classroom table with a picture book and building blocks, from the Kiddo.school community illustration." loading="lazy"></div></div></div>`;
 }

@@ -142,7 +142,7 @@ export function letterPageBody(L,prev,next){
   <div class="al-sound-grid">
    <figure class="al-face"><img src="${L.file('sound.png')}" width="${L.w}" height="${L.h}" alt="Letter and picture association card: ${up} ${l} with ${esc(L.pictureAlt.charAt(0).toLowerCase()+L.pictureAlt.slice(1))}" loading="lazy"><figcaption><span class="eyebrow">ASSOCIATION CARD</span><strong>${up} ${l} — ${esc(L.word)}</strong></figcaption></figure>
    <div class="al-sound-copy">
-    <p class="al-sound-say">&ldquo;${esc(L.soundSay)}&rdquo;</p>
+    <p class="al-sound-say">“${esc(L.soundSay)}”</p>
     <p class="lesson-copy">${esc(L.soundCopy)}</p>
     ${soundReveal}
    </div>

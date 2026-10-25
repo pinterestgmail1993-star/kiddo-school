@@ -97,7 +97,7 @@ export function magicColorBody(G){
  const complete=`<section class="mg-screen" data-mg-screen="complete" aria-label="Activity complete">
    <span class="eyebrow">ACTIVITY COMPLETE</span>
    <h2>Three recipes, one little artist!</h2>
-   <p class="lesson-copy">You mixed orange, green and purple from just three brave colors. Whether you mixed once or twenty times, you now know the painter&rsquo;s biggest secret: new colors were hiding inside the old ones all along.</p>
+   <p class="lesson-copy">You mixed orange, green and purple from just three brave colors. Whether you mixed once or twenty times, you now know the painter’s biggest secret: new colors were hiding inside the old ones all along.</p>
    <div class="mg-actions"><button type="button" class="button" data-mg-replay>Play Again <span aria-hidden="true">↺</span></button><a class="button button-ghost" href="${G.classPath}">Back to Colors &amp; Color Mixing <span aria-hidden="true">↗</span></a><a class="button button-ghost" href="/learning-path/">Learning Path <span aria-hidden="true">↗</span></a></div>
    <div class="lesson-path">
     <a class="fc-stage lesson-card-link" href="${G.classPath}"><div class="fc-stage-pills"><span class="fc-age">Age 3</span><span class="fc-class">Class 4</span></div><h3>Colors &amp; Color Mixing</h3><p>The full class: twelve color pairs, find-the-color, the mix pot and a rainbow to explore.</p><span class="fc-open">Open this class <span aria-hidden="true">↗</span></span></a>

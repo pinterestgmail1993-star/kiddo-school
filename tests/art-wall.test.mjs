@@ -70,9 +70,9 @@ test('art wall is wired in: sitemap, my classroom panel and honest grown-ups not
  assert.match(html,/Add your artwork\./);
  assert.match(html,/data-aw-form/);
  assert.match(html,/accept="image\/jpeg,image\/png,image\/webp/);
- assert.match(html,/I&rsquo;m the parent or guardian and I&rsquo;m okay with this artwork being reviewed/);
+ assert.match(html,/I’m the parent or guardian and I’m okay with this artwork being reviewed/);
  assert.match(html,/Artwork only, please/); // artwork, never photos of children
- assert.match(html,/Don&rsquo;t include private information/);
+ assert.match(html,/Don’t include private information/);
  // The starter-art folder and the private submissions area stay separated:
  // nothing on the page mixes family art into the eleven classroom examples.
  assert.equal((html.match(/starter-art\//g)||[]).length>=11,true);

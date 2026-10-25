@@ -60,7 +60,7 @@ export const bunnyBook={
  cover:{file:'cover.webp',alt:'Bunny Finds a Friend book cover: a smiling rabbit in a garden with a butterfly, a bee, a ladybug and a snail'},
  grownups:{
   title:'Read together, not on a schedule.',
-  paras:['This book has eight little pages and one big idea: a friendly bunny meets some garden friends. There are no scores, no timers and nothing to finish &mdash; the story moves only when your child is ready.','Let your child point, name, listen, or simply enjoy the pictures. The small questions on each page are invitations, never tests: answer them together, or ignore them completely and make up your own.']
+  paras:['This book has eight little pages and one big idea: a friendly bunny meets some garden friends. There are no scores, no timers and nothing to finish — the story moves only when your child is ready.','Let your child point, name, listen, or simply enjoy the pictures. The small questions on each page are invitations, never tests: answer them together, or ignore them completely and make up your own.']
  },
  related:[['Back to the Library','/learning-library/'],['Age 2 classes','/toddler/2-years/'],['Garden Bugs &amp; Friends','/toddler/2-years/garden-bugs-and-friends/']],
  pages:[
@@ -159,7 +159,7 @@ export function bookReaderBody(b){
   <span class="eyebrow">${esc(b.eyebrow)}</span>
   <h1>${esc(b.h1)}</h1>
   <p class="mw-lede">${esc(b.lede)}</p>
-  <p class="fc-hint">${esc(b.ageLabel)}. Read together at your child&rsquo;s pace &mdash; little hands can turn every page. Read online as often as you like.</p>
+  <p class="fc-hint">${esc(b.ageLabel)}. Read together at your child’s pace — little hands can turn every page. Read online as often as you like.</p>
   <div class="bk-reader" data-book-reader>
    <script type="application/json" data-book-data>${readerData(b)}</script>
    <div class="bk-static" data-bk-static>

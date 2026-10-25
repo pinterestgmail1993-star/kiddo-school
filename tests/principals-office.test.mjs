@@ -39,7 +39,7 @@ test('the form offers exactly the six categories and requires only the two messa
  // Parent name stays optional; email is OPTIONAL and used only if a reply is wanted
  assert.match(html,/Parent name <span class="po-opt">Optional</);
  assert.match(html,/id="po-email" name="po-email" maxlength="200"/);
- assert.match(html,/only if you&rsquo;d like a reply/);
+ assert.match(html,/only if you’d like a reply/);
 });
 
 test('the form is honest about the real backend: success only after the server confirms',()=>{

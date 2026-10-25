@@ -99,7 +99,7 @@ export function magicAnimalBody(G){
 <div class="tc-choices" role="group" aria-label="Who made that sound? Choose an animal.">${r.choices.map((slug,i)=>{const a=ANIMALS.find(x=>x.slug===slug);return `<button type="button" class="tc-choice mg-listen-choice" aria-label="${cap(a.slug)}"${i===r.correct?' data-mg-correct="true"':''}>${img(a)}<span class="mg-tile-word">${cap(a.slug)}</span></button>`;}).join('')}</div>
 <p class="tc-feedback" data-mg-feedback aria-live="polite" hidden></p>
 </div>`;}).join('')}
-   <p class="mg-hint">All six sounds come from the site&rsquo;s real recordings — the same ones the Animals &amp; Their Sounds class plays.</p>
+   <p class="mg-hint">All six sounds come from the site’s real recordings — the same ones the Animals &amp; Their Sounds class plays.</p>
    <div class="mg-next"><button type="button" class="button" data-mg-go="find">Find the Animal <span aria-hidden="true">↓</span></button></div>
   </section>`;
 
@@ -161,7 +161,7 @@ ${complete}
   <span class="eyebrow">FOR GROWN-UPS</span>
   <h2>About the sounds.</h2>
   <p class="lesson-copy">Every animal in this game plays a real recording. Dog, cat, cow and sheep use the very same files as the Animals &amp; Their Sounds class, so the sounds stay consistent across the school. The duck recording is “Anas platyrhynchos - Mallard - XC62258” by Jonathon Jongsma (xeno-canto via Wikimedia Commons, CC BY-SA 3.0) — a close-up of a mallard giving the classic quack — and the frog is “Single Frog Croak” by MichaeltheFox8621 (Wikimedia Commons, CC BY-SA 4.0); both are trimmed and volume-matched, with the full credits kept in the sound folder. The sound word is written under every animal so you can perform it yourself, which is honestly the best version.</p>
-  <p class="lesson-copy">Every movement in Step 5 is deliberately small and calm. If your child is sensitive to motion, the parent Calm Mode toggle in the footer (or your device&rsquo;s reduced-motion setting) stills every animation while all sounds, words and games keep working.</p>
+  <p class="lesson-copy">Every movement in Step 5 is deliberately small and calm. If your child is sensitive to motion, the parent Calm Mode toggle in the footer (or your device’s reduced-motion setting) stills every animation while all sounds, words and games keep working.</p>
   <p class="lesson-note">Being the frog is still the most popular role in this school. Assign accordingly.</p>
  </section>`;
 }

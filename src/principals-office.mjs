@@ -12,12 +12,12 @@ export function principalOfficeBody(){
  return `<section class="wrap section compact">
  <div class="po-room">
   <div class="tc-note-block tc-principal po-hello">
-   <span class="eyebrow">FROM THE PRINCIPAL&rsquo;S DESK</span>
-   <p class="tc-say">&ldquo;Welcome in. This school is a little different: you are the teacher, and we are the helper. If something here works well for your family &mdash; or if something doesn&rsquo;t &mdash; I would genuinely like to hear it.&rdquo;</p>
-   <p class="tc-who">&mdash; The Principal, Kiddo.school</p>
+   <span class="eyebrow">FROM THE PRINCIPAL’S DESK</span>
+   <p class="tc-say">“Welcome in. This school is a little different: you are the teacher, and we are the helper. If something here works well for your family — or if something doesn’t — I would genuinely like to hear it.”</p>
+   <p class="tc-who">— The Principal, Kiddo.school</p>
   </div>
   <form class="po-form" data-po-form action="#" method="post">
-   <p class="po-offline"><strong>This note goes straight to the Principal.</strong> Your email is optional &mdash; it is used only if you&rsquo;d like a reply.</p>
+   <p class="po-offline"><strong>This note goes straight to the Principal.</strong> Your email is optional — it is used only if you’d like a reply.</p>
    <fieldset class="po-cats">
     <legend>What kind of note is it?</legend>
     ${catField}
@@ -31,13 +31,13 @@ export function principalOfficeBody(){
    <label class="po-field" for="po-name">Parent name <span class="po-opt">Optional</span>
     <input type="text" id="po-name" name="po-name" maxlength="80" autocomplete="name" placeholder="However you like to be called">
    </label>
-   <label class="po-field" for="po-email">Your email <span class="po-opt">Optional &mdash; only if you&rsquo;d like a reply</span>
+   <label class="po-field" for="po-email">Your email <span class="po-opt">Optional — only if you’d like a reply</span>
     <input type="email" id="po-email" name="po-email" maxlength="200" autocomplete="email" placeholder="you@example.com">
    </label>
    <p class="po-privacy"><strong>Please keep private details out of your message.</strong> This form is for grown-ups and never asks for anything about a child.</p>
    <p class="po-hp" aria-hidden="true"><label for="po-company">Company</label><input type="text" id="po-company" name="company" tabindex="-1" autocomplete="off"></p>
    <div class="po-actions">
-    <button type="submit" class="button">Send to the Principal&rsquo;s Office</button>
+    <button type="submit" class="button">Send to the Principal’s Office</button>
     <p class="po-status" data-po-status role="status" aria-live="polite"></p>
    </div>
   </form>
@@ -47,9 +47,9 @@ export function principalOfficeBody(){
   <span class="eyebrow">THE OFFICE RULES</span>
   <h2>What happens to a note here</h2>
   <ul class="po-rules">
-   <li><strong>Only the Principal reads it.</strong> Messages sent through this page go to the Principal&rsquo;s Office &mdash; not to teachers, not to other parents.</li>
+   <li><strong>Only the Principal reads it.</strong> Messages sent through this page go to the Principal’s Office — not to teachers, not to other parents.</li>
    <li><strong>Complaints are never public.</strong> A complaint is never published, never quoted and never added to any wall on this site.</li>
-   <li><strong>No child details, ever.</strong> The school doesn&rsquo;t collect children&rsquo;s names, ages, photos or school names through this page.</li>
+   <li><strong>No child details, ever.</strong> The school doesn’t collect children’s names, ages, photos or school names through this page.</li>
   </ul>
  </section>
  <section class="wrap lesson-section"><span class="eyebrow">KEEP EXPLORING</span><h2>Where next?</h2><div class="lesson-linkrow"><a class="lesson-pill-link" href="/my-classroom/">My Classroom</a><a class="lesson-pill-link" href="/school-community/">School Community</a><a class="lesson-pill-link" href="/about/">About the school</a></div></section>`;

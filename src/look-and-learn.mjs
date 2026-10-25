@@ -76,7 +76,7 @@ export function llWordBody(w){
  <div class="fc2-dual wrap">
   <div class="fc2-main"><figure class="fc2-hero"><img src="${cardImg(x.n)}" width="800" height="1131" alt="${esc(cardAlt(x.n))}"><figcaption><strong>${esc(titleOf(w))}</strong><span>Card ${String(x.n).padStart(2,'0')} of 15 \u00b7 Look &amp; Learn</span></figcaption></figure>
   <section class="fc2-learn" aria-label="How to use this word">
-   <div class="fc2-do"><h2>Say it together</h2><p class="fc2-say">&ldquo;${esc(x.l)}&rdquo;</p><p class="fc-hint">${sayLeadTxt} <strong>${esc(x.a)}</strong>.</p></div>
+   <div class="fc2-do"><h2>Say it together</h2><p class="fc2-say">“${esc(x.l)}”</p><p class="fc-hint">${sayLeadTxt} <strong>${esc(x.a)}</strong>.</p></div>
    <div class="fc2-do"><h2>Try it now</h2><p>${c.try}</p></div>
    ${sibBlock}
   </section></div>

@@ -20,7 +20,7 @@ export function fcCommunityMount(path){
  <span class="eyebrow">REACTIONS</span>
  <h2>How did it go?</h2>
  <p class="lesson-copy">One tap, no writing, no name. Pick the face that matches how it went — reactions are counted instantly and stay anonymous.</p>
- <noscript><p class="fc-hint">Tapping a reaction needs JavaScript. Everything else on this page works without it — and you are always welcome to write to the <a href="/principals-office/">Principal&rsquo;s Office</a> instead.</p></noscript>
+ <noscript><p class="fc-hint">Tapping a reaction needs JavaScript. Everything else on this page works without it — and you are always welcome to write to the <a href="/principals-office/">Principal’s Office</a> instead.</p></noscript>
  <div class="fc2-reactions" data-fc-reactions hidden role="group" aria-label="How did your kiddo like this? Choose one.">
   ${REACTIONS.map(([v,emoji,label])=>`<button type="button" class="cm-btn" data-fc-reaction="${v}" aria-pressed="false"><span class="cm-emoji" aria-hidden="true">${emoji}</span><span>${label}</span><span class="fc2-count" data-fc-count="${v}" hidden aria-hidden="true"></span></button>`).join('')}
  </div>
@@ -46,8 +46,8 @@ export function fcCommunityMount(path){
    <textarea id="fc-review-text" name="comment" data-fc-review-comment rows="3" maxlength="300" placeholder="What worked, what did not — a sentence or two is plenty."></textarea>
    <label for="fc-review-name">Your name <span class="cm-optional">(optional — a first name, nickname or initials)</span></label>
    <input type="text" id="fc-review-name" name="displayName" data-fc-review-name maxlength="40" autocomplete="off">
-   <p class="fc-hint">Reviews are read by the school office before they appear. Don&rsquo;t include private information — no surnames, ages or addresses.</p>
-   <label class="cm-confirm"><input type="checkbox" data-fc-review-confirm> I&rsquo;m the grown-up, and I&rsquo;m okay with this review being read for the Kiddo School community.</label>
+   <p class="fc-hint">Reviews are read by the school office before they appear. Don’t include private information — no surnames, ages or addresses.</p>
+   <label class="cm-confirm"><input type="checkbox" data-fc-review-confirm> I’m the grown-up, and I’m okay with this review being read for the Kiddo School community.</label>
    <p class="cm-status" data-fc-review-status role="status" aria-live="polite"></p>
    <button type="submit" class="button" data-fc-review-send>Send review</button>
   </form>
@@ -67,8 +67,8 @@ export function fcCommunityMount(path){
    <textarea id="fc-comment-text" name="comment" data-fc-comment-text rows="3" maxlength="300" placeholder="A sentence or two is plenty."></textarea>
    <label for="fc-comment-name">Your name <span class="cm-optional">(optional — a first name, nickname or initials)</span></label>
    <input type="text" id="fc-comment-name" name="displayName" data-fc-comment-name maxlength="40" autocomplete="off">
-   <p class="fc-hint">Please don&rsquo;t include private information — no surnames, ages, addresses or anything private about your child.</p>
-   <label class="cm-confirm"><input type="checkbox" data-fc-comment-confirm> I&rsquo;m the grown-up, and I&rsquo;m okay with this comment being read for the Kiddo School community.</label>
+   <p class="fc-hint">Please don’t include private information — no surnames, ages, addresses or anything private about your child.</p>
+   <label class="cm-confirm"><input type="checkbox" data-fc-comment-confirm> I’m the grown-up, and I’m okay with this comment being read for the Kiddo School community.</label>
    <p class="cm-status" data-fc-comment-status role="status" aria-live="polite"></p>
    <button type="submit" class="button" data-fc-comment-send>Send comment</button>
   </form>

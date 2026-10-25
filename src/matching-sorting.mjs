@@ -51,7 +51,7 @@ export function msNeighbours(a){
 const shareBlock=(eyebrow,heading,url,title,media)=>{
  const enc=encodeURIComponent;
  const pin=media?`<a class="fc2-share-btn" href="https://pinterest.com/pin/create/button/?url=${enc(url)}&media=${enc(media)}&description=${enc(title)}" target="_blank" rel="noopener" aria-label="Save this on Pinterest">Pinterest</a>`:'';
- return `<div class="fc2-block fc2-share-block"><span class="eyebrow">${eyebrow}</span><h2>${heading}</h2><div class="fc2-share"><a class="fc2-share-btn" href="https://twitter.com/intent/tweet?url=${enc(url)}&text=${enc(title)}" target="_blank" rel="noopener" aria-label="Share on X">X</a><a class="fc2-share-btn" href="https://www.facebook.com/sharer/sharer.php?u=${enc(url)}" target="_blank" rel="noopener" aria-label="Share on Facebook">Facebook</a><a class="fc2-share-btn" href="https://wa.me/?text=${enc(title+' '+url)}" target="_blank" rel="noopener" aria-label="Share on WhatsApp">WhatsApp</a>${pin}<button type="button" class="fc2-share-btn" data-fc-copy>Copy link</button></div><p class="fc-hint">Share buttons open in a new tab. The copy button copies this page&rsquo;s address — nothing is tracked.</p></div>`;
+ return `<div class="fc2-block fc2-share-block"><span class="eyebrow">${eyebrow}</span><h2>${heading}</h2><div class="fc2-share"><a class="fc2-share-btn" href="https://twitter.com/intent/tweet?url=${enc(url)}&text=${enc(title)}" target="_blank" rel="noopener" aria-label="Share on X">X</a><a class="fc2-share-btn" href="https://www.facebook.com/sharer/sharer.php?u=${enc(url)}" target="_blank" rel="noopener" aria-label="Share on Facebook">Facebook</a><a class="fc2-share-btn" href="https://wa.me/?text=${enc(title+' '+url)}" target="_blank" rel="noopener" aria-label="Share on WhatsApp">WhatsApp</a>${pin}<button type="button" class="fc2-share-btn" data-fc-copy>Copy link</button></div><p class="fc-hint">Share buttons open in a new tab. The copy button copies this page’s address — nothing is tracked.</p></div>`;
 };
 
 /* ---------- the Matching & Sorting section on the Class 10 page ---------- */
@@ -66,7 +66,7 @@ export function matchingSortSection(){
  return `<section class="wrap lesson-section" id="matching-sorting-fun" aria-label="Matching and sorting activities">
   <span class="eyebrow">MATCHING &amp; SORTING ACTIVITIES</span>
   <h2>Match, sort and draw — right on the sheet.</h2>
-  <p class="lesson-copy">Thirty-one big, friendly activity sheets made for two-year-old hands: your child solves each one straight on the picture — drawing the matching lines, circling the twins and sorting the groups with a finger, a stylus or the mouse. Pencil, colors, eraser, undo and redo included, and every child&rsquo;s drawing is saved for them in <a href="/my-classroom/">My Classroom</a> so they can come back and carry on where they left off.</p>
+  <p class="lesson-copy">Thirty-one big, friendly activity sheets made for two-year-old hands: your child solves each one straight on the picture — drawing the matching lines, circling the twins and sorting the groups with a finger, a stylus or the mouse. Pencil, colors, eraser, undo and redo included, and every child’s drawing is saved for them in <a href="/my-classroom/">My Classroom</a> so they can come back and carry on where they left off.</p>
   <div class="sa-grid">${cards}</div>
   <p class="lesson-note">Prefer crayons on paper? Every sheet is also a printable worksheet in the <a href="${MS_WS_BASE}">Matching &amp; Sorting worksheet collection</a> — download and print.</p>
  </section>`;
@@ -154,7 +154,7 @@ export function msWorksheetBody(w,site){
   <aside class="fc2-rail" aria-label="Download, print, share and family feedback">
    <section class="fc2-block fc2-first-block"><span class="eyebrow">TAKE IT TO THE TABLE</span><h2>Download &amp; print.</h2>
     <div class="fc2-actions"><button type="button" class="button ws-dl" data-ms-download="${esc(file)}" data-ms-filename="${dlName}">Download original image <span aria-hidden="true">\u2193</span></button><button type="button" class="button button-ghost ws-print" data-ms-print>Print this page <span aria-hidden="true">\u2318</span></button></div>
-    <p class="fc-hint">The download keeps the original WebP picture, full size (1414\u00d72000, A4 portrait). Print opens your browser&rsquo;s print dialog with just the picture &mdash; no header, no buttons, nothing stored.</p>
+    <p class="fc-hint">The download keeps the original WebP picture, full size (1414\u00d72000, A4 portrait). Print opens your browser’s print dialog with just the picture — no header, no buttons, nothing stored.</p>
    </section>
    <div class="fc2-block"><span class="eyebrow">SOLVE IT ON SCREEN</span><h2>Solve it online.</h2><p class="fc-hint">The on-screen version of this sheet — drawing layer, three steps, save-your-work and all — lives at <a href="${actUrl}">${actUrl}</a>.</p><div class="fc2-actions"><a class="button" href="${actUrl}">Solve it online <span aria-hidden="true">↗</span></a></div></div>
    ${shareBlock('SHARE THIS WORKSHEET','Pass it on.',pageUrl,`${w.title} Worksheet — printable for 2-year-olds from Kiddo.school`,file)}
