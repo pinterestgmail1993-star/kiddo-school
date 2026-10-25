@@ -28,12 +28,12 @@ const escH=s=>s.replace(/&/g,'&amp;');
 
 const set=fcSetBySlug['animal-categories'];
 const setHtml=readPage('/flashcards/animal-categories/');
-const ORDER=['pets','farm-animals','more-farm-animals','farm-birds','insects','garden-creatures','small-animals','amphibians','birds','fish','sea-creatures','reptiles','big-animals','safari-animals','wild-cats','primates','forest-animals','desert-animals','arctic-animals','australian-animals','whales-and-dolphins','dinosaurs','night-animals','rainforest-animals'];
+const ORDER=['pets','farm-animals','more-farm-animals','farm-birds','insects','garden-creatures','small-animals','amphibians','birds','fish','sea-creatures','reptiles','big-animals','safari-animals','wild-cats','primates','forest-animals','desert-animals','arctic-animals','australian-animals','whales-and-dolphins','night-animals','rainforest-animals'];
 const GROUP_HEADS=['Pets & farm friends','Little crawly creatures','Feathers, fins & scales','Big & wild','Where animals live','Giants & old wonders'];
 const LANDSCAPE=['whales-and-dolphins'];
 
 test('animal-categories set: 24 families in tour order at their true probed dims',()=>{
- assert.equal(set.cards.length,24,'24 family cards, cover never counted');
+ assert.equal(set.cards.length,23,'23 family cards, cover never counted — dinosaurs retired to their own class (owner 2026-10-25)');
  assert.deepEqual(set.cards.map(c=>c.slug),ORDER,'cards ride in tour order');
  for(const c of set.cards){
   if(LANDSCAPE.includes(c.slug)){assert.equal(c.w,1100,c.slug+' landscape width');assert.equal(c.h,778,c.slug+' landscape height');}
@@ -50,10 +50,10 @@ test('animal-categories set: 24 families in tour order at their true probed dims
 test('animal-categories age pills: the owner said take care of ages — both pills ride, familiar families first',()=>{
  const threes=set.cards.filter(c=>c.ages==='Ages 3+').map(c=>c.slug);
  const fours=set.cards.filter(c=>c.ages==='Ages 4–5').map(c=>c.slug);
- assert.equal(threes.length+fours.length,24,'every card carries exactly one age pill');
+ assert.equal(threes.length+fours.length,23,'every card carries exactly one age pill');
  assert.ok(threes.includes('pets')&&threes.includes('farm-animals'),'the familiar families ride Ages 3+');
  assert.ok(fours.includes('primates')&&fours.includes('amphibians'),'the concept families ride Ages 4–5');
- assert.ok(threes.includes('dinosaurs'),'dinosaurs ride Ages 3+ — famous young favorites');
+ assert.ok(!threes.includes('dinosaurs')&&!set.cards.some(c=>c.slug==='dinosaurs'),'the dinosaurs card retired — it owns /dinosaurs/ now (owner 2026-10-25)');
  assert.ok(setHtml.includes('Ages 3+')&&setHtml.includes('Ages 4–5'),'both pills render on the set page');
 });
 
@@ -62,8 +62,8 @@ test('animal-categories set page: six pill groups, age pills, class button, no L
  assert.ok(setHtml.includes('/extra-classes/animal-categories/'),'class button back to the class');
  assert.ok(!setHtml.includes('LEARNING PATH LESSON'),'no fake Learning Path claim');
  assert.equal((setHtml.match(/class="fc-pillgroup"/g)||[]).length,6,'six pill groups on the set page');
- assert.ok((setHtml.match(/fc-pill-age/g)||[]).length>=24,'age pills ride on every card tile');
- assert.ok(setHtml.includes('24'),'the set size is honest somewhere on the page');
+ assert.ok((setHtml.match(/fc-pill-age/g)||[]).length>=23,'age pills ride on every card tile');
+ assert.ok(setHtml.includes('23'),'the set size is honest somewhere on the page');
 });
 
 test('animal-categories card pages: 24 unique titles, download, pills, print',()=>{
@@ -79,11 +79,11 @@ test('animal-categories card pages: 24 unique titles, download, pills, print',()
   assert.ok(html.includes('/extra-classes/animal-categories/'),'class line back-link');
   assert.ok(html.length>9000,c.slug+' substantial page (not a stub)');
  }
- assert.equal(titles.size,24,'all 24 card titles unique');
+ assert.equal(titles.size,23,'all 23 card titles unique');
 });
 
 test('animal-categories lessons: 24 pages under the class, simple kid guide, canvas, tour-order prev/next',()=>{
- assert.equal(Object.keys(lpContent).length,24,'24 lessons in the registry');
+ assert.equal(Object.keys(lpContent).length,23,'23 lessons in the registry — the dinosaurs lesson moved to its own class');
  for(let i=0;i<set.cards.length;i++){
   const c=set.cards[i];
   const p=`/extra-classes/animal-categories/learn/${c.slug}/`;
@@ -93,7 +93,7 @@ test('animal-categories lessons: 24 pages under the class, simple kid guide, can
   assert.ok(html.includes('/extra-classes/'),'crumbed through Extra Classes');
   assert.ok(/data-wc/.test(html),c.slug+' drawing canvas mounts over the card');
   assert.ok(html.includes(c.img),c.slug+' lesson shows the original card');
-  const prev=set.cards[(i-1+24)%24],next=set.cards[(i+1)%24];
+  const prev=set.cards[(i-1+23)%23],next=set.cards[(i+1)%23];
   assert.ok(html.includes('learn/'+prev.slug+'/')&&html.includes('learn/'+next.slug+'/'),c.slug+' rides tour-order prev/next');
   for(const f of ['teach','what','know','play','check'])assert.ok(lpContent[c.slug][f]&&lpContent[c.slug][f].length>40,c.slug+' lesson field '+f);
  }
@@ -108,7 +108,7 @@ test('animal-categories class page: groups, the Big Sort, two-names section, Nat
  assert.ok(html.includes('/extra-classes/'),'back to Extra Classes');
  assert.ok(html.includes('/nature-club/animals/'),'hand-off link to the deeper Nature Club deck');
  const tiles=(html.match(/class="lp-tile"/g)||[]).length;
- assert.equal(tiles,24,'24 lesson tiles on the class page');
+ assert.equal(tiles,23,'23 lesson tiles on the class page');
 });
 
 test('animal-categories rides the extra-classes shelf (seven classes) with honest cover dims',()=>{
@@ -116,9 +116,9 @@ test('animal-categories rides the extra-classes shelf (seven classes) with hones
  assert.ok(ac,'on the EXTRA_CLASSES shelf');
  assert.equal(ac.href,'/extra-classes/animal-categories/');
  assert.equal(ac.w,800);assert.equal(ac.h,1277,'the taller cover dims ride honestly');
- assert.equal(EXTRA_CLASSES.length,9,'nine extra classes — Look & Learn joined (owner 2026-10-24)');
+ assert.equal(EXTRA_CLASSES.length,10,'ten extra classes — Dinosaurs joined (owner 2026-10-25)');
  const hub=readPage('/extra-classes/');
- assert.ok(hub.includes('Nine extra classes'),'hub copy counts nine — Look & Learn joined (owner 2026-10-24)');
+ assert.ok(hub.includes('Ten extra classes'),'hub copy counts ten — Dinosaurs joined (owner 2026-10-25)');
  assert.ok(hub.includes('/extra-classes/animal-categories/'),'hub links the class');
  const lpRow=readPage('/learning-path/');
  assert.ok(lpRow.includes('/extra-classes/animal-categories/'),'Learning Path bonus row links the class');

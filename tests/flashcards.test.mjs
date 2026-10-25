@@ -42,8 +42,8 @@ test('black and white baby cards page shows flashcards, stages grid, guide and s
  assert.ok(urls.length>=16,'set page should embed the fifteen flashcards plus the parents guide');
 });
 
-test('flashcard data: forty-eight flashcard sets (every learning-path class 1-22 covered, plus Class 23 the Music Room, the Playground and My Classroom school rooms, Classes 24, 28, 31-37 and Class 38 Feelings & Kindness, plus the Toddler Room, Kitchen, Doctor Visit, Home and Daily Life, Kids Games, Places in the Community, Animal Categories and Colors extra classes and the Nature Club Animals club), every card complete and linked to its real lesson',()=>{
- assert.equal(fcSets.length,48);
+test('flashcard data: forty-nine flashcard sets (every learning-path class 1-22 covered, plus Class 23 the Music Room, the Playground and My Classroom school rooms, Classes 24, 28, 31-37 and Class 38 Feelings & Kindness, plus the Toddler Room, Kitchen, Doctor Visit, Home and Daily Life, Kids Games, Places in the Community, Animal Categories and Colors extra classes, the Nature Club Animals club and the Dinosaurs extra class), every card complete and linked to its real lesson',()=>{
+ assert.equal(fcSets.length,49);
  for(const s of fcSets){
   assert.ok(s.cards.length>=10,`${s.slug} has ${s.cards.length} cards`);
   assert.ok(existsSync(join(root,s.url.slice(1),'index.html')),`${s.url} missing`);
@@ -128,8 +128,8 @@ test('card pages: unique titles and descriptions, say/try/note, download, prev/n
  // Room + 35 Kitchen = 825, +30 for the Classroom's object/good-habit
  // cards = 855, +22 for the Doctor Visit cards in visit order = 877, +16
  // for the School People (Who Works at My School) person cards = 893, +41
- // for the Home and Daily Life house-word cards = 934, +26 for the Kids Games game cards = 960, +28 for the Places in the Community town cards = 988, +24 for the Animal Categories family cards, +22 for the Nature Club Animals spotter cards, +15 for the Colors & Shades color cards = 1049 and +35 for the Class 38 feelings-and-kindness cards = 1084.
- assert.equal(downloads,1084);
+ // for the Home and Daily Life house-word cards = 934, +26 for the Kids Games game cards = 960, +28 for the Places in the Community town cards = 988, +24 for the Animal Categories family cards, +22 for the Nature Club Animals spotter cards, +15 for the Colors & Shades color cards = 1049, +35 for the Class 38 feelings-and-kindness cards = 1084, −1 for the retired Animal Categories dinosaurs card (its class opened at /dinosaurs/, owner 2026-10-25) = 1083 and +33 for the dinosaur cards = 1116.
+ assert.equal(downloads,1116);
 });
 
 test('library: every set is listed, baby collection included, no orphan sets',()=>{

@@ -48,7 +48,11 @@ export const lesson={
   {slug:'arctic-animals',file:'arctic-animals.webp',w:800,h:1132,alt:'An Animal Categories flashcard titled Arctic Animals: a two-by-two sheet of four labeled polar animals — Polar Bear, Seal, Penguin and Walrus.'},
   {slug:'australian-animals',file:'australian-animals.webp',w:800,h:1132,alt:'An Animal Categories flashcard titled Australian Animals: a two-by-two sheet of four labeled marsupials — Kangaroo, Koala, Wombat and Platypus.'},
   {slug:'whales-and-dolphins',file:'whales-and-dolphins.webp',w:1100,h:778,alt:'An Animal Categories flashcard titled Whales and Dolphins: a landscape two-by-two sheet of four labeled ocean giants — Whale, Dolphin, Manatee and Dugong.'},
-  {slug:'dinosaurs',file:'dinosaurs.webp',w:800,h:1132,alt:'An Animal Categories flashcard titled Dinosaurs: a two-by-two sheet of four labeled dinosaurs — T-rex, Triceratops, Stegosaurus and Brachiosaurus.'},
+  /* The 'dinosaurs' card retired 2026-10-25 (owner: "Remove the dinosaurs card
+     from the Animal Categories set") — the deck grew its own extra class at
+     /dinosaurs/ with 33 individual dinosaur cards. The two old URLs
+     (/flashcards/animal-categories/dinosaurs/ and the /learn/ twin) 301 to
+     /dinosaurs/ via public/_redirects. */
   {slug:'night-animals',file:'night-animals.webp',w:800,h:1132,alt:'An Animal Categories flashcard titled Night Animals: a two-by-two sheet of four labeled night animals — Bat, Raccoon, Hedgehog and Firefly.'},
   {slug:'rainforest-animals',file:'rainforest-animals.webp',w:800,h:1132,alt:'An Animal Categories flashcard titled Rainforest Animals: a two-by-two sheet of four labeled rainforest animals — Parrot, Toucan, Sloth and Tree Frog.'}
  ]
@@ -56,11 +60,11 @@ export const lesson={
 export const meta={
  slug:'animal-categories',
  name:'Animal Categories',
- seoTitle:'Animal Categories Flashcards — 24 Animal Family Spotter Sheets with Lessons (Ages 3–5)',
+ seoTitle:'Animal Categories Flashcards — 23 Animal Family Spotter Sheets with Lessons (Ages 3–5)',
  h1:'Animal Categories flashcards.',
- metaDescription:'Twenty-four printable animal-categories flashcards for ages 3–5: pets, farm animals, birds, fish, insects, safari animals, wild cats, dinosaurs, arctic, desert, rainforest and more — every card a spotter sheet of four labeled animals, with a simple lesson kids can follow, age pills and a download button. US/UK word pairs (ladybug and ladybird, cougar and mountain lion) taught side by side.',
- lede:'Twenty-four animal families, twenty-four spotter sheets, ninety-six labeled animals a kid can read. Each card gathers one family — the pets that share our houses, the farm crew that feeds us, the wild cats with their whiskers, the dinosaurs from long, long ago — and each card page carries a simple guide: who belongs to the family, what the animals do, and one way to play the whole family at home tonight. The deck starts with the animals your child already loves and walks outward, family by family, until the whole animal kingdom sits on the floor in rows.',
- hubBlurb:'Twenty-four animal families on spotter sheets — pets and farm friends, bugs and birds, safari giants, wild cats, dinosaurs and the whole animal kingdom, four labeled animals at a time.',
+ metaDescription:'Twenty-three printable animal-categories flashcards for ages 3–5: pets, farm animals, birds, fish, insects, safari animals, wild cats, arctic, desert, rainforest and more — every card a spotter sheet of four labeled animals, with a simple lesson kids can follow, age pills and a download button. US/UK word pairs (ladybug and ladybird, cougar and mountain lion) taught side by side.',
+ lede:'Twenty-three animal families, twenty-three spotter sheets, ninety-two labeled animals a kid can read. Each card gathers one family — the pets that share our houses, the farm crew that feeds us, the wild cats with their whiskers, the giants of the ocean — and each card page carries a simple guide: who belongs to the family, what the animals do, and one way to play the whole family at home tonight. The deck starts with the animals your child already loves and walks outward, family by family, until the whole animal kingdom sits on the floor in rows — and the dinosaurs of long ago now have a whole class of their own at /dinosaurs/.',
+ hubBlurb:'Twenty-three animal families on spotter sheets — pets and farm friends, bugs and birds, safari giants, wild cats and the whole animal kingdom, four labeled animals at a time.',
  ageLabel:'3–5 years',
  noun:'Animals',
  group:'preschool',
@@ -77,11 +81,11 @@ export const meta={
   ['Feathers, fins & scales','The animal kingdom in its three oldest coats: the birds that fly, the fish that swim and the sea&rsquo;s strange treasures, plus the scaly sunbathers.',['birds','fish','sea-creatures','reptiles']],
   ['Big & wild','The heavyweights and the acrobats: the big four of the grasslands, the safari&rsquo;s famous four, every wild cat from tiger to lynx, and our own monkey cousins.',['big-animals','safari-animals','wild-cats','primates']],
   ['Where animals live','Four habitats, four crews: the forest, the desert, the ice and the land Down Under — each animal dressed exactly for its home.',['forest-animals','desert-animals','arctic-animals','australian-animals']],
-  ['Giants & old wonders','The set&rsquo;s grand finale: the ocean&rsquo;s gentle giants, the dinosaurs of long ago, the animals of the dark and the rainforest&rsquo;s high-life crew.',['whales-and-dolphins','dinosaurs','night-animals','rainforest-animals']]
+  ['Giants & old wonders','The set&rsquo;s grand finale: the ocean&rsquo;s gentle giants, the animals of the dark and the rainforest&rsquo;s high-life crew.',['whales-and-dolphins','night-animals','rainforest-animals']]
  ],
  useIdeas:[
   ['The Big Sort','Lay all the cards face up and sort the whole zoo into teams: fur, feathers, scales, shells. Count each team out loud — which team won today? Sort again tomorrow by big and small, or by where they live.'],
-  ['Four a side','Every card is a two-by-two sheet of four animals. Pick one animal from each square and tell one true thing about it — "the duck swims, the goat climbs, the horse runs fast!" Ninety-six animals, one thing each.'],
+  ['Four a side','Every card is a two-by-two sheet of four animals. Pick one animal from each square and tell one true thing about it — "the duck swims, the goat climbs, the horse runs fast!" Ninety-two animals, one thing each.'],
   ['Spot the repeat visitor','Some animals sneak onto two cards: the penguin flies with the birds AND slides with the arctic crew, the parrot sits with the birds AND the rainforest crew, the frog hops with the amphibians AND the rainforest. Find every double!'],
   ['Fur, feathers, scales, shells','Hold a toy animal up against the wall of cards and ask: where does this friend belong? Sorting by body cover is the first real science a child does — and every card on the floor is an answer.'],
   ['One square a day','Read one square of one card at breakfast — a twenty-second animal visit. At that pace the whole deck takes a month, and every animal gets its own morning.']
@@ -218,12 +222,6 @@ export const cards={
   say:'Whales and dolphins! The whale is bigger than a bus and sings songs across the whole ocean, the dolphin jumps and whistles hello, and the manatee and dugong are the sea&rsquo;s gentle cows — they munch seagrass all day, slowly, slowly.',
   try:'Whale-song phones: two paper cups joined by string, one person hums a long whale song, the other listens and answers. Then jump like a dolphin between the waves (two cushions) and float like a manatee on the rug.',
   note:'Whales and dolphins are mammals, not fish — they nurse their babies with milk and must come up to breathe, which is why they blow the famous spout. A manatee is sometimes called a sea cow; sailors once mistook dugongs for mermaids, which was generous of them.'},
- 'dinosaurs':{word:'Dinosaurs',ages:'Ages 3+',pill:'Giants & old wonders',
-  cardTitle:'Dinosaurs Flashcard for Kids — T-rex, Triceratops, Stegosaurus and Brachiosaurus',
-  intro:'Dinosaurs ruled the Earth for over 160 million years, and this card holds the four most beloved: the T-rex with teeth the size of bananas, the three-horned triceratops, the stegosaurus with plates down its back, and the brachiosaurus tall enough to look into a fourth-floor window. On the card, the ancient crew stomps through its squares.',
-  say:'Dinosaurs! Long, long ago — before houses, before towns, before people! The T-rex had the biggest bite, the triceratops had three horns, the stegosaurus wore plates on its back, and the brachiosaurus was so tall it ate from the treetops. ROAR!',
-  try:'Dino stomp parade: march around the room with slow giant steps, one dino call per corner — ROAR (T-rex), snort-snort (triceratops swishing its tail), clap-plates (stegosaurus), and the long-neck reach for brachiosaurus. The loudest corner wins.',
-  note:'Dinosaurs never saw a person — they were gone about 65 million years before the first people. Birds are living dinosaurs: the T-rex&rsquo;s closest surviving relatives include chickens and pigeons. Paleontologists are the scientists who dig them up — a very popular dream job at age four.'},
  'night-animals':{word:'Night Animals',ages:'Ages 4–5',pill:'Giants & old wonders',
   cardTitle:'Night Animals Flashcard for Kids — Bat, Raccoon, Hedgehog and Firefly',
   intro:'When the sun goes down, the night shift clocks in: the bat that sees with sound, the raccoon with its clever little hands, the hedgehog that rolls into a prickly ball, and the firefly that lights up the summer dark. On the card, the night crew sits in its squares, wide awake.',

@@ -24,6 +24,7 @@ import {lpContent as ktExtra} from './lp-kitchen.mjs';
 import {lpContent as dvExtra} from './lp-doctor-visit.mjs';
 import {lpContent as hdExtra} from './lp-home-daily-life.mjs';
 import {lpContent as kgExtra} from './lp-kids-games.mjs';
+import {lpContent as dinoExtra} from './lp-dinosaurs.mjs';
 import {lpContent as pcExtra} from './lp-places-in-community.mjs';
 import {lpContent as acExtra} from './lp-animal-categories.mjs';
 import {lpContent as ncExtra} from './lp-nature-club-animals.mjs';
@@ -202,6 +203,10 @@ export const LP_REGISTRY=[
  {slug:'sight-words',content:sw29,
   navTitle:'Learn the sight words, one card at a time',
   navIntro:'Fifty-two sight word lessons, five minutes each: look at the card, say the word, play one tiny game and spot it in a real book. Start with a, the, I and you, then the action words, the colours and the little words that join sentences together.'},
+
+ {slug:'dinosaurs',content:dinoExtra,
+  navTitle:'Meet the dinosaurs, one move at a time',
+  navIntro:'Thirty-three dinosaur lessons for ages 3–5: the name, the facts a grown-up tells, the card\u2019s own action as the practice game, and the understanding check. The six favorites lead — Tyrannosaurus Rex, Triceratops, Stegosaurus, Brachiosaurus, Pterodactyl, Velociraptor — then the armored, the crested, the sail-backed, the gliding and the sea king.'},
 ].map(r=>({...r,set:fcSetBySlug[r.slug]})).filter(r=>r.set);
 
 export const lpSetBySlug=Object.fromEntries(LP_REGISTRY.map(r=>[r.slug,r]));

@@ -128,6 +128,9 @@ export const FC_TAGS={
  // animals in twenty-four families; sorting IS the game, so matching rides
  // with the animal science.
  'animal-categories':['age-3','age-4-5','lvl-preschool','lvl-prek','subj-animals','subj-science','skill-vocab','skill-thinking','skill-matching'],
+ // EXTRA CLASS · Dinosaurs: the owner's 33 move-and-play cards (owner
+ // 2026-10-25, ages 3–5) — vocabulary and big-body movement ride together.
+ 'dinosaurs':['age-3','age-4-5','lvl-preschool','lvl-prek','subj-animals','subj-science','skill-vocab','skill-movement'],
  // NATURE CLUB · Animals: the deeper spotter deck — specialist groups and
  // six wild homes; observation and naming are the skills, and the deck
  // leans Ages 4–5 with five friendly groups riding Ages 3+.

@@ -14,6 +14,7 @@ import {lesson as acLesson} from './flashcards/data-animal-categories.mjs';
 import {lesson as colLesson} from './flashcards/data-colors-and-shades.mjs';
 import {lesson as pcLesson} from './flashcards/data-places-in-community.mjs';
 import {LL_BASE,LL_COVER} from './look-and-learn.mjs';
+import {DINO_BASE,DINO_COVER} from './flashcards/data-dinosaurs.mjs';
 
 export const EXTRA_CLASSES=[
  {name:'The Toddler Room',href:'/toddler-room/',cover:trLesson.r2Base+'cover.webp',w:1414,h:2000,
@@ -42,7 +43,7 @@ export const EXTRA_CLASSES=[
   link:'Walk the town'},
  {name:'Animal Categories',href:'/extra-classes/animal-categories/',cover:acLesson.r2Base+'cover.webp',w:800,h:1277,
   alt:'Cover of the Animal Categories flashcards set: the words "Animal Category Flashcards" over a little bat, a crocodile, an ant and a pink salamander.',
-  blurb:'Twenty-four animal families on spotter sheets — pets and farm friends, the crawly crews, feathers, fins and scales, the big wild ones, four habitats, dinosaurs and the giants of the ocean — each with a simple lesson a kid can follow. The sorting class: ninety-six labeled animals, one deck.',
+  blurb:'Twenty-three animal families on spotter sheets — pets and farm friends, the crawly crews, feathers, fins and scales, the big wild ones, four habitats and the giants of the ocean — each with a simple lesson a kid can follow. The sorting class: ninety-two labeled animals, one deck. (The dinosaurs now have their own class.)',
   link:'Sort the animals'},
  {name:'Colors',href:'/extra-classes/colors/',cover:colLesson.r2Base+'flashcards/cover.webp',w:600,h:849,
   alt:'Cover of the Colors flashcards set: the words "Color Flashcards" over five round color dots.',
@@ -51,7 +52,11 @@ export const EXTRA_CLASSES=[
  {name:'Look & Learn',href:'/look-and-learn/',cover:LL_BASE+'flashcards/'+LL_COVER.file,w:LL_COVER.w,h:LL_COVER.h,
   alt:LL_COVER.alt,
   blurb:'Fifteen picture cards, four words each, and one tiny move on every picture — point at the moon, waddle like a duck, balance like a flamingo. The school\u2019s lightest class: look, say, move — nothing to print first, ages 2–5.',
-  link:'Open Look & Learn'}
+  link:'Open Look & Learn'},
+ {name:'Dinosaurs',href:'/dinosaurs/',cover:DINO_BASE+DINO_COVER.file,w:DINO_COVER.w,h:DINO_COVER.h,
+  alt:DINO_COVER.alt,
+  blurb:'Thirty-three dinosaur cards with a move-and-play action on every one — stomp like a T. rex, swing your club tail, glide like a giant flyer. The six favorites lead, every dinosaur has its own short page and lesson, and the printable twins live in the library. Ages 3–5.',
+  link:'Meet the dinosaurs'}
 ];
 
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));

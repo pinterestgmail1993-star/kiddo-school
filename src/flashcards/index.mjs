@@ -32,6 +32,7 @@ import * as acData from './data-animal-categories.mjs';
 import * as ncData from './data-nature-club-animals.mjs';
 import * as colData from './data-colors-and-shades.mjs';
 import * as fkData from './data-feelings-kindness.mjs';
+import * as dinoData from './data-dinosaurs.mjs';
 import * as fvData from './data-fruits-vegetables.mjs';
 import * as lsData from './data-life-skills-and-good-habits.mjs';
 import * as chData from './data-community-helpers.mjs';
@@ -320,7 +321,21 @@ const SOURCES=[
  // step-by-step teaching on their own pages. Class 38 sits at the END of
  // the path by owner decision (2026-10-23) — beside Class 32 was the
  // logical home, but inserting it there would renumber Classes 33–37.
- [fkData,fkData.lesson]
+ [fkData,fkData.lesson],
+ /* EXTRA CLASS · Dinosaurs (owner 2026-10-25): 33 dinosaur cards in the
+    owner's uploads at school/extra-classes/dinosaurs/ (34/34 probed HTTP
+    200 image/webp — 33 cards + cover, every file 800×1131 portrait; the
+    owner uploaded the deck into dinosaurs/ directly, one level above the
+    usual flashcards/ subfolder, so r2Base points at the real location).
+    Cover fronts the set and is never counted as a card. Display order is
+    the owner's: six pinned dinosaurs first (T. rex, Triceratops,
+    Stegosaurus, Brachiosaurus, Pterodactyl, Velociraptor), then file order.
+    Every card prints one ACTION line, transcribed verbatim. The class page
+    /dinosaurs/ hosts the short pages (/dinosaurs/<slug>/, slug = file
+    name) and the /learn/ lessons (lp-dinosaurs.mjs via LP_REGISTRY); the
+    library holds the printable twins. The old Animal Categories
+    "Dinosaurs" overview card retired into this class — its two URLs 301. */
+ [dinoData,dinoData.lesson]
 ];
 
 function buildSet([data,lesson]){

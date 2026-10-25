@@ -80,3 +80,13 @@
 /preschool/4-years/feelings-and-kindness/learn/care-support-encourage-comfort* /preschool/4-years/feelings-and-kindness/learn/care:splat 301
 /preschool/4-years/feelings-and-kindness/learn/listen-understand-respond-forgive* /preschool/4-years/feelings-and-kindness/learn/forgive:splat 301
 /preschool/4-years/feelings-and-kindness/learn/kind-words-kind-actions-kind-heart-choose-kindness* /preschool/4-years/feelings-and-kindness/learn/kind-words:splat 301
+
+# --- Animal Categories 'dinosaurs' card retired 2026-10-25 (owner: "Remove
+# the dinosaurs card from the Animal Categories set") — the deck moved into
+# its own extra class at /dinosaurs/ with 33 individual cards. Both old URLs
+# 301 to the new class hub. House redirect format: path-based splat rules
+# (www is handled by functions/_middleware.js, not here).
+/flashcards/animal-categories/dinosaurs/ /dinosaurs/ 301
+/flashcards/animal-categories/dinosaurs /dinosaurs/ 301
+/extra-classes/animal-categories/learn/dinosaurs/ /dinosaurs/ 301
+/extra-classes/animal-categories/learn/dinosaurs /dinosaurs/ 301

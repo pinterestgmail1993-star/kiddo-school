@@ -411,25 +411,10 @@ export const lpContent={
   real:'Whale-watching boats run on the US, Canadian and UK coasts — the spout is the first sighting. Manatee parks in Florida let families watch sea cows float; dugongs live off Australia.',
   play:'Whale-song telephone: two paper cups joined by string — hum a long whale note, the listener answers with their own. Then dolphin jumps between two cushions, and a manatee float on the rug, slow as seagrass.',
   check:'Ask: "What comes out of the blowhole?" (air — the spout) "What do manatees eat?" (seagrass) "Are whales and dolphins fish?" (no — mammals)'},
- 'dinosaurs':{
-  title:'The Dinosaurs Lesson',one:'The giants of long, long ago.',
-  seoTitle:'Dinosaurs Lesson for Kids — T-rex, Triceratops, Stegosaurus and Brachiosaurus, Step by Step (Animal Categories)',
-  metaDescription:'A simple animal-categories lesson for ages 3+: dinosaurs — the T-rex&rsquo;s giant bite, the triceratops&rsquo; three horns, the stegosaurus&rsquo; plates and the tall brachiosaurus. How we know they lived, and birds as living dinosaurs.',
-  intro:'This lesson teaches the ancient giants and how we know about them, one fossil at a time.',
-  what:'Dinosaurs were the giant reptiles that ruled the Earth for over 160 million years — long before people. We know them from fossils: bones turned to stone.',
-  know:'The T-rex had teeth the size of bananas; the triceratops carried three horns and a bony frill; the stegosaurus wore back plates and had a brain about the size of a plum; the brachiosaurus stood as tall as a four-story building. And the biggest twist: birds ARE dinosaurs — living ones.',
-  mean:'Deep time is the idea: 65 million years is too long to imagine, but a fossil you can touch makes it real — the past leaves receipts.',
-  why:'Dinosaurs are the gateway drug to science: the child who learns "fossils tell the story" has the whole method in miniature.',
-  dev:'Deep-time talk in kid units, evidence-based thinking (bones → scientists → story), and the bird connection that rewires everything.',
-  vocab:'dinosaur, fossil, paleontologist, T-rex, triceratops, stegosaurus, brachiosaurus, extinct, bones, ancient',
-  teach:'1) Start with the word: dinosaur means "terrible lizard" — but they were not lizards, and the T-rex was more like a giant bird cousin.\n2) The T-rex: the famous hunter — teeth like bananas, jaws like a truck. It lived about 66 million years ago.\n3) The triceratops: the three-horned plant-eater — its frill was a shield and its horns said "not today".\n4) The stegosaurus: the plated one — back plates for show and warmth, tail spikes for defense, and a plum-sized brain that managed fine.\n5) The brachiosaurus: the tall one — a four-story reach, front legs longer than back, eating treetops no one else could.\n6) The ending AND the twist: an asteroid ended the age 65 million years ago — but birds are living dinosaurs, so the dinosaurs never fully left.',
-  say:'"Dinosaurs ruled the Earth long, long before people! The T-rex had banana-sized teeth, the triceratops had three horns, the stegosaurus wore plates, and the brachiosaurus was as tall as a house. And here is the secret: birds are living dinosaurs!"',
-  notice:'On the card, the T-rex grins with its banana teeth, the triceratops shows all three horns, the stegosaurus carries its back plates, and the brachiosaurus reaches past the top of its square. Which one ate plants? Three of the four did!',
-  ask:'"How do we know dinosaurs existed?" (fossils — bones turned to stone) "Which dinosaur was the tallest?" (the brachiosaurus) "Are there any dinosaurs alive today?" (yes — birds!)',
-  childSay:'Your child might roar-banana at the dinner table, excavate a "fossil" (toy buried in rice) with a paintbrush like a real paleontologist, or refuse to eat chicken without acknowledging its family history.',
-  real:'Natural history museums across the US, UK and Canada hang real skeletons — the brachiosaurus-in-the-lobby is a rite of passage. Fossil digs and dino-trail parks let children brush real stone.',
-  play:'Dino stomp parade: giant slow steps around the room, one call per corner — ROAR (T-rex), snort (triceratops), clap-the-plates (stegosaurus), reach-the-ceiling (brachiosaurus). The stomp ends at the fossil bed (the couch).',
-  check:'Ask: "What are dinosaur bones called when they turn to stone?" (fossils) "What happened to the dinosaurs?" (an asteroid ended their age) "Which animals today are dinosaurs?" (birds)'},
+ /* The 'dinosaurs' lesson retired 2026-10-25 with its card — the deck has
+    its own extra class at /dinosaurs/ (33 individual lessons via
+    lp-dinosaurs.mjs). The old /extra-classes/animal-categories/learn/
+    dinosaurs/ URL 301s to /dinosaurs/. */
  'night-animals':{
   title:'The Night Animals Lesson',one:'The world after bedtime.',
   seoTitle:'Night Animals Lesson for Kids — Bat, Raccoon, Hedgehog and Firefly, Step by Step (Animal Categories)',

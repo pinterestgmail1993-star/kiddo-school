@@ -108,6 +108,10 @@ const SECTIONS=[
    /* Kids Games rules (owner 2026-10-24): the /games/ shelf + 35 game pages
       live in one group beside the Kids Games class. */
    if(p==='/games/'||p.startsWith('/games/'))return{key:'gr',name:null,hub:'/games/'};
+   /* Dinosaurs extra class (owner 2026-10-25): the class hub, its 33 short
+      pages and the 33 /learn/ lessons live in one group at /dinosaurs/
+      (only the /flashcards/dinosaurs/ twins classify under the library). */
+   if(p==='/dinosaurs/'||p.startsWith('/dinosaurs/'))return{key:'dinosaurs',name:null,hub:'/dinosaurs/'};
    const room=p.split('/')[1];
    if(['/music-room/','/kitchen/','/playground/','/toddler-room/','/who-works-at-my-school/'].includes('/'+room+'/'))
     return{key:'rm-'+room,name:null,hub:'/'+room+'/'};
