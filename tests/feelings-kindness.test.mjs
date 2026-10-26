@@ -112,7 +112,7 @@ test('Class 38 wired across the school: flashcards wall, filter tags, Ages 4–5
   assert.ok(reds.includes('/flashcards/feelings-and-kindness/'+o+'* /flashcards/feelings-and-kindness/'+n+':splat 301'),'card 301: '+o);
   assert.ok(reds.includes('/preschool/4-years/feelings-and-kindness/learn/'+o+'* /preschool/4-years/feelings-and-kindness/learn/'+n+':splat 301'),'lesson 301: '+o);
  }
- assert.ok(wall.includes('Showing all 58 sets'),'wall count is 58 — the Clubs set joined the library (owner 2026-10-25); the Art Room set joined earlier (owner 2026-10-25)');
+ assert.ok(wall.includes('Showing all 59 sets'),'wall count is 59 — the Cafeteria set joined the library (owner 2026-10-26); the Clubs set joined earlier (owner 2026-10-25)');
  const tag=read('dist/flashcards/index.html').match(new RegExp('href="/flashcards/feelings-and-kindness/"[\\s\\S]{0,400}?data-filters="([^"]+)"'));
  assert.ok(tag&&tag[1].includes('age-4-5')&&tag[1].includes('subj-feelings'),'filter tags ride on the set card');
  const lp=read('dist/learning-path/index.html');

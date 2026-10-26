@@ -136,6 +136,10 @@ export const FC_TAGS={
  // 2026-10-25, ages 3–12) — the young shelf rides age-3/age-4-5, the move
  // and think skills span the whole deck; the level is a School Room.
  'extra-curricular-activities':['age-3','age-4-5','lvl-rooms','subj-sports','subj-music','subj-thinking','subj-science','subj-people','skill-movement','skill-talking','skill-thinking'],
+ // SCHOOL ROOM · The Cafeteria: the owner's 62 food cards (owner 2026-10-26,
+ // ages 2–5) — pointing, counting and matching games on every card; the
+ // level is a School Room, the subjects split across the food groups.
+ 'cafeteria':['age-1-2','age-3','age-4-5','lvl-rooms','subj-first-words','subj-colors-shapes','skill-vocab','skill-talking'],
  // NATURE CLUB · Animals: the deeper spotter deck — specialist groups and
  // six wild homes; observation and naming are the skills, and the deck
  // leans Ages 4–5 with five friendly groups riding Ages 3+.

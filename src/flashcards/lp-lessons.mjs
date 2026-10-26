@@ -27,6 +27,7 @@ import {lpContent as kgExtra} from './lp-kids-games.mjs';
 import {lpContent as dinoExtra} from './lp-dinosaurs.mjs';
 import {lpContent as artExtra} from './lp-art-room.mjs';
 import {lpContent as clubsExtra} from './lp-clubs.mjs';
+import {lpContent as cafExtra} from './lp-cafeteria.mjs';
 import {lpContent as pcExtra} from './lp-places-in-community.mjs';
 import {lpContent as acExtra} from './lp-animal-categories.mjs';
 import {lpContent as ncExtra} from './lp-nature-club-animals.mjs';
@@ -215,6 +216,9 @@ export const LP_REGISTRY=[
  {slug:'extra-curricular-activities',content:clubsExtra,
   navTitle:'Try a club, one card at a time',
   navIntro:'Forty-five club lessons for ages 3–12: what the club is, what its two printed skills secretly train, the parent script, and the understanding check. The fifteen Ages 3+ clubs lead — art to singing — then the thirty Ages 6+ clubs, from archery to volunteering; fencing and archery always ride with a trained coach.'},
+ {slug:'cafeteria',content:cafExtra,
+  navTitle:'Name lunch, one tray food at a time',
+  navIntro:'Sixty-two cafeteria lessons for ages 2–5: what the food is, what its card activity secretly trains, the parent script, and the understanding check. The main shelf leads — apple through ham-sandwich — then More foods, juice through yogurt, with counting, matching and pointing games all the way.'},
 ].map(r=>({...r,set:fcSetBySlug[r.slug]})).filter(r=>r.set);
 
 export const lpSetBySlug=Object.fromEntries(LP_REGISTRY.map(r=>[r.slug,r]));

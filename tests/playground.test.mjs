@@ -122,8 +122,8 @@ test('homepage School Rooms section: six covers + Explore the School button',()=
  assert.ok(sec.includes('SCHOOL ROOMS'),'section eyebrow');
  assert.ok(sec.includes('href="/rooms/"'),'section links the hub');
  assert.ok(sec.includes('>Explore the School'),'button text');
- assert.ok((sec.match(/class="room-card"/g)||[]).length===6,'six room cards');
- for(const cover of ['bunny-finds-a-friend','garden-bugs-and-friends-age-2','school/playground/flashcards/cover.webp','school/music-room/flashcards/cover.webp','school/art-room/cover.webp','school/club/cover.webp'])
+ assert.ok((sec.match(/class="room-card"/g)||[]).length===7,'seven room cards — the Cafeteria joined (owner 2026-10-26)');
+ for(const cover of ['bunny-finds-a-friend','garden-bugs-and-friends-age-2','school/playground/flashcards/cover.webp','school/music-room/flashcards/cover.webp','school/art-room/cover.webp','school/club/cover.webp','school/cafeteria/cover.webp'])
   assert.ok(sec.includes(cover),'section cover '+cover);
 });
 

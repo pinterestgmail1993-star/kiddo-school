@@ -35,6 +35,7 @@ import * as fkData from './data-feelings-kindness.mjs';
 import * as dinoData from './data-dinosaurs.mjs';
 import * as artData from './data-art-room.mjs';
 import * as clubsData from './data-clubs.mjs';
+import * as cafData from './data-cafeteria.mjs';
 import * as fvData from './data-fruits-vegetables.mjs';
 import * as lsData from './data-life-skills-and-good-habits.mjs';
 import * as chData from './data-community-helpers.mjs';
@@ -368,7 +369,28 @@ const SOURCES=[
     library holds the printable twins. Owner cross-links: Explore the School
     (/rooms/) and the Learning Path's Growing-up classrooms row point here,
     and the room links back to both. */
- [clubsData,clubsData.lesson]
+ [clubsData,clubsData.lesson],
+
+ /* SCHOOL ROOM · The Cafeteria (owner 2026-10-26): 62 food cards from the
+    owner's uploads at school/cafeteria/ (63/63 probed HTTP 200 image/webp —
+    62 cards + cover; 56 portrait at 800×1132, 6 landscape at 1100×778: apple,
+    banana, cafeteria-tray, juice, milk, sandwich — the room letterboxes them
+    with object-fit: contain, per the owner's rule; the owner uploaded the
+    deck into cafeteria/ directly rather than the brief's
+    school/rooms/cafeteria/flashcards/, so r2Base points at the real location
+    — the fourth top-level deck in a row). Cover fronts the set and is never
+    counted as a card. SHELVES (owner rule): the first 29 cards (apple through
+    ham-sandwich) are the main shelf; the other 33 (juice through yogurt) sit
+    under "More foods". Every card prints one ACTIVITY line, transcribed
+    verbatim. The room page /cafeteria/ hosts the short pages
+    (/cafeteria/<slug>/, slug = file name) and the /cafeteria/learn/ lessons
+    (lp-cafeteria.mjs via LP_REGISTRY); the library holds the printable twins
+    at /flashcards/cafeteria/. Five words already live in the Fruits &
+    Vegetables set (apple, banana, carrot, grapes, strawberry): their URLs are
+    kept and friend links join them to the cafeteria versions. Owner
+    cross-links: Explore the School (/rooms/), Class 22 Fruits & Vegetables
+    and the Kitchen Helper class point here, and the room links back. */
+ [cafData,cafData.lesson]
 ];
 
 function buildSet([data,lesson]){

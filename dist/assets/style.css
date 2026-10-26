@@ -2247,3 +2247,8 @@ h1 em,h2 em{color:#7b4b99}
 .ll-cell .lp-tile strong{display:block;padding:10px 12px;font-size:15px}
 .ll-words{margin:0;font-size:14px;line-height:1.9}
 .ll-words a{font-weight:600;white-space:nowrap}
+/* Cafeteria room (owner 2026-10-26): the six landscape cards (apple, banana,
+   cafeteria-tray, juice, milk, sandwich — 1100×778) letterbox with
+   object-fit: contain, never crop. Pinned as its own rule so any future
+   object-fit: cover change elsewhere cannot crop the deck's landscape art. */
+.lp-tile.caf-land img,.fc2-hero img.caf-land{object-fit:contain;background:#fff}

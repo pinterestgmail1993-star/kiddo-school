@@ -136,7 +136,7 @@ test('owner cross-links both ways: Explore the School, Coloring Pages, Colors cl
  // Explore the School: /rooms/ lists six rooms and the homepage section carries the Art Room card
  const rooms=readPage('/rooms/');
  assert.ok(rooms.includes('href="/art-room/"'),'/rooms/ links the Art Room');
- assert.ok(rooms.includes('Six rooms'),'/rooms/ copy says six rooms');
+ assert.ok(rooms.includes('Seven rooms'),'/rooms/ copy says seven rooms — the Cafeteria joined (owner 2026-10-26)');
  const home=read('dist/index.html');
  const sec=home.slice(home.indexOf('id="school-rooms"'),home.indexOf('id="school-rooms"')+12000);
  assert.ok(sec.includes('href="/art-room/"'),'homepage School Rooms section links the Art Room');

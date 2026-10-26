@@ -32,18 +32,22 @@ export const ROOMS=[
  {name:'Clubs',href:'/clubs/',cover:'https://assets.kiddo.school/school/club/cover.webp',w:800,h:1131,
   alt:'Cover of the Extra-Curricular Activities flashcards set: the words "Extra-Curricular Activities" over five smiling children holding a guitar, a soccer ball, a paintbrush and a paint palette.',
   blurb:'Forty-five after-school clubs for ages 3–12: art, music and baking for the youngest members, then chess, coding and fencing for ages 6 and up — every card prints the two skills its club trains.',
-  link:'Join the Clubs'}
+  link:'Join the Clubs'},
+ {name:'Cafeteria',href:'/cafeteria/',cover:'https://assets.kiddo.school/school/cafeteria/cover.webp',w:800,h:1132,
+  alt:'Cover of the School Cafeteria Flashcards set: the words "School Cafeteria Flashcards" over a line-drawn lunch tray holding a milk carton, an apple, a sandwich and a fork.',
+  blurb:'Sixty-two lunch-tray foods for ages 2–5: fruits, mains, breakfasts, drinks and snacks — every card prints its own pointing, counting or matching activity, and every food has a lesson and a printable twin.',
+  link:'Visit the Cafeteria'}
 ];
 
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 
-/* The homepage School Rooms section: six covered cards plus the
+/* The homepage School Rooms section: seven covered cards plus the
    "Explore the School" button into the hub at /rooms/. */
 export function homeRoomsSection(){
- return `<section class="section wrap" id="school-rooms"><div class="section-heading"><div><span class="eyebrow">SCHOOL ROOMS</span><h2>Walk around the school.</h2></div><a class="text-link" href="/rooms/">Explore the School <span aria-hidden="true">↗</span></a></div><p class="mw-lede">Six rooms to wander into — a library to read in, a garden to grow in, a playground to run in, a music room to play in, an art room to make in and a clubs room to join.</p><div class="room-grid">${ROOMS.map(r=>`<a class="room-card" href="${r.href}"><span class="room-cover"><img src="${r.cover}" width="${r.w}" height="${r.h}" alt="${esc(r.alt)}" loading="lazy"></span><span class="room-body"><span class="explore-eyebrow">SCHOOL ROOM</span><h3>${esc(r.name)}</h3><p>${esc(r.blurb)}</p><span class="text-link">${esc(r.link)} <span aria-hidden="true">↗</span></span></span></a>`).join('')}</div><div class="hero-actions"><a class="button" href="/rooms/">Explore the School <span aria-hidden="true">↗</span></a></div></section>`;
+ return `<section class="section wrap" id="school-rooms"><div class="section-heading"><div><span class="eyebrow">SCHOOL ROOMS</span><h2>Walk around the school.</h2></div><a class="text-link" href="/rooms/">Explore the School <span aria-hidden="true">↗</span></a></div><p class="mw-lede">Seven rooms to wander into — a library to read in, a garden to grow in, a playground to run in, a music room to play in, an art room to make in, a clubs room to join and a cafeteria to taste.</p><div class="room-grid">${ROOMS.map(r=>`<a class="room-card" href="${r.href}"><span class="room-cover"><img src="${r.cover}" width="${r.w}" height="${r.h}" alt="${esc(r.alt)}" loading="lazy"></span><span class="room-body"><span class="explore-eyebrow">SCHOOL ROOM</span><h3>${esc(r.name)}</h3><p>${esc(r.blurb)}</p><span class="text-link">${esc(r.link)} <span aria-hidden="true">↗</span></span></span></a>`).join('')}</div><div class="hero-actions"><a class="button" href="/rooms/">Explore the School <span aria-hidden="true">↗</span></a></div></section>`;
 }
 
-/* The /rooms/ hub: the same six rooms, room-sized. */
+/* The /rooms/ hub: the same seven rooms, room-sized. */
 export function roomsHubBody(){
  return `<section class="wrap section compact"><div class="room-grid room-grid-hub">${ROOMS.map(r=>`<a class="room-card" href="${r.href}"><span class="room-cover"><img src="${r.cover}" width="${r.w}" height="${r.h}" alt="${esc(r.alt)}" loading="lazy"></span><span class="room-body"><span class="explore-eyebrow">SCHOOL ROOM</span><h2>${esc(r.name)}</h2><p>${esc(r.blurb)}</p><span class="text-link">${esc(r.link)} <span aria-hidden="true">↗</span></span></span></a>`).join('')}</div><p class="fc-hint">Every room\u2019s cards and pages live inside the rooms themselves — the classes and lessons keep their own shelves on the <a href="/learning-path/">Learning Path</a>, the printable card library sits at <a href="/flashcards/">Flashcards</a>, and the book reader lives in the <a href="/learning-library/">Library</a>.</p></section>`;
 }
