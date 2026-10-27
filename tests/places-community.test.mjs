@@ -118,9 +118,9 @@ test('places-in-the-community rides the extra-classes shelf (six classes) with h
  const pc=EXTRA_CLASSES.find(c=>c.name==='Places in the Community');
  assert.ok(pc,'on the EXTRA_CLASSES shelf');
  assert.equal(pc.href,'/extra-classes/places-in-the-community/');
- assert.equal(EXTRA_CLASSES.length,10,'ten extra classes — Dinosaurs joined (owner 2026-10-25)');
+ assert.equal(EXTRA_CLASSES.length,11,'eleven extra classes — Manners joined (owner 2026-10-27, one page, no individual URLs)');
  const hub=readPage('/extra-classes/');
- assert.ok(hub.includes('Ten extra classes'),'hub copy counts ten — Dinosaurs joined (owner 2026-10-25)');
+ assert.ok(hub.includes('Eleven extra classes'),'hub copy counts ten — Dinosaurs joined (owner 2026-10-25)');
  assert.ok(hub.includes('/extra-classes/places-in-the-community/'),'hub links the class');
  const lpRow=readPage('/learning-path/');
  assert.ok(lpRow.includes('/extra-classes/places-in-the-community/'),'Learning Path bonus row links the class');

@@ -2252,3 +2252,25 @@ h1 em,h2 em{color:#7b4b99}
    object-fit: contain, never crop. Pinned as its own rule so any future
    object-fit: cover change elsewhere cannot crop the deck's landscape art. */
 .lp-tile.caf-land img,.fc2-hero img.caf-land{object-fit:contain;background:#fff}
+
+/* Manners extra class (owner 2026-10-27): ONE page at /manners/ — 32 card
+   tiles on the class page, each with its practice tip and Download + Print
+   under the image. House look: ink border, hard offset shadow, serif word. */
+.mn-cards{margin-top:26px;display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:20px}
+.mn-card{margin:0;display:flex;flex-direction:column;gap:10px;background:var(--white);border:1.5px solid var(--ink);box-shadow:4px 4px 0 var(--ink);padding:12px 12px 14px}
+.mn-card img{width:100%;height:auto;background:#fff;border:1px solid var(--line)}
+.mn-card strong{font-family:var(--serif);font-weight:400;font-size:17px;line-height:1.25;text-align:center;letter-spacing:-.2px}
+.mn-card .mn-tip{margin:0;font-size:.86rem;line-height:1.45;color:var(--ink-soft,#5C5470)}
+.mn-actions{display:flex;gap:8px;margin-top:auto;padding-top:4px;flex-wrap:wrap}
+.mn-actions .button{padding:.45em .9em;font-size:.85rem}
+@media(max-width:640px){.mn-cards{grid-template-columns:repeat(2,1fr);gap:12px}.mn-card strong{font-size:15px}.mn-card .mn-tip{font-size:.8rem}}
+/* Per-card print isolation: manners.js adds body.mn-printing + the chosen
+   card .mn-print-card, then calls window.print() — the visibility trick
+   prints exactly one card, full page, nothing else. */
+@media print{
+ body.mn-printing *{visibility:hidden!important}
+ body.mn-printing .mn-print-card,body.mn-printing .mn-print-card *{visibility:visible!important}
+ body.mn-printing .mn-print-card{position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;border:none;box-shadow:none;padding:0;margin:0;background:#fff}
+ body.mn-printing .mn-print-card img{max-width:88%;max-height:94%;width:auto;height:auto;border:none}
+ body.mn-printing .mn-print-card .mn-tip,body.mn-printing .mn-print-card .mn-actions{display:none!important}
+}

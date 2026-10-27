@@ -116,7 +116,7 @@ const SECTIONS=[
       (only the /flashcards/dinosaurs/ twins classify under the library). */
    if(p==='/dinosaurs/'||p.startsWith('/dinosaurs/'))return{key:'dinosaurs',name:null,hub:'/dinosaurs/'};
    const room=p.split('/')[1];
-   if(['/music-room/','/kitchen/','/playground/','/art-room/','/clubs/','/cafeteria/','/toddler-room/','/who-works-at-my-school/'].includes('/'+room+'/'))
+   if(['/music-room/','/kitchen/','/manners/','/playground/','/art-room/','/clubs/','/cafeteria/','/toddler-room/','/who-works-at-my-school/'].includes('/'+room+'/'))
     return{key:'rm-'+room,name:null,hub:'/'+room+'/'};
    return null;
   }},
