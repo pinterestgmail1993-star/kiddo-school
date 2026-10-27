@@ -1,22 +1,29 @@
-// Kiddo School — EXTRA CLASS · Manners: ONE page at /manners/ (owner brief
-// 2026-10-27, restated as a standing rule the same day: "no individual pages —
-// talk everything on that specific page with the image"). So this module builds
-// exactly one URL: the class page. Cover first (owner rule), then all 32 cards
-// in file order — the artwork, the manner's practice tip, and a Download +
-// Print control under every image. Print prints JUST that card (per-card
-// isolation via assets/manners.js + @media print rules in style.css); download
-// serves the full-size webp. No Greetings cards here: that deck is the owner's
+// Kiddo School — EXTRA CLASS · Manners: the class page at /manners/ (owner
+// brief 2026-10-27, restated as a standing rule the same day: "no individual
+// pages — talk everything on that specific page with the image") PLUS the
+// parents' shelf at /flashcards/manners/ (owner 2026-10-27: "include in
+// flashcard library too — but no individual pages"; the library is for
+// parents, the lesson is for kids). So the module builds exactly two URLs:
+// the class page and the library shelf — nothing per card anywhere. The
+// class page: cover first (owner rule), then all 32 cards in file order —
+// the artwork, the manner's practice tip, and a Download + Print control
+// under every image. The shelf: the same 32 tiles with the same buttons,
+// spoken to parents. Print prints JUST that card (per-card isolation via
+// assets/manners.js + @media print rules in style.css); download serves the
+// full-size webp. No Greetings cards here: that deck is the owner's
 // separate product and, per the owner (2026-10-27: "forget etsy — there is no
 // link between etsy and website"), the site never mentions it — no Etsy link,
-// no Etsy note anywhere. The 33 files were probed live on R2 at
-// school/extra-classes/manners/flashcards/ (33/33 HTTP 200 image/webp, every
-// card 800×1131 portrait — no landscape handling needed). Owner cross-links:
-// Class 32 "Practice good manners", Class 38 "Kind actions: manners", the
-// Cafeteria room (table-manner cards) and the Playground room (its five
-// manners cards) point here, and this page links back to all four. Owner
-// doctrine: the class page speaks teacher-to-parent — lesson voice and library
-// usefulness on the same page, no per-card URLs anywhere.
+// no Etsy note anywhere. No anchor links either (owner: the #the-cards jump
+// link "is destroying the seo" — real links only). The 33 files were probed
+// live on R2 at school/extra-classes/manners/flashcards/ (33/33 HTTP 200
+// image/webp, every card 800×1131 portrait — no landscape handling needed).
+// Owner cross-links: Class 32 "Practice good manners", Class 38 "Kind
+// actions: manners", the Cafeteria room (table-manner cards) and the
+// Playground room (its five manners cards) point at the class, and the class
+// links back to all four. Owner doctrine: the class page speaks
+// teacher-to-parent — the lesson; the shelf speaks to parents — the deck.
 import {R2} from './adventure-kit.mjs';
+import {fcCommunityMount} from './flashcards/community.mjs';
 
 export const MN_PATH='/manners/';
 export const MAN_BASE=R2+'school/extra-classes/manners/flashcards/';
@@ -88,16 +95,16 @@ for(const c of CARDS){
 
 const esc=s=>String(s).replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
 
-/* ---- The one and only Manners page --------------------------------------- */
+/* ---- The class page (the lesson) ------------------------------------------ */
 function cardTile(c){
  return `<figure class="mn-card"><img src="${MAN_BASE}${c.file}" width="${W}" height="${H}" alt="${esc(c.alt)}" loading="lazy"><strong>${esc(c.word)}</strong><figcaption class="mn-tip">${esc(c.tip)}</figcaption><div class="mn-actions"><a class="button" href="${MAN_BASE}${c.file}" download="${c.slug}.webp">Download <span aria-hidden="true">\u2193</span></a><button type="button" class="button button-ghost" data-mn-print>Print <span aria-hidden="true">\u2399</span></button></div></figure>`;
 }
 
 export function mannersBody(){
- const hero=`<article class="wrap lesson-hero lesson-hero-cover"><div class="lesson-hero-copy"><span class="eyebrow">EXTRA CLASS \u00b7 MANNERS \u00b7 32 CARDS \u00b7 AGES 3\u20135</span><h1>Manners flashcards — 32 good habits to print and practise.</h1><p class="lesson-lede">Thirty-two printable manners cards for ages three to five: the magic words, the waiting, the tidying, the table manners and the kind hands. Every card below prints free, downloads as a full-size image and carries one plain tip from the teacher on how to practise it tonight — the whole class lives on this single page.</p><div class="lesson-start"><a class="button" href="#the-cards">Open the cards <span aria-hidden="true">\u2193</span></a><a class="button button-ghost" href="/extra-classes/">More extra classes <span aria-hidden="true">\u2197</span></a></div></div><figure class="lesson-cover"><img src="${MAN_BASE}${MAN_COVER.file}" width="${MAN_COVER.w}" height="${MAN_COVER.h}" alt="${esc(MAN_COVER.alt)}"></figure></article>`;
+ const hero=`<article class="wrap lesson-hero lesson-hero-cover"><div class="lesson-hero-copy"><span class="eyebrow">EXTRA CLASS \u00b7 MANNERS \u00b7 32 CARDS \u00b7 AGES 3\u20135</span><h1>Manners flashcards — 32 good habits to print and practise.</h1><p class="lesson-lede">Thirty-two printable manners cards for ages three to five: the magic words, the waiting, the tidying, the table manners and the kind hands. Every card below prints free, downloads as a full-size image and carries one plain tip from the teacher on how to practise it tonight — the whole class lives on this single page.</p><div class="lesson-start"><a class="button button-ghost" href="/extra-classes/">More extra classes <span aria-hidden="true">\u2197</span></a></div></div><figure class="lesson-cover"><img src="${MAN_BASE}${MAN_COVER.file}" width="${MAN_COVER.w}" height="${MAN_COVER.h}" alt="${esc(MAN_COVER.alt)}"></figure></article>`;
  const how=`<section class="wrap lesson-section"><span class="eyebrow">HOW THIS CLASS WORKS</span><h2>Print the card. Practise the manner. Catch them doing it.</h2><p class="lesson-copy">Pick one card a week and pin it to the fridge at your child\u2019s eye level. Name the manner at a calm moment — not mid-tantrum — act it out once together, then spend the week catching the real thing: \u201cYou waited your turn — that\u2019s the card!\u201d Children repeat what gets noticed, and a fridge card gets noticed every single day.</p><p class="lesson-copy">The cards run in file order from ask-first to wipe-the-table, but any order works: start with the manner your mornings need most. Print on A4 or Letter paper, cut along the border, and let your child pin up each card they earn — ownership is half of manners. Everything on this page is free to print at home, today.</p></section>`;
- const cards=`<section class="wrap lesson-section" id="the-cards"><span class="eyebrow">THE CARDS \u00b7 32 MANNERS</span><h2>Every manner, its tip, and the button to print it.</h2><p class="fc-hint">Each tile is the card itself: the artwork prints at full size with the Download button, and Print runs just that one card through your printer. The tip under each card is the whole lesson — one way to set it up tonight.</p><div class="mn-cards">${CARDS.map(cardTile).join('')}</div></section>`;
- const around=`<section class="wrap lesson-section"><span class="eyebrow">AROUND THE SCHOOL</span><h2>Where manners are practised next.</h2><div class="lesson-linkrow"><a class="lesson-pill-link" href="/preschool/4-years/life-skills-and-good-habits/">Practise good manners in Class 32 <span>· Ages 4–5</span> <span aria-hidden="true">\u2197</span></a><a class="lesson-pill-link" href="/preschool/4-years/feelings-and-kindness/">Kind actions in Class 38 <span>· Ages 4–5</span> <span aria-hidden="true">\u2197</span></a><a class="lesson-pill-link" href="/cafeteria/">Table manners in the Cafeteria <span>· Ages 2–5</span> <span aria-hidden="true">\u2197</span></a><a class="lesson-pill-link" href="/playground/">Fair play in the Playground <span>· The five manners</span> <span aria-hidden="true">\u2197</span></a><a class="lesson-pill-link" href="/extra-classes/">All the extra classes <span aria-hidden="true">\u2197</span></a></div><p class="lesson-copy">Class 32 builds the daily habits and Class 38 grows the kind words; the Cafeteria room names every food on the tray, and the Playground keeps the five manners that make play fair. This class prints the manners themselves — one card, one habit, one fridge at a time.</p></section>`;
+ const cards=`<section class="wrap lesson-section"><span class="eyebrow">THE CARDS \u00b7 32 MANNERS</span><h2>Every manner, its tip, and the button to print it.</h2><p class="fc-hint">Each tile is the card itself: the artwork prints at full size with the Download button, and Print runs just that one card through your printer. The tip under each card is the whole lesson — one way to set it up tonight.</p><div class="mn-cards">${CARDS.map(cardTile).join('')}</div></section>`;
+ const around=`<section class="wrap lesson-section"><span class="eyebrow">AROUND THE SCHOOL</span><h2>Where manners are practised next.</h2><div class="lesson-linkrow"><a class="lesson-pill-link" href="/preschool/4-years/life-skills-and-good-habits/">Practise good manners in Class 32 <span>· Ages 4–5</span> <span aria-hidden="true">\u2197</span></a><a class="lesson-pill-link" href="/preschool/4-years/feelings-and-kindness/">Kind actions in Class 38 <span>· Ages 4–5</span> <span aria-hidden="true">\u2197</span></a><a class="lesson-pill-link" href="/cafeteria/">Table manners in the Cafeteria <span>· Ages 2–5</span> <span aria-hidden="true">\u2197</span></a><a class="lesson-pill-link" href="/playground/">Fair play in the Playground <span>· The five manners</span> <span aria-hidden="true">\u2197</span></a><a class="lesson-pill-link" href="/flashcards/manners/">The parents\u2019 shelf in the library <span>· All 32 cards</span> <span aria-hidden="true">\u2197</span></a><a class="lesson-pill-link" href="/extra-classes/">All the extra classes <span aria-hidden="true">\u2197</span></a></div><p class="lesson-copy">Class 32 builds the daily habits and Class 38 grows the kind words; the Cafeteria room names every food on the tray, and the Playground keeps the five manners that make play fair. This page is the lesson — it teaches each manner to your child the way a teacher would. Parents who want the whole deck on one wall will find it on the <a href="/flashcards/manners/">parents\u2019 shelf in the flashcards library</a>: the same thirty-two cards, downloading and printing straight from there.</p></section>`;
  return `${hero}${how}${cards}${around}<p class="lesson-note"><strong>Manners are not a lecture.</strong> They are fifty small chances a day for a child to be proudly capable — the cards just help everyone remember to look for the chances.</p>`;
 }
 
@@ -110,3 +117,24 @@ export const MAN_KINDNESS_LINK=`<section class="wrap lesson-section"><span class
 export const MAN_CAFETERIA_LINK=`<section class="wrap lesson-section"><span class="eyebrow">AT THE TABLE</span><h2>Table manners, printed.</h2><p class="lesson-copy">The Cafeteria names the food — the <a href="/manners/">Manners flashcards</a> mind the table: chew quietly, use two hands, wipe the table, offer to share. Thirty-two printable manners cards for ages 3–5, each with a how-to-practise tip, a download and a one-tap print on a single page. Print both decks and lunch gets louder in the best way.</p></section>`;
 /* Appended to the Playground room. */
 export const MAN_PLAYGROUND_LINK=`<section class="wrap lesson-section"><span class="eyebrow">PLAY FAIR</span><h2>The five manners meet thirty-two more.</h2><p class="lesson-copy">The Playground keeps five manners cards — the ones play needs most. The <a href="/manners/">Manners flashcards</a> next door carry the full set: take turns and let-others-go-first for the slide queue, quiet voices and walking feet for the halls — thirty-two cards for ages 3–5 with a tip, a download and a print button on each, all on one page.</p></section>`;
+
+/* ---- The parents' shelf in the library (/flashcards/manners/) -------------- */
+/* Owner 2026-10-27: the manners cards belong in the flashcard library too —
+   but still with NO individual pages. So the shelf IS the set page: the whole
+   deck on one wall, Download + Print under every image, nothing linking away
+   per card. Voice split (owner doctrine): the class page is the lesson for
+   the child; this shelf is the parents' printing copy. No cover figure here
+   (house library convention — the wall card already showed it). */
+export const MN_LIB_SET={slug:'manners',url:'/flashcards/manners/',name:'Manners',
+ ageLabel:'3–5',stageName:null,
+ hubBlurb:'The parents\u2019 shelf: all thirty-two manners cards with a download and a print button under every image, printing straight from the shelf — no card pages. The child\u2019s lesson lives in the Manners class.',
+ coverUrl:MAN_BASE+MAN_COVER.file,
+ cover:{w:MAN_COVER.w,h:MAN_COVER.h,alt:MAN_COVER.alt},
+ cards:CARDS.map(c=>({slug:c.slug,word:c.word}))};
+
+export function mannersLibBody(){
+ const intro=`<section class="wrap lesson-section"><p class="lesson-copy">This is the parents\u2019 copy of the Manners class: all thirty-two cards on one shelf, ready to print. You do not need a plan — pick the manner your days need most, download the card, and print it full size on A4 or Letter paper. Every card carries its practice tip underneath, so the how-to rides along with the picture, and the print button runs a single card through your printer with nothing else on the page. There are no card pages to hop through: the shelf is the whole set.</p><p class="lesson-copy">The shelf is yours; the lesson is your child\u2019s. The class page at <a href="/manners/">Manners</a> teaches each manner the way a teacher would — what it means, how to model it, what to catch them doing — while this wall simply holds the deck for printing. Same cards, two jobs: the lesson lives in the class, the library is where parents print.</p></section>`;
+ const cards=`<section class="wrap lesson-section"><span class="eyebrow">THE DECK \u00b7 32 MANNERS</span><h2>Every card, its tip, and the buttons.</h2><p class="fc-hint">Download takes the full-size card image; Print runs just that one card through the printer. Nothing opens a new page — the shelf is the whole set.</p><div class="mn-cards">${CARDS.map(cardTile).join('')}</div></section>`;
+ const next=`<section class="wrap lesson-section"><span class="eyebrow">WHERE TO NEXT</span><h2>The lesson, the hall, the rest of the library.</h2><div class="lesson-linkrow"><a class="lesson-pill-link" href="/manners/">The Manners class <span>· The child\u2019s lesson</span> <span aria-hidden="true">\u2197</span></a><a class="lesson-pill-link" href="/extra-classes/">All the extra classes <span aria-hidden="true">\u2197</span></a><a class="lesson-pill-link" href="/flashcards/">All flashcard sets <span aria-hidden="true">\u2197</span></a></div><p class="lesson-copy">Print a card here, teach the manner there: the <a href="/manners/">Manners class</a> is the lesson side of this deck — one card a week pinned at your child\u2019s eye level, with the words to say and the habit to catch. Once the deck is up on the fridge, the class page is the manual that makes each card stick.</p></section>`;
+ return `${intro}${cards}${next}${fcCommunityMount('/flashcards/manners/')}`;
+}
