@@ -114,6 +114,10 @@ export const FC_TAGS={
  // 3–5) — the manners cards ride the feelings-and-good-habits subject like
  // Class 32; talking the words together and the daily routines ARE the skill.
  'manners':['age-3','age-4-5','lvl-prek','subj-feelings','skill-talking','skill-routines'],
+ // EXTRA CLASS · Question Words: the parents' shelf deck (owner 2026-10-28,
+ // ages 3–5) — question words are the child's first language tools, so they
+ // ride reading (language) and both talking and thinking skills.
+ 'question-words':['age-3','age-4-5','lvl-prek','subj-reading','skill-talking','skill-thinking'],
  'transportation-and-vehicles':['age-4-5','lvl-prek','subj-vehicles','skill-vocab'],
  // Extra classes and rooms (their real age spans ride along)
  'kitchen':['age-3','age-4-5','lvl-preschool','lvl-prek','subj-first-words','skill-vocab','skill-routines'],

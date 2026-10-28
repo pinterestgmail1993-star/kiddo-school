@@ -139,12 +139,12 @@ test('the old AC dinosaurs card is REMOVED: 23 cards left, both URLs 301, copy h
 });
 
 test('wiring: extras shelf (ten tiles incl. Dinosaurs), search index, /all-pages/, sitemap, honest counts',()=>{
- assert.equal(EXTRA_CLASSES.length,11,'eleven extra classes — Manners joined (owner 2026-10-27)');
+ assert.equal(EXTRA_CLASSES.length,12,'twelve extra classes — Question Words joined (owner 2026-10-28; Manners joined 2026-10-27)');
  const dino=EXTRA_CLASSES.find(c=>c.name==='Dinosaurs');
  assert.ok(dino&&dino.href==='/dinosaurs/','Dinosaurs tile on the extras shelf');
  const ex=readPage('/extra-classes/');
  assert.ok(ex.includes('href="/dinosaurs/"'),'extras hub links the class');
- assert.ok(ex.includes('Eleven extra classes'),'hub copy says eleven');
+ assert.ok(ex.includes('Twelve extra classes'),'hub copy says twelve — Question Words joined (owner 2026-10-28)');
  const idx=read('dist/assets/search-index.json');
  for(const p of ['/dinosaurs/','/dinosaurs/tyrannosaurus-rex/','/dinosaurs/learn/triceratops/','/flashcards/dinosaurs/'])
   assert.ok(idx.includes('"u":"'+p+'"'),'search index carries '+p);

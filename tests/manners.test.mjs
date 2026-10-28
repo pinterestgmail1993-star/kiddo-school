@@ -108,7 +108,7 @@ test('cross-links both ways: Class 32, Class 38, Cafeteria, Playground — and b
  // hub + learning-path bonus row list the class (house coherence)
  const hub=read('/extra-classes/');
  assert.ok(hub.includes('href="/manners/"'),'extra-classes hub lists Manners');
- assert.ok(hub.includes('Eleven extra classes'),'hub copy counts Eleven');
+ assert.ok(hub.includes('Twelve extra classes'),'hub copy counts Twelve — Question Words joined (owner 2026-10-28)');
  assert.ok(hub.includes('href="/flashcards/manners/"'),'hub hints at the parents\u2019 shelf');
  const lp=read('/learning-path/');
  assert.ok(lp.includes('<a href="/manners/">Manners</a> (ages 3–5)'),'Learning Path bonus row lists Manners');
@@ -119,7 +119,7 @@ test('cross-links both ways: Class 32, Class 38, Cafeteria, Playground — and b
  const fcHub=read('/flashcards/');
  assert.ok(/<a class="fc-setcard" href="\/flashcards\/manners\/" data-filters="[^"]+">/.test(fcHub),'tagged set card on the library wall');
  assert.ok(fcHub.includes('Manners · Extra Class'),'its own shelf heading');
- assert.ok(fcHub.includes('Showing all 60 sets'),'the wall count grew to 60');
+ assert.ok(fcHub.includes('Showing all 61 sets'),'the wall count grew to 61 — the Question Words parents’ shelf joined (owner 2026-10-28)');
 });
 
 test('wiring: search index, sitemap and /all-pages/ carry both pages — and nothing per card',()=>{
