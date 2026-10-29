@@ -116,9 +116,9 @@ test('animal-categories rides the extra-classes shelf (seven classes) with hones
  assert.ok(ac,'on the EXTRA_CLASSES shelf');
  assert.equal(ac.href,'/extra-classes/animal-categories/');
  assert.equal(ac.w,800);assert.equal(ac.h,1277,'the taller cover dims ride honestly');
- assert.equal(EXTRA_CLASSES.length,12,'twelve extra classes — Question Words joined (owner 2026-10-28; Manners joined 2026-10-27, one page, no individual URLs)');
+ assert.equal(EXTRA_CLASSES.length,13,'thirteen extra classes — Sequence Stories joined (owner 2026-10-29; Question Words 2026-10-28, Manners 2026-10-27, one page, no individual URLs)');
  const hub=readPage('/extra-classes/');
- assert.ok(hub.includes('Twelve extra classes'),'hub copy counts twelve — Question Words joined (owner 2026-10-28; Dinosaurs 2026-10-25)');
+ assert.ok(hub.includes('Thirteen extra classes'),'hub copy counts twelve — Question Words joined (owner 2026-10-28; Dinosaurs 2026-10-25)');
  assert.ok(hub.includes('/extra-classes/animal-categories/'),'hub links the class');
  const lpRow=readPage('/learning-path/');
  assert.ok(lpRow.includes('/extra-classes/animal-categories/'),'Learning Path bonus row links the class');

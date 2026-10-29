@@ -2267,7 +2267,11 @@ h1 em,h2 em{color:#7b4b99}
 .mn-card .mn-tip{margin:0;font-size:.86rem;line-height:1.45;color:var(--ink-soft,#5C5470)}
 .mn-actions{display:flex;gap:8px;margin-top:auto;padding-top:4px;flex-wrap:wrap}
 .mn-actions .button{padding:.45em .9em;font-size:.85rem}
-@media(max-width:640px){.mn-cards{grid-template-columns:repeat(2,1fr);gap:12px}.mn-card strong{font-size:15px}.mn-card .mn-tip{font-size:.8rem}}
+/* The "Ask a grown-up" badge (owner 2026-10-29): the two kitchen sequence
+   cards — make-toast and make-lemonade — carry it under the card name, and
+   the badge prints with the card (it is not in the hidden list below). */
+.mn-grownup{display:inline-block;align-self:center;font-size:.78rem;font-weight:700;letter-spacing:.3px;color:#8a4a00;background:#FFF3D6;border:1.5px dashed #d98a00;border-radius:999px;padding:.25em .85em}
+@media(max-width:640px){.mn-cards{grid-template-columns:repeat(2,1fr);gap:12px}.mn-card strong{font-size:15px}.mn-card .mn-tip{font-size:.8rem}.mn-grownup{font-size:.72rem}}
 /* Per-card print isolation: manners.js adds body.mn-printing + the chosen
    card .mn-print-card, then calls window.print() — the visibility trick
    prints exactly one card, full page, nothing else. */
@@ -2277,4 +2281,5 @@ h1 em,h2 em{color:#7b4b99}
  body.mn-printing .mn-print-card{position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;border:none;box-shadow:none;padding:0;margin:0;background:#fff}
  body.mn-printing .mn-print-card img{max-width:88%;max-height:94%;width:auto;height:auto;border:none}
  body.mn-printing .mn-print-card .mn-tip,body.mn-printing .mn-print-card .mn-actions{display:none!important}
+ body.mn-printing .mn-print-card .mn-grownup{font-size:.95rem;margin-top:2px}
 }

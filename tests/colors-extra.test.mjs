@@ -96,7 +96,7 @@ test('object-fit: contain ships on the card art (owner brief), and the .fg-more 
 test('hub shelves: /extra-classes/ lists Colors (eight classes), /flashcards/ lists the set',()=>{
  const hub=read('dist/extra-classes/index.html');
  assert.ok(hub.includes('href="/extra-classes/colors/"'),'Colors on the extra-classes shelf');
- assert.ok(hub.includes('Twelve extra classes'),'hub copy counts twelve — Question Words joined (owner 2026-10-28; Dinosaurs 2026-10-25)');
+ assert.ok(hub.includes('Thirteen extra classes'),'hub copy counts twelve — Question Words joined (owner 2026-10-28; Dinosaurs 2026-10-25)');
  const fcHub=read('dist/flashcards/index.html');
  assert.ok(fcHub.includes('href="/flashcards/colors-and-shades/"'),'set on the library wall');
  // the earlier paint-splash set is untouched at its own slug

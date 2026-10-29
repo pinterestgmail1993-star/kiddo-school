@@ -103,7 +103,7 @@ test('cross-links both ways: Class 21, Class 29, Class 30 — and back',()=>{
  // hub + learning-path bonus row list the class (house coherence)
  const hub=read('/extra-classes/');
  assert.ok(hub.includes('href="/question-words/"'),'extra-classes hub lists Question Words');
- assert.ok(hub.includes('Twelve extra classes'),'hub copy counts Twelve');
+ assert.ok(hub.includes('Thirteen extra classes'),'hub copy counts Twelve');
  assert.ok(hub.includes('href="/flashcards/question-words/"'),'hub hints at the parents\u2019 shelf');
  const lp=read('/learning-path/');
  assert.ok(lp.includes('<a href="/question-words/">Question Words</a> (ages 3–5)'),'Learning Path bonus row lists Question Words');

@@ -107,7 +107,7 @@ test('home-and-daily-life class page: groups, house hunt, two-words section, bac
 test('home-and-daily-life is on the extra-classes shelf, never the numbered path',()=>{
  const hub=readPage('/extra-classes/');
  assert.ok(hub.includes('href="/extra-classes/home-and-daily-life/"'),'hub lists the class');
- assert.equal(EXTRA_CLASSES.length,12,'twelve extra classes — Question Words joined (owner 2026-10-28; Manners joined 2026-10-27, one page, no individual URLs)');
+ assert.equal(EXTRA_CLASSES.length,13,'thirteen extra classes — Sequence Stories joined (owner 2026-10-29; Question Words 2026-10-28, Manners 2026-10-27, one page, no individual URLs)');
  assert.ok(EXTRA_CLASSES.find(c=>c.name==='Home and Daily Life'),'named Home and Daily Life');
  // the learning path page mentions it only in the bonus row
  const lp=readPage('/learning-path/');
