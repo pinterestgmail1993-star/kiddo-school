@@ -1,13 +1,15 @@
-// Kiddo School — School Rooms: the six places of the school on one shelf.
+// Kiddo School — School Rooms: the eight places of the school on one shelf.
 // The Library (the bookshelf), the School Garden (the outdoor class), the
 // Playground (action words, equipment and manners), the Music Room
 // (Class 23), the Art Room (art-activity cards, ages 2–5) and the Clubs
-// (extra-curricular activity cards, ages 3–12). The ROOMS constant is the
+// (extra-curricular activity cards, ages 3–12) and the School Hall
+// (holidays & special days, 2026-10-30). The ROOMS constant is the
 // single source of truth: the /rooms/
 // hub page and the homepage School Rooms section are both built from it, so
 // names, covers, art and links can never drift between home and hub.
 // Covers are each room's own live artwork (book cover, garden flashcard set
 // cover, playground and music-room set covers) — nothing invented.
+import {HW_BASE} from './school-hall.mjs';
 export const ROOMS=[
  {name:'School Library',href:'/learning-library/',cover:'https://assets.kiddo.school/books/age-2/bunny-finds-a-friend/cover.webp',w:2000,h:1545,
   alt:'Bunny Finds a Friend book cover: a smiling rabbit in a garden with a butterfly — the first book on the School Library shelf.',
@@ -36,18 +38,22 @@ export const ROOMS=[
  {name:'Cafeteria',href:'/cafeteria/',cover:'https://assets.kiddo.school/school/cafeteria/cover.webp',w:800,h:1132,
   alt:'Cover of the School Cafeteria Flashcards set: the words "School Cafeteria Flashcards" over a line-drawn lunch tray holding a milk carton, an apple, a sandwich and a fork.',
   blurb:'Sixty-two lunch-tray foods for ages 2–5: fruits, mains, breakfasts, drinks and snacks — every card prints its own pointing, counting or matching activity, and every food has a lesson and a printable twin.',
-  link:'Visit the Cafeteria'}
+  link:'Visit the Cafeteria'},
+ {name:'The School Hall',href:'/school-hall/',cover:HW_BASE+'action-verbs/01-cat-ghost-pumpkin-bat.webp',w:800,h:1131,
+  alt:'A Halloween action card from the School Hall: a spooky cat meowing, a silly ghost saying boo, a wobbly pumpkin wiggling and a happy bat flapping its arms.',
+  blurb:'Where the whole school celebrates: the calendar of special days — Halloween, Thanksgiving, Christmas, Valentine’s Day and Eid, the next one first — each with its own kid-sized page and printable cards.',
+  link:'Visit the School Hall'}
 ];
 
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 
-/* The homepage School Rooms section: seven covered cards plus the
+/* The homepage School Rooms section: eight covered cards plus the
    "Explore the School" button into the hub at /rooms/. */
 export function homeRoomsSection(){
- return `<section class="section wrap" id="school-rooms"><div class="section-heading"><div><span class="eyebrow">SCHOOL ROOMS</span><h2>Walk around the school.</h2></div><a class="text-link" href="/rooms/">Explore the School <span aria-hidden="true">↗</span></a></div><p class="mw-lede">Seven rooms to wander into — a library to read in, a garden to grow in, a playground to run in, a music room to play in, an art room to make in, a clubs room to join and a cafeteria to taste.</p><div class="room-grid">${ROOMS.map(r=>`<a class="room-card" href="${r.href}"><span class="room-cover"><img src="${r.cover}" width="${r.w}" height="${r.h}" alt="${esc(r.alt)}" loading="lazy"></span><span class="room-body"><span class="explore-eyebrow">SCHOOL ROOM</span><h3>${esc(r.name)}</h3><p>${esc(r.blurb)}</p><span class="text-link">${esc(r.link)} <span aria-hidden="true">↗</span></span></span></a>`).join('')}</div><div class="hero-actions"><a class="button" href="/rooms/">Explore the School <span aria-hidden="true">↗</span></a></div></section>`;
+ return `<section class="section wrap" id="school-rooms"><div class="section-heading"><div><span class="eyebrow">SCHOOL ROOMS</span><h2>Walk around the school.</h2></div><a class="text-link" href="/rooms/">Explore the School <span aria-hidden="true">↗</span></a></div><p class="mw-lede">Eight rooms to wander into — a library to read in, a garden to grow in, a playground to run in, a music room to play in, an art room to make in, a clubs room to join, a cafeteria to taste and a hall to celebrate in.</p><div class="room-grid">${ROOMS.map(r=>`<a class="room-card" href="${r.href}"><span class="room-cover"><img src="${r.cover}" width="${r.w}" height="${r.h}" alt="${esc(r.alt)}" loading="lazy"></span><span class="room-body"><span class="explore-eyebrow">SCHOOL ROOM</span><h3>${esc(r.name)}</h3><p>${esc(r.blurb)}</p><span class="text-link">${esc(r.link)} <span aria-hidden="true">↗</span></span></span></a>`).join('')}</div><div class="hero-actions"><a class="button" href="/rooms/">Explore the School <span aria-hidden="true">↗</span></a></div></section>`;
 }
 
-/* The /rooms/ hub: the same seven rooms, room-sized. */
+/* The /rooms/ hub: the same eight rooms, room-sized. */
 export function roomsHubBody(){
  return `<section class="wrap section compact"><div class="room-grid room-grid-hub">${ROOMS.map(r=>`<a class="room-card" href="${r.href}"><span class="room-cover"><img src="${r.cover}" width="${r.w}" height="${r.h}" alt="${esc(r.alt)}" loading="lazy"></span><span class="room-body"><span class="explore-eyebrow">SCHOOL ROOM</span><h2>${esc(r.name)}</h2><p>${esc(r.blurb)}</p><span class="text-link">${esc(r.link)} <span aria-hidden="true">↗</span></span></span></a>`).join('')}</div><p class="fc-hint">Every room\u2019s cards and pages live inside the rooms themselves — the classes and lessons keep their own shelves on the <a href="/learning-path/">Learning Path</a>, the printable card library sits at <a href="/flashcards/">Flashcards</a>, and the book reader lives in the <a href="/learning-library/">Library</a>.</p></section>`;
 }

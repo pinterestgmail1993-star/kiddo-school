@@ -115,6 +115,10 @@ const SECTIONS=[
       pages and the 33 /learn/ lessons live in one group at /dinosaurs/
       (only the /flashcards/dinosaurs/ twins classify under the library). */
    if(p==='/dinosaurs/'||p.startsWith('/dinosaurs/'))return{key:'dinosaurs',name:null,hub:'/dinosaurs/'};
+   /* The School Hall (owner 2026-10-30): the holidays & special days room —
+      the hub and its five short holiday pages (URLs the same every year)
+      live in one group at /school-hall/. */
+   if(p==='/school-hall/'||['/halloween/','/thanksgiving/','/christmas/','/valentines-day/','/eid/'].includes(p))return{key:'hall',name:null,hub:'/school-hall/'};
    const room=p.split('/')[1];
    if(['/music-room/','/kitchen/','/manners/','/question-words/','/sequence-stories/','/playground/','/art-room/','/clubs/','/cafeteria/','/toddler-room/','/who-works-at-my-school/'].includes('/'+room+'/'))
     return{key:'rm-'+room,name:null,hub:'/'+room+'/'};

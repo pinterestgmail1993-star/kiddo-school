@@ -150,7 +150,7 @@ test('owner cross-links both ways: Explore the School + the Growing-up classroom
  // Explore the School: /rooms/ lists six rooms and the homepage section carries the Clubs card
  const rooms=readPage('/rooms/');
  assert.ok(rooms.includes('href="/clubs/"'),'/rooms/ links the Clubs');
- assert.ok(rooms.includes('Seven rooms'),'/rooms/ copy says seven rooms — the Cafeteria joined (owner 2026-10-26)');
+ assert.ok(rooms.includes('Eight rooms'),'/rooms/ copy says eight rooms — the School Hall joined (owner 2026-10-30)');
  assert.ok(rooms.includes('school/club/cover.webp'),'/rooms/ carries the Clubs cover');
  const home=read('dist/index.html');
  const sec=home.slice(home.indexOf('id="school-rooms"'),home.indexOf('id="school-rooms"')+14000);

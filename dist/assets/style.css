@@ -2283,3 +2283,13 @@ h1 em,h2 em{color:#7b4b99}
  body.mn-printing .mn-print-card .mn-tip,body.mn-printing .mn-print-card .mn-actions{display:none!important}
  body.mn-printing .mn-print-card .mn-grownup{font-size:.95rem;margin-top:2px}
 }
+
+/* The School Hall calendar (/school-hall/): five special days, next first. */
+.hall-cal{list-style:none;margin:26px 0 0;padding:0;display:grid;gap:14px;max-width:780px}
+.hall-day{margin:0;display:flex;flex-direction:column;gap:4px;background:var(--white);border:1.5px solid var(--ink);box-shadow:4px 4px 0 var(--ink);padding:16px 18px}
+.hall-day .hall-when{font-size:.8rem;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.hall-day .hall-what{font-family:var(--serif);font-size:1.4rem;color:var(--ink);text-decoration:none;width:fit-content}
+.hall-day .hall-what:hover{text-decoration:underline;text-decoration-thickness:3px;text-decoration-color:var(--yellow)}
+.hall-day p{margin:0;font-size:.95rem;color:var(--muted)}
+.hall-day.hall-next{border-width:2.5px;background:var(--kiddo-lavender,#EEE6F2)}
+@media(max-width:640px){.hall-day{padding:13px 14px}.hall-day .hall-what{font-size:1.2rem}}

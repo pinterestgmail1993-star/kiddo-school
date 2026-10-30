@@ -93,12 +93,12 @@ test('cross-links: Explore the School, Class 22 and Kitchen Helper, both ways',(
   assert.ok(rooms.includes('href="/cafeteria/"')&&rooms.includes('Cafeteria'),'rooms hub carries the Cafeteria');
   const home=read('/');
   assert.ok(home.includes('href="/cafeteria/"'),'homepage room shelf carries the Cafeteria');
-  assert.ok(home.includes('Seven rooms'),'homepage counts seven rooms');
+  assert.ok(home.includes('Eight rooms'),'homepage counts eight rooms — the School Hall joined (owner 2026-10-30)');
   const fruits=read('/preschool/3-years/fruits-and-vegetables/');
   assert.ok(fruits.includes('href="/cafeteria/"'),'Class 22 links the Cafeteria');
   const kitchen=read('/kitchen/');
   assert.ok(kitchen.includes('href="/cafeteria/"'),'Kitchen links the Cafeteria');
-  assert.ok(rooms.includes('Seven rooms'),'rooms hub counts seven rooms');
+  assert.ok(rooms.includes('Eight rooms'),'rooms hub counts eight rooms — the School Hall joined (owner 2026-10-30)');
 });
 
 test('the five existing word pages keep their URLs and link their cafeteria versions',()=>{
