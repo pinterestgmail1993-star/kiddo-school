@@ -5,7 +5,10 @@
    age pill, subject pill and a skills line, plus the "Why we made First
    Glance" story. Locks: page contract, 58 cards = exact bucket manifest,
    pills/skills per card, no individual card pages, header row-2 on every
-   page, footer link, sitemap + image sitemap, search index, /all-pages/. */
+   page, footer link, sitemap + image sitemap, search index, /all-pages/.
+   2026-10-31: the header's featured chip moved to the new Science at a
+   Glance collection (owner: "on header science at a glance"); the header
+   assertions now track the chip swap, the footer link stays. */
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync,readdirSync,existsSync} from 'node:fs';
@@ -83,14 +86,19 @@ test('NO individual card pages — dist/first-glance/ holds only the one page',(
 });
 
 test('discoverable everywhere: header row-2, footer, sitemap+image, search, directory',()=>{
+ /* Owner 2026-10-31: the header's featured chip moved to the new Science
+    at a Glance collection ("on header science at a glance"); First Glance
+    keeps its footer link and the science page's sibling link. */
  const home=read('dist/index.html');
  const deep=read('dist/flashcards/animal-categories/amphibians/index.html');
  const fgSelf=read('dist/first-glance/index.html');
  for(const [name,h] of [['home',home],['deep page',deep],['first-glance itself',fgSelf]]){
-  assert.ok(h.includes('class="header-fg" href="/first-glance/"'),'header row-2 missing on '+name);
+  assert.ok(h.includes('class="header-fg" href="/science-at-a-glance/"'),'header row-2 missing on '+name);
+  assert.ok(h.includes('65 first-picture sheets · Ages 2–5'),'header chip count missing on '+name);
   assert.ok(h.includes('<a href="/first-glance/">First Glance sheets</a>'),'footer link missing on '+name);
  }
- assert.ok(fgSelf.includes('class="header-fg" href="/first-glance/" aria-current="page"'),'aria-current on the page itself');
+ assert.ok(!fgSelf.includes('header-fg" href="/first-glance/"'),'the featured chip no longer points at first-glance (owner 2026-10-31 swap)');
+ assert.ok(read('dist/science-at-a-glance/index.html').includes('class="header-fg" href="/science-at-a-glance/" aria-current="page"'),'aria-current moved with the chip to the science page');
  assert.ok(read('dist/sitemap.xml').includes('<loc>https://kiddo.school/first-glance/</loc>'));
  assert.ok(read('dist/sitemap.xml').includes('<image:loc>https://assets.kiddo.school/flashcards/first-glance/ages-2-3/01-pets.webp</image:loc>'),'pets sheet joins the image sitemap via og:image');
  const idx=JSON.parse(read('dist/assets/search-index.json'));

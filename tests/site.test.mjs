@@ -9,7 +9,7 @@ const activities=JSON.parse(readFileSync('data/activities.json','utf8'));
 const info=JSON.parse(readFileSync('dist/build-info.json','utf8'));
 const read=f=>readFileSync(f,'utf8');
 test('all HTML pages, eleven permanent activity routes and activity sheets',()=>{
- assert.equal(htmlFiles.length,3944);assert.equal(activities.length,11);
+ assert.equal(htmlFiles.length,3945);assert.equal(activities.length,11);
  for(const a of activities){assert.ok(existsSync(`dist/${a.subject}/${a.slug}/index.html`));assert.ok(existsSync(`dist/downloads/${a.slug}.svg`));assert.ok(a.steps.length>=5);assert.ok(a.safety.length>50);}
 });
 test('every local link, image, stylesheet, script and fragment resolves',()=>{
@@ -45,7 +45,8 @@ test('sitemap includes all indexable pages and excludes search and errors',()=>{
  // +20 for Class 39 · Staying Safe (owner 2026-10-30): the /staying-safe/ class page + 19 one-short-page-per-card URLs at /staying-safe/<slug>/ — numbered 39 by the owner's no-skip rule (Classes 39/40 were not live); inbound sections on Classes 24/32/33 and the First Glance safety sheet's fg-more; LP row 39 and the thirty-nine counts on LP/homepage/about; zero existing URLs touched.
 // +22 for Class 40 · Healthy Food & Eating Well (owner 2026-10-30/31): the /healthy-food/ class page + 21 short pages — deck probed live at school/learning-path/healthy-food/flashcards/ (22/22 incl. cover.webp leading the class page); three shelves (the plate, meals & drinks, how we eat), each card's printed title turned into the child's sentence on its own page with a try-it-tonight job; cross-links from Class 22, Class 32 and the Cafeteria room — Class 39 stays the remote round untouched (the lock above moved 3920→3942 html and 3898→3920 sitemap).
  // +2 for the parents' shelves round (owner 2026-10-31: both new decks in the flashcards library, "no individual pages"): /flashcards/staying-safe/ + /flashcards/healthy-food/ — each shelf is ONE page carrying its whole deck (image + parent tip + age/subject/level pill + Download/Print under every card, the manners/question-words one-shelf precedent); zero per-card URLs in the library; the classes at /staying-safe/ and /healthy-food/ keep their lesson pages (3942→3944 html, 3920→3922 sitemap).
-assert.equal(links.length,3922);assert.equal(new Set(links).size,3922);
+ // +1 for Science at a Glance (owner 2026-10-31): /science-at-a-glance/ — the 65 first-picture science sheets probed live at school/extra-classes/science-at-a-glance/ (65/65 HTTP 200 image/webp, 800×1035), ONE standalone page with NO individual card pages (standing rule): six sections (my body 12 / animals & ecosystems 12 / plants, cells & DNA 7 / earth, weather & water 15 / sun, moon & space 3 / matter, energy & motion 16), every sheet carrying age/subject/level/skill pills, a kid-directed description and Download + Print buttons under the image (the owner's shelf pattern); the site header's featured chip swaps from First Glance to this collection (owner: "on header science at a glance") and First Glance keeps its footer link plus a sibling cross-link; descriptions talk to the KID, framing copy uses what USA parents search (3944→3945 html, 3922→3923 sitemap).
+assert.equal(links.length,3923);assert.equal(new Set(links).size,3923);
  for(const link of links){const u=new URL(link);assert.equal(u.origin,info.siteUrl);assert.ok(existsSync(join(root,u.pathname,'index.html')));assert.ok(!u.pathname.includes('/search'),'no /search/ pages in the sitemap (word-search pages are fine)');}
  assert.ok(!links.some(l=>l.includes('/admin')||l.includes('/api/')),'no admin or API routes in sitemap');
  assert.ok(links.includes(info.siteUrl+'/school-community/'),'school community is indexable');

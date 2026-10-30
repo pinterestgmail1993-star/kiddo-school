@@ -2275,6 +2275,11 @@ h1 em,h2 em{color:#7b4b99}
    the badge prints with the card (it is not in the hidden list below). */
 .mn-grownup{display:inline-block;align-self:center;font-size:.78rem;font-weight:700;letter-spacing:.3px;color:#8a4a00;background:#FFF3D6;border:1.5px dashed #d98a00;border-radius:999px;padding:.25em .85em}
 @media(max-width:640px){.mn-cards{grid-template-columns:repeat(2,1fr);gap:12px}.mn-card strong{font-size:15px}.mn-card .mn-tip{font-size:.8rem}.mn-grownup{font-size:.72rem}}
+/* Science at a Glance (/science-at-a-glance/): the parents'-shelf tile with
+   a tap-to-open artwork link and a fourth, dashed skill pill beside
+   age/subject/level. Print isolation inherits the manners rules above. */
+.sg-card .sg-imagelink{display:block}
+.fc-pill-skill{border:1.5px dashed var(--ink,#34233E);background:var(--white,#fff);color:var(--ink,#34233E)}
 /* Per-card print isolation: manners.js adds body.mn-printing + the chosen
    card .mn-print-card, then calls window.print() — the visibility trick
    prints exactly one card, full page, nothing else. */
