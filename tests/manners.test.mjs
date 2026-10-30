@@ -119,7 +119,7 @@ test('cross-links both ways: Class 32, Class 38, Cafeteria, Playground — and b
  const fcHub=read('/flashcards/');
  assert.ok(/<a class="fc-setcard" href="\/flashcards\/manners\/" data-filters="[^"]+">/.test(fcHub),'tagged set card on the library wall');
  assert.ok(fcHub.includes('Manners · Extra Class'),'its own shelf heading');
- assert.ok(fcHub.includes('Showing all 61 sets'),'the wall count grew to 61 — the Question Words parents’ shelf joined (owner 2026-10-28)');
+ assert.ok(fcHub.includes('Showing all 63 sets'),'the wall count grew to 63 — the Question Words parents’ shelf joined (owner 2026-10-28)');
 });
 
 test('wiring: search index, sitemap and /all-pages/ carry both pages — and nothing per card',()=>{

@@ -2061,6 +2061,9 @@ h1 em,h2 em{color:#7b4b99}
 .fc-pill{display:inline-block;padding:3px 10px;border-radius:999px;font-size:11.5px;font-weight:700;line-height:1.3}
 .fc-pill-age{background:var(--white,#fff);color:var(--ink,#34233E);border:1.5px solid var(--ink,#34233E)}
 .fc-pill-subject{border:1.5px solid var(--ink,#34233E);background:var(--white,#fff);color:var(--ink,#34233E)}
+/* Level pill (parents' shelves: staying-safe + healthy-food): filled so the
+   three-pill row reads age → subject → level at a glance. */
+.fc-pill-level{background:var(--ink,#34233E);color:#fff;border:1.5px solid var(--ink,#34233E)}
 .fc-pill-big{padding:7px 16px;font-size:13.5px}
 .fc-cardpills{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 4px}
 .fc-cardpills .fc-pill{padding:5px 13px;font-size:12.5px}
@@ -2280,7 +2283,7 @@ h1 em,h2 em{color:#7b4b99}
  body.mn-printing .mn-print-card,body.mn-printing .mn-print-card *{visibility:visible!important}
  body.mn-printing .mn-print-card{position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;border:none;box-shadow:none;padding:0;margin:0;background:#fff}
  body.mn-printing .mn-print-card img{max-width:88%;max-height:94%;width:auto;height:auto;border:none}
- body.mn-printing .mn-print-card .mn-tip,body.mn-printing .mn-print-card .mn-actions{display:none!important}
+ body.mn-printing .mn-print-card .mn-tip,body.mn-printing .mn-print-card .mn-actions,body.mn-printing .mn-print-card .fc-pillrow{display:none!important}
  body.mn-printing .mn-print-card .mn-grownup{font-size:.95rem;margin-top:2px}
 }
 

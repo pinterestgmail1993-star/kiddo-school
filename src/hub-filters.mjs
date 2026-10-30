@@ -118,6 +118,14 @@ export const FC_TAGS={
  // ages 3–5) — question words are the child's first language tools, so they
  // ride reading (language) and both talking and thinking skills.
  'question-words':['age-3','age-4-5','lvl-prek','subj-reading','skill-talking','skill-thinking'],
+ // CLASS 39 · Staying Safe (owner 2026-10-31): the safety rules ride the
+ // good-habits subject (life-skills precedent), the drills and the
+ // asking-telling words carry routines + talking + thinking.
+ 'staying-safe':['age-4-5','lvl-prek','subj-feelings','skill-routines','skill-talking','skill-thinking'],
+ // CLASS 40 · Healthy Food (owner 2026-10-31): food words ride first-words
+ // (fruits-vegetables precedent), the table habits are real routines and the
+ // talking-together skill.
+ 'healthy-food':['age-4-5','lvl-prek','subj-first-words','subj-feelings','skill-vocab','skill-routines','skill-talking'],
  'transportation-and-vehicles':['age-4-5','lvl-prek','subj-vehicles','skill-vocab'],
  // Extra classes and rooms (their real age spans ride along)
  'kitchen':['age-3','age-4-5','lvl-preschool','lvl-prek','subj-first-words','skill-vocab','skill-routines'],
