@@ -51,7 +51,9 @@ s, html = get('/earth-and-space/')
 ck('/earth-and-space/ 200', s == 200, s)
 ck('real tracker tag still ships beside site.js',
    'cloud.umami.is/script.js' in html and 'assets/site.js' in html)
-ck('24 print buttons + 24 download controls', html.count('data-mn-print') >= 24 and html.count('<a download') >= 24, s)
+ck('24 print buttons + 24 download controls',
+   html.count('data-mn-print') >= 24 and html.count('download="') >= 24,
+   f"{html.count('data-mn-print')}/{html.count('download=')}")
 
 time.sleep(1)
 s, coloring = get('/coloring-pages/shapes/star/')
