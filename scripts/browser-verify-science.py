@@ -3,9 +3,9 @@
 /science-at-a-glance/ — 65 first-picture science sheets on ONE page, six
 sections, age/subject/level/skill pills, kid-directed descriptions,
 Download + Print buttons under every image, zero per-card URLs; the site
-header's featured chip swaps from First Glance to this collection; First
-Glance keeps its footer link + sibling cross-link. Headless Chrome at
-1440 + 390."""
+header features BOTH glances (owner's same-day correction): First Glance's
+chip restored beside the Science chip; First Glance keeps its footer link
++ sibling cross-link. Headless Chrome at 1440 + 390."""
 import subprocess, time, os
 from playwright.sync_api import sync_playwright
 
@@ -30,11 +30,15 @@ with sync_playwright() as p:
         r = pg.goto(BASE + '/science-at-a-glance/', wait_until='load', timeout=30000)
         ck(f'[{label}] page 200', r.status == 200, r.status)
         ck(f'[{label}] title', pg.title().startswith('Science at a Glance — 65'), pg.title()[:60])
-        # header chip: swapped to this collection, count, aria-current on self
-        chip = pg.locator('a.header-fg')
-        ck(f'[{label}] header chip href', chip.get_attribute('href') == '/science-at-a-glance/')
-        sub_txt = pg.evaluate('document.querySelector(".header-fg-sub")?.textContent.trim()')
-        ck(f'[{label}] chip count text (DOM)', sub_txt == '65 first-picture sheets · Ages 2–5', sub_txt)
+        # header: BOTH glances (owner 2026-10-31 correction) — First Glance's
+        # chip restored beside this collection; aria-current on the science chip here
+        nchip = pg.locator('a.header-fg').count()
+        ck(f'[{label}] two header chips', nchip == 2, nchip)
+        ck(f'[{label}] First Glance chip back', pg.locator('a.header-fg[href="/first-glance/"]').count() == 1)
+        chip = pg.locator('a.header-fg[href="/science-at-a-glance/"]')
+        ck(f'[{label}] science chip present', chip.count() == 1, chip.count())
+        subs = pg.evaluate('[...document.querySelectorAll(".header-fg-sub")].map(e => e.textContent.trim())')
+        ck(f'[{label}] both chip counts (DOM)', subs == ['58 first-picture sheets · Ages 2–5', '65 first-picture sheets · Ages 2–5'], subs)
         ck(f'[{label}] chip aria-current on self', chip.get_attribute('aria-current') == 'page')
         # tiles + pills + buttons
         tiles = pg.locator('figure.mn-card.sg-card')
@@ -100,11 +104,13 @@ with sync_playwright() as p:
     fg = b.new_page(viewport={'width': 1440, 'height': 950})
     fg.goto(BASE + '/first-glance/', wait_until='load')
     ck('[first-glance] links the science page', fg.locator('a[href="/science-at-a-glance/"]').count() >= 1)
-    ck('[first-glance] chip NOT first-glance', fg.locator('a.header-fg[href="/first-glance/"]').count() == 0)
+    ck('[first-glance] chip IS first-glance (both glances on the header)', fg.locator('a.header-fg[href="/first-glance/"]').count() == 1)
+    ck('[first-glance] science chip beside it', fg.locator('a.header-fg[href="/science-at-a-glance/"]').count() == 1)
     home = b.new_page(viewport={'width': 1440, 'height': 950})
     home.goto(BASE + '/', wait_until='load')
     ck('[home] footer science link', home.locator('footer a[href="/science-at-a-glance/"]').count() == 1)
-    ck('[home] header chip swapped', home.locator('a.header-fg[href="/science-at-a-glance/"]').count() == 1)
+    ck('[home] both header chips', home.locator('a.header-fg').count() == 2, home.locator('a.header-fg').count())
+    ck('[home] First Glance chip + count', home.locator('a.header-fg[href="/first-glance/"]').count() == 1 and '58 first-picture sheets · Ages 2–5' in home.content())
     b.close()
 srv.terminate()
 print('---')

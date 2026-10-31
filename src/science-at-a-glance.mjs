@@ -2,8 +2,10 @@
    (R2 bucket kiddo-school-assets/school/extra-classes/science-at-a-glance/,
    probed LIVE 2026-10-31: 65/65 HTTP 200 image/webp, every file 800×1035,
    29–83 kB). The owner's brief (2026-10-31): build the round like First
-   Glance — the site header's featured chip ("New · First Glance · 58
-   first-picture sheets · Ages 2–5") now carries THIS collection — with a
+   Glance — the site header now features THIS collection BESIDE First
+   Glance ("New · First Glance · 58 first-picture sheets · Ages 2–5" +
+   "New · Science at a Glance · 65 first-picture sheets · Ages 2–5"; the
+   owner's same-day correction: both glances stay on the header) — with a
    clean SEO URL, ALL sheets on ONE page, no individual pages; every sheet
    carries Download + Print buttons under the image with a description and
    age / subject / level / skill pills, grouped in sections; sheet

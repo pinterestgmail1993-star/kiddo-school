@@ -62,16 +62,20 @@ import re
 bad_links = [m.group(1) for m in re.finditer(r'<figure class="mn-card sg-card"[\s\S]*?</figure>', main) if re.search(r'href="(?!https://assets[^"]*\.webp)[^"]+"', m.group(0))]
 ck('zero per-card URLs in tiles', not bad_links, bad_links[:3])
 
-# header chip on home + First Glance untouched + classes 39/40 still live
+# BOTH header chips on home (owner 2026-10-31 correction: First Glance stays
+# beside Science at a Glance) + First Glance untouched + classes 39/40 still live
 c2, home, _ = get(BASE + '/')
 ck('home 200', c2 == 200, c2)
-ck('home chip swapped', 'class="header-fg" href="/science-at-a-glance/"' in home.decode('utf8', 'replace'))
-ck('home chip count', '65 first-picture sheets · Ages 2–5' in home.decode('utf8', 'replace'))
+ck('home science chip', 'class="header-fg" href="/science-at-a-glance/"' in home.decode('utf8', 'replace'))
+ck('home science chip count', '65 first-picture sheets · Ages 2–5' in home.decode('utf8', 'replace'))
+ck('home First Glance chip back', 'class="header-fg" href="/first-glance/"' in home.decode('utf8', 'replace'))
+ck('home First Glance chip count', '58 first-picture sheets · Ages 2–5' in home.decode('utf8', 'replace'))
 ck('home footer keeps First Glance', '<a href="/first-glance/">First Glance sheets</a>' in home.decode('utf8', 'replace'))
 ck('home footer adds Science at a Glance', '<a href="/science-at-a-glance/">Science at a Glance sheets</a>' in home.decode('utf8', 'replace'))
 c3, fg, _ = get(BASE + '/first-glance/')
 ck('/first-glance/ 200', c3 == 200, c3)
 ck('first-glance links the sibling', 'href="/science-at-a-glance/"' in fg.decode('utf8', 'replace'))
+ck('first-glance own chip aria-current', 'class="header-fg" href="/first-glance/" aria-current="page"' in fg.decode('utf8', 'replace'))
 # Classes 39/40 untouched: class pages tile with .lp-tile, parents' shelves with .mn-card
 for path, n, cls in [('/staying-safe/', 19, 'lp-tile'), ('/healthy-food/', 21, 'lp-tile'), ('/flashcards/staying-safe/', 19, 'mn-card'), ('/flashcards/healthy-food/', 21, 'mn-card')]:
     c4, body, _ = get(BASE + path)

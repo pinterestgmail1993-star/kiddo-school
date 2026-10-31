@@ -2209,6 +2209,12 @@ h1 em,h2 em{color:#7b4b99}
 .header-fg[aria-current] strong{text-decoration:none}
 .header-fg-chip{background:var(--kiddo-cream-yellow);border:1px solid var(--ink);border-radius:999px;padding:2px 8px;font-size:9px;letter-spacing:1.2px;text-transform:uppercase;flex-shrink:0}
 .header-fg-sub{color:var(--muted);font-weight:500;font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:220px}
+/* Owner 2026-10-31: BOTH glances stay on the header — First Glance restored
+   BESIDE Science at a Glance as a second .header-fg pill. Two featured chips
+   plus Search are wider than one, so the sub line drops first as the viewport
+   narrows, and below 680px the pill row wraps under the brand. */
+@media(max-width:1120px){.header-fg-sub{display:none}}
+@media(max-width:680px){.header-top{flex-wrap:wrap;row-gap:10px}.header-side{flex-wrap:wrap;row-gap:8px}}
 .search-link{display:inline-flex;align-items:center;gap:7px;flex:0 0 auto;background:#fff;border:1.5px solid #d9cbe8;border-radius:999px;padding:8px 15px;font-size:12.5px;font-weight:700;color:var(--kiddo-purple);text-decoration:none;white-space:nowrap;box-shadow:2px 2px 0 var(--kiddo-lavender);transition:transform .15s,box-shadow .15s}
 .search-link:hover{transform:translate(-1px,-1px);box-shadow:3px 3px 0 var(--kiddo-lavender);text-decoration:none}
 .search-link[aria-current]{border-color:var(--kiddo-purple)}

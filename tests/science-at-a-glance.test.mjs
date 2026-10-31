@@ -1,7 +1,8 @@
 /* science-at-a-glance — THE OWNER'S 65 FIRST-PICTURE SCIENCE SHEETS
    (owner 2026-10-31: the R2 round at school/extra-classes/science-at-a-glance/
    built "with New First Glance · 58 first-picture sheets · Ages 2–5" — the
-   site header's featured chip now carries THIS collection). ONE standalone
+   site header now features BOTH collections side by side (owner's same-day
+   correction: the science chip joins First Glance, it does not replace it). ONE standalone
    page at /science-at-a-glance/ with NO individual card pages (standing
    rule); six sections; every sheet carries an age pill, a subject pill, a
    level pill and a skill pill, a KID-DIRECTED description (the owner's
@@ -104,13 +105,17 @@ test('NO individual card pages — dist/science-at-a-glance/ holds only the one 
  assert.ok(!existsSync('dist/flashcards/science-at-a-glance'),'no shelf page inside the flashcards library either');
 });
 
-test('discoverable: header chip (swapped), footer, sibling links both ways, sitemap+image, search, directory, print js',()=>{
+test('discoverable: both header chips (First Glance beside science), footer, sibling links both ways, sitemap+image, search, directory, print js',()=>{
  const home=read('dist/index.html');
  const deep=read('dist/flashcards/animal-categories/amphibians/index.html');
  const sgSelf=html;
  for(const [name,h] of [['home',home],['deep page',deep],['science page itself',sgSelf]]){
   assert.ok(h.includes('class="header-fg" href="/science-at-a-glance/"'),'header chip missing on '+name);
   assert.ok(h.includes('65 first-picture sheets · Ages 2–5'),'chip count missing on '+name);
+  /* Owner 2026-10-31, correction: BOTH glances stay on the header — the
+     First Glance chip sits BESIDE the science chip, not replaced by it. */
+  assert.ok(h.includes('class="header-fg" href="/first-glance/"'),'First Glance chip missing on '+name);
+  assert.ok(h.includes('58 first-picture sheets · Ages 2–5'),'First Glance chip count missing on '+name);
   assert.ok(h.includes('<a href="/science-at-a-glance/">Science at a Glance sheets</a>'),'footer link missing on '+name);
  }
  assert.ok(sgSelf.includes('class="header-fg" href="/science-at-a-glance/" aria-current="page"'),'aria-current on the page itself');
