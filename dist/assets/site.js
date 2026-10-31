@@ -243,3 +243,20 @@
     if (event.target && event.target.closest && event.target.closest('a')) setOpen(false);
   });
 })();
+
+/* Float-to-top (owner 2026-10-31: "i need float to top") — a floating
+   back-to-top pill on every page; appears after 500px, scrolls home on
+   tap (smooth unless prefers-reduced-motion), never printed. */
+(() => {
+  if (typeof window === 'undefined' || typeof document === 'undefined') return;
+  const btn = document.querySelector('[data-to-top]');
+  if (!btn) return;
+  btn.hidden = false;
+  const toggle = () => btn.classList.toggle('is-visible', window.scrollY > 500);
+  window.addEventListener('scroll', toggle, { passive: true });
+  toggle();
+  btn.addEventListener('click', () => {
+    const calm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    window.scrollTo({ top: 0, behavior: calm ? 'auto' : 'smooth' });
+  });
+})();

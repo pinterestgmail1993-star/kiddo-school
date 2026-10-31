@@ -2307,3 +2307,14 @@ h1 em,h2 em{color:#7b4b99}
 .hall-day p{margin:0;font-size:.95rem;color:var(--muted)}
 .hall-day.hall-next{border-width:2.5px;background:var(--kiddo-lavender,#EEE6F2)}
 @media(max-width:640px){.hall-day{padding:13px 14px}.hall-day .hall-what{font-size:1.2rem}}
+
+/* ---- Float-to-top (owner 2026-10-31: "i need float to top") ----
+   A floating back-to-top pill on every page, house look: white card, ink
+   border, offset shadow. Appears after 500px of scroll (site.js), respects
+   prefers-reduced-motion, hidden from printers. */
+.to-top{position:fixed;right:18px;bottom:18px;z-index:70;display:inline-flex;align-items:center;gap:7px;background:#fff;border:1.5px solid var(--ink);border-radius:999px;padding:9px 15px;font-size:12.5px;font-weight:700;color:var(--kiddo-purple);text-decoration:none;box-shadow:3px 3px 0 var(--kiddo-lavender);cursor:pointer;opacity:0;pointer-events:none;transform:translateY(8px);transition:opacity .2s,transform .2s,box-shadow .15s}
+.to-top.is-visible{opacity:1;pointer-events:auto;transform:none}
+.to-top:hover{transform:translate(-1px,-1px);box-shadow:4px 4px 0 var(--kiddo-lavender)}
+.to-top svg{display:block}
+@media(max-width:680px){.to-top{right:12px;bottom:12px;padding:8px 12px}}
+@media print{.to-top{display:none}}

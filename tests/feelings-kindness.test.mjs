@@ -80,12 +80,12 @@ test('no text is shared between the /learn/ lessons and the library card pages',
  }
 });
 
-test('learning path: rows 39-40 follow row 38, count words say forty',()=>{
+test('learning path: rows 39-40 follow row 38, count words say forty-one',()=>{
  const lp=read('dist/learning-path/index.html');
  const rows=[...lp.matchAll(/lp-class">Class (\d+):/g)].map(m=>+m[1]);
- assert.deepEqual(rows,[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40],'sequence is exactly Classes 1–40, no gap');
- assert.ok(lp.includes('forty age-guided classes'),'LP title count');
- assert.ok(lp.includes('Forty classes are ready now'),'LP intro count');
+ assert.deepEqual(rows,[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41],'sequence is exactly Classes 1–41, no gap');
+ assert.ok(lp.includes('forty-one age-guided classes'),'LP title count');
+ assert.ok(lp.includes('Forty-one classes are ready now'),'LP intro count');
  assert.ok(lp.includes(`${CLASS_PATH}learn/happy/`),'LP row 38 links the first lesson');
 });
 
@@ -112,11 +112,11 @@ test('Class 38 wired across the school: flashcards wall, filter tags, Ages 4–5
   assert.ok(reds.includes('/flashcards/feelings-and-kindness/'+o+'* /flashcards/feelings-and-kindness/'+n+':splat 301'),'card 301: '+o);
   assert.ok(reds.includes('/preschool/4-years/feelings-and-kindness/learn/'+o+'* /preschool/4-years/feelings-and-kindness/learn/'+n+':splat 301'),'lesson 301: '+o);
  }
- assert.ok(wall.includes('Showing all 63 sets'),'wall count is 63 — the Question Words parents’ shelf joined the library (owner 2026-10-28); Manners joined 2026-10-27, the Cafeteria set earlier (owner 2026-10-26)');
+ assert.ok(wall.includes('Showing all 64 sets'),'wall count is 63 — the Question Words parents’ shelf joined the library (owner 2026-10-28); Manners joined 2026-10-27, the Cafeteria set earlier (owner 2026-10-26)');
  const tag=read('dist/flashcards/index.html').match(new RegExp('href="/flashcards/feelings-and-kindness/"[\\s\\S]{0,400}?data-filters="([^"]+)"'));
  assert.ok(tag&&tag[1].includes('age-4-5')&&tag[1].includes('subj-feelings'),'filter tags ride on the set card');
  const lp=read('dist/learning-path/index.html');
  assert.ok(lp.includes('feelings-and-kindness'),'Ages 4–5 shelf lists the set');
  const home=read('dist/index.html');
- assert.ok(home.includes('Forty classes are ready now'),'homepage counts 38');
+ assert.ok(home.includes('Forty-one classes are ready now'),'homepage counts 38');
 });

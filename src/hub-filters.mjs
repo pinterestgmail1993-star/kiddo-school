@@ -126,6 +126,10 @@ export const FC_TAGS={
  // (fruits-vegetables precedent), the table habits are real routines and the
  // talking-together skill.
  'healthy-food':['age-4-5','lvl-prek','subj-first-words','subj-feelings','skill-vocab','skill-routines','skill-talking'],
+ // CLASS 41 \u00b7 Time & Daily Routine (owner 2026-10-31): the day's words ride
+ // first-words, routines are the heart of the deck and the talking-together
+ // skill carries the calendar.
+ 'time-and-daily-routine':['age-4-5','lvl-prek','subj-first-words','subj-feelings','skill-vocab','skill-routines','skill-talking'],
  'transportation-and-vehicles':['age-4-5','lvl-prek','subj-vehicles','skill-vocab'],
  // Extra classes and rooms (their real age spans ride along)
  'kitchen':['age-3','age-4-5','lvl-preschool','lvl-prek','subj-first-words','skill-vocab','skill-routines'],

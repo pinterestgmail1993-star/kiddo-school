@@ -17,7 +17,11 @@ const card=(c,folder,bandLabel)=>{
  const more=c.slug==='colors-1'||c.slug==='colors-2'?`<a class="fg-more" href="/extra-classes/colors/">More colors in the Colors class <span aria-hidden="true">↗</span></a>`
   /* Owner cross-link (2026-10-30): the Staying-safe sheet points to the
      safety class — every word on this sheet has a card and a practice. */
-  :c.slug==='safety'?`<a class="fg-more" href="/staying-safe/">Every one of these words has a card: Class 39 · Staying Safe <span aria-hidden="true">↗</span></a>`:'';
+  :c.slug==='safety'?`<a class="fg-more" href="/staying-safe/">Every one of these words has a card: Class 39 · Staying Safe <span aria-hidden="true">↗</span></a>`
+  /* Owner cross-link (2026-10-31): the Daily Routine and Times of Day sheets
+     point to Class 41 · Time & Daily Routine. */
+  :c.slug==='daily-routine'?`<a class="fg-more" href="/time-and-daily-routine/">Every one of these steps has a card: Class 41 · Time &amp; Daily Routine <span aria-hidden="true">↗</span></a>`
+  :c.slug==='times-of-day'?`<a class="fg-more" href="/time-and-daily-routine/">Morning to night has a whole class: Class 41 · Time &amp; Daily Routine <span aria-hidden="true">↗</span></a>`:'';
  return `<figure class="fc-card fg-card"><a href="${FG_BASE}${folder}/${file}" target="_blank" rel="noopener" aria-label="Open the ${e(c.t)} sheet full size in a new tab"><img src="${FG_BASE}${folder}/${file}" width="${w}" height="${h}" alt="${e(alt)}" loading="lazy"></a><figcaption><strong>${e(c.t)}</strong><span>${e(c.d)}</span><span class="fc-pillrow"><span class="fc-pill fc-pill-age">${e(bandLabel)}</span><span class="fc-pill fc-pill-subject">${e(c.sub)}</span></span><span class="fg-skills">Skills: ${e(c.sk)}</span>${more}</figcaption></figure>`;
 };
 

@@ -88,7 +88,7 @@ export const privacyBody=()=>`<p>Last updated: ${LEGAL_UPDATED}.</p>
 
 export const aboutBody=(img)=>`<div class="brand-duo"><div class="brand-art"><img src="${img}" width="1748" height="1240" alt="Three children in purple school uniforms wave and read in front of the school building, from the Kiddo.school welcome illustration." loading="lazy"></div></div>
 <h2>Who we are</h2>
-<p>Kiddo.school is an independent digital school for curious children and the adults learning alongside them. The journey begins at birth with short, parent-led baby and toddler classes and grows into hands-on classrooms in art, science, nature, maths, stories and engineering. Forty classes from birth to age five are ready today, with more on the drawing table.</p>
+<p>Kiddo.school is an independent digital school for curious children and the adults learning alongside them. The journey begins at birth with short, parent-led baby and toddler classes and grows into hands-on classrooms in art, science, nature, maths, stories and engineering. Forty-one classes from birth to age five are ready today, with more on the drawing table.</p>
 <h2>Why we started</h2>
 <p>Young children learn best by touching, drawing, counting and talking with someone they love, yet most online learning pulls them toward a screen and leaves parents guessing what to do next. We started Kiddo.school to put the grown-up back in the teacher’s seat: clear steps, printable pages and short classes that fit into a real day, so a few playful minutes together can be enough.</p>
 <h2>What you will find here</h2>

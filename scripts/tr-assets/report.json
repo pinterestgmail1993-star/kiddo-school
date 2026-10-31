@@ -1,0 +1,389 @@
+{
+ "base": "https://assets.kiddo.school/school/learning-path/time-and-daily-routine/",
+ "csv": {
+  "https://assets.kiddo.school/school/learning-path/time-and-daily-routine/time-and-daily-routine-image-seo.csv": 404,
+  "https://assets.kiddo.school/school/learning-path/time-and-daily-routine/flashcards/time-and-daily-routine-image-seo.csv": 404
+ },
+ "cards": {
+  "a-day-at-school-routine-flashcard-for-kids.webp": {
+   "status": 200,
+   "type": "image/webp",
+   "bytes": "44170"
+  },
+  "afternoon-activities-flashcard-for-kids.webp": {
+   "status": 200,
+   "type": "image/webp",
+   "bytes": "43260"
+  },
+  "always-sometimes-never-flashcard-for-kids.webp": {
+   "status": 200,
+   "type": "image/webp",
+   "bytes": "49940"
+  },
+  "before-during-after-time-words-flashcard-for-kids.webp": {
+   "status": 200,
+   "type": "image/webp",
+   "bytes": "50848"
+  },
+  "begin-continue-finish-flashcard-for-kids.webp": {
+   "status": 200,
+   "type": "image/webp",
+   "bytes": "58860"
+  },
+  "chores-in-order-flashcard-for-kids.webp": {
+   "status": 200,
+   "type": "image/webp",
+   "bytes": "42568"
+  },
+  "countdown-to-a-special-day-flashcard-for-kids.webp": {
+   "status": 200,
+   "type": "image/webp",
+   "bytes": "44840"
+  },
+  "dawn-noon-dusk-midnight-flashcard-for-kids.webp": {
+   "status": 200,
+   "type": "image/webp",
+   "bytes": "36686"
+  },
+  "days-of-the-week-flashcard-for-kids.webp": {
+   "status": 200,
+   "type": "image/webp",
+   "bytes": "43632"
+  },
+  "early-or-late-flashcard-for-kids.webp": {
+   "status": 200,
+   "type": "image/webp",
+   "bytes": "49314"
+  },
+  "evening-and-night-routine-flashcard-for-kids.webp": {
+   "status": 200,
+   "type": "image/webp",
+   "bytes": "35880"
+  },
+  "fast-or-slow-flashcard-for-kids.webp": {
+   "status": 200,
+   "type": "image/webp",
+   "bytes": "35956"
+  },
+  "first-next-last-sequence-words-flashcard-for-kids.webp": {
+   "status": 200,
+   "type": "image/webp",
+   "bytes": "51578"
+  },
+  "getting-ready-routine-flashcard-for-kids.webp": {
+   "status": 200,
+   "type": "image/webp",
+   "bytes": "42884"
+  },
+  "healthy-habits-daily-routine-flashcard-for-kids.webp": {
+   "status": 200,
+   "type": "image/webp",
+   "bytes": "45008"
+  },
+  "how-long-might-it-take-flashcard-for-kids.webp": {
+   "status": 200,
+   "type": "image/webp",
+   "bytes": "46112"
+  },
+  "how-often-time-words-flashcard-for-kids.webp": {
+   "status": 200,
+   "type": "image/webp",
+   "bytes": "42170"
+  },
+  "long-or-short-time-flashcard-for-kids.webp": {
+   "status": 200,
+   "type": "image/webp",
+   "bytes": "36284"
+  },
+  "meal-times-breakfast-lunch-dinner-flashcard-for-kids.webp": {
+   "status": 200,
+   "type": "image/webp",
+   "bytes": "43132"
+  },
+  "months-of-the-year-flashcard-for-kids.webp": {
+   "status": 200,
+   "type": "image/webp",
+   "bytes": "46472"
+  },
+  "morning-routine-flashcard-for-kids.webp": {
+   "status": 200,
+   "type": "image/webp",
+   "bytes": "39318"
+  },
+  "my-daily-routine-flashcard-for-kids.webp": {
+   "status": 200,
+   "type": "image/webp",
+   "bytes": "51172"
+  },
+  "now-soon-later-time-words-flashcard-for-kids.webp": {
+   "status": 200,
+   "type": "image/webp",
+   "bytes": "36156"
+  },
+  "open-happening-closed-flashcard-for-kids.webp": {
+   "status": 200,
+   "type": "image/webp",
+   "bytes": "46632"
+  },
+  "parts-of-the-day-flashcard-for-kids.webp": {
+   "status": 200,
+   "type": "image/webp",
+   "bytes": "44172"
+  },
+  "plan-my-day-flashcard-for-kids.webp": {
+   "status": 200,
+   "type": "image/webp",
+   "bytes": "48710"
+  },
+  "read-the-clock-hour-oclock-flashcard-for-kids.webp": {
+   "status": 200,
+   "type": "image/webp",
+   "bytes": "53914"
+  },
+  "same-time-each-day-routine-flashcard-for-kids.webp": {
+   "status": 200,
+   "type": "image/webp",
+   "bytes": "44334"
+  },
+  "seconds-minutes-hours-flashcard-for-kids.webp": {
+   "status": 200,
+   "type": "image/webp",
+   "bytes": "48298"
+  },
+  "start-and-stop-flashcard-for-kids.webp": {
+   "status": 200,
+   "type": "image/webp",
+   "bytes": "53988"
+  },
+  "the-calendar-days-weeks-months-flashcard-for-kids.webp": {
+   "status": 200,
+   "type": "image/webp",
+   "bytes": "44540"
+  },
+  "time-changes-melt-grow-flashcard-for-kids.webp": {
+   "status": 200,
+   "type": "image/webp",
+   "bytes": "38520"
+  },
+  "time-helpers-clock-calendar-timer-flashcard-for-kids.webp": {
+   "status": 200,
+   "type": "image/webp",
+   "bytes": "40696"
+  },
+  "time-order-words-first-second-third-flashcard-for-kids.webp": {
+   "status": 200,
+   "type": "image/webp",
+   "bytes": "51660"
+  },
+  "time-words-review-flashcard-for-kids.webp": {
+   "status": 200,
+   "type": "image/webp",
+   "bytes": "49794"
+  },
+  "waiting-time-patience-flashcard-for-kids.webp": {
+   "status": 200,
+   "type": "image/webp",
+   "bytes": "39916"
+  },
+  "week-month-year-flashcard-for-kids.webp": {
+   "status": 200,
+   "type": "image/webp",
+   "bytes": "51816"
+  },
+  "weekday-or-weekend-flashcard-for-kids.webp": {
+   "status": 200,
+   "type": "image/webp",
+   "bytes": "60636"
+  },
+  "when-plans-change-flashcard-for-kids.webp": {
+   "status": 200,
+   "type": "image/webp",
+   "bytes": "57888"
+  },
+  "work-time-and-break-time-flashcard-for-kids.webp": {
+   "status": 200,
+   "type": "image/webp",
+   "bytes": "38052"
+  },
+  "yesterday-today-tomorrow-flashcard-for-kids.webp": {
+   "status": 200,
+   "type": "image/webp",
+   "bytes": "37686"
+  }
+ },
+ "cover": {
+  "status": 200,
+  "type": "image/webp",
+  "bytes": "38192"
+ },
+ "dims": {
+  "a-day-at-school-routine-flashcard-for-kids.webp": [
+   800,
+   1132
+  ],
+  "afternoon-activities-flashcard-for-kids.webp": [
+   800,
+   1132
+  ],
+  "always-sometimes-never-flashcard-for-kids.webp": [
+   800,
+   1132
+  ],
+  "before-during-after-time-words-flashcard-for-kids.webp": [
+   800,
+   1132
+  ],
+  "begin-continue-finish-flashcard-for-kids.webp": [
+   800,
+   1132
+  ],
+  "chores-in-order-flashcard-for-kids.webp": [
+   800,
+   1132
+  ],
+  "countdown-to-a-special-day-flashcard-for-kids.webp": [
+   800,
+   1132
+  ],
+  "dawn-noon-dusk-midnight-flashcard-for-kids.webp": [
+   800,
+   1132
+  ],
+  "days-of-the-week-flashcard-for-kids.webp": [
+   800,
+   1132
+  ],
+  "early-or-late-flashcard-for-kids.webp": [
+   800,
+   1132
+  ],
+  "evening-and-night-routine-flashcard-for-kids.webp": [
+   800,
+   1132
+  ],
+  "fast-or-slow-flashcard-for-kids.webp": [
+   800,
+   1132
+  ],
+  "first-next-last-sequence-words-flashcard-for-kids.webp": [
+   800,
+   1132
+  ],
+  "getting-ready-routine-flashcard-for-kids.webp": [
+   800,
+   1132
+  ],
+  "healthy-habits-daily-routine-flashcard-for-kids.webp": [
+   800,
+   1132
+  ],
+  "how-long-might-it-take-flashcard-for-kids.webp": [
+   800,
+   1132
+  ],
+  "how-often-time-words-flashcard-for-kids.webp": [
+   800,
+   1132
+  ],
+  "long-or-short-time-flashcard-for-kids.webp": [
+   800,
+   1132
+  ],
+  "meal-times-breakfast-lunch-dinner-flashcard-for-kids.webp": [
+   800,
+   1132
+  ],
+  "months-of-the-year-flashcard-for-kids.webp": [
+   800,
+   1132
+  ],
+  "morning-routine-flashcard-for-kids.webp": [
+   800,
+   1132
+  ],
+  "my-daily-routine-flashcard-for-kids.webp": [
+   800,
+   1132
+  ],
+  "now-soon-later-time-words-flashcard-for-kids.webp": [
+   800,
+   1132
+  ],
+  "open-happening-closed-flashcard-for-kids.webp": [
+   800,
+   1132
+  ],
+  "parts-of-the-day-flashcard-for-kids.webp": [
+   800,
+   1132
+  ],
+  "plan-my-day-flashcard-for-kids.webp": [
+   800,
+   1132
+  ],
+  "read-the-clock-hour-oclock-flashcard-for-kids.webp": [
+   800,
+   1132
+  ],
+  "same-time-each-day-routine-flashcard-for-kids.webp": [
+   800,
+   1132
+  ],
+  "seconds-minutes-hours-flashcard-for-kids.webp": [
+   800,
+   1132
+  ],
+  "start-and-stop-flashcard-for-kids.webp": [
+   800,
+   1132
+  ],
+  "the-calendar-days-weeks-months-flashcard-for-kids.webp": [
+   800,
+   1132
+  ],
+  "time-and-daily-routine-flashcards-for-kids-cover.webp": [
+   800,
+   1132
+  ],
+  "time-changes-melt-grow-flashcard-for-kids.webp": [
+   800,
+   1132
+  ],
+  "time-helpers-clock-calendar-timer-flashcard-for-kids.webp": [
+   800,
+   1132
+  ],
+  "time-order-words-first-second-third-flashcard-for-kids.webp": [
+   800,
+   1132
+  ],
+  "time-words-review-flashcard-for-kids.webp": [
+   800,
+   1132
+  ],
+  "waiting-time-patience-flashcard-for-kids.webp": [
+   800,
+   1132
+  ],
+  "week-month-year-flashcard-for-kids.webp": [
+   800,
+   1132
+  ],
+  "weekday-or-weekend-flashcard-for-kids.webp": [
+   800,
+   1132
+  ],
+  "when-plans-change-flashcard-for-kids.webp": [
+   800,
+   1132
+  ],
+  "work-time-and-break-time-flashcard-for-kids.webp": [
+   800,
+   1132
+  ],
+  "yesterday-today-tomorrow-flashcard-for-kids.webp": [
+   800,
+   1132
+  ]
+ }
+}
