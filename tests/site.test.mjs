@@ -52,6 +52,7 @@ test('sitemap includes all indexable pages and excludes search and errors',()=>{
 // −41+1 for the one-page round (owner 2026-10-31: "dont make indiviual pages, they are thin to google — include all in one page with download, print button, age, skill if any, level pill, subject pill, make sections, small descripiton all beneath the images"; "check only daily routine"; "dont touch staying safe is good"): the 41 Class 41 short pages at /time-and-daily-routine/<slug>/ are GONE (301s in _redirects point them at the class page) and the class page /time-and-daily-routine/ now carries the whole 41-card deck — five sections, every card with image + age/subject/level/skill pills + kid-voice description + Download + Print (manners.js isolation); level pills name school grades (owner: "levels are grade 1, grade 2, preschool"). +1 for Class 42 · Measuring & Money (owner 2026-10-31): /measuring-and-money/ — ONE page, the whole 28-card deck probed live at school/learning-path/measuring-and-money/flashcards/ (29/29 incl. the cover as the main image), five shelves, file names kept exactly as uploaded (SEO), slugs riding the file names (no seo.csv provided), titles/alts transcribed off labeled contact sheets; inbound links on Classes 35/19/31; the LP count goes forty-one → forty-two. The 53 science-lab flashcards join the existing Science Lab page /science/ as ONE shelf family (no new URLs; ask-a-grown-up badge on the nine grown-up-only cards, SOS variant on the emergency crew; NOT in the Learning Path) (3988→3948 html, 3966→3926 sitemap).
 // +1 for Class 43 · Our Earth & Space (owner 2026-10-31): /earth-and-space/ — ONE page, the whole 24-card deck probed live at school/learning-path/our-earth-and-space/flashcards/ (25/25 incl. the cover as the main image), six shelves, file names kept exactly as uploaded (SEO), slugs riding the file names (the owner's our-earth-and-space-image-seo.csv not reachable — 13 R2 paths probed), titles/alts transcribed off 6 labeled contact sheets; inbound links on Classes 31/34/41 and Science at a Glance; the LP count goes forty-two → forty-three; the magic-games labels fixed (Class 3→17, Class 6→20 on the Age 3 hub). No existing URL touched (3948→3949 html, 3926→3927 sitemap).
 // +0 for the Art Room deck round (owner 2026-10-31: "include these https://kiddo.school/art/"): the 14 art-supply flashcards probed live at school/art-room/flashcards/ (14/14 — 13 portrait 800×1131 + ONE landscape 800×566, dims carried per file) join the EXISTING Art Studio page /art/ as ONE shelf family — the Science Lab treatment, zero new URLs (3927/3949 unchanged): four shelves (draw & color 3 / paint & mix 3 / cut, glue & tape 4 / build, shape & print 4), every card with image + age (Ages 3–12) / subject / level / skill pills + kid-voice description + Download/Print (manners.js rides on /art/ now); the craft-knife card wears the Ask-a-grown-up badge (the science rule); file names kept exactly as uploaded (SEO); card words/alts transcribed off 2 labeled contact sheets (scripts/art-sheets.py); levels Preschool 4 / Grade 1 5 / Grade 2 5; all fourteen images join the image sitemap on the /art/ entry (Google's multi-image-per-url format — the sitemap writer now accepts arrays); the studio stays OUT of the Learning Path and OUT of the class count.
+// +0 for the umami events round (owner 2026-11-01: "fire the events of download and print to umami · check what events are firing"): site.js — which ships on EVERY page beside the umami tracker — now fires two house events into the SAME tracker (no new scripts, no new URLs, 3927/3949 unchanged): PRINT via one wrapper on window.print (every print flow funnels through it — manners cards, coloring sheets, worksheet generators, the Circle Time print view — so one hook covers all and nothing double-counts) and DOWNLOAD via capture-phase delegation on every <a download>, with the file's SEO name as the event data so the dashboard shows WHICH card was taken. Before this round the tracker saw page views only — zero umami.track calls and zero data-umami-event attributes existed anywhere (audited). Guarded + try/caught; the static-runtime lock below still holds (site.js does no fetch/localStorage — the umami script does the network).
 assert.equal(links.length,3927);assert.equal(new Set(links).size,3927);
  for(const link of links){const u=new URL(link);assert.equal(u.origin,info.siteUrl);assert.ok(existsSync(join(root,u.pathname,'index.html')));assert.ok(!u.pathname.includes('/search'),'no /search/ pages in the sitemap (word-search pages are fine)');}
  assert.ok(!links.some(l=>l.includes('/admin')||l.includes('/api/')),'no admin or API routes in sitemap');
@@ -97,4 +98,24 @@ test('preview safeguards, no missing content, and static-only runtime',()=>{
   // real control names — the emoji are never the only label. All other emoji stay banned.
   assert.doesNotMatch(read(file),/[\u{1F300}-\u{1F44A}\u{1F44C}-\u{1F44E}\u{1F450}-\u{1F609}\u{1F60B}-\u{1F60C}\u{1F60E}-\u{1F60F}\u{1F611}-\u{1F614}\u{1F616}-\u{1FAFF}]/u);}
  const js=read('dist/assets/site.js');assert.doesNotMatch(js,/fetch\(|localStorage|sessionStorage|document.cookie/);
+});
+test('umami download + print events fire from site.js (owner 2026-11-01)',()=>{
+ const js=read('dist/assets/site.js');
+ // PRINT: one wrapper on the one function every print flow calls — and the
+ // wrap guard means manners.js buttons (which call window.print themselves)
+ // count exactly once.
+ assert.match(js,/!window\.print\.__kiddoTracked/);
+ assert.match(js,/send\('print'\)/);
+ assert.match(js,/realPrint\(\)/);
+ // DOWNLOAD: capture-phase delegation on every <a download>, firing before
+ // navigation, with the SEO file name as the event's data — the anchor's own
+ // download attribute wins (the synthesized flows set it to the real name),
+ // the plain R2 card links fall back to their SEO href basename.
+ assert.match(js,/closest\('a\[download\]'\)/);
+ assert.match(js,/send\('download', \{ file/);
+ assert.match(js,/getAttribute\('download'\)/);
+ assert.match(js,/true\);$/m);
+ // Events ride the real tracker, guarded — never a bare global call.
+ assert.match(js,/window\.umami && typeof window\.umami\.track === 'function'/);
+ assert.match(js,/catch \(e\)/);
 });

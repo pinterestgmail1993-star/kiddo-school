@@ -260,3 +260,57 @@
     window.scrollTo({ top: 0, behavior: calm ? 'auto' : 'smooth' });
   });
 })();
+
+/* Umami events (owner 2026-11-01: "fire the events of download and print to
+   umami · check what events are firing"). The tracker already ships on every
+   page — until now it saw page views only, so the site's two busiest buttons
+   were invisible to the dashboard. Two events now ride the same tracker, with
+   no new scripts and no identifiers, matching the house privacy line:
+   - print: fires whenever any print flow opens the dialog. Every script
+     funnels through window.print (manners cards, coloring sheets, worksheet
+     generators, the Circle Time print view…), so ONE wrapper covers them all
+     and nothing double-counts — even where a button has its own listener.
+   - download: fires when a card or sheet's <a download> link is tapped,
+     capture phase so the event leaves before the navigation starts; the
+     file's SEO name rides as the event's data, so the dashboard shows WHICH
+     cards parents actually take, not just that they tapped something.
+   Everything is guarded + try/caught: analytics can never break the page,
+   the static-runtime lock holds (this file still makes no network calls and
+   touches no storage — the umami script itself does the sending), and the
+   Node mock harness exits early exactly like the float-to-top module above. */
+(() => {
+  if (typeof window === 'undefined' || typeof document === 'undefined' ||
+      typeof document.addEventListener !== 'function') return;
+  const send = (name, data) => {
+    try {
+      if (window.umami && typeof window.umami.track === 'function') {
+        window.umami.track(name, data);
+      }
+    } catch (e) { /* stats must never break the page */ }
+  };
+  /* One wrapper on the one function every print flow calls. */
+  if (typeof window.print === 'function' && !window.print.__kiddoTracked) {
+    const realPrint = window.print.bind(window);
+    const tracked = function kiddoTrackedPrint() {
+      send('print');
+      realPrint();
+    };
+    tracked.__kiddoTracked = true;
+    window.print = tracked;
+  }
+  /* Downloads: capture-phase delegation on every <a download> link — the
+     plain card links AND the synthesized ones (coloring sheets, worksheet
+     packs, life-skills, the magic games all fetch a blob and a.click() an
+     anchor whose download attribute carries the real file name). */
+  document.addEventListener('click', (ev) => {
+    const target = ev && ev.target;
+    const link = target && typeof target.closest === 'function'
+      ? target.closest('a[download]') : null;
+    if (!link || typeof link.getAttribute !== 'function') return;
+    const href = link.getAttribute('href') || '';
+    if (!href) return;
+    const attr = (link.getAttribute('download') || '').trim();
+    const file = attr || href.split('/').pop().split('?')[0];
+    send('download', { file: file || 'unknown' });
+  }, true);
+})();
