@@ -94,5 +94,5 @@ test('the Art Studio stays OUT of the Learning Path, zero URLs touched',()=>{
  assert.ok(rows.every(u=>u!=='/art/'),'no numbered class row links the studio (it is a room, not a class)');
  assert.ok(lp.includes('href="/art/">Art Studio</a>'),'the studio stays in the older-kids classroom row');
  const before=read('learning-path/index.html');
- assert.ok(before.includes('forty-three'),'the LP count stays forty-three — no class number was added');
+ assert.ok(before.includes('forty-four'),'the LP count stays forty-four — no class number was added');
 });

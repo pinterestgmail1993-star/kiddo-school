@@ -6,7 +6,7 @@
 // pills, kid-voice descriptions under every image and Download + Print
 // buttons; the cover file is the main image; SEO file names kept exactly;
 // loading="lazy" + width/height on the card images; link from Classes 31/34/41
-// and Science at a Glance and back; LP count forty-two → forty-three; the
+// and Science at a Glance and back; LP count forty-two → forty-four; the
 // magic-games labels fixed (Class 3→17, Class 6→20). Deck probed LIVE on R2
 // at school/learning-path/our-earth-and-space/flashcards/ (25/25 incl. cover,
 // 800×1132, 15–27 kB); the owner's our-earth-and-space-image-seo.csv was not
@@ -28,12 +28,12 @@ test('ONE page only: the class page, zero per-card URLs, nothing else under /ear
  assert.ok(!html.includes('href="'+ES_PATH.slice(0,-1)+'/'+ES_ORDER[0]),'no links to per-card pages');
 });
 
-test('the LP counts say forty-three and row 43 follows row 42 with no gap',()=>{
+test('the LP counts say forty-four and row 43 follows row 42 with no gap',()=>{
  const lp=read('learning-path/index.html');
  const rows=[...lp.matchAll(/lp-class">Class (\d+):/g)].map(m=>+m[1]);
- assert.deepEqual(rows,[...Array(43).keys()].map(i=>i+1),'LP sequence is exactly 1–43');
+ assert.deepEqual(rows,[...Array(44).keys()].map(i=>i+1),'LP sequence is exactly 1–44');
  assert.ok(lp.includes('<span>43</span>')&&lp.includes('Class 43: <a href="/earth-and-space/">Our Earth &amp; Space</a>'),'the Class 43 row');
- assert.ok(lp.includes('forty-three age-guided classes')&&lp.includes('Forty-three classes are ready now'),'LP count words say forty-three');
+ assert.ok(lp.includes('forty-four age-guided classes')&&lp.includes('Forty-four classes are ready now'),'LP count words say forty-four');
 });
 
 test('R2 assets: SEO file names kept exactly, the cover is the main image, lazy + dims on every card',()=>{
