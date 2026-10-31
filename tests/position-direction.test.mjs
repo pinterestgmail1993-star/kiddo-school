@@ -113,6 +113,18 @@ test('inbound links: Class 19, Class 33 and Class 42 each carry their Class 44 b
  assert.ok(read('measuring-and-money/index.html').includes('href="/prepositions/"'),'Class 42 points here');
 });
 
+test('the URL round: old folder-named URLs 301 to their /prepositions/ twins',()=>{
+ // Cloudflare Pages processes only the FIRST 100 DYNAMIC (splat) rules of
+ // _redirects, so the 46 PD rules ride at the top of the file as EXACT
+ // STATIC rules (the splat form would silently ride past the cap).
+ const red=readFileSync('public/_redirects','utf8');
+ assert.ok(red.indexOf('/position-and-direction /prepositions/ 301')>-1,'class page 301 (no slash)');
+ assert.ok(red.indexOf('/position-and-direction/ /prepositions/ 301')>-1,'class page 301 (slash)');
+ for(const s of PD_ORDER)
+  assert.ok(red.includes('/position-and-direction/'+s+'/ /prepositions/'+s+'/ 301'),'word 301: '+s);
+ assert.ok(red.indexOf('/position-and-direction')<2000,'the PD rules ride at the very top of _redirects');
+});
+
 test('discoverable: search kind Class, all-pages room, manners.js on every new page',()=>{
  const search=JSON.parse(read('assets/search-index.json'));
  const cls=search.filter(x=>x.u.startsWith('/prepositions/'));

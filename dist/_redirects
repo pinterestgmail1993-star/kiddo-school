@@ -1,3 +1,90 @@
+# Class 44 · Position & Direction Words — the URL round (owner 2026-11-01:
+"forget the cloudflare folders structure — you make the clean urls what
+parents really search … for position and directions this is best or the
+prepositions is best? answer") — the class moved to /prepositions/ (the
+head keyword family parents actually type); the class page and all 22
+word pages 301 to their twins. Cloudflare Pages processes only the FIRST
+100 DYNAMIC (splat) rules of this file, so these are EXACT STATIC rules
+riding at the very top; the same fix rescues the 13 Time & Daily Routine
+splats that had silently ridden past the cap (their splat lines stay
+below for the record and for the tests that pin them).
+EXACT STATIC RULES — the class page:
+/position-and-direction /prepositions/ 301
+/position-and-direction/ /prepositions/ 301
+EXACT STATIC RULES — the 22 word pages:
+/position-and-direction/above /prepositions/above/ 301
+/position-and-direction/above/ /prepositions/above/ 301
+/position-and-direction/across /prepositions/across/ 301
+/position-and-direction/across/ /prepositions/across/ 301
+/position-and-direction/around /prepositions/around/ 301
+/position-and-direction/around/ /prepositions/around/ 301
+/position-and-direction/away-from /prepositions/away-from/ 301
+/position-and-direction/away-from/ /prepositions/away-from/ 301
+/position-and-direction/back-behind /prepositions/back-behind/ 301
+/position-and-direction/back-behind/ /prepositions/back-behind/ 301
+/position-and-direction/below /prepositions/below/ 301
+/position-and-direction/below/ /prepositions/below/ 301
+/position-and-direction/between /prepositions/between/ 301
+/position-and-direction/between/ /prepositions/between/ 301
+/position-and-direction/down /prepositions/down/ 301
+/position-and-direction/down/ /prepositions/down/ 301
+/position-and-direction/far /prepositions/far/ 301
+/position-and-direction/far/ /prepositions/far/ 301
+/position-and-direction/in-front-of /prepositions/in-front-of/ 301
+/position-and-direction/in-front-of/ /prepositions/in-front-of/ 301
+/position-and-direction/inside /prepositions/inside/ 301
+/position-and-direction/inside/ /prepositions/inside/ 301
+/position-and-direction/left /prepositions/left/ 301
+/position-and-direction/left/ /prepositions/left/ 301
+/position-and-direction/near /prepositions/near/ 301
+/position-and-direction/near/ /prepositions/near/ 301
+/position-and-direction/next-to /prepositions/next-to/ 301
+/position-and-direction/next-to/ /prepositions/next-to/ 301
+/position-and-direction/on /prepositions/on/ 301
+/position-and-direction/on/ /prepositions/on/ 301
+/position-and-direction/outside /prepositions/outside/ 301
+/position-and-direction/outside/ /prepositions/outside/ 301
+/position-and-direction/over /prepositions/over/ 301
+/position-and-direction/over/ /prepositions/over/ 301
+/position-and-direction/right /prepositions/right/ 301
+/position-and-direction/right/ /prepositions/right/ 301
+/position-and-direction/through /prepositions/through/ 301
+/position-and-direction/through/ /prepositions/through/ 301
+/position-and-direction/toward /prepositions/toward/ 301
+/position-and-direction/toward/ /prepositions/toward/ 301
+/position-and-direction/under /prepositions/under/ 301
+/position-and-direction/under/ /prepositions/under/ 301
+/position-and-direction/up /prepositions/up/ 301
+/position-and-direction/up/ /prepositions/up/ 301
+EXACT STATIC RULES — rescuing the 13 Time & Daily Routine splats that sat
+past the 100-dynamic-rule cap (same source, same target, no splat):
+/time-and-daily-routine/seconds-minutes-hours /time-and-daily-routine/ 301
+/time-and-daily-routine/seconds-minutes-hours/ /time-and-daily-routine/ 301
+/time-and-daily-routine/start-and-stop /time-and-daily-routine/ 301
+/time-and-daily-routine/start-and-stop/ /time-and-daily-routine/ 301
+/time-and-daily-routine/the-calendar-days-weeks-months /time-and-daily-routine/ 301
+/time-and-daily-routine/the-calendar-days-weeks-months/ /time-and-daily-routine/ 301
+/time-and-daily-routine/time-changes-melt-grow /time-and-daily-routine/ 301
+/time-and-daily-routine/time-changes-melt-grow/ /time-and-daily-routine/ 301
+/time-and-daily-routine/time-helpers-clock-calendar-timer /time-and-daily-routine/ 301
+/time-and-daily-routine/time-helpers-clock-calendar-timer/ /time-and-daily-routine/ 301
+/time-and-daily-routine/time-order-words-first-second-third /time-and-daily-routine/ 301
+/time-and-daily-routine/time-order-words-first-second-third/ /time-and-daily-routine/ 301
+/time-and-daily-routine/time-words-review /time-and-daily-routine/ 301
+/time-and-daily-routine/time-words-review/ /time-and-daily-routine/ 301
+/time-and-daily-routine/waiting-time-patience /time-and-daily-routine/ 301
+/time-and-daily-routine/waiting-time-patience/ /time-and-daily-routine/ 301
+/time-and-daily-routine/week-month-year /time-and-daily-routine/ 301
+/time-and-daily-routine/week-month-year/ /time-and-daily-routine/ 301
+/time-and-daily-routine/weekday-or-weekend /time-and-daily-routine/ 301
+/time-and-daily-routine/weekday-or-weekend/ /time-and-daily-routine/ 301
+/time-and-daily-routine/when-plans-change /time-and-daily-routine/ 301
+/time-and-daily-routine/when-plans-change/ /time-and-daily-routine/ 301
+/time-and-daily-routine/work-time-and-break-time /time-and-daily-routine/ 301
+/time-and-daily-routine/work-time-and-break-time/ /time-and-daily-routine/ 301
+/time-and-daily-routine/yesterday-today-tomorrow /time-and-daily-routine/ 301
+/time-and-daily-routine/yesterday-today-tomorrow/ /time-and-daily-routine/ 301
+
 # 301: the 52 Class 29 sight word lessons moved to their own hub
 # (old /learn/{word}/ pages → /preschool/4-years/sight-words/{word}/)
 /preschool/4-years/storytime-and-pre-reading/learn/* /preschool/4-years/sight-words/:splat 301
@@ -143,14 +230,3 @@
 /time-and-daily-routine/when-plans-change* /time-and-daily-routine/ 301
 /time-and-daily-routine/work-time-and-break-time* /time-and-daily-routine/ 301
 /time-and-daily-routine/yesterday-today-tomorrow* /time-and-daily-routine/ 301
-
-# Class 44 · Position & Direction Words — the URL round (owner 2026-11-01:
-# "forget the cloudflare folders structure — you make the clean urls what
-# parents really search … for position and directions this is best or the
-# prepositions is best? answer") — the class moved to /prepositions/ (the
-# head keyword family parents actually type); the class page and all 22
-# word pages 301 to their twins (they lived for hours, zero equity lost;
-# the splat covers the word pages, the exact lines cover the class page).
-/position-and-direction /prepositions/ 301
-/position-and-direction/ /prepositions/ 301
-/position-and-direction/* /prepositions/:splat 301

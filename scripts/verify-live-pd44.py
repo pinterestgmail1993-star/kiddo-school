@@ -98,5 +98,26 @@ req = urllib.request.Request('https://assets.kiddo.school/school/nature-club/fla
 with urllib.request.urlopen(req, timeout=30) as r:
     ck('R2 nature card 200 image/webp', r.status == 200 and r.headers.get('Content-Type') == 'image/webp')
 
+
+# --- URL ROUND: the old folder-named URLs must 301 to their /prepositions/ twins
+print('--- old-URL 301 probes ---')
+import urllib.request as _u, urllib.error as _e
+def _code(url):
+    req=_u.Request(url,headers={'User-Agent':'kiddo-probe/1.0'},method='GET')
+    class NoRedir(_u.HTTPRedirectHandler):
+        def redirect_request(self,*a,**k): return None
+    op=_u.build_opener(NoRedir)
+    try:
+        r=op.open(req,timeout=30); return r.status,''
+    except _e.HTTPError as ex:
+        return ex.code,ex.headers.get('Location','')
+    except Exception as ex:
+        return 0,str(ex)
+for old in ['/position-and-direction/','/position-and-direction/above/','/position-and-direction/up/','/position-and-direction']:
+    c,loc=_code('https://kiddo.school'+old)
+    ok = c==301 and loc.startswith('https://kiddo.school/prepositions')
+    print(('PASS' if ok else 'FAIL')+f' 301 {old} -> {c} {loc}')
+    if not ok: fails.append('301 '+old)
+
 print(f"\n{len(fails)} fails" + ((': ' + ', '.join(fails)) if fails else ''))
 raise SystemExit(1 if fails else 0)
