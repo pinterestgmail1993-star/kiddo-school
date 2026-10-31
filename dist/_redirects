@@ -97,12 +97,3 @@
 # 1-day-old-URL 301 play as Class 38 above.
 /flashcards/clubs /flashcards/extra-curricular-activities/ 301
 /flashcards/clubs/* /flashcards/extra-curricular-activities/:splat 301
-
-# --- Science at a Glance folded INTO First Glance 2026-10-31 (owner:
-# "why did you remove the other glance? told you put the science with it")
-# — the 65 science sheets now live ON /first-glance/ as its third band and
-# the header chip is back on First Glance ("New · First Glance · 123
-# first-picture sheets · Ages 2–5"). The 1-day-old standalone URL 301s to
-# the merged page (same play as Class 38 and Clubs above).
-/science-at-a-glance/ /first-glance/ 301
-/science-at-a-glance /first-glance/ 301

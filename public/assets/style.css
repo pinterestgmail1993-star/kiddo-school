@@ -2280,16 +2280,6 @@ h1 em,h2 em{color:#7b4b99}
    age/subject/level. Print isolation inherits the manners rules above. */
 .sg-card .sg-imagelink{display:block}
 .fc-pill-skill{border:1.5px dashed var(--ink,#34233E);background:var(--white,#fff);color:var(--ink,#34233E)}
-/* Science at a Glance as the third band INSIDE /first-glance/ (2026-10-31
-   merge: owner "told you put the science with it"). The band header uses
-   the First Glance .fg-sec look; the six science sections and the levels
-   legend tuck underneath with First Glance rhythm. */
-.fg-science .sg-group{margin-top:38px}
-.fg-science .sg-group .fc-hint{margin-top:10px;max-width:720px}
-.fg-science .sg-levels{margin-top:26px;max-width:840px}
-.fg-science .sg-levels .fc-steps{margin-top:14px}
-.fg-science .fg-sec-head .fc-pill-big{margin-top:12px}
-@media(max-width:680px){.fg-science .sg-group{margin-top:30px}}
 /* Per-card print isolation: manners.js adds body.mn-printing + the chosen
    card .mn-print-card, then calls window.print() — the visibility trick
    prints exactly one card, full page, nothing else. */

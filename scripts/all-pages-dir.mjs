@@ -27,7 +27,8 @@ const LABELS=new Map([
   ['/learning-path/','The Learning Path'],
   ['/my-classroom/','My Classroom'],
   ['/rooms/','School Rooms'],
-  ['/first-glance/','First Glance · all 123 first-picture sheets (words + science)'],
+  ['/first-glance/','First Glance · all 58 first-picture sheets'],
+  ['/science-at-a-glance/','Science at a Glance · all 65 first-picture science sheets'],
   ['/search/','Search the whole school'],
   ['/subjects/','Explore by subject'],
   ['/ages/','Explore by age'],
@@ -64,7 +65,7 @@ const GROUP_LABELS=new Map([
 const SECTIONS=[
  {id:'start',title:'Start here',dot:'var(--yellow)',
   blurb:'The front doors of the school — the guided path, the classroom and ways to browse.',
-  match:p=>p==='/'||p==='/learning-path/'||p==='/my-classroom/'||p==='/rooms/'||p==='/search/'||p==='/first-glance/'?{key:'doors',name:'The way in'}
+  match:p=>p==='/'||p==='/learning-path/'||p==='/my-classroom/'||p==='/rooms/'||p==='/search/'||p==='/first-glance/'||p==='/science-at-a-glance/'?{key:'doors',name:'The way in'}
    :p==='/subjects/'||p.startsWith('/subjects/')||p==='/ages/'||p.startsWith('/ages/')||p==='/activities/'||p.startsWith('/activities/')?{key:'browse',name:'Browse by age & subject'}:null},
  {id:'newborn',title:'The Newborn room',dot:'var(--kiddo-lavender)',
   blurb:'Gentle high-contrast cards and first-theatre classes for the earliest weeks.',

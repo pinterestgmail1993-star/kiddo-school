@@ -1,19 +1,14 @@
-/* first-glance — THE OWNER'S FIRST-PICTURE SHEETS (owner 2026-10-22:
+/* first-glance — THE OWNER'S 58 FIRST-PICTURE SHEETS (owner 2026-10-22:
    "these are first glance this is separate" + "no indiviual pages required"
    + header placement on a next row). ONE standalone page at /first-glance/
-   holding the 58 first-word sheets in two age groups, each card with
-   description, age pill, subject pill and a skills line, plus the "Why we
-   made First Glance" story. Locks: page contract, 58 cards = exact bucket
-   manifest, pills/skills per card, no individual card pages, header row-2
-   on every page, footer link, sitemap + image sitemap, search index,
-   /all-pages/.
-   2026-10-31: the owner's 65 Science at a Glance sheets joined the page as
-   its THIRD BAND (owner: "why did you remove the other glance? told you put
-   the science with it") — 58 + 65 = 123 sheets — and the header's featured
-   chip is back on First Glance ("New · First Glance · 123 first-picture
-   sheets · Ages 2–5"). The science band's own locks live in
-   tests/science-at-a-glance.test.mjs; here: the chip flip, the title and
-   the band's presence on the page. */
+   holding all 58 sheets in two age groups, each card with description,
+   age pill, subject pill and a skills line, plus the "Why we made First
+   Glance" story. Locks: page contract, 58 cards = exact bucket manifest,
+   pills/skills per card, no individual card pages, header row-2 on every
+   page, footer link, sitemap + image sitemap, search index, /all-pages/.
+   2026-10-31: the header's featured chip moved to the new Science at a
+   Glance collection (owner: "on header science at a glance"); the header
+   assertions now track the chip swap, the footer link stays. */
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync,readdirSync,existsSync} from 'node:fs';
@@ -25,10 +20,10 @@ const A45=['01-seasons','02-up-down-in-out','03-times-of-day','04-jobs-1','05-le
 const MANIFEST=[...A23.map(s=>'ages-2-3/'+s),...A45.map(s=>'ages-4-5/'+s)];
 
 test('page contract: title, canonical, indexed, honest description',()=>{
- assert.ok(html.includes('<title>First Glance — 123 first-picture sheets to name together (Ages 2–5) | Kiddo.school</title>'));
+ assert.ok(html.includes('<title>First Glance — 58 first-picture sheets to name together (Ages 2–5) | Kiddo.school</title>'));
  assert.ok(html.includes('rel="canonical" href="https://kiddo.school/first-glance/"'));
  assert.ok(html.includes('content="index,follow"'));
- assert.ok(html.includes('All 123 First Glance picture sheets on one page'));
+ assert.ok(html.includes('All 58 First Glance picture sheets on one page'));
 });
 
 test('all 58 sheets on ONE page, exactly the bucket manifest, nothing missing',()=>{
@@ -50,15 +45,6 @@ test('two age groups with honest counts and jump links',()=>{
  const a23=main.split('id="fg-4-5"')[0];
  assert.equal([...a23.matchAll(/class="fc-card fg-card"/g)].length,32,'32 cards in the 2–3 group');
  assert.equal([...main.matchAll(/class="fc-card fg-card"/g)].length-32,26,'26 cards in the 4–5 group');
-});
-
-test('the science band lives here as the third band (owner 2026-10-31: "put the science with it")',()=>{
- const jumps=main.match(/<nav class="fg-jumps[^"]*" aria-label="Jump to a group">[\s\S]*?<\/nav>/);
- assert.ok(jumps,'no jump nav');
- assert.equal([...jumps[0].matchAll(/<a href="#/g)].length,4,'4 jump cards: two age bands + science + why');
- assert.ok(main.includes('id="fg-science"'),'no Science at a Glance band on the page');
- assert.ok(main.includes('<h2 id="fg-science-h">Science at a Glance</h2>'));
- assert.ok(jumps[0].includes('href="#fg-science"'),'no jump card for the science band');
 });
 
 test('every card carries description, age pill, subject pill and skills line',()=>{
@@ -99,27 +85,26 @@ test('NO individual card pages — dist/first-glance/ holds only the one page',(
  assert.ok(!existsSync('dist/flashcards/first-glance'),'no set page inside the flashcards library either');
 });
 
-test('discoverable everywhere: header row-2 (BACK on First Glance), footer, sitemap+image, search, directory',()=>{
- /* Owner 2026-10-31: "why did you remove the other glance? told you put
-    the science with it" — the featured chip is back on First Glance, now
-    reading 123 first-picture sheets (58 word sheets + 65 science sheets
-    on this one page), and the science page is a 301 here. */
+test('discoverable everywhere: header row-2, footer, sitemap+image, search, directory',()=>{
+ /* Owner 2026-10-31: the header's featured chip moved to the new Science
+    at a Glance collection ("on header science at a glance"); First Glance
+    keeps its footer link and the science page's sibling link. */
  const home=read('dist/index.html');
  const deep=read('dist/flashcards/animal-categories/amphibians/index.html');
  const fgSelf=read('dist/first-glance/index.html');
  for(const [name,h] of [['home',home],['deep page',deep],['first-glance itself',fgSelf]]){
-  assert.ok(h.includes('class="header-fg" href="/first-glance/"'),'header row-2 missing on '+name);
-  assert.ok(h.includes('123 first-picture sheets · Ages 2–5'),'header chip count missing on '+name);
+  assert.ok(h.includes('class="header-fg" href="/science-at-a-glance/"'),'header row-2 missing on '+name);
+  assert.ok(h.includes('65 first-picture sheets · Ages 2–5'),'header chip count missing on '+name);
   assert.ok(h.includes('<a href="/first-glance/">First Glance sheets</a>'),'footer link missing on '+name);
-  assert.ok(!h.includes('href="/science-at-a-glance/"'),'stale science link on '+name);
  }
- assert.ok(fgSelf.includes('class="header-fg" href="/first-glance/" aria-current="page"'),'aria-current on first-glance itself');
+ assert.ok(!fgSelf.includes('header-fg" href="/first-glance/"'),'the featured chip no longer points at first-glance (owner 2026-10-31 swap)');
+ assert.ok(read('dist/science-at-a-glance/index.html').includes('class="header-fg" href="/science-at-a-glance/" aria-current="page"'),'aria-current moved with the chip to the science page');
  assert.ok(read('dist/sitemap.xml').includes('<loc>https://kiddo.school/first-glance/</loc>'));
  assert.ok(read('dist/sitemap.xml').includes('<image:loc>https://assets.kiddo.school/flashcards/first-glance/ages-2-3/01-pets.webp</image:loc>'),'pets sheet joins the image sitemap via og:image');
  const idx=JSON.parse(read('dist/assets/search-index.json'));
  const fg=idx.find(p=>p.u==='/first-glance/');
  assert.ok(fg,'first-glance in the search index');
  assert.equal(fg.k,'Picture sheets');
- assert.ok(fg.t.includes('First Glance')&&fg.t.includes('123')&&fg.d.length>40);
+ assert.ok(fg.t.includes('First Glance')&&fg.d.length>40);
  assert.ok(read('dist/all-pages/index.html').includes('href="/first-glance/"'),'first-glance listed on /all-pages/');
 });
