@@ -4,7 +4,7 @@ push (deploy live ~20s):
 A) CLASS 44 · Position & Direction Words: the class page + all 22 word pages
    200, cover leading, LP row 44 + forty-four counts, sitemap carrying the 23
    new URLs with the cover in the image sitemap, short page contract on
-   /position-and-direction/above/ (the owner's own example), inbound sections
+   /prepositions/above/ (the owner's own example), inbound sections
    live on Classes 19/33/42.
 B) The Nature Club deck: /nature/ carries the 41-card shelf family and the
    /nature/ sitemap entry carries all 41 <image:image> entries.
@@ -29,17 +29,17 @@ def get(path, tries=3):
             time.sleep(3 * (i + 1))
 
 time.sleep(1)
-s, pd = get('/position-and-direction/')
-ck('/position-and-direction/ 200', s == 200, s)
+s, pd = get('/prepositions/')
+ck('/prepositions/ 200', s == 200, s)
 ck('cover leads as the main image', 'position-and-direction-words-flashcards-for-kids-cover.webp' in pd and 'lesson-hero-cover' in pd)
 ck('CLASS 44 eyebrow', 'CLASS 44' in pd)
 ck('22 card tiles + four shelves',
    pd.count('class="mn-card"') == 22 and 'UP &amp; DOWN SHELF' in pd and 'SIDES &amp; DISTANCE SHELF' in pd)
-ck('word-page links present', 'href="/position-and-direction/above/"' in pd)
+ck('word-page links present', 'href="/prepositions/above/"' in pd)
 
 time.sleep(1)
-s, above = get('/position-and-direction/above/')
-ck('/position-and-direction/above/ 200', s == 200, s)
+s, above = get('/prepositions/above/')
+ck('/prepositions/above/ 200', s == 200, s)
 ck('word h1 + verbatim labels + try-it + counter',
    '<h1>Above</h1>' in above and 'Balloon above' in above and 'Try it today' in above and 'CARD 1 OF 22' in above)
 ck('card og:image with transcribed alt',
@@ -50,14 +50,14 @@ words = ['across','around','away-from','back-behind','below','between','down','f
  'left','near','next-to','on','outside','over','right','through','toward','under','up']
 bad = []
 for w in words:
-    s, _ = get('/position-and-direction/' + w + '/')
+    s, _ = get('/prepositions/' + w + '/')
     if s != 200: bad.append((w, s))
     time.sleep(0.4)
 ck('all 22 word pages 200 (paced)', not bad, bad)
 
 time.sleep(1)
 s, lp = get('/learning-path/')
-ck('LP row 44 after row 43', 'Class 44: <a href="/position-and-direction/">Position &amp; Direction Words</a>' in lp and '<span>44</span>' in lp)
+ck('LP row 44 after row 43', 'Class 44: <a href="/prepositions/">Position &amp; Direction Words</a>' in lp and '<span>44</span>' in lp)
 ck('LP counts say forty-four', 'forty-four age-guided classes' in lp and 'Forty-four classes are ready now' in lp)
 
 time.sleep(1)
@@ -66,17 +66,17 @@ ck('homepage lede says forty-four', 'Forty-four classes are ready now' in home)
 
 time.sleep(1)
 s, opp = get('/preschool/3-years/opposites-and-comparing/')
-ck('Class 19 inbound section live', 'href="/position-and-direction/"' in opp)
+ck('Class 19 inbound section live', 'href="/prepositions/"' in opp)
 time.sleep(0.5)
 s, ch = get('/preschool/4-years/community-helpers-and-our-neighborhood/')
-ck('Class 33 inbound section live', 'href="/position-and-direction/"' in ch)
+ck('Class 33 inbound section live', 'href="/prepositions/"' in ch)
 time.sleep(0.5)
 s, mm = get('/measuring-and-money/')
-ck('Class 42 inbound section live', 'href="/position-and-direction/"' in mm)
+ck('Class 42 inbound section live', 'href="/prepositions/"' in mm)
 
 time.sleep(1)
 s, xml = get('/sitemap.xml')
-ck('sitemap carries the 23 new URLs', xml.count('<loc>https://kiddo.school/position-and-direction/') == 23)
+ck('sitemap carries the 23 new URLs', xml.count('<loc>https://kiddo.school/prepositions/') == 23)
 ck('cover in the image sitemap', '<image:loc>https://assets.kiddo.school/school/learning-path/position-and-direction-words/flashcards/position-and-direction-words-flashcards-for-kids-cover.webp</image:loc>' in xml)
 
 time.sleep(1)

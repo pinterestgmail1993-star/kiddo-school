@@ -1,9 +1,19 @@
 /* Kiddo School — CLASS 44 · Position & Direction Words (Ages 4–5): the
-   Learning Path class page at /position-and-direction/ PLUS one short page
-   per card at /position-and-direction/<word>/ (owner brief 2026-11-01 — the
-   owner spells the short-page URL pattern out card by card, "for example
-   /position-and-direction/above/", so this class rides the Class 39/40
-   short-page precedent, unlike the one-page Classes 41–43). Numbered 44 by
+   Learning Path class page at /prepositions/ PLUS one short page per card
+   at /prepositions/<word>/ (owner brief 2026-11-01 — the owner spells the
+   short-page URL pattern out card by card, "for example /prepositions/
+   above/", so this class rides the Class 39/40 short-page precedent,
+   unlike the one-page Classes 41–43). URL ROUND (owner 2026-11-01, after
+   the first build): "forget the cloudflare folders structure — you make
+   the clean urls what parents really search … for position and directions
+   this is best or the prepositions is best? answer" — the answer is
+   PREPOSITIONS: it is the head keyword family parents actually type
+   ("prepositions for kids", "preposition flashcards"), it is short and
+   guessable, and the R2 file names already carry the position-words family
+   (-position-word-flashcard-for-kids.webp), so the class catches BOTH
+   keyword families while the LP row keeps the class name; the old
+   folder-shaped URLs 301 in _redirects to their twins (they lived for
+   hours, zero equity lost). Numbered 44 by
    the no-skip rule: Class 43 · Our Earth & Space is LIVE on production at
    https://kiddo.school/earth-and-space/ — probed HTTP 200 before the number
    was assigned. The deck was probed LIVE on R2 on 2026-11-01: 23/23 files
@@ -12,7 +22,7 @@
    File names ride EXACTLY as uploaded (owner: "they are SEO names for Google
    Image search"); no seo.csv came with the deck, so the short-page slug is
    the card's own word at the start of the file name (the owner's example:
-   above-position-word-… → /position-and-direction/above/) and card titles +
+   above-position-word-… → /prepositions/above/) and card titles +
    alt text were transcribed verbatim off the artwork via 3 labeled contact
    sheets (scripts/pd44-sheets.py — every card face read, all five labeled
    scenes per card). The cover is the class page's main image (owner rule)
@@ -31,7 +41,7 @@
    to the class page. The class count goes forty-three → forty-four. */
 import {R2} from './adventure-kit.mjs';
 
-export const PD_PATH='/position-and-direction/';
+export const PD_PATH='/prepositions/';
 export const PD_BASE=R2+'school/learning-path/position-and-direction-words/flashcards/';
 
 /* File order, exactly as the owner uploaded them (sorted); the slug is the
@@ -146,14 +156,14 @@ function tile(c){
 }
 
 export function pdClassBody(){
- const hero=`<article class="wrap lesson-hero lesson-hero-cover"><div class="lesson-hero-copy"><span class="eyebrow">LEARNING PATH \u00b7 CLASS 44 \u00b7 POSITION &amp; DIRECTION WORDS \u00b7 AGES 4\u20135</span><h1>Position &amp; Direction Words — twenty-two printable position word cards to act out.</h1><p class="lesson-lede">Twenty-two printable position and direction flashcards for ages four to five — one short page per word, all linked from the shelves below. Up and down, above and below, over and under, inside and outside, across and through: the words that tell you WHERE. Every card shows the word five ways with labeled pictures, so the word sticks the way a game sticks — and every word has something your body can do right now. Pick a card, print it, and the hallway becomes a treasure map.</p><div class="lesson-start"><a class="button button-ghost" href="/learning-path/">Back to the Learning Path <span aria-hidden="true">\u2197</span></a></div></div><figure class="lesson-cover"><img src="${PD_BASE}${PD_COVER.file}" width="${PD_COVER.w}" height="${PD_COVER.h}" alt="${esc(PD_COVER.alt)}"></figure></article>`;
+ const hero=`<article class="wrap lesson-hero lesson-hero-cover"><div class="lesson-hero-copy"><span class="eyebrow">LEARNING PATH \u00b7 CLASS 44 \u00b7 POSITION &amp; DIRECTION WORDS \u00b7 AGES 4\u20135</span><h1>Prepositions for kids — twenty-two printable position &amp; direction word cards to act out.</h1><p class="lesson-lede">Twenty-two printable position and direction flashcards for ages four to five — one short page per word, all linked from the shelves below. Up and down, above and below, over and under, inside and outside, across and through: the words that tell you WHERE. Every card shows the word five ways with labeled pictures, so the word sticks the way a game sticks — and every word has something your body can do right now. Pick a card, print it, and the hallway becomes a treasure map.</p><div class="lesson-start"><a class="button button-ghost" href="/learning-path/">Back to the Learning Path <span aria-hidden="true">\u2197</span></a></div></div><figure class="lesson-cover"><img src="${PD_BASE}${PD_COVER.file}" width="${PD_COVER.w}" height="${PD_COVER.h}" alt="${esc(PD_COVER.alt)}"></figure></article>`;
  const how=`<section class="wrap lesson-section"><span class="eyebrow">HOW THIS CLASS WORKS</span><h2>One little word. Your whole body does it. That is the lesson.</h2><p class="lesson-copy">Position words are the first math words a child ever uses — before numbers, comes WHERE. Every card in this class prints one word five ways: the word big at the top, then five labeled pictures showing it — balloon above, book above, bird above. You do not need a desk for this class. You need a floor, a table to crawl under, and maybe a sock to toss over your shoulder. Say the word, do the word, and the word is yours.</p><p class="lesson-copy">The shelves follow how the words grow. The Up &amp; Down shelf starts with the ones your body already knows — jumping up, flopping down, hiding under. Where Things Are adds the hiding words — inside, outside, between, next to, in front of, back-behind. The Way Things Move puts directions in your feet — across, around, through, toward, away from. And Sides &amp; Distance finishes with the two tricky teams — left and right, near and far — that later become maps, dances and driving directions.</p></section>`;
  const shelfSections=PD_SHELVES.map(sh=>`<section class="wrap lesson-section" id="shelf-${sh.id}"><span class="eyebrow">${sh.label}</span><h2>${sh.h2}</h2><p class="fc-hint">${sh.hint} Every card opens its own word page — the five labeled scenes from the card, one thing to try today, and Download + Print. The pills answer one glance: the age, the subject, the grade level, the skill it builds.</p><div class="mn-cards">${sh.slugs.map(s=>tile(pdBySlug[s])).join('')}</div></section>`).join('');
  const around=`<section class="wrap lesson-section"><span class="eyebrow">AROUND THE SCHOOL</span><h2>Where the position words grow up.</h2><div class="lesson-linkrow"><a class="lesson-pill-link" href="/preschool/3-years/opposites-and-comparing/">Opposite pairs in Class 19 <span>\u00b7 Age 3</span> <span aria-hidden="true">\u2197</span></a><a class="lesson-pill-link" href="/preschool/4-years/community-helpers-and-our-neighborhood/">Neighborhood walks in Class 33 <span>\u00b7 Ages 4\u20135</span> <span aria-hidden="true">\u2197</span></a><a class="lesson-pill-link" href="/measuring-and-money/">Measuring &amp; Money in Class 42 <span>\u00b7 Ages 4\u20135</span> <span aria-hidden="true">\u2197</span></a><a class="lesson-pill-link" href="/learning-path/">The Learning Path <span aria-hidden="true">\u2197</span></a></div><p class="lesson-copy">Class 19 compares — big and little, more and less, over and under in its own opposite pairs — and this class hands those pairs their real names. Class 33 walks the neighborhood, where every walk is a direction word: toward the mailbox, across the street, next to the park. Class 42 measures and sorts, and its own shelf already keeps a few position words — this class is where those words get a whole school day. And when you want the next class, the Learning Path holds all forty-four in order.</p></section>`;
  return `${hero}${how}${shelfSections}${around}<p class="lesson-note"><strong>Position words are caught, not taught.</strong> Every card here hands you a word your body can try before your brain has to — and your grown-up\u2019s whole job is to say it out loud with you while you do it.</p>`;
 }
 
-/* ---- One short page per word (owner brief: "/position-and-direction/<word>/
+/* ---- One short page per word (owner brief: "/prepositions/<word>/
    with a link back") — the Class 39/40 short-page precedent ----------------- */
 export function pdShortBody(slug){
  const c=pdBySlug[slug];
@@ -177,8 +187,8 @@ export function pdShortBody(slug){
 
 /* ---- Inbound-link blocks, appended at the three classes' page() calls ----- */
 /* Appended to Class 19 · Opposites & Comparing. */
-export const PD_OPPOSITES_LINK=`<section class="wrap lesson-section"><span class="eyebrow">FROM OPPOSITE PAIRS TO POSITION WORDS</span><h2>Class 44 \u00b7 Position &amp; Direction Words.</h2><p class="lesson-copy">Class 19 plays in opposite pairs — big and little, more and less, open and shut — and the <a href="/position-and-direction/">Position &amp; Direction Words class</a> gives those pairs their everyday names: up and down, over and under, above and below. Twenty-two printable position word cards for ages 4\u20135, one short page per word, each with the word shown five ways and something your body can try today.</p></section>`;
+export const PD_OPPOSITES_LINK=`<section class="wrap lesson-section"><span class="eyebrow">FROM OPPOSITE PAIRS TO POSITION WORDS</span><h2>Class 44 \u00b7 Position &amp; Direction Words.</h2><p class="lesson-copy">Class 19 plays in opposite pairs — big and little, more and less, open and shut — and the <a href="/prepositions/">Prepositions for kids class</a> gives those pairs their everyday names: up and down, over and under, above and below. Twenty-two printable position word cards for ages 4\u20135, one short page per word, each with the word shown five ways and something your body can try today.</p></section>`;
 /* Appended to Class 33 · Community Helpers & Our Neighborhood. */
-export const PD_HELPERS_LINK=`<section class="wrap lesson-section"><span class="eyebrow">WORDS FOR EVERY WALK</span><h2>Class 44 \u00b7 Position &amp; Direction Words.</h2><p class="lesson-copy">Class 33 walks the neighborhood — the doctor, the mailbox, the fire station — and every single walk runs on direction words: toward the corner, across the street, next to the park, away from home. The <a href="/position-and-direction/">Position &amp; Direction Words class</a> prints those walking words as cards: twenty-two position and direction flashcards for ages 4\u20135, one page per word, each with a way to act it out before the next walk.</p></section>`;
+export const PD_HELPERS_LINK=`<section class="wrap lesson-section"><span class="eyebrow">WORDS FOR EVERY WALK</span><h2>Class 44 \u00b7 Position &amp; Direction Words.</h2><p class="lesson-copy">Class 33 walks the neighborhood — the doctor, the mailbox, the fire station — and every single walk runs on direction words: toward the corner, across the street, next to the park, away from home. The <a href="/prepositions/">Prepositions for kids class</a> prints those walking words as cards: twenty-two position and direction flashcards for ages 4\u20135, one page per word, each with a way to act it out before the next walk.</p></section>`;
 /* Appended to Class 42 · Measuring & Money. */
-export const PD_MEASURE_LINK=`<section class="wrap lesson-section"><span class="eyebrow">THE POSITION WORDS GET A WHOLE CLASS</span><h2>Class 44 \u00b7 Position &amp; Direction Words.</h2><p class="lesson-copy">Class 42 keeps a little position-words shelf among its measuring cards — and the <a href="/position-and-direction/">Position &amp; Direction Words class</a> is where those words get a school day of their own: twenty-two printable position and direction flashcards for ages 4\u20135, from up, down and on to through, toward and between, each shown five labeled ways with one thing to try today.</p></section>`;
+export const PD_MEASURE_LINK=`<section class="wrap lesson-section"><span class="eyebrow">THE POSITION WORDS GET A WHOLE CLASS</span><h2>Class 44 \u00b7 Position &amp; Direction Words.</h2><p class="lesson-copy">Class 42 keeps a little position-words shelf among its measuring cards — and the <a href="/prepositions/">Prepositions for kids class</a> is where those words get a school day of their own: twenty-two printable position and direction flashcards for ages 4\u20135, from up, down and on to through, toward and between, each shown five labeled ways with one thing to try today.</p></section>`;

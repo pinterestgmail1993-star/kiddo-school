@@ -143,3 +143,14 @@
 /time-and-daily-routine/when-plans-change* /time-and-daily-routine/ 301
 /time-and-daily-routine/work-time-and-break-time* /time-and-daily-routine/ 301
 /time-and-daily-routine/yesterday-today-tomorrow* /time-and-daily-routine/ 301
+
+# Class 44 · Position & Direction Words — the URL round (owner 2026-11-01:
+# "forget the cloudflare folders structure — you make the clean urls what
+# parents really search … for position and directions this is best or the
+# prepositions is best? answer") — the class moved to /prepositions/ (the
+# head keyword family parents actually type); the class page and all 22
+# word pages 301 to their twins (they lived for hours, zero equity lost;
+# the splat covers the word pages, the exact lines cover the class page).
+/position-and-direction /prepositions/ 301
+/position-and-direction/ /prepositions/ 301
+/position-and-direction/* /prepositions/:splat 301
