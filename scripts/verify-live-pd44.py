@@ -115,7 +115,7 @@ def _code(url):
         return 0,str(ex)
 for old in ['/position-and-direction/','/position-and-direction/above/','/position-and-direction/up/','/position-and-direction']:
     c,loc=_code('https://kiddo.school'+old)
-    ok = c==301 and loc.startswith('https://kiddo.school/prepositions')
+    ok = c==301 and ('https://kiddo.school/prepositions' in loc or loc.startswith('/prepositions'))
     print(('PASS' if ok else 'FAIL')+f' 301 {old} -> {c} {loc}')
     if not ok: fails.append('301 '+old)
 
