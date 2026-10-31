@@ -1,17 +1,20 @@
 /* Science at a Glance — the owner's 65 first-picture science sheets
    (R2 bucket kiddo-school-assets/school/extra-classes/science-at-a-glance/,
    probed LIVE 2026-10-31: 65/65 HTTP 200 image/webp, every file 800×1035,
-   29–83 kB). The owner's brief (2026-10-31): build the round like First
-   Glance — the site header's featured chip ("New · First Glance · 58
-   first-picture sheets · Ages 2–5") now carries THIS collection — with a
-   clean SEO URL, ALL sheets on ONE page, no individual pages; every sheet
-   carries Download + Print buttons under the image with a description and
-   age / subject / level / skill pills, grouped in sections; sheet
-   descriptions talk DIRECTLY TO THE KID (the owner's dialogue rule), while
-   the framing copy uses the words USA parents search. The owner's word-ban
-   holds: no "no sign up", "no paywall", "free to use", "no account", "free
-   forever" anywhere. Card words are read off the artwork via labeled
-   contact sheets, so alts can never drift from the real images. */
+   29–83 kB). 2026-10-31, after the first push, the owner asked: "why did
+   you remove the other glance? told you put the science with it" — so the
+   sheets live ON the First Glance page (/first-glance/) as its THIRD BAND,
+   not on a separate URL: the standalone page is gone, /science-at-a-glance/
+   301s to /first-glance/, and the site header's featured chip is back on
+   First Glance ("New · First Glance · 123 first-picture sheets · Ages 2–5").
+   Every sheet still carries Download + Print buttons under the image with
+   a description and age / subject / level / skill pills, grouped in six
+   sections; sheet descriptions talk DIRECTLY TO THE KID (the owner's
+   dialogue rule), while the framing copy uses the words USA parents search.
+   The owner's word-ban holds: no "no sign up", "no paywall", "free to use",
+   "no account", "free forever" anywhere. Card words are read off the
+   artwork via labeled contact sheets, so alts can never drift from the
+   real images. */
 import {R2} from './adventure-kit.mjs';
 
 export const SG_PATH='/science-at-a-glance/';
@@ -202,7 +205,10 @@ export const SG_LEVEL_BLURB={
  2:'Tell the story back. Life cycles, the water cycle, food chains: your child says what happens next, in order.',
  3:'Ask why together. The bigger-idea sheets — DNA, gravity, the pH scale — best with a grown-up asking the questions.'};
 
-/* ---- the one-page builder ---- */
+/* ---- the science band inside /first-glance/ (2026-10-31 merge: owner
+   "why did you remove the other glance? told you put the science with it"
+   — the 65 sheets live ON the First Glance page as its third band; the
+   standalone page is gone and 301s to /first-glance/) ---- */
 const e=s=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
 const num=n=>n.toLocaleString('en-US');
 
@@ -215,14 +221,9 @@ const altFor=c=>`Science at a Glance “${c.t}” sheet: ${c.w.join(', ')} — a
    the shared manners.js handler; the print snapshot keeps artwork + word. */
 const tile=c=>`<figure class="mn-card sg-card"><a class="sg-imagelink" href="${SG_BASE}${c.slug}.webp" target="_blank" rel="noopener" aria-label="Open the ${e(c.t)} sheet full size in a new tab"><img src="${SG_BASE}${c.slug}.webp" width="${SG_W}" height="${SG_H}" alt="${e(altFor(c))}" loading="lazy"></a><strong>${e(c.t)}</strong><span class="fc-pillrow"><span class="fc-pill fc-pill-age">Ages 2–5</span><span class="fc-pill fc-pill-subject">${e(c.sub)}</span><span class="fc-pill fc-pill-level">${SG_LEVEL_NAMES[c.lvl]}</span><span class="fc-pill fc-pill-skill">${e(c.sk)}</span></span><figcaption class="mn-tip">${e(c.d)}</figcaption><div class="mn-actions"><a class="button" href="${SG_BASE}${c.slug}.webp" download="${c.slug}.webp">Download <span aria-hidden="true">↓</span></a><button type="button" class="button button-ghost" data-mn-print>Print <span aria-hidden="true">⌘</span></button></div></figure>`;
 
-export function scienceAtAGlanceBody(){
- const crumb=`<nav class="breadcrumbs wrap" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><span aria-current="page">Science at a Glance</span></nav>`;
- const head=`<div class="page-heading wrap"><span class="eyebrow">SCIENCE AT A GLANCE · A FIRST LOOK AT HOW THE WORLD WORKS</span><h1>Science at a Glance<span class="title-dot">.</span></h1><span class="fc-pill fc-pill-big fc-pill-age">65 first-picture sheets · Ages 2–5</span><p>All ${num(SG_TOTAL)} printable science sheets on one page — one big idea per sheet, from the water cycle to the human brain, drawn big and labeled clearly for little scientists. Talk to the picture together: point, name, ask the little question. Then tap Download or Print right under the sheet — the fridge door is about to become a science wall.</p></div>`;
- const jumps=`<nav class="fg-jumps wrap" aria-label="Jump to a section"><a href="#sg-body"><b>My body</b><span>${BODY.length} sheets</span></a><a href="#sg-nature"><b>Animals &amp; ecosystems</b><span>${NATURE.length} sheets</span></a><a href="#sg-plants"><b>Plants, cells &amp; DNA</b><span>${PLANTS.length} sheets</span></a><a href="#sg-earth"><b>Earth, weather &amp; water</b><span>${EARTH.length} sheets</span></a><a href="#sg-space"><b>Sun, moon &amp; space</b><span>${SPACE.length} sheets</span></a><a href="#sg-matter"><b>Matter, energy &amp; motion</b><span>${MATTER.length} sheets</span></a><a href="#sg-levels"><b>The three levels</b><span>start here, then wonder</span></a><a href="#sg-why"><b>Why it works</b><span>the idea behind the sheets</span></a><a href="#sg-how"><b>How to use them</b><span>four tiny moves</span></a></nav>`;
- const deck=SG_SECTIONS.map(s=>`<section class="wrap lesson-section" id="${s.id}" aria-labelledby="${s.id}-h"><span class="eyebrow">${e(s.band.toUpperCase())} · ${s.cards.length} SHEETS</span><h2 id="${s.id}-h">${e(s.band)}<span class="title-dot">.</span></h2><p class="fc-hint">${e(s.intro)}</p><div class="mn-cards">${s.cards.map(c=>tile({...c,sub:s.sub})).join('')}</div></section>`).join('');
- const levels=`<section class="wrap lesson-section" id="sg-levels" aria-labelledby="sg-levels-h"><span class="eyebrow">THE THREE LEVELS</span><h2 id="sg-levels-h">Start at Level 1, then wonder your way up<span class="title-dot">.</span></h2><p class="fc-hint">Every sheet wears a level pill so tonight’s pick takes one glance. The levels are a suggested order, not a rule — the question your child asked at breakfast is always the right sheet.</p><ol class="fc-steps"><li><span class="fc-stepnum">01</span><div><h3>${SG_LEVEL_NAMES[1]}</h3><p>${SG_LEVEL_BLURB[1]}</p></div></li><li><span class="fc-stepnum">02</span><div><h3>${SG_LEVEL_NAMES[2]}</h3><p>${SG_LEVEL_BLURB[2]}</p></div></li><li><span class="fc-stepnum">03</span><div><h3>${SG_LEVEL_NAMES[3]}</h3><p>${SG_LEVEL_BLURB[3]}</p></div></li></ol></section>`;
- const why=`<section class="wrap lesson-section" id="sg-why" aria-labelledby="sg-why-h"><span class="eyebrow">THE IDEA</span><h2 id="sg-why-h">Why science at a glance works<span class="title-dot">.</span></h2><p>Young children meet science the way they meet everything: one picture at a time. A volcano erupting, a caterpillar turning into a butterfly, the moon changing its shape — these printable science posters for preschool and kindergarten put one big idea on each sheet, labeled and drawn friendly, so a two-year-old can point and a five-year-old can explain.</p><p>That is also how early STEM sticks at home. Pointing builds words, words build questions, and questions build the homeschool science lesson you did not have to plan. Keep a couple of sheets on the fridge, rotate them with the seasons, and let your child catch you being curious too.</p><p>New here? This page pairs with <a href="/first-glance/">First Glance</a> — 58 first-word sheets in the same point-and-name style — and with the hands-on classes on the <a href="/learning-path/">Learning Path</a>. One sheet, one minute, one big idea: that is the whole method.</p></section>`;
- const how=`<section class="wrap lesson-section" id="sg-how" aria-labelledby="sg-how-h"><h2 id="sg-how-h">How to use the sheets<span class="title-dot">.</span></h2><div class="fg-how-grid"><div><span>01</span><h3>Point and name</h3><p>Open a sheet and name what you see, then let your child point and name it back. Echoing is learning — the volcano wants to be called by name.</p></div><div><span>02</span><h3>Ask the little question</h3><p>“Where is the rain going?” “Which one is Mars?” One small question turns naming into thinking, and every answer deserves a follow-up.</p></div><div><span>03</span><h3>Do the tiny version</h3><p>Floating soap at bath time, a magnet around the kitchen, a bean in a cup — every sheet has a two-minute experiment hiding in it.</p></div><div><span>04</span><h3>Print and post</h3><p>Download the full-size sheet or hit Print for a clean single-card page. The kitchen wall, the car door, the science center at co-op — science loves a good spot.</p></div></div></section>`;
- const next=`<section class="wrap lesson-section"><span class="eyebrow">WHERE TO NEXT</span><h2>More first looks, more to print.</h2><div class="lesson-linkrow"><a class="lesson-pill-link" href="/first-glance/">First Glance <span>· 58 first-word sheets</span> <span aria-hidden="true">↗</span></a><a class="lesson-pill-link" href="/learning-path/">The Learning Path <span aria-hidden="true">↗</span></a><a class="lesson-pill-link" href="/extra-classes/">All the extra classes <span aria-hidden="true">↗</span></a><a class="lesson-pill-link" href="/flashcards/">All flashcard sets <span aria-hidden="true">↗</span></a></div><p class="lesson-copy">When the naming is flowing, the <a href="/first-glance/">First Glance</a> sheets add the everyday words — pets, fruit, feelings, jobs — and the <a href="/learning-path/">Learning Path</a> turns curiosity into little classes, one short lesson at a time. Everything prints the same friendly way.</p></section>`;
- return `${crumb}${head}${jumps}${deck}${levels}${why}${how}${next}`;
+export function scienceBandBody(){
+ const intro=`One big science idea on every sheet — the human body, animals and ecosystems, plants and DNA, weather and water, space, and the physical-science basics. These printable science picture sheets for preschool and kindergarten are drawn big and labeled clearly, so a two-year-old can point and name and a five-year-old can tell the story back and ask why. Download the full-size sheet or print a clean single card for the fridge, the kitchen wall or the homeschool binder.`;
+ const levels=`<div class="sg-levels" id="sg-levels"><span class="eyebrow">THE THREE LEVELS</span><p class="fc-hint">Every sheet wears a level pill so tonight’s pick takes one glance. The levels are a suggested order, not a rule — the question your child asked at breakfast is always the right sheet.</p><ol class="fc-steps"><li><span class="fc-stepnum">01</span><div><h3>${SG_LEVEL_NAMES[1]}</h3><p>${SG_LEVEL_BLURB[1]}</p></div></li><li><span class="fc-stepnum">02</span><div><h3>${SG_LEVEL_NAMES[2]}</h3><p>${SG_LEVEL_BLURB[2]}</p></div></li><li><span class="fc-stepnum">03</span><div><h3>${SG_LEVEL_NAMES[3]}</h3><p>${SG_LEVEL_BLURB[3]}</p></div></li></ol></div>`;
+ const groups=SG_SECTIONS.map(s=>`<section class="sg-group" id="${s.id}" aria-labelledby="${s.id}-h"><span class="eyebrow">${e(s.band.toUpperCase())} · ${s.cards.length} SHEETS</span><h3 id="${s.id}-h">${e(s.band)}</h3><p class="fc-hint">${e(s.intro)}</p><div class="mn-cards">${s.cards.map(c=>tile({...c,sub:s.sub})).join('')}</div></section>`).join('');
+ return `<section class="fg-sec wrap fg-science" id="fg-science" aria-labelledby="fg-science-h"><header class="fg-sec-head"><span class="fg-dot" style="background:var(--rose)"></span><div><h2 id="fg-science-h">Science at a Glance</h2><p>${intro}</p><span class="fc-pill fc-pill-big fc-pill-age">${SG_TOTAL} first-picture sheets · Ages 2–5</span></div><span class="fg-badge">${SG_TOTAL} sheets</span></header><p class="fg-sec-note">${SG_TOTAL} sheets · one big idea per sheet · Download and Print buttons under every picture</p>${levels}${groups}</section>`;
 }
