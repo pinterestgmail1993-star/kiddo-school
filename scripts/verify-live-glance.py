@@ -8,7 +8,9 @@ with pills/download/print per tile, manners.js shipping, word-ban clean,
 zero per-card URLs in tiles; NO stale /science-at-a-glance/ links; the
 1-day-old /science-at-a-glance/ URL 301s to /first-glance/; sitemap 3922
 (−1, the science URL gone, zero other removals); Classes 39–40 and both
-parents' shelves still 200 with their exact tiles; three R2 sheets 200."""
+parents' shelves still 200 with their exact tiles; three R2 sheets 200.
+Ran on production 2026-10-31 after the push of 20b2ce716d: deploy live
+~20s, ALL PASS 41/41."""
 import time, urllib.request, sys, re
 
 BASE = 'https://kiddo.school'
