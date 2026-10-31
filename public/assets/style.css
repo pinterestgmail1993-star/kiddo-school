@@ -2280,6 +2280,7 @@ h1 em,h2 em{color:#7b4b99}
    cards — make-toast and make-lemonade — carry it under the card name, and
    the badge prints with the card (it is not in the hidden list below). */
 .mn-grownup{display:inline-block;align-self:center;font-size:.78rem;font-weight:700;letter-spacing:.3px;color:#8a4a00;background:#FFF3D6;border:1.5px dashed #d98a00;border-radius:999px;padding:.25em .85em}
+.mn-grownup.mn-sos{color:#a10000;background:#FFE3E3;border-color:#d40000;border-style:solid}
 @media(max-width:640px){.mn-cards{grid-template-columns:repeat(2,1fr);gap:12px}.mn-card strong{font-size:15px}.mn-card .mn-tip{font-size:.8rem}.mn-grownup{font-size:.72rem}}
 /* Science at a Glance (/science-at-a-glance/): the parents'-shelf tile with
    a tap-to-open artwork link and a fourth, dashed skill pill beside

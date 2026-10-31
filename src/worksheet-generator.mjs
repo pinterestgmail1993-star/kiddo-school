@@ -52,7 +52,7 @@ export function generatorHubBody(){
  </div>
  <section class="wrap lesson-section"><span class="eyebrow">FOR GROWN-UPS</span><h2>How the machines work.</h2>
   <p class="lesson-copy">Each machine starts from the words and numbers our classes actually teach: the habitat animals from <a href="/preschool/4-years/animals-and-their-habitats/">Class 36</a>, the helpers from <a href="/preschool/4-years/community-helpers-and-our-neighborhood/">Class 33</a>, the weather words from <a href="/preschool/4-years/weather-seasons-and-what-we-wear/">Class 34</a>. <strong>Shuffle</strong> deals a fresh sheet from the same options, so siblings can each get their own. <strong>Solve on screen</strong> turns the sheet into a gentle game — tap the letters, tap the answers, connect the pairs — and <strong>print</strong> or <strong>save as picture</strong> put it on paper for the kitchen table and the fridge door.</p>
-  <p class="lesson-copy">Printed worksheets never mark anything complete in <a href="/my-classroom/">My Classroom</a> — paper is for tables, kitchens and fridge doors. The on-screen versions are just for fun, and they collect nothing: no name, no score board, no account.</p>
+  <p class="lesson-copy">Printed worksheets never mark anything complete in <a href="/my-classroom/">My Classroom</a> — paper is for tables, kitchens and fridge doors. The on-screen versions are just for fun, and nothing gets collected — the drawing stays on your screen and nowhere else.</p>
  </section>`;
 }
 

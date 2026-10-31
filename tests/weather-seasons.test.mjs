@@ -162,10 +162,10 @@ test('all 35 Class 34 worksheet pages exist (genuine artwork, two pages per shee
 test('whole-school wiring: LP row 34, stage card, flashcards hub, count words thirty-five',()=>{
  const lp=read('/learning-path/index.html');
  assert.ok(lp.includes('Class 34: <a href="/preschool/4-years/weather-seasons-and-what-we-wear/">'),'LP row 34 present');
- assert.ok(lp.includes('forty-one age-guided classes'),'LP title count (Class 41 joined, owner 2026-10-31);');
- assert.ok(lp.includes('Forty-one classes are ready now'),'LP intro count');
- assert.ok(read('/index.html').includes('Forty-one classes are ready now'),'homepage count');
- assert.ok(read('/about/index.html').includes('Forty-one classes from birth to age five are ready today'),'About count');
+ assert.ok(lp.includes('forty-two age-guided classes'),'LP title count (Class 41 joined, owner 2026-10-31);');
+ assert.ok(lp.includes('Forty-two classes are ready now'),'LP intro count');
+ assert.ok(read('/index.html').includes('Forty-two classes are ready now'),'homepage count');
+ assert.ok(read('/about/index.html').includes('Forty-two classes from birth to age five are ready today'),'About count');
  const hub4=read('/preschool/4-years/index.html');
  assert.ok(hub4.includes('/preschool/4-years/weather-seasons-and-what-we-wear/'),'Age 4 stage card links Class 34');
  assert.ok(hub4.includes('Class 34'),'Class 34 chip on the stage hub');

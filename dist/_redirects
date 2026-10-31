@@ -97,3 +97,49 @@
 # 1-day-old-URL 301 play as Class 38 above.
 /flashcards/clubs /flashcards/extra-curricular-activities/ 301
 /flashcards/clubs/* /flashcards/extra-curricular-activities/:splat 301
+
+# Class 41 · Time & Daily Routine — the 41 per-card short pages were removed
+# (owner 2026-10-31: "dont make indiviual pages, they are thin to google —
+# include all in one page"): every card now lives on the class page with its
+# Download + Print buttons, so the old URLs 301 there.
+/time-and-daily-routine/a-day-at-school-routine* /time-and-daily-routine/ 301
+/time-and-daily-routine/afternoon-activities* /time-and-daily-routine/ 301
+/time-and-daily-routine/always-sometimes-never* /time-and-daily-routine/ 301
+/time-and-daily-routine/before-during-after-time-words* /time-and-daily-routine/ 301
+/time-and-daily-routine/begin-continue-finish* /time-and-daily-routine/ 301
+/time-and-daily-routine/chores-in-order* /time-and-daily-routine/ 301
+/time-and-daily-routine/countdown-to-a-special-day* /time-and-daily-routine/ 301
+/time-and-daily-routine/dawn-noon-dusk-midnight* /time-and-daily-routine/ 301
+/time-and-daily-routine/days-of-the-week* /time-and-daily-routine/ 301
+/time-and-daily-routine/early-or-late* /time-and-daily-routine/ 301
+/time-and-daily-routine/evening-and-night-routine* /time-and-daily-routine/ 301
+/time-and-daily-routine/fast-or-slow* /time-and-daily-routine/ 301
+/time-and-daily-routine/first-next-last-sequence-words* /time-and-daily-routine/ 301
+/time-and-daily-routine/getting-ready-routine* /time-and-daily-routine/ 301
+/time-and-daily-routine/healthy-habits-daily-routine* /time-and-daily-routine/ 301
+/time-and-daily-routine/how-long-might-it-take* /time-and-daily-routine/ 301
+/time-and-daily-routine/how-often-time-words* /time-and-daily-routine/ 301
+/time-and-daily-routine/long-or-short-time* /time-and-daily-routine/ 301
+/time-and-daily-routine/meal-times-breakfast-lunch-dinner* /time-and-daily-routine/ 301
+/time-and-daily-routine/months-of-the-year* /time-and-daily-routine/ 301
+/time-and-daily-routine/morning-routine* /time-and-daily-routine/ 301
+/time-and-daily-routine/my-daily-routine* /time-and-daily-routine/ 301
+/time-and-daily-routine/now-soon-later-time-words* /time-and-daily-routine/ 301
+/time-and-daily-routine/open-happening-closed* /time-and-daily-routine/ 301
+/time-and-daily-routine/parts-of-the-day* /time-and-daily-routine/ 301
+/time-and-daily-routine/plan-my-day* /time-and-daily-routine/ 301
+/time-and-daily-routine/read-the-clock-hour-oclock* /time-and-daily-routine/ 301
+/time-and-daily-routine/same-time-each-day-routine* /time-and-daily-routine/ 301
+/time-and-daily-routine/seconds-minutes-hours* /time-and-daily-routine/ 301
+/time-and-daily-routine/start-and-stop* /time-and-daily-routine/ 301
+/time-and-daily-routine/the-calendar-days-weeks-months* /time-and-daily-routine/ 301
+/time-and-daily-routine/time-changes-melt-grow* /time-and-daily-routine/ 301
+/time-and-daily-routine/time-helpers-clock-calendar-timer* /time-and-daily-routine/ 301
+/time-and-daily-routine/time-order-words-first-second-third* /time-and-daily-routine/ 301
+/time-and-daily-routine/time-words-review* /time-and-daily-routine/ 301
+/time-and-daily-routine/waiting-time-patience* /time-and-daily-routine/ 301
+/time-and-daily-routine/week-month-year* /time-and-daily-routine/ 301
+/time-and-daily-routine/weekday-or-weekend* /time-and-daily-routine/ 301
+/time-and-daily-routine/when-plans-change* /time-and-daily-routine/ 301
+/time-and-daily-routine/work-time-and-break-time* /time-and-daily-routine/ 301
+/time-and-daily-routine/yesterday-today-tomorrow* /time-and-daily-routine/ 301
