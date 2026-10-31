@@ -67,7 +67,9 @@ test('shapes set page: cover carries its own ImageObject',()=>{
 test('sitemap: image namespace + an <image:image> on every flashcard URL',()=>{
  const xml=readFileSync('dist/sitemap.xml','utf8');
  assert.match(xml,/xmlns:image="http:\/\/www\.google\.com\/schemas\/sitemap-image\/1\.1"/,'image namespace declared');
- const entries=[...xml.matchAll(/<url><loc>(https:\/\/kiddo\.school[^<]*)<\/loc>(<image:image><image:loc>[^<]*<\/image:loc><\/image:image>)?<\/url>/g)];
+ // one OR MORE <image:image> per <url> — Google's documented format; the
+ // /art/ room carries its whole 14-card deck on one entry (owner 2026-10-31)
+ const entries=[...xml.matchAll(/<url><loc>(https:\/\/kiddo\.school[^<]*)<\/loc>((?:<image:image><image:loc>[^<]*<\/image:loc><\/image:image>)*)<\/url>/g)];
  assert.ok(entries.length>2500,'full sitemap parsed ('+entries.length+' urls)');
  const fc=entries.filter(m=>m[1].includes('/flashcards/'));
  assert.ok(fc.length>1000,'flashcard urls in sitemap ('+fc.length+')');
@@ -77,3 +79,13 @@ test('sitemap: image namespace + an <image:image> on every flashcard URL',()=>{
  assert.ok(circle&&circle[2],'circle card url has an image entry');
  assert.match(circle&&circle[2]||'',/01-circle\.webp/,'circle image entry points at the exact card art');
 });
+
+test('the /art/ sitemap entry carries all fourteen art-room card images',()=>{
+ const xml=readFileSync('dist/sitemap.xml','utf8');
+ const m=xml.match(/<url><loc>https:\/\/kiddo\.school\/art\/<\/loc>([\s\S]*?)<\/url>/);
+ assert.ok(m,'the /art/ entry parses');
+ const imgs=[...m[1].matchAll(/<image:loc>([^<]+)<\/image:loc>/g)].map(x=>x[1]);
+ assert.equal(imgs.length,14,'fourteen images on the art room entry ('+imgs.length+')');
+ for(const u of imgs)assert.match(u,/school\/art-room\/flashcards\/[a-z0-9-]+-flashcard-for-kids\.webp/,'R2 art-room image as uploaded: '+u);
+});
+
