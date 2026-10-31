@@ -138,7 +138,7 @@ test('the Learning Path row sits after Class 38 with the copy saying forty-one',
  assert.ok(lp.includes('Class 40: <a href="/healthy-food/">Healthy Food &amp; Eating Well</a>'),'the Class 40 row');
  const i38=lp.indexOf('Class 38: <a'),i39=lp.indexOf('Class 39: <a'),i40=lp.indexOf('Class 40: <a');
  assert.ok(i38>-1&&i39>i38&&i40>i39,'the sequence order 38 → 39 → 40 holds on the page');
- assert.ok(lp.includes('forty-two age-guided classes'),'the LP title count says forty-one (Class 41 joined, owner 2026-10-31);');
+ assert.ok(lp.includes('forty-three age-guided classes'),'the LP title count says forty-one (Class 41 joined, owner 2026-10-31);');
 });
 
 test('search, sitemap and the all-pages directory all carry the class',()=>{

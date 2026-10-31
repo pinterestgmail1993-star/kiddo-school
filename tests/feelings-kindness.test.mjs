@@ -80,12 +80,12 @@ test('no text is shared between the /learn/ lessons and the library card pages',
  }
 });
 
-test('learning path: rows 39-40 follow row 38, count words say forty-two',()=>{
+test('learning path: rows 39-40 follow row 38, count words say forty-three',()=>{
  const lp=read('dist/learning-path/index.html');
  const rows=[...lp.matchAll(/lp-class">Class (\d+):/g)].map(m=>+m[1]);
- assert.deepEqual(rows,[...Array(42).keys()].map(i=>i+1),'sequence is exactly Classes 1–42, no gap');
- assert.ok(lp.includes('forty-two age-guided classes'),'LP title count');
- assert.ok(lp.includes('Forty-two classes are ready now'),'LP intro count');
+ assert.deepEqual(rows,[...Array(43).keys()].map(i=>i+1),'sequence is exactly Classes 1–43, no gap');
+ assert.ok(lp.includes('forty-three age-guided classes'),'LP title count');
+ assert.ok(lp.includes('Forty-three classes are ready now'),'LP intro count');
  assert.ok(lp.includes(`${CLASS_PATH}learn/happy/`),'LP row 38 links the first lesson');
 });
 
@@ -118,5 +118,5 @@ test('Class 38 wired across the school: flashcards wall, filter tags, Ages 4–5
  const lp=read('dist/learning-path/index.html');
  assert.ok(lp.includes('feelings-and-kindness'),'Ages 4–5 shelf lists the set');
  const home=read('dist/index.html');
- assert.ok(home.includes('Forty-two classes are ready now'),'homepage counts 38');
+ assert.ok(home.includes('Forty-three classes are ready now'),'homepage counts 38');
 });

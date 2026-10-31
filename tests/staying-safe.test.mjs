@@ -41,10 +41,10 @@ test('numbering: the class publishes as Class 39 on the page and the Learning Pa
  const lp=read('/learning-path/');
  assert.ok(lp.includes('Class 39: <a href="/staying-safe/">Staying Safe</a>'),'LP row 39');
  const rows=[...lp.matchAll(/lp-class">Class (\d+):/g)].map(m=>+m[1]);
- assert.deepEqual(rows,[...Array(42).keys()].map(i=>i+1),'LP sequence is exactly 1–41');
- assert.ok(lp.includes('forty-two age-guided classes')&&lp.includes('Forty-two classes are ready now'),'LP counts say forty');
- assert.ok(read('/index.html').includes('Forty-two classes are ready now'),'homepage count says forty');
- assert.ok(read('/about/').includes('Forty-two classes from birth to age five are ready today'),'about count says forty');
+ assert.deepEqual(rows,[...Array(43).keys()].map(i=>i+1),'LP sequence is exactly 1–43');
+ assert.ok(lp.includes('forty-three age-guided classes')&&lp.includes('Forty-three classes are ready now'),'LP counts say forty');
+ assert.ok(read('/index.html').includes('Forty-three classes are ready now'),'homepage count says forty');
+ assert.ok(read('/about/').includes('Forty-three classes from birth to age five are ready today'),'about count says forty');
 });
 
 test('assets: every page serves the owner\'s real R2 files — folder root, no flashcards/ subfolder, honest dims',()=>{

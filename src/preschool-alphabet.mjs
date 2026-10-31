@@ -253,8 +253,8 @@ export function preschoolStageBody(){
  </div>
  <h2 class="lesson-classheading">The magic games</h2>
  <div class="fc-stages">${[
-  {href:'/preschool/3-years/magic-shape-builder/',title:'Look & Draw — Magic Shapes',copy:'Look at a picture — a house, a tree, a rocket, a robot, a butterfly, a flower, a fruit or a friendly door — then draw your own on a big white canvas, with six big colors, easy tools and gentle “Show me how” steps. Plays with Class 3: Shapes &amp; Patterns.'},
-  {href:'/preschool/3-years/magic-animal-playground/',title:'Animal Sound Safari',copy:'Tap six animal friends to hear their real sounds, guess who made each sound and copy their gentle moves. Plays with Class 6: Animals &amp; Their Sounds.'}
+  {href:'/preschool/3-years/magic-shape-builder/',title:'Look & Draw — Magic Shapes',copy:'Look at a picture — a house, a tree, a rocket, a robot, a butterfly, a flower, a fruit or a friendly door — then draw your own on a big white canvas, with six big colors, easy tools and gentle “Show me how” steps. Plays with Class 17: Shapes &amp; Patterns.'},
+  {href:'/preschool/3-years/magic-animal-playground/',title:'Animal Sound Safari',copy:'Tap six animal friends to hear their real sounds, guess who made each sound and copy their gentle moves. Plays with Class 20: Animals &amp; Their Sounds.'}
  ].map(g=>`<a class="fc-stage lesson-card-link" href="${g.href}"><div class="fc-stage-pills"><span class="fc-age">Age 3</span><span class="fc-class">Magic game</span></div><h3>${g.title}</h3><p>${g.copy}</p><span class="fc-open">Play the game <span aria-hidden="true">↗</span></span></a>`).join('')}
  </div>
  <p class="lesson-note">Every magic game has no scores and no timers — just extra play with the things each class teaches. Looking for earlier stages? The <a href="/toddler/2-years/">Age 2 classes</a> and the full <a href="/learning-path/">Learning Path</a> are right where you left them.</p></section>`;

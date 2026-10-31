@@ -1,7 +1,9 @@
 // Magic games (Age 3) — after the owner's retirement of Magic Counting
 // Garden, Magic Opposites Finder and Magic Fruit Basket, exactly two games
-// remain on the magic-games shelf: Look & Draw — Magic Shapes (Class 3) and
-// Animal Sound Safari (Class 6), plus Magic Color Lab, which stays live and
+// remain on the magic-games shelf: Look & Draw — Magic Shapes (Class 17) and
+// Animal Sound Safari (Class 20) — the owner 2026-10-31: the labels must say
+// Class 17 and Class 20, the Learning Path numbers, never the stage-local
+// 3/6 — plus Magic Color Lab, which stays live and
 // wired to Class 4 but deliberately off every shelf. The retired games'
 // illustrations live on inside Look & Draw's gallery. Guards below cover the
 // remaining game pages, their real R2 assets (exact owner filenames, true

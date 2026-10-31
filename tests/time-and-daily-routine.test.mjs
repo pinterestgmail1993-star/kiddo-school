@@ -32,17 +32,17 @@ test('ONE page only: the class page + the parents shelf, zero per-card URLs, 301
  for(const c of TR_CARDS)assert.ok(red.includes('/time-and-daily-routine/'+c.pageSlug+'* /time-and-daily-routine/ 301'),'301 for '+c.pageSlug);
 });
 
-test('Class 42 numbering: LP sequence 1-42 no-gap and the forty-two count words',()=>{
+test('Class 42/43 numbering: LP sequence no-gap and the forty-three count words',()=>{
  const lp=read('/learning-path/index.html');
  assert.ok(lp.includes('<span>42</span>'),'LP row 42 present');
  assert.ok(lp.includes('Class 42: <a href="/measuring-and-money/">Measuring &amp; Money</a>'),'the Class 42 row');
  assert.ok(lp.includes('Class 41: <a href="/time-and-daily-routine/">Time &amp; Daily Routine</a>'),'LP row 41 stays');
- assert.ok(lp.includes('forty-two age-guided classes'),'LP title+description carry the count');
- assert.ok(lp.includes('Forty-two classes are ready now'),'LP heading carries the count');
+ assert.ok(lp.includes('forty-three age-guided classes'),'LP title+description carry the count');
+ assert.ok(lp.includes('Forty-three classes are ready now'),'LP heading carries the count');
  assert.ok(!lp.includes('Forty-one classes are ready now')&&!lp.includes('forty-one age-guided'),'stale counts gone');
  const home=read('/index.html');
- assert.ok(home.includes('Forty-two classes are ready now'),'homepage lede carries the count');
- assert.ok(read('/about/index.html').includes('Forty-two classes from birth to age five are ready today'),'About carries the count');
+ assert.ok(home.includes('Forty-three classes are ready now'),'homepage lede carries the count');
+ assert.ok(read('/about/index.html').includes('Forty-three classes from birth to age five are ready today'),'About carries the count');
 });
 
 test('R2 assets: the owner\u2019s SEO file names kept exactly, cover leads the class page',()=>{

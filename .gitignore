@@ -3,3 +3,5 @@ node_modules/
 .DS_Store
 .shots/
 scripts/manners-tmp/
+scripts/manners-tmp/
+scripts/es-tmp/

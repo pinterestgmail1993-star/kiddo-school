@@ -83,7 +83,7 @@ test('the Science Lab stays OUT of the Learning Path',()=>{
  const lp=read('learning-path/index.html');
  const rows=[...lp.matchAll(/lp-class">Class (\d+): <a href="([^"]+)"/g)].map(m=>m[2]);
  assert.ok(rows.every(u=>u!=='/science/'),'no numbered class row links the lab (the lab is a room, not a class)');
- assert.ok(!lp.includes('Class 43'),'no invented class number');
+ assert.ok(!lp.includes('Class 44'),'no invented class number (Class 43 · Our Earth & Space is live at /earth-and-space/ since 2026-10-31)');
  // the LP keeps its own classroom row for older children instead
  assert.ok(lp.includes('href="/science/">Science Lab</a>'),'the lab stays in the older-kids classroom row');
 });

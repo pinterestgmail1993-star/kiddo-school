@@ -24,10 +24,10 @@ test('ONE page only: the class page, zero per-card URLs, nothing else under /mea
  assert.ok(!html.includes('href="'+MM_PATH.slice(0,-1)+'/'+MM_ORDER[0]),'no links to per-card pages');
 });
 
-test('the LP counts say forty-two and row 42 follows row 41 with no gap',()=>{
+test('the LP counts say forty-three and row 42 follows row 41 with no gap',()=>{
  const lp=read('learning-path/index.html');
  const rows=[...lp.matchAll(/lp-class">Class (\d+):/g)].map(m=>+m[1]);
- assert.deepEqual(rows,[...Array(42).keys()].map(i=>i+1),'LP sequence is exactly 1–42');
+ assert.deepEqual(rows,[...Array(43).keys()].map(i=>i+1),'LP sequence is exactly 1–43');
  assert.ok(lp.includes('<span>42</span>')&&lp.includes('Class 42: <a href="/measuring-and-money/">Measuring &amp; Money</a>'),'the Class 42 row');
 });
 
