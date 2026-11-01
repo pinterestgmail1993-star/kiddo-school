@@ -139,6 +139,8 @@ export const FC_TAGS={
  'family-and-friends':['age-4-5','lvl-prek','subj-first-words','subj-feelings','skill-vocab','skill-talking'],
  'early-addition-and-subtraction':['age-4-5','lvl-prek','subj-numbers','skill-counting'],
  'caring-for-our-planet':['age-4-5','lvl-prek','subj-science','skill-routines','skill-talking'],
+ 'plants-and-how-they-grow':['age-4-5','lvl-prek','subj-science','skill-vocab','skill-thinking'],
+ 'plants-and-how-they-grow':['age-4-5','lvl-prek','subj-science','skill-vocab','skill-thinking'],
  'transportation-and-vehicles':['age-4-5','lvl-prek','subj-vehicles','skill-vocab'],
  // Extra classes and rooms (their real age spans ride along)
  'kitchen':['age-3','age-4-5','lvl-preschool','lvl-prek','subj-first-words','skill-vocab','skill-routines'],

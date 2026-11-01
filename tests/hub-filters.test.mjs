@@ -147,14 +147,14 @@ for(const [name,html,cardRe] of [
 }
 
 /* ---- 2. shipped structure ---- */
-test('flashcards hub: bar, four groups, twenty-three shelves, count, clear, empty, script',()=>{
+test('flashcards hub: bar, four groups, twenty-four shelves, count, clear, empty, script',()=>{
  const bar=fcHtml.match(/<div class="hub-filters" data-hub-filters data-unit="sets"[^>]*>/);
  assert.ok(bar,'the filter bar exists');
  assert.ok(bar[0].includes('aria-label="Filter the flashcard sets"'),'labelled for AT');
  for(const g of GROUPS)assert.ok(fcHtml.includes(`data-filter-group="${g}"`),'group '+g+' present');
- assert.equal([...fcHtml.matchAll(/data-hub-section/g)].length,23,'thirteen shelves + the nine class parents’ shelves (Manners, Question Words, Staying Safe, Healthy Food, Time & Daily Routine + the six one-page-round shelves, owner 2026-10-27–11-01);');
+ assert.equal([...fcHtml.matchAll(/data-hub-section/g)].length,24,'thirteen shelves + the ten class parents’ shelves (Manners, Question Words, Staying Safe, Healthy Food, Time & Daily Routine + the six one-page-round shelves, owner 2026-10-27–11-01);');
  for(let i=0;i<16;i++)assert.ok(fcHtml.includes(`id="fc-stage-${i}"`),'shelf fc-stage-'+i+' has its anchor');
- assert.ok(fcHtml.includes('Showing all 70 sets'),'count says 63 sets');
+ assert.ok(fcHtml.includes('Showing all 71 sets'),'count says 63 sets');
  assert.ok(/<button type="button" class="hub-clear" data-filter-clear hidden>/.test(fcHtml),'clear ships hidden');
  assert.ok(fcHtml.includes('data-filters-empty'),'empty state present');
  assert.ok(/<script src="\/assets\/hub-filters\.js(\?v=\d+)?" defer><\/script>/.test(fcHtml),'script tag ships');
@@ -185,7 +185,7 @@ test('chips filter cards in place and fold empty shelves away',()=>{
  assert.ok(h.sections[0].getAttribute('id')==='fc-stage-0');
  for(let i=0;i<3;i++)assert.ok(!h.sections[i].hidden,'shelf '+i+' stays (newborn, infant and baby sets are all 0–1)');
  for(let i=3;i<9;i++)assert.ok(h.sections[i].hidden,'shelf '+i+' folds away');
- assert.equal(h.count.textContent,'Showing 6 of 70 sets','count stays honest');
+ assert.equal(h.count.textContent,'Showing 6 of 71 sets','count stays honest');
  assert.ok(age.classList.contains('is-on')&&age.getAttribute('aria-pressed')==='true','chip shows its on state');
  assert.ok(!h.clear.hidden,'clear appears');
  assert.ok(h.empty.hidden,'empty state stays hidden');
@@ -197,16 +197,16 @@ test('chips from different rows team up (AND), tapping again lets go',()=>{
  click(animals);
  const visible=h.cards.filter(c=>!c.hidden).map(c=>c.getAttribute('href'));
  assert.deepEqual(visible,['/flashcards/animals-and-their-habitats/','/flashcards/animal-categories/','/flashcards/nature-club-animals/','/flashcards/dinosaurs/'],'Ages 4–5 + animals = the habitat set, the two animal decks and the dinosaur deck');
- assert.equal(h.count.textContent,'Showing 4 of 70 sets');
+ assert.equal(h.count.textContent,'Showing 4 of 71 sets');
  // tap the subject chip again — back to the age filter alone
  click(animals);
  const after=h.cards.filter(c=>!c.hidden);
- assert.equal(after.length,38,'thirty-eight Ages 4–5 sets return — the six one-page-round parents’ shelves joined (owner 2026-11-01); previously — Class 41 Time & Daily Routine joined (owner 2026-10-31); previously — Staying Safe and Healthy Food joined (owner 2026-10-31); previously — the two animal decks, the Colors deck, Class 38 Feelings & Kindness, the Dinosaurs deck, the Art Room deck, the Clubs deck (its Ages 3+ half serves 4–5s), the Cafeteria deck, and the Manners and Question Words parents’ shelves joined the shelf (owner 2026-10-21/22/23/25/26/27/28)');
+ assert.equal(after.length,39,'thirty-nine Ages 4–5 sets return — the six one-page-round parents’ shelves joined (owner 2026-11-01); previously — Class 41 Time & Daily Routine joined (owner 2026-10-31); previously — Staying Safe and Healthy Food joined (owner 2026-10-31); previously — the two animal decks, the Colors deck, Class 38 Feelings & Kindness, the Dinosaurs deck, the Art Room deck, the Clubs deck (its Ages 3+ half serves 4–5s), the Cafeteria deck, and the Manners and Question Words parents’ shelves joined the shelf (owner 2026-10-21/22/23/25/26/27/28)');
  assert.ok(!animals.classList.contains('is-on'),'chip let go');
  // tap the age chip again — everything back
  click(h.chips.find(c=>c.getAttribute('data-filter')==='age-4-5'));
- assert.equal(h.cards.filter(c=>!c.hidden).length,70,'whole wall returns');
- assert.ok(h.count.textContent.startsWith('Showing all 70'),'count resets');
+ assert.equal(h.cards.filter(c=>!c.hidden).length,71,'whole wall returns');
+ assert.ok(h.count.textContent.startsWith('Showing all 71'),'count resets');
  assert.ok(h.clear.hidden,'clear hides again');
  for(const s of h.sections)assert.ok(!s.hidden,'all shelves unfold');
 });
@@ -217,7 +217,7 @@ test('a mix that matches nothing shows the empty state, never a blank wall',()=>
  assert.equal(h.cards.filter(c=>!c.hidden).length,0,'baby + alphabet is honestly nothing');
  assert.ok(!h.empty.hidden,'empty state appears');
  assert.ok(h.sections.every(s=>s.hidden),'every shelf folds');
- assert.equal(h.count.textContent,'Showing 0 of 70 sets');
+ assert.equal(h.count.textContent,'Showing 0 of 71 sets');
 });
 test('clear all filters resets everything in one tap',()=>{
  const h=harness(fcHtml,{sectioned:true});

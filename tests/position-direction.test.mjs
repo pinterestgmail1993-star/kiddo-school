@@ -36,14 +36,14 @@ test('the class page exists and carries the WHOLE deck — zero per-card URLs',(
  assert.ok(existsSync('dist/flashcards/prepositions/index.html'),'the parents\u2019 shelf exists');
 });
 
-test('numbering: Class 44 sits after Class 43 on the LP, the count says forty-seven everywhere',()=>{
+test('numbering: Class 44 sits after Class 43 on the LP, the count says forty-eight everywhere',()=>{
  const lp=read('learning-path/index.html');
  const rows=[...lp.matchAll(/lp-class">Class (\d+):/g)].map(m=>+m[1]);
- assert.deepEqual(rows,[...Array(47).keys()].map(i=>i+1),'LP sequence is exactly 1–47, no gap');
+ assert.deepEqual(rows,[...Array(48).keys()].map(i=>i+1),'LP sequence is exactly 1–48, no gap');
  assert.ok(lp.includes('<span>44</span>')&&lp.includes('Class 44: <a href="/prepositions/">Position &amp; Direction Words</a>'),'the Class 44 row after row 43');
- assert.ok(lp.includes('forty-seven age-guided classes')&&lp.includes('Forty-seven classes are ready now'),'LP count words say forty-seven');
- assert.ok(read('index.html').includes('Forty-seven classes are ready now, from birth to age five'),'homepage lede says forty-seven');
- assert.ok(read('about/index.html').includes('Forty-seven classes'),'About page says forty-seven');
+ assert.ok(lp.includes('forty-eight age-guided classes')&&lp.includes('Forty-eight classes are ready now'),'LP count words say forty-seven');
+ assert.ok(read('index.html').includes('Forty-eight classes are ready now, from birth to age five'),'homepage lede says forty-seven');
+ assert.ok(read('about/index.html').includes('Forty-eight classes'),'About page says forty-eight');
  assert.ok(!lp.includes('/prepositions/above/'),'the LP row no longer advertises per-word pages');
 });
 
