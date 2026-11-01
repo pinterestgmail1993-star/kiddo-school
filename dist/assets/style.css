@@ -1807,6 +1807,11 @@ h1 em,h2 em{color:#7b4b99}
  .fc2-rail,.fc2-pn,.fc-section,.fc2-learn,.wc-head,.fc-hint,.breadcrumbs,.page-heading,.lesson-section,.fc2-lesson{display:none!important}
  .fc2-dual{display:block!important}
  .ws-hero-art img{max-height:94vh;width:auto;max-width:100%;margin:0 auto}
+ /* Owner 2026-11-01 — high-resolution master assets: a short card page
+    (fc2 chain) prints its hero at full paper width, centered — the src is
+    the master JPG/PNG, so the printed file is the full-resolution asset. */
+ .fc2-hero{margin:0 auto;text-align:center}
+ .fc2-hero img{max-height:94vh;width:auto;max-width:100%;object-fit:contain;margin:0 auto}
  .wc-section{padding:0!important}
 }
 
@@ -2294,7 +2299,11 @@ h1 em,h2 em{color:#7b4b99}
  body.mn-printing *{visibility:hidden!important}
  body.mn-printing .mn-print-card,body.mn-printing .mn-print-card *{visibility:visible!important}
  body.mn-printing .mn-print-card{position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;border:none;box-shadow:none;padding:0;margin:0;background:#fff}
- body.mn-printing .mn-print-card img{max-width:88%;max-height:94%;width:auto;height:auto;border:none}
+ /* Owner 2026-11-01 — high-resolution master assets: the [Print] button must
+    render the full-resolution source image (the master JPG/PNG on R2 — the
+    img src IS the master) fitted to standard printer paper (A4 / US Letter)
+    with clean centering: the owner's exact spec. */
+ body.mn-printing .mn-print-card img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;border:none}
  body.mn-printing .mn-print-card .mn-tip,body.mn-printing .mn-print-card .mn-actions,body.mn-printing .mn-print-card .fc-pillrow{display:none!important}
  body.mn-printing .mn-print-card .mn-grownup{font-size:.95rem;margin-top:2px}
 }

@@ -28,12 +28,12 @@ test('ONE page only: the class page, zero per-card URLs, nothing else under /ear
  assert.ok(!html.includes('href="'+ES_PATH.slice(0,-1)+'/'+ES_ORDER[0]),'no links to per-card pages');
 });
 
-test('the LP counts say forty-four and row 43 follows row 42 with no gap',()=>{
+test('the LP counts say forty-five and row 43 follows row 42 with no gap',()=>{
  const lp=read('learning-path/index.html');
  const rows=[...lp.matchAll(/lp-class">Class (\d+):/g)].map(m=>+m[1]);
- assert.deepEqual(rows,[...Array(44).keys()].map(i=>i+1),'LP sequence is exactly 1–44');
+ assert.deepEqual(rows,[...Array(45).keys()].map(i=>i+1),'LP sequence is exactly 1–45');
  assert.ok(lp.includes('<span>43</span>')&&lp.includes('Class 43: <a href="/earth-and-space/">Our Earth &amp; Space</a>'),'the Class 43 row');
- assert.ok(lp.includes('forty-four age-guided classes')&&lp.includes('Forty-four classes are ready now'),'LP count words say forty-four');
+ assert.ok(lp.includes('forty-five age-guided classes')&&lp.includes('Forty-five classes are ready now'),'LP count words say forty-four');
 });
 
 test('R2 assets: SEO file names kept exactly, the cover is the main image, lazy + dims on every card',()=>{

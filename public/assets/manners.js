@@ -10,7 +10,12 @@
     var btn = ev.target.closest('[data-mn-print]');
     if (!btn) return;
     var card = btn.closest('.mn-card');
-    if (!card) return;
+    /* Short card pages (/prepositions/<word>/, /family-and-friends/<word>/)
+       carry the button outside a .mn-card — there the page's own @media
+       print block is the isolation (it hides rail, learn sections and page
+       furniture and prints the .fc2-hero master image, paper-fit), so a
+       plain window.print() IS the per-card print. */
+    if (!card) { window.print(); return; }
     document.body.classList.add('mn-printing');
     card.classList.add('mn-print-card');
     var done = function () {

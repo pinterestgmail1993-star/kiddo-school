@@ -127,11 +127,11 @@ test('all sixteen card pages exist with unique metadata, downloads and navigatio
 
 test('class 8 is wired into the whole school honestly',()=>{
  assert.ok(lp.includes('Class 22: <a href="/preschool/3-years/fruits-and-vegetables/">Fruits &amp; Vegetables</a>'));
- assert.ok(lp.includes('forty-four age-guided classes'));
- assert.ok(lp.includes('Forty-four classes are ready now, from birth to age five, in one calm sequence.'));
- assert.ok(home.includes('Forty-four classes are ready now, from birth to age five'));
+ assert.ok(lp.includes('forty-five age-guided classes'));
+ assert.ok(lp.includes('Forty-five classes are ready now, from birth to age five, in one calm sequence.'));
+ assert.ok(home.includes('Forty-five classes are ready now, from birth to age five'));
  assert.ok(home.includes('Letters, numbers, shapes, colors, opposites, animals, your body with all five senses — and the foods you eat.'));
- assert.ok(about.includes('Forty-four classes from birth to age five are ready today'));
+ assert.ok(about.includes('Forty-five classes from birth to age five are ready today'));
  assert.ok(hub.includes('Eight classes ready now'));
  assert.ok(stage.includes('<strong>Status</strong> Eight classes ready now'));
  assert.ok(stage.includes('href="/preschool/3-years/fruits-and-vegetables/"'));

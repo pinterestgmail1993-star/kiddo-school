@@ -31,7 +31,14 @@ test('the calendar: five holidays, the NEXT one first, every holiday linked',()=
  const cal=hallCalendar();
  assert.equal(cal.length,5);
  for(let i=1;i<cal.length;i++)assert.ok(cal[i-1].iso<=cal[i].iso,'calendar stays date-sorted: '+cal[i-1].iso+' before '+cal[i].iso);
- assert.equal(cal[0].name,'Halloween','the next holiday comes first');
+ // The contract is "the NEXT holiday comes first" — not a named holiday:
+ // the builder rolls every holiday to its next occurrence, so the leader
+ // changes by the calendar. (Date-bomb story: this line used to hardcode
+ // 'Halloween' and detonated on 2026-11-01, the day Halloween passed — the
+ // live build had led with Thanksgiving all along. Locked to the contract.)
+ const todayIso=new Date().toISOString().slice(0,10);
+ assert.ok(cal[0].iso>=todayIso,'the calendar leads with the NEXT upcoming holiday (today it is '+cal[0].name+' at '+cal[0].iso+')');
+ assert.ok(HALL_HOLIDAYS.some(h=>h.name===cal[0].name),'the leader is one of the five named holidays');
  // the hub page carries them in that order, first flagged as next
  const ol=hall.slice(hall.indexOf('<ol class="hall-cal">'),hall.indexOf('</ol>'));
  let at=-1;

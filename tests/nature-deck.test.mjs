@@ -13,7 +13,7 @@
 // Download + Print under every card (manners.js now ships with /nature/).
 // All 41 images ride the /nature/ sitemap entry as an array (Google's
 // multi-image format, the /art/ precedent). NOT in the Learning Path — the
-// count stays forty-four.
+// count now says forty-five — Class 45 joined the path in a later round;
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
@@ -25,7 +25,7 @@ const html=read('nature/index.html');
 test('the deck lives on the existing /nature/ page — the room keeps its own pages, zero new URLs',()=>{
  assert.ok(html.includes('THE NATURE CLUB SHELF \u00b7 41 FLASHCARDS'),'the shelf family leads with its count');
  const xml=read('sitemap.xml');
- const before=3950;
+ const before=3986; // +36 for Class 45 Family & Friends (class page + 35 short pages)
  const locs=(xml.match(/<loc>/g)||[]).length;
  assert.equal(locs,before,'sitemap count unchanged (zero new URLs)');
  for(const c of NAT_CARDS.slice(0,6))assert.ok(!xml.includes('<loc>https://kiddo.school/nature/'+c.slug+'/</loc>'),'no per-card URLs (the standing one-page rule)');
@@ -87,9 +87,9 @@ test('the 41 images ride the /nature/ sitemap entry as an array; alt text on eve
  for(const c of NAT_CARDS)assert.ok(c.alt.length>=80&&c.alt.startsWith('A Kiddo School Nature Club card titled'),'honest alt: '+c.slug);
 });
 
-test('the deck stays OUT of the Learning Path — the count stays forty-four',()=>{
+test('the deck stays OUT of the Learning Path — the count stays forty-five',()=>{
  const lp=read('learning-path/index.html');
  assert.ok(!lp.includes('href="'+NAT_BASE),'no deck image on the LP');
  assert.ok(!lp.includes('/nature/</a> — forty-one'),'no nature class row');
- assert.ok(lp.includes('forty-four age-guided classes'),'the LP count stays forty-four');
+ assert.ok(lp.includes('forty-five age-guided classes'),'the LP count stays forty-four');
 });

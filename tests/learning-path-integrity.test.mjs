@@ -14,7 +14,7 @@
 //    any order, skipping never means falling behind.
 //  - every row link (class page, stage hub, flashcards, worksheets) resolves
 //    to a real built page.
-//  - the intro count word ("Forty-four classes are ready now") must equal the
+//  - the intro count word ("Forty-five classes are ready now") must equal the
 //    REAL number of published classes — the copy can never silently drift
 //    from the sequence again.
 //  - Class 24 was printables-only by owner Option A until Transportation &
@@ -27,7 +27,7 @@ import {readFileSync,existsSync} from 'node:fs';
 const read=p=>readFileSync('dist/'+p,'utf8');
 const lp=()=>read('learning-path/index.html');
 
-// The approved published sequence — Classes 1–43, no gap. Update ONLY
+// The approved published sequence — Classes 1–45, no gap. Update ONLY
 // when the owner approves a new class (23 = Music Room, owner-approved
 // 2026-10-14; 24 = Transportation & Vehicles, the complete class that filled
 // the reserved slot; 33, 34, 35, 36, 37 approved & built; 38 = Feelings &
@@ -37,8 +37,13 @@ const lp=()=>read('learning-path/index.html');
 // free, so the next free number was 39; 41/42/43 = Time & Daily Routine /
 // Measuring & Money / Our Earth & Space, each live-verified before numbering;
 // 44 = Position & Direction Words, owner brief 2026-11-01 with the short-page
-// URL pattern spelled out, numbered after Class 43 probed live).
-const APPROVED=[...Array(44).keys()].map(i=>i+1);
+// URL pattern spelled out, numbered after Class 43 probed live; 45 = Family &
+// Friends, owner brief 2026-11-01 — the owner's rule was "If Class 45 is not
+// live, tell me before assigning numbers": the production probes found NO
+// Class 45 (latest live was 44), so the no-skip number 45 was assigned and
+// the literal "46" was rejected — it would gap the sequence; the owner was
+// told in the round report, and the number rides display copy only).
+const APPROVED=[...Array(45).keys()].map(i=>i+1);
 
 const WORDS={one:1,two:2,three:3,four:4,five:5,six:6,seven:7,eight:8,nine:9,ten:10,
  eleven:11,twelve:12,thirteen:13,fourteen:14,fifteen:15,sixteen:16,seventeen:17,
@@ -49,11 +54,11 @@ const WORDS={one:1,two:2,three:3,four:4,five:5,six:6,seven:7,eight:8,nine:9,ten:
  'thirty-nine':39,forty:40,'forty-one':41,'forty-two':42,'forty-three':43,'forty-four':44,
  'forty-five':45,'forty-six':46,'forty-seven':47,'forty-eight':48,'forty-nine':49,fifty:50};
 
-test('the Learning Path shows exactly the approved classes — unique, strictly increasing, no gap (1–44)',()=>{
+test('the Learning Path shows exactly the approved classes — unique, strictly increasing, no gap (1–45)',()=>{
  const html=lp();
  const nums=[...html.matchAll(/lp-class">Class (\d+):/g)].map(m=>+m[1]);
  assert.equal(nums.length,APPROVED.length,'row count matches the approved registry ('+nums.length+' rows)');
- assert.deepEqual(nums,APPROVED,'sequence is exactly Classes 1–44, no gap');
+ assert.deepEqual(nums,APPROVED,'sequence is exactly Classes 1–45, no gap');
  assert.equal(new Set(nums).size,nums.length,'no duplicate class numbers');
  for(let i=1;i<nums.length;i++)assert.ok(nums[i]>nums[i-1],'strictly increasing at position '+i);
 });
