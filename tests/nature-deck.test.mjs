@@ -25,7 +25,7 @@ const html=read('nature/index.html');
 test('the deck lives on the existing /nature/ page — the room keeps its own pages, zero new URLs',()=>{
  assert.ok(html.includes('THE NATURE CLUB SHELF \u00b7 41 FLASHCARDS'),'the shelf family leads with its count');
  const xml=read('sitemap.xml');
- const before=3986; // +36 for Class 45 Family & Friends (class page + 35 short pages)
+ const before=4017; // +31 for Class 46 Early Addition & Subtraction (class page + 30 short pages; the two 10-minus-3 artworks share ONE URL)
  const locs=(xml.match(/<loc>/g)||[]).length;
  assert.equal(locs,before,'sitemap count unchanged (zero new URLs)');
  for(const c of NAT_CARDS.slice(0,6))assert.ok(!xml.includes('<loc>https://kiddo.school/nature/'+c.slug+'/</loc>'),'no per-card URLs (the standing one-page rule)');
@@ -91,5 +91,5 @@ test('the deck stays OUT of the Learning Path — the count stays forty-five',()
  const lp=read('learning-path/index.html');
  assert.ok(!lp.includes('href="'+NAT_BASE),'no deck image on the LP');
  assert.ok(!lp.includes('/nature/</a> — forty-one'),'no nature class row');
- assert.ok(lp.includes('forty-five age-guided classes'),'the LP count stays forty-four');
+ assert.ok(lp.includes('forty-six age-guided classes'),'the LP count stays forty-four');
 });

@@ -32,14 +32,14 @@ test('the class page exists and EXACTLY 22 short pages — one per word, nothing
  for(const s of PD_ORDER)assert.ok(existsSync('dist/prepositions/'+s+'/index.html'),'word page exists: '+s);
 });
 
-test('numbering: Class 44 follows Class 43 on the LP, the count says forty-five everywhere',()=>{
+test('numbering: Class 44 follows Class 43 on the LP, the count says forty-six everywhere',()=>{
  const lp=read('learning-path/index.html');
  const rows=[...lp.matchAll(/lp-class">Class (\d+):/g)].map(m=>+m[1]);
- assert.deepEqual(rows,[...Array(45).keys()].map(i=>i+1),'LP sequence is exactly 1–45, no gap');
+ assert.deepEqual(rows,[...Array(46).keys()].map(i=>i+1),'LP sequence is exactly 1–46, no gap');
  assert.ok(lp.includes('<span>44</span>')&&lp.includes('Class 44: <a href="/prepositions/">Position &amp; Direction Words</a>'),'the Class 44 row after row 43');
- assert.ok(lp.includes('forty-five age-guided classes')&&lp.includes('Forty-five classes are ready now'),'LP count words say forty-four');
- assert.ok(read('index.html').includes('Forty-five classes are ready now, from birth to age five'),'homepage lede says forty-four');
- assert.ok(read('about/index.html').includes('Forty-five classes'),'About page says forty-five');
+ assert.ok(lp.includes('forty-six age-guided classes')&&lp.includes('Forty-six classes are ready now'),'LP count words say forty-four');
+ assert.ok(read('index.html').includes('Forty-six classes are ready now, from birth to age five'),'homepage lede says forty-four');
+ assert.ok(read('about/index.html').includes('Forty-six classes'),'About page says forty-five');
 });
 
 test('R2 assets: SEO file names kept exactly, the cover leads, lazy + dims everywhere, image sitemap',()=>{

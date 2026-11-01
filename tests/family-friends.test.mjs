@@ -44,14 +44,14 @@ test('the class page exists and EXACTLY 35 short pages — one per word, nothing
  for(const s of FF_ORDER)assert.ok(existsSync('dist/family-and-friends/'+s+'/index.html'),'word page exists: '+s);
 });
 
-test('numbering: Class 45 follows Class 44 on the LP — no gap, no skipped 46 — and the count says forty-five everywhere',()=>{
+test('numbering: Class 45 follows Class 44 on the LP — no gap, no skipped 47 — and the count says forty-five everywhere',()=>{
  const lp=read('learning-path/index.html');
  const rows=[...lp.matchAll(/lp-class">Class (\d+):/g)].map(m=>+m[1]);
- assert.deepEqual(rows,[...Array(45).keys()].map(i=>i+1),'LP sequence is exactly 1–45, no gap, no skipped 46');
+ assert.deepEqual(rows,[...Array(46).keys()].map(i=>i+1),'LP sequence is exactly 1–46, no gap, no skipped 47');
  assert.ok(lp.includes('<span>45</span>')&&lp.includes('Class 45: <a href="/family-and-friends/">Family &amp; Friends</a>'),'the Class 45 row after row 44');
- assert.ok(lp.includes('forty-five age-guided classes')&&lp.includes('Forty-five classes are ready now'),'LP count words say forty-five');
- assert.ok(read('index.html').includes('Forty-five classes are ready now, from birth to age five'),'homepage lede says forty-five');
- assert.ok(read('about/index.html').includes('Forty-five classes'),'About page says forty-five');
+ assert.ok(lp.includes('forty-six age-guided classes')&&lp.includes('Forty-six classes are ready now'),'LP count words say forty-five');
+ assert.ok(read('index.html').includes('Forty-six classes are ready now, from birth to age five'),'homepage lede says forty-five');
+ assert.ok(read('about/index.html').includes('Forty-six classes'),'About page says forty-five');
 });
 
 test('R2 assets: master JPG file names kept EXACTLY, no re-compression, the cover leads, lazy + honest dims everywhere, image sitemap',()=>{
