@@ -64,14 +64,14 @@ test('the class page exists, carries the WHOLE deck, and there are zero per-card
  assert.ok(!existsSync('dist/plants-and-how-they-grow/inside-a-leaf-plant'),'no per-card dirs — the one-page rule');
 });
 
-test('numbering: Class 48 sits after Class 47 on the LP, the count says forty-eight everywhere',()=>{
+test('numbering: Class 48 sits after Class 47 on the LP, the count says forty-nine everywhere',()=>{
  const lp=read('learning-path/index.html');
  const rows=[...lp.matchAll(/lp-class">Class (\d+):/g)].map(m=>+m[1]);
- assert.deepEqual(rows,[...Array(48).keys()].map(i=>i+1),'LP sequence is exactly 1\u201348, no gap');
+ assert.deepEqual(rows,[...Array(49).keys()].map(i=>i+1),'LP sequence is exactly 1\u201349, no gap');
  assert.ok(lp.includes('<span>48</span>')&&lp.includes('Class 48: <a href="/plants-and-how-they-grow/">Plants &amp; How They Grow</a>'),'the Class 48 row after row 47');
- assert.ok(lp.includes('forty-eight age-guided classes')&&lp.includes('Forty-eight classes are ready now'),'LP count words say forty-eight');
- assert.ok(read('index.html').includes('Forty-eight classes are ready now, from birth to age five'),'homepage lede says forty-eight');
- assert.ok(read('about/index.html').includes('Forty-eight classes'),'About page says forty-eight');
+ assert.ok(lp.includes('forty-nine age-guided classes')&&lp.includes('Forty-nine classes are ready now'),'LP count words say forty-nine');
+ assert.ok(read('index.html').includes('Forty-nine classes are ready now, from birth to age five'),'homepage lede says forty-nine');
+ assert.ok(read('about/index.html').includes('Forty-nine classes'),'About page says forty-nine');
 });
 
 test('R2 assets: JPG masters ride exactly as uploaded, the cover leads, every card at full print size with lazy loading',()=>{

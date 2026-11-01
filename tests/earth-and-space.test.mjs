@@ -31,9 +31,9 @@ test('ONE page only: the class page, zero per-card URLs, nothing else under /ear
 test('the LP counts say forty-six and row 43 follows row 42 with no gap',()=>{
  const lp=read('learning-path/index.html');
  const rows=[...lp.matchAll(/lp-class">Class (\d+):/g)].map(m=>+m[1]);
- assert.deepEqual(rows,[...Array(48).keys()].map(i=>i+1),'LP sequence is exactly 1–48');
+ assert.deepEqual(rows,[...Array(49).keys()].map(i=>i+1),'LP sequence is exactly 1–49');
  assert.ok(lp.includes('<span>43</span>')&&lp.includes('Class 43: <a href="/earth-and-space/">Our Earth &amp; Space</a>'),'the Class 43 row');
- assert.ok(lp.includes('forty-eight age-guided classes')&&lp.includes('Forty-eight classes are ready now'),'LP count words say forty-four');
+ assert.ok(lp.includes('forty-nine age-guided classes')&&lp.includes('Forty-nine classes are ready now'),'LP count words say forty-four');
 });
 
 test('R2 assets: SEO file names kept exactly, the cover is the main image, lazy + dims on every card',()=>{

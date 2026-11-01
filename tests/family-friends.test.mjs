@@ -31,12 +31,12 @@ test('the class page exists and carries the WHOLE deck — zero per-card URLs',(
  assert.ok(existsSync('dist/flashcards/family-and-friends/index.html'),'the parents\u2019 shelf exists');
 });
 
-test('numbering: Class 45 sits after Class 44 on the LP, the count says forty-eight everywhere',()=>{
+test('numbering: Class 45 sits after Class 44 on the LP, the count says forty-nine everywhere',()=>{
  const lp=read('learning-path/index.html');
  const rows=[...lp.matchAll(/lp-class">Class (\d+):/g)].map(m=>+m[1]);
- assert.deepEqual(rows,[...Array(48).keys()].map(i=>i+1),'LP sequence is exactly 1–48, no gap');
+ assert.deepEqual(rows,[...Array(49).keys()].map(i=>i+1),'LP sequence is exactly 1–49, no gap');
  assert.ok(lp.includes('<span>45</span>')&&lp.includes('Class 45: <a href="/family-and-friends/">Family &amp; Friends</a>'),'the Class 45 row after row 44');
- assert.ok(lp.includes('forty-eight age-guided classes')&&lp.includes('Forty-eight classes are ready now'),'LP count words say forty-seven');
+ assert.ok(lp.includes('forty-nine age-guided classes')&&lp.includes('Forty-nine classes are ready now'),'LP count words say forty-seven');
  assert.ok(!lp.includes('/family-and-friends/mum/'),'the LP row no longer advertises per-person pages');
 });
 

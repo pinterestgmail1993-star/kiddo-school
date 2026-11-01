@@ -27,7 +27,7 @@ test('ONE page only: the class page, zero per-card URLs, nothing else under /mea
 test('the LP counts say forty-six and row 42 follows row 41 with no gap',()=>{
  const lp=read('learning-path/index.html');
  const rows=[...lp.matchAll(/lp-class">Class (\d+):/g)].map(m=>+m[1]);
- assert.deepEqual(rows,[...Array(48).keys()].map(i=>i+1),'LP sequence is exactly 1–48');
+ assert.deepEqual(rows,[...Array(49).keys()].map(i=>i+1),'LP sequence is exactly 1–49');
  assert.ok(lp.includes('<span>42</span>')&&lp.includes('Class 42: <a href="/measuring-and-money/">Measuring &amp; Money</a>'),'the Class 42 row');
 });
 

@@ -25,7 +25,7 @@ const html=read('nature/index.html');
 test('the deck lives on the existing /nature/ page — the room keeps its own pages, zero new URLs',()=>{
  assert.ok(html.includes('THE NATURE CLUB SHELF \u00b7 41 FLASHCARDS'),'the shelf family leads with its count');
  const xml=read('sitemap.xml');
- const before=3939; // the one-page round (owner 2026-11-01): −87 per-card pages (Classes 44/45/46 rolled back to the one-page rule), +7 (the Class 47 class page + the six parents' shelves); zero new URLs for /nature/ itself
+ const before=3964; // +25 for Class 49 · Action Words (owner 2026-11-02, /action-words/ + 24 card pages); before that: the one-page round (owner 2026-11-01): −87 per-card pages (Classes 44/45/46 rolled back to the one-page rule), +7 (the Class 47 class page + the six parents' shelves); zero new URLs for /nature/ itself
  const locs=(xml.match(/<loc>/g)||[]).length;
  assert.equal(locs,before,'sitemap count unchanged (zero new URLs)');
  for(const c of NAT_CARDS.slice(0,6))assert.ok(!xml.includes('<loc>https://kiddo.school/nature/'+c.slug+'/</loc>'),'no per-card URLs (the standing one-page rule)');
@@ -91,5 +91,5 @@ test('the deck stays OUT of the Learning Path — the count stays forty-five',()
  const lp=read('learning-path/index.html');
  assert.ok(!lp.includes('href="'+NAT_BASE),'no deck image on the LP');
  assert.ok(!lp.includes('/nature/</a> — forty-one'),'no nature class row');
- assert.ok(lp.includes('forty-eight age-guided classes'),'the LP count stays forty-four');
+ assert.ok(lp.includes('forty-nine age-guided classes'),'the LP count stays forty-four');
 });

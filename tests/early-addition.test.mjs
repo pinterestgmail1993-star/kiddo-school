@@ -32,12 +32,12 @@ test('the class page exists and carries the WHOLE deck — zero per-card URLs',(
  assert.ok(existsSync('dist/flashcards/early-addition-and-subtraction/index.html'),'the parents\u2019 shelf exists');
 });
 
-test('numbering: Class 46 sits after Class 45 on the LP, the count says forty-eight everywhere',()=>{
+test('numbering: Class 46 sits after Class 45 on the LP, the count says forty-nine everywhere',()=>{
  const lp=read('learning-path/index.html');
  const rows=[...lp.matchAll(/lp-class">Class (\d+):/g)].map(m=>+m[1]);
- assert.deepEqual(rows,[...Array(48).keys()].map(i=>i+1),'LP sequence is exactly 1–48, no gap');
+ assert.deepEqual(rows,[...Array(49).keys()].map(i=>i+1),'LP sequence is exactly 1–49, no gap');
  assert.ok(lp.includes('<span>46</span>')&&lp.includes('Class 46: <a href="/early-addition-and-subtraction/">Early Addition &amp; Subtraction</a>'),'the Class 46 row after row 45');
- assert.ok(lp.includes('forty-eight age-guided classes')&&lp.includes('Forty-eight classes are ready now'),'LP count words say forty-seven');
+ assert.ok(lp.includes('forty-nine age-guided classes')&&lp.includes('Forty-nine classes are ready now'),'LP count words say forty-seven');
  assert.ok(!lp.includes('/early-addition-and-subtraction/1-plus-2/'),'the LP row no longer advertises per-sum pages');
 });
 

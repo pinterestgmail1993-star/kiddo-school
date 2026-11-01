@@ -1873,6 +1873,7 @@ h1 em,h2 em{color:#7b4b99}
 .lp-tile:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
 .lp-tile img{width:100%;height:auto;background:#fff;border-bottom:1.5px solid var(--ink)}
 .lp-tile strong{display:block;padding:10px 12px 12px;font-family:var(--serif);font-weight:400;font-size:17px;line-height:1.25;text-align:center;letter-spacing:-.2px}
+.lp-tile .lp-tile-sub{display:block;padding:0 12px 12px;font-size:12px;line-height:1.4;text-align:center;color:var(--muted)}
 .lp-tile .sa-card-num{width:30px;height:30px;font-size:13px;top:10px;left:10px}
 .lp-tile .sa-card-done{font-size:10px;top:10px;right:10px;padding:4px 9px}
 .sa-card-imgonly .sa-card-body{padding:14px 16px 16px}

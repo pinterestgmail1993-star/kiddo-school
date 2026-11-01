@@ -48,7 +48,7 @@ const lp=()=>read('learning-path/index.html');
 // forty-five), so the no-skip number 46 was assigned and the owner's
 // literal "45" was rejected — two Class 45s would duplicate the sequence;
 // the owner was told, the number rides display copy only).
-const APPROVED=[...Array(48).keys()].map(i=>i+1);
+const APPROVED=[...Array(49).keys()].map(i=>i+1);
 
 const WORDS={one:1,two:2,three:3,four:4,five:5,six:6,seven:7,eight:8,nine:9,ten:10,
  eleven:11,twelve:12,thirteen:13,fourteen:14,fifteen:15,sixteen:16,seventeen:17,
@@ -59,11 +59,11 @@ const WORDS={one:1,two:2,three:3,four:4,five:5,six:6,seven:7,eight:8,nine:9,ten:
  'thirty-nine':39,forty:40,'forty-one':41,'forty-two':42,'forty-three':43,'forty-four':44,
  'forty-five':45,'forty-six':46,'forty-seven':47,'forty-eight':48,'forty-nine':49,fifty:50};
 
-test('the Learning Path shows exactly the approved classes — unique, strictly increasing, no gap (1–48)',()=>{
+test('the Learning Path shows exactly the approved classes — unique, strictly increasing, no gap (1–49)',()=>{
  const html=lp();
  const nums=[...html.matchAll(/lp-class">Class (\d+):/g)].map(m=>+m[1]);
  assert.equal(nums.length,APPROVED.length,'row count matches the approved registry ('+nums.length+' rows)');
- assert.deepEqual(nums,APPROVED,'sequence is exactly Classes 1–48, no gap');
+ assert.deepEqual(nums,APPROVED,'sequence is exactly Classes 1–49, no gap');
  assert.equal(new Set(nums).size,nums.length,'no duplicate class numbers');
  for(let i=1;i<nums.length;i++)assert.ok(nums[i]>nums[i-1],'strictly increasing at position '+i);
 });
