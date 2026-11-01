@@ -25,6 +25,7 @@
    Nature & Discovery) point here; the class page links back to all three,
    the Learning Path and the class count goes forty-one → forty-two. */
 import {R2} from './adventure-kit.mjs';
+import {fcCommunityMount} from './flashcards/community.mjs';
 
 export const MM_PATH='/measuring-and-money/';
 export const MM_BASE=R2+'school/learning-path/measuring-and-money/flashcards/';
@@ -175,3 +176,59 @@ export const MM_NUMBERS_LINK=`<section class="wrap lesson-section"><span class="
 export const MM_OPPOSITES_LINK=`<section class="wrap lesson-section"><span class="eyebrow">FROM OPPOSITES TO MATH WORDS</span><h2>Class 42 \u00b7 Measuring &amp; Money.</h2><p class="lesson-copy">Class 19 races the opposites — big and small, hot and cold — and the <a href="/measuring-and-money/">Measuring &amp; Money class</a> measures the same world with math words: long and short, heavy and light, thick and thin, wide and narrow, full and empty, more and less. Twenty-eight printable cards for ages 4\u20135, every one downloadable and printable straight from the class page — the comparing your child just practiced, now with numbers on it.</p></section>`;
 /* Appended to Class 31 · Science, Nature & Discovery. */
 export const MM_SCIENCE_LINK=`<section class="wrap lesson-section"><span class="eyebrow">MEASURE LIKE A SCIENTIST</span><h2>Class 42 \u00b7 Measuring &amp; Money.</h2><p class="lesson-copy">Class 31 predicts, tests and writes down what happened — and the <a href="/measuring-and-money/">Measuring &amp; Money class</a> hands the scientist a toolkit: twenty-eight printable math cards for ages 4\u20135 with the ruler, the height chart, the balance scale, the timer words and the money math that pays for the materials. Every card prints straight from the class page — measuring is where math and science hold hands.</p></section>`;
+
+/* ---- The parents' shelf: the whole deck on ONE library page (the TDR
+   pattern). Lib tips are new parent-voice lines — no sentence shared with
+   the class page's say lines. ---------------------------------------------- */
+const MM_LIB_TIPS={
+ 'counting-1-to-10':'Print it and count the stairs up to bed — one number per step. The card\u2019s apples and frogs are the backup singers; your staircase is the star.',
+ 'numbers-1-to-20':'Print it and count past ten at snack time — raisins, crackers, peas. Twenty is just ten plus ten more, and the card shows the whole climb.',
+ 'number-bonds':'Print it and play what-makes-five with your fingers — two up, three up, five up. Every pair the card shows is a handshake numbers do.',
+ 'tens-and-ones':'Print it and bundle real things in tens — cotton buds, pasta, buttons — then count the bundles. The card\u2019s bundles are your junk drawer, organized.',
+ 'odd-and-even-numbers':'Print it and line up the shoes — pairs are even, the lonely one is odd. Sorting socks just became a math lesson, exactly like the card drew it.',
+ 'addition-adding-groups':'Print it and add two real groups — three crackers plus two crackers, count the pile. The card\u2019s plus sign is just a fancy word for put-together.',
+ 'subtraction-taking-away':'Print it and take away for real — five grapes, eat two, count the survivors. Subtraction is snack math, and the card knows it.',
+ 'long-and-short-comparing-length':'Print it and hunt long-and-short around the house — a long spoon, a short spoon, a long hallway, a short hallway. The card turns the house into a measuring tape.',
+ 'measuring-length-ruler':'Print it and measure three things with a real ruler tonight — a book, a shoe, a table. Write the numbers down; the card\u2019s ruler does the same job, louder.',
+ 'measuring-height':'Print it and measure everybody against the door frame with a pencil mark — the card\u2019s height chart, running live on your own wall.',
+ 'heavy-and-light-comparing-weight':'Print it and play the hand scale — an apple in one hand, a sock in the other. Heavy and light land in the palms before the words land anywhere else.',
+ 'weight-and-balance-scale':'Print it and build the cardboard-bucket balance the card shows — a hanger, two cups, string. Thirty seconds to build; an hour of experiments.',
+ 'thick-and-thin':'Print it and stack the sandwich books — which is the thick one, which is thin? The card\u2019s word pair fits every slice of bread in the house.',
+ 'wide-and-narrow':'Print it and try the doorway test the card draws — arms stretched wide, then squeezed narrow. Wide and narrow are body words before they are math words.',
+ 'full-and-empty-capacity':'Print it and play the water-jar game at bath time — full, half, empty, splash. The card\u2019s jars are the bathtub, wearing math words.',
+ 'near-and-far-distance':'Print it and stand near, then far — three giant steps back, say the words. The card\u2019s distance pair is a game of red light, green light in disguise.',
+ 'left-and-right':'Print it and sticky-note the left hand, then call the turns — turn left at the couch. The card\u2019s two hands are the first map skills there are.',
+ 'inside-and-outside':'Print it and put toys inside, outside the basket — say the word every drop. The card\u2019s box scene runs all over your living room.',
+ 'in-front-and-behind':'Print it and play toy parade — one in front, one behind, march around the rug. The card\u2019s order words walk themselves into place.',
+ 'top-and-bottom':'Print it and climb the word ladder — top bunk, bottom bunk, top shelf, bottom shelf. The card\u2019s pair lives on every staircase and bookshelf.',
+ 'same-and-different':'Print it and play spot-the-match with socks, spoons, buttons — same or different? The card\u2019s pair game is the oldest logic puzzle there is.',
+ 'sorting-and-grouping':'Print it and sort the toy basket by color, then by size, then by kind — three rounds, one basket. The card\u2019s groups are tidying in disguise.',
+ 'more-and-less-comparing-groups':'Print it and compare two snack piles — which is more? The card\u2019s comparing pair decides who gets the bigger handful, fairly.',
+ 'equal-same-amount':'Print it and deal the crackers until both piles are equal — the card\u2019s balanced scale, served at snack time.',
+ 'shapes-circle-square-triangle-rectangle':'Print it and run a shape hunt — circle plates, square windows, rectangle doors. The card\u2019s four shapes are hiding in every room.',
+ 'simple-fractions-whole-half-quarter':'Print it and cut the sandwich into halves, then quarters — fair shares are fractions with butter on them. The card\u2019s pizza math, made of lunch.',
+ 'money-coins-price-change':'Print it and open a play shop — price stickers, a handful of coins, one cashier. The card\u2019s money math runs on empty pasta boxes.',
+ 'day-and-night':'Print it and sort today\u2019s photos — which happened in daylight, which at night? The card\u2019s sun-and-moon pair closes the day like a curtain.'};
+if(Object.keys(MM_LIB_TIPS).length!==28)throw Error('measuring-and-money: shelf tips must cover 28 cards');
+for(const c of CARDS){if(!MM_LIB_TIPS[c.slug]||MM_LIB_TIPS[c.slug].length<60)throw Error('measuring-and-money: thin shelf tip for '+c.slug);}
+
+export const MM_LIB_SET={slug:'measuring-and-money',url:'/flashcards/measuring-and-money/',name:'Measuring & Money',
+ ageLabel:'4–5',stageName:null,
+ hubBlurb:'The parents\u2019 shelf for Class 42: all twenty-eight early-math cards with a download and a print button under every image — age, subject, level and skill pills on each card, printing straight from the shelf, no card pages. The child\u2019s lesson lives in the Measuring & Money class.',
+ coverUrl:MM_BASE+MM_COVER.file,
+ cover:{w:MM_COVER.w,h:MM_COVER.h,alt:MM_COVER.alt},
+ cards:CARDS.map(c=>({slug:c.slug,word:c.word}))};
+
+function mmLibTile(c){
+ const pillRow=`<span class="fc-pillrow"><span class="fc-pill fc-pill-age">Ages 4–5</span><span class="fc-pill fc-pill-subject">${esc(c.sub)}</span><span class="fc-pill fc-pill-level">${MM_LEVEL_NAMES[MM_LEVEL[c.slug]]}</span><span class="fc-pill fc-pill-skill">${esc(MM_SKILL[c.slug])}</span></span>`;
+ return `<figure class="mn-card"><img src="${MM_BASE}${c.file}" width="${W}" height="${H}" alt="${esc(c.alt)}" loading="lazy"><strong>${esc(c.word)}</strong>${pillRow}<figcaption class="mn-tip">${esc(MM_LIB_TIPS[c.slug])}</figcaption><div class="mn-actions"><a class="button" href="${MM_BASE}${c.file}" download="${c.pageSlug}.webp">Download <span aria-hidden="true">\u2193</span></a><button type="button" class="button button-ghost" data-mn-print>Print <span aria-hidden="true">\u2399</span></button></div></figure>`;
+}
+
+export function mmLibBody(){
+ const intro=`<section class="wrap lesson-section"><p class="lesson-copy">This is the parents\u2019 copy of <a href="/measuring-and-money/">Class 42 \u00b7 Measuring &amp; Money</a>: all twenty-eight early-math cards on one shelf, ready to print. You do not need a plan — pick the math word today\u2019s game can use, download the card, and print it full size on A4 or Letter paper. Every card carries one parent tip underneath and four pills on top: the age it suits, the subject it teaches, the grade level to start at, and the skill it builds. The download button takes the full-size card; the print button runs a single card through your printer with nothing else on the page. There are no card pages to hop through: the shelf is the whole set.</p><p class="lesson-copy">The shelf is yours; the lesson is your child\u2019s. The class page at <a href="/measuring-and-money/">Measuring &amp; Money</a> teaches each idea the way a teacher would — the rule said kid-first, one way to use it today — while this wall simply holds the deck for printing. Same twenty-eight cards, two jobs: the lesson lives in the class, the library is where parents print.</p></section>`;
+ const levels=`<section class="wrap lesson-section"><span class="eyebrow">THE THREE LEVELS</span><h2>Preschool, Grade 1, Grade 2.</h2><p class="fc-hint">Every card wears a level pill so tonight\u2019s card takes one glance to choose. The levels are a suggested order, not a test — the word your game needs most is always the right card.</p><ol class="fc-steps"><li><span class="fc-stepnum">01</span><div><h3>${MM_LEVEL_NAMES[1]}</h3><p>${MM_LEVEL_BLURB[1]}.</p></div></li><li><span class="fc-stepnum">02</span><div><h3>${MM_LEVEL_NAMES[2]}</h3><p>${MM_LEVEL_BLURB[2]}.</p></div></li><li><span class="fc-stepnum">03</span><div><h3>${MM_LEVEL_NAMES[3]}</h3><p>${MM_LEVEL_BLURB[3]}.</p></div></li></ol></section>`;
+ const heads={'count-add':'The count &amp; add shelf — numbers that build.','measure':'The measure &amp; compare shelf — the house as a measuring tape.','position':'The position words shelf — the treasure map.','sort':'The sort &amp; match shelf — same, different, more, less.','shapes-money':'The shapes, fractions &amp; money shelf — the big finish.'};
+ const deck=MM_SHELVES.map(sh=>{const cards=sh.slugs.map(s=>mmBySlug[s]);return `<section class="wrap lesson-section"><span class="eyebrow">${sh.label}</span><h2>${heads[sh.id]}</h2><p class="fc-hint">${sh.hint} Download takes the full-size card; Print runs just that one card through the printer.</p><div class="mn-cards">${cards.map(mmLibTile).join('')}</div></section>`;}).join('');
+ const next=`<section class="wrap lesson-section"><span class="eyebrow">WHERE TO NEXT</span><h2>The lesson, the path, the rest of the library.</h2><div class="lesson-linkrow"><a class="lesson-pill-link" href="/measuring-and-money/">The Measuring &amp; Money class <span>\u00b7 The child\u2019s lesson</span> <span aria-hidden="true">\u2197</span></a><a class="lesson-pill-link" href="/learning-path/">The Learning Path <span aria-hidden="true">\u2197</span></a><a class="lesson-pill-link" href="/flashcards/">All flashcard sets <span aria-hidden="true">\u2197</span></a><a class="lesson-pill-link" href="/flashcards/time-and-daily-routine/">The Time &amp; Daily Routine parents\u2019 shelf <span aria-hidden="true">\u2197</span></a></div><p class="lesson-copy">Print a card here, teach the word there: the <a href="/measuring-and-money/">Measuring &amp; Money class</a> is the lesson side of this deck — one idea a sitting, said kid-first, used on real things today. Once the deck is up on the fridge, the class page is the manual that makes each word stick.</p></section>`;
+ return `${intro}${levels}${deck}${next}${fcCommunityMount('/flashcards/measuring-and-money/')}`;
+}

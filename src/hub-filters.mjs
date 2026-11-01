@@ -130,6 +130,15 @@ export const FC_TAGS={
  // first-words, routines are the heart of the deck and the talking-together
  // skill carries the calendar.
  'time-and-daily-routine':['age-4-5','lvl-prek','subj-first-words','subj-feelings','skill-vocab','skill-routines','skill-talking'],
+ // ONE-page round (owner 2026-11-01): the class decks that joined the
+ // library — math tags for 42/46, science for 43, first-words for 44/45 and
+ // eco habits for 47. Every slug tagged or the hub build fails.
+ 'measuring-and-money':['age-4-5','lvl-prek','subj-numbers','skill-counting','skill-vocab'],
+ 'earth-and-space':['age-4-5','lvl-prek','subj-science','skill-vocab','skill-talking'],
+ 'prepositions':['age-4-5','lvl-prek','subj-first-words','skill-vocab','skill-talking'],
+ 'family-and-friends':['age-4-5','lvl-prek','subj-first-words','subj-feelings','skill-vocab','skill-talking'],
+ 'early-addition-and-subtraction':['age-4-5','lvl-prek','subj-numbers','skill-counting'],
+ 'caring-for-our-planet':['age-4-5','lvl-prek','subj-science','skill-routines','skill-talking'],
  'transportation-and-vehicles':['age-4-5','lvl-prek','subj-vehicles','skill-vocab'],
  // Extra classes and rooms (their real age spans ride along)
  'kitchen':['age-3','age-4-5','lvl-preschool','lvl-prek','subj-first-words','skill-vocab','skill-routines'],

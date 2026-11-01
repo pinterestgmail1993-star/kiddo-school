@@ -83,7 +83,7 @@ test('the Science Lab stays OUT of the Learning Path',()=>{
  const lp=read('learning-path/index.html');
  const rows=[...lp.matchAll(/lp-class">Class (\d+): <a href="([^"]+)"/g)].map(m=>m[2]);
  assert.ok(rows.every(u=>u!=='/science/'),'no numbered class row links the lab (the lab is a room, not a class)');
- assert.ok(!lp.includes('Class 47'),'no invented class number (Class 46 · Early Addition & Subtraction is live at /early-addition-and-subtraction/ since 2026-11-01 — numbered by the no-skip rule after Class 45 · Family & Friends went live earlier the same day; the LP runs 1–46 with no gap);');
+ assert.ok(!lp.includes('Class 48'),'no invented class number (Class 47 · Caring for Our Planet went live at /caring-for-our-planet/ on 2026-11-01 — numbered by the no-skip rule after Class 46 · Early Addition & Subtraction; the LP runs 1–47 with no gap);');
  // the LP keeps its own classroom row for older children instead
  assert.ok(lp.includes('href="/science/">Science Lab</a>'),'the lab stays in the older-kids classroom row');
 });

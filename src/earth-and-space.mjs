@@ -30,6 +30,7 @@
    all four and the Learning Path, and the class count goes forty-two →
    forty-three. */
 import {R2} from './adventure-kit.mjs';
+import {fcCommunityMount} from './flashcards/community.mjs';
 
 export const ES_PATH='/earth-and-space/';
 export const ES_BASE=R2+'school/learning-path/our-earth-and-space/flashcards/';
@@ -180,3 +181,55 @@ export const ES_WEATHER_LINK=`<section class="wrap lesson-section"><span class="
 export const ES_ROUTINE_LINK=`<section class="wrap lesson-section"><span class="eyebrow">WHY THE DAY TURNS</span><h2>Class 43 \u00b7 Our Earth &amp; Space.</h2><p class="lesson-copy">Class 41 plans the day — first, next, last; now, soon, later — and the <a href="/earth-and-space/">Our Earth &amp; Space class</a> shows why the day turns at all: Earth spins once for every day and night, walks around the sun once a year, and the seasons ride along. Twenty-four printable space flashcards for ages 4\u20135, every one downloadable and printable straight from the class page — the routine YOU just practiced, hung on the sky that makes it.</p></section>`;
 /* Appended to Science at a Glance. */
 export const ES_GLANCE_LINK=`<section class="wrap lesson-section"><span class="eyebrow">FROM THE WALL TO THE WINDOW</span><h2>Class 43 \u00b7 Our Earth &amp; Space.</h2><p class="lesson-copy">These first-picture science sheets name the parts — the water cycle, the planets, the weather — and the <a href="/earth-and-space/">Our Earth &amp; Space class</a> gives every one of those ideas a card your child can hold: twenty-four printable space flashcards for ages 4\u20135, from the ocean and the atmosphere out to comets and black holes, each with Download and Print right under the picture.</p></section>`;
+
+/* ---- The parents' shelf: the whole deck on ONE library page (the TDR
+   pattern). Lib tips are new parent-voice lines — no sentence shared with
+   the class page's say lines. ---------------------------------------------- */
+const ES_LIB_TIPS={
+ 'ocean-mountain-volcano':'Print it and pick tonight\u2019s bedtime landscape — ocean wave, snow mountain or erupting volcano — and build it from a blanket. The card\u2019s four landforms are a whole vacation in one page.',
+ 'atmosphere-continent-river':'Print it and trace the river with one finger to the sea, then breathe in — the air you just took is the atmosphere the card drew. Sky science, from your kitchen chair.',
+ 'fossil-rock-mineral':'Print it and start the rock box — one pocket rock today, one tomorrow. Every pebble on the card\u2019s pile is a piece of Earth older than dinosaurs.',
+ 'recycle-water-air':'Print it and find one thing tonight that goes in the recycling instead of the trash — the card\u2019s Earth-helper job, done before bedtime.',
+ 'sun-moon-earth':'Print it and hang it where the morning light lands — the sun for waking, the moon for bed. Which one is out right now? The card answers every morning.',
+ 'mercury-venus-earth':'Print it and say the four rocky planets at bath time — Mercury, Venus, Earth, Mars — fastest to slowest. The card\u2019s racers make the order stick.',
+ 'jupiter-saturn-uranus':'Print it and pick a favorite giant — striped Jupiter, ringed Saturn, sideways Uranus or windy Neptune. The card\u2019s four big friends start a love of planets that lasts for years.',
+ 'planet-dwarf-planet-moon':'Print it and sort the circles — which ones circle the sun, and which one circles us? The card\u2019s sorting game quietly teaches what a planet even is.',
+ 'ringed-planet-space-helmet-moon-rock':'Print it and turn a colander into a space helmet — the card\u2019s moon-mission gear, live from the dress-up box.',
+ 'rocket-astronaut-space-station':'Print it and run the full countdown — three, two, one, blastoff — then bounce like the astronaut the card drew. The space station waits in orbit; dinner waits after.',
+ 'crater-satellite-space-suit':'Print it and count the moon\u2019s craters from the window tonight — the card\u2019s satellite takes the pictures; your child takes the count.',
+ 'rover-lander-space-mission':'Print it and drive a toy car rover across the couch cushions — Mars terrain, courtesy of the card\u2019s six-wheeled hero.',
+ 'space-walk-alien-moon-base':'Print it and float around the room in slow bouncy space-walk steps — the card\u2019s astronaut move, the funniest way to cross a bedroom.',
+ 'day-night-gravity':'Print it and ask the window question at breakfast and bedtime — day or night? The card\u2019s sun-moon pair turns one page into the whole spinning day.',
+ 'rotation-revolution-axis':'Print it and spin one slow circle like Earth — one spin is one day, one walk around the table is one year. The card\u2019s orbit, measured in giggles.',
+ 'eclipse-tide-season':'Print it and find tonight\u2019s season on the four little trees — spring buds, summer green, fall gold or winter bare? The card keeps all four in one glance.',
+ 'sunrise-sunset-cloud':'Print it and catch one real sunrise or sunset this week — then name the color the sky turned. The card\u2019s sky show, live and free every day.',
+ 'weather-wind-thunder':'Print it and give the weather report at breakfast — sunny, windy, cloudy or stormy, said out loud like the card\u2019s reporter. Weather words for the whole morning routine.',
+ 'solar-panel-wind-turbine-rain':'Print it and hunt for the sun\u2019s helpers on your street — a solar panel, a spinning turbine. The card\u2019s power crew turns the walk home into a field trip.',
+ 'equator-north-pole-south-pole':'Print it and spin the globe — finger on the middle for the equator, top and bottom for the poles. The card\u2019s belt-and-caps map, held in one lap.',
+ 'tropical-polar-temperate':'Print it and sort the animals by home — palm tree, ice floe or leafy tree? The card\u2019s three climates sort every animal book on the shelf.',
+ 'star-comet-asteroid':'Print it and count the stars you can actually see tonight — then find the card\u2019s comet tail in your imagination. Real sky, real counting, one page.',
+ 'comet-asteroid-meteor':'Print it and draw a comet with the longest tail in the house — the card\u2019s icy snowball is the model; the crayon box does the rest.',
+ 'solar-system-constellation-black-hole':'Print it and connect five dots into your own constellation — the card\u2019s star pictures were invented exactly this way, by somebody looking up.'};
+if(Object.keys(ES_LIB_TIPS).length!==24)throw Error('earth-and-space: shelf tips must cover 24 cards');
+for(const c of CARDS){if(!ES_LIB_TIPS[c.slug]||ES_LIB_TIPS[c.slug].length<60)throw Error('earth-and-space: thin shelf tip for '+c.slug);}
+
+export const ES_LIB_SET={slug:'earth-and-space',url:'/flashcards/earth-and-space/',name:'Our Earth & Space',
+ ageLabel:'4–5',stageName:null,
+ hubBlurb:'The parents\u2019 shelf for Class 43: all twenty-four Earth-and-space cards with a download and a print button under every image — age, subject, level and skill pills on each card, printing straight from the shelf, no card pages. The child\u2019s lesson lives in the Our Earth & Space class.',
+ coverUrl:ES_BASE+ES_COVER.file,
+ cover:{w:ES_COVER.w,h:ES_COVER.h,alt:ES_COVER.alt},
+ cards:CARDS.map(c=>({slug:c.slug,word:c.word}))};
+
+function esLibTile(c){
+ const pillRow=`<span class="fc-pillrow"><span class="fc-pill fc-pill-age">Ages 4–5</span><span class="fc-pill fc-pill-subject">${esc(c.sub)}</span><span class="fc-pill fc-pill-level">${ES_LEVEL_NAMES[ES_LEVEL[c.slug]]}</span><span class="fc-pill fc-pill-skill">${esc(ES_SKILL[c.slug])}</span></span>`;
+ return `<figure class="mn-card"><img src="${ES_BASE}${c.file}" width="${W}" height="${H}" alt="${esc(c.alt)}" loading="lazy"><strong>${esc(c.word)}</strong>${pillRow}<figcaption class="mn-tip">${esc(ES_LIB_TIPS[c.slug])}</figcaption><div class="mn-actions"><a class="button" href="${ES_BASE}${c.file}" download="${c.pageSlug}.webp">Download <span aria-hidden="true">\u2193</span></a><button type="button" class="button button-ghost" data-mn-print>Print <span aria-hidden="true">\u2399</span></button></div></figure>`;
+}
+
+export function esLibBody(){
+ const intro=`<section class="wrap lesson-section"><p class="lesson-copy">This is the parents\u2019 copy of <a href="/earth-and-space/">Class 43 \u00b7 Our Earth &amp; Space</a>: all twenty-four sky cards on one shelf, ready to print. You do not need a plan — pick the question tonight is already asking, download the card, and print it full size on A4 or Letter paper. Every card carries one parent tip underneath and four pills on top: the age it suits, the subject it teaches, the grade level to start at, and the skill it builds. The download button takes the full-size card; the print button runs a single card through your printer with nothing else on the page. There are no card pages to hop through: the shelf is the whole set.</p><p class="lesson-copy">The shelf is yours; the lesson is your child\u2019s. The class page at <a href="/earth-and-space/">Our Earth &amp; Space</a> teaches each idea the way a teacher would — the sky idea said kid-first, one thing to try out the window — while this wall simply holds the deck for printing. Same twenty-four cards, two jobs: the lesson lives in the class, the library is where parents print.</p></section>`;
+ const levels=`<section class="wrap lesson-section"><span class="eyebrow">THE THREE LEVELS</span><h2>Preschool, Grade 1, Grade 2.</h2><p class="fc-hint">Every card wears a level pill so tonight\u2019s card takes one glance to choose. The levels are a suggested order, not a test — the question your child just asked is always the right card.</p><ol class="fc-steps"><li><span class="fc-stepnum">01</span><div><h3>${ES_LEVEL_NAMES[1]}</h3><p>${ES_LEVEL_BLURB[1]}.</p></div></li><li><span class="fc-stepnum">02</span><div><h3>${ES_LEVEL_NAMES[2]}</h3><p>${ES_LEVEL_BLURB[2]}.</p></div></li><li><span class="fc-stepnum">03</span><div><h3>${ES_LEVEL_NAMES[3]}</h3><p>${ES_LEVEL_BLURB[3]}.</p></div></li></ol></section>`;
+ const heads={'my-planet':'My blue planet — the ground, the water, the air.','sun-family':'The sun\u2019s family — meet the planets.','spin':'The spinning day — why the sun comes up.','weather':'The weather &amp; world shelf — what the sky is doing.','travel':'The rockets &amp; astronauts shelf — blastoff!','far-space':'The stars &amp; far space shelf — very big ideas.'};
+ const deck=ES_SHELVES.map(sh=>{const cards=sh.slugs.map(s=>esBySlug[s]);return `<section class="wrap lesson-section"><span class="eyebrow">${sh.label}</span><h2>${heads[sh.id]}</h2><p class="fc-hint">${sh.hint} Download takes the full-size card; Print runs just that one card through the printer.</p><div class="mn-cards">${cards.map(esLibTile).join('')}</div></section>`;}).join('');
+ const next=`<section class="wrap lesson-section"><span class="eyebrow">WHERE TO NEXT</span><h2>The lesson, the path, the rest of the library.</h2><div class="lesson-linkrow"><a class="lesson-pill-link" href="/earth-and-space/">The Our Earth &amp; Space class <span>\u00b7 The child\u2019s lesson</span> <span aria-hidden="true">\u2197</span></a><a class="lesson-pill-link" href="/learning-path/">The Learning Path <span aria-hidden="true">\u2197</span></a><a class="lesson-pill-link" href="/flashcards/">All flashcard sets <span aria-hidden="true">\u2197</span></a><a class="lesson-pill-link" href="/flashcards/caring-for-our-planet/">The Caring for Our Planet parents\u2019 shelf <span aria-hidden="true">\u2197</span></a></div><p class="lesson-copy">Print a card here, teach the sky there: the <a href="/earth-and-space/">Our Earth &amp; Space class</a> is the lesson side of this deck — one idea a sitting, said kid-first, tried out the window today. Once the deck is up on the fridge, the class page is the manual that makes each idea stick.</p></section>`;
+ return `${intro}${levels}${deck}${next}${fcCommunityMount('/flashcards/earth-and-space/')}`;
+}
