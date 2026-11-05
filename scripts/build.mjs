@@ -238,6 +238,17 @@ const ASSET_VER=String(Date.now()); // cache-bust: every build rewrites ?v= so b
    against the audited dims table at build time, so a wrong file fails the build. */
 const advOg=(band,base,g)=>{const a=artFor(band+'/'+g.slug,base+g.img);return{ogImage:base+g.img,ogAlt:g.alt,ogW:a.w,ogH:a.h};};
 function page(path,title,description,body,{image='bean',noindex=false,schema=[],ogImage=null,ogAlt=null,ogW=0,ogH=0}={}){
+ /* Absolute og:image URLs only (GSC 2026-11-04: 'Invalid URL — 106 instances'
+    in the sitemaps report). The sight-words deck (Class 29) is the one set
+    served from the site itself with a relative base (/assets/sight-words/),
+    so its og:image, ImageObject contentUrl and sitemap <image:loc> all came
+    out relative — Google rejects relative URLs in all three. Absolutize here,
+    once, at the page() entry: og:image meta, JSON-LD and routeImg (image
+    sitemap) all flow from this value. On-page <img src> tags stay relative. */
+ if(ogImage){
+  const imgs=[].concat(ogImage).map(u=>u.startsWith('/')?site+u:u);
+  ogImage=imgs.length===1?imgs[0]:imgs;
+ }
  const socialImg=ogImage||brandBase+'kiddo-social-sharing-art.webp';
  /* og:image dims/type: the default social art was probed live at 1024×768
     (2026-10-13); page-specific images carry their probed ogW/ogH. */
@@ -1321,7 +1332,7 @@ routeImg.set(PGP_PATH,[PGP_BASE+PGP_COVER.file,...PGP_ORDER.map(s=>PGP_BASE+pgpB
 routeImg.set('/flashcards/plants-and-how-they-grow/',[PGP_BASE+PGP_COVER.file,...PGP_ORDER.map(s=>PGP_BASE+pgpBySlug[s].file)]);
 routeImg.set(PGP_PATH,[PGP_BASE+PGP_COVER.file,...PGP_ORDER.map(s=>PGP_BASE+pgpBySlug[s].file)]);
 routeImg.set('/flashcards/plants-and-how-they-grow/',[PGP_BASE+PGP_COVER.file,...PGP_ORDER.map(s=>PGP_BASE+pgpBySlug[s].file)]);
-writeFileSync('dist/sitemap.xml',`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">${allRoutes.map(p=>routeImg.has(p)?`<url><loc>${site+p}</loc>${[].concat(routeImg.get(p)).map(u=>`<image:image><image:loc>${e(u)}</image:loc></image:image>`).join('')}</url>`:`<url><loc>${site+p}</loc></url>`).join('')}</urlset>\n`);
+writeFileSync('dist/sitemap.xml',`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">${allRoutes.map(p=>routeImg.has(p)?`<url><loc>${site+p}</loc>${[].concat(routeImg.get(p)).map(u=>`<image:image><image:loc>${e(u.startsWith('/')?site+u:u)}</image:loc></image:image>`).join('')}</url>`:`<url><loc>${site+p}</loc></url>`).join('')}</urlset>\n`);
 writeFileSync('dist/robots.txt',`User-agent: *\n${indexable?'Allow: /':'Disallow: /'}\nDisallow: /admin/\nDisallow: /api/\nSitemap: ${site}/sitemap.xml\n`);
 writeFileSync('dist/_headers',`/assets/*.js\n  Cache-Control: public, max-age=31536000, immutable\n/assets/*.css\n  Cache-Control: public, max-age=31536000, immutable\n/assets/*.webp\n  Cache-Control: public, max-age=31536000, immutable\n/assets/*.png\n  Cache-Control: public, max-age=2592000\n/assets/sight-words/*\n  Cache-Control: public, max-age=2592000\n/assets/*.svg\n  Cache-Control: public, max-age=2592000\n/assets/*.mp3\n  Cache-Control: public, max-age=2592000\n/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: strict-origin-when-cross-origin\n  X-Frame-Options: DENY\n  Permissions-Policy: camera=(), microphone=(), geolocation=()\n  Content-Security-Policy: default-src 'self'; script-src 'self' https://static.cloudflareinsights.com https://*.adtrafficquality.google https://challenges.cloudflare.com https://pagead2.googlesyndication.com https://*.googlesyndication.com https://*.googletagservices.com https://*.g.doubleclick.net https://*.google.com https://*.gstatic.com https://adservice.google.com https://cloud.umami.is; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://*.adtrafficquality.google https://assets.kiddo.school https://*.googlesyndication.com https://*.g.doubleclick.net https://*.google.com https://*.gstatic.com; font-src 'self'; connect-src 'self' https://cloudflareinsights.com https://*.adtrafficquality.google https://challenges.cloudflare.com https://*.google.com https://*.g.doubleclick.net https://*.googlesyndication.com https://adservice.google.com https://cloud.umami.is https://gateway.umami.is; object-src 'none'; base-uri 'none'; frame-ancestors 'none'; frame-src https://*.adtrafficquality.google https://challenges.cloudflare.com https://googleads.g.doubleclick.net https://*.googlesyndication.com https://tpc.googlesyndication.com https://www.google.com\n${indexable?'':'  X-Robots-Tag: noindex, follow\n'}`);
 writeFileSync('dist/build-info.json',JSON.stringify({siteUrl:site,indexable,pages:allRoutes.length+2,activities:activities.length},null,2));
