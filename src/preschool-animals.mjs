@@ -90,19 +90,19 @@ export function animalsClassBody(L){
     worksheet-solving guidance here instead of coded games. */
  const solveSection=age3SolveSheets({
   heading:'Solve the animal sheets together.',
-  copy:'The twelve animal cards print two to a page, straight from your browser. Printed, cut and named, they are the class\u2019s real worksheets — and on screen, every card page can be drawn on directly.',
+  copy:'Print the twelve animal cards and they turn into your worksheets. Cut them out, say each name, and you’re ready to play.',
   steps:[
-   ['Print the cards','Open the printable cards and print all twelve, two to a page. Cut them out together, naming each animal as it is cut.'],
-   ['Say the sound','Hold up a card, make its sound — woof, moo, tweet — then wait for your child\u2019s turn. Any attempt counts, and silliness counts double.'],
-   ['Act the animal out','Walk like a dog, waddle like a duck, stomp like an elephant. Guessing from a movement is the game, and the whole room can play.'],
-   ['Match card to world','Lay three cards on the table and find their twins in an animal book. Then color a favourite card on its page with the Write & Color layer.']
+   ['Print the cards','Open the printable cards and print all twelve, two to a page. Cut them out, and say each animal’s name as you cut.'],
+   ['Say the sound','Pick a card, hold it up and make its sound. Woof! Moo! Tweet! Silly sounds count double.'],
+   ['Act the animal out','Walk like a dog, waddle like a duck, stomp like an elephant. Can somebody guess which animal you are?'],
+   ['Match card to world','Put three cards on the table and find the same animals in a picture book. Then color your favorite card with the Write & Color tool.']
   ],
   printHref:'/preschool/3-years/animals-and-their-sounds/print/',fcHref:'/flashcards/animal-sounds/'
  });
  const learnSection=`<section class="wrap lesson-section" id="meet-the-animals" aria-label="Meet the animals">
   <span class="eyebrow">MEET THE ANIMALS</span>
   <h2>Twelve animal friends.</h2>
-  <p class="lesson-copy">Say each animal’s name as it arrives, then make its sound together — any version your child likes is the right version. Use the arrows to wander, or simply scroll: all twelve cards are below.</p>
+  <p class="lesson-copy">Say each animal’s name when you see it. Then make its sound! Your woof can sound however you like. Tap the arrows to go card by card, or just scroll down. All twelve are waiting.</p>
   <div class="lv-groups" data-an-groups hidden><button type="button" class="lv-group-chip is-on" data-an-group-filter="all" aria-pressed="true">All 12</button><button type="button" class="lv-group-chip" data-an-group-filter="farm" aria-pressed="false">Farm friends</button><button type="button" class="lv-group-chip" data-an-group-filter="wild" aria-pressed="false">Wild ones</button></div>
   <div class="lv-frame" data-lesson-viewer>
    <div class="lv-stage" data-lv-stage></div>
@@ -112,7 +112,7 @@ export function animalsClassBody(L){
    <div class="lv-begin"><button type="button" class="button" data-lv-start>Start the animal cards</button><span class="lv-beginhint">Or simply scroll: all ${CARDS.length} cards are below.</span></div>
   </div>
   <div class="lv-grid" data-lv-grid>${slides}</div>
-  <div class="tc-hunt"><h3>Say the sounds together</h3><ul class="lesson-prompts"><li>Farm friends first: woof, meow, moo, baa, quack, cluck, neigh, oink — the sounds that happen at a farm, all day long.</li><li>Wild ones next: roar, trumpet, ribbit and tweet — big voices from the jungle, the pond and the trees outside your window.</li></ul></div>
+  <div class="tc-hunt"><h3>Say the sounds together</h3><ul class="lesson-prompts"><li>Farm friends first. Woof, meow, moo, baa, quack, cluck, neigh, oink! Those are the sounds you’d hear all day on a farm.</li><li>Now the wild ones. Roar, toot (that’s the elephant), ribbit and tweet! Big voices from the jungle, the pond and the trees outside your window.</li></ul></div>
  </section>`;
 
  // Listen: hear the sounds — the real sound board. Nine animals have
@@ -122,10 +122,10 @@ export function animalsClassBody(L){
  const soundSection=`<section class="wrap lesson-section" id="hear-the-sounds" aria-label="Hear the sounds">
   <span class="eyebrow">LISTEN · HEAR THE SOUNDS</span>
   <h2>Press play, then press it again.</h2>
-  <p class="lesson-copy">These are real animal sounds. Tap play, listen together, then say the sound in your own voice — your voice is the one your child is learning from, so make it big. Play it again and again; repetition is the whole game.</p>
+  <p class="lesson-copy">These are real animals! Tap play and listen. Then say the sound back in your own voice, as big as you can. Want to hear it again? Tap it again. Playing it over and over is the fun part.</p>
   <div class="an-sound-board" data-an-sound-board>${soundCards}</div>
   <noscript><p class="fc-hint">The sound buttons need JavaScript. Everything else works without it — and making the sounds yourselves is the best part anyway.</p></noscript>
-  <p class="lesson-note">Duck, elephant and frog are on the cards above, and their recordings are on the way — until then, you make the quack, the trumpet and the ribbit yourselves. You are probably better at it anyway.</p>
+  <p class="lesson-note">The duck, the elephant and the frog are on the cards above, and their recordings are on the way — until then, you make the quack, the trumpet and the ribbit yourself. You’re probably better at it anyway.</p>
  </section>`;
 
  // Play: guess the animal — the shared find-it engine with a replay button
@@ -166,29 +166,29 @@ ${playBtn(t,'Play the sound',true)}
  const offScreenSection=`<section class="wrap lesson-section" id="off-screen" aria-label="Take it off screen">
   <span class="eyebrow">OFF-SCREEN PLAY</span>
   <h2>Be the animal.</h2>
-  <p class="lesson-copy">Animal sounds are made for away-from-screen play: loud, physical and impossible to get wrong. Pick one of these — two minutes is plenty — and follow your child’s lead.</p>
-  <div class="tc-hunt"><h3>Old MacDonald, live from your kitchen</h3><ul class="lesson-prompts"><li>Pick any three animals from the cards and sing their verse: “Old MacDonald had a farm — and on that farm he had a… dog!” Your child picks the next animal and supplies the sound.</li></ul></div>
-  <div class="tc-hunt"><h3>Move like the animal</h3><ul class="lesson-prompts"><li>Draw a card and move like the picture: gallop like the horse, waddle like the duck, prowl like the lion, hop like the frog. You take turns calling the animal; the other one moves.</li></ul></div>
-  <div class="tc-hunt"><h3>Sound walk</h3><ul class="lesson-prompts"><li>On the way to school or the shops, listen for real animals — a dog on a porch, birds in the trees. Say the animal word and its sound together each time you spot one.</li></ul></div>
-  <div class="tc-hunt"><h3>Zoo box guess</h3><ul class="lesson-prompts"><li>Put two or three animal toys (or drawn cards) in a box. One of you hides an animal and makes its sound; the other reaches in and finds the right one by ear.</li></ul></div>
-  <p class="lesson-note">Stay close, keep it playful and stop while it is still fun. There is nothing to finish here.</p>
+  <p class="lesson-copy">Time to get up and be the animals! It’s loud, it’s wiggly, and you can’t get it wrong. Pick one game. Two minutes is plenty.</p>
+  <div class="tc-hunt"><h3>Old MacDonald, live from your kitchen</h3><ul class="lesson-prompts"><li>Pick any three animals from your cards and sing their verse. “Old MacDonald had a farm, and on that farm he had a… dog!” Then you choose the next animal and make its sound.</li></ul></div>
+  <div class="tc-hunt"><h3>Move like the animal</h3><ul class="lesson-prompts"><li>Pick a card and move like the animal. Gallop like a horse, waddle like a duck, prowl like a lion, hop like a frog. Take turns: one of you picks the animal, and the other one moves.</li></ul></div>
+  <div class="tc-hunt"><h3>Sound walk</h3><ul class="lesson-prompts"><li>Next time you go outside, listen for real animals. A dog on a porch? Birds in the trees? When you hear one, say its name and make its sound.</li></ul></div>
+  <div class="tc-hunt"><h3>Zoo box guess</h3><ul class="lesson-prompts"><li>Put two or three animal toys (or animal cards) in a box. One player hides an animal and makes its sound. The other player reaches in and finds the right one, just by listening.</li></ul></div>
+  <p class="lesson-note">Stop when it stops being fun. There’s nothing to finish.</p>
  </section>`;
 
  const printSection=`<section class="wrap lesson-section tc-printables" id="printables" aria-label="Print the cards">
   <span class="eyebrow">PRINT THE CARDS</span>
-  <h2>Take the animals to the kitchen table.</h2>
-  <p class="lesson-copy">All twelve cards print two to a page, in card order, straight from your browser — no PDF, nothing to install. Cut them out and the whole set plays on the table.</p>
+  <h2>Take the animals to the kitchen table!</h2>
+  <p class="lesson-copy">Print all twelve cards, two to a page. Cut them out and you can play with the whole set on the table.</p>
   <div class="hero-actions tc-print-actions"><a class="button" href="${CLASS_PATH}print/">View Printable Cards <span aria-hidden="true">↗</span></a><button type="button" class="button button-ghost" data-tc-print-open="${CLASS_PATH}print/?print=1">Print Cards</button></div>
-  <p class="lesson-note">Printed cards love fridges, bedroom doors and kitchen tables. The same cards also live in the <a href="${SET_URL}">flashcards library</a>, each with its own page.</p>
+  <p class="lesson-note">Stick them on the fridge or your bedroom door. You can also find the same cards in the <a href="${SET_URL}">animal flashcards</a>.</p>
  </section>`;
 
- const teacherNoteSection=`<section class="wrap lesson-section"><span class="eyebrow">TEACHER NOTE</span><h2>One last word from class.</h2><div class="tc-note-block tc-teacher"><p class="tc-say">“What a noisy, wonderful class! Your child heard real animals and answered every one of them in their own voice — that back-and-forth IS the lesson. Keep the sounds alive on your walks: a dog, a bird, a cow behind a fence. See you in class!”</p><p class="tc-who">— Your Kiddo School teacher</p></div></section>`;
+ const teacherNoteSection=`<section class="wrap lesson-section"><span class="eyebrow">TEACHER NOTE</span><h2>One last word from class.</h2><div class="tc-note-block tc-teacher"><p class="tc-say">“What a noisy, wonderful class! You listened to real animals and answered every one of them with your own voice. That’s exactly how you learn. Keep listening when you go outside: a dog, a bird, a cow behind a fence. See you next time!”</p><p class="tc-who">— Your Kiddo School teacher</p></div></section>`;
  const principalSection=`<section class="wrap lesson-section tc-principal"><span class="eyebrow">A NOTE FROM THE PRINCIPAL</span><h2>For the grown-ups.</h2><p class="lesson-copy">Sound play is language practice wearing a costume: every woof your child makes exercises the same listening, breath control and word-making skills that sentences need later. If your child repeats one sound forty times, that is not a hiccup — that is the lesson working. The recordings here are real animals, but your voice is the one that counts: play the sound once, then answer it in your own voice so your child can copy a human.</p><p class="lesson-copy"><a href="/about/#principal">More from the Principal’s Office <span aria-hidden="true">↗</span></a></p></section>`;
 
  const completeSection=`<section class="wrap lesson-section tc-complete" id="class-complete" aria-label="Class complete">
   <span class="eyebrow">CLASS COMPLETE</span>
   <h2>Wonderful listening!</h2>
-  <p class="lesson-copy">Whether you met two animals or all twelve, that was the whole class — and stopping early is always allowed. The sounds will be right here, and so will the match board, whenever you come back. The animal voices are already busy in your house: at the window, in the bath, in every storybook.</p>
+  <p class="lesson-copy">You did it! Whether you met two animals or all twelve, that was a whole class. The sounds will be right here whenever you want to come back. Now keep your ears open. Animals are hiding at the window, in your storybooks, even in the bath.</p>
   <div class="hero-actions"><a class="button" href="#todays-class">Explore Again <span aria-hidden="true">↑</span></a><a class="button button-ghost" href="${SET_URL}">View Animal Flashcards <span aria-hidden="true">↗</span></a><a class="button button-ghost" href="/learning-path/">Learning Path <span aria-hidden="true">↗</span></a></div>
   <div class="lesson-path"><a class="fc-stage lesson-card-link" href="/preschool/3-years/body-parts-and-five-senses/"><div class="fc-stage-pills"><span class="fc-age">Where next</span><span class="fc-class">Class 7</span></div><h3>Body Parts &amp; My Five Senses</h3><p>The next preschool class is ready: twenty-four cards about your own body — the five senses, printable sheets to solve and safe off-screen exploring.</p><span class="fc-open">Go to the next class <span aria-hidden="true">↗</span></span></a></div>
  </section>`;
@@ -214,7 +214,7 @@ ${playBtn(t,'Play the sound',true)}
  ${`<section class="wrap lesson-section" id="todays-class" aria-label="Today’s class">
   <span class="eyebrow">TODAY’S CLASS</span>
   <h2>How today’s class works.</h2>
-  <p class="lesson-copy">Five little steps, in any order that suits you: a welcome from your teacher, the animal cards, real sounds to hear, solving the animal sheets together, off-screen play, and a warm goodbye. Stop after any step — that is a complete class, and there is never a score at the end.</p>
+  <p class="lesson-copy">Here’s how class goes: say hi, meet the animals, listen to their real sounds, do the animal sheets, then get up and play. You can do the steps in any order. Stop whenever you want, because stopping still counts as a whole class. Nobody is keeping score.</p>
   <ol class="tc-flow">
    <li><span>1</span> Teacher welcome</li>
    <li><span>2</span> Meet the animals</li>
@@ -223,7 +223,7 @@ ${playBtn(t,'Play the sound',true)}
    <li><span>5</span> Take it off screen</li>
    <li><span>6</span> Class complete</li>
   </ol>
-  <div class="tc-note-block tc-teacher"><span class="eyebrow">TEACHER WELCOME</span><p class="tc-say">“Hello, my friend — and hello to you, grown-up helper! Today the classroom is a barnyard: we will meet twelve animal friends, listen to their real sounds and make every single one of them ourselves. Woof, moo, roar — ready when you are!”</p><p class="tc-who">— Your Kiddo School teacher</p></div>
+  <div class="tc-note-block tc-teacher"><span class="eyebrow">TEACHER WELCOME</span><p class="tc-say">“Hello, my friend! Guess what? Today our classroom is a barnyard. We’re going to meet twelve animal friends, listen to their real sounds, and make every one of those sounds ourselves. Woof! Moo! Roar! Ready? Let’s go!”</p><p class="tc-who">— Your Kiddo School teacher</p></div>
   <div class="lesson-start"><a class="button" href="#meet-the-animals">Begin the class <span aria-hidden="true">↓</span></a><span class="lesson-start-hint">First stop: the animal cards. Or jump straight to the sounds below.</span></div>
  </section>`}
  ${learnSection}
