@@ -1359,5 +1359,16 @@ for(const f of walkAll('dist').filter(f=>f.endsWith('.html'))){
  });
  if(o2!==h)writeFileSync(f,o2);
 }
+/* NO PICTURE JUMPS: a tile whose picture links to a card section on the SAME page (#slug) is unwrapped, so tapping a picture never scrolls away or looks like an individual page. */
+for(const f of walkAll('dist').filter(f=>f.endsWith('/index.html'))){
+ const self=f.slice(4,-10);
+ const h=readFileSync(f,'utf8');
+ const o=h.replace(/<a\b([^>]*?)\bhref="([^"]*)"([^>]*)>((?:(?!<\/a>)[\s\S])*?<img\b(?:(?!<\/a>)[\s\S])*?)<\/a>/g,(m,a1,href,a2,inner)=>{
+  const same=href.startsWith('#')||href.startsWith(self+'#')||false;
+  if(!same||/class="brand"/.test(a1+a2)||/<a\b/.test(inner))return m;
+  return '<span'+(a1+a2).replace(/\s(?:aria-label|target|rel|data-[a-z-]+)="[^"]*"/g,'')+'>'+inner+'</span>';
+ });
+ if(o!==h)writeFileSync(f,o);
+}
 writeFileSync('dist/build-info.json',JSON.stringify({siteUrl:site,indexable,pages:allRoutes.length+2,activities:activities.length},null,2));
 console.log(`Built ${allRoutes.length+2} pages and ${activities.length} activity sheets. Canonical origin: ${site}. Indexing: ${indexable?'enabled':'disabled (preview)'}.`);

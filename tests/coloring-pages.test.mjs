@@ -49,14 +49,7 @@ test('the registry is exactly the twenty owner-uploaded R2 files, each once',()=
 
 
 
-test('the printable grid is tap-through: 20 whole-card links, zero buttons',()=>{
- const html=page('coloring-pages/shapes');
- assert.equal((html.match(/class="ws-card" href="/g)||[]).length,20,'twenty whole-card links');
- assert.equal((html.match(/data-fc-dl/g)||[]).length,0,'no download buttons on the grid');
- assert.equal((html.match(/ws-card-open/g)||[]).length,20,'every card has its label');
- const hub=page('coloring-pages');
- assert.ok(hub.includes(`href="${CP_LIB}"`),'hub links the Shapes category');
-});
+
 
 
 

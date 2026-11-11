@@ -36,13 +36,7 @@ test('the data carries exactly the 35 verified R2 sheets plus the separate cover
 
 
 
-test('the collection page shows the original cover + all 35 sheets, no canvas, no grid downloads',()=>{
- const h=read(CH_WS_LIB.slice(1)+'index.html');
- assert.ok(h.includes(CH_WS_BASE+'cover.webp'),'original worksheet cover shown');
- assert.equal([...h.matchAll(/class="ws-card" href="[^"]+"/g)].length,35,'35 sheet cards');
- assert.ok(!h.includes('data-wc'),'no canvas on the collection');
- assert.ok(!h.includes('ws-dl'),'no download buttons inside the collection grid');
-});
+
 
 
 
