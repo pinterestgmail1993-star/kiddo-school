@@ -67,7 +67,7 @@ export const meta={
  name:'Playground',
  seoTitle:'Playground Flashcards for Preschoolers — 32 Actions, Equipment & Manners',
  h1:'Playground flashcards.',
- metaDescription:'Thirty-two Playground flashcards for ages 2–5: fifteen action words from balance to walk, twelve pieces of playground equipment from ball to tunnel and five playground manners from help to wait — each card with its own page, a download button and short notes for grown-ups.',
+ metaDescription:'Thirty-two Playground flashcards for ages 2–5: fifteen action words from balance to walk, twelve pieces of playground equipment from ball to tunnel and five playground manners from help to wait — each card right here on one page, a download button and short notes for grown-ups.',
  lede:'Thirty-two cards from the school\u2019s Playground: the words our bodies do there — balance, jump, swing — the things on the ground, from the ball to the tunnel, and the five manners that make play work together. Every card carries its picture word, the words to say together and one game — the whole playground, ready to print.',
  hubBlurb:'Action words, playground things and the manners that make play work — run, swing, share: the whole playground in one set.',
  ageLabel:'2–5 years',

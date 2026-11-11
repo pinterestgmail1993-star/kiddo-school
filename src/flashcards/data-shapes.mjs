@@ -18,7 +18,7 @@ export const shapesMeta={
  h1:'Shape Flashcards for Preschoolers',
  metaDescription:'Twelve shape flashcards for preschoolers: circle, square, triangle, star, heart and more, with shape hunts, naming games and simple pattern play for home.',
  lede:'Twelve shape cards, from the everyday circle to the eight-sided octagon. One big friendly shape per card, its name to read together, and a shape hunt to try — pick a card, name it and go find it in your house.',
- hubBlurb:'Twelve shapes from circle to octagon, each with its own card, its own page and a shape hunt to try.',
+ hubBlurb:'Twelve shapes from circle to octagon, each with its own card and a shape hunt to try.',
  ageLabel:'3–4 years',
  noun:'Preschoolers',
  useIdeas:[

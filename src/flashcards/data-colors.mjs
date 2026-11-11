@@ -22,7 +22,7 @@ export const colorsMeta={
  h1:'Color Flashcards for Preschoolers',
  metaDescription:'Twelve color flashcards for preschoolers: a color splash and a real-world picture for red, blue, yellow, green and more, with color hunts, mixing games and activities for home.',
  lede:'Twelve color cards with two faces each: a big paint splash with the color word, and a matching picture from real life — a red apple, a blue car, a yellow sun. Name the color, find the picture, then go find the color in your house.',
- hubBlurb:'Twelve colors from red to rainbow, each with a splash card, a matching picture card and its own page.',
+ hubBlurb:'Twelve colors from red to rainbow, each with a splash card and a matching picture card.',
  ageLabel:'3–4 years',
  noun:'Preschoolers',
  useIdeas:[

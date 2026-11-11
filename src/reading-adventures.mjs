@@ -472,7 +472,7 @@ export function readingClassBody(){
  <section class="wrap fc-section" id="sight-words" aria-label="Sight word lessons">
   <span class="eyebrow">LEARN · 52 SIGHT WORD LESSONS</span>
   <h2>Learn the sight words, one card at a time.</h2>
-  <p class="fc-hint">The small words on every page of a first book: a, the, I, can, see, blue and more. Tap any card to open its lesson: the flashcard with a drawing canvas on the left, and on the right how to teach the word, how to say it and where to use it. Start at the top and work down, three new words a day at most.</p>
+  <p class="fc-hint">The small words on every page of a first book: a, the, I, can, see, blue and more. Work through the lessons right here on this page: each card pairs the flashcard with how to teach the word, how to say it and where to use it. Start at the top and work down, three new words a day at most.</p>
   <div class="lp-tiles">${swLesson.cards.map(c=>`<a class="lp-tile" href="${swLesson.lessonUrlBase}${c.slug}/"><img src="${swLesson.r2Base+swLesson.folder+c.file}" width="${c.w}" height="${c.h}" alt="${esc(c.alt)}" loading="lazy"><strong>${esc(swLp[c.slug].title)}</strong></a>`).join('')}</div>
   <p class="lesson-note">The whole shelf also lives on the <a href="/preschool/4-years/sight-words/">Sight Words hub</a> — one page with all fifty-two lessons. Every lesson pairs with a printable card in the <a href="/flashcards/sight-words/">Sight Words flashcard set</a>, with its own download button and notes for grown-ups.</p>
  </section>

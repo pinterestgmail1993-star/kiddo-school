@@ -518,13 +518,13 @@ export function lifeSkillsClassBody(){
  <section class="wrap fc-section" id="teach" aria-label="How to teach the 28 life skills">
   <span class="eyebrow">LEARN WITH FLASHCARDS · HOW TO TEACH THE 28 LIFE SKILLS</span>
   <h2>Teach every skill, step by step.</h2>
-  <p class="fc-hint">Twenty-eight skills, one picture each. Tap any picture and it opens its own lesson page — the original artwork with a drawing canvas on the left, and how to teach the skill, step by step, on the right: what it is, why it matters, the words to say and a way to practise the real thing the same day.</p>
+  <p class="fc-hint">Twenty-eight skills, one picture each. Every skill is right here on this page — the original artwork beside how to teach it, step by step: what it is, why it matters, the words to say and a way to practise the real thing the same day.</p>
   <div class="lp-tiles">${learnTiles}</div>
  </section>
  <section class="wrap lesson-section" id="activities" aria-label="The life skills activities">
   <span class="eyebrow">PRACTISE WITH WORKSHEETS · THE LIFE SKILLS ACTIVITIES</span>
   <h2>Real sheets, done right here.</h2>
-  <p class="lesson-copy">Twenty-nine genuine activity sheets, one picture each — tap a sheet and it opens its own activity page: the sheet sits on the left and your child traces, circles, counts and draws straight on top of it, with how to solve it written beside them and the drawing tools under their fingers. Nothing to print unless you want to — each sheet has a printable twin in the worksheet library.</p>
+  <p class="lesson-copy">Twenty-nine genuine activity sheets, one picture each — every sheet is right here: the sheet sits on the left and your child traces, circles, counts and draws straight on top of it, with how to solve it written beside them and the drawing tools under their fingers. Nothing to print unless you want to — each sheet has a printable twin in the worksheet library.</p>
   <div class="sa-grid">${cards}</div>
   ${missing}
  </section>
@@ -619,7 +619,7 @@ export function lifeSkillsWsCategoryBody(){
  <section class="wrap lesson-section"><span class="eyebrow">KEEP EXPLORING</span><h2>Where these come from.</h2>
   <div class="fc-stages">
    <a class="fc-stage lesson-card-link" href="${LS_CLASS_PATH}"><div class="fc-stage-pills"><span class="fc-age">Ages 4–5</span><span class="fc-class">Class 32</span></div><h3>Life Skills &amp; Good Habits</h3><p>The class behind these worksheets — do every sheet on screen with the drawing layer before it hits the fridge.</p><span class="fc-open">Open Class 32 <span aria-hidden="true">↗</span></span></a>
-   <a class="fc-stage lesson-card-link" href="/worksheets/"><div class="fc-stage-pills"><span class="fc-age">All ages</span><span class="fc-class">Library</span></div><h3>The Worksheet Library</h3><p>All the school’s printable subjects, each with its own page, download and print buttons.</p><span class="fc-open">Browse all worksheets <span aria-hidden="true">↗</span></span></a>
+   <a class="fc-stage lesson-card-link" href="/worksheets/"><div class="fc-stage-pills"><span class="fc-age">All ages</span><span class="fc-class">Library</span></div><h3>The Worksheet Library</h3><p>All the school’s printable subjects, with download and print buttons on every set page.</p><span class="fc-open">Browse all worksheets <span aria-hidden="true">↗</span></span></a>
   </div>
  </section>`;
 }

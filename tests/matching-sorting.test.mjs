@@ -47,93 +47,85 @@ test('the registry is exactly the thirty-one owner-uploaded R2 files, each once'
  }
 });
 
-test('all 63 new pages exist with unique titles and self-matching canonicals',()=>{
- const pages=[[MS_WS_BASE]];
- for(const s of SLUGS){pages.push([MS_WS_BASE+s+'/'],[MS_ACT_PATH+s+'/']);}
- const titles=new Set(),canons=new Set();
- for(const [u] of pages){
-  assert.ok(existsSync(join(root,u,'index.html')),u+' exists on disk');
-  const html=page(u.slice(1));
-  const t=(html.match(/<title>([^<]+)<\/title>/)||[])[1];
-  assert.ok(t&&!titles.has(t),'unique title for '+u+': '+t);
-  titles.add(t);
-  const c=(html.match(/rel="canonical" href="([^"]+)"/)||[])[1];
-  assert.ok(c&&c.endsWith(u),'canonical matches '+u);
-  assert.ok(!canons.has(c),'canonical unique: '+c);
-  canons.add(c);
+test('every per-item page is gone; its URL 301s to the main page',()=>{
+ for(const s of SLUGS){
+  assert.ok(!existsSync(join(root,MS_WS_BASE+s,'index.html')),s+' printable page removed');
+  assert.ok(!existsSync(join(root,MS_ACT_PATH+s,'index.html')),s+' activity page removed');
  }
- assert.equal(pages.length,63,'category + 62 pages');
+ const xml=read('sitemap.xml');
+ assert.ok(!xml.includes(MS_ACT_PATH+'match-same-colors/'),'sitemap carries no activity page');
+ assert.ok(!xml.includes(MS_WS_BASE+'match-same-colors/'),'sitemap carries no printable page');
+ const red=read('_redirects');
+ for(const s of [SLUGS[0],SLUGS[15],SLUGS[30]]){
+  assert.ok(red.includes(MS_ACT_PATH+s+'/ '+MS_ACT_PATH+' 301'),'301: activity '+s);
+ }
+ assert.ok(red.includes('/worksheets/:p1/:p2/:p3 /worksheets/:p1/:p2/ 301'),'301 placeholder covers the printables');
 });
 
-test('activity pages: original image + drawing layer + ?draw=1 + restore key + twin link',()=>{
+
+test('the class page folds all 31 activities with their original artwork',()=>{
+ const cls=page('toddler/2-years/matching-and-sorting');
+ assert.ok(cls.includes('MATCHING &amp; SORTING ACTIVITIES'),'the section is there');
  for(const a of msPages){
-  const html=page('toddler/2-years/matching-and-sorting/'+a.slug);
-  assert.ok(html.includes(`data-wc data-wc-src="${MS_BASE}${a.img}?draw=1"`),'original R2 picture feeds the drawing layer with its own cache key: '+a.slug);
-  assert.ok(html.includes(`src="${MS_BASE}${a.img}?draw=1"`),'the sheet img shares the CORS-safe cache key: '+a.slug);
-  assert.ok(html.includes('crossorigin="anonymous"'),'sheet loads in CORS mode so saves can compose: '+a.slug);
-  assert.ok(html.includes('data-wc-w="1414" data-wc-h="2000"'),'natural proportions declared: '+a.slug);
-  assert.ok(html.includes(`data-wc-restore="matching-sorting/${a.slug}"`),'per-child save & restore key: '+a.slug);
-  assert.ok(html.includes('data-wc-toolbar="#ms-tools"'),'tools live in the right rail: '+a.slug);
-  assert.ok(html.includes('rel="prev"')&&html.includes('rel="next"'),'prev/next: '+a.slug);
-  assert.ok(html.includes(`href="${MS_WS_BASE}${a.slug}/"`),'links the printable twin: '+a.slug);
-  assert.ok(!html.includes('data-ms-download'),'activity page is not a download page: '+a.slug);
-  assert.ok(html.includes(`href="${MS_ACT_PATH}${msPages[(msPages.indexOf(a)+1)%31].slug}/"`),'next activity wired: '+a.slug);
-  assert.ok(!html.includes('cover.webp'),'activity '+a.slug+' never touches the cover');
+  const i=cls.indexOf(`id="${a.slug}"`);
+  assert.ok(i>=0,'folded article '+a.slug);
+  const seg=cls.slice(i,i+6000);
+  assert.ok(seg.includes(MS_BASE+a.img),'original R2 picture: '+a.slug);
+  assert.ok(!seg.includes(`href="${MS_ACT_PATH}${a.slug}/"`),'no self link: '+a.slug);
  }
+ assert.ok(!cls.includes('data-wc-src'),'no drawing mounts left on the class page');
+ assert.ok(!cls.includes('data-wc-restore'),'no restore keys left on the class page');
 });
 
-test('printable pages: no canvas, download + print + feedback + solve online',()=>{
+
+test('the worksheet set folds all 31 printables with their artwork and downloads',()=>{
+ const set=page('worksheets/toddler/matching-and-sorting');
+ assert.equal([...set.matchAll(/<article class="one-page-item"/g)].length,31,'thirty-one folded printables');
  for(const a of msPages){
-  const html=page('worksheets/toddler/matching-and-sorting/'+a.slug);
-  assert.ok(!html.includes('data-wc '),'printable must not carry a drawing mount: '+a.slug);
-  assert.ok(!html.includes('?draw=1'),'printable keeps the plain URL (no canvas cache key needed): '+a.slug);
-  assert.ok(html.includes(`data-ms-download="${MS_BASE}${a.img}"`),'original image download: '+a.slug);
-  assert.ok(html.includes('data-ms-print'),'print button: '+a.slug);
-  assert.ok(html.includes('data-fc-root'),'existing family feedback mount: '+a.slug);
-  assert.ok(html.includes(`href="${MS_ACT_PATH}${a.slug}/"`),'Solve it online: '+a.slug);
-  assert.ok(html.includes('Solve it online'),'the button is labelled: '+a.slug);
-  assert.ok(html.includes('rel="prev"')&&html.includes('rel="next"'),'prev/next: '+a.slug);
-  assert.ok(html.includes('MORE MATCHING &amp; SORTING'),'related pages: '+a.slug);
-  assert.ok(html.includes('href="/worksheets/"'),'breadcrumb to the library: '+a.slug);
-  assert.ok(!html.includes('cover.webp'),'printable '+a.slug+' never touches the cover');
+  const i=set.indexOf(`id="${a.slug}"`);
+  assert.ok(i>=0,'folded printable '+a.slug);
+  const seg=set.slice(i,i+6000);
+  assert.ok(seg.includes(`src="${MS_BASE}${a.img}"`),'plain R2 url, no draw key: '+a.slug);
+  assert.ok(seg.includes(`href="${MS_BASE}${a.img}" download`),'real download link with the SEO file name: '+a.slug);
+  assert.ok(!seg.includes('data-wc '),'no drawing mount: '+a.slug);
  }
+ assert.ok(!set.includes('?draw=1'),'printables keep the plain URL');
 });
 
-test('the worksheet grid is tap-through: 31 whole-card links, zero buttons',()=>{
+
+test('the worksheet grid is a one-page shelf: no per-sheet jump links',()=>{
  const html=page('worksheets/toddler/matching-and-sorting');
- assert.equal((html.match(/class="ws-card" href="/g)||[]).length,31,'thirty-one whole-card links');
- assert.equal((html.match(/data-ms-download|data-fc-dl/g)||[]).length,0,'no download buttons on the grid');
- assert.equal((html.match(/ws-card-open/g)||[]).length,31,'every card has its label');
- assert.ok(html.includes(`class="lesson-cover"`),'category hero uses the cover figure');
+ assert.equal((html.match(/class="ws-card" href="/g)||[]).length,0,'no per-sheet jump links');
+ assert.ok(html.includes('class="lesson-cover"'),'category hero uses the cover figure');
  assert.ok(html.includes(`src="${MS_COVER.url}"`),'category hero wears the cover');
  const hub=page('worksheets');
  assert.ok(hub.includes(`href="${MS_WS_BASE}"`),'library hub links the new category');
 });
 
-test('Class 10 carries the Matching & Sorting section with 31 ribbon cards',()=>{
+
+test('Class 10 keeps its 31 ribbon cards, now without any jump links',()=>{
  const cls=page('toddler/2-years/matching-and-sorting');
- assert.ok(cls.includes('MATCHING &amp; SORTING ACTIVITIES'),'the section is there');
  assert.equal((cls.match(/data-ms-card="/g)||[]).length,31,'thirty-one activity cards');
- assert.ok(cls.includes(`href="${MS_ACT_PATH}match-same-colors/"`),'first activity linked');
+ assert.ok(!cls.includes(`href="${MS_ACT_PATH}match-same-colors/"`),'no per-item links');
  assert.ok(cls.includes(`href="${MS_WS_BASE}"`),'printable collection linked');
  assert.ok(cls.includes('id="off-screen"'),'the rest of the class page stays intact');
- // the other classes stay untouched — no matching cards anywhere else
  const cs=page('toddler/2-years/colors-and-shapes');
  assert.equal((cs.match(/data-ms-card/g)||[]).length,0,'Class 9 untouched');
 });
 
+
 test('no new top-level header entry: the collection lives under Worksheets',()=>{
- for(const u of ['','toddler/2-years/matching-and-sorting','worksheets','worksheets/toddler/matching-and-sorting/match-same-colors']){
+ for(const u of ['','toddler/2-years/matching-and-sorting','worksheets','worksheets/toddler/matching-and-sorting']){
   const html=page(u);
   const nav=html.slice(html.indexOf('<nav'),html.indexOf('</nav>'));
   assert.ok(!nav.includes(MS_WS_BASE),'no top-level nav link to the collection on /'+u);
   assert.ok(nav.includes('href="/worksheets/"'),'header keeps the Worksheets entry on /'+u);
  }
- // and the Worksheets header link is current across the new printables
- const nav=page('worksheets/toddler/matching-and-sorting/sort-red-and-blue').slice(
-  page('worksheets/toddler/matching-and-sorting/sort-red-and-blue').indexOf('<nav'),page('worksheets/toddler/matching-and-sorting/sort-red-and-blue').indexOf('</nav>'));
- assert.ok(nav.includes('aria-current="page"'),'Worksheets marked current on a printable page');
+ const navHtml=page('worksheets/toddler/matching-and-sorting');
+ const nav=navHtml.slice(navHtml.indexOf('<nav'),navHtml.indexOf('</nav>'));
+ assert.ok(nav.includes('aria-current="page"'),'Worksheets marked current on the set page');
 });
+
 
 
 

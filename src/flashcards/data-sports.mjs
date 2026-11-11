@@ -75,7 +75,7 @@ export const meta={
  // SEO: the phrases families search in the US ("gross motor activities"),
  // Canada ("physical literacy"), Australia and New Zealand ("fundamental
  // movement skills", "active play") — woven in, never stuffed.
- metaDescription:'Forty printable sports flashcards for ages 4–5 that build gross motor skills, fundamental movement skills and physical literacy through active play: soccer to swimming, gymnastics to judo — each with its own page, a download button and a home game for grown-ups.',
+ metaDescription:'Forty printable sports flashcards for ages 4–5 that build gross motor skills, fundamental movement skills and physical literacy through active play: soccer to swimming, gymnastics to judo — each right here on one page, a download button and a home game for grown-ups.',
  lede:'Forty cards that turn the whole wide world of sport into active play a four-year-old can start today: the ball games every playground knows, the run-jump-throw heart of athletics, the water sports, the wheels and boards and ice, climbing and riding, the aim-and-precision games, the martial arts and one mighty lift. Every card is a gross motor skill with a name — and every name is a game the body already wants to play.',
  hubBlurb:'Forty sports and movement cards — soccer to swimming, karate to cycling — one gross motor skill per card, ready to try in the living room.',
  ageLabel:'4–5 years',

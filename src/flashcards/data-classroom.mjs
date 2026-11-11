@@ -59,7 +59,7 @@ export const meta={
  name:'Classroom',
  seoTitle:'Classroom Flashcards for Kids — 30 Printable Object & Good-Habit Cards',
  h1:'Classroom flashcards.',
- metaDescription:'Thirty printable classroom flashcards in two groups: eighteen object cards from backpack to wastebasket that name the things a school day uses, and twelve good-habit cards — listening, raising a hand, sharing, saying please — each with its own page and a two-minute game.',
+ metaDescription:'Thirty printable classroom flashcards in two groups: eighteen object cards from backpack to wastebasket that name the things a school day uses, and twelve good-habit cards — listening, raising a hand, sharing, saying please — each right here on one page and a two-minute game.',
  lede:'Thirty cards that name the room school happens in. Eighteen of them are the things your child sees every morning — the backpack, the desk, the whiteboard, the little clock on the wall — and twelve are the good habits every classroom runs on: listening, raising a hand, sharing, saying please and thank you, walking feet inside. Point at the card, then find the real thing; say the habit, then try it today.',
  hubBlurb:'Thirty classroom cards in two groups — eighteen objects from backpack to wastebasket and twelve good habits from listening to clean-up — one thing to say and one thing to do on every card.',
  ageLabel:'2–6 years',

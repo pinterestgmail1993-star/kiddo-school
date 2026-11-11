@@ -127,7 +127,7 @@ const SOURCES=[
  [{meta:bpData.bodyPartsMeta,cards:bpData.bodyPartsCardContent},bpData.bodyPartsLesson],
  // Age 3 Class 8: sixteen foods — eight fruits, eight vegetables. The folder
  // has no cover file, so the strawberry card fronts the set (colors-class
- // precedent). Each card has its own page.
+ // precedent). Every card is right here on one page.
  [{meta:fvData.fruitsMeta,cards:fvData.fruitsCardContent},fvData.fruitsLesson],
  // Preschool Class 32: twenty-eight life-skills cards from the owner's Canva
  // uploads in the class's own R2 folder (self-contained lesson object — the
@@ -530,8 +530,8 @@ export function fcSetPageBody(s){
  return `${crumbNav([['Flashcards','/flashcards/'],[s.name]])}
  ${heading('FLASHCARD SET · AGES '+esc(s.ageLabel.toUpperCase()),s.h1,esc(s.lede))}
  ${stageLink}
- <section class="wrap fc-section"><span class="eyebrow">THE CARDS</span><h2>Every card in the set.</h2><p class="fc-hint">${s.pillGroups?'Each card has its own page, and every card shows its age pill — start with the group that fits your child today.':'Each card has its own page: the picture and short, practical notes for grown-ups — what it is for, how to use it, how to print it. Tap any card to open it.'}</p>${grid}</section>
- ${letterSets?`<section class="wrap fc-section"><span class="eyebrow">ALPHABET LETTER SETS</span><h2>The same letters, six more ways.</h2><p class="fc-hint">Individual letter-card sets with their own clean pages — every card has its own download button and its own card page.</p><div class="fc2-relrow">${letterSets}</div></section>`:''}
+ <section class="wrap fc-section"><span class="eyebrow">THE CARDS</span><h2>Every card in the set.</h2><p class="fc-hint">${s.pillGroups?'Every card is right here on one page, and every card shows its age pill — start with the group that fits your child today.':'Every card is right here on one page: the picture and short, practical notes for grown-ups — what it is for, how to use it, how to print it. Read every card right here.'}</p>${grid}</section>
+ ${letterSets?`<section class="wrap fc-section"><span class="eyebrow">ALPHABET LETTER SETS</span><h2>The same letters, six more ways.</h2><p class="fc-hint">Individual letter-card sets — every card has its own download button, right on its set page.</p><div class="fc2-relrow">${letterSets}</div></section>`:''}
  <section class="wrap fc-section"><span class="eyebrow">HOW TO USE THESE CARDS</span><h2>Four ways that work.</h2><p class="fc-hint">You do not need a plan or a printer schedule. Pick one idea, try it for two minutes and see what happens.</p>${ideas}</section>
  <section class="wrap fc-section"><span class="eyebrow">PRINT &amp; DOWNLOAD</span><h2>Print the set, download a card.</h2><div class="fc2-actions"><a class="button" href="${s.classUrl||s.lessonPath}">${s.classUrl&&!s.stageName?(s.classBtn||'Step into the room these cards come from'):'View the class these cards come from'} <span aria-hidden="true">↗</span></a>${s.lessonUrlBase?`<a class="button" href="${s.lessonUrlBase}">Open the lessons</a>`:''}${printBtn}<a class="button" href="/flashcards/">All flashcard sets</a></div><p class="fc-hint">${s.downloadHint||'Every card page has its own download button with the full-size image.'}${s.printPath?' The full set has a print-ready page too.':' This set is printed straight from its class page.'}</p></section>
  ${relatedRow?`<section class="wrap fc-section"><span class="eyebrow">MORE CARDS LIKE THESE</span><h2>Families of cards that pair well.</h2>${relatedRow}</section>`:''}

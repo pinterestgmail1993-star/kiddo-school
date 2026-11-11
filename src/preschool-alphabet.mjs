@@ -159,7 +159,7 @@ export function alphabetClassBody(L){
   <h2>Take the alphabet to the kitchen table.</h2>
   <p class="lesson-copy">All twenty-six cards can be printed two to a page, in order, straight from your browser — no PDF, nothing to install.</p>
   <div class="hero-actions tc-print-actions"><a class="button" href="${CLASS_PATH}print/">View Printable Cards <span aria-hidden="true">↗</span></a><button type="button" class="button button-ghost" data-tc-print-open="${CLASS_PATH}print/?print=1">Print Cards</button></div>
-  <p class="lesson-note">Printed cards love fridges, bedroom doors and kitchen tables. The same cards also live in the <a href="${SET_URL}">flashcards library</a>, each with its own page.</p>
+  <p class="lesson-note">Printed cards love fridges, bedroom doors and kitchen tables. The same cards also live in the <a href="${SET_URL}">flashcards library</a>, all right here on this page.</p>
  </section>`;
 
  const completeSection=`<section class="wrap lesson-section tc-complete" id="class-complete" aria-label="Class complete">
@@ -233,14 +233,14 @@ export function preschoolStageBody(){
   {href:'/preschool/3-years/fruits-and-vegetables/',cls:'Class 8',title:'Fruits &amp; Vegetables',copy:'Sixteen food cards — eight fruits, eight vegetables — with printable sheets to sort and solve at the table, color rows and counting together.'}
  ];
  const setCards=[
-  {href:'/flashcards/alphabet/',title:'Alphabet Flashcards A–Z',copy:'Every letter card has its own page with the picture, the words to say together and a download button — print the whole set from the class.'},
-  {href:'/flashcards/numbers-and-counting/',title:'Numbers 1–10 Flashcards',copy:'One to ten with apples, ducks and butterflies — every counting card has its own page, its own prompt and its own download.'},
-  {href:'/flashcards/shapes/',title:'Shape Flashcards',copy:'Twelve shapes from circle to octagon, each with its own page, a real-life shape hunt and a download button.'},
-  {href:'/flashcards/colors/',title:'Color Flashcards',copy:'Twelve colors from red to rainbow — every card pairs a paint splash with a real-world picture, each with its own page and downloads.'},
-  {href:'/flashcards/opposites/',title:'Opposite Flashcards',copy:'Six opposite pairs from big and small to open and closed — every card has its own page, a comparing idea for the table and a download button.'},
-  {href:'/flashcards/animal-sounds/',title:'Animal Flashcards',copy:'Twelve animal cards from dog to bird — every card has its own page, its own sound to hear where a recording is ready and a download button.'},
-  {href:'/flashcards/body-parts-and-five-senses/',title:'Body Parts & Five Senses Flashcards',copy:'Twenty-four cards from head to feel — every body part and every sense word has its own page, a pointing idea for the table and a download button.'},
-  {href:'/flashcards/fruits-and-vegetables/',title:'Fruit & Vegetable Flashcards',copy:'Sixteen food cards from apple to pumpkin — every food has its own page, a kitchen idea and a download button.'}
+  {href:'/flashcards/alphabet/',title:'Alphabet Flashcards A–Z',copy:'Every letter card is right here with the picture, the words to say together and a download button — print the whole set from the class.'},
+  {href:'/flashcards/numbers-and-counting/',title:'Numbers 1–10 Flashcards',copy:'One to ten with apples, ducks and butterflies — every counting card has its prompt and its download, right here.'},
+  {href:'/flashcards/shapes/',title:'Shape Flashcards',copy:'Twelve shapes from circle to octagon, each with a real-life shape hunt and a download button, right here.'},
+  {href:'/flashcards/colors/',title:'Color Flashcards',copy:'Twelve colors from red to rainbow — every card pairs a paint splash with a real-world picture, each with downloads right here.'},
+  {href:'/flashcards/opposites/',title:'Opposite Flashcards',copy:'Six opposite pairs from big and small to open and closed — every card has a comparing idea for the table and a download button, right here.'},
+  {href:'/flashcards/animal-sounds/',title:'Animal Flashcards',copy:'Twelve animal cards from dog to bird — every card has its sound to hear where a recording is ready and a download button, right here.'},
+  {href:'/flashcards/body-parts-and-five-senses/',title:'Body Parts & Five Senses Flashcards',copy:'Twenty-four cards from head to feel — every body part and every sense word has a pointing idea for the table and a download button, right here.'},
+  {href:'/flashcards/fruits-and-vegetables/',title:'Fruit & Vegetable Flashcards',copy:'Sixteen food cards from apple to pumpkin — every food has a kitchen idea and a download button, right here.'}
  ];
  return `${crumbNav([['Preschool','/preschool/'],['Age 3']])}
  ${heading('PRESCHOOL · AGE 3','Age 3: letters, numbers, shapes, colors — your five senses, your food.','The preschool stage of Kiddo School. Three-year-olds love to name, spot and show off what they know — so this stage starts with the alphabet, keeps counting calm, makes patterns a game, mixes colors like paint, lines up opposites side by side, fills a barnyard with animal sounds, explores your own body with all five senses and ends in the kitchen with the fruits and vegetables your child eats every day, at exactly their pace.')}

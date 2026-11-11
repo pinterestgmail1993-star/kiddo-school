@@ -660,7 +660,7 @@ export function weatherWsCategoryBody(){
   <div class="fc-stages">
    <a class="fc-stage lesson-card-link" href="${WS34_CLASS_PATH}"><div class="fc-stage-pills"><span class="fc-age">Ages 4–5</span><span class="fc-class">Class 34</span></div><h3>Weather, Seasons &amp; What We Wear</h3><p>The class behind these worksheets — 29 step-by-step weather lessons and every sheet solvable on screen with the drawing layer.</p><span class="fc-open">Open Class 34 <span aria-hidden="true">↗</span></span></a>
    <a class="fc-stage lesson-card-link" href="/flashcards/weather-seasons-and-what-we-wear/"><div class="fc-stage-pills"><span class="fc-age">Ages 4–5</span><span class="fc-class">Library</span></div><h3>The Weather Flashcards</h3><p>The matching card collection — what each kind of sky means, why it matters for a preschooler, and a printable card for the fridge.</p><span class="fc-open">Open the flashcards <span aria-hidden="true">↗</span></span></a>
-   <a class="fc-stage lesson-card-link" href="/worksheets/"><div class="fc-stage-pills"><span class="fc-age">All ages</span><span class="fc-class">Library</span></div><h3>The Worksheet Library</h3><p>All the school’s printable subjects, each with its own page, download and print buttons.</p><span class="fc-open">Browse all worksheets <span aria-hidden="true">↗</span></span></a>
+   <a class="fc-stage lesson-card-link" href="/worksheets/"><div class="fc-stage-pills"><span class="fc-age">All ages</span><span class="fc-class">Library</span></div><h3>The Worksheet Library</h3><p>All the school’s printable subjects, with download and print buttons on every set page.</p><span class="fc-open">Browse all worksheets <span aria-hidden="true">↗</span></span></a>
   </div>
  </section>`;
 }

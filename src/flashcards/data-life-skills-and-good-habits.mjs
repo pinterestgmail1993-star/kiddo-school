@@ -52,7 +52,7 @@ export const meta={
  name:'Life Skills & Good Habits',
  seoTitle:'Life Skills & Good Habits Flashcards for Preschoolers — 28 Printable Cards',
  h1:'Life Skills & Good Habits flashcards.',
- metaDescription:'Twenty-eight life-skills flashcards for ages 4–5: hand-washing, teeth, the toilet routine, getting dressed, tidying, manners, sharing, patience and safety rules like seat belts. Each card has its own page with parent guidance and a download button.',
+ metaDescription:'Twenty-eight life-skills flashcards for ages 4–5: hand-washing, teeth, the toilet routine, getting dressed, tidying, manners, sharing, patience and safety rules like seat belts. Every card is right here on one page with parent guidance and a download button.',
  lede:'Twenty-eight everyday skills, one card each: wash your hands, use gentle hands, wait your turn, wear your seat belt. Show the card, say the words together, then practise the real thing — that is the whole method, and it works.',
  hubBlurb:'Twenty-eight everyday skills — hygiene, manners, independence and safety — one card each.',
  ageLabel:'4–5 years',

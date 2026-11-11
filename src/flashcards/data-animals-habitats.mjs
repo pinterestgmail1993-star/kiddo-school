@@ -58,7 +58,7 @@ export const meta={
  name:'Animals & Their Habitats',
  seoTitle:'Animal Habitat Flashcards for Preschoolers — 22 Printable Cards',
  h1:'Animals &amp; Their Habitats flashcards.',
- metaDescription:'Twenty-two animal habitat flashcards for ages 4–5: one smiling animal per card living in its real home — meadow, pond, forest, grassland, desert, river, ocean and ice — each with its own page, a download button and short notes for grown-ups.',
+ metaDescription:'Twenty-two animal habitat flashcards for ages 4–5: one smiling animal per card living in its real home — meadow, pond, forest, grassland, desert, river, ocean and ice — each right here on one page, a download button and short notes for grown-ups.',
  lede:'Twenty-two cards that answer a very big question in a very small way: where do animals live? A rabbit in the meadow, a frog on the pond, a koala in the eucalyptus tree, a camel between the dunes, a whale under the waves and a bat hanging in the cave — every card one animal in the home that fits it, ready to sort, match and talk about.',
  hubBlurb:'Twenty-two habitat cards — a rabbit in the meadow to a bat in the cave, each animal home in one smiling picture.',
  ageLabel:'4–5 years',

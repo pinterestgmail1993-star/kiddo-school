@@ -123,7 +123,7 @@ export function learningLibraryBody(Lb){
  const musicInstruments=musicSet?musicSet.cards.filter(c=>c.file.startsWith('instrument-')):[];
  const musicShelf=musicInstruments.length?`<div class="lib-section" id="music-room">
    <h2>From the Music Room <span class="chip-count">${musicInstruments.length} instruments</span></h2>
-   <p class="lib-blurb">The Music Room\u2019s instrument shelf, browsable from the Library: every instrument card opens its own page in the flashcards library, with a download button and one game to play tonight.</p>
+   <p class="lib-blurb">The Music Room\u2019s instrument shelf, browsable from the Library: every instrument card sits on the Music Room page with a download button and one game to play tonight.</p>
    <div class="lib-grid bookshelf">${musicInstruments.map(c=>`<a class="bookcard" href="${c.url}"><span class="bookcard-cover"><img src="${c.img}" width="${c.w}" height="${c.h}" alt="${esc(c.alt)}" loading="lazy"></span><div class="bookcard-body"><span class="lib-kind">Music Room card</span><h3>${esc(c.word)}</h3><p>Instrument card ${c.n} of ${musicSet.cards.length} from the Music Room — what it is, what it sounds like and how to play a home version.</p><div class="bookcard-pills"><span class="pill">Ages 3–5</span><span class="pill">Instrument</span></div><span class="button bookcard-read">Open the card <span aria-hidden="true">↗</span></span></div></a>`).join('\n  ')}</div>
    <p class="fc-hint">The music words and the people who make music live in the <a href="/flashcards/music-room/">full Music Room set</a>, and the room itself is <a href="/music-room/">Class 23 on the Learning Path</a>.</p>
   </div>`:'';

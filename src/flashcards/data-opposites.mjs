@@ -21,7 +21,7 @@ export const oppositesMeta={
  h1:'Opposite Flashcards for Preschoolers',
  metaDescription:'Twelve opposite flashcards for preschoolers: big and small balls, tall and short trees, full and empty glasses and more, with comparing games and household hunts to play at home.',
  lede:'Twelve cards in six honest opposite pairs: a big ball beside a small ball, a tall tree beside a short one, a full glass beside an empty one. Show each pair side by side, say both words together, then go find the opposites hiding in your house.',
- hubBlurb:'Six opposite pairs from big and small to open and closed — every card has its own page, a comparing game and a download.',
+ hubBlurb:'Six opposite pairs from big and small to open and closed — every card has a comparing game and a download, right here.',
  ageLabel:'3–4 years',
  noun:'Preschoolers',
  useIdeas:[

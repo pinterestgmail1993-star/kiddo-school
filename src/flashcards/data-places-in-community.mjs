@@ -65,7 +65,7 @@ export const meta={
  h1:'Places in the Community flashcards.',
  metaDescription:'Twenty-eight printable places-in-the-community flashcards for ages 3–5: school, library, hospital, fire station, supermarket, post office, park, zoo and more — each with a simple lesson kids can follow (who works there, what we do there, what to say), age pills and a download button. US/UK word pairs (movie theater and cinema, drugstore and chemist, gas and petrol station) taught side by side.',
  lede:'Twenty-eight places a child’s town is made of, on twenty-eight cards a kid can read. Each card names one place — the library with its open book, the fire station with its truck asleep between the doors, the bakery that smells like tomorrow’s breakfast — and each card page carries a simple guide: who works there, what we do there, and the words to say when we arrive. The town speaks the everyday words of the US, UK and Canada — and where the countries differ (movie theater and cinema, drugstore and chemist’s, gas station and petrol station), both names ride along, so every family hears its own hometown talking.',
- hubBlurb:'Twenty-eight places in the community, each with its own lesson — the library, the fire station, the bakery, the bus stop, the park and the whole town in between.',
+ hubBlurb:'Twenty-eight places in the community, each with its lesson — the library, the fire station, the bakery, the bus stop, the park and the whole town in between.',
  ageLabel:'3–5 years',
  noun:'Community',
  group:'preschool',
@@ -75,7 +75,7 @@ export const meta={
  classBtn:'Open the Places in the Community class',
  lessonCrumb:[['Extra Classes','/extra-classes/']],
  lessonEyebrow:'PLACES IN THE COMMUNITY LESSON',
- lessonLine:'extra class — every place card opens its own simple lesson.',
+ lessonLine:'extra class — every place card is taught right on its class page.',
  pillGroups:[
   ['Learn, read & imagine','The places that fill a young mind: the school you know, the library that lends, the museum that keeps old wonders and the cinema that makes pictures move.',['school','library','museum','cinema']],
   ['Safe & cared for','The places that help us: the hospital, the dentist, the pharmacy, and the two stations whose people come running when we need them most.',['hospital','dentists-office','pharmacy','fire-station','police-station']],

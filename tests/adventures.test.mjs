@@ -23,12 +23,13 @@ import {artFor} from '../src/adventure-dims.mjs';
 const read=f=>readFileSync('dist'+f,'utf8');
 const page=p=>read(p+'/index.html');
 
-/* ---------- shapes: pages, libraries, boards ---------- */
-test('the shape library lists all 18 adventures with real artwork and links',()=>{
+/* ---------- shapes: one-page library, folded articles ---------- */
+test('the shape library lists all 18 adventures with real artwork, all on one page',()=>{
  const lib=page('/preschool/shapes/adventures/');
  assert.equal([...lib.matchAll(/data-sa-libcard="/g)].length,18);
+ assert.equal([...lib.matchAll(/<article class="one-page-item"/g)].length,18,'all 18 folded onto the library');
  for(const g of shapeAdventures){
-  assert.ok(lib.includes(`href="/preschool/shapes/adventures/${g.slug}/"`),'card '+g.slug);
+  assert.ok(!lib.includes(`href="/preschool/shapes/adventures/${g.slug}/"`),'no per-card link '+g.slug);
   assert.ok(lib.includes(SHAPE_BASE+g.img),'artwork '+g.img);
   assert.ok(lib.includes(esc(g.alt))||lib.includes('alt="'),'alt text for '+g.slug);
  }
@@ -37,45 +38,40 @@ test('the shape library lists all 18 adventures with real artwork and links',()=
 
 
 
-/* ---------- colors: pages, mixing truth, tools ---------- */
-test('the colors library groups all 18 activities with artwork and links',()=>{
+/* ---------- colors: one-page library, folded articles ---------- */
+test('the colors library groups all 18 activities with artwork, all on one page',()=>{
  const lib=page('/preschool/colors/adventures/');
  assert.equal([...lib.matchAll(/data-cc-libcard="/g)].length,18);
+ assert.equal([...lib.matchAll(/<article class="one-page-item"/g)].length,18,'all 18 folded onto the library');
  for(const a of colorCreativities){
-  assert.ok(lib.includes(`href="/preschool/colors/adventures/${a.slug}/"`),'card '+a.slug);
+  assert.ok(!lib.includes(`href="/preschool/colors/adventures/${a.slug}/"`),'no per-card link '+a.slug);
   assert.ok(lib.includes(COLOR_BASE+a.img),'artwork '+a.img);
  }
  assert.ok(lib.includes('/preschool/4-years/colors-mixing-and-creativity/'),'links to Class 26');
  assert.ok(lib.includes('red + yellow = orange'),'honest mixing summary on the library');
 });
-test('all 18 color activity pages exist, each drawing on its own artwork',()=>{
+test('the per-item drawing machinery is retired from the color library for good',()=>{
+ const lib=page('/preschool/colors/adventures/');
  const seen=new Set();
  for(const a of colorCreativities){
-  const p=`/preschool/colors/adventures/${a.slug}/`;
-  const html=page(p);
-  const title=html.match(/<title>(.*?)<\/title>/)[1];
-  assert.ok(!seen.has(title),'unique title '+a.slug);seen.add(title);
-  assert.ok(html.includes(`<h1 class="ia-h1">${a.title}</h1>`),'h1 '+a.slug);
-  assert.ok(html.includes(`data-wc-src="${COLOR_BASE+a.img}?draw=1"`),'drawing mount '+a.slug);
   const art=artFor('colors/'+a.slug,COLOR_BASE+a.img);
-  assert.ok(html.includes(`data-wc-w="${art.w}"`)&&html.includes(`data-wc-h="${art.h}"`),'true pixel dims '+a.slug);
-  assert.ok(html.includes('data-ia-band="colors"'),'progress band '+a.slug);
-  assert.ok(html.includes('id="ia-tools"'),'tools rail '+a.slug);
-  assert.ok(html.includes('/assets/image-adventure.js'),'progress engine '+a.slug);
-  assert.ok(html.includes(COLOR_BASE+a.img),'hero artwork '+a.slug);
-  assert.ok(html.includes('aria-label'),'aria labels '+a.slug);
-  // no coded paint engines may remain
-  for(const hook of ['data-cc-board','data-cc-game','data-cc-fill','data-cc-tray','data-cc-stage','data-cc-canvas','data-cc-mirror','data-cc-combos','data-cc-order','data-cc-item','data-cc-bin'])
-   assert.ok(!html.includes(hook),hook+' retired on '+a.slug);
+  assert.ok(lib.includes(COLOR_BASE+a.img),'hero artwork '+a.slug);
+  assert.ok(lib.includes(`width="${art.w}"`)||lib.includes(`width="${art.w}"`),'true pixel dims '+a.slug);
+  seen.add(a.slug);
  }
+ assert.equal(seen.size,18);
+ // the old per-item machinery is gone from the page for good
+ for(const gone of ['data-wc-src','id="ia-tools"','data-ia-band'])
+  assert.ok(!lib.includes(gone),gone+' retired from the library');
 });
 
 
-/* ---------- writing: pages, geometry, worksheets ---------- */
-test('the writing library lists all 30 adventures in five groups',()=>{
+/* ---------- writing: one-page library, folded articles ---------- */
+test('the writing library lists all 30 adventures in five groups, all on one page',()=>{
  const lib=page('/preschool/writing/adventures/');
  assert.equal([...lib.matchAll(/data-wa-libcard="/g)].length,30);
- for(const a of writingAdventures)assert.ok(lib.includes(`href="/preschool/writing/adventures/${a.slug}/"`),'card '+a.slug);
+ assert.equal([...lib.matchAll(/<article class="one-page-item"/g)].length,30,'all 30 folded onto the library');
+ for(const a of writingAdventures)assert.ok(!lib.includes(`href="/preschool/writing/adventures/${a.slug}/"`),'no per-card link '+a.slug);
  for(const g of ['Curves and Paths','Lines and Direction','Connect and Complete','Shapes and Outlines','Creative Stroke Practice'])
   assert.ok(lib.includes(g),'group '+g);
  assert.ok(lib.includes('/preschool/4-years/early-writing-and-pencil-control/'),'links to Class 27');
@@ -101,7 +97,7 @@ test('Classes 25, 26 and 27 are the shipped age-4 curriculum',()=>{
  assert.ok(c25.includes('/preschool/shapes/adventures/'),'class 25 links its library');
  assert.ok(c26.includes('/preschool/colors/adventures/'),'class 26 links its library');
  assert.ok(c27.includes('/preschool/writing/adventures/'),'class 27 links its library');
- assert.equal([...c27.matchAll(/href="\/preschool\/writing\/adventures\/[a-z0-9-]+\/"/g)].length,30,'class 27 links all 30 adventures');
+ assert.equal([...c27.matchAll(/href="\/preschool\/writing\/adventures\/#/g)].length,30,'class 27 points all 30 adventures at the one-page library');
 });
 test('the 4-years hub, preschool hub, homepage and learning path all know Age 4',()=>{
  const hub=page('/preschool/4-years/');
@@ -131,15 +127,13 @@ test('My Classroom mounts the creations gallery and adventure progress',()=>{
  assert.ok(existsSync('dist/assets/my-creations.js'));
  assert.ok(mc.includes('data-gal-grid'),'gallery grid mount');
 });
-test('adventure pages never ship curriculum progress scripts',()=>{
+test('the folded adventure libraries never ship curriculum progress scripts',()=>{
  // completing an adventure records kiddo-adventures only — it can never
  // mark a curriculum class complete (school-progress.js is not loaded here)
- for(const [base,items] of [['/preschool/shapes/adventures/',shapeAdventures],['/preschool/colors/adventures/',colorCreativities],['/preschool/writing/adventures/',writingAdventures]]){
-  for(const it of items){
-   const html=page(base+it.slug+'/');
-   assert.ok(!html.includes('school-progress.js'),'no class-progress machinery on '+it.slug);
-   assert.ok(!html.includes('data-tc-complete'),'no completion bar on '+it.slug);
-  }
+ for(const base of ['/preschool/shapes/adventures/','/preschool/colors/adventures/','/preschool/writing/adventures/']){
+  const html=page(base);
+  assert.ok(!html.includes('school-progress.js'),'no class-progress machinery on '+base);
+  assert.ok(!html.includes('data-tc-complete'),'no completion bar on '+base);
  }
 });
 test('the drawing engine ships, the coded engines are gone for good',()=>{

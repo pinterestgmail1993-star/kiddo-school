@@ -68,7 +68,7 @@ export function whoWorksBody(){
   ${group('People who teach','The faces at the front of the room — and one very important student.',TEACH)}
   ${group('People who help','The helpers your child meets between the bells — at the lunch counter, the library, the office and out in the garden.',HELP)}
   ${group('People who keep us safe','The watchers at the doors, the road and the playground — the reason the day feels safe enough to learn in.',SAFE)}
-  <p class="fc-hint">Want to print a person? Every card above opens its own page with a download button — <a href="${WW_SET}">open the whole School People set</a>.</p>
+  <p class="fc-hint">Want to print a person? Every card above has a download button right under it — <a href="${WW_SET}">open the whole School People set</a>.</p>
  </section>
  <section class="wrap lesson-section"><span class="eyebrow">TRY IT TODAY</span><h2>Which person helps you when you feel sick?</h2>
   <p class="lesson-copy">Point at the school nurse card together, then name two more helpers your child has really met — and what they said or did. Naming the people of the school is how a building starts to feel like <em>my</em> school.</p>

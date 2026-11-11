@@ -226,7 +226,7 @@ export function animalsWsCategoryBody(){
   <div class="fc-stages">
    <a class="fc-stage lesson-card-link" href="${AHWS_CLASS_PATH}"><div class="fc-stage-pills"><span class="fc-age">Ages 4–5</span><span class="fc-class">Class 36</span></div><h3>Animals &amp; Their Habitats</h3><p>The class behind these worksheets — twenty-two step-by-step habitat lessons, from a rabbit in the meadow to a whale in the deep blue.</p><span class="fc-open">Open Class 36 <span aria-hidden="true">↗</span></span></a>
    <a class="fc-stage lesson-card-link" href="/flashcards/animals-and-their-habitats/"><div class="fc-stage-pills"><span class="fc-age">Ages 4–5</span><span class="fc-class">Library</span></div><h3>The Habitat Flashcards</h3><p>The matching card collection — twenty-two animals in their homes, each with a printable card and short notes for playing animal match at home.</p><span class="fc-open">Open the flashcards <span aria-hidden="true">↗</span></span></a>
-   <a class="fc-stage lesson-card-link" href="/worksheets/"><div class="fc-stage-pills"><span class="fc-age">All ages</span><span class="fc-class">Library</span></div><h3>The Worksheet Library</h3><p>All the school’s printable subjects, each with its own page, download and print buttons.</p><span class="fc-open">Browse all worksheets <span aria-hidden="true">↗</span></span></a>
+   <a class="fc-stage lesson-card-link" href="/worksheets/"><div class="fc-stage-pills"><span class="fc-age">All ages</span><span class="fc-class">Library</span></div><h3>The Worksheet Library</h3><p>All the school’s printable subjects, with download and print buttons on every set page.</p><span class="fc-open">Browse all worksheets <span aria-hidden="true">↗</span></span></a>
   </div>
  </section>`;
 }

@@ -7,17 +7,17 @@
 // after `npm run build`.
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {readFileSync} from 'node:fs';
+import {readFileSync,existsSync} from 'node:fs';
 import {myFirstColors,R2_SCHOOL} from '../src/books.mjs';
 
 const read=f=>readFileSync(f,'utf8');
 const PATH='/library/books/age-2/my-first-colors/';
-const page=read('dist'+PATH+'index.html');
+/* ONE-PAGE (owner 2026-11-11): folded into the Learning Library, story and all. */
 const library=read('dist/learning-library/index.html');
+const article=(()=>{const m=library.match(/<article class="one-page-item" id="my-first-colors">[\s\S]*?<\/article>/);if(!m)throw Error('book article missing from the library');return m[0];})();
 const sitemap=read('dist/sitemap.xml');
+const redirects=read('dist/_redirects');
 const site=JSON.parse(read('dist/build-info.json')).siteUrl;
-const data=JSON.parse(page.match(/<script type="application\/json" data-book-data>(.*?)<\/script>/s)[1]);
-const schema=JSON.parse(page.match(/<script type="application\/ld\+json">(.*?)<\/script>/s)[1]);
 
 const BASE=R2_SCHOOL+'books/my-first-colors/';
 const COVER='my-first-colors-page-01.png';
@@ -66,102 +66,61 @@ test('alt text describes the artwork, never search keywords',()=>{
  for(const p of myFirstColors.pages)assert.doesNotMatch(p.alt,banned,p.file);
 });
 
-test('reader data carries the whole book: cover first, then pages in order',()=>{
- assert.equal(data.cover.src,BASE+COVER);
- assert.equal(data.pages.length,10);
- data.pages.forEach((p,i)=>{
-  assert.equal(p.src,BASE+STORY[i][0],'page src '+i);
-  assert.equal(p.text,STORY[i][1]);
-  assert.ok(p.w>0&&p.h>0,'reserved dimensions on page '+i);
- });
- assert.equal(data.pages[7].w,1999,'page 11 keeps its own true width');
- assert.match(data.completionTitle,/You finished My First Colors!/);
- assert.equal(data.backHref,'/learning-library/');
- assert.equal(data.backLabel,'Back to the Library');
-});
-
-test('page SEO: title, meta, canonical, one H1, breadcrumbs, online reading',()=>{
- assert.equal(page.match(/<title>(.*?)<\/title>/)[1],'My First Colors | Colors Picture Book Online | Kiddo.school');
- assert.equal(page.match(/name="description" content="([^"]+)"/)[1],myFirstColors.description);
- assert.equal(page.match(/rel="canonical" href="([^"]+)"/)[1],site+PATH);
- assert.equal([...page.matchAll(/<h1[ >]/g)].length,1);
- assert.match(page,/<h1>My First Colors<\/h1>/);
- assert.match(page,/href="\/learning-library\/">Library<\/a>/);
- assert.match(page,/href="\/toddler\/2-years\/">Age 2<\/a>/);
- assert.match(page,/Read online as often as you like/);
-});
-
-test('structured data: a factual Book and a 4-step BreadcrumbList, nothing invented',()=>{
- const types=schema.map(s=>s['@type']);
- assert.ok(types.includes('Book')&&types.includes('BreadcrumbList'));
- const bk=schema.find(s=>s['@type']==='Book');
- assert.equal(bk.name,'My First Colors');
- assert.equal(bk.url,site+PATH);
- assert.equal(bk.image,BASE+COVER);
- assert.equal(bk.typicalAgeRange,'2-3');
- for(const s of schema){
-  const json=JSON.stringify(s);
-  assert.ok(!/ISBN|isbn|AggregateRating|publisher|award|reviewCount/i.test(json),'no invented credentials in schema');
+test('the folded article carries the whole reading order: eight colors, the challenge, the ending',()=>{
+ assert.ok(article.includes(BASE+COVER),'cover rides the article');
+ for(let i=0;i<STORY.length;i++){
+  const [file,text]=STORY[i];
+  assert.ok(article.includes(BASE+file),'story page src: '+file);
+  assert.ok(article.includes(text),'transcribed line: '+text);
  }
- const bc=schema.find(s=>s['@type']==='BreadcrumbList');
- assert.equal(bc.itemListElement.length,4);
- assert.deepEqual(bc.itemListElement.map(i=>i.name),['Home','Library','Age 2','My First Colors']);
+ assert.ok(article.indexOf(BASE+'my-first-colors-page-02.png')<article.indexOf(BASE+'my-first-colors-page-07.png'),'colors come before the challenge');
 });
 
-test('the review system is the real moderated backend, asked as a story',()=>{
- assert.match(page,/data-cm-root data-page-path="\/library\/books\/age-2\/my-first-colors\/"/);
- assert.match(page,/How was this story\?/);
- assert.doesNotMatch(page,/How was this activity\?/);
- for(const label of ['Loved it','Liked it','It was okay','Not for us'])assert.ok(page.includes(label),label);
- assert.match(page,/data-cm-comment/);
+test('the book page is gone and its URL 301s to the library',()=>{
+ assert.ok(!existsSync('dist'+PATH+'index.html'),'no book page on disk');
+ assert.ok(!sitemap.includes(`<loc>${site}${PATH}</loc>`),'book URL out of the sitemap');
+ assert.ok(redirects.includes(PATH+' /learning-library/ 301'),'301 to the library');
+ assert.ok(article.includes('<h3 class="item-title">My First Colors</h3>'),'article title');
+ assert.ok(article.includes('Read online as often as you like'),'reading promise kept');
 });
 
-test('reader component: mounted with the reusable script and cover-first HTML',()=>{
- assert.match(page,/src="\/assets\/book-reader\.js(\?v=[0-9]+)?"/);
- const staticCover=page.match(/data-bk-static>\s*<div class="bk-covercard"><img src="([^"]+)"[^>]*>/);
- assert.equal(staticCover[1],BASE+COVER,'page 1 ships as the cover in the initial HTML');
- assert.match(staticCover[0],/width="2000" height="1545"/,'cover at its true dims');
- assert.match(page,/<noscript>/,'the whole book still reads without JavaScript');
- assert.ok(page.includes('Cover')&&page.includes('Page 1:'),'the noscript story names the cover and pages');
+test('the library carries both folded books with the owner\u2019s artwork',()=>{
+ assert.ok(article.includes(BASE+COVER),'book artwork rides the library page');
+ assert.ok(library.includes('<article class="one-page-item" id="bunny-finds-a-friend"'),'both books folded');
 });
 
-test('no premium placeholder on the book page: no checkout, no price, no fake button',()=>{
- assert.doesNotMatch(page,/Get Printable PDF/);
- assert.doesNotMatch(page,/coming soon/i);
- assert.doesNotMatch(page,/\$\d|checkout link|Buy now|Add to cart/i);
+test('the folded book carries no per-page review mounts (they retired with the page)',()=>{
+ assert.ok(!article.includes('data-cm-root'),'no community mount inside the article');
+});
+
+test('the story reads without any JavaScript at all',()=>{
+ assert.ok(article.includes('data-bk-static'),'static reading box');
+ assert.ok(article.includes('Red \u2014 a juicy red apple!'),'the story text is real markup, not a script');
+ assert.ok(!article.includes('data-book-data'),'no reader JSON (the reader retired with the page)');
+});
+
+test('no premium placeholder on the folded book: no checkout, no price, no fake button',()=>{
+ assert.doesNotMatch(article,/Get Printable PDF/);
+ assert.doesNotMatch(article,/coming soon/i);
+ assert.doesNotMatch(article,/\$\d|checkout|Buy now/i);
 });
 
 test('gentle age language: guides, never requirements',()=>{
  const banned=/your 2-year-old should|your child must|by age 2 they should|test your toddler|should know/i;
- assert.doesNotMatch(page,banned);
- assert.match(page,/Age 2/);
- assert.match(page,/Read together at your child/);
+ assert.doesNotMatch(article,banned);
+ assert.match(article,/Age 2/);
 });
 
-test('library: My First Colors sits on the Educational Books shelf, labeled Read',()=>{
- const card=library.match(/<article class="bookcard"[\s\S]*?my-first-colors[\s\S]*?<\/article>/);
- assert.ok(card,'My First Colors card exists on the bookshelf');
- assert.match(card[0],/href="\/library\/books\/age-2\/my-first-colors\/"/);
- assert.match(card[0],/My First Colors/);
- assert.match(card[0],/Read/);
- assert.match(card[0],/Colors Book/);
- assert.match(card[0],/Educational Books/);
- assert.match(card[0],/data-age="age-2"/);
- // the cover thumbnail is the first page of the book, at its true dims
- assert.match(card[0],new RegExp(BASE.replace(/[/.]/g,'\\$&')+COVER));
- assert.match(card[0],/width="2000" height="1545"/);
- // the educational shelf announces one book; storybooks still hold bunny
- const eduShelf=library.slice(library.indexOf('id="cat-educational"'),library.indexOf('id="cat-activity"'));
- assert.match(eduShelf,/1 book/);
- assert.match(eduShelf,/My First Colors/);
- const storyShelf=library.slice(library.indexOf('id="cat-storybooks"'),library.indexOf('id="cat-educational"'));
- assert.match(storyShelf,/Bunny Finds a Friend/);
- assert.match(storyShelf,/Read Book/,'bunny keeps its own label');
+test('the library keeps its Educational Books shelf contract with the book folded in',()=>{
+ assert.match(library,/data-cat="educational"/,'educational shelf present');
+ assert.match(library,/id="my-first-colors"/,'the book rides the library');
+ assert.doesNotMatch(library,/href="\/library\/books\//,'no book-page links left');
 });
 
-test('the book is in the sitemap once, under its canonical path',()=>{
- const loc=site+PATH;
- assert.equal([...sitemap.matchAll(new RegExp('<loc>'+loc.replace(/[/.]/g,'\\$&')+'</loc>','g'))].length,1);
+test('the sitemap carries the library with the book artwork, not the book page',()=>{
+ assert.ok(sitemap.includes('<loc>https://kiddo.school/learning-library/</loc>'));
+ assert.ok(sitemap.includes(BASE+COVER),'cover in the image sitemap');
+ assert.ok(!sitemap.includes('<loc>https://kiddo.school'+PATH+'</loc>'),'book page out of the sitemap');
 });
 
 test('every referenced artwork really exists on R2 and nothing else was invented',async()=>{

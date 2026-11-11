@@ -65,7 +65,7 @@ export const meta={
  classBtn:'Open the Colors class',
  lessonCrumb:[['Extra Classes','/extra-classes/']],
  lessonEyebrow:'COLORS LESSON',
- lessonLine:'extra class — every color opens its own simple lesson.',
+ lessonLine:'extra class — every color is taught right on its class page.',
  pillGroups:[
   ['The first colors','The eleven colors a child names first, in the deck’s own order: the red apple to the gold honey pot. Four labeled things on every card — name the color, then hunt it in the room.',['red','blue','yellow','green','orange','purple','pink','brown','black','grey','gold']],
   ['More colors (ages 4-5)','Four shades for bigger spotters — each one a color you can MAKE: light blue is blue plus white, navy is blue gone dark, peach is orange gone soft, lavender is purple gone pale.',['light-blue','navy','peach','lavender']]
@@ -79,7 +79,7 @@ export const meta={
  ],
  downloadHint:'Every card page has its own download button with the full-size image.',
  coverAlt:'Cover of the Colors flashcards set from Kiddo School: the words "Color Flashcards" over five round color dots — crimson, blue, green, orange and pink.',
- lessonBlurb:'the Colors extra class, where every color comes with its own simple lesson',
+ lessonBlurb:'the Colors extra class, where every color’s lesson is right on the class page',
  relatedSets:['colors','colors-and-shapes']
 };
 

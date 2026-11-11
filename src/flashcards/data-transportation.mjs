@@ -68,7 +68,7 @@ export const meta={
  // SEO: the phrases families search in the US ("transportation activities for
  // preschoolers", "things that go"), Canada ("community vehicles"), Australia
  // and New Zealand ("transport theme") — woven in, never stuffed.
- metaDescription:'Thirty-two printable transportation flashcards for ages 4–5: cars, buses, trains, fire engines, tractors, boats, airplanes and construction machines — each spotter card names four vehicles with its own page, an age pill and a spotting game. A things-that-go set for the preschool transport theme.',
+ metaDescription:'Thirty-two printable transportation flashcards for ages 4–5: cars, buses, trains, fire engines, tractors, boats, airplanes and construction machines — each spotter card names four vehicles with an age pill and a spotting game, all right here. A things-that-go set for the preschool transport theme.',
  lede:'Thirty-two spotter cards for everything that goes: the land vehicles kids ride and see every week — car, bus, train, school bus, tractor, ambulance — the helper trucks that keep a town running, the rails and the cables, the boats that float and the machines that fly, and eleven sheets of construction giants, from road roller to tower crane. Every card names its four vehicles on the picture, so the words go home with the art.',
  hubBlurb:'Thirty-two vehicles spotter cards — land, water, air and construction — four labeled vehicles per card, from the family car to the tower crane.',
  ageLabel:'4–5 years',

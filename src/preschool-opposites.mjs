@@ -159,7 +159,7 @@ export function oppositesClassBody(L){
   <h2>Take the opposites to the kitchen table.</h2>
   <p class="lesson-copy">All twelve cards print two to a page, in pair order, straight from your browser — no PDF, nothing to install. Cut them out and the whole set plays on the table.</p>
   <div class="hero-actions tc-print-actions"><a class="button" href="${CLASS_PATH}print/">View Printable Cards <span aria-hidden="true">↗</span></a><button type="button" class="button button-ghost" data-tc-print-open="${CLASS_PATH}print/?print=1">Print Cards</button></div>
-  <p class="lesson-note">Printed cards love fridges, bedroom doors and kitchen tables. The same cards also live in the <a href="${SET_URL}">flashcards library</a>, each with its own page.</p>
+  <p class="lesson-note">Printed cards love fridges, bedroom doors and kitchen tables. The same cards also live in the <a href="${SET_URL}">flashcards library</a>, all right here on this page.</p>
  </section>`;
 
  const teacherNoteSection=`<section class="wrap lesson-section"><span class="eyebrow">TEACHER NOTE</span><h2>One last word from class.</h2><div class="tc-note-block tc-teacher"><p class="tc-say">“What a day of comparing! Big and small, full and empty — your child spotted differences everywhere today, and every single one counts. Keep the words alive at snack time and bathtime, and let your child win the comparing game sometimes. See you in class!”</p><p class="tc-who">— Your Kiddo School teacher</p></div></section>`;

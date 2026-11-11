@@ -54,7 +54,7 @@ export const meta={
  name:'Community Helpers & Our Neighborhood',
  seoTitle:'Community Helpers Flashcards for Preschoolers — 29 Printable Cards',
  h1:'Community Helpers & Our Neighborhood flashcards.',
- metaDescription:'Twenty-nine community-helpers flashcards for ages 4–5: doctor, firefighter, police officer, teacher, farmer, chef, builder and more. Each card has its own page with parent guidance and a download button.',
+ metaDescription:'Twenty-nine community-helpers flashcards for ages 4–5: doctor, firefighter, police officer, teacher, farmer, chef, builder and more. Every card is right here on one page with parent guidance and a download button.',
  lede:'Twenty-nine helpers, one card each: the people who keep us healthy, keep us safe, feed us, build our homes and teach us something new every day. Show the card, name the helper, then talk about how your neighborhood works — that is the whole method, and it works.',
  hubBlurb:'Twenty-nine neighborhood helpers — health, safety, food, building, transport and learning — one card each.',
  ageLabel:'4–5 years',

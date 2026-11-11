@@ -67,7 +67,7 @@ export const meta={
  name:'Toddler Room',
  seoTitle:'Toddler Room Flashcards — 35 Printable Cards for One- and Two-Year-Olds',
  h1:'Toddler Room flashcards.',
- metaDescription:'Thirty-five printable toddler flashcards for ages 1 to 3: the ball, the crib, the sippy cup, the potty, the teddy bear — the whole toddler room on cards, each with its own page, an age pill and a home game for grown-ups.',
+ metaDescription:'Thirty-five printable toddler flashcards for ages 1 to 3: the ball, the crib, the sippy cup, the potty, the teddy bear — the whole toddler room on cards, each right here on one page, an age pill and a home game for grown-ups.',
  lede:'Thirty-five cards that name the world a toddler actually lives in: the toys on the mat, the cup and the high chair, the crib and the night-light, the potty and the toothbrush, the shoes and the socks and the little table and chair. Every card carries an age pill and a room-area pill, so a parent can tell in one glance whether tonight is a play-time card, a sleepy-time card or a care-time card.',
  hubBlurb:'Thirty-five cards for one- to three-year-olds — the toys, the mealtimes, the sleep corner and the care routines of the toddler room, one everyday word per card.',
  ageLabel:'1–3 years',

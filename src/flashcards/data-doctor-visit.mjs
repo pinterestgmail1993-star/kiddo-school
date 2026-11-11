@@ -55,7 +55,7 @@ export const meta={
  name:'Doctor Visit',
  seoTitle:'Doctor Visit Flashcards for Kids — 22 Gentle Check-Up Cards (Ages 3–5)',
  h1:'Doctor Visit flashcards.',
- metaDescription:'Twenty-two printable doctor-visit flashcards in visit order: getting ready, meeting the helpers, the check-up itself and after the visit — a teddy bear comes along on every card, and medicine is only ever taken from a grown-up. Each card has its own page, a two-minute game and a download button.',
+ metaDescription:'Twenty-two printable doctor-visit flashcards in visit order: getting ready, meeting the helpers, the check-up itself and after the visit — a teddy bear comes along on every card, and medicine is only ever taken from a grown-up. Every card is right here on one page, a two-minute game and a download button.',
  lede:'A whole check-up, one calm card at a time. A teddy bear comes along on every step: the appointment, the waiting room, the doctor’s hello, the stethoscope’s listen, the deep breath — and the proud walk home. The cards run in visit order on purpose: the gentle steps first, and the two big ones (the x-ray, the hospital bed) arrive late, when your child already knows the story. Nothing at a check-up is a punishment, and medicine is only taken from a grown-up.',
  hubBlurb:'Twenty-two doctor-visit cards in visit order — a teddy bear on every step of a check-up, from the appointment to the proud goodbye.',
  ageLabel:'3–5 years',

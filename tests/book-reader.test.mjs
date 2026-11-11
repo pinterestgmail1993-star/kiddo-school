@@ -5,18 +5,19 @@
 // collection). Runs against dist/ after `npm run build`.
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {readFileSync} from 'node:fs';
+import {readFileSync,existsSync} from 'node:fs';
 import {bunnyBook,R2_BOOKS} from '../src/books.mjs';
 
 const read=f=>readFileSync(f,'utf8');
 const PATH='/library/books/age-2/bunny-finds-a-friend/';
-const page=read('dist'+PATH+'index.html');
+/* ONE-PAGE (owner 2026-11-11): the book page is folded into the Learning
+   Library as an article — the whole story rides the library page as static
+   markup (the noscript reading path, unrolled), the old URL 301s there. */
 const library=read('dist/learning-library/index.html');
-const reader=read('dist/assets/book-reader.js');
+const article=(()=>{const m=library.match(/<article class="one-page-item" id="bunny-finds-a-friend">[\s\S]*?<\/article>/);if(!m)throw Error('book article missing from the library');return m[0];})();
 const sitemap=read('dist/sitemap.xml');
+const redirects=read('dist/_redirects');
 const site=JSON.parse(read('dist/build-info.json')).siteUrl;
-const data=JSON.parse(page.match(/<script type="application\/json" data-book-data>(.*?)<\/script>/s)[1]);
-const schema=JSON.parse(page.match(/<script type="application\/ld\+json">(.*?)<\/script>/s)[1]);
 
 const STORY=[
  ['01-this-is-bunny.webp','This is Bunny.'],
@@ -47,110 +48,75 @@ test('alt text describes the artwork, never search keywords',()=>{
  for(const p of bunnyBook.pages)assert.doesNotMatch(p.alt,banned,p.file);
 });
 
-test('reader data carries the whole book: cover, pages, text, completion',()=>{
- assert.equal(data.cover.src,bunnyBook.base+'cover.webp');
- assert.equal(data.pages.length,8);
- data.pages.forEach((p,i)=>{
-  assert.equal(p.src,bunnyBook.base+bunnyBook.pages[i].file);
-  assert.equal(p.text,STORY[i][1]);
-  assert.ok(p.w>0&&p.h>0,'reserved dimensions on page '+i);
- });
- assert.match(data.completionTitle,/You finished Bunny Finds a Friend!/);
- assert.equal(data.backHref,'/learning-library/');
-});
-
-test('page SEO: title, meta, canonical, one H1, breadcrumbs',()=>{
- assert.equal(page.match(/<title>(.*?)<\/title>/)[1],'Bunny Finds a Friend | Picture Book for 2 Year Olds | Kiddo.school');
- assert.equal(page.match(/name="description" content="([^"]+)"/)[1],bunnyBook.description);
- assert.equal(page.match(/rel="canonical" href="([^"]+)"/)[1],site+PATH);
- assert.equal([...page.matchAll(/<h1[ >]/g)].length,1);
- assert.match(page,/<h1>Bunny Finds a Friend<\/h1>/);
- assert.match(page,/href="\/learning-library\/">Library<\/a>/);
- assert.match(page,/href="\/toddler\/2-years\/">Age 2<\/a>/);
-});
-
-test('structured data: a factual Book and a 4-step BreadcrumbList, nothing invented',()=>{
- const types=schema.map(s=>s['@type']);
- assert.ok(types.includes('Book')&&types.includes('BreadcrumbList'));
- const bk=schema.find(s=>s['@type']==='Book');
- assert.equal(bk.name,'Bunny Finds a Friend');
- assert.equal(bk.url,site+PATH);
- assert.equal(bk.image,bunnyBook.base+'cover.webp');
- for(const s of schema){
-  const json=JSON.stringify(s);
-  assert.ok(!/ISBN|isbn|AggregateRating|publisher|award|reviewCount/i.test(json),'no invented credentials in schema');
+test('the folded article carries the whole story: cover first, then pages in order',()=>{
+ assert.ok(article.includes(bunnyBook.base+'cover.webp'),'cover rides the article');
+ for(let i=0;i<STORY.length;i++){
+  const [file,text]=STORY[i];
+  const at=article.indexOf(bunnyBook.base+file);
+  assert.ok(at>=0,'story page src on the article: '+file);
+  assert.ok(article.includes(text),'story line on the article: '+text);
  }
- const bc=schema.find(s=>s['@type']==='BreadcrumbList');
- assert.equal(bc.itemListElement.length,4);
- assert.deepEqual(bc.itemListElement.map(i=>i.name),['Home','Library','Age 2','Bunny Finds a Friend']);
+ assert.ok(article.indexOf(bunnyBook.base+'cover.webp')<article.indexOf(bunnyBook.base+STORY[0][0]),'cover first');
 });
 
-test('the review system is the real moderated backend, asked as a story',()=>{
- assert.match(page,/data-cm-root data-page-path="\/library\/books\/age-2\/bunny-finds-a-friend\/"/);
- assert.match(page,/How was this story\?/);
- assert.doesNotMatch(page,/How was this activity\?/);
- for(const label of ['Loved it','Liked it','It was okay','Not for us'])assert.ok(page.includes(label),label);
- assert.match(page,/data-cm-comment/);
+test('the book page is gone and its URL 301s to the library',()=>{
+ assert.ok(!existsSync('dist'+PATH+'index.html'),'no book page on disk');
+ assert.ok(!sitemap.includes(`<loc>${site}${PATH}</loc>`),'book URL out of the sitemap');
+ assert.ok(redirects.includes(PATH+' /learning-library/ 301'),'301 to the library');
+ assert.ok(article.includes('<h3 class="item-title">Bunny Finds a Friend</h3>'),'article title');
 });
 
-test('reader component: mounted with the reusable script and cover-first HTML',()=>{
- assert.match(page,/src="\/assets\/book-reader\.js(\?v=[0-9]+)?"/);
- const staticCover=page.match(/data-bk-static>\s*<div class="bk-covercard"><img src="([^"]+)"[^>]*>/);
- assert.equal(staticCover[1],bunnyBook.base+'cover.webp','cover ships in the initial HTML');
- assert.match(staticCover[0],/fetchpriority="high"/,'cover is the priority image');
- assert.match(page,/<noscript>/,'the story still reads without JavaScript');
+test('the library entry fronts the book: images ride the library, nothing invented',()=>{
+ assert.ok(library.includes('<article class="one-page-item" id="my-first-colors"'),'both books folded');
+ assert.ok(article.includes(bunnyBook.base+'cover.webp'),'book artwork rides the library page');
+});
+
+test('the folded book carries no per-page review mounts (they retired with the page)',()=>{
+ assert.ok(!article.includes('data-cm-root'),'no community mount inside the article');
+});
+
+test('the story reads without any JavaScript at all',()=>{
+ assert.ok(article.includes('data-bk-static'),'static reading box');
+ assert.ok(article.includes('This is Bunny.'),'the story text is real markup, not a script');
+ assert.ok(!article.includes('data-book-data'),'no reader JSON (the reader retired with the page)');
 });
 
 test('gentle age language: guides, never requirements',()=>{
  const banned=/your 2-year-old should|your child must|by age 2 they should|test your toddler|should know/i;
- assert.doesNotMatch(page,banned);
- assert.match(page,/Age 2/);
- assert.doesNotMatch(page,/For ages around 2/);
- assert.match(page,/Read together at your child/);
+ assert.doesNotMatch(article,banned);
+ assert.match(article,/Age 2/);
+ assert.match(article,/Read together at your child/);
 });
 
-test('library: a books-only bookshelf with the Read Book card; shelves with no books are hidden',()=>{
+test('the library keeps its bookshelf contract with the books folded in',()=>{
  assert.match(library,/data-library/);
  assert.match(library,/<h1>Library<\/h1>/);
- // only shelves that really hold books are shown
- for(const c of ['storybooks','educational'])assert.match(library,new RegExp('data-cat="'+c+'"'),'shelf '+c);
- for(const c of ['activity','life-skills'])assert.doesNotMatch(library,new RegExp('data-cat="'+c+'"'),'empty shelf '+c+' hidden');
+ // the folded books ride the library as articles, not as shelf links
+ assert.match(library,/id="bunny-finds-a-friend"/);
+ assert.match(library,/id="my-first-colors"/);
+ assert.doesNotMatch(library,/href="\/library\/books\//,'no book-page links left');
  assert.doesNotMatch(library,/href="\/preschool\/3-years\//,'no class listings on the library');
- assert.doesNotMatch(library,/href="\/flashcards\/(?!music-room\/)[a-z-]+\//,'no flashcard set listings on the library (the Music Room instrument shelf, owner-approved 2026-10-14, is the only allowance)');
- assert.doesNotMatch(library,/href="\/preschool\/3-years\/magic-/,'no magic game listings on the library');
- const card=library.match(/<article class="bookcard"[\s\S]*?<\/article>/);
- assert.ok(card,'book card exists on the bookshelf');
- assert.match(card[0],/href="\/library\/books\/age-2\/bunny-finds-a-friend\/"/);
- assert.match(card[0],/Bunny Finds a Friend/);
- assert.match(card[0],/Read Book/);
- assert.match(card[0],/data-age="age-2"/);
- assert.match(card[0],/Storybooks/);
- // age filter only offers ages that really have books
- assert.match(library,/data-age-chip="age-2"/);
- assert.doesNotMatch(library,/data-age-chip="newborn"/);
+ assert.doesNotMatch(library,/href="\/flashcards\/(?!music-room\/)[a-z-]+\//,'no flashcard set listings on the library (the Music Room instrument shelf, owner-approved 2026-10-14, is the only set allowed)');
  // no empty-shelf or coming-soon placeholders, no checkout, no price
  assert.doesNotMatch(library,/No books on this shelf yet/);
  assert.doesNotMatch(library,/coming soon/i);
  assert.doesNotMatch(library,/\$\d|checkout|Buy now/i);
 });
 
-test('reader behaviour: keyboard, swipe, reduced motion, honest controls',()=>{
- assert.match(reader,/ArrowRight/);
- assert.match(reader,/ArrowLeft/);
- assert.match(reader,/touchstart/);
- assert.match(reader,/touchend/);
+test('the reader engine still honours its privacy and behaviour promises (it ships for the reader markup)',()=>{
+ const reader=read('dist/assets/book-reader.js');
  assert.match(reader,/prefers-reduced-motion/);
- assert.match(reader,/Restart Book/);
- assert.match(reader,/Read Again/);
  assert.match(reader,/Back to Library/);
  assert.match(reader,/aria-live/);
  // privacy: the reader collects nothing and talks to nobody
  assert.doesNotMatch(reader,/fetch\(|localStorage|sessionStorage|document\.cookie|XMLHttpRequest/);
- // no autoplay: pages turn only on user action
  assert.doesNotMatch(reader,/setInterval/);
+ // no page references the reader any more — the story is static markup
+ assert.ok(!library.includes('/assets/book-reader.js'),'no reader script on the library');
 });
 
-test('the book is in the sitemap once, under its canonical path',()=>{
- const loc=site+PATH;
- assert.equal([...sitemap.matchAll(new RegExp('<loc>'+loc.replace(/[/.]/g,'\\$&')+'</loc>','g'))].length,1);
+test('the sitemap carries the library with the book artwork, not the book pages',()=>{
+ assert.ok(sitemap.includes('<loc>https://kiddo.school/learning-library/</loc>'));
+ assert.ok(sitemap.includes(bunnyBook.base+'cover.webp'),'cover in the image sitemap');
+ assert.ok(!sitemap.includes('<loc>https://kiddo.school'+PATH+'</loc>'),'book page out of the sitemap');
 });

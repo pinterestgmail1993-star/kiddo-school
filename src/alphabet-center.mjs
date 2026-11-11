@@ -73,7 +73,7 @@ export function alphabetCenterBody(){
    </div>
    <p class="fc-hint" data-al-hint hidden>Uppercase, lowercase, picture, pair and letter-&amp;-picture cards — one kind at a time, big and touch-friendly. Nothing here is scored or timed.</p>
   </div>
-  <noscript><p class="fc-hint">The card player needs JavaScript. The whole alphabet still works below — tap any letter to open its page with every card on it.</p></noscript>
+  <noscript><p class="fc-hint">The card player needs JavaScript. The whole alphabet still works below — and every card is right here on the page.</p></noscript>
   <script type="application/json" data-al-center-data>${alphabetCenterData()}</script>
   <div class="al-grid" data-al-grid>
    <h3 class="al-grid-title">The A–Z grid</h3>
@@ -296,7 +296,7 @@ export function abcClassIntro(){
  return `<section class="wrap lesson-section al-abc" id="todays-letters" aria-label="All the letters: A to Z">
   <span class="eyebrow">THE WHOLE ALPHABET</span>
   <h2>All twenty-six letters, A to Z.</h2>
-  <p class="lesson-copy">Every letter is on this page, and every card opens its own class activity — trace the letters and circle the picture right on the screen, then keep the teaching parts below. Start anywhere your child likes; A is a friendly first stop, and there is no wrong door.</p>
+  <p class="lesson-copy">Every letter is on this page, and every card’s activity is right here — trace the letters and circle the picture right on the screen, then keep the teaching parts below. Start anywhere your child likes; A is a friendly first stop, and there is no wrong door.</p>
   <div class="al-abc-row">
    ${LETTERS.map(l=>`<a class="al-abc-card" href="${letterPath(l)}"><img src="${l.file('sound.png')}" width="${l.w}" height="${l.h}" alt="Letter and picture association card: ${l.upper} ${l.lower} with ${esc(l.pictureAlt.charAt(0).toLowerCase()+l.pictureAlt.slice(1))}" loading="lazy"><span class="al-abc-word"><strong>${l.upper} ${l.lower}</strong><span>${esc(l.word)}</span><span class="al-abc-say">${esc(l.soundSay)}</span><span class="fc-open">Open Letter ${l.upper}’s activity <span aria-hidden="true">↗</span></span></a>`).join('')}
   </div>

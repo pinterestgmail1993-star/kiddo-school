@@ -137,10 +137,11 @@ test('the shipped engine is the honest progress keeper',()=>{
 
 
 
-test('science adventure pages never ship curriculum progress machinery',()=>{
- for(const g of scienceAdventures){
-  const html=page('/preschool/science/adventures/'+g.slug+'/');
-  assert.ok(!html.includes('school-progress.js'),'no class-progress scripts on '+g.slug);
-  assert.ok(!html.includes('data-tc-complete'),'no completion bar on '+g.slug);
- }
+test('the folded science library never ships curriculum progress machinery',()=>{
+ const lib=page('/preschool/science/adventures/');
+ assert.ok(!lib.includes('school-progress.js'),'no class-progress scripts on the library');
+ assert.ok(!lib.includes('data-tc-complete'),'no completion bar on the library');
+ assert.ok(!lib.includes('data-wc-src'),'no per-item drawing mounts left');
+ assert.equal([...lib.matchAll(/<article class="one-page-item"/g)].length,30,'all 30 folded onto the library');
 });
+

@@ -266,7 +266,7 @@ export function class28Body(){
  <section class="wrap lesson-section" id="adventures" aria-label="The phonics adventures">
   <span class="eyebrow">PLAY · THE 24 PHONICS ADVENTURES</span>
   <h2>Twenty-four listening adventures.</h2>
-  <p class="lesson-copy">Start anywhere your child’s ears are curious. The shelves below run in a gentle skill order — first sounds before blends, blends before swaps — but every game stands on its own. Each adventure has a printable worksheet twin at <a href="${WS28_PATH}">/worksheets/phonics/</a>, and the whole alphabet prints from the <a href="${FC28_PATH}">A–Z letter-sound flashcards</a> — every letter with its own page, its picture word and its sound script.</p>
+  <p class="lesson-copy">Start anywhere your child’s ears are curious. The shelves below run in a gentle skill order — first sounds before blends, blends before swaps — but every game stands on its own. Each adventure has a printable worksheet twin at <a href="${WS28_PATH}">/worksheets/phonics/</a>, and the whole alphabet prints from the <a href="${FC28_PATH}">A–Z letter-sound flashcards</a> — every letter with its picture word and its sound script, right here.</p>
   ${shelves.map((sh,i)=>{
     const [a,b]=byGroup[i];
     const items=phonicAdventures.filter(g=>g.num>=a&&g.num<=b);
@@ -276,7 +276,7 @@ export function class28Body(){
  <section class="wrap fc-section" id="learn" aria-label="Learn with flashcards">
   <span class="eyebrow">LEARN WITH FLASHCARDS</span>
   <h2>Teach the letter sounds, one lesson at a time.</h2>
-  <p class="fc-hint">Twenty-six letter-sound lessons, Aa apple to Zz zebra. Tap any letter and it opens its own lesson page — the original flashcard with a drawing canvas on the left, and the step-by-step teaching on the right: how the sound is really made, the words to say, and one game that drills it. Five minutes a letter, in any order your child points at.</p>
+  <p class="fc-hint">Twenty-six letter-sound lessons, Aa apple to Zz zebra. Every lesson is right here on this page — the original flashcard beside the step-by-step teaching: how the sound is really made, the words to say, and one game that drills it. Five minutes a letter, in any order your child points at.</p>
   <div class="lp-tiles">${PH_LEARN_ROWS}</div>
   <p class="lesson-note">Every lesson pairs with a printable card in the <a href="${FC28_PATH}">A–Z letter-sound flashcard set</a>, and the sounds keep drilling in the adventures above.</p>
  </section>

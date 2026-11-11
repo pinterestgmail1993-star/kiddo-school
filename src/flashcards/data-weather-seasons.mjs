@@ -62,7 +62,7 @@ export const meta={
  name:'Weather, Seasons & What We Wear',
  seoTitle:'Weather & Seasons Flashcards for Preschoolers — 29 Printable Cards',
  h1:'Weather, Seasons & What We Wear flashcards.',
- metaDescription:'Twenty-nine weather and seasons flashcards for ages 4–5: sun, rain, rainbows, storms, snow, the four seasons and the clothes we wear in each — each card has its own page with parent guidance and a download button.',
+ metaDescription:'Twenty-nine weather and seasons flashcards for ages 4–5: sun, rain, rainbows, storms, snow, the four seasons and the clothes we wear in each — every card is right here on one page with parent guidance and a download button.',
  lede:'Twenty-nine cards about the sky over our heads and the clothes on our bodies: the sun and clouds, rain and rainbows, storms and snow, the four seasons, and the umbrella, raincoat, sun hat and winter coat that match each kind of day. Look out the window, pick the matching card, and the weather itself becomes the lesson.',
  hubBlurb:'Twenty-nine sky-and-clothes cards — sun, rain, snow, storms, the four seasons, and what we wear in each kind of weather.',
  ageLabel:'4–5 years',

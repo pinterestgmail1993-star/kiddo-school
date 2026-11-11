@@ -189,7 +189,7 @@ export function myClassroomBody(){
  <div class="mc-panel">
   <span class="eyebrow">ON THE SHELF · CLASSROOM FLASHCARDS</span>
   <h2>Classroom flashcards</h2>
-  <p>Thirty printable cards that name this room and its good habits — every card has its own page with a download button and a two-minute game. <a href="/flashcards/classroom/">Open the whole set <span aria-hidden="true">↗</span></a></p>
+  <p>Thirty printable cards that name this room and its good habits — every card has a download button and a two-minute game, right here. <a href="/flashcards/classroom/">Open the whole set <span aria-hidden="true">↗</span></a></p>
   ${fcGroup('Classroom objects','The things a school morning uses — say the word on the card, then hunt for the real one in your room.','object-')}
   ${fcGroup('Good habits','The rules, phrased as things to do — pick one card, act it out today, and catch your child doing it for real.','rule-')}
  </div>

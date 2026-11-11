@@ -224,7 +224,7 @@ export function worksheetPageBody(w,site){
   <aside class="fc2-rail" aria-label="Download, print, instructions, share and family feedback"><section class="fc2-block fc2-first-block"><span class="eyebrow">PRINT &amp; PLAY ON PAPER</span><h2>Take it to the table.</h2>${actions}</section>${howto}${tips}${share}${fcCommunityMount(wsUrl(w.subject,w.slug))}</aside>
  </div>
  <section class="wrap fc-section" aria-label="Related worksheets"><span class="eyebrow">RELATED WORKSHEETS</span><h2>More sheets like this one.</h2>
-  <p class="fc-hint">Nearby worksheets from ${esc(s.label)} and its friends \u2014 each with its own page, preview and PDF.</p>
+  <p class="fc-hint">Nearby worksheets from ${esc(s.label)} and its friends \u2014 each with a preview and a PDF on its set page.</p>
   <div class="ws-grid">${related.map(r=>wsCard(r)).join('')}</div>
  </section>`;
 }

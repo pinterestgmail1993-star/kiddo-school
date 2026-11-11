@@ -145,7 +145,7 @@ export const meta={
  classBtn:'Open the Dinosaurs class',
  lessonCrumb:[['Extra Classes','/extra-classes/']],
  lessonEyebrow:'DINOSAURS LESSON',
- lessonLine:'extra class — every dinosaur card opens its own move-and-play lesson.',
+ lessonLine:'extra class — every dinosaur card is taught right on its class page.',
  pillGroups:[
   ['Hunters & chasers','The meat-eating runners: big jaws, quick feet and one giant bite.',['tyrannosaurus-rex','velociraptor','allosaurus','giganotosaurus','ceratosaurus','carnotaurus','baryonyx','deinonychus','compsognathus','spinosaurus']],
   ['Horned, plated & plant eaters','The gentle giants and their armor: long necks, horned frills, back plates, club tails and dome heads.',['triceratops','stegosaurus','brachiosaurus','ankylosaurus','diplodocus','euoplocephalus','iguanodon','hadrosaurus','maiasaura','corythosaurus','parasaurolophus','ouranosaurus','plateosaurus','centrosaurus','styracosaurus','pachycephalosaurus','therizinosaurus','oviraptor']],

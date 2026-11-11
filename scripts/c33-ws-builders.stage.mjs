@@ -111,7 +111,7 @@ export function communityWsCategoryBody(){
   <div class="fc-stages">
    <a class="fc-stage lesson-card-link" href="${CH_CLASS_PATH}"><div class="fc-stage-pills"><span class="fc-age">Ages 4–5</span><span class="fc-class">Class 33</span></div><h3>Community Helpers &amp; Our Neighborhood</h3><p>The class behind these worksheets — 29 step-by-step helper lessons and every sheet solvable on screen with the drawing layer.</p><span class="fc-open">Open Class 33 <span aria-hidden="true">↗</span></span></a>
    <a class="fc-stage lesson-card-link" href="/flashcards/community-helpers-and-our-neighborhood/"><div class="fc-stage-pills"><span class="fc-age">Ages 4–5</span><span class="fc-class">Library</span></div><h3>The Community Helpers Flashcards</h3><p>The matching card collection — what each helper does, why it helps a preschooler, and a printable card for the fridge.</p><span class="fc-open">Open the flashcards <span aria-hidden="true">↗</span></span></a>
-   <a class="fc-stage lesson-card-link" href="/worksheets/"><div class="fc-stage-pills"><span class="fc-age">All ages</span><span class="fc-class">Library</span></div><h3>The Worksheet Library</h3><p>All the school’s printable subjects, each with its own page, download and print buttons.</p><span class="fc-open">Browse all worksheets <span aria-hidden="true">↗</span></span></a>
+   <a class="fc-stage lesson-card-link" href="/worksheets/"><div class="fc-stage-pills"><span class="fc-age">All ages</span><span class="fc-class">Library</span></div><h3>The Worksheet Library</h3><p>All the school’s printable subjects, each right here on one page, download and print buttons.</p><span class="fc-open">Browse all worksheets <span aria-hidden="true">↗</span></span></a>
   </div>
  </section>`;
 }

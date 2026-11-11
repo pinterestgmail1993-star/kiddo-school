@@ -31,19 +31,22 @@ test('all 24 phonics adventures: real configs, unique slugs and titles',()=>{
 
 
 
-test('phonics pages are draw-on-the-picture: no coded boards, no sound instructions',()=>{
+test('the phonics library folds all 24 adventures: no coded boards, no sound instructions',()=>{
+ const lib=page(PHONICS_LIB_PATH);
+ assert.equal([...lib.matchAll(/<article class="one-page-item"/g)].length,24,'all 24 folded onto the library');
  for(const g of phonicAdventures){
-  const html=page(PHONICS_LIB_PATH+g.slug+'/');
-  // the retired coded board must not exist anywhere
-  for(const hook of ['data-ph-board','data-ph-engine','data-ph-round','data-ph-ok','data-ph-bin','data-ph-seq','data-ph-tile','data-ph-need','data-ph-pick','ph-audio-bar'])
-   assert.ok(!html.includes(hook),hook+' retired on '+g.slug);
-  // the owner's rule: no sound instructions on the page
-  assert.ok(!html.includes('Sound: on')&&!html.includes('data-ph-mute'),'no audio bar on '+g.slug);
-  assert.ok(!html.includes('speechSynthesis'),'no screen voice on '+g.slug);
-  // the picture is the activity
-  assert.ok(html.includes('crossorigin="anonymous"'),'CORS save on '+g.slug);
+  assert.ok(!lib.includes(`href="${PHONICS_LIB_PATH}${g.slug}/"`),'no per-card link '+g.slug);
+  assert.ok(lib.includes(PHONICS_BASE+g.img),'artwork '+g.img);
  }
+ // the retired coded board must not exist anywhere
+ for(const hook of ['data-ph-board','data-ph-engine','data-ph-round','data-ph-ok','data-ph-bin','data-ph-seq','data-ph-tile','data-ph-need','data-ph-pick','ph-audio-bar'])
+  assert.ok(!lib.includes(hook),hook+' retired from the library');
+ // the owner's rule: no sound instructions on the page
+ assert.ok(!lib.includes('Sound: on')&&!lib.includes('data-ph-mute'),'no audio bar');
+ assert.ok(!lib.includes('speechSynthesis'),'no screen voice');
+ assert.ok(!lib.includes('data-wc-src'),'no per-item drawing mounts left');
 });
+
 
 test('the audio manifest matches the shipped recordings',()=>{
  assert.ok(existsSync('dist/assets/phonics-audio-manifest.json'));
@@ -70,20 +73,20 @@ test('the shipped engine is the honest progress keeper: no sound, no scores, no 
  assert.ok(js.includes("data-ia-band"),'band comes from the page, not a hardcoded map');
 });
 
-test('game completion never marks a curriculum class complete',()=>{
- for(const g of phonicAdventures){
-  const html=page(PHONICS_LIB_PATH+g.slug+'/');
-  assert.ok(!html.includes('school-progress.js'),'no curriculum progress on '+g.slug);
- }
+test('the folded library never marks a curriculum class complete',()=>{
+ const lib=page(PHONICS_LIB_PATH);
+ assert.ok(!lib.includes('school-progress.js'),'no curriculum progress on the library');
+ assert.ok(!lib.includes('data-tc-complete'),'no completion bar on the library');
  const engine=read('/assets/image-adventure.js');
  assert.ok(!engine.includes('class-complete'),'engine never touches class completion');
 });
+
 
 test('Class 28 is wired into the whole school',()=>{
  const cls=page(C28_PATH);
  assert.ok(cls.includes('<h1>Phonics &amp; Beginning Sounds</h1>'),'class H1');
  assert.ok(cls.includes('28 of 28'),'class chip');
- assert.ok(cls.includes(PHONICS_LIB_PATH+'sound-detective/'),'class lists game 1');
+ assert.ok(cls.includes(PHONICS_LIB_PATH+'#sound-detective'),'class points game 1 at the one-page library');
  assert.ok(cls.includes('/worksheets/phonics/'),'class links the worksheet category');
  const hub=page('/preschool/4-years/');
  assert.ok(hub.includes(C28_PATH),'age 4 hub lists Class 28');
@@ -94,7 +97,9 @@ test('Class 28 is wired into the whole school',()=>{
  assert.ok(cur.includes('"n":28')&&cur.includes('phonics-and-beginning-sounds'),'client curriculum has 26 entries incl. 28');
  const lib=page(PHONICS_LIB_PATH);
  assert.ok((lib.match(/data-ph-libcard=/g)||[]).length===24,'library lists all 24');
+ assert.ok(!lib.includes(`href="${PHONICS_LIB_PATH}sound-detective/"`),'no per-card links on the library');
 });
+
 
 
 
@@ -108,22 +113,24 @@ test('worksheet downloads never touch My Classroom progress',()=>{
  assert.ok(!engine.includes('download'),'engine does not track downloads');
 });
 
-test('phonics pages render on mobile without horizontal overflow',()=>{
+test('the phonics library renders on mobile without horizontal overflow',()=>{
  // viewport-level guarantee: the board svg scales by CSS, no fixed widths
  const css=read('/assets/style.css');
  assert.ok(css.includes('.ph-svg{width:100%'),'board scales to container');
- for(const g of phonicAdventures.slice(0,3)){
-  const html=page(PHONICS_LIB_PATH+g.slug+'/');
-  assert.ok(html.includes('name="viewport"'),'viewport meta on '+g.slug);
- }
+ const lib=page(PHONICS_LIB_PATH);
+ assert.ok(lib.includes('name="viewport"'),'viewport meta on the library');
 });
 
-test('sitemap carries Class 28, the library and all 24 game pages',()=>{
+
+test('sitemap carries Class 28 and the one-page library, no game pages',()=>{
  const xml=read('/sitemap.xml');
  assert.ok(xml.includes(`<loc>${TEST_ORIGIN}${C28_PATH}</loc>`));
  assert.ok(xml.includes(`<loc>${TEST_ORIGIN}${PHONICS_LIB_PATH}</loc>`));
- for(const g of phonicAdventures)assert.ok(xml.includes(`<loc>${TEST_ORIGIN}${PHONICS_LIB_PATH}${g.slug}/</loc>`),'sitemap '+g.slug);
+ for(const g of phonicAdventures)assert.ok(!xml.includes(`<loc>${TEST_ORIGIN}${PHONICS_LIB_PATH}${g.slug}/</loc>`),'sitemap drops '+g.slug);
+ const red=read('/_redirects');
+ assert.ok(red.includes('/preschool/phonics/:p2/:p3 /preschool/phonics/:p2/ 301'),'placeholder 301 covers the folded games');
 });
+
 
 test('every phonics activity matches what its artwork actually shows (audited 2026-10-10)',()=>{
  // the audit compared all 24 Canva illustrations against the configs; these

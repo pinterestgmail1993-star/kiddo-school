@@ -73,7 +73,7 @@ export const meta={
  name:'Home and Daily Life',
  seoTitle:'Home and Daily Life Flashcards for Kids — 41 House Word Cards (Ages 3–5)',
  h1:'Home and Daily Life flashcards.',
- metaDescription:'Forty-one printable home-and-daily-life flashcards for ages 3–5: rooms and furniture, bath-and-bedtime routines, kitchen actions, chores and tools, by the door, sounds, safety and green habits — with US/UK/CA word pairs (faucet/tap, flashlight/torch, cart/trolley) taught side by side. Every card has its own page, a two-minute game and a download button.',
+ metaDescription:'Forty-one printable home-and-daily-life flashcards for ages 3–5: rooms and furniture, bath-and-bedtime routines, kitchen actions, chores and tools, by the door, sounds, safety and green habits — with US/UK/CA word pairs (faucet/tap, flashlight/torch, cart/trolley) taught side by side. Every card is right here with a two-minute game and a download button.',
  lede:'A house is a child’s first country, and this set is its phrasebook. Forty-one cards walk the whole home — the rooms and their furniture, the wash-and-get-ready routines, the kitchen verbs, the chores and the toolbox, the mail by the front door, the sounds the house makes when nobody is watching, and the green habits that keep it all running. The cards speak the everyday words of the US, UK and Canada — and where the countries differ (the tap and the faucet, the torch and the flashlight, the trolley and the cart), both words ride along, so every family hears its own home talking.',
  hubBlurb:'Forty-one cards for the words of home — rooms, routines, the kitchen, chores, the door, the sounds and the green habits — with US and UK words taught side by side.',
  ageLabel:'3–5 years',

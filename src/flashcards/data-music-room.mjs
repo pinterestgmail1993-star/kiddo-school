@@ -87,7 +87,7 @@ export const meta={
  name:'Music Room',
  seoTitle:'Music Room Flashcards for Preschoolers — 53 Instruments, Words & Music-Makers',
  h1:'Music Room flashcards.',
- metaDescription:'Fifty-three Music Room flashcards for ages 3–5: thirty-three instruments from accordion to xylophone, thirteen music words from beat to volume and seven music-room people — each card with its own page, a download button and short notes for grown-ups.',
+ metaDescription:'Fifty-three Music Room flashcards for ages 3–5: thirty-three instruments from accordion to xylophone, thirteen music words from beat to volume and seven music-room people — each card right here on one page, a download button and short notes for grown-ups.',
  lede:'Fifty-three cards from the school\u2019s Music Room: every instrument on the shelf, the words music uses — beat, melody, tempo, volume — and the people who fill the room with sound. Every card carries its picture word, a sound to make together and one tiny game — the whole room, ready to print.',
  hubBlurb:'Instruments, music words and the people who make the music — boom, squeak, plink: the whole room in one set.',
  ageLabel:'3–5 years',

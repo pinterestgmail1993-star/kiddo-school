@@ -182,7 +182,7 @@ export function colorsClassBody(L){
   <h2>Take the colors to the kitchen table.</h2>
   <p class="lesson-copy">All twelve color pairs print one pair to a page — the splash beside its matching picture — straight from your browser. No PDF, nothing to install.</p>
   <div class="hero-actions tc-print-actions"><a class="button" href="${CLASS_PATH}print/">View Printable Cards <span aria-hidden="true">↗</span></a><button type="button" class="button button-ghost" data-tc-print-open="${CLASS_PATH}print/?print=1">Print Cards</button></div>
-  <p class="lesson-note">Printed cards love fridges, bedroom doors and kitchen tables. The same cards also live in the <a href="${SET_URL}">flashcards library</a>, each with its own page.</p>
+  <p class="lesson-note">Printed cards love fridges, bedroom doors and kitchen tables. The same cards also live in the <a href="${SET_URL}">flashcards library</a>, all right here on this page.</p>
  </section>`;
 
  const teacherNoteSection=`<section class="wrap lesson-section"><span class="eyebrow">TEACHER NOTE</span><h2>One last word from class.</h2><div class="tc-note-block tc-teacher"><p class="tc-say">“You did some lovely color spotting today. Colors are hiding everywhere now — in snacks, socks and the sky. Keep naming them together, and save a little paint for tomorrow. See you in class!”</p><p class="tc-who">— Your Kiddo School teacher</p></div></section>`;

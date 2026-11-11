@@ -20,7 +20,7 @@ export const animalsMeta={
  seoTitle:'Animal Flashcards for Preschoolers | 12 Cards',
  h1:'Animal Flashcards for Preschoolers',
  metaDescription:'Twelve animal flashcards for preschoolers: dog, cat, cow, sheep, duck, chicken, horse, pig, lion, elephant, frog and bird, with real sounds to hear and games to play at home.',
- lede:'Twelve animal friends from dog to bird — every card has its own page with the picture, the sound it makes and one thing to try together, and nine of the sounds play right on the page.',
+ lede:'Twelve animal friends from dog to bird — every card has the picture, the sound it makes and one thing to try together, right here, and nine of the sounds play right on the page.',
  hubBlurb:'Twelve animal friends with real sounds to hear — press play on nine of them, then make the rest yourselves.',
  ageLabel:'3–4 years',
  noun:'Preschoolers',

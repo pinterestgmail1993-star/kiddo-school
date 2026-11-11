@@ -37,7 +37,7 @@ const KINDS={
   slug:'alphabet-uppercase',kind:'uppercase',name:'Uppercase Alphabet',
   seoTitle:'Uppercase Alphabet Flashcards A–Z: Big Letter Cards',
   h1:'Uppercase Alphabet Flashcards A–Z',
-  metaDescription:'Uppercase alphabet flashcards A–Z: 26 big letter cards in their own colours, each with its own page. Tap a card to open, download, print and share it.',
+  metaDescription:'Uppercase alphabet flashcards A–Z: 26 big letter cards in their own colours, each right here on one page. Tap a card to open, download, print and share it.',
   lede:'Twenty-six big letters, one to a card — A to Z, each in its own bright colour, exactly as they look on our picture alphabet. One big shape per page, so nothing competes for attention.',
   hubBlurb:'Just the big letters A–Z, one per card.',
   downloadHint:'Open any card for its own page — the download, print and share buttons live there.',
@@ -55,7 +55,7 @@ const KINDS={
   slug:'alphabet-lowercase',kind:'lowercase',name:'Lowercase Alphabet',
   seoTitle:'Lowercase Alphabet Flashcards a–z: Little Letter Cards',
   h1:'Lowercase Alphabet Flashcards a–z',
-  metaDescription:'Lowercase alphabet flashcards a–z: 26 little letter cards, each with its own page. Tap a card to open, download, print and share it.',
+  metaDescription:'Lowercase alphabet flashcards a–z: 26 little letter cards, each right here on one page. Tap a card to open, download, print and share it.',
   lede:'Twenty-six little letters, one to a card. These are the real lowercase cards a–z from our alphabet — the shapes your child will meet on almost every page of every book, now alone on their own cards.',
   hubBlurb:'Just the little letters a–z, one per card.',
   downloadHint:'Open any card for its own page — the download, print and share buttons live there.',
@@ -73,7 +73,7 @@ const KINDS={
   slug:'alphabet-letters',kind:'pair',name:'Big & Little Letters',
   seoTitle:'Alphabet Flashcards: Big & Little Letters Together (Aa–Zz)',
   h1:'Big & Little Letters Together',
-  metaDescription:'Alphabet flashcards showing uppercase and lowercase together: 26 Aa–Zz pair cards, each with its own page. Tap a card to open, download, print and share it.',
+  metaDescription:'Alphabet flashcards showing uppercase and lowercase together: 26 Aa–Zz pair cards, each right here on one page. Tap a card to open, download, print and share it.',
   lede:'Twenty-six cards showing each big letter and its little letter side by side — Aa to Zz — the classic first matching pair for preschool hands and eyes.',
   hubBlurb:'Big and little letters together on one card, Aa–Zz.',
   downloadHint:'Open any card for its own page — the download, print and share buttons live there.',
@@ -91,7 +91,7 @@ const KINDS={
   slug:'alphabet-objects',kind:'object',name:'Alphabet Object Cards',
   seoTitle:'Alphabet Object Cards A–Z: Picture Flashcards for Guessing Games',
   h1:'Alphabet Object Cards A–Z',
-  metaDescription:'Alphabet object cards A–Z: all 26 pictures — apple, dog, moon — as bold flat-colour cards for guessing games, each with its own page and download button.',
+  metaDescription:'Alphabet object cards A–Z: all 26 pictures — apple, dog, moon — as bold flat-colour cards for guessing games, each right here on one page and download button.',
   lede:'Twenty-six objects, one to a card — the apple, the dog, the moon — as bold, flat-colour pictures with no letters beside them. Perfect for guessing games: hide the card, reveal it slowly, and let the guesses run before anyone names it.',
   hubBlurb:'All 26 alphabet pictures on their own cards — guess first, name after.',
   downloadHint:'Every card below has its own download button — the full-size object card, straight from this page.',
@@ -110,7 +110,7 @@ const KINDS={
   slug:'alphabet-sounds',kind:'sound',name:'Letter Sound Cards',
   seoTitle:'Alphabet Letter Sound Cards A–Z: “A is for Apple” Cards',
   h1:'Alphabet Letter Sound Cards A–Z',
-  metaDescription:'Letter-sound flashcards A–Z: big letter, little letter and the picture together — Aa apple, Bb ball — each with its own page. Tap a card to open, download, print and share it.',
+  metaDescription:'Letter-sound flashcards A–Z: big letter, little letter and the picture together — Aa apple, Bb ball — each right here on one page. Tap a card to open, download, print and share it.',
   lede:'Twenty-six cards that put the letter and its sound together: big A, little a and the apple. Say “aaa — apple” while your child points at the picture, and the picture does half the teaching.',
   hubBlurb:'Big letter, little letter and the sound picture together, Aa apple to Zz zebra.',
   downloadHint:'Open any card for its own page — the download, print and share buttons live there.',
@@ -128,7 +128,7 @@ const KINDS={
   slug:'alphabet-tracing',kind:'tracing',name:'Alphabet Tracing Cards',
   seoTitle:'Alphabet Tracing Cards A–Z: Dotted Letter Cards with Stroke Arrows',
   h1:'Alphabet Tracing Cards A–Z',
-  metaDescription:'Alphabet tracing cards A–Z: dotted big and little letters with numbered stroke arrows, each with its own page. Trace a finger first, then a crayon.',
+  metaDescription:'Alphabet tracing cards A–Z: dotted big and little letters with numbered stroke arrows, each right here on one page. Trace a finger first, then a crayon.',
   lede:'Twenty-six dotted tracing cards, one for every letter. Numbered arrows show the strokes: start at 1, follow the arrow, lift at the dot. Trace with a finger first — then a crayon, right on the card.',
   hubBlurb:'Dotted Aa–Zz with numbered stroke arrows — trace a finger first, then a crayon.',
   downloadHint:'Open any card for its own page — the download, print and share buttons live there.',
@@ -224,7 +224,7 @@ export function fcVariantSetPageBody(s,shareUrl){
         const ideas=s.useIdeas.map(([t,d],i)=>`<li><span class="fc-stepnum">${String(i+1).padStart(2,'0')}</span><div><h3>${esc(t)}</h3><p>${esc(d)}</p></div></li>`).join('');
         return `<nav class="breadcrumbs wrap" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><a href="/flashcards/">Flashcards</a><span aria-hidden="true">/</span><span aria-current="page">${esc(s.name)}</span></nav>
 <div class="page-heading wrap"><span class="eyebrow">FLASHCARD SET · AGES ${esc(AGE.toUpperCase())}</span><h1>${esc(s.h1)}</h1><p>${esc(s.lede)}</p></div>
-<section class="wrap fc-section"><span class="eyebrow">THE CARDS</span><h2>All twenty-six.</h2><p class="fc-hint">Tap any card to open its own page — the full-size card, the words to say together, and the download, print and share buttons.</p><div class="fcv-grid">${cards}</div></section>
+<section class="wrap fc-section"><span class="eyebrow">THE CARDS</span><h2>All twenty-six.</h2><p class="fc-hint">Right here on this page — the full-size card, the words to say together, and the download, print and share buttons.</p><div class="fcv-grid">${cards}</div></section>
 <section class="wrap fc-section"><span class="eyebrow">HOW TO USE THESE CARDS</span><h2>Little ways that work.</h2><ol class="fc-steps">${ideas}</ol></section>
 <section class="wrap fc-section"><span class="eyebrow">MORE ALPHABET SETS</span><h2>Pick your letters.</h2><div class="fc2-relrow">${alphabetVariantSets.filter(v=>v.slug!==s.slug).map(v=>`<a class="fc2-relcard" href="${v.url}"><strong>${esc(v.name)}</strong><span>26 cards</span><span class="fc-open">Open <span aria-hidden="true">↗</span></span></a>`).join('')}<a class="fc2-relcard" href="${s.mainSetUrl}"><strong>${esc(s.mainSetName)}</strong><span>picture cards</span><span class="fc-open">Open <span aria-hidden="true">↗</span></span></a></div></section>
 <section class="wrap fc-section"><div class="fc2-block fc2-share-block"><span class="eyebrow">SHARE THIS SET</span><h2>Pass it on.</h2><div class="fc2-share"><a class="fc2-share-btn" href="https://twitter.com/intent/tweet?url=${enc(shareUrl)}&text=${enc(shareTitle)}" target="_blank" rel="noopener" aria-label="Share this set on X">X</a><a class="fc2-share-btn" href="https://www.facebook.com/sharer/sharer.php?u=${enc(shareUrl)}" target="_blank" rel="noopener" aria-label="Share this set on Facebook">Facebook</a><a class="fc2-share-btn" href="https://wa.me/?text=${enc(shareTitle+' '+shareUrl)}" target="_blank" rel="noopener" aria-label="Share this set on WhatsApp">WhatsApp</a><a class="fc2-share-btn" href="https://pinterest.com/pin/create/button/?url=${enc(shareUrl)}&media=${enc(s.coverUrl)}&description=${enc(shareTitle)}" target="_blank" rel="noopener" aria-label="Save this set on Pinterest">Pinterest</a><button type="button" class="fc2-share-btn" data-fc-copy>Copy link</button></div><p class="fc-hint">Share buttons open in a new tab. The copy button copies this page’s address — nothing is tracked.</p></div></section>

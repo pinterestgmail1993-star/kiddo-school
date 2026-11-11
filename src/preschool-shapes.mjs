@@ -144,7 +144,7 @@ export function shapesClassBody(L){
   <h2>Take the shapes to the kitchen table.</h2>
   <p class="lesson-copy">All twelve shape cards can be printed two to a page, in order, straight from your browser — no PDF, nothing to install.</p>
   <div class="hero-actions tc-print-actions"><a class="button" href="${CLASS_PATH}print/">View Printable Cards <span aria-hidden="true">↗</span></a><button type="button" class="button button-ghost" data-tc-print-open="${CLASS_PATH}print/?print=1">Print Cards</button></div>
-  <p class="lesson-note">Printed cards love fridges, bedroom doors and kitchen tables. The same cards also live in the <a href="${SET_URL}">flashcards library</a>, each with its own page.</p>
+  <p class="lesson-note">Printed cards love fridges, bedroom doors and kitchen tables. The same cards also live in the <a href="${SET_URL}">flashcards library</a>, all right here on this page.</p>
  </section>`;
 
  const teacherNoteSection=`<section class="wrap lesson-section"><span class="eyebrow">TEACHER NOTE</span><h2>One last word from class.</h2><div class="tc-note-block tc-teacher"><p class="tc-say">“Shapes are hiding everywhere — in plates, doors, wheels and the night sky. Keep spotting them together, and a plain old walk becomes a shape hunt. See you in class!”</p><p class="tc-who">— Your Kiddo School teacher</p></div></section>`;

@@ -61,8 +61,10 @@ test('the library is a books-only bookshelf: real books only, empty shelves hidd
  // only shelves with books render; each book card points at a real readable book
  for(const c of ['storybooks','educational'])assert.ok(lib.includes(`data-cat="${c}"`),'shelf '+c);
  for(const c of ['activity','life-skills'])assert.ok(!lib.includes(`data-cat="${c}"`),'empty shelf hidden '+c);
- assert.ok(lib.includes('href="/library/books/age-2/bunny-finds-a-friend/"'),'the real book is listed');
- assert.ok(read('dist/library/books/age-2/bunny-finds-a-friend/index.html'),'book page exists');
+ // ONE-PAGE (owner 2026-11-11): the books fold into the library itself
+ assert.ok(lib.includes('id="bunny-finds-a-friend"'),'the real book is folded into the library');
+ assert.ok(!lib.includes('href="/library/books/'),'no book-page links left');
+ assert.ok(read('dist/_redirects').includes('/library/books/age-2/bunny-finds-a-friend/ /learning-library/ 301'),'book URL 301s to the library');
  assert.ok(lib.includes('Read Book'),'free reading CTA');
  assert.ok(!/coming soon/i.test(lib),'no coming-soon placeholder');
  assert.ok(!/\$\d|Buy now|checkout/i.test(lib),'no fake checkout or invented prices');

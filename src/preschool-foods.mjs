@@ -212,7 +212,7 @@ export function fruitsClassBody(L){
   <h2>Take the market to the kitchen table.</h2>
   <p class="lesson-copy">All sixteen cards print two to a page, in card order, straight from your browser — no PDF, nothing to install. Cut them out and the whole market plays on the table.</p>
   <div class="hero-actions tc-print-actions"><a class="button" href="${CLASS_PATH}print/">View Printable Cards <span aria-hidden="true">↗</span></a><button type="button" class="button button-ghost" data-tc-print-open="${CLASS_PATH}print/?print=1">Print Cards</button></div>
-  <p class="lesson-note">Printed cards love fridges, snack cups and shopping bags. The same cards also live in the <a href="${SET_URL}">flashcards library</a>, each with its own page.</p>
+  <p class="lesson-note">Printed cards love fridges, snack cups and shopping bags. The same cards also live in the <a href="${SET_URL}">flashcards library</a>, all right here on this page.</p>
  </section>`;
 
  const teacherNoteSection=`<section class="wrap lesson-section"><span class="eyebrow">TEACHER NOTE</span><h2>One last word from class.</h2><div class="tc-note-block tc-teacher"><p class="tc-say">“What a delicious class! Your child named fruits, sorted vegetables, matched twins and counted a whole rainbow of foods — that is real vocabulary, real math and real healthy-eating practice, all in one. Keep the game alive at every meal: name it, find it, count it. See you in class!”</p><p class="tc-who">— Your Kiddo School teacher</p></div></section>`;

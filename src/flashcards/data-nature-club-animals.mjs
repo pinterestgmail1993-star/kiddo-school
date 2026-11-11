@@ -60,7 +60,7 @@ export const meta={
  seoTitle:'Nature Club Animals Flashcards — 22 Wildlife Spotter Sheets with Lessons (Ages 3–6)',
  h1:'Nature Club Animals flashcards.',
  metaDescription:'Twenty-two printable nature-club animal flashcards for ages 3–6: birds of prey, garden and desert birds, coastal and river animals, crustaceans, pollinators, the dog family, deer and grazers, rodents, grassland and mountain animals — every card a spotter sheet of four labeled animals, with a simple lesson kids can follow, age pills and a download button. US/UK word pairs (reindeer and caribou, shrimp and prawn) taught side by side.',
- lede:'Twenty-two spotter sheets for children who already know their animal families and want to go deeper — this is the Nature Club deck, the step up from Animal Categories. Each card studies one specialist group: the hunters of the sky, the shells of the shore, the animals that pollinate our food, the whole dog family from wolf to dingo, and the wild homes from grassland to mountaintop. Each card page carries a simple guide a kid can follow, and every card opens its own Nature Club lesson on its own page.',
+ lede:'Twenty-two spotter sheets for children who already know their animal families and want to go deeper — this is the Nature Club deck, the step up from Animal Categories. Each card studies one specialist group: the hunters of the sky, the shells of the shore, the animals that pollinate our food, the whole dog family from wolf to dingo, and the wild homes from grassland to mountaintop. Each card carries a simple guide a kid can follow, and every lesson is right here on this page.',
  hubBlurb:'Twenty-two deeper animal spotter sheets from the Nature Club — birds of prey, crustaceans, pollinators, the dog family, rodents and the wild homes of six habitats, four labeled animals at a time.',
  ageLabel:'3–6 years',
  noun:'Wildlife',
@@ -71,7 +71,7 @@ export const meta={
  classBtn:'Open the Nature Club Animals class',
  lessonCrumb:[['Nature Club','/nature-club/']],
  lessonEyebrow:'NATURE CLUB LESSON',
- lessonLine:'nature club — every animal group opens its own spotter lesson.',
+ lessonLine:'nature club — every animal group is taught right on its class page.',
  coverUrl:R2+'school/extra-classes/animal-categories/flashcards/cover.webp',
  pillGroups:[
   ['Birds of the world','The hunters and the singers of the sky: the raptors with their sharp eyes, the birds at the backyard feeder, the desert’s roadrunners and the strange birds of Australia.',['birds-of-prey','garden-birds','desert-birds','australian-birds']],
@@ -89,7 +89,7 @@ export const meta={
  ],
  downloadHint:'Every card page has its own download button with the full-size image.',
  coverAlt:'Cover of the Nature Club Animals flashcards set from Kiddo School: the words "Animal Category Flashcards" over a little bat, a crocodile, an ant and a pink salamander.',
- lessonBlurb:'the Nature Club Animals class, where every animal group opens its own spotter lesson',
+ lessonBlurb:'the Nature Club Animals class, where every animal group’s spotter lesson is right on the class page',
  relatedSets:['animal-categories','animals-and-their-habitats']
 };
 export const cards={

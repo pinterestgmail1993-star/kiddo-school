@@ -66,7 +66,7 @@ export const meta={
  name:'Kitchen Things',
  seoTitle:'Kitchen Flashcards for Kids — 35 Printable Kitchen-Things Cards with Ages',
  h1:'Kitchen Things flashcards.',
- metaDescription:'Thirty-five printable kitchen flashcards for ages 3 to 6, sorted with age pills: the things little kids use every day (spoon, fork, plate, mug), the helper tools (whisk, rolling pin, ladle, measuring cups), the grown-up tools to name and the one big rule — knives are for grown-ups. Each card has its own page and a home game.',
+ metaDescription:'Thirty-five printable kitchen flashcards for ages 3 to 6, sorted with age pills: the things little kids use every day (spoon, fork, plate, mug), the helper tools (whisk, rolling pin, ladle, measuring cups), the grown-up tools to name and the one big rule — knives are for grown-ups. Every card is right here on one page and a home game.',
  lede:'Thirty-five cards that name the busiest room in the house, sorted into age pills so parents know exactly what is on the menu: the everyday things a three-year-old already uses, the helper tools a four- or five-year-old can start with, the grown-up tools older kids love to name and one card — the chef\u2019s knife — that exists to teach the kitchen\u2019s biggest rule: knives are for grown-ups. The class game is Kitchen Helper: find the item, say its name, then sort the cards into "I can use it" and "grown-ups only."',
  hubBlurb:'Thirty-five kitchen cards with age pills — everyday things, helper tools, grown-up tools and the one rule card — a Kitchen Helper set for little cooks.',
  ageLabel:'3–6 years',

@@ -8,14 +8,21 @@
    search index, /all-pages/ and the sitemap are written. */
 import {readFileSync,writeFileSync,rmSync,existsSync,readdirSync,statSync} from 'node:fs';
 
-/* Only these areas collapse. Games, the worksheet generator, books, activities
-   and the singleton pages are real tools or one-off pages — they stay. */
-const ROOTS=['/flashcards/','/worksheets/','/preschool/','/toddler/','/baby/','/newborn/','/cafeteria/','/clubs/','/dinosaurs/','/art-room/','/action-words/','/healthy-food/','/staying-safe/','/coloring-pages/','/extra-classes/','/kitchen/','/music-room/','/playground/','/toddler-room/','/nature-club/','/games/'];
+/* Only these areas collapse. The worksheet generator, the play games and the
+   other real tools are one-off pages — they stay. OWNER 2026-11-11, second
+   pass: "remove all individual pages they are still opening — check the whole
+   site" — the library books, the draw-on-the-picture adventures, the toddler
+   matching games and worksheet sheets, the Look & Learn word pages and the
+   life-skills activity pages now fold too (the first pass kept them as
+   "tools"; the owner overruled: no individual pages anywhere). */
+const ROOTS=['/flashcards/','/worksheets/','/preschool/','/toddler/','/baby/','/newborn/','/cafeteria/','/clubs/','/dinosaurs/','/art-room/','/action-words/','/healthy-food/','/staying-safe/','/coloring-pages/','/extra-classes/','/kitchen/','/music-room/','/playground/','/toddler-room/','/nature-club/','/games/','/library/'];
 /* Pages that list classes or decks — never a merge target. */
 const AGGREGATORS=new Set(['/','/flashcards/','/worksheets/','/preschool/','/preschool/3-years/','/preschool/4-years/','/toddler/','/toddler/2-years/','/toddler/12-18-months/','/toddler/18-24-months/','/baby/','/newborn/','/extra-classes/','/coloring-pages/','/learning-path/','/learning-library/','/rooms/','/subjects/']);
 
-/* markers of a playable tool page */
-const INTERACTIVE=/id="(ia-tools|ms-tools|play)"|data-ia-|data-ms-|class="[^"]*\b(ia-stage|ms-stage|wsgen)\b/;
+/* The only static markup that still marks a real tool: a canvas that exists
+   without JavaScript (the draw-and-scribble desk). Everything else — the
+   write-color mounts, the progress markers — folds with its page now. */
+const INTERACTIVE=/<canvas[\s>]/;
 const parentOf=p=>p.slice(0,p.lastIndexOf('/',p.length-2)+1);
 
 /* Remove every element whose opening tag matches openRe, with its whole
@@ -45,18 +52,27 @@ function entry(childHtml,slug){
  if(!mm)return null;
  let c=mm[1];
  const title=txt((c.match(/<h1[^>]*>([\s\S]*?)<\/h1>/)||[,''])[1]);
- /* keep the download link from the side rail before the rail goes */
+ /* keep the download link from the side rail before the rail goes —
+    and harvest the JS-driven download buttons (data-ms-download and
+    friends) into a real anchor, so every folded sheet still downloads
+    the owner's original file with its SEO file name */
  const dl=[...c.matchAll(/<a\b[^>]*\sdownload(?:="[^"]*")?[^>]*>[\s\S]*?<\/a>/g)].map(x=>x[0].replace(/\sid="[^"]*"/g,'')).slice(0,1);
+ const dlBtn=[...c.matchAll(/<(?:a|button)\b[^>]*\sdata-[a-z]+-download="([^"]+)"[^>]*>/g)].map(x=>x[1]).slice(0,1);
+ if(!dl.length&&dlBtn.length)dl.push(`<a href="${dlBtn[0]}" download>Download the sheet</a>`);
  c=removeEl(c,/<nav\b[^>]*>/);
  c=removeEl(c,/<aside\b[^>]*>/);
  c=removeEl(c,/<section\b[^>]*\bcm\b[^>]*>/);
  c=removeEl(c,/<section\b[^>]*\bfc-section\b[^>]*>/);
  c=removeEl(c,/<form\b[^>]*>/);
+ /* the story pages of a folded book live in <noscript> (the no-JS reading
+    path) — unroll them into the visible article before the strip, so the
+    folded book carries its whole story on the main page */
+ c=c.replace(/<noscript\b[^>]*>([\s\S]*?)<\/noscript>/g,'$1');
  c=removeEl(c,/<script\b[^>]*>/);
  c=removeEl(c,/<noscript\b[^>]*>/);
  c=removeEl(c,/<button\b[^>]*>/);
  c=removeEl(c,/<canvas\b[^>]*>/);
- c=c.replace(/\sid="[^"]*"/g,'').replace(/\sdata-wc[a-z-]*(="[^"]*")?/g,'').replace(/\sfetchpriority="[^"]*"/g,'').replace(/\scrossorigin="[^"]*"/g,'');
+ c=c.replace(/\sid="[^"]*"/g,'').replace(/\sdata-(wc|ia|ms|tc|fc|sa|cc|wa|ph|st)-[a-z-]*(="[^"]*")?/g,'').replace(/\sfetchpriority="[^"]*"/g,'').replace(/\scrossorigin="[^"]*"/g,'');
  c=c.replace(/<img\b[^>]*>/g,t=>/\sloading=/.test(t)?t:t.replace('<img','<img loading="lazy" decoding="async"'));
  c=c.replace(/class="([^"]*)"/g,(_,k)=>'class="'+k.split(/\s+/).filter(x=>x&&x!=='wrap').join(' ')+'"');
  c=c.replace(/<h4\b/g,'<h5').replace(/<\/h4>/g,'</h5>').replace(/<h3\b/g,'<h4').replace(/<\/h3>/g,'</h4>').replace(/<h2\b/g,'<h4').replace(/<\/h2>/g,'</h4>');
@@ -66,12 +82,17 @@ function entry(childHtml,slug){
  return {title,html:`<article class="one-page-item" id="${slug}">${c}${dl.length?`<p class="item-download">${dl[0]}</p>`:''}</article>`};
 }
 
-export function collapse({allRoutes,routeImg,searchPages,site,dist='dist'}){
+export function collapse({allRoutes,routeImg,searchPages,site,dist='dist',parentOverrides}){
  const S=new Set(allRoutes);
  const hasChild=new Set();
  for(const p of allRoutes){let a=parentOf(p);while(a&&a!=='/'){hasChild.add(a);a=parentOf(a);}}
- /* nearest ancestor that is a real page and not an aggregator */
- const target=p=>{let a=parentOf(p);while(a&&a!=='/'){if(S.has(a))return AGGREGATORS.has(a)?null:a;a=parentOf(a);}return null;};
+ /* nearest ancestor that is a real page and not an aggregator — except the
+    pages the build pins by hand: books → the Learning Library, Look & Learn
+    words → the Look & Learn class, life-skills activities → their class page
+    (their own folder is not a real page, so the walk would stop at an
+    aggregator and keep them alive). */
+ const pinned=p=>parentOverrides&&parentOverrides.get(p);
+ const target=p=>{const pin=pinned(p);if(pin)return pin;let a=parentOf(p);while(a&&a!=='/'){if(S.has(a))return AGGREGATORS.has(a)?null:a;a=parentOf(a);}return null;};
  const items=[];const seen=new Set();
  for(const p of allRoutes){
   if(seen.has(p))continue;seen.add(p);
@@ -79,9 +100,6 @@ export function collapse({allRoutes,routeImg,searchPages,site,dist='dist'}){
   if(hasChild.has(p))continue;
   const parent=target(p);
   if(!parent||parent===p)continue;
-  /* playable pages stay: the drawing adventures, matching/sorting tools and
-     image activities are tools, not lessons or library cards */
-  if(/\/adventures\//.test(p))continue;
   const cf=dist+p+'index.html';
   if(existsSync(cf)&&INTERACTIVE.test(readFileSync(cf,'utf8')))continue;
   items.push({path:p,parent});
@@ -96,8 +114,10 @@ export function collapse({allRoutes,routeImg,searchPages,site,dist='dist'}){
   const used=new Set();
   const arts=[];
   for(const it of list){
-   const rel=it.path.slice(parent.length).replace(/\/$/,'');
-   const segs=rel.split('/');
+   /* the anchor slug is ALWAYS the path's own last segment — pinned pages
+      (books → the Library, word pages → Look & Learn) do not start with
+      their parent's path, so slicing at parent.length would mangle them */
+   const segs=it.path.replace(/\/$/,'').split('/');
    let slug=segs[segs.length-1];
    if(used.has(slug))slug=segs.join('-');
    used.add(slug);
@@ -157,7 +177,28 @@ export function collapse({allRoutes,routeImg,searchPages,site,dist='dist'}){
   const si=searchPages.findIndex(x=>x.u===it.path);if(si>=0)searchPages.splice(si,1);
  }
  rewriteLinks(moved,dist);
+ unwrapSelfLinks(byParent,dist);
+ console.log('Folded ' + items.length + ' individual pages into ' + byParent.size + ' main pages:');
+ for(const [parent,list] of [...byParent].sort((a,b)=>b[1].length-a[1].length)) console.log('  ' + String(list.length).padStart(4) + '  →  ' + parent);
  return {items,redirects,moved,parents:[...byParent.keys()]};
+}
+
+/* ONE-PAGE RULE, phase 3 (owner 2026-11-11: "no link anywhere points at a card
+   section"): on every main page that just absorbed children, an anchor that
+   now targets one of its own folded sections becomes a styled span — same
+   classes, same ribbon hooks, no href, no jump. The lp-tile precedent. */
+function unwrapSelfLinks(byParent,dist='dist'){
+ for(const parent of byParent.keys()){
+  const f=dist+parent+'index.html';
+  if(!existsSync(f))continue;
+  let h=readFileSync(f,'utf8');
+  const re=new RegExp('<a\\b([^>]*?)\\shref="'+parent.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+'#[a-z0-9-]+"([^>]*)>([\\s\\S]*?)</a>','g');
+  const out=h.replace(re,(m,pre,post,inner)=>{
+   const attrs=(pre+' '+post).replace(/\s(?:href|target|rel|download)(="[^"]*")?/g,'').trim();
+   return '<span'+(attrs?' '+attrs:'')+'>'+inner+'</span>';
+  });
+  if(out!==h)writeFileSync(f,out);
+ }
 }
 const walkHtml=d=>readdirSync(d).flatMap(n=>{const f=d+'/'+n;return statSync(f).isDirectory()?walkHtml(f):f.endsWith('.html')?[f]:[];});
 export const walkAll=d=>readdirSync(d).flatMap(n=>{const f=d+'/'+n;return statSync(f).isDirectory()?walkAll(f):[f];});

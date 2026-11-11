@@ -120,7 +120,7 @@ export function msCategoryBody(){
  <article class="wrap lesson-hero lesson-hero-cover"><div class="lesson-hero-copy">
   <span class="eyebrow">MATCHING &amp; SORTING \u00b7 31 WORKSHEETS \u00b7 AGE 2</span>
   <h1>Matching and sorting worksheets for 2-year-olds — printables.</h1>
-  <p class="lesson-lede">Thirty-one matching and sorting worksheets from the owner’s own bold, friendly artwork: same-and-different pairs, animal twins and shadows, baby animals, big and small, color and shape sorts — every one a whole activity on a single page. Tap any picture to open it; download and print buttons live there.</p>
+  <p class="lesson-lede">Thirty-one matching and sorting worksheets from the owner’s own bold, friendly artwork: same-and-different pairs, animal twins and shadows, baby animals, big and small, color and shape sorts — every one a whole activity on a single page. Download and print buttons sit right under every picture.</p>
  </div><figure class="lesson-cover"><img src="${esc(MS_COVER.url)}" width="${MS_COVER.w}" height="${MS_COVER.h}" alt="${esc(MS_COVER.alt)}" fetchpriority="high"></figure></article>
  <section class="wrap section compact" aria-label="All matching and sorting worksheets">
   <div class="ws-grid">${cards}</div>

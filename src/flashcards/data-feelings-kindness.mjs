@@ -75,7 +75,7 @@ export const meta={
  name:'Feelings & Kindness',
  seoTitle:'Feelings & Kindness Flashcards for Preschoolers — 35 Printable Cards',
  h1:'Feelings &amp; Kindness flashcards.',
- metaDescription:'Thirty-five feelings-and-kindness flashcards for ages 4–5: the feeling faces, kind words, calm-down skills and belonging habits — four words on every card, each card with its own page, parent guidance and a download button.',
+ metaDescription:'Thirty-five feelings-and-kindness flashcards for ages 4–5: the feeling faces, kind words, calm-down skills and belonging habits — four words on every card, each card right here on one page, parent guidance and a download button.',
  lede:'Thirty-five cards, four words each: the feelings a four-year-old lives with, the kind habits that make days gentler and the calm-down skills that turn big feelings into words. Show the card, say the words together, try the real thing — that is the whole method, and it works.',
  hubBlurb:'Thirty-five feelings-and-kindness cards — emotion words, kind habits and calm-down skills, four words a card.',
  ageLabel:'4–5 years',

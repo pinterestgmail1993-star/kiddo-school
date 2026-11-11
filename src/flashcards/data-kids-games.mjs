@@ -63,7 +63,7 @@ export const meta={
  h1:'Kids Games flashcards.',
  metaDescription:'Twenty-six printable kids-games flashcards for ages 3–5: balloon keep-up, hide and seek, tic-tac-toe, treasure hunt and more — each with a simple how-to-play guide kids can follow, what-you-need lists, age pills and a download button. US/UK word pairs (tic-tac-toe and noughts and crosses, jump rope and skipping rope) taught side by side.',
  lede:'Every classic game a childhood needs, on twenty-six cards a kid can read. Each card names one game — the balloon you keep off the floor, the potato that burns hands, the bear-hug hide-and-seek behind the bush — and each card page carries a simple guide: what you need, how to play, and one way to make it fresh tomorrow. The games speak the everyday words of the US, UK and Canada — and where the countries differ (tic-tac-toe and noughts and crosses, jump rope and skipping rope, freeze dance and musical statues), both names ride along, so every family hears its own playground talking.',
- hubBlurb:'Twenty-six classic games, each with its own how-to-play guide — balloons and beanbags, hiding and hopping, boards, mazes and treasure maps.',
+ hubBlurb:'Twenty-six classic games, each with its how-to-play guide on the class page — balloons and beanbags, hiding and hopping, boards, mazes and treasure maps.',
  ageLabel:'3–5 years',
  noun:'Kids',
  group:'preschool',
@@ -73,7 +73,7 @@ export const meta={
  classBtn:'Open the Kids Games class',
  lessonCrumb:[['Extra Classes','/extra-classes/']],
  lessonEyebrow:'KIDS GAMES LESSON',
- lessonLine:'extra class — every game card opens its own simple how-to-play lesson.',
+ lessonLine:'extra class — every game’s how-to-play guide is right on the class page.',
  pillGroups:[
   ['Throw, roll & aim','Games where something flies: balloons, beanbags, balls, hoops and paper planes — and the target waiting for it.',['balloon-keep-up','beanbag-toss','bowling','hoop-toss','paper-plane-target']],
   ['Run, chase & freeze','The big-movement classics: hiding, chasing, freezing, passing fast and falling over laughing.',['duck-duck-goose','follow-the-leader','freeze-dance','hide-and-seek','hot-potato','musical-chairs','red-light-green-light']],

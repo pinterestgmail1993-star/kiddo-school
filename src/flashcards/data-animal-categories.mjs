@@ -74,7 +74,7 @@ export const meta={
  classBtn:'Open the Animal Categories class',
  lessonCrumb:[['Extra Classes','/extra-classes/']],
  lessonEyebrow:'ANIMAL CATEGORIES LESSON',
- lessonLine:'extra class — every animal family opens its own simple lesson.',
+ lessonLine:'extra class — every animal family is taught right on its class page.',
  pillGroups:[
   ['Pets & farm friends','The animals that live with us and feed us: the pets that share our houses, the farm crew in the barnyard, the second barn crew, and the birds of the henhouse.',['pets','farm-animals','more-farm-animals','farm-birds']],
   ['Little crawly creatures','The small ones under our feet: the six-legged crew, the garden’s quiet workers, the little furballs and the pond-hoppers who live two lives.',['insects','garden-creatures','small-animals','amphibians']],

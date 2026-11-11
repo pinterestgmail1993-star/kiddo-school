@@ -1532,7 +1532,7 @@ const SOLVE_SHEETS={
   printHref:'/toddler/2-years/colors-and-shapes/print/',fcHref:'/flashcards/colors-and-shapes/'},
  '/toddler/2-years/matching-and-sorting/':{
   heading:'Solve the matching cards together.',
-  copy:'This class’s cards live in the flashcards library — every card has its own page, and every card page can be printed, downloaded or drawn on right on the screen.',
+  copy:'This class’s cards live in the flashcards library — every card is on the library shelf, ready to print, download or draw on right on the screen.',
   steps:[
    ['Print the cards','Print the matching and sorting cards from the flashcards library, two to a page, and cut them out together.'],
    ['Make the pairs','Lay the cards out and find the pairs that are the same. Say “same!” every time a pair lands — the word and the match grow up together.'],
@@ -1542,7 +1542,7 @@ const SOLVE_SHEETS={
   printHref:null,fcHref:'/flashcards/matching-and-sorting/'},
  '/toddler/2-years/animals-and-sounds/':{
   heading:'Solve the animal cards together.',
-  copy:'The twelve animal cards live in the flashcards library, each on its own page — with its real sound to hear where a recording is ready — and every page can be printed or drawn on.',
+  copy:'The twelve animal cards live in the flashcards library, all on the shelf — with its real sound to hear where a recording is ready — and every page can be printed or drawn on.',
   steps:[
    ['Print the cards','Print the animal cards from the flashcards library and cut them out together, naming each animal as it is cut.'],
    ['Say the sound','Hold up one card and make its sound — moo, woof, tweet — then wait. Whatever your toddler sends back is the lesson working.'],

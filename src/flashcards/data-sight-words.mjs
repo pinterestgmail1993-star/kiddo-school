@@ -386,7 +386,7 @@ export const meta={
  name:'Sight Words',
  seoTitle:'Sight Word Flashcards for Preschoolers — 52 Printable Cards',
  h1:'Sight Word flashcards.',
- metaDescription:'Fifty-two sight word flashcards for ages 4–5: the Dolch pre-primer, primer and grade-1 words, each with a friendly picture, its own page, a download button and short notes for grown-ups.',
+ metaDescription:'Fifty-two sight word flashcards for ages 4–5: the Dolch pre-primer, primer and grade-1 words, each with a friendly picture, a download button and short notes for grown-ups, all on one page.',
  lede:'Fifty-two cards for the small words that appear on every page of a first book: a, the, I, can, see, blue and the rest. Each card shows one word in big, clear letters over a friendly picture, ready to hold, read and spot in a story.',
  hubBlurb:'Fifty-two early-reading cards: a, the, I, can, see, blue and more, each word with a friendly picture.',
  ageLabel:'4–5 years',

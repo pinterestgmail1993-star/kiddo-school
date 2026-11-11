@@ -214,7 +214,7 @@ export const meta={
  seoTitle:'Cafeteria Food Flashcards for Kids — 62 Printable Cards with Activities (Ages 2–5)',
  h1:'Cafeteria food flashcards.',
  metaDescription:'Sixty-two printable cafeteria food flashcards for ages 2–5: fruits, vegetables, main dishes, breakfast, drinks and snacks — every card carries its own pointing, counting or matching activity, an age pill, a short page and a download button. Name lunch, count lunch, match lunch.',
- lede:'Sixty-two foods, sixty-two things to do with them. Each card names one cafeteria item — the apple, the spaghetti, the milk carton — and prints one activity under its name: point to the apple, count the peas, match the sandwich. Each food has its own short page, a full lesson and a printable twin in the library. Little lunches start with the tray card and grow one food at a time.',
+ lede:'Sixty-two foods, sixty-two things to do with them. Each card names one cafeteria item — the apple, the spaghetti, the milk carton — and prints one activity under its name: point to the apple, count the peas, match the sandwich. Each food is right here with a full lesson and a printable twin in the library. Little lunches start with the tray card and grow one food at a time.',
  hubBlurb:'Fruits, mains, breakfast and drinks — sixty-two cafeteria foods, each with a point-and-say activity on the card.',
  ageLabel:'2–5 years',
  noun:'Toddlers',

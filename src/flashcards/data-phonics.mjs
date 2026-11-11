@@ -59,7 +59,7 @@ export const meta={
  name:'Phonics & Beginning Sounds',
  seoTitle:'Phonics Flashcards A–Z for Preschoolers — 26 Letter-Sound Cards',
  h1:'Phonics &amp; Beginning Sounds flashcards.',
- metaDescription:'Twenty-six phonics flashcards for ages 4–5: every letter A to Z with its beginning sound — Aa apple, Bb ball, Cc cat — each card with its own page, a download button and short notes for grown-ups.',
+ metaDescription:'Twenty-six phonics flashcards for ages 4–5: every letter A to Z with its beginning sound — Aa apple, Bb ball, Cc cat — each card right here on one page, a download button and short notes for grown-ups.',
  lede:'Twenty-six cards, one for every letter: big Aa beside the apple, Bb beside the ball, all the way to Zz beside the zebra. Every card carries its picture word, its sound script for grown-ups and one tiny activity — the whole alphabet\u2019s worth of first sounds, ready to print.',
  hubBlurb:'Twenty-six letter-sound cards — Aa apple to Zz zebra, the whole alphabet with its sounds and picture words.',
  ageLabel:'4–5 years',

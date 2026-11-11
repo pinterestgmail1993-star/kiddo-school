@@ -400,7 +400,7 @@ export function coloringCategoryBody(){
  <article class="wrap lesson-hero lesson-hero-cover"><div class="lesson-hero-copy">
   <span class="eyebrow">SHAPES \u00b7 20 COLORING PAGES \u00b7 AGES 2\u20134</span>
   <h1>Shapes coloring pages — circles, squares, triangles and friends.</h1>
-  <p class="lesson-lede">Twenty coloring pages from the owner’s own bold, friendly artwork: one clear outline per page, with the real-world twin beside it — a circle and a beach ball, a rectangle and a bus, a triangle and a house. Tap any picture to open its page; download and print buttons live there.</p>
+  <p class="lesson-lede">Twenty coloring pages from the owner’s own bold, friendly artwork: one clear outline per page, with the real-world twin beside it — a circle and a beach ball, a rectangle and a bus, a triangle and a house. Download and print buttons sit right under every picture.</p>
  </div><figure class="lesson-cover"><img src="${esc(CP_COVER.url)}" width="${CP_COVER.w}" height="${CP_COVER.h}" alt="${esc(CP_COVER.alt)}" fetchpriority="high"></figure></article>
  <section class="wrap section compact" aria-label="All shapes coloring pages">
   <div class="ws-grid">${cards}</div>
