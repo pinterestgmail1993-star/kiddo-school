@@ -9,7 +9,9 @@ const KEY_LOCATION = `https://kiddo.school/${KEY}.txt`;
 const SITEMAP = 'https://kiddo.school/sitemap.xml';
 const max = Number(process.argv[2] || 10000);
 
-const xml = readFileSync('/tmp/live-sitemap.xml', 'utf8');
+const xml = process.argv[3]
+  ? readFileSync(process.argv[3], 'utf8')
+  : await (await fetch('https://kiddo.school/sitemap.xml')).text();
 const all = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m => m[1]);
 const urls = all.slice(0, max);
 console.log(`sitemap locs: ${all.length} — submitting: ${urls.length}`);
