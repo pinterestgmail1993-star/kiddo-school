@@ -70,7 +70,7 @@ test('/art-room/ hub: cover FIRST, 27 tiles in file order, owner cross-links + g
  assert.ok(html.includes('href="/coloring-pages/"'),'links the Coloring Pages');
  assert.ok(html.includes('href="/extra-classes/colors/"'),'links the Colors class');
  assert.ok(html.includes('href="/flashcards/art-room/"'),'links the printable set');
- for(const g of ['/games/colour-hunt/','/games/shape-hunt/','/games/shadow-shapes/','/games/follow-the-leader/'])
+ for(const g of ['/games/#colour-hunt','/games/#shape-hunt','/games/#shadow-shapes','/games/#follow-the-leader'])
   assert.ok(html.includes('href="'+g+'"'),'games-shelf link (owner standing rule) '+g);
  assert.ok(html.toUpperCase().includes('AGES 2–5'),'age pill on the room');
 });

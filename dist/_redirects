@@ -757,6 +757,8 @@
 /cafeteria/learn/:p2/ /cafeteria/ 301
 /newborn/0-6-weeks/:p2 /newborn/0-6-weeks/ 301
 /newborn/0-6-weeks/:p2/ /newborn/0-6-weeks/ 301
+/games/:p1 /games/ 301
+/games/:p1/ /games/ 301
 /dinosaurs/:p1 /dinosaurs/ 301
 /dinosaurs/:p1/ /dinosaurs/ 301
 /art-room/:p1 /art-room/ 301

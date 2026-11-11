@@ -53,9 +53,9 @@ test('cross-links: Explore the School, Class 22 and Kitchen Helper, both ways',(
 
 test('games-shelf links per the standing rule',()=>{
   assert.ok(hub.includes('href="/games/"'),'games shelf link');
-  assert.ok(hub.includes('href="/games/hot-potato/"'),'hot potato');
-  assert.ok(hub.includes('href="/games/simon-says/"'),'simon says');
-  assert.ok(hub.includes('href="/games/treasure-hunt/"'),'treasure hunt');
+  assert.ok(hub.includes('href="/games/#hot-potato"'),'hot potato');
+  assert.ok(hub.includes('href="/games/#simon-says"'),'simon says');
+  assert.ok(hub.includes('href="/games/#treasure-hunt"'),'treasure hunt');
 });
 
 

@@ -70,7 +70,7 @@ test('/dinosaurs/ hub: cover FIRST, six pinned lead the 33 tiles, links back to 
  assert.equal((html.match(/class="lp-tile"/g)||[]).length,33,'33 tiles');
  assert.ok(html.includes('href="/preschool/4-years/animals-and-their-habitats/"'),'links Class 36');
  assert.ok(html.includes('href="/extra-classes/animal-categories/"'),'links Animal Categories');
- assert.ok(html.includes('href="/games/animal-walks/"'),'games-shelf link (owner standing rule)');
+ assert.ok(html.includes('href="/games/#animal-walks"'),'games-shelf link (owner standing rule)');
  assert.ok(html.includes('href="/flashcards/dinosaurs/"'),'links the printable set');
 });
 

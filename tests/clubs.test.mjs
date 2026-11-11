@@ -81,7 +81,7 @@ test('/clubs/ hub: cover FIRST, young shelf then older shelf, cross-links + game
  assert.ok(html.includes('href="/rooms/"'),'links Explore the School');
  assert.ok(html.includes('href="/learning-path/"'),'links the Learning Path (Growing-up classrooms)');
  assert.ok(html.includes('href="/flashcards/extra-curricular-activities/"'),'links the printable set');
- for(const g of ['/games/animal-walks/','/games/musical-statues/','/games/relay-race/','/games/obstacle-course/','/games/simon-says/'])
+ for(const g of ['/games/#animal-walks','/games/#musical-statues','/games/#relay-race','/games/#obstacle-course','/games/#simon-says'])
   assert.ok(html.includes('href="'+g+'"'),'games-shelf link (owner standing rule) '+g);
 });
 

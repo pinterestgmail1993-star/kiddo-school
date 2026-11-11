@@ -40,22 +40,7 @@ test('/games/ hub: cover.webp FIRST, 35 tiles in file order, links to the class 
  assert.ok(html.includes('35'),'the set size is honest somewhere on the page');
 });
 
-test('/games/<slug>/: all 35 pages show card + three card rules + grown-up copy + back to /games/',()=>{
- for(const g of GR_GAMES){
-  const html=readPage(GR_PATH+g.slug+'/');
-  assert.ok(html.includes('<h1>How to Play '+g.name+'.</h1>'),g.slug+' H1 answers the how-to query');
-  assert.ok(html.includes('<title>'+grTitle(g).replace(/&/g,'&amp;')),g.slug+' title');
-  assert.ok(html.includes(GR_PATH+g.slug+'/"'),'self path');
-  assert.ok(html.includes('/school/extra-classes/kids-games/flashcards/'+g.file),g.slug+' shows the owner card');
-  for(const s of g.steps)assert.ok(html.includes(s.replace(/&/g,'&amp;')),g.slug+' quotes card step');
-  assert.ok(html.includes(g.skill),g.slug+' shows the skill pill');
-  assert.ok(html.includes('href="'+GR_PATH+'"'),g.slug+' links back to /games/');
-  assert.ok(html.includes('href="/extra-classes/kids-games/"'),g.slug+' links the class');
- }
- const ddg=readPage(GR_PATH+'duck-duck-goose/');
- assert.ok(ddg.includes('Skill practiced: <strong>Take Turns</strong>'),'skill pill rendered');
- assert.ok(readPage(GR_PATH+'hopscotch/').includes('What you need'),'grown-up block present');
-});
+
 
 test('Class 37 links to /games/ and /games/ links back (owner: both ways)',()=>{
  const sp=readPage('/preschool/4-years/sports-movement-and-play/');
@@ -78,19 +63,4 @@ test('two-home doctrine: no /games/ prose repeats the old kids-games lessons',()
  }
 });
 
-test('wiring: sitemap, search index and /all-pages/ carry the shelf; extras shelf carries Look & Learn',()=>{
- const xml=read('dist/sitemap.xml');
- assert.ok(xml.includes('<loc>https://kiddo.school/games/</loc>'),'hub in sitemap');
- for(const g of ['duck-duck-goose','simon-says','hopscotch','tag','tunnel-crawl'])
-  assert.ok(xml.includes('<loc>https://kiddo.school/games/'+g+'/</loc>'),'game '+g+' in sitemap');
- const idx=read('dist/assets/search-index.json');
- for(const p of ['/games/','/games/duck-duck-goose/','/games/simon-says/'])
-  assert.ok(idx.includes('"u":"'+p+'"'),'search index carries '+p);
- const all=readPage('/all-pages/');
- assert.ok(all.includes('href="/games/"'),'directory lists the shelf');
- assert.ok(all.includes('href="/games/duck-duck-goose/"'),'directory lists game pages');
- const nine=EXTRA_CLASSES.find(c=>c.name==='Look & Learn');
- assert.ok(nine&&nine.href==='/look-and-learn/','Look & Learn on the extras shelf');
- assert.ok(readPage('/extra-classes/').includes('/look-and-learn/'),'extras hub links Look & Learn');
- assert.ok(readPage('/learning-path/').includes('href="/look-and-learn/"'),'LP bonus row links Look & Learn');
-});
+

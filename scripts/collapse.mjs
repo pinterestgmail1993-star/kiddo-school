@@ -10,7 +10,7 @@ import {readFileSync,writeFileSync,rmSync,existsSync,readdirSync,statSync} from 
 
 /* Only these areas collapse. Games, the worksheet generator, books, activities
    and the singleton pages are real tools or one-off pages — they stay. */
-const ROOTS=['/flashcards/','/worksheets/','/preschool/','/toddler/','/baby/','/newborn/','/cafeteria/','/clubs/','/dinosaurs/','/art-room/','/action-words/','/healthy-food/','/staying-safe/','/coloring-pages/','/extra-classes/','/kitchen/','/music-room/','/playground/','/toddler-room/','/nature-club/'];
+const ROOTS=['/flashcards/','/worksheets/','/preschool/','/toddler/','/baby/','/newborn/','/cafeteria/','/clubs/','/dinosaurs/','/art-room/','/action-words/','/healthy-food/','/staying-safe/','/coloring-pages/','/extra-classes/','/kitchen/','/music-room/','/playground/','/toddler-room/','/nature-club/','/games/'];
 /* Pages that list classes or decks — never a merge target. */
 const AGGREGATORS=new Set(['/','/flashcards/','/worksheets/','/preschool/','/preschool/3-years/','/preschool/4-years/','/toddler/','/toddler/2-years/','/toddler/12-18-months/','/toddler/18-24-months/','/baby/','/newborn/','/extra-classes/','/coloring-pages/','/learning-path/','/learning-library/','/rooms/','/subjects/']);
 
