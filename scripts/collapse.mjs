@@ -79,7 +79,27 @@ function entry(childHtml,slug){
  c=c.replace(/<h1\b[^>]*>/,'<h3 class="item-title">').replace(/<\/h1>/,'</h3>');
  c=c.replace(/<h1\b/g,'<h3').replace(/<\/h1>/g,'</h3>');
  c=c.replace(/\n\s*/g,' ').replace(/>\s+</g,'><');
- return {title,html:`<article class="one-page-item" id="${slug}">${c}${dl.length?`<p class="item-download">${dl[0]}</p>`:''}</article>`};
+ /* OWNER 2026-11-11: "download buttons are too bottom — put them in
+    horizontal view, with their description and buttons below the image, not
+    stacked vertical." Folded items used to end with the download button
+    buried under the Try-it / Keep-going boxes, ~1300px under the picture.
+    Now the item shows the sheet first, then a band directly under it: the
+    lead description on the left, the download button on the right. The
+    Try-it / Keep-going boxes follow after the band. Items without a
+    download anchor (the library books) or without a picture figure keep
+    the old shape. */
+ const tp=c.match(/<h3 class="item-title">[\s\S]*?<\/h3><p(?:[^>]*)>((?:(?!<\/p>)[\s\S])*)<\/p>/);
+ let banded=false;
+ if(tp&&dl.length){
+  c=c.replace(/(<h3 class="item-title">[\s\S]*?<\/h3>)<p(?:[^>]*)>(?:(?!<\/p>)[\s\S])*<\/p>/,'$1');
+  const figI=c.indexOf('</figure>');
+  if(figI>=0){
+   const at=figI+9;
+   c=c.slice(0,at)+`<div class="item-band"><p class="item-desc">${tp[1]}</p><p class="item-download">${dl[0]}</p></div>`+c.slice(at);
+   banded=true;
+  }
+ }
+ return {title,html:`<article class="one-page-item" id="${slug}">${c}${dl.length&&!banded?`<p class="item-download">${dl[0]}</p>`:''}</article>`};
 }
 
 export function collapse({allRoutes,routeImg,searchPages,site,dist='dist',parentOverrides}){

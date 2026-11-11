@@ -77,7 +77,7 @@ const esc=s=>String(s).replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;
 
 /* ---- The card tile — same house markup as the manners deck ---------------- */
 function cardTile(c){
- return `<figure class="mn-card"><img src="${QW_BASE}${c.file}" width="${W}" height="${H}" alt="${esc(c.alt)}" loading="lazy"><strong>${esc(c.word)}</strong><figcaption class="mn-tip">${esc(c.tip)}</figcaption><div class="mn-actions"><a class="button" href="${QW_BASE}${c.file}" download="${c.slug}.webp">Download <span aria-hidden="true">\u2193</span></a><button type="button" class="button button-ghost" data-mn-print>Print <span aria-hidden="true">\u2399</span></button></div></figure>`;
+ return `<figure class="mn-card"><img src="${QW_BASE}${c.file}" width="${W}" height="${H}" alt="${esc(c.alt)}" loading="lazy"><strong>${esc(c.word)}</strong><figcaption class="mn-band"><div class="mn-tip">${esc(c.tip)}</div><div class="mn-actions"><a class="button" href="${QW_BASE}${c.file}" download="${c.slug}.webp">Download <span aria-hidden="true">\u2193</span></a><button type="button" class="button button-ghost" data-mn-print>Print <span aria-hidden="true">\u2399</span></button></div></figcaption></figure>`;
 }
 
 /* ---- The class page (the lesson) ------------------------------------------ */

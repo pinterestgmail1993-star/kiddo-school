@@ -2271,7 +2271,7 @@ h1 em,h2 em{color:#7b4b99}
 /* Manners extra class (owner 2026-10-27): ONE page at /manners/ — 32 card
    tiles on the class page, each with its practice tip and Download + Print
    under the image. House look: ink border, hard offset shadow, serif word. */
-.mn-cards{margin-top:26px;display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:20px}
+.mn-cards{margin-top:26px;display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:20px}
 /* Question Words class page: the six core cards lead, the ten more follow —
    the two shelves are labelled with a small eyebrow-style heading. */
 .mn-shelf-title{margin:2.4rem 0 0;font-family:Arial,Helvetica,sans-serif;font-size:.82rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
@@ -2280,14 +2280,17 @@ h1 em,h2 em{color:#7b4b99}
 .mn-card img{width:100%;height:auto;background:#fff;border:1px solid var(--line)}
 .mn-card strong{font-family:var(--serif);font-weight:400;font-size:17px;line-height:1.25;text-align:center;letter-spacing:-.2px}
 .mn-card .mn-tip{margin:0;font-size:.86rem;line-height:1.45;color:var(--ink-soft,#5C5470)}
-.mn-actions{display:flex;gap:8px;margin-top:auto;padding-top:4px;flex-wrap:wrap}
-.mn-actions .button{padding:.45em .9em;font-size:.85rem}
+.mn-actions{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.mn-actions .button{padding:.5em .6em;font-size:.8rem;min-height:0;white-space:nowrap;gap:.3em}
+/* the arrow/shortcut glyphs are decoration — the First Glance buttons run
+   without them, and at three-per-row they blow the card wall */
+.mn-actions .button span[aria-hidden]{display:none}
 /* The "Ask a grown-up" badge (owner 2026-10-29): the two kitchen sequence
    cards — make-toast and make-lemonade — carry it under the card name, and
    the badge prints with the card (it is not in the hidden list below). */
 .mn-grownup{display:inline-block;align-self:center;font-size:.78rem;font-weight:700;letter-spacing:.3px;color:#8a4a00;background:#FFF3D6;border:1.5px dashed #d98a00;border-radius:999px;padding:.25em .85em}
 .mn-grownup.mn-sos{color:#a10000;background:#FFE3E3;border-color:#d40000;border-style:solid}
-@media(max-width:640px){.mn-cards{grid-template-columns:repeat(2,1fr);gap:12px}.mn-card strong{font-size:15px}.mn-card .mn-tip{font-size:.8rem}.mn-grownup{font-size:.72rem}}
+@media(max-width:640px){.mn-cards{grid-template-columns:1fr;gap:12px}.mn-card strong{font-size:15px}.mn-card .mn-tip{font-size:.8rem}.mn-grownup{font-size:.72rem}}
 /* Science at a Glance (/science-at-a-glance/): the parents'-shelf tile with
    a tap-to-open artwork link and a fourth, dashed skill pill beside
    age/subject/level. Print isolation inherits the manners rules above. */
@@ -2345,3 +2348,16 @@ h1 em,h2 em{color:#7b4b99}
 .fg-card .fg-actions .button:active{transform:translate(2px,2px);box-shadow:1px 1px 0 #3d1f52!important}
 .fg-actions-msg{font-size:13px;font-weight:700;color:#3d1f52;flex-basis:100%}
 .fg-actions-msg:empty{display:none}
+/* OWNER 2026-11-11: "download buttons are too bottom — put them in horizontal
+   view, with their description and buttons below the image, not stacked
+   vertical." Every sheet card now ends with one band under the picture:
+   description on the left, buttons on the right, wrapping to two tidy rows
+   when the card is narrow — never one button per line at the card floor. */
+.mn-band{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;margin-top:2px}
+.mn-band .mn-tip{flex:1 1 170px}
+.mn-band .mn-actions{flex:0 0 auto;margin-top:0;padding-top:0}
+.item-band{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;margin-top:14px}
+.item-band .item-desc{flex:1 1 320px;margin:0}
+.one-page-item .item-band .item-download,.item-band .item-download{margin-top:0}
+.item-band .item-download .button{white-space:nowrap}
+@media(max-width:640px){.mn-band{flex-direction:column;align-items:stretch}.mn-band .mn-actions .button{flex:1 1 0;min-width:0;justify-content:center}.item-band{flex-direction:column;align-items:stretch}.item-band .item-download{margin-top:2px}}

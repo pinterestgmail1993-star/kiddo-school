@@ -436,7 +436,7 @@ const esc=s=>String(s).replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;
 function tile(c){
  const badge=c.badge==='grownup'?'<span class="mn-grownup">Ask a grown-up</span>':'';
  const pills=`<span class="fc-pillrow"><span class="fc-pill fc-pill-age">Ages 4\u20135</span><span class="fc-pill fc-pill-subject">${esc(c.sub)}</span><span class="fc-pill fc-pill-level">${PGP_LEVEL_NAMES[PGP_LEVEL[c.slug]]}</span><span class="fc-pill fc-pill-skill">${esc(PGP_SKILL[c.slug])}</span></span>`;
- return `<figure class="mn-card"><img src="${PGP_BASE}${c.file}" width="${c.w}" height="${c.h}" alt="${esc(c.alt)}" loading="lazy"><strong>${esc(c.word)}</strong>${badge}${pills}<figcaption class="mn-tip">${esc(c.say)}</figcaption><div class="mn-actions"><a class="button" href="${PGP_BASE}${c.file}" download="${c.slug}.jpg">Download <span aria-hidden="true">\u2193</span></a><button type="button" class="button button-ghost" data-mn-print>Print <span aria-hidden="true">\u2399</span></button></div></figure>`;
+ return `<figure class="mn-card"><img src="${PGP_BASE}${c.file}" width="${c.w}" height="${c.h}" alt="${esc(c.alt)}" loading="lazy"><strong>${esc(c.word)}</strong>${badge}${pills}<figcaption class="mn-band"><div class="mn-tip">${esc(c.say)}</div><div class="mn-actions"><a class="button" href="${PGP_BASE}${c.file}" download="${c.slug}.jpg">Download <span aria-hidden="true">\u2193</span></a><button type="button" class="button button-ghost" data-mn-print>Print <span aria-hidden="true">\u2399</span></button></div></figcaption></figure>`;
 }
 
 export function pgpClassBody(){
@@ -458,7 +458,7 @@ export const PGP_LIB_SET={slug:'plants-and-how-they-grow',url:'/flashcards/plant
 function libTile(c){
  const badge=c.badge==='grownup'?'<span class="mn-grownup">Ask a grown-up</span>':'';
  const pillRow=`<span class="fc-pillrow"><span class="fc-pill fc-pill-age">Ages 4–5</span><span class="fc-pill fc-pill-subject">${esc(c.sub)}</span><span class="fc-pill fc-pill-level">${PGP_LEVEL_NAMES[PGP_LEVEL[c.slug]]}</span><span class="fc-pill fc-pill-skill">${esc(PGP_SKILL[c.slug])}</span></span>`;
- return `<figure class="mn-card"><img src="${PGP_BASE}${c.file}" width="${c.w}" height="${c.h}" alt="${esc(c.alt)}" loading="lazy"><strong>${esc(c.word)}</strong>${badge}${pillRow}<figcaption class="mn-tip">${esc(c.try)}</figcaption><div class="mn-actions"><a class="button" href="${PGP_BASE}${c.file}" download="${c.slug}.jpg">Download <span aria-hidden="true">\u2193</span></a><button type="button" class="button button-ghost" data-mn-print>Print <span aria-hidden="true">\u2399</span></button></div></figure>`;
+ return `<figure class="mn-card"><img src="${PGP_BASE}${c.file}" width="${c.w}" height="${c.h}" alt="${esc(c.alt)}" loading="lazy"><strong>${esc(c.word)}</strong>${badge}${pillRow}<figcaption class="mn-band"><div class="mn-tip">${esc(c.try)}</div><div class="mn-actions"><a class="button" href="${PGP_BASE}${c.file}" download="${c.slug}.jpg">Download <span aria-hidden="true">\u2193</span></a><button type="button" class="button button-ghost" data-mn-print>Print <span aria-hidden="true">\u2399</span></button></div></figcaption></figure>`;
 }
 
 export function pgpLibBody(){

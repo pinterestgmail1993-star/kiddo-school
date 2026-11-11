@@ -263,7 +263,7 @@ export const SS_LIB_SET={slug:'staying-safe',url:'/flashcards/staying-safe/',nam
 
 function ssShelfTile(c){
  const pillRow=`<span class="fc-pillrow"><span class="fc-pill fc-pill-age">Ages 4\u20135</span><span class="fc-pill fc-pill-subject">${SS_SHELF_SUBJECT[c.shelf]}</span><span class="fc-pill fc-pill-level">${SS_LEVEL_NAMES[SS_LEVEL[c.slug]]}</span></span>`;
- return `<figure class="mn-card"><img src="${imgOf(c.slug)}" width="800" height="1131" alt="${esc(c.alt)}" loading="lazy"><strong>${esc(c.word)}</strong>${pillRow}<figcaption class="mn-tip">${esc(SS_SHELF_DESC[c.slug])}</figcaption><div class="mn-actions"><a class="button" href="${imgOf(c.slug)}" download="${c.slug}.webp">Download <span aria-hidden="true">\u2193</span></a><button type="button" class="button button-ghost" data-mn-print>Print <span aria-hidden="true">\u2399</span></button></div></figure>`;
+ return `<figure class="mn-card"><img src="${imgOf(c.slug)}" width="800" height="1131" alt="${esc(c.alt)}" loading="lazy"><strong>${esc(c.word)}</strong>${pillRow}<figcaption class="mn-band"><div class="mn-tip">${esc(SS_SHELF_DESC[c.slug])}</div><div class="mn-actions"><a class="button" href="${imgOf(c.slug)}" download="${c.slug}.webp">Download <span aria-hidden="true">\u2193</span></a><button type="button" class="button button-ghost" data-mn-print>Print <span aria-hidden="true">\u2399</span></button></div></figcaption></figure>`;
 }
 
 export function stayingSafeLibBody(){

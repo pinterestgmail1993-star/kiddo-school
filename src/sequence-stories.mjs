@@ -84,7 +84,7 @@ const esc=s=>String(s).replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;
 /* ---- The class page (the lesson) ------------------------------------------ */
 function cardTile(c){
  const badge=c.grownup?'<span class="mn-grownup">Ask a grown-up</span>':'';
- return `<figure class="mn-card"><img src="${SS_BASE}${c.file}" width="${W}" height="${H}" alt="${esc(c.alt)}" loading="lazy"><strong>${esc(c.word)}</strong>${badge}<figcaption class="mn-tip">${esc(c.tip)}</figcaption><div class="mn-actions"><a class="button" href="${SS_BASE}${c.file}" download="${c.slug}.webp">Download <span aria-hidden="true">\u2193</span></a><button type="button" class="button button-ghost" data-mn-print>Print <span aria-hidden="true">\u2399</span></button></div></figure>`;
+ return `<figure class="mn-card"><img src="${SS_BASE}${c.file}" width="${W}" height="${H}" alt="${esc(c.alt)}" loading="lazy"><strong>${esc(c.word)}</strong>${badge}<figcaption class="mn-band"><div class="mn-tip">${esc(c.tip)}</div><div class="mn-actions"><a class="button" href="${SS_BASE}${c.file}" download="${c.slug}.webp">Download <span aria-hidden="true">\u2193</span></a><button type="button" class="button button-ghost" data-mn-print>Print <span aria-hidden="true">\u2399</span></button></div></figcaption></figure>`;
 }
 
 export function sequenceStoriesBody(){

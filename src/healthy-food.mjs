@@ -113,7 +113,7 @@ export function hfShortBody(slug){
  return `${crumbHf(c.word)}
  <div class="page-heading wrap"><span class="eyebrow">HEALTHY FOOD &amp; EATING WELL \u00b7 CLASS 40 \u00b7 AGES 4\u20135</span><h1>${esc(c.word)}</h1><p>The ${esc(c.word.toLowerCase())} card from Class 40 \u00b7 Healthy Food &amp; Eating Well — one happy habit, said by YOU, tried tonight.</p></div>
  <div class="fc2-dual wrap">
-  <div class="fc2-main"><figure class="fc2-hero mn-card"><img src="${HF_BASE}${c.file}" width="${W}" height="${H}" alt="${esc(c.alt)}"><figcaption><strong>${esc(c.word)}</strong><span>Class 40 \u00b7 Healthy Food \u00b7 the card\u2019s own habit</span></figcaption><div class="mn-actions"><a class="button" href="${HF_BASE}${c.file}" download="${c.slug}.webp">Download <span aria-hidden="true">\u2193</span></a><button type="button" class="button button-ghost" data-mn-print>Print <span aria-hidden="true">\u2399</span></button></div></figure>
+  <div class="fc2-main"><figure class="fc2-hero mn-card"><img src="${HF_BASE}${c.file}" width="${W}" height="${H}" alt="${esc(c.alt)}"><figcaption class="mn-band"><div><strong>${esc(c.word)}</strong><span>Class 40 \u00b7 Healthy Food \u00b7 the card\u2019s own habit</span></div><div class="mn-actions"><a class="button" href="${HF_BASE}${c.file}" download="${c.slug}.webp">Download <span aria-hidden="true">\u2193</span></a><button type="button" class="button button-ghost" data-mn-print>Print <span aria-hidden="true">\u2399</span></button></div</div></figcaption></figure>
   <section class="fc2-learn" aria-label="The ${esc(c.word)} habit">
    <div class="fc2-do"><h2>The card\u2019s habit</h2><p class="dino-action">\u201c${esc(c.say)}\u201d — the ${esc(c.word.toLowerCase())} card\u2019s big words, in the child\u2019s voice.</p></div>
    <div class="fc2-do"><h2>Try it tonight</h2><p>${esc(c.tryIt).replace(/^Try it tonight: /,'')}</p></div>
@@ -201,7 +201,7 @@ export const HF_LIB_SET={slug:'healthy-food',url:'/flashcards/healthy-food/',nam
 
 function hfShelfTile(c){
  const pillRow=`<span class="fc-pillrow"><span class="fc-pill fc-pill-age">Ages 4–5</span><span class="fc-pill fc-pill-subject">${HF_SHELF_SUBJECT[HF_SHELF_BY_SLUG[c.slug]]}</span><span class="fc-pill fc-pill-level">${HF_LEVEL_NAMES[HF_LEVEL[c.slug]]}</span></span>`;
- return `<figure class="mn-card"><img src="${HF_BASE}${c.file}" width="${c.w}" height="${c.h}" alt="${esc(c.alt)}" loading="lazy"><strong>${esc(c.word)}</strong>${pillRow}<figcaption class="mn-tip">${esc(HF_SHELF_DESC[c.slug])}</figcaption><div class="mn-actions"><a class="button" href="${HF_BASE}${c.file}" download="${c.slug}.webp">Download <span aria-hidden="true">\u2193</span></a><button type="button" class="button button-ghost" data-mn-print>Print <span aria-hidden="true">\u2399</span></button></div></figure>`;
+ return `<figure class="mn-card"><img src="${HF_BASE}${c.file}" width="${c.w}" height="${c.h}" alt="${esc(c.alt)}" loading="lazy"><strong>${esc(c.word)}</strong>${pillRow}<figcaption class="mn-band"><div class="mn-tip">${esc(HF_SHELF_DESC[c.slug])}</div><div class="mn-actions"><a class="button" href="${HF_BASE}${c.file}" download="${c.slug}.webp">Download <span aria-hidden="true">\u2193</span></a><button type="button" class="button button-ghost" data-mn-print>Print <span aria-hidden="true">\u2399</span></button></div></figcaption></figure>`;
 }
 
 export function healthyFoodLibBody(){

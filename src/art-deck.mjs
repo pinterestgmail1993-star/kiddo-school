@@ -131,7 +131,7 @@ const esc=s=>String(s).replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;
 function artTile(c){
  const badge=c.badge==='grownup'?'<span class="mn-grownup">Ask a grown-up</span>':'';
  const pills=`<span class="fc-pillrow"><span class="fc-pill fc-pill-age">Ages 3\u201312</span><span class="fc-pill fc-pill-subject">${esc(ARTDECK_SHELF_BY_SLUG[c.slug].sub)}</span><span class="fc-pill fc-pill-level">${ARTDECK_LEVEL_NAMES[ARTDECK_LEVEL_OF[c.slug]]}</span><span class="fc-pill fc-pill-skill">${esc(ARTDECK_SKILL[c.slug])}</span></span>`;
- return `<figure class="mn-card"><img src="${ARTDECK_BASE}${c.file}" width="${c.w}" height="${c.h}" alt="${esc(c.alt)}" loading="lazy"><strong>${esc(c.word)}</strong>${badge}${pills}<figcaption class="mn-tip">${esc(c.say)}</figcaption><div class="mn-actions"><a class="button" href="${ARTDECK_BASE}${c.file}" download="${c.pageSlug}.webp">Download <span aria-hidden="true">\u2193</span></a><button type="button" class="button button-ghost" data-mn-print>Print <span aria-hidden="true">\u2399</span></button></div></figure>`;
+ return `<figure class="mn-card"><img src="${ARTDECK_BASE}${c.file}" width="${c.w}" height="${c.h}" alt="${esc(c.alt)}" loading="lazy"><strong>${esc(c.word)}</strong>${badge}${pills}<figcaption class="mn-band"><div class="mn-tip">${esc(c.say)}</div><div class="mn-actions"><a class="button" href="${ARTDECK_BASE}${c.file}" download="${c.pageSlug}.webp">Download <span aria-hidden="true">\u2193</span></a><button type="button" class="button button-ghost" data-mn-print>Print <span aria-hidden="true">\u2399</span></button></div></figcaption></figure>`;
 }
 
 /* The shelf family appended to the Art Studio page (/art/), after the
