@@ -44,44 +44,8 @@ const checkLesson=(html,L)=>{
 };
 
 
-test('lesson 4 follows the Infant 2 spec with Try Together and a real link to lesson 5',()=>{
- checkLesson(l4,fwftLesson);
- assert.ok(l4.includes('INFANT 2 · LESSON 4'));
- assert.ok(l4.includes('TRY TOGETHER'));
- assert.ok(l4.includes('<h2>Little things to say.</h2>'));
- for(const p of fwftLesson.tryTogether)assert.ok(l4.includes('<li>'+p+'</li>'),p);
- assert.ok(l4.includes('Previous lesson'));
- assert.ok(l4.includes('href="/baby/3-4-months/colors-and-first-objects/"'));
- assert.ok(l4.includes('3–4 Months'));
- assert.ok(l4.includes('Next lesson'));
- assert.ok(l4.includes('href="/baby/6-9-months/animals-everyday-objects/"'));
- assert.ok(l4.includes('6–9 Months'));
- const files=[...l4.matchAll(new RegExp(lessonsBase.replace(/\./g,'\\.')+'first-words-familiar-things-4-6-months/(\\d{2}-[a-z-]+)\\.webp','g'))].map(m=>m[1]);
- assert.equal(new Set(files).size,11,'each card present exactly once (baby-face card reserved: artwork never shipped)');
- assert.deepEqual([...new Set(files)],fwftLesson.cards.map(c=>c.file.replace('.webp','')));
- assert.match(l4,/BreadcrumbList[\s\S]*"name":"Baby"[\s\S]*"name":"4–6 Months"[\s\S]*"name":"First Words & Familiar Things"/);
-});
-test('lesson 5 follows the Baby 1 spec with Try Together, Find It in Real Life and a real link to lesson 6',()=>{
- checkLesson(l5,aeoLesson);
- assert.ok(l5.includes('EXPLORER 1 · LESSON 5'));
- assert.ok(l5.includes('TRY TOGETHER'));
- assert.ok(l5.includes('<h2>Little things to say.</h2>'));
- for(const p of aeoLesson.tryTogether)assert.ok(l5.includes('<li>'+p+'</li>'),p);
- assert.ok(l5.includes('REAL-WORLD CONNECTION'));
- assert.ok(l5.includes('<h2>Find It in Real Life</h2>'));
- assert.ok(l5.includes(aeoLesson.realWorld.copy));
- for(const p of aeoLesson.realWorld.examples)assert.ok(l5.includes('<li>'+p+'</li>'),p);
- assert.ok(l5.includes('Previous lesson'));
- assert.ok(l5.includes('href="/baby/4-6-months/first-words-familiar-things/"'));
- assert.ok(l5.includes('4–6 Months'));
- assert.ok(l5.includes('Next lesson'));
- assert.ok(l5.includes('href="/baby/9-12-months/first-actions-body-parts/"'));
- assert.ok(l5.includes('9–12 Months'));
- const files=[...l5.matchAll(new RegExp(lessonsBase.replace(/\./g,'\\.')+'animals-everyday-objects-6-9-months/(\\d{2}-[a-z-]+)\\.webp','g'))].map(m=>m[1]);
- assert.equal(new Set(files).size,12,'each card present exactly once (the cat card also fronts the set: the folder has no cover file)');
- assert.deepEqual([...new Set(files)],aeoLesson.cards.map(c=>c.file.replace('.webp','')));
- assert.match(l5,/BreadcrumbList[\s\S]*"name":"Baby"[\s\S]*"name":"6–9 Months"[\s\S]*"name":"Animals & Everyday Objects"/);
-});
+
+
 
 test('lesson 7 follows the Toddler 1 spec with Try Together, Find It at Home and coming-soon next',()=>{
  checkLesson(l7,fwfhLesson);

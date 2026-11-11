@@ -127,6 +127,35 @@ export function collapse({allRoutes,routeImg,searchPages,site,dist='dist'}){
  const gone=new Set(items.map(i=>i.path));
  for(let i=allRoutes.length-1;i>=0;i--)if(gone.has(allRoutes[i]))allRoutes.splice(i,1);
  for(let i=searchPages.length-1;i>=0;i--)if(gone.has(searchPages[i].u))searchPages.splice(i,1);
+ /* PHASE 2 — thin landing pages: an age/stage page under /baby/, /newborn/
+    or /toddler/ that is only a short intro pointing at ONE real lesson is
+    removed; its URL 301s to that lesson. */
+ const THIN_ROOTS=['/baby/','/newborn/','/toddler/'];
+ const notPrint=q=>!/\/print\/$/.test(q);
+ const thin=[];
+ for(const p of [...allRoutes]){
+  if(!THIN_ROOTS.some(r=>p.startsWith(r))||AGGREGATORS.has(p)||!notPrint(p))continue;
+  const kids=allRoutes.filter(q=>q!==p&&q.startsWith(p)&&notPrint(q));
+  if(kids.length!==1)continue;
+  const f=dist+p+'index.html';
+  if(!existsSync(f))continue;
+  const mm=readFileSync(f,'utf8').match(/<main[^>]*>([\s\S]*)<\/main>/);
+  const words=mm?txt(mm[1].replace(/<script[\s\S]*?<\/script>/g,'')).split(' ').length:0;
+  if(words>=300)continue;
+  thin.push({path:p,parent:kids[0]});
+ }
+ const moved2=new Map();
+ for(const it of thin){
+  if(routeImg.has(it.path)){
+   const merged=new Set([].concat(routeImg.get(it.parent)||[],routeImg.get(it.path)));
+   routeImg.set(it.parent,[...merged]);routeImg.delete(it.path);
+  }
+  rmSync(dist+it.path+'index.html',{force:true});
+  moved.set(it.path,it.parent);moved2.set(it.path,it.parent);
+  redirects.push({from:it.path,to:it.parent});items.push(it);
+  const gi=allRoutes.indexOf(it.path);if(gi>=0)allRoutes.splice(gi,1);
+  const si=searchPages.findIndex(x=>x.u===it.path);if(si>=0)searchPages.splice(si,1);
+ }
  rewriteLinks(moved,dist);
  return {items,redirects,moved,parents:[...byParent.keys()]};
 }

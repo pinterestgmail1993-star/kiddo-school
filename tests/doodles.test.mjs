@@ -19,7 +19,7 @@ const c1=read('toddler/2-years/colors-and-shapes/index.html');
 
 const baby=read('baby/index.html');
 const newborn=read('newborn/index.html');
-const babyStage=read('baby/3-4-months/index.html');
+
 const lib=read('learning-library/index.html');
 const nature=read('nature/index.html');
 const natureLeaf=read('nature/leaf-rubbing/index.html');
