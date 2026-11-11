@@ -2338,3 +2338,8 @@ h1 em,h2 em{color:#7b4b99}
 .one-page-item img{max-width:100%;height:auto;border-radius:12px}
 .one-page-item .item-download{margin-top:1rem}
 .one-page-item:target{outline:3px solid #f5b835;outline-offset:8px;border-radius:12px}
+
+.fg-actions{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:10px 12px 0}
+.fg-actions .button{padding:8px 14px;font-size:14px;min-height:40px}
+.fg-actions-msg{font-size:13px;font-weight:700;color:var(--ink);flex-basis:100%}
+.fg-actions-msg:empty{display:none}
