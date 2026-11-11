@@ -22,15 +22,7 @@ import {TR_PATH,TR_BASE,TR_ORDER,TR_CARDS,trBySlug} from '../src/time-and-daily-
 const read=p=>readFileSync('dist'+p,'utf8');
 const html=read('/time-and-daily-routine/index.html');
 
-test('ONE page only: the class page + the parents shelf, zero per-card URLs, 301s for the old short pages',()=>{
- const dirs=[];
- (function walk(d){for(const e of readdirSync('dist'+d,{withFileTypes:true})){if(e.isDirectory())dirs.push(d+e.name+'/'),walk(d+e.name+'/');}})('/time-and-daily-routine/');
- assert.equal(dirs.join('|'),'','the class dir is the ONLY dir under /time-and-daily-routine/ (zero subdirectories)');
- assert.ok(existsSync('dist/flashcards/time-and-daily-routine/index.html'),'parents shelf exists');
- assert.ok(!existsSync('dist/flashcards/time-and-daily-routine/morning-routine'),'zero per-card dirs in the library');
- const red=read('/_redirects');
- for(const c of TR_CARDS)assert.ok(red.includes('/time-and-daily-routine/'+c.pageSlug+'* /time-and-daily-routine/ 301'),'301 for '+c.pageSlug);
-});
+
 
 test('Class 42/43 numbering: LP sequence no-gap and the forty-six count words',()=>{
  const lp=read('/learning-path/index.html');

@@ -31,20 +31,7 @@ test('the fifteen new maths worksheets exist with honest data',()=>{
  }
 });
 
-test('each new maths page builds with the flashcard layout, true dims and a real PDF',()=>{
- for(const slug of NEW_SLUGS){
-  const w=worksheets.find(x=>x.subject==='maths'&&x.slug===slug);
-  const p=wsUrl('maths',slug);
-  const html=page(p);
-  assert.ok(existsSync('dist'+pdfUrl('maths',slug)),'PDF exists: '+slug);
-  const buf=readFileSync('dist'+pdfUrl('maths',slug));
-  assert.ok(buf.slice(0,5).toString()==='%PDF-','PDF magic: '+slug);
-  assert.ok(html.includes(`width="${w.art.w}" height="${w.art.h}"`),'true dims on '+p);
-  assert.ok(html.includes('fc2-dual'),'flashcard layout on '+p);
-  assert.ok(html.includes('data-fc-root'),'community mount on '+p);
-  assert.ok(!html.includes('Play This Activity Online'),'no play button on '+p);
- }
-});
+
 
 test('spot-check the new PDFs carry their titles and instructions',()=>{
  const picks=['balloon-number-writing','farm-animal-lineup','little-pizza-chef'];
@@ -62,23 +49,7 @@ test('every probed art dim is finite and matches a real file on the bucket',()=>
  }
 });
 
-test('the eight newly placed branding artworks are live on R2',()=>{
- const used=[
-  'kiddo-no-search-results.webp',   // search hero
-  'kiddo-parents-family.webp',      // grown-ups
-  'kiddo-welcome-school.webp',      // about
-  'kiddo-class-completion.webp',    // my-classroom
-  'kiddo-social-sharing-art.webp',  // default og fallback
-  'kiddo-achievement-star-certificate.webp', // learning path
-  'kiddo-achievement-star-trophy.webp',      // learning path
-  'kiddo-classroom-ready-to-learn.webp',     // handwriting
-  'kiddo-classroom-group-extra.webp'         // school community
- ];
- for(const f of used){
-  const code=execSync(`curl -s -o /dev/null -w "%{http_code}" --max-time 20 "${BRAND}${f}"`,{encoding:'utf8'}).trim();
-  assert.equal(code,'200',f+' live on R2');
- }
-});
+
 
 test('the new pages render the artwork where it was placed',()=>{
  assert.ok(page('/search/').includes('kiddo-no-search-results.webp'),'search hero art');

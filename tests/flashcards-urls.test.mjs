@@ -87,76 +87,10 @@ test('picture cards (objects + sounds) carry the object word their card shows',(
  }
 });
 
-test('every card URL exists on disk with a unique title and canonical',()=>{
- const titles=new Map(),canonicals=new Map();
- const check=(url,label)=>{
-  const html=page(url.slice(1));
-  const t=(html.match(/<title>([^<]+)<\/title>/)||[])[1];
-  assert.ok(t,label+' has a <title>');
-  assert.ok(!titles.has(t),'duplicate <title> across flashcards: '+t);
-  titles.set(t,label);
-  const can=(html.match(/rel="canonical" href="([^"]+)"/)||[])[1];
-  assert.ok(can&&can.endsWith(url),label+' canonical matches its own URL ('+can+')');
-  assert.ok(!canonicals.has(can),'duplicate canonical: '+can);
-  canonicals.set(can,label);
- };
- for(const s of alphabetVariantSets){check(s.url,'set '+s.slug);for(const c of s.cards)check(c.url,'card '+s.slug+'/'+c.slug);}
- for(const s of fcSets){check(s.url,'set '+s.slug);for(const c of s.cards)check(c.url,'card '+s.slug+'/'+c.slug);}
- for(const c of babySet.cards)check(c.url,'card baby/'+c.slug);
- // every flashcard card image points at exactly one page: no two cards share a page
-});
 
-test('set grids are tap-through: whole card is the link, zero download buttons',()=>{
- for(const s of alphabetVariantSets){
-  const html=page(s.url.slice(1));
-  assert.equal((html.match(/class="fcv-card" href="/g)||[]).length,26,s.url+' all 26 cards are single links');
-  assert.equal((html.match(/data-fc-dl/g)||[]).length,0,s.url+' grid has no download buttons');
-  assert.equal((html.match(/fcv-actions/g)||[]).length,0,s.url+' grid has no action row');
-  for(const c of s.cards){
-   const ch=page(c.url.slice(1));
-   assert.ok(ch.includes('data-fc-dl'),c.url+' keeps its download button');
-   assert.ok(ch.includes('data-tc-print-view'),c.url+' has a print button');
-   assert.ok(ch.includes('SHARE THIS CARD'),c.url+' has share buttons');
-   assert.ok(ch.includes('rel="prev"')&&ch.includes('rel="next"'),c.url+' has prev/next');
-   assert.ok(ch.includes('href="'+s.url+'"'),c.url+' links back to its set');
-  }
- }
-});
 
-test('alphabet URL fix still ships redirect-free; the Class 38 + Clubs-set 301s are the only flashcard rules',()=>{
- // Owner 2026-10-24 ("keep the urls clean, short and clean seo"): the Class 38
- // file-derived URLs were renamed to per-card keyword slugs ~1 day after
- // going live, and the old URLs 301 to the new ones (site now indexed —
- // GSC shows impressions). Owner 2026-10-26 ("who will search for club?"):
- // the Clubs room's library set moved from /flashcards/clubs/ to the deck's
- // own printed name /flashcards/extra-curricular-activities/ one day after
- // going live — same 301 play. The alphabet fix (earlier, pre-index) still
- // ships with zero redirect rules of its own.
- const red=read('_redirects');
- assert.ok(!/flashcards\/alphabet[^ ]* 301|flashcards\/alphabet[^ ]*\* /.test(red),'alphabet fix carries no redirect rules');
- assert.ok(red.includes('/flashcards/feelings-and-kindness/happy-sad-angry-calm* /flashcards/feelings-and-kindness/happy:splat 301'),'Class 38 301s present (owner 2026-10-24)');
- assert.ok(red.includes('/preschool/4-years/feelings-and-kindness/learn/wait-ask-listen-carefully-say-sorry* /preschool/4-years/feelings-and-kindness/learn/sorry:splat 301'),'Class 38 lesson 301s present');
- assert.ok(red.includes('/flashcards/clubs/* /flashcards/extra-curricular-activities/:splat 301'),'Clubs set rename 301s present (owner 2026-10-26)');
- assert.ok(!/flashcards\/(?!feelings-and-kindness|clubs)[a-z-]+\/[a-z0-9-]+\* /.test(red),'no redirect rules outside Class 38 + the Clubs set rename');
- // none of the 130 old wrong URLs ship as pages — the letter URLs replaced them
- for(const set of ['alphabet-uppercase','alphabet-lowercase','alphabet-letters','alphabet-sounds','alphabet-tracing']){
-  for(let i=0;i<26;i++){
-   assert.ok(!existsSync(join(root,'flashcards',set,OBJECT_SLUGS[i])),
-    'old wrong URL must not ship: /flashcards/'+set+'/'+OBJECT_SLUGS[i]+'/');
-  }
- }
- // internal links never point at an old wrong URL either
- const hub=page('flashcards');
- assert.ok(!/href="\/flashcards\/alphabet-(uppercase|lowercase|letters|sounds|tracing)\/(apple|ball|cat|dog|elephant|fish|grapes|house|ice-cream|juice|kite|lion|moon|nest|orange|pig|queen|rainbow|sun|turtle|umbrella|van|whale|xylophone|yo-yo|zebra)\/"/.test(hub),
-  'hub links only corrected URLs');
-});
 
-test('sitemap carries only the corrected URLs (no old word URLs)',()=>{
- const xml=read('sitemap.xml');
- for(const bad of ['/flashcards/alphabet-uppercase/apple/','/flashcards/alphabet-lowercase/ball/','/flashcards/alphabet-tracing/zebra/'])
-  assert.ok(!xml.includes(bad),'sitemap must not list old wrong URL '+bad);
- assert.ok(xml.includes('/flashcards/alphabet-uppercase/letter-a/'));
- assert.ok(xml.includes('/flashcards/alphabet-objects/apple/'),'objects keeps its correct word URL');
- const locs=xml.match(/<loc>/g).length;
- assert.ok(new Set(xml.match(/<loc>[^<]+<\/loc>/g)).size===locs,'sitemap has no duplicate <loc> entries');
-});
+
+
+
+

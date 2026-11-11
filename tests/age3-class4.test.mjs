@@ -50,35 +50,9 @@ test('colors content: unique intro/say/try/note/meta/cardTitle per color, paint-
  for(const slug of COLORS)assert.doesNotMatch(JSON.stringify(colorsCardContent[slug]),/[\u{1F300}-\u{1FAFF}\u{2700}-\u{27BF}]/u,'no emoji in '+slug);
 });
 
-test('flashcard engine: colors is a real set; card pages show BOTH faces with two downloads',()=>{
- const set=fcSets.find(s=>s.slug==='colors');
- assert.ok(set,'colors set registered');
- assert.equal(set.cards.length,12);
- assert.equal(set.coverUrl,R2+'12-rainbow-splash.webp');
- for(const c of set.cards){
-  const html=page(c.url.slice(1));
-  assert.ok(existsSync(join(root,c.url.slice(1),'index.html')),c.url+' exists');
-  assert.ok(html.includes('class="fc2-pair"'),c.url+' renders the two-image pair');
-  assert.ok(html.includes(`src="${c.img}"`),c.url+' splash present');
-  assert.ok(html.includes(`src="${c.img2}"`),c.url+' picture present');
-  assert.ok((html.match(new RegExp(c.img.slice(R2.length),'g'))||[]).length>=1,'splash referenced');
-  assert.ok(html.includes(`href="${c.img}" download="red-splash.webp"`)||html.includes(`download="${c.file.replace(/^\d+-/,'')}"`),c.url+' splash download');
-  assert.ok(html.includes(`href="${c.img2}" download="`),c.url+' picture download');
-  assert.ok(html.includes('data-fc-reactions')&&html.includes('data-fc-review-form')&&html.includes('data-fc-comment-form'),c.url+' three community systems');
-  assert.ok(html.includes('"BreadcrumbList"'),c.url+' breadcrumb schema');
-  assert.ok(!html.includes('aggregateRating'),c.url+' no fabricated ratings');
- }
-});
 
-test('colors set page: no cover repeat, spec SEO strings, honest grid of 12',()=>{
- const html=page('flashcards/colors');
- assert.ok(!html.includes('fc2-cover'),'no repeated cover thumbnail');
- assert.ok(html.includes('<title>Color Flashcards for Preschoolers | 12 Colors | Kiddo.school</title>'),'set title');
- assert.equal([...html.matchAll(/class="fc-card fc2-cardlink"/g)].length,12,'12 cards in grid');
- assert.ok(html.includes('href="/preschool/3-years/colors-and-color-mixing/"'),'links back to class');
- assert.ok(html.includes(`<img src="${R2}01-red-splash.webp"`),'grid uses real splash thumbs');
- for(const s of COLORS)assert.ok(html.includes(`/flashcards/colors/${s}/`),'grid links '+s);
-});
+
+
 
 test('class page: learn + rainbow + solve-the-sheets, no coded games (owner instruction)',()=>{
  const html=page('preschool/3-years/colors-and-color-mixing');

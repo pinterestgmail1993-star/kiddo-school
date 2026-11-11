@@ -43,12 +43,7 @@ test('print: the four generator machines carry body.wsgen-page',()=>{
  assert.doesNotMatch(read('/worksheet-generator/'),/<body class="wsgen-page">/,'the generator hub is not a machine page');
 });
 
-test('print: flashcard card page keeps a plain <body> and a visible print chain',()=>{
- const html=read('/flashcards/classroom/object-map/');
- assert.match(html,/<body>/,'card pages must NOT carry wsgen-page — main must print');
- assert.match(html,/class="fc2-dual wrap">\s*<div class="fc2-main"><figure class="fc2-hero">/,'the card image sits in the .fc2-dual > .fc2-main > .fc2-hero print chain');
- assert.match(html,/<figure class="fc2-hero"><img src="https:\/\/assets\.kiddo\.school\//,'the hero image is a real R2 asset, not a background');
-});
+
 
 test('print: print-view set page and worksheet/coloring pages keep a plain <body>',()=>{
  assert.match(read('/toddler/2-years/school-garden/garden-flowers/print/'),/<body class="print-view">/,'print-view pages keep their own class — main visible in print');

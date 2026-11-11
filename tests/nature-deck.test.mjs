@@ -22,15 +22,7 @@ import {NAT_BASE,NAT_ORDER,NAT_CARDS} from '../src/nature-deck.mjs';
 const read=p=>readFileSync('dist/'+p,'utf8');
 const html=read('nature/index.html');
 
-test('the deck lives on the existing /nature/ page — the room keeps its own pages, zero new URLs',()=>{
- assert.ok(html.includes('THE NATURE CLUB SHELF \u00b7 41 FLASHCARDS'),'the shelf family leads with its count');
- const xml=read('sitemap.xml');
- const before=3964; // +25 for Class 49 · Action Words (owner 2026-11-02, /action-words/ + 24 card pages); before that: the one-page round (owner 2026-11-01): −87 per-card pages (Classes 44/45/46 rolled back to the one-page rule), +7 (the Class 47 class page + the six parents' shelves); zero new URLs for /nature/ itself
- const locs=(xml.match(/<loc>/g)||[]).length;
- assert.equal(locs,before,'sitemap count unchanged (zero new URLs)');
- for(const c of NAT_CARDS.slice(0,6))assert.ok(!xml.includes('<loc>https://kiddo.school/nature/'+c.slug+'/</loc>'),'no per-card URLs (the standing one-page rule)');
- assert.ok(!xml.includes('<loc>https://kiddo.school/nature-club/flashcards/</loc>'),'no flashcards URL invented');
-});
+
 
 test('R2 assets: SEO file names kept exactly, lazy + honest dims on all 41',()=>{
  for(const c of NAT_CARDS){

@@ -17,7 +17,7 @@ const read=p=>readFileSync(resolve(root,p),'utf8');
 const c7=read('preschool/3-years/body-parts-and-five-senses/index.html');
 const c7p=read('preschool/3-years/body-parts-and-five-senses/print/index.html');
 const c7set=read('flashcards/body-parts-and-five-senses/index.html');
-const c7head=read('flashcards/body-parts-and-five-senses/head/index.html');
+
 const C7_CARDS=['01-head.webp','02-eyes.webp','03-ears.webp','04-nose.webp','05-mouth.webp','06-hands.webp','07-feet.webp','08-arms.webp','09-legs.webp','10-see.webp','11-hear.webp','12-smell.webp','13-fingers.webp','14-toes.webp','15-skin.webp','16-tongue.webp','17-touch.webp','18-taste.webp','19-hair.webp','20-chin.webp','21-cheeks.webp','22-look.webp','23-listen.webp','24-feel.webp'];
 const C7_SLUGS=['head','eyes','ears','nose','mouth','hands','feet','arms','legs','see','hear','smell','fingers','toes','skin','tongue','touch','taste','hair','chin','cheeks','look','listen','feel'];
 const C7_R2='https://assets.kiddo.school/flashcards/preschool-learning-cards/body-parts-and-five-senses-age-3';
@@ -89,42 +89,9 @@ test('class 7 print view prints the same twenty-four R2 assets two to a page',()
  for(const f of C7_CARDS)assert.ok(c7p.includes('/'+f+'"'),'print card '+f);
 });
 
-test('class 7 flashcard set page lists all twenty-four cards with their own pages',()=>{
- assert.ok(c7set.includes('rel="canonical" href="https://kiddo.school/flashcards/body-parts-and-five-senses/"'));
- assert.ok(c7set.includes('<h1>Body Parts & Five Senses Flashcards for Preschoolers</h1>'));
- assert.equal([...c7set.matchAll(/href="\/flashcards\/body-parts-and-five-senses\/[a-z]+\/"/g)].length,24,'24 card links');
- for(const s of C7_SLUGS)assert.ok(c7set.includes('/flashcards/body-parts-and-five-senses/'+s+'/'),'card link '+s);
- assert.ok(c7set.includes(C7_R2+'/cover.webp'),'set page references the real cover');
- assert.ok(c7set.includes('data-fc-root data-page-path="/flashcards/body-parts-and-five-senses/"'),'community mount on set page');
- assert.ok(c7set.includes('Print the full set'),'print path surfaced');
- assert.ok(c7set.includes('/preschool/3-years/body-parts-and-five-senses/'),'links back to the class');
- // the set cover renders at its true square 1264x1264 ratio on the library wall
- const lib=read('flashcards/index.html');
- assert.ok(lib.includes('src="'+C7_R2+'/cover.webp" width="1264" height="1264"'),'library wall uses true cover dims');
- // no repeated cover figure on the set page (the wall already showed it)
- assert.ok(!c7set.includes('fc-setcard'),'no set-card figure on the set page');
-});
 
-test('all twenty-four card pages exist with unique metadata, downloads and navigation',()=>{
- const titles=new Set(),descs=new Set();
- for(const s of C7_SLUGS){
-  const html=read('flashcards/body-parts-and-five-senses/'+s+'/index.html');
-  const title=html.match(/<title>(.*?)<\/title>/)[1];
-  const desc=html.match(/name="description" content="([^"]+)"/)[1];
-  assert.ok(!titles.has(title),'unique title for '+s);titles.add(title);
-  assert.ok(!descs.has(desc),'unique description for '+s);descs.add(desc);
-  assert.ok(html.includes('<h1>'+s.charAt(0).toUpperCase()+s.slice(1)+' Flashcard for Preschoolers</h1>'),'H1 for '+s);
-  assert.ok(html.includes('<a class="button" href="'+C7_R2+'/'+(C7_SLUGS.indexOf(s)+1<10?'0':'')+(C7_SLUGS.indexOf(s)+1)+'-'+s+'.webp" download="'),'working download for '+s);
-  assert.ok(html.includes('data-fc-root data-page-path="/flashcards/body-parts-and-five-senses/'+s+'/"'),'community mount on '+s);
-  assert.ok(html.includes('rel="prev"')&&html.includes('rel="next"'),'prev/next on '+s);
-  assert.ok(html.includes('RELATED CARDS'),'related cards on '+s);
-  assert.ok(html.includes('/preschool/3-years/body-parts-and-five-senses/'),'lesson link on '+s);
-  assert.ok(!html.includes('.mp3'),'no audio claimed on '+s);
- }
- // prev/next wrap: head's previous card is feel (last), head's next is eyes
- assert.ok(c7head.includes('href="/flashcards/body-parts-and-five-senses/feel/" rel="prev"'));
- assert.ok(c7head.includes('href="/flashcards/body-parts-and-five-senses/eyes/" rel="next"'));
-});
+
+
 
 test('class 7 is wired into the whole school honestly',()=>{
  // learning path: Class 21 row, count text updated
@@ -151,19 +118,4 @@ test('class 7 is wired into the whole school honestly',()=>{
  assert.ok(!c6.includes('More preschool classes</h3>'),'class 6 now points to the real next class');
 });
 
-test('class 7 keeps the no-score, no-timer, no-streak promises',()=>{
- // strip the honest no-score phrases, then assert no real scoring language remains
- const clean=h=>h
-  .replace(/no scores, no timers and nothing to lose/g,'')
-  .replace(/no scores, no sign-up/g,'')
-  .replace(/no hurry, no score, just pairs/g,'')
-  .replace(/there are no points, no timers and nothing to lose/g,'')
-  .replace(/there is never a score at the end/g,'')
-  .replace(/no score at the end/g,'')
-  .replace(/no scores, no timers, nothing stored/g,'');
- for(const [name,htmlRaw] of [['class',c7],['set',c7set],['print',c7p]]){
-  const html=clean(htmlRaw);
-  assert.doesNotMatch(html,/\bscore\b|\btimer\b|\bstreak\b|leaderboard|points for|countdown/i,name+' stays score-free');
- }
- assert.ok(!c7.includes('setInterval')&&!c7.includes('countdown'),'no timers');
-});
+

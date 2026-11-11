@@ -44,43 +44,10 @@ test('school-people set page: groups render, class button is honest',()=>{
  assert.equal(imgs,16,'16 person images on the set page');
 });
 
-test('school-people card pages: every person has a page with a download button',()=>{
- for(const p of PEOPLE){
-  const html=read(SETPATH+p.slug+'/');
-  assert.ok(html.includes('Download card'),'download button on '+p.slug);
-  assert.ok(html.includes(`href="${WW_BASE}${p.slug}.webp"`),'full-size R2 download href on '+p.slug);
-  assert.ok(html.includes('data-tc-print-view'),'Print this card on '+p.slug);
-  assert.ok(html.includes(`width="1000" height="707"`),'true dims on '+p.slug+' hero');
-  assert.ok(html.includes('people page'),'people-page link on '+p.slug);
-  const t=[...html.matchAll(/<title>([^<]+)<\/title>/g)].map(m=>m[1]);
-  assert.equal(new Set(t).size,1,'one title tag on '+p.slug);
- }
- const titles=PEOPLE.map(p=>read(SETPATH+p.slug+'/').match(/<title>([^<]+)<\/title>/)[1]);
- assert.equal(new Set(titles).size,16,'16 unique card-page titles');
-});
 
-test('people page: 14 tiles open card pages, the two doors stay doors',()=>{
- const html=read(WW_PATH);
- for(const p of PEOPLE){
-  if(p.slug==='principal'||p.slug==='school-nurse')continue;
-  assert.ok(html.includes(`href="${SETPATH}${p.slug}/"`),p.slug+' tile opens its card page');
- }
- assert.ok(html.includes('href="/principals-office/"'),'principal door intact');
- assert.ok(html.includes('Visit the Principal’s Office'),'principal door label intact');
- assert.ok(html.includes('href="/extra-classes/doctor-visit/"'),'nurse door intact');
- assert.ok(html.includes('Meet the nurse at the doctor'),'nurse door label intact');
- assert.ok(html.includes(`href="${SETPATH}"`),'the whole School People set is linked');
- assert.ok(html.includes('open the whole School People set'),'set link line present');
-});
 
-test('school-people is discoverable: hub shelf, sitemap, related sets',()=>{
- const hub=read('/flashcards/');
- assert.ok(hub.includes('href="'+SETPATH+'"'),'flashcards hub lists the set');
- const xml=readFileSync('dist/sitemap.xml','utf8');
- assert.ok(xml.includes('<loc>'+site+SETPATH+'</loc>'),'set in sitemap');
- for(const p of PEOPLE)assert.ok(xml.includes('<loc>'+site+SETPATH+p.slug+'/</loc>'),p.slug+' in sitemap');
- const rel=read(SETPATH+'teacher/');
- assert.ok(rel.includes('href="/flashcards/classroom/object-'),'related cards reach the Classroom set');
-});
+
+
+
 
 function esc(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}

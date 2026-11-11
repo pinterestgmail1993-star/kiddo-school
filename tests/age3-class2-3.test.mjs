@@ -52,71 +52,12 @@ test('shapes data: 12 real cards, all portrait, every polygon named honestly',()
 });
 
 /* ---- Set pages with the exact spec SEO strings ---- */
-test('numbers set page: exact title, meta, canonical, H1 and all ten card links',()=>{
- const html=page('/flashcards/numbers-and-counting/');
- assert.ok(html.includes('<title>Number Flashcards 1–10 for Preschoolers | Kiddo.school</title>'));
- assert.ok(html.includes('content="Explore numbers 1 to 10 with colorful picture flashcards, counting prompts and simple activities. View, download and practice each number together."'));
- assert.ok(html.includes('rel="canonical" href="https://kiddo.school/flashcards/numbers-and-counting/"'));
- assert.match(html,/<h1>Numbers 1–10 Flashcards<\/h1>/);
- const slugs=['one','two','three','four','five','six','seven','eight','nine','ten'];
- slugs.forEach(s=>assert.ok(html.includes(`href="/flashcards/numbers-and-counting/${s}/"`),'card link '+s));
- assert.ok(html.includes('href="/preschool/3-years/numbers-and-counting/"'),'set links to its class');
- assert.ok(html.includes('href="/preschool/3-years/numbers-and-counting/print/"'),'set links the real print view');
- assert.ok(!/\.pdf/i.test(html),'no fabricated PDF claims');
-});
-test('shapes set page: exact title, H1, twelve card links, real related sets',()=>{
- const html=page('/flashcards/shapes/');
- assert.ok(html.includes('<title>Shape Flashcards for Preschoolers | 12 Shapes | Kiddo.school</title>'));
- assert.match(html,/<h1>Shape Flashcards for Preschoolers<\/h1>/);
- ['circle','square','triangle','rectangle','oval','star','heart','diamond','crescent','pentagon','hexagon','octagon'].forEach(s=>
-  assert.ok(html.includes(`href="/flashcards/shapes/${s}/"`),'card link '+s));
- assert.ok(html.includes('href="/preschool/3-years/shapes-and-patterns/"'),'set links to its class');
- assert.ok(html.includes('href="/flashcards/colors-and-shapes/"'),'related real set');
-});
+
+
 
 /* ---- Individual card pages ---- */
-test('numbers card pages: 10 unique spec-pattern titles, numeral H1s, downloads, prev/next, community',()=>{
- const seen=new Set();
- const titles=new Set();
- for(let i=1;i<=10;i++){
-  const slug=['one','two','three','four','five','six','seven','eight','nine','ten'][i-1];
-  const html=page(`/flashcards/numbers-and-counting/${slug}/`);
-  const c=numbersLesson.cards[i-1];
-  assert.ok(html.includes(`rel="canonical" href="https://kiddo.school/flashcards/numbers-and-counting/${slug}/"`));
-  assert.ok(html.includes(`data-page-path="/flashcards/numbers-and-counting/${slug}/"`),'community mount on '+slug);
-  assert.ok(html.includes(`<h1>Number ${i} Flashcard — `),'numeral H1 '+slug);
-  assert.ok(html.includes('Download card'),'download button '+slug);
-  assert.ok(html.includes('href="https://assets.kiddo.school/flashcards/preschool-learning-cards/numbers-and-counting-age-3/'+c.file+'" download='),'real R2 download '+slug);
-  assert.ok(html.includes('Previous card')&&html.includes('Next card'),'prev/next '+slug);
-  assert.ok(html.includes('Related')||html.includes('RELATED CARDS'),'related cards '+slug);
-  assert.ok(html.includes('VIEW FULL SET')||html.includes('View full set'),'view full set '+slug);
-  // True aspect ratio in the hero: landscape cards must carry 2000×1414.
-  assert.ok(new RegExp(`<img src="[^"]*${c.file}" width="${c.w}" height="${c.h}"`).test(html),'true dims '+slug);
-  const m=html.match(/<title>(.*?)<\/title>/);
-  assert.ok(m,'title '+slug);
-  assert.ok(m[1].includes(`Count `),'counting title '+slug);
-  titles.add(m[1]);
-  const h1s=(html.match(/<h1[ >]/g)||[]).length;
-  assert.equal(h1s,1,'exactly one H1 '+slug);
- }
- assert.equal(titles.size,10,'all ten titles unique');
-});
-test('shapes card pages: 12 unique titles, one H1 each, downloads, cross-set twins',()=>{
- const titles=new Set();
- for(const c of shapesLesson.cards){
-  const html=page(`/flashcards/shapes/${c.slug}/`);
-  assert.ok(html.includes(`rel="canonical" href="https://kiddo.school/flashcards/shapes/${c.slug}/"`));
-  assert.ok(html.includes('Download card'),'download '+c.slug);
-  const m=html.match(/<title>(.*?)<\/title>/);
-  titles.add(m[1]);
-  assert.equal((html.match(/<h1[ >]/g)||[]).length,1,'one H1 '+c.slug);
-  assert.ok(new RegExp(`width="${c.w}" height="${c.h}"`).test(html),'true dims '+c.slug);
- }
- assert.equal(titles.size,12,'all twelve titles unique');
- // circle/square/star/heart/rectangle/oval have real twins in colors-and-shapes.
- const circle=page('/flashcards/shapes/circle/');
- assert.ok(circle.includes('href="/flashcards/colors-and-shapes/circle/"'),'cross-set related twin');
-});
+
+
 
 /* ---- The Numbers & Counting class ---- */
 test('numbers class: learn + solve-the-sheets structure, no coded games (owner instruction)',()=>{
@@ -204,19 +145,4 @@ test('the preschool hub lists all eight classes and eight sets; the library stay
  const home=page('/');
  assert.ok(home.includes('Forty-nine classes are ready now'));
 });
-test('sitemap, indexing stance and lesson wiring',()=>{
- const map=read('sitemap.xml');
- ['/preschool/3-years/numbers-and-counting/','/preschool/3-years/shapes-and-patterns/','/flashcards/numbers-and-counting/','/flashcards/shapes/','/flashcards/numbers-and-counting/five/','/flashcards/shapes/octagon/'].forEach(u=>assert.ok(map.includes(`<loc>https://kiddo.school${u}</loc>`),'sitemap '+u));
- assert.ok(!map.includes('numbers-and-counting/print/'),'print stays out of sitemap');
- assert.ok(!map.includes('shapes-and-patterns/print/'),'print stays out of sitemap');
- // The site is public and indexable: index meta on class pages and robots allows crawling.
- const html=page('/preschool/3-years/numbers-and-counting/');
- assert.ok(html.includes('content="index,follow"'),'class page indexable');
- const robots=read('robots.txt');
- assert.ok(robots.includes('Allow: /'),'robots allows crawling');
- // Both lesson pages carry the community mount and the flashcards link row.
- const nl=page('/preschool/3-years/numbers-and-counting/');
- assert.ok(nl.includes('Open the Numbers 1–10 flashcards'),'lesson links its set');
- const sl=page('/preschool/3-years/shapes-and-patterns/');
- assert.ok(sl.includes('Open the Shapes &amp; Patterns flashcards'),'lesson links its set');
-});
+

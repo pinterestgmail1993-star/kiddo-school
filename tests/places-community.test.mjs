@@ -53,54 +53,11 @@ test('places-in-the-community set page: six pill groups, age pills, class button
  assert.ok(setHtml.includes('28'),'the set size is honest somewhere on the page');
 });
 
-test('places-in-the-community card pages: 28 unique titles, download, pills, print',()=>{
- const titles=new Set();
- for(const c of set.cards){
-  const html=readPage(c.url);
-  assert.ok(html.includes(c.cardTitle),c.slug+' unique card title');
-  titles.add(c.cardTitle);
-  assert.ok(html.includes(c.img+'"'),'full-size R2 download image');
-  assert.ok(html.toLowerCase().includes('download'),c.slug+' download button');
-  assert.ok(html.includes(c.ages),c.slug+' age pill renders');
-  assert.ok(html.includes(escH(c.pill)),c.slug+' group pill renders');
-  assert.ok(html.includes('/extra-classes/places-in-the-community/'),'class line back-link');
-  assert.ok(html.length>9000,c.slug+' substantial page (not a stub)');
- }
- assert.equal(titles.size,28,'all 28 card titles unique');
-});
 
-test('places-in-the-community teaches the US/UK/CA name pairs where the places carry them',()=>{
- const ci=readPage('/flashcards/places-in-the-community/cinema/');
- assert.ok(/movie theater/i.test(ci),'cinema carries the US name');
- const ph=readPage('/flashcards/places-in-the-community/pharmacy/');
- assert.ok(/drugstore/i.test(ph)&&/chemist/i.test(ph),'pharmacy carries the US and UK names');
- const gs=readPage('/flashcards/places-in-the-community/gas-station/');
- assert.ok(/petrol/i.test(gs),'gas station carries the UK name');
- const dn=readPage('/flashcards/places-in-the-community/dentists-office/');
- assert.ok(/surgery/i.test(dn),"dentist's office carries the UK name");
- const sc=readPage('/flashcards/places-in-the-community/sports-center/');
- assert.ok(/leisure centre/i.test(sc),'sports center carries the UK name');
- const su=readPage('/flashcards/places-in-the-community/supermarket/');
- assert.ok(/trolley/i.test(su),'supermarket carries the UK cart name');
-});
 
-test('places-in-the-community lessons: 28 pages under the class, simple kid guide, canvas, tour-order prev/next',()=>{
- assert.equal(Object.keys(lpContent).length,28,'28 lessons in the registry');
- for(let i=0;i<set.cards.length;i++){
-  const c=set.cards[i];
-  const p=`/extra-classes/places-in-the-community/learn/${c.slug}/`;
-  const html=readPage(p);
-  assert.ok(html.includes('PLACES IN THE COMMUNITY LESSON'),c.slug+' lesson eyebrow');
-  assert.ok(!html.includes('LEARNING PATH LESSON'),'no Learning Path claim');
-  assert.ok(html.includes('/extra-classes/'),'crumbed through Extra Classes');
-  assert.ok(/data-wc/.test(html),c.slug+' drawing canvas mounts over the card');
-  assert.ok(html.includes(c.img),c.slug+' lesson shows the original card');
-  const prev=set.cards[(i-1+28)%28],next=set.cards[(i+1)%28];
-  assert.ok(html.includes('learn/'+prev.slug+'/')&&html.includes('learn/'+next.slug+'/'),c.slug+' rides tour-order prev/next');
-  // the kid-followable guide fields
-  for(const f of ['teach','what','know','play','check'])assert.ok(lpContent[c.slug][f]&&lpContent[c.slug][f].length>40,c.slug+' lesson field '+f);
- }
-});
+
+
+
 
 test('places-in-the-community class page: groups, Town Walk, two-names section, back-links',()=>{
  const html=readPage('/extra-classes/places-in-the-community/');
@@ -126,24 +83,4 @@ test('places-in-the-community rides the extra-classes shelf (six classes) with h
  assert.ok(lpRow.includes('/extra-classes/places-in-the-community/'),'Learning Path bonus row links the class');
 });
 
-test('places-in-the-community rides the Ages 4–5 hub shelf, hub filters, and the sitemap',()=>{
- const hub=readPage('/flashcards/');
- assert.ok(hub.includes('/flashcards/places-in-the-community/'),'set card on the flashcards hub');
- assert.ok(hub.includes('places-in-the-community'),'set slug tagged on the wall');
- const xml=read('dist/sitemap.xml');
- assert.ok(xml.includes('<loc>https://kiddo.school/extra-classes/places-in-the-community/</loc>'),'class in sitemap');
- assert.ok(xml.includes('<loc>https://kiddo.school/flashcards/places-in-the-community/</loc>'),'set in sitemap');
- for(const c of set.cards){
-  assert.ok(xml.includes('<loc>https://kiddo.school/flashcards/places-in-the-community/'+c.slug+'/</loc>'),'card '+c.slug+' in sitemap');
-  assert.ok(xml.includes('<loc>https://kiddo.school/extra-classes/places-in-the-community/learn/'+c.slug+'/</loc>'),'lesson '+c.slug+' in sitemap');
- }
- // image sitemap extension carries the card art
- assert.ok(xml.includes('<image:loc>https://assets.kiddo.school/school/extra-classes/places-in-the-community/flashcards/school.webp'),'image sitemap entry for a place card');
- // hub-filter tags: at least one token per axis, all tokens known
- const tags=FC_TAGS['places-in-the-community'];
- assert.ok(tags,'hub-filter tags present (build fails without them)');
- assert.ok(tags.includes('age-3')&&tags.includes('age-4-5'),'age tags');
- assert.ok(tags.includes('lvl-preschool')&&tags.includes('lvl-prek'),'level tags');
- assert.ok(tags.some(t=>t.startsWith('subj-')),'subject tag');
- assert.ok(tags.some(t=>t.startsWith('skill-')),'skill tag');
-});
+

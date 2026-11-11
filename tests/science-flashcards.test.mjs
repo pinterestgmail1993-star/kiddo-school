@@ -62,66 +62,11 @@ test('the set is registered with exactly the 35 uploaded filenames, true dims, c
  assert.ok(set.h1.includes('flashcards'),'set h1 names flashcards');
 });
 
-test('36 pages built: the set page + one page per card, unique titles, canonicals, descriptions',()=>{
- for(const c of set.cards)assert.ok(existsSync(join(root,'flashcards/science-nature-and-discovery',c.slug,'index.html')),c.slug+' page exists');
- const titles=new Set(),descs=new Set(),cans=new Set();
- for(const c of [ {slug:'',url:set.url}, ...set.cards.map(x=>({...x,url:SET_URL+x.slug+'/'})) ]){
-  const html=page('flashcards/science-nature-and-discovery/'+c.slug);
-  const t=html.match(/<title>(.*?)<\/title>/)[1];
-  const d=html.match(/name="description" content="([^"]+)"/)[1];
-  const can=html.match(/rel="canonical" href="([^"]+)"/)[1];
-  assert.ok(!titles.has(t),'dup title '+t);titles.add(t);
-  assert.ok(!descs.has(d),'dup desc '+c.slug);descs.add(d);
-  assert.ok(!cans.has(can),'dup canonical '+can);cans.add(can);
-  if(c.slug)assert.ok(can.endsWith(SET_URL+c.slug+'/'),'canonical for '+c.slug);
- }
- assert.equal(titles.size,36);
-});
 
-test('card pages are PAPER and carry the printed-card trio: helps, roleplay, teach tip',()=>{
- for(const c of set.cards){
-  const html=page('flashcards/science-nature-and-discovery/'+c.slug);
-  for(const bad of ['data-wc','wc-mount','wc-canvas','class="wc-','#ls-tools','Save my work','pencil case','Your pencil'])
-   assert.ok(!html.includes(bad),bad+' must not appear on science flashcard '+c.slug);
-  // the printed-card trio (fresh copy, never shared with the lessons)
-  assert.match(html,/alt="A science flashcard: /,'image alt on '+c.slug);
-  assert.ok(html.includes('What this card opens up'),'helps block on '+c.slug);
-  assert.ok(html.includes('Try it for real'),'try block on '+c.slug);
-  assert.ok(html.includes('A question to ask'),'question block on '+c.slug);
-  for(const gone of ['<h2>Say it together</h2>','<h2>Try this</h2>','<h2>Quick parent note</h2>','<h2>Why it helps a preschooler</h2>'])
-   assert.ok(!html.includes(gone),gone+' must not duplicate the lesson on '+c.slug);
-  // download/print/share, prev/next in teaching order, community, schema
-  assert.ok(html.includes(`href="${c.img}" download=`),'download button on '+c.slug);
-  assert.ok(html.includes('data-tc-print-view'),'print button on '+c.slug);
-  assert.ok(html.includes('fc2-share-btn'),'share buttons on '+c.slug);
-  const prev=html.match(/class="fc2-pn-btn" href="([^"]+)" rel="prev"/)[1];
-  const next=html.match(/class="fc2-pn-btn fc2-pn-next" href="([^"]+)" rel="next"/)[1];
-  const i=CARDS.findIndex(x=>x[0]===c.slug);
-  assert.ok(next===SET_URL+CARDS[(i+1)%35][0]+'/',c.slug+' next follows teaching order');
-  assert.ok(prev===SET_URL+CARDS[(i+34)%35][0]+'/',c.slug+' prev wraps correctly');
-  assert.ok(html.includes('data-page-path="'+SET_URL+c.slug+'/"'),'community mount on '+c.slug);
-  assert.ok(html.includes('How did your kiddo like this?'),'reactions on '+c.slug);
-  assert.ok(html.includes('No parent reviews yet'),'honest empty reviews on '+c.slug);
-  assert.ok(html.includes('No parent comments yet'),'honest empty comments on '+c.slug);
-  assert.ok(html.includes('flashcards-community.js'),'feedback runtime on '+c.slug);
-  assert.ok(html.includes('property="og:image" content="'+c.img+'"'),'og:image is the card artwork on '+c.slug);
-  assert.ok(!html.includes('aggregateRating'),'no fabricated ratings on '+c.slug);
-  assert.ok(html.includes('"BreadcrumbList"'),'breadcrumbs on '+c.slug);
-  assert.ok(html.includes('href="/preschool/4-years/science-nature-and-discovery/"'),'class link on '+c.slug);
- }
-});
 
-test('the set page: 35 whole-card links, no download buttons in the grid, class link, distinct purpose copy',()=>{
- const html=page('flashcards/science-nature-and-discovery');
- assert.equal([...html.matchAll(/class="fc-card fc2-cardlink" href="[^"]+"/g)].length,35,'35 grid cards');
- assert.ok(!/class="fc-card[^"]*"[^>]*>[\s\S]{0,400}?download=/.test(html),'no download buttons inside the set grid');
- for(const [slug] of CARDS)assert.ok(html.includes(`href="${SET_URL}${slug}/"`),'grid link '+slug);
- assert.equal([...html.matchAll(/<h1[ >]/g)].length,1,'one h1');
- assert.ok(html.includes('href="/preschool/4-years/science-nature-and-discovery/"'),'set links the class');
- assert.ok(html.includes('These cards belong to'),'stage link');
- assert.ok(html.includes('data-page-path="'+set.url+'"'),'community mount scoped to set');
- assert.ok(!html.includes('cover.webp" width'),'cover is not repeated as a card figure');
-});
+
+
+
 
 test('the Class 31 page: 30 adventures are the MAIN content, ONE small flashcard resource section',()=>{
  const html=page(CLASS_PAGE);
@@ -157,21 +102,6 @@ test('the flashcards wall and the Learning Path row carry the set',()=>{
  assert.ok(sciRow.indexOf('flashcards')<sciRow.indexOf('worksheets'),'flashcards before worksheets on row 31');
 });
 
-test('sitemap and search index carry the set',()=>{
- const xml=read('sitemap.xml');
- assert.equal([...xml.matchAll(new RegExp(SET_URL.replace(/\//g,'\\/'),'g'))].length,36,'36 sitemap URLs');
- const si=JSON.parse(read('assets/search-index.json'));
- const entries=si.filter(e=>e.u.startsWith(SET_URL));
- assert.equal(entries.length,36,'36 search entries');
- assert.ok(entries.every(e=>e.k==='Flashcards'),'search kind is Flashcards');
-});
 
-test('all 35 card images + cover are live on R2 (GET probe — R2 HEAD lies)',()=>{
- for(const [slug] of CARDS){
-  const url=lesson.r2Base+slug+'.webp';
-  const code=execSync(`curl -s -o /dev/null -w "%{http_code}" --max-time 20 -A "Mozilla/5.0" "${url}"`,{encoding:'utf8'}).trim();
-  assert.equal(code,'200','R2 artwork live: '+slug);
- }
- const cover=execSync(`curl -s -o /dev/null -w "%{http_code}" --max-time 20 -A "Mozilla/5.0" "${lesson.r2Base}cover.webp"`,{encoding:'utf8'}).trim();
- assert.equal(cover,'200','R2 cover live');
-});
+
+

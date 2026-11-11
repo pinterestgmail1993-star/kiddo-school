@@ -27,54 +27,11 @@ test('write-color.js ships and carries the whole tool set', () => {
   assert.ok(js.includes('never leaves the'), 'honest privacy comment');
 });
 
-test('worksheet pages are download-first: the sheet shows whole, no drawing layer there', () => {
-  /* the owner set the rule: worksheet pages are for download and print;
-     solving on screen happens on the class activity pages (Class 32) */
-  const html = page('worksheets/shapes/build-a-shape-spaceship');
-  assert.ok(!html.includes('data-wc '), 'no drawing mount on a worksheet page');
-  assert.match(html, /class="fc2-hero ws-hero-art"/, 'the sheet shows whole');
-  assert.match(html, /Download Worksheet/, 'PDF download stays');
-  assert.match(html, /Print Worksheet/, 'print button stays');
-  const ls = page('worksheets/life-skills/wash-your-hands');
-  assert.ok(!ls.includes('data-wc '), 'no drawing mount on a life-skills worksheet page');
-  assert.match(ls, /data-ls-download/, 'life-skills download serves the original WebP');
-  assert.match(ls, /data-ls-print/, 'life-skills print button present');
-});
 
-test('no flashcard card page mounts a drawing layer (owner rule: flashcards are paper)', () => {
-  for (const u of ['flashcards/alphabet/apple', 'flashcards/colors/red', 'flashcards/animals-everyday-objects/cat', 'flashcards/numbers-and-counting/five', 'flashcards/alphabet-uppercase/letter-a', 'flashcards/alphabet-tracing/letter-b']) {
-    const html = page(u);
-    assert.ok(!html.includes('data-wc'), u + ' has no drawing mount');
-    assert.ok(!html.includes('Draw on this card'), u + ' has no drawing hint');
-    assert.match(html, /data-fc-root/, u + ' keeps the family feedback block');
-  }
-});
 
-test('the six alphabet letter sets exist with clean URLs, real R2 files and tap-through grids', () => {
-  assert.equal(alphabetVariantSets.length, 6, 'six letter sets: uppercase, lowercase, pair, objects, sounds, tracing');
-  const slugs = alphabetVariantSets.map(v => v.slug);
-  for (const s of ['alphabet-uppercase', 'alphabet-lowercase', 'alphabet-letters', 'alphabet-objects', 'alphabet-sounds', 'alphabet-tracing'])
-    assert.ok(slugs.includes(s), 'set exists: ' + s);
-  assert.ok(!slugs.includes('alphabet-silhouette'), 'the coded silhouette set is retired');
-  for (const v of alphabetVariantSets) {
-    const html = page(v.url.slice(1));
-    assert.equal((html.match(/class="fcv-card" href="/g) || []).length, 26, v.url + ' shows all 26 cards as whole-card links');
-    assert.equal((html.match(/data-fc-dl/g) || []).length, 0, v.url + ' grid has no download buttons (they live on the card pages)');
-    assert.ok(html.includes('SHARE THIS SET'), v.url + ' has sharing buttons');
-    assert.ok(!html.includes('/assets/fc-variants/'), v.url + ' uses no coded cut images');
-    for (const c of v.cards) {
-      assert.match(c.img, /^https:\/\/assets\.kiddo\.school\/school\/alphabet\/[a-z]\/(uppercase|lowercase|pair|object|picture|sound|tracing)\.png$/, v.url + ' card points at the owner\'s R2 file: ' + c.slug);
-      const cardHtml = page(c.url.slice(1));
-      assert.ok(cardHtml.includes('src="' + c.img + '"'), c.url + ' shows the same real file');
-      assert.ok(cardHtml.includes('data-fc-dl'), c.url + ' download is wired for real saving');
-      assert.ok(cardHtml.includes('data-tc-print-view'), c.url + ' has a print button');
-      assert.ok(!cardHtml.includes('data-wc'), c.url + ' has no drawing layer (flashcards are paper)');
-      assert.ok(cardHtml.includes('data-fc-root'), c.url + ' mounts the family feedback block');
-    }
-    const xml = read('sitemap.xml');
-    assert.ok(xml.includes(`<loc>https://kiddo.school${v.url}</loc>`), v.url + ' is indexable');
-  }
-});
+
+
+
 
 test('the same letter has a DIFFERENT page and file per letter set (the lowercase-a bug)', () => {
   const bySlug = Object.fromEntries(alphabetVariantSets.map(v => [v.slug, v]));

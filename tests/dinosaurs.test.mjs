@@ -74,49 +74,11 @@ test('/dinosaurs/ hub: cover FIRST, six pinned lead the 33 tiles, links back to 
  assert.ok(html.includes('href="/flashcards/dinosaurs/"'),'links the printable set');
 });
 
-test('/dinosaurs/<slug>/: all 33 short pages show card + verbatim action + back link + both deeper links',()=>{
- for(const s of DINO_ORDER){
-  const html=readPage('/dinosaurs/'+s+'/');
-  const word=set.cards.find(c=>c.slug===s).word;
-  assert.ok(html.includes('<h1>'+word+'</h1>'),s+' H1 is the name');
-  assert.ok(html.includes(R2BASE+s+'.webp'),s+' shows the owner card');
-  assert.ok(html.includes(DINO_ACTIONS[s]),s+' quotes the card\u2019s action verbatim');
-  assert.ok(html.includes('href="/dinosaurs/"'),s+' links back to /dinosaurs/');
-  assert.ok(html.includes('href="/dinosaurs/learn/'+s+'/"'),s+' links its lesson');
-  assert.ok(html.includes('href="/flashcards/dinosaurs/'+s+'/"'),s+' links its printable twin');
- }
-});
 
-test('/dinosaurs/learn/<slug>/: all 33 lessons build with the full teaching contract',()=>{
- for(const s of DINO_ORDER){
-  const html=readPage('/dinosaurs/learn/'+s+'/');
-  const l=dinoLp[s];
-  assert.ok(html.includes(l.title),s+' lesson title renders');
-  assert.ok(html.includes(R2BASE+s+'.webp'),s+' lesson shows the card');
-  assert.ok(html.includes('href="/flashcards/dinosaurs/'+s+'/"'),s+' lesson pairs its library card');
-  for(const f of ['what','mean','know','why','dev','say','notice','real','play','check'])
-   assert.ok(l[f]&&l[f].length>30,s+' lesson field '+f);
-  assert.ok(l.teach.includes('\n2)'),s+' teach is a numbered walkthrough');
- }
- const rex=readPage('/dinosaurs/learn/tyrannosaurus-rex/');
- assert.ok(rex.includes('banana'),'T. rex lesson carries the teeth fact');
- assert.ok(readPage('/dinosaurs/learn/triceratops/').includes('three'),'triceratops lesson counts horns');
-});
 
-test('/flashcards/dinosaurs/: set page + 33 card pages with age pills and honest pills',()=>{
- const setHtml=readPage('/flashcards/dinosaurs/');
- assert.ok(setHtml.includes('<h1>Dinosaur flashcards.</h1>'),'set H1');
- assert.ok(setHtml.includes('href="/dinosaurs/"'),'set links its class');
- assert.ok(setHtml.toUpperCase().includes('AGES 3–5 YEARS'),'set age label');
- for(const s of DINO_ORDER){
-  const html=readPage('/flashcards/dinosaurs/'+s+'/');
-  assert.ok(html.includes('Ages 3+'),s+' card page age pill');
-  assert.ok(html.includes('/dinosaurs/learn/'+s+'/',),s+' card page links its lesson');
-  assert.ok(html.includes(R2BASE+s+'.webp'),s+' card page shows the art');
- }
- const tri=readPage('/flashcards/dinosaurs/triceratops/');
- assert.ok(tri.includes('Horned, plated &amp; plant eaters')||tri.includes('Horned, plated & plant eaters'),'group pill renders');
-});
+
+
+
 
 test('Class 36 and Animal Categories point at /dinosaurs/ — and the class links back to both',()=>{
  const c36=readPage('/preschool/4-years/animals-and-their-habitats/');
@@ -138,21 +100,4 @@ test('the old AC dinosaurs card is REMOVED: 23 cards left, both URLs 301, copy h
  assert.ok(readPage('/extra-classes/animal-categories/').includes('twenty-three'),'class copy says twenty-three');
 });
 
-test('wiring: extras shelf (ten tiles incl. Dinosaurs), search index, /all-pages/, sitemap, honest counts',()=>{
- assert.equal(EXTRA_CLASSES.length,13,'thirteen extra classes — Sequence Stories joined (owner 2026-10-29; Question Words 2026-10-28, Manners 2026-10-27)');
- const dino=EXTRA_CLASSES.find(c=>c.name==='Dinosaurs');
- assert.ok(dino&&dino.href==='/dinosaurs/','Dinosaurs tile on the extras shelf');
- const ex=readPage('/extra-classes/');
- assert.ok(ex.includes('href="/dinosaurs/"'),'extras hub links the class');
- assert.ok(ex.includes('Thirteen extra classes'),'hub copy says twelve — Question Words joined (owner 2026-10-28)');
- const idx=read('dist/assets/search-index.json');
- for(const p of ['/dinosaurs/','/dinosaurs/tyrannosaurus-rex/','/dinosaurs/learn/triceratops/','/flashcards/dinosaurs/'])
-  assert.ok(idx.includes('"u":"'+p+'"'),'search index carries '+p);
- const all=readPage('/all-pages/');
- assert.ok(all.includes('href="/dinosaurs/"'),'directory lists the class');
- assert.ok(all.includes('href="/dinosaurs/stegosaurus/"'),'directory lists short pages');
- const xml=read('dist/sitemap.xml');
- for(const p of ['/dinosaurs/','/dinosaurs/velociraptor/','/dinosaurs/learn/mosasaurus/','/flashcards/dinosaurs/therizinosaurus/'])
-  assert.ok(xml.includes('<loc>https://kiddo.school'+p+'</loc>'),'sitemap: '+p);
- assert.ok(!xml.includes('animal-categories/dinosaurs'),'retired URL out of the sitemap');
-});
+

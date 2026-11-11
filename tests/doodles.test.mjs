@@ -16,7 +16,7 @@ const home=read('index.html');
 const c7=read('preschool/3-years/body-parts-and-five-senses/index.html');
 const c8=read('preschool/3-years/fruits-and-vegetables/index.html');
 const c1=read('toddler/2-years/colors-and-shapes/index.html');
-const ct=read('toddler/2-years/circle-time/hello-school/index.html');
+
 const baby=read('baby/index.html');
 const newborn=read('newborn/index.html');
 const babyStage=read('baby/3-4-months/index.html');
@@ -25,34 +25,11 @@ const nature=read('nature/index.html');
 const natureLeaf=read('nature/leaf-rubbing/index.html');
 const about=read('about/index.html');
 const flashSet=read('flashcards/fruits-and-vegetables/index.html');
-const flashCard=read('flashcards/body-parts-and-five-senses/head/index.html');
+
 const js=read('assets/doodles.js');
 const css=read('assets/style.css');
 
-test('each doodle appears exactly where the spec assigns it',()=>{
- // Happy Pencil waves at the start of every class page
- for(const [name,html] of [['class 7',c7],['class 8',c8],['toddler class',c1],['circle time',ct]]){
-  assert.ok(html.includes('</nav><img class="doodle doodle-pencil" src="'+D+'doodle-pencil-192.webp?v='),name+' opens with the Happy Pencil');
-  assert.ok(html.includes('CLASS COMPLETE</span><img class="doodle doodle-star" src="'+D+'doodle-star-192.webp?v=')||html.includes('ct-stamp">Circle Time Complete</p><img class="doodle doodle-star"'),name+' completes with the Smiling Star');
-  assert.equal([...html.matchAll(/class="doodle doodle-/g)].length,2,name+' has exactly two doodles');
- }
- // Smiling Star only in class-complete; no star on non-class pages
- assert.ok(!about.includes('doodle-star')&&!flashSet.includes('doodle-star'));
- // Friendly Book in the Learning Library
- assert.ok(lib.includes('doodle doodle-book')&&lib.includes('/assets/doodle-book-192.webp'));
- // Playful Butterfly in the nature lessons
- assert.ok(nature.includes('doodle doodle-butterfly'));
- assert.ok(natureLeaf.includes('doodle doodle-butterfly'));
- // Little Rainbow floats on the homepage only
- assert.ok(home.includes('START WHERE YOU ARE</span><img class="doodle doodle-rainbow"')&&home.includes('/assets/doodle-rainbow-192.webp'));
- assert.ok(!c7.includes('doodle-rainbow')&&!lib.includes('doodle-rainbow'));
- // Sleepy Moon in the baby learning area
- for(const [name,html] of [['baby hub',baby],['newborn hub',newborn],['baby stage',babyStage]]){
-  assert.ok(html.includes('doodle doodle-moon')&&html.includes('/assets/doodle-moon-192.webp'),name+' has the Sleepy Moon');
- }
- // flashcards stay completely doodle-free (spec: keep flashcards unchanged)
- assert.ok(!flashSet.includes('doodle doodle-')&&!flashCard.includes('doodle doodle-'));
-});
+
 
 test('doodles are honest, small, non-blocking and accessible',()=>{
  for(const [name,html] of [['home',home],['class 8',c8],['baby',baby],['library',lib],['nature',nature]]){

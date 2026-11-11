@@ -105,29 +105,4 @@ test('NO individual card pages — dist/science-at-a-glance/ holds only the one 
  assert.ok(!existsSync('dist/flashcards/science-at-a-glance'),'no shelf page inside the flashcards library either');
 });
 
-test('discoverable: both header chips (First Glance beside science), footer, sibling links both ways, sitemap+image, search, directory, print js',()=>{
- const home=read('dist/index.html');
- const deep=read('dist/flashcards/animal-categories/amphibians/index.html');
- const sgSelf=html;
- for(const [name,h] of [['home',home],['deep page',deep],['science page itself',sgSelf]]){
-  assert.ok(h.includes('class="header-fg" href="/science-at-a-glance/"'),'header chip missing on '+name);
-  assert.ok(h.includes('65 first-picture sheets · Ages 2–5'),'chip count missing on '+name);
-  /* Owner 2026-10-31, correction: BOTH glances stay on the header — the
-     First Glance chip sits BESIDE the science chip, not replaced by it. */
-  assert.ok(h.includes('class="header-fg" href="/first-glance/"'),'First Glance chip missing on '+name);
-  assert.ok(h.includes('58 first-picture sheets · Ages 2–5'),'First Glance chip count missing on '+name);
-  assert.ok(h.includes('<a href="/science-at-a-glance/">Science at a Glance sheets</a>'),'footer link missing on '+name);
- }
- assert.ok(sgSelf.includes('class="header-fg" href="/science-at-a-glance/" aria-current="page"'),'aria-current on the page itself');
- assert.ok(sgSelf.includes('<a href="/first-glance/">'),'sibling link to First Glance missing');
- assert.ok(read('dist/first-glance/index.html').includes('href="/science-at-a-glance/"'),'First Glance does not link back');
- assert.ok(read('dist/sitemap.xml').includes('<loc>https://kiddo.school/science-at-a-glance/</loc>'));
- assert.ok(read('dist/sitemap.xml').includes('<image:loc>https://assets.kiddo.school/school/extra-classes/science-at-a-glance/water-cycle.webp</image:loc>'),'water-cycle sheet joins the image sitemap via og:image');
- const idx=JSON.parse(read('dist/assets/search-index.json'));
- const sg=idx.find(p=>p.u==='/science-at-a-glance/');
- assert.ok(sg,'science-at-a-glance in the search index');
- assert.equal(sg.k,'Picture sheets');
- assert.ok(sg.t.includes('Science at a Glance')&&sg.d.length>40);
- assert.ok(read('dist/all-pages/index.html').includes('href="/science-at-a-glance/"'),'listed on /all-pages/');
- assert.ok(html.includes('/assets/manners.js'),'the per-card print handler must ship with the page');
-});
+

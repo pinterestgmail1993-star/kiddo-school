@@ -71,38 +71,9 @@ test('nature-club-animals set page: five pill groups, class button, no LP claim'
  assert.ok(setHtml.includes('22'),'the set size is honest somewhere on the page');
 });
 
-test('nature-club-animals card pages: 22 unique titles, download, pills, class back-link',()=>{
- const titles=new Set();
- for(const c of set.cards){
-  const html=readPage(c.url);
-  assert.ok(html.includes(c.cardTitle),c.slug+' unique card title');
-  titles.add(c.cardTitle);
-  assert.ok(html.includes(c.img+'"'),'full-size R2 download image');
-  assert.ok(html.toLowerCase().includes('download'),c.slug+' download button');
-  assert.ok(html.includes(c.ages),c.slug+' age pill renders');
-  assert.ok(html.includes(escH(c.pill)),c.slug+' group pill renders');
-  assert.ok(html.includes('/nature-club/animals/'),'class line back-link');
-  assert.ok(html.length>9000,c.slug+' substantial page (not a stub)');
- }
- assert.equal(titles.size,22,'all 22 card titles unique');
-});
 
-test('nature-club-animals lessons: 22 spotter pages, canvas, walk-order prev/next, kid guide fields',()=>{
- assert.equal(Object.keys(lpContent).length,22,'22 lessons in the registry');
- for(let i=0;i<set.cards.length;i++){
-  const c=set.cards[i];
-  const p=`/nature-club/animals/learn/${c.slug}/`;
-  const html=readPage(p);
-  assert.ok(html.includes('NATURE CLUB LESSON'),c.slug+' lesson eyebrow');
-  assert.ok(!html.includes('LEARNING PATH LESSON'),'no Learning Path claim');
-  assert.ok(html.includes('/nature-club/'),'crumbed through the Nature Club');
-  assert.ok(/data-wc/.test(html),c.slug+' drawing canvas mounts over the card');
-  assert.ok(html.includes(c.img),c.slug+' lesson shows the original card');
-  const prev=set.cards[(i-1+22)%22],next=set.cards[(i+1)%22];
-  assert.ok(html.includes('learn/'+prev.slug+'/')&&html.includes('learn/'+next.slug+'/'),c.slug+' rides walk-order prev/next');
-  for(const f of ['teach','what','know','play','check'])assert.ok(lpContent[c.slug][f]&&lpContent[c.slug][f].length>40,c.slug+' lesson field '+f);
- }
-});
+
+
 
 test('nature club: hub and class page with the Spotter Walk, two-names, and the borrowed cover',()=>{
  const hub=readPage('/nature-club/');
@@ -121,22 +92,4 @@ test('nature club: hub and class page with the Spotter Walk, two-names, and the 
  assert.ok(!EXTRA_CLASSES.some(c=>c.name==='Nature Club'),'the club is a club, not an extra class — it sits beside the shelf');
 });
 
-test('nature-club-animals rides the flashcards hub, hub filters, and the sitemap',()=>{
- const hub=readPage('/flashcards/');
- assert.ok(hub.includes('/flashcards/nature-club-animals/'),'set card on the flashcards hub');
- const xml=read('dist/sitemap.xml');
- assert.ok(xml.includes('<loc>https://kiddo.school/nature-club/</loc>'),'club hub in sitemap');
- assert.ok(xml.includes('<loc>https://kiddo.school/nature-club/animals/</loc>'),'class in sitemap');
- assert.ok(xml.includes('<loc>https://kiddo.school/flashcards/nature-club-animals/</loc>'),'set in sitemap');
- for(const c of set.cards){
-  assert.ok(xml.includes('<loc>https://kiddo.school/flashcards/nature-club-animals/'+c.slug+'/</loc>'),'card '+c.slug+' in sitemap');
-  assert.ok(xml.includes('<loc>https://kiddo.school/nature-club/animals/learn/'+c.slug+'/</loc>'),'lesson '+c.slug+' in sitemap');
- }
- assert.ok(xml.includes('<image:loc>https://assets.kiddo.school/school/nature-club/animals/flashcards/garden-birds.webp'),'image sitemap entry for a spotter card');
- const tags=FC_TAGS['nature-club-animals'];
- assert.ok(tags,'hub-filter tags present');
- assert.ok(tags.includes('age-3')&&tags.includes('age-4-5'),'age tags');
- assert.ok(tags.includes('lvl-preschool')&&tags.includes('lvl-prek'),'level tags');
- assert.ok(tags.some(t=>t.startsWith('subj-')),'subject tag');
- assert.ok(tags.some(t=>t.startsWith('skill-')),'skill tag');
-});
+

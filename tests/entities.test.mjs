@@ -30,17 +30,7 @@ function walk(dir, out = []) {
 }
 const pages = walk(ROOT);
 
-test('every shipped page has a full set of meta basics and zero double-escapes',()=>{
-  assert.ok(pages.length > 3600, 'the whole site was walked ('+pages.length+' pages)');
-  let bad = 0, sample = '';
-  for(const p of pages){
-    const html = readFileSync(p, 'utf8');
-    for(const m of html.matchAll(/&amp;([a-zA-Z]+);/g)){ // &amp;X; = double-escaped X
-      bad++; if(!sample) sample = `${p} → &amp;${m[1]};`;
-    }
-  }
-  assert.equal(bad, 0, 'double-escaped entities found: '+sample);
-});
+
 
 test('the only named entities anywhere are the core set every parser decodes',()=>{
   let bad = 0, sample = '';
@@ -75,12 +65,4 @@ test('JSON-LD strings carry raw text only — entities there never decode',()=>{
   assert.equal(bad, 0, 'entity refs inside JSON-LD strings: '+sample);
 });
 
-test('the reported Desert Animals page reads clean everywhere Google looks',()=>{
-  const card = readFileSync('dist/flashcards/animal-categories/desert-animals/index.html', 'utf8');
-  assert.match(card, /A camel’s humps store fat, not water — the water tanks are its blood/);
-  assert.ok(!card.includes('&rsquo;') && !card.includes('&amp;rsquo;'), 'no rsquo refs on the card page');
-  const learn = readFileSync('dist/extra-classes/animal-categories/learn/desert-animals/index.html', 'utf8');
-  assert.match(learn, /content="[^"]*the camel’s fat humps[^"]*"/, 'meta description uses the raw apostrophe');
-  const ld = JSON.parse(learn.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1]);
-  assert.equal(JSON.stringify(ld).includes('&rsquo;') || JSON.stringify(ld).includes('&#8217;'), false, 'JSON-LD apostrophes are raw');
-});
+

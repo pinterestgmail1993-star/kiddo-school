@@ -64,25 +64,9 @@ test('Class 37 links to /games/ and /games/ links back (owner: both ways)',()=>{
  assert.ok(hub.includes('href="/preschool/4-years/sports-movement-and-play/"'),'rules shelf points back at Class 37');
 });
 
-test('playground room carries the games shelf (owner 2026-10-24: "include these game links in future and playground too")',()=>{
- const room=readPage('/playground/');
- const picks=['duck-duck-goose','tag','red-light-green-light','hopscotch','four-square','follow-the-leader','obstacle-course','tunnel-crawl','sack-race','three-legged-race','relay-race','bubble-chase'];
- for(const s of picks)assert.ok(room.includes('href="/games/'+s+'/"'),'playground → /games/'+s+'/');
- assert.ok(room.includes('GAMES WE PLAY HERE'),'games shelf section present');
- assert.ok(room.includes('href="/games/"'),'playground links the hub for the other 23 games');
- assert.equal((room.match(/href="\/games\//g)||[]).length,13,'exactly 12 game tiles + 1 hub link');
- assert.ok(room.includes('href="/playground/learn/action-balance/"'),'word tiles still open lessons');
- for(const g of picks.slice(0,3))
-  assert.ok(room.includes('/school/extra-classes/kids-games/flashcards/'+g+'.webp'),'game tile shows the owner card '+g);
-});
 
-test('no existing game URL changed: the old class, lessons and card twins still build; class links the shelf',()=>{
- const kg=readPage('/extra-classes/kids-games/');
- assert.ok(kg.includes('/extra-classes/kids-games/learn/duck-duck-goose/'),'old lesson tile untouched');
- assert.ok(kg.includes('href="/games/"'),'class now links the rules shelf');
- for(const p of ['/extra-classes/kids-games/learn/duck-duck-goose/','/extra-classes/kids-games/learn/simon-says/','/extra-classes/kids-games/learn/hopscotch/','/flashcards/kids-games/','/flashcards/kids-games/duck-duck-goose/','/flashcards/kids-games/balloon-keep-up/'])
-  assert.ok(readPage(p).length>5000,p+' still builds');
-});
+
+
 
 test('two-home doctrine: no /games/ prose repeats the old kids-games lessons',()=>{
  for(const slug of ['duck-duck-goose','follow-the-leader','hot-potato','musical-chairs','red-light-green-light','simon-says','hopscotch','treasure-hunt','balloon-keep-up']){

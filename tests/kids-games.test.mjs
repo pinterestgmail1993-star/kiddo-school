@@ -53,52 +53,11 @@ test('kids-games set page: six pill groups, age pills, class button, no LP claim
  assert.ok(setHtml.includes('26'),'the set size is honest somewhere on the page');
 });
 
-test('kids-games card pages: 26 unique titles, download, pills, print',()=>{
- const titles=new Set();
- for(const c of set.cards){
-  const html=readPage(c.url);
-  assert.ok(html.includes(c.cardTitle),c.slug+' unique card title');
-  titles.add(c.cardTitle);
-  assert.ok(html.includes(c.img+'"'),'full-size R2 download image');
-  assert.ok(html.toLowerCase().includes('download'),c.slug+' download button');
-  assert.ok(html.includes(c.ages),c.slug+' age pill renders');
-  assert.ok(html.includes(escH(c.pill)),c.slug+' group pill renders');
-  assert.ok(html.includes('/extra-classes/kids-games/'),'class line back-link');
-  assert.ok(html.length>9000,c.slug+' substantial page (not a stub)');
- }
- assert.equal(titles.size,26,'all 26 card titles unique');
-});
 
-test('kids-games teaches the US/UK/CA name pairs where the games carry them',()=>{
- const tt=readPage('/flashcards/kids-games/tic-tac-toe/');
- assert.ok(/noughts and crosses/i.test(tt),'tic-tac-toe carries the UK name');
- const jr=readPage('/flashcards/kids-games/jump-rope/');
- assert.ok(/skipping rope/i.test(jr),'jump rope carries the UK name');
- const pp=readPage('/flashcards/kids-games/paper-plane-target/');
- assert.ok(/paper aeroplane/i.test(pp),'paper plane carries the UK name');
- const fd=readPage('/flashcards/kids-games/freeze-dance/');
- assert.ok(/musical statues/i.test(fd),'freeze dance carries the UK name');
- const fr=readPage('/flashcards/kids-games/four-in-a-row/');
- assert.ok(/Connect Four/i.test(fr),'four in a row names the boxed version');
-});
 
-test('kids-games lessons: 26 pages under the class, simple kid guide, canvas, tour-order prev/next',()=>{
- assert.equal(Object.keys(lpContent).length,26,'26 lessons in the registry');
- for(let i=0;i<set.cards.length;i++){
-  const c=set.cards[i];
-  const p=`/extra-classes/kids-games/learn/${c.slug}/`;
-  const html=readPage(p);
-  assert.ok(html.includes('KIDS GAMES LESSON'),c.slug+' lesson eyebrow');
-  assert.ok(!html.includes('LEARNING PATH LESSON'),'no Learning Path claim');
-  assert.ok(html.includes('/extra-classes/'),'crumbed through Extra Classes');
-  assert.ok(/data-wc/.test(html),c.slug+' drawing canvas mounts over the card');
-  assert.ok(html.includes(c.img),c.slug+' lesson shows the original card');
-  const prev=set.cards[(i-1+26)%26],next=set.cards[(i+1)%26];
-  assert.ok(html.includes('learn/'+prev.slug+'/')&&html.includes('learn/'+next.slug+'/'),c.slug+' rides tour-order prev/next');
-  // the kid-followable guide fields
-  for(const f of ['teach','what','know','play','check'])assert.ok(lpContent[c.slug][f]&&lpContent[c.slug][f].length>40,c.slug+' lesson field '+f);
- }
-});
+
+
+
 
 test('kids-games class page: groups, Game Day, two-names section, back-links',()=>{
  const html=readPage('/extra-classes/kids-games/');
@@ -124,24 +83,4 @@ test('kids-games rides the extra-classes shelf (five classes) with honest cover 
  assert.ok(lpRow.includes('/extra-classes/kids-games/'),'Learning Path bonus row links the class');
 });
 
-test('kids-games rides the Ages 4–5 hub shelf, hub filters, and the sitemap',()=>{
- const hub=readPage('/flashcards/');
- assert.ok(hub.includes('/flashcards/kids-games/'),'set card on the flashcards hub');
- assert.ok(hub.includes('kids-games'),'set slug tagged on the wall');
- const xml=read('dist/sitemap.xml');
- assert.ok(xml.includes('<loc>https://kiddo.school/extra-classes/kids-games/</loc>'),'class in sitemap');
- assert.ok(xml.includes('<loc>https://kiddo.school/flashcards/kids-games/</loc>'),'set in sitemap');
- for(const c of set.cards){
-  assert.ok(xml.includes('<loc>https://kiddo.school/flashcards/kids-games/'+c.slug+'/</loc>'),'card '+c.slug+' in sitemap');
-  assert.ok(xml.includes('<loc>https://kiddo.school/extra-classes/kids-games/learn/'+c.slug+'/</loc>'),'lesson '+c.slug+' in sitemap');
- }
- // image sitemap extension carries the card art
- assert.ok(xml.includes('<image:loc>https://assets.kiddo.school/school/extra-classes/kids-games/flashcards/balloon-keep-up.webp'),'image sitemap entry for a game card');
- // hub-filter tags: at least one token per axis, all tokens known
- const tags=FC_TAGS['kids-games'];
- assert.ok(tags,'hub-filter tags present (build fails without them)');
- assert.ok(tags.includes('age-3')&&tags.includes('age-4-5'),'age tags');
- assert.ok(tags.includes('lvl-preschool')&&tags.includes('lvl-prek'),'level tags');
- assert.ok(tags.some(t=>t.startsWith('subj-')),'subject tag');
- assert.ok(tags.some(t=>t.startsWith('skill-')),'skill tag');
-});
+

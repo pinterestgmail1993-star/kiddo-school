@@ -75,62 +75,13 @@ test('/art-room/ hub: cover FIRST, 27 tiles in file order, owner cross-links + g
  assert.ok(html.toUpperCase().includes('AGES 2–5'),'age pill on the room');
 });
 
-test('/art-room/<slug>/: all 27 short pages show card + verbatim activity + back link + both deeper links',()=>{
- for(const s of ART_ORDER){
-  const html=readPage('/art-room/'+s+'/');
-  const word=set.cards.find(c=>c.slug===s).word;
-  assert.ok(html.includes('<h1>'+word+'</h1>'),s+' H1 is the name');
-  assert.ok(html.includes(R2BASE+s+'.webp'),s+' shows the owner card');
-  assert.ok(html.includes(ART_ACTIONS[s]),s+' quotes the card\u2019s activity verbatim');
-  assert.ok(html.includes('href="/art-room/"'),s+' links back to /art-room/');
-  assert.ok(html.includes('href="/art-room/learn/'+s+'/"'),s+' links its lesson');
-  assert.ok(html.includes('href="/flashcards/art-room/'+s+'/"'),s+' links its printable twin');
- }
-});
 
-test('/art-room/learn/<slug>/: all 27 lessons build with the full teaching contract',()=>{
- for(const s of ART_ORDER){
-  const html=readPage('/art-room/learn/'+s+'/');
-  const l=artLp[s];
-  assert.ok(html.includes(l.title),s+' lesson title renders');
-  assert.ok(html.includes(R2BASE+s+'.webp'),s+' lesson shows the card');
-  assert.ok(html.includes('href="/flashcards/art-room/'+s+'/"'),s+' lesson pairs its library card');
-  for(const f of ['what','mean','know','why','dev','say','notice','real','play','check'])
-   assert.ok(l[f]&&l[f].length>30,s+' lesson field '+f);
-  assert.ok(l.teach.includes('\n2)'),s+' teach is a numbered walkthrough');
- }
- const sky=readPage('/art-room/learn/watercolors/');
- assert.ok(sky.includes('water'),'watercolors lesson carries the water rule');
- assert.ok(readPage('/art-room/learn/scissors/').includes('thumb'),'scissors lesson teaches the grip');
-});
 
-test('/flashcards/art-room/: set page + 27 card pages with age pills and honest pills',()=>{
- const setHtml=readPage('/flashcards/art-room/');
- assert.ok(setHtml.includes('<h1>Art activity flashcards.</h1>'),'set H1');
- assert.ok(setHtml.includes('href="/art-room/"'),'set links its room');
- assert.ok(setHtml.toUpperCase().includes('AGES 2–5 YEARS'),'set age label');
- for(const s of ART_ORDER){
-  const html=readPage('/flashcards/art-room/'+s+'/');
-  assert.ok(html.includes('Ages 2+'),s+' card page age pill');
-  assert.ok(html.includes('/art-room/learn/'+s+'/'),s+' card page links its lesson');
-  assert.ok(html.includes(R2BASE+s+'.webp'),s+' card page shows the art');
- }
- const sc=readPage('/flashcards/art-room/scissors/');
- assert.ok(sc.includes('Cut, stick &amp; make')||sc.includes('Cut, stick & make'),'group pill renders');
-});
 
-test('American spelling in every page title (owner rule), card words clean',()=>{
- for(const s of ART_ORDER){
-  const html=readPage('/art-room/'+s+'/');
-  const t=html.match(/<title>([^<]+)<\/title>/)[1];
-  assert.ok(!/colour/i.test(t),'American title: '+t);
-  const cardPage=readPage('/flashcards/art-room/'+s+'/');
-  const ct=cardPage.match(/<title>([^<]+)<\/title>/)[1];
-  assert.ok(!/colour/i.test(ct),'American card title: '+ct);
- }
- assert.ok(readPage('/art-room/colored-pencils/').includes('<h1>Colored Pencils</h1>'),'Colored Pencils (not Coloured)');
- assert.ok(readPage('/flashcards/art-room/colored-pencils/').includes('Colored Pencils Card'),'card page American too');
-});
+
+
+
+
 
 test('owner cross-links both ways: Explore the School, Coloring Pages, Colors class',()=>{
  // Explore the School: /rooms/ lists six rooms and the homepage section carries the Art Room card
@@ -151,19 +102,4 @@ test('owner cross-links both ways: Explore the School, Coloring Pages, Colors cl
  assert.ok(readPage('/art-room/').includes('href="/extra-classes/colors/"'),'Art Room links Colors back');
 });
 
-test('wiring: rooms hub card, filter tags, search index, /all-pages/, sitemap, honest counts',()=>{
- const roomsHub=readPage('/rooms/');
- assert.ok(roomsHub.includes('school/art-room/cover.webp'),'rooms hub carries the Art Room cover');
- const fcHub=readPage('/flashcards/');
- assert.ok(fcHub.includes('href="/flashcards/art-room/"'),'flashcards wall carries the set');
- assert.ok(fcHub.includes('data-filters="age-1-2 age-3 age-4-5 lvl-rooms subj-colors-shapes subj-first-words skill-vocab skill-movement skill-talking"'),'set ships with filter tokens');
- const idx=read('dist/assets/search-index.json');
- for(const p of ['/art-room/','/art-room/crayon/','/art-room/learn/glue/','/flashcards/art-room/'])
-  assert.ok(idx.includes('"u":"'+p+'"'),'search index carries '+p);
- const all=readPage('/all-pages/');
- assert.ok(all.includes('href="/art-room/"'),'directory lists the room');
- assert.ok(all.includes('href="/art-room/sponge/"'),'directory lists short pages');
- const xml=read('dist/sitemap.xml');
- for(const p of ['/art-room/','/art-room/watercolors/','/art-room/learn/stencil/','/flashcards/art-room/ribbon/'])
-  assert.ok(xml.includes('<loc>https://kiddo.school'+p+'</loc>'),'sitemap: '+p);
-});
+

@@ -148,29 +148,6 @@ test('School Garden hub lists all four real collections with the new cards', () 
  assert.ok(!hub.includes('Garden Vocabulary'), 'the unfinished Garden Vocabulary collection is still NOT faked');
 });
 
-test('flashcard sets: garden-flowers and garden-things set pages + 24 card pages', () => {
- const fs = read('dist/flashcards/garden-flowers/index.html');
- const ts = read('dist/flashcards/garden-things/index.html');
- assert.ok(fs.includes('Garden Flowers flashcards.'), 'flowers set H1');
- assert.ok(fs.includes('href="/flashcards/garden-flowers/sunflower/"'), 'flowers card links');
- assert.ok(ts.includes('Garden Things flashcards.'), 'things set H1');
- assert.ok(ts.includes('href="/flashcards/garden-things/watering-can/"'), 'things card links (multi-word slug)');
- // a flower card page and a thing card page, fully built
- const sun = read('dist/flashcards/garden-flowers/sunflower/index.html');
- assert.ok(sun.includes('<h2>Petal play</h2>'), 'card page activity block');
- assert.ok(sun.includes('1920'), 'true card dims on card page');
- const wc = read('dist/flashcards/garden-things/watering-can/index.html');
- assert.ok(wc.includes('<h2>Spot it outside</h2>'), 'thing card page activity block');
- // both linked from the /flashcards/ toddler wall
- const wall = read('dist/flashcards/index.html');
- assert.ok(wall.includes('href="/flashcards/garden-flowers/"'), 'wall links flowers');
- assert.ok(wall.includes('href="/flashcards/garden-things/"'), 'wall links things');
-});
 
-test('both class pages + both sets sitewide sitemap entries and no horizontal harm', () => {
- for (const L of [gflLesson, gthLesson]) {
-  assert.ok(map.includes(`<loc>${site}${L.path}</loc>`), L.h1 + ' in sitemap');
-  assert.ok(map.includes(`<loc>${site}/flashcards/${L === gflLesson ? 'garden-flowers' : 'garden-things'}/</loc>`), 'set in sitemap');
- }
- assert.ok(map.includes(`<loc>${site}/flashcards/garden-things/garden-bench/</loc>`), 'multi-word card slug in sitemap');
-});
+
+

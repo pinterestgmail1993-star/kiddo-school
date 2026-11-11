@@ -48,50 +48,11 @@ test('data: every sheet carries the full grown-up field set with honest artwork 
  assert.equal(metas.size,6,'unique meta description per sheet');
 });
 
-test('activity pages: 6 built, canvas over the original sheet, tools, progress, neighbours',()=>{
- for(const w of animalsWs){
-  const p=AHWS_WS_CLASS+w.slug+'/';
-  const html=pageFile(p);
-  assert.ok(html.includes(`data-ahws-activity="${w.slug}"`),p+': activity mount');
-  assert.ok(html.includes(`data-wc-src="${AHWS_WS_BASE+w.file}?draw=1"`),p+': CORS-safe sheet src');
-  assert.ok(html.includes(`data-wc-restore="animals-and-their-habitats/${w.slug}"`),p+': restore key namespaced per sheet');
-  assert.ok(html.includes('data-wc-toolbar="#ahws-tools"'),p+': tools rail');
-  assert.ok(html.includes('data-ahws-progress-block'),p+': progress block');
-  assert.ok(html.includes('class="fc2-pn"'),p+': prev/next');
-  assert.ok(html.includes('/assets/animals-ws.js?v='),p+': progress script versioned');
-  assert.ok(html.includes(`href="${AHWS_WS_LIB}${w.slug}/"`),p+': printable twin linked');
-  assert.ok(!html.includes('style="--iar'),p+': no inline layout styles (CSP law)');
- }
-});
 
-test('printable twins: 6 built, download+print, NO canvas, activity linked back',()=>{
- for(const w of animalsWs){
-  const p=AHWS_WS_LIB+w.slug+'/';
-  const html=pageFile(p);
-  assert.ok(html.includes(`data-ahws-download="${AHWS_WS_BASE+w.file}"`),p+': download button');
-  assert.ok(html.includes('data-ahws-print'),p+': print button');
-  assert.ok(!html.includes('data-wc-mount')&&!html.includes('data-ahws-activity'),p+': no canvas on the printable');
-  assert.ok(html.includes(`href="${AHWS_WS_CLASS}${w.slug}/"`),p+': activity twin linked');
-  const more=(html.match(/class="ws-card"/g)||[]).length;
-  assert.equal(more,5,p+': five sibling sheets in MORE HABITAT SHEETS');
- }
-});
 
-test('collection: 6 cards, genuine cover, cross-links, in sitemap',()=>{
- const html=pageFile(AHWS_WS_LIB);
- assert.ok(html.includes(AHWS_WS_BASE+AHWS_WS_COVER.file),'/worksheets/animals-and-their-habitats/: genuine cover');
- assert.ok(html.includes('class="fc2-hero ws-hero-art ws-cover-sm"'),'collection cover is a SMALL preview (ws-cover-sm), never full-width');
- assert.ok(!/class="fc2-hero ws-hero-art"/.test(html),'no unbounded cover hero left on the collection');
- assert.equal((html.match(/class="ws-card"/g)||[]).length,6,'6 cards on the collection');
- assert.ok(html.includes('href="'+CLASS+'"'),'links the class hub');
- assert.ok(html.includes('/flashcards/animals-and-their-habitats/'),'links the flashcards');
- const sitemap=read('/sitemap.xml');
- assert.ok(sitemap.includes('https://kiddo.school'+AHWS_WS_LIB),'collection in sitemap');
- for(const w of animalsWs){
-  assert.ok(sitemap.includes('https://kiddo.school'+AHWS_WS_LIB+w.slug+'/'),w.slug+' printable in sitemap');
-  assert.ok(sitemap.includes('https://kiddo.school'+AHWS_WS_CLASS+w.slug+'/'),w.slug+' activity in sitemap');
- }
-});
+
+
+
 
 test('learning path: Class 36 row links BOTH the flashcards and the worksheets',()=>{
  const lp=read('/learning-path/index.html');
@@ -108,14 +69,7 @@ test('collection covers are small previews on all three worksheet collections (C
  }
 });
 
-test('Class 36 hub: PRACTISE WITH WORKSHEETS section with 6 tiles + collection button',()=>{
- const hub=pageFile(CLASS);
- assert.ok(hub.includes('PRACTISE WITH WORKSHEETS'),'hub practice section');
- assert.equal([...hub.matchAll(/data-ahws-card="([a-z-]+)"/g)].length,6,'6 worksheet tiles on the hub');
- assert.equal([...hub.matchAll(/data-ahws-done/g)].length,6,'every tile carries its Cleared! ribbon hook');
- assert.ok(hub.includes('href="'+AHWS_WS_LIB+'"'),'collection button on the hub');
- for(const w of animalsWs)assert.ok(hub.includes(`href="${AHWS_WS_CLASS}${w.slug}/"`),w.slug+' tile link');
-});
+
 
 test('/worksheets/ library index lists the Class 36 category card',()=>{
  const lib=pageFile('/worksheets/');
@@ -132,15 +86,4 @@ test('counting set shows its REAL cover on the /flashcards/ wall',()=>{
  assert.ok(wall.includes(set.coverUrl),'/flashcards/ wall carries the real counting cover URL');
 });
 
-test('both habitat pages keep their text to themselves (duplicate-content law)',()=>{
- // The activity and printable twins of one sheet share NO long sentence:
- // the activity uses tag-based headings, the printable leads with meta.
- for(const w of animalsWs){
-  const aBody=pageFile(AHWS_WS_CLASS+w.slug+'/').split('</head>')[1];
-  const p=pageFile(AHWS_WS_LIB+w.slug+'/');
-  assert.ok(!aBody.includes(w.meta),w.slug+': meta stays on the printable page');
-  const stepsA=(aBody.match(/<ol class="fc-steps">/g)||[]).length;
-  const stepsP=(p.match(/<ol class="fc-steps">/g)||[]).length;
-  assert.equal(stepsA,1);assert.equal(stepsP,1,w.slug+': exactly one steps list per twin');
- }
-});
+

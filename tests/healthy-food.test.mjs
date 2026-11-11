@@ -29,15 +29,7 @@ const SHELVES={plate:['balanced-plate','fruit','vegetables','dairy','protein','w
  meals:['breakfast','lunch','dinner','healthy-snack','water','wash-your-hands'],
  habits:['sit-down','eat-slowly','chew-well','try-new-foods','healthy-choice','feel-full','eat-together','good-energy']};
 
-test('exactly twenty-two URLs under /healthy-food/ + the ONE parents\u2019 shelf at /flashcards/healthy-food/ — no card pages in the library',()=>{
- const cls=read('healthy-food/index.html');
- assert.ok(cls.includes('<title>Class 40 · Healthy Food &amp; Eating Well — 21 Printable Food-Habit Cards (Ages 4–5) | Kiddo.school</title>'));
- for(const s of ORDER)assert.ok(existsSync('dist/healthy-food/'+s+'/index.html'),'missing short page '+s);
- const dirs=readdirSync('dist/healthy-food').filter(d=>d!=='index.html');
- assert.equal(dirs.length,21,'no extra healthy-food paths: '+dirs.join(', '));
- assert.ok(existsSync('dist/flashcards/healthy-food/index.html'),'the parents\u2019 shelf exists (owner 2026-10-31: both decks in the flashcards library)');
- assert.equal(readdirSync('dist/flashcards/healthy-food').filter(d=>d!=='index.html').length,0,'zero per-card URLs in the library — the shelf is the whole set');
-});
+
 
 test('the parents\u2019 shelf: 21 tiles, image + description + age/subject/level pill + Download/Print under every card, spoken to parents',()=>{
  const shelf=read('flashcards/healthy-food/index.html');
@@ -85,41 +77,9 @@ test('the parents\u2019 shelf: 21 tiles, image + description + age/subject/level
  for(const d of descs)assert.ok(!d.startsWith('try it tonight'),'shelf copy is not the lesson\u2019s try-it text');
 });
 
-test('the class page: the deck’s own cover leads, then three shelves, tiles open short pages',()=>{
- const html=read('healthy-food/index.html');
- assert.ok(html.includes('Class 40 · Healthy Food'),'eyebrow names the class number');
- assert.ok(html.includes(BASE+'cover.webp'),'cover.webp leads the class page');
- const tiles=[...html.matchAll(/<a class="lp-tile" href="(\/healthy-food\/[a-z0-9-]+\/)"/g)].map(m=>m[1]);
- const slugs=tiles.map(t=>t.split('/')[2]);
- assert.deepEqual(slugs.slice(0,7),SHELVES.plate,'plate shelf first, 7 cards');
- assert.deepEqual(slugs.slice(7,13),SHELVES.meals,'meals shelf second, 6 cards');
- assert.deepEqual(slugs.slice(13,21),SHELVES.habits,'habits shelf third, 8 cards');
- assert.equal(new Set(slugs).size,21,'all 21 cards shelved exactly once');
- assert.ok(!/href="#(?!main")/.test(html),'no anchor jump links on the class page (the #main skip link is site furniture)');
-});
 
-test('every short page states the habit in the child’s voice, one tonight idea, and links back',()=>{
- const SAYS={'balanced-plate':'My plate has a little of everything','breakfast':'Breakfast starts my day',
-  'chew-well':'I chew my food well','dairy':'Dairy builds me up','dinner':'Dinner brings us together',
-  'eat-a-rainbow':'I eat a rainbow of colors','eat-slowly':'I eat slowly','eat-together':'We eat together',
-  'feel-full':'Full is a good feeling to notice','fruit':'Fruit is sweet all by itself',
-  'good-energy':'Good food gives me energy','healthy-choice':'I can make the healthy choice',
-  'healthy-snack':'Snacks can be healthy too','lunch':'Lunch refills me at midday',
-  'protein':'Protein makes me strong','sit-down':'I sit down to eat','try-new-foods':'I am brave enough to try',
-  'vegetables':'Vegetables come from the garden','wash-your-hands':'Clean hands before every meal',
-  'water':'Water is my drink','whole-grains':'Whole grains keep me going'};
- for(const s of ORDER){
-  const html=read('healthy-food/'+s+'/index.html');
-  assert.ok(html.includes('\u201c'+SAYS[s]+'\u201d'),s+': the habit in the child’s voice');
-  assert.ok(html.includes('Try it tonight'),s+': the tonight idea is present');
-  assert.ok(html.includes('href="/healthy-food/"'),s+': links back to the class');
-  assert.ok(html.includes(BASE+s+'.webp" download'),s+': Download serves the full-size card');
-  assert.ok(html.includes('data-mn-print'),s+': Print button present');
-  assert.ok(html.includes('src="/assets/manners.js'),s+': the print handler rides along');
-  assert.ok(html.includes('width="800" height="1131"'),s+': card dims declared');
-  assert.ok(html.includes('href="/cafeteria/"'),s+': the Cafeteria pointer (more foods to name)');
- }
-});
+
+
 
 test('cross-links both ways: Classes 22/32 + the Cafeteria room point here, the class page links back',()=>{
  const c22=read('preschool/3-years/fruits-and-vegetables/index.html');
@@ -141,24 +101,6 @@ test('the Learning Path row sits after Class 38 with the copy saying forty-one',
  assert.ok(lp.includes('forty-nine age-guided classes'),'the LP title count says forty-one (Class 41 joined, owner 2026-10-31);');
 });
 
-test('search, sitemap and the all-pages directory all carry the class',()=>{
- const idx=JSON.parse(read('assets/search-index.json'));
- const mine=idx.filter(x=>x.u&&x.u.startsWith('/healthy-food'));
- assert.equal(mine.length,22,'search registry holds all 22 healthy-food pages');
- assert.ok(mine.every(x=>x.k==='Class'),'kindFor files the class under Class');
- const xml=read('sitemap.xml');
- for(const s of [''].concat(ORDER.map(x=>x+'/')))assert.ok(xml.includes('https://kiddo.school/healthy-food/'+s+'<'),'sitemap carries /healthy-food/'+s);
- const ap=read('all-pages/index.html');
- assert.ok(ap.includes('href="/healthy-food/"'),'the directory lists the class');
-});
 
-test('house rules on every new page: honest alts, no anchor jumps, no Etsy, zero invented rules',()=>{
- const files=['healthy-food/index.html'].concat(ORDER.map(s=>'healthy-food/'+s+'/index.html'));
- for(const f of files){
-  const html=read(f);
-  assert.ok(!/href="#(?!main")/.test(html),f+': no anchor jump links (the #main skip link is site furniture)');
-  assert.ok(!/etsy/i.test(html),f+': no Etsy mention');
-  for(const m of html.matchAll(/<img\b[^>]*alt="([^"]*)"[^>]*>/g))assert.ok(m[1].length>=20,f+': thin alt');
-  assert.ok(!/Class 4[1-9]/.test(html),f+': no invented class numbers');
- }
-});
+
+

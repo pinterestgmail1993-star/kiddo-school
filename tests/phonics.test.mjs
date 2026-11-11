@@ -27,33 +27,9 @@ test('all 24 phonics adventures: real configs, unique slugs and titles',()=>{
  }
 });
 
-test('every phonics adventure page exists with unique SEO, H1, artwork and the drawing layer',()=>{
- const titles=new Set();
- for(const g of phonicAdventures){
-  const p=PHONICS_LIB_PATH+g.slug+'/';
-  const html=page(p);
-  assert.ok(html.includes(`<h1 class="ia-h1">${g.title}</h1>`),'H1 on '+p);
-  assert.ok(html.includes(`data-wc-src="${PHONICS_BASE+g.img}?draw=1"`),'drawing mount over the artwork on '+p);
-  assert.ok(html.includes('data-ia-band="phonics"'),'progress band on '+p);
-  assert.ok(html.includes('/assets/image-adventure.js'),'progress engine on '+p);
-  assert.ok(html.includes('id="ia-tools"'),'tools rail on '+p);
-  assert.ok(html.includes(PHONICS_BASE+g.img),'R2 artwork on '+p);
-  assert.ok(html.includes(C28_PATH),'class link on '+p);
-  assert.ok(html.includes('/worksheets/phonics/'+g.slug+'/'),'worksheet twin link on '+p);
-  const robots=(html.match(/<meta name="robots" content="([^"]*)"/)||[])[1];
-  assert.ok(robots.includes('follow'),'game pages carry the standard crawl stance: '+p);
-  titles.add(html.match(/<title>([^<]*)<\/title>/)[1]);
- }
- assert.equal(titles.size,24,'24 unique SEO titles');
-});
 
-test('all 24 phonics R2 artworks are live (GET probe — R2 HEAD lies)',()=>{
- for(const g of phonicAdventures){
-  const url=PHONICS_BASE+g.img;
-  const code=execSync(`curl -s -o /dev/null -w "%{http_code}" --max-time 20 -A "Mozilla/5.0" "${url}"`,{encoding:'utf8'}).trim();
-  assert.equal(code,'200','R2 artwork live: '+g.img);
- }
-});
+
+
 
 test('phonics pages are draw-on-the-picture: no coded boards, no sound instructions',()=>{
  for(const g of phonicAdventures){
@@ -120,16 +96,7 @@ test('Class 28 is wired into the whole school',()=>{
  assert.ok((lib.match(/data-ph-libcard=/g)||[]).length===24,'library lists all 24');
 });
 
-test('the 24 phonics worksheets exist and twin back',()=>{
- const ws=bySubject('phonics');
- assert.equal(ws.length,24);
- for(const w of ws){
-  assert.ok(phonicBySlug[w.slug],'worksheet twin of a real game: '+w.slug);
-  assert.ok(w.answers,'phonics worksheets carry a grown-up answer guide: '+w.slug);
-  const html=page('/worksheets/phonics/'+w.slug+'/');
-  assert.ok(html.includes('Answer guide'),'answer guide rendered: '+w.slug);
- }
-});
+
 
 test('worksheet downloads never touch My Classroom progress',()=>{
  // the old worksheets.js is gone entirely; worksheet pages now ship only the

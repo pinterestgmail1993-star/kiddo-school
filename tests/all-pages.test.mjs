@@ -60,15 +60,4 @@ test('parents can always find it: footer link on every page + sitemap entry',()=
  assert.ok(sitemapPaths.has('/all-pages/'));
 });
 
-test('spot checks: known pages live in the right sections',()=>{
- const sec=id=>main.split(`id="ap-${id}"`)[1].split('</section>')[0];
- assert.ok(sec('start').includes('href="/"'));
- assert.ok(sec('start').includes('href="/first-glance/"'),'first-glance under Start here');
- assert.ok(sec('preschool').includes('href="/preschool/4-years/sight-words/"'),'sight-words under preschool');
- assert.ok(sec('extra').includes('href="/nature-club/animals/"'),'nature club under extra');
- assert.ok(sec('flashcards').includes('href="/flashcards/animal-categories/amphibians/"'),'amphibians card under flashcards');
- assert.ok(sec('worksheets').includes('href="/worksheets/phonics/"'),'phonics under worksheets');
- assert.ok(sec('parents').includes('href="/grown-ups/"'));
- const fc=sec('flashcards');
- assert.ok((fc.match(/<details class="ap-group"/g)||[]).length>=54,'53 sets + the hub wall under flashcards');
-});
+

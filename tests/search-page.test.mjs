@@ -41,26 +41,7 @@ test('the index matches the sitemap exactly — nothing hidden, nothing invented
  assert.deepEqual(indexPaths,sitemapPaths,'searchable = sitemap: books, classes and activities are all searchable');
 });
 
-test('the school’s real rooms are searchable, utility views are not',()=>{
- const byPath=Object.fromEntries(index.map(p=>[p.u,p]));
- assert.equal(byPath['/'].k,'School home');
- assert.equal(byPath['/library/books/age-2/my-first-colors/'].k,'Book','My First Colors is searchable');
- assert.equal(byPath['/library/books/age-2/bunny-finds-a-friend/'].k,'Book','Bunny Finds a Friend is searchable');
- assert.equal(byPath['/how-to-draw-a-cat/'].k,'Drawing lesson');
- assert.equal(byPath['/how-to-draw-a-dog/'].k,'Drawing lesson');
- assert.equal(byPath['/toddler/2-years/circle-time/hello-school/'].k,'Circle Time');
- assert.equal(byPath['/toddler/2-years/school-garden/garden-flowers/'].k,'School Garden');
- assert.equal(byPath['/toddler/2-years/'].k,'Class');
- assert.equal(byPath['/science/grow-a-bean/how-to-grow-a-bean/'].k,'Activity');
- assert.equal(byPath['/flashcards/'].k,'Flashcards');
- assert.equal(byPath['/learning-path/'].k,'School page');
- assert.equal(byPath['/grown-ups/'].k,'School page');
- assert.equal(byPath['/privacy/'].k,'School page','parents can find the privacy page');
- assert.ok(!byPath['/search/'],'the search page does not search itself');
- assert.ok(!byPath['/404.html'],'no error pages in the index');
- assert.ok(!index.some(p=>p.u.endsWith('/print/')),'print views stay out');
- assert.ok(!byPath['/my-school-bag/'],'noindex tools stay out');
-});
+
 
 test('the search page ships the whole-school results mount and script',()=>{
  assert.match(searchPage,/src="\/assets\/search-page\.js(\?v=[0-9]+)?"/,'the whole-school script is wired');

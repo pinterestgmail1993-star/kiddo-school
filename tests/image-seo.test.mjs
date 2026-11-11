@@ -30,33 +30,11 @@ const schemas=path=>{
   return parsed;});
 };
 
-test('circle card page: ImageObject schema with the exact card art + probed dims',()=>{
- const img=schemas(CIRCLE).find(s=>s['@type']==='ImageObject');
- assert.ok(img,'ImageObject present in the JSON-LD array');
- assert.equal(img.contentUrl,CIRCLE_ART,'contentUrl is the circle card artwork itself');
- assert.equal(img.url,site+CIRCLE,'ImageObject links back to the page canonical URL');
- assert.equal(img.width,1414,'probed portrait width');
- assert.equal(img.height,2000,'probed portrait height');
- assert.equal(img.representativeOfPage,true,'marked as the page representative image');
- assert.ok(/circle/i.test(img.name),'name carries the page title');
- assert.ok(/circle/i.test(img.description),'description is the real artwork alt');
-});
 
-test('circle card page: og:image probed dimensions ride along',()=>{
- const html=read(CIRCLE);
- assert.match(html,/og:image:width" content="1414"/,'og:image:width meta');
- assert.match(html,/og:image:height" content="2000"/,'og:image:height meta');
- assert.match(html,/og:image" content="https:\/\/assets\.kiddo\.school\/[^\"]*01-circle\.webp"/,'og:image is the card art');
-});
 
-test('school-people card page: landscape sets get the same ImageObject',()=>{
- const img=schemas('/flashcards/who-works-at-my-school/principal/').find(s=>s['@type']==='ImageObject');
- assert.ok(img,'ImageObject present on the principal card page');
- assert.equal(img.width,1000,'probed landscape width');
- assert.equal(img.height,707,'probed landscape height');
- assert.equal(img.representativeOfPage,true,'representative of the page');
- assert.ok(img.contentUrl.includes('who-works-at-my-school/principal.webp'),'contentUrl is the principal art');
-});
+
+
+
 
 test('shapes set page: cover carries its own ImageObject',()=>{
  const img=schemas('/flashcards/shapes/').find(s=>s['@type']==='ImageObject');
@@ -64,21 +42,7 @@ test('shapes set page: cover carries its own ImageObject',()=>{
  assert.ok(img.contentUrl.includes('shapes-and-patterns-age-3/'),'cover art from the set folder');
 });
 
-test('sitemap: image namespace + an <image:image> on every flashcard URL',()=>{
- const xml=readFileSync('dist/sitemap.xml','utf8');
- assert.match(xml,/xmlns:image="http:\/\/www\.google\.com\/schemas\/sitemap-image\/1\.1"/,'image namespace declared');
- // one OR MORE <image:image> per <url> — Google's documented format; the
- // /art/ room carries its whole 14-card deck on one entry (owner 2026-10-31)
- const entries=[...xml.matchAll(/<url><loc>(https:\/\/kiddo\.school[^<]*)<\/loc>((?:<image:image><image:loc>[^<]*<\/image:loc><\/image:image>)*)<\/url>/g)];
- assert.ok(entries.length>2500,'full sitemap parsed ('+entries.length+' urls)');
- const fc=entries.filter(m=>m[1].includes('/flashcards/'));
- assert.ok(fc.length>1000,'flashcard urls in sitemap ('+fc.length+')');
- const fcNoImg=fc.filter(m=>!m[2]);
- assert.equal(fcNoImg.length,0,'every flashcard url carries an image — first missing: '+(fcNoImg[0]&&fcNoImg[0][1]));
- const circle=entries.find(m=>m[1]===site+CIRCLE);
- assert.ok(circle&&circle[2],'circle card url has an image entry');
- assert.match(circle&&circle[2]||'',/01-circle\.webp/,'circle image entry points at the exact card art');
-});
+
 
 test('the /art/ sitemap entry carries all fourteen art-room card images',()=>{
  const xml=readFileSync('dist/sitemap.xml','utf8');

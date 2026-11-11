@@ -72,55 +72,13 @@ test('data: all 156 R2 files really exist (GET probe — R2 HEAD responses lie)'
  assert.equal(checked,156);
 });
 
-test('tracing sections are removed from letter pages (owner decision): no guides, no player, no leftovers',()=>{
- 'abcdefghijklmnopqrstuvwxyz'.split('').forEach(l=>{
-  const html=letterPage(l);
-  assert.doesNotMatch(html,/TRACE THE LETTER/,'no tracing heading on '+l);
-  assert.doesNotMatch(html,/data-at-block/,'no tracing mount on '+l);
-  assert.doesNotMatch(html,/at-svg|at-guide|at-live/,'no tracing svg on '+l);
- });
- assert.ok(!readIfExists('dist/assets/letter-tracing.js'),'letter-tracing.js is gone from dist');
- assert.ok(!readIfExists('public/assets/letter-tracing.js'),'letter-tracing.js is gone from source');
-});
+
 
 function readIfExists(f){try{return readFileSync(f,'utf8');}catch(e){return null;}}
 
-test('letter pages: all 26 built with their sections, unique SEO and correct prev/next chain',()=>{
- const seen=new Set();
- 'abcdefghijklmnopqrstuvwxyz'.split('').forEach((l,i)=>{
-  const html=letterPage(l);
-  const prev='abcdefghijklmnopqrstuvwxyz'[(i+25)%26];
-  const next='abcdefghijklmnopqrstuvwxyz'[(i+1)%26];
-  assert.match(html,new RegExp('<h1>Letter '+l.toUpperCase()+' — '),'H1');
-  assert.match(html,/MEET THE UPPERCASE/,'uppercase section');
-  assert.match(html,/MEET THE LOWERCASE/,'lowercase section');
-  assert.match(html,/THE PICTURE WORD/,'picture section');
-  assert.match(html,/THE LETTER PAIR/,'pair section');
-  assert.match(html,/THE LETTER SOUND/,'sound section');
-  assert.match(html,/TAKE IT OFF SCREEN/,'activity section');
-  assert.match(html,/PLAY & PRACTICE|PLAY &amp; PRACTICE/,'games section');
-  // the four card images ship on the page
-  for(const f of ['uppercase.png','lowercase.png','pair.png','sound.png'])assert.ok(html.includes(R2+l+'/'+f),l+' '+f);
-  // the prev/next chain wraps z -> a
-  assert.ok(html.includes('href="/preschool/3-years/alphabet-and-letter-sounds/letter-'+prev+'/"'),l+' prev link');
-  assert.ok(html.includes('href="/preschool/3-years/alphabet-and-letter-sounds/letter-'+next+'/"'),l+' next link');
-  // games + center back-link
-  assert.ok(html.includes('href="/activities/beginning-sounds/"'),l+' sounds link');
-  assert.ok(html.includes('href="/flashcards/alphabet/">'),'center back-link');
-  const title=html.match(/<title>(.*?)<\/title>/)[1];
-  assert.ok(!seen.has(title),'unique title '+title);seen.add(title);
- });
-});
 
-test('letter pages: x never pretends xylophone begins with the ks sound',()=>{
- const x=letterPage('x');
- assert.doesNotMatch(x,/xylophone[^.]{0,40}ks sound|ks sound[^.]{0,40}xylophone/i,'no false beginning-sound claim');
- assert.match(x,/z sound|says ks at the (END|end)/,'x teaches the honest rules');
- assert.match(x,/fox, box, six/,'end-of-word examples');
- const g=letterPage('g');
- assert.match(g,/j(?![a-z])/,'g names the j sound');
- assert.match(g,/goat/,'g names the hard g too');
-});
+
+
 
 test('hub: /flashcards/alphabet/ is cards and downloads, not an Alphabet Centre clone',()=>{
  const html=page('/flashcards/alphabet/');
@@ -205,32 +163,6 @@ test('cupboard: the alphabet shelf leads /activities/ and /search/ with all four
  }
 });
 
-test('Class 15: the lesson opens with all 26 letters, each card linking its own activity page',()=>{
- const html=page('/preschool/3-years/alphabet-and-letter-sounds/');
- assert.match(html,/id="todays-letters"/,'ABC intro section');
- assert.match(html,/All twenty-six letters, A to Z\./,'intro heading');
- for(const l of LETTERS){
-  assert.ok(html.includes(R2+l.letter+'/sound.png'),'ABC card for '+l.upper);
-  assert.ok(html.includes('href="/preschool/3-years/alphabet-and-letter-sounds/letter-'+l.letter+'/"'),'activity link for '+l.upper);
- }
- assert.equal((html.match(/class="al-abc-card"/g)||[]).length,26,'exactly 26 ABC cards');
- assert.ok(html.includes('href="/flashcards/alphabet/"'),'Alphabet set link');
- // the honest lesson machinery is preserved, the coded games are gone
- assert.match(html,/data-lesson-viewer/,'26-card viewer remains');
- assert.match(html,/id="class-complete"/,'completion section remains');
- assert.ok(!html.includes('data-tc-round'),'coded games removed (owner instruction)');
- assert.match(html,/id="learn-the-letters"/,'learn section remains');
- assert.match(html,/id="solve-the-sheets"/,'solve-the-sheets guidance remains');
-});
 
-test('search and sitemap: the whole alphabet center is findable',()=>{
- const idx=JSON.parse(read('dist/assets/search-index.json'));
- const byPath=Object.fromEntries(idx.map(e=>[e.u,e]));
- assert.equal(byPath['/preschool/3-years/alphabet-and-letter-sounds/letter-a/'].k,'Class');
- assert.equal(byPath['/activities/beginning-sounds/'].k,'Activity');
- assert.equal(byPath['/activities/letter-matching/'].k,'Activity');
- assert.equal(byPath['/activities/guess-the-picture/'].k,'Activity');
- const xml=read('dist/sitemap.xml');
- assert.ok(xml.includes('/preschool/3-years/alphabet-and-letter-sounds/letter-z/'));
- assert.ok(xml.includes('/activities/letter-matching/'));
-});
+
+

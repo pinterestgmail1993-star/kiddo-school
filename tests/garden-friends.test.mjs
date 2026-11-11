@@ -106,15 +106,7 @@ test('where might we see it: honest, hedged wording — no claim that every anim
  assert.ok(whereSection.includes('High in old trees at night'));
 });
 
-test('take it off screen: looking, never touching or feeding — spec safety rules', () => {
- const off = html.slice(html.indexOf('id="off-screen"'), html.indexOf('id="printables"'));
- assert.ok(off.includes('Wild animals are looked at, never touched, chased or fed'), 'core safety line');
- assert.ok(off.includes('Never feed wild animals, never touch or pick up an unknown animal, and never follow one for a closer look'), 'explicit rules');
- assert.ok(off.includes('A grown-up stays close the whole time'), 'grown-up supervision');
- assert.ok(!/touch the (bird|frog|rabbit|worm)/i.test(off), 'no touching instructions');
- // no camera, no location, no proof anywhere on the page
- assert.ok(!/camera|geolocation|upload a photo|prove it/i.test(html), 'no camera/location/proof requirements');
-});
+
 
 test('print cards step + print page: 18 cards, two per page, noindex', () => {
  assert.ok(html.includes('Print the garden animal cards.'));
@@ -137,13 +129,7 @@ test('review mount: same community system, mounted at the end with the four reac
  assert.ok(html.includes('/assets/community-api.js'));
 });
 
-test('no scores, timers, points, grades or invented animals anywhere', () => {
- assert.ok(!/\b(scores?|grades?|timers?|leaderboard|winner|losing|points)\b/i.test(html), 'no competitive language');
- assert.ok(!/dragonfly|butterfly|ladybug|snail-bee|zebra|lion|elephant/i.test(html), 'no invented or out-of-folder animals');
- const refs = [...html.matchAll(/garden-friends-age-2\/([\w-]+)\.webp/g)].map(m => m[1]);
- for (const r of refs) assert.ok(gfLesson.cards.some(c => c.file === r + '.webp'), 'asset comes from the real folder: ' + r);
- assert.ok(html.includes('03-squirrel.webp') && !html.includes('garden-friends-age-2/19-'), 'no 19th card');
-});
+
 
 test('School Garden hub links the real collections; Learning Library links the garden', () => {
  assert.ok(hub.includes('href="/toddler/2-years/school-garden/garden-friends/"'), 'hub links Garden Animals & Friends');

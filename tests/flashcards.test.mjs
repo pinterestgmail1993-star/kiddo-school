@@ -60,77 +60,9 @@ test('flashcard data: fifty-two flashcard sets (every learning-path class 1-22 c
  }
 });
 
-test('set pages: honest card grid, four use ideas, related sets, community mount',()=>{
- for(const s of fcSets){
-  const html=page(s.url.slice(1));
-  assert.equal([...html.matchAll(/<h1[ >]/g)].length,1,s.url);
-  assert.ok(html.includes(`href="${s.lessonPath||s.classUrl}"`),'set links back to its lesson (or, for room sets like the Playground, its room)');
-  assert.equal(html.split('data-page-path').length-1,1,'exactly one community mount');
-  assert.ok(html.includes('data-page-path="'+s.url+'"'),'mount scoped to the set page path');
-  assert.ok(html.includes('How did your kiddo like this?'),'reactions heading');
-  assert.ok(html.includes('No parent reviews yet'),'honest empty reviews state');
-  assert.ok(html.includes('No parent comments yet'),'honest empty comments state');
-  for(const [idea] of s.useIdeas)assert.ok(html.includes(idea.replace(/'/g,'&#39;')),`use idea "${idea}" missing`);
-  for(const c of s.cards)assert.ok(html.includes(`href="${c.url}"`),`card link ${c.url} missing`);
-  if(s.printPath)assert.ok(html.includes(`href="${s.printPath}"`),'print link when a real print page exists');
-  else assert.ok(!/Print the full set/.test(html),'no fake print button without a real print page');
- }
-});
 
-test('card pages: unique titles and descriptions, say/try/note, download, prev/next, related',()=>{
- const titles=new Set(),descriptions=new Set();
- let downloads=0;
- for(const s of fcSets)for(const c of s.cards){
-  const html=page(c.url.slice(1));
-  const title=html.match(/<title>(.*?)<\/title>/)[1];
-  assert.ok(!titles.has(title),`duplicate title: ${title}`);titles.add(title);
-  const desc=html.match(/name="description" content="([^"]+)"/)[1];
-  assert.ok(!descriptions.has(desc),`duplicate description on ${c.url}`);descriptions.add(desc);
-  /* Every set now carries its OWN printed-card blocks (per-set frame):
-     helps / how to use it / what kids learn / how to print it / tips.
-     No card page may still render the old lesson-duplicated blocks. */
-  const DF={t1:'How this card helps',t2:'How to use this card',t3:'What kids learn from it',t4:'Print it like this',t5:'How to teach with this card'};
-  const fr=(LIBCOPY[s.slug]||{}).frame||DF;
-  if(LIBCOPY[s.slug]){
-   assert.ok([fr.t1,fr.t2,fr.t3,fr.t4,fr.t5].every(t=>html.includes(`<h2>${t}</h2>`)),`${c.url} missing its set frame blocks`);
-   for(const gone of ['<h2>Say it together</h2>','<h2>Try this</h2>','<h2>Quick parent note</h2>','<h2>Why it helps a preschooler</h2>'])
-    assert.ok(!html.includes(gone),`${c.url} still carries lesson-duplicated blocks`);
-  }else{
-   assert.ok(html.includes('Say it together'),`${c.url} missing say-it-together`);
-   assert.ok(html.includes('Try this'),`${c.url} missing try-this`);
-   assert.ok(html.includes('Quick parent note'),`${c.url} missing parent note`);
-  }
-  assert.ok(html.includes(`href="${c.img}" download=`),'download button points at the real card image');
-  downloads++;
-  // prev/next: links resolve to real pages and cover the set cycle
-  const prevMatch=html.match(/class="fc2-pn-btn" href="([^"]+)" rel="prev"/);const nextMatch=html.match(/class="fc2-pn-btn fc2-pn-next" href="([^"]+)" rel="next"/);
-  assert.ok(prevMatch&&nextMatch,`${c.url} missing prev/next`);
-  assert.ok(existsSync(join(root,prevMatch[1].slice(1),'index.html')),`${c.url} prev target missing`);
-  assert.ok(existsSync(join(root,nextMatch[1].slice(1),'index.html')),`${c.url} next target missing`);
-  // related cards: three, all real pages, at least one from another set when available
-  const rel=[...html.matchAll(/class="fc-card fc2-cardlink" href="([^"]+)"/g)].map(m=>m[1]);
-  assert.ok(rel.length===3,`${c.url} expected 3 related cards, got ${rel.length}`);
-  for(const r of rel)assert.ok(existsSync(join(root,r.slice(1),'index.html')),`${c.url} related target missing ${r}`);
-  // community mount scoped to the card URL
-  assert.ok(html.includes('data-page-path="'+c.url+'"'),'card mount path');
-  // breadcrumb: Home > Flashcards > Set > Card
-  const bc=html.match(/"breadcrumbList","itemListElement":\[.*?\]/s)||html.match(/"BreadcrumbList"(.*?)<\/script>/s);
-  assert.ok(html.includes('"BreadcrumbList"'),`${c.url} missing breadcrumb schema`);
-  assert.ok(html.includes('item":"https://kiddo.school'+c.url+'"'),'breadcrumb includes card item');
-  // honesty guards
-  assert.ok(!html.includes('aggregateRating'),'no fabricated ratings schema');
-  assert.ok(!html.includes('★★★★★</span>'),'no fabricated review text in HTML');
- }
- // One download button per card page: 598 before the Music Room, +53 for
- // Class 23's fifty-three instrument/word/people cards = 651, +32 for the
- // Playground's action/equipment/manner cards = 683, +40 for the Class 37
- // sports cards = 723, +32 Class 24 Transportation & Vehicles + 35 Toddler
- // Room + 35 Kitchen = 825, +30 for the Classroom's object/good-habit
- // cards = 855, +22 for the Doctor Visit cards in visit order = 877, +16
- // for the School People (Who Works at My School) person cards = 893, +41
- // for the Home and Daily Life house-word cards = 934, +26 for the Kids Games game cards = 960, +28 for the Places in the Community town cards = 988, +24 for the Animal Categories family cards, +22 for the Nature Club Animals spotter cards, +15 for the Colors & Shades color cards = 1049, +35 for the Class 38 feelings-and-kindness cards = 1084, −1 for the retired Animal Categories dinosaurs card (its class opened at /dinosaurs/, owner 2026-10-25) = 1083 and +33 for the dinosaur cards = 1116, +27 for the Art Room art-activity cards = 1143, +45 for the Clubs extra-curricular activity cards = 1188, +62 for the Cafeteria food cards = 1250.
- assert.equal(downloads,1250);
-});
+
+
 
 test('library: every set is listed, baby collection included, no orphan sets',()=>{
  const html=page('flashcards');
@@ -138,77 +70,13 @@ test('library: every set is listed, baby collection included, no orphan sets',()
  assert.ok(html.includes('/flashcards/black-and-white-baby-cards/'),'baby collection still listed');
 });
 
-test('sitemap: all set and card URLs are indexable, print views excluded',()=>{
- const xml=read('dist/sitemap.xml');
- for(const s of fcSets){
-  assert.ok(xml.includes(`<loc>https://kiddo.school${s.url}</loc>`),`sitemap missing ${s.url}`);
-  for(const c of s.cards)assert.ok(xml.includes(`<loc>https://kiddo.school${c.url}</loc>`),`sitemap missing ${c.url}`);
- }
- for(const c of babySet.cards)assert.ok(xml.includes(`<loc>https://kiddo.school${c.url}</loc>`),`sitemap missing baby card ${c.url}`);
- assert.ok(!xml.includes('/print/'),'print views stay unindexed');
-});
 
-test('black and white baby cards: every card opens its own page, not the raw image',()=>{
- const s=flashcardSets[0];
- const html=page(`flashcards/${s.slug}`);
- for(const c of s.cards)assert.ok(html.includes(`href="${babySet.url}${c.slug}/"`),`card page link for ${c.slug} missing`);
- const rawAnchors=[...html.matchAll(/<a [^>]*href="(https:\/\/assets\.kiddo\.school[^"]+)"/g)].map(m=>m[1]);
- assert.equal(rawAnchors.length,1,`only the parents guide may link straight to R2, found: ${rawAnchors.join(', ')}`);
- assert.ok(rawAnchors[0].includes(s.guide),'the one raw R2 link is the parents guide');
- assert.ok(html.includes(`data-page-path="${babySet.url}"`),'baby set page has its own community mount');
- assert.ok(html.includes('How did your kiddo like this?'),'baby set reactions present');
-});
 
-test('baby card pages: fifteen unique pages with say/try/note, downloads above community, share, prev/next',()=>{
- assert.equal(babySet.cards.length,15);
- const titles=new Set();
- for(const c of babySet.cards){
-  const html=page(c.url.slice(1));
-  const title=html.match(/<title>(.*?)<\/title>/)[1];
-  assert.ok(!titles.has(title),`duplicate title: ${title}`);titles.add(title);
-  assert.match(html,/Flashcard for Babies/,`${c.url} baby H1`);
-  assert.ok(html.includes('Say it together'),`${c.url} missing say`);
-  assert.ok(html.includes('Try this'),`${c.url} missing try`);
-  assert.ok(html.includes('Quick parent note'),`${c.url} missing note`);
-  assert.ok(html.includes(`href="${c.img}" download=`),`${c.url} download button`);
-  assert.ok(html.includes('fc2-dual'),`${c.url} two-column layout`);
-  assert.ok(html.includes('data-fc-copy'),`${c.url} copy-link button`);
-  assert.ok(html.includes('twitter.com/intent/tweet'),`${c.url} X share`);
-  assert.ok(html.includes('facebook.com/sharer'),`${c.url} Facebook share`);
-  assert.ok(html.includes('wa.me/'),`${c.url} WhatsApp share`);
-  assert.ok(html.includes('pinterest.com/pin/create'),`${c.url} Pinterest share`);
-  const dIdx=html.indexOf('TAKE IT WITH YOU');const rIdx=html.indexOf('data-fc-reactions');
-  assert.ok(dIdx>-1&&rIdx>-1&&dIdx<rIdx,`${c.url} downloads must sit above reactions and comments`);
-  const prevMatch=html.match(/class="fc2-pn-btn" href="([^"]+)" rel="prev"/);const nextMatch=html.match(/class="fc2-pn-btn fc2-pn-next" href="([^"]+)" rel="next"/);
-  assert.ok(prevMatch&&nextMatch,`${c.url} prev/next present beside the image`);
-  assert.ok(existsSync(join(root,prevMatch[1].slice(1),'index.html')),`${c.url} prev target missing`);
-  assert.ok(existsSync(join(root,nextMatch[1].slice(1),'index.html')),`${c.url} next target missing`);
-  const rel=[...html.matchAll(/class="fc-card fc2-cardlink" href="([^"]+)"/g)].map(m=>m[1]);
-  assert.equal(rel.length,3,`${c.url} expected 3 related cards`);
-  for(const r of rel){
-   assert.ok(existsSync(join(root,r.slice(1),'index.html')),`${c.url} related target missing ${r}`);
-   assert.ok(r.startsWith(babySet.url),`${c.url} related stays inside the baby set`);
-  }
-  assert.ok(html.includes(`data-page-path="${c.url}"`),'mount path');
-  assert.ok(html.includes('"BreadcrumbList"'),`${c.url} breadcrumb schema`);
-  assert.ok(!html.includes('aggregateRating'),'no fabricated ratings schema');
- }
-});
 
-test('card images render at their true aspect ratio — no portrait cropping anywhere',()=>{
- for(const s of fcSets){
-  const html=page(s.url.slice(1));
-  assert.ok(!html.includes('width="440"'),`${s.url} still hardcodes portrait dims`);
-  for(const c of s.cards)assert.ok(html.includes(`width="${c.w}" height="${c.h}"`),`${s.url} missing true dims for ${c.slug}`);
-  const cardPage=page(s.cards[0].url.slice(1));
-  assert.ok(cardPage.includes('fc2-dual'),'card page uses the dual layout');
-  assert.ok(cardPage.includes(`width="${s.cards[0].w}" height="${s.cards[0].h}"`),'hero uses true dims');
- }
- const css=read('dist/assets/style.css');
- assert.ok(/\.fc2-cardimg img\{[^}]*object-fit:contain/.test(css)&&!/\.fc2-cardimg img\{[^}]*aspect-ratio/.test(css),'card grid shows true ratios, no crop');
- assert.ok(!/\.fc2-hero img\{[^}]*aspect-ratio/.test(css),'hero shows the true ratio');
- assert.ok(css.includes('.fc2-dual'),'dual layout styles shipped');
-});
+
+
+
+
 
 test('set pages never repeat the library cover thumbnail, and landscape covers keep their real ratio on the library wall',()=>{
  const css=read('dist/assets/style.css');

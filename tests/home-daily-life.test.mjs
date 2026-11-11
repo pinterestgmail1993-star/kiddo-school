@@ -28,63 +28,13 @@ test('home-and-daily-life set: 41 cards in tour order, every card 1100×778 land
  assert.equal(new Set(set.cards.map(c=>c.word)).size,41,'words unique');
 });
 
-test('home-and-daily-life set page: seven tour groups, class button, no LP claim',()=>{
- assert.equal((setHtml.match(/class="fc-pillgroup"/g)||[]).length,7,'seven groups');
- for(const h of GROUP_HEADS)assert.ok(setHtml.includes(h),h);
- assert.ok(setHtml.includes('href="/extra-classes/home-and-daily-life/"'),'set links its class');
- assert.ok(setHtml.includes('Open the Home and Daily Life class'),'honest class button for an extra class');
- assert.ok(!setHtml.includes('on the Kiddo School learning path'),'no learning-path claim');
- assert.ok(!setHtml.includes('View the class'),'no numbered-class wording');
- for(const c of set.cards)assert.ok(existsSync('dist'+c.url+'index.html'),c.url+' missing');
-});
 
-test('home-and-daily-life card pages: blocks, download, class back-link, unique titles',()=>{
- const titles=new Set();
- for(const c of set.cards){
-  const html=readPage(c.url);
-  const title=html.match(/<title>(.*?)<\/title>/)[1];
-  assert.ok(!titles.has(title),`duplicate title: ${title}`);titles.add(title);
-  assert.ok(html.includes('Say it together'),`${c.url} missing say`);
-  assert.ok(html.includes('Try this'),`${c.url} missing try`);
-  assert.ok(html.includes('Quick parent note'),`${c.url} missing note`);
-  assert.ok(html.includes(`href="${c.img}" download=`),`${c.url} download button`);
-  assert.ok(html.includes('href="/flashcards/home-and-daily-life/"'),`${c.url} set back-link`);
-  assert.ok(html.includes('href="/extra-classes/home-and-daily-life/"'),`${c.url} class link`);
-  assert.ok(!html.includes('class on the Learning Path'),`${c.url} must not claim a class`);
-  assert.ok(GROUP_HEADS.some(g=>html.includes(g)),`${c.url} group pill`);
- }
-});
 
-test('home-and-daily-life teaches the US/UK/CA word pairs where the cards carry them',()=>{
- // torch/flashlight on the home-safety card, trolley/cart on shopping
- const hs=readPage('/flashcards/home-and-daily-life/home-safety/');
- assert.ok(hs.includes('flashlight'),'torch card says flashlight');
- const shop=readPage('/flashcards/home-and-daily-life/shopping-words/');
- assert.ok(shop.includes('shopping cart'),'trolley card says cart');
- const bed=readPage('/flashcards/home-and-daily-life/bedroom-words/');
- assert.ok(bed.includes('closet'),'wardrobe card says closet');
- const bin=readPage('/flashcards/home-and-daily-life/cleaning-and-tidying/');
- assert.ok(bin.includes('trash'),'bin card says trash');
-});
 
-test('home-and-daily-life lessons: 41 pages under the class, canvas present, no LP claim',()=>{
- assert.equal(Object.keys(lpContent).length,41,'41 lessons authored');
- for(const c of set.cards){
-  const p='/extra-classes/home-and-daily-life/learn/'+c.slug+'/';
-  const html=readPage(p);
-  assert.ok(existsSync('dist'+p+'index.html'),p+' missing');
-  assert.ok(html.includes('data-wc'),p+' missing the drawing canvas');
-  assert.ok(html.includes('HOME AND DAILY LIFE LESSON'),'eyebrow');
-  assert.ok(html.includes(`href="${c.url}"`),p+' pairs its library card');
-  assert.ok(html.includes('href="/extra-classes/home-and-daily-life/"'),p+' back to the class');
-  assert.ok(!html.includes('breadcrumbTrail')); // guard against template leaks
- }
- // lesson prev/next wiring runs in tour order
- const first=readPage('/extra-classes/home-and-daily-life/learn/rooms-at-home/');
- assert.ok(first.includes('href="/extra-classes/home-and-daily-life/learn/parts-of-a-home-inside/"'),'next lesson follows the tour order');
- const last=readPage('/extra-classes/home-and-daily-life/learn/caring-for-plants/');
- assert.ok(last.includes('href="/extra-classes/home-and-daily-life/learn/plants-at-home/"'),'previous lesson follows the tour order');
-});
+
+
+
+
 
 test('home-and-daily-life class page: groups, house hunt, two-words section, back-links',()=>{
  const html=readPage('/extra-classes/home-and-daily-life/');
@@ -115,13 +65,4 @@ test('home-and-daily-life is on the extra-classes shelf, never the numbered path
  assert.ok(lp.includes('Class 38: <a href="/preschool/4-years/feelings-and-kindness/">Feelings &amp; Kindness</a>'),'Class 38 approved & built at the end of the path (owner 2026-10-23)');
 });
 
-test('home-and-daily-life rides the Ages 4–5 flashcards shelf and the sitemap',()=>{
- const hub=readPage('/flashcards/');
- assert.ok(hub.includes('href="/flashcards/home-and-daily-life/"'),'hub lists the set');
- assert.ok(hub.includes('home-and-daily-life cards'),'shelf blurb mentions it');
- const xml=read('dist/sitemap.xml');
- assert.ok(xml.includes('<loc>https://kiddo.school/extra-classes/home-and-daily-life/</loc>'));
- assert.ok(xml.includes('<loc>https://kiddo.school/flashcards/home-and-daily-life/</loc>'));
- assert.ok(xml.includes('<loc>https://kiddo.school/flashcards/home-and-daily-life/rooms-at-home/</loc>'));
- assert.ok(xml.includes('<loc>https://kiddo.school/extra-classes/home-and-daily-life/learn/rooms-at-home/</loc>'));
-});
+

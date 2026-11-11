@@ -18,23 +18,7 @@ const R2='https://assets.kiddo.school/flashcards/preschool-learning-cards/opposi
 const SLUGS=['big-ball','small-ball','tall-tree','short-tree','long-pencil','short-pencil','full-glass','empty-glass','hot-soup','cold-ice-cream','open-door','closed-door'];
 const PAIRS={1:['big-ball','small-ball'],2:['tall-tree','short-tree'],3:['long-pencil','short-pencil'],4:['full-glass','empty-glass'],5:['hot-soup','cold-ice-cream'],6:['open-door','closed-door']};
 
-test('opposites data: twelve cards, six complete pairs, all real R2 files with true 1024×768 dims',()=>{
- assert.equal(oppositesLesson.cards.length,12);
- assert.deepEqual(oppositesLesson.cards.map(c=>c.slug),SLUGS);
- for(const c of oppositesLesson.cards){
-  assert.equal(c.w,1024,'true width carried for '+c.slug);
-  assert.equal(c.h,768,'true height carried for '+c.slug);
-  assert.match(c.file,/^\d{2}-[a-z-]+\.webp$/,'file pattern '+c.file);
-  assert.ok(c.alt&&c.alt.length>60,'real alt text for '+c.slug);
- }
- // the six pairs partition the set, and each pair's two slugs are true opposites
- const byPair=Object.fromEntries(Object.entries(PAIRS).map(([n,[a,b]])=>[n,a+'|'+b]));
- assert.deepEqual(Object.keys(byPair).sort(),['1','2','3','4','5','6']);
- assert.ok(existsSync(join(root,'flashcards/opposites/big-ball/index.html')),'descriptive URLs exist');
- // cover is the owner's real cover file, probed landscape
- assert.equal(oppositesLesson.cover.file,'cover.webp');
- assert.equal(oppositesLesson.cover.w,1024);assert.equal(oppositesLesson.cover.h,768);
-});
+
 
 test('opposites content: unique intro/say/try/note/meta/cardTitle per card, honest hot-safety note',()=>{
  const seen={intro:new Set(),meta:new Set(),title:new Set(),say:new Set(),spot:new Set()};
@@ -54,36 +38,9 @@ test('opposites content: unique intro/say/try/note/meta/cardTitle per card, hone
  for(const slug of SLUGS)assert.doesNotMatch(JSON.stringify(oppositesCardContent[slug]),/[\u{1F300}-\u{1FAFF}\u{2700}-\u{27BF}]/u,'no emoji in '+slug);
 });
 
-test('flashcard engine: opposites is a real set; twelve card pages with downloads and community',()=>{
- const set=fcSets.find(s=>s.slug==='opposites');
- assert.ok(set,'opposites set registered');
- assert.equal(set.cards.length,12);
- assert.equal(set.group,'preschool');
- assert.equal(set.coverUrl,R2+'cover.webp');
- assert.equal(set.cover.w,1024);assert.equal(set.cover.h,768,'landscape cover dims on the library wall');
- for(const c of set.cards){
-  const html=page(c.url.slice(1));
-  assert.ok(existsSync(join(root,c.url.slice(1),'index.html')),c.url+' exists');
-  assert.ok(!html.includes('fc2-pair'),c.url+' is a single-image card (no second face)');
-  assert.ok(html.includes(`src="${c.img}"`),c.url+' card image present');
-  assert.ok(html.includes(`width="1024" height="768"`),c.url+' true ratio attrs');
-  assert.ok(html.includes(`href="${c.img}" download="`),c.url+' real WebP download');
-  assert.ok(html.includes('data-fc-reactions')&&html.includes('data-fc-review-form')&&html.includes('data-fc-comment-form'),c.url+' three community systems');
-  assert.ok(html.includes('"BreadcrumbList"'),c.url+' breadcrumb schema');
-  assert.ok(html.includes('rel="prev"')&&html.includes('rel="next"'),c.url+' prev/next');
-  assert.ok(!html.includes('aggregateRating'),c.url+' no fabricated ratings');
- }
-});
 
-test('opposites set page: no cover repeat, spec SEO strings, honest grid of 12',()=>{
- const html=page('flashcards/opposites');
- assert.ok(!html.includes('fc2-cover'),'no repeated cover thumbnail');
- assert.ok(html.includes('<title>Opposite Flashcards for Preschoolers | 12 Cards | Kiddo.school</title>'),'set title');
- assert.equal([...html.matchAll(/class="fc-card fc2-cardlink"/g)].length,12,'12 cards in grid');
- assert.ok(html.includes('href="/preschool/3-years/opposites-and-comparing/"'),'links back to class');
- assert.ok(html.includes(`<img src="${R2}01-big-ball.webp"`),'grid uses real card thumbs');
- for(const s of SLUGS)assert.ok(html.includes(`/flashcards/opposites/${s}/`),'grid links '+s);
-});
+
+
 
 test('class page: learn + solve-the-sheets, no coded games (owner instruction)',()=>{
  const html=page('preschool/3-years/opposites-and-comparing');

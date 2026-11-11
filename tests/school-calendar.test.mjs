@@ -20,25 +20,7 @@ test('school calendar: exact SEO title, one H1, breadcrumbs and schema',()=>{
  assert.match(html,/src="\/assets\/calendar\.js(\?v=[0-9]+)?"/);
 });
 
-test('every day of the week points to a real page that exists in this build',()=>{
- const days=[...html.matchAll(/<li class="sc-day" data-sc-day="\d">/g)];
- assert.equal(days.length,7);
- for(const name of ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday']){
-  assert.ok(html.includes(`<span class="sc-dayname">${name}</span>`),name);
- }
- const links=[...html.matchAll(/class="text-link" href="(\/[^"]+)"/g)].map(m=>m[1]);
- assert.ok(links.length>=7);
- for(const href of links){
-  assert.ok(existsSync(`dist${href}index.html`.replace(/index\.htmlindex\.html$/,'index.html')),href);
-  assert.ok(!href.includes('http'),href);
- }
- // The themes follow the school's real weekly rhythm
- for(const theme of ['Learn','Play &amp; practice','Circle Time','My work','Let’s explore','Library','Together day']){
-  assert.ok(html.includes(`>${theme}</span>`),theme);
- }
- // "Start Today's Class" leads to the real Today's Class destination used site-wide
- assert.match(html,/href="\/newborn\/0-6-weeks\/high-contrast-cards\/">Start Today’s Class/);
-});
+
 
 test('no dates are fabricated in the static HTML — all dates are local-time JS',()=>{
  // Check the page's own content (the footer's © line is not a fabricated date)

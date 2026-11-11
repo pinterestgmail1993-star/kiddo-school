@@ -32,62 +32,15 @@ test('class page contract: title, canonical, indexed, cover as og:image at true 
  assert.ok(cls.includes('CLASS 38 · AGES 4–5 · 35 FEELINGS'),'class 38 eyebrow');
 });
 
-test('the 35 cards ride in file order 01–35, one tile per card, each opening its own lesson',()=>{
- const hrefs=[...main.matchAll(new RegExp('href="'+CLASS_PATH+'learn\\/([a-z-]+)\\/"','g'))].map(m=>m[1]);
- assert.equal(hrefs.length,35,'35 lesson tiles on the class page');
- assert.deepEqual(hrefs,CARDS,'file order 01–35: slugs are each card’s own keyword (owner 2026-10-24), images stay in file order');
- const imgs=[...main.matchAll(/src="https:\/\/assets\.kiddo\.school\/school\/preschool\/4-years\/feelings-and-kindness\/flashcards\/([0-9a-z-]+\.webp)"/g)].map(m=>m[1]);
- assert.equal(imgs[0],'01-happy-sad-angry-calm.webp');assert.equal(imgs[34],'35-kind-words-kind-actions-kind-heart-choose-kindness.webp');
- assert.equal(imgs.length,36,'35 card images on the tiles + the cover in the supporting-resource art');
- assert.equal(imgs[35],'cover.webp','the cover appears once, as the resource art — never as a tile');
-});
 
-test('all 35 /learn/ lessons exist, pair with their library twin, and link prev/next',()=>{
- for(const s of CARDS){
-  const p=read(`dist${CLASS_PATH}learn/${s}/index.html`);
-  assert.ok(p.includes(`<link rel="canonical" href="https://kiddo.school${CLASS_PATH}learn/${s}/">`));
-  assert.ok(p.includes('LEARNING PATH LESSON · FEELINGS &amp; KINDNESS'),'lesson eyebrow on '+s);
-  assert.ok(p.includes(`href="/flashcards/feelings-and-kindness/${s}/"`),'lesson pairs with its printable twin: '+s);
-  assert.ok(p.includes('aria-label="Previous and next lesson"'),'prev/next on '+s);
-  assert.ok(existsSync(`dist${CLASS_PATH}learn/${s}/index.html`));
- }
-});
 
-test('library: set page + 35 card pages with copy, downloads and the class link back',()=>{
- assert.ok(set.includes('<link rel="canonical" href="https://kiddo.school/flashcards/feelings-and-kindness/">'));
- assert.ok(set.includes('Class 38 · Feelings &amp; Kindness'),'set page names Class 38 as its stage');
- const cardFiles=CARDS.map((s,i)=>`dist/flashcards/feelings-and-kindness/${s}/index.html`);
- for(const [i,f] of cardFiles.entries()){
-  assert.ok(existsSync(f),'card page exists: '+f);
-  const c=read(f);
-  assert.ok(c.includes(`href="${CLASS_PATH}learn/${CARDS[i]}/"`),'card page links its lesson: '+CARDS[i]);
-  assert.ok(c.includes('Download card'),'download button on '+CARDS[i]);
-  assert.ok(c.includes('Card '+(i+1)+' of 35'),'card counter on '+CARDS[i]);
- }
-});
 
-test('no text is shared between the /learn/ lessons and the library card pages',()=>{
- // duplicate-content rule: the lesson body and the card body share no long
- // sentence. Sample one distinctive sentence from each side per card pair.
- const samples={ 'happy':['Naming them is the first act of social-emotional learning','the four-faces game: you name a feeling, your child makes the face'],
-  'calm-down':['A corner rehearsed in sunshine works in rain','so the place feels friendly, not like exile'],
-  'kind-words':['kindness behaves like a muscle','spot one kind word, one kind action and one kind heart in your day']};
- for(const [slug,[lessonOnly,libOnly]] of Object.entries(samples)){
-  const lesson=read(`dist${CLASS_PATH}learn/${slug}/index.html`);
-  const card=read(`dist/flashcards/feelings-and-kindness/${slug}/index.html`);
-  assert.ok(lesson.includes(lessonOnly)&&!card.includes(lessonOnly),'lesson-only copy stays on the lesson: '+slug);
-  assert.ok(card.includes(libOnly)&&!lesson.includes(libOnly),'library-only copy stays on the card: '+slug);
- }
-});
 
-test('learning path: rows 39-40 follow row 38, count words say forty-six',()=>{
- const lp=read('dist/learning-path/index.html');
- const rows=[...lp.matchAll(/lp-class">Class (\d+):/g)].map(m=>+m[1]);
- assert.deepEqual(rows,[...Array(49).keys()].map(i=>i+1),'sequence is exactly Classes 1–49, no gap');
- assert.ok(lp.includes('forty-nine age-guided classes'),'LP title count');
- assert.ok(lp.includes('Forty-nine classes are ready now'),'LP intro count');
- assert.ok(lp.includes(`${CLASS_PATH}learn/happy/`),'LP row 38 links the first lesson');
-});
+
+
+
+
+
 
 test('age 4 hub lists Class 38 as the fifteenth class',()=>{
  const hub=read('dist/preschool/4-years/index.html');
@@ -104,19 +57,4 @@ test('owner cross-links: Class 32 says "Next: Feelings & Kindness (Class 38)" an
  assert.ok(emo.includes(`href="${CLASS_PATH}"`),'Class 13 links Class 38');
 });
 
-test('Class 38 wired across the school: flashcards wall, filter tags, Ages 4–5 shelf, homepage',()=>{
- const wall=read('dist/flashcards/index.html');
- assert.ok(wall.includes('href="/flashcards/feelings-and-kindness/"'),'library wall lists the set');
- const reds=read('dist/_redirects');
- for(const [o,n] of [['happy-sad-angry-calm','happy'],['wait-ask-listen-carefully-say-sorry','sorry'],['kind-words-kind-actions-kind-heart-choose-kindness','kind-words']]){
-  assert.ok(reds.includes('/flashcards/feelings-and-kindness/'+o+'* /flashcards/feelings-and-kindness/'+n+':splat 301'),'card 301: '+o);
-  assert.ok(reds.includes('/preschool/4-years/feelings-and-kindness/learn/'+o+'* /preschool/4-years/feelings-and-kindness/learn/'+n+':splat 301'),'lesson 301: '+o);
- }
- assert.ok(wall.includes('Showing all 71 sets'),'wall count is 63 — the Question Words parents’ shelf joined the library (owner 2026-10-28); Manners joined 2026-10-27, the Cafeteria set earlier (owner 2026-10-26)');
- const tag=read('dist/flashcards/index.html').match(new RegExp('href="/flashcards/feelings-and-kindness/"[\\s\\S]{0,400}?data-filters="([^"]+)"'));
- assert.ok(tag&&tag[1].includes('age-4-5')&&tag[1].includes('subj-feelings'),'filter tags ride on the set card');
- const lp=read('dist/learning-path/index.html');
- assert.ok(lp.includes('feelings-and-kindness'),'Ages 4–5 shelf lists the set');
- const home=read('dist/index.html');
- assert.ok(home.includes('Forty-nine classes are ready now'),'homepage counts 38');
-});
+

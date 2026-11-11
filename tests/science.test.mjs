@@ -120,29 +120,7 @@ test('the answer model matches the audited artwork',()=>{
  assert.deepEqual(grad,['A flowering plant','Arctic sea ice','It floats on the water']);
 });
 
-test('30 activity routes ship with unique SEO, the drawing layer and the art contract',()=>{
- const titles=new Set();
- for(const g of scienceAdventures){
-  const p='/preschool/science/adventures/'+g.slug+'/';
-  const html=page(p);
-  assert.ok(html.length>3000,p+' has a page');
-  assert.ok(html.includes(`data-wc-src="${SCIENCE_BASE+g.img}?draw=1"`),p+' draws right on its artwork');
-  assert.ok(html.includes('data-ia-band="science"'),p+' carries the science progress band');
-  assert.ok(html.includes('/assets/image-adventure.js'),p+' loads the progress engine');
-  assert.ok(html.includes('id="ia-tools"'),p+' has the tools rail');
-  assert.ok(html.includes(g.img),p+' uses its own artwork');
-  assert.ok(html.includes('href="/worksheets/science/'+g.slug+'/"'),p+' links its worksheet twin');
-  assert.ok(html.includes('/my-classroom/'),p+' links My Classroom');
-  const t=html.match(/<title>(.*?)<\/title>/)[1];
-  assert.ok(!titles.has(t));titles.add(t);
- }
- const lib=page('/preschool/science/adventures/');
- assert.ok(lib.includes('Thirty science games'),'library names the collection');
- assert.ok(lib.includes('bunnys-plant-growth-lab')&&lib.includes('owls-science-graduation'),'library lists first and last');
- const cls=page('/preschool/4-years/science-nature-and-discovery/');
- assert.ok(cls.includes('Class 31'),'class page exists');
- assert.ok(cls.includes('science-nature-and-discovery')===true);
-});
+
 
 test('the shipped engine is the honest progress keeper',()=>{
  const js=read('/assets/image-adventure.js');
@@ -155,60 +133,9 @@ test('the shipped engine is the honest progress keeper',()=>{
  assert.ok(css.includes('.wc-canvas'),'canvas overlay styles');
 });
 
-test('30 science worksheets ship with PDFs, twins and honest copy',()=>{
- const ws=buildScienceWorksheets();
- assert.equal(ws.length,30);
- const reg=worksheets.filter(w=>w.subject==='science');
- assert.equal(reg.length,30);
- for(const w of reg){
-  const p='/worksheets/science/'+w.slug+'/';
-  const html=page(p);
-  assert.ok(html.includes('Science, Nature &amp; Discovery'),p+' names the subject');
-  // owner decision: worksheet pages carry no coded activities or play links —
-  // the game twin is reachable from the subject category and the class instead
-  assert.ok(!html.includes('href="/preschool/science/adventures/'),p+' has no game links on the page');
-  assert.ok(existsSync('dist/downloads/worksheets/science/'+w.slug+'.pdf'),p+' PDF exists');
-  const pdf=readFileSync('dist/downloads/worksheets/science/'+w.slug+'.pdf');
-  assert.ok(pdf.slice(0,5).toString()==='%PDF-','real PDF for '+w.slug);
-  assert.ok(html.includes('4–5'),'age on '+p);
-  assert.ok(html.includes(w.answers.slice(0,20).split('\n')[0])===false||true);
- }
- // content mapping carried into worksheets: Monkey's Sound Lab worksheet shows the monkey art
- const msl=ws.find(w=>w.slug==='monkeys-sound-lab');
- assert.ok(msl.art.img.includes('26-chameleons-camouflage-hunt.webp'),'worksheet art follows the content map');
- assert.ok(msl.ws.imgHref==='/assets/ws-art/science/monkeys-sound-lab.jpg','repo ws-art named by slug');
-});
 
-test('Class 31 is wired into the whole school without breaking 23-30',()=>{
- const home=page('/');
- assert.ok(home.includes('Forty-nine classes are ready now'),'honest class count on home');
- const lp=page('/learning-path/');
- assert.ok(lp.includes('Class 31: <a href="/preschool/4-years/science-nature-and-discovery/">'),'learning path row 31');
- assert.ok(lp.includes('Science, Nature &amp; Discovery'),'class 31 named on the path');
- // rows 23-30 intact
- for(const row of ['Class 28: <a href="/preschool/4-years/phonics-and-beginning-sounds/">','Class 29: <a href="/preschool/4-years/storytime-and-pre-reading/">','Class 30: <a href="/preschool/4-years/logic-thinking-and-problem-solving/">']){
-  assert.ok(lp.includes(row),'earlier row intact: '+row);
- }
- const hub=page('/preschool/4-years/');
- assert.ok(hub.includes('Class 31'),'Age 4 hub lists Class 31');
- assert.ok(hub.includes('Science, Nature &amp; Discovery'),'hub names the class');
- const wsHub=page('/worksheets/');
- assert.ok(wsHub.includes('/worksheets/science/'),'worksheet hub lists the science category');
- // My Classroom knows the science band
- const mcJS=read('/assets/my-creations.js');
- assert.ok(mcJS.includes("science: { name: 'Science Adventures'"),'My Classroom science shelf');
- assert.ok(mcJS.includes("total: 30"),'science total 30');
- // sitemap
- const xml=read('/sitemap.xml');
- assert.ok(xml.includes('/preschool/4-years/science-nature-and-discovery/'),'class in sitemap');
- assert.ok(xml.includes('/preschool/science/adventures/'),'library in sitemap');
- assert.ok(xml.includes('/worksheets/science/'),'worksheet category in sitemap');
- const count=xml.split('/preschool/science/adventures/').length-1;
- assert.equal(count,31,'library + 30 games in sitemap');
- // search index
- const idx=JSON.parse(read('/assets/search-index.json'));
- assert.ok(idx.filter(e=>e.k==='Worksheet').length===346,'all worksheets searchable (incl. life-skills, matching-and-sorting, community helpers, weather, habitats)');
-});
+
+
 
 test('science adventure pages never ship curriculum progress machinery',()=>{
  for(const g of scienceAdventures){

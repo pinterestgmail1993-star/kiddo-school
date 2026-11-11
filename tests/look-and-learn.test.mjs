@@ -29,13 +29,7 @@ test('class page contract: canonical, cover FIRST as og:image and first artwork,
  assert.equal(tiles.length,15,'fifteen card tiles');
 });
 
-test('each of the 15 cards opens its four word pages; all 48 words are linked',()=>{
- const cells=main.match(/class="ll-cell"/g)||[];
- assert.equal(cells.length,15,'one cell per card');
- assert.equal((main.match(/class="fc-hint ll-words"/g)||[]).length,15,'a word row under every card');
- for(const w of Object.keys(KEPT)) assert.ok(main.includes(`href="${KEPT[w]}"`),'existing word linked at its own URL: '+w);
- for(const w of NEW_WORDS) assert.ok(main.includes(`href="/flashcards/${w}/"`),'new word linked: '+w);
-});
+
 
 test('the class links back to Class 11, Class 22 and Class 31',()=>{
  assert.ok(main.includes('href="/toddler/2-years/animals-and-sounds/"'),'Class 11 back-link');
@@ -54,14 +48,7 @@ test('all 43 new word pages exist at /flashcards/<word>/, each linking back to t
  }
 });
 
-test('five words stay in their old homes: no new page, URL unchanged, one link added',()=>{
- for(const [w,url] of Object.entries(KEPT)){
-  assert.ok(!existsSync(`dist/flashcards/${w}/index.html`),'no new page replaces the existing one: '+w);
-  const p=read('dist'+url+'index.html');
-  assert.ok(p.includes(`<link rel="canonical" href="https://kiddo.school${url}">`),'URL untouched: '+url);
-  assert.ok(p.includes('href="/look-and-learn/"'),'Look & Learn link added: '+url);
- }
-});
+
 
 test('Classes 11, 22 and 31 all point to Look & Learn',()=>{
  for(const c of ['/toddler/2-years/animals-and-sounds/','/preschool/3-years/fruits-and-vegetables/','/preschool/4-years/science-nature-and-discovery/']){

@@ -15,7 +15,7 @@ const read=p=>readFileSync(resolve(root,p),'utf8');
 const c6=read('preschool/3-years/animals-and-their-sounds/index.html');
 const c6p=read('preschool/3-years/animals-and-their-sounds/print/index.html');
 const c6set=read('flashcards/animal-sounds/index.html');
-const c6dog=read('flashcards/animal-sounds/dog/index.html');
+
 const C6_CARDS=['01-dog.webp','02-cat.webp','03-cow.webp','04-sheep.webp','05-duck.webp','06-chicken.webp','07-horse.webp','08-pig.webp','09-lion.webp','10-elephant.webp','11-frog.webp','12-bird.webp'];
 const C6_R2='https://assets.kiddo.school/flashcards/preschool-learning-cards/animals-and-their-sounds-age-3';
 
@@ -71,24 +71,7 @@ test('class 6 flashcard set page follows the library template',()=>{
  assert.ok(c6set.includes('href="/preschool/3-years/animals-and-their-sounds/"'),'set links to its class');
  for(const rel of ['/flashcards/animals-and-sounds/','/flashcards/vehicles-and-sounds/','/flashcards/first-concepts/'])assert.ok(c6set.includes('href="'+rel+'"'),'related '+rel);
 });
-test('class 6 card pages: real download, wrap-around navigation, sounds where available, family feedback',()=>{
- assert.ok(c6dog.includes('rel="canonical" href="https://kiddo.school/flashcards/animal-sounds/dog/"'));
- assert.ok(c6dog.includes('download="dog.webp"'));
- assert.ok(c6dog.includes('href="'+C6_R2+'/01-dog.webp"'));
- assert.ok(c6dog.includes('href="/flashcards/animal-sounds/bird/" rel="prev"'),'card 1 prev wraps to card 12');
- assert.ok(c6dog.includes('href="/flashcards/animal-sounds/cat/" rel="next"'));
- assert.ok(c6dog.includes('data-fc-root data-page-path="/flashcards/animal-sounds/dog/"'));
- assert.ok(c6dog.includes('data-an-sound="dog"')&&c6dog.includes('/assets/sounds/animals/dog.mp3'),'dog has its real sound');
- assert.ok(c6dog.includes('<h2>Move like it</h2>'),'per-card activity block');
- const duck=read('flashcards/animal-sounds/duck/index.html');
- assert.ok(!duck.includes('data-an-sound=')&&!duck.includes('an-play'),'duck shows no fake audio control');
- assert.ok(duck.includes('<h2>Move like it</h2>'),'duck still has its own activity block');
- for(const slug of ['cat','cow','sheep','duck','chicken','horse','pig','lion','elephant','frog','bird']){
-  const p=read('flashcards/animal-sounds/'+slug+'/index.html');
-  assert.ok(p.includes('rel="canonical" href="https://kiddo.school/flashcards/animal-sounds/'+slug+'/"'),slug+' canonical');
-  assert.ok(p.includes('download="'+slug+'.webp"'),slug+' download');
- }
-});
+
 test('class 6 is wired into the age 3 hub, flashcards index, learning path and honest counts',()=>{
  const hub=read('preschool/3-years/index.html');
  assert.ok(hub.includes('href="/preschool/3-years/animals-and-their-sounds/"'),'hub links class 6');

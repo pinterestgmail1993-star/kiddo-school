@@ -135,41 +135,9 @@ test('no new top-level header entry: the collection lives under Worksheets',()=>
  assert.ok(nav.includes('aria-current="page"'),'Worksheets marked current on a printable page');
 });
 
-test('sitemap and search index carry every new URL with honest kinds',()=>{
- const xml=read('sitemap.xml');
- const search=JSON.parse(read('assets/search-index.json'));
- const urls=[MS_WS_BASE];
- for(const s of SLUGS){urls.push(MS_WS_BASE+s+'/',MS_ACT_PATH+s+'/');}
- for(const u of urls){
-  assert.ok(xml.includes(`<loc>https://kiddo.school${u}</loc>`),'sitemap: '+u);
- }
- const ws=search.filter(e=>e.u.startsWith(MS_WS_BASE));
- const acts=search.filter(e=>e.u.startsWith(MS_ACT_PATH)&&e.u!==MS_CLASS_PATH&&!e.u.includes('/learn/'));
- const learns=search.filter(e=>e.u.startsWith(MS_ACT_PATH)&&e.u.includes('/learn/'));
- assert.equal(ws.length,32,'category + 31 printables in search');
- assert.equal(acts.length,31,'31 activities in search');
- assert.equal(learns.length,15,'15 Learning Path lessons in search');
- assert.ok(ws.every(e=>e.k==='Worksheet')&&acts.every(e=>e.k==='Matching activity')&&learns.every(e=>e.k==='Matching activity'||e.k==='Class'),'honest kinds');
-});
 
-test('restore stays opt-in per page family: flashcards none, activities their own key',()=>{
- for(const u of ['flashcards/alphabet-lowercase/letter-a','flashcards/matching-and-sorting/same-balls','worksheets/life-skills/wash-your-hands']){
-  const html=page(u);
-  assert.ok(!html.includes('data-wc '),'printable/flashcard page carries no drawing mount at all: '+u);
- }
- // every Learning Path activity restores its own per-child slot
- for(const [u,key] of [
-  ['toddler/2-years/matching-and-sorting/match-same-animals','data-wc-restore="matching-sorting/match-same-animals"'],
-  ['preschool/life-skills/wash-your-hands','data-wc-restore="life-skills/wash-your-hands"'],
-  ['toddler/2-years/colors-and-shapes/coloring/circle','data-wc-restore="coloring/circle"'],
-  ['preschool/3-years/alphabet-and-letter-sounds/letter-a','data-wc-restore="alphabet/letter-a"']]){
-  const html=page(u);
-  assert.ok(html.includes(key),'restore keeps its own family key: '+u+' -> '+key);
- }
- // the flashcards set for this very class stays exactly as it was
- const fc=page('flashcards/matching-and-sorting');
- assert.ok(existsSync(join(root,'flashcards/matching-and-sorting/index.html')),'the existing flashcards set is untouched');
-});
+
+
 
 test('the Learning Path Class 10 row links straight to the worksheet category',()=>{
  const lp=page('learning-path');

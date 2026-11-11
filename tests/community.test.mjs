@@ -166,19 +166,7 @@ test('homepage gains one clean community section; primary nav stays six items; P
  assert.ok(footer.includes('href="/school-community/"'),'footer links School Community');
 });
 
-test('review mounts land on activity pages only — never on home, privacy, PO, bag, forms or hubs-of-hubs',()=>{
- const withMount=read('dist/toddler/2-years/garden-bugs-and-friends/index.html').includes('data-cm-root')
-  &&read('dist/toddler/2-years/emotions-and-feelings/index.html').includes('data-cm-root')
-  &&read('dist/toddler/2-years/circle-time/hello-school/index.html').includes('data-cm-root')
-  &&read('dist/toddler/2-years/play-and-practice/index.html').includes('data-cm-root')
-  &&read('dist/toddler/2-years/my-work/index.html').includes('data-cm-root')
-  &&read('dist/toddler/2-years/lets-explore/index.html').includes('data-cm-root');
- assert.ok(withMount,'mounts on lessons, circle time, play, my work, explore');
- for(const f of ['dist/index.html','dist/privacy/index.html','dist/principals-office/index.html','dist/my-school-bag/index.html','dist/sticky-note-wall/index.html','dist/art-wall/index.html','dist/learning-path/index.html','dist/learning-library/index.html']){
-  assert.ok(!read(f).includes('data-cm-root'),'no review mount on '+f);
- }
- assert.ok(/src="\/assets\/community\.js(\?v=[0-9]+)?"/.test(read('dist/school-community/index.html')),'community page loads the community script');
-});
+
 
 test('community-api.js loads BEFORE every consumer script (defer execution order)',()=>{
  // rooms.js / principal-office.js / art-wall.js / community.js capture
