@@ -99,7 +99,58 @@ function entry(childHtml,slug){
    banded=true;
   }
  }
- return {title,html:`<article class="one-page-item" id="${slug}">${c}${dl.length&&!banded?`<p class="item-download">${dl[0]}</p>`:''}</article>`};
+ /* OWNER 2026-11-11 v2: "render them small — there is a lot of empty — told
+    you make horizontal — you still making vertical." The first pass kept the
+    old card-page bones (fc2-dual's phantom rail column, fc2-pair's dangling
+    second picture, fcl's sticky two-column split, the learn boxes as
+    full-width rows), so deck pages still stack giant vertical blocks with
+    dead space and the download far from the picture. Card- and lesson-shaped
+    items are now REBUILT as a small tile for the horizontal shelf: picture(s)
+    first, then the title, the age/subject pills, the short description and
+    the download button UNDER the picture, and the teaching copy folded into a
+    <details> so nothing the owner wrote is lost. Books and the few items
+    without card markup keep the banded shape above. */
+ let html;
+ if(/class="fcl"|class="fc2-dual"|class="fc2-pair"/.test(c)){
+  const eyebrow=(c.match(/<span class="eyebrow">([\s\S]*?)<\/span>/)||[,''])[1];
+  c=c.replace(/<span class="eyebrow">[\s\S]*?<\/span>/,'');
+  const figs=[...c.matchAll(/<figure\b[\s\S]*?<\/figure>/g)].map(m=>m[0]);
+  c=c.replace(/<figure\b[\s\S]*?<\/figure>/g,'');
+  let titleHtml='',lede='';
+  const lm=c.match(/<h3 class="item-title">[\s\S]*?<\/h3><p[^>]*>((?:(?!<\/p>)[\s\S])*)<\/p>/);
+  if(lm){titleHtml=lm[0].slice(0,lm[0].indexOf('</h3>')+5);lede=lm[1];c=c.replace(lm[0],'');}
+  else{const tm=c.match(/<h3 class="item-title">[\s\S]*?<\/h3>/);if(tm){titleHtml=tm[0];c=c.replace(tm[0],'');}}
+  const bm=c.match(/<div class="item-band"><p class="item-desc">([\s\S]*?)<\/p><p class="item-download">([\s\S]*?)<\/p><\/div>/);
+  let pills='',bandDesc='',dlHtml=dl.length?dl[0]:'';
+  if(bm){
+   if(/class="fc-pill/.test(bm[1]))pills=bm[1];else bandDesc=bm[1];
+   if(bm[2])dlHtml=bm[2];
+   c=c.replace(bm[0],'');
+  }
+  const desc=lede||bandDesc;
+  /* lessons folded with no <a download> of their own (their rail went with
+    the page) — the owner's standing rule is a download under every picture,
+    so the tile's own artwork becomes the download, SEO file name and all */
+  if(!dlHtml&&figs.length){
+   const src=((figs[0].match(/\ssrc="([^"]+)"/)||[,''])[1]).split('?')[0];
+   if(src)dlHtml=`<a class="button" href="${src}" download="${src.split('/').pop()||'card.webp'}">Download the card <span aria-hidden="true">↓</span></a>`;
+  }
+  /* the rest is the teaching copy — strip empty card-page shells and the
+     per-card "From the … class" line (the deck page already says it), then
+     fold what is left into the details */
+  const more=c.replace(/<div(?:\s[^>]*)?><\/div>/g,'').replace(/<p class="fc2-lesson">[\s\S]*?<\/p>/g,'').trim();
+  const summary=/class="fcl"|class="fcl-copy"/.test(more)?'Open the full lesson':'Teaching tips';
+  const media=figs.length?`<div class="op-media">${figs.join('')}</div>`:'';
+  const head=eyebrow?`<span class="eyebrow op-eyebrow">${eyebrow}</span>`:'';
+  const pillRow=pills?`<p class="op-pills">${pills}</p>`:'';
+  const descTag=desc?`<p class="item-desc">${desc}</p>`:'';
+  const dlTag=dlHtml?`<p class="item-download">${dlHtml}</p>`:'';
+  const moreTag=more?`<details class="op-more"><summary>${summary}</summary><div class="op-more-body">${more}</div></details>`:'';
+  html=`<article class="one-page-item op-tile" id="${slug}">${media}${head}${titleHtml}${pillRow}${descTag}${dlTag}${moreTag}</article>`;
+ }else{
+  html=`<article class="one-page-item" id="${slug}">${c}${dl.length&&!banded?`<p class="item-download">${dl[0]}</p>`:''}</article>`;
+ }
+ return {title,html};
 }
 
 export function collapse({allRoutes,routeImg,searchPages,site,dist='dist',parentOverrides}){

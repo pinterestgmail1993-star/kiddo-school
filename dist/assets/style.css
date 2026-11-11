@@ -2361,3 +2361,29 @@ h1 em,h2 em{color:#7b4b99}
 .one-page-item .item-band .item-download,.item-band .item-download{margin-top:0}
 .item-band .item-download .button{white-space:nowrap}
 @media(max-width:640px){.mn-band{flex-direction:column;align-items:stretch}.mn-band .mn-actions .button{flex:1 1 0;min-width:0;justify-content:center}.item-band{flex-direction:column;align-items:stretch}.item-band .item-download{margin-top:2px}}
+/* OWNER 2026-11-11 v2 — "render them small, there is a lot of empty — told you make horizontal, you still making vertical." The folded card / lesson items become a shelf of SMALL cards (the mn-card look): picture on top, then the title, pills, description and the download button UNDER the picture, teaching copy folded into a details. Non-card items (the books) keep the full-width row. */
+.one-page-items{grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:18px;align-items:start}
+.one-page-item{grid-column:1/-1;margin:0}
+.one-page-item.op-tile{grid-column:auto;display:flex;flex-direction:column;gap:9px;background:var(--white,#fff);border:1.5px solid var(--ink,#3F3420);box-shadow:4px 4px 0 var(--ink,#3F3420);padding:12px 12px 14px}
+.op-tile .op-media{margin:0;display:grid;gap:8px;justify-items:center}
+.op-tile .op-media figure{margin:0;max-width:100%}
+.op-tile .op-media img{display:block;width:auto;max-width:100%;max-height:240px;height:auto;object-fit:contain;margin:0 auto;background:#fff;border:1px solid var(--line,#e6ddc6);border-radius:10px}
+.op-tile .op-media figcaption{margin-top:6px;font-size:.78rem;color:#8a7f66;text-align:center;display:flex;flex-direction:column;gap:2px}
+.op-tile .op-media figcaption strong{font-family:var(--serif),serif;font-weight:400;font-size:.95rem;color:#3F3420}
+.op-tile .op-eyebrow{display:none}
+.op-tile .item-title{font-family:var(--serif),serif;font-weight:400;font-size:17px;line-height:1.3;text-align:center;letter-spacing:-.2px;margin:0}
+.op-tile .op-pills{margin:0;display:flex;flex-wrap:wrap;gap:6px;justify-content:center}
+.op-tile .op-pills .fc-pill{font-size:.68rem;padding:3px 9px}
+.op-tile .item-desc{margin:0;font-size:.87rem;line-height:1.45;color:#5C5470}
+.op-tile .item-download{margin:0}
+.op-tile .item-download .button{display:flex;justify-content:center;width:100%;font-size:.8rem;padding:.5em .6em;min-height:0;gap:.3em;white-space:nowrap}
+.op-tile .item-download .button span[aria-hidden]{display:none}
+.op-tile .op-more{margin-top:2px;border-top:1px dashed #e0d6bd;padding-top:8px}
+.op-tile .op-more summary{cursor:pointer;font-size:.8rem;font-weight:700;color:#3F3420}
+.op-tile .op-more-body{font-size:.85rem;line-height:1.5;margin-top:8px}
+.op-tile .op-more-body .fcl,.op-tile .op-more-body .fc2-dual,.op-tile .op-more-body .fc2-main,.op-tile .op-more-body .fc2-pair,.op-tile .op-more-body .fc2-learn{display:block;max-width:none;grid-template-columns:none;gap:0;margin:0;padding:0}
+.op-tile .op-more-body .fc2-do{margin:0 0 12px;padding:14px 16px}
+.op-tile .op-more-body h2,.op-tile .op-more-body h4,.op-tile .op-more-body h5{font-size:1rem;margin:0 0 6px}
+.op-tile .op-more-body .fcl-art{position:static}
+.op-tile .op-more-body ol,.op-tile .op-more-body ul{margin:6px 0 0;padding-left:18px}
+@media(max-width:640px){.one-page-items{grid-template-columns:repeat(auto-fill,minmax(205px,1fr));gap:12px}.op-tile .op-media img{max-height:190px}}

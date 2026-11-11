@@ -41,7 +41,7 @@ test('the class links back to Class 11, Class 22 and Class 31',()=>{
 
 test('all 43 word pages are folded into the class page and their URLs 301 there',()=>{
  const cls=read('dist'+CLASS_PATH+'index.html');
- assert.equal([...cls.matchAll(/<article class="one-page-item"/g)].length,NEW_WORDS.length,'every word folded onto the class page');
+ assert.equal([...cls.matchAll(/<article class="one-page-item[\w -]*"/g)].length,NEW_WORDS.length,'every word folded onto the class page');
  for(const w of NEW_WORDS){
   assert.ok(cls.includes(`id="${w}"`),'word section on the class page: '+w);
   assert.ok(!existsSync(`dist/flashcards/${w}/index.html`),'word page removed: '+w);

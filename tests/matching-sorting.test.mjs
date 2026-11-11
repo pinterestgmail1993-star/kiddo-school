@@ -80,7 +80,7 @@ test('the class page folds all 31 activities with their original artwork',()=>{
 
 test('the worksheet set folds all 31 printables with their artwork and downloads',()=>{
  const set=page('worksheets/toddler/matching-and-sorting');
- assert.equal([...set.matchAll(/<article class="one-page-item"/g)].length,31,'thirty-one folded printables');
+ assert.equal([...set.matchAll(/<article class="one-page-item[\w -]*"/g)].length,31,'thirty-one folded printables');
  for(const a of msPages){
   const i=set.indexOf(`id="${a.slug}"`);
   assert.ok(i>=0,'folded printable '+a.slug);
