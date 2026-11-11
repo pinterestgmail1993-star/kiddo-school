@@ -1370,5 +1370,29 @@ for(const f of walkAll('dist').filter(f=>f.endsWith('/index.html'))){
  });
  if(o!==h)writeFileSync(f,o);
 }
+/* NO CARD LINKS: no link anywhere points at a card section (/class/#card-slug). Picture links to a card are unwrapped; text links go to the class page itself with no #fragment, so nothing ever lands on what looks like an individual page. */
+{
+ const cardIds=new Map();
+ const pages=walkAll('dist').filter(f=>f.endsWith('/index.html'));
+ for(const f of pages){
+  const route=f==='dist/index.html'?'/':f.slice(4,-10)+'/';
+  const h=readFileSync(f,'utf8');
+  const set=new Set();
+  for(const m of h.matchAll(/<[^>]*\bone-page-item\b[^>]*>/g)){const i=m[0].match(/\bid="([^"]+)"/);if(i)set.add(i[1]);}
+  cardIds.set(route,set);
+ }
+ for(const f of walkAll('dist').filter(f=>f.endsWith('.html'))){
+  const h=readFileSync(f,'utf8');
+  const o=h.replace(/<a\b([^>]*?)\bhref="(\/[^"#]*)#([^"]+)"([^>]*)>((?:(?!<\/a>)[\s\S])*?)<\/a>/g,(m,a1,path,id,a2,inner)=>{
+   const route=path.endsWith('/')?path:path+'/';
+   if(!(cardIds.get(route)||new Set()).has(id))return m;
+   if(/<img\b|<picture\b/.test(inner)&&!/<a\b/.test(inner)&&!/class="brand"/.test(a1+a2)){
+    return '<span'+(a1+a2).replace(/\s(?:aria-label|target|rel|data-[a-z-]+)="[^"]*"/g,'')+'>'+inner+'</span>';
+   }
+   return '<a'+a1+'href="'+path+'"'+a2+'>'+inner+'</a>';
+  });
+  if(o!==h)writeFileSync(f,o);
+ }
+}
 writeFileSync('dist/build-info.json',JSON.stringify({siteUrl:site,indexable,pages:allRoutes.length+2,activities:activities.length},null,2));
 console.log(`Built ${allRoutes.length+2} pages and ${activities.length} activity sheets. Canonical origin: ${site}. Indexing: ${indexable?'enabled':'disabled (preview)'}.`);
