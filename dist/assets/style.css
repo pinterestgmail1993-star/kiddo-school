@@ -2339,7 +2339,9 @@ h1 em,h2 em{color:#7b4b99}
 .one-page-item .item-download{margin-top:1rem}
 .one-page-item:target{outline:3px solid #f5b835;outline-offset:8px;border-radius:12px}
 
-.fg-actions{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:10px 12px 0}
-.fg-actions .button{padding:8px 14px;font-size:14px;min-height:40px}
-.fg-actions-msg{font-size:13px;font-weight:700;color:var(--ink);flex-basis:100%}
+.fg-actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center;padding:12px 12px 0}
+.fg-card .fg-actions .button{gap:0;min-height:44px;padding:9px 18px;font-size:15px;font-weight:800;letter-spacing:.2px;background:#ffffff!important;color:#3d1f52!important;border:2.5px solid #3d1f52!important;border-radius:12px;box-shadow:3px 3px 0 #3d1f52!important;opacity:1}
+.fg-card .fg-actions .button:hover,.fg-card .fg-actions .button:focus-visible{background:#3d1f52!important;color:#ffffff!important;transform:translate(-1px,-1px);box-shadow:4px 4px 0 #f7c9b4!important}
+.fg-card .fg-actions .button:active{transform:translate(2px,2px);box-shadow:1px 1px 0 #3d1f52!important}
+.fg-actions-msg{font-size:13px;font-weight:700;color:#3d1f52;flex-basis:100%}
 .fg-actions-msg:empty{display:none}
