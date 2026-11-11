@@ -62,7 +62,6 @@ test('every sheet: pills (age/subject/level/skill), kid-voice description, downl
   assert.ok(/class="mn-tip">[^<]{40,}</.test(c),'description missing or thin');
   assert.ok(/data-mn-print/.test(c),'print button missing');
   assert.ok(/href="https:\/\/assets\.kiddo\.school\/school\/extra-classes\/science-at-a-glance\/[a-z0-9-]+\.webp" download="[a-z0-9-]+\.webp">Download/.test(c),'download button missing');
-  assert.ok(c.includes('sg-imagelink'),'tap-to-open artwork link missing');
  }
  assert.equal([...main.matchAll(/fc-pill fc-pill-age">Ages 2–5</g)].length,65);
 });

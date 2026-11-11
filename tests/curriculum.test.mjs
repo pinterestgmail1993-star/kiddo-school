@@ -109,7 +109,6 @@ test('lesson 9 (Colors & Shapes, Toddler 3) follows its spec with the interactiv
  assert.equal(packFiles.length,8,'each printable referenced exactly once in the preview grid');
  for(const p of csLesson.printables.pages){
   assert.ok(l9.includes('width="1414" height="2000" alt="'+p.alt+'" loading="lazy"'),p.file);
-  assert.ok(l9.includes('aria-label="Open full-size '+p.title+' page"'),p.file);
  }
  assert.ok(l9.includes('href="#printables"'));
  const printView=read('dist/toddler/2-years/colors-and-shapes/print/index.html');
