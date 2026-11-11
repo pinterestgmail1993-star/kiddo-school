@@ -2329,3 +2329,12 @@ h1 em,h2 em{color:#7b4b99}
 .to-top svg{display:block}
 @media(max-width:680px){.to-top{right:12px;bottom:12px;padding:8px 12px}}
 @media print{.to-top{display:none}}
+
+/* ONE-PAGE EVERYTHING (2026-11-11): every card / lesson that used to be its own page is a section on its class or deck page */
+.one-page-items{display:grid;gap:2.5rem;margin-top:2.5rem;padding-top:1.5rem;border-top:2px dashed rgba(0,0,0,.12)}
+.one-page-item{scroll-margin-top:5rem;padding-bottom:2rem;border-bottom:1px solid rgba(0,0,0,.08)}
+.one-page-item .item-title{font-size:clamp(1.4rem,3vw,1.9rem);margin:.2rem 0 .6rem}
+.one-page-item .page-heading{padding:0;margin-bottom:1rem}
+.one-page-item img{max-width:100%;height:auto;border-radius:12px}
+.one-page-item .item-download{margin-top:1rem}
+.one-page-item:target{outline:3px solid #f5b835;outline-offset:8px;border-radius:12px}

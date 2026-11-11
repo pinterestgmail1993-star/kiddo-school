@@ -285,76 +285,6 @@ past the 100-dynamic-rule cap (same source, same target, no splat):
 # "keep the urls clean, short and clean seo" — page slugs are each card’s
 # own keyword, not the R2 filename; the old file-derived URLs 301 below.
 # Splats cover requests with and without the trailing slash.)
-/flashcards/feelings-and-kindness/happy-sad-angry-calm* /flashcards/feelings-and-kindness/happy:splat 301
-/flashcards/feelings-and-kindness/kind-share-help-thank-you* /flashcards/feelings-and-kindness/share:splat 301
-/flashcards/feelings-and-kindness/excited-worried-surprised-proud* /flashcards/feelings-and-kindness/excited:splat 301
-/flashcards/feelings-and-kindness/listen-gentle-take-turns-kind-words* /flashcards/feelings-and-kindness/gentle:splat 301
-/flashcards/feelings-and-kindness/breathe-brave-try-again-i-can-do-it* /flashcards/feelings-and-kindness/try-again:splat 301
-/flashcards/feelings-and-kindness/smile-care-forgive-friend* /flashcards/feelings-and-kindness/friend:splat 301
-/flashcards/feelings-and-kindness/lonely-loved-frustrated-relaxed* /flashcards/feelings-and-kindness/lonely:splat 301
-/flashcards/feelings-and-kindness/patient-honest-polite-fair* /flashcards/feelings-and-kindness/patient:splat 301
-/flashcards/feelings-and-kindness/notice-understand-comfort-encourage* /flashcards/feelings-and-kindness/comfort:splat 301
-/flashcards/feelings-and-kindness/wait-ask-listen-carefully-say-sorry* /flashcards/feelings-and-kindness/sorry:splat 301
-/flashcards/feelings-and-kindness/welcome-include-cooperate-teamwork* /flashcards/feelings-and-kindness/include:splat 301
-/flashcards/feelings-and-kindness/hopeful-safe-problem-solver-kind-heart* /flashcards/feelings-and-kindness/hopeful:splat 301
-/flashcards/feelings-and-kindness/joyful-tired-confused-curious* /flashcards/feelings-and-kindness/curious:splat 301
-/flashcards/feelings-and-kindness/scared-brave-shy-confident* /flashcards/feelings-and-kindness/brave:splat 301
-/flashcards/feelings-and-kindness/share-give-care-thank* /flashcards/feelings-and-kindness/give:splat 301
-/flashcards/feelings-and-kindness/be-kind-helpful-patient-honest* /flashcards/feelings-and-kindness/kind:splat 301
-/flashcards/feelings-and-kindness/forgive-accept-respect-include* /flashcards/feelings-and-kindness/respect:splat 301
-/flashcards/feelings-and-kindness/pause-breathe-deeply-think-choose-kindness* /flashcards/feelings-and-kindness/pause:splat 301
-/flashcards/feelings-and-kindness/proud-disappointed-grateful-peaceful* /flashcards/feelings-and-kindness/grateful:splat 301
-/flashcards/feelings-and-kindness/worried-relieved-jealous-embarrassed* /flashcards/feelings-and-kindness/jealous:splat 301
-/flashcards/feelings-and-kindness/notice-name-share-feelings-ask-for-help* /flashcards/feelings-and-kindness/ask-for-help:splat 301
-/flashcards/feelings-and-kindness/say-hello-make-space-be-curious-ask-nicely* /flashcards/feelings-and-kindness/say-hello:splat 301
-/flashcards/feelings-and-kindness/share-space-work-together-take-turns-cheer-others* /flashcards/feelings-and-kindness/take-turns:splat 301
-/flashcards/feelings-and-kindness/kind-choice-good-friend-try-your-best-grow-together* /flashcards/feelings-and-kindness/kind-choice:splat 301
-/flashcards/feelings-and-kindness/calm-down-count-to-ten-use-your-words-take-a-break* /flashcards/feelings-and-kindness/calm-down:splat 301
-/flashcards/feelings-and-kindness/i-feel-i-need-i-want-i-choose* /flashcards/feelings-and-kindness/i-feel:splat 301
-/flashcards/feelings-and-kindness/listen-first-think-first-speak-kindly-solve-together* /flashcards/feelings-and-kindness/speak-kindly:splat 301
-/flashcards/feelings-and-kindness/welcome-all-be-inclusive-share-joy-make-a-friend* /flashcards/feelings-and-kindness/welcome:splat 301
-/flashcards/feelings-and-kindness/you-matter-i-am-here-you-are-safe-we-care* /flashcards/feelings-and-kindness/you-matter:splat 301
-/flashcards/feelings-and-kindness/keep-trying-learn-celebrate-be-yourself* /flashcards/feelings-and-kindness/be-yourself:splat 301
-/flashcards/feelings-and-kindness/welcome-belong-trust-connect* /flashcards/feelings-and-kindness/belong:splat 301
-/flashcards/feelings-and-kindness/notice-pause-breathe-reset* /flashcards/feelings-and-kindness/breathe:splat 301
-/flashcards/feelings-and-kindness/care-support-encourage-comfort* /flashcards/feelings-and-kindness/care:splat 301
-/flashcards/feelings-and-kindness/listen-understand-respond-forgive* /flashcards/feelings-and-kindness/forgive:splat 301
-/flashcards/feelings-and-kindness/kind-words-kind-actions-kind-heart-choose-kindness* /flashcards/feelings-and-kindness/kind-words:splat 301
-/preschool/4-years/feelings-and-kindness/learn/happy-sad-angry-calm* /preschool/4-years/feelings-and-kindness/learn/happy:splat 301
-/preschool/4-years/feelings-and-kindness/learn/kind-share-help-thank-you* /preschool/4-years/feelings-and-kindness/learn/share:splat 301
-/preschool/4-years/feelings-and-kindness/learn/excited-worried-surprised-proud* /preschool/4-years/feelings-and-kindness/learn/excited:splat 301
-/preschool/4-years/feelings-and-kindness/learn/listen-gentle-take-turns-kind-words* /preschool/4-years/feelings-and-kindness/learn/gentle:splat 301
-/preschool/4-years/feelings-and-kindness/learn/breathe-brave-try-again-i-can-do-it* /preschool/4-years/feelings-and-kindness/learn/try-again:splat 301
-/preschool/4-years/feelings-and-kindness/learn/smile-care-forgive-friend* /preschool/4-years/feelings-and-kindness/learn/friend:splat 301
-/preschool/4-years/feelings-and-kindness/learn/lonely-loved-frustrated-relaxed* /preschool/4-years/feelings-and-kindness/learn/lonely:splat 301
-/preschool/4-years/feelings-and-kindness/learn/patient-honest-polite-fair* /preschool/4-years/feelings-and-kindness/learn/patient:splat 301
-/preschool/4-years/feelings-and-kindness/learn/notice-understand-comfort-encourage* /preschool/4-years/feelings-and-kindness/learn/comfort:splat 301
-/preschool/4-years/feelings-and-kindness/learn/wait-ask-listen-carefully-say-sorry* /preschool/4-years/feelings-and-kindness/learn/sorry:splat 301
-/preschool/4-years/feelings-and-kindness/learn/welcome-include-cooperate-teamwork* /preschool/4-years/feelings-and-kindness/learn/include:splat 301
-/preschool/4-years/feelings-and-kindness/learn/hopeful-safe-problem-solver-kind-heart* /preschool/4-years/feelings-and-kindness/learn/hopeful:splat 301
-/preschool/4-years/feelings-and-kindness/learn/joyful-tired-confused-curious* /preschool/4-years/feelings-and-kindness/learn/curious:splat 301
-/preschool/4-years/feelings-and-kindness/learn/scared-brave-shy-confident* /preschool/4-years/feelings-and-kindness/learn/brave:splat 301
-/preschool/4-years/feelings-and-kindness/learn/share-give-care-thank* /preschool/4-years/feelings-and-kindness/learn/give:splat 301
-/preschool/4-years/feelings-and-kindness/learn/be-kind-helpful-patient-honest* /preschool/4-years/feelings-and-kindness/learn/kind:splat 301
-/preschool/4-years/feelings-and-kindness/learn/forgive-accept-respect-include* /preschool/4-years/feelings-and-kindness/learn/respect:splat 301
-/preschool/4-years/feelings-and-kindness/learn/pause-breathe-deeply-think-choose-kindness* /preschool/4-years/feelings-and-kindness/learn/pause:splat 301
-/preschool/4-years/feelings-and-kindness/learn/proud-disappointed-grateful-peaceful* /preschool/4-years/feelings-and-kindness/learn/grateful:splat 301
-/preschool/4-years/feelings-and-kindness/learn/worried-relieved-jealous-embarrassed* /preschool/4-years/feelings-and-kindness/learn/jealous:splat 301
-/preschool/4-years/feelings-and-kindness/learn/notice-name-share-feelings-ask-for-help* /preschool/4-years/feelings-and-kindness/learn/ask-for-help:splat 301
-/preschool/4-years/feelings-and-kindness/learn/say-hello-make-space-be-curious-ask-nicely* /preschool/4-years/feelings-and-kindness/learn/say-hello:splat 301
-/preschool/4-years/feelings-and-kindness/learn/share-space-work-together-take-turns-cheer-others* /preschool/4-years/feelings-and-kindness/learn/take-turns:splat 301
-/preschool/4-years/feelings-and-kindness/learn/kind-choice-good-friend-try-your-best-grow-together* /preschool/4-years/feelings-and-kindness/learn/kind-choice:splat 301
-/preschool/4-years/feelings-and-kindness/learn/calm-down-count-to-ten-use-your-words-take-a-break* /preschool/4-years/feelings-and-kindness/learn/calm-down:splat 301
-/preschool/4-years/feelings-and-kindness/learn/i-feel-i-need-i-want-i-choose* /preschool/4-years/feelings-and-kindness/learn/i-feel:splat 301
-/preschool/4-years/feelings-and-kindness/learn/listen-first-think-first-speak-kindly-solve-together* /preschool/4-years/feelings-and-kindness/learn/speak-kindly:splat 301
-/preschool/4-years/feelings-and-kindness/learn/welcome-all-be-inclusive-share-joy-make-a-friend* /preschool/4-years/feelings-and-kindness/learn/welcome:splat 301
-/preschool/4-years/feelings-and-kindness/learn/you-matter-i-am-here-you-are-safe-we-care* /preschool/4-years/feelings-and-kindness/learn/you-matter:splat 301
-/preschool/4-years/feelings-and-kindness/learn/keep-trying-learn-celebrate-be-yourself* /preschool/4-years/feelings-and-kindness/learn/be-yourself:splat 301
-/preschool/4-years/feelings-and-kindness/learn/welcome-belong-trust-connect* /preschool/4-years/feelings-and-kindness/learn/belong:splat 301
-/preschool/4-years/feelings-and-kindness/learn/notice-pause-breathe-reset* /preschool/4-years/feelings-and-kindness/learn/breathe:splat 301
-/preschool/4-years/feelings-and-kindness/learn/care-support-encourage-comfort* /preschool/4-years/feelings-and-kindness/learn/care:splat 301
-/preschool/4-years/feelings-and-kindness/learn/listen-understand-respond-forgive* /preschool/4-years/feelings-and-kindness/learn/forgive:splat 301
-/preschool/4-years/feelings-and-kindness/learn/kind-words-kind-actions-kind-heart-choose-kindness* /preschool/4-years/feelings-and-kindness/learn/kind-words:splat 301
 
 # --- Animal Categories 'dinosaurs' card retired 2026-10-25 (owner: "Remove
 # the dinosaurs card from the Animal Categories set") — the deck moved into
@@ -377,44 +307,8 @@ past the 100-dynamic-rule cap (same source, same target, no splat):
 # (owner 2026-10-31: "dont make indiviual pages, they are thin to google —
 # include all in one page"): every card now lives on the class page with its
 # Download + Print buttons, so the old URLs 301 there.
-/time-and-daily-routine/a-day-at-school-routine* /time-and-daily-routine/ 301
-/time-and-daily-routine/afternoon-activities* /time-and-daily-routine/ 301
-/time-and-daily-routine/always-sometimes-never* /time-and-daily-routine/ 301
-/time-and-daily-routine/before-during-after-time-words* /time-and-daily-routine/ 301
-/time-and-daily-routine/begin-continue-finish* /time-and-daily-routine/ 301
-/time-and-daily-routine/chores-in-order* /time-and-daily-routine/ 301
-/time-and-daily-routine/countdown-to-a-special-day* /time-and-daily-routine/ 301
-/time-and-daily-routine/dawn-noon-dusk-midnight* /time-and-daily-routine/ 301
-/time-and-daily-routine/days-of-the-week* /time-and-daily-routine/ 301
-/time-and-daily-routine/early-or-late* /time-and-daily-routine/ 301
-/time-and-daily-routine/evening-and-night-routine* /time-and-daily-routine/ 301
-/time-and-daily-routine/fast-or-slow* /time-and-daily-routine/ 301
-/time-and-daily-routine/first-next-last-sequence-words* /time-and-daily-routine/ 301
-/time-and-daily-routine/getting-ready-routine* /time-and-daily-routine/ 301
-/time-and-daily-routine/healthy-habits-daily-routine* /time-and-daily-routine/ 301
-/time-and-daily-routine/how-long-might-it-take* /time-and-daily-routine/ 301
-/time-and-daily-routine/how-often-time-words* /time-and-daily-routine/ 301
-/time-and-daily-routine/long-or-short-time* /time-and-daily-routine/ 301
-/time-and-daily-routine/meal-times-breakfast-lunch-dinner* /time-and-daily-routine/ 301
-/time-and-daily-routine/months-of-the-year* /time-and-daily-routine/ 301
-/time-and-daily-routine/morning-routine* /time-and-daily-routine/ 301
-/time-and-daily-routine/my-daily-routine* /time-and-daily-routine/ 301
-/time-and-daily-routine/now-soon-later-time-words* /time-and-daily-routine/ 301
-/time-and-daily-routine/open-happening-closed* /time-and-daily-routine/ 301
-/time-and-daily-routine/parts-of-the-day* /time-and-daily-routine/ 301
-/time-and-daily-routine/plan-my-day* /time-and-daily-routine/ 301
-/time-and-daily-routine/read-the-clock-hour-oclock* /time-and-daily-routine/ 301
-/time-and-daily-routine/same-time-each-day-routine* /time-and-daily-routine/ 301
-/time-and-daily-routine/seconds-minutes-hours* /time-and-daily-routine/ 301
-/time-and-daily-routine/start-and-stop* /time-and-daily-routine/ 301
-/time-and-daily-routine/the-calendar-days-weeks-months* /time-and-daily-routine/ 301
-/time-and-daily-routine/time-changes-melt-grow* /time-and-daily-routine/ 301
-/time-and-daily-routine/time-helpers-clock-calendar-timer* /time-and-daily-routine/ 301
-/time-and-daily-routine/time-order-words-first-second-third* /time-and-daily-routine/ 301
-/time-and-daily-routine/time-words-review* /time-and-daily-routine/ 301
-/time-and-daily-routine/waiting-time-patience* /time-and-daily-routine/ 301
-/time-and-daily-routine/week-month-year* /time-and-daily-routine/ 301
-/time-and-daily-routine/weekday-or-weekend* /time-and-daily-routine/ 301
-/time-and-daily-routine/when-plans-change* /time-and-daily-routine/ 301
-/time-and-daily-routine/work-time-and-break-time* /time-and-daily-routine/ 301
-/time-and-daily-routine/yesterday-today-tomorrow* /time-and-daily-routine/ 301
+
+
+# Time & Daily Routine: the 41 old per-card URLs, collapsed from 41 rules into 2 (owner 2026-11-11, dynamic-rule cap)
+/time-and-daily-routine/:x /time-and-daily-routine/ 301
+/time-and-daily-routine/:x/ /time-and-daily-routine/ 301

@@ -142,6 +142,7 @@ import {LETTERS,letterAt} from '../src/alphabet-data.mjs';
 import {letterPageBody,letterSchema,letterPath,matchGameBody,soundsGameBody,pictureGameBody,alphabetShelf} from '../src/alphabet-center.mjs';
 import {ourClassroom,ourClassroomBody,letsExplore,letsExploreBody,stickyWall,stickyWallBody,bcSchema as clBc} from '../src/classroom-life.mjs';
 import {readFileSync,writeFileSync,mkdirSync,rmSync,cpSync,readdirSync} from 'node:fs';
+import {collapse,buildRedirects,rewriteLinks,walkAll} from './collapse.mjs';
 import {illustrations} from './illustrations.mjs';
 import {allPagesSection} from './all-pages-dir.mjs';
 import {firstGlanceBody} from '../src/first-glance.mjs';
@@ -1271,6 +1272,8 @@ for(const ss of SSAFE_ORDER){
  const p=SSAFE_PATH+ss+'/';
  page(p,ssShortTitle(ss),ssShortDesc(ss),ssShortBody(ss),{ogImage:SSAFE_BASE+ss+'.webp',ogAlt:ssShortAlt(ss),ogW:800,ogH:1131});
 }
+/* ONE-PAGE EVERYTHING (owner 2026-11-11) — see scripts/collapse.mjs. Runs after the last page() call and before the search index, /all-pages/ and the sitemap. */
+const COLLAPSED=collapse({allRoutes,routeImg,searchPages,site});
 /* Whole-school search index: written after the last page registers so it
    always covers the complete school — books, classes, drawing lessons,
    flashcards, activities and the pages parents need. */
@@ -1332,6 +1335,16 @@ routeImg.set(PGP_PATH,[PGP_BASE+PGP_COVER.file,...PGP_ORDER.map(s=>PGP_BASE+pgpB
 routeImg.set('/flashcards/plants-and-how-they-grow/',[PGP_BASE+PGP_COVER.file,...PGP_ORDER.map(s=>PGP_BASE+pgpBySlug[s].file)]);
 routeImg.set(PGP_PATH,[PGP_BASE+PGP_COVER.file,...PGP_ORDER.map(s=>PGP_BASE+pgpBySlug[s].file)]);
 routeImg.set('/flashcards/plants-and-how-they-grow/',[PGP_BASE+PGP_COVER.file,...PGP_ORDER.map(s=>PGP_BASE+pgpBySlug[s].file)]);
+/* ONE-PAGE EVERYTHING — pages built after the collapse (/all-pages/ etc.) get their links rewritten too, then the 301s are written. */
+rewriteLinks(COLLAPSED.moved);
+{
+ const survivors=new Set(allRoutes);
+ const distFiles=walkAll('dist').map(f=>f.slice(4)).filter(f=>!f.endsWith('/index.html')||true).map(f=>f.replace(/index\.html$/,''));
+ const R=buildRedirects({items:COLLAPSED.items,survivors,distFiles});
+ const old=readFileSync('dist/_redirects','utf8');
+ writeFileSync('dist/_redirects','# ONE-PAGE EVERYTHING (owner 2026-11-11: "delete all individual lesson pages and library pages — all the content on the main page"): every lesson card, library card and worksheet page is folded into its class/deck page and 301s there. Static exact rules first (unlimited); the placeholder rules after them stay under Cloudflare\'s 100-dynamic cap.\n'+R.stat.join('\n')+'\n'+R.dyn.join('\n')+'\n'+old);
+ console.log(`Redirects: ${R.dyn.length} placeholder + ${R.stat.length} exact rules for ${COLLAPSED.items.length} removed pages.`);
+}
 writeFileSync('dist/sitemap.xml',`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">${allRoutes.map(p=>routeImg.has(p)?`<url><loc>${site+p}</loc>${[].concat(routeImg.get(p)).map(u=>`<image:image><image:loc>${e(u.startsWith('/')?site+u:u)}</image:loc></image:image>`).join('')}</url>`:`<url><loc>${site+p}</loc></url>`).join('')}</urlset>\n`);
 writeFileSync('dist/robots.txt',`User-agent: *\n${indexable?'Allow: /':'Disallow: /'}\nDisallow: /admin/\nDisallow: /api/\nSitemap: ${site}/sitemap.xml\n`);
 writeFileSync('dist/_headers',`/assets/*.js\n  Cache-Control: public, max-age=31536000, immutable\n/assets/*.css\n  Cache-Control: public, max-age=31536000, immutable\n/assets/*.webp\n  Cache-Control: public, max-age=31536000, immutable\n/assets/*.png\n  Cache-Control: public, max-age=2592000\n/assets/sight-words/*\n  Cache-Control: public, max-age=2592000\n/assets/*.svg\n  Cache-Control: public, max-age=2592000\n/assets/*.mp3\n  Cache-Control: public, max-age=2592000\n/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: strict-origin-when-cross-origin\n  X-Frame-Options: DENY\n  Permissions-Policy: camera=(), microphone=(), geolocation=()\n  Content-Security-Policy: default-src 'self'; script-src 'self' https://static.cloudflareinsights.com https://*.adtrafficquality.google https://challenges.cloudflare.com https://pagead2.googlesyndication.com https://*.googlesyndication.com https://*.googletagservices.com https://*.g.doubleclick.net https://*.google.com https://*.gstatic.com https://adservice.google.com https://cloud.umami.is; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://*.adtrafficquality.google https://assets.kiddo.school https://*.googlesyndication.com https://*.g.doubleclick.net https://*.google.com https://*.gstatic.com; font-src 'self'; connect-src 'self' https://cloudflareinsights.com https://*.adtrafficquality.google https://challenges.cloudflare.com https://*.google.com https://*.g.doubleclick.net https://*.googlesyndication.com https://adservice.google.com https://cloud.umami.is https://gateway.umami.is; object-src 'none'; base-uri 'none'; frame-ancestors 'none'; frame-src https://*.adtrafficquality.google https://challenges.cloudflare.com https://googleads.g.doubleclick.net https://*.googlesyndication.com https://tpc.googlesyndication.com https://www.google.com\n${indexable?'':'  X-Robots-Tag: noindex, follow\n'}`);
