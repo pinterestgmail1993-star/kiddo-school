@@ -42,13 +42,13 @@ const pencilSet=new Set([
    - Sleepy Moon sways in the baby learning area                       */
 export function applyDoodles(path,html){
  if(pencilSet.has(path)){
-  html=html.replace(/(<\/nav>)/,(m)=>m+DOODLES.pencil);
+  /* owner 2026-11-11: no Happy Pencil under the header */
   html=html.replace('CLASS COMPLETE</span>',`CLASS COMPLETE</span>${DOODLES.star}`);
   html=html.replace('<div class="ct-complete"><p class="ct-stamp">Circle Time Complete</p>',`<div class="ct-complete"><p class="ct-stamp">Circle Time Complete</p>${DOODLES.star}`);
  }
  if(path==='/learning-library/')html=html.replace(/(<\/nav>)/,(m)=>m+DOODLES.book);
  if(path==='/nature/'||path.startsWith('/nature/'))html=html.replace(/(<\/nav>)/,(m)=>m+DOODLES.butterfly);
- if(path==='/baby/'||path==='/newborn/'||path.startsWith('/baby/')||path.startsWith('/newborn/'))html=html.replace(/(<\/nav>)/,(m)=>m+DOODLES.moon);
+ /* owner 2026-11-11: no Sleepy Moon under the header */
  if(path==='/')html=html.replace('START WHERE YOU ARE</span>',`START WHERE YOU ARE</span>${DOODLES.rainbow}`);
  return html;
 }
