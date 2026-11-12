@@ -120,6 +120,7 @@ G({num:7,slug:'bunnys-puzzle-blocks',img:'07-bunnys-puzzle-blocks.webp',title:'B
  tag: 'A color grid, a shape pattern, a growing tower — circle the block that completes each puzzle.',
  say: 'Three block puzzles! Circle the block that completes each one.',
  hint:'That completes it!',doneTitle:'All puzzles complete!',doneSub:'A green square, a yellow star, and the littlest blue block on top.',
+ alt:'Three puzzles: a 2x2 color grid with one square missing, a star-heart pattern ending in a question mark, and a block tower missing its top block.',
  artNote:'The printed art gives each row its own rule (all-different colors; the star-heart pattern; a tower that shrinks). The game spells the rule out in every prompt so nothing stays a guess.',
  steps:[
   {type:'ask',ask:'Every square in the grid is a different color. Red, blue, yellow\u2026 which color is missing?',ctx:[16.5,27.5,31.5,48.5],ctxLabel:'The 2x2 grid: red, blue, yellow and one empty square',
@@ -504,6 +505,7 @@ G({num:28,slug:'penguins-ice-block-builder',img:'28-penguins-ice-block-builder.w
  tag: 'Each tower misses its top block — circle the block that completes every ice tower.',
  say: 'Each tower needs one more block! Circle the block that completes it.',
  hint:'The tower stands!',doneTitle:'All towers built!',doneSub:'A little blue block, a yellow block, and a pink circle block.',
+ alt:'Three ice towers built from blue blocks, red and yellow blocks and mixed shapes, each missing its top block, with a pile of spare blocks below.',
  artNote:'The printed sheet shows one shared block pile for three towers with three different completion rules (blues shrink, red-yellow alternates, shapes alternate). The game presents each tower with its own three blocks and spells the rule in the prompt.',
  steps:[
   {type:'ask',ask:'The blue tower: big blue, medium blue\u2026 which block goes on top?',ctx:[3,34.5,21,80],ctxLabel:'The blue tower: big dark blue base, lighter blue block, empty top',
