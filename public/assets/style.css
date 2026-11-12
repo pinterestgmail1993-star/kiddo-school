@@ -2324,6 +2324,14 @@ h1 em,h2 em{color:#7b4b99}
 .to-top svg{display:block}
 @media(max-width:680px){.to-top{right:12px;bottom:12px;padding:8px 12px}}
 @media print{.to-top{display:none}}
+/* Bottom pill sits at the corner, Top stacks above it */
+.to-bottom{position:fixed;right:18px;bottom:18px;z-index:70;display:inline-flex;align-items:center;gap:7px;background:#fff;border:1.5px solid var(--ink);border-radius:999px;padding:9px 15px;font-size:12.5px;font-weight:700;color:var(--kiddo-purple);text-decoration:none;box-shadow:3px 3px 0 var(--kiddo-lavender);cursor:pointer;opacity:0;pointer-events:none;transform:translateY(8px);transition:opacity .2s,transform .2s,box-shadow .15s}
+.to-bottom.is-visible{opacity:1;pointer-events:auto;transform:none}
+.to-bottom:hover{transform:translate(-1px,-1px);box-shadow:4px 4px 0 var(--kiddo-lavender)}
+.to-bottom svg{display:block}
+.to-top{bottom:64px}
+@media(max-width:680px){.to-bottom{right:12px;bottom:12px;padding:8px 12px}.to-top{bottom:56px}}
+@media print{.to-bottom{display:none}}
 
 /* ONE-PAGE EVERYTHING (2026-11-11): every card / lesson that used to be its own page is a section on its class or deck page */
 .one-page-items{display:grid;gap:2.5rem;margin-top:2.5rem;padding-top:1.5rem;border-top:2px dashed rgba(0,0,0,.12)}

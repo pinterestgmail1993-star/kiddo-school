@@ -259,6 +259,21 @@
     const calm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     window.scrollTo({ top: 0, behavior: calm ? 'auto' : 'smooth' });
   });
+
+  /* Float-to-bottom: the pill under Top. Shows whenever there is more page
+     below, so a long page can be skipped to its end in one tap. */
+  const down = document.querySelector('[data-to-bottom]');
+  if (!down) return;
+  down.hidden = false;
+  const root = document.documentElement;
+  const toggleDown = () => down.classList.toggle('is-visible', root.scrollHeight - (window.scrollY + window.innerHeight) > 300);
+  window.addEventListener('scroll', toggleDown, { passive: true });
+  window.addEventListener('resize', toggleDown, { passive: true });
+  toggleDown();
+  down.addEventListener('click', () => {
+    const calm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    window.scrollTo({ top: root.scrollHeight, behavior: calm ? 'auto' : 'smooth' });
+  });
 })();
 
 /* Umami events (owner 2026-11-01: "fire the events of download and print to

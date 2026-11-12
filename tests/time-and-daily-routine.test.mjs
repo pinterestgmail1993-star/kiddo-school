@@ -159,6 +159,7 @@ test('float-to-top: markup on every page, CSS, print-hidden, JS wiring',()=>{
   const h=read(p);
   assert.ok(h.includes('class="to-top" data-to-top'),'to-top button present: '+p);
   assert.ok(h.includes('aria-label="Back to top"'),'accessible label: '+p);
+  assert.ok(h.includes('class="to-bottom" data-to-bottom')&&h.includes('aria-label="Go to bottom"'),'to-bottom button present: '+p);
  }
  const js=read('/assets/site.js');
  assert.ok(js.includes("querySelector('[data-to-top]')")&&js.includes("scrollY > 500")&&js.includes('prefers-reduced-motion'),'site.js wiring');
