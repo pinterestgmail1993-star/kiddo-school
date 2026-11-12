@@ -1569,5 +1569,43 @@ for(const f of walkAll('dist').filter(f=>f.endsWith('/index.html'))){
  }
  console.log(`Repeated boilerplate removed: ${paras} paragraphs, ${blocks} per-sheet blocks`);
 }
+/* TEACHER'S LESSON ON EVERY CLASS (owner 2026-11-12: "you do lesson pages"): the hand-scripted classes keep their own scripts; every other class that has a flashcard deck gets the same taught sequence built from that deck's real teacher lines — a goal, a welcome, one step per card (the exact words to say + the activity that makes it stick), practice, a check and a close — so no class page is just a description. Decks of 21+ cards are taught in labelled parts of ten. */
+{
+ const e=t=>String(t||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+ const lc=t=>t.charAt(0).toLowerCase()+t.slice(1);
+ let n=0;
+ for(const set of fcSets){
+  const path=set.lessonPath;if(!path)continue;
+  let h;try{h=readFileSync('dist'+path+'index.html','utf8');}catch(_){continue;}
+  if(h.includes('lt-goal')||h.includes('id="teachers-lesson"')||h.includes('TEACHER WELCOME'))continue;
+  const cards=set.cards.filter(c=>c.say&&c.word);
+  if(cards.length<4)continue;
+  const topic=(set.name||set.h1||'').replace(/\s*Flashcards?$/i,'').trim();
+  let k=0;
+  const row=(tag,say,how)=>`<li class="lt-step"><span class="lt-num">${String(++k).padStart(2,'0')}</span><div><span class="lt-tag">${e(tag)}</span><p class="lt-say">“${e(say).replace(/[“”"]/g,'‘').replace(/&quot;/g,'‘')}”</p>${how?`<p class="lt-how"><strong>How:</strong> ${e(how)}</p>`:''}</div></li>`;
+  const rows=[];
+  rows.push(row('Welcome',`Hello! Today we are learning about ${topic}. We have ${cards.length} cards, and we will look at them one at a time.`,'Sit side by side with the cards in front of you. Keep your voice warm and unhurried, and let your child touch the cards.'));
+  const step=(c,i)=>row(`Card ${i+1} · ${c.word}`,c.say,c.try||c.teachTip||'');
+  if(cards.length>20){
+   for(let a=0;a<cards.length;a+=10){
+    rows.push(`<li class="lt-part">Cards ${a+1}–${Math.min(a+10,cards.length)}</li>`);
+    cards.slice(a,a+10).forEach((c,j)=>rows.push(step(c,a+j)));
+   }
+  }else cards.forEach((c,i)=>rows.push(step(c,i)));
+  const w1=cards[0].word,w2=cards[Math.floor(cards.length/2)].word;
+  rows.push(row('Practice','Now you are the teacher! Pick any card and tell me what it is.','Let your child choose the card and say the word in their own way. Teaching someone else is the strongest way to remember.'));
+  rows.push(row('Check',`Can you find ${w1}? Now show me ${w2}.`,'A point, a fetch or the word all count as a pass. If they are unsure, name it for them and try again another day — there are no scores and no pressure.'));
+  rows.push(row('Well done',`Well done! Today we met ${cards.length} cards. Let us look for one of them at home.`,'End on a win, then spot one of the words in real life today. Meeting it again in the real world is what makes it stay.'));
+  const sec=`<section class="wrap lesson-section lt-section" id="teachers-lesson"><span class="eyebrow">TEACHER’S LESSON</span><h2>How this class is taught.</h2><p class="lt-goal"><strong>By the end of this class:</strong> your child has met all ${cards.length} cards in ${topic}, said each word with you and tried one small activity from the lesson.</p><ol class="lt-script">${rows.join('')}</ol><p class="lesson-note">Read the script while you show the cards — the say-lines are yours to say out loud and the how-lines are the activity behind each step. Skip, shorten or repeat anything: the class bends to your child, never the other way round.</p></section>`;
+  const a=h.indexOf('<main'),b=h.indexOf('</main>');
+  if(a<0||b<0)continue;
+  let main=h.slice(a,b);
+  const m=/<section(?:(?!<\/section>)[\s\S])*?(?:PARENT INSTRUCTIONS|Prefer printed cards\?)/.exec(main);
+  main=m?main.slice(0,m.index)+sec+main.slice(m.index):main+sec;
+  writeFileSync('dist'+path+'index.html',h.slice(0,a)+main+h.slice(b));
+  n++;
+ }
+ console.log(`Teacher's lessons added to class pages: ${n}`);
+}
 writeFileSync('dist/build-info.json',JSON.stringify({siteUrl:site,indexable,pages:allRoutes.length+2,activities:activities.length},null,2));
 console.log(`Built ${allRoutes.length+2} pages and ${activities.length} activity sheets. Canonical origin: ${site}. Indexing: ${indexable?'enabled':'disabled (preview)'}.`);
