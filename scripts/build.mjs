@@ -1391,10 +1391,12 @@ for(const f of walkAll('dist').filter(f=>f.endsWith('/index.html'))){
   cardIds.set(route,set);
  }
  for(const f of walkAll('dist').filter(f=>f.endsWith('.html'))){
+  const self=f.endsWith('/index.html')?(f==='dist/index.html'?'/':f.slice(4,-10)+'/'):'';
   const h=readFileSync(f,'utf8');
   const o=h.replace(/<a\b([^>]*?)\bhref="(\/[^"#]*)#([^"]+)"([^>]*)>((?:(?!<\/a>)[\s\S])*?)<\/a>/g,(m,a1,path,id,a2,inner)=>{
    const route=path.endsWith('/')?path:path+'/';
-   if(!(cardIds.get(route)||new Set()).has(id))return m;
+   const isCard=(cardIds.get(route)||new Set()).has(id);
+   if(!isCard){return (/<img\b|<picture\b/.test(inner)&&route!==self)?'<a'+a1+'href="'+path+'"'+a2+'>'+inner+'</a>':m;}
    if(/<img\b|<picture\b/.test(inner)&&!/<a\b/.test(inner)&&!/class="brand"/.test(a1+a2)){
     return '<span'+(a1+a2).replace(/\s(?:aria-label|target|rel|data-[a-z-]+)="[^"]*"/g,'')+'>'+inner+'</span>';
    }

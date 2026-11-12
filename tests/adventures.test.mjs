@@ -97,7 +97,7 @@ test('Classes 25, 26 and 27 are the shipped age-4 curriculum',()=>{
  assert.ok(c25.includes('/preschool/shapes/adventures/'),'class 25 links its library');
  assert.ok(c26.includes('/preschool/colors/adventures/'),'class 26 links its library');
  assert.ok(c27.includes('/preschool/writing/adventures/'),'class 27 links its library');
- assert.equal([...c27.matchAll(/href="\/preschool\/writing\/adventures\/#/g)].length,30,'class 27 points all 30 adventures at the one-page library');
+ assert.ok(c27.includes('/preschool/writing/adventures/'),'class 27 links the adventures library (no #card jumps, owner 2026-11-12)');
 });
 test('the 4-years hub, preschool hub, homepage and learning path all know Age 4',()=>{
  const hub=page('/preschool/4-years/');

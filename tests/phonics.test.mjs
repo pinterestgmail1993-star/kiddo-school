@@ -86,7 +86,7 @@ test('Class 28 is wired into the whole school',()=>{
  const cls=page(C28_PATH);
  assert.ok(cls.includes('<h1>Phonics &amp; Beginning Sounds</h1>'),'class H1');
  assert.ok(cls.includes('28 of 28'),'class chip');
- assert.ok(cls.includes(PHONICS_LIB_PATH+'#sound-detective'),'class points game 1 at the one-page library');
+ assert.ok(cls.includes('href="'+PHONICS_LIB_PATH+'"'),'class points game 1 at the one-page library');
  assert.ok(cls.includes('/worksheets/phonics/'),'class links the worksheet category');
  const hub=page('/preschool/4-years/');
  assert.ok(hub.includes(C28_PATH),'age 4 hub lists Class 28');
