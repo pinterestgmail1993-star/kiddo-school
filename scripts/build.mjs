@@ -1426,5 +1426,40 @@ for(const f of walkAll('dist').filter(f=>f.endsWith('/index.html'))){
   if(o!==h)writeFileSync(f,o);
  }
 }
+/* LESSON vs FLASHCARDS, WHOLE SITE (owner 2026-11-11: "solve the whole site"): the flashcards library is the ONLY place a card is listed with its picture and Download button. Every class/lesson page drops any folded item whose card already lives on a /flashcards/ page. Activities, adventures, books, worksheets and coloring pages are not flashcards and stay. */
+{
+ const shelfIds=new Set();
+ const all=walkAll('dist').filter(f=>f.endsWith('/index.html'));
+ for(const f of all){
+  if(!f.startsWith('dist/flashcards/'))continue;
+  for(const m of readFileSync(f,'utf8').matchAll(/<article class="one-page-item[^"]*" id="([^"]+)"/g))shelfIds.add(m[1]);
+ }
+ let removed=0,pagesTouched=0;
+ for(const f of all){
+  if(/^dist\/(flashcards|worksheets|coloring-pages|learning-library|look-and-learn)\//.test(f))continue;
+  const h=readFileSync(f,'utf8');
+  const a=h.indexOf('<section class="wrap one-page-items"');
+  if(a<0)continue;
+  const nx=['<section class="wrap lesson-section"','</main>'].map(t=>h.indexOf(t,a)).filter(i=>i>0);
+  const b=Math.min(...nx)-10;
+  const block=h.slice(a,b+10);
+  const arts=[...block.matchAll(/<article class="one-page-item[^"]*" id="([^"]+)"[\s\S]*?<\/article>/g)];
+  const keep=arts.filter(m=>!shelfIds.has(m[1]));
+  if(keep.length===arts.length)continue;
+  removed+=arts.length-keep.length;pagesTouched++;
+  const nb=keep.length?block.slice(0,block.indexOf('>')+1)+keep.map(m=>m[0]).join('')+'</section>':'';
+  writeFileSync(f,h.slice(0,a)+nb+h.slice(b+10));
+ }
+ console.log(`Flashcard duplicates removed from lesson/class pages: ${removed} cards on ${pagesTouched} pages`);
+ /* a lesson has no downloads: the card Download buttons that rode along on the remaining class tiles go too (downloads live on /flashcards/ and /worksheets/) */
+ let dls=0;
+ for(const f of all){
+  if(/^dist\/(flashcards|worksheets|coloring-pages|learning-library)\//.test(f))continue;
+  const h=readFileSync(f,'utf8');
+  const o=h.replace(/<p class="item-download"><a class="button" href="[^"]*" download="[^"]*">Download the card <span aria-hidden="true">↓<\/span><\/a><\/p>/g,()=>{dls++;return '';});
+  if(o!==h)writeFileSync(f,o);
+ }
+ console.log(`Card Download buttons removed from lesson/class pages: ${dls}`);
+}
 writeFileSync('dist/build-info.json',JSON.stringify({siteUrl:site,indexable,pages:allRoutes.length+2,activities:activities.length},null,2));
 console.log(`Built ${allRoutes.length+2} pages and ${activities.length} activity sheets. Canonical origin: ${site}. Indexing: ${indexable?'enabled':'disabled (preview)'}.`);

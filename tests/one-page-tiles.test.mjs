@@ -44,18 +44,11 @@ test('flashcard deck tiles carry pills and the real lede description (not the pi
  }
 });
 
-test('lesson tiles keep the lesson body in a collapsed details and gain a download for their artwork',()=>{
- const h=read('/preschool/4-years/sight-words/');
- const ts=tiles(h);
- assert.equal(ts.length,52,'fifty-two lesson tiles');
- for(const [,id,body] of ts){
-  assert.ok(body.includes('<details class="op-more"><summary>How to use this card</summary>'),id+' folds the lesson body');
-  assert.ok(body.includes('class="fcl-copy"'),id+' keeps the lesson boxes inside the details');
-  assert.ok(/<a class="button" href="[^"]+" download="/.test(body),id+' has a download for its card');
-  assert.ok(body.includes('class="item-desc"'),id+' keeps its lede');
- }
- const caf=tiles(read('/cafeteria/'));
- assert.ok(caf.length>=62,'the cafeteria lessons tile too ('+caf.length+')');
+test('lesson pages do not repeat the flashcard shelf (owner 2026-11-11: lesson = class, flashcards = the parents\' downloads)',()=>{
+ assert.equal(tiles(read('/preschool/4-years/sight-words/')).length,0,'no card tiles under the sight-words class');
+ const shelf=tiles(read('/flashcards/sight-words/'));
+ assert.ok(shelf.length>=52,'the flashcards shelf keeps every card ('+shelf.length+')');
+ for(const [,id,body] of shelf)assert.ok(/<a class=\"button\" href=\"[^\"]+\" download=\"/.test(body),id+' has a download on the shelf');
 });
 
 test('books stay full-width one-page items with their reader, never tiles',()=>{
