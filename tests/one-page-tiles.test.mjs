@@ -49,7 +49,7 @@ test('lesson tiles keep the lesson body in a collapsed details and gain a downlo
  const ts=tiles(h);
  assert.equal(ts.length,52,'fifty-two lesson tiles');
  for(const [,id,body] of ts){
-  assert.ok(body.includes('<details class="op-more"><summary>Open the full lesson</summary>'),id+' folds the lesson body');
+  assert.ok(body.includes('<details class="op-more"><summary>How to use this card</summary>'),id+' folds the lesson body');
   assert.ok(body.includes('class="fcl-copy"'),id+' keeps the lesson boxes inside the details');
   assert.ok(/<a class="button" href="[^"]+" download="/.test(body),id+' has a download for its card');
   assert.ok(body.includes('class="item-desc"'),id+' keeps its lede');

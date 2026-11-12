@@ -1403,5 +1403,28 @@ for(const f of walkAll('dist').filter(f=>f.endsWith('/index.html'))){
   if(o!==h)writeFileSync(f,o);
  }
 }
+/* LESSON vs FLASHCARDS (owner 2026-11-11): a lesson is the class for the child; the flashcards library is the parents' shelf with the downloads. A lesson page that has a flashcard set must NOT repeat that set's cards (title, blurb, Download, "Open the full lesson") underneath the class. The shelf lives only in /flashcards/; the lesson keeps its one "Prefer printed cards?" link to it. */
+{
+ let stripped=0;
+ for(const x of fcSets){
+  if(!x.lessonPath||!/^\/(baby|newborn)\/|^\/toddler\/(12|18)-/.test(x.lessonPath))continue;
+  const f='dist'+x.lessonPath+'index.html';
+  if(!(()=>{try{readFileSync(f);return true}catch{return false}})())continue;
+  const h=readFileSync(f,'utf8');
+  const a=h.indexOf('<section class="wrap one-page-items"');
+  if(a<0)continue;
+  let b=h.indexOf('<section class="wrap lesson-section"><span class="eyebrow">FLASHCARDS',a);
+  if(b<0)b=h.lastIndexOf('</main>');
+  if(b<a)continue;
+  writeFileSync(f,h.slice(0,a)+h.slice(b));stripped++;
+ }
+ console.log(`Lesson pages cleaned of repeated flashcard blocks: ${stripped}`);
+ /* no page says "Open the full lesson" any more */
+ for(const f of walkAll('dist').filter(f=>f.endsWith('.html'))){
+  const h=readFileSync(f,'utf8');
+  const o=h.replace(/<summary>Open the full lesson<\/summary>/g,'<summary>How to use this card</summary>');
+  if(o!==h)writeFileSync(f,o);
+ }
+}
 writeFileSync('dist/build-info.json',JSON.stringify({siteUrl:site,indexable,pages:allRoutes.length+2,activities:activities.length},null,2));
 console.log(`Built ${allRoutes.length+2} pages and ${activities.length} activity sheets. Canonical origin: ${site}. Indexing: ${indexable?'enabled':'disabled (preview)'}.`);
