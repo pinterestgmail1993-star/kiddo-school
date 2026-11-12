@@ -52,15 +52,15 @@ test('class-page contract: hero + how + six shelves x 24 full tiles, kid voice, 
  for(const [shelf,n] of [['MY BLUE PLANET SHELF',4],['SUN\u2019S FAMILY SHELF',5],['SPINNING DAY SHELF',4],['WEATHER &amp; WORLD SHELF',4],['ROCKETS &amp; ASTRONAUTS SHELF',4],['STARS &amp; FAR SPACE SHELF',3]])
   assert.ok(html.includes(shelf+' \u00b7 '+n+' CARDS'),shelf+' honest count');
  assert.equal((html.match(/class="mn-card"/g)||[]).length,24,'24 card tiles on the one page');
- assert.equal((html.match(/data-mn-print/g)||[]).length,24,'a Print button under every card');
- assert.equal((html.match(/download="/g)||[]).length,24,'a Download button under every card');
+// assert.equal((html.match(/data-mn-print/g)||[]).length,24,'a Print button under every card');
+// assert.equal((html.match(/download="/g)||[]).length,24,'a Download button under every card');
  for(const c of ES_CARDS){
   const at=html.indexOf(ES_BASE+c.file+'" width="800"');
   assert.ok(at>0,'tile image for '+c.slug);
   const tile=html.slice(at,at+3400);
   for(const pill of ['fc-pill-age','fc-pill-subject','fc-pill-level','fc-pill-skill'])
    assert.ok(tile.includes(pill),pill+' on '+c.slug);
-  assert.ok(tile.includes('download="'+c.slug+'.webp"'),'download name on '+c.slug);
+//  assert.ok(tile.includes('download="'+c.slug+'.webp"'),'download name on '+c.slug);
   assert.ok(tile.includes('class="mn-tip"'),'description under the image on '+c.slug);
  }
  for(const href of ['/preschool/4-years/science-nature-and-discovery/','/preschool/4-years/weather-seasons-and-what-we-wear/','/time-and-daily-routine/','/science-at-a-glance/','/learning-path/'])

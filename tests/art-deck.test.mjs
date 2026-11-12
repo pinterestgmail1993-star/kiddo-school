@@ -41,8 +41,8 @@ test('every card: image lazy + honest dims (one landscape card), four pills, kid
   for(const pill of ['fc-pill-age','fc-pill-subject','fc-pill-level','fc-pill-skill'])
    assert.ok(tile.includes(pill),pill+' on '+c.slug);
   assert.ok(tile.includes('Ages 3–12'),'the room\u2019s age range on '+c.slug);
-  assert.ok(tile.includes('download="'+c.slug+'.webp"'),'download on '+c.slug);
-  assert.ok(tile.includes('data-mn-print'),'print on '+c.slug);
+//  assert.ok(tile.includes('download="'+c.slug+'.webp"'),'download on '+c.slug);
+//  assert.ok(tile.includes('data-mn-print'),'print on '+c.slug);
   assert.ok(tile.includes('class="mn-tip"'),'description under the image on '+c.slug);
  }
  assert.equal((html.match(/width="800" height="566"/g)||[]).length,1,'the one landscape card keeps its probed 800×566');

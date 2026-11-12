@@ -1430,9 +1430,12 @@ for(const f of walkAll('dist').filter(f=>f.endsWith('/index.html'))){
 {
  const shelfIds=new Set();
  const all=walkAll('dist').filter(f=>f.endsWith('/index.html'));
+ const shelfUrls=new Set();
  for(const f of all){
   if(!f.startsWith('dist/flashcards/'))continue;
-  for(const m of readFileSync(f,'utf8').matchAll(/<article class="one-page-item[^"]*" id="([^"]+)"/g))shelfIds.add(m[1]);
+  const fh=readFileSync(f,'utf8');
+  for(const m of fh.matchAll(/<article class="one-page-item[^"]*" id="([^"]+)"/g))shelfIds.add(m[1]);
+  for(const m of fh.matchAll(/(?:src|data-sheet-url)="(https:\/\/assets\.kiddo\.school\/[^"]+\.(?:webp|jpe?g|png))"/g))shelfUrls.add(m[1]);
  }
  let removed=0,pagesTouched=0;
  for(const f of all){
@@ -1444,7 +1447,7 @@ for(const f of walkAll('dist').filter(f=>f.endsWith('/index.html'))){
   const b=Math.min(...nx)-10;
   const block=h.slice(a,b+10);
   const arts=[...block.matchAll(/<article class="one-page-item[^"]*" id="([^"]+)"[\s\S]*?<\/article>/g)];
-  const keep=arts.filter(m=>!shelfIds.has(m[1]));
+  const keep=arts.filter(m=>!shelfIds.has(m[1])&&![...m[0].matchAll(/<img[^>]*\ssrc="([^"]+)"/g)].some(x=>shelfUrls.has(x[1])));
   if(keep.length===arts.length)continue;
   removed+=arts.length-keep.length;pagesTouched++;
   const nb=keep.length?block.slice(0,block.indexOf('>')+1)+keep.map(m=>m[0]).join('')+'</section>':'';
@@ -1456,7 +1459,16 @@ for(const f of walkAll('dist').filter(f=>f.endsWith('/index.html'))){
  for(const f of all){
   if(/^dist\/(flashcards|worksheets|coloring-pages|learning-library)\//.test(f))continue;
   const h=readFileSync(f,'utf8');
-  const o=h.replace(/<p class="item-download"><a class="button" href="[^"]*" download="[^"]*">Download the card <span aria-hidden="true">↓<\/span><\/a><\/p>/g,()=>{dls++;return '';});
+  const o=h.replace(/<p class="item-download"><a class="button[^"]*" href="[^"]*" download(?:="[^"]*")?>Download the card[\s\S]*?<\/a><\/p>/g,()=>{dls++;return '';});
+  if(o!==h)writeFileSync(f,o);
+ }
+ for(const f of all){
+  if(/^dist\/(flashcards|worksheets|coloring-pages|learning-library|first-glance|science-at-a-glance)\//.test(f))continue;
+  const h=readFileSync(f,'utf8');
+  const o=h.replace(/<a class="button[^"]*" href="https:\/\/assets\.kiddo\.school\/[^"]+\.(?:webp|jpe?g|png)" download(?:="[^"]*")?>Download(?: the card)? <span aria-hidden="true">↓<\/span><\/a>/g,()=>{dls++;return '';})
+   /* picture tiles that pointed at a card on the flashcards shelf are plain pictures now */
+   .replace(/<div class="mn-actions"><button type="button" class="button button-ghost" data-mn-print>Print <span aria-hidden="true">⎙<\/span><\/button><\/div>/g,'')
+   .replace(/<a class="(fc-card fc2-cardlink[^"]*)" href="\/flashcards\/[^"]*"[^>]*>((?:(?!<\/a>)[\s\S])*?)<\/a>/g,'<span class="$1">$2</span>');
   if(o!==h)writeFileSync(f,o);
  }
  console.log(`Card Download buttons removed from lesson/class pages: ${dls}`);
