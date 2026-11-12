@@ -584,7 +584,12 @@ export function fcCardPageBody(set,card,ctx){
  /* Same word, two homes (friend-links.mjs): the card side of an owner-pinned
     pair — one fresh sentence pointing at the other set's lesson. */
  const friend=CARD_FRIEND_LINKS[set.slug+'/'+card.slug]?`<div class="fc2-do fc2-note"><h2>One word, two lessons</h2><p>${CARD_FRIEND_LINKS[set.slug+'/'+card.slug]}</p></div>`:'';
- const teach=(lpTeachLinks[set.slug]||{})[card.slug]?`<div class="fc2-do"><h2>Teach it, step by step</h2><p>Want the full walkthrough? <a href="${set.lessonUrlBase?set.lessonUrlBase+card.slug+'/':set.lessonPath+'learn/'+card.slug+'/'}">Open ${set.slug==='sight-words'?'the lesson for “'+esc(card.word)+'”':'the '+esc(card.word)+' lesson'}</a> on the Learning Path.</p></div>`:'';
+ /* OWNER 2026-11-12: "you dont make duplicates — whats the difference between
+    lesson and library". Per-card /learn/ pages no longer exist under class
+    pages, so a deck tile never links to a per-card lesson there; it points at
+    the CLASS itself (the library links to the lesson, never the reverse).
+    Sight-words keeps its per-card lessons on its own hub page. */
+ const teach=(lpTeachLinks[set.slug]||{})[card.slug]?`<div class="fc2-do"><h2>Teach it, step by step</h2><p>${set.lessonUrlBase?`Want the full walkthrough? <a href="${set.lessonUrlBase+card.slug+'/'}">Open the lesson for “${esc(card.word)}”</a> on the Learning Path.`:`This card belongs to a real class — <a href="${set.lessonPath}">open the ${esc(set.lessonTitle||set.name)} class</a> on the Learning Path.`}</p></div>`:'';
  const dlName=f=>f.replace(/^\d+-/,'').replace(/\.webp$/,'');
  const actions=`<div class="fc2-actions">${card.img2
   ?`<a class="button" href="${card.img}" download="${dlName(card.file)}.webp">Download splash <span aria-hidden="true">↓</span></a><a class="button" href="${card.img2}" download="${dlName(card.img2.split('/').pop())}.webp">Download picture <span aria-hidden="true">↓</span></a>`

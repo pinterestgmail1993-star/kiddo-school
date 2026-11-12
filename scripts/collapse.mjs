@@ -153,6 +153,12 @@ function entry(childHtml,slug){
  return {title,html};
 }
 
+/* Learning-Path class roots: a folded /learn/ card lesson whose PARENT sits
+   under one of these roots lands on a class page — the owner's no-duplicates
+   rule says the class page IS the lesson, so there the item is dropped (301
+   + folder removed) instead of folded into a deck dump at the page floor. */
+const LP_CLASS_ROOTS=['/baby/','/newborn/','/toddler/','/preschool/'];
+
 export function collapse({allRoutes,routeImg,searchPages,site,dist='dist',parentOverrides}){
  const S=new Set(allRoutes);
  const hasChild=new Set();
@@ -177,6 +183,7 @@ export function collapse({allRoutes,routeImg,searchPages,site,dist='dist',parent
  }
  const byParent=new Map();
  for(const it of items){if(!byParent.has(it.parent))byParent.set(it.parent,[]);byParent.get(it.parent).push(it);}
+ let dropCount=0;               // /learn/ lessons dropped from class pages (owner: no duplicates)
  const moved=new Map();      // old path -> new href (parent#slug)
  const redirects=[];         // {from,to}
  for(const [parent,list] of byParent){
@@ -193,12 +200,26 @@ export function collapse({allRoutes,routeImg,searchPages,site,dist='dist',parent
    if(used.has(slug))slug=segs.join('-');
    used.add(slug);
    const isPrint=/^(print|print-view)$/.test(slug);
+   /* OWNER 2026-11-12: "on lesson the flashcards are shown on bottom and
+      written open the lesson? what is this? you dont make duplicates ... how
+      many times whats the difference between lesson and library." The /learn/
+      card lessons under a Learning-Path class were folding into that class
+      page as a second copy of the deck — the class IS the lesson and the
+      deck page already carries every card with its teaching tips and
+      downloads. On class pages (/baby/, /newborn/, /toddler/, /preschool/)
+      the /learn/ items are now dropped, not folded: the old URL 301s to the
+      class page, the folder is removed, and NO tile is appended. Room pages
+      (cafeteria, dinosaurs, playground, art-room, ...) and the sight-words
+      hub keep their folded lessons — there the folded items ARE the page's
+      own content and no class page duplicates them. */
+   const dropLearn=!isPrint&&/(^|\/)learn\//.test(it.path)&&LP_CLASS_ROOTS.some(r=>parent.startsWith(r));
    const f=dist+it.path+'index.html';
-   if(!isPrint&&existsSync(f)){
+   if(!isPrint&&!dropLearn&&existsSync(f)){
     const en=entry(readFileSync(f,'utf8'),slug);
     if(en)arts.push(en.html);
    }
-   moved.set(it.path,isPrint?parent:parent+'#'+slug);
+   moved.set(it.path,isPrint||dropLearn?parent:parent+'#'+slug);
+   if(dropLearn)dropCount++;
    redirects.push({from:it.path,to:parent});
    /* image sitemap: the child's pictures ride on the parent */
    if(routeImg.has(it.path)){
@@ -250,6 +271,7 @@ export function collapse({allRoutes,routeImg,searchPages,site,dist='dist',parent
  rewriteLinks(moved,dist);
  unwrapSelfLinks(byParent,dist);
  console.log('Folded ' + items.length + ' individual pages into ' + byParent.size + ' main pages:');
+ if(dropCount)console.log('  (owner 2026-11-12 "dont make duplicates": ' + dropCount + ' /learn/ card lessons DROPPED from class pages — the deck page already carries every card with its tips; old URLs 301 to the class)');
  for(const [parent,list] of [...byParent].sort((a,b)=>b[1].length-a[1].length)) console.log('  ' + String(list.length).padStart(4) + '  →  ' + parent);
  return {items,redirects,moved,parents:[...byParent.keys()]};
 }

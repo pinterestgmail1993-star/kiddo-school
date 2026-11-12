@@ -7,7 +7,7 @@
    keep the full-width reader. The CSS shelf pins the small horizontal grid. */
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
-import {readFileSync} from 'node:fs';
+import {readFileSync,readdirSync} from 'node:fs';
 
 const read=p=>readFileSync(new URL('../dist'+p+(p.endsWith('/')?'index.html':''),import.meta.url),'utf8');
 const tiles=h=>[...h.matchAll(/<article class="one-page-item op-tile" id="([a-z0-9-]+)">([\s\S]*?)<\/article>/g)];
@@ -49,6 +49,45 @@ test('lesson pages do not repeat the flashcard shelf (owner 2026-11-11: lesson =
  const shelf=tiles(read('/flashcards/sight-words/'));
  assert.ok(shelf.length>=52,'the flashcards shelf keeps every card ('+shelf.length+')');
 for(const [,id,body] of shelf)assert.ok(body.includes('data-sheet-act="download"'),id+' has Download on the shelf');
+});
+
+test('NO DUPLICATES anywhere (owner 2026-11-12: "on lesson the flashcards are shown on bottom and written open the lesson? you dont make duplicates — whats the difference between lesson and library"): class pages carry zero card tiles, zero download bands and one line pointing at the library',()=>{
+ for(const p of ['/baby/6-9-months/animals-everyday-objects/','/preschool/3-years/animals-and-their-sounds/','/toddler/2-years/animals-and-sounds/','/newborn/6-12-weeks/faces-and-visual-tracking/','/preschool/4-years/numbers-counting-and-early-math/','/preschool/4-years/sight-words/']){
+  const h=read(p);
+  assert.ok(!h.includes('one-page-item op-tile'),p+' has no deck dump at the bottom');
+  assert.ok(!h.includes('Open the full lesson'),p+' has no open-the-lesson tiles');
+  assert.ok(!h.includes('Download the card'),p+' has no per-card download band');
+  assert.ok(h.includes('Prefer printed cards'),p+' keeps its single one-line pointer to the library');
+ }
+ const deck=tiles(read('/flashcards/animals-everyday-objects/'));
+ assert.equal(deck.length,12,'the library deck keeps its twelve tiles');
+ for(const [,id,body] of deck){
+  assert.ok(body.includes('data-sheet-act="download"'),id+' keeps Download on the shelf');
+  assert.ok(body.includes('data-sheet-act="print"')&&body.includes('data-sheet-act="share"'),id+' keeps Print and Share');
+ }
+ assert.ok(!deck.map(t=>t[1]).some(id=>read('/baby/6-9-months/animals-everyday-objects/').includes('id="'+id+'"')),'no deck card id repeats on the class page');
+ /* room pages keep their own non-flashcard activities, but NO page anywhere
+    still carries the duplicated card bands — the library is the one home of
+    the shelf (site-wide sweep) */
+ const caf=tiles(read('/cafeteria/'));
+ assert.ok(caf.length===0,'the cafeteria repeats no flashcard cards ('+caf.length+')');
+ assert.ok(tiles(read('/toddler/2-years/matching-and-sorting/')).length>=31,'non-flashcard game activities stay on the class page');
+ const banned=['Open the full lesson','Download the card'];
+ const walk=d=>readdirSync(new URL('../dist'+d,import.meta.url),{withFileTypes:true}).flatMap(e=>{
+  const p=d+'/'+e.name;
+  return e.isDirectory()?walk(p):(e.name.endsWith('.html')?[p]:[]);
+ });
+ const offenders=[];
+ for(const f of walk('')){
+  const h=read(f);
+  for(const b of banned)if(h.includes(b))offenders.push(f+' says '+b);
+ }
+ assert.deepEqual(offenders,[],'no page anywhere says "'+banned.join('" or "')+'"');
+ /* every deck card link points at the CLASS page itself, never a per-card lesson */
+ for(const [,id,body] of deck){
+  const m=body.match(/<a [^>]*href="(\/(?:baby|newborn|toddler|preschool)\/[^"]*)"[^>]*>([^<]+)/);
+  if(m)assert.ok(!m[1].includes('/learn/')&&!m[1].includes('#'),id+' links the plain class page ('+m[1]+')');
+ }
 });
 
 test('books stay full-width one-page items with their reader, never tiles',()=>{
