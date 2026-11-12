@@ -2387,3 +2387,9 @@ h1 em,h2 em{color:#7b4b99}
 .op-tile .op-more-body .fcl-art{position:static}
 .op-tile .op-more-body ol,.op-tile .op-more-body ul{margin:6px 0 0;padding-left:18px}
 @media(max-width:640px){.one-page-items{grid-template-columns:repeat(auto-fill,minmax(205px,1fr));gap:12px}.op-tile .op-media img{max-height:190px}}
+
+/* flashcards: Print / Download / Share under every card */
+.fc-acts{display:flex;flex-wrap:wrap;gap:10px;align-items:center;padding:12px 12px 0}
+.fc-acts .button{gap:0;min-height:44px;padding:9px 18px;font-size:15px;font-weight:800;letter-spacing:.2px;background:#ffffff!important;color:#3d1f52!important;border:2.5px solid #3d1f52!important;border-radius:12px;box-shadow:3px 3px 0 #3d1f52!important;opacity:1}
+.fc-acts .button:hover,.fc-acts .button:focus-visible{background:#3d1f52!important;color:#ffffff!important;transform:translate(-1px,-1px);box-shadow:4px 4px 0 #f7c9b4!important}
+.fc-acts .button:active{transform:translate(2px,2px);box-shadow:1px 1px 0 #3d1f52!important}

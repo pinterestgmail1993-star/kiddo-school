@@ -1461,5 +1461,37 @@ for(const f of walkAll('dist').filter(f=>f.endsWith('/index.html'))){
  }
  console.log(`Card Download buttons removed from lesson/class pages: ${dls}`);
 }
+/* FLASHCARDS PAGES: every card has Print / Download / Share right under its picture (same buttons and script as First Glance). The grid card and the full card below it both get them. Downloads live here, never on class pages. */
+{
+ const esc=t=>t.replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;');
+ const strip=t=>t.replace(/<[^>]*>/g,'').replace(/&amp;/g,'&').replace(/&#39;/g,"'").replace(/&quot;/g,'"').trim();
+ const acts=(url,file,title,id)=>`<div class="fc-acts" data-sheet-url="${url}" data-sheet-file="${esc(file)}" data-sheet-title="${esc(title)}" data-sheet-id="${id}"><button type="button" class="button button-ghost" data-sheet-act="print">Print</button><button type="button" class="button button-ghost" data-sheet-act="download">Download</button><button type="button" class="button button-ghost" data-sheet-act="share">Share</button><span class="fg-actions-msg" data-sheet-msg role="status" aria-live="polite"></span></div>`;
+ let n=0;
+ for(const f of walkAll('dist').filter(f=>/^dist\/flashcards\/.*index\.html$/.test(f))){
+  let h=readFileSync(f,'utf8');
+  if(!h.includes('one-page-item'))continue;
+  const idByUrl=new Map();
+  /* full cards: replace the single Download link with the three buttons */
+  h=h.replace(/<article class="one-page-item([^"]*)" id="([^"]+)">([\s\S]*?)<\/article>/g,(m,cls,id,body)=>{
+   const dm=body.match(/<p class="item-download"><a class="button" href="([^"]+)" download="([^"]+)">[^<]*<span[^>]*>[^<]*<\/span><\/a><\/p>/);
+   if(!dm)return m;
+   const tm=body.match(/<h3 class="item-title">([\s\S]*?)<\/h3>/);
+   const title=tm?strip(tm[1]).replace(/ Flashcard for .*$/,''):id;
+   idByUrl.set(dm[1],id);
+   n++;
+   return m.replace(dm[0],'<div class="item-download">'+acts(dm[1],dm[2],title,id)+'</div>');
+  });
+  /* grid cards: same three buttons right under the card */
+  h=h.replace(/<span class="fc-card fc2-cardlink([^"]*)">(<span class="fc2-cardimg"><img src="([^"]+)"[\s\S]*?<\/span>)(<span class="fc2-cardword"><strong>([\s\S]*?)<\/strong>[\s\S]*?<\/span>)<\/span>/g,(m,c,img,url,word,t)=>{
+   const id=idByUrl.get(url);
+   if(!id)return m;
+   const file=url.split('/').pop().replace(/^\d+-/,'');
+   return '<span class="fc-card fc2-cardlink'+c+'">'+img+word+acts(url,file,strip(t),id)+'</span>';
+  });
+  if(!h.includes('/assets/sheet-actions.js'))h=h.replace('</body>','<script src="/assets/sheet-actions.js" defer></script></body>');
+  writeFileSync(f,h);
+ }
+ console.log(`Flashcard cards with Print / Download / Share: ${n}`);
+}
 writeFileSync('dist/build-info.json',JSON.stringify({siteUrl:site,indexable,pages:allRoutes.length+2,activities:activities.length},null,2));
 console.log(`Built ${allRoutes.length+2} pages and ${activities.length} activity sheets. Canonical origin: ${site}. Indexing: ${indexable?'enabled':'disabled (preview)'}.`);

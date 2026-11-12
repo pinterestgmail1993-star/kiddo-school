@@ -23,7 +23,7 @@ test('the colors deck renders its 12 cards as tiles: both pictures, title, descr
   const dlAt=body.indexOf('class="item-download"');
   const mediaEnd=body.indexOf('</div>',body.indexOf('class="op-media"'));
   assert.ok(dlAt>mediaEnd,id+' download sits under the picture');
-  assert.ok(/<a class="button" [^>]*download=/.test(body),id+' keeps the download anchor');
+  assert.ok(body.includes('data-sheet-act="download"')&&body.includes('data-sheet-act="print"')&&body.includes('data-sheet-act="share"'),id+' has Print, Download and Share');
   assert.ok(body.includes('<details class="op-more"><summary>Teaching tips</summary>'),id+' folds its teaching tips');
   const head=body.slice(0,body.indexOf('<details'));
   assert.ok(!head.includes('class="fc2-dual"')&&!head.includes('class="fc2-pair"'),id+' drops the old card-page wrappers at tile level');
@@ -48,7 +48,7 @@ test('lesson pages do not repeat the flashcard shelf (owner 2026-11-11: lesson =
  assert.equal(tiles(read('/preschool/4-years/sight-words/')).length,0,'no card tiles under the sight-words class');
  const shelf=tiles(read('/flashcards/sight-words/'));
  assert.ok(shelf.length>=52,'the flashcards shelf keeps every card ('+shelf.length+')');
- for(const [,id,body] of shelf)assert.ok(/<a class=\"button\" href=\"[^\"]+\" download=\"/.test(body),id+' has a download on the shelf');
+for(const [,id,body] of shelf)assert.ok(body.includes('data-sheet-act="download"'),id+' has Download on the shelf');
 });
 
 test('books stay full-width one-page items with their reader, never tiles',()=>{
