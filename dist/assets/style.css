@@ -2393,3 +2393,19 @@ h1 em,h2 em{color:#7b4b99}
 .fc-acts .button{gap:0;min-height:44px;padding:9px 18px;font-size:15px;font-weight:800;letter-spacing:.2px;background:#ffffff!important;color:#3d1f52!important;border:2.5px solid #3d1f52!important;border-radius:12px;box-shadow:3px 3px 0 #3d1f52!important;opacity:1}
 .fc-acts .button:hover,.fc-acts .button:focus-visible{background:#3d1f52!important;color:#ffffff!important;transform:translate(-1px,-1px);box-shadow:4px 4px 0 #f7c9b4!important}
 .fc-acts .button:active{transform:translate(2px,2px);box-shadow:1px 1px 0 #3d1f52!important}
+
+/* TEACHER'S LESSON script (owner 2026-11-12: "give the proper lesson like a
+   teacher teaching the topic to kids — how to make them understand") — goal,
+   welcome, per-card say/how steps, practice, check, close */
+.lt-section{margin-top:10px}
+.lt-goal{margin-top:18px;max-width:860px;font-size:16.5px;color:var(--ink);background:var(--white);border:1.5px solid var(--ink);box-shadow:4px 4px 0 var(--ink);padding:14px 18px}
+.lt-goal strong{color:#a9694e}
+.lt-script{list-style:none;margin:24px 0 0;padding:0;display:grid;gap:12px;max-width:860px}
+.lt-step{display:flex;gap:14px;align-items:flex-start;border:1.5px solid var(--line);background:var(--white);padding:14px 16px}
+.lt-num{font-family:var(--serif);font-size:21px;color:#a9694e;min-width:32px;padding-top:2px}
+.lt-tag{display:inline-block;border:1.5px solid var(--ink);background:var(--yellow);padding:3px 10px;border-radius:999px;font-size:10.5px;font-weight:800;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px}
+.lt-say{font-family:var(--serif);font-style:italic;font-size:19px;color:var(--ink);line-height:1.45}
+.lt-how{margin-top:6px;font-size:13.5px;line-height:1.6}
+.lt-how strong{color:#a9694e}
+.lt-part{list-style:none;font-weight:800;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:#8b7855;padding:14px 0 0}
+@media(max-width:700px){.lt-step{flex-direction:column;gap:6px}.lt-num{padding-top:0}}

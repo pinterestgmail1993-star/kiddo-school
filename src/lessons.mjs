@@ -20,6 +20,27 @@ export const hcLesson={
  ledes:['Newborns see the world in bold shapes long before they see details. These twelve black and white baby flashcards use strong, high-contrast patterns — circles, stripes, checkerboards and friendly faces — because bold contrast is exactly what catches a brand-new baby’s attention. It is the classic newborn visual stimulation activity, turned into a calm two-to-five-minute class: no printing, no setup, just you, your baby and one card at a time.',
   'Show a card, watch, talk softly, and stop when your baby is done. That is the whole class. Nothing to teach and nothing to test — just an easy first step into Kiddo.school, from birth onward.'],
  startHint:'Twelve cards, one at a time. Works beautifully on a phone at arm’s length.',
+ teacher:{
+  goal:'your baby has focused on bold black-and-white shapes, followed one slow movement with their eyes, and told you — by looking longer or looking away — which pictures they love.',
+  opening:{say:'Hello, little one. It is looking time — ready?',do:'Hold your baby facing you, and hold the first card 20–30 cm from their face — about the distance from your elbow to your fingers.'},
+  parts:[{label:'Look and learn, one shape at a time',steps:[
+   {card:1,word:'Circle',say:'Look — a circle! A big, round, black circle.',how:'Say circle slowly, twice. Newborns learn by hearing the same calm word while the shape fills their eyes.'},
+   {card:2,word:'Square',say:'Now a square — one, two, three, four sides.',how:'Trace the air along one edge with your finger. The slow movement pulls their gaze onto the shape.'},
+   {card:3,word:'Stripes up',say:'Stripes! Up and down, up and down.',how:'Run your finger down one stripe. Bold lines are the easiest thing for brand-new eyes to follow.'},
+   {card:4,word:'Stripes across',say:'And sideways stripes — zoom, across we go.',how:'Move your finger left to right once, slowly. That sideways track is the first rep of visual tracking.'},
+   {card:5,word:'Checkerboard',say:'A checkerboard — black, white, black, white.',how:'Point to one black square, then one white square. Contrast is exactly what newborn eyes see best.'},
+   {card:6,word:'Circles in circles',say:'Circles inside circles — all the way in.',how:'Trace one slow finger lap from the outside in, then stop and wait. Waiting is part of the teaching.'},
+   {card:7,word:'Spiral',say:'A spiral — round and round and in.',how:'Let your finger follow the spiral once. If their eyes follow, that is tracking — cheer softly.'},
+   {card:8,word:'Triangle',say:'A triangle — point at the top!',how:'Tap the point gently. Naming the sharpest part gives your baby one clear place to look.'},
+   {card:9,word:'Target',say:'A target — dot, ring, dot.',how:'Name the middle, then the ring, then the middle again. One name at a time keeps it calm.'},
+   {card:10,word:'Eyes',say:'Hello, eyes! Can you see me?',how:'Hold the card still and wait. When a newborn stares hard, they are studying — let them study.'},
+   {card:11,word:'Face',say:'A smiling face! Hello, face.',how:'Say hello the way you would to a person. Faces are a newborn’s favourite picture in the world.'},
+   {card:12,word:'Symmetrical face',say:'And another face — hello again!',how:'Finish by holding this card while you talk. Your real face next to the card doubles the lesson.'}
+  ]}],
+  practice:{say:'Which one does my baby love best?',how:'Show the two cards your baby looked at longest, one more time each. Repeating a favourite is the newborn version of practice.'},
+  check:{say:'All done — was that nice?',how:'The check is reading your baby: wide eyes and stillness means more, yawning or looking away means finished. Both answers are correct.'},
+  close:{say:'Great looking today. See you tomorrow, same time.',how:'Two minutes of full attention is a complete newborn class. Stop while it is still fun, and tomorrow they come back hungry for more.'}
+ },
  viewerLabel:'Today’s class: twelve high-contrast cards',
  viewerHeading:'Twelve cards, one at a time.',
  folder:'',
@@ -65,6 +86,27 @@ export const fvLesson={
  ledes:['Between 6 and 12 weeks, your baby starts to hold a gaze a little longer and follows movement with their eyes. This class uses simple high-contrast faces, gentle patterns and a first taste of strong colour — twelve cards you show one at a time, in a calm two-to-five-minute session whenever it suits you both.',
   'Faces are a baby’s favourite thing to look at, and moving a card slowly from side to side turns that looking into early visual tracking practice. Nothing to teach and nothing to test — just an easy next step from your first class.'],
  startHint:'Twelve cards, one at a time. The cover stays on this page; the class is one tap away.',
+ teacher:{
+  goal:'your baby has met several friendly faces, followed a card left-and-right and along a winding path, and met their first strong colour: red.',
+  opening:{say:'Good morning, looker! Today we have faces — and they move.',do:'Sit where light falls on the card, not in your baby’s eyes. First card at 20–30 cm.'},
+  parts:[{label:'Faces first, then paths to follow',steps:[
+   {card:1,word:'Eyes',say:'Eyes! Whose eyes are these? My baby’s eyes!',how:'Hold it still and name it, then bring the card near your own face — your eyes and the card’s eyes sit together.'},
+   {card:2,word:'Happy face',say:'A happy face — hello, happy face!',how:'Smile as you say it. Your matching face is the second half of the picture.'},
+   {card:3,word:'Different face',say:'Here is a different face — not the same!',how:'Alternate cards 2 and 3 twice — same, different, same. Newborns love comparing two faces.'},
+   {card:4,word:'Face pattern',say:'A whole family of faces, in a pattern.',how:'Sweep your finger slowly across the rows — one slow pass, left to right, then stop.'},
+   {card:5,word:'Circles in circles',say:'Circles in circles — all the way in.',how:'Trace two slow laps inward, then park your finger in the centre and wait.'},
+   {card:6,word:'Wavy lines',say:'Wavy lines — up and down, up and down.',how:'Ride the waves with your finger. Slow is the trick: about three seconds to cross, no faster.'},
+   {card:7,word:'Zigzag',say:'Zigzag! Sharp and jumpy — zig, zag.',how:'Follow the zigzag once. A new path for the eyes is a new repetition of tracking.'},
+   {card:8,word:'Large dots',say:'Dots! Big dots — one, two, three.',how:'Touch each big dot as you count. Counting out loud is free number teaching.'},
+   {card:9,word:'Curved path',say:'A little road, all bendy.',how:'Drive your finger along the road like a slow car. This long path is the strongest tracking exercise in the set.'},
+   {card:10,word:'Red circle',say:'Red! A bright red circle.',how:'Red is the first colour a baby notices. Say red three times, warmly, while the circle fills their view.'},
+   {card:11,word:'Red and black',say:'Red and black together — what a pair.',how:'Point to the red, then to the black. Naming one colour each turn keeps the two words clear.'},
+   {card:12,word:'Red face detail',say:'A face with a red surprise — where is it?',how:'Wait one breath after the question, then point to the red. You are teaching look first, find second.'}
+  ]}],
+  practice:{say:'Let’s fly! Here comes the card — side to side.',how:'Slowly move your baby’s favourite card left, then right, about ten centimetres each way. Three slow passes is plenty of practice.'},
+  check:{say:'Did my baby follow it?',how:'Eyes following the card counts as yes. Eyes wandering means the class is over — and that answer is correct too.'},
+  close:{say:'All done, champion looker. Same time tomorrow?',how:'End with your real face close and a smile. The last picture of every class should be you.'}
+ },
  viewerLabel:'Today’s class: twelve faces, patterns and early colour cards',
  viewerHeading:'Twelve cards, one at a time.',
  folder:'faces-and-visual-tracking-6-12-weeks/',
@@ -108,6 +150,27 @@ export const cfoLesson={
  ledes:['Around three to four months, many babies begin to notice colour and reach toward the world. This class pairs bold red, yellow and blue with a few familiar objects — a ball, a cup, a spoon, an apple, a teddy — shown one at a time in short, parent-led sessions.',
   'Name what you see if you like, and let your baby look for as long as they want. There is no need to test anything or expect a response: this is shared looking, not a quiz.'],
  startHint:'Twelve cards, one at a time. Short sessions win at this age.',
+ teacher:{
+  goal:'your baby has heard the words red, yellow and blue many times, met six everyday objects, and maybe batted at a card with their own hands.',
+  opening:{say:'Hi! Today we look at colours and things you already know.',do:'Prop the first card where your baby can see it AND reach it — this is the age of grabbing.'},
+  parts:[{label:'Three colours, then six things',steps:[
+   {card:1,word:'Red circle',say:'Red! A big red circle.',how:'Hold it steady, say red, wait. At this age, one colour word over one clear shape is the whole lesson.'},
+   {card:2,word:'Yellow circle',say:'Yellow! Here is yellow — like sunshine.',how:'Same shape, new colour. The sameness makes the new word easy to hear.'},
+   {card:3,word:'Blue circle',say:'Blue! This one is blue.',how:'Three cards, three colours, one circle — red, yellow, blue is today’s first mini-lesson.'},
+   {card:4,word:'Three colours',say:'All three friends together — red, yellow, blue!',how:'Point to each colour in the same order you taught it. Order helps memory.'},
+   {card:5,word:'Ball',say:'A ball! You have a ball like this.',how:'Name it, then bounce a real ball nearby if you have one. Picture to world — that click is the learning.'},
+   {card:6,word:'Cup',say:'A cup — your cup!',how:'Show the card, then the real cup at the next drink. One object, two views, one word.'},
+   {card:7,word:'Spoon',say:'A spoon — for yummy bites.',how:'Name it at a calm moment, not mid-bite. The card before the meal makes the word stick.'},
+   {card:8,word:'Apple',say:'An apple — round, red fruit.',how:'Point out the roundness: the circle from card one became an apple. Connections build understanding.'},
+   {card:9,word:'Sun',say:'The sun — yellow and bright, like card two!',how:'Link it back to yellow. Yellow sun is one of the first colour-and-object pairs a baby ever meets.'},
+   {card:10,word:'Ball and cup',say:'A ball AND a cup — two friends on one card.',how:'Name ball, pause, name cup. Two words in order is early listening practice.'},
+   {card:11,word:'Teddy bear',say:'Your friend, the teddy bear!',how:'If there is a real teddy nearby, hold it beside the card. The match makes the word come alive.'},
+   {card:12,word:'Simple face',say:'A face — hello, face!',how:'Finish on the face card, then your own face. The last word of every class is hello.'}
+  ]}],
+  practice:{say:'Can you touch the card?',how:'Hold the red circle within arm’s reach and wait. A swat, a brush or a grab — any touch is the right answer, and it teaches cause and effect.'},
+  check:{say:'Where is red? … There it is!',how:'Show two cards and see which one your baby’s eyes go to when you say red. Any look toward it is a pass.'},
+  close:{say:'Class finished — high five, little grabber!',how:'Repeat one real object after the class (the cup, the apple). That is the homework — and it is just life.'}
+ },
  viewerLabel:'Today’s class: twelve colour and first-object cards',
  viewerHeading:'Twelve cards, one at a time.',
  folder:'colors-and-first-objects-3-4-months/',
@@ -153,6 +216,26 @@ export const fwftLesson={
  ledes:['Around four to six months, babies babble back, laugh at familiar faces and start to connect the sounds you make with the things they see. This class uses eleven simple familiar-object flashcards — a ball, a cup, a spoon, a bottle, an apple, a banana, a cat, a dog, a bird, a car and a teddy bear — shown one at a time while you name what you see in your own words.',
   'There is no script and nothing to test. You talk, your baby listens, and the little everyday names — ball, cup, dog, hello — slowly grow into your baby’s first words. Short, calm sessions of two to five minutes are all it takes.'],
  startHint:'Eleven cards, one at a time. Name each picture in your own words — short and natural wins.',
+ teacher:{
+  goal:'your baby has heard eleven first words clearly and often, babbled back at least once, and learned that every picture has a name.',
+  opening:{say:'Hello! Today we name things — your things.',do:'One card at a time, close enough to touch, your voice slow and happy.'},
+  parts:[{label:'Name it, pause, wait for any sound back',steps:[
+   {card:1,word:'Ball',say:'Ball. Look at the ball!',how:'Say ball twice — once to the card, once to your baby. Names land best face to face.'},
+   {card:2,word:'Cup',say:'Cup. Here is your cup.',how:'Use the exact words you use at drink time. Familiar phrases are where first words are born.'},
+   {card:3,word:'Spoon',say:'Spoon. The spoon says yum.',how:'A tiny sound effect keeps a five-month-old’s attention on the word.'},
+   {card:4,word:'Bottle',say:'Bottle. Time for the bottle.',how:'Show the card just before a real feed — that is the strongest moment for this word.'},
+   {card:5,word:'Apple',say:'Apple. A shiny apple.',how:'If you have one, hold the real apple under the card. Real plus picture is the fastest route in.'},
+   {card:6,word:'Banana',say:'Banana! Long and yellow.',how:'Peel a real banana as you say it — the action glues the word.'},
+   {card:7,word:'Cat',say:'Cat. Soft little cat.',how:'Whisper it. A change of volume restarts attention without any new props.'},
+   {card:8,word:'Dog',say:'Dog! Woof, woof.',how:'The sound is the hook: dog, then woof, then dog again — word, effect, word.'},
+   {card:9,word:'Bird',say:'Bird. Hello, bird!',how:'Wave at the bird. Waving grows into pointing, and pointing is how names get asked for.'},
+   {card:10,word:'Car',say:'Car — brmmm, brmmm.',how:'Slide the card slowly sideways with the sound. A moving picture holds the gaze for the whole word.'},
+   {card:11,word:'Teddy bear',say:'Teddy bear! Your teddy bear.',how:'End with the real teddy if you have it, and say its name TO it. Hello, teddy bear is a whole conversation for a baby.'}
+  ]}],
+  practice:{say:'Your turn — what do you want to say?',how:'Hold one card, say its word, then wait five quiet seconds. A coo, a squeal or a babble is your baby’s first turn in a conversation — answer it happily.'},
+  check:{say:'Where is the dog? Where is the ball?',how:'Show two cards and watch which one their eyes choose. Eyes are enough — hands and words come later.'},
+  close:{say:'All done today. Ball, cup, dog — what a lot of words!',how:'Say three of the words again as you tidy the cards away. Repetition at the end is what stores them.'}
+ },
  viewerLabel:'Today’s class: eleven familiar-object cards',
  viewerHeading:'Eleven cards, one at a time.',
  folder:'first-words-familiar-things-4-6-months/',
@@ -197,6 +280,28 @@ export const aeoLesson={
  ledes:['Around six to nine months, babies reach for what interests them, light up at familiar pictures and love a funny animal sound. This class pairs twelve realistic animals with everyday objects — a cat, a dog, a bird, a fish, a duck, a cow, then a ball, a shoe, a cup, a spoon, a car and a teddy bear — shown one at a time while you name what you see and play with simple sounds.',
   'There is no script and nothing to test. Your baby looks and listens, you talk and play, and every little connection — woof, moo, ball, cup — grows early recognition at your baby’s own pace. Short, playful sessions of three to five minutes are all it takes.'],
  startHint:'Twelve cards, one at a time. Name each picture and add an animal sound if you like — short and playful wins.',
+ teacher:{
+  goal:'your baby has heard six animal names with their sounds, six everyday object names, joined in with a sound or a reach of their own, and found one card when you asked for it.',
+  opening:{say:'Hello! Class time! Today we meet animals and things.',do:'Sit facing your baby with the cards beside you. Big smile, quiet voice, all your attention on them.'},
+  parts:[{label:'Part 1 · The animals (cards 1–6)',steps:[
+   {card:1,word:'Cat',say:'A cat! A cat says meow. Meow!',how:'Tap the cat gently on each meow. Name, sound, tap — the touch links picture and word.'},
+   {card:2,word:'Dog',say:'A dog! Woof, woof!',how:'Say woof big and silly. If your baby giggles, say woof again — laughter is a request for the repeat.'},
+   {card:3,word:'Bird',say:'Look, a bird! Tweet, tweet.',how:'Point at the bird, then out of the window. The card is the lesson; the window is the world.'},
+   {card:4,word:'Fish',say:'A fish — glub, glub.',how:'Open and close your mouth like a fish. Babies copy mouths long before they copy words.'},
+   {card:5,word:'Duck',say:'A duck! Quack, quack.',how:'Make your hand waddle like a puppet. Sound plus movement is double teaching.'},
+   {card:6,word:'Cow',say:'A cow — moooooo!',how:'Make the moo looooong. Long sounds are funnier, and funny means memorable.'}
+  ]},{label:'Part 2 · The everyday things (cards 7–12)',steps:[
+   {card:7,word:'Ball',say:'A ball! Roll, roll the ball.',how:'Roll a real ball to your baby right after saying it. The word arrives with the game.'},
+   {card:8,word:'Shoe',say:'A shoe. Shoe on your foot!',how:'Touch your baby’s shoe while saying it. Body-based words are the earliest to stick.'},
+   {card:9,word:'Cup',say:'Your cup! Drink, drink.',how:'Show the card, then offer a real sip. Word, object, action — one loop.'},
+   {card:10,word:'Spoon',say:'A spoon — here comes the spoon!',how:'Fly one aeroplane-spoon, then say spoon again quietly. The word after the game is the one that stays.'},
+   {card:11,word:'Car',say:'A car! Brmmm, brmmm.',how:'Drive the card in a slow figure of eight. Sound first, then the word, then wait.'},
+   {card:12,word:'Teddy bear',say:'Teddy bear! Hug the teddy.',how:'If there is a real teddy, hug it. Hug, word, giggle — the last card ends on love.'}
+  ]}],
+  practice:{say:'Now — where is the cow? And where is the ball?',how:'Lay two or three cards face up and ask for one. A reach, a stare or a lunge at the right card is the answer. Wrong pick? Say its name and try again.'},
+  check:{say:'What does the dog say? … Woof!',how:'Ask, then answer yourself after five seconds. You are teaching the question-and-answer rhythm, and your baby is learning that questions expect a turn.'},
+  close:{say:'Class done! Cat, dog, ball, cup — see you next class!',how:'Name four cards one last time as you stack them. Then use one word out in the world today: a dog on a walk, a cup at drink time.'}
+ },
  viewerLabel:'Today’s class: twelve animal and everyday-object cards',
  viewerHeading:'Twelve cards, one at a time.',
  folder:'animals-everyday-objects-6-9-months/',
@@ -244,6 +349,28 @@ export const fabLesson={
  ledes:['Between nine and twelve months, babies become little copiers: they wave, clap, point and love it when you name what they are doing. This class uses twelve simple cards — a hand, a foot, eyes, a nose, a mouth, then clapping, waving, eating, drinking, sleeping, pointing and smiling — shown one at a time while you say the word or do the action together.',
   'There is no script and nothing to test. You talk and play, your baby looks and moves, and the words for their little body and everyday actions grow out of real, happy moments. Short sessions of three to five minutes are all it takes.'],
  startHint:'Twelve cards, one at a time. Say the word, do the action — copy-me play wins at this age.',
+ teacher:{
+  goal:'your baby has connected five body words to their own body, copied at least one action, and waved or pointed with meaning.',
+  opening:{say:'Hello, my little copier! Today we talk about YOU.',do:'Have your baby on your lap — this class uses their own hands and feet as the props.'},
+  parts:[{label:'Part 1 · Your body (cards 1–5)',steps:[
+   {card:1,word:'Hand',say:'Hand! Where is your hand? Here is your hand!',how:'Hold up your baby’s hand as you say it. Their own body makes the word impossible to miss.'},
+   {card:2,word:'Foot',say:'Foot! Toot-toot, little foot.',how:'Tap soles together gently as you sing it. Rhythm plus body word equals memory glue.'},
+   {card:3,word:'Eyes',say:'Eyes! I see you with my eyes.',how:'Point to the card’s eyes, then your eyes, then your baby’s. Three stops, one word.'},
+   {card:4,word:'Nose',say:'Nose. Beep your little nose!',how:'A gentle nose-beep makes the word a game. Games get requested — and requests mean repetition.'},
+   {card:5,word:'Mouth',say:'Mouth! Open wide, mouth.',how:'Open your own mouth wide as you say it. Copy-me play starts here.'}
+  ]},{label:'Part 2 · Your actions (cards 6–12)',steps:[
+   {card:6,word:'Clapping',say:'Clap, clap! Clap your hands!',how:'Bring your baby’s hands together gently on each clap. The action IS the word.'},
+   {card:7,word:'Waving',say:'Wave bye-bye!',how:'Wave at the card, then wave at something real — a sibling, the window, someone leaving. Bye-bye becomes usable instantly.'},
+   {card:8,word:'Eating',say:'Eating! Yum-yum-yum.',how:'Rub your tummy in circles, then say eating again at the next meal — same word, real moment.'},
+   {card:9,word:'Drinking',say:'Drinking — glug, glug!',how:'Mime a sip. Name it again at the next bottle or cup for the second half of the lesson.'},
+   {card:10,word:'Sleeping',say:'Shhh… sleeping. Baby is sleeping.',how:'Drop to a whisper with hands under your cheek. Whispering makes this the easiest word of the set.'},
+   {card:11,word:'Pointing',say:'Point! Point at… the teddy!',how:'Point at a real object, then help your baby’s finger do it. Pointing is the wordless version of what is that?'},
+   {card:12,word:'Smiling',say:'A smile! Give me a big smile!',how:'Smile big and wait — babies mirror faces. Their smile back is the check mark on the whole class.'}
+  ]}],
+  practice:{say:'Your turn! Can you clap? Can you wave?',how:'Ask for one action, wait five seconds, then help gently. Praise any attempt — a wiggle toward clapping counts.'},
+  check:{say:'Where are your eyes? Where is your foot?',how:'Ask for one body part. A look, a touch or a wiggle toward it is correct. Nothing? Show it yourself and move on — this is not a test.'},
+  close:{say:'Class finished! Hands, feet, claps and waves — clever body!',how:'Use one class word in real life today (wave bye-bye to the bath). Real-life reuse turns today’s words into tomorrow’s talking.'}
+ },
  viewerLabel:'Today’s class: twelve body-part and action cards',
  viewerHeading:'Twelve cards, one at a time.',
  folder:'first-actions-body-parts-9-12-months/',
@@ -292,6 +419,27 @@ export const fwfhLesson={
  ledes:['Between twelve and eighteen months, toddlers point at everything, understand far more than they can say and love hearing you name their world. This class pairs eleven everyday pictures — an apple, a banana, an orange, a cup of milk, bread, an egg, then a cup, a spoon, a shoe, a sock and a chair — shown one at a time while you say the word simply and clearly.',
   'There is no script and nothing to test. You name it, your toddler looks, points or has a go in their own way, and every calm repetition — apple, cup, shoe, chair — feeds those growing first words. Short, playful sessions of three to five minutes are all it takes.'],
  startHint:'Eleven cards, one at a time. Name it, pause, and let your toddler answer in their own way.',
+ teacher:{
+  goal:'your toddler has named or pointed to at least three foods, matched two cards to real objects at home, and heard every word clearly several times.',
+  opening:{say:'Time for class! Today: yummy food and things from home.',do:'Sit at the table if you can — food words live at the table.'},
+  parts:[{label:'Part 1 · The food (cards 1–6)',steps:[
+   {card:1,word:'Apple',say:'Apple! A big red apple — yum.',how:'Say apple, then offer a real apple slice. Name before bite: apple, yum is the strongest loop there is.'},
+   {card:2,word:'Banana',say:'Banana! Peel the banana.',how:'Peel slowly as you repeat banana. One action, one word, all of their attention.'},
+   {card:3,word:'Orange',say:'Orange — round and orange.',how:'Compare with the apple card: both are fruit. Naming what two things share is real thinking.'},
+   {card:4,word:'Milk cup',say:'Milk! A cup of milk.',how:'Hold the card near their real cup. The same word at every drink puts milk among the first ten words.'},
+   {card:5,word:'Bread',say:'Bread — soft bread.',how:'Let them touch real bread once. Texture, word and taste: three senses, one name.'},
+   {card:6,word:'Egg',say:'An egg — oval and smooth.',how:'Show a real egg in the shell with hands on. Quiet, careful holding makes this word feel special.'}
+  ]},{label:'Part 2 · The home (cards 7–11)',steps:[
+   {card:7,word:'Cup',say:'Cup. Your own cup!',how:'Send your toddler to fetch or point to their real cup. A tiny errand turns a word into a skill.'},
+   {card:8,word:'Spoon',say:'Spoon. Tap-tap the spoon.',how:'Tap the spoon on the plate twice, saying spoon on each tap. Sound games make toddlers laugh and learn.'},
+   {card:9,word:'Shoe',say:'Shoe! Where is your shoe?',how:'Ask, then look together — under the table? In the hall? Finding beats pointing.'},
+   {card:10,word:'Sock',say:'Sock. Peek-a-boo toes in a sock!',how:'Put the sock on half-way and peek. Sock becomes a game they ask for by name.'},
+   {card:11,word:'Chair',say:'Chair. Sit on the chair.',how:'Say it, then let them climb up and sit. Word, action, praise — the full lesson in one card.'}
+  ]}],
+  practice:{say:'Find the cup! Now find the shoe!',how:'Scatter three cards on the floor and call one. Any correct look, point or grab wins — celebrate it loudly.'},
+  check:{say:'What is this? … Apple! And this? … Spoon!',how:'Hold up cards and pause after each question. If they say nothing, answer yourself happily — hearing the answer is learning too.'},
+  close:{say:'All done! Apple, cup, shoe, chair — such a clever helper.',how:'Use two class words naturally at the next real meal. Tomorrow’s class feels familiar because today’s words already live at home.'}
+ },
  viewerLabel:'Today’s class: eleven food and home cards',
  viewerHeading:'Eleven cards, one at a time.',
  folder:'first-words-food-home-12-18-months/',
@@ -338,6 +486,21 @@ export const fcLesson={
  ledes:['Around eighteen to twenty-four months, toddlers love spotting differences: the big ball and the little ball, the box that opens and shuts, the cup that is full and then empty. This class uses eleven realistic pictures arranged in concept pairs — big and small, up and down, open and closed, full and empty, one and many, and in — shown one at a time in pair order, so each opposite appears right after its partner and the comparison is easy to see. Then the last game continues off screen: put a toy in a basket, take it out, and do it again.',
   'There is no script and nothing to test. Show a pair, say the concepts clearly — ‘Big. Small.’ — and give your toddler time to look at the difference. Short, playful sessions of three to five minutes are all it takes.'],
  startHint:'Eleven cards, one at a time, in matching pairs. Say each concept clearly — short and playful wins.',
+ teacher:{
+  goal:'your toddler has heard five concept pairs — big and small, up and down, open and closed, full and empty, one and many — plus the word in, and used one pair with real objects.',
+  opening:{say:'Class time! Today we play opposites — big and small and more!',do:'Show the cards in pair order: each concept right after its partner, so the difference is always visible.'},
+  parts:[{label:'Five pairs, always taught together',steps:[
+   {card:'1–2',word:'Big and small',say:'BIG! … and small. Big — small!',how:'Stretch your arms wide on big, pinch your fingers on small. Your body shows the difference better than any picture.'},
+   {card:'3–4',word:'Up and down',say:'Up! … now down.',how:'Lift a toy high on up, bring it down gently on down. Actions are how toddlers understand words.'},
+   {card:'5–6',word:'Open and closed',say:'Open… and closed.',how:'Open and shut your hands, or a real box. Say each word exactly at the moment things change — word on action.'},
+   {card:'7–8',word:'Full and empty',say:'Full! … now empty — all gone!',how:'Show a cup with water and one without. All gone is a favourite toddler phrase — use it with relish.'},
+   {card:'9–10',word:'One and many',say:'One duck… many ducks!',how:'Hold up one finger, then wiggle all five. One and many live in their hands.'},
+   {card:11,word:'In',say:'The ball is IN the basket!',how:'Drop a ball in and out of a real basket, saying in and out. Repeat five times — toddlers want the loop.'}
+  ]}],
+  practice:{say:'Your turn — bring me something BIG. Now something small!',how:'Send them on a tiny hunt around the room. A correct object is a pass; a wrong one is just more naming — say what they brought, warmly.'},
+  check:{say:'Show me BIG! Show me up!',how:'Ask for one concept as an action — arms wide, hands high. Copying the action is the answer.'},
+  close:{say:'All done! Big, small, up, down — you know your opposites!',how:'Use one pair today: big bite and small bite at lunch, up and down on the stairs. Concepts repeat best inside real routines.'}
+ },
  viewerLabel:'Today’s class: eleven first-concept cards',
  viewerHeading:'Eleven cards, one at a time.',
  folder:'first-concepts-18-24-months/',
@@ -1475,6 +1638,36 @@ export function classLessonBody(L){
   </div>
   <div class="lv-grid" data-lv-grid>${L.cards.map(c=>`<figure class="lv-card">${img((L.r2Base||lessonsBase)+L.folder,c.file,c.w,c.h,c.alt,L.eagerFirst&&c.order===1)}</figure>`).join('')}</div>
  </section>`;
+ /* TEACHER'S LESSON (owner 2026-11-12: "i want you to give the proper lesson
+    like a teacher teaching the topic to kids — how to make them understand —
+    its writing the normal description then there will be no difference
+    between lesson"). A lesson is a STRUCTURED TEACHING SEQUENCE, not an
+    activity blurb: goal, opening, the taught steps in order with the exact
+    words to say, the technique behind each step, practice, a check and a
+    close. The say-lines are the teacher's words; the how-lines quietly
+    explain why each step builds understanding. */
+ const teacherBlock=T=>{
+  let n=0;
+  const row=(tag,say,how,cls='')=>`<li class="lt-step${cls}"><span class="lt-num">${String(n).padStart(2,'0')}</span><div><span class="lt-tag">${tag}</span><p class="lt-say">“${say}”</p>${how?`<p class="lt-how"><strong>How:</strong> ${how}</p>`:''}</div></li>`;
+  const rows=[];
+  n++;rows.push(row('Welcome',T.opening.say,T.opening.do));
+  for(const part of T.parts||[]){
+   rows.push(`<li class="lt-part">${part.label}</li>`);
+   for(const s of part.steps){n++;rows.push(row(`Card ${s.card} · ${s.word}`,s.say,s.how));}
+  }
+  if(T.practice){n++;rows.push(row('Practice',T.practice.say,T.practice.how));}
+  if(T.check){n++;rows.push(row('Check',T.check.say,T.check.how));}
+  if(T.close){n++;rows.push(row('Well done',T.close.say,T.close.how));}
+  return `<section class="wrap lesson-section lt-section" id="teachers-lesson">
+  <span class="eyebrow">TEACHER’S LESSON</span>
+  <h2>How this class is taught.</h2>
+  <p class="lt-goal"><strong>By the end of this class:</strong> ${T.goal}</p>
+  <ol class="lt-script">${rows.join('')}</ol>
+  <p class="lesson-note">Read the script while you show the cards above — the say-lines are yours to say out loud and the how-lines quietly explain the trick behind each step. Skip, shorten or repeat anything: the class bends to your child, never the other way round.</p>
+ </section>`;
+ };
+ const T=L.teacher;
+ const teacher=T?teacherBlock(T):'';
  const howTo=`<section class="wrap lesson-section" id="how-to">
   <span class="eyebrow">PARENT INSTRUCTIONS</span>
   <h2>${L.howTo.heading}</h2>
@@ -1501,6 +1694,7 @@ export function classLessonBody(L){
  return `${crumbNav(L.crumbs)}
  ${hero}
  ${viewer}
+ ${teacher}
  ${howTo}
  ${tryTogether}${realWorld?`\n ${realWorld}`:''}
  ${why}
