@@ -1678,7 +1678,7 @@ export function classLessonBody(L){
  const tryTogether=L.tryTogether?`<section class="wrap lesson-section">
   <span class="eyebrow">TRY TOGETHER</span>
   <h2>Little things to say.</h2>
-  <p class="fc-hint">Prompts for you, not for the cards — say them softly while your baby looks.</p>
+  <p class="fc-hint">${L.promptsHint||'Prompts for you, not for the cards — say them softly while your baby looks.'}</p>
   <ul class="lesson-prompts">${L.tryTogether.map(p=>`<li>${p}</li>`).join('')}</ul>
  </section>`:'';
  const realWorld=L.realWorld?`<section class="wrap lesson-section">
