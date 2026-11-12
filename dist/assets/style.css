@@ -1038,8 +1038,7 @@ button.op-card.is-matched{opacity:.55;outline:3px solid #2e6b3f;outline-offset:2
 
 /* Animated doodle characters (school/animated-doodles on R2): small,
    in-flow greeting images. Animations start only when doodles.js marks the
-   doodle .doodle-live (scroll into view); body.calm-mode (the parent
-   toggle in the footer) and prefers-reduced-motion both stop everything.
+   doodle .doodle-live (scroll into view); prefers-reduced-motion stops everything.
    Doodles are normal flow images — they can never cover text or buttons. */
 .doodle{display:block;width:clamp(64px,9vw,96px);height:auto;margin:6px auto 2px;border-radius:18px}
 .doodle-pencil{transform-origin:50% 92%;margin-bottom:10px}
@@ -1058,19 +1057,14 @@ button.op-card.is-matched{opacity:.55;outline:3px solid #2e6b3f;outline-offset:2
 @keyframes doodle-flutter{0%,100%{transform:rotate(-3deg) translateY(0)}50%{transform:rotate(3deg) translateY(-5px)}}
 @keyframes doodle-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
 @keyframes doodle-sway{0%,100%{transform:rotate(-3deg)}50%{transform:rotate(3deg)}}
-body.calm-mode .doodle{animation:none!important;transform:none}
 @media(prefers-reduced-motion:reduce){.doodle{animation:none!important;transform:none}}
-.doodle-calm{display:inline-flex;align-items:center;gap:7px;border:1.5px solid var(--ink,#343b30);border-radius:999px;background:var(--white,#fff);color:var(--ink,#343b30);font-family:inherit;font-size:12.5px;font-weight:700;padding:6px 13px;cursor:pointer;transition:transform .15s}
-.doodle-calm:hover,.doodle-calm:focus-visible{transform:translate(-1px,-1px)}
-.doodle-calm[aria-pressed="true"]{background:var(--ink,#343b30);color:#fff}
 
 /* ---- Magic games (Age 3): Fruit Basket, Color Mixing, Animal Playground,
    Shape Builder. Server-rendered screens stay visible without JavaScript
    (the whole game reads as a scroll-through activity); with JavaScript,
    magic-*.js shows one screen at a time and wires the real interactions.
    No scores, no timers, no streaks anywhere. Animations are gentle and
-   triple-gated: body.calm-mode (parent toggle in the footer) and
-   prefers-reduced-motion both stop them, and JS never forces movement. */
+   gated: prefers-reduced-motion stops them, and JS never forces movement. */
 .mg-game{margin-top:8px}
 .mg-screens{margin-top:22px}
 .mg-screen{margin-top:26px}
@@ -1171,8 +1165,7 @@ button.ld-tool[aria-pressed="true"]{background:#71326d;color:#fff;border-color:#
 .ld-crop img{position:absolute;height:auto;max-width:none;display:block}
 .ld-ref .ld-crop{width:100%;max-width:250px;margin:0 auto}
 @media(max-width:860px){.ld-layout{grid-template-columns:1fr}.ld-canvas-wrap,.ld-tools{max-width:520px}}
-/* ---- Magic games: calm + reduced-motion gates ---- */
-body.calm-mode .mg-mixing .mg-drip-a,body.calm-mode .mg-mixing .mg-drip-b,body.calm-mode button.mg-animal.is-moving img{animation:none!important}
+/* ---- Magic games: reduced-motion gates ---- */
 @media(prefers-reduced-motion:reduce){.mg-mixing .mg-drip-a,.mg-mixing .mg-drip-b,button.mg-animal.is-moving img{animation:none!important}button.mg-tile,button.mg-animal,button.mg-splash,button.ld-color,button.ld-size,button.ld-tool{transition:none}.mg-result-blob{transition:none}}
 /* ---- Today's Class recommendation, child profiles & real progress ---- */
 .tc-day-hint{margin-top:10px;font-size:13.5px;color:var(--muted)}
@@ -1637,7 +1630,6 @@ a.tc-day-class.is-rec{border:2px solid #71326d;background:#faf6ff}
 .ph-miss{animation:ph-shake .5s ease}
 @keyframes ph-shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
 @media (prefers-reduced-motion:reduce){.ph-miss{animation:none}}
-body.calm-mode .ph-miss{animation:none}
 .sa-cheer{background:#eef4e6;border:1.5px solid var(--ink);border-radius:16px;padding:22px;text-align:center;margin-top:16px}
 .sa-cheer-title{font-family:var(--serif);font-size:26px;color:var(--ink)}
 .sa-cheer-sub{font-size:14px;color:var(--muted);margin:6px 0 0}

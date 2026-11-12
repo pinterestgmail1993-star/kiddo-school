@@ -7,7 +7,7 @@
    alternative. Progressive enhancement only — without JavaScript every
    screen is visible and the noscript note invites grown-ups to be the
    duck. No scores, no timers, nothing stored. Animations respect
-   body.calm-mode and prefers-reduced-motion through the shared CSS gates
+   prefers-reduced-motion through the shared CSS gates
    in style.css. */
 (() => {
   const game = document.querySelector('[data-mg-game="animal-playground"]');

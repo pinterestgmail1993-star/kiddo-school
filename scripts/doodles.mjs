@@ -5,8 +5,7 @@
 // Each doodle is a small in-flow image (never absolutely positioned, so it
 // can never cover text, buttons or activities), aria-hidden, lazy-loaded.
 // CSS animations in style.css run only when doodles.js adds .doodle-live on
-// scroll into view; body.calm-mode (parent-controlled, localStorage) and
-// prefers-reduced-motion both stop all movement.
+// scroll into view; prefers-reduced-motion stops all movement.
 import {lessons} from '../src/lessons.mjs';
 import {alphabetLesson} from '../src/flashcards/data-alphabet.mjs';
 import {numbersLesson} from '../src/flashcards/data-numbers.mjs';

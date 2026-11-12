@@ -161,7 +161,7 @@ ${complete}
   <span class="eyebrow">FOR GROWN-UPS</span>
   <h2>About the sounds.</h2>
   <p class="lesson-copy">Every animal in this game plays a real recording. Dog, cat, cow and sheep use the very same files as the Animals &amp; Their Sounds class, so the sounds stay consistent across the school. The duck recording is “Anas platyrhynchos - Mallard - XC62258” by Jonathon Jongsma (xeno-canto via Wikimedia Commons, CC BY-SA 3.0) — a close-up of a mallard giving the classic quack — and the frog is “Single Frog Croak” by MichaeltheFox8621 (Wikimedia Commons, CC BY-SA 4.0); both are trimmed and volume-matched, with the full credits kept in the sound folder. The sound word is written under every animal so you can perform it yourself, which is honestly the best version.</p>
-  <p class="lesson-copy">Every movement in Step 5 is deliberately small and calm. If your child is sensitive to motion, the parent Calm Mode toggle in the footer (or your device’s reduced-motion setting) stills every animation while all sounds, words and games keep working.</p>
+  <p class="lesson-copy">Every movement in Step 5 is deliberately small and calm. If your child is sensitive to motion, your device’s reduced-motion setting stills every animation while all sounds, words and games keep working.</p>
   <p class="lesson-note">Being the frog is still the most popular role in this school. Assign accordingly.</p>
  </section>`;
 }

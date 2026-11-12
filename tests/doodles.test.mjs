@@ -44,10 +44,10 @@ test('doodles are honest, small, non-blocking and accessible',()=>{
  assert.ok(!c8.includes('position:absolute')&&!css.includes('.doodle{position'),'no absolutely-positioned doodles');
 });
 
-test('calm mode and reduced motion really stop the movement',()=>{
+test('reduced motion really stops the movement',()=>{
  // CSS: every animation rule is gated on .doodle-live, and both calm-mode
  // and prefers-reduced-motion force animation:none
- assert.match(css,/body\.calm-mode \.doodle\{animation:none!important/);
+ assert.ok(!css.includes('calm-mode')&&!css.includes('doodle-calm'),'calm mode is gone from the css');
  assert.match(css,/@media\(prefers-reduced-motion:reduce\)\{\.doodle\{animation:none!important/);
  for(const kind of ['wave','bounce','wiggle','flutter','float','sway']){
   assert.ok(css.includes('@keyframes doodle-'+kind),'keyframes for '+kind);
@@ -56,16 +56,13 @@ test('calm mode and reduced motion really stop the movement',()=>{
  assert.ok(css.includes('.doodle-live.doodle-pencil'),'wave is gated on live');
  // JS: observer gated on reduced motion + calm mode, choice persisted
  assert.match(js,/matchMedia\('\(prefers-reduced-motion: reduce\)'\)/);
- assert.match(js,/calm-mode/);
- assert.match(js,/localStorage\.setItem\(calmKey/);
- assert.match(js,/localStorage\.getItem\(calmKey/);
- assert.match(js,/aria-pressed/);
+ assert.ok(!/calm/i.test(js),'no calm-mode toggle in doodles.js');
  assert.ok(!js.includes('fetch(')&&!js.includes('XMLHttpRequest'),'no network in doodles.js');
 });
 
-test('every page loads doodles.js and the calm toggle lands in the footer',()=>{
+test('every page loads doodles.js and no calm toggle is injected',()=>{
  for(const [name,html] of [['home',home],['class 8',c8],['about',about],['baby',baby]]){
   assert.ok(/<script src="\/assets\/doodles\.js(\?v=[0-9]+)?" defer><\/script>/.test(html),name+' loads doodles.js');
  }
- assert.match(js,/\.wrap\.footer-bottom/,'calm button mounts in the footer bottom bar');
+ assert.ok(!js.includes('footer-bottom'),'nothing is mounted in the footer');
 });

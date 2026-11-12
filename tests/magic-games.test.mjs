@@ -119,7 +119,7 @@ test('magic animal playground: real recordings only where they exist, honest wor
  assert.ok(animal.includes('data-cm-root data-page-path="/preschool/3-years/magic-animal-playground/"'));
  assert.ok(animal.includes('/assets/magic-animal-playground.js'));
  assert.ok(animal.includes('href="/preschool/3-years/animals-and-their-sounds/"'),'links back to Class 6');
- assert.ok(animal.includes('Calm Mode toggle in the footer')||animal.includes('parent Calm Mode toggle'),'calm mode mentioned');
+ assert.ok(!/Calm Mode/i.test(animal)&&animal.includes('reduced-motion setting'),'reduced-motion mentioned, no calm toggle');
 });
 
 test('look & draw: a 25-picture gallery on four shelves, gathered from the retired games',()=>{
@@ -186,15 +186,13 @@ test('look & draw: a 25-picture gallery on four shelves, gathered from the retir
  assert.ok(!shape.includes('aria-label="undefined"'),'no broken aria-labels');
 });
 
-test('remaining magic games respect calm mode, reduced motion and the no-score/no-timer/no-download promises',()=>{
+test('remaining magic games respect reduced motion and the no-score/no-timer/no-download promises',()=>{
  for(const [name,html] of [['color',color],['animal',animal],['shape',shape]]){
   assert.doesNotMatch(clean(html),/\bscore\b|\btimer\b|\bstreak\b|leaderboard|countdown/i,name+' stays score-free');
   assert.ok(!html.includes('setInterval'),'no timers in '+name);
   assert.ok(!html.includes('download="'),'no download buttons for game assets in '+name);
  }
- // the shared CSS gates every animation behind calm-mode and reduced-motion
- assert.ok(css.includes('body.calm-mode .mg-mixing .mg-drip-a'),'calm-mode gate for the mixing drips');
- assert.ok(css.includes('body.calm-mode button.mg-animal.is-moving img'),'calm-mode gate for animal movement');
+ // the shared CSS gates every animation behind reduced-motion
  assert.ok(css.includes('button.ld-color,button.ld-size,button.ld-tool{transition:none}'),'reduced-motion gate covers the drawing tools');
  assert.ok(/@media\(prefers-reduced-motion:reduce\)\{[^}]*mg-animal[^}]*\}/.test(css),'reduced-motion gate for the magic animations');
  // the retired games' CSS is gone for good
