@@ -86,7 +86,7 @@ test('the worksheet set folds all 31 printables with their artwork and downloads
   assert.ok(i>=0,'folded printable '+a.slug);
   const seg=set.slice(i,i+6000);
   assert.ok(seg.includes(`src="${MS_BASE}${a.img}"`),'plain R2 url, no draw key: '+a.slug);
-  assert.ok(seg.includes(`href="${MS_BASE}${a.img}" download`),'real download link with the SEO file name: '+a.slug);
+  assert.ok(seg.includes(`data-sheet-url="${MS_BASE}${a.img}"`)&&seg.includes('data-sheet-act="print"')&&seg.includes('data-sheet-act="download"')&&seg.includes('data-sheet-act="share"'),'Print / Download / Share buttons on the sheet: '+a.slug);
   assert.ok(!seg.includes('data-wc '),'no drawing mount: '+a.slug);
  }
  assert.ok(!set.includes('?draw=1'),'printables keep the plain URL');

@@ -1507,5 +1507,41 @@ for(const f of walkAll('dist').filter(f=>f.endsWith('/index.html'))){
  }
  console.log(`Flashcard cards with Print / Download / Share: ${n}`);
 }
+/* WORKSHEETS + COLORING PAGES: every card has Print / Download / Share right under its picture (same buttons and script as First Glance and Flashcards). The card is a printable sheet, so the buttons replace the old "View Worksheet" line, which led nowhere. */
+{
+ const esc=t=>t.replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;');
+ const strip=t=>t.replace(/<[^>]*>/g,'').replace(/&amp;/g,'&').replace(/&#39;/g,"'").replace(/&quot;/g,'"').trim();
+ let n=0;
+ for(const f of walkAll('dist').filter(f=>f.endsWith('/index.html'))){
+  let h=readFileSync(f,'utf8');
+  if(!h.includes('<span class="ws-card">')&&!h.includes('<p class="item-download"><a '))continue;
+  let i=0;
+  const o=h.replace(/<span class="ws-card">(\s*<span class="ws-card-art"><img src="([^"]+)"[\s\S]*?<\/span>\s*<span class="ws-card-body">\s*<strong>([\s\S]*?)<\/strong>[\s\S]*?<\/span>)\s*<span class="ws-card-open">[^<]*<span[^>]*>[^<]*<\/span><\/span>(\s*)<\/span>/g,(m,top,url,t)=>{
+   const title=strip(t);
+   const slug=url.split('/').pop().replace(/\.[a-z0-9]+$/i,'');
+   const ext=(url.match(/\.([a-z0-9]+)$/i)||[,'webp'])[1];
+   const id='ws-sheet-'+(++i)+'-'+slug;
+   n++;
+   return '<span class="ws-card" id="'+id+'">'+top+'<span class="fc-acts" data-sheet-url="'+url+'" data-sheet-file="kiddo-school-'+esc(slug)+'.'+ext+'" data-sheet-title="'+esc(title)+'" data-sheet-id="'+id+'"><button type="button" class="button button-ghost" data-sheet-act="print">Print</button><button type="button" class="button button-ghost" data-sheet-act="download">Download</button><button type="button" class="button button-ghost" data-sheet-act="share">Share</button><span class="fg-actions-msg" data-sheet-msg role="status" aria-live="polite"></span></span></span>';
+  });
+  /* full sheets further down the page: the lone Download link becomes Print / Download / Share too */
+  const o2=o.replace(/<article class="one-page-item([^"]*)" id="([^"]+)">([\s\S]*?)<\/article>/g,(m,cls,id,body)=>{
+   const dm=body.match(/<p class="item-download"><a [^>]*download[^>]*>[\s\S]*?<\/a><\/p>/);
+   const im=body.match(/<img [^>]*src="([^"]+)"/);
+   if(!dm||!im)return m;
+   const tm=body.match(/<h3 class="item-title">([\s\S]*?)<\/h3>/);
+   const title=tm?strip(tm[1]).replace(/ for Ages? .*$/,''):id;
+   const url=im[1];
+   const ext=(url.match(/\.([a-z0-9]+)$/i)||[,'webp'])[1];
+   n++;
+   return m.replace(dm[0],'<div class="item-download"><span class="fc-acts" data-sheet-url="'+url+'" data-sheet-file="kiddo-school-'+esc(id)+'.'+ext+'" data-sheet-title="'+esc(title)+'" data-sheet-id="'+esc(id)+'"><button type="button" class="button button-ghost" data-sheet-act="print">Print</button><button type="button" class="button button-ghost" data-sheet-act="download">Download</button><button type="button" class="button button-ghost" data-sheet-act="share">Share</button><span class="fg-actions-msg" data-sheet-msg role="status" aria-live="polite"></span></span></div>');
+  });
+  if(o2===h)continue;
+  h=o2;
+  if(!h.includes('/assets/sheet-actions.js'))h=h.replace('</body>','<script src="/assets/sheet-actions.js" defer></script></body>');
+  writeFileSync(f,h);
+ }
+ console.log(`Worksheet and coloring-page cards with Print / Download / Share: ${n}`);
+}
 writeFileSync('dist/build-info.json',JSON.stringify({siteUrl:site,indexable,pages:allRoutes.length+2,activities:activities.length},null,2));
 console.log(`Built ${allRoutes.length+2} pages and ${activities.length} activity sheets. Canonical origin: ${site}. Indexing: ${indexable?'enabled':'disabled (preview)'}.`);
